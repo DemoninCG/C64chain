@@ -1,0 +1,25 @@
+# Normalise line endings on checkin, and keep them LF in the working tree too.
+#
+# Without this, git applies core.autocrlf on Windows and every text file comes
+# back as CRLF even though it was committed as LF. The generated files then
+# churn on every rebuild and diffs become unreadable.
+* text=auto eol=lf
+
+# Generated build artefacts and documentation. Keep LF, never CRLF: a tree.png
+# or a .dot file must never acquire line-ending changes that swamp a real diff.
+*.json   text eol=lf
+*.md     text eol=lf
+*.mjs    text eol=lf
+*.js     text eol=lf
+*.css    text eol=lf
+*.html   text eol=lf
+*.dot    text eol=lf
+*.mmd    text eol=lf
+
+# Binary: never touch, never try to normalise.
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.pdf    binary
