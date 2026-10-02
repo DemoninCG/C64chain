@@ -1,0 +1,78 @@
+{
+  "$comment": "Structural spine. These are the grouping nodes that hold the per-subsystem fragments together, plus the navigation entries that guarantee the deep trunks (metals, petrochemicals, industry, peripherals) are reachable from the root even if no fragment references them by id.",
+  "roots": [
+    {
+      "id": "c64.mainboard",
+      "name": "Mainboard ASSY 250407",
+      "description": "A single two-layer FR-4 board carrying the whole computer. Eight 4164 DRAMs make the 64 KB of main RAM; a 1 KB static RAM holds screen colour; the 6510 processor, the VIC-II, the SID, two CIAs, the PPI, a mask-programmed PLA and three mask ROMs do the rest, wired together with a dozen 74-series parts, three CMOS parts and a handful of small-signal transistors. Everything is through-hole DIP. About 320 components and 20 integrated circuits.",
+      "kind": "part",
+      "category": "board",
+      "era": "1982-1984",
+      "confidence": "high",
+      "note": "Board ASSY 250407 is the long 'breadbin' layout, schematic 251138. Earlier revisions differ mainly in having no plated-through holes at all — where later boards have a via, the early ones carry a short single-core jumper wire soldered across the same pads. The U-numbers quoted throughout this tree are the canonical 250407 set and do not line up with the 250425, 250466 or short boards. A validated copy of the 250407 layout has zero vias and exactly two wire jumpers, E1 and E2.",
+      "children": [
+        "mb.pcb",
+        "mb.cpu",
+        "mb.ram",
+        "mb.color-ram",
+        "mb.roms",
+        "mb.vic",
+        "mb.sid",
+        "mb.cia",
+        "mb.ppi",
+        "mb.pla",
+        "mb.discretes",
+        "mb.logic",
+        "mb.rf-modulator",
+        "c64.mains",
+        "mb.passives",
+        "mb.crystal",
+        "c64.connector-jacks",
+        "mb.solder",
+        "mb.assembly",
+        "mb.test",
+        "mb.photo"
+      ]
+    },
+    {
+      "id": "c64.io-panel",
+      "name": "Rear and side I/O panel",
+      "description": "Everything you can plug into the machine. The back carries the 8-pin DIN video output, the 6-pin DIN serial (IEC) port, the 6-pin edge-connector datasette port, the user-port edge connector, the 7-pin DIN power input and the RF modulator's coax socket; the side carries two DE-9 control ports for joysticks and paddles; the bottom edge of the board exposes the 44-pin expansion socket. The video output is composite plus separate luma and chroma on an 8-pin DIN — which is one reason the RF modulator existed and one reason it did not need to be as good as it was.",
+      "kind": "part",
+      "category": "interconnect",
+      "era": "1982",
+      "confidence": "high",
+      "children": [
+        "c64.connector-jacks",
+        "c64.switches"
+      ]
+    },
+    {
+      "id": "c64.bottoms-out",
+      "name": "Where every branch terminates",
+      "description": "Everything above ends in one of three trunks: refined metals, petrochemicals, and the utilities and factories that supply both. Most component subtrees inline their own copy of the relevant chain — a capacitor really does carry its own aluminium, and an ABS case really does carry its own acrylonitrile — so these are the canonical, deepest versions of those same chains, kept together so you can read one end to end.",
+      "kind": "facility",
+      "category": "industry",
+      "era": "1980s",
+      "children": ["metal", "chem", "industry"]
+    },
+    {
+      "id": "c64.extras",
+      "name": "Finishing and bundled extras",
+      "description": "Branches that hang off the machine rather than being part of it: how legends and colours were printed onto plastic, how one keyboard key becomes a bit, and the joystick that shipped in the box in some markets.",
+      "kind": "facility",
+      "category": "interconnect",
+      "era": "1983",
+      "children": ["c64.decor", "c64.keyboard-switches", "c64.joystick"]
+    },
+    {
+      "id": "c64.peripherals",
+      "name": "Also required to use it",
+      "description": "A C64 shipped as a box with no screen, no way to save a program, and no way to enter one. In 1983 the machine was useless without a television set, a cassette recorder, and a joystick — arguably all three were part of 'a computer' in the way the question was meant.",
+      "kind": "facility",
+      "category": "peripherals",
+      "era": "1983",
+      "children": ["peripheral", "c64.joystick"]
+    }
+  ]
+}

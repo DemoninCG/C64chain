@@ -1,0 +1,22 @@
+{
+  "$comment": "Spine file. Only the top-level assembly breakdown lives here; each subsystem is defined in its own data/*.json file and stitched by scripts/build.mjs. 'children' entries that are plain strings are ids resolved at build time.",
+  "id": "c64",
+  "name": "Commodore 64 (breadbin, ASSY 250407)",
+  "description": "A home computer sold from 1982. This tree traces every physical component back through the industrial processes of the early 1980s to the ore, crude oil and quartz sand it began as. Roughly 320 discrete parts from about twenty distinct manufacturing industries. The chips were designed in Pennsylvania and fabricated there; the board was populated and the machine was boxed in Hong Kong, with some runs contract-manufactured in Japan.",
+  "kind": "part",
+  "category": "computing",
+  "era": "1982-1984",
+  "children": [
+    "c64.case",
+    "c64.keyboard",
+    "c64.io-panel",
+    "c64.mainboard",
+    "c64.psu",
+    "c64.mains",
+    "c64.cables",
+    "c64.packaging",
+    "c64.peripherals",
+    "c64.extras",
+    "c64.bottoms-out"
+  ]
+}

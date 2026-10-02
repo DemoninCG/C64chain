@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C64 — production process tree</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%230f1117'/><path d='M3 4h10M5 8h6M7 12h2' stroke='%237aa2f7' stroke-width='1.6'/></svg>">
+</head>
+<body>
+
+<header id="top">
+  <div class="brand">
+    <span class="logo">▚</span>
+    <div>
+      <h1>Commodore 64 — production process tree</h1>
+      <p class="sub">Every component traced back through 1980s industry to ore, oil and quartz</p>
+    </div>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="tools">
+    <div class="searchwrap">
+      <input id="search" type="search" placeholder="Search 2,000+ nodes…  ( / )" autocomplete="off" spellcheck="false">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <div class="seg" role="group" aria-label="View">
+      <button data-view="tree" class="on" title="Dendrogram">Tree</button>
+      <button data-view="outline" title="Indented outline">Outline</button>
+    </div>
+    <button id="expandAll" title="Expand the entire tree (may be slow)">Expand all</button>
+    <button id="collapseAll" title="Collapse to depth 1">Collapse</button>
+  </div>
+</header>
+
+<main>
+  <aside id="left">
+    <section>
+      <h3>Category</h3>
+      <div id="legend" class="legend"></div>
+    </section>
+    <section>
+      <h3>Kind</h3>
+      <div id="kindFilter" class="chips"></div>
+    </section>
+    <section>
+      <h3>Confidence</h3>
+      <div id="confFilter" class="chips"></div>
+    </section>
+    <section>
+      <h3>Depth</h3>
+      <label class="slider">expand to level <output id="depthOut">3</output>
+        <input id="depthSlider" type="range" min="1" max="14" value="3">
+      </label>
+      <label class="check"><input type="checkbox" id="dimUnrelated"> dim unrelated when selected</label>
+      <label class="check"><input type="checkbox" id="showRefs" checked> highlight shared subtrees</label>
+    </section>
+    <section class="exports">
+      <h3>Export</h3>
+      <a href="tree.json" download>tree.json</a>
+      <a href="tree.dot" download>tree.dot (graphviz)</a>
+      <a href="tree.mmd" download>tree.mmd (mermaid)</a>
+      <a href="../docs/TREE.md" download>TREE.md (outline)</a>
+    </section>
+  </aside>
+
+  <div id="stage">
+    <svg id="canvas" xmlns="http://www.w3.org/2000/svg" tabindex="0"></svg>
+    <div id="outline" hidden></div>
+    <div id="hint" class="hint">scroll to zoom · drag to pan · click a node for detail · <kbd>dbl-click</kbd> to expand</div>
+    <pre id="crash" hidden></pre>
+  </div>
+
+  <aside id="right">
+    <div id="panel" class="panel empty">
+      <p class="placeholder">Select a node to read how it was made.</p>
+    </div>
+  </aside>
+</main>
+
+<footer id="bottom">
+  <span id="status"></span>
+  <span class="keys">
+    <kbd>/</kbd> search · <kbd>←→↑↓</kbd> navigate · <kbd>↵</kbd> expand/collapse ·
+    <kbd>Esc</kbd> clear · <kbd>0</kbd> reset view · <kbd>?</kbd> help
+  </span>
+</footer>
+
+<script src="app.js" type="module"></script>
+</body>
+</html>

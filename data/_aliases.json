@@ -1,0 +1,14 @@
+{
+  "$comment": "Wrong id -> right id. build.mjs rewrites these in place and reports each rewrite, so a single naming disagreement between fragments does not require rewriting a whole file.",
+
+  "facility.natural-gas": "facility.power.natural-gas",
+
+  "chem.solder": "metal.solder",
+  "chem.trichlorosilane": "metal.silica.tcs",
+  "chem.ferric-chloride": "chem.pcb-chemicals.etching.ferric-chloride",
+  "chem.barium-carbonate": "metal.barium-carbonate",
+  "chem.silica-fiber": "chem.glass-fiber",
+  "chem.chlorine": "chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali",
+  "chem.nitrogen": "chem.fab-chemicals.process-gases.nitrogen.cryogenic-air.atmospheric-air",
+  "chem.benzene": "chem.styrene.benzene"
+}
