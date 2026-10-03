@@ -341,7 +341,26 @@ function dist(a, b) {
  * sat in the tree unlinked. Ingredients never become children: the ABS subtree
  * is ~80 nodes and a child edge per part would multiply it into thousands.
  */
-const normKey = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim();
+/* Strip a parenthetical before normalising, so "Rosin flux (RMA)" answers to the
+ * input string "rosin flux".
+ *
+ * The two scripts that reason about this normalisation disagreed, and the
+ * disagreement hid real work. build.mjs used to reduce a parenthetical to spaces
+ * and keep the words inside it, so "Hydrochloric acid (32-37%)" normalised to
+ * "hydrochloric acid 32 37" and could never be reached by the input string
+ * "hydrochloric acid". scripts/ingredients.mjs strips the parenthetical first, so
+ * it believed such an input was resolved and never listed it. Net effect: 210
+ * entity-like node names carry a parenthetical, and 59 `from` edges across 27
+ * distinct input strings were unreachable and invisible to the one tool whose
+ * job is to list unreachable ones. Making the two agree is the fix; adding 27
+ * rows to data/_ingredients.json would have papered over it.
+ *
+ * Collisions are safe. If two names differ only inside a parenthetical they
+ * normalise to the same key, the key goes into nameAmbiguous, and build refuses
+ * to link it rather than picking one. A refusal is counted and reported; a
+ * silent wrong link is not. */
+const normKey = (s) => String(s).toLowerCase().replace(/\([^)]*\)/g, '')
+  .replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim();
 
 /* Name fallback, but only when it is unambiguous, and matched on the node's
  * NAME only.
@@ -372,6 +391,21 @@ for (const k of nameAmbiguous.keys()) nameIndex.delete(k);
 const ingredientStats = { exact: 0, byName: 0, byTable: 0, prose: 0, ambiguous: 0 };
 const ingredientUnresolved = [];
 const ambiguousLinks = [];
+/* Precedence is id -> table -> name, and the middle step used to be last.
+ *
+ * data/_ingredients.json calls itself "the explicit, reviewable part", so a
+ * reviewed row must be able to say something an automatic name match disagrees
+ * with. Name-first meant it could not: widening the name index (see normKey
+ * above) silently overrode nine rows, two of which were deliberate corrections
+ * from the QA pass - "boric acid" and "kaolin", both of which had been pointed at
+ * the wrong node on purpose. A silent override of a reviewed decision is the same
+ * class of defect as a silent wrong link, so the table now wins.
+ *
+ * Reordering exposed three rows that were themselves sloppy, and those are fixed
+ * in the table rather than reverted: "epichlorohydrin" pointed at the epoxy
+ * PROCESS instead of the substance, "natural rubber" at the elastomer mixture
+ * rather than the rubber, and "nitrogen" at atmospheric air. */
+const tableShadowed = [];
 for (const [id, n] of defs) {
   const from = new Set();
   for (const raw of n.inputs ?? []) {
@@ -379,6 +413,14 @@ for (const [id, n] of defs) {
     if (!s) continue;
     if (defs.has(s)) { from.add(s); ingredientStats.exact++; continue; }
     const k = normKey(s);
+    const t = ingredients[k];
+    if (t && defs.has(t)) {
+      from.add(t); ingredientStats.byTable++;
+      if (!nameAmbiguous.has(k) && nameIndex.has(k) && nameIndex.get(k) !== t) {
+        tableShadowed.push(`${k}\t${t}\t${nameIndex.get(k)}`);
+      }
+      continue;
+    }
     if (nameAmbiguous.has(k)) {
       ingredientStats.ambiguous++;
       if (ambiguousLinks.length < 300) {
@@ -387,8 +429,6 @@ for (const [id, n] of defs) {
       continue;
     }
     if (nameIndex.has(k)) { from.add(nameIndex.get(k)); ingredientStats.byName++; continue; }
-    const t = ingredients[k];
-    if (t && defs.has(t)) { from.add(t); ingredientStats.byTable++; continue; }
     ingredientStats.prose++;
     if (ingredientUnresolved.length < 400) ingredientUnresolved.push(`${id}\t${s}`);
   }
@@ -698,6 +738,16 @@ if (collisions.length) {
     `  (${((linked / tot) * 100).toFixed(1)}%)`);
   console.log(`    exact id ${ingredientStats.exact} · by unique name ${ingredientStats.byName} · via _ingredients.json ${ingredientStats.byTable}`);
   console.log(`    refused: ${ingredientStats.ambiguous} ambiguous name(s), ${ingredientStats.prose} unresolved`);
+  /* A row in data/_ingredients.json whose key also normalises to some node's
+     name, where the two disagree. The table wins, so this row is a deliberate
+     override of an automatic match -- which is allowed, but only on purpose, so
+     it is reported rather than left for someone to trip over. */
+  if (tableShadowed.length) {
+    const uniq = [...new Set(tableShadowed)];
+    console.log(`    ${uniq.length} _ingredients.json row(s) override a node name (the table wins):`);
+    for (const row of uniq.slice(0, 20)) console.log(`      ${row.replace(/\t/g, '  ->  ')}`);
+    if (uniq.length > 20) console.log(`      ... and ${uniq.length - 20} more`);
+  }
   console.log(`  nodes given a "from" edge: ${[...defs.values()].filter((n) => n.from?.length).length}`);
 }
 if (kindFixed) console.log(`\n  ${kindFixed} node(s) retyped by data/_fixes.json`);

@@ -1,7 +1,7 @@
 # Production tree — Commodore 64
 
 2454 nodes, max depth 15, 1301 leaves.
-Generated 2026-10-03T07:19:40.009Z by `scripts/build.mjs`. Do not edit by hand.
+Generated 2026-10-03T07:46:39.801Z by `scripts/build.mjs`. Do not edit by hand.
 
 # Commodore 64 (breadbin, ASSY 250407) `c64`
 
@@ -4661,7 +4661,7 @@ Tape pigment iron did not need to be virgin: it was often made from ferrous scra
 
 ###### Crystal-habit modifier, fatty acid or sulphonate `peripheral.cassette.tape.oxide.surfactant` _(medium)_
 
-Crystal habit is controlled by what is adsorbed on the growing face. The pigment industry used a fatty acid or an alkylbenzene sulphonate, or in the classic process a hydrolysed protein or a polyol, adsorbed on the iron oxide as it precipitated so that growth was fastest along one axis. Without it the pigment came out spherical and a cassette tape of the same thickness held a fraction of the data.
+A surfactant, and the reason the word appears on three unrelated branches: what a tape pigment, a printing-ink deinking flotation cell and a chromium dioxide oxidation all have in common is that the chemistry is dominated by an anionic or amphoteric surface-active agent adsorbed on a particle. Crystal habit is controlled by what is adsorbed on the growing face. The pigment industry used a fatty acid or an alkylbenzene sulphonate, or in the classic process a hydrolysed protein or a polyol, adsorbed on the iron oxide as it precipitated so that growth was fastest along one axis. Without it the pigment came out spherical and a cassette tape of the same thickness held a fraction of the data.
 
 ###### Chromium dioxide (Type II pigment) `peripheral.cassette.tape.oxide.chromium` _(medium)_
 

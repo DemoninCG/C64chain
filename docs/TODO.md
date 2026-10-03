@@ -52,16 +52,16 @@ stop being conflated.
 
 ---
 
-## 1a. Phase 3 is much smaller than planned — read this before scoping it
+## 1a. Phase 3 is much smaller than planned — and it is DONE
 
 I originally proposed resolving the unresolved ingredient strings as a bulk
-delegated pass. **Measured, that is wrong.** Of the **533** distinct input strings
-that resolve by none of build's three routes (build reports 697 unresolved
+delegated pass. **Measured, that is wrong.** Of the **520** distinct input strings
+that resolve by none of build's three routes (build reported 697 unresolved
 *occurrences*, which counts each use separately):
 
 | | count |
 |---|---|
-| ambiguous — several nodes could be meant | 511 |
+| ambiguous — several nodes could be meant | 510 |
 | exactly one candidate node | 17 |
 | no plausible node at all | 10 |
 
@@ -80,10 +80,127 @@ By usage, the real reviewable scope is the long tail's opposite end:
 | 3–4 uses | 13 |
 | 5+ uses | **7**, covering 48 edges |
 
-**Action.** Scope Phase 3 at roughly 30–35 items: the 7 high-use strings, the 13
-mid-use, and the 17 single-candidate ones read by a human. It does not need
-subagents, and it must not be applied mechanically. `node scripts/ingredients.mjs
-unresolved --clean|--strict` reproduces the ranking.
+### Done 2026-10-03 — see item 8 for what was actually done
+
+Re-measured before starting, because phase 2 had moved the counts: **5** strings
+used 5+ times, **15** used 3–4, **17** were single-candidate — 37 rows, not the
+30-35 guessed at above. The measured 5+ group was 5, not 7, so the doc figure was
+stale. Every row was read at every site before a decision; the outcome is in
+item 8.
+
+## 8. Phase 3 — ingredient link review — DONE 2026-10-03
+
+All 37 rows read individually. **16 mappings added, 6 node inputs corrected, 1
+builder bug fixed.** Unresolved occurrences 683 → 562; distinct strings 520 →
+504; resolution rate 76.6% → 80.7%. `ingredients.mjs unresolved --strict` now
+returns **0 rows**, which is the right end state: nothing left is safe to apply
+without a human.
+
+### The builder bug, which was worth more than the mappings
+
+`build.mjs` and `scripts/ingredients.mjs` normalised node names differently, and
+the disagreement hid real work:
+
+- `build.mjs` reduced a parenthetical to spaces and kept the words inside it, so
+  **"Hydrochloric acid (32-37%)"** normalised to `hydrochloric acid 32 37`.
+- `ingredients.mjs` stripped the parenthetical first, so it believed the input
+  `hydrochloric acid` was resolved and **never listed it**.
+
+**210** entity-like node names carry a parenthetical. **59 `from` edges across 27
+distinct input strings** were unreachable *and invisible to the one tool whose job
+is to list unreachable ones*. The worst were `phosphine` (13 edges), `arsine`
+(8), `brass` (5) and `hydrochloric acid` (4, and 0 resolved before the fix).
+
+Fixed in `build.mjs`'s `normKey` rather than papered over with 27 table rows.
+Collisions are safe: two names differing only inside a parenthetical normalise to
+one key, the key goes into `nameAmbiguous`, and build **refuses** to link rather
+than picking one. Zero new ambiguities resulted.
+
+### Precedence: the explicit table now beats an automatic name match
+
+Resolution was `id → name → table`, which meant widening the name index silently
+overrode **9** rows — including two deliberate corrections from the QA pass
+(`boric acid` and `kaolin`, both of which had been pointed at the wrong node on
+purpose). A silent override of a reviewed decision is the same class of defect as
+a silent wrong link.
+
+Precedence is now `id → table → name`, so `data/_ingredients.json` means what its
+own `$comment` claims: "the explicit, reviewable part". `build.mjs` now **reports
+every override** rather than making one silently:
+
+```
+  3 _ingredients.json row(s) override a node name (the table wins):
+    iron ore  ->  metal.hematite  ->  facility.power.iron-ore
+    kaolin  ->  metal.bauxite.kaolinite  ->  facility.power.kaolin
+    boric acid  ->  chem.glass-fiber.borax.acid  ->  peripheral.tv.crt.panel.funnel-glass.borax
+```
+
+All three are the QA-pass corrections. Reordering exposed three rows that were
+themselves sloppy, and those were fixed in the table rather than reverted:
+
+| key | was | now | why |
+|---|---|---|---|
+| `epichlorohydrin` | `chem.epoxy` (**process**) | `chem.epoxy.dgeba.epichlorohydrin` | the old target inverted the relation |
+| `nitrogen` | `facility.nitrogen.atmospheric-air` | `chem.fab-chemicals.process-gases.nitrogen` | nitrogen is not air |
+| `natural rubber` | `chem.rubber` (a mixture) | `chem.rubber.natural` | the specific substance |
+
+### Six node inputs that were wrong, not merely vague
+
+Every one of these would have been cemented by a mapping. Fixed first.
+
+| node | was | now | why |
+|---|---|---|---|
+| `c64.case.feet` | `ABS melt` | `soft PVC` | its own facts say "black styrene-butadiene rubber or soft PVC" |
+| `c64.case.shield.spacer` | `ABS melt` | `corrugated board` | its own description says greyboard or plastic fibre; no moulding involved |
+| `si.clean` | `sulphuric acid` | `chem.fab-chemicals.sulfuric-acid` | Piranha and SC-2 are fab chemicals, not 93-99% bulk acid |
+| `peripheral.tv.crt.mask.etch` | `steel sheet` | `peripheral.tv.crt.mask.steel` | a shadow mask is photoetched from its own low-carbon sheet |
+| `c64.cables.rf-cable` | `coaxial cable` | removed | redundant with its own child `…rf-cable.coax` |
+| `peripheral.cassette.tape.oxide.surfactant` | description | now says it is a surfactant | it is now a mapping target for three branches; "crystal-habit modifier" did not tell a reader that |
+
+### What was left unresolved, and why
+
+Seven strings with 3+ uses remain, and in every case a single mapping would have
+been **wrong-but-resolving** — the failure mode `HANDOFF` §6 calls the one that
+matters.
+
+| string | uses | the trap |
+|---|---|---|
+| `glass` | 7 | one substance (low-melting sealing glass) with **four** copies in three fragments: `mb.passives.caps.mlcc.slurry.glass-frit`, `mb.passives.resistors.discrete-axial.wirewound.enamel.glass`, `peripheral.tv.crt.panel.frit`, and `mb.logic.package.ceramic.seal` — which is a `process`, so even the target kind is wrong. Any single mapping is wrong for 2 of 7 sites. |
+| `quartz` | 4 | porcelain-body quartz at two sites (feldspar and kaolin already in `from`), fused quartz for a wafer boat, silicon feedstock on a third |
+| `silica` | 3 | two sites already have a stronger link to the glass batch; the third is silica *in the varistor's glass* |
+| `air` | 3 | the only air node is `facility.nitrogen.atmospheric-air`, described as ASU intake air delivered through a baffled multi-bay intake — wrong for a zinc roast |
+| `nitric-acid` | 3 | the only nitric acid node is **electronic grade**; no bulk node exists, though bulk `metal.hydrochloric-acid` does |
+| `graphite` | 3 | pot-lining aggregate, a carbon contact, and an EDM electrode are three substances; one site is a self-reference |
+| `iron oxide` | 3 | ferrite iron oxide has only a `process` node (`metal.ferrite.iron-oxide-source`); the third site is an ink pigment |
+
+Of the 17 single-candidate rows, 8 were **self-references** — the input string
+sits on the very node it would link to, so `from.delete(id)` drops it
+(`lignosulphonate`, `polyacrylamide`, `polyalkoxyamine`, `nonylphenol
+ethoxylate`, `woodchips`, and three more). Those are not defects and not
+actionable. Four were the documented known-wrong ones (`liquefaction`, `soil`,
+`sunlight`, `dyes`). `diamines` matched epoxy curing agents when the user is a
+polyimide membrane; `switchgear` matched phenolic resin when the user is a
+substation. `rockfill` was the most nearly acceptable and still failed: a
+penstock's inputs are cement and steel plate, and the hydro branch has no dam
+node for the rockfill to belong to.
+
+### Gaps this review exposed, for whoever wants them
+
+- **No canonical low-melting glass node**, and four copies of it (item 7 above).
+- **No bulk nitric acid node**, though bulk HCl, H2SO4 and HF all exist.
+- **No cooling-water biocide node.** `facility.water.chem-treatment` lists
+  `biocide` as chlorine or an organomercurial/isothiazolinone blend; the only
+  candidate was a *drilling-mud* node.
+- **No RDX/HMX node.** The shaped-charge perforator needs it and the only
+  explosive node is seismic shot-hole ammunition.
+- **Duplicate substance nodes** the widening exposed, not yet merged:
+  boric acid (`chem.glass-fiber.borax.acid` vs `peripheral.tv.crt.panel.funnel-glass.borax`),
+  nylon 6,6 (two nodes under the joystick and the power slider), and `metal.coke`
+  vs `si.polysilicon.coke.anthracite`.
+- **`audit.mjs` `TERMINAL_PROCS` has a dead entry.** `facility.water.ion-exchange`
+  no longer fires its NOTE, because the caustic-soda mapping gave it a real
+  ingredient link. Left in place deliberately: if that `from` edge ever goes, the
+  exemption is needed again.
 
 ## 1b. The audit only category-checks 5 of 16 categories
 
@@ -221,22 +338,17 @@ category the audit never checks.
 
 The wider lesson is item 1b above, not these six.
 
-## 6. Unresolved ingredient inputs — rescoped, see item 1a
+## 6. Unresolved ingredient inputs — rescoped, see items 1a and 8
 
-683 input *occurrences* (520 distinct strings) do not resolve to a node, but only
-~30 are worth a decision. The original framing of this item as a bulk pass was
-wrong; the measurement is in 1a.
+562 input *occurrences* (504 distinct strings) do not resolve to a node. Phase 2
+took the counts to 683/520 and phase 3 to 562/504.
 
-Phase 2 moved both counts in the right direction — 697 → 683 occurrences and
-533 → 520 distinct strings — by giving the tungsten, cobalt and rare-earth
-strings something real to resolve to. It deliberately left the *review* list
-alone: the 17 single-candidate strings and the 1 that passes `--strict` are
-exactly the same set as before, because nothing in Phase 2 touched them.
-
-**Action.** Work the ~30-item list. The check that compares each mapping's key
-against its target's name is now permanent as `scripts/ingredients.mjs links`,
-and it is how the borax, soda-ash, barite and polyphenylene-sulfide errors were
-found. Keep it.
+The check that compares each mapping's key against its target's name is permanent
+as `scripts/ingredients.mjs links`, and it is how the borax, soda-ash, barite and
+polyphenylene-sulfide errors were found. Keep it. Phase 3 added a second guard in
+the other direction: `build.mjs` now reports every `_ingredients.json` row that
+overrides a node name, so a reviewed decision can no longer be silently undone by
+the automatic matcher.
 
 ## 7. (checked, not an issue) boron
 
@@ -272,3 +384,8 @@ Two sides of one cut-off, not a contradiction. Nothing to do.
   in the report, not findings about the data. The two uncovered branches it
   meant were tungsten and cobalt, which Phase 2 has now written; the NaN has
   not been looked at.
+- `scripts/ingredients.mjs` and `scripts/build.mjs` now agree on normalisation,
+  but `scripts/ambig.mjs`, `analyse.mjs`, `spotcheck.mjs`, `project.mjs` and
+  `estimate.mjs` were not re-checked for it and each carries its own copy of some
+  part of the logic. Phase 3 only ever compared the two it knew about, so there
+  may be a third disagreement somewhere in that list.

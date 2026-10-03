@@ -26,12 +26,13 @@ machine back through early-1980s manufacturing to ore, crude oil and quartz sand
 | build | exit 0 |
 | selftest | 40/40 |
 | patchtest | all pass |
-| audit | **0 FAIL / 0 WARN**, 10 NOTE |
+| audit | **0 FAIL / 0 WARN**, 9 NOTE |
 | checktables | 0 missing targets, 1 expected merge chain |
 | ingredients | 0 mappings to a non-existent node |
-| ingredient links | 2,236 of 2,919 resolve (76.6%); 683 unresolved, mostly deliberate prose |
+| ingredient links | 2,356 of 2,918 resolve (80.7%); 562 unresolved, mostly deliberate prose |
+| `unresolved --strict` | **0 rows** — nothing left is safe to apply unreviewed |
 | metalang | DELETE 1 (a known false positive), REWRITE 0 |
-| git | 7 commits, **none pushed to `origin/main`** |
+| git | 8 commits, **none pushed to `origin/main`** |
 
 `audit`'s 10 NOTEs and `checktables`' records are *decisions recorded on purpose*,
 not outstanding work. They are listed so nobody "fixes" them.
@@ -76,6 +77,10 @@ first.
   root, one two-substance node split into two, and nine path-local copies folded
   into them. The detail, including four factual corrections that fell out of
   doing it, is in `TODO.md` §2–§4.
+- **Phase 3: ingredient link review.** All 37 reviewable rows read by hand: 16
+  mappings added, 6 wrong node inputs corrected, and one `build.mjs` bug fixed
+  that was hiding 59 edges from the linter. 683 → 562 unresolved occurrences,
+  76.6% → 80.7% resolved, `--strict` down to 0 rows. In `TODO.md` §8.
 
 ## 5. Remaining phases, and the decisions already made
 
@@ -97,21 +102,19 @@ closed. Three things a later session should know before touching these branches:
 3. **The rare-earth branch is deliberately one, not two.** Five consumers draw
    from `metal.rare-earths.oxides`; that is the point of the phase.
 
-### Phase 3 — ~30 ingredient links (do it centrally)
+### Phase 3 — ingredient links — **DONE 2026-10-03**
 
-**Measured scope, do not re-derive.** Of 520 input strings that resolve by none
-of build's three routes: 510 are ambiguous, 17 have a single candidate, 10 have
-none. (Phase 2 moved the occurrence count 697 → 683 and the distinct count
-533 → 520, but deliberately left the *review list* identical, so these numbers
-still describe the same set of work.)
+Done centrally and by hand, as this section prescribed. `TODO.md` §8 has the full
+account. The short version, and the two things that matter for later work:
 
-And the 17 "unambiguous" ones are **~40% correct on hand review** —
-`liquefaction` matched *Hydrogen*, `soil` matched the *barite mud system*. So:
-
-- review ~30 items: the 7 strings used 5+ times, the 13 used 3–4 times, and the
-  17 single-candidate ones
-- **must be read, not applied mechanically**
-- does not need subagents
+1. **The work list was bigger than documented and the documented figures were
+   stale.** Re-measured: 5 strings used 5+ times (not 7), 15 used 3-4 (not 13),
+   17 single-candidate — 37 rows. Measure; do not trust the counts in §1a.
+2. **A builder bug was worth more than every mapping combined.**
+   `build.mjs` kept the words inside a node name's parentheses and
+   `ingredients.mjs` did not, so 59 edges were unreachable *and* invisible to the
+   tool that lists unreachable things. Fixed in `normKey`. If you write another
+   script that normalises names, check it against `build.mjs` first.
 
 ### Phase 4 — document confidence pass (the one place fan-out pays)
 
@@ -119,18 +122,25 @@ Partition **by fragment**, and give each agent the *full* document list.
 Partitioning by document would put every agent in every fragment.
 
 *Decided:* require verbatim quotes with document identifiers, and let `confidence`
-go **down** as readily as up. Gate it — do not start Phase 4 until Phase 3's
-mappings lint clean, or there is no way to tell which agent introduced a bad link.
+go **down** as readily as up. **Phase 3's gate is now met** — the mappings lint
+clean and `ingredients.mjs links` reports nothing new — so Phase 4 can start.
 
 Sizing: 942 nodes are at medium/low confidence and 1,915 carry no `sources` array
-at all. Source attribution, not confidence, is the gap.
+at all. Source attribution, not confidence, is the gap. Note that the three new
+phase 2 branches were written with sources from the start, so the gap is now
+concentrated in the older branches.
 
 ### Also queued
 
 `TODO.md` §1b: extend `CAT_OK` to the eleven unchecked categories. Expect real
 findings — `metal.benzene` is categorised `metals` while the canonical
-`chem.styrene.benzene` is `plastics`. Note that `metal.benzene` did not trip
-Phase 2, because Phase 2 added nodes, not categories.
+`chem.styrene.benzene` is `plastics`. Neither phase 2 nor phase 3 tripped it,
+because both added links and nodes rather than categories.
+
+Phase 3 also exposed five concrete gaps and three duplicate-substance pairs it did
+**not** have the budget to fix — all listed at the end of `TODO.md` §8. The
+low-melting-glass one is the biggest: four copies of one substance in three
+fragments, one of which is a `process` node where a material belongs.
 
 ---
 
@@ -143,6 +153,28 @@ fibre, soda ash → rock salt, kaolin → bauxite, barite → barium carbonate,
 polyphenylene sulfide → polyester. `scripts/ingredients.mjs links` exists
 because of this. Run it. Phase 2 nearly added a sixth — `"cobalt oxide"` →
 cobalt *ore*, where the varistor's dopant is a manufactured calcined powder.
+
+**A vague ingredient string hides a wrong one.** `c64.case.feet` listed
+`"ABS melt"` while its own `facts` said "black styrene-butadiene rubber or soft
+PVC", and `c64.case.shield.spacer` listed it while describing greyboard.
+Mapping the string would have cemented both errors, because the *string* was
+consistent across seven real sites and only the nodes were inconsistent. **When
+one input string is used by N nodes, read the N nodes before writing the mapping
+— the string being consistent is not evidence that the uses are.**
+
+**Two scripts can normalise names differently, and the quieter one hides
+everything.** `build.mjs` kept the words inside a node name's parentheses;
+`ingredients.mjs` stripped them. So an input could be unreachable in the build
+*and* absent from the report of unreachable inputs — 59 edges across 27 strings.
+Any new script that normalises names must be diffed against `build.mjs` first.
+Five existing scripts were not re-checked (`TODO.md`, "Carried over").
+
+**An explicit decision must outrank an automatic match.** Resolution used to be
+`id → name → table`, so widening the name index silently overrode nine
+`_ingredients.json` rows — two of them deliberate QA-pass corrections. It is now
+`id → table → name`, and the build **reports** every row that overrides a name.
+Three rows were themselves wrong and are now fixed: `epichlorohydrin` pointed at
+a `process`, `nitrogen` at atmospheric air, `natural rubber` at a mixture.
 
 **Check the alloy you name, not the family it belongs to.** Phase 2's first
 draft put 5% tungsten in the H13 tool steel of the case mould, because H13 is a
@@ -205,9 +237,12 @@ Do not "fix" these without a decision.
 - **56 JUDGEMENT rows** in `metalang.mjs` — `in this tree` phrases. 49 of 59
   occurrences tree-wide are ordinary orienting prose. Accepted as good. Phase 2
   added one more (`metal.monazite.beach`), which is consistent with the rule.
-- **10 audit NOTEs** — 9 documented terminal processes (`chem.silicone.rochow` is
+- **9 audit NOTEs** — 8 documented terminal processes (`chem.silicone.rochow` is
   the Rochow process; folding it would delete the fact that it has a name), plus
-  the `CAT_OK` coverage report.
+  the `CAT_OK` coverage report. Was 10 until Phase 3: `facility.water.ion-exchange`
+  no longer fires, because the caustic-soda mapping gave it a real ingredient
+  link. Its `TERMINAL_PROCS` entry is now dead and is **deliberately left in
+  place**, so that removing that `from` edge does not turn into an audit FAIL.
 - **1 declined merge** — `c64.case.abs-resin.o-xylene` →
   `chem.solvents.aromatic-hydrocarbon`. Declined because o-xylene is a defined
   compound and the survivor is a blended stream. Recorded in
@@ -240,10 +275,11 @@ From the last pass, in rough priority order:
 7. **Re-read your own output against `CHECKLIST` §0.** All four factual errors
    Phase 2 found were in prose, and three of them were errors of *inheritance* —
    text already in the tree that had never been checked. No script can see any of
-   them.
+   them. Phase 3 found six more of the same kind in `inputs` arrays.
 
 ## 9. Housekeeping still open
 
 - Push the commits to `origin/main`.
 - Produce the consolidated `probe.mjs` before/after diff for the README.
 - Decide whether build artifacts stay in git.
+- **Phase 4 is unblocked and is the only remaining phase.**
