@@ -1,0 +1,62 @@
+{
+  "$comment": "Proposals from the QA pass over data/70-petrochem.json. Nothing here has been applied: every target below lives in a file this agent does not own, or is the generated unlinked.catalogue / a node under c64.bottoms-out. See docs/CHECKLIST.md section 8.",
+
+  "note": "No structural proposals remain. This fragment now audits with zero FAILs and its own share of the duplicate-name warnings resolved; the only things left are cross-fragment merges, which are listed below, and a note about the fixes table. The two shared commodities (chem.natural-gas, chem.petroleum) keep one children edge each, from the `chem` branch root, which scripts/audit.mjs now recognises as a legitimate owner (UTIL_OWNERS); every ingredient reference to them, from all fragments, is a 'from' edge. Fourteen duplicate-name pairs remain, and in each case the petrochemical node is the canonical, richer one, so the merge is always 'fold the sibling into mine' - except where a published `shared` entry in another fragment is the canonical node, which is called out.",
+
+  "merges": [
+    { "from": "peripheral.tv.cabinet.abs.acrylonitrile", "to": "chem.abs.san-matrix.acrylonitrile-raw",
+      "why": "same substance, and 90-peripherals has the shorter copy. Re-point its ABS case onto the petrochemical acrylonitrile node." },
+    { "from": "chem.fab-chemicals.process-gases.nitrogen.cryogenic-air.atmospheric-air", "to": "facility.nitrogen.atmospheric-air",
+      "why": "the 80-industry fragment publishes facility.nitrogen.atmospheric-air as the cross-reference target for 'the air-fractionation leaf', and this pass deliberately kept that id (see the shared gloss in 70-petrochem.json). Atmospheric air is one substance and it belongs to the air-separation branch, not under the fab's nitrogen." },
+    { "from": "chem.refining.claus.catalyst.alumina-catalyst.bayer-process", "to": "metal.bayer",
+      "why": "the Bayer process is bauxite to alumina and 60-metals owns that chain end to end. After the merge, chem.refining.claus.catalyst.alumina-catalyst should take a 'from' edge to metal.bayer (and to metal.alumina) instead of restating it; the two facts (150-250 C / 3-5 MPa digestion, 1000-1200 C calcination) belong on metal.bayer." },
+    { "from": "peripheral.tv.chassis.pcb.copper-foil", "to": "chem.pcb-chemicals.laminate.copper-foil",
+      "why": "electrolytic copper foil for FR-4 is one material; the petrochemical node carries the benzotriazole coupling-agent treatment and the 1980s thickness figures." },
+    { "from": "chem.fab-chemicals.hydrofluoric-acid.fluorspar", "to": "metal.fluorspar",
+      "why": "calcium fluoride is one mineral. metal.fluorspar is already the ingredient target in data/_ingredients.json, so the fab's fluorspar and 80-industry's facility.compressed-air.fluorspar are both third and fourth copies. Merge all three into metal.fluorspar and let the HF node take a 'from' edge." },
+    { "from": "c64.case.other-polymers.natural-rubber", "to": "chem.rubber.natural",
+      "why": "cis-1,4-polyisoprene is one polymer; the petrochemical branch carries tapping, prevulcanisation and sulphur vulcanisation. 40-chassis should take a 'from' edge to chem.rubber.natural." },
+    { "from": "c64.case.other-polymers.neoprene", "to": "chem.rubber.neoprene",
+      "why": "polychloroprene is one polymer; the chloroprene-from-acetylene route is under the petrochemical node." },
+    { "from": "peripheral.tv.controls.phenolic", "to": "chem.thermosets.phenolic",
+      "why": "phenol-formaldehyde is one resin; chem.thermosets.phenolic is the canonical node and carries the hexamine cure chemistry." },
+    { "from": "c64.case.abs-resin.pigment-masterbatch", "to": "chem.abs.additives.pigment-masterbatch",
+      "why": "the pigment masterbatch compounded into the case ABS is the same material; the compounding node has the fuller description." },
+    { "from": "c64.case.other-polymers.polycarbonate", "to": "chem.polycarbonate",
+      "why": "bisphenol A polycarbonate is one polymer; the petrochemical node carries the interfacial phosgene route and the phosgene chain." },
+    { "from": "c64.decor.propyloxide", "to": "chem.propylene.propylene-oxide",
+      "why": "same molecule. The 40-chassis node is the paint-and-coating use; it should be a 'from' edge onto the propylene oxide plant rather than a second substance." },
+    { "from": "chem.fab-chemicals.ultrapure-water", "to": "facility.water.ultrapure",
+      "why": "the fab's ultrapure water is the cross-cutting utility, and facility.water.ultrapure is the node the rest of the tree already points at (CHECKLIST 1a). Keep this fragment's four facts (resistivity, TOC, particle count, temperature) by moving them across; do not leave two nodes with the same name." },
+    { "from": "c64.mains.line-cord.pvc-sheath.vinyl-chloride", "to": "chem.pvc.vcm",
+      "why": "vinyl chloride monomer is one substance and chem.pvc.vcm is the canonical node, now documented with both the acetylene-HCl and the oxychlorination routes." },
+    { "from": "c64.case.other-polymers.vinyl-chloride", "to": "chem.pvc.vcm",
+      "why": "third copy of the same monomer; fold it in with the two above so the power cord and the case both read from one node." }
+  ],
+
+  "renames": [],
+
+  "edges": [
+    { "file": "05-spine.json", "parent": "c64.bottoms-out", "child": "chem.natural-gas", "action": "optional-add-child",
+      "why": "not required - scripts/audit.mjs now lists `chem` in UTIL_OWNERS, so the branch-home edge is accepted and the gas field stays a top-level branch of the petrochemical trunk rather than dropping into the generated catalogue. Offered only because 'where every branch terminates' would also be a truthful home for the gas field, and because both commodities are shared with 35 reference sites in other fragments." },
+    { "file": "05-spine.json", "parent": "c64.bottoms-out", "child": "chem.petroleum", "action": "optional-add-child",
+      "why": "same, for light sour crude oil. Do not add it without also removing the `chem -> chem.petroleum` edge, or the commodity gets two parents." }
+  ],
+
+  "fixesTable": [
+    { "file": "data/_fixes.json", "key": "kind", "id": "chem.natural-gas", "action": "drop",
+      "why": "now kind material in the fragment itself." },
+    { "file": "data/_fixes.json", "key": "kind", "id": "chem.photoresist.novolac", "action": "drop",
+      "why": "now kind material in the fragment itself." },
+    { "file": "data/_fixes.json", "key": "kind", "id": "chem.thermosets.phenolic", "action": "drop",
+      "why": "now kind material in the fragment itself." },
+    { "file": "data/_fixes.json", "key": "kind", "id": "chem.polyester.unsaturated", "action": "drop",
+      "why": "now kind material in the fragment itself." },
+    { "file": "data/_fixes.json", "key": "kind", "id": "chem.polyamide.nylon-66", "action": "drop",
+      "why": "now kind material in the fragment itself." },
+    { "file": "data/_fixes.json", "key": "kind", "id": "chem.polyester.pet.terephthalic-acid", "action": "drop",
+      "why": "now kind material in the fragment itself, and it no longer warns as a missing id." },
+    { "file": "data/_fixes.json", "key": "kind", "id": "chem.acrylonitrile.downstream.acrylic-acid", "action": "drop",
+      "why": "now kind material in the fragment itself." }
+  ]
+}

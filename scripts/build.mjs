@@ -19,7 +19,7 @@ const DATA = path.resolve(process.env.DATA_DIR ?? path.join(ROOT, 'data'));
 const PUBLIC = path.resolve(process.env.PUBLIC_DIR ?? path.join(ROOT, 'public'));
 const DOCS = path.resolve(process.env.DOCS_DIR ?? path.join(ROOT, 'docs'));
 
-const VALID_KINDS = new Set(['part', 'process', 'material', 'facility', 'tool']);
+const VALID_KINDS = new Set(['part', 'process', 'material', 'facility', 'tool', 'note']);
 const ENTITY_LIKE = new Set(['part', 'material']);
 // Categories answer "what industry made this", not "where does it sit in the
 // machine". The machine-position distinction is structural and lives in the
@@ -89,14 +89,21 @@ try {
 } catch { /* no alias table */ }
 const aliasHits = [];
 
-/* Curated corrections: node id -> {kind, editorial}. Hand-reviewed, not
- * pattern-matched -- see the file for why a regex was not good enough. */
-let fixes = { kind: {}, editorial: [] };
+/* Curated corrections: node id -> kind. Hand-reviewed, not pattern-matched --
+ * see the file for why a regex was not good enough.
+ *
+ * `note` is the kind for commentary: an aside about the supply chain rather than
+ * a thing in it. It is not an entity, and the components-only view routes
+ * through it exactly as it routes through a process, so a note with real
+ * children loses nothing and a bare note survives as a chip. This replaced an
+ * earlier `editorial` boolean, which had the fatal flaw that hiding a container
+ * hides its contents. */
+let fixes = { kind: {}, note: [] };
 try {
   const raw = JSON.parse(await readFile(path.join(DATA, '_fixes.json'), 'utf8'));
   fixes = {
     kind: Object.fromEntries(Object.entries(raw.kind ?? {}).filter(([k]) => !k.startsWith('_'))),
-    editorial: (raw.editorial ?? []).filter((k) => !k.startsWith('_')),
+    note: [...(raw.note ?? []), ...(raw.editorial ?? [])].filter((k) => !k.startsWith('_')),
   };
 } catch { /* no fixes table */ }
 
@@ -274,11 +281,10 @@ for (const site of refSites) {
   if (!aliasHits.includes(label)) aliasHits.push(label);
 }
 
-/* ---------------------------------- curated kind fixes and editorial flags */
-const editorialSet = new Set(fixes.editorial);
-// Some flagged ids (the generated catalogue) do not exist yet at this point;
-// they are flagged once the adopt step has created them.
-const editorialPending = new Set();
+/* -------------------------------------------------- retyped notes ------ */
+const noteSet = new Set(fixes.note);
+// Some flagged ids (the generated catalogue) may not exist yet at this point.
+const notePending = new Set();
 let kindFixed = 0;
 for (const [id, kind] of Object.entries(fixes.kind)) {
   const n = defs.get(id);
@@ -289,10 +295,10 @@ for (const [id, kind] of Object.entries(fixes.kind)) {
     kindFixed++;
   }
 }
-for (const id of editorialSet) {
+for (const id of noteSet) {
   const n = defs.get(id);
-  if (n) n.editorial = true;
-  else editorialPending.add(id);
+  if (n) n.kind = 'note';
+  else notePending.add(id);
 }
 
 /* ---------------------------------------------- dangling references */
@@ -337,19 +343,35 @@ function dist(a, b) {
  */
 const normKey = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim();
 
-const nameIndex = new Map();
+/* Name fallback, but only when it is unambiguous, and matched on the node's
+ * NAME only.
+ *
+ * Two failures found during the QA pass, both from over-eager matching:
+ *
+ *  1. Ambiguity. With ~2,700 nodes, "chlorine" matches several. Picking the
+ *     first is a coin flip that any unrelated edit can silently re-roll.
+ *     Ambiguous names are left as prose and reported.
+ *  2. The id-tail index (matching the last dotted segment of an id, so that
+ *     "metal.copper.foil" answers to "foil") was far worse. It captured generic
+ *     substance words tree-wide: a porcelain bushing's "quartz" resolved to
+ *     silicon-furnace lump, and TV panel glass's "quartz sand" to
+ *     semiconductor-grade sand. 38 wrong links across five fragments. Removed.
+ *
+ * A missing link is recoverable; a wrong one silently misleads. */
+const nameIndex = new Map();       // normalised name -> id   (unique only)
+const nameAmbiguous = new Map();  // normalised name -> [ids]
 for (const [id, n] of defs) {
   if (!n.name || !ENTITY_LIKE.has(n.kind)) continue;
   const k = normKey(n.name);
-  if (k && !nameIndex.has(k)) nameIndex.set(k, id);
-  // also index the last dotted segment of the id, which is often the bare
-  // substance name ("metal.copper.foil" -> "foil")
-  const tail = normKey(id.split('.').pop());
-  if (tail.length >= 6 && !nameIndex.has(tail)) nameIndex.set(tail, id);
+  if (!k) continue;
+  if (nameIndex.has(k)) nameAmbiguous.set(k, [nameIndex.get(k), id]);
+  else nameIndex.set(k, id);
 }
+for (const k of nameAmbiguous.keys()) nameIndex.delete(k);
 
-const ingredientStats = { exact: 0, byName: 0, byTable: 0, prose: 0, selfRef: 0 };
+const ingredientStats = { exact: 0, byName: 0, byTable: 0, prose: 0, ambiguous: 0 };
 const ingredientUnresolved = [];
+const ambiguousLinks = [];
 for (const [id, n] of defs) {
   const from = new Set();
   for (const raw of n.inputs ?? []) {
@@ -357,14 +379,20 @@ for (const [id, n] of defs) {
     if (!s) continue;
     if (defs.has(s)) { from.add(s); ingredientStats.exact++; continue; }
     const k = normKey(s);
+    if (nameAmbiguous.has(k)) {
+      ingredientStats.ambiguous++;
+      if (ambiguousLinks.length < 300) {
+        ambiguousLinks.push(`${id}\t"${s}"\t${nameAmbiguous.get(k).join(' | ')}`);
+      }
+      continue;
+    }
     if (nameIndex.has(k)) { from.add(nameIndex.get(k)); ingredientStats.byName++; continue; }
-    const t = ingredients[k] ?? ingredients[normKey(s.split('.').pop())];
+    const t = ingredients[k];
     if (t && defs.has(t)) { from.add(t); ingredientStats.byTable++; continue; }
     ingredientStats.prose++;
     if (ingredientUnresolved.length < 400) ingredientUnresolved.push(`${id}\t${s}`);
   }
   from.delete(id);
-  if (from.size !== (n.from?.length ?? 0)) ingredientStats.selfRef += 0;
   n.from = [...from];
 }
 
@@ -471,14 +499,14 @@ if (adopted?.length) {
     children: adopted,
   };
   defs.set(node.id, node);
-  if (editorialSet.has(node.id)) node.editorial = true;
+  
   const host = defs.has('c64.bottoms-out') ? defs.get('c64.bottoms-out') : defs.get(rootId);
   host.children = [...(host.children ?? []), node.id];
   seen = reachable(rootId);
 }
-for (const id of editorialPending) {
-  if (defs.has(id)) { defs.get(id).editorial = true; editorialPending.delete(id); }
-  else warn(`fixes: editorial id "${id}" matched no node`);
+for (const id of notePending) {
+  if (defs.has(id)) { defs.get(id).kind = 'note'; notePending.delete(id); }
+  else warn(`fixes: note id "${id}" matched no node`);
 }
 const orphans = [...defs.keys()].filter((id) => !seen.has(id));
 // Only report what is still unreachable after adoption: adopting a parent can
@@ -541,8 +569,7 @@ function strip(node) {
   for (const k of ['name', 'description', 'kind', 'category', 'era', 'confidence', 'note']) {
     if (node[k] !== undefined) o[k] = node[k];
   }
-  if (node.editorial) o.editorial = true;
-  for (const k of ['inputs', 'facts', 'places', 'sources']) {
+    for (const k of ['inputs', 'facts', 'places', 'sources']) {
     if (Array.isArray(node[k]) && node[k].length) o[k] = node[k];
   }
   if (Array.isArray(node.from) && node.from.length) o.from = node.from;
@@ -664,15 +691,22 @@ if (collisions.length) {
   for (const c of collisions) console.log(`    X ${c}`);
 }
 {
-  const tot = ingredientStats.exact + ingredientStats.byName + ingredientStats.byTable + ingredientStats.prose;
-  const linked = tot - ingredientStats.prose;
+  const tot = ingredientStats.exact + ingredientStats.byName + ingredientStats.byTable
+    + ingredientStats.prose + ingredientStats.ambiguous;
+  const linked = tot - ingredientStats.prose - ingredientStats.ambiguous;
   console.log(`\n  ingredients resolved into real "from" links: ${linked}/${tot}` +
     `  (${((linked / tot) * 100).toFixed(1)}%)`);
-  console.log(`    exact id ${ingredientStats.exact} · by name ${ingredientStats.byName} · via _ingredients.json ${ingredientStats.byTable} · still prose ${ingredientStats.prose}`);
+  console.log(`    exact id ${ingredientStats.exact} · by unique name ${ingredientStats.byName} · via _ingredients.json ${ingredientStats.byTable}`);
+  console.log(`    refused: ${ingredientStats.ambiguous} ambiguous name(s), ${ingredientStats.prose} unresolved`);
   console.log(`  nodes given a "from" edge: ${[...defs.values()].filter((n) => n.from?.length).length}`);
 }
 if (kindFixed) console.log(`\n  ${kindFixed} node(s) retyped by data/_fixes.json`);
-if (editorialSet.size) console.log(`  ${[...defs.values()].filter((n) => n.editorial).length} node(s) flagged editorial (hidden by default in the viewer)`);
+{
+  const notes = [...defs.values()].filter((n) => n.kind === 'note');
+  if (notes.length) {
+    console.log(`  ${notes.length} node(s) are kind "note" (commentary: not an entity, routed through by the components-only view)`);
+  }
+}
 if (stubs.length) {
   console.log(`\n  ${stubs.length} PLACEHOLDER STUB(S) — advertised ids with no subtree written:`);
   for (const s of stubs) console.log(`    ? ${s}`);

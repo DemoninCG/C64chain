@@ -1,6 +1,5 @@
 {
   "$comment": "Ingredient synonym table. scripts/build.mjs tries three ways to turn a node's `inputs` into a real `from` link: (1) the string is already a node id, (2) it normalises to a node name, (3) it matches a key here. This file is case 3 -- the explicit, reviewable part. Keys are matched against a lowercased, punctuation-stripped form of the input string. Values are node ids in this tree.",
-
   "map": {
     "sodium dichromate": "metal.chromium.aod",
     "chromium trioxide": "metal.chromate-passivation",
@@ -12,11 +11,11 @@
     "argon": "facility.gases",
     "oxygen": "facility.gases",
     "zinc chloride": "metal.zinc.ingot",
-    "borax": "chem.glass-fiber",
-    "boric acid": "chem.glass-fiber",
-    "clay": "metal.bauxite",
-    "kaolin": "metal.bauxite",
-    "tungsten wire": "metal.tungsten",
+    "borax": "chem.glass-fiber.borax",
+    "boric acid": "chem.glass-fiber.borax.acid",
+    "clay": "metal.bentonite",
+    "kaolin": "metal.bauxite.kaolinite",
+    "tungsten wire": "metal.molybdenum.scheelite",
     "beryllium copper": "metal.copper",
     "polyphenylene sulfide": "chem.polyester",
     "spring probe": "facility.test-equipment",
@@ -43,7 +42,7 @@
     "fluorspar": "metal.fluorspar",
     "limestone": "metal.limestone",
     "salt": "metal.salt-brine",
-    "soda ash": "metal.salt-brine",
+    "soda ash": "metal.soda-ash",
     "silicon metal": "metal.silica.mgsi",
     "metallurgical silicon": "metal.silica.mgsi",
     "polysilicon": "metal.silica.polysilicon",
@@ -62,8 +61,8 @@
     "soda silica": "metal.silica-sand",
     "water": "facility.water",
     "ultrapure water": "facility.water",
-    "hydrogen": "chem.fab-chemicals.process-gases.hydrogen",
-    "nitrogen": "chem.fab-chemicals.process-gases.nitrogen.cryogenic-air.atmospheric-air",
+    "hydrogen": "facility.gases.hydrogen",
+    "nitrogen": "facility.nitrogen.atmospheric-air",
     "ammonia": "metal.cyanide-precursor",
     "methanol": "c64.case.other-polymers.methanol",
     "benzene": "chem.styrene.benzene",
@@ -81,7 +80,7 @@
     "nylon 6 6": "c64.joystick.microswitches.plastic-case.nylon.nylon-6-6",
     "polyester": "chem.polyester",
     "polyethylene": "chem.ethylene.polyethylene",
-    "polypropylene": "chem.propylene.polymerisation.polypropylene",
+    "polypropylene": "chem.propylene.polymerisation",
     "polycarbonate": "chem.polycarbonate",
     "silicone": "chem.silicone",
     "natural rubber": "chem.rubber",
@@ -101,7 +100,6 @@
     "aluminium flake": "c64.decor.metallised.flake",
     "pad print ink": "c64.decor.pad-print.pad-compound",
     "metallised ink": "c64.decor.metallised.flake",
-    "abs bezel surface": "c64.case.abs-resin",
     "epoxy": "chem.epoxy",
     "glass fibre": "chem.glass-fiber",
     "glass fiber": "chem.glass-fiber",
@@ -128,5 +126,6 @@
     "epoxy moulding compound": "chem.epoxy",
     "moulding compound": "chem.epoxy",
     "silica filler": "metal.silica-sand"
-  }
+  },
+  "$note": "Tungsten still has no canonical metal node: \"tungsten wire\" points at the wolframite/scheelite branch, which is the ore it would be drawn from, not the metal itself. Review that mapping if a tungsten node is ever added."
 }

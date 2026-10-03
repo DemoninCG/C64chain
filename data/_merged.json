@@ -1,0 +1,3149 @@
+{
+  "$comment": "Content of every node deleted by a cross-fragment merge, kept for the record so a merge is never a silent loss. Written by scripts/applyproposals.mjs.",
+  "merges": [
+    {
+      "loser": "si.polysilicon.fluorspar-ore",
+      "loserName": "Fluorspar vein and stock ore",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.fluorspar.vein",
+      "survivorName": "Fluorite vein in limestone",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "the vein and stock ore the concentrate is floated from. One edge in 70-petrochem currently resolves onto this node.",
+      "loserDescription": "Vein and stock deposits of CaF2 in limestone, worked by open pit and underground mining, then crushed and flotation-beneficiated to acid grade.",
+      "loserFacts": null
+    },
+    {
+      "loser": "si.polysilicon.fluorspar",
+      "loserName": "Fluorspar (CaF2) concentrate",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.fluorspar",
+      "survivorName": "Fluorspar (CaF2) ore",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "acid-grade fluorspar concentrate; the metals fragment publishes the canonical node and already reaches it from its own HF branch.",
+      "loserDescription": "Acid-grade fluorspar mined from hydrothermal veins and karst deposits, then beneficiated by flotation to 97% or better. Without it there is no hydrofluoric acid, and therefore no oxide etching, no semiconductor-grade quartz and no cleaning chemistry anywhere in this tree.",
+      "loserFacts": null
+    },
+    {
+      "loser": "si.polysilicon.sulfur",
+      "loserName": "Elemental sulfur",
+      "loserFile": "10-silicon.json",
+      "survivor": "chem.sulfur",
+      "survivorName": "Elemental sulphur (brimstone)",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "10-silicon.json",
+      "why": "elemental sulfur from the Claus process; 80-industry publishes the node.",
+      "loserDescription": "Sulfur recovered from sour natural gas by the Claus process (2 H2S + SO2 -> 3 S + 2 H2O), or from the coking of sour coal, then burned to SO2 for the contact process. In 1982 most of the world's sulfur came out of those two places rather than from mining.",
+      "loserFacts": null
+    },
+    {
+      "loser": "peripheral.tv.crt.panel.frit.pbo.roast-smelt.galena.mine.ore",
+      "loserName": "Lead-zinc sulphide ore in the ground",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.galena.rock",
+      "survivorName": "Galenite replacement in carbonate rock",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "Same orebody description (stratabound/replacement galena in carbonate host). metal.galena.rock is the canonical rock node and has no children, so nothing is lost.",
+      "loserDescription": "Galena and sphalerite intergrown in limestone and dolomite, deposited from hydrothermal fluids in Palaeozoic sediments. The whole industry of this branch's lead and zinc hangs off a few stratabound orebodies in Missouri, Broken Hill, Sullivan, the Upper Mississippi valley and northern Mexico.",
+      "loserFacts": [
+        {
+          "label": "Host",
+          "value": "dolomitised limestone, often 100-300 m thick"
+        },
+        {
+          "label": "Geometry",
+          "value": "replacement bodies along bedding and cross-cutting veins"
+        }
+      ]
+    },
+    {
+      "loser": "si.polysilicon.hf",
+      "loserName": "Hydrofluoric acid from fluorspar",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.hydrofluoric-acid",
+      "survivorName": "Hydrofluoric acid from fluorspar",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "same node NAME as the metals fragment's, which is the second audit rule 4 duplicate. Same retort, same reaction, same sulfuric-acid route; only the etch duty is silicon-specific.",
+      "loserDescription": "Finely ground acid-grade fluorspar is treated with concentrated sulfuric acid in a lead or cast-iron retort at 200-250 C: CaF2 + H2SO4 -> CaSO4 + 2 HF. The same acid that leached the quartz later etched every thermal oxide in the process, and it is still the standard oxide etchant, so enormous quantities of it went through this one chain.",
+      "loserFacts": [
+        {
+          "label": "Concentration",
+          "value": "49% anhydrous or up to 70% solution"
+        },
+        {
+          "label": "Consumption",
+          "value": "~1 kg HF per wafer for oxide steps, reused several times"
+        }
+      ]
+    },
+    {
+      "loser": "si.polysilicon.h2so4",
+      "loserName": "Sulfuric acid",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.sulphuric-acid",
+      "survivorName": "Sulphuric acid, 93-99%, from smelter SO2",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "contact-process sulfuric acid, the feed for the HF retort and the Piranha clean.",
+      "loserDescription": "Contact-process sulfuric acid: sulfur is burned and catalytically oxidised over V2O5 to SO3, which is absorbed in 98% H2SO4. It is used both to make the hydrofluoric acid that leaches quartz and etches oxide, and in the hot Piranha clean that every wafer goes through.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.case.abs-resin.bauxite",
+      "loserName": "Bauxite (alumina precursor)",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.bauxite",
+      "survivorName": "Bauxite (hydrated alumina ore)",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "same ore; metal.bauxite already owns the Bayer chain",
+      "loserDescription": "Hydrated alumina rock, mined and Bayer-refined to alumina. It is the source of the alumina support for the reforming catalyst, and also the ore that becomes the aluminium in the EMI shield.",
+      "loserFacts": null
+    },
+    {
+      "loser": "peripheral.tv.crt.panel.frit.pbo.roast-smelt.galena.mine",
+      "loserName": "Underground lead-zinc mine and concentrator",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.galena.mine",
+      "survivorName": "Underground lead-zinc mine",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "Same mine, different wording. metal.galena.mine is the canonical underground lead-zinc mine and concentrator.",
+      "loserDescription": "Sulphide ores are heavy and low-grade, so they are mined underground and milled rather than scraped off a hillside. The rock is broken, ground to a few tens of microns in a ball mill and floated; the concentrate is trucked or rail-loaded a thousand kilometres to a smelter. In 1982 the American lead belt along the Mississippi and the Mexican states of Chihuahua and Sonora were the sources for the North American television trade.",
+      "loserFacts": [
+        {
+          "label": "Ore grade",
+          "value": "2-6% lead and 4-12% zinc as sphalerite-galena ore"
+        },
+        {
+          "label": "Concentrate grade",
+          "value": "60-80% Pb, 50-60% Zn"
+        },
+        {
+          "label": "Grinding",
+          "value": "to 50-75 microns before flotation"
+        },
+        {
+          "label": "Collector",
+          "value": "xanthate or fatty-acid collectors in a froth flotation cell"
+        }
+      ]
+    },
+    {
+      "loser": "si.polysilicon.quartz-leach",
+      "loserName": "Semiconductor-grade quartz purification",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.silica",
+      "survivorName": "High-purity silicon feedstock (9N polysilicon)",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "semiconductor-grade quartz purification (HF/HNO3 leach, Cl2 chlorination at 800-1000 C). No canonical purification node exists in the metals fragment; either keep this one where it is or add a purification node under metal.quartzite.",
+      "loserDescription": "Quartz destined for the Siemens reactor or for the crucible rather than for the arc furnace is crushed to sand, hot-leached in mixed HF and HNO3 at 80-120 C to dissolve surface aluminium and iron, chlorinated at 800-1000 C in dry Cl2 with carbon to strip boron, phosphorus, arsenic and the alkali metals, then annealed in vacuum. Yield of semiconductor-grade quartz from ordinary mine sand is a few percent.",
+      "loserFacts": [
+        {
+          "label": "Total impurity",
+          "value": "<100 ppm, typically 20-50 ppm"
+        },
+        {
+          "label": "Yield from high-purity sand",
+          "value": "~10-30%"
+        },
+        {
+          "label": "Leach",
+          "value": "HF/HNO3 at 80-120 C, then Cl2 at 800-1000 C"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.platinum-catalyst",
+      "loserName": "Platinum-alumina reforming catalyst",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.refining.catalytic-reforming.platinum-catalyst",
+      "survivorName": "Platinum-rhenium on chlorided alumina",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "platinum-rhenium on chlorided alumina for naphtha reforming; same catalyst, and the survivor is filed under the refining branch where it belongs",
+      "loserDescription": "0.3-0.5 wt% platinum with rhenium, chloride and fluoride promoters dispersed on synthetic gamma-alumina. The platinum comes from PGM ores or from spent refinery catalyst; the alumina support is sintered from calcined bauxite.",
+      "loserFacts": null
+    },
+    {
+      "loser": "facility.power.bauxite-mine",
+      "loserName": "Bauxite mine",
+      "loserFile": "80-industry.json",
+      "survivor": "metal.bauxite.mine",
+      "survivorName": "Open-cast bauxite mine with dragline",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "Bauxite mine. Same thing at the same level. metal.bauxite.mine has the dragline profile and the laterite sequence under it.",
+      "loserDescription": "Residual laterite capping on old limestone terrain, stripped by shovel and truck or by cable-sbucket wheel excavator. Ends at the bauxite body.",
+      "loserFacts": null
+    },
+    {
+      "loser": "peripheral.tv.crt.panel.frit.pbo.roast-smelt.galena",
+      "loserName": "Galena (PbS) concentrate",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.galena",
+      "survivorName": "Galena (PbS) concentrate",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "Galena (PbS) concentrate. Byte-identical name and substance; metal.galena carries the underground mine, the carbonate host rock and the hand-sorting step.",
+      "loserDescription": "Galena is cubic and dense at 7.6 g/cm3, which is why it separates from gangue so cleanly in froth flotation or a heavy-media washer. A lead-zinc mine's flotation plant produces three products: lead concentrate, zinc concentrate and a copper concentrate, and the economics of a 1982 lead plant stood or fell on the price of the sulphuric acid made from the roast's SO2.",
+      "loserFacts": null
+    },
+    {
+      "loser": "chem.refining.claus.catalyst.alumina-catalyst.bauxite",
+      "loserName": "Bauxite",
+      "loserFile": "70-petrochem.json",
+      "survivor": "metal.bauxite",
+      "survivorName": "Bauxite (hydrated alumina ore)",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "Bauxite. Same ore; metal.bauxite carries metal.bauxite.mine and the laterite/kaolinite/gibbsite profile.",
+      "loserDescription": "An aluminium oxide hydroxide rock, 30-60% Al2O3, which is the only ore worth mining for aluminium. The Claus catalyst is therefore a dig-it-out node too, just a different one from the oil and the sand: a bauxite mine in Guinea or Australia, or a later low-grade Australian deposit, feeds a refinery's sulphur recovery.",
+      "loserFacts": null
+    },
+    {
+      "loser": "chem.refining.claus.catalyst.alumina-catalyst.bayer-process",
+      "loserName": "Bayer process",
+      "loserFile": "70-petrochem.json",
+      "survivor": "metal.bayer",
+      "survivorName": "Bayer process",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "The Bayer process. metal.bayer has the four steps written out (digestion, clarification, precipitation, calcination) plus the red-mud link and the lime chemistry; the petrochemical copy is a bare leaf reached from the Claus catalyst chain.",
+      "loserDescription": "Bauxite digested in hot caustic soda at 150-250 C and 3-5 MPa, the alumina dissolved as sodium aluminate, the iron and silicon left behind as a red mud, and the alumina precipitated as aluminium hydroxide and calcined at 1,000-1,200 C to give the alumina. The caustic is recovered, the water is recycled, and the red mud is a waste stream of 1-2 tonnes per tonne of alumina - the well-known environmental problem of the alumina industry. The Claus unit's catalyst is the last stage of this process, run by a completely different industry.",
+      "loserFacts": [
+        {
+          "label": "Digestion",
+          "value": "150-250 C, 3-5 MPa, NaOH"
+        },
+        {
+          "label": "Calcination",
+          "value": "1,000-1,200 C"
+        }
+      ]
+    },
+    {
+      "loser": "si.polysilicon.quartz-ore",
+      "loserName": "Pegmatite and quartzite ore, mined and crushed",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.quartzite",
+      "survivorName": "High-grade quartzite (97-99% SiO2)",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "The quartz ore of the silicon chain: pegmatite or high-purity quartzite, blasted, jaw-crushed and hand-sorted. Same material as metal.quartzite ('High-grade quartzite, 97-99% SiO2'), which carries the quarry and the protolith and is the from-ingredient of the submerged-arc furnace. The silicon copy's note about hand-sorting to 5-30 mm lump is worth keeping in the survivor.",
+      "loserDescription": "The actual dig: a hard-rock pegmatite or high-purity quartzite vein, blasted and jaw-crushed, then screened and hand-sorted to 5-30 mm lump. Only a fraction of any deposit is white enough to be metallurgical grade.",
+      "loserFacts": null
+    },
+    {
+      "loser": "chem.silicone.rochow.metallurgical-silicon",
+      "loserName": "Metallurgical silicon",
+      "loserFile": "70-petrochem.json",
+      "survivor": "metal.silica.mgsi",
+      "survivorName": "Metallurgical silicon, 98-99%",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "Metallurgical silicon, 98-99%. Same substance as metal.silica.mgsi; the Rochow route in the silicone chain starts at the same 98-99% metal.",
+      "loserDescription": "98-99.5% silicon made in submerged arc furnaces from quartz and petroleum coke. The 1980s trade fed two very different industries: the ~100,000 tonne a year silicones and chlorosilanes trade, and the far smaller but far purer semiconductor-grade silicon trade, which used the same furnaces with nine-nines purification. Coke, silicon and chlorine are three inputs that appear in both branches of this tree.",
+      "loserFacts": [
+        {
+          "label": "Purity",
+          "value": "98-99.5% (metallurgical); 9N+ for semiconductors"
+        }
+      ]
+    },
+    {
+      "loser": "si.polysilicon.quartz-sand",
+      "loserName": "Quartz sand, 99.5% SiO2",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.silica-sand",
+      "survivorName": "Industrial silica sand (quartz dune sand)",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "the leached sand the lump is crushed from, and the sand the crucibles and the EMC filler are made from. CAREFUL: 15 edges in 30-/35-/40-/60-/70-/90-peripherals resolve their 'quartz sand' ingredient onto THIS node today because its id ends in quartz-sand and this fragment sorts before 60-metals. Merging moves those 15 links onto whatever survives; that is an improvement, but check them.",
+      "loserDescription": "Sand washed from a high-purity quartzite or sandstone deposit, then purified for semiconductor use by acid leaching (HF and HNO3 to strip aluminium and iron) and by chlorination, yielding quartz that can be melted into crucibles, reacted with HCl, or hand-sorted as lump for the arc furnace.",
+      "loserFacts": [
+        {
+          "label": "Assay",
+          "value": "99.5% SiO2 after washing and leaching"
+        },
+        {
+          "label": "Sources",
+          "value": "Spruce Pine NC, Stettein Norway, IOTA Switzerland"
+        }
+      ]
+    },
+    {
+      "loser": "si.polysilicon.salt",
+      "loserName": "Rock salt for the chlor-alkali cell",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.salt-brine",
+      "survivorName": "Rock salt and solar salt brine",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "halite for the chlor-alkali cell that makes the chlorine and hydrogen behind every gram of trichlorosilane.",
+      "loserDescription": "Halite mined by room-and-pillar or solution mining, then dissolved to make brine. The geography of this one node explains a lot of the chlor-alkali map: Michigan basin, Louisiana salt domes, the Cheshire salt field in England, and the Zechstein basin of northern Germany.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.case.abs-resin.aromatics-extraction",
+      "loserName": "Catalytic reforming and aromatics extraction",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.styrene.benzene.aromatics-recovery",
+      "survivorName": "Aromatics recovery from reformer naphtha",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "reformer plus aromatics extraction from naphtha is already there, sulfolane and all",
+      "loserDescription": "Naphtha is vaporised and passed over platinum (often with rhenium) on gamma-alumina at 450-520 C and 5-30 bar. Naphthenes and paraffins dehydrocyclise to aromatics; the C6+ aromatics are then split by extractive distillation with sulfolane or by azeotropic distillation with NMP.",
+      "loserFacts": [
+        {
+          "label": "Reformer temperature",
+          "value": "480-520 C"
+        },
+        {
+          "label": "Pressure",
+          "value": "5-30 bar"
+        },
+        {
+          "label": "Catalyst",
+          "value": "0.3-0.5 wt% Pt on gamma-alumina"
+        },
+        {
+          "label": "Aromatic yield",
+          "value": "55-70 wt% on naphtha feed"
+        },
+        {
+          "label": "Extraction solvent",
+          "value": "sulfolane or N-methyl-2-pyrrolidone"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.flotation",
+      "loserName": "Froth flotation of copper ore",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.copper.flotation",
+      "survivorName": "Froth flotation of chalcopyrite",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "identical node name and content - one of the audit's duplicate-name warnings",
+      "loserDescription": "Crushed and ground ore is conditioned with xanthate collectors and frothers, and the copper sulfide particles are floated to the surface in a bank of rectangular flotation cells. This is how most of the world's copper is separated from its host rock.",
+      "loserFacts": [
+        {
+          "label": "Grind",
+          "value": "to ~50-150 um"
+        },
+        {
+          "label": "Collector",
+          "value": "xanthate or dithiophosphonate"
+        },
+        {
+          "label": "Cells",
+          "value": "dozens in series, each a few m3"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.flash-smelting",
+      "loserName": "Flash smelting and converting",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.copper.smelting",
+      "survivorName": "Flash smelting of concentrate to copper matte",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "flash smelting of concentrate to matte; the survivor names the furnace and the tuyeres",
+      "loserDescription": "Sulfide concentrate is blown with oxygen-enriched air in a flash furnace at ~1250 C, so that the sulfur burns and autogenous heat smelts the copper. The resulting matte is oxidised in converters, slagged of its iron, and the blister copper is electrorefined.",
+      "loserFacts": [
+        {
+          "label": "Flash furnace temperature",
+          "value": "1200-1400 C"
+        },
+        {
+          "label": "Converter",
+          "value": "peirce-smith, oxygen airblown"
+        },
+        {
+          "label": "Next step",
+          "value": "tankhouse electrorefining"
+        }
+      ]
+    },
+    {
+      "loser": "facility.power.limestone-quarry",
+      "loserName": "Limestone quarry (scrubber and flux grade)",
+      "loserFile": "80-industry.json",
+      "survivor": "metal.limestone.quarry",
+      "survivorName": "Limestone quarry and crushing plant",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "Limestone, CaCO3. Same substance. metal.limestone already has the geological leaf (metal.limestone.bed) and the quarry (metal.limestone.quarry); 'scrubber and flux grade' belongs in a note on the referring edge, not in a second limestone.",
+      "loserDescription": "A bench quarry in Ordovician-Silurian carbonate rock, crushed on site and shipped as 20-40 mm stone. A flue-gas desulphuriser wanted a high-calcium, low-magnesium stone and a blast furnace wanted it as flux, so the same quarry served both. Ends at the rock in the ground.",
+      "loserFacts": [
+        {
+          "label": "Product size",
+          "value": "20-40 mm crushed stone"
+        }
+      ]
+    },
+    {
+      "loser": "facility.compressed-air.rock-salt-mine",
+      "loserName": "Rock salt mine",
+      "loserFile": "80-industry.json",
+      "survivor": "metal.salt-brine",
+      "survivorName": "Rock salt and solar salt brine",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "Rock salt. Same feed, and metal.salt-brine already has metal.salt-rock and metal.salt-evaporite beneath it. The id itself is an accident in the industry fragment - 'facility.compressed-air.*' is not a gas.",
+      "loserDescription": "Bedded evaporite salt (halite) mined by room-and-pillar in shafts or by solution mining in the brine field, in Permian or Silurian formations. Ends at the salt body in the rock.",
+      "loserFacts": null
+    },
+    {
+      "loser": "peripheral.tv.crt.mask.steel.bf.coke",
+      "loserName": "Metallurgical coke",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.coke",
+      "survivorName": "Coke and coke oven gas: the reducing agent",
+      "survivorFile": "60-metals.json",
+      "proposal": "80-industry.json",
+      "why": "same material; third copy of metallurgical coke.",
+      "loserDescription": "Metallurgical coke is made by destructive distillation of bituminous coal at about 1100-1200 degrees C in a battery of coke ovens. It supplies both the heat and the carbon for the reduction of iron oxide. Bituminous coal is the one fossil fuel in this chain that was not petroleum.",
+      "loserFacts": [
+        {
+          "label": "Carbonisation",
+          "value": "1100-1200 degrees C in a by-product oven battery"
+        },
+        {
+          "label": "By-products",
+          "value": "coke oven gas, tar, crude benzene, ammonia"
+        }
+      ]
+    },
+    {
+      "loser": "facility.water.sulphur",
+      "loserName": "Recovered sulphur (Claus process)",
+      "loserFile": "80-industry.json",
+      "survivor": "chem.sulfur",
+      "survivorName": "Elemental sulphur (brimstone)",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "80-industry.json",
+      "why": "same element. chem.sulfur is the canonical brimstone node; the recovered-sulphur history (post-1970 Claus, displacing Frasch) belongs in its note.",
+      "loserDescription": "By 1983 nearly all of the world's sulphur came from desulphurising high-sulphur crude and natural gas with Claus converters - i.e. it came out of the same crude oil that made the fuel oil.",
+      "loserFacts": null
+    },
+    {
+      "loser": "facility.power.alumina-bauxite",
+      "loserName": "Alumina from bauxite (Bayer process)",
+      "loserFile": "80-industry.json",
+      "survivor": "metal.bayer.digestion",
+      "survivorName": "Caustic digestion in autoclaves",
+      "survivorFile": "60-metals.json",
+      "proposal": "80-industry.json",
+      "why": "the Bayer process is already written in the metals fragment (metal.bayer.digestion, metal.red-mud, metal.bauxite.beneficiation). This fragment's copy should become a `from` edge on the aluminium conductor rather than a second subtree.",
+      "loserDescription": "Aluminium exists as bauxite ore -> alumina -> aluminium. The Bayer process leaches alumina from bauxite with hot caustic soda under pressure, then precipitates aluminium hydroxide. 4 tonnes bauxite give 2 t alumina give 1 t aluminium.",
+      "loserFacts": null
+    },
+    {
+      "loser": "peripheral.tv.crt.mask.steel.bf.ore",
+      "loserName": "Hematite and magnetite iron ore",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.iron",
+      "survivorName": "Iron ore: the hematite and magnetite end of the chain",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "Hematite and magnetite ore, the same node. metal.iron already splits into metal.hematite and metal.magnetite, so this local copy is strictly less detailed.",
+      "loserDescription": "Fe2O3 (hematite) and Fe3O4 (magnetite) are the two commercial ores. Hematite ships from the Pilbara and the Mesabi range as 62-66% Fe fines; magnetite ships as pellets from the Labrador Trough and as taconite concentrate from the Mesabi. Neither is chemically purified: the blast furnace does the chemistry.",
+      "loserFacts": [
+        {
+          "label": "Hematite",
+          "value": "62-66% Fe, Pilbara and Carajás"
+        },
+        {
+          "label": "Magnetite",
+          "value": "65-70% Fe, Labrador Trough and Kiruna"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.crt.yoke.winding.copper.ore",
+      "loserName": "Chalcopyrite concentrate, 20-30% Cu",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.copper.concentrate",
+      "survivorName": "Copper flotation concentrate (~25-30% Cu)",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "Chalcopyrite flotation concentrate at 20-30% Cu against metal.copper.concentrate's 25-30%. Same substance, same flotation story.",
+      "loserDescription": "CuFeS2, the dominant copper ore, concentrated to 20-30% by froth flotation and roasted and smelted. A 1982 colour TV contained on the order of a kilogram of copper: in the yoke, the line output transformer, the speaker voice coil, the field coils, the signal wiring and the mains lead. In 1982 about half the world's mined copper came from porphyry deposits in Chile and the US.",
+      "loserFacts": [
+        {
+          "label": "Porphyry grade",
+          "value": "0.4-1.0% Cu, huge low-grade tonnage"
+        },
+        {
+          "label": "Concentrate",
+          "value": "20-32% Cu"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.crt.phosphor.zns.so2.sulfur",
+      "loserName": "Elemental sulphur feed",
+      "loserFile": "90-peripherals.json",
+      "survivor": "chem.sulfur",
+      "survivorName": "Elemental sulphur (brimstone)",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "90-peripherals.json",
+      "why": "Elemental sulphur. chem.sulfur ('Elemental sulphur (brimstone)') is the canonical material node in the petrochemical fragment. Note chem.sulfur has no children today, so the Claus process this node carried should be re-hung under it rather than dropped.",
+      "loserDescription": "Where a smelter did not have its own roast gas, elemental sulphur was produced from hydrogen sulphide in sour crude oil or sour natural gas, or by the Claus process. The sulphur then burned to make the SO2 the contact plant needed.",
+      "loserFacts": null
+    },
+    {
+      "loser": "peripheral.tv.crt.gun.heater.scheelite.decomp",
+      "loserName": "Decompose scheelite with soda ash",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.soda-ash",
+      "survivorName": "Soda ash (Na2CO3)",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "Not needed as a merge: this node has already been changed in 90-peripherals to take metal.soda-ash as an ingredient, and the local soda-ash copy was deleted. Listed so the reviewer knows the duplicate is gone and why.",
+      "loserDescription": "Scheelite has to be opened chemically because it is calcium tungstate and calcium is hard to leach. The ore is crushed and cooked with soda ash or caustic soda at about 900-1000 degrees C, converting it to sodium tungstate in solution; the calcium stays behind as calcium carbonate and the liquor is filtered. From sodium tungstate the APT intermediate is precipitated with ammonium chloride.",
+      "loserFacts": [
+        {
+          "label": "Decomposition",
+          "value": "about 900-1000 degrees C with Na2CO3 or NaOH"
+        },
+        {
+          "label": "Precipitation",
+          "value": "APT crystallised out with NH4Cl from the tungstate liquor"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.crt.yoke.winding.bobbin.nylon",
+      "loserName": "Nylon 6,6 from adipic acid",
+      "loserFile": "90-peripherals.json",
+      "survivor": "chem.polyamide.nylon-66",
+      "survivorName": "Nylon 6,6 from adipic acid and HMDA",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "90-peripherals.json",
+      "why": "Nylon 6,6 from adipic acid and hexamethylenediamine. chem.polyamide.nylon-66 is the canonical material node and chem.polyamide.nylon-66.adiponitrile is already the adiponitrile route. Keep the KA-oil detail as a note if it is not already there.",
+      "loserDescription": "Adipic acid is made by oxidising a cyclohexanol/cyclohexanone mixture (KA oil) which itself is made by hydrogenating benzene; hexamethylenediamine comes from adiponitrile, made by hydrodimerisation of acrylonitrile. Both routes start from benzene, so nylon is a great-grandchild of crude oil.",
+      "loserFacts": [
+        {
+          "label": "Nylon 6,6 step polymerisation",
+          "value": "260-280 degrees C, salt then polymer"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.crt.panel.funnel-glass.borax.ore",
+      "loserName": "Colemanite and borate ore",
+      "loserFile": "90-peripherals.json",
+      "survivor": "chem.glass-fiber.borax.ore",
+      "survivorName": "Colemanite and borate ore",
+      "survivorFile": "55-chem-gaps.json",
+      "proposal": "90-peripherals.json",
+      "why": "The audit reports 'Colemanite and borate ore' x2. chem.glass-fiber.borax.ore (55-chem-gaps.json) is the other copy and is the better placed one, because borate is a glass-batch raw material rather than a television part.",
+      "loserDescription": "A calcium borate mineral, often in veins with gypsum and limestone, crushed and digested in acid to give boric acid which is then crystallised out as sodium tetraborate.",
+      "loserFacts": null
+    },
+    {
+      "loser": "si.polysilicon.saf",
+      "loserName": "Submerged arc furnace, 20-40 MVA",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.silica.submerged-arc-furnace",
+      "survivorName": "Submerged-arc furnace reduction at 1800-2000 C",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "the three-electrode submerged arc furnace, 1900-2200 C, 200-400 kA, ~11-13 MWh per tonne. Same machine; merge the furnace-size and throughput figures.",
+      "loserDescription": "A refractory-lined steel shell 10-12 m deep with three graphite electrodes lowered into a charge of quartz lump, petroleum coke and woodchips. Electric current at 200-400 kA and 40-70 V maintains an arc that melts the charge in the submerged zone at 1900-2200 C, and grey metallic silicon is tapped out of the bottom every one to two hours. A 1982-era unit made a few hundred tonnes a year; a modern one makes 150-400 t a day.",
+      "loserFacts": [
+        {
+          "label": "Temperature",
+          "value": "1900-2200 C"
+        },
+        {
+          "label": "Current",
+          "value": "200-400 kA at 40-70 V"
+        },
+        {
+          "label": "Energy",
+          "value": "~11,000-13,000 kWh per tonne of 99% silicon"
+        }
+      ]
+    },
+    {
+      "loser": "si.polysilicon.quartz",
+      "loserName": "High-grade quartz lump",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.quartzite",
+      "survivorName": "High-grade quartzite (97-99% SiO2)",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "the 5-30 mm high-purity quartz lump charged to the silicon furnace is the silicon grade of metal.quartzite (97-99% SiO2). Note that metal.quartzite's own subtree already hangs off metal.silica.submerged-arc-furnace, so merging this removes a second path to the same rock.",
+      "loserDescription": "High-purity quartz, ideally under 200 ppm aluminium and iron, crushed to 5-30 mm. Because aluminium in the metal feeds straight through to every device, silicon makers specify vein quartz or purified lump rather than ordinary sand.",
+      "loserFacts": null
+    },
+    {
+      "loser": "si.polysilicon.coke",
+      "loserName": "Petroleum coke as the carbon reductant",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.silica.petcoke",
+      "survivorName": "Calcined petroleum coke for silicon",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "the low-ash petroleum coke charged to the silicon furnace. metal.silica.petcoke is the silicon grade; metal.coke is the general coke-oven product. Neither carries the delayed-coking/calcining description in si.polysilicon.coke.calciner, so prefer moving that text across with the merge.",
+      "loserDescription": "Needle coke or calcined petroleum coke, used as both reductant and fuel in the submerged arc furnace. The silicon grade is chosen for low ash, low vanadium and low sulphur, which is a narrow slice of the coke market, and it is also the ancestor of the graphite electrodes that hold the arc. A blend with anthracite coal from the hard coal fields of Pennsylvania, Wales or Shanxi was the other traditional recipe; anthracite is lower in carbon and higher in ash and iron, so it went in as a blend component rather than alone.",
+      "loserFacts": null
+    },
+    {
+      "loser": "mb.passives.caps.mlcc.dicing.blade.synthetic-diamond",
+      "loserName": "Synthetic diamond abrasive",
+      "loserFile": "30-passives.json",
+      "survivor": "si.wafer.diamond",
+      "survivorName": "Industrial diamond from graphite",
+      "survivorFile": "10-silicon.json",
+      "proposal": "10-silicon.json",
+      "why": "CROSS-FRAGMENT, the other direction: 30-passives has a 'synthetic diamond abrasive' node under its MLCC dicing blade and 30-passives also has its own resin-bonded blade. Three fragments now describe the same belt-press product for the same reason (a diamond-impregnated blade). si.wafer.diamond is the richest of the three; if the maintainer prefers a metals home, metal.silica is the wrong place and a new node is needed. 35-logic had one too (mb.logic.bipolar.wafer.saw.diamond) but it has since deleted it.",
+      "loserDescription": "Industrial diamond in 1982 was made almost entirely by shock-wave synthesis from graphite, and its price set the cost of grinding, drilling and sawing across the whole ceramics and glass industry.",
+      "loserFacts": null
+    },
+    {
+      "loser": "mb.logic.bipolar.wafer",
+      "loserName": "Polished silicon wafer from a merchant supplier",
+      "loserFile": "35-logic.json",
+      "survivor": "si.wafer",
+      "survivorName": "Polished 100 mm CZ silicon wafer",
+      "survivorFile": "10-silicon.json",
+      "proposal": "35-logic.json",
+      "why": "The whole point of this pass. This node used to inline the entire silicon-from-quartz chain as 30 of its own nodes - quartzite, coke, the submerged-arc furnace, metallurgical silicon, the Siemens reactor, polysilicon, hydrochloric acid, brine, rock salt, the hydrogen-from-natural-gas reformer and the gas field, the Czochralski puller, crucible, seed, saw, lap, polish, wafer sizes and die-per-wafer. All of it now hangs off si.wafer by id. Note that si.wafer is written as a 100 mm wafer; a merchant bipolar logic line of 1983 also ran 75 mm entry lines, so if si.wafer is to be the canonical wafer for the whole tree its note should say so - it currently mentions 75 mm only in passing, in the context of discretes. The 75 mm fact is carried in 35-logic.json on mb.logic.bipolar.wafer for now.",
+      "loserDescription": "No fab makes its own silicon. A merchant logic line in 1983 bought polished 75 mm or 100 mm wafers from a specialist supplier - Shin-Etsu, Sumitomo, Siltron, MEMC - who themselves bought high-grade quartzite, reduced it in a submerged-arc furnace to 98-99% metallurgical silicon, chlorinated that to trichlorosilane, distilled it to 11 nines, reduced it with hydrogen in a Siemens fluidised bed to polysilicon, melted that in a fused-quartz crucible and pulled a monocrystalline boule by the Czochralski method, then ground, sawn, lapped, edge-rounded and polished it. This is the longest supply chain in the whole computer, and it is shared with every other silicon device in the machine. For a junction-isolated bipolar line the wafer is lightly p-type, roughly 5-15 ohm-cm.",
+      "loserFacts": [
+        {
+          "label": "Wafer diameters in 1983",
+          "value": "75 mm (3 in) on entry logic lines, 100 mm (4 in) standard; 125 mm (5 in) arriving at the leading edge late in the decade"
+        },
+        {
+          "label": "Conductivity type for this line",
+          "value": "p-type, ~5-15 ohm-cm"
+        },
+        {
+          "label": "14-pin logic die per 100 mm wafer",
+          "value": "~1,500-3,000 gross, before edge exclusion and probe yield"
+        },
+        {
+          "label": "Named merchant wafer suppliers",
+          "value": "Shin-Etsu, Sumitomo, Siltron, MEMC"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.ethylbenzene-alkylation",
+      "loserName": "Benzene alkylation with ethylene",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.styrene.ethylbenzene",
+      "survivorName": "Ethylbenzene from benzene and ethylene",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "benzene alkylation with ethylene, already published under the styrene branch",
+      "loserDescription": "Friedel-Crafts alkylation over amorphous silica-alumina or a zeolite at 200-350 C and 5-20 bar, giving ethylbenzene plus polyalkylated heavies removed by fractionation.",
+      "loserFacts": [
+        {
+          "label": "Temperature",
+          "value": "250-300 C on silica-alumina"
+        },
+        {
+          "label": "Pressure",
+          "value": "5-15 bar"
+        },
+        {
+          "label": "Selectivity to ethylbenzene",
+          "value": "~95%"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.benzene",
+      "loserName": "Benzene",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.styrene.benzene",
+      "survivorName": "Benzene",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "benzene is a node there; mine is a second copy reached from the ABS end",
+      "loserDescription": "A C6H6 aromatic produced either by catalytic reforming of naphtha or by hydrodealkylation of toluene. Benzene is the entry point to styrene, and via cumene to phenol, epoxy resin and polycarbonate.",
+      "loserFacts": [
+        {
+          "label": "Purity (frozen point)",
+          "value": "5.45-5.50 C implies >99.9%"
+        },
+        {
+          "label": "Source split (1980s)",
+          "value": "~85% catalytic reforming, ~15% hydrodealkylation"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.halite",
+      "loserName": "Rock salt (halite)",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.salt-evaporite",
+      "survivorName": "Halite evaporite: the rock",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "rock salt as the chlor-alkali feedstock; metal.salt-evaporite and metal.salt-brine already carry the evaporite geology",
+      "loserDescription": "Sodium chloride as mined or solution-mined from evaporite deposits and dissolved to make the brine that is electrolysed. Pure salt is the raw material for the entire chlor-alkali complex, which in turn supplies the chlorine and the caustic soda that the ABS plant's chain of persulphate initiator and soap emulsifier depends on.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.case.abs-resin.haber-bosch",
+      "loserName": "Haber-Bosch ammonia synthesis",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.natural-gas.uses.hydrogen.to-ammonia",
+      "survivorName": "Hydrogen to ammonia (Haber-Bosch)",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "same synthesis, same 400-500 C / 150-300 bar / promoted-iron conditions",
+      "loserDescription": "Nitrogen and hydrogen react at 400-500 C and 150-300 bar over an iron catalyst promoted with K2O and Al2O3. This is where the era shows: 1980s plants ran the classic packed-bed, and modern plants use much more efficient ruthenium catalysts at lower pressure.",
+      "loserFacts": [
+        {
+          "label": "Temperature",
+          "value": "400-500 C"
+        },
+        {
+          "label": "Pressure",
+          "value": "150-300 bar"
+        },
+        {
+          "label": "Catalyst (1980s)",
+          "value": "magnetite-based iron with K2O/Al2O3 promoters"
+        },
+        {
+          "label": "Catalyst (modern)",
+          "value": "ruthenium on graphite, 80-150 bar"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.o-xylene",
+      "loserName": "o-Xylene",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.solvents.aromatic-hydrocarbon",
+      "survivorName": "Xylene, toluene and hexane",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "o-xylene is one of the aromatics the survivor groups; if the maintainer would rather keep the isomer separate, this is the one merge in the ABS block that is a judgement call",
+      "loserDescription": "One of the three xylene isomers separated out of the mixed aromatics from the reformer by adsorption (UOP Parex-type) or by distillation. The ortho isomer is the one that gets oxidised to phthalic anhydride.",
+      "loserFacts": [
+        {
+          "label": "Sorbent",
+          "value": "X/Y zeolite molecular sieve"
+        },
+        {
+          "label": "Recovery",
+          "value": "96-99% para-xylene recovery"
+        },
+        {
+          "label": "Feed",
+          "value": "mixed C8 aromatics from the reformer"
+        },
+        {
+          "label": "Era",
+          "value": "Parex commercial from 1962, universal by 1982"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.chalcopyrite",
+      "loserName": "Chalcopyrite (copper ore)",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.copper.ore",
+      "survivorName": "Porphyry copper ore (0.4-1% Cu)",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "chalcopyrite CuFeS2 is the dominant mineral in porphyry copper ore, which is what metal.copper.ore publishes",
+      "loserDescription": "CuFeS2, the dominant copper ore, mined underground or in large open pits and concentrated by flotation before smelting. The smelter's job is to strip the iron into slag so that copper matte can be converted and electrorefined.",
+      "loserFacts": [
+        {
+          "label": "Copper grade (run of mine)",
+          "value": "0.5-1.5% Cu"
+        },
+        {
+          "label": "Concentrate grade",
+          "value": "20-30% Cu"
+        },
+        {
+          "label": "Smelter",
+          "value": "flash smelting, 1200-1400 C"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.molybdenum-source",
+      "loserName": "Molybdenum ore (molybdenite)",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.molybdenite",
+      "survivorName": "Molybdenite in a porphyry",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "molybdenite ore; the survivor is the canonical node and mine is a second copy",
+      "loserDescription": "Molybdenite, MoS2, mined mostly as a by-product of porphyry copper. It is roasted to technical-grade molybdic oxide and then purified to the high-purity metal or oxidised for catalyst use.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.packaging.sodium-hydroxide",
+      "loserName": "Caustic soda, 50% solution",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.caustic-soda",
+      "survivorName": "Caustic soda (NaOH), 50% solution",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "same material, same 50% solution - one of the audit's duplicate-name warnings. I have set my copy to category fluids because it is a solution; if the merge is applied the survivor's metals category wins",
+      "loserDescription": "The same chlor-alkali caustic that makes VCM and soaps comes to the paper mill, typically as a 50% solution in tank cars. It is the alkali half of the white liquor that dissolves the lignin out of the wood chips; the sulfide half keeps the dissolved lignin in solution so the fibres do not darken.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.decor.prepress.lead-ore",
+      "loserName": "Galena (lead sulfide ore) and silver-bearing concentrates",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.galena",
+      "survivorName": "Galena (PbS) concentrate",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "galena concentrate - duplicate-name warning. The silver-bearing-argentite detail should move into the survivor's note",
+      "loserDescription": "Galena is the dominant lead ore and almost always carries silver as argentite or as silver dissolved in the galena lattice. It is mined, concentrated by flotation, and reduced in a blast furnace or sinter plant.",
+      "loserFacts": [
+        {
+          "label": "Ore",
+          "value": "PbS, often with 0.01-0.1% Ag"
+        }
+      ]
+    },
+    {
+      "loser": "facility.gases.laterite",
+      "loserName": "Nickel laterite ore",
+      "loserFile": "80-industry.json",
+      "survivor": "metal.nickel.laterite",
+      "survivorName": "Nickel laterite (garnierite ore)",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "'Nickel laterite ore' filed under a gas-supply branch. Same material; metal.nickel.laterite carries the washing plant, the serpentinised peridotite protolith and the limonite/garnierite mineralogy.",
+      "loserDescription": "The dominant world nickel ore in 1983 - a limonite/garnierite blanket over ultramafic rock in New Caledonia, Cuba, the Philippines and Indonesia, usually smelted in a ferronickel plant. The Philippines connection is the direct one to the C64's subcontractor geography.",
+      "loserFacts": null
+    },
+    {
+      "loser": "peripheral.tv.crt.phosphor.zns.sphalerite",
+      "loserName": "Sphalerite concentrate, 50-60% Zn",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.sphalerite",
+      "survivorName": "Sphalerite (ZnS) concentrate, 50-60% Zn",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "Sphalerite concentrate, 50-60% Zn. Same concentrate at the same grade - the names differ only in punctuation, which is exactly the 'copper ore / copper ore for the leaf' duplication. metal.sphalerite carries the mine, the concentrator, the dense-media separation and the massive-sulphide host.",
+      "loserDescription": "The world's zinc was a by-product of lead and copper mining: sphalerite is so closely associated with galena that the two are separated only by froth flotation. The concentrate came from underground or open-pit zinc-lead mines, and the roast's SO2 was the reason those mines mattered, because it was the cheapest industrial source of sulphuric acid for the fertiliser industry.",
+      "loserFacts": [
+        {
+          "label": "Ore grade",
+          "value": "3-12% Zn, commonly 6-10%"
+        },
+        {
+          "label": "Concentrate",
+          "value": "55-62% Zn"
+        }
+      ]
+    },
+    {
+      "loser": "chem.fab-chemicals.process-gases.nitrogen.cryogenic-air.atmospheric-air",
+      "loserName": "Atmospheric air",
+      "loserFile": "70-petrochem.json",
+      "survivor": "facility.nitrogen.atmospheric-air",
+      "survivorName": "Atmospheric air",
+      "survivorFile": "80-industry.json",
+      "proposal": "70-petrochem.json",
+      "why": "the 80-industry fragment publishes facility.nitrogen.atmospheric-air as the cross-reference target for 'the air-fractionation leaf', and this pass deliberately kept that id (see the shared gloss in 70-petrochem.json). Atmospheric air is one substance and it belongs to the air-separation branch, not under the fab's nitrogen.",
+      "loserDescription": "The end of that chain: nitrogen and oxygen are separated out of the air itself, and the nitrogen a fab buys is a few parts per million of everything else in the atmosphere removed. The air a nitrogen plant compresses is 78.1% nitrogen, 21% oxygen, 0.93% argon, 0.04% carbon dioxide and the rest is neon, helium, methane, water and whatever the industrial district has put into it. It is the only feedstock in this entire tree that needs no mining, no drilling and no chemistry at all, which makes it the cheapest and the least traceable.",
+      "loserFacts": [
+        {
+          "label": "Nitrogen in dry air",
+          "value": "78.08 vol%"
+        },
+        {
+          "label": "Oxygen",
+          "value": "20.95 vol%"
+        },
+        {
+          "label": "Argon",
+          "value": "0.93 vol%"
+        },
+        {
+          "label": "Carbon dioxide",
+          "value": "0.04 vol%"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.steam-methane-reforming",
+      "loserName": "Primary steam reformer",
+      "loserFile": "40-chassis.json",
+      "survivor": "facility.gases.hydrogen.reforming",
+      "survivorName": "Steam methane reforming",
+      "survivorFile": "80-industry.json",
+      "proposal": "80-industry.json",
+      "why": "same operation, described twice. This fragment's node carries the desulphurisation target (<0.5 ppm S), the 3:1 steam ratio, the 800-850 C / 15-25 bar conditions and the shift step.",
+      "loserDescription": "Natural gas and steam are burned over nickel at 800-900 C to give synthesis gas, CO plus H2. The high-temperature endothermic step is fired by burning part of the gas itself, so an ammonia plant is really a gas-fired furnace with a chemistry attached. Per tonne of acrylonitrile the plant needs roughly a quarter of a tonne of ammonia, and the byproduct ammonium sulphate goes straight back onto farmland.",
+      "loserFacts": [
+        {
+          "label": "Temperature",
+          "value": "800-900 C"
+        },
+        {
+          "label": "Catalyst",
+          "value": "nickel on alumina"
+        },
+        {
+          "label": "Output",
+          "value": "CO + 3H2 per CH4"
+        }
+      ]
+    },
+    {
+      "loser": "facility.water.sulphuric-acid",
+      "loserName": "Sulphuric acid",
+      "loserFile": "80-industry.json",
+      "survivor": "metal.sulphuric-acid",
+      "survivorName": "Sulphuric acid, 93-99%, from smelter SO2",
+      "survivorFile": "60-metals.json",
+      "proposal": "80-industry.json",
+      "why": "same substance. metal.sulphuric-acid is the canonical 93-99% contact-process node; this fragment's copy exists only to hang the recovered-sulphur node off it, and that edge can be re-made directly.",
+      "loserDescription": "Made by burning sulphur or roasting pyrite and absorbing the SO2 in a contact plant to 93-98% oleum-free acid. The single most-produced industrial chemical in the world, and the raw material for lead-acid batteries, phosphates and most water treatment.",
+      "loserFacts": null
+    },
+    {
+      "loser": "facility.power.bauxite-mine-alum",
+      "loserName": "Bauxite quarry (alumina grade)",
+      "loserFile": "80-industry.json",
+      "survivor": "metal.bauxite.mine",
+      "survivorName": "Open-cast bauxite mine with dragline",
+      "survivorFile": "60-metals.json",
+      "proposal": "80-industry.json",
+      "why": "second bauxite quarry in the tree for the same purpose. Both this node and facility.power.bauxite-mine sit inside the water/alum and the ACSR/alumina branches; metal.bauxite and metal.bauxite.mine are the canonical pair.",
+      "loserDescription": "High-digestion, alumina-grade bauxite for the alum plant: the digestion autoclave is unforgiving of high-silica and high-boehmite ore, so a water-treatment chemical works did not use any bauxite it could get. Crushed to a fine sand and digested. Ends at the ore body.",
+      "loserFacts": null
+    },
+    {
+      "loser": "facility.compressed-air.salt-brine",
+      "loserName": "Brine (concentrated sodium chloride)",
+      "loserFile": "80-industry.json",
+      "survivor": "metal.salt-brine",
+      "survivorName": "Rock salt and solar salt brine",
+      "survivorFile": "60-metals.json",
+      "proposal": "80-industry.json",
+      "why": "same substance. metal.salt-brine already has the solar-salt pan and the halite rock beneath it, which is exactly what this fragment's node and its rock-salt mine inline.",
+      "loserDescription": "Either evaporated sea salt or a solution of mined rock salt, brined to saturation and clarified with lime and salt cake. Ends at the salt field or the sea.",
+      "loserFacts": null
+    },
+    {
+      "loser": "peripheral.tv.crt.gun.grids.nickel",
+      "loserName": "Rolled nickel sheet",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.nickel.ingot",
+      "survivorName": "Electrolytic or cathode nickel, 99.9%",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "Rolled nickel sheet for the CRT grid foils is the same metal as the cathode nickel; metal.nickel.ingot is the canonical cathode and carries no duplicate of its own. This also removes the stray 99.0-99.2% figure - the metals fragment says 99.9% for cathode nickel, which is probably right for the cathode and wrong for the rolled foil, so the survivor's number should be kept and the sheet-rolling step described in the edge.",
+      "loserDescription": "99%+ nickel, rolled to 0.02-0.1 mm, chosen because it has no gas to give up in vacuum and it does not sputter. Electroformed nickel was the higher-grade route. Nickel itself is refined from sulphide ore concentrate, usually laterite-derived or from pentlandite in Sudbury-type nickel iron sulphide.",
+      "loserFacts": [
+        {
+          "label": "Purity",
+          "value": "99.0-99.2% cathode nickel"
+        },
+        {
+          "label": "Melting point",
+          "value": "1455 degrees C"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.crt.yoke.winding.copper",
+      "loserName": "Enamelled copper wire",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.copper.wire",
+      "survivorName": "Enamelled magnet wire for transformer windings",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "Enamelled magnet wire for the yoke harness. metal.copper.wire is the canonical node and already has the enamelling line, the multiwire drawing die and the enamel resin under it.",
+      "loserDescription": "A copper wire factory buys blister copper at 99.5% from a smelter, electrorefines it to 99.99% cathode, casts it into a wire-rod, then hot draws and cold draws. Enamelling is a coating of polyurethane or polyesterimide over polyester or a phenolic base, applied in a multiple-pass oven and then tested by a high-frequency spark test.",
+      "loserFacts": [
+        {
+          "label": "Smelting",
+          "value": "flash smelting at 1200-1300 degrees C, matte converted"
+        },
+        {
+          "label": "Refining",
+          "value": "tankhouse electrolysis, 99.99% cathode, 2-3 days of electrolysis"
+        },
+        {
+          "label": "Drawing",
+          "value": "electrolytic cathode to rod to 9-11 mm to finished wire"
+        },
+        {
+          "label": "Enamel",
+          "value": "polyurethane-imide, baked at 350-450 degrees C, 10-30 microns"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.chassis.power.reservoir.al-foil",
+      "loserName": "Etched high-purity aluminium foil",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.aluminum.anode-foil",
+      "survivorName": "Etched aluminium anode foil",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "Etched high-purity aluminium anode foil for a 200 uF 160 V reservoir is the same product as the capacitor anode foil. Note this is NOT the same as the four-nines rolled foil used behind the CRT phosphor, which is a different node and a different merge.",
+      "loserDescription": "The anode foil is 99.99% aluminium, electrochemically roughened in a chloride bath so the effective surface area is tens of times the geometric area, allowing a 200 microfarad, 160 V capacitor to fit in a 25 mm can. It converges on the same four-nines aluminium chain as the CRT's aluminium foil.",
+      "loserFacts": [
+        {
+          "label": "Roughening",
+          "value": "form voltage raised over a chloride etch, surface area multiplied roughly 10-100x"
+        },
+        {
+          "label": "Forming",
+          "value": "anodic oxide grown at the rated voltage"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.crt.phosphor.aluminium.bauxite",
+      "loserName": "Four-nines aluminium foil",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.aluminum",
+      "survivorName": "Primary aluminium: ingot, foil, sheet, extrusion",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "Bauxite -> Bayer -> Hall-Heroult -> 4N ingot and foil is the primary aluminium chain, and metal.aluminum is the canonical node with the ingot, foil, sheet and extrusion under it. peripheral.cassette.deck.led.gallium has already been re-pointed at metal.alumina, because gallium comes out of the Bayer liquor and not out of foil.",
+      "loserDescription": "99.99% four-nines aluminium, 0.1-0.15 mm foil. Bauxite is digested in hot sodium hydroxide to sodium aluminate, seeded to precipitate aluminium hydroxide, calcined to alumina, then reduced in a Hall-Heroult cell by carbon at about 1000 degrees C and cast.",
+      "loserFacts": [
+        {
+          "label": "Bauxite grade",
+          "value": "45-55% Al2O3, Bayer process"
+        },
+        {
+          "label": "Hall-Heroult",
+          "value": "950-1000 degrees C, 2-5 V, 150 kA"
+        },
+        {
+          "label": "Purity",
+          "value": "99.7% primary, refined to 4N for foil"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.cassette.tape.oxide.chromium.chromite",
+      "loserName": "Chromite ore, FeCr2O4",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.chromite",
+      "survivorName": "Chromite ore (FeCr2O4), 38-46% Cr2O3",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "Chromite ore. This is the merge that untangles the branch: peripheral.tv.aerial.whip.plating (television) and peripheral.cassette.tape.pad.materials (cassette) both currently have to reach across into the cassette branch to find it, because this file had no other chromium node. After the merge both can point at metal.chromite and the television and cassette chains stop touching.",
+      "loserDescription": "Chromite is the only economic chromium ore, a spinel of iron and chromium oxide at 45-50% Cr2O3, mined from the Bushveld Complex and from layered intrusions. It was smelted to ferrochrome, the alloy in stainless steel, and the same ore fed the pigment chemistry.",
+      "loserFacts": [
+        {
+          "label": "Grade",
+          "value": "40-48% Cr2O3 in lump, richer in concentrate"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.crt.vacuum.tantalum",
+      "loserName": "Tantalum exhaust tip cap",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.columbite",
+      "survivorName": "Columbite-tantalite concentrate",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "The node is the coltan supply chain (concentrate -> HF digestion -> fluoride -> reduction -> powder). metal.columbite is the canonical concentrate and carries the mine, the pegmatite and the tailings stream.",
+      "loserDescription": "The exhaust tip cap has to be sealed by welding without oxidising and has to be gas-tight at 10^-7 mbar. Tantalum was chosen because it is refractory and forms its own oxide. It is also the material behind every solid-state tantalum capacitor, which is why a small 1980s television contributed a gram of coltan to a supply chain that later became a political problem.",
+      "loserFacts": [
+        {
+          "label": "Separation",
+          "value": "HF digestion to H2TaF7 and KF2TaF7, then solvent extraction of the tantalum fluoride"
+        },
+        {
+          "label": "Reduction",
+          "value": "electrochemical or Kroll-type reduction to tantalum powder, sintered and drawn"
+        },
+        {
+          "label": "Melting point",
+          "value": "3017 degrees C"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.crt.panel.funnel-glass.silica",
+      "loserName": "Glass-grade silica sand",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.silica-sand",
+      "survivorName": "Industrial silica sand (quartz dune sand)",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "Glass-grade silica sand, washed and sieved, low in iron. metal.silica-sand is the canonical industrial silica sand and already has the dune/beach placer child.",
+      "loserDescription": "Silica sand, over 99% SiO2, dredged or quarried and washed, is the largest single ingredient of a glass batch by weight. Glass-grade sand has to be low in iron (which green-tints the glass) and low in alumina variation. It is not chemically refined, which is unusual for an optical material: it is washed and sieved.",
+      "loserFacts": [
+        {
+          "label": "Purity",
+          "value": "99.5% SiO2 typical for glass batch"
+        },
+        {
+          "label": "Fe2O3 limit",
+          "value": "a few hundred ppm for colourless glass, looser for tinted"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.crt.gun.cathode.nio-cr.barite",
+      "loserName": "Barite ore (BaSO4)",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.barite",
+      "survivorName": "Barite (BaSO4) ore, 90-98%",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "Barite ore for barium carbonate, barium metal and the speaker ferrite - three uses of one diggings in this file alone. metal.barite is the canonical node (90-98% grade) and carries metal.barite.reduction, which is the conversion to barium carbonate that this node's description describes.",
+      "loserDescription": "Barium carbonate is made from barite (BaSO4), the same ore that is reduced to barium metal for the CRT getter and sintered into a speaker magnet. Barite is mined both as a vein fill (underground) and as a residual beach placer (open pit).",
+      "loserFacts": [
+        {
+          "label": "To carbonate",
+          "value": "reduction to BaS with coke, then carbonated, or a soda ash roast"
+        },
+        {
+          "label": "Use split",
+          "value": "drilling fluid (most), barium metal for the getter, magnet ferrite, and the cathode oxide"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.crt.yoke.core.manganese",
+      "loserName": "Manganese oxide and manganese ore",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.manganese-carbonate",
+      "survivorName": "Manganese carbonate",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "High-purity manganese compound for the ferrite blend. metal.manganese-carbonate is the canonical ferrite-grade node; metal.manganese is the steelmaking end and is a different use.",
+      "loserDescription": "Most manganese ore went to steelmaking, but a small fraction of high-purity electrolytic manganese dioxide went into ferrite. The ore is a sedimentary or lateritic material and the metallurgical chain runs ore to manganous sulphate to electrowinning.",
+      "loserFacts": [
+        {
+          "label": "Purity",
+          "value": "99.5%+ EMD for ferrite grade"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.crt.gun.heater.scheelite",
+      "loserName": "Scheelite ore (CaWO4)",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.molybdenum.scheelite",
+      "survivorName": "Scheelite and wolframite: the limestone vein alternative",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "Scheelite is calcium tungstate and the metals fragment already publishes it as the limestone-vein alternative to wolframite. There is no tungsten node anywhere in the tree (checked metal.*, chem.* and facility.*), so this is the closest canonical home; its description should be widened from molybdenum to both metals.",
+      "loserDescription": "The calcium tungstate ore, usually from scheelite skarn or from the Climax and Pine Creek molybdenum-tungsten porphyries. It decomposes in sodium carbonate or caustic, and its tungsten content is often a fraction of a percent of the rock, so the mill has to be big and the recovery obsessive.",
+      "loserFacts": [
+        {
+          "label": "WO3 content",
+          "value": "0.3-1.0% in porphyry ores, far higher in some skarns"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.aerial.coax.polyethylene.salt",
+      "loserName": "Rock salt, NaCl",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.salt-brine",
+      "survivorName": "Rock salt and solar salt brine",
+      "survivorFile": "60-metals.json",
+      "proposal": "90-peripherals.json",
+      "why": "Rock salt and solar salt brine. metal.salt-brine is the canonical node and already has the bedded halite and the solar pan under it. peripheral.plug.userport.pvc already points at metal.salt-brine directly.",
+      "loserDescription": "Salt was either mined from bedded evaporite (rock salt) or pumped as brine and evaporated in the sun (the Gulf Coast and the Cheshire salt towns). Electrolysis of the brine or of a saturated salt solution gives chlorine and sodium hydroxide, and the chlorine went into PVC jackets, into the chlorinated solvents used to clean printed circuit boards, and into the chloromethane blowing agent for cable foam.",
+      "loserFacts": [
+        {
+          "label": "Electrolysis",
+          "value": "membrane cell, 2NaCl + 2H2O -> 2NaOH + Cl2 + H2 at 3-4 V"
+        },
+        {
+          "label": "Chlorine use",
+          "value": "PVC, chlorinated solvents (TCA, perchloroethylene for PCB cleaning), flame retardants"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.chassis.pcb.epoxy.bpa",
+      "loserName": "Bisphenol A from phenol and acetone",
+      "loserFile": "90-peripherals.json",
+      "survivor": "chem.epoxy.dgeba.bisphenol-a",
+      "survivorName": "Bisphenol A from cumene",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "90-peripherals.json",
+      "why": "Bisphenol A from phenol and acetone, already written in the petrochemical fragment. NOTE: c64.psu.potting.chemistry.bisphenol-a was the target I first wrote here and the power-supply agent has since deleted it; chem.epoxy.dgeba.bisphenol-a ('Bisphenol A from cumene') is the surviving canonical node and carries the acetone co-reactant with it.",
+      "loserDescription": "Phenol comes from benzene sulphonation or cumene oxidation; acetone comes from cumene or from propylene oxide. Bisphenol A is the condensation of two phenols with one acetone under acid, and by the late 1980s this single molecule would become the centre of a long-running regulatory argument about plastics and hormone disruption.",
+      "loserFacts": [
+        {
+          "label": "Reaction",
+          "value": "2 phenol + acetone + HCl -> BPA + water"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.crt.gun.blackening.carbon-black",
+      "loserName": "Carbon black, from petroleum coke",
+      "loserFile": "90-peripherals.json",
+      "survivor": "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black",
+      "survivorName": "Carbon black (channel/process black)",
+      "survivorFile": "30-passives.json",
+      "proposal": "90-peripherals.json",
+      "why": "Carbon black from the oil method, 20-40 nm primary particles. The passives copy is the richest (it already has the soot reactor and the petroleum residuum feed), which is rule 4.1 of the keep-rule. c64.keyboard.switches.carbon-black and c64.keyboard-switches.domes.composition.carbon-black are the other two copies and should follow.",
+      "loserDescription": "Made by the oil method: heavy residual petroleum oil or the green oil from the cracker is sprayed into a hot gas flame at 1200-1900 degrees C, quenched, and the soot agglomerates are pelletised. Carbon black goes into tyres, into black cabinet pigment, into conductive paint and into the inside of the CRT.",
+      "loserFacts": [
+        {
+          "label": "Flame temperature",
+          "value": "1200-1900 degrees C"
+        },
+        {
+          "label": "Particle",
+          "value": "20-40 nm primary, agglomerated to microns"
+        },
+        {
+          "label": "Content in black TV resin",
+          "value": "1-3% for a black ABS, a few tenths of a percent for a dark grey"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.chassis.audio.volume-pot.carbon",
+      "loserName": "Carbon track from petroleum coke",
+      "loserFile": "90-peripherals.json",
+      "survivor": "mb.passives.resistors.discrete-axial.carbon-composition",
+      "survivorName": "Carbon composition resistor",
+      "survivorFile": "30-passives.json",
+      "proposal": "90-peripherals.json",
+      "why": "LOW CONFIDENCE, REVIEW BEFORE APPLYING. A carbon-track potentiometer and a carbon-composition resistor are different products from the same pigment and binder chemistry, so this may be better left alone. It is listed because the node is referenced from 60-metals.json (metal.tin) and 40-chassis.json (c64.case.tooling.h13) as a `from` ingredient, so if it is ever merged both of those references must be re-pointed in the same commit.",
+      "loserDescription": "A mix of graphite and carbon black in a resin or ceramic binder, screen-printed onto the substrate and fired. Carbon track pots were cheap, noisy and prone to wear, and a 'crackle' as the volume control was turned was a common household complaint. Cermet (metal oxide) track came in for better pots, and the two technologies coexisted for decades.",
+      "loserFacts": [
+        {
+          "label": "Application",
+          "value": "sprayed or screen-printed onto an alumina or phenolic substrate, then fired at 700-900 degrees C"
+        },
+        {
+          "label": "V2O5 for cermet pots",
+          "value": "a few percent vanadium pentoxide in a glass binder"
+        }
+      ]
+    },
+    {
+      "loser": "si.polysilicon.msi",
+      "loserName": "Metallurgical silicon, 98-99%",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.silica.mgsi",
+      "survivorName": "Metallurgical silicon, 98-99%",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "metallurgical silicon 98-99%, including the node NAME, which is why audit rule 4 still reports a duplicate. IMPORTANT DISAGREEMENT to resolve on merge: this fragment records B 200-400 ppm / P 100-200 ppm in the furnace output, metal.silica.mgsi records B 5-20 ppm for what it names the same material. One of them is wrong or they describe different points in the chain. The electronics budget (boron below 1 ppb after distillation) is not in dispute.",
+      "loserDescription": "Rough grey lumps of silicon produced in a submerged arc furnace from quartz and petroleum coke at 1900-2200 C. This is the ore-like starting point of the whole silicon chain: boron and phosphorus ride along at hundreds of ppm and have to be removed by chlorination and distillation later, which is why the furnace takes a low-ash petroleum coke rather than the 10-12% ash coke the steel industry uses.",
+      "loserFacts": [
+        {
+          "label": "Purity",
+          "value": "98-99% Si"
+        },
+        {
+          "label": "Typical impurity",
+          "value": "B 200-400 ppm, P 100-200 ppm as recorded by this fragment - see note, the figure is disputed"
+        },
+        {
+          "label": "Yield",
+          "value": "roughly 300 kg of 98% silicon per 6510-class wafer batch"
+        }
+      ]
+    },
+    {
+      "loser": "si.polysilicon.hcl",
+      "loserName": "Hydrogen chloride from salt and chlorine",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.hydrochloric-acid",
+      "survivorName": "Hydrochloric acid (32-37%)",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "HCl gas, dried with concentrated sulfuric acid; 35-logic publishes the same node.",
+      "loserDescription": "Dry HCl gas made by chlorinating hydrogen over a bed of rock salt, or by burning hydrogen in chlorine, then condensing it and drying it with concentrated sulfuric acid. The chlorine itself comes from electrolysis of brine.",
+      "loserFacts": null
+    },
+    {
+      "loser": "si.cz.crucible",
+      "loserName": "Fused quartz CZ crucible",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.silica.czochralski.crucible",
+      "survivorName": "Fused quartz growth crucible",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "the fused quartz CZ crucible, flame-fused around a graphite mandrel. metal.silica.czochralski.crucible is thinner and says a few hundred pulls; this fragment's service life of a handful of pulls for a small internal device fab is the more useful figure - reconcile them.",
+      "loserDescription": "A thick-walled transparent silica cup, 100-160 mm inside diameter and 6-12 mm of wall, holding several kilos of molten silicon and dipping into it several centimetres at 1420 C. It is itself grown from quartz sand in a flame-fusion electric furnace around a rotating graphite mandrel, annealed slowly to relieve stress, then glazed inside and out. Crucibles were the dominant silicon-metal loss source and were scrapped after a handful of pulls, because the silica picks up silicon carbide and oxygen.",
+      "loserFacts": [
+        {
+          "label": "SiO2 purity",
+          "value": "99.995%, pure fused quartz"
+        },
+        {
+          "label": "Wall",
+          "value": "6-12 mm"
+        },
+        {
+          "label": "Inside diameter",
+          "value": "100-160 mm"
+        },
+        {
+          "label": "Service life",
+          "value": "a handful of pulls, then scrapped"
+        }
+      ]
+    },
+    {
+      "loser": "si.mask.chromite",
+      "loserName": "Chromite (FeCr2O4) ore concentrate",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.chromite",
+      "survivorName": "Chromite ore (FeCr2O4), 38-46% Cr2O3",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "chromite (FeCr2O4) concentrate, the ore behind every mask plate's chromium absorber in this tree. The metals fragment owns both the chromium and the chromite nodes.",
+      "loserDescription": "The chrome on every photomask in this tree starts here. Chromite is mined from the Bushveld Complex of South Africa, the Ural chromite deposits, or the Great Dyke of Zimbabwe - the entire industrial supply of chromium metal still traces back to a handful of layered igneous intrusions.",
+      "loserFacts": null
+    },
+    {
+      "loser": "facility.compressed-air.caustic-soda",
+      "loserName": "Caustic soda (sodium hydroxide)",
+      "loserFile": "80-industry.json",
+      "survivor": "metal.caustic-soda",
+      "survivorName": "Caustic soda (NaOH), 50% solution",
+      "survivorFile": "60-metals.json",
+      "proposal": "20-board.json",
+      "why": "This duplicate surfaced while auditing my own `from` resolution: the bare ingredient string 'caustic soda' was resolving by name to the caustic-soda node buried inside the compressed-air branch, which is nonsense as an ingredient. mb.pcb.strip now names metal.caustic-soda explicitly so the bad link is gone, but both nodes are still published and still compete on the name 'Caustic soda'. Merge, or rename one.",
+      "loserDescription": "Chlor-alkali electrolysis of brine: 2NaCl + 2H2O -> Cl2 + H2 + 2NaOH, with the hydrogen and chlorine sold and the caustic sold. The most-used industrial chemical on the site. Ends at salt and electricity.",
+      "loserFacts": [
+        {
+          "label": "Cell voltage",
+          "value": "about 3-4 V DC"
+        },
+        {
+          "label": "Energy",
+          "value": "roughly 2,200-2,500 kWh per tonne of NaOH (as Cl2)"
+        }
+      ]
+    },
+    {
+      "loser": "facility.power.natural-gas",
+      "loserName": "Natural gas",
+      "loserFile": "80-industry.json",
+      "survivor": "chem.natural-gas",
+      "survivorName": "Natural gas: the gas field",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "20-board.json",
+      "why": "Two natural-gas nodes: chem.natural-gas 'Natural gas: the gas field' (composition, sources, processing, uses) and facility.power.natural-gas (North Sea, LNG, US domestic). CHECKLIST 1a names chem.natural-gas as the cross-cutting gas stream, so it should be the survivor; fold the pipeline/LNG/US supply branches into it. My mb.pcb.laminate.press.heat reads `from: chem.natural-gas`.",
+      "loserDescription": "Methane with ethane and propane, delivered by pipeline or (from 1983 in Taiwan and Japan) as LNG. Western Europe's gas was North Sea and Groningen; the US grid burned domestic Appalachian, Texas and Louisiana gas.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.case.abs-resin.mo-bi-catalyst",
+      "loserName": "Bismuth phosphomolybdate ammoxidation catalyst",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.acrylonitrile.sovere.catalyst.bismuth-molybdate",
+      "survivorName": "Bismuth molybdate on silica",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "same catalyst; the survivor even publishes its silica support",
+      "loserDescription": "The heart of the ammoxidation: a mixture of bismuth, molybdenum, iron, cobalt and other metal oxides, typically supported on silica or silica-alumina. It works by a redox cycle - the lattice oxygen of the molybdate grabs an allylic hydrogen from propylene, ammonia inserts, the nitrile is desorbs, and air re-oxidises the bismuth.",
+      "loserFacts": [
+        {
+          "label": "Catalyst family",
+          "value": "Bi-Mo, or bismuth phosphomolybdate (BiPMo)"
+        },
+        {
+          "label": "Carrier",
+          "value": "silica or silica-alumina"
+        },
+        {
+          "label": "Catalyst lifetime",
+          "value": "years between regenerations"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.chlor-alkali",
+      "loserName": "Chlor-alkali electrolysis of brine",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.chlor-alkali",
+      "survivorName": "Chlor-alkali electrolytic cell",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "brine electrolysis is already a node there, with the cell and the dechlorination loop",
+      "loserDescription": "Electrolysis of saturated brine in a membrane or mercury cell splits salt water into chlorine, sodium (or potassium) hydroxide and hydrogen. This is one of the foundational 20th-century chemical processes and it feeds PVC, solvents, and every chlorinated intermediate.",
+      "loserFacts": [
+        {
+          "label": "Cell type (1980s)",
+          "value": "diaphragm, mercury or membrane; membrane gaining share by mid-1980s"
+        },
+        {
+          "label": "Voltage",
+          "value": "~3 V per cell, but 100-150 V across a cell house"
+        },
+        {
+          "label": "Products",
+          "value": "Cl2, NaOH/KOH, H2"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.ammonia",
+      "loserName": "Ammonia",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.cyanide-precursor",
+      "survivorName": "Ammonia (NH3)",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "same substance; the survivor sits under the natural-gas -> hydrogen -> ammonia chain that feeds it",
+      "loserDescription": "Made by steam-methane reforming natural gas to synthesis gas (CO+H2) and then Haber-Bosch synthesis over promoted iron. Every tonne of acrylonitrile needs roughly a quarter tonne of ammonia, and the byproduct ammonium sulphate goes straight back onto farmland.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.case.abs-resin.coke",
+      "loserName": "Coke (blast-furnace grade)",
+      "loserFile": "40-chassis.json",
+      "survivor": "facility.power.coke",
+      "survivorName": "Metallurgical coke",
+      "survivorFile": "80-industry.json",
+      "proposal": "40-chassis.json",
+      "why": "blast-furnace grade coke is already published as metal.coke",
+      "loserDescription": "Metallurgical coke, the carbonaceous reductant in the titanium tetrachloride chlorinator and the fuel of the flame reactor that turns it into white rutile pigment. It is a by-product of coking coal in a coke oven battery, not a mined material in its own right: the coal chosen is a thermal-rank bituminous coal picked for its caking properties, and the coke oven is one of the great carbon-emitting industrial plants of the period.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.case.abs-resin.rutile-ore",
+      "loserName": "Ilmenite and rutile ore",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.ilmenite-sand",
+      "survivorName": "Heavy mineral beach sand and the dredge",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "ilmenite and rutile beach sand; the survivor is the canonical beach-sand node",
+      "loserDescription": "Titanium ore, mined from beach sands and hard-rock deposits. Ilmenite (FeTiO3) is the dominant feed; it is reduced to titanium slag, or chlorinated to TiCl4.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.case.abs-resin.copper",
+      "loserName": "Copper(II) salts",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.copper",
+      "survivorName": "Copper: track, winding wire, foil, contacts",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "copper metal, reached from the phthalocyanine pigment; metal.copper is the canonical node and already owns the tankhouse",
+      "loserDescription": "Copper(II) salts, from electrorefined copper. Copper comes from chalcopyrite CuFeS2 ore or from ore sorted to a copper concentrate, then smelted, converted and electrorefined.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.case.tooling.chromite-ore",
+      "loserName": "Chromite ore, 40-48% Cr2O3",
+      "loserFile": "40-chassis.json",
+      "survivor": "facility.water.chromite",
+      "survivorName": "Chromite ore (FeCr2O4)",
+      "survivorFile": "80-industry.json",
+      "proposal": "40-chassis.json",
+      "why": "same ore. Note the two nodes disagree on grade (mine says 40-48% Cr2O3, metal.chromite says 38-46%); keep the survivor's figure",
+      "loserDescription": "The only economic chromium ore, mined mostly in South Africa's Bushveld complex and in Zimbabwe, Kazakhstan and Turkey. Sold as a lumpy or sintered lump, or as a fines fraction.",
+      "loserFacts": [
+        {
+          "label": "Grade",
+          "value": "40-48% Cr2O3"
+        },
+        {
+          "label": "Where",
+          "value": "Bushveld (South Africa), Great Dyke (Zimbabwe), Kazakhstan, Turkey"
+        }
+      ]
+    },
+    {
+      "loser": "c64.keyboard.switches.silicon-metal",
+      "loserName": "Metallurgical silicon",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.silica.mgsi",
+      "survivorName": "Metallurgical silicon, 98-99%",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "98-99% metallurgical silicon - duplicate-name warning",
+      "loserDescription": "Quartz sand reduced with carbon in a submerged-arc furnace at about 2000 C to give 98-99% silicon. This is the starting point for the whole silicon chemistry of the machine, and here the trail ends in a rubber pad rather than in a chip: the carbon black that makes the keyboard dome conductive is made from heavy oil, and the silica that reinforces the silicone rubber matrix can be traced back to the same sand.",
+      "loserFacts": [
+        {
+          "label": "Furnace",
+          "value": "submerged arc, about 2000 C"
+        },
+        {
+          "label": "Purity",
+          "value": "98-99% metallurgical silicon"
+        },
+        {
+          "label": "Electrode",
+          "value": "graphite or carbon rod"
+        }
+      ]
+    },
+    {
+      "loser": "c64.cables.rf-cable.ldpe-polymerisation",
+      "loserName": "LDPE polymerisation of ethylene",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.ethylene.polyethylene.ldpe",
+      "survivorName": "LDPE: free-radical high-pressure process",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "the high-pressure free-radical LDPE route, already published with its autoclave and peroxide initiator",
+      "loserDescription": "Ethylene is polymerised either at high pressure (1000-3000 bar, 200-300 C, initiated by peroxides) or at low pressure with a Ziegler-Natta catalyst (20-40 bar, 70-110 C). A cable plant runs the high-pressure route, because high-pressure LDPE extrudes cleanly and fast and gives the flexible, low-dielectric-constant film a coax jacket wants; low-pressure LLDPE is the modern preference for some uses and is not what filled a 1982 television aerial lead.",
+      "loserFacts": [
+        {
+          "label": "High-pressure LDPE",
+          "value": "1000-3000 bar, 200-300 C, peroxide initiators"
+        },
+        {
+          "label": "Low-pressure LLDPE",
+          "value": "20-40 bar, 70-110 C, TiCl4/AlEt3 catalyst"
+        },
+        {
+          "label": "Grade used for coax dielectric",
+          "value": "high-pressure LDPE, branched, dielectric constant 2.2-2.35"
+        },
+        {
+          "label": "Monomer purity",
+          "value": "99.9%+, with O2 and H2O at ppb"
+        }
+      ]
+    },
+    {
+      "loser": "c64.decor.propyloxide",
+      "loserName": "Propylene oxide",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.propylene.propylene-oxide",
+      "survivorName": "Propylene oxide",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "propylene oxide by the chlorohydrin and hydroperoxide routes - duplicate-name warning",
+      "loserDescription": "Made by the chlorohydrin route - propylene plus chlorine and water, then caustic dehydrochlorination - or by the older hydroperoxide route. It is what turns propylene into the propylene glycol ethers and acetates that were the commonest 1980s pad-ink and screen-ink solvents, so a pad-printing ink is not a purely cosmetic chemical: its main solvent begins at the same propylene that feeds the acrylonitrile in the ABS case.",
+      "loserFacts": [
+        {
+          "label": "Chlorohydrin route",
+          "value": "additive chlorination then dehydrochlorination with Ca(OH)2"
+        },
+        {
+          "label": "Glycol ether",
+          "value": "propylene oxide plus an alcohol at base, then distillation"
+        }
+      ]
+    },
+    {
+      "loser": "c64.decor.prepress.silver",
+      "loserName": "Silver (recovered from ore and refinery residue)",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.silver.ingot",
+      "survivorName": "Silver ingot, 99.9%, and silver contact material",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "the substance is silver metal. Caveat for the reviewer: 21 references used to point at this node; they have since been re-pointed elsewhere by their owning fragments, and my file no longer depends on it",
+      "loserDescription": "Silver metal recovered from argentite and galena ores, and from the anode slimes of electrolytic copper refining. It is refined to photographic purity by cupellation and electrolytic refining.",
+      "loserFacts": [
+        {
+          "label": "Recovery",
+          "value": "mostly a byproduct of lead/copper refining"
+        }
+      ]
+    },
+    {
+      "loser": "facility.steam.soda-ash",
+      "loserName": "Soda ash (sodium carbonate)",
+      "loserFile": "80-industry.json",
+      "survivor": "metal.soda-ash",
+      "survivorName": "Soda ash (Na2CO3)",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "Soda ash, Na2CO3. Same substance. metal.soda-ash carries the Solvay works underneath it (carbonation tower, gasworks ammonia, lime kiln, salt recovery) and four facts; the industry fragment's node has no children.",
+      "loserDescription": "The sodium carbonate that pairs with slaked lime in the lime-soda process. Made by the Solvay process - salt brine, ammonia and limestone through a carbonating tower, or by the older Leblanc process - and it ends at the salt field and the limestone quarry. In the 1983 plant it was bought as a bagged or bulk chemical, not made on site.",
+      "loserFacts": [
+        {
+          "label": "Route",
+          "value": "Solvay process (salt, ammonia, limestone)"
+        }
+      ]
+    },
+    {
+      "loser": "chem.natural-gas.uses.hydrogen.to-ammonia.ammonia",
+      "loserName": "Ammonia",
+      "loserFile": "70-petrochem.json",
+      "survivor": "metal.cyanide-precursor",
+      "survivorName": "Ammonia (NH3)",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "Ammonia, NH3. Same substance. This fragment publishes metal.cyanide-precursor, now named 'Ammonia (NH3)' and typed as a material - see the rename below, which should be applied first.",
+      "loserDescription": "NH3: the feedstock for the acrylonitrile ammoxidation, for fertiliser, and for the electronic-grade ammonium hydroxide used to rinse and develop photoresist. World ammonia production in 1983 was of the order of 100-110 million tonnes a year.",
+      "loserFacts": [
+        {
+          "label": "World ammonia production 1983",
+          "value": "~100-110 Mt/year"
+        },
+        {
+          "label": "Synthesis conditions",
+          "value": "400-500 C, 150-250 bar"
+        }
+      ]
+    },
+    {
+      "loser": "chem.refining.delayed-coking.calcined-coke",
+      "loserName": "Calcined petroleum coke",
+      "loserFile": "70-petrochem.json",
+      "survivor": "metal.silica.petcoke",
+      "survivorName": "Calcined petroleum coke for silicon",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "Calcined petroleum coke. Same substance. Merge THIS direction: metal.silica.petcoke's description is specific to the silicon smelter, the petrochemical copy is a bare label that other petrochemical nodes point at, so they should point here instead.",
+      "loserDescription": "Green coke is calcined at 1,250-1,350 C in a rotary kiln or a fluid-bed calciner to make calcined coke for carbon anodes. Needle coke, with low sulphur, low metals and low volatile matter, is the anode grade; sponge coke is the fuel grade. The aluminium smelting industry consumes a few million tonnes a year of anode coke, which is the economic reason delayed coking survived the fuel-oil era.",
+      "loserFacts": null
+    },
+    {
+      "loser": "facility.water.coconut-carbon",
+      "loserName": "Coconut-shell activated carbon",
+      "loserFile": "80-industry.json",
+      "survivor": "metal.activated-carbon",
+      "survivorName": "Activated carbon from coconut shell",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "Coconut-shell activated carbon. Same substance; metal.activated-carbon already has the coal/coke alternative feed and the steam-activation step.",
+      "loserDescription": "The premium grade, made in Sri Lanka, India or the Philippines by carbonising shell and steam-activating. The same material appears in the 8-bit filter section of a home computer.",
+      "loserFacts": null
+    },
+    {
+      "loser": "peripheral.tv.cabinet.abs.acrylonitrile",
+      "loserName": "Acrylonitrile monomer",
+      "loserFile": "90-peripherals.json",
+      "survivor": "chem.abs.san-matrix.acrylonitrile-raw",
+      "survivorName": "Acrylonitrile monomer",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "70-petrochem.json",
+      "why": "same substance, and 90-peripherals has the shorter copy. Re-point its ABS case onto the petrochemical acrylonitrile node.",
+      "loserDescription": "Acrylonitrile was made by the Sohio process: propylene, ammonia and oxygen over a bismuth-antimony catalyst at about 450 degrees C to give acrylonitrile and water. The ammonia came from steam reforming natural gas, so the plastics chain and the gas chain converge here.",
+      "loserFacts": [
+        {
+          "label": "Sohio reaction",
+          "value": "CH2=CHCH3 + NH3 + 1.5 O2 -> CH2=CHCN + 3 H2O at about 450 degrees C"
+        },
+        {
+          "label": "Selectivity",
+          "value": "about 80% to acrylonitrile on a bismuth-antimony catalyst"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.chassis.pcb.copper-foil",
+      "loserName": "Electrolytic copper foil",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.copper.foil",
+      "survivorName": "Copper foil: 35 um PCB and 6-18 um capacitor foil",
+      "survivorFile": "60-metals.json",
+      "proposal": "70-petrochem.json",
+      "why": "electrolytic copper foil for FR-4 is one material; the petrochemical node carries the benzotriazole coupling-agent treatment and the 1980s thickness figures.",
+      "loserDescription": "The copper that becomes every trace on the board. Electrolytic copper foil is deposited on a rotating drum cathode from a copper sulphate bath, then treated with a nodularisation pass so the reverse side bonds to the epoxy. It is the same copper as the yoke wire, one step earlier in the chain.",
+      "loserFacts": [
+        {
+          "label": "Thickness",
+          "value": "35 micrometres (1 oz) standard; 70 for power boards"
+        },
+        {
+          "label": "Drum speed",
+          "value": "co-deposited at millimetre-per-second rates to get a ductile foil"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.tooling.iron-ore",
+      "loserName": "Vanadiferous titanomagnetite ore",
+      "loserFile": "40-chassis.json",
+      "survivor": "facility.power.iron-ore",
+      "survivorName": "Iron ore (hematite/magnetite)",
+      "survivorFile": "80-industry.json",
+      "proposal": "80-industry.json",
+      "why": "same ore. The general 'Iron ore (hematite/magnetite)' node belongs in one place; it is currently the blast-furnace feed for the power station's turbine steel, which is exactly the general case.",
+      "loserDescription": "The ore is smelted in a blast furnace; when it carries vanadium the slag is deliberately kept for vanadium recovery. So the same lump of ore yields the iron for the press frame and, later, the vanadium in the tool steel.",
+      "loserFacts": null
+    },
+    {
+      "loser": "peripheral.tv.cabinet.abs.styrene",
+      "loserName": "Styrene monomer",
+      "loserFile": "90-peripherals.json",
+      "survivor": "facility.steam.styrene",
+      "survivorName": "Styrene monomer",
+      "survivorFile": "80-industry.json",
+      "proposal": "90-peripherals.json",
+      "why": "Styrene monomer. The audit reports 'Styrene monomer' x3 across three fragments; this node is the television's copy. NOTE: chem.abs.san-matrix.styrene-raw was the target I first wrote here and the petrochemical agent has since deleted it, so facility.steam.styrene is the surviving material node. The more thorough fix is to merge this node's whole subtree into chem.styrene, which already owns the benzene -> ethylbenzene -> dehydrogenation chain that peripheral.tv.cabinet.abs.styrene.benzene duplicates.",
+      "loserDescription": "Styrene comes from ethylbenzene, which comes from benzene by alkylation with ethylene and then is dehydrogenated. Benzene is itself from a refinery reformer, so a plastics cabinet is a great-grandchild of crude oil three steps away.",
+      "loserFacts": [
+        {
+          "label": "Ethylbenzene",
+          "value": "benzene + ethylene over a zeolite at 250-350 degrees C"
+        },
+        {
+          "label": "Dehydrogenation",
+          "value": "550-650 degrees C over iron oxide catalyst, giving styrene plus hydrogen"
+        },
+        {
+          "label": "SAN",
+          "value": "styrene-acrylonitrile random copolymer, 70:30"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.cabinet.abs.butadiene",
+      "loserName": "1,3-butadiene from the steam cracker",
+      "loserFile": "90-peripherals.json",
+      "survivor": "chem.abs.grafting.rubber-phase.butadiene-raw",
+      "survivorName": "Butadiene monomer",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "90-peripherals.json",
+      "why": "Butadiene monomer for the rubber phase, with the cracker C4 extraction already documented there.",
+      "loserDescription": "The rubbery part of ABS. It is not made from natural rubber but by cracking butane or the C4 fraction of a naphtha cracker, and by 1982 the biggest source was the co-product gas of a large steam cracker, which is why ABS prices tracked ethylene capacity.",
+      "loserFacts": [
+        {
+          "label": "Steam cracking",
+          "value": "850 degrees C with a few percent steam over a hot silica-alumina coil"
+        },
+        {
+          "label": "Butadiene",
+          "value": "about 40-50% of the C4 cut"
+        },
+        {
+          "label": "Graft polymerisation",
+          "value": "butadiene polymerised in the SAN matrix, 50-70% conversion"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.cabinet.abs.pigment",
+      "loserName": "Pigment: titanium dioxide and carbon black",
+      "loserFile": "90-peripherals.json",
+      "survivor": "chem.abs.additives.pigment-masterbatch",
+      "survivorName": "Pigment masterbatch",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "90-peripherals.json",
+      "why": "The TiO2 and carbon black loading of a black or beige ABS cabinet is compounding additives, and the pigment masterbatch node is the canonical place for it.",
+      "loserDescription": "A beige or brown cabinet was pigmented. The workhorse was titanium dioxide, rutile grade, a white pigment made from ilmenite or from ore plus a chloride process; the black or dark brown was carbon black. A woodgrain was printed, not pigmented.",
+      "loserFacts": [
+        {
+          "label": "TiO2",
+          "value": "about 2-5% loading for a light colour, sulfate or chloride process"
+        },
+        {
+          "label": "Carbon black",
+          "value": "0.5-3% for a dark colour, the same petroleum-coke carbon as the CRT blackening"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.cassette.tape.film.paraxylene",
+      "loserName": "Para-xylene",
+      "loserFile": "90-peripherals.json",
+      "survivor": "chem.polyester.pet.terephthalic-acid",
+      "survivorName": "Para-xylene and terephthalic acid",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "90-peripherals.json",
+      "why": "Para-xylene into terephthalic acid / DMT is already written there. The audit reports 'Para-xylene' x2 against mb.passives.caps.film.polyester-metallisation.pet-polymerisation.paraxylene; whichever of the two survives, the other should follow.",
+      "loserDescription": "Para-xylene is the key intermediate to PET. It is produced by catalytic reforming of naphtha, then by selective adsorption (UOP Parex, a molecular sieve that picks out the para isomer from the mixed xylenes) because only the para isomer is useful and it is a minority of the xylene mixture. It is then oxidised to terephthalic acid or esterified to DMT.",
+      "loserFacts": [
+        {
+          "label": "Reforming",
+          "value": "450-520 degrees C, Pt, gives mixed xylenes"
+        },
+        {
+          "label": "Para-selectivity",
+          "value": "about 90-95% via a molecular-sieve adsorption process (Parex)"
+        },
+        {
+          "label": "To DMT",
+          "value": "esterified with methanol, or oxidised to TPA and reacted with methanol"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.cassette.tape.coating.solvent",
+      "loserName": "Toluene and xylene from naphtha",
+      "loserFile": "90-peripherals.json",
+      "survivor": "chem.styrene.benzene.aromatics-recovery",
+      "survivorName": "Aromatics recovery from reformer naphtha",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "90-peripherals.json",
+      "why": "ADVANCE WARNING, NOT A MERGE: this node is referenced from 40-chassis.json (c64.decor.paint.lacquer takes it as a `from` ingredient), so it must keep its id or that fragment must be edited first. Toluene and xylene are the C8/C7 aromatics cut that node already documents. Flagging it here rather than proposing a merge, because the cross-file reference has to be re-pointed in the same commit.",
+      "loserDescription": "The aromatic solvents that carried the binder. Toluene was made by hydrodealkylating the benzene from the reformer or by methylating benzene with methanol; xylene came straight off the reformer as part of the aromatics cut. Both are naphtha descendants.",
+      "loserFacts": [
+        {
+          "label": "Toluene",
+          "value": "benzene + methanol over an alumina catalyst, or HDA of reformate benzene"
+        },
+        {
+          "label": "Xylene",
+          "value": "the C8 aromatics cut from the reformer"
+        },
+        {
+          "label": "Use",
+          "value": "dispersion solvent, doctor-blade coating, and cleaning"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.chassis.pcb.epoxy",
+      "loserName": "Epoxy resin from bisphenol A",
+      "loserFile": "90-peripherals.json",
+      "survivor": "chem.epoxy",
+      "survivorName": "Epoxy: bisphenol A and epichlorohydrin",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "90-peripherals.json",
+      "why": "LOWER CONFIDENCE THAN THE OTHERS, REVIEW BEFORE APPLYING. FR-4 uses TEGDA/DGEBA epoxy rather than brominated epoxy, so chem.epoxy.brominated-epoxy (my first choice) is the wrong resin. chem.epoxy is the parent node and has the bisphenol A and epichlorohydrin feeds under it; kinds differ (this node is a material, chem.epoxy is a process), so the maintainer may prefer to point this node's inputs at chem.epoxy.dgeba and delete the subtree instead.",
+      "loserDescription": "The resin that glues the glass in FR-4 is an epoxy, made from bisphenol A (itself from two mols of phenol and acetone) and epichlorohydrin. It cures by cross-linking rather than by condensation, which is what gives FR-4 its low shrinkage and high heat resistance.",
+      "loserFacts": [
+        {
+          "label": "Curing",
+          "value": "140-180 degrees C for tens of minutes, amine hardener"
+        }
+      ]
+    },
+    {
+      "loser": "si.polysilicon.reactor",
+      "loserName": "Siemens wire-heated deposition reactor",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.silica.polysilicon.deposition",
+      "survivorName": "Siemens deposition on UHF-heated rods",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "the Siemens wire-heated (UHF) deposition reactor is the same machine as metal.silica.polysilicon.deposition; merge and keep the filament/1150 C detail in the survivor's description.",
+      "loserDescription": "A vertical bell-jar or can reactor holding 40-80 U-shaped silicon filaments wound from vapour-grown poly. A few hundred amps of DC is passed through the filaments to hold them near 1150 C while SiHCl3 vapour decomposes on them. These reactors were the standard ultra-purity route until the late 1980s.",
+      "loserFacts": null
+    },
+    {
+      "loser": "si.polysilicon.tcs",
+      "loserName": "Trichlorosilane (SiHCl3), 9N-11N",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.silica.tcs",
+      "survivorName": "Trichlorosilane (HSiCl3), 11N",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "trichlorosilane, 31.8 C boiling point, distilled to 9-11N. Identical substance and identical boiling-point figure; this fragment's version adds the 250-350 C fluidised-bed make and the 1 ppb boron cut.",
+      "loserDescription": "The intermediate that carries silicon from cheap metallurgical metal to electronics grade. Made by passing dry HCl over crushed metallurgical silicon at 250-350 C in a fluidised or bubbling bed: Si + 3 HCl -> SiHCl3 + H2. Rectified by fractional distillation on its 31.8 C boiling point until metal, boron and phosphorus contaminants are below 1 ppb, then stored in nickel or stainless bulk tanks.",
+      "loserFacts": [
+        {
+          "label": "Boiling point",
+          "value": "31.8 C"
+        },
+        {
+          "label": "Purification",
+          "value": "fractional distillation, 100-200 theoretical plates"
+        },
+        {
+          "label": "Reaction",
+          "value": "250-350 C, fluidised or bubbling bed"
+        }
+      ]
+    },
+    {
+      "loser": "si.cz",
+      "loserName": "Czochralski growth of the boron-doped ingot",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.silica.czochralski",
+      "survivorName": "Czochralski monocrystalline ingot",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "the Czochralski pull. This fragment's version is the 1982 one: 100 mm boule, 1-1.5 m long, boron to 10-20 ohm-cm, helium or argon; metal.silica.czochralski says 0.5-2 mm/min and 75-150 mm. Keep the 1982 numbers when folding.",
+      "loserDescription": "The puller melts polysilicon chunks in a fused quartz crucible at 1420 C under flowing helium or argon, dips a (100) seed crystal, and rotates and slowly withdraws it while a raw boule about 100 mm across and 1-1.5 m long grows. Boron trichloride or diborane is dosed into the melt to set the 10-20 ohm-cm p-type resistivity. The constant rotation and the thermal gradient grow a uniform cross-section with few dislocations and a slight oxygen-precipitate peak near the seed end.",
+      "loserFacts": [
+        {
+          "label": "Melting point",
+          "value": "1420 C"
+        },
+        {
+          "label": "Pull rate",
+          "value": "2-4 mm/min at 0.5-2 rpm"
+        },
+        {
+          "label": "Atmosphere",
+          "value": "He or Ar, 20-40 l/min"
+        },
+        {
+          "label": "Dopant",
+          "value": "B as BCl3 or B2H6, or P as PH3"
+        },
+        {
+          "label": "Boule",
+          "value": "~100 mm diameter, 1-1.5 m long"
+        }
+      ]
+    },
+    {
+      "loser": "si.mask.chrome",
+      "loserName": "Sputtered chromium absorber",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.chromium.metal",
+      "survivorName": "Electrolytic chromium metal from chrome alum",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "99.5% sputter-target chromium. Note that this merge also releases the 'chromium' ingredient key, which four nodes in 35-logic and 40-chassis currently resolve onto si.mask.chrome's predecessor mb.cpu.mask.chromium; after the merge they should land on metal.chromium, which is where they belong.",
+      "loserDescription": "99.5% pure chromium cathode, vacuum-melted and rolled, sputtered with argon at 1-2 kW in a DC magnetron chamber onto the rotating plate. Chromium metal is won from chromite ore: the concentrate is smelted to ferrochrome and then refined to metal for sputtering targets.",
+      "loserFacts": null
+    },
+    {
+      "loser": "metal.rosin",
+      "loserName": "Rosin (colophony) from pine",
+      "loserFile": "60-metals.json",
+      "survivor": "chem.rosin",
+      "survivorName": "Pine rosin (colophony)",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "20-board.json",
+      "why": "reciprocal merge with chem.rosin; keep-rule chose it (description 709 chars vs 694)",
+      "loserDescription": "The flux, and it is not synthetic: it is the sticky, yellow-brown, semi-solid fraction of pine resin tapped from living trees or distilled out of pine stumps and mill residues. Chemically it is a mixture of resin acids - abietic acid and its relatives - which at soldering temperature decompose to a mild organic acid that dissolves the copper and tin oxides and floats them away in a non-conductive film. Electronics rosin is gum or wood rosin, bleached pale, dissolved in the flux. It is one of the few places in the electronics chain where the feedstock is a forest product rather than a mine, and it is combustible, which is why rosin-fluxed boards must be cleaned before conformal coating.",
+      "loserFacts": [
+        {
+          "label": "Source",
+          "value": "tapped pine resin (gum) and pine-stump distillation (wood rosin)"
+        },
+        {
+          "label": "Acid content",
+          "value": "abietic acid and dehydroabietic acid, about 70-90% of rosin"
+        },
+        {
+          "label": "Behaviour",
+          "value": "at 180-250 C the acids break down into non-corrosive, non-conductive residues"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.styrene-dehydrogenation",
+      "loserName": "Ethylbenzene dehydrogenation to styrene",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.styrene.dehydrogenation",
+      "survivorName": "Dehydrogenation to styrene",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "same unit operation; the survivor already names the fired-furnace and reactor detail",
+      "loserDescription": "Endothermic vapour-phase dehydrogenation of ethylbenzene over shell-type alumina-iron catalysts at 600-700 C, giving styrene plus hydrogen. Modern plants add a styrene monomer recovery loop to recycle unreacted ethylbenzene; 1980s plants ran single-pass at roughly 50-60% conversion and burned the rest.",
+      "loserFacts": [
+        {
+          "label": "Temperature",
+          "value": "600-700 C"
+        },
+        {
+          "label": "Pressure",
+          "value": "0.1-0.3 bar gauge"
+        },
+        {
+          "label": "Single-pass conversion (pre-SMR)",
+          "value": "50-60%"
+        },
+        {
+          "label": "Reaction enthalpy",
+          "value": "+147 kJ/mol absorbed"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.ammoxidation",
+      "loserName": "SOVERE ammoxidation of propylene",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.acrylonitrile.sovere",
+      "survivorName": "SOVERE ammoxidation process",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "same process, including the bismuth-molybdate-on-silica catalyst and the 400-510 C fluidised bed",
+      "loserDescription": "Propylene, ammonia and air are fed together into a turbulent fluidised-bed reactor over a bismuth-molybdate-on-silica catalyst at 400-510 C and only 1.5-3 bar. Acrylonitrile comes out together with acetonitrile, HCN and COx; the gases are quenched in a countercurrent water absorber, the acrylonitrile is distilled, and the residual ammonia is neutralised with sulphuric acid to ammonium sulphate fertiliser.",
+      "loserFacts": [
+        {
+          "label": "Temperature",
+          "value": "400-510 C"
+        },
+        {
+          "label": "Pressure",
+          "value": "150-300 kPa (1.5-3 bar)"
+        },
+        {
+          "label": "Propylene conversion, single pass",
+          "value": "about 98%"
+        },
+        {
+          "label": "Selectivity to acrylonitrile",
+          "value": "70-80%; about 15% goes to acetonitrile"
+        },
+        {
+          "label": "Catalyst",
+          "value": "bismuth phosphomolybdate on silica or silica-alumina"
+        },
+        {
+          "label": "By-product",
+          "value": "ammonium sulphate fertiliser"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.titanium-dioxide",
+      "loserName": "Titanium dioxide (white pigment)",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.titanium-dioxide",
+      "survivorName": "Titanium dioxide from rutile sand",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "same pigment, same chloride and sulphate routes",
+      "loserDescription": "The workhorse white pigment, present in almost every beige or grey ABS and in most white packaging ink. Rutile is the industrial grade: made by chlorinating ilmenite or rutile ore to TiCl4, then oxidising it in a 1000 C flame to pure white rutile pigment.",
+      "loserFacts": [
+        {
+          "label": "Grade used in plastics",
+          "value": "rutile TiO2, chloride process, surface-treated"
+        },
+        {
+          "label": "Reactor",
+          "value": "~900-1000 C oxychlorination flame"
+        },
+        {
+          "label": "Refractive index",
+          "value": "2.6-2.7, vs ~1.5 for the polymer"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.tooling.ferrochrome",
+      "loserName": "Ferrochrome from chromite ore",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.ferrochrome",
+      "survivorName": "High-carbon ferrochrome, 60-70% Cr",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "high-carbon ferrochrome 60-70% Cr is already published there",
+      "loserDescription": "Chromite, FeCr2O4, is smelted in a submerged-arc or submerged-top furnace with coke and lime to give high-carbon ferrochrome, then refined to low-carbon ferrochrome. Almost all the chromium in a tool steel charge comes in as ferrochrome.",
+      "loserFacts": [
+        {
+          "label": "Ore",
+          "value": "chromite (FeCr2O4), typically 40-45% Cr2O3"
+        },
+        {
+          "label": "Smelting",
+          "value": "s submerged-arc furnace with coke, 1500-1700 C"
+        },
+        {
+          "label": "Product",
+          "value": "high-C ferrochrome 60-70% Cr; low-C 0.1-0.5% C"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.tooling.ferromoly",
+      "loserName": "Ferromolybdenum from molybdite",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.molybdenum",
+      "survivorName": "Molybdenum: a tool steel alloying element",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "ferromolybdenum is the alloy of an element metal.molybdenum already owns as a tool-steel alloyant",
+      "loserDescription": "Molybdenite is roasted to technical molybdic oxide (MoO3) and then reduced with aluminium or in a submerged-arc furnace with coke to ferromolybdenum, which is dosed into the steel melt.",
+      "loserFacts": [
+        {
+          "label": "Roasting",
+          "value": "600-700 C, 2-4 h in a multiple-hearth furnace"
+        },
+        {
+          "label": "Product",
+          "value": "ferromolybdenum, 60-70% Mo"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.moulding.kaolin",
+      "loserName": "Kaolin (china clay)",
+      "loserFile": "40-chassis.json",
+      "survivor": "facility.power.kaolin",
+      "survivorName": "Kaolin (china clay)",
+      "survivorFile": "80-industry.json",
+      "proposal": "40-chassis.json",
+      "why": "same clay, same Al2Si2O5(OH)4; the survivor is already categorised industry, which is what I changed mine to",
+      "loserDescription": "A white clay, essentially kaolinite Al2Si2O5(OH)4, washed from a kaolin pit, calcined and reacted with sodium aluminate or caustic to make a 4A zeolite molecular sieve. Kaolin is a dug mineral, not a petrochemical.",
+      "loserFacts": null
+    },
+    {
+      "loser": "mb.crystal.y1.natural-quartz.pegmatite-vein",
+      "loserName": "Quartz vein in pegmatite host",
+      "loserFile": "30-passives.json",
+      "survivor": "metal.quartz",
+      "survivorName": "Natural vein quartz",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "'Quartz vein in pegmatite host'. Same occurrence as metal.quartz ('Natural vein quartz'), which is now reachable from the hydrothermal growth step of the clock-crystal branch. If the passives fragment wants the host rock it should be a child of metal.quartz, not a sibling.",
+      "loserDescription": "Clear quartz crystallises in the pockets and miarolitic cavities of granitic pegmatite, growing inward from the cavity walls until the void is filled - which is why Brazilian rock crystal comes out with flat crystal faces already in place. Mined by hand-scale underground workings and by washing decomposed pegmatite. Brazilian rock crystal was worked in small underground operations following the vein, split out and sold as found; it was never a large-tonnage commodity, which is part of why synthetic quartz took over so decisively.",
+      "loserFacts": null
+    },
+    {
+      "loser": "chem.solder-chemicals.reflow-profile.wave-soldering",
+      "loserName": "Wave soldering",
+      "loserFile": "70-petrochem.json",
+      "survivor": "metal.solder.wave-solder",
+      "survivorName": "Wave soldering with the alloy pot",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "Wave soldering. Same process; metal.solder.wave-solder carries the hot-air knife, the preheater and the board-warp failure mode.",
+      "loserDescription": "A through-hole board is soldered by passing it through a standing wave of molten solder at 250-260 C under a layer of flux, and the specific energy of the solder wave is what wets the joint and leaves the surface behind it clean. The 1980s wave machine had a two or three wave pot, a preheat tunnel, a flux station and a drying tunnel, and it consumed a surprising amount of both flux and deoxidised solder.",
+      "loserFacts": null
+    },
+    {
+      "loser": "chem.fab-chemicals.hydrofluoric-acid.fluorspar",
+      "loserName": "Fluorspar (fluorite, CaF2)",
+      "loserFile": "70-petrochem.json",
+      "survivor": "metal.fluorspar",
+      "survivorName": "Fluorspar (CaF2) ore",
+      "survivorFile": "60-metals.json",
+      "proposal": "70-petrochem.json",
+      "why": "calcium fluoride is one mineral. metal.fluorspar is already the ingredient target in data/_ingredients.json, so the fab's fluorspar and 80-industry's facility.compressed-air.fluorspar are both third and fourth copies. Merge all three into metal.fluorspar and let the HF node take a 'from' edge.",
+      "loserDescription": "A mineral mined in Mexico, South Africa, China and elsewhere, and a genuinely strategic material: the entire fluorine chemistry of a semiconductor fab - the HF etch, the fluorocarbon plasma etch gases, the fluoropolymer bottles and the O-rings - descends from this rock. It is the one raw material in the whole tree that is neither a petroleum nor a metal nor a silicate.",
+      "loserFacts": null
+    },
+    {
+      "loser": "peripheral.tv.controls.phenolic",
+      "loserName": "Phenolic resin",
+      "loserFile": "90-peripherals.json",
+      "survivor": "chem.thermosets.phenolic",
+      "survivorName": "Phenolic resin (phenol-formaldehyde)",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "70-petrochem.json",
+      "why": "phenol-formaldehyde is one resin; chem.thermosets.phenolic is the canonical node and carries the hexamine cure chemistry.",
+      "loserDescription": "Phenolic (Bakelite) moulded in a compression press at 150-180 degrees C, using phenol and formaldehyde. Phenol came from cumene oxidation or benzene sulphonation, so it is petroleum; formaldehyde came from methanol, which came from natural gas. Phenolic was used because it would not soften near a hot chassis.",
+      "loserFacts": [
+        {
+          "label": "Resin",
+          "value": "phenol-formaldehyde, filled with wood flour"
+        },
+        {
+          "label": "Formaldehyde",
+          "value": "methanol oxidation, and the methanol came from natural gas reforming"
+        },
+        {
+          "label": "Moulding",
+          "value": "compression at 150-180 degrees C and 10-25 MPa"
+        }
+      ]
+    },
+    {
+      "loser": "facility.compressed-air.refrigerant",
+      "loserName": "Refrigerant (CFC-11/12, or ammonia)",
+      "loserFile": "80-industry.json",
+      "survivor": "chem.solvents.cfc",
+      "survivorName": "CFCs and HCFCs (halons and freons)",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "80-industry.json",
+      "why": "same substance. chem.solvents.cfc has the full synthesis chain (methane chlorination -> chloroform -> CFC) and this fragment's fluorspar/HF chain duplicates it.",
+      "loserDescription": "The refrigeration for an absorption dryer. CFC-11 and CFC-12 were the universal choices and are the ozone-depleting gases the 1987 Montreal Protocol eventually banned - so this node is both a 1983 fact and a direct cause of later environmental regulation.",
+      "loserFacts": null
+    },
+    {
+      "loser": "peripheral.tv.cabinet.abs",
+      "loserName": "ABS resin",
+      "loserFile": "90-peripherals.json",
+      "survivor": "chem.abs.grade",
+      "survivorName": "The ABS grade the C64 case used",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "90-peripherals.json",
+      "why": "ABS resin for a television cabinet is the same material as the ABS grade the C64 case used. chem.abs is the canonical ABS plant (process) and chem.abs.grade its material node, with the SAN matrix, the graft polymerisation, the styrene, butadiene and acrylonitrile feeds and the pigment masterbatch already under it.",
+      "loserDescription": "Acrylonitrile butadiene styrene: a styrene-acrylonitrile matrix with polybutadiene rubber grafted on. The acrylonitrile gives chemical and heat resistance, the butadiene gives toughness and impact strength, and the styrene gives the surface gloss and the rigidity. A television cabinet was usually ABS with a flame retardant, or a polycarbonate-ABS blend for the parts around the tube.",
+      "loserFacts": [
+        {
+          "label": "Typical composition",
+          "value": "about 50% styrene, 25% butadiene, 25% acrylonitrile, by mass"
+        },
+        {
+          "label": "Mould window",
+          "value": "roughly 220-260 degrees C"
+        },
+        {
+          "label": "Decomposition",
+          "value": "above about 270 degrees C it gives off HCN and styrene; it is a poor choice for a burning appliance"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.cassette.tape.film",
+      "loserName": "Polyester (PET) film base",
+      "loserFile": "90-peripherals.json",
+      "survivor": "chem.polyester.pet",
+      "survivorName": "PET from ethylene glycol and dimethyl terephthalate",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "90-peripherals.json",
+      "why": "Biaxially-oriented PET film. NOTE FOR THE REVIEWER: kinds differ - this node is a material, chem.polyester.pet is a process - and there are now three copies (this one, mb.photo.plotter.film.base in 20-board.json, and the paraxylene/terephthalic-acid branch under chem.polyester.pet). The cleanest outcome is a material film node under chem.polyester.pet with all three converging on it; if you would rather not create one, merge this and mb.photo.plotter.film.base into chem.polyester.pet and accept the kind change.",
+      "loserDescription": "The base is 9-12 microns of polyethylene terephthalate, extruded as a biaxially oriented film. The path to PET runs from crude oil through naphtha to paraxylene, then through dimethyl terephthalate, which is condensed with ethylene glycol into the polyester. It is the same chemistry as a soda bottle, just 20 microns thinner and stretched hard, which is why it is dimensionally stable enough to run past a 1 micron head gap.",
+      "loserFacts": [
+        {
+          "label": "Thickness",
+          "value": "9 microns (C-90, C-120) to 12 microns (C-46, C-60)"
+        },
+        {
+          "label": "Orientation",
+          "value": "biaxially oriented in the film line, MD and TD stretch"
+        },
+        {
+          "label": "Tensile strength",
+          "value": "about 200 MPa in the machine direction"
+        },
+        {
+          "label": "Process",
+          "value": "DMT + ethylene glycol condensed at about 280 degrees C; melt extruded through a slit die and stretched"
+        }
+      ]
+    },
+    {
+      "loser": "si.polysilicon",
+      "loserName": "9N-11N electronic-grade polysilicon",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.silica.polysilicon",
+      "survivorName": "Polysilicon ingot and rod, 9N",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "the electronic-grade polysilicon charge; same substance. Kept here only because this fragment's copy carries the Siemens reactor detail and the 1982 purity caveat that metal.silica.polysilicon also records - reconcile the two purities (9N-11N merchant against 6N-7N in 1982) when folding.",
+      "loserDescription": "Chunky polycrystalline silicon charge loaded into the Czochralski crystal puller, and the single most expensive material in the tree. Made by the Siemens process: high-purity trichlorosilane is reduced with pure hydrogen over electrically heated silicon filaments at about 1150 C, depositing polycrystalline silicon on the hot wires until a rod 150-250 mm across and about 1 m long has grown. It is diced or flaked into the lumps that charge a puller.",
+      "loserFacts": [
+        {
+          "label": "Purity",
+          "value": "9N-11N (99.9999999%) merchant grade; 6N-7N was typical of 1982 material"
+        },
+        {
+          "label": "Rod",
+          "value": "150-250 mm diameter, about 1 m long, 1-2 t per reactor"
+        },
+        {
+          "label": "Deposition",
+          "value": "SiHCl3 + H2 over DC-heated silicon filaments at ~1150 C"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.emulsion-polymerisation.initiator",
+      "loserName": "Potassium persulfate initiator",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.abs.grafting.initiator",
+      "survivorName": "Potassium persulphate initiator",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "potassium persulphate initiator, already published under that name",
+      "loserDescription": "Potassium persulfate or sodium persulfate, thermally decomposed in the aqueous reactor to start the radical chain. Cheap, and the resulting sulphate is later washed out during coagulation.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.case.abs-resin.acrylonitrile",
+      "loserName": "Acrylonitrile (vinyl cyanide)",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.abs.san-matrix.acrylonitrile-raw",
+      "survivorName": "Acrylonitrile monomer",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "same monomer; the survivor already hangs it under the SAN matrix, which is where it belongs",
+      "loserDescription": "CH2=CH-CN, the polar monomer that gives ABS its rigidity and resistance to solvents. Almost all of it is made by catalytic ammoxidation of propylene with ammonia and air over a bismuth-molybdate catalyst in a fluidised bed.",
+      "loserFacts": [
+        {
+          "label": "Purity",
+          "value": ">99.5%"
+        },
+        {
+          "label": "Boiling point",
+          "value": "77 C"
+        },
+        {
+          "label": "Role in ABS",
+          "value": "the SAN matrix; typically 20-30 wt%"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.butadiene",
+      "loserName": "Butadiene (1,3-butadiene)",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.abs.grafting.rubber-phase.butadiene-raw",
+      "survivorName": "Butadiene monomer",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "same monomer, same role as the graft rubber phase",
+      "loserDescription": "The rubber monomer. 1980s butadiene came almost entirely from the C4 fraction of the steam cracker, extracted by extractive distillation (or by older acetylene-dimerisation routes still running in Europe).",
+      "loserFacts": [
+        {
+          "label": "Boiling points",
+          "value": "-4.4 C (1,3-) vs 13 C (1,2-)"
+        },
+        {
+          "label": "Typical purity",
+          "value": "99.5%+ after purification"
+        },
+        {
+          "label": "Role in ABS",
+          "value": "grafted rubber phase, 8-20 wt%"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.pigment-masterbatch",
+      "loserName": "ABS colour masterbatch",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.abs.additives.pigment-masterbatch",
+      "survivorName": "Pigment masterbatch",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "same pigment masterbatch; the case colour is the only C64-specific detail worth carrying over",
+      "loserDescription": "A high-loading pellet of pigment dispersed in an ABS or PE carrier resin, let down at 1-4% into the natural ABS. The colour masterbatch is itself a compounding product, made on its own twin-screw line.",
+      "loserFacts": [
+        {
+          "label": "Let-down ratio",
+          "value": "1-4% masterbatch into base resin"
+        },
+        {
+          "label": "Carrier",
+          "value": "ABS or PE, matched to base for colour"
+        },
+        {
+          "label": "Why a masterbatch",
+          "value": "pigment dropped in as a powder will not disperse, and undispersed pigment shows as specks in the moulding"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.release-agent",
+      "loserName": "Release agent / lubricant",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.abs.additives.stearate",
+      "survivorName": "Metal stearate release agent",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "metal stearate release agent; the survivor is the canonical node",
+      "loserDescription": "A trace of an internal lubricant such as a metal stearate (zinc or calcium stearate, or a fatty-acid ester) is compounded into the ABS so the mould releases cleanly. Too much and it bloats the surface of the textured area.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.case.moulding.desiccant",
+      "loserName": "Molecular sieve desiccant",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.abs.drying.desiccant",
+      "survivorName": "Molecular sieve desiccant",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "same node, different name - this is one of the audit's duplicate-name warnings",
+      "loserDescription": "Either silica gel or, better, a synthetic zeolite molecular sieve (3A/4A) that adsorbs water at low partial pressure and regenerates at 200-300 C. Zeolites are made from kaolin or from amorphous silica and alumina.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.case.shield.foil-casting",
+      "loserName": "Aluminium slab casting and rolling",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.aluminum",
+      "survivorName": "Primary aluminium: ingot, foil, sheet, extrusion",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "primary aluminium plus rolling; metal.aluminum already publishes ingot, foil, sheet and extrusion",
+      "loserDescription": "Bauxite is refined to alumina, smelted to primary aluminium in a Hall-Heroult potline at 950 C, then cast into rolling ingots and hot-rolled to foil gauge. Foil rolling is astonishingly aggressive: a 600 mm slab becomes 0.006 mm sheet after thousands of reduction passes.",
+      "loserFacts": [
+        {
+          "label": "Electrolytic potline temperature",
+          "value": "~950 C with cryolite bath"
+        },
+        {
+          "label": "Carbon anode consumption",
+          "value": "~1.2 t CO2 per tonne of aluminium"
+        },
+        {
+          "label": "Foil rolling passes",
+          "value": "several hundred per gauge step"
+        }
+      ]
+    },
+    {
+      "loser": "c64.cables.rf-cable.brass",
+      "loserName": "Brass pin and barrel stock",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.zinc.brass",
+      "survivorName": "Brass (Cu-Zn)",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "free-cutting brass is brass; metal.zinc.brass is the canonical node",
+      "loserDescription": "Free-cutting brass (typically leaded brass) machined or cold-formed into the pin and barrel. Brass is the standard connector material because it machines well, springs enough to take a wipe, and does not rust.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.cables.power-cord.brass-prongs",
+      "loserName": "Brass prongs",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.zinc.brass",
+      "survivorName": "Brass (Cu-Zn)",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "same alloy in a different place; both of mine are thin instances of the canonical brass node",
+      "loserDescription": "Blanked, formed and plated brass strip. Brass is used rather than steel because it must not spark and must not corrode; the plating gives the dull, non-tarnishing surface a moulded plug has.",
+      "loserFacts": [
+        {
+          "label": "Alloy",
+          "value": "brass strip, often leaded free-cutting grade"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.other-polymers.vinyl-chloride",
+      "loserName": "Vinyl chloride monomer",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.pvc.vcm",
+      "survivorName": "Vinyl chloride monomer",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "same monomer - one of the audit's duplicate-name warnings",
+      "loserDescription": "Made by cracking EDC to VCM and HCl, then recombining HCl with ethylene (oxychlorination) or recovering HCl from the cracker. Then polymerised in a suspension autoclave - the classic 20-50 bar autoclave with a suspension agent - to PVC.",
+      "loserFacts": [
+        {
+          "label": "VCM route",
+          "value": "1,2-dichloroethane cracking, or ethylene oxychlorination"
+        },
+        {
+          "label": "EDC cracking",
+          "value": "about 500 C, 15-30 bar, packed or fluidised bed"
+        },
+        {
+          "label": "PVC suspension polymerisation",
+          "value": "about 50-60 C, 10-15 bar, water plus suspending agent"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.other-polymers.terephthalic-acid",
+      "loserName": "Terephthalic acid",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.polyester.pet.terephthalic-acid",
+      "survivorName": "Para-xylene and terephthalic acid",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "same substance, already published together with para-xylene",
+      "loserDescription": "Made by air oxidation of para-xylene over cobalt-manganese acetate at 150-250 C and 10-40 bar, in a process that is a classic example of good process engineering: the oxidation is exothermic and the acetic acid by-product is recycled. It is the second acid of the polyester film family, the first being the glycol side.",
+      "loserFacts": [
+        {
+          "label": "Catalyst",
+          "value": "cobalt-manganese acetate, bromide promoter"
+        },
+        {
+          "label": "Temperature",
+          "value": "150-250 C"
+        },
+        {
+          "label": "Pressure",
+          "value": "10-40 bar"
+        }
+      ]
+    },
+    {
+      "loser": "c64.keyboard.switches.music-wire",
+      "loserName": "Music wire (patented steel)",
+      "loserFile": "40-chassis.json",
+      "survivor": "c64.keyboard-switches.keycap.spring.music-wire",
+      "survivorName": "Music wire (patented steel)",
+      "survivorFile": "30-passives.json",
+      "proposal": "40-chassis.json",
+      "why": "patented steel music wire - duplicate-name warning. Both are the same C64 key spring; the 30-passives id is the older, more awkward one",
+      "loserDescription": "A high-carbon, low-carbon-content alloy steel with very tight mechanical properties and a very clean surface - patented in the 1880s for piano wire. It is drawn to fine gauge on a bull-block or continuous wire drawer and patented through a multi-step process.",
+      "loserFacts": [
+        {
+          "label": "Carbon",
+          "value": "~0.8-0.9% (music wire is high carbon, spring wire lower)"
+        },
+        {
+          "label": "Process",
+          "value": "patenting: quench, patenting heat, over-drawing in dies"
+        }
+      ]
+    },
+    {
+      "loser": "c64.keyboard.switches.carbon-black",
+      "loserName": "Carbon black filler",
+      "loserFile": "40-chassis.json",
+      "survivor": "c64.keyboard-switches.domes.composition.carbon-black",
+      "survivorName": "Carbon black filler (petroleum-derived)",
+      "survivorFile": "30-passives.json",
+      "proposal": "40-chassis.json",
+      "why": "petroleum-derived carbon black filler in the conductive dome - duplicate-name warning",
+      "loserDescription": "The conductive filler. Furnace black is made by feeding oil or gas to a hot refractory-carbon reactor in a stream of air at 1200-1500 C, quenching the soot, then pelletising and grinding it. It is the same carbon black family used in tyre rubber.",
+      "loserFacts": [
+        {
+          "label": "Reactor",
+          "value": "~1200-1500 C refractory-lined furnace"
+        },
+        {
+          "label": "Feed",
+          "value": "heavy oil / aromatic residue from petroleum refining"
+        }
+      ]
+    },
+    {
+      "loser": "c64.keyboard.switches.silicone",
+      "loserName": "Silicone rubber (the matrix of the conductive pad)",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.silicone.polymer",
+      "survivorName": "Silicone rubber and fluids",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "polydimethylsiloxane rubber; the survivor is the canonical silicone node",
+      "loserDescription": "Polydimethylsiloxane. The base polymer is made by ring-opening polymerisation of octamethylcyclotetrasiloxane or by equilibration of a silanol-terminated PDMS; fillers (silica, silicone oil) tune the hardness and the tear strength.",
+      "loserFacts": [
+        {
+          "label": "Monomer",
+          "value": "D4 (octamethylcyclotetrasiloxane)"
+        },
+        {
+          "label": "Cure",
+          "value": "peroxide (e.g. dicumyl peroxide) or addition-cure platinum"
+        },
+        {
+          "label": "Shore hardness",
+          "value": "Shore A 40-70 for a contact pad"
+        }
+      ]
+    },
+    {
+      "loser": "c64.mains.line-cord.pvc-sheath.vinyl-chloride",
+      "loserName": "Vinyl chloride monomer",
+      "loserFile": "50-power.json",
+      "survivor": "chem.pvc.vcm",
+      "survivorName": "Vinyl chloride monomer",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "50-power.json",
+      "why": "Vinyl chloride monomer, same substance, same level. 70-petrochem publishes the canonical material node (with the -13.4 C boiling point, the angiosarcoma hazard and the 1983 capacity figure) and 40-chassis has a third copy at c64.case.other-polymers.vinyl-chloride. Mine is the only one carrying the oxychlorination and chlor-alkali chain down to halite, so move that subtree under chem.pvc.vcm before deleting this id.",
+      "loserDescription": "Made by the oxychlorination of ethylene with oxygen and chlorine over a fluidised bed of copper(II) chloride at 180-220 C, or by the chlorination of acetylene. Vinyl chloride monomer is acutely toxic and carcinogenic, and its manufacture was one of the worst occupational hazards in the chemical industry until the 1970s-80s control campaigns.",
+      "loserFacts": [
+        {
+          "label": "Route",
+          "value": "C2H4 + Cl2 + 1/2 O2 -> C2H3Cl + HCl, CuCl2 catalyst, 200 C"
+        },
+        {
+          "label": "Polymerisation",
+          "value": "suspension polymerisation, ~50-70 C, 5-12 bar"
+        }
+      ]
+    },
+    {
+      "loser": "mb.rf-modulator.rf-oscillator.tank-transformer",
+      "loserName": "Oscillator coil and RF transformer",
+      "loserFile": "50-power.json",
+      "survivor": "metal.ferrite.modulator",
+      "survivorName": "The RF modulator coil",
+      "survivorFile": "60-metals.json",
+      "proposal": "50-power.json",
+      "why": "The RF modulator's ferrite-loaded coil exists in both fragments. metal.ferrite.modulator is the canonical published node and the rule is to link to it rather than keep a path-local copy; the 50-power version carries the schematic detail worth moving across first - a tapped coil or miniature two-winding transformer on a 2-3 mm former, 1-2 uH class at 60 MHz, 0.15-0.25 mm enamelled copper, 3-8 turns, and the note that the PAL UHF version scales the inductance down about tenfold. I have pointed the coil's material edge at metal.ferrite.nizn rather than at metal.ferrite, which keeps the branch to six nodes instead of twenty-nine.",
+      "loserDescription": "A very small ferrite- or powdered-iron-cored coil wound on a 2-3 mm former with a tap, or a miniature two-winding transformer. The tapped winding gives both the feedback tap and an output tap, and the whole assembly sits within a few millimetres of the board's ground plane to keep the stray capacitance stable.",
+      "loserFacts": [
+        {
+          "label": "Inductance",
+          "value": "~1-2 uH class for a 60 MHz tank, loaded by the divider"
+        },
+        {
+          "label": "Core",
+          "value": "ferrite or powdered iron, 2-4 mm diameter"
+        },
+        {
+          "label": "Wire",
+          "value": "0.15-0.25 mm enamelled copper, 3-8 turns"
+        }
+      ]
+    },
+    {
+      "loser": "mb.solder.wave.pot",
+      "loserName": "Solder pot and wave former",
+      "loserFile": "20-board.json",
+      "survivor": "metal.solder.pot",
+      "survivorName": "The wave-solder pot and its dross",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "Solder pot and wave former. Same machine. metal.solder.pot carries the dross and the oxide film; if the board fragment wants the machine as a component it should reference metal.solder.pot rather than own a second one.",
+      "loserDescription": "A stainless or cast-iron pot holding tens to hundreds of kg of molten solder at roughly 250 deg C. Inside, a pump or a tilted paddle throws solder up against a forming dam, which spills over as a smooth standing wave. The pot is lined or plated because molten tin dissolves iron: a bare iron pot would be eaten away in weeks, taking the wave geometry with it. That single material decision is what makes a wave machine a five-year purchase rather than a consumable.",
+      "loserFacts": [
+        {
+          "label": "Pot metal",
+          "value": "cast iron with solder-resistant plating, or solid stainless"
+        },
+        {
+          "label": "Wave height",
+          "value": "a few millimetres above the pot lip, set by pump rate"
+        }
+      ]
+    },
+    {
+      "loser": "chem.fab-chemicals.hydrofluoric-acid",
+      "loserName": "Hydrofluoric acid",
+      "loserFile": "70-petrochem.json",
+      "survivor": "metal.hydrofluoric-acid",
+      "survivorName": "Hydrofluoric acid from fluorspar",
+      "survivorFile": "60-metals.json",
+      "proposal": "60-metals.json",
+      "why": "'Electronic-grade hydrofluoric acid' is a purified grade of the same molecule, not a different substance. If the grade is worth keeping it belongs as a named grade under metal.hydrofluoric-acid. Same argument for chem.fab-chemicals.hydrochloric-acid -> metal.hydrochloric-acid.",
+      "loserDescription": "The silicon etchant. HF dissolves silicon dioxide, and it does so fast, cleanly and without leaving a residue - which is why it is the single most important wet chemical in a silicon fab and also the one that produces the most fatalities. Anhydrous HF is made from fluorspar (CaF2) with sulphuric acid at 200-250 C, and the aqueous grades are made from that. Buffered oxide etch dilutes hydrofluoric acid to 0.5-5% and buffers it with ammonium acetate or acetic acid to hold the pH at 4-6, and the buffer is not cosmetic: it stabilises the etch rate by controlling the HF2- concentration and stops the etch accelerating as the acid is consumed.",
+      "loserFacts": [
+        {
+          "label": "HF concentration",
+          "value": "0.5-5% buffered"
+        },
+        {
+          "label": "Buffer",
+          "value": "ammonium acetate or acetic acid"
+        }
+      ]
+    },
+    {
+      "loser": "chem.fab-chemicals.ultrapure-water",
+      "loserName": "Ultrapure water",
+      "loserFile": "70-petrochem.json",
+      "survivor": "facility.water.ultrapure",
+      "survivorName": "Ultrapure water for the fab",
+      "survivorFile": "80-industry.json",
+      "proposal": "70-petrochem.json",
+      "why": "the fab's ultrapure water is the cross-cutting utility, and facility.water.ultrapure is the node the rest of the tree already points at (CHECKLIST 1a). Keep this fragment's four facts (resistivity, TOC, particle count, temperature) by moving them across; do not leave two nodes with the same name.",
+      "loserDescription": "The most-consumed chemical in a fab by volume, and the hardest. Deionised, reverse-osmosed, ultrafiltered, UV-irradiated and finally ozonised to a resistivity of 18.2 MOhm-cm at 25 C, with total organic carbon below 5 parts per billion and dissolved silica below 1 part per billion. The resistivity figure is a saturation: it says the water is at the limit of what a deioniser can do, and it was the number on the certificate that every batch of chemicals was diluted from.",
+      "loserFacts": [
+        {
+          "label": "Resistivity",
+          "value": "18.2 MOhm-cm at 25 C"
+        },
+        {
+          "label": "Total organic carbon",
+          "value": "<5 ppb"
+        },
+        {
+          "label": "Dissolved silica",
+          "value": "<1 ppb"
+        },
+        {
+          "label": "Consumption",
+          "value": "thousands of cubic metres a day for a mid-size fab"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.styrene",
+      "loserName": "Styrene monomer, polymerisation grade",
+      "loserFile": "40-chassis.json",
+      "survivor": "facility.steam.styrene",
+      "survivorName": "Styrene monomer",
+      "survivorFile": "80-industry.json",
+      "proposal": "80-industry.json",
+      "why": "same monomer. Three copies survive now (facility.steam.styrene, peripheral.tv.cabinet.abs.styrene, c64.case.abs-resin.styrene); the general one should survive. If the 40-chassis or 90-peripherals node turns out to be the richer one, keep that instead and re-point the divinylbenzene sibling edge.",
+      "loserDescription": "Vinylbenzene, made by catalytic dehydrogenation of ethylbenzene or recovered from a cracker. A 1980s ABS plant bought it at 99.5% or better into stainless bulk tanks, inhibited against polymerisation in transit.",
+      "loserFacts": [
+        {
+          "label": "Purity",
+          "value": "99.5-99.8%"
+        },
+        {
+          "label": "Inhibitor",
+          "value": "TBC (tert-butylcatechol) at 10-50 ppm"
+        }
+      ]
+    },
+    {
+      "loser": "mb.assembly.cleaning",
+      "loserName": "Cleaning after soldering",
+      "loserFile": "20-board.json",
+      "survivor": "metal.solder.cleaning",
+      "survivorName": "Cleaning the flux residue off the board",
+      "survivorFile": "60-metals.json",
+      "proposal": "20-board.json",
+      "why": "CROSS-REFERENCE, NOT A MERGE - please do not apply this one as a merge. The same step (washing rosin flux residue off a soldered board) is written twice: as an assembly operation in this fragment and as a waste-stream problem in 60-metals.json. Both readings earn their place, so this wants one node with two aspects, or at minimum a cross-link. Both are left in place and mb.assembly.cleaning's note says so.",
+      "loserDescription": "Rosin flux leaves a sticky, slightly conductive, hygroscopic and mildly acidic film. The board is washed - historically in an isopropanol or detergent wash, sometimes with a little ultrasonics - and then dried. The film matters rather than the shine: rosin residue is hygroscopic and mildly acidic, so in humid climates it slowly corrodes the board and lowers surface insulation between adjacent pads.",
+      "loserFacts": [
+        {
+          "label": "Cleaners",
+          "value": "isopropanol or a detergent wash"
+        },
+        {
+          "label": "Goal",
+          "value": "ionic cleanliness, not cosmetics"
+        },
+        {
+          "label": "Consequence if skipped",
+          "value": "surface leakage and, over years, corrosion"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.emulsion-polymerisation",
+      "loserName": "Emulsion graft polymerisation to ABS",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.abs.grafting",
+      "survivorName": "Graft copolymerisation: growing SAN on the rubber",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "same process, same chemistry; chem.abs.grafting already carries the graft-copolymerisation route and the rubber phase",
+      "loserDescription": "The dominant ABS route since the 1960s and still the one that makes the resin in the C64. Butadiene is polymerised in water to a polybutadiene latex; styrene and acrylonitrile are graft-polymerised onto that latex; the graft latex is coagulated, dewatered, dried and compounded with separately made bulk-SAN resin.",
+      "loserFacts": [
+        {
+          "label": "Graft reactor",
+          "value": "jacketed stirred-tank train, 5-50 C"
+        },
+        {
+          "label": "Initiation",
+          "value": "potassium or sodium persulfate, or an organic persulfate"
+        },
+        {
+          "label": "Typical conversion",
+          "value": ">95%"
+        },
+        {
+          "label": "Residual monomer removal",
+          "value": "steam stripping in a vacuum plate column"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.san-resin",
+      "loserName": "SAN resin (styrene-acrylonitrile) matrix component",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.abs.san-matrix",
+      "survivorName": "The SAN matrix",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "the SAN matrix component is already a node there; mine is a second copy of it",
+      "loserDescription": "Most ABS is a blend: grafted rubber plus a separately polymerised SAN. The SAN is the continuous, glossy, rigid phase; the grafted rubber is the dispersed, toughening phase. The SAN is usually made by bulk or emulsion polymerisation in a separate plant and shipped to the ABS compounding line as pellets or as latex.",
+      "loserFacts": [
+        {
+          "label": "Typical AN content in the SAN",
+          "value": "22-35 wt%"
+        },
+        {
+          "label": "Share of SAN in the finished ABS",
+          "value": "50-70 wt%"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin.additives",
+      "loserName": "Additives package",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.abs.additives",
+      "survivorName": "Compounding additives",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "the 1980s ABS additive package is already written out there",
+      "loserDescription": "ABS pellets as delivered are a straw-coloured, unpigmented polymer. The beige-brown of the C64 case is added downstream at the compounder as a colour masterbatch, together with stabilisers, a release agent and, in some grades, a flame retardant. A 1982 C64 case is almost certainly pigmented at the compound line, not at the moulder. The lightening and browning that a case shows over forty years is the butadiene rubber phase oxidising at the surface, so both the UV stabiliser loading and the pigment loading affect how fast it happens.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.case.abs-resin.compounding",
+      "loserName": "Twin-screw compounding and pelletising",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.abs.pelletising",
+      "survivorName": "Compounding and pelletising",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "twin-screw compounding and pelletising, already published there with the same equipment children",
+      "loserDescription": "Natural ABS pellets are let down with the colour masterbatch and additives on a co-rotating twin-screw extruder, degassed, filtered through a screen pack, and pelletised - chopped strands or underwater cut. This is a 1980s standard plastic-compounding line.",
+      "loserFacts": [
+        {
+          "label": "Screw",
+          "value": "co-rotating intermeshing twin, L/D ~30:1 to 45:1"
+        },
+        {
+          "label": "Barrel temperature",
+          "value": "200-250 C"
+        },
+        {
+          "label": "Die",
+          "value": "hot-die strand or underwater pelletiser"
+        },
+        {
+          "label": "Throughput (merchant line)",
+          "value": "a few hundred kg/h to 1-2 t/h"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.moulding.drying",
+      "loserName": "Drying the ABS before moulding",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.abs.drying",
+      "survivorName": "Drying",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "drying ABS before moulding is already a node under chem.abs",
+      "loserDescription": "ABS is hygroscopic: even a little absorbed water hydrolyses the nitrile groups at melt temperature, causing splay streaks and reduced molecular weight. Pellets are dried before use - typically 2-4 hours at 80-90 C in a hot-air, dehumidifying hopper dryer - to below about 0.05% moisture.",
+      "loserFacts": [
+        {
+          "label": "Drying temperature",
+          "value": "80-90 C for 2-4 hours"
+        },
+        {
+          "label": "Target moisture",
+          "value": "<0.05% by weight"
+        },
+        {
+          "label": "Failure mode",
+          "value": "silver streaks (splay) on the visible surface"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.tooling.tool-steel",
+      "loserName": "Tool steel (P20 pre-hardened or H13/SKD61 hardened)",
+      "loserFile": "40-chassis.json",
+      "survivor": "metal.die-steel",
+      "survivorName": "Tool steel: SKD61 / H13 / D2, the moulds and dies",
+      "survivorFile": "60-metals.json",
+      "proposal": "40-chassis.json",
+      "why": "metal.die-steel is already named 'SKD61 / H13 / D2, the moulds and dies'. My sibling grade nodes c64.case.tooling.h13 and c64.case.tooling.p20 are not proposed for merge - they are grade detail the reviewer may want folded into the survivor's facts rather than kept",
+      "loserDescription": "Most 1980s housing tools were cut from pre-hardened P20-type steel (about HRC 30-35) so the tool could be finished-machined without distortion. Tools needing more polish cycles or more heat went to H13/SKD61, vacuum-hardened and tempered to HRC 44-50.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.case.other-polymers.pvc",
+      "loserName": "Polyvinyl chloride",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.pvc.uses-c64",
+      "survivorName": "PVC in a C64",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "chem.pvc.uses-c64 is the C64-specific PVC node; mine is a second, weaker copy",
+      "loserDescription": "The wire jackets, cable boots and some insulators in a C64 are PVC. PVC is made by polymerising vinyl chloride, and vinyl chloride comes from the chlor-ethylene route (EDC cracking to VCM plus HCl) or from oxychlorination of ethylene. The ethylene and the chlorine both come out of the same crackers and chlor-alkali plants that feed everything else.",
+      "loserFacts": [
+        {
+          "label": "VCM route",
+          "value": "1,2-dichloroethane cracking, or ethylene oxychlorination"
+        },
+        {
+          "label": "PVC polymerisation",
+          "value": "suspension, ~50-60 C, autogenous at pressure"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.other-polymers.natural-rubber",
+      "loserName": "Natural rubber (feet, grommets)",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.rubber.natural",
+      "survivorName": "Natural rubber (cis-1,4-polyisoprene)",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "same polymer - duplicate-name warning",
+      "loserDescription": "Some C64 feet and small grommets are natural rubber, cis-1,4-polyisoprene, made by coagulating latex tapped from Hevea brasiliensis. Natural rubber has excellent resilience and grip and ages to a tacky amber.",
+      "loserFacts": [
+        {
+          "label": "Source",
+          "value": "latex from Hevea brasiliensis plantations, coagulated with acetic acid"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.other-polymers.neoprene",
+      "loserName": "Neoprene (chloroprene rubber)",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.rubber.neoprene",
+      "survivorName": "Neoprene (polychloroprene)",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "same polymer - duplicate-name warning. Note c64.decor.screen-print.neoprene already takes its input from chem.rubber, not from my node",
+      "loserDescription": "Polychloroprene is used where oil and weather resistance matter - cable jackets on some Commodore leads, feet, and gasket material. It comes from chloroprene, made by chlorination of butadiene from the same C4 cracker cut.",
+      "loserFacts": [
+        {
+          "label": "Monomer",
+          "value": "chloroprene (2-chlorobutadiene)"
+        },
+        {
+          "label": "Production",
+          "value": "free-radical emulsion polymerisation"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.other-polymers.polycarbonate",
+      "loserName": "Polycarbonate",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.polycarbonate",
+      "survivorName": "Polycarbonate",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "same polymer - duplicate-name warning",
+      "loserDescription": "Bisphenol A polycarbonate appears in clear covers, lens and shroud parts and in some clear case variants. It is made from bisphenol A and phosgene, and from the same BPA that comes out of cumene/benzene oxidation.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.case.other-polymers.pom",
+      "loserName": "Polyoxymethylene (acetal / POM)",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.pom",
+      "survivorName": "POM (acetal homopolymer and copolymer)",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "acetal homopolymer and copolymer; the survivor is the canonical POM node",
+      "loserDescription": "Acetal homopolymer and copolymer appear in precision mechanical parts - key plungers, small gears, latches - because POM is stiff, self-lubricating and dimensionally stable. It is made by polymerising formaldehyde from purified methanol.",
+      "loserFacts": [
+        {
+          "label": "Feedstock",
+          "value": "methanol -> formaldehyde -> polymerisation"
+        },
+        {
+          "label": "Key property",
+          "value": "low friction, high stiffness, good dimensional stability"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.other-polymers.epoxy",
+      "loserName": "Epoxy (potting, die attach)",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.epoxy",
+      "survivorName": "Epoxy: bisphenol A and epichlorohydrin",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "bisphenol A / epichlorohydrin epoxy; the survivor is the canonical node and already covers potting and die attach",
+      "loserDescription": "Epoxy resin is not a case material but appears as a potting and die-attach compound inside the machine - gluing the heat sink to the regulators and, in places, encapsulating a noisy analogue section. Epoxy comes from bisphenol A and epichlorohydrin, both aromatic-derived.",
+      "loserFacts": [
+        {
+          "label": "Chemistry",
+          "value": "bisphenol A + epichlorohydrin -> DGEBA epoxy"
+        },
+        {
+          "label": "Cure",
+          "value": "amine or anhydride, room temp to 120 C"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.other-polymers.polystyrene",
+      "loserName": "Polystyrene (GPPS and HIPS)",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.styrene.polymerisation.bulk-gpps",
+      "survivorName": "General purpose polystyrene, bulk and suspension",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "GPPS and HIPS; the survivor publishes both routes",
+      "loserDescription": "General-purpose and impact polystyrene appear in the C64's plastic inventory as packaging foam and tray material rather than in the case itself. Impact polystyrene is styrene polymerised in the presence of a polybutadiene graft rubber - the same architecture as ABS, one substitution away, with the acrylonitrile dropped. Both come from the same styrene feedstock as the case resin.",
+      "loserFacts": [
+        {
+          "label": "Rubber content, HIPS",
+          "value": "5-15% butadiene"
+        },
+        {
+          "label": "Where it appears",
+          "value": "packaging foam and trays, not the case"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.other-polymers.nylon",
+      "loserName": "Nylon 6 / 6 (connector latches, clips)",
+      "loserFile": "40-chassis.json",
+      "survivor": "c64.switches.power-slider.body.nylon.nylon-6-6",
+      "survivorName": "Nylon 6,6 (PA66)",
+      "survivorFile": "30-passives.json",
+      "proposal": "40-chassis.json",
+      "why": "nylon 6,6 - duplicate-name warning. The survivor sits oddly deep (under a switch slider) for a general polymer; a rename or a move up would be an improvement, but that is the reviewer's call, not mine",
+      "loserDescription": "Nylon is the classic connector and latch material: tough, slightly elastic, and it takes a good insert or press-fit without cracking. It appears in the latch tabs and clips that hold connectors in the case.",
+      "loserFacts": [
+        {
+          "label": "Monomers",
+          "value": "hexamethylenediamine + adipic acid (6,6), or caprolactam (6)"
+        },
+        {
+          "label": "Water absorption",
+          "value": "~8% for 6,6 - it changes dimension with humidity"
+        }
+      ]
+    },
+    {
+      "loser": "c64.keyboard.switches.conductive-rubber",
+      "loserName": "Conductive rubber contact (carbon-loaded silicone)",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.silicone.polymer.key-domes",
+      "survivorName": "Conductive elastomer key domes",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "the carbon-loaded conductive pad is exactly the key dome chem.silicone.polymer.key-domes publishes",
+      "loserDescription": "The contact is a small pad of silicone rubber loaded with conductive carbon black. The carbon particles touch each other and carry a small current across the PCB pad when the pad is pressed down, closing the switch. It needs to be conductive enough to bridge the gold contact but resistive enough not to be a dead short.",
+      "loserFacts": [
+        {
+          "label": "Volume resistivity",
+          "value": "~10-100 ohm.cm, tuned"
+        },
+        {
+          "label": "Filler",
+          "value": "carbon black, ~20-40 phr"
+        },
+        {
+          "label": "Matrix",
+          "value": "silicone rubber (VMQ), cured with a peroxide"
+        }
+      ]
+    },
+    {
+      "loser": "c64.mains.line-cord.stranded-copper",
+      "loserName": "Stranded copper conductors",
+      "loserFile": "50-power.json",
+      "survivor": "c64.cables.power-cord.conductors",
+      "survivorName": "Flexible stranded copper conductors",
+      "survivorFile": "40-chassis.json",
+      "proposal": "50-power.json",
+      "why": "Same conductors. Note that the target is currently kind 'process' for a substance; see the retype entry below. 50-power's version has the strand figures (0.15-0.20 mm, about 30 strands for 1.0 mm2) which are worth keeping.",
+      "loserDescription": "Stranded rather than solid, because a cord is flexed at the strain relief and a solid conductor cracks there within a few years. Each strand is 0.15-0.20 mm bare copper wire; a 1.0 mm2 cord has roughly 30 strands.",
+      "loserFacts": [
+        {
+          "label": "Strand diameter",
+          "value": "0.15-0.20 mm"
+        },
+        {
+          "label": "Strand count",
+          "value": "~25-35 for a 1.0 mm2 conductor"
+        }
+      ]
+    },
+    {
+      "loser": "c64.psu.aux-caps.tantalum",
+      "loserName": "Sintered tantalum bead capacitor",
+      "loserFile": "50-power.json",
+      "survivor": "mb.passives.caps.tantalum",
+      "survivorName": "Tantalum capacitor",
+      "survivorFile": "30-passives.json",
+      "proposal": "50-power.json",
+      "why": "A sintered tantalum bead capacitor, described in both fragments. mb.passives.caps.tantalum is the richer node (13 nodes: anode pressing and sintering, the anodic Ta2O5 dielectric, the MnO2 solid electrolyte, packaging, the columbite ore-to-powder route and the early-1980s supply squeeze), so it should survive. The 0.22 uF 35 V epoxy-dipped bead used in the brick, and the note that a tantalum fails short, belong on c64.psu.aux-caps, where they already are.",
+      "loserDescription": "A porous sintered tantalum pellet, pressed from tantalum powder and sintered at 1200-2000 C under vacuum, dipped in manganese dioxide as the solid electrolyte, then coated with a conductive polymer or resin and epoxy for protection. Extremely high capacitance per unit volume and no liquid electrolyte to dry out, but it fails short and can burn.",
+      "loserFacts": [
+        {
+          "label": "Anode",
+          "value": "sintered tantalum powder, ~99.9% Ta, grain size 1-3 um"
+        },
+        {
+          "label": "Dielectric",
+          "value": "manganese dioxide, grown electrochemically at 90-200 V"
+        },
+        {
+          "label": "Sintering",
+          "value": "1200-2000 C under vacuum"
+        },
+        {
+          "label": "CV product",
+          "value": "~10,000 uF.V per cc - roughly 10x an aluminium electrolytic"
+        },
+        {
+          "label": "Ore grade",
+          "value": "Ta2O5 equivalent, typically 0.02-0.05% Ta2O5 in columbite"
+        },
+        {
+          "label": "Reduction",
+          "value": "K2TaF7 + K -> Ta powder, 700-900 C"
+        },
+        {
+          "label": "Refining",
+          "value": "electron-beam melting / electron-beam floating zone to 99.9-99.99%"
+        }
+      ]
+    },
+    {
+      "loser": "mb.discretes.power-bjt",
+      "loserName": "High-voltage power BJTs (2N3055, 2N3792)",
+      "loserFile": "10-silicon.json",
+      "survivor": "c64.psu.regulator.variant-discrete.pass-npn",
+      "survivorName": "2N3055 / 2N3792 power NPN",
+      "survivorFile": "50-power.json",
+      "proposal": "50-power.json",
+      "why": "Both name the 2N3055 / 2N3792 series-pass transistor of the brick's discrete regulator. 10-silicon's node is a bare leaf; 50-power's carries the triple-diffusion structure, the TO-3 package mass, the hermetic sealing and the emitter wire bonds, so it is the survivor under CHECKLIST 4.1. Re-point anything that references mb.discretes.power-bjt. Medium confidence on the 120407 discrete schematic either way - the note on the node says the part numbers are unconfirmed for this assembly.",
+      "loserDescription": "The 2N3055 is a 15 A, 200-300 V NPN power transistor in a TO-3 metal can or a plastic TO-220, used as the series pass element in the C64's linear 5 V power supply. The 2N3792 is a 100 V, 0.5 A NPN used in the supply's short-circuit detection, driving an SCR crowbar. Both are triple-diffused or epitaxial-base-collector designs with large dies, thick aluminium (or nickel) metallization and often a molybdenum or copper heat spreader, die-attachable with a soft solder or silver brazing.",
+      "loserFacts": [
+        {
+          "label": "2N3055",
+          "value": "NPN, 250 V VCEO, 15 A Ic, 200 W Pc"
+        },
+        {
+          "label": "2N3792",
+          "value": "NPN, 100 V VCEO, 0.5 A Ic, 1 W Pc"
+        }
+      ]
+    },
+    {
+      "loser": "c64.case.abs-resin",
+      "loserName": "ABS resin, general-purpose injection grade",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.abs.grade",
+      "survivorName": "The ABS grade the C64 case used",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "The whole ABS subtree here re-derives what chem.abs.grade already states as the grade the C64 case used. Structural merge: apply it last, after the leaf merges below, because this node parents most of them. Keep the machine-specific detail (25 kg bags, merchant compounding, Hong Kong/Taiwan case factories) as a note on the survivor.",
+      "loserDescription": "Acrylonitrile-butadiene-styrene: a SAN matrix rigidified by acrylonitrile, toughened by grafted polybutadiene and given surface gloss by styrene. Commodore bought commodity ABS pellets in 25 kg bags, compounded them with colour masterbatch in a merchant compounder, and shipped them to case factories in Hong Kong and Taiwan.",
+      "loserFacts": [
+        {
+          "label": "Typical acrylonitrile content",
+          "value": "20-30 wt%"
+        },
+        {
+          "label": "Butadiene (rubber) content",
+          "value": "8-20 wt%"
+        },
+        {
+          "label": "Density",
+          "value": "1.04-1.06 g/cm3"
+        },
+        {
+          "label": "Moulding shrinkage",
+          "value": "0.4-0.7%"
+        },
+        {
+          "label": "Vicat softening (1 kg/50 C)",
+          "value": "95-110 C"
+        }
+      ]
+    },
+    {
+      "loser": "c64.mains.line-cord",
+      "loserName": "Three-conductor line cord",
+      "loserFile": "50-power.json",
+      "survivor": "c64.cables.power-cord",
+      "survivorName": "Mains power cord",
+      "survivorFile": "40-chassis.json",
+      "proposal": "50-power.json",
+      "why": "The same object, described twice. 40-chassis says 'A detachable mains lead for the external power supply: two or three PVC-insulated copper conductors in a moulded outer jacket, with a moulded mains plug at one end and a moulded figure-8 or IEC connector at the other'; 50-power's c64.mains.line-cord is the same lead, with its PVC sheath, stranded conductors and strain-relief clamp. Both are rooted in the tree, so a reader can follow the brick's mains lead into either branch. 50-power already holds the deeper of the two (the PVC compound and the chlor-alkali chain behind the vinyl chloride), so the union of facts should be merged into the 40-chassis node before c64.mains.line-cord is dropped.",
+      "loserDescription": "A flexible cord with one heavier line conductor, one neutral and a green or green-and-yellow earth conductor, exiting the case through a clamp or grommet. The sheath is PVC in the 1980s rather than the older rubber; PVC is tougher, thinner and better suited to being moulded into the case.",
+      "loserFacts": [
+        {
+          "label": "Construction",
+          "value": "stranded annealed copper in a PVC or rubber sheath"
+        },
+        {
+          "label": "Rating",
+          "value": "2.5 A / 250 V for a light-duty appliance cord"
+        },
+        {
+          "label": "Colour",
+          "value": "black or white sheath; green or green/yellow earth in the North American build"
+        }
+      ]
+    },
+    {
+      "loser": "c64.mains.plug",
+      "loserName": "Moulded wall plug",
+      "loserFile": "50-power.json",
+      "survivor": "c64.cables.power-cord.mains-plug",
+      "survivorName": "Moulded mains plug",
+      "survivorFile": "40-chassis.json",
+      "proposal": "50-power.json",
+      "why": "Same plug. I have already renamed mine to 'Moulded wall plug' so the two names no longer collide, which is a stopgap, not a fix: it is the NEMA 1-15P / CEE 7/16 end of the same cord. Merge with the cord above; the nickel-plated-brass contacts node travels with it.",
+      "loserDescription": "A two- or three-pole moulded plug permanently attached to the cord: in the North American build a polarised NEMA 1-15P with one blade rotated 180 degrees so it can only be inserted one way round; in most of Europe a CEE 7/16 Europlug with two round 4.0 mm pins. The body is a thermosetting or thermoplastic moulding with the cord entering through a separate bushing so the strain is not carried by the conductors.",
+      "loserFacts": [
+        {
+          "label": "North America",
+          "value": "NEMA 1-15P polarised, 15 A 125 V"
+        },
+        {
+          "label": "Europe",
+          "value": "CEE 7/16 Europlug, 2.5 A 250 V"
+        },
+        {
+          "label": "Blades and pins",
+          "value": "brass, nickel-plated"
+        }
+      ]
+    }
+  ]
+}

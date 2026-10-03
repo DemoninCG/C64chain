@@ -1,15 +1,25 @@
 {
-  "$comment": "Structural spine. These are the grouping nodes that hold the per-subsystem fragments together, plus the navigation entries that guarantee the deep trunks (metals, petrochemicals, industry, peripherals) are reachable from the root even if no fragment references them by id.",
+  "$comment": "Structural spine. These are the grouping nodes that hold the per-subsystem fragments together, plus the three navigation entries that guarantee the deep trunks (metals, petrochemicals, industry) and the bundled/required-peripheral branches are reachable from the root even if no fragment references them by id. Three of the five are deliberately kind `note`: they are indexes, not things in the supply chain, and they keep their children because data/00-root.json references them by id and this pass does not own that file.",
   "roots": [
     {
       "id": "c64.mainboard",
       "name": "Mainboard ASSY 250407",
-      "description": "A single two-layer FR-4 board carrying the whole computer. Eight 4164 DRAMs make the 64 KB of main RAM; a 1 KB static RAM holds screen colour; the 6510 processor, the VIC-II, the SID, two CIAs, the PPI, a mask-programmed PLA and three mask ROMs do the rest, wired together with a dozen 74-series parts, three CMOS parts and a handful of small-signal transistors. Everything is through-hole DIP. About 320 components and 20 integrated circuits.",
+      "description": "A single two-layer FR-4 board carrying the whole computer: 1.6 mm of laminate with 35 um of copper on each face, about 1200 unplated component holes, and not one plated-through hole or via anywhere on it. Eight 4164 64 Kbit DRAMs give the 64 KB of main RAM and one 2114L static chip holds 1 KB of screen colour; a 6510 at about 1 MHz, the 6567 VIC-II, the 6581 SID, two 6526 CIAs, a 6532 PPI, a mask-programmed 906114-01 PLA and three mask ROMs - 901226-01 BASIC, 901227-03 KERNAL and the 4 KB 901225-01 character generator - do the rest. Everything is through-hole DIP, so every connection between two parts is a copper trace: where a later revision has a via, this board carries a short single-core jumper wire soldered across the same pads. About 320 components in all: 19 memory, custom-logic and ROM devices, about a dozen 74-series glue parts, a few CMOS parts and a handful of small-signal transistors.",
       "kind": "part",
       "category": "board",
       "era": "1982-1984",
       "confidence": "high",
-      "note": "Board ASSY 250407 is the long 'breadbin' layout, schematic 251138. Earlier revisions differ mainly in having no plated-through holes at all — where later boards have a via, the early ones carry a short single-core jumper wire soldered across the same pads. The U-numbers quoted throughout this tree are the canonical 250407 set and do not line up with the 250425, 250466 or short boards. A validated copy of the 250407 layout has zero vias and exactly two wire jumpers, E1 and E2.",
+      "facts": [
+        { "label": "Board", "value": "ASSY 250407, PCB 326498-01, material no. 250406, artwork 251137, schematic 251138" },
+        { "label": "Layers / vias", "value": "2 layers, 0 plated-through holes, 0 vias" },
+        { "label": "Jumper wires", "value": "2 (E1, E2) across pads where a later revision has a via" },
+        { "label": "Main RAM", "value": "8 x 4164, 64 Kbit each = 64 KB" },
+        { "label": "Colour RAM", "value": "2114L, 1K x 4 static, at U6" },
+        { "label": "Mask ROM", "value": "20 KB total: 8 KB BASIC + 8 KB KERNAL + 4 KB character generator" },
+        { "label": "Clock", "value": "1.023 MHz NTSC / 0.985 MHz PAL" }
+      ],
+      "sources": ["https://en.wikipedia.org/wiki/Commodore_64"],
+      "note": "The 250407 is the long 'breadbin' layout and the U-numbers quoted throughout this tree are its canonical set; they do not line up with the 250425, 250466 or short boards. The via count is the one a validated copy of the 250407 artwork settles: zero, which is why the zero-via claim is stated in the description rather than left as a footnote. This node no longer lists c64.connector-jacks or c64.mains among its children: the plugs belong to the panel they are soldered into, which c64.io-panel carries, and the line cord, plug, switch and fuse live in the external power supply, which is a separate assembly reached from the top of the tree.",
       "children": [
         "mb.pcb",
         "mb.cpu",
@@ -24,10 +34,8 @@
         "mb.discretes",
         "mb.logic",
         "mb.rf-modulator",
-        "c64.mains",
         "mb.passives",
         "mb.crystal",
-        "c64.connector-jacks",
         "mb.solder",
         "mb.assembly",
         "mb.test",
@@ -36,12 +44,30 @@
     },
     {
       "id": "c64.io-panel",
-      "name": "Rear and side I/O panel",
-      "description": "Everything you can plug into the machine. The back carries the 8-pin DIN video output, the 6-pin DIN serial (IEC) port, the 6-pin edge-connector datasette port, the user-port edge connector, the 7-pin DIN power input and the RF modulator's coax socket; the side carries two DE-9 control ports for joysticks and paddles; the bottom edge of the board exposes the 44-pin expansion socket. The video output is composite plus separate luma and chroma on an 8-pin DIN — which is one reason the RF modulator existed and one reason it did not need to be as good as it was.",
+      "name": "Connectors and operator controls",
+      "description": "Everything that plugs into the machine, and the three things a person touches to run it. The rear edge of the board carries the 44-pin cartridge expansion socket, the integral RF modulator with its channel adjust and RCA antenna socket, an 8-pin DIN for composite video plus separate luma and chroma and audio in and out, the 6-pin DIN serial bus, the 2 x 6 card-edge datasette port and the 24-pin card-edge user port, and the panel also takes a 7-pin DIN power input and two DE-9 control ports. Power arrives as 5 V DC and 9 V AC on that 7-pin socket rather than as mains, because the transformer, rectifier and regulators are in the external supply - which is why the machine's own earthing arrangement is an interwinding screen and a bond inside the brick. The operator controls are a power rocker in the right-hand case panel and two slide potentiometers on the top deck, one for volume and tone and one for brightness, wired straight into the SID's audio output and the VIC-II's analogue video level.",
       "kind": "part",
       "category": "interconnect",
-      "era": "1982",
+      "era": "1982-1984",
       "confidence": "high",
+      "facts": [
+        { "label": "Video / audio", "value": "8-pin round DIN, 262-degree horseshoe: composite out, separate Y and C out, audio in and out" },
+        { "label": "Serial bus", "value": "6-pin round DIN, Commodore's serial variant of the IEEE-488 handshake, 300 baud" },
+        { "label": "Datasette", "value": "2 x 6 card edge: read, write, sense, motor, +5 V and ground" },
+        { "label": "User port", "value": "24-pin card edge: 17 TTL signals plus 7 ground and voltage pins, one of them 9 V AC" },
+        { "label": "Expansion", "value": "44-pin dual-row card edge carrying the CPU address and data buses" },
+        { "label": "Control ports", "value": "2 x DE-9 subminiature D, Atari-compatible" },
+        { "label": "Power input", "value": "7-pin round DIN: 5 V DC and 9 V AC from the external supply" },
+        { "label": "RF modulator", "value": "integral on the breadbin; RCA antenna output, channel set on the board by a trimmer" }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Commodore_64",
+        "https://en.wikipedia.org/wiki/DIN_connector",
+        "https://en.wikipedia.org/wiki/Card_edge_connector",
+        "https://en.wikipedia.org/wiki/D-subminiature",
+        "https://en.wikipedia.org/wiki/IEEE-488"
+      ],
+      "note": "Checked against c64.connector-jacks, which carries one subtree per connector - user port, cassette port, expansion port, video/audio DIN, serial DIN, control ports and power inlet - plus the shared contact-stamping and housing-moulding sequences and one connector deliberately left off this list, the keyboard ribbon header, which is an internal board-to-board header rather than something a user plugs into. Two qualifications worth keeping: the earliest boards, PCB 326498, carry a 5-pin DIN video connector with composite and luminance but no chroma, the 8-pin part appearing part-way through production; and this subtree is listed once, here, rather than also hanging off the mainboard.",
       "children": [
         "c64.connector-jacks",
         "c64.switches"
@@ -50,28 +76,33 @@
     {
       "id": "c64.bottoms-out",
       "name": "Where every branch terminates",
-      "description": "Everything above ends in one of three trunks: refined metals, petrochemicals, and the utilities and factories that supply both. Most component subtrees inline their own copy of the relevant chain — a capacitor really does carry its own aluminium, and an ABS case really does carry its own acrylonitrile — so these are the canonical, deepest versions of those same chains, kept together so you can read one end to end.",
-      "kind": "facility",
+      "description": "Everything above ends in one of three trunks: refined metals, petrochemicals, and the plants and utilities that supply both. Most component subtrees carry their own shorter copy of the relevant chain - a capacitor really does carry its own aluminium, and an ABS case really does carry its own acrylonitrile - so these are the canonical, deepest versions of the same chains, kept together so that one can be read end to end.",
+      "kind": "note",
       "category": "industry",
-      "era": "1980s",
+      "confidence": "high",
+      "note": "Retyped from facility to note: this is an index of where the tree bottoms out, not a plant, and nothing is made, mined or operated here. It has to remain a node regardless, because it is the only route from the root to metal.*, chem.* and industry.*, and all three ids are referenced from data/00-root.json, which this pass does not own. The build also parks the generated unlinked.catalogue here, so any canonical subtree that no fragment ends up linking stays reachable rather than being dropped.",
       "children": ["metal", "chem", "industry"]
     },
     {
       "id": "c64.extras",
       "name": "Finishing and bundled extras",
-      "description": "Branches that hang off the machine rather than being part of it: how legends and colours were printed onto plastic, how one keyboard key becomes a bit, and the joystick that shipped in the box in some markets.",
-      "kind": "facility",
-      "category": "interconnect",
+      "description": "Three branches that hang off the machine rather than being part of it: how legends and colours were printed onto moulded plastic, how one keyboard key becomes a bit in the matrix, and the joystick that shipped in the box in some markets. None of them is needed to trace the machine's own supply line - they are the finishing and the bundled accessories, gathered here so they are not mistaken for part of the board.",
+      "kind": "note",
+      "category": "computing",
       "era": "1983",
+      "confidence": "high",
+      "note": "Retyped from facility to note, for the same reason as c64.bottoms-out: a grouping is not a plant. Its three children are real - decoration is a set of processes, the keyboard switches are parts, the joystick is a part - and CHECKLIST rule 2 keeps a note with real children intact, because the components-only view routes through a note exactly as it routes through a process. Category moved from interconnect to computing: two of the three children are not interconnect at all, and the honest answer to 'what industry made this' for a bundle of finishing steps and accessories is the machine itself. The audit's kind/category warning for note under computing is accepted deliberately.",
       "children": ["c64.decor", "c64.keyboard-switches", "c64.joystick"]
     },
     {
       "id": "c64.peripherals",
       "name": "Also required to use it",
-      "description": "A C64 shipped as a box with no screen, no way to save a program, and no way to enter one. In 1983 the machine was useless without a television set, a cassette recorder, and a joystick — arguably all three were part of 'a computer' in the way the question was meant.",
-      "kind": "facility",
+      "description": "A C64 shipped as a box with no screen, no way to save a program and no way to enter one. In 1983 the machine was useless without a television set, a cassette recorder and a joystick, and all three were arguably part of 'a computer' in the way the question was meant. The peripheral branch carries them, with the 1541 disk drive and the television and its CRT glass among them.",
+      "kind": "note",
       "category": "computing",
-      "era": "1983",
+      "sources": ["https://en.wikipedia.org/wiki/Commodore_64"],
+      "confidence": "high",
+      "note": "Retyped from facility to note: nothing here is a plant or a company, it is a grouping of the things you plug into the machine. It has to stay a node because data/00-root.json lists it as a child of c64 and the id is referenced from there, which this pass does not own. c64.joystick is intentionally a child of both this node and c64.extras - it was bundled with the machine in some markets and it was also something you plugged in, and one five-node subtree shown twice is cheaper and clearer than two halves of it.",
       "children": ["peripheral", "c64.joystick"]
     }
   ]

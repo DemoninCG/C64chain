@@ -1,29 +1,28 @@
 {
-  "$comment": "Gap fill. Three ids were advertised by one fragment and referenced by another but never actually written by anyone. These are the real subtrees, published via `shared` so they are adopted into the unlinked catalogue.",
+  "$comment": "Gap fill, now a published pair. chem.glass-fiber and chem.silane were advertised by one fragment and named in another but never actually written by anyone; they are the canonical, reusable versions of two chains that several other fragments also carry short local copies of. Both are published via `shared`, so they are adopted into the tree even where nothing links them yet. chem.silane IS linked - many nodes in the silicon, logic and board fragments cite it, mostly as a `from` edge and once as a child - while chem.glass-fiber is currently reachable only through the generated unlinked.catalogue under c64.bottoms-out, because 20-board's laminate chain runs on its own local copy at mb.pcb.laminate.cloth.fibre.*.",
   "subsystem": "chem-gaps",
   "shared": {
     "chem.glass-fiber": {
       "id": "chem.glass-fiber",
-      "name": "Glass fibre (E-glass) for laminate and filter media",
-      "description": "Continuous drawn glass filaments a few microns thick, bundled into strand and woven into cloth. A C64 needs it twice: as the reinforcing cloth in the FR-4 mainboard laminate, and — if you follow the machine out to a television — as the fine filter media in an air-cleaning system. E-glass is the workhorse composition, named for its electrical resistivity, and it is made in enormous tonnage.",
+      "name": "E-glass fibre",
+      "description": "Continuous glass filaments about 5 microns across, drawn in thousands from a tank furnace and woven into cloth. The C64 needs it twice on the board side of the machine: as the reinforcing cloth in the FR-4 mainboard laminate, and as the laminate core of the keyboard matrix board. E-glass is a lime-alumino-borosilicate, and the 15-19% of its weight that is not silica exists for one reason - it brings the working temperature down far enough that a 5 micron filament can be drawn from an affordable non-lead melt. That is why it is made in millions of tonnes a year and why it is the cheapest structural reinforcement known. Everything it is made of is weighed once, in a batch: silica sand, limestone, soda ash, a borate and a clay.",
       "kind": "material",
       "category": "board",
       "era": "1940s-",
       "confidence": "high",
       "facts": [
-        { "label": "E-glass composition", "value": "~54 wt% SiO2, 15% Al2O3, 16% CaO, 8% B2O3, small Na2O/K2O, Fe2O3 under 0.4%" },
-        { "label": "Typical filament diameter", "value": "3-10 um continuous; 0.1-3 um for fine filter grades" },
-        { "label": "Tensile strength", "value": "1.5-3.5 GPa" },
-        { "label": "Softening point", "value": "~800 C; fibres soften in a flame" }
+        { "label": "E-glass composition", "value": "typical analysis ~54 wt% SiO2, ~15% Al2O3, ~16% CaO, 0-10 wt% B2O3, 1-2 wt% Na2O+K2O, Fe2O3 under 0.5%" },
+        { "label": "Filament diameter", "value": "about 5 um continuous roving; 9-24 um for chopped and mat grades" },
+        { "label": "Tensile strength / modulus", "value": "2-3.5 GPa / 70-76 GPa on the sized filament" },
+        { "label": "Softening point", "value": "about 820 C, against a 1400-1500 C melt" }
       ],
-      "inputs": ["metal.silica", "limestone", "soda ash", "borax or boric acid", "clay"],
-      "sources": ["https://www.mcgraw-hill.com"],
-      "note": "Soda ash (Na2CO3) came from Solvay-process soda, and boron from imported borax — both are pure inputs in the historical sense.",
+      "sources": ["https://en.wikipedia.org/wiki/E-glass", "https://en.wikipedia.org/wiki/Glass_fibre", "https://en.wikipedia.org/wiki/FR-4"],
+      "note": "Chopped strand for glass-filled phenolic connector bodies and glass-filled nylon is the same melt run through a hammer mill instead of a winder, so it shares this batch but not this filament; the phenolic and nylon connector housings elsewhere in the tree carry their own short copies of that chain.",
       "children": [
         {
           "id": "chem.glass-fiber.batch",
-          "name": "Batch mixing",
-          "description": "The raw oxides are weighed and dry-mixed in a batch charger to about +/-1% on each constituent. A modern batch is tens of tonnes; the tolerance matters because the melt is what fixes the composition, and composition fixes the viscosity, which fixes whether 5 micron fibre can be drawn at all.",
+          "name": "Mix the batch",
+          "description": "The raw materials are weighed and dry-blended to about +/-1% on each constituent before a single tonne is melted. The tolerance matters more than it looks: the melt fixes the viscosity curve, and the viscosity curve decides whether 5 micron filament can be drawn from the bushing at all. A modern batch is tens of tonnes, and it is the last point at which the composition can be corrected.",
           "kind": "process",
           "category": "board",
           "era": "1980s",
@@ -31,30 +30,88 @@
           "facts": [
             { "label": "Batch size", "value": "1-40 tonnes" },
             { "label": "Mixing time", "value": "2-8 minutes in a ribbon blender" },
-            { "label": "Target tolerance", "value": "+/-1 wt% on major constituents" }
+            { "label": "Target tolerance", "value": "+/-1 wt% on the major constituents" }
           ],
-          "inputs": ["metal.silica", "clay", "limestone", "borax"]
+          "sources": ["https://en.wikipedia.org/wiki/E-glass"],
+          "note": "The five raw materials are children here rather than 'made of' edges: a glass batch is a mixture, so its constituents are siblings that melt into each other, and a reader following the chain needs to land on the sand and the limestone, not on a link list. Each one is referenced by id, not inlined.",
+          "children": [
+            "metal.silica-sand",
+            "metal.limestone",
+            "metal.soda-ash",
+            "chem.glass-fiber.borax",
+            "facility.power.kaolin"
+          ]
+        },
+        {
+          "id": "chem.glass-fiber.borax",
+          "name": "Borax (sodium borate)",
+          "description": "The boron source, and the reason E-glass is a borosilicate at all. Borax decahydrate, Na2B4O7.10H2O, goes into the batch either as the decahydrate or as boric acid made from it; either way the boron ends up in the glass network as B2O3. A few per cent of B2O3 lowers the liquidus and widens the working range enough to draw fine filament at a temperature the bushing alloy can survive, and it improves chemical durability - which is what stops the finished fibre dissolving in the warm caustic etch bath the board house puts it through.",
+          "kind": "material",
+          "category": "board",
+          "era": "1980s",
+          "confidence": "high",
+          "facts": [
+            { "label": "B2O3 in E-glass", "value": "0-10 wt% depending on the melt; the boron is what makes this a borosilicate" },
+            { "label": "Borax as batched", "value": "Na2B4O7.10H2O (decahydrate, 47 wt% water) or calcined anhydrous, or as H3BO3" },
+            { "label": "Where the boron came from", "value": "colemanite and ulexite ore, Turkey and California dominant by the 1980s" }
+          ],
+          "sources": ["https://en.wikipedia.org/wiki/Borax", "https://en.wikipedia.org/wiki/Colemanite"],
+          "note": "Three other fragments write their own borax node (boric-acid.tincalconite under the electrolytic capacitor electrolyte, base.boron.borax under the bipolar base diffusion, and funnel-glass.borax under the television's funnel glass). This one is the keeper: it is the only one whose name is general, whose category is right, and whose chain reaches the ore.",
+          "children": [
+            {
+              "id": "chem.glass-fiber.borax.acid",
+              "name": "Boric acid from colemanite",
+              "description": "Colemanite ore is crushed and boiled with sulfuric acid, which drives the calcium out as gypsum and leaves boric acid in solution: Ca2B6O11.5H2O + 2 H2SO4 + 2 H2O -> 2 CaSO4 + 6 H3BO3. The liquor is filtered hot and crystallised by cooling, and the crystals are dried at low temperature because boric acid dehydrates to B2O3 above about 100 C. Glass makers bought either this acid or the crude ash from dry lakes such as Searles Lake; the acid was the easier way to get a clean batch.",
+              "kind": "process",
+              "category": "board",
+              "era": "1980s",
+              "confidence": "high",
+              "facts": [
+                { "label": "Reaction", "value": "colemanite + H2SO4 -> boric acid + gypsum, by boiling aqueous digestion" },
+                { "label": "Drying limit", "value": "below about 100 C, or the acid dehydrates to B2O3" },
+                { "label": "Yield", "value": "roughly 0.7-0.9 t of boric acid per tonne of 30% B2O3 ore" }
+              ],
+              "inputs": ["chem.glass-fiber.borax.ore", "metal.sulphuric-acid", "facility.water"],
+              "sources": ["https://en.wikipedia.org/wiki/Colemanite", "https://en.wikipedia.org/wiki/Boric_acid"]
+            },
+            {
+              "id": "chem.glass-fiber.borax.ore",
+              "name": "Colemanite and borate ore",
+              "description": "The borates are mined from evaporite deposits and altered limestone-tuff beds, in Turkey (Bigadiç, Emet) and California's Boron and Kramer districts. Ore is 25-35% B2O3 and is shipped as run-of-mine lump, so this is as close as the boron in a C64 mainboard gets to the ground.",
+              "kind": "material",
+              "category": "board",
+              "era": "1980s",
+              "confidence": "high",
+              "facts": [
+                { "label": "Ore grade", "value": "25-35% B2O3" },
+                { "label": "Principal districts", "value": "Bigadiç and Emet (Turkey); Boron and Kramer (California)" }
+              ],
+              "sources": ["https://en.wikipedia.org/wiki/Colemanite"],
+              "places": ["Bigadiç, Turkey", "Boron, California"]
+            }
+          ]
         },
         {
           "id": "chem.glass-fiber.melt",
-          "name": "Melting in a regenerative tank furnace",
-          "description": "The batch is charged into a regenerative furnace held around 1400-1500 C. The glass is not just melted: it must then be refined (bubbles larger than a few microns rise out or are broken by a rotating mechanical stirrer) and conditioned (held just above the liquidus so beta-eucryptite crystallises, which is what stops the finished fibre devitrifying into a crystalline, brittle, unusable mass). Conditioning is slow — tens of hours — and it is the step that makes continuous fibre possible at all.",
+          "name": "Melt, refine and condition the batch",
+          "description": "The batch is charged into a regenerative tank furnace held at 1400-1500 C - hot enough to keep the viscosity low enough to draw a filament through a 10 micron hole, and then held in that narrow window for tens of hours. What comes out is not merely molten: it is refined until every bubble larger than a few microns has risen out or been broken by a rotating stirrer, and then conditioned - held just above the liquidus so that beta-eucryptite crystallises out on the refractory. That conditioning is the slowest step in the plant and the one that makes continuous fibre possible: without it the drawn fibre devitrifies into a crystalline, brittle mass the moment it cools.",
           "kind": "process",
           "category": "board",
           "era": "1980s",
           "confidence": "high",
           "facts": [
             { "label": "Melt temperature", "value": "1400-1500 C" },
-            { "label": "Refining bubble target", "value": "<1-50 um depending on the grade" },
-            { "label": "Conditioning time", "value": "10-40 h, the slowest step in the plant" }
+            { "label": "Refining bubble target", "value": "no bubble above 1-50 um, depending on the grade" },
+            { "label": "Conditioning time", "value": "10-40 h" }
           ],
-          "inputs": ["chem.glass-fiber.batch", "natural gas"],
-          "facts_note": "fuel was natural gas or oil; the regenerative pair recovers 40-60% of the heat"
+          "inputs": ["chem.glass-fiber.batch", "chem.natural-gas"],
+          "sources": ["https://en.wikipedia.org/wiki/Glass_fibre"],
+          "note": "Fuel was natural gas or fuel oil, and the two regenerators either side of the tank put 40-60% of the heat back into the incoming air, which is why a glass furnace is a net consumer of a few GJ per tonne of glass rather than a large one."
         },
         {
           "id": "chem.glass-fiber.bushing",
-          "name": "Forehearth and bushings",
-          "description": "Glass travels from the furnace through a refractory forehearth to a bushing plate — a small alloy block drilled with 200 to several thousand holes of 10-40 microns, usually gold-platinum alloy because it resists corrosion at 1400 C. Pressure pushes the melt through each hole; surface tension then draws it out, and gravity plus attenuation stretches it to a fiber diameter a fiftieth of the hole.",
+          "name": "Forehearth and bushing plate",
+          "description": "The glass leaves the furnace through a refractory forehearth and arrives at a bushing plate: a small alloy block, a couple of hundred millimetres across, drilled with 200 to several thousand holes of 10-40 microns. Gold-platinum-rhodium is the usual alloy because nothing else survives 1400 C in contact with a boron-bearing melt; the cheapest bushings are rhodium-plated nickel. Pressure pushes the melt through each hole, surface tension rounds the emerging cone, and gravity and attenuation do the rest.",
           "kind": "process",
           "category": "board",
           "era": "1980s",
@@ -62,129 +119,151 @@
           "facts": [
             { "label": "Bushing hole diameter", "value": "10-40 um" },
             { "label": "Holes per bushing", "value": "200-4000" },
-            { "label": "Bushing material", "value": "Au-Pt alloy, or rhodium-plated nickel in the cheapest grades" }
+            { "label": "Bushing material", "value": "Au-Pt-Rh alloy, or rhodium-plated nickel in the cheaper grades" }
           ],
-          "inputs": ["chem.glass-fiber.melt"]
+          "inputs": ["chem.glass-fiber.melt"],
+          "sources": ["https://en.wikipedia.org/wiki/Glass_fibre"]
         },
         {
           "id": "chem.glass-fiber.attenuation",
-          "name": "Attenuation and sizing",
-          "description": "Air jets at high velocity and constant pressure stretch the molten filament to 3-10 microns. As it passes a sizing apron a thin film of starch or oil is applied; for laminate grade this is usually replaced after weaving by a silane or acrylate coupling agent, which is what lets the glass bond chemically to the epoxy instead of merely sitting in it.",
+          "name": "Attenuate and size the strand",
+          "description": "A blast of air at constant pressure across the wicket pulls the emerging cone out to about 5 microns before it has travelled half a metre, and the filament is wound onto a rotating package at 10-25 m/s. As it passes the sizing apron it picks up a thin film - starch or oil for the textile trade, and a light dose of silane for laminate grade. Continuous filament is not chopped: chopped strand is a separate product made by running the same strand through a hammer mill, which is what the glass-filled phenolic and glass-filled nylon parts elsewhere in this tree are made from.",
           "kind": "process",
           "category": "board",
           "era": "1980s",
           "confidence": "high",
           "facts": [
-            { "label": "Filament diameter after attenuation", "value": "3-10 um" },
-            { "label": "Air pressure", "value": "0.5-3 bar across the wicket" },
-            { "label": "Sizing", "value": "starch or oil on the strand; silane/acrylate after weaving" }
+            { "label": "Filament diameter after attenuation", "value": "about 5 um" },
+            { "label": "Drawing speed", "value": "10-25 m/s" },
+            { "label": "Strand length per package", "value": "tens of kilometres" },
+            { "label": "Sizing on the strand", "value": "starch or oil; a light silane for laminate grade" }
           ],
-          "inputs": ["chem.glass-fiber.bushing", "chem.silane.coupling-agent"]
+          "inputs": ["chem.glass-fiber.bushing", "facility.compressed-air"],
+          "sources": ["https://en.wikipedia.org/wiki/Glass_fibre"]
         },
         {
           "id": "chem.glass-fiber.packaging",
-          "name": "Spinning to strand, roving and woven cloth",
-          "description": "The attenuated strand is wound onto a rotating package at high traverse speed — a single package can hold tens of kilometres of strand — then combined into rovings and woven on a air-jet loom into plain-weave cloth. The loom matters: a plain weave with square fill is what gives an FR-4 laminate its isotropic behaviour, which is why PCB cloth is woven rather than chopped.",
+          "name": "Spin, rove and weave the cloth",
+          "description": "The attenuated strand is wound onto a rotating package at high traverse speed, then a few hundred filaments are gathered into a roving and woven on an air-jet loom into plain-weave cloth. The loom is the reason a laminate is isotropic: a plain weave with a square fill puts equal glass in both directions, so the board does not creep along one axis when it is heated. That is why PCB cloth is woven rather than chopped or randomly matted. The kraft liner in the finished laminate panel is paper, not glass - a softwood pulp sheet - and belongs to the resin and liner branch, not here.",
           "kind": "process",
           "category": "board",
           "era": "1980s",
           "confidence": "medium",
           "facts": [
-            { "label": "Cloth weight for FR-4", "value": "100-300 gsm; 120-200 gsm typical for 1.6 mm two-layer board" },
-            { "label": "Weave", "value": "plain, or crow/twill for higher stiffness" },
-            { "label": "Yarns per cm", "value": "about 13 x 13 per cm for 100-200 gsm" }
+            { "label": "Cloth weight for FR-4", "value": "about 100-300 g/m2; roughly 200 g/m2 (style 7628, 7.9 oz/yd2) was the common one for 1.6 mm two-layer board" },
+            { "label": "Weave", "value": "plain, or crow/twill where higher stiffness was wanted" },
+            { "label": "Yarn", "value": "about 9-22 tex per 100 filaments, 8-18 filaments per cm of cloth" }
           ],
           "inputs": ["chem.glass-fiber.attenuation"],
-          "note": "The agent's brief specified long-fibre softwood for the kraft liner; that is the paper, not the glass."
+          "sources": ["https://en.wikipedia.org/wiki/Glass_fibre", "https://en.wikipedia.org/wiki/Plain_weave", "https://en.wikipedia.org/wiki/FR-4"],
+          "note": "The 100-300 g/m2 range and style 7628 are figures I would defend; the yarn tex and ends-per-cm figures are the same ones the board fragment states on its own cloth node, and I have not checked either against a 1983 laminate datasheet."
         },
         {
-          "id": "chem.glass-fiber.filter-media",
-          "name": "Fine and ultrafine grades for air filtration",
-          "description": "Air-purification media use a much finer fibre than the 5 micron laminate grade: 0.1-1 micron fibres are produced by reducing the number and size of bushing holes and, for HEPA grades, by a flash or steam-blowing process that collapses the fibre into mats. This branch exists because a semiconductor fab and a television both need filtered air, and the same silica-and-limestone feedstocks are involved.",
+          "id": "chem.glass-fiber.cloth-sizing",
+          "name": "Size the woven cloth with silane",
+          "description": "For laminate grade the woven cloth is desized and then treated with an organosilane coupling agent - sprayed or dipped, dried and cured at 100-150 C - before it is impregnated with epoxy. The molecule has one end that hydrolyses and bonds to the silanol groups on the glass surface and an organic end that reacts with the resin, so the glass is covalently joined to the epoxy instead of merely being wetted by it. That chemical bond across the cloth is what keeps a mainboard from delaminating along its own reinforcement when the assembly goes through a solder pot, and the 0.3-1.0 wt% of silane that buys it is invisible in the finished part.",
           "kind": "process",
-          "category": "industry",
+          "category": "board",
           "era": "1980s",
-          "confidence": "medium",
+          "confidence": "high",
           "facts": [
-            { "label": "HEPA grade fibre", "value": "0.1-3 um" },
-            { "label": "Fibre media rating", "value": "99.97% at 0.3 um for HEPA" }
+            { "label": "Loading", "value": "0.3-1.0 wt% of the glass" },
+            { "label": "Application", "value": "spray or dip, then dry and cure at 100-150 C" },
+            { "label": "Effect", "value": "an aminosilane-sized epoxy laminate shows roughly 20-50% higher apparent interlaminar shear strength than the same laminate on unsized cloth" }
           ],
-          "inputs": ["chem.glass-fiber.melt"],
-          "note": "Owned in detail by the industry fragment's cleanroom branch; recorded here so the material chain to the sand is continuous."
+          "inputs": ["chem.glass-fiber.packaging", "chem.silane.coupling-agent"],
+          "sources": ["https://en.wikipedia.org/wiki/E-glass", "https://en.wikipedia.org/wiki/Composite_material"],
+          "note": "The 20-50% interlaminar shear figure is a commonly quoted range for aminosilane versus no treatment rather than a measurement of a C64 panel, and the coupling agent used for a brominated-epoxy FR-4 was typically a methacrylate or glycidoxy silane rather than an amino one. The chemistry is the same in all three cases."
         }
       ]
     },
     "chem.silane": {
       "id": "chem.silane",
-      "name": "Silane chemistry",
-      "description": "Two chemically unrelated families share the name, and both come off the same silicon-chlorine-hydrogen chemistry. Monosilane SiH4 is the gas used to deposit polysilicon in CMOS fabrication. Organosilanes — silane coupling agents — are the surface chemistry that makes glass fibre bond to epoxy resin, and they end up in every FR-4 board. Both are pyrophoric, and monosilane is acutely toxic in a way that made it one of the more awkward gases to handle before the industry moved to DCS.",
-      "kind": "material",
+      "name": "Silane and organosilane chemistry",
+      "description": "Monosilane, SiH4, is a gas made by redistributing trichlorosilane, and it is the precursor for the polysilicon films deposited inside the fab that made the 6510 and the 4164s. Organosilanes are the opposite: a methyl- or ethylchlorosilane that has been reacted with methanol or ethanol instead, so the molecule ends up carrying an alkoxy group and an organic group and is a liquid rather than a gas. They are the surface chemistry that bonds glass fibre to epoxy resin, and every FR-4 board in the world contains them. Both families come out of the same silicon-chlorine-hydrogen chemistry; that shared feedstock is the only relationship between them, and conflating the two is the usual first mistake.",
+      "kind": "note",
       "category": "silicon",
       "era": "1950s-",
       "confidence": "high",
-      "inputs": ["metal.silica", "metal.silica.tcs", "hydrogen"],
+      "facts": [
+        { "label": "Shared feedstock", "value": "trichlorosilane, from metallurgical silicon and HCl" },
+        { "label": "The split", "value": "redistributing HSiCl3 gives SiH4, a pyrophoric gas; alkylchlorosilane plus alcohol gives RSi(OR')3, a liquid coupling agent" }
+      ],
+      "sources": ["https://en.wikipedia.org/wiki/Silane", "https://en.wikipedia.org/wiki/Trichlorosilane"],
+      "note": "This node is a routing point and is typed as a note on purpose: it is a statement about the supply chain, not a substance. It has two children because both branches are real materials that other fragments cite by id, and CHECKLIST rule 2 keeps a note with real children intact - the entity-only view routes through it exactly as it routes through a process. It cannot be dissolved, because many nodes across the silicon, logic and board fragments already reference this id and the fragments that own them cannot be rewritten from here.",
       "children": [
         {
           "id": "chem.silane.monosilane",
-          "name": "Monosilane (SiH4) for polysilicon deposition",
-          "description": "The workhorse polysilicon precursor for gate oxide, doped poly gates, lightly doped source/drain and passivation films in 1982-84 CMOS. A silicon fab in that era ran a silane or dichlorosilane plant, usually on site, because the gas is dangerous to ship and to store.",
+          "name": "Monosilane (SiH4)",
+          "description": "The polysilicon precursor: a colourless, pyrophoric gas that decomposes on a hot surface to lay down a conformal silicon film. A fab in 1982-84 that used it ran a small silane plant, because the gas is both too dangerous and too cheap to ship far. It goes into the machine's own logic: the polysilicon gate of the 6510, and the second of the three polysilicon levels in each 4164 DRAM, were deposited from silane by low-pressure CVD. It did not make the 9N polysilicon charge for the crystal pullers - that was still the Siemens trichlorosilane process until the late 1980s.",
           "kind": "material",
           "category": "silicon",
-          "era": "1980s",
+          "era": "1950s-",
           "confidence": "high",
           "facts": [
-            { "label": "Purity", "value": "3N-5N electronic grade" },
-            { "label": "Storage", "value": "steel cylinders or bulk liquid at -60 C or below" },
-            { "label": "Hazard", "value": "pyrophoric in air, acutely toxic, forms explosive mixtures with air" }
+            { "label": "Purity", "value": "4N-5N (99.99-99.9999%) electronic grade" },
+            { "label": "Boiling point", "value": "-111.8 C, so it is handled as a liquefied gas" },
+            { "label": "Storage", "value": "refrigerated bulk liquid in stainless or carbon-steel tanks at -60 C or below; cylinder supply at low pressure" },
+            { "label": "Hazard", "value": "pyrophoric in air, acutely toxic, flammable from about 1% in air" }
           ],
+          "inputs": ["metal.silica.tcs", "metal.hydrogen"],
+          "sources": ["https://en.wikipedia.org/wiki/Silane", "https://en.wikipedia.org/wiki/Trichlorosilane"],
           "children": [
             {
               "id": "chem.silane.monosilane.tcs-route",
-              "name": "Disproportionation of trichlorosilane with hydrogen",
-              "description": "Trichlorosilane plus hydrogen, catalysed, yields monosilane and hydrogen chloride. This is the route most fabs used in the early 1980s because trichlorosilane was already being distilled in bulk for the polysilicon itself, so the silane plant was a small add-on to the same distillation train. The hydrogen chloride is recycled back into the chlor-alkali plant.",
+              "name": "Disproportionate the trichlorosilane",
+              "description": "The industrial route to monosilane: trichlorosilane redistributes into silane and tetrachlorosilane, catalysed, with the whole reaction run in a hydrogen atmosphere: 4 HSiCl3 -> SiH4 + 3 SiCl4. It suits a fab because the trichlorosilane it consumes is the same material the polysilicon plant already makes by the ton, delivered in bulk ISO containers or road tankers, and the tetrachlorosilane that comes back out is reclaimed by hydrogenation at the same plant. The silane leaves the reactor diluted to roughly a tenth or a quarter in hydrogen, which is what the crackers and the adsorption columns downstream were designed for and is far easier to handle than neat silane.",
               "kind": "process",
               "category": "silicon",
               "era": "1980s",
-              "confidence": "medium",
+              "confidence": "high",
               "facts": [
+                { "label": "Reaction", "value": "4 HSiCl3 -> SiH4 + 3 SiCl4 (disproportionation, run in H2)" },
                 { "label": "Temperature", "value": "50-100 C" },
-                { "label": "Output", "value": "10-25% SiH4 in H2 before final purification" },
-                { "label": "Note", "value": "SiH4 decomposes above ~400 C, which is why the CVD furnace is a cold-wall stainless tube, not a hot-wall quartz one" }
+                { "label": "Crude output", "value": "10-25% SiH4 in H2, purified before use" },
+                { "label": "By-product", "value": "SiCl4, hydrogenated back to trichlorosilane at the polysilicon plant" }
               ],
-              "inputs": ["metal.silica.tcs", "chem.fab-chemicals.process-gases.hydrogen"]
+              "inputs": ["metal.silica.tcs", "metal.hydrogen"],
+              "sources": ["https://en.wikipedia.org/wiki/Silane", "https://en.wikipedia.org/wiki/Trichlorosilane"],
+              "note": "This is a disproportionation of trichlorosilane, not a reduction by hydrogen - the hydrogen is the carrier and diluent gas, and the equation balances without it. Direct synthesis from metallurgical silicon and hydrogen also exists but was not the commercial route in this period."
             },
             {
               "id": "chem.silane.monosilane.lpcvd",
-              "name": "Low-pressure CVD deposition of polysilicon",
-              "description": "Silane decomposes on hot silicon wafers at 600-850 C in a diffusion tube, laying down a conformal layer. Poly gates made this way replaced the older aluminium gate, which is the change that made NMOS CMOS manufacturable at all — and the reason a 6510's logic gate is polysilicon rather than aluminium.",
+              "name": "Deposit polysilicon by low-pressure CVD",
+              "description": "Silane decomposes on hot silicon in a diffusion tube at 600-850 C, laying down a conformal film of polycrystalline silicon. This is the step that changed how the C64's own chips were made. A self-aligned gate needs a gate material that survives ion implantation into the source and drain on either side of it, and that can be laid down and then oxidised around; aluminium can do neither, because it is destroyed by the implant and it diffuses into the oxide at the temperatures every later step needs. So once implantation replaced diffusion for source and drain doping, polysilicon won, and with it a gate that is chemically bonded to its own dielectric rather than merely resting on it.",
               "kind": "process",
               "category": "silicon",
               "era": "1982",
               "confidence": "high",
               "facts": [
                 { "label": "Deposition temperature", "value": "600-850 C" },
-                { "label": "Film", "value": "100-500 nm poly-Si gate, doped P or n from the source" },
-                { "label": "Atmosphere", "value": "silane or dichlorosilane in N2 or Ar" }
+                { "label": "Film", "value": "100-500 nm of poly-Si, doped n+ or p+ from a gas in the same tube" },
+                { "label": "Reactor wall", "value": "cold-wall quartz or silicon carbide tube; SiH4 decomposes appreciably above about 400 C, so a hot-wall tube would coat itself" },
+                { "label": "On the C64's own parts", "value": "the 6510's gate, and the second of the three polysilicon levels in each 4164" }
               ],
-              "inputs": ["chem.silane.monosilane"]
+              "inputs": ["chem.silane.monosilane", "facility.electricity"],
+              "sources": ["https://en.wikipedia.org/wiki/Chemical_vapor_deposition", "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication", "https://en.wikipedia.org/wiki/Silane"],
+              "note": "Dichlorosilane was the cheaper alternative and was used for the same films; silane won where the film had to be phosphorus- or boron-doped in the same step."
             }
           ]
         },
         {
           "id": "chem.silane.coupling-agent",
-          "name": "Silane coupling agents for glass fibre sizing",
-          "description": "Organosilanes with two different ends: a hydrolysable alkoxy or chloro group that bonds to the glass surface hydroxyls, and a functional group — vinyl, amino, epoxy, methacrylate — that reacts with the resin. Aminopropyltriethoxysilane and vinyltrimethoxysilane are the workhorses. Applied to woven cloth after desizing, they are the reason epoxy bonds to glass rather than merely wetting it, and therefore the reason a C64 mainboard does not delaminate when it is soldered.",
-          "kind": "process",
+          "name": "Organosilane coupling agents",
+          "description": "Bifunctional organosilanes: a hydrolysable alkoxy or chloro group that bonds to the silanol groups on a glass surface, and an organic group - vinyl, amino, epoxy or methacrylate - that reacts with the resin. Aminopropyltriethoxysilane and vinyltrimethoxysilane are the workhorses; methacryloxypropyltrimethoxysilane and 3-glycidoxypropyltrimethoxysilane were the ones chosen where the resin was an epoxy. They are made from the same silicon-chlorine chemistry as monosilane by substituting an alcohol for the hydrogen: methyltrichlorosilane plus methanol gives the trimethoxysilane and releases HCl. Applied to woven glass cloth at a few tenths of a per cent by weight, they are the reason epoxy bonds to glass rather than merely wetting it - and therefore the reason a C64 mainboard does not delaminate in a solder pot.",
+          "kind": "material",
           "category": "board",
-          "era": "1980s",
+          "era": "1950s-",
           "confidence": "high",
           "facts": [
-            { "label": "Typical loading", "value": "0.3-1.0% by weight of glass" },
-            { "label": "Application", "value": "spray or dip, then oven-dry and cure at 100-150 C" },
-            { "label": "Effect", "value": "raises the laminate's interlaminar shear strength by 30-50% over an unsized cloth" }
+            { "label": "Typical loading", "value": "0.3-1.0 wt% of the glass" },
+            { "label": "Preparation", "value": "alkylchlorosilane plus methanol or ethanol, releasing HCl; the alcohol replaces the chlorine, not the hydrogen" },
+            { "label": "Form", "value": "colourless to pale liquid, hydrolysed and condensed to a siloxane oligomer in the applied solution" },
+            { "label": "Competing chemistry", "value": "titanate and zirconate coupling agents do the same job for glass-filled thermoplastics, without the silicon" }
           ],
-          "inputs": ["chem.glass-fiber", "ethanol", "titanate"],
-          "note": "Also used to size glass fibre for tyres and for printed-circuit substrates other than FR-4."
+          "inputs": ["metal.silica.tcs", "chem.ethanol"],
+          "sources": ["https://en.wikipedia.org/wiki/E-glass", "https://en.wikipedia.org/wiki/Composite_material"],
+          "note": "Retyped from process to material: a coupling agent is a substance with a composition, and the operation that applies it to cloth is a separate step in the glass-fibre branch (chem.glass-fiber.cloth-sizing), which is where the tree now keeps it. The tree has no alkylchlorosilane node, so the silicon-chlorine feedstock is linked to the trichlorosilane node that shares the front end; methanol is the route to the methoxy silanes and is left as prose rather than tied to one branch's copy of it. 20-board writes its own short version of the same molecule at mb.pcb.laminate.cloth.fibre.size.silane; that is the duplicate to retire."
         }
       ]
     }

@@ -1,0 +1,242 @@
+{
+  "$comment": "Cross-fragment changes proposed by the agent that owns data/60-metals.json. Nothing here has been applied. Every `to` is an id defined in this fragment (in the `shared` map or inline in a branch root), so all of them are safe, stable merge targets - which is the whole reason this fragment was worth the pass. See docs/CHECKLIST.md section 8 before applying.",
+
+  "merges": [
+    {
+      "from": "facility.steam.soda-ash",
+      "to": "metal.soda-ash",
+      "why": "Soda ash, Na2CO3. Same substance. metal.soda-ash carries the Solvay works underneath it (carbonation tower, gasworks ammonia, lime kiln, salt recovery) and four facts; the industry fragment's node has no children."
+    },
+    {
+      "from": "facility.power.limestone-quarry",
+      "to": "metal.limestone",
+      "why": "Limestone, CaCO3. Same substance. metal.limestone already has the geological leaf (metal.limestone.bed) and the quarry (metal.limestone.quarry); 'scrubber and flux grade' belongs in a note on the referring edge, not in a second limestone."
+    },
+    {
+      "from": "facility.gases.laterite",
+      "to": "metal.nickel.laterite",
+      "why": "'Nickel laterite ore' filed under a gas-supply branch. Same material; metal.nickel.laterite carries the washing plant, the serpentinised peridotite protolith and the limonite/garnierite mineralogy."
+    },
+    {
+      "from": "facility.compressed-air.rock-salt-mine",
+      "to": "metal.salt-brine",
+      "why": "Rock salt. Same feed, and metal.salt-brine already has metal.salt-rock and metal.salt-evaporite beneath it. The id itself is an accident in the industry fragment - 'facility.compressed-air.*' is not a gas."
+    },
+    {
+      "from": "facility.compressed-air.caustic-soda",
+      "to": "metal.caustic-soda",
+      "why": "Caustic soda, NaOH. Same substance; metal.caustic-soda carries the chlor-alkali cell, the diaphragm cell and the brine circuit, and it is the from-ingredient of the Bayer digestion."
+    },
+    {
+      "from": "facility.power.bauxite-mine",
+      "to": "metal.bauxite.mine",
+      "why": "Bauxite mine. Same thing at the same level. metal.bauxite.mine has the dragline profile and the laterite sequence under it."
+    },
+    {
+      "from": "peripheral.tv.crt.phosphor.zns.sphalerite",
+      "to": "metal.sphalerite",
+      "why": "Sphalerite concentrate, 50-60% Zn. Same concentrate at the same grade - the names differ only in punctuation, which is exactly the 'copper ore / copper ore for the leaf' duplication. metal.sphalerite carries the mine, the concentrator, the dense-media separation and the massive-sulphide host."
+    },
+    {
+      "from": "peripheral.tv.crt.panel.frit.pbo.roast-smelt.galena",
+      "to": "metal.galena",
+      "why": "Galena (PbS) concentrate. Byte-identical name and substance; metal.galena carries the underground mine, the carbonate host rock and the hand-sorting step."
+    },
+    {
+      "from": "chem.refining.claus.catalyst.alumina-catalyst.bauxite",
+      "to": "metal.bauxite",
+      "why": "Bauxite. Same ore; metal.bauxite carries metal.bauxite.mine and the laterite/kaolinite/gibbsite profile."
+    },
+    {
+      "from": "chem.refining.claus.catalyst.alumina-catalyst.bayer-process",
+      "to": "metal.bayer",
+      "why": "The Bayer process. metal.bayer has the four steps written out (digestion, clarification, precipitation, calcination) plus the red-mud link and the lime chemistry; the petrochemical copy is a bare leaf reached from the Claus catalyst chain."
+    },
+    {
+      "from": "si.polysilicon.fluorspar",
+      "to": "metal.fluorspar",
+      "why": "Fluorspar, CaF2. Same ore. metal.fluorspar carries the mine, the vein and the hydrofluoric acid child, and it is the from-ingredient of metal.tin.bolivian-roast and metal.cryolite.synthesis. The 10-silicon copy has no facts."
+    },
+    {
+      "from": "si.polysilicon.hf",
+      "to": "metal.hydrofluoric-acid",
+      "why": "Hydrofluoric acid from fluorspar - identical name. metal.hydrofluoric-acid has three facts, the CaF2 + H2SO4 route and the sulphuric acid from-edge; the silicon copy has two facts and no children. Union the facts."
+    },
+    {
+      "from": "si.polysilicon.quartz-ore",
+      "to": "metal.quartzite",
+      "why": "The quartz ore of the silicon chain: pegmatite or high-purity quartzite, blasted, jaw-crushed and hand-sorted. Same material as metal.quartzite ('High-grade quartzite, 97-99% SiO2'), which carries the quarry and the protolith and is the from-ingredient of the submerged-arc furnace. The silicon copy's note about hand-sorting to 5-30 mm lump is worth keeping in the survivor."
+    },
+    {
+      "from": "si.polysilicon.quartz-sand",
+      "to": "metal.silica-sand",
+      "why": "Quartz sand, 99.5% SiO2. Same material as metal.silica-sand ('Industrial silica sand'), which already has the dune and beach-placer leaf. NOTE: if the silicon fragment needs semiconductor-grade purity as a distinct grade, that should be a named grade under metal.silica-sand, not a second sand node."
+    },
+    {
+      "from": "si.polysilicon.salt",
+      "to": "metal.salt-brine",
+      "why": "Halite for the chlor-alkali cell. Same feed as metal.salt-brine, whose branch already runs halite bed -> evaporite -> solar pan. The silicon copy's geography (Michigan basin, Louisiana domes, Cheshire, Zechstein) is worth folding into metal.salt-rock's description."
+    },
+    {
+      "from": "si.polysilicon.msi",
+      "to": "metal.silica.mgsi",
+      "why": "Metallurgical silicon, 98-99%. Identical name. metal.silica.mgsi carries the submerged-arc furnace, the carbothermal reductant and the calcined petroleum coke; the silicon copy has three children of its own. Merge, then re-point the silicon copy's children at metal.silica.mgsi's."
+    },
+    {
+      "from": "si.polysilicon",
+      "to": "metal.silica.polysilicon",
+      "why": "9N polysilicon - the same material, and both copies correctly say it is made by the Siemens process. metal.silica.polysilicon carries the UHF deposition, the doping and the flaking and the 100-200 kWh/kg figure. Both descriptions are good; union them."
+    },
+    {
+      "from": "si.polysilicon.tcs",
+      "to": "metal.silica.tcs",
+      "why": "Trichlorosilane. Same liquid. metal.silica.tcs carries the 31.8 C boiling point, the fluid-bed chlorination and the distillation; the silicon copy adds its own purity range. The two purity claims differ (11N vs 9N-11N) - keep the more specific one and put the other in note."
+    },
+    {
+      "from": "si.polysilicon.saf",
+      "to": "metal.silica.submerged-arc-furnace",
+      "why": "The submerged arc furnace. Same furnace. metal.silica.submerged-arc-furnace is a process with the quartzite and reductant from-edges and six facts; the silicon copy types it as a tool with none. Take the furnace as a tool or a process once, not both."
+    },
+    {
+      "from": "si.cz.crucible",
+      "to": "metal.silica.czochralski.crucible",
+      "why": "The fused-silica Czochralski crucible. REVERSED PRIORITY: si.cz.crucible is the richer of the two (four facts, 501 characters, wall thickness and growth route) against metal.silica.czochralski.crucible's two facts. Per CHECKLIST 4 keep-rule 1 the silicon copy's facts and description should win this one; keep the id metal.silica.czochralski.crucible because it is already the published target, and union the content."
+    },
+    {
+      "from": "si.mask.chromite",
+      "to": "metal.chromite",
+      "why": "Chromite (FeCr2O4) ore concentrate. Same ore; metal.chromite carries the Bushveld layer-seam mine, the norite and the Merensky Reef. The silicon copy has no facts and exists only to explain where the chrome on a photomask comes from - that sentence belongs in the referring node."
+    },
+    {
+      "from": "si.polysilicon.h2so4",
+      "to": "metal.sulphuric-acid",
+      "why": "Sulphuric acid. Same substance; metal.sulphuric-acid has five facts, the contact-process route and the smelter-SO2 source, and is the from-ingredient of the zinc and copper branches."
+    },
+    {
+      "from": "chem.silicone.rochow.metallurgical-silicon",
+      "to": "metal.silica.mgsi",
+      "why": "Metallurgical silicon, 98-99%. Same substance as metal.silica.mgsi; the Rochow route in the silicone chain starts at the same 98-99% metal."
+    },
+    {
+      "from": "chem.natural-gas.uses.hydrogen.to-ammonia.ammonia",
+      "to": "metal.cyanide-precursor",
+      "why": "Ammonia, NH3. Same substance. This fragment publishes metal.cyanide-precursor, now named 'Ammonia (NH3)' and typed as a material - see the rename below, which should be applied first."
+    },
+    {
+      "from": "c64.case.abs-resin.ammonia",
+      "to": "metal.cyanide-precursor",
+      "why": "Ammonia, NH3. Same substance. Keep whichever of the three carries the most content - mine has the Haber-Bosch description, the Andrussow oxidation to HCN and the metal.habers-catalyst child."
+    },
+    {
+      "from": "chem.rosin",
+      "to": "metal.rosin",
+      "why": "Rosin / colophony. metal.rosin carries the pine-resin and turpentine children and the halide activator. WARNING: data/_ingredients.json maps 'rosin', 'colophony' and 'pine stumps' to chem.rosin and other fragments resolve to it, so the alias/ingredient table must move in the same commit or a dozen from-edges will dangle."
+    },
+    {
+      "from": "chem.refining.delayed-coking.calcined-coke",
+      "to": "metal.silica.petcoke",
+      "why": "Calcined petroleum coke. Same substance. Merge THIS direction: metal.silica.petcoke's description is specific to the silicon smelter, the petrochemical copy is a bare label that other petrochemical nodes point at, so they should point here instead."
+    },
+    {
+      "from": "facility.water.coconut-carbon",
+      "to": "metal.activated-carbon",
+      "why": "Coconut-shell activated carbon. Same substance; metal.activated-carbon already has the coal/coke alternative feed and the steam-activation step."
+    },
+    {
+      "from": "mb.crystal.y1.natural-quartz.pegmatite-vein",
+      "to": "metal.quartz",
+      "why": "'Quartz vein in pegmatite host'. Same occurrence as metal.quartz ('Natural vein quartz'), which is now reachable from the hydrothermal growth step of the clock-crystal branch. If the passives fragment wants the host rock it should be a child of metal.quartz, not a sibling."
+    },
+    {
+      "from": "mb.solder.wave.pot",
+      "to": "metal.solder.pot",
+      "why": "Solder pot and wave former. Same machine. metal.solder.pot carries the dross and the oxide film; if the board fragment wants the machine as a component it should reference metal.solder.pot rather than own a second one."
+    },
+    {
+      "from": "chem.solder-chemicals.reflow-profile.wave-soldering",
+      "to": "metal.solder.wave-solder",
+      "why": "Wave soldering. Same process; metal.solder.wave-solder carries the hot-air knife, the preheater and the board-warp failure mode."
+    },
+    {
+      "from": "chem.fab-chemicals.hydrofluoric-acid",
+      "to": "metal.hydrofluoric-acid",
+      "why": "'Electronic-grade hydrofluoric acid' is a purified grade of the same molecule, not a different substance. If the grade is worth keeping it belongs as a named grade under metal.hydrofluoric-acid. Same argument for chem.fab-chemicals.hydrochloric-acid -> metal.hydrochloric-acid."
+    }
+  ],
+
+  "advisory_no_action_needed": [
+    {
+      "ids": ["si.polysilicon.brine", "c64.case.abs-resin.chlor-alkali", "chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali", "facility.compressed-air.membrane-cell"],
+      "note": "Four chlor-alkali cells. They are NOT the same machine: metal.chlor-alkali is the 1982 diaphragm cell (asbestos-lined), the industry fragment's is a membrane cell, and the two petrochemical/chassis ones are generic references. Worth collapsing the two generic ones into metal.chlor-alkali and leaving the membrane cell as a named later design, but I am not proposing it because the distinction is real."
+    },
+    {
+      "ids": ["si.polysilicon.coke", "si.polysilicon.coke.anthracite", "si.polysilicon.coke.crude", "mb.logic.bipolar.wafer.quartz.coke"],
+      "note": "Five petroleum-coke nodes. metal.coke owns the coking branch (coal seam -> coke oven -> quench -> tar/pitch) and metal.silica.petcoke owns the calcined grade used in the silicon furnace. The petrochemical fragment's chem.refining.delayed-coding.calcined-coke is already proposed into metal.silica.petcoke above; the others are best left to their owners."
+    },
+    {
+      "ids": ["si.polysilicon.quartz-leach", "si.polysilicon.gangue", "si.polysilicon.quartz", "metal.quartz"],
+      "note": "Four quartz nodes. They are genuinely different things - metal.quartz is crystal-grade vein quartz for resonators, si.polysilicon.quartz is lump quartz for the furnace, si.polysilicon.quartz-leach is the semiconductor-grade purification step - so they should be siblings under one quartz parent, not merged. If the maintainer wants that parent it is metal.quartzite."
+    }
+  ],
+
+  "renames": [
+    {
+      "id": "metal.cyanide-precursor",
+      "to": "metal.ammonia",
+      "why": "The node was named for its role in the cyanide plant; it is now typed as a material and named 'Ammonia (NH3)' because the Sherritt-Gordon nickel leach and the Solvay works buy the same ammonia, so the old name is both misleading and relative to a consumer (CHECKLIST 4 keep-rule 4). data/_ingredients.json maps 'ammonia' to this id and must move in the same commit."
+    },
+    {
+      "id": "chem.solder-chemicals.solder-alloy",
+      "to": "chem.solder-chemicals.solder-alloy-60-40",
+      "why": "NOT a merge, and important: this fragment's metal.solder is 63/37 and the petrochemical fragment's is 60/40. Those are different alloys with different solidus behaviour, so the two must not be merged. metal.solder's facts ('Liquidus and solidus: 183 C exactly - a eutectic') are correct for 63/37; 60/40 is not a eutectic and solidifies over a range. Whoever owns the petrochemical copy should re-check the number and then rename the node so the two are distinguishable."
+    }
+  ],
+
+  "shared_infrastructure_needs": [
+    {
+      "file": "data/_fixes.json",
+      "what": "\"metal.lime.scavenger\": \"material\"",
+      "why": "This retype is wrong and is now actively misleading. The node has been renamed 'Lime as a slag flux in tin, lead and silicon smelting' and it is a usage of lime, not a substance. Please drop the entry; the build currently reports it as a retype, so the source and the built tree disagree."
+    },
+    {
+      "file": "data/_fixes.json",
+      "what": "\"metal.iron.burden\": \"material\", \"metal.steel.sheet\": \"material\", \"metal.ferronickel\": \"material\", \"metal.hydrofluoric-acid\": \"material\", \"metal.habers-catalyst\": \"material\", \"metal.zinc-oxide-powder\": \"material\", \"metal.aluminum.anode-foil\": \"material\"",
+      "why": "These seven are correct. This fragment now carries the same kind in its own source, so the build no longer reports them as retype fixups. Flagged as agreed rather than as a change request."
+    },
+    {
+      "file": "data/_ingredients.json",
+      "what": "\"zinc chloride\": \"metal.zinc.ingot\", \"sodium dichromate\": \"metal.chromium.aod\", \"chromium trioxide\": \"metal.chromate-passivation\", \"lead dioxide anode\": \"metal.lead.ingot\", \"borax\": \"chem.glass-fiber\"",
+      "why": "These five mappings are wrong and they silently manufacture false edges: 'zinc chloride' resolves to a zinc INGOT, 'sodium dichromate' to the AOD VESSEL and 'chromium trioxide' to the passivation PROCESS. This fragment worked around them by using exact ids in `inputs`, so nothing in 60-metals.json is wrong, but any other fragment using those five words gets a bad edge. 'borax'/'boric acid' -> chem.glass-fiber is the worst of the set."
+    },
+    {
+      "file": "data/_ingredients.json",
+      "what": "\"soda ash\": \"metal.salt-brine\"",
+      "why": "Soda ash is Na2CO3, not rock salt. It currently resolves to metal.salt-brine, a different substance."
+    }
+  ],
+
+  "evidence_for_other_agents": [
+    {
+      "rule": "CHECKLIST 1a",
+      "finding": "At the start of this pass `node scripts/audit.mjs --file 60-metals.json` reported 4 FAIL rows covering 87 children edges on cross-cutting utilities. NONE of them was in 60-metals.json. The other nine agents got them from 87 edges down to 3, and this fragment contributes zero FAILs and zero WARNs of its own. Exactly three edges remain and all three are in someone else's file:",
+      "detail": [
+        "industry -> facility.water (80-industry.json). The industry branch's own utility hub, which is arguably a legitimate owner in the spirit of the rule but is not in audit.mjs's allowlist of c64.bottoms-out / facility.power / facility.water. Either move the edge to `from` or add `industry` to the allowlist.",
+        "chem -> chem.natural-gas (70-petrochem.json). Same shape: the petrochemical branch's own feedstock hub.",
+        "chem.crude.reservoir.oil-column -> chem.petroleum (70-petrochem.json). This one is a genuine `from` and a one-word fix: the oil column in the pore space IS made of petroleum.",
+        "Progress during the pass, for the record: facility.water 18 -> 1 edges, facility.electricity 31 -> 0, chem.natural-gas 12 -> 1, chem.petroleum 24 -> 1."
+      ]
+    },
+    {
+      "rule": "CHECKLIST 1b",
+      "finding": "Four inline copies of shared nodes were in MY file and are now gone. They are the pattern to look for elsewhere:",
+      "detail": [
+        "A node with id `natural-gas`, named 'Natural gas: the atmosphere-derived feedstock', was inlined under metal.cs2-synthesis. Deleted; metal.cs2-synthesis now has \"inputs\": [\"chem.natural-gas\", ...]. metal.gold.cyanide-synthesis, metal.cyanide-precursor, metal.magnetite.speciality and metal.sulphuric-acid were re-pointed to chem.natural-gas in the same pass.",
+        "`metal.rolling-oil.petroleum` ('Paraffinic base oil from crude') was an inline copy of the petroleum chain under the steel rolling oil. Deleted; metal.rolling-oil now takes chem.petroleum as a from-ingredient.",
+        "`metal.landfill` ('The hazardous-waste landfill') was an inline copy of shared plant. Deleted; metal.solder.waste-leachate now takes facility.hazardous-waste.landfill as a from-ingredient.",
+        "Same class of problem, found by scanning my own ingredient lists: the build resolves a prose `inputs` word against ANY node name in the tree, so 'iron-ore' was resolving to a path-local iron-ore node in 30-passives and 'high-purity-quartz' to one in 50-power, giving the metals fragment edges into other fragments' private copies. Every `inputs` entry in 60-metals.json is now an exact id, so no such accidental edge survives here. Other fragments should check for from-edges that land on a node whose id begins mb., c64. or peripheral."
+      ]
+    }
+  ],
+
+  "note": "60-metals.json is 476 nodes (was 483) and now contributes no FAIL and no WARN to `node scripts/audit.mjs --file 60-metals.json`; the 40 selftest checks pass. THE KEY RESULT, the shared-vs-inline split: all 60 nodes this fragment publishes in its `shared` map are now reachable from its 21 branch roots, so the generated unlinked.catalogue holds no metals node at all. At the start of the pass eight of them sat there and were visible only as catalogue entries - metal.quartz, metal.cryolite, metal.rosin, metal.zinc.ingot, metal.chromium.aod, metal.chromium.metal, metal.chromate-passivation, metal.hex-chrome-plating. I went through all eight and none of them is a genuinely different substance: metal.quartz is the vein quartz charged to the hydrothermal growth step of the clock-crystal branch, metal.cryolite is the Hall-Heroult bath solvent (and the branch had no electrolyte node at all before), metal.rosin is the flux core physically inside metal.solder.wire, metal.zinc.ingot is the terminal product of the zinc branch downstream of cathode stripping, and the four chromium nodes are chromium's two other markets - stainless via AOD and plating via electrolytic metal - in a branch that had only chromite and ferrochrome in it. Each is now wired into the branch it belongs to rather than left adrift. Two inline copies in my own file were the mirror image of the same failure and are deleted. The other 52 published nodes were already the branch node rather than a duplicate, so nothing there needed to move. Deletions were only ever made after re-pointing every reference inside this fragment: metal.coal.tailings (byte-identical duplicate of metal.coal-tailings), metal.copper.crushing (folded into metal.copper.grinding), metal.aluminum.foil-slitting and metal.aluminum.foil-annealing (folded into metal.aluminum.cold-rolling), metal.aluminum.foil-pore (folded into metal.aluminum.anode-foil) - the last three are the exact examples CHECKLIST section 5 names. No id was changed, so every merge target below is safe to point other fragments at."
+}

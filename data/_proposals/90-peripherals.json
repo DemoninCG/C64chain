@@ -1,0 +1,212 @@
+{
+  "$comment": "Cross-fragment changes the 90-peripherals agent is not allowed to apply. Every entry names a node that lives in another data/*.json file, or that would have to be deleted/renamed across a fragment boundary, or that lands under c64.bottoms-out (metal.*, chem.*, industry.*). Nothing here has been applied. Schema: docs/CHECKLIST.md section 8, data/_proposals/README.md.",
+
+  "merges": [
+    {
+      "from": "peripheral.tv.crt.panel.frit.pbo.roast-smelt.galena",
+      "to": "metal.galena",
+      "why": "Fourth copy of galena concentrate in the tree. The metals fragment publishes the canonical node and already carries the roast/sinter/blast-furnace chain under metal.lead.sintering and metal.lead.blast-furnace, which is exactly what peripheral...roast-smelt duplicates."
+    },
+    {
+      "from": "peripheral.tv.crt.panel.frit.pbo.roast-smelt.galena.mine",
+      "to": "metal.galena.mine",
+      "why": "Same mine, different wording. metal.galena.mine is the canonical underground lead-zinc mine and concentrator."
+    },
+    {
+      "from": "peripheral.tv.crt.panel.frit.pbo.roast-smelt.galena.mine.ore",
+      "to": "metal.galena.rock",
+      "why": "Same orebody description (stratabound/replacement galena in carbonate host). metal.galena.rock is the canonical rock node and has no children, so nothing is lost."
+    },
+    {
+      "from": "peripheral.tv.crt.phosphor.zns.sphalerite",
+      "to": "metal.sphalerite",
+      "why": "Already reported by the audit as a duplicate name (both are literally 'Sphalerite (ZnS) concentrate, 50-60% Zn'). metal.sphalerite carries the mine node as well. Note that peripheral.tv.tuner.can.zinc and peripheral.tv.cabinet.screws.zinc-plating currently take this node as an ingredient and will be re-pointed."
+    },
+    {
+      "from": "peripheral.tv.crt.mask.steel.bf.ore",
+      "to": "metal.iron",
+      "why": "Hematite and magnetite ore, the same node. metal.iron already splits into metal.hematite and metal.magnetite, so this local copy is strictly less detailed."
+    },
+    {
+      "from": "peripheral.tv.crt.mask.steel.bf.coke",
+      "to": "metal.coke",
+      "why": "Metallurgical coke from a by-product oven battery. metal.coke is the canonical node and has the battery, the quench tower, the tar stream and the gas behind it."
+    },
+    {
+      "from": "peripheral.tv.crt.gun.grids.nickel",
+      "to": "metal.nickel.ingot",
+      "why": "Rolled nickel sheet for the CRT grid foils is the same metal as the cathode nickel; metal.nickel.ingot is the canonical cathode and carries no duplicate of its own. This also removes the stray 99.0-99.2% figure - the metals fragment says 99.9% for cathode nickel, which is probably right for the cathode and wrong for the rolled foil, so the survivor's number should be kept and the sheet-rolling step described in the edge."
+    },
+    {
+      "from": "peripheral.tv.crt.yoke.winding.copper",
+      "to": "metal.copper.wire",
+      "why": "Enamelled magnet wire for the yoke harness. metal.copper.wire is the canonical node and already has the enamelling line, the multiwire drawing die and the enamel resin under it."
+    },
+    {
+      "from": "peripheral.tv.crt.yoke.winding.copper.ore",
+      "to": "metal.copper.concentrate",
+      "why": "Chalcopyrite flotation concentrate at 20-30% Cu against metal.copper.concentrate's 25-30%. Same substance, same flotation story."
+    },
+    {
+      "from": "peripheral.tv.chassis.pcb.copper-foil",
+      "to": "metal.copper.foil",
+      "why": "35 um electrolytic PCB foil. metal.copper.foil is the canonical node and already distinguishes the drum electrodeposition and the nodular bonding treatment."
+    },
+    {
+      "from": "peripheral.tv.chassis.power.reservoir.al-foil",
+      "to": "metal.aluminum.anode-foil",
+      "why": "Etched high-purity aluminium anode foil for a 200 uF 160 V reservoir is the same product as the capacitor anode foil. Note this is NOT the same as the four-nines rolled foil used behind the CRT phosphor, which is a different node and a different merge."
+    },
+    {
+      "from": "peripheral.tv.crt.phosphor.aluminium.bauxite",
+      "to": "metal.aluminum",
+      "why": "Bauxite -> Bayer -> Hall-Heroult -> 4N ingot and foil is the primary aluminium chain, and metal.aluminum is the canonical node with the ingot, foil, sheet and extrusion under it. peripheral.cassette.deck.led.gallium has already been re-pointed at metal.alumina, because gallium comes out of the Bayer liquor and not out of foil."
+    },
+    {
+      "from": "peripheral.cassette.tape.oxide.chromium.chromite",
+      "to": "metal.chromite",
+      "why": "Chromite ore. This is the merge that untangles the branch: peripheral.tv.aerial.whip.plating (television) and peripheral.cassette.tape.pad.materials (cassette) both currently have to reach across into the cassette branch to find it, because this file had no other chromium node. After the merge both can point at metal.chromite and the television and cassette chains stop touching."
+    },
+    {
+      "from": "peripheral.tv.crt.vacuum.tantalum",
+      "to": "metal.columbite",
+      "why": "The node is the coltan supply chain (concentrate -> HF digestion -> fluoride -> reduction -> powder). metal.columbite is the canonical concentrate and carries the mine, the pegmatite and the tailings stream."
+    },
+    {
+      "from": "peripheral.tv.crt.panel.funnel-glass.silica",
+      "to": "metal.silica-sand",
+      "why": "Glass-grade silica sand, washed and sieved, low in iron. metal.silica-sand is the canonical industrial silica sand and already has the dune/beach placer child."
+    },
+    {
+      "from": "peripheral.tv.crt.gun.cathode.nio-cr.barite",
+      "to": "metal.barite",
+      "why": "Barite ore for barium carbonate, barium metal and the speaker ferrite - three uses of one diggings in this file alone. metal.barite is the canonical node (90-98% grade) and carries metal.barite.reduction, which is the conversion to barium carbonate that this node's description describes."
+    },
+    {
+      "from": "peripheral.tv.crt.yoke.core.manganese",
+      "to": "metal.manganese-carbonate",
+      "why": "High-purity manganese compound for the ferrite blend. metal.manganese-carbonate is the canonical ferrite-grade node; metal.manganese is the steelmaking end and is a different use."
+    },
+    {
+      "from": "peripheral.tv.crt.gun.heater.scheelite",
+      "to": "metal.molybdenum.scheelite",
+      "why": "Scheelite is calcium tungstate and the metals fragment already publishes it as the limestone-vein alternative to wolframite. There is no tungsten node anywhere in the tree (checked metal.*, chem.* and facility.*), so this is the closest canonical home; its description should be widened from molybdenum to both metals."
+    },
+    {
+      "from": "peripheral.tv.crt.phosphor.zns.so2.sulfur",
+      "to": "chem.sulfur",
+      "why": "Elemental sulphur. chem.sulfur ('Elemental sulphur (brimstone)') is the canonical material node in the petrochemical fragment. Note chem.sulfur has no children today, so the Claus process this node carried should be re-hung under it rather than dropped."
+    },
+    {
+      "from": "peripheral.tv.aerial.coax.polyethylene.salt",
+      "to": "metal.salt-brine",
+      "why": "Rock salt and solar salt brine. metal.salt-brine is the canonical node and already has the bedded halite and the solar pan under it. peripheral.plug.userport.pvc already points at metal.salt-brine directly."
+    },
+    {
+      "from": "peripheral.tv.crt.gun.heater.scheelite.decomp",
+      "to": "metal.soda-ash",
+      "why": "Not needed as a merge: this node has already been changed in 90-peripherals to take metal.soda-ash as an ingredient, and the local soda-ash copy was deleted. Listed so the reviewer knows the duplicate is gone and why."
+    },
+    {
+      "from": "peripheral.tv.cabinet.abs",
+      "to": "chem.abs.grade",
+      "why": "ABS resin for a television cabinet is the same material as the ABS grade the C64 case used. chem.abs is the canonical ABS plant (process) and chem.abs.grade its material node, with the SAN matrix, the graft polymerisation, the styrene, butadiene and acrylonitrile feeds and the pigment masterbatch already under it."
+    },
+    {
+      "from": "peripheral.tv.cabinet.abs.styrene",
+      "to": "facility.steam.styrene",
+      "why": "Styrene monomer. The audit reports 'Styrene monomer' x3 across three fragments; this node is the television's copy. NOTE: chem.abs.san-matrix.styrene-raw was the target I first wrote here and the petrochemical agent has since deleted it, so facility.steam.styrene is the surviving material node. The more thorough fix is to merge this node's whole subtree into chem.styrene, which already owns the benzene -> ethylbenzene -> dehydrogenation chain that peripheral.tv.cabinet.abs.styrene.benzene duplicates."
+    },
+    {
+      "from": "peripheral.tv.cabinet.abs.butadiene",
+      "to": "chem.abs.grafting.rubber-phase.butadiene-raw",
+      "why": "Butadiene monomer for the rubber phase, with the cracker C4 extraction already documented there."
+    },
+    {
+      "from": "peripheral.tv.cabinet.abs.acrylonitrile",
+      "to": "chem.abs.san-matrix.acrylonitrile-raw",
+      "why": "Acrylonitrile monomer. chem.acrylonitrile.sovere is the canonical ammoxidation plant, so the Sohio description and the ammonia reforming chain under this node are already written there."
+    },
+    {
+      "from": "peripheral.tv.cabinet.abs.pigment",
+      "to": "chem.abs.additives.pigment-masterbatch",
+      "why": "The TiO2 and carbon black loading of a black or beige ABS cabinet is compounding additives, and the pigment masterbatch node is the canonical place for it."
+    },
+    {
+      "from": "peripheral.tv.crt.yoke.winding.bobbin.nylon",
+      "to": "chem.polyamide.nylon-66",
+      "why": "Nylon 6,6 from adipic acid and hexamethylenediamine. chem.polyamide.nylon-66 is the canonical material node and chem.polyamide.nylon-66.adiponitrile is already the adiponitrile route. Keep the KA-oil detail as a note if it is not already there."
+    },
+    {
+      "from": "peripheral.cassette.tape.film",
+      "to": "chem.polyester.pet",
+      "why": "Biaxially-oriented PET film. NOTE FOR THE REVIEWER: kinds differ - this node is a material, chem.polyester.pet is a process - and there are now three copies (this one, mb.photo.plotter.film.base in 20-board.json, and the paraxylene/terephthalic-acid branch under chem.polyester.pet). The cleanest outcome is a material film node under chem.polyester.pet with all three converging on it; if you would rather not create one, merge this and mb.photo.plotter.film.base into chem.polyester.pet and accept the kind change."
+    },
+    {
+      "from": "peripheral.cassette.tape.film.paraxylene",
+      "to": "chem.polyester.pet.terephthalic-acid",
+      "why": "Para-xylene into terephthalic acid / DMT is already written there. The audit reports 'Para-xylene' x2 against mb.passives.caps.film.polyester-metallisation.pet-polymerisation.paraxylene; whichever of the two survives, the other should follow."
+    },
+    {
+      "from": "peripheral.cassette.tape.coating.solvent",
+      "to": "chem.styrene.benzene.aromatics-recovery",
+      "why": "ADVANCE WARNING, NOT A MERGE: this node is referenced from 40-chassis.json (c64.decor.paint.lacquer takes it as a `from` ingredient), so it must keep its id or that fragment must be edited first. Toluene and xylene are the C8/C7 aromatics cut that node already documents. Flagging it here rather than proposing a merge, because the cross-file reference has to be re-pointed in the same commit."
+    },
+    {
+      "from": "peripheral.tv.crt.panel.funnel-glass.borax.ore",
+      "to": "chem.glass-fiber.borax.ore",
+      "why": "The audit reports 'Colemanite and borate ore' x2. chem.glass-fiber.borax.ore (55-chem-gaps.json) is the other copy and is the better placed one, because borate is a glass-batch raw material rather than a television part."
+    },
+    {
+      "from": "peripheral.tv.controls.phenolic",
+      "to": "chem.thermosets.phenolic",
+      "why": "Phenol-formaldehyde resin. The audit reports 'Phenolic resin (phenol-formaldehyde)' x2; chem.thermosets.phenolic is the canonical node."
+    },
+    {
+      "from": "peripheral.tv.chassis.pcb.epoxy.bpa",
+      "to": "chem.epoxy.dgeba.bisphenol-a",
+      "why": "Bisphenol A from phenol and acetone, already written in the petrochemical fragment. NOTE: c64.psu.potting.chemistry.bisphenol-a was the target I first wrote here and the power-supply agent has since deleted it; chem.epoxy.dgeba.bisphenol-a ('Bisphenol A from cumene') is the surviving canonical node and carries the acetone co-reactant with it."
+    },
+    {
+      "from": "peripheral.tv.chassis.pcb.epoxy",
+      "to": "chem.epoxy",
+      "why": "LOWER CONFIDENCE THAN THE OTHERS, REVIEW BEFORE APPLYING. FR-4 uses TEGDA/DGEBA epoxy rather than brominated epoxy, so chem.epoxy.brominated-epoxy (my first choice) is the wrong resin. chem.epoxy is the parent node and has the bisphenol A and epichlorohydrin feeds under it; kinds differ (this node is a material, chem.epoxy is a process), so the maintainer may prefer to point this node's inputs at chem.epoxy.dgeba and delete the subtree instead."
+    },
+    {
+      "from": "peripheral.tv.crt.gun.blackening.carbon-black",
+      "to": "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black",
+      "why": "Carbon black from the oil method, 20-40 nm primary particles. The passives copy is the richest (it already has the soot reactor and the petroleum residuum feed), which is rule 4.1 of the keep-rule. c64.keyboard.switches.carbon-black and c64.keyboard-switches.domes.composition.carbon-black are the other two copies and should follow."
+    },
+    {
+      "from": "peripheral.tv.chassis.audio.volume-pot.carbon",
+      "to": "mb.passives.resistors.discrete-axial.carbon-composition",
+      "why": "LOW CONFIDENCE, REVIEW BEFORE APPLYING. A carbon-track potentiometer and a carbon-composition resistor are different products from the same pigment and binder chemistry, so this may be better left alone. It is listed because the node is referenced from 60-metals.json (metal.tin) and 40-chassis.json (c64.case.tooling.h13) as a `from` ingredient, so if it is ever merged both of those references must be re-pointed in the same commit."
+    }
+  ],
+
+  "renames": [],
+
+  "additions": [
+    {
+      "id": "metal.tungsten",
+      "name": "Tungsten: wolframite and scheelite to drawn wire",
+      "why": "NOT PROPOSED AS A DONE THING - a gap, not a change, re-checked at the end of this pass. There is still no tungsten node anywhere in the tree. metal.molybdenum.scheelite is the nearest thing and mentions wolframite only in passing; chem.crude.rig.bit.tungsten-carbide is carbide cutters, a different product. The brief for this fragment assumed a canonical tungsten existed; it does not. The television's heater filaments are the only real consumer in this project, and 90-peripherals now carries that chain itself (wolframite and scheelite, both with their mines, and the APT route). Somebody with the tungsten sources to hand should write metal.tungsten, and peripheral.tv.crt.gun.heater.wolframite should then converge on it."
+    },
+    {
+      "id": "metal.cobalt",
+      "name": "Cobalt metal",
+      "why": "NOT PROPOSED AS A DONE THING - a gap, re-checked at the end of this pass. Kovar is 17% cobalt and there is still no cobalt node in the tree: metal.nickel.cobalt-carbonyl is the dicobalt octacarbonyl, which is the other end of the same chain, and metal.ferrite.nizn.co-source is a bag of dopants rather than a metal. peripheral.tv.crt.gun.grids.kovar names cobalt as a prose ingredient with no edge, because there is nothing to point at."
+    },
+    {
+      "id": "metal.rare-earths",
+      "name": "Bastnasite and the light rare earths",
+      "why": "NOT PROPOSED AS A DONE THING - a gap. Two unrelated parts of a 1982 television come out of one light-rare-earth concentrate: the europium in the red phosphor (peripheral.tv.crt.phosphor.zns.europium) and the samarium in the deflection magnets (peripheral.tv.crt.yoke.geometry.magnets). The petrochemical fragment has chem.butadiene.polymerisation.neodymium-catalyst.neodymium-source.bastnasite for the neodymium case; a shared rare-earth node would let both of mine point at it instead of each carrying its own paragraph about bastnasite. I have not done that here because the two nodes belong to different branches and the merge would have to move content, not just an edge."
+    },
+    {
+      "id": "metal.barite.mine",
+      "note": "Already exists as metal.barite.mine. Listed here only because the 90-peripherals barite node is proposed into metal.barite and a reader may wonder whether the vein and placer geology comes with it - it does."
+    }
+  ],
+
+  "note": "Scope of this file: everything in it touches a node that lives outside 90-peripherals.json, or that would have to be renamed or deleted across a fragment boundary, or that lands under c64.bottoms-out. The 90-peripherals fragment itself is now 215 nodes (was 242), builds clean, has zero unreachable nodes, zero duplicate-id collisions, and zero audit WARN rows attributable to its own nodes. Two targets moved while this pass was running and have been corrected above (chem.abs.san-matrix.styrene-raw and c64.psu.potting.chemistry.bisphenol-a were both deleted by other agents). Two things a reviewer should know. (1) `peripheral` keeps its id and all four children as instructed; it was only renamed, from the question-framed 'What you plug into it' to 'Television, cassette drive and connectors', because the spine's c64.peripherals node is already called 'Also required to use it' and the two headings were saying the same thing. (2) The audit's remaining rule 1a FAILs are NOT fixable from this fragment. `node scripts/audit.mjs --file 90-peripherals.json` runs rule 1a over the whole tree, and at the end of this pass the only parents still offending are `industry` and `chem` in 80-industry.json and 70-petrochem.json - the bottoms-out trunk roots, which take Water, Natural gas and Petroleum as `children`. No peripheral.* node is a parent of any of the four utilities, at any point in this pass."
+}

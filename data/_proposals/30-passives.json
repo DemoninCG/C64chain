@@ -1,0 +1,266 @@
+{
+  "$comment": "Proposals from the 30-passives QA pass. Nothing in this file has been applied by scripts/build.mjs; it is a request list for the central merge. Three groups: (A) merges of a 30-passives node into a canonical metal.*/chem.*/facility.* node - ALREADY APPLIED inside data/30-passives.json by deleting the local copy and linking by id, listed here so the central merge can retire the same material elsewhere; (B) merges where a node in ANOTHER fragment is the loser and a 30-passives node is the survivor; (C) factual corrections in other fragments that the pass turned up. Ids are never changed by these proposals.",
+
+  "A. retired-inline-duplicates": {
+    "$comment": "Each of these was an inline copy of a canonical node already in the tree. 30-passives now links to the target by id (as a children ref where the copy was genuinely contained, otherwise as an inputs entry that builds.mjs turns into a 'from' edge). The local copy has been deleted from 30-passives; the same duplicates elsewhere in the tree can now be collapsed onto the target.",
+    "metal.alumina": [
+      "mb.passives.resistors.discrete-axial.carbon-film.trim.wheel.abrasive.alumina (+.alumina.laterite)",
+      "mb.passives.resistors.discrete-axial.metal-film.substrate.ceramic.alumina (+.alumina.laterite)",
+      "mb.passives.resistors.cermet-networks.substrate.sintering.refractory.alumina (+.alumina.laterite)",
+      "mb.passives.resistors.cermet-networks.trim.yag.alumina (+.alumina.laterite)",
+      "mb.passives.resistors.cermet-networks.encapsulation.glass-epoxy.silica-sand",
+      "mb.passives.caps.alu-electrolytic.cathode-foil.foil-roll.alumina (+.alumina.laterite)",
+      "mb.passives.caps.mica.metallisation.aluminium-evaporation.alumina (+.alumina.laterite)",
+      "mb.passives.caps.trim.air-gap.ceramic-plate.alumina.alumina (+.alumina.laterite)",
+      "mb.crystal.oscillator.pierce.load-capacitor.type.alumina (+.alumina.laterite)",
+      "c64.joystick.knob.abs.filler.pigment-dispersion.tio2.alumina (+.alumina.laterite)"
+    ],
+    "metal.bauxite + metal.bayer.digestion": [
+      "mb.passives.resistors.discrete-axial.carbon-film.substrate.alumina.bauxite (+.alumina.bauxite.laterite)",
+      "mb.passives.resistors.discrete-axial.carbon-film.substrate.alumina.alumina-refinery",
+      "mb.passives.resistors.discrete-axial.carbon-film.substrate.alumina.alumina-refinery.caustic-soda (this copy named potassium hydroxide as the 1982 Bayer digestant; caustic soda was the mainstream)"
+    ],
+    "metal.silica-sand": [
+      "mb.passives.resistors.discrete-axial.wirewound.enamel.glass.silica-sand",
+      "mb.passives.resistors.cermet-networks.encapsulation.glass-epoxy.silica-sand",
+      "mb.passives.caps.mlcc.slurry.glass-frit.silica-sand",
+      "mb.passives.caps.alu-electrolytic.assembly.bung.silicone.silica-sand (wrong anyway - silicone is reinforced with fumed silica, not dune sand)",
+      "mb.passives.caps.ceramic-disc.press-sinter.body.base-ceramic.silica-sand",
+      "c64.keyboard-switches.domes.composition.elastomer.silicone.silica-sand (same error)",
+      "c64.connector-jacks.moulding.phenolic.glass-fibre.sand",
+      "mb.crystal.y1.blank-preparation.lapping.colloidal-silica.silica-sand",
+      "mb.crystal.y1.natural-quartz.synthetic.silica-feed.quartz-sand"
+    ],
+    "metal.iron": [
+      "mb.passives.resistors.discrete-axial.carbon-composition.moulding.die.iron-ore",
+      "mb.passives.resistors.cermet-networks.screen-print.mesh.iron-ore",
+      "mb.passives.caps.alu-electrolytic.winding.mandrel.iron-ore",
+      "c64.connector-jacks.metalworking.four-slide-die.tool-steel.iron-ore",
+      "c64.connector-jacks.moulding.injection-press.tool-steel.iron-ore",
+      "c64.connector-jacks.av-din.tulip-pin.mating-socket.broach.iron-ore",
+      "c64.connector-jacks.av-din.shell.steel-strip.iron-ore",
+      "c64.keyboard-switches.keycap.spring.music-wire.iron-ore",
+      "c64.keyboard-switches.keycap.spring.coil-winder.steel.iron-ore",
+      "c64.keyboard-switches.keycap.double-shot.legend-colour.pigment.iron-oxide.iron-ore",
+      "c64.joystick.knob.abs.moulding.tool.iron-ore",
+      "c64.joystick.gate.spring.wire.iron-ore",
+      "c64.joystick.shaft.steel.iron-ore",
+      "c64.switches.level-sliders.section.shaft.iron-ore"
+    ],
+    "metal.copper": [
+      "c64.connector-jacks.metalworking.four-slide-die.coil-stock.copper (+.copper.ore)",
+      "c64.connector-jacks.metalworking.brass-stock.brass-copper (its electrorefining child was kept and reattached to brass-stock)",
+      "c64.connector-jacks.user-port.contacts.leaf-alloy.copper-ore (name was 'Copper ore for the leaf', meaningless alone)",
+      "c64.switches.power-slider.contacts.phosphor-bronze.copper",
+      "mb.passives.resistors.trimmers.adjuster.screw.copper-ore",
+      "c64.connector-jacks.power-inlet.friction-lock.crimp.brass.copper-ore",
+      "mb.passives.caps.alu-electrolytic.winding.mandrel.iron-ore's steel sibling chain"
+    ],
+    "chem.styrene.benzene": [
+      "mb.passives.caps.tantalum.packaging.seal.bisphenol-a.benzene",
+      "mb.passives.caps.film.polystyrene.styrene-polymerisation.benzene",
+      "c64.switches.level-sliders.housing.knob.abs.styrene.benzene",
+      "c64.switches.power-slider.body.nylon.nylon-6-6.caprolactam.benzene (chain deleted: caprolactam does not make nylon 6,6)",
+      "c64.connector-jacks.moulding.phenolic.resin-source.phenol.benzene",
+      "c64.connector-jacks.control-ports.insulator.nylon.caprolactam.benzene (chain deleted)",
+      "c64.joystick.gate.friction.nylon-bushing.resin.caprolactam.benzene (chain deleted)"
+    ],
+    "chem.pvc.vcm": [
+      "c64.keyboard-switches.ribbon.film.pvc.vinyl-chloride",
+      "c64.mains.line-cord.pvc-sheath.vinyl-chloride (50-power) - different parent, same substance; the oxychlorination route is described once at chem.pvc"
+    ],
+    "chem.polyamide.nylon-66": [
+      "c64.connector-jacks.control-ports.insulator.nylon.caprolactam",
+      "c64.joystick.gate.friction.nylon-bushing.resin.caprolactam"
+    ],
+    "chem.ethylene / refinery naphtha": [
+      "mb.passives.caps.alu-electrolytic.electrolyte.glycol-ethers.ethylene-oxide.naphtha (chain ran backwards: naphtha is the cracker feed, not a product of ethylene oxide)",
+      "c64.connector-jacks.moulding.pbt.dmt.px.naphtha",
+      "c64.keyboard-switches.keycap.abs.styrene.ethylbenzene.naphtha",
+      "c64.keyboard-switches.ribbon.film.pvc.vinyl-chloride.naphtha"
+    ],
+    "chem.crude": [
+      "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black.residuum.crude-oil",
+      "c64.keyboard-switches.pcb-resin.epichlorohydrin.crude-oil",
+      "c64.keyboard-switches.keycap.abs.butadiene.crude-oil"
+    ],
+    "metal.cassiterite + metal.tin.ingot": [
+      "mb.passives.resistors.discrete-axial.carbon-composition.end-cap.tin",
+      "mb.passives.caps.mlcc.terminations.tin",
+      "c64.switches.power-slider.contacts.phosphor-bronze.tin",
+      "c64.connector-jacks.expansion-port.contacts-alloy.tin (+.tin.cassiterite)"
+    ],
+    "metal.sphalerite": [
+      "c64.connector-jacks.metalworking.brass-stock.brass-zinc.sphalerite"
+    ],
+    "metal.chromite + metal.chromium": [
+      "mb.passives.resistors.discrete-axial.metal-film.nichrome.chromium",
+      "mb.crystal.y1.electrodes.chromium.ore"
+    ],
+    "metal.silver.ingot": [
+      "mb.passives.resistors.cermet-networks.substrate.metallisation.silver-ore",
+      "c64.connector-jacks.metalworking.gold.dore.silver-ore"
+    ],
+    "metal.barium-carbonate": [
+      "mb.passives.caps.mlcc.powder.synthesis.barium-carbonate (+.barium-carbonate.barite)"
+    ],
+    "metal.ilmenite-sand": [
+      "mb.passives.caps.mlcc.powder.synthesis.titanium-dioxide.ilmenite"
+    ],
+    "metal.phosphate-ore": [
+      "mb.passives.caps.alu-electrolytic.anode-foil.forming.phosphoric-acid",
+      "c64.connector-jacks.metalworking.plating.electroless-nickel.phosphorus (kept - it is a distinct process, but its apatite input is metal.phosphate-ore)"
+    ],
+    "metal.galena + metal.solder + mb.solder.wave + chem.solder-chemicals.rosin-flux": [
+      "c64.connector-jacks.keyboard-header.solder-joint.solder (+.solder.galena)",
+      "c64.connector-jacks.keyboard-header.solder-joint.flux (+.flux.pine, .flux.pine.wood)",
+      "c64.connector-jacks.keyboard-header.solder-joint.wave-solder"
+    ],
+    "chem.glass-fiber": [
+      "c64.connector-jacks.moulding.phenolic.glass-fibre (+.glass-fibre.sand)",
+      "c64.keyboard-switches.keyboard-glass-cloth (+.silica-batch, .silica-batch.batch)"
+    ],
+    "chem.thermosets.phenolic": [
+      "phenolic resin / phenol-formaldehyde resin inputs across the carbon-film slurry, the connector housing and the microswitch case"
+    ],
+    "chem.abs": [
+      "c64.switches.level-sliders.housing.knob.abs (+.abs.styrene, +.abs.styrene.benzene)"
+    ],
+    "chem.styrene + chem.styrene.ethylbenzene": [
+      "c64.keyboard-switches.keycap.abs.styrene (+.styrene.ethylbenzene)"
+    ],
+    "chem.acrylonitrile + chem.butadiene": [
+      "c64.keyboard-switches.keycap.abs.butadiene.butadiene renamed to a distinct thing rather than deleted: it is the Sohlo ammoxidation process, not the monomer. Its bismuth-antimony catalyst child has no canonical equivalent and was kept."
+    ],
+    "c64.packaging.kraft-pulp": [
+      "mb.passives.caps.alu-electrolytic.separator.kraft-paper.wood-pulp"
+    ],
+    "facility.steam.ion-resin": [
+      "mb.crystal.y1.cutting.cleanroom.deionised-water.ion-exchange"
+    ],
+    "chem.fab-chemicals.process-gases.nitrogen.cryogenic-air": [
+      "mb.crystal.y1.case.argon-fill.cryogenic-distillation"
+    ],
+    "metal.salt-brine + metal.caustic-soda": [
+      "mb.crystal.y1.natural-quartz.synthetic.autoclave.caustic.rock-salt"
+    ],
+    "chem.fab-chemicals.nitric-acid": [
+      "mb.passives.resistors.discrete-axial.metal-foil.foil-roll.etch.nitric"
+    ],
+    "metal.quartz": [
+      "mb.crystal.y1.natural-quartz.synthetic.silica-feed.quartz-sand is now a from-link to metal.silica-sand; natural rock crystal itself is mb.crystal.y1.natural-quartz, which is a materials-and-mining node rather than a duplicate of metal.quartz"
+    ],
+    "metal.coke + metal.iron.burden": [
+      "c64.joystick.shaft.steel.iron-ore.pellet (+.pellet.coke)"
+    ],
+    "mb.passives.caps.mlcc.powder.synthesis.titanium-dioxide (kept, not deleted)": [
+      "It is a genuine local material (ceramic-grade TiO2) rather than a copy of a canonical node; only its ilmenite child was merged into metal.ilmenite-sand"
+    ]
+  },
+
+  "B. merge-into-30-passives": {
+    "$comment": "The 30-passives node is the survivor (richer description, more facts, or already referenced from three places inside the fragment). The other fragment's node should be re-pointed and deleted. These are cross-fragment merges, so they are proposals only.",
+    "c64.keyboard-switches.domes.composition.carbon-black": [
+      "c64.keyboard.switches.carbon-black"
+    ],
+    "c64.keyboard-switches.keycap.spring.music-wire": [
+      "c64.keyboard.switches.music-wire",
+      "c64.keyboard.switches.spring is a part that cites music wire; keep it but re-point it at the 30-passives node"
+    ],
+    "mb.passives.caps.film.polyester-metallisation.pet-polymerisation.paraxylene": [
+      "peripheral.cassette.tape.film.paraxylene"
+    ],
+    "$also": "c64.keyboard.switches (40-chassis, 'Hybrid switches (Mitsumi-style plunger, rubber dome, spring)') duplicates the whole c64.keyboard-switches story in 30-passives, and hangs off c64.keyboard rather than off the machine's keyboard. Its genuinely additive children - force-curve, spring, conductive-rubber, rubber-compounding, cure-system, dicumyl-peroxide, cumene-source, alpha-methylstyrene, cumene-oxidation, two-roll-mill, silicone, silica-filler, plunger, plunger-polymer - would be better hung off c64.keyboard-switches.domes / .keycap / .matrix in 30-passives, with the duplicate leaves (carbon-black, music-wire, silicon-metal) merged as above. I have not touched 40-chassis.",
+    "$not_a_merge": "c64.cables.rf-cable.brass ('Brass pin stock', 40-chassis) and c64.switches.power-slider.body.terminal.brass-stock were both called 'Brass pin stock' but are different parts - a leaded free-cutting brass RF coax pin and a springy brass slide-switch terminal. I renamed mine 'Brass terminal stock'; no merge is needed."
+  },
+
+  "B2. merge-into-another-canonical-node": {
+    "$comment": "Duplicate leaf removed from 30-passives because a strictly richer canonical node already exists. Recorded so the central merge can retire the same leaf elsewhere.",
+    "chem.butadiene": [
+      "c64.keyboard-switches.keycap.abs.butadiene.butadiene ('Butadiene monomer') deleted from 30-passives; the parent c64.keyboard-switches.keycap.abs.butadiene now takes chem.butadiene as a from-link. The identical leaf chem.abs.grafting.rubber-phase.butadiene-raw in 70-petrochem should go the same way."
+    ]
+  },
+
+  "C. factual-corrections-elsewhere": {
+    "$comment": "Found while checking that nothing in the tree claims a discrete 2 MHz C64 crystal. Not mine to edit.",
+    "2.048-MHz-quartz-crystal": [
+      "metal.silica.quartz-crystal is named '2.048 MHz quartz clock crystal' and its description claims 'The C64's timing reference: an AT-cut quartz plate about 7.6 x 2.5 mm brazed between metal caps, resonating at 2.048 MHz', with a fact '2.048 MHz (PAL/NTSC master clock)'. The breadbin C64 has no such crystal: Y1 is 14.31818 MHz NTSC or 17.734475 MHz PAL in an HC-49/U can, and the 74LS629/MC4044 PLL derives the dot clock from it. The 2 MHz figure is the CPU Phi 2 output of the divider, not a crystal.",
+      "Suggested fix: delete metal.silica.quartz-crystal and re-point metal.silica's child edge at mb.crystal.y1, which already carries the full crystal chain (quartz -> synthetic autoclave -> X-ray orienting -> lapping -> grinding -> electrodes -> case). metal.silica.quartz-crystal is referenced by metal.silica only.",
+      "Also correct metal.silica's own description, which says 'A 1982 Commodore 64 mainboard carried a handful of silicon dies and one 2 MHz quartz crystal'. Say 14.31818 MHz, or say 'and one quartz crystal' and let mb.crystal.y1 carry the number."
+    ],
+    "nylon-6-6-from-caprolactam": [
+      "30-passives contained four nodes claiming nylon 6,6 was made by ring-opening polymerisation of caprolactam. That is the route to nylon 6; nylon 6,6 is hexamethylenediamine plus adipic acid. I corrected mine and deleted the caprolactam branches.",
+      "Worth a grep across the other fragments: any node whose description says nylon 6,6 (or PA66) comes from caprolactam, phenol or cyclohexanone is wrong in the same way. c64.case.other-polymers.nylon in 40-chassis already has the right inputs (adipic acid, hexamethylenediamine), which suggests the rest of that fragment agrees."
+    ],
+    "metal.silica-is-not-silica-sand": [
+      "metal.silica is 'High-purity silicon feedstock (9N polysilicon)'. Several fragments listed 'metal.silica' as the ingredient of glass, glass fibre, ceramic filler, silicone rubber or quartz, which silently links a glass part to a polysilicon ingot. I replaced every such input in 30-passives with metal.silica-sand or chem.glass-fiber. The same substitution is probably needed elsewhere."
+    ],
+    "duplicate-iron-ore-leaves": [
+      "Roughly a dozen fragments each carry their own inline 'Iron ore' leaf under a tool-steel or spring-steel node, always with the same boilerplate paragraph ('Hematite and magnetite, the iron ore of the world trade. Everything ferrous in this file ... begins here'). That paragraph describes the file, not the part. metal.iron is the canonical node; the tool-steel route is metal.die-steel."
+    ],
+    "keyboard-branch-duplication": {
+      "$note": "40-chassis carries c64.keyboard.switches.* (19 nodes) for the C64 keyboard's switches, and 30-passives carries c64.keyboard-switches.* for the same hardware from the other direction. This is the largest remaining duplication in the tree and needs one owner. I have flagged it in B above but made no cross-fragment edit."
+    }
+  },
+
+  "D. stale-entries-in-data/_fixes.json": {
+    "$comment": "These entries name 30-passives nodes that this pass deleted, so scripts/build.mjs now reports them as 'not a node in this tree, skipping kind fix'. Harmless, but they can be dropped from data/_fixes.json by whoever owns that file. I did not edit it.",
+    "kind": [
+      "mb.passives.resistors.discrete-axial.metal-foil.foil-roll.etch.nitric -> material (node deleted, merged into chem.fab-chemicals.nitric-acid)",
+      "mb.passives.caps.alu-electrolytic.anode-foil.forming.phosphoric-acid -> material (node deleted, merged into metal.phosphate-ore)",
+      "mb.crystal.y1.cutting.cleanroom.deionised-water.ion-exchange -> material (node deleted, merged into facility.steam.ion-resin)"
+    ],
+    "now-redundant": [
+      "c64.keyboard-switches.pcb-resin -> material (retype applied at source in 30-passives)",
+      "c64.keyboard-switches.matrix.pcb.copper-foil -> material (retype applied at source)",
+      "c64.switches.power-slider.body.melamine.melamine-resin -> material (retype applied at source)",
+      "c64.joystick.microswitches.plastic-case.nylon.nylon-6-6 -> material (retype applied at source)",
+      "note: c64.keyboard-switches.shift-lock (retype applied at source)",
+      "note: c64.connector-jacks.expansion-port.spec (retype applied at source)"
+    ]
+  },
+
+  "E. ids-still-referenced-from-30-passives": {
+    "$comment": "Confirming that nothing outside 30-passives points at a node inside it other than these six roots, so no other fragment breaks. Verified against the spine.",
+    "root-ids-unchanged": [
+      "mb.passives",
+      "mb.crystal",
+      "c64.switches",
+      "c64.connector-jacks",
+      "c64.keyboard-switches",
+      "c64.joystick"
+    ],
+    "also-referenced": [
+      "data/_ingredients.json maps 'bisphenol a' to mb.passives.caps.tantalum.packaging.seal.bisphenol-a - kept, not deleted",
+      "data/_ingredients.json maps 'nylon' and 'nylon 6 6' to c64.joystick.microswitches.plastic-case.nylon.nylon-6-6 - kept, not deleted"
+    ],
+    "stale-ids-inside-my-fragment": [
+      "mb.passives.caps.tantalum.dielectric.forming-voltage.cathode-body - the parent 'forming-voltage' was folded into 'dielectric', so the id retains a name that is no longer in the path. Ids are stable per CHECKLIST section 8, so I left it and recorded the reason in the node's note.",
+      "mb.crystal.y1.natural-quartz.synthetic - moved up to be a sibling of natural-quartz rather than its child; the id retains the old path for the same reason. Noted on the node."
+    ]
+  },
+
+  "F. known-remaining-audit-failures-not-mine": {
+    "$comment": "scripts/audit.mjs --file 30-passives.json still exits non-zero, but every FAIL it reports is a children edge to a shared utility held by a node in another fragment. Zero 30-passives nodes hold a utility as a child. I cannot fix these from my file.",
+    "as-of-the-final-green-build-of-this-pass": {
+      "facility.water <- children of": "industry (80-industry.json)",
+      "chem.natural-gas <- children of": "chem (70-petrochem.json)",
+      "chem.petroleum <- children of": "chem.crude.reservoir.oil-column (70-petrochem.json)"
+    },
+    "$at-the-start-of-my-pass": "The same four utilities were failing on 18 / 33 / 12 / 24 edges respectively, spread over 80-industry, 35-logic, 50-power and 70-petrochem. Those agents have since cleared all but the three above."
+  },
+
+  "G. pass-summary": {
+    "file": "data/30-passives.json",
+    "nodes": "542 -> 367",
+    "nodes-removed": "175 (43 of them folded into a parent description first, the rest deleted as inline duplicates of a canonical node or as empty routing points)",
+    "notes-created": 12,
+    "renamed": 24,
+    "kind-or-category-changes": 51,
+    "nodes-moved": 6,
+    "descriptions-rewritten": 46,
+    "root-ids": "unchanged - mb.passives, mb.crystal, c64.switches, c64.connector-jacks, c64.keyboard-switches, c64.joystick. The spine links to all six and nothing outside this fragment references anything inside it except two ids named in data/_ingredients.json, both of which are still present.",
+    "ingredient-links": "97.4 % of this fragment's recorded ingredients now resolve into real 'from' edges (measured on an isolated build). Every 'Water for a factory', 'Electricity at the factory wall', 'Natural gas' and 'Petroleum' input is a from-link, never a children edge.",
+    "verification": "node scripts/build.mjs exits 0; node scripts/selftest.mjs passes all 40 checks; node scripts/audit.mjs --file 30-passives.json reports 3 FAIL, none of them on a 30-passives node, and 3 duplicate-name WARNs that involve a 30-passives node, all three of which are the cross-fragment merges proposed in section B."
+  }
+}
