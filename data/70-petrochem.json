@@ -509,10 +509,17 @@
                     "kind": "material",
                     "category": "industry",
                     "era": "1980s",
+                    "inputs": [
+                      "metal.tungsten.carbide"
+                    ],
                     "facts": [
                       {
                         "label": "Hardness",
                         "value": "900-1,600 HV; binder 6-12% Co"
+                      },
+                      {
+                        "label": "Brazed to",
+                        "value": "a cone, or a milled-steel body with carbide inserts on the three cones"
                       }
                     ],
                     "confidence": "medium"
@@ -547,7 +554,7 @@
                         "era": "1980s",
                         "inputs": [
                           "synthetic diamond powder",
-                          "metallic catalyst",
+                          "cobalt metal",
                           "tungsten-carbide substrate"
                         ],
                         "confidence": "medium"
@@ -1644,14 +1651,22 @@
                       {
                         "id": "chem.refining.atmospheric-distillation.fractionating-tower.naphtha-hydrotreating.cobalt-molybdenum",
                         "name": "Cobalt-molybdenum / nickel-molybdenum catalyst",
-                        "description": "Sulphided Co-Mo or Ni-Mo on alumina in a fixed bed at 300-400 C and 20-50 bar hydrogen, with an H2/hydrocarbon ratio of 200-1,000. Lumping several reactors in series gave 0.2-0.5 wt% sulphur naphtha; a naphtha cracker in 1980s practice wanted 0.5 wt% S or less.",
+                        "description": "Sulphided Co-Mo or Ni-Mo on alumina in a fixed bed at 300-400 C and 20-50 bar hydrogen, with an H2/hydrocarbon ratio of 200-1,000. Lumping several reactors in series gave 0.2-0.5 wt% sulphur naphtha; a naphtha cracker in 1980s practice wanted 0.5 wt% S or less. The cobalt is not a promoter in the small sense - it is roughly 2-6% Co2O3 beside 10-30% MoO3 on the same alumina support, and the two together are what makes the catalyst active, so a refinery bought the same refined cobalt that a drill-bit maker bought, and it arrived as oxide on a support rather than as anything recognisable as a metal.",
                         "kind": "material",
                         "category": "fluids",
                         "era": "1960s",
+                        "inputs": [
+                          "metal.cobalt.oxide",
+                          "metal.molybdenum"
+                        ],
                         "facts": [
                           {
                             "label": "Conditions",
                             "value": "300-400 C, 20-50 bar H2"
+                          },
+                          {
+                            "label": "Loading",
+                            "value": "about 2-6% Co2O3 with 10-30% MoO3 on alumina"
                           },
                           {
                             "label": "Product sulphur",
@@ -1812,6 +1827,9 @@
                     "kind": "material",
                     "category": "fluids",
                     "era": "1960s",
+                    "inputs": [
+                      "metal.rare-earths.oxides"
+                    ],
                     "children": [
                       {
                         "id": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina",
@@ -3664,30 +3682,30 @@
                 "children": [
                   {
                     "id": "chem.butadiene.polymerisation.neodymium-catalyst.neodymium-source",
-                    "name": "Neodymium from bastnasite",
-                    "description": "The high-cis polybutadiene catalyst needs a rare earth metal, and the rare earths come from bastnasite, a light-brown carbonatite ore mined in Mountain Pass, California, in Bayan Obo in China, and in Australia and India, concentrated and then separated by a long solvent-extraction cascade. The separation is the interesting part: fifteen chemically similar elements have to be separated one at a time by a solvent-extraction train, and the neodymium is the one that came into industrial demand in the 1980s for reasons nobody had predicted - a rubber catalyst.",
-                    "kind": "process",
-                    "category": "plastics",
+                    "name": "Neodymium oxide and neodymium metal",
+                    "description": "The high-cis polybutadiene catalyst wants the neodymium as a soluble organometallic rather than as the oxide, so the oxide comes out of the separation plant, is converted to a halide and then alkylated, and is dosed at a few hundredths of a percent. The neodymium is the fraction of the bastnasite that nobody had predicted would matter: a light rare earth sold by the tonne for glass polishing and ceramic glaze suddenly became worth several times its price per kilogram for a rubber catalyst, and by the mid-1980s the separation plants were being run to make more of the neodymium-praseodymium fraction than of anything else. A C64's rubber therefore begins in a carbonatite in California or an iron-ore pit in Inner Mongolia, passes through a mixer-settler train several hundred stages long, and ends up dosed into a hydrocarbon diluent at about one part in a thousand.",
+                    "kind": "material",
+                    "category": "metals",
                     "era": "1980s",
-                    "children": [
+                    "inputs": [
+                      "metal.rare-earths.oxides"
+                    ],
+                    "facts": [
                       {
-                        "id": "chem.butadiene.polymerisation.neodymium-catalyst.neodymium-source.bastnasite",
-                        "name": "Bastnasite ore",
-                        "description": "A light rare earth carbonate fluorosilicate, about 6-9% rare earth oxides, discovered in 1878 at Bastnas in Sweden and mined in quantity from 1949. It is the last dig-it-out node of the ABS branch's rubber phase: a C64's rubber comes from butadiene from a cracker, but the catalyst that gives that butadiene its cis content begins in a carbonatite dyke in California or in Inner Mongolia.",
-                        "kind": "material",
-                        "category": "plastics",
-                        "era": "ancient",
-                        "inputs": [
-                          "bastnasite ore"
-                        ],
-                        "places": [
-                          "Mountain Pass, California",
-                          "Bayan Obo, Inner Mongolia"
-                        ],
-                        "confidence": "medium",
-                        "note": "The rare earth chain is a metals subsystem; this node marks where a 1980s rubber catalyst entered it."
+                        "label": "Form used",
+                        "value": "a soluble neodymium alkyl, not the oxide; the oxide is halided and alkylated first"
+                      },
+                      {
+                        "label": "Dose",
+                        "value": "a few hundredths of a percent of the butadiene charge"
+                      },
+                      {
+                        "label": "Why neodymium",
+                        "value": "praseodymium was co-produced with it, and the two together soon outsold the polishing-grade fractions"
                       }
-                    ]
+                    ],
+                    "confidence": "medium",
+                    "note": "The catalyst chemistry and the origin of the ore are well documented; medium confidence on the dose level and on the timing of the shift in what the separation plants chose to make."
                   }
                 ],
                 "facts": [

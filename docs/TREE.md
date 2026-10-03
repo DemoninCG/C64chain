@@ -1,7 +1,7 @@
 # Production tree — Commodore 64
 
-2438 nodes, max depth 15, 1293 leaves.
-Generated 2026-10-03T06:37:16.141Z by `scripts/build.mjs`. Do not edit by hand.
+2454 nodes, max depth 15, 1301 leaves.
+Generated 2026-10-03T07:19:40.009Z by `scripts/build.mjs`. Do not edit by hand.
 
 # Commodore 64 (breadbin, ASSY 250407) `c64`
 
@@ -2522,11 +2522,7 @@ Trivalent donor dopants (La2O3, Dy2O3, Y2O3) or pentavalent acceptors (Nb2O5, Ta
 
 ###### Rare-earth dopant oxides `mb.passives.caps.mlcc.powder.doping.dopant-oxides` _(medium)_
 
-Lanthanum, dysprosium and yttrium oxides, ground and sieved to sub-micron, are the donor dopants that set the temperature coefficient of an X7R dielectric. They are rare-earth minerals mined and separated in small tonnages, and their price was a visible line item in MLCC costing.
-
-###### Rare-earth concentrates (bastnaesite, monazite) `mb.passives.caps.mlcc.powder.doping.dopant-oxides.bastnaesite` _(medium)_
-
-Rare-earth minerals are worked chiefly from carbonatite and monazite/bastnaesite concentrates, with the world supply dominated by one mining complex and its associated separation plants. The oxides are then produced by acid leach and solvent extraction.
+Lanthanum, dysprosium and yttrium oxides, ground and sieved to sub-micron, are the donor dopants that set the temperature coefficient of an X7R dielectric. The sub-micron sieve is the whole difficulty: a barium titanate powder wants its additives soluble or finely dispersed so that no second phase forms, and an oxide bought at the separation plant's standard grade arrives as lumps. These are the most expensive few grams on the bill of materials and they were bought by the kilogram, not the tonne, so the MLCC maker was dependent on the same two plants as the television maker for the same handful of elements.
 
 ###### Tape-casting slurry (powder + frit + binder) `mb.passives.caps.mlcc.slurry`
 
@@ -4098,7 +4094,7 @@ Copper, usually added as copper oxide, deepens the green and creates the donor l
 
 ###### Europium oxide `peripheral.tv.crt.phosphor.zns.europium` _(low)_
 
-The 1980s red was the least settled of the three. CaS:Eu and Eu-doped ZnS were both in service; CaS:Eu has the better red chromaticity but is hygroscopic and needs protection from moisture. The europium came from bastnasite, a light rare-earth carbonate, cracked with acid and solvent-extracted to 99.9% europium oxide.
+Europium is the activator that makes a television's red, and it was the one rare earth that a mass market paid for. It is used at a loading of a few tenths of a percent in the host lattice, where the Eu3+ ion's sharp 610 nm 4f-4f transition gives a narrow-band red that the zinc sulphide host itself cannot. Two red formulations were in service in 1982 and the trade between them was chromaticity against stability: CaS:Eu gave the better red but is hygroscopic and had to be protected from moisture, while europium-doped ZnS was more forgiving and slightly less saturated. The oxide itself arrives at 99.9% from the rare-earth separation plant, having begun as a few tenths of a percent of a ton of concentrate.
 
 ##### Shadow mask and aperture grille `peripheral.tv.crt.mask` _(medium)_
 
@@ -4136,13 +4132,9 @@ The cup that carries the emitting coating: a nickel-chromium alloy, about 82% Ni
 
 A hair-fine tungsten wire folded into a flat zig-zag under the cathode cup and buried in its oxides. Typical wire 0.04-0.08 mm diameter, 60-150 mm long, running at 6.3 V. It is the only hot tungsten in the gun and by far the largest source of tube failure.
 
-###### Drawn tungsten wire `peripheral.tv.crt.gun.heater.wolframite` _(medium)_
+###### Drawn tungsten wire `metal.tungsten.wire`
 
-Tungsten does not exist as a pure ore anywhere. Wolframite (Fe,Mn)WO4 and scheelite CaWO4 are decomposed with caustic soda or sodium carbonate to sodium tungstate, then to APT (ammonium paratungstate), then to tungsten trioxide reduced with hydrogen at 800-1000 degrees C to a fine powder, which is doped with potassium and drawn.
-
-###### Tungsten mine and concentrator `peripheral.tv.crt.gun.heater.wolframite.mine` _(medium)_
-
-Wolframite is dense and refractory, so the ore is mined, crushed and gravity-concentrated or floated to a 60-70% WO3 concentrate. Because the ore is often a by-product of a tin or molybdenum mine, tungsten supply followed the fortunes of tin mining, and the price spiked hard whenever the tin market wobbled.
+The compact is swaged, then rolled, then drawn through carbide or diamond dies in a long series of steps, with a hydrogen anneal between them, because tungsten will not work cold: the ductile-to-brittle transition is close to room temperature and cold tungsten cracks rather than draws. A domestic television's heater ends up as wire 0.04-0.08 mm in diameter and 60-150 mm long, folded into a flat zig-zag under the cathode cup and run off 6.3 V; at that diameter a 30 cm length weighs about a hundredth of a gram and is the largest single reason a colour tube of that generation failed. The same carbide that draws this wire draws the enamelled magnet wire on the power-supply transformer, and the same wire stock makes the probe-card needles that touch every bond pad on a 6510 die.
 
 ###### Focus and screen grids, nickel sheet `peripheral.tv.crt.gun.grids` _(medium)_
 
@@ -4180,9 +4172,17 @@ Yoke bobbins and coil formers were glass-filled nylon (PA66-GF30) because the wi
 
 A 13 inch set with a 90 degree deflection had visible pincushion and barrel distortion. Correction was partly mechanical: a pair of small magnets on the neck that tilted the field to change the deflection centre, a static C-core for pincushion, and inside the flyback a 'geometry' winding that shapes the scan current. The customer-facing result was a V-hold, H-hold, width, height, linearity and convergence control on the back of the chassis, and on a cheap set a bright-line adjustment they could get wrong.
 
-###### Alnico and samarium-cobalt correction magnets `peripheral.tv.crt.yoke.geometry.magnets` _(medium)_
+###### Correction magnets on the tube neck `peripheral.tv.crt.yoke.geometry.magnets`
 
-The small magnets that set the deflection centre and the geometry of a 1982 set were usually Alnico, an iron-aluminium-nickel alloy, or a small ferrite. Samarium-cobalt was the high-performance alternative but was too expensive and too new for a domestic set; it became standard in the small deflection magnets of the 1990s. Samarium is a rare earth, and the rare earths came from bastnasite.
+A pair of small magnets sitting on the neck of the tube, arranged to tilt the deflection field and move the deflection centre without touching the geometry circuit. In a 1982 domestic set these were almost always cast Alnico; the high-performance alternative, a samarium-cobalt magnet, cost several times as much for no benefit a consumer could see on a 13 inch screen, and only became standard in the small deflection magnets of the 1990s. The mass in either case is a few grams.
+
+###### Alnico correction magnet `peripheral.tv.crt.yoke.geometry.magnets.alnico`
+
+An iron-aluminium-nickel alloy with a high Curie point and a hard, brittle, unmachinable structure. Alnico is cast or sintered as a solid block, aged for days at 600-800 C to precipitate its magnetic phase, and then magnetised in a strong field - and it cannot be ground to shape afterwards, so the geometry of the magnet has to be cast in, which is exactly why a set's pincushion and width adjustments are a fixed arrangement of magnets rather than something the customer can trim. The recipe varies across the family and the variation matters for this tree: the original grades were cobalt-free, but the high-coercivity grades of the 1950s onwards added cobalt, titanium and copper, so an Alnico 5 magnet on a 1982 set is an iron-cobalt alloy and the cobalt in it came out of the Copperbelt, not out of the aluminium or the nickel.
+
+###### Samarium-cobalt correction magnet `peripheral.tv.crt.yoke.geometry.magnets.smco`
+
+A rare-earth permanent magnet with roughly twice the energy product of Alnico from a fraction of the volume, made by sintering or bonding finely divided samarium-cobalt powder and magnetising it. Its coercivity comes from samarium's affinity for cobalt, which holds the grains from rotating back into alignment, so the magnet resists demagnetisation far better than Alnico and does not need the iron it replaced. That is a real advantage on a deflection magnet, and it is exactly why the material was developed for this job and then priced out of a domestic set: samarium oxide was one of the more expensive rare-earth fractions, so the magnet cost was set by the separation plant rather than by the metallurgy.
 
 ##### EHT / line output transformer (flyback) `peripheral.tv.crt.flyback`
 
@@ -5119,7 +5119,7 @@ Everything above ends in one of three trunks: refined metals, petrochemicals, an
 
 ### Metals, ores and industrial minerals `metal`
 
-Every mineral stream behind a 1982 Commodore 64: the quartzite that becomes silicon, the bauxite and cryolite that becomes aluminium foil, the porphyry copper that becomes PCB track and transformer magnet wire, the tin and lead that become 63/37 solder, the iron ore and coke that become the steel chassis and the transformer laminations, and the specialty metals - gold, silver, nickel, tantalum, zinc, chromium, manganese, cobalt - that end up plating contacts, filling ceramic capacitors and setting the sinter point of every solder joint. Each branch runs from the finished metal down to the quarry, the open pit, the evaporite bed or the seabed.
+Every mineral stream behind a 1982 Commodore 64: the quartzite that becomes silicon, the bauxite and cryolite that becomes aluminium foil, the porphyry copper that becomes PCB track and transformer magnet wire, the tin and lead that become 63/37 solder, the iron ore and coke that become the steel chassis and the transformer laminations, and the specialty metals - gold, silver, nickel, tantalum, zinc, chromium, manganese, cobalt, tungsten - that end up plating contacts, filling ceramic capacitors, binding carbide cutters and drawing the filament in a television's gun. The rare earths are here too, as oxides rather than metals, because they arrive as oxides and are only a few hundred tonnes of them. Each branch runs from the finished metal down to the quarry, the open pit, the evaporite bed or the seabed.
 
 #### High-purity silicon feedstock (9N polysilicon) `metal.silica`
 
@@ -6193,7 +6193,7 @@ Ludwig Mond's 1890s process, still used in the 1980s for the last nines. Nickel 
 
 ###### Dicobalt octacarbonyl, Co2(CO)8 `metal.nickel.cobalt-carbonyl` _(medium)_
 
-The cobalt in the Mond residue is a genuine industrial source of cobalt: the residue is treated with copper at 200 C under hydrogen to reduce the cobalt and copper carbonyls, and then re-carbonylated to Co2(CO)8, which is filtered out and decomposed. In 1982 the two leading producers - INCO in Canada and OUTOKUMPU in Finland - between them controlled most of the world's cobalt from their nickel operations, and a period of low cobalt stocks in 1982-83 contributed to a real shortage.
+The cobalt in a Mond residue is a genuine industrial source, and an unusual one: the residue left after the nickel has been volatilised as Ni(CO)4 still contains the cobalt as Co2(CO)8, and the two carbonyls are separated by exploiting the fact that dicobalt octacarbonyl is solid and will crystallise out while nickel carbonyl boils off at 43 C. In the classical route the residue is treated with copper at about 200 C under hydrogen to reduce both carbonyls, and then re-carbonylated to re-form Co2(CO)8, which is filtered and decomposed to metal. The consequence for the wider market is that every tonne of nickel refined by the carbonyl process is a tonne of cobalt that did not have to be mined, which is why the two nickel carbonyl plants at Sudbury and Kokkola were influential in the cobalt market well beyond their own output.
 
 ###### Why nickel carbonyl is the deadliest room in metals `metal.nickel.mond.safety` _(medium)_
 
@@ -6524,14 +6524,19 @@ The concentrate is digested in a mixture of hydrofluoric acid, nitric acid and h
 
 Columbite-tantalite carries thorium and uranium in solid solution, typically 0.01-0.5% Th as ThO2, and because thorium's chemistry is so close to the rare earths it follows them through the whole fluoride circuit and reports with the rare-earth product. It is an alpha emitter, so the refinery's thorium residue is a radioactive waste that has to be stored, and in 1982 the disposal arrangements in most producing countries were informal. The leaf is a radioactive waste site, which is a legitimate if slightly grim terminus for a branch of the metals tree.
 
-###### Monazite, the thorium and rare-earth carrier `metal.tantalum.monazite` _(medium)_
+###### Monazite concentrate and the beach-sand placer `metal.rare-earths.monazite`
 
-Monazite, (Ce,La,Nd,Th)PO4, is a heavy placer mineral from the same beach sands as the ilmenite and the rutile - the Kerala and Queensland and Cape Breton sands. It is the world's main thorium source and, after a very difficult separation, a rare-earth source. In the tantalum circuit monazite is an impurity that has to be filtered off the fluoride solution. So the tantalum in a 1982 capacitor, the titanium dioxide in its casing, and the thorium residue all come out of the same Queensland beach sand.
+Monazite, (Ce,La,Nd,Th)PO4, is a heavy placer mineral from the beach sands that carry ilmenite, zircon, rutile and xenotime with it - the Kerala and Queensland and Cape Breton sands, worked by a dredge and a floating concentrator with shaking tables, spirals, a magnet and an electrostatic separator. It holds 20-30% rare-earth oxides and, because thorium's chemistry is so close to the rare earths', 5-30% ThO2 as well. That thorium is the practical difficulty and the reason monazite had been worked mainly for its heavy minerals: it follows the rare earths through the whole separation chemistry and has to be parked in a radioactive residue. Monazite is mined for thorium, for the heavy minerals and, in a few places, for the rare earths themselves. It is also an impurity that a coltan refinery has to filter off its fluoride solution.
 
 ###### The heavy-mineral beach and its dredge `metal.monazite.beach`
 
-The leaf of the tantalum branch's by-product chain: a beach on the east coast of Queensland or on the Malabar coast of Kerala where the wave has concentrated ilmenite, zircon, rutile, monazite and xenotime into a dark, 1-10% heavy-mineral band a metre or two thick in the sand. It is worked by a suction dredge on a barge that pumps the sand onto a floating concentrator with shaking tables, spirals, a magnetic separator and an electrostatic separator. Everything in this file that is 'derived from a beach sand' - the titanium dioxide, the coltan, the thorium, the rare earths, the zircon - came out of a band like this one.
+A beach on the east coast of Queensland or on the Malabar coast of Kerala where the wave has concentrated ilmenite, zircon, rutile, monazite and xenotime into a dark, 1-10% heavy-mineral band a metre or two thick in the sand. It is worked by a cutter-suction dredge or a walking dredge on a barge, which pumps the sand onto a floating concentrator with shaking tables, spirals, a magnetic separator and an electrostatic separator. This is the shared geological endpoint of a surprising amount of this file: the titanium dioxide, the coltan, the thorium residue, the rare earths and the zircon all came out of a band like this one, which is why a capacitor's tantalum and a television's red phosphor can be argued about at the same beach.
 
+###### Caustic soda bake to split the rare earths from the thorium `metal.rare-earths.monazite.caustic-bake` _(medium)_
+
+Monazite is a refractory phosphate, so the industrial split between the rare earths and the thorium is a matter of finding a lye that will dissolve one and not the other. A 50% caustic soda solution is mixed with the sand and taken to about 140-150 C for several hours; the phosphate is broken down and the rare-earth elements go into solution as hydroxides, while thorium and uranium stay behind as comparatively insoluble hydroxides in the residue, where they concentrate into a radioactive waste that has to be stored. The pregnant liquor is then diluted, filtered and taken to the separation plant. An acid digestion at 150-200 C does the same job more cheaply on some ores and worse on others, because it dissolves the thorium too and puts the separation problem downstream.
+
+            - *The heavy-mineral beach and its dredge* `metal.monazite.beach` *(seen above)*
 ###### The fluoride digestion vessel `metal.tantalum.digest-vessel` _(medium)_
 
 The digestor is the most aggressively corrosive piece of equipment in the metals tree. Anhydrous hydrofluoric acid at 100-200 C attacks glass, attacks most metals, and attacks concrete; so the vessel is Monel, nickel, or Teflon-lined, with the condenser and the piping also in Monel, and there is a continuous fluoride leak problem because HF is off-gassing from a boiling slurry. The industry answer through the 1980s was the Monel plant, with a steam stripping system to recover the HF and a caustic scrubber on the vent, and it was the single largest reason the industry needed a process chemist rather than a metallurgist.
@@ -6669,15 +6674,11 @@ The C64's case, the keycaps, the key plungers and the disk-drive and modulator h
 
 ###### Molybdenum: a tool steel alloying element `metal.molybdenum` _(medium)_
 
-Molybdenum is in the tool steel, in the stainless and in the hydrodesulphurisation catalyst, so it belongs in this tree, but its own branch is short because in 1982 almost no molybdenum came from a molybdenum mine: about half came from the molybdenite recovered as a by-product of the porphyry copper concentrators, where it is a few hundred ppm of the concentrate and reports to a separate flotation circuit, and the other half came as molybdic oxide from roasting. The ore is molybdenite, MoS2, in the Climax and Henderson porphyry in Colorado and in the Bingham Canyon concentrate. The leaf is a porphyry or a granite vein.
+Molybdenum is in the tool steel, in the stainless and in the hydrodesulphurisation catalyst, so it belongs in this tree, but its own branch is short because in 1982 almost no molybdenum came from a molybdenum mine: about half came from the molybdenite recovered as a by-product of the porphyry copper concentrators, where it is a few hundred ppm of the concentrate and reports to a separate flotation circuit, and the other half came as molybdic oxide from roasting. The ore is molybdenite, MoS2, in the Climax and Henderson porphyry in Colorado and in the Bingham Canyon concentrate. Molybdenum and tungsten share the greisen hydrothermal environment, so scheelite CaWO4 and molybdenite are sometimes intergrown in the same vein and the two metals can be recovered from one orebody. The leaf is a porphyry or a granite vein.
 
 ###### Molybdenite in a porphyry `metal.molybdenite`
 
 Soft, greasy, platy flakes of MoS2 in the quartz and feldspar of a granitic porphyry, associated with the copper minerals of the Climax and Henderson molybdenum operations or with the Bingham copper concentrate. The leaf is the same porphyry intrusion the copper branch ends in, which is a genuine shared endpoint.
-
-###### Scheelite and wolframite: the limestone vein alternative `metal.molybdenum.scheelite` _(low)_
-
-Almost all molybdenum came from porphyry copper, but there is a second source: the molybdenite that sits in the tungsten skarn and vein deposits - the Climax and Henderson molybdenum orebodies in Colorado were actually a Colorado Clueca-type porphyry with a molybdenum-bearing skarn. The relevant geology is that molybdenum and tungsten share the hydrothermal vein environment, and scheelite (CaWO4) and molybdenite (MoS2) are sometimes intergrown in the same greisen. So the molybdenum in a C64's injection-moulding die could in principle have come out of the same vein as a tungsten electrode - which is the point the brief made when it said no tungsten in a 1982 C64, and this is where that fact becomes interesting: the tungsten was there, in the same rock, but it went into other industries.
 
 ###### Vanadium: a small alloying element `metal.vanadium` _(medium)_
 
@@ -6750,12 +6751,11 @@ The C64's TV modulator, which puts the composite video onto the RF of channel 3 
 
 The NiZn family is doped with copper and cobalt to shape the grain-boundary physics, and with calcium to control the sintering. The NiZn product of the 1980s was deliberately split by composition into a high-permeability low-loss grade for transformers below 1 MHz and a very high-permeability grade for read heads and for antenna cores, and the difference between them was a fraction of a percent of dopant. It is a good example of a material in which the last tenth of a percent of the recipe is the difference between two products.
 
-###### The nickel and cobalt raw materials for NiZn `metal.ferrite.nizn.co-source` _(low)_
+###### The nickel and cobalt raw materials for NiZn `metal.ferrite.nizn.co-source` _(medium)_
 
-The Ni-Zn family's nickel does not come as metal. It comes as nickel oxide, or as green nickel hydroxide precipitate from a laterite leach, and the cobalt comes either as cobalt metal or - much more cheaply, and this is the point - as a cobalt hydroxide carried out of the Sherritt-Gordon ammonia circuit as a precipitate, or as cobalt recovered from the spent nickel-catalyst streams. So the cobalt in a NiZn ferrite and the cobalt in a superalloy came out of the same nickel refinery, and that nickel refinery in 1982 was in the middle of a genuine cobalt supply crisis, which is a nice way for a ferrite material to be affected by a metals-market event.
+The Ni-Zn family's nickel does not come as metal. It comes as nickel oxide, or as green nickel hydroxide precipitate from a laterite leach, and the cobalt comes as metal, as oxide, or - much more cheaply - as a cobalt hydroxide carried out of the nickel refinery's ammonia circuit. Which is the point: the cobalt in a NiZn ferrite, the cobalt in a superalloy and the cobalt binder in a tungsten-carbide drill cone all came out of the same few refineries, so the price a ferrite maker paid for its dopant was set by the nickel market rather than by anything to do with ferrite. By 1982 that price was falling rather than rising - cobalt was about $12.50/lb in May, down from $25/lb in 1980, and about $5/lb by 1983-84 as new supply arrived.
 
               - *Nickel oxide (NiO)* `metal.nickel.nickel-oxide` *(seen above)*
-              - *Dicobalt octacarbonyl, Co2(CO)8* `metal.nickel.cobalt-carbonyl` *(seen above)*
 ##### Ferrite raw materials: the oxide blend `metal.ferrite.raw-materials`
 
 The three powders that get blended, and each one has its own industrial route. The iron oxide is either mill scale from the aluminium or the steel mill - washed, dried and milled, and the cheapest source - or a precipitated oxide made by acid leaching hematite. The manganese is manganese carbonate, a chemical precipitate from a manganese sulphate solution. The zinc is zinc oxide, made by roasting zinc ore or by burning zinc metal. The blend has to be accurate to about 0.2% in each component, because the magnetic properties are extremely sensitive to it, and by the 1980s the oxide suppliers were selling pre-blended 'master mixes' to the smaller ferrite makers precisely because the blending was the hard part.
@@ -6884,6 +6884,77 @@ The same powder cannot make a Y5V capacitor and an X7R one. Y5V is made from a f
 ###### Co-fire the internal electrodes in a low-oxygen atmosphere `metal.dielectric-grading.mlc` _(medium)_
 
 A multilayer capacitor's internal electrode is nickel or palladium, printed as a paste and co-fired with the ceramic. That will not work in air - the ceramic would reduce and become a lossy semiconductor - so the whole stack is fired in a low-oxygen atmosphere at 1200-1350 C in hydrogen or in a nitrogen-hydrogen mix, and then re-oxidised afterwards so the barium titanate goes back to being an insulator. The oxygen partial pressure is controlled to a few millibars. It is the most metallurgically demanding step in the whole electronics supply chain that nobody ever sees, and it is a barium carbonate problem.
+
+#### Tungsten: filaments, carbide and alloying element `metal.tungsten`
+
+Very little tungsten is inside a 1982 C64, and almost all of what there is sits in capital equipment and consumables rather than in the machine: the heater filament in a television's electron gun, the cemented-carbide cutters that drill the mainboard and route the glass-epoxy laminate, the carbide dies that draw the power-supply transformer's magnet wire, the tungsten-rhenium needles of a wafer probe card, and a percent or two of it in the simple tooling and stamping steels. What it is: the highest-melting-point of all metals at 3422 C, boiling at 5930 C, density 19.25 g/cm3 - a metal that is essentially never found as native metal, because wolframite and scheelite carry it at 0.3-2.5% WO3 and it has to be chemically opened before it can be reduced. It is not in the case mould: SKD61 and H13 are chromium-molybdenum-vanadium steels with no tungsten in them at all, and the alloying element in that family is molybdenum.
+
+##### Wolframite and scheelite ore `metal.tungsten.ore`
+
+The two ores are chemically different and are opened differently, which is why the mine and the mill are designed separately. Wolframite, (Fe,Mn)WO4, a solid solution of ferberite FeWO4 and huebnerite MnWO4, is a dense black mineral of specific gravity 7.1-7.9 that sits in the quartz veins of a granite cupola with cassiterite, topaz and native bismuth; being that heavy and weakly magnetic it concentrates on a shaking table and on a magnetic separator. Scheelite, CaWO4, is the calcium equivalent - too light and too non-magnetic for gravity, so it is froth-floated, and it is the ore of the Climax and Pine Creek skarns in Colorado and Montana and of the Felbertauern in Austria. Neither commonly exceeds about 1.5% WO3, so a tungsten mine is a large mill for a small product and it is usually a by-product operation. Molybdenum and tungsten share the greisen hydrothermal environment, so scheelite and molybdenite MoS2 are sometimes intergrown in one vein.
+
+###### Tungsten mine and concentrator `metal.tungsten.ore.mine` _(medium)_
+
+Wolframite is dense and refractory, so the ore is mined, crushed and gravity-concentrated or floated to a 60-70% WO3 concentrate, which is roughly a hundredfold upgrade on a 0.6% head grade. Because the ore is so often a by-product of a tin or molybdenum mine rather than the main product of its own, tungsten supply followed the fortunes of tin mining for most of the twentieth century, and the price spiked hard whenever the tin market wobbled. The supply map changed abruptly around 1980: China had been a minor producer whose entire output went to its own steel industry, and from 1980 its production rose sharply on an export surge, while South Korea's Sangdong was the other new large source. Korea and China were becoming the dominant suppliers just as the electronics industry started buying filament wire.
+
+##### Ammonium paratungstate (APT) `metal.tungsten.apt`
+
+The intermediate every other tungsten product starts from. The concentrate is digested with sodium hydroxide or with soda ash at about 900-1000 C, which brings the tungsten into solution as sodium tungstate while the calcium, iron and fluorine stay behind as insoluble residues that are filtered off; ammonium chloride then precipitates ammonium paratungstate. APT is a stable, dry, freely soluble white solid, and that is the whole point of it: it can be shipped a long way without absorbing moisture or picking up anything from a wooden crate, so APT rather than concentrate is what crosses an ocean. Calcining it at 500-600 C drives off the ammonia and leaves yellow tungsten trioxide, the one stable oxide and the universal feedstock for the metal.
+
+##### Reduce the trioxide to tungsten powder `metal.tungsten.reduction`
+
+WO3 + 3 H2 gives W + 3 H2O. Hydrogen is the reducing agent because carbon would give tungsten carbide, which is a different and also valuable product rather than the metal anyone wants here; the reaction is carried out on a boat of fine powder in a hydrogen tube furnace at 500-1000 C. What comes out is not yet a usable metal: it is a porous mass of interlocking crystallites a few microns across that can be crushed but not drawn. Tungsten is brittle at room temperature - its ductile-to-brittle transition sits near 200 C - so no amount of powder metallurgy alone gives a workable solid, and the grain boundary chemistry of the powder has to be fixed before the metal can be made at all.
+
+###### Doped tungsten powder `metal.tungsten.powder`
+
+Undoped tungsten powder has almost no grain boundary strength, and a filament drawn from it sags as it heats and burns out where the sag is greatest. The fix, worked out in the 1920s and universal by 1982, is to add a few tenths of a percent of potassium as potassium hydroxide or potassium carbonate, with a little alumina alongside, during the reduction itself: the potassium ends up as finely dispersed potassium bubbles along the grain boundaries, and it is those bubbles that pin the boundaries so the wire can be drawn to 0.04 mm without slumping. Alumina refines the grain as well. The doped compact is pressed and sintered, then hot-worked, and the final filament metal is 99.9-99.95% pure with the potassium content controlled to control the grain.
+
+            - *Drawn tungsten wire* `metal.tungsten.wire` *(seen above)*
+##### Tungsten carbide and the WC-Co cemented carbide `metal.tungsten.carbide`
+
+Tungsten carbide, WC, is made by heating tungsten powder with carbon above 2000 C, and pressed and sintered on its own it is brittle and useless. What the industry actually buys is the composite: 6-12% finely divided cobalt powder mixed with WC grains of 0.5-30 microns, pressed and vacuum-sintered at 1400-1600 C, then ground and lapped to shape. The molten cobalt wets the carbide grains and holds them in a continuous binder, which is why the two metals are inseparable inside one object - a rock bit cone is a tungsten product and a cobalt product at once. By the 1980s cemented carbide was the largest single use of tungsten, ahead of filament, and oil-well drill cones were among its largest markets, so the bit on the rig producing the crude is a tungsten product just as much as the end mill cutting a C64 mainboard is.
+
+#### Cobalt: the carbide binder, the ferrite dopant and the magnet alloy `metal.cobalt`
+
+Cobalt is the element nobody thinks of and cannot do without. In a 1982 C64 and its peripherals it is the metal that holds tungsten carbide together in a drill cone, an end mill and a stamping die; the grain-boundary dopant that makes NiZn ferrite behave; the balance element in the iron-nickel-cobalt lid sealed onto a memory chip's ceramic package; a few percent of an Alnico correction magnet; and, at the top of the price range, half of a samarium-cobalt magnet. The mass in any one machine is a few grams. What is worth tracing is where it comes from, because cobalt is almost never mined for itself: it is overwhelmingly a by-product reporting out of somebody else's circuit, most often a copper-cobalt orebody or a nickel refinery, so the cobalt supply chain is largely a set of attachments to the copper and nickel branches.
+
+##### Cobalt ore: heterogenite, carrollite and asbolane `metal.cobalt.ore`
+
+Most cobalt never appears as a cobalt mineral at all. In the Copperbelt - the Shaba and Nkana strata of Zaire and Zambia - it sits in the sulphide ores as carrollite, Cu(Co,Ni)2S4, and it is recovered by flotation alongside the copper sulphides, so its output tracks the copper mine's. Where the deposit weathers, the same cobalt is oxidised to heterogenite, CoO(OH), a black manganese-rich oxide in the near-surface ore, and it is the oxide that the later hydrometallurgical flowsheets treat. A third source is asbolane, (Ni,Co)2-xMn4+(O,OH)4.nH2O, the cobalt-nickel-manganese oxide that forms in New Caledonian laterite. Grades are low: laterites run 0.1-1.5% Co, and the oxide zones are mined at a few percent.
+
+###### Leach the copper-cobalt oxide ore `metal.cobalt.ore.hydromet` _(medium)_
+
+The oxide ores of the Copperbelt are not smelted for their cobalt: they are leached. The ore is crushed and agitated in a sulfuric acid solution, which dissolves the cobalt and copper as sulphates while the iron stays in the residue as hydroxide, and the pregnant liquor is then taken to a solvent-extraction circuit that pulls the cobalt and copper apart from each other. What comes out of that circuit is a cobalt sulphate solution and, from it, a cobalt hydroxide intermediate that is shipped to a refinery. This is why the cobalt in a 1982 tungsten-carbide drill cone is a chemical-plant product rather than a smelter product, and why the Copperbelt's cobalt followed the fortunes of its acid plants and its export routes.
+
+##### The Sherritt-Gordon ammonia pressure leach `metal.cobalt.ammoniacal-leach` _(medium)_
+
+The second big route takes cobalt out of a nickel refinery rather than out of an orebody, and it exists because the nickel circuit was already there. Nickel concentrate or matte is leached with ammonia and ammonium sulphate in horizontal autoclaves under air at elevated pressure, which dissolves the nickel, cobalt and copper as metal-ammine complexes while the sulphide sulphur is oxidised and leaves as ammonium sulphate - a saleable fertiliser, which is what made the process pay. Cobalt is then separated from nickel on the fact that the cobalt ammine is far more stable: it is held in solution while the nickel is thrown down, and the cobalt stream is finished separately to metal. Because the feed is somebody else's concentrate, every tonne of cobalt this route makes is a tonne that did not have to be mined.
+
+##### Electrolytic refining to 99.8% cathode `metal.cobalt.electrolytic`
+
+Almost all cobalt metal on the market is won by electrolysis, and that is a deliberate choice about purity rather than about cost. The cobalt hydroxide or the crude metal is dissolved in sulfuric acid to make a cobalt sulphate solution; that solution is fed to an insoluble anode and a cobalt starter cathode, and metal grows on the cathode at a controlled current density while the impurities that are not plating out stay in the bath. The result is a cobalt cathode of about 99.8% - the grade trade calls Falconbridge cathode - and it is the standard feed for the tungsten-carbide industry, because a carbide's cobalt binder has to be fine, uniform and free of the copper, iron and lead that would poison the sintering. Electrolytic cobalt is also how the high-purity metal for superalloys and for the samarium-cobalt magnets was made.
+
+          - *Dicobalt octacarbonyl, Co2(CO)8* `metal.nickel.cobalt-carbonyl` *(seen above)*
+##### Cobalt(II) oxide, the additive grade `metal.cobalt.oxide` _(medium)_
+
+The oxide a component maker actually buys is neither the ore nor the metal but a calcined powder, and in 1982 electronics the grade in question was a few percent of a zinc oxide varistor disc and a trace in a ferrite body. Heating cobalt metal in oxygen gives the blue-black spinel Co3O4, which is the oxide most of the industry actually trades; the green rocksalt CoO underneath it is a different substance with a different stability range, oxidising back to Co3O4 at 600-700 C and reappearing only when the temperature goes above 900 C. That is why the calcining route is described as reducing to the metal by way of Co3O4, and why a supplier's 'cobalt monoxide' and 'cobalt oxide' can be the same powder. The varistor is why this matters - a few percent of cobalt lets a zinc oxide disc hold a wide voltage range without failing, by making the grain boundaries and the grain interiors drift to their breakdown voltages at different rates.
+
+#### Rare earths: fifteen metals out of two concentrate ores `metal.rare-earths`
+
+The lanthanides plus scandium and yttrium are a single mining and refining industry that supplies fifteen elements which are chemically almost identical and economically almost unrelated. What a 1982 machine actually asks for is a gram-scale pinch of several of them: europium to make the red of a television phosphor, samarium for a correction magnet, neodymium for the catalyst that sets the cis content of a butadiene rubber, lanthanum and dysprosium as the donor dopants of an X7R ceramic dielectric, and lanthanum and neodymium exchanged into the zeolite of a refinery's cracking catalyst. All of them leave the same two concentrate ores and the same solvent-extraction plant, and after that plant the only question is which of the fifteen fractions a customer asks for.
+
+##### Bastnasite concentrate and the Mountain Pass carbonatite `metal.rare-earths.bastnasite`
+
+Bastnasite - usually written bastnaesite in commercial and metallurgical use, and bastnäsite in mineralogy - is (Ce,La)CO3F, a light-brown carbonate fluorosilicate carrying 6-9% rare-earth oxides. It was found in 1878 at Bastnas in Sweden and worked in quantity from 1949, but the ore that supplied the western industry in 1982 was a carbonatite in the Clark Mountains in California. It is an open pit in a 1.4-billion-year-old carbonatite intrusion, 8-12% rare-earth oxides in bastnasite with calcite, barite and dolomite as gangue, and it is dredged, floated and sent to its own separation plant on the same site. Mountain Pass is the clearest single example in this tree of an ore mined for an element nobody can see in it: barium is the gangue, iron is what comes out of the separation circuit, and the rare earths are what it is for. Production rose steeply through the 1960s to supply europium for the red of colour television. The other giant, Bayan Obo in Inner Mongolia, is different in kind: it is an iron-ore mine first, with monazite and bastnasite in the ore and the rare earths and niobium recovered as by-products, its concentrate travelling 150 km to the separation works at Baotou.
+
+        - *Monazite concentrate and the beach-sand placer* `metal.rare-earths.monazite` *(seen above)*
+##### Cracking, leaching and solvent extraction `metal.rare-earths.separation`
+
+Fifteen elements that differ only in the number of electrons in one inner shell cannot be separated by any normal chemical operation, because they all want the same compounds. The industry separates them by arithmetic instead: a long train of mixer-settler stages in which a hydrocarbon solvent and an aqueous phase pass counter-current and the partition coefficient between them is exploited a hundred times over, walking cerium, lanthanum, neodymium and the rest off the stream one at a time. Hundreds of stages and several tonnes of solvent per tonne of oxide is what it costs, which is why the whole business sits behind one or two plants per ore rather than being spread around, and why the ore's owner and the plant's owner are usually the same company. Cerium is the one that comes out cheaply and in bulk, and cerium is a nuisance: there is far more of it than anyone can use.
+
+###### Separated rare-earth oxides `metal.rare-earths.oxides`
+
+The output of the separation plant is a set of individual oxides rather than a mixture: europium oxide for the red activator in a colour television phosphor, samarium oxide for the samarium-cobalt magnet, neodymium oxide for the lanthanide rubber catalyst and for the cracking-catalyst zeolite, lanthanum and dysprosium oxides ground to sub-micron as the donor dopants of a ceramic dielectric, and yttrium oxide as both a dopant and a stabiliser. Grades are quoted by purity - 99.9% or 99.99% for the phosphor and magnet grades - and the price differences between them are large enough that the tonnages are shaped by which grade happens to be wanted, not by how much of the element there is in the ground.
 
 ### Petrochemicals and process chemistry `chem`
 
@@ -7427,7 +7498,7 @@ The cracker feedstock was almost never straight-run naphtha. It was hydrotreated
 
 ###### Cobalt-molybdenum / nickel-molybdenum catalyst `chem.refining.atmospheric-distillation.fractionating-tower.naphtha-hydrotreating.cobalt-molybdenum` _(medium)_
 
-Sulphided Co-Mo or Ni-Mo on alumina in a fixed bed at 300-400 C and 20-50 bar hydrogen, with an H2/hydrocarbon ratio of 200-1,000. Lumping several reactors in series gave 0.2-0.5 wt% sulphur naphtha; a naphtha cracker in 1980s practice wanted 0.5 wt% S or less.
+Sulphided Co-Mo or Ni-Mo on alumina in a fixed bed at 300-400 C and 20-50 bar hydrogen, with an H2/hydrocarbon ratio of 200-1,000. Lumping several reactors in series gave 0.2-0.5 wt% sulphur naphtha; a naphtha cracker in 1980s practice wanted 0.5 wt% S or less. The cobalt is not a promoter in the small sense - it is roughly 2-6% Co2O3 beside 10-30% MoO3 on the same alumina support, and the two together are what makes the catalyst active, so a refinery bought the same refined cobalt that a drill-bit maker bought, and it arrived as oxide on a support rather than as anything recognisable as a metal.
 
 ###### Sour water stripper `chem.refining.atmospheric-distillation.fractionating-tower.naphtha-hydrotreating.sour-water`
 
@@ -7748,13 +7819,9 @@ A pyrophoric organolithium, always supplied as a 10-20% solution in hexane and n
 
 The high-cis technology of the 1980s: a neodymium (or lanthanide) compound with an alkylaluminium in a hydrocarbon diluent gives 97-99% cis-1,4, and because the cis content is so high the rubber does not need to be plasticised with oil. Linear low-cis polybutadiene was the growth product of the decade; the older lithium-process cis-PB at 90-95% was still the volume product in 1983.
 
-###### Neodymium from bastnasite `chem.butadiene.polymerisation.neodymium-catalyst.neodymium-source`
+###### Neodymium oxide and neodymium metal `chem.butadiene.polymerisation.neodymium-catalyst.neodymium-source` _(medium)_
 
-The high-cis polybutadiene catalyst needs a rare earth metal, and the rare earths come from bastnasite, a light-brown carbonatite ore mined in Mountain Pass, California, in Bayan Obo in China, and in Australia and India, concentrated and then separated by a long solvent-extraction cascade. The separation is the interesting part: fifteen chemically similar elements have to be separated one at a time by a solvent-extraction train, and the neodymium is the one that came into industrial demand in the 1980s for reasons nobody had predicted - a rubber catalyst.
-
-###### Bastnasite ore `chem.butadiene.polymerisation.neodymium-catalyst.neodymium-source.bastnasite` _(medium)_
-
-A light rare earth carbonate fluorosilicate, about 6-9% rare earth oxides, discovered in 1878 at Bastnas in Sweden and mined in quantity from 1949. It is the last dig-it-out node of the ABS branch's rubber phase: a C64's rubber comes from butadiene from a cracker, but the catalyst that gives that butadiene its cis content begins in a carbonatite dyke in California or in Inner Mongolia.
+The high-cis polybutadiene catalyst wants the neodymium as a soluble organometallic rather than as the oxide, so the oxide comes out of the separation plant, is converted to a halide and then alkylated, and is dosed at a few hundredths of a percent. The neodymium is the fraction of the bastnasite that nobody had predicted would matter: a light rare earth sold by the tonne for glass polishing and ceramic glaze suddenly became worth several times its price per kilogram for a rubber catalyst, and by the mid-1980s the separation plants were being run to make more of the neodymium-praseodymium fraction than of anything else. A C64's rubber therefore begins in a carbonatite in California or an iron-ore pit in Inner Mongolia, passes through a mixer-settler train several hundred stages long, and ends up dosed into a hydrocarbon diluent at about one part in a thousand.
 
 ###### Potassium persulphate initiator `chem.abs.grafting.initiator`
 

@@ -102,39 +102,115 @@ still categorised `metals` while the canonical `chem.styrene.benzene` is
 
 ---
 
-## 2. No canonical tungsten node
+## 2. ~~No canonical tungsten node~~ DONE 2026-10-03
 
-There is no node for tungsten as a metal. The tree currently reaches tungsten
-only through path-local copies: the wolframite branch under the CRT heater,
-scheelite under molybdenum, and tungsten-carbide drill bits.
+`metal.tungsten` now exists under the `metal` root, with the full route rather
+than a summary of it:
 
-Consequence: `data/_ingredients.json` maps `"tungsten wire"` to
-`metal.molybdenum.scheelite`, which is defensible (wire is drawn from
-tungsten, which comes from wolframite) but is not the substance node. This is
-noted in that file's `$note`.
+| node | what it is |
+|---|---|
+| `metal.tungsten` | the metal: 3422 C melting point, 19.25 g/cm3, 60-70% of consumption into carbide |
+| `metal.tungsten.ore` | wolframite and scheelite, and why they are concentrated differently |
+| `metal.tungsten.ore.mine` | the concentrator, and the 1980 shift to Chinese and Korean supply |
+| `metal.tungsten.apt` | the caustic digest and ammonium paratungstate, the traded intermediate |
+| `metal.tungsten.reduction` | WO3 + 3 H2, and why it is not carbon |
+| `metal.tungsten.powder` | potassium and alumina doping, and what non-sag means |
+| `metal.tungsten.wire` | swaging, drawing, the hydrogen anneal between steps |
+| `metal.tungsten.carbide` | WC-Co cemented carbide, and why the two metals are inseparable |
 
-**Action.** Add `metal.tungsten` with the ore (wolframite / scheelite), the
-conversion to ammonium paratungstate, reduction to the metal, and the powder
-route. Then repoint every tungsten reference at it and drop the `metal.tungsten`
-alias workaround.
+Three path-local copies were merged into it and recorded in `_merged.json`:
+`metal.molybdenum.scheelite`, `peripheral.tv.crt.gun.heater.wolframite` and
+`peripheral.tv.crt.gun.heater.wolframite.mine`. The first was the interesting
+one — it was a tungsten ore node filed under molybdenum, with a name relative
+to a parent it was not about ("the limestone vein alternative"). The previous
+pass had recorded that its description "should be widened from molybdenum to
+both metals", which was the wrong instruction: it should have become the
+tungsten ore node.
 
-## 3. No canonical cobalt node
+That leaves a **three-link merge chain** in `_merged.json`:
+`peripheral.tv.crt.gun.heater.scheelite` → `metal.molybdenum.scheelite` →
+`metal.tungsten.ore`. `checktables.mjs` now reports one "survivor since merged
+away, expected for chains". That is expected, not a defect.
 
-Same shape of gap. Cobalt appears only as a path-local input string
-("cobalt metal", "cobalt oxide") on the CRT gun and varistor branches, with no
-node behind it.
+Every tungsten reference that could resolve now does: `_ingredients.json`
+`"tungsten wire"` and `"tungsten ore"` point at the wire and the ore rather than
+at a neighbouring ore node, and the PCB end mill, PCB drill bit, magnet-wire
+drawing die, lamination punch die, wedge bonder and the wafer probe card all
+draw from the new branch.
 
-**Action.** Add `metal.cobalt` — ore (heterogenite / asbolane), the
-Sherritt-Gordon ammonia-leach route, and the electrolytic route — or record
-deliberately that cobalt is out of scope.
+**One correction worth recording.** The first draft of `metal.tungsten` claimed
+that 5% of tungsten was in the H13/SKD61 tool steel of the case mould. It is
+not: that alloy is 5Cr-5Mo-1V-0.4C with no tungsten. The tungsten-bearing
+tooling steels are the W1/SKS3 class and the high-speed steels. Both the
+description and the facts table now say so, because it is the kind of error a
+reader would not catch.
 
-## 4. Europium and samarium are split across branches
+## 3. ~~No canonical cobalt node~~ DONE 2026-10-03
 
-`peripheral.tv.crt.phosphor.zns.europium` and the samarium oxide on the
-magnet branch each grow their own bastnasite chain, rather than sharing one.
+`metal.cobalt` exists, with three routes rather than a summary:
 
-**Action.** Merge onto a single rare-earth branch, or accept the split
-deliberately and say why in a note.
+| node | what it is |
+|---|---|
+| `metal.cobalt` | the metal, and the by-product character of its supply |
+| `metal.cobalt.ore` | carrollite in the Copperbelt sulphides, heterogenite in the oxide zone, asbolane in New Caledonia |
+| `metal.cobalt.ore.hydromet` | the sulfuric acid leach and the solvent-extraction split from copper |
+| `metal.cobalt.ammoniacal-leach` | the Sherritt-Gordon pressure leach of a nickel concentrate |
+| `metal.cobalt.electrolytic` | 99.8% cathode, and why the grade matters to a carbide binder |
+| `metal.cobalt.oxide` | the calcined additive grade, Co3O4/CoO, for the varistor and the ferrite |
+| `metal.nickel.cobalt-carbonyl` | the Mond residue route, re-parented under `metal.cobalt` |
+
+`metal.cobalt.oxide` is the one that was not on the list and is worth
+explaining. Mapping `"cobalt oxide"` to the ore node would have been a
+wrong-but-resolving link — the varistor's dopant is a manufactured calcined
+powder, not a rock — which is exactly the failure mode `ingredients.mjs links`
+was written to catch. It would have passed every other check.
+
+**Two factual corrections, both material.** The tree previously said twice that
+there was "a genuine cobalt shortage in 1982-83". There was not; the price went
+from about $5.58/lb (1977) to $25/lb (1980) to about $12.50/lb (May 1982) to
+about $5/lb (1983-84). The genuine disruption was the Shaba invasions of 1977
+and 1978 in Zaire, and even that was milder than expected, because cobalt's
+pigments are toxic enough to substitute and the industry had established
+recycling. Both nodes now say so, with the sources in `metal.cobalt`'s facts
+table.
+
+## 4. ~~Europium and samarium are split across branches~~ DONE 2026-10-03
+
+Merged onto one branch, and the split was worse than the two-way split in the
+original item suggested — the rare-earth ore story existed **four** times, not
+three: two bastnasite copies (the rubber catalyst and the MLCC dopant), a
+monazite copy under the tantalum branch, and an ore input string on the
+europium phosphor and again on the correction magnet.
+
+`metal.rare-earths` now holds bastnasite, monazite, the separation plant and
+the separated oxides, and five consumers draw from it:
+
+- `peripheral.tv.crt.phosphor.zns.europium`
+- `peripheral.tv.crt.yoke.geometry.magnets.smco` (new — see below)
+- `chem.butadiene.polymerisation.neodymium-catalyst.neodymium-source`
+- `mb.passives.caps.mlcc.powder.doping.dopant-oxides`
+- `chem.refining.fluid-catalytic-cracking.zeolite-catalyst` (the rare-earth
+  exchanged cracking zeolite, which was not linked at all)
+
+Three nodes were deleted and recorded in `_merged.json`:
+`chem.butadiene...neodymium-source.bastnasite`,
+`mb.passives.caps.mlcc.powder.doping.dopant-oxides.bastnaesite` and
+`metal.tantalum.monazite`. The tantalum role is kept — `metal.tantalum.thorium`
+still points at `metal.rare-earths.monazite`, which carries the 5-30% ThO2
+figure.
+
+`peripheral.tv.crt.yoke.geometry.magnets` was split into Alnico and Sm-Co
+children, because it was two substances in one node and the rare-earth half had
+nowhere to hang.
+
+**Two corrections from that split.** The original node claimed a correction
+magnet was Alnico or Sm-Co and listed Alnico as "iron-aluminium-nickel". Most
+Alnico grades contain cobalt — Alnico 5 is about 24% Co, Alnico 8 about 35% —
+so an Alnico 5 magnet on a 1982 set draws on the cobalt branch, and the new
+`...magnets.alnico` node says so and takes `metal.cobalt` as an ingredient.
+And the europium node asserted "rare earths are roughly 0.1% of the ore"; bastnasite
+runs 6-9% REO and the Mountain Pass carbonatite 8-12%, so the figure was wrong
+by two orders of magnitude and is now stated correctly.
 
 ## 5. Six nodes restored from git HEAD — REVIEWED 2026-10-03
 
@@ -147,9 +223,15 @@ The wider lesson is item 1b above, not these six.
 
 ## 6. Unresolved ingredient inputs — rescoped, see item 1a
 
-697 input *occurrences* (533 distinct strings) do not resolve to a node, but only
+683 input *occurrences* (520 distinct strings) do not resolve to a node, but only
 ~30 are worth a decision. The original framing of this item as a bulk pass was
 wrong; the measurement is in 1a.
+
+Phase 2 moved both counts in the right direction — 697 → 683 occurrences and
+533 → 520 distinct strings — by giving the tungsten, cobalt and rare-earth
+strings something real to resolve to. It deliberately left the *review* list
+alone: the 17 single-candidate strings and the 1 that passes `--strict` are
+exactly the same set as before, because nothing in Phase 2 touched them.
 
 **Action.** Work the ~30-item list. The check that compares each mapping's key
 against its target's name is now permanent as `scripts/ingredients.mjs links`,
@@ -174,7 +256,7 @@ Two sides of one cut-off, not a contradiction. Nothing to do.
 
 - Re-run `scripts/probe.mjs` on the standard lines and produce the
   consolidated before/after diff for the README.
-- Push the 5 commits to `origin/main`.
+- Push the commits to `origin/main`.
 - Decide whether the large build artifacts (`public/tree.*`, `docs/TREE.md`)
   stay committed or move to a release artifact.
 - Worth a look while it is fresh: `metal.benzene` ("Crude benzene from the coke
@@ -184,3 +266,9 @@ Two sides of one cut-off, not a contradiction. Nothing to do.
 - The `$qaPass` provenance blocks at the end of some fragments have never been
   reviewed. They are file-level metadata rather than node text, so
   `metalang.mjs` does not scan them.
+- `estimate.mjs` reports "full tree, max depth **NaN**" in its projection
+  section, and names "the two uncovered branches" as expected additions. Both
+  predate Phase 2 — the output is identical on a clean tree — so they are bugs
+  in the report, not findings about the data. The two uncovered branches it
+  meant were tungsten and cobalt, which Phase 2 has now written; the NaN has
+  not been looked at.

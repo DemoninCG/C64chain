@@ -1,11 +1,11 @@
 # Session handoff
 
-Start here. Written 2026-10-03 at the end of the QA/prose-scrub work, for a
-fresh session picking up the remaining phases.
+Start here. Written 2026-10-03 at the end of the QA/prose-scrub work, updated
+the same day after Phase 2, for a fresh session picking up the remaining phases.
 
 **The project.** A supply-chain tree for the Commodore 64 (1982), traced from the
 machine back through early-1980s manufacturing to ore, crude oil and quartz sand.
-2,438 nodes. The data is the point; the viewer is secondary.
+2,454 nodes. The data is the point; the viewer is secondary.
 
 ---
 
@@ -14,24 +14,24 @@ machine back through early-1980s manufacturing to ore, crude oil and quartz sand
 | file | what it is |
 | --- | --- |
 | `docs/SCHEMA.md` | the node schema — read before editing any data |
-| `docs/CHECKLIST.md` | the QA standard. **7a** is the prose rule added this session |
-| `docs/TODO.md` | research gaps and coverage holes, with evidence |
+| `docs/CHECKLIST.md` | the QA standard. **7a** is the prose rule added in the prose-scrub session |
+| `docs/TODO.md` | research gaps and coverage holes, with evidence. **§2, §3, §4 are now done** |
 | this file | state, verification, remaining plan, and the traps |
 
 ## 2. Current state
 
 | | |
 | --- | --- |
-| nodes | 2,438 (1,293 leaves, 0 unreachable, depth 15) |
+| nodes | 2,454 (1,301 leaves, 0 unreachable, depth 15) |
 | build | exit 0 |
 | selftest | 40/40 |
 | patchtest | all pass |
 | audit | **0 FAIL / 0 WARN**, 10 NOTE |
-| checktables | 0 missing targets, 0 stale merge records |
+| checktables | 0 missing targets, 1 expected merge chain |
 | ingredients | 0 mappings to a non-existent node |
-| ingredient links | 2,193 of 2,890 resolve (75.9%); 697 unresolved, almost all deliberate prose |
+| ingredient links | 2,236 of 2,919 resolve (76.6%); 683 unresolved, mostly deliberate prose |
 | metalang | DELETE 1 (a known false positive), REWRITE 0 |
-| git | 5 commits, **none pushed to `origin/main`** |
+| git | 7 commits, **none pushed to `origin/main`** |
 
 `audit`'s 10 NOTEs and `checktables`' records are *decisions recorded on purpose*,
 not outstanding work. They are listed so nobody "fixes" them.
@@ -71,25 +71,41 @@ first.
 - **Prose scrub.** ~170 fields across 165 nodes, removing sentences about the
   authoring process. `CHECKLIST 7a` now prevents recurrence.
 - **Keycap legends resolved** against external sources (see `TODO.md` §1).
+- **Phase 2: tungsten, cobalt and the rare earths.** 2,438 → 2,454 nodes: 22
+  added, 6 deleted. Three canonical branches (20 nodes) now sit under the `metal`
+  root, one two-substance node split into two, and nine path-local copies folded
+  into them. The detail, including four factual corrections that fell out of
+  doing it, is in `TODO.md` §2–§4.
 
 ## 5. Remaining phases, and the decisions already made
 
 Do them in this order. The ordering is not arbitrary — see §6.
 
-### Phase 2 — tungsten, cobalt, rare earths (one agent, or do it centrally)
+### Phase 2 — tungsten, cobalt, rare earths — **DONE 2026-10-03**
 
-One brief, **not** two agents: tungsten and cobalt both live in `60-metals` and
-`90-peripherals`, so splitting by substance would recreate write conflicts. It is
-one coherent chemical domain.
+Done centrally, as one agent, exactly as this section prescribed. `metal.tungsten`,
+`metal.cobalt` and `metal.rare-earths` are in and `TODO.md` §2, §3, §4 are
+closed. Three things a later session should know before touching these branches:
 
-*Decided:* state the canonical targets in the brief so the agent verifies rather
-than decides. See `TODO.md` §2, §3, §4.
+1. **Four facts were wrong and are now corrected** — H13/SKD61 has no tungsten in
+   it, Alnico usually does, there was no cobalt shortage in 1982-83, and
+   bastnasite is 6-9% REO rather than 0.1%. Each is written up in `TODO.md` where
+   it was found. If you restore any of the old text you will put the error back.
+2. **`metal.cobalt.oxide` exists for a reason.** Mapping `"cobalt oxide"` to the
+   ore node would have been a wrong-but-resolving link that passed every other
+   check. Do not collapse it back into the ore.
+3. **The rare-earth branch is deliberately one, not two.** Five consumers draw
+   from `metal.rare-earths.oxides`; that is the point of the phase.
 
 ### Phase 3 — ~30 ingredient links (do it centrally)
 
-**Measured scope, do not re-derive.** Of 533 input strings that resolve by none
-of build's three routes: 511 are ambiguous, 17 have a single candidate, 10 have
-none. And the 17 "unambiguous" ones are **~40% correct on hand review** —
+**Measured scope, do not re-derive.** Of 520 input strings that resolve by none
+of build's three routes: 510 are ambiguous, 17 have a single candidate, 10 have
+none. (Phase 2 moved the occurrence count 697 → 683 and the distinct count
+533 → 520, but deliberately left the *review list* identical, so these numbers
+still describe the same set of work.)
+
+And the 17 "unambiguous" ones are **~40% correct on hand review** —
 `liquefaction` matched *Hydrogen*, `soil` matched the *barite mud system*. So:
 
 - review ~30 items: the 7 strings used 5+ times, the 13 used 3–4 times, and the
@@ -113,7 +129,8 @@ at all. Source attribution, not confidence, is the gap.
 
 `TODO.md` §1b: extend `CAT_OK` to the eleven unchecked categories. Expect real
 findings — `metal.benzene` is categorised `metals` while the canonical
-`chem.styrene.benzene` is `plastics`.
+`chem.styrene.benzene` is `plastics`. Note that `metal.benzene` did not trip
+Phase 2, because Phase 2 added nodes, not categories.
 
 ---
 
@@ -124,24 +141,41 @@ verifies a target *exists*, not that it is *right*. Five mappings resolved
 cleanly to the wrong node and passed every check: borax and boric acid → E-glass
 fibre, soda ash → rock salt, kaolin → bauxite, barite → barium carbonate,
 polyphenylene sulfide → polyester. `scripts/ingredients.mjs links` exists
-because of this. Run it.
+because of this. Run it. Phase 2 nearly added a sixth — `"cobalt oxide"` →
+cobalt *ore*, where the varistor's dopant is a manufactured calcined powder.
+
+**Check the alloy you name, not the family it belongs to.** Phase 2's first
+draft put 5% tungsten in the H13 tool steel of the case mould, because H13 is a
+tool steel and tool steels get tungsten. H13 is 5Cr-5Mo-1V-0.4C. The same
+session found the mirror-image error one node later: the tree called Alnico an
+"iron-aluminium-nickel alloy" when most Alnico grades carry 6-35% cobalt. Both
+errors were invisible to every script and both read as plausible.
 
 **Regex-on-name matching is ~40% precise.** Measured, not guessed — see Phase 3.
 
 **After any structural change, re-point the lookup tables.** `build.mjs` rewrites
 references inside fragments but knows nothing about `data/_ingredients.json`,
 `data/_aliases.json` or `data/_fixes.json`. Four mappings were left pointing at
-deleted nodes this way. `checktables.mjs` catches it; run it.
+deleted nodes this way, and Phase 2 hit it again within two edits.
+`checktables.mjs` catches it; run it.
+
+**A deleted node in an inline block takes its neighbours with it.** Deleting
+`metal.tantalum.monazite` in Phase 2 also deleted `metal.monazite.beach`, which
+was a sibling in the same `children` array and had no id reference anywhere, so
+nothing complained until `build.mjs` reported a dangling id — **and named the
+wrong node.** Look at what else lived in the block you removed.
 
 **`scripts/patch.mjs` had two bugs that wrote edits into the wrong node while
 reporting success.** One agent lost 53 edits and reverted the file. Both are
 fixed and `patchtest.mjs` holds the cases down — but it is **not parallel-safe**
 (it reads the whole file and writes the whole file back), so run patches
 serially. Prefer `patch.mjs` over round-tripping a fragment through
-`JSON.stringify`, which reformats the file and buries the edit.
+`JSON.stringify`, which reformats the file and buries the edit. Note that
+`patch.mjs` writes **string** values only, so adding a node or changing an array
+needs the `edit` tool — which is byte-preserving too.
 
-**The audit rules are tree-wide; the agents owned single files.** That mismatch is
-why 17 defects survived a full QA pass. Any rule that must be satisfied
+**The audit rules are tree-wide; the agents owned single files.** That mismatch
+is why 17 defects survived a full QA pass. Any rule that must be satisfied
 tree-wide has to be checked centrally after the file owners are done.
 
 **Agents cannot see each other.** Give them globally-consistent decisions as
@@ -157,12 +191,20 @@ inside quoted testimony. Its header lists them. Do not widen its patterns.
 **A bare `\bI\b` is not a detector.** Of 70 occurrences, 34 are current notation,
 class numbers or numerals.
 
+**`docs/*.md` have no trailing newline.** The `edit` tool silently fails to
+match an `oldString` that ends in a newline. This cost three failed attempts
+during the Phase 2 doc update; check the byte before assuming a match is
+impossible.
+
+---
+
 ## 7. Deliberately left alone
 
 Do not "fix" these without a decision.
 
-- **55 JUDGEMENT rows** in `metalang.mjs` — `in this tree` phrases. 49 of 59
-  occurrences tree-wide are ordinary orienting prose. Accepted as good.
+- **56 JUDGEMENT rows** in `metalang.mjs` — `in this tree` phrases. 49 of 59
+  occurrences tree-wide are ordinary orienting prose. Accepted as good. Phase 2
+  added one more (`metal.monazite.beach`), which is consistent with the rule.
 - **10 audit NOTEs** — 9 documented terminal processes (`chem.silicone.rochow` is
   the Rochow process; folding it would delete the fact that it has a name), plus
   the `CAT_OK` coverage report.
@@ -170,8 +212,14 @@ Do not "fix" these without a decision.
   `chem.solvents.aromatic-hydrocarbon`. Declined because o-xylene is a defined
   compound and the survivor is a blended stream. Recorded in
   `data/_merged.json` with `merged: false`.
+- **1 merge chain** — `peripheral.tv.crt.gun.heater.scheelite` →
+  `metal.molybdenum.scheelite` → `metal.tungsten.ore`. `checktables.mjs` reports
+  the middle id as "a survivor since merged away, expected for chains". Expected.
 - **`data/_qaPass` blocks** at the end of some fragments — file-level provenance
   logs, not node text. Never reviewed.
+- **`estimate.mjs` reporting `max depth NaN`** — pre-existing; its output is
+  identical on a clean tree. A bug in the report, not in the data. Noted in
+  `TODO.md`.
 - **Build artifacts** committed (`public/tree.*`, `docs/TREE.md`) — the decision
   to keep them is still open.
 
@@ -189,9 +237,13 @@ From the last pass, in rough priority order:
    fragment boundary, and let `scripts/applyproposals.mjs` arbitrate.
 6. **Verify between phases**, not at the end. Integration consumed most of one
    session.
+7. **Re-read your own output against `CHECKLIST` §0.** All four factual errors
+   Phase 2 found were in prose, and three of them were errors of *inheritance* —
+   text already in the tree that had never been checked. No script can see any of
+   them.
 
 ## 9. Housekeeping still open
 
-- Push the 5 commits to `origin/main`.
+- Push the commits to `origin/main`.
 - Produce the consolidated `probe.mjs` before/after diff for the README.
 - Decide whether build artifacts stay in git.

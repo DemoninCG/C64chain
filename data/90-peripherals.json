@@ -707,11 +707,9 @@
                         "kind": "material",
                         "category": "optics",
                         "era": "1982",
-                        "description": "The 1980s red was the least settled of the three. CaS:Eu and Eu-doped ZnS were both in service; CaS:Eu has the better red chromaticity but is hygroscopic and needs protection from moisture. The europium came from bastnasite, a light rare-earth carbonate, cracked with acid and solvent-extracted to 99.9% europium oxide.",
+                        "description": "Europium is the activator that makes a television's red, and it was the one rare earth that a mass market paid for. It is used at a loading of a few tenths of a percent in the host lattice, where the Eu3+ ion's sharp 610 nm 4f-4f transition gives a narrow-band red that the zinc sulphide host itself cannot. Two red formulations were in service in 1982 and the trade between them was chromaticity against stability: CaS:Eu gave the better red but is hygroscopic and had to be protected from moisture, while europium-doped ZnS was more forgiving and slightly less saturated. The oxide itself arrives at 99.9% from the rare-earth separation plant, having begun as a few tenths of a percent of a ton of concentrate.",
                         "inputs": [
-                          "bastnasite concentrate",
-                          "hydrochloric acid",
-                          "solvent extraction"
+                          "metal.rare-earths.oxides"
                         ],
                         "facts": [
                           {
@@ -719,8 +717,16 @@
                             "value": "about 610 nm, Eu3+ 4f-4f transition"
                           },
                           {
-                            "label": "Yield",
-                            "value": "rare earths are roughly 0.1% of the ore, so bastnasite was mined in large tonnages"
+                            "label": "Loading",
+                            "value": "a few tenths of a percent of the host lattice"
+                          },
+                          {
+                            "label": "The two 1982 reds",
+                            "value": "CaS:Eu, better chromaticity but hygroscopic; Eu-doped ZnS, more stable and less saturated"
+                          },
+                          {
+                            "label": "Not the scarce thing",
+                            "value": "bastnasite runs 6-9% rare-earth oxides, so the ore was milled in large tonnage to get a few hundred tonnes of europium oxide"
                           }
                         ],
                         "places": [
@@ -728,7 +734,7 @@
                           "Bayan Obo, Inner Mongolia"
                         ],
                         "confidence": "low",
-                        "note": "Confidence on the formulation is low: the red formulation of any particular 1982 tube was proprietary, and which manufacturer used CaS:Eu against Eu-doped ZnS is not established; both were in service. CaS:Eu has the better red chromaticity but is hygroscopic and needs protection from moisture, which is the trade the industry was making in 1982. Europium itself is not the scarce thing here - bastnasite is about 0.1% rare earths, so it was mined in large tonnages - and the same concentrate supplied the samarium in the deflection magnets.",
+                        "note": "Confidence is low on the formulation, not on the supply: the red formulation of any particular 1982 tube was proprietary, and which manufacturer used CaS:Eu against Eu-doped ZnS is not established - both were in service. The europium supply side is well documented, and the same concentrate supplied the samarium in the correction magnets.",
                         "children": []
                       }
                     ],
@@ -1028,75 +1034,11 @@
                       }
                     ],
                     "confidence": "high",
+                    "inputs": [
+                      "metal.tungsten.wire"
+                    ],
                     "children": [
-                      {
-                        "id": "peripheral.tv.crt.gun.heater.wolframite",
-                        "name": "Drawn tungsten wire",
-                        "kind": "material",
-                        "category": "metals",
-                        "era": "1982",
-                        "description": "Tungsten does not exist as a pure ore anywhere. Wolframite (Fe,Mn)WO4 and scheelite CaWO4 are decomposed with caustic soda or sodium carbonate to sodium tungstate, then to APT (ammonium paratungstate), then to tungsten trioxide reduced with hydrogen at 800-1000 degrees C to a fine powder, which is doped with potassium and drawn.",
-                        "inputs": [
-                          "wolframite concentrate, 60-70% WO3",
-                          "sodium hydroxide",
-                          "hydrogen"
-                        ],
-                        "facts": [
-                          {
-                            "label": "APT",
-                            "value": "(NH4)10H2W12O42, the standard intermediate"
-                          },
-                          {
-                            "label": "Reduction",
-                            "value": "800-1000 degrees C, H2, to W powder"
-                          },
-                          {
-                            "label": "Drawing",
-                            "value": "doped powder, hydrogen-annealed, swaged and drawn to 0.04 mm"
-                          },
-                          {
-                            "label": "Purity",
-                            "value": "99.9-99.95%, and the potassium content is controlled to control the grain"
-                          }
-                        ],
-                        "places": [
-                          "Pan Pacific (China, Texas, Bolivia, Korea)",
-                          "Kitzingen, Germany"
-                        ],
-                        "confidence": "medium",
-                        "note": "Korea and China were becoming dominant in tungsten supply by the early 1980s.",
-                        "children": [
-                          {
-                            "id": "peripheral.tv.crt.gun.heater.wolframite.mine",
-                            "name": "Tungsten mine and concentrator",
-                            "kind": "facility",
-                            "category": "logistics",
-                            "era": "ancient",
-                            "description": "Wolframite is dense and refractory, so the ore is mined, crushed and gravity-concentrated or floated to a 60-70% WO3 concentrate. Because the ore is often a by-product of a tin or molybdenum mine, tungsten supply followed the fortunes of tin mining, and the price spiked hard whenever the tin market wobbled.",
-                            "inputs": [
-                              "wolframite-bearing vein ore",
-                              "greasey and xanthate collectors for flotation"
-                            ],
-                            "facts": [
-                              {
-                                "label": "Concentrate",
-                                "value": "60-70% WO3, roughly a 100x upgrade"
-                              },
-                              {
-                                "label": "Mining",
-                                "value": "underground stoping and hand sorting, plus alluvial allutan placers on the Malay Archipelago tin belt"
-                              }
-                            ],
-                            "places": [
-                              "Cornwall and the Dartmoor alluvials",
-                              "Kitzingen, Germany",
-                              "Pan Pacific"
-                            ],
-                            "confidence": "medium",
-                            "children": []
-                          }
-                        ]
-                      }
+                      "metal.tungsten.wire"
                     ]
                   },
                   {
@@ -1319,35 +1261,106 @@
                     "children": [
                       {
                         "id": "peripheral.tv.crt.yoke.geometry.magnets",
-                        "name": "Alnico and samarium-cobalt correction magnets",
+                        "name": "Correction magnets on the tube neck",
                         "kind": "material",
                         "category": "magnetics",
                         "era": "1982",
-                        "description": "The small magnets that set the deflection centre and the geometry of a 1982 set were usually Alnico, an iron-aluminium-nickel alloy, or a small ferrite. Samarium-cobalt was the high-performance alternative but was too expensive and too new for a domestic set; it became standard in the small deflection magnets of the 1990s. Samarium is a rare earth, and the rare earths came from bastnasite.",
+                        "description": "A pair of small magnets sitting on the neck of the tube, arranged to tilt the deflection field and move the deflection centre without touching the geometry circuit. In a 1982 domestic set these were almost always cast Alnico; the high-performance alternative, a samarium-cobalt magnet, cost several times as much for no benefit a consumer could see on a 13 inch screen, and only became standard in the small deflection magnets of the 1990s. The mass in either case is a few grams.",
                         "inputs": [
-                          "iron, aluminium and nickel for Alnico",
-                          "samarium oxide from bastnasite for SmCo",
-                          "bastnasite",
-                          "iron, aluminium and nickel for Alnico"
+                          "metal.cobalt"
                         ],
                         "facts": [
                           {
-                            "label": "Alnico",
-                            "value": "about 8-12% Al, 15-26% Ni, the rest Fe; cast and magnetised"
+                            "label": "1982 choice",
+                            "value": "cast Alnico, or a small ferrite"
                           },
                           {
-                            "label": "Samarium-cobalt",
-                            "value": "a rare earth, expensive and barely used in 1982 sets"
+                            "label": "Why not Sm-Co",
+                            "value": "several times the cost for no visible benefit on a 13 inch screen"
                           }
                         ],
                         "places": [
                           "Japan",
-                          "Netherlands",
-                          "Mountain Pass, California"
+                          "Netherlands"
                         ],
-                        "confidence": "medium",
-                        "children": [],
-                        "note": "A correction magnet is Alnico or Sm-Co; europium is a phosphor activator. The samarium does come from bastnasite, the same rare-earth concentrate the europium came from."
+                        "confidence": "high",
+                        "children": [
+                          {
+                            "id": "peripheral.tv.crt.yoke.geometry.magnets.alnico",
+                            "name": "Alnico correction magnet",
+                            "kind": "material",
+                            "category": "magnetics",
+                            "era": "1982",
+                            "description": "An iron-aluminium-nickel alloy with a high Curie point and a hard, brittle, unmachinable structure. Alnico is cast or sintered as a solid block, aged for days at 600-800 C to precipitate its magnetic phase, and then magnetised in a strong field - and it cannot be ground to shape afterwards, so the geometry of the magnet has to be cast in, which is exactly why a set's pincushion and width adjustments are a fixed arrangement of magnets rather than something the customer can trim. The recipe varies across the family and the variation matters for this tree: the original grades were cobalt-free, but the high-coercivity grades of the 1950s onwards added cobalt, titanium and copper, so an Alnico 5 magnet on a 1982 set is an iron-cobalt alloy and the cobalt in it came out of the Copperbelt, not out of the aluminium or the nickel.",
+                            "kind": "material",
+                            "category": "magnetics",
+                            "era": "1982",
+                            "inputs": [
+                              "metal.nickel.ingot",
+                              "metal.aluminum.ingot",
+                              "metal.steel",
+                              "metal.cobalt"
+                            ],
+                            "facts": [
+                              {
+                                "label": "Cobalt-free grades",
+                                "value": "about 8-12% Al, 15-26% Ni, the rest Fe"
+                              },
+                              {
+                                "label": "Cobalt grades",
+                                "value": "Alnico 5 is about 24% Co with 12% Al, 5% Ti and 6% Cu; Alnico 8 is about 35% Co"
+                              },
+                              {
+                                "label": "Making",
+                                "value": "cast or sintered, aged 600-800 C to precipitate the magnetic phase, then magnetised"
+                              },
+                              {
+                                "label": "Consequence",
+                                "value": "brittle and unmachinable, so the magnet's geometry is fixed at the casting and cannot be trimmed"
+                              }
+                            ],
+                            "sources": [
+                              "https://en.wikipedia.org/wiki/Alnico"
+                            ],
+                            "note": "The composition range across the Alnico family is well documented; which grade a particular 1982 chassis used is not established, and the two differ in whether they contain cobalt at all.",
+                            "children": []
+                          },
+                          {
+                            "id": "peripheral.tv.crt.yoke.geometry.magnets.smco",
+                            "name": "Samarium-cobalt correction magnet",
+                            "kind": "material",
+                            "category": "magnetics",
+                            "era": "1982",
+                            "description": "A rare-earth permanent magnet with roughly twice the energy product of Alnico from a fraction of the volume, made by sintering or bonding finely divided samarium-cobalt powder and magnetising it. Its coercivity comes from samarium's affinity for cobalt, which holds the grains from rotating back into alignment, so the magnet resists demagnetisation far better than Alnico and does not need the iron it replaced. That is a real advantage on a deflection magnet, and it is exactly why the material was developed for this job and then priced out of a domestic set: samarium oxide was one of the more expensive rare-earth fractions, so the magnet cost was set by the separation plant rather than by the metallurgy.",
+                            "kind": "material",
+                            "category": "magnetics",
+                            "era": "1982",
+                            "inputs": [
+                              "metal.rare-earths.oxides",
+                              "metal.cobalt"
+                            ],
+                            "facts": [
+                              {
+                                "label": "Energy product",
+                                "value": "roughly twice Alnico's from a fraction of the volume"
+                              },
+                              {
+                                "label": "Coercivity",
+                                "value": "samarium's affinity for cobalt holds the grains against demagnetisation, so no iron is needed"
+                              },
+                              {
+                                "label": "Cost driver",
+                                "value": "samarium oxide is one of the more expensive rare-earth fractions, so price is set by the separation plant" },
+                              {
+                                "label": "1982 uptake",
+                                "value": "too new and too expensive for a domestic set; standard in small deflection magnets by the 1990s"
+                              }
+                            ],
+                            "note": "Which correction magnets in which 1982 sets were in fact samarium-cobalt is not established; the node records the material and its economics rather than a claim about a particular chassis.",
+                            "children": []
+                          }
+                        ],
+                        "note": "A correction magnet is Alnico or Sm-Co. Europium is a separate use of the same concentrate: it is a phosphor activator, not a magnet alloy."
                       }
                     ]
                   }

@@ -4,7 +4,7 @@
   "root": {
     "id": "metal",
     "name": "Metals, ores and industrial minerals",
-    "description": "Every mineral stream behind a 1982 Commodore 64: the quartzite that becomes silicon, the bauxite and cryolite that becomes aluminium foil, the porphyry copper that becomes PCB track and transformer magnet wire, the tin and lead that become 63/37 solder, the iron ore and coke that become the steel chassis and the transformer laminations, and the specialty metals - gold, silver, nickel, tantalum, zinc, chromium, manganese, cobalt - that end up plating contacts, filling ceramic capacitors and setting the sinter point of every solder joint. Each branch runs from the finished metal down to the quarry, the open pit, the evaporite bed or the seabed.",
+    "description": "Every mineral stream behind a 1982 Commodore 64: the quartzite that becomes silicon, the bauxite and cryolite that becomes aluminium foil, the porphyry copper that becomes PCB track and transformer magnet wire, the tin and lead that become 63/37 solder, the iron ore and coke that become the steel chassis and the transformer laminations, and the specialty metals - gold, silver, nickel, tantalum, zinc, chromium, manganese, cobalt, tungsten - that end up plating contacts, filling ceramic capacitors, binding carbide cutters and drawing the filament in a television's gun. The rare earths are here too, as oxides rather than metals, because they arrive as oxides and are only a few hundred tonnes of them. Each branch runs from the finished metal down to the quarry, the open pit, the evaporite bed or the seabed.",
     "kind": "material",
     "category": "metals",
     "era": "1982-1984",
@@ -3599,22 +3599,26 @@
                       {
                         "id": "metal.nickel.cobalt-carbonyl",
                         "name": "Dicobalt octacarbonyl, Co2(CO)8",
-                        "description": "The cobalt in the Mond residue is a genuine industrial source of cobalt: the residue is treated with copper at 200 C under hydrogen to reduce the cobalt and copper carbonyls, and then re-carbonylated to Co2(CO)8, which is filtered out and decomposed. In 1982 the two leading producers - INCO in Canada and OUTOKUMPU in Finland - between them controlled most of the world's cobalt from their nickel operations, and a period of low cobalt stocks in 1982-83 contributed to a real shortage.",
+                        "description": "The cobalt in a Mond residue is a genuine industrial source, and an unusual one: the residue left after the nickel has been volatilised as Ni(CO)4 still contains the cobalt as Co2(CO)8, and the two carbonyls are separated by exploiting the fact that dicobalt octacarbonyl is solid and will crystallise out while nickel carbonyl boils off at 43 C. In the classical route the residue is treated with copper at about 200 C under hydrogen to reduce both carbonyls, and then re-carbonylated to re-form Co2(CO)8, which is filtered and decomposed to metal. The consequence for the wider market is that every tonne of nickel refined by the carbonyl process is a tonne of cobalt that did not have to be mined, which is why the two nickel carbonyl plants at Sudbury and Kokkola were influential in the cobalt market well beyond their own output.",
                         "kind": "material",
                         "category": "metals",
                         "era": "1982",
                         "confidence": "medium",
                         "facts": [
                           {
-                            "label": "Process",
-                            "value": "reduction with copper under hydrogen, then carbonylation"
+                            "label": "Separation",
+                            "value": "Co2(CO)8 is solid and crystallises; Ni(CO)4 boils at 43 C and distils off"
                           },
                           {
-                            "label": "1982 context",
-                            "value": "a genuine cobalt shortage in 1982-83 driven by Zaire's production problems and by the INCO/OUTOKUMPU cutbacks"
+                            "label": "Process",
+                            "value": "reduction with copper under hydrogen at about 200 C, then carbonylation, then decomposition to metal"
+                          },
+                          {
+                            "label": "Market effect",
+                            "value": "nickel carbonyl plants are a by-product source of cobalt, so nickel capacity sets part of the cobalt supply"
                           }
                         ],
-                        "note": "The 1982-83 cobalt shortage is well documented; medium confidence on attributing a specific share to the nickel carbonyl plants.",
+                        "note": "The chemistry and the plants are well documented. How much cobalt came from this route in 1982 is not established, and the market that year was falling rather than short: about $12.50/lb in May, against $25/lb in 1980 and about $5/lb by 1983-84.",
                         "sources": [
                           "https://en.wikipedia.org/wiki/Cobalt"
                         ],
@@ -4928,57 +4932,8 @@
                   "https://en.wikipedia.org/wiki/Thorium"
                 ],
                 "children": [
-                  {
-                    "id": "metal.tantalum.monazite",
-                    "name": "Monazite, the thorium and rare-earth carrier",
-                    "description": "Monazite, (Ce,La,Nd,Th)PO4, is a heavy placer mineral from the same beach sands as the ilmenite and the rutile - the Kerala and Queensland and Cape Breton sands. It is the world's main thorium source and, after a very difficult separation, a rare-earth source. In the tantalum circuit monazite is an impurity that has to be filtered off the fluoride solution. So the tantalum in a 1982 capacitor, the titanium dioxide in its casing, and the thorium residue all come out of the same Queensland beach sand.",
-                    "kind": "material",
-                    "category": "metals",
-                    "era": "1982",
-                    "confidence": "medium",
-                    "places": [
-                      "Kollam, Kerala",
-                      "Cape Breton, Nova Scotia"
-                    ],
-                    "facts": [
-                      {
-                        "label": "Composition",
-                        "value": "(Ce,La,Nd,Th)PO4 with 5-30% ThO2"
-                      },
-                      {
-                        "label": "Occurrence",
-                        "value": "heavy placer concentrates from a beach sand"
-                      }
-                    ],
-                    "note": "The co-occurrence of ilmenite, rutile, zircon and monazite in one beach sand is well established; medium confidence on individual mine tonnages."
-                  },
-                  {
-                    "id": "metal.monazite.beach",
-                    "name": "The heavy-mineral beach and its dredge",
-                    "description": "The leaf of the tantalum branch's by-product chain: a beach on the east coast of Queensland or on the Malabar coast of Kerala where the wave has concentrated ilmenite, zircon, rutile, monazite and xenotime into a dark, 1-10% heavy-mineral band a metre or two thick in the sand. It is worked by a suction dredge on a barge that pumps the sand onto a floating concentrator with shaking tables, spirals, a magnetic separator and an electrostatic separator. Everything in this file that is 'derived from a beach sand' - the titanium dioxide, the coltan, the thorium, the rare earths, the zircon - came out of a band like this one.",
-                    "kind": "material",
-                    "category": "metals",
-                    "era": "1982",
-                    "confidence": "high",
-                    "places": [
-                      "Cape York, Queensland",
-                      "Kollam, Kerala"
-                    ],
-                    "facts": [
-                      {
-                        "label": "Band",
-                        "value": "0.5-5 m of heavy-mineral sand at 1-10% HM"
-                      },
-                      {
-                        "label": "Mining",
-                        "value": "cutter-suction dredge or a walking dredge on a barge"
-                      },
-                      {
-                        "label": "Concentration",
-                        "value": "gravity tables and spirals, then magnet and electrostatic separation"
-                      }
-                    ]
-                  }
+                  "metal.rare-earths.monazite",
+                  "metal.monazite.beach"
                 ]
               },
               {
@@ -7090,6 +7045,501 @@
             ]
           },
           "metal.barium.titanate"
+        ]
+      },
+      {
+        "id": "metal.tungsten",
+        "name": "Tungsten: filaments, carbide and alloying element",
+        "description": "Very little tungsten is inside a 1982 C64, and almost all of what there is sits in capital equipment and consumables rather than in the machine: the heater filament in a television's electron gun, the cemented-carbide cutters that drill the mainboard and route the glass-epoxy laminate, the carbide dies that draw the power-supply transformer's magnet wire, the tungsten-rhenium needles of a wafer probe card, and a percent or two of it in the simple tooling and stamping steels. What it is: the highest-melting-point of all metals at 3422 C, boiling at 5930 C, density 19.25 g/cm3 - a metal that is essentially never found as native metal, because wolframite and scheelite carry it at 0.3-2.5% WO3 and it has to be chemically opened before it can be reduced. It is not in the case mould: SKD61 and H13 are chromium-molybdenum-vanadium steels with no tungsten in them at all, and the alloying element in that family is molybdenum.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "confidence": "high",
+        "facts": [
+          { "label": "Melting point", "value": "3422 C - the highest of any metal; boils at 5930 C" },
+          { "label": "Density", "value": "19.25 g/cm3, about 1.7 times lead" },
+          { "label": "Ore grade", "value": "0.3-2.5 wt% WO3 in the run-of-mine ore; about 60% WO3 in a concentrate" },
+          { "label": "End-use split", "value": "cemented carbide 60-70%, steels and other alloys 20-30%, the rest in compounds" },
+          { "label": "Abundance", "value": "about 1.5 ppm of the earth's crust, the 58th most abundant element" },
+          { "label": "Not in the case mould", "value": "SKD61 / H13 is 5Cr-5Mo-1V-0.4C with no tungsten; the W-bearing steels are the W1/SKS3 tooling class and the high-speed steels, up to 18% W" }
+        ],
+        "sources": [
+          "https://en.wikipedia.org/wiki/Tungsten",
+          "https://www.plansee.com/en/materials/tungsten/origin-and-procurement.html"
+        ],
+        "children": [
+          {
+            "id": "metal.tungsten.ore",
+            "name": "Wolframite and scheelite ore",
+            "description": "The two ores are chemically different and are opened differently, which is why the mine and the mill are designed separately. Wolframite, (Fe,Mn)WO4, a solid solution of ferberite FeWO4 and huebnerite MnWO4, is a dense black mineral of specific gravity 7.1-7.9 that sits in the quartz veins of a granite cupola with cassiterite, topaz and native bismuth; being that heavy and weakly magnetic it concentrates on a shaking table and on a magnetic separator. Scheelite, CaWO4, is the calcium equivalent - too light and too non-magnetic for gravity, so it is froth-floated, and it is the ore of the Climax and Pine Creek skarns in Colorado and Montana and of the Felbertauern in Austria. Neither commonly exceeds about 1.5% WO3, so a tungsten mine is a large mill for a small product and it is usually a by-product operation. Molybdenum and tungsten share the greisen hydrothermal environment, so scheelite and molybdenite MoS2 are sometimes intergrown in one vein.",
+            "kind": "material",
+            "category": "metals",
+            "era": "ancient",
+            "confidence": "high",
+            "facts": [
+              { "label": "Wolframite", "value": "(Fe,Mn)WO4: ferberite FeWO4 solid solution with huebnerite MnWO4; specific gravity 7.1-7.9, weakly magnetic" },
+              { "label": "Scheelite", "value": "CaWO4; floated rather than gravity-concentrated" },
+              { "label": "Typical host rock", "value": "quartz vein in a granite cupola, with cassiterite, topaz and wolframite" },
+              { "label": "Companion metal", "value": "scheelite CaWO4 and molybdenite MoS2 intergrown in the same greisen vein" }
+            ],
+            "places": [
+              "Cornwall and the Dartmoor alluvials",
+              "Panasqueira, Portugal",
+              "Felbertauern, Austria",
+              "Climax and Pine Creek, Colorado",
+              "Sangdong, South Korea"
+            ],
+            "sources": [
+              "https://en.wikipedia.org/wiki/Tungsten"
+            ],
+            "children": [
+              {
+                "id": "metal.tungsten.ore.mine",
+                "name": "Tungsten mine and concentrator",
+                "description": "Wolframite is dense and refractory, so the ore is mined, crushed and gravity-concentrated or floated to a 60-70% WO3 concentrate, which is roughly a hundredfold upgrade on a 0.6% head grade. Because the ore is so often a by-product of a tin or molybdenum mine rather than the main product of its own, tungsten supply followed the fortunes of tin mining for most of the twentieth century, and the price spiked hard whenever the tin market wobbled. The supply map changed abruptly around 1980: China had been a minor producer whose entire output went to its own steel industry, and from 1980 its production rose sharply on an export surge, while South Korea's Sangdong was the other new large source. Korea and China were becoming the dominant suppliers just as the electronics industry started buying filament wire.",
+                "kind": "facility",
+                "category": "logistics",
+                "era": "ancient",
+                "confidence": "medium",
+                "inputs": [
+                  "wolframite-bearing vein ore",
+                  "greasy and xanthate collectors for flotation"
+                ],
+                "facts": [
+                  { "label": "Concentrate", "value": "60-70% WO3, roughly a 100x upgrade" },
+                  { "label": "Mining", "value": "underground stoping and hand sorting, plus alluvial alluvial placers on the Malay Archipelago tin belt" },
+                  { "label": "Supply shift", "value": "China's output rose sharply from 1980 on an export surge, alongside South Korea" }
+                ],
+                "note": "The pre-1980 supply geography and the general by-product character of tungsten mining are well established; the exact 1982 split between China, Korea, Zaire, Bolivia and Austria is not asserted here.",
+                "places": [
+                  "Cornwall and the Dartmoor alluvials",
+                  "Kitzingen, Germany",
+                  "Pan Pacific"
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "metal.tungsten.apt",
+            "name": "Ammonium paratungstate (APT)",
+            "description": "The intermediate every other tungsten product starts from. The concentrate is digested with sodium hydroxide or with soda ash at about 900-1000 C, which brings the tungsten into solution as sodium tungstate while the calcium, iron and fluorine stay behind as insoluble residues that are filtered off; ammonium chloride then precipitates ammonium paratungstate. APT is a stable, dry, freely soluble white solid, and that is the whole point of it: it can be shipped a long way without absorbing moisture or picking up anything from a wooden crate, so APT rather than concentrate is what crosses an ocean. Calcining it at 500-600 C drives off the ammonia and leaves yellow tungsten trioxide, the one stable oxide and the universal feedstock for the metal.",
+            "kind": "material",
+            "category": "metals",
+            "era": "1982",
+            "confidence": "high",
+            "inputs": [
+              "metal.tungsten.ore",
+              "metal.caustic-soda",
+              "metal.soda-ash"
+            ],
+            "facts": [
+              { "label": "Formula", "value": "(NH4)10H2W12O42, the standard traded intermediate" },
+              { "label": "Decomposition", "value": "about 900-1000 C with NaOH or Na2CO3 to a sodium tungstate solution" },
+              { "label": "Precipitation", "value": "APT crystallised out with NH4Cl from the tungstate liquor" },
+              { "label": "Calcination", "value": "500-600 C to yellow WO3" }
+            ],
+            "note": "Soda ash is the alternative to caustic soda; the two routes were both in commercial use in 1982 and the choice is largely a question of what the works already had.",
+            "sources": [
+              "https://en.wikipedia.org/wiki/Tungsten",
+              "https://www.plansee.com/en/materials/tungsten/origin-and-procurement.html"
+            ],
+            "children": []
+          },
+          {
+            "id": "metal.tungsten.reduction",
+            "name": "Reduce the trioxide to tungsten powder",
+            "description": "WO3 + 3 H2 gives W + 3 H2O. Hydrogen is the reducing agent because carbon would give tungsten carbide, which is a different and also valuable product rather than the metal anyone wants here; the reaction is carried out on a boat of fine powder in a hydrogen tube furnace at 500-1000 C. What comes out is not yet a usable metal: it is a porous mass of interlocking crystallites a few microns across that can be crushed but not drawn. Tungsten is brittle at room temperature - its ductile-to-brittle transition sits near 200 C - so no amount of powder metallurgy alone gives a workable solid, and the grain boundary chemistry of the powder has to be fixed before the metal can be made at all.",
+            "kind": "process",
+            "category": "metals",
+            "era": "1982",
+            "confidence": "high",
+            "inputs": [
+              "facility.gases.hydrogen"
+            ],
+            "facts": [
+              { "label": "Reaction", "value": "WO3 + 3 H2 -> W + 3 H2O, 500-1000 C" },
+              { "label": "Why hydrogen", "value": "carbon reduction makes WC rather than W" },
+              { "label": "Product form", "value": "a porous sintered mass of micronscale crystallites, not a workable metal" }
+            ],
+            "children": [
+              {
+                "id": "metal.tungsten.powder",
+                "name": "Doped tungsten powder",
+                "description": "Undoped tungsten powder has almost no grain boundary strength, and a filament drawn from it sags as it heats and burns out where the sag is greatest. The fix, worked out in the 1920s and universal by 1982, is to add a few tenths of a percent of potassium as potassium hydroxide or potassium carbonate, with a little alumina alongside, during the reduction itself: the potassium ends up as finely dispersed potassium bubbles along the grain boundaries, and it is those bubbles that pin the boundaries so the wire can be drawn to 0.04 mm without slumping. Alumina refines the grain as well. The doped compact is pressed and sintered, then hot-worked, and the final filament metal is 99.9-99.95% pure with the potassium content controlled to control the grain.",
+                "kind": "material",
+                "category": "metals",
+                "era": "1982",
+                "confidence": "high",
+                "inputs": [
+                  "metal.tungsten.reduction"
+                ],
+                "facts": [
+                  { "label": "Doping", "value": "0.1-1 wt% potassium as KOH or K2CO3, plus 0.1-0.5% Al2O3" },
+                  { "label": "Mechanism", "value": "dispersed potassium bubbles pin the grain boundaries - non-sag tungsten" },
+                  { "label": "Filament purity", "value": "99.9-99.95%, with potassium controlled to control the grain size" }
+                ],
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Tungsten"
+                ],
+                "children": [
+                  {
+                    "id": "metal.tungsten.wire",
+                    "name": "Drawn tungsten wire",
+                    "description": "The compact is swaged, then rolled, then drawn through carbide or diamond dies in a long series of steps, with a hydrogen anneal between them, because tungsten will not work cold: the ductile-to-brittle transition is close to room temperature and cold tungsten cracks rather than draws. A domestic television's heater ends up as wire 0.04-0.08 mm in diameter and 60-150 mm long, folded into a flat zig-zag under the cathode cup and run off 6.3 V; at that diameter a 30 cm length weighs about a hundredth of a gram and is the largest single reason a colour tube of that generation failed. The same carbide that draws this wire draws the enamelled magnet wire on the power-supply transformer, and the same wire stock makes the probe-card needles that touch every bond pad on a 6510 die.",
+                    "kind": "material",
+                    "category": "metals",
+                    "era": "1982",
+                    "confidence": "high",
+                    "facts": [
+                      { "label": "Filament", "value": "0.04-0.08 mm diameter, 60-150 mm long, 6.3 V heater" },
+                      { "label": "Working", "value": "swaged, rolled and drawn with a hydrogen anneal between every reduction step" },
+                      { "label": "Why anneal", "value": "the ductile-to-brittle transition sits near room temperature" }
+                    ],
+                    "places": [
+                      "Kitzingen, Germany"
+                    ],
+                    "from": [
+                      "metal.tungsten.powder"
+                    ],
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "metal.tungsten.carbide",
+            "name": "Tungsten carbide and the WC-Co cemented carbide",
+            "description": "Tungsten carbide, WC, is made by heating tungsten powder with carbon above 2000 C, and pressed and sintered on its own it is brittle and useless. What the industry actually buys is the composite: 6-12% finely divided cobalt powder mixed with WC grains of 0.5-30 microns, pressed and vacuum-sintered at 1400-1600 C, then ground and lapped to shape. The molten cobalt wets the carbide grains and holds them in a continuous binder, which is why the two metals are inseparable inside one object - a rock bit cone is a tungsten product and a cobalt product at once. By the 1980s cemented carbide was the largest single use of tungsten, ahead of filament, and oil-well drill cones were among its largest markets, so the bit on the rig producing the crude is a tungsten product just as much as the end mill cutting a C64 mainboard is.",
+            "kind": "material",
+            "category": "metals",
+            "era": "1982",
+            "confidence": "high",
+            "inputs": [
+              "metal.tungsten.powder",
+              "metal.cobalt"
+            ],
+            "facts": [
+              { "label": "Composition", "value": "6-12% cobalt binder, 900-1600 HV" },
+              { "label": "Making", "value": "WC from tungsten powder and carbon above 2000 C; pressed and vacuum-sintered at 1400-1600 C" },
+              { "label": "Grain size", "value": "0.5-30 microns of WC in the sintered body" },
+              { "label": "Share of tungsten use", "value": "cemented carbide takes 60-70% of world tungsten consumption" }
+            ],
+            "note": "Drilling and metalworking tooling together took the majority of cemented carbide; rock bits were the single largest application in the 1980s.",
+            "sources": [
+              "https://en.wikipedia.org/wiki/Tungsten"
+            ],
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "metal.cobalt",
+        "name": "Cobalt: the carbide binder, the ferrite dopant and the magnet alloy",
+        "description": "Cobalt is the element nobody thinks of and cannot do without. In a 1982 C64 and its peripherals it is the metal that holds tungsten carbide together in a drill cone, an end mill and a stamping die; the grain-boundary dopant that makes NiZn ferrite behave; the balance element in the iron-nickel-cobalt lid sealed onto a memory chip's ceramic package; a few percent of an Alnico correction magnet; and, at the top of the price range, half of a samarium-cobalt magnet. The mass in any one machine is a few grams. What is worth tracing is where it comes from, because cobalt is almost never mined for itself: it is overwhelmingly a by-product reporting out of somebody else's circuit, most often a copper-cobalt orebody or a nickel refinery, so the cobalt supply chain is largely a set of attachments to the copper and nickel branches.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "confidence": "high",
+        "inputs": [
+          "metal.cobalt.ore"
+        ],
+        "facts": [
+          { "label": "Metal", "value": "grey-white, hard and brittle, density 8.83 g/cm3, melting point 1495 C" },
+          { "label": "Supply character", "value": "almost entirely a by-product of copper and of nickel; primary cobalt deposits are rare" },
+          { "label": "Late-1970s concentration", "value": "a contemporary industry survey put Zaire at 53% of world output, with Zambia 9%, Australia 7%, New Caledonia 6% and Morocco 6%" },
+          { "label": "Price", "value": "$5.58/lb in 1977, $25/lb in 1980, about $12.50/lb in May 1982, about $5/lb by 1983-84" },
+          { "label": "Share of the market", "value": "superalloys and cemented carbides have historically taken the largest share" }
+        ],
+        "note": "The market was not short in 1982, which is the opposite of the usual assumption. The genuine disruption was the Shaba invasions of 1977 and 1978 in Zaire, which stopped the Katanga copper mines; the price went from about $5.58/lb in 1977 to about $25/lb in 1980 and then fell back as Zaire's stockpiles came down and nickel-derived supply grew. Even the Shaba shock was milder than expected, because cobalt is a rare metal, its pigment is toxic enough that a formulator could substitute, and the industry had established effective recycling. Which plants contributed how much cobalt in a particular year is not established here.",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Cobalt"
+        ],
+        "children": [
+          {
+            "id": "metal.cobalt.ore",
+            "name": "Cobalt ore: heterogenite, carrollite and asbolane",
+            "description": "Most cobalt never appears as a cobalt mineral at all. In the Copperbelt - the Shaba and Nkana strata of Zaire and Zambia - it sits in the sulphide ores as carrollite, Cu(Co,Ni)2S4, and it is recovered by flotation alongside the copper sulphides, so its output tracks the copper mine's. Where the deposit weathers, the same cobalt is oxidised to heterogenite, CoO(OH), a black manganese-rich oxide in the near-surface ore, and it is the oxide that the later hydrometallurgical flowsheets treat. A third source is asbolane, (Ni,Co)2-xMn4+(O,OH)4.nH2O, the cobalt-nickel-manganese oxide that forms in New Caledonian laterite. Grades are low: laterites run 0.1-1.5% Co, and the oxide zones are mined at a few percent.",
+            "kind": "material",
+            "category": "metals",
+            "era": "ancient",
+            "confidence": "high",
+            "facts": [
+              { "label": "Copperbelt sulphide", "value": "carrollite Cu(Co,Ni)2S4, floated with the copper sulphides" },
+              { "label": "Oxide zone", "value": "heterogenite CoO(OH), the near-surface weathering product" },
+              { "label": "Laterite", "value": "asbolane (Ni,Co)2-xMn4+(O,OH)4.nH2O, New Caledonia" },
+              { "label": "Grades", "value": "0.1-1.5% Co in laterite; the oxide zones are worked at a few percent" }
+            ],
+            "places": [
+              "Shaba (Katanga), Zaire",
+              "Nkana, Zambia",
+              "Koniambo, New Caledonia",
+              "Bou Azzer, Morocco"
+            ],
+            "sources": [
+              "https://en.wikipedia.org/wiki/Cobalt"
+            ],
+            "children": [
+              {
+                "id": "metal.cobalt.ore.hydromet",
+                "name": "Leach the copper-cobalt oxide ore",
+                "description": "The oxide ores of the Copperbelt are not smelted for their cobalt: they are leached. The ore is crushed and agitated in a sulfuric acid solution, which dissolves the cobalt and copper as sulphates while the iron stays in the residue as hydroxide, and the pregnant liquor is then taken to a solvent-extraction circuit that pulls the cobalt and copper apart from each other. What comes out of that circuit is a cobalt sulphate solution and, from it, a cobalt hydroxide intermediate that is shipped to a refinery. This is why the cobalt in a 1982 tungsten-carbide drill cone is a chemical-plant product rather than a smelter product, and why the Copperbelt's cobalt followed the fortunes of its acid plants and its export routes.",
+                "kind": "process",
+                "category": "metals",
+                "era": "1982",
+                "confidence": "medium",
+                "inputs": [
+                  "metal.cobalt.ore"
+                ],
+                "facts": [
+                  { "label": "Leach", "value": "sulfuric acid; cobalt and copper dissolve as sulphates, iron stays in the residue" },
+                  { "label": "Separation", "value": "solvent extraction splits cobalt from copper" },
+                  { "label": "Intermediate", "value": "cobalt hydroxide concentrate, shipped to a refinery" }
+                ],
+                "note": "The sulfate-leach and solvent-extraction flowsheet for Copperbelt oxide ore is well established; which particular plant or circuit served a given carbide maker in 1982 is not established.",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "metal.cobalt.ammoniacal-leach",
+            "name": "The Sherritt-Gordon ammonia pressure leach",
+            "description": "The second big route takes cobalt out of a nickel refinery rather than out of an orebody, and it exists because the nickel circuit was already there. Nickel concentrate or matte is leached with ammonia and ammonium sulphate in horizontal autoclaves under air at elevated pressure, which dissolves the nickel, cobalt and copper as metal-ammine complexes while the sulphide sulphur is oxidised and leaves as ammonium sulphate - a saleable fertiliser, which is what made the process pay. Cobalt is then separated from nickel on the fact that the cobalt ammine is far more stable: it is held in solution while the nickel is thrown down, and the cobalt stream is finished separately to metal. Because the feed is somebody else's concentrate, every tonne of cobalt this route makes is a tonne that did not have to be mined.",
+            "kind": "process",
+            "category": "metals",
+            "era": "1982",
+            "confidence": "medium",
+            "inputs": [
+              "chem.natural-gas.uses.fertiliser-ammonia"
+            ],
+            "facts": [
+              { "label": "Feed", "value": "nickel concentrate or matte, and lateritic mixed sulphide precipitate" },
+              { "label": "Leach", "value": "ammonia and ammonium sulphate, air, elevated pressure, horizontal autoclaves" },
+              { "label": "Separation", "value": "the cobalt ammine is much more stable than the nickel ammine, so cobalt is held and nickel is thrown down" },
+              { "label": "By-product", "value": "ammonium sulphate fertiliser, which is what made the process economic" }
+            ],
+            "note": "The ammonia pressure leach is a mature Sherritt-Gordon process by 1982 and is applied to sulphide concentrate as well as to laterite-derived precipitate; the share of world cobalt it supplied in 1982 is not asserted here.",
+            "sources": [
+              "https://magazine.cim.org/en/mining-the-archives/pressure-point-en"
+            ],
+            "children": []
+          },
+          {
+            "id": "metal.cobalt.electrolytic",
+            "name": "Electrolytic refining to 99.8% cathode",
+            "description": "Almost all cobalt metal on the market is won by electrolysis, and that is a deliberate choice about purity rather than about cost. The cobalt hydroxide or the crude metal is dissolved in sulfuric acid to make a cobalt sulphate solution; that solution is fed to an insoluble anode and a cobalt starter cathode, and metal grows on the cathode at a controlled current density while the impurities that are not plating out stay in the bath. The result is a cobalt cathode of about 99.8% - the grade trade calls Falconbridge cathode - and it is the standard feed for the tungsten-carbide industry, because a carbide's cobalt binder has to be fine, uniform and free of the copper, iron and lead that would poison the sintering. Electrolytic cobalt is also how the high-purity metal for superalloys and for the samarium-cobalt magnets was made.",
+            "kind": "process",
+            "category": "metals",
+            "era": "1982",
+            "confidence": "high",
+            "inputs": [
+              "metal.sulphuric-acid"
+            ],
+            "facts": [
+              { "label": "Bath", "value": "cobalt sulphate solution, insoluble anode, cobalt starter cathode" },
+              { "label": "Product", "value": "about 99.8% cobalt cathode" },
+              { "label": "Other grades", "value": "about 99.6% from Zambia, 99.3% ingot from the Soviet Union" },
+              { "label": "Why the grade matters", "value": "the WC binder must be fine and free of copper, iron and lead or the carbide will not sinter" }
+            ],
+            "sources": [
+              "https://en.wikipedia.org/wiki/Cobalt"
+            ],
+            "children": [
+              "metal.nickel.cobalt-carbonyl"
+            ]
+          },
+          {
+            "id": "metal.cobalt.oxide",
+            "name": "Cobalt(II) oxide, the additive grade",
+            "description": "The oxide a component maker actually buys is neither the ore nor the metal but a calcined powder, and in 1982 electronics the grade in question was a few percent of a zinc oxide varistor disc and a trace in a ferrite body. Heating cobalt metal in oxygen gives the blue-black spinel Co3O4, which is the oxide most of the industry actually trades; the green rocksalt CoO underneath it is a different substance with a different stability range, oxidising back to Co3O4 at 600-700 C and reappearing only when the temperature goes above 900 C. That is why the calcining route is described as reducing to the metal by way of Co3O4, and why a supplier's 'cobalt monoxide' and 'cobalt oxide' can be the same powder. The varistor is why this matters - a few percent of cobalt lets a zinc oxide disc hold a wide voltage range without failing, by making the grain boundaries and the grain interiors drift to their breakdown voltages at different rates.",
+            "kind": "material",
+            "category": "metals",
+            "era": "1982",
+            "confidence": "medium",
+            "inputs": [
+              "metal.cobalt"
+            ],
+            "facts": [
+              { "label": "The traded oxide", "value": "blue-black spinel Co3O4, from heating cobalt metal in oxygen" },
+              { "label": "The two oxides", "value": "CoO oxidises to Co3O4 at 600-700 C, and Co3O4 loses oxygen above 900 C to give CoO again" },
+              { "label": "Varistor use", "value": "a few percent in a ZnO disc, to spread the grain-boundary and grain-interior breakdown voltages" }
+            ],
+            "note": "The CoO/Co3O4 equilibrium is textbook inorganic chemistry; which specific oxide a 1982 varistor or ferrite supplier used is not established, so the node records the substance rather than a claim about a particular part.",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "metal.rare-earths",
+        "name": "Rare earths: fifteen metals out of two concentrate ores",
+        "description": "The lanthanides plus scandium and yttrium are a single mining and refining industry that supplies fifteen elements which are chemically almost identical and economically almost unrelated. What a 1982 machine actually asks for is a gram-scale pinch of several of them: europium to make the red of a television phosphor, samarium for a correction magnet, neodymium for the catalyst that sets the cis content of a butadiene rubber, lanthanum and dysprosium as the donor dopants of an X7R ceramic dielectric, and lanthanum and neodymium exchanged into the zeolite of a refinery's cracking catalyst. All of them leave the same two concentrate ores and the same solvent-extraction plant, and after that plant the only question is which of the fifteen fractions a customer asks for.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "confidence": "high",
+        "facts": [
+          { "label": "Two ores", "value": "bastnasite, a light-REE carbonate fluorosilicate, and monazite, a mostly-light phosphate that also carries thorium" },
+          { "label": "Two dominant sources in 1982", "value": "Mountain Pass, California and Bayan Obo, Inner Mongolia" },
+          { "label": "Separation", "value": "solvent extraction in a train of hundreds of mixer-settler stages" },
+          { "label": "Demand in 1982", "value": "gram-scale: colour television phosphors dominated, with catalysts and magnets far behind" }
+        ],
+        "note": "Category is metals because the industry sells and counts these as metals - mixed rare-earth metal and the individual ingots - even where the product bought is an oxide. There is no separate rare-earths category, and the oxide is what a phosphor maker receives.",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Rare_earth_element"
+        ],
+        "children": [
+          {
+            "id": "metal.rare-earths.bastnasite",
+            "name": "Bastnasite concentrate and the Mountain Pass carbonatite",
+            "description": "Bastnasite - usually written bastnaesite in commercial and metallurgical use, and bastnäsite in mineralogy - is (Ce,La)CO3F, a light-brown carbonate fluorosilicate carrying 6-9% rare-earth oxides. It was found in 1878 at Bastnas in Sweden and worked in quantity from 1949, but the ore that supplied the western industry in 1982 was a carbonatite in the Clark Mountains in California. It is an open pit in a 1.4-billion-year-old carbonatite intrusion, 8-12% rare-earth oxides in bastnasite with calcite, barite and dolomite as gangue, and it is dredged, floated and sent to its own separation plant on the same site. Mountain Pass is the clearest single example in this tree of an ore mined for an element nobody can see in it: barium is the gangue, iron is what comes out of the separation circuit, and the rare earths are what it is for. Production rose steeply through the 1960s to supply europium for the red of colour television. The other giant, Bayan Obo in Inner Mongolia, is different in kind: it is an iron-ore mine first, with monazite and bastnasite in the ore and the rare earths and niobium recovered as by-products, its concentrate travelling 150 km to the separation works at Baotou.",
+            "kind": "material",
+            "category": "metals",
+            "era": "ancient",
+            "confidence": "high",
+            "inputs": [
+              "metal.caustic-lime-flotation"
+            ],
+            "facts": [
+              { "label": "Mineral", "value": "(Ce,La)CO3F, a carbonate fluorosilicate" },
+              { "label": "Grade", "value": "6-9% REO; the Mountain Pass carbonatite carries 8-12% REO" },
+              { "label": "Gangue", "value": "calcite, barite and dolomite" },
+              { "label": "Bayan Obo", "value": "an iron-ore mine whose rare earths and niobium are by-products; ore processed at Baotou 150 km away" },
+              { "label": "What it is mined for", "value": "europium for colour television red expanded Mountain Pass production steeply in the 1960s" }
+            ],
+            "places": [
+              "Mountain Pass, California",
+              "Bayan Obo, Inner Mongolia",
+              "Baotou, Inner Mongolia",
+              "Bastnas, Sweden"
+            ],
+            "sources": [
+              "https://en.wikipedia.org/wiki/Bastn%C3%A4site",
+              "https://mpmaterials.com/history"
+            ],
+            "children": []
+          },
+          {
+            "id": "metal.rare-earths.monazite",
+            "name": "Monazite concentrate and the beach-sand placer",
+            "description": "Monazite, (Ce,La,Nd,Th)PO4, is a heavy placer mineral from the beach sands that carry ilmenite, zircon, rutile and xenotime with it - the Kerala and Queensland and Cape Breton sands, worked by a dredge and a floating concentrator with shaking tables, spirals, a magnet and an electrostatic separator. It holds 20-30% rare-earth oxides and, because thorium's chemistry is so close to the rare earths', 5-30% ThO2 as well. That thorium is the practical difficulty and the reason monazite had been worked mainly for its heavy minerals: it follows the rare earths through the whole separation chemistry and has to be parked in a radioactive residue. Monazite is mined for thorium, for the heavy minerals and, in a few places, for the rare earths themselves. It is also an impurity that a coltan refinery has to filter off its fluoride solution.",
+            "kind": "material",
+            "category": "metals",
+            "era": "ancient",
+            "confidence": "high",
+            "inputs": [
+              "metal.monazite.beach"
+            ],
+            "facts": [
+              { "label": "Composition", "value": "(Ce,La,Nd,Th)PO4 with 5-30% ThO2" },
+              { "label": "Rare-earth content", "value": "20-30% REO" },
+              { "label": "Occurrence", "value": "heavy placer concentrates from a beach sand, alongside ilmenite, zircon, rutile and xenotime" },
+              { "label": "The thorium problem", "value": "thorium's chemistry follows the rare earths through the whole circuit and reports in the residue" }
+            ],
+            "places": [
+              "Kollam, Kerala",
+              "Cape York, Queensland",
+              "Cape Breton, Nova Scotia"
+            ],
+            "sources": [
+              "https://en.wikipedia.org/wiki/Monazite"
+            ],
+            "children": [
+              {
+                "id": "metal.monazite.beach",
+                "name": "The heavy-mineral beach and its dredge",
+                "description": "A beach on the east coast of Queensland or on the Malabar coast of Kerala where the wave has concentrated ilmenite, zircon, rutile, monazite and xenotime into a dark, 1-10% heavy-mineral band a metre or two thick in the sand. It is worked by a cutter-suction dredge or a walking dredge on a barge, which pumps the sand onto a floating concentrator with shaking tables, spirals, a magnetic separator and an electrostatic separator. This is the shared geological endpoint of a surprising amount of this file: the titanium dioxide, the coltan, the thorium residue, the rare earths and the zircon all came out of a band like this one, which is why a capacitor's tantalum and a television's red phosphor can be argued about at the same beach.",
+                "kind": "material",
+                "category": "metals",
+                "era": "1982",
+                "confidence": "high",
+                "places": [
+                  "Cape York, Queensland",
+                  "Kollam, Kerala"
+                ],
+                "facts": [
+                  {
+                    "label": "Band",
+                    "value": "0.5-5 m of heavy-mineral sand at 1-10% HM"
+                  },
+                  {
+                    "label": "Mining",
+                    "value": "cutter-suction dredge or a walking dredge on a barge"
+                  },
+                  {
+                    "label": "Concentration",
+                    "value": "gravity tables and spirals, then magnet and electrostatic separation"
+                  }
+                ]
+              },
+              {
+                "id": "metal.rare-earths.monazite.caustic-bake",
+                "name": "Caustic soda bake to split the rare earths from the thorium",
+                "description": "Monazite is a refractory phosphate, so the industrial split between the rare earths and the thorium is a matter of finding a lye that will dissolve one and not the other. A 50% caustic soda solution is mixed with the sand and taken to about 140-150 C for several hours; the phosphate is broken down and the rare-earth elements go into solution as hydroxides, while thorium and uranium stay behind as comparatively insoluble hydroxides in the residue, where they concentrate into a radioactive waste that has to be stored. The pregnant liquor is then diluted, filtered and taken to the separation plant. An acid digestion at 150-200 C does the same job more cheaply on some ores and worse on others, because it dissolves the thorium too and puts the separation problem downstream.",
+                "kind": "process",
+                "category": "metals",
+                "era": "1982",
+                "confidence": "medium",
+                "inputs": [
+                  "metal.caustic-soda"
+                ],
+                "facts": [
+                  { "label": "Bake", "value": "about 50% NaOH at 140-150 C for several hours" },
+                  { "label": "Split", "value": "rare earths dissolve as hydroxides; thorium and uranium stay in the residue" },
+                  { "label": "Alternative", "value": "nitric or sulfuric acid digestion at 150-200 C, which takes the thorium into solution as well" },
+                  { "label": "Waste", "value": "the thorium residue is a radioactive waste that has to be stored, not sold" }
+                ],
+                "note": "The caustic bake and its selectivity against thorium are well documented in monazite processing; which route a given 1982 plant used is not established.",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Monazite"
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "metal.rare-earths.separation",
+            "name": "Cracking, leaching and solvent extraction",
+            "description": "Fifteen elements that differ only in the number of electrons in one inner shell cannot be separated by any normal chemical operation, because they all want the same compounds. The industry separates them by arithmetic instead: a long train of mixer-settler stages in which a hydrocarbon solvent and an aqueous phase pass counter-current and the partition coefficient between them is exploited a hundred times over, walking cerium, lanthanum, neodymium and the rest off the stream one at a time. Hundreds of stages and several tonnes of solvent per tonne of oxide is what it costs, which is why the whole business sits behind one or two plants per ore rather than being spread around, and why the ore's owner and the plant's owner are usually the same company. Cerium is the one that comes out cheaply and in bulk, and cerium is a nuisance: there is far more of it than anyone can use.",
+            "kind": "process",
+            "category": "metals",
+            "era": "1982",
+            "confidence": "high",
+            "inputs": [
+              "metal.rare-earths.bastnasite",
+              "metal.rare-earths.monazite",
+              "metal.hydrochloric-acid"
+            ],
+            "facts": [
+              { "label": "Method", "value": "counter-current mixer-settler solvent extraction, hundreds of stages" },
+              { "label": "Why", "value": "the elements differ only in one inner shell, so they form identical compounds" },
+              { "label": "Economics", "value": "the plant and the mine are normally one company; the separation is the barrier to entry" },
+              { "label": "Bulk fraction", "value": "cerium is the most abundant and the least wanted, and comes out in large tonnage" }
+            ],
+            "sources": [
+              "https://en.wikipedia.org/wiki/Rare_earth_element"
+            ],
+            "children": [
+              {
+                "id": "metal.rare-earths.oxides",
+                "name": "Separated rare-earth oxides",
+                "description": "The output of the separation plant is a set of individual oxides rather than a mixture: europium oxide for the red activator in a colour television phosphor, samarium oxide for the samarium-cobalt magnet, neodymium oxide for the lanthanide rubber catalyst and for the cracking-catalyst zeolite, lanthanum and dysprosium oxides ground to sub-micron as the donor dopants of a ceramic dielectric, and yttrium oxide as both a dopant and a stabiliser. Grades are quoted by purity - 99.9% or 99.99% for the phosphor and magnet grades - and the price differences between them are large enough that the tonnages are shaped by which grade happens to be wanted, not by how much of the element there is in the ground.",
+                "kind": "material",
+                "category": "metals",
+                "era": "1982",
+                "confidence": "high",
+                "facts": [
+                  { "label": "Grades sold", "value": "99.9% and 99.99% oxide for phosphor, magnet and catalyst uses" },
+                  { "label": "Particle size matters", "value": "MLCC dopant oxides are ground and sieved to sub-micron" },
+                  { "label": "Price", "value": "europium, samarium and dysprosium cost orders of magnitude more per kilogram than cerium" }
+                ],
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Rare_earth_element"
+                ],
+                "children": []
+              }
+            ]
+          }
         ]
       }
     ]
@@ -13037,7 +13487,7 @@
         {
           "id": "metal.molybdenum",
           "name": "Molybdenum: a tool steel alloying element",
-          "description": "Molybdenum is in the tool steel, in the stainless and in the hydrodesulphurisation catalyst, so it belongs in this tree, but its own branch is short because in 1982 almost no molybdenum came from a molybdenum mine: about half came from the molybdenite recovered as a by-product of the porphyry copper concentrators, where it is a few hundred ppm of the concentrate and reports to a separate flotation circuit, and the other half came as molybdic oxide from roasting. The ore is molybdenite, MoS2, in the Climax and Henderson porphyry in Colorado and in the Bingham Canyon concentrate. The leaf is a porphyry or a granite vein.",
+          "description": "Molybdenum is in the tool steel, in the stainless and in the hydrodesulphurisation catalyst, so it belongs in this tree, but its own branch is short because in 1982 almost no molybdenum came from a molybdenum mine: about half came from the molybdenite recovered as a by-product of the porphyry copper concentrators, where it is a few hundred ppm of the concentrate and reports to a separate flotation circuit, and the other half came as molybdic oxide from roasting. The ore is molybdenite, MoS2, in the Climax and Henderson porphyry in Colorado and in the Bingham Canyon concentrate. Molybdenum and tungsten share the greisen hydrothermal environment, so scheelite CaWO4 and molybdenite are sometimes intergrown in the same vein and the two metals can be recovered from one orebody. The leaf is a porphyry or a granite vein.",
           "kind": "material",
           "category": "metals",
           "era": "1982",
@@ -13078,29 +13528,6 @@
                   "value": "molybdenite MoS2, as 1-10 cm flakes in veinlets"
                 }
               ]
-            },
-            {
-              "id": "metal.molybdenum.scheelite",
-              "name": "Scheelite and wolframite: the limestone vein alternative",
-              "description": "Almost all molybdenum came from porphyry copper, but there is a second source: the molybdenite that sits in the tungsten skarn and vein deposits - the Climax and Henderson molybdenum orebodies in Colorado were actually a Colorado Clueca-type porphyry with a molybdenum-bearing skarn. The relevant geology is that molybdenum and tungsten share the hydrothermal vein environment, and scheelite (CaWO4) and molybdenite (MoS2) are sometimes intergrown in the same greisen. So the molybdenum in a C64's injection-moulding die could in principle have come out of the same vein as a tungsten electrode - which is the point the brief made when it said no tungsten in a 1982 C64, and this is where that fact becomes interesting: the tungsten was there, in the same rock, but it went into other industries.",
-              "kind": "material",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "low",
-              "places": [
-                "Climax, Colorado"
-              ],
-              "facts": [
-                {
-                  "label": "Molybdenite",
-                  "value": "MoS2 in vein and skarn greisen"
-                },
-                {
-                  "label": "Companion",
-                  "value": "scheelite CaWO4 and wolframite, often in the same vein"
-                }
-              ],
-              "note": "Low confidence on the specifics of the Climax-Henderson molybdenum-greisen relationship; the general geology of molybdenum-tungsten greisen association is well established; the particular orebody detail is not asserted."
             }
           ]
         },
@@ -13654,7 +14081,7 @@
           "era": "1982",
           "confidence": "medium",
           "inputs": [
-            "metal.nickel.cobalt-carbonyl",
+            "metal.cobalt",
             "metal.strontium-carbonate",
             "metal.quartzite"
           ],
@@ -13777,7 +14204,7 @@
           "era": "1982",
           "confidence": "medium",
           "inputs": [
-            "metal.nickel.cobalt-carbonyl"
+            "metal.cobalt"
           ],
           "facts": [
             {
@@ -13794,14 +14221,14 @@
             {
               "id": "metal.ferrite.nizn.co-source",
               "name": "The nickel and cobalt raw materials for NiZn",
-              "description": "The Ni-Zn family's nickel does not come as metal. It comes as nickel oxide, or as green nickel hydroxide precipitate from a laterite leach, and the cobalt comes either as cobalt metal or - much more cheaply, and this is the point - as a cobalt hydroxide carried out of the Sherritt-Gordon ammonia circuit as a precipitate, or as cobalt recovered from the spent nickel-catalyst streams. So the cobalt in a NiZn ferrite and the cobalt in a superalloy came out of the same nickel refinery, and that nickel refinery in 1982 was in the middle of a genuine cobalt supply crisis, which is a nice way for a ferrite material to be affected by a metals-market event.",
+              "description": "The Ni-Zn family's nickel does not come as metal. It comes as nickel oxide, or as green nickel hydroxide precipitate from a laterite leach, and the cobalt comes as metal, as oxide, or - much more cheaply - as a cobalt hydroxide carried out of the nickel refinery's ammonia circuit. Which is the point: the cobalt in a NiZn ferrite, the cobalt in a superalloy and the cobalt binder in a tungsten-carbide drill cone all came out of the same few refineries, so the price a ferrite maker paid for its dopant was set by the nickel market rather than by anything to do with ferrite. By 1982 that price was falling rather than rising - cobalt was about $12.50/lb in May, down from $25/lb in 1980, and about $5/lb by 1983-84 as new supply arrived.",
               "kind": "material",
               "category": "magnetics",
               "era": "1982",
-              "confidence": "low",
+              "confidence": "medium",
               "inputs": [
                 "metal.nickel.nickel-oxide",
-                "metal.nickel.cobalt-carbonyl"
+                "metal.cobalt"
               ],
               "facts": [
                 {
@@ -13810,13 +14237,16 @@
                 },
                 {
                   "label": "Cobalt source",
-                  "value": "cobalt hydroxide from the nickel circuit, or recovered metal"
+                  "value": "cobalt hydroxide from the nickel circuit, or electrolytic cathode"
+                },
+                {
+                  "label": "1982 price context",
+                  "value": "cobalt about $12.50/lb in May 1982, against $25/lb in 1980 and about $5/lb by 1983-84"
                 }
               ],
-              "note": "Low confidence on the specific ferrite raw-material supply chains; the cobalt crisis of 1982-83 is well documented but its effect on ferrite raw materials is not.",
+              "note": "The supply route is well established; medium confidence on which of the three cobalt forms a given ferrite maker was buying, since the recipes and the purchasing are proprietary.",
               "children": [
-                "metal.nickel.nickel-oxide",
-                "metal.nickel.cobalt-carbonyl"
+                "metal.nickel.nickel-oxide"
               ]
             }
           ]

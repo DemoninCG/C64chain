@@ -3158,6 +3158,92 @@
       "why": "Both nodes are named 'Nickel reforming catalyst' and both are leaf materials at medium confidence. The 70-petrochem copy is the one on the canonical hydrogen-from-SMR path and is the richer of the two (it carries the pre-1957 Topsoe SMR-180 detail and the multi-bed reformer tube geometry). Kept per CHECKLIST keep-rule 1. This is the last of the duplicate-name groups left by the QA pass.",
       "loserDescription": "Nickel oxide on alumina, or the classic nickel-molybdenum on alumina, formed by impregnating a porous pellet with nickel nitrate and calcining. Ends at the laterite and the bauxite.",
       "loserFacts": null
+    },
+    {
+      "loser": "metal.molybdenum.scheelite",
+      "loserName": "Scheelite and wolframite: the limestone vein alternative",
+      "loserFile": "60-metals.json",
+      "survivor": "metal.tungsten.ore",
+      "survivorName": "Wolframite and scheelite ore",
+      "survivorFile": "60-metals.json",
+      "proposal": "central (docs/TODO.md section 2)",
+      "why": "Phase 2. This node was always a tungsten ore node filed under molybdenum: its own name said 'the limestone vein alternative', i.e. relative to a molybdenum parent it was not really about. The previous pass recorded here that its description 'should be widened from molybdenum to both metals', which is the opposite of what it needed - it should have become a tungsten ore node. Its only real content was the greisen co-occurrence of scheelite CaWO4 and molybdenite MoS2, which is now a clause in metal.tungsten.ore and a clause in metal.molybdenum. The node also carried a build-process sentence about 'the point the brief made', which CHECKLIST 7a forbids.",
+      "loserDescription": "Almost all molybdenum came from porphyry copper, but there is a second source: the molybdenite that sits in the tungsten skarn and vein deposits - the Climax and Henderson molybdenum orebodies in Colorado were actually a Colorado Clueca-type porphyry with a molybdenum-bearing skarn. The relevant geology is that molybdenum and tungsten share the hydrothermal vein environment, and scheelite (CaWO4) and molybdenite (MoS2) are sometimes intergrown in the same greisen. So the molybdenum in a C64's injection-moulding die could in principle have come out of the same vein as a tungsten electrode - which is the point the brief made when it said no tungsten in a 1982 C64, and this is where that fact becomes interesting: the tungsten was there, in the same rock, but it went into other industries.",
+      "loserFacts": [
+        { "label": "Molybdenite", "value": "MoS2 in vein and skarn greisen" },
+        { "label": "Companion", "value": "scheelite CaWO4 and wolframite, often in the same vein" }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.crt.gun.heater.wolframite",
+      "loserName": "Drawn tungsten wire",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.tungsten.wire",
+      "survivorName": "Drawn tungsten wire",
+      "survivorFile": "60-metals.json",
+      "proposal": "central (docs/TODO.md section 2)",
+      "why": "Phase 2. Same name as the new canonical node, which is what the audit's duplicate-name rule flagged. The whole of the chemistry chain it described in one paragraph - digest to sodium tungstate, to APT, to WO3, hydrogen reduction, potassium doping, drawing - is now four real nodes under metal.tungsten, so a path-local copy that compressed four levels of supply chain into one description was the wrong shape as well as the wrong place. Its 'Korea and China were becoming dominant' note is now on metal.tungsten.ore.mine, where the supply claim belongs.",
+      "loserDescription": "Tungsten does not exist as a pure ore anywhere. Wolframite (Fe,Mn)WO4 and scheelite CaWO4 are decomposed with caustic soda or sodium carbonate to sodium tungstate, then to APT (ammonium paratungstate), then to tungsten trioxide reduced with hydrogen at 800-1000 degrees C to a fine powder, which is doped with potassium and drawn.",
+      "loserFacts": [
+        { "label": "APT", "value": "(NH4)10H2W12O42, the standard intermediate" },
+        { "label": "Reduction", "value": "800-1000 degrees C, H2, to W powder" },
+        { "label": "Drawing", "value": "doped powder, hydrogen-annealed, swaged and drawn to 0.04 mm" },
+        { "label": "Purity", "value": "99.9-99.95%, and the potassium content is controlled to control the grain" }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.crt.gun.heater.wolframite.mine",
+      "loserName": "Tungsten mine and concentrator",
+      "loserFile": "90-peripherals.json",
+      "survivor": "metal.tungsten.ore.mine",
+      "survivorName": "Tungsten mine and concentrator",
+      "survivorFile": "60-metals.json",
+      "proposal": "central (docs/TODO.md section 2)",
+      "why": "Phase 2. Same name as the new canonical node. A mine is a facility, not a property of a television's heater, so the node belonged with the ore it produces. Its content is preserved verbatim in the survivor plus the 1980 supply shift.",
+      "loserDescription": "Wolframite is dense and refractory, so the ore is mined, crushed and gravity-concentrated or floated to a 60-70% WO3 concentrate. Because the ore is often a by-product of a tin or molybdenum mine, tungsten supply followed the fortunes of tin mining, and the price spiked hard whenever the tin market wobbled.",
+      "loserFacts": [
+        { "label": "Concentrate", "value": "60-70% WO3, roughly a 100x upgrade" },
+        { "label": "Mining", "value": "underground stoping and hand sorting, plus alluvial allutan placers on the Malay Archipelago tin belt" }
+      ]
+    },
+    {
+      "loser": "chem.butadiene.polymerisation.neodymium-catalyst.neodymium-source.bastnasite",
+      "loserName": "Bastnasite ore",
+      "loserFile": "70-petrochem.json",
+      "survivor": "metal.rare-earths.bastnasite",
+      "survivorName": "Bastnasite concentrate and the Mountain Pass carbonatite",
+      "survivorFile": "60-metals.json",
+      "proposal": "central (docs/TODO.md section 4)",
+      "why": "Phase 2. This is the duplicate half of the split TODO section 4 complains about: the europium phosphor and the samarium magnet each grew their own bastnasite story while this one grew a third. Bastnasite is an ore, so it belongs under metal.rare-earths next to monazite, not inside a rubber catalyst in a plastics fragment. Its note - 'the rare earth chain is a metals subsystem; this node marks where a 1980s rubber catalyst entered it' - was about the tree rather than the substance, which CHECKLIST 7a forbids; the metals link it complains about now exists for real.",
+      "loserDescription": "A light rare earth carbonate fluorosilicate, about 6-9% rare earth oxides, discovered in 1878 at Bastnas in Sweden and mined in quantity from 1949. It is the last dig-it-out node of the ABS branch's rubber phase: a C64's rubber comes from butadiene from a cracker, but the catalyst that gives that butadiene its cis content begins in a carbonatite dyke in California or in Inner Mongolia.",
+      "loserFacts": null
+    },
+    {
+      "loser": "mb.passives.caps.mlcc.powder.doping.dopant-oxides.bastnaesite",
+      "loserName": "Rare-earth concentrates (bastnaesite, monazite)",
+      "loserFile": "30-passives.json",
+      "survivor": "metal.rare-earths.bastnasite",
+      "survivorName": "Bastnasite concentrate and the Mountain Pass carbonatite",
+      "survivorFile": "60-metals.json",
+      "proposal": "central (docs/TODO.md section 4)",
+      "why": "Phase 2. The fourth copy of the rare-earth ore story, and the vaguest: 'with the world supply dominated by one mining complex and its associated separation plants' names no complex, and its own note admits the chain is 'deliberately compressed'. The mineral it was pointing at now has a real node with the two named complexes and the separation step. Monazite, which this node's name also claimed, is now metal.rare-earths.monazite.",
+      "loserDescription": "Rare-earth minerals are worked chiefly from carbonatite and monazite/bastnaesite concentrates, with the world supply dominated by one mining complex and its associated separation plants. The oxides are then produced by acid leach and solvent extraction.",
+      "loserFacts": null
+    },
+    {
+      "loser": "metal.tantalum.monazite",
+      "loserName": "Monazite, the thorium and rare-earth carrier",
+      "loserFile": "60-metals.json",
+      "survivor": "metal.rare-earths.monazite",
+      "survivorName": "Monazite concentrate and the beach-sand placer",
+      "survivorFile": "60-metals.json",
+      "proposal": "central (docs/TODO.md section 4)",
+      "why": "Phase 2. Monazite was a duplicate mineral living under the tantalum branch, where it appears as an impurity to be filtered off a fluoride solution. That role is genuine and is kept - metal.tantalum.thorium still points here, and the survivor keeps the 5-30% ThO2 figure - but the mineral itself, its composition and its occurrence, belongs with the other rare-earth ore. Per CHECKLIST keep-rule 4 the name was relative to a parent ('the thorium and rare-earth carrier') and is now the general name.",
+      "loserDescription": "Monazite, (Ce,La,Nd,Th)PO4, is a heavy placer mineral from the same beach sands as the ilmenite and the rutile - the Kerala and Queensland and Cape Breton sands. It is the world's main thorium source and, after a very difficult separation, a rare-earth source. In the tantalum circuit monazite is an impurity that has to be filtered off the fluoride solution. So the tantalum in a 1982 capacitor, the titanium dioxide in its casing, and the thorium residue all come out of the same Queensland beach sand.",
+      "loserFacts": [
+        { "label": "Composition", "value": "(Ce,La,Nd,Th)PO4 with 5-30% ThO2" },
+        { "label": "Occurrence", "value": "heavy placer concentrates from a beach sand" }
+      ]
     }
   ]
 }

@@ -1551,26 +1551,28 @@
                         {
                           "id": "mb.passives.caps.mlcc.powder.doping.dopant-oxides",
                           "name": "Rare-earth dopant oxides",
-                          "description": "Lanthanum, dysprosium and yttrium oxides, ground and sieved to sub-micron, are the donor dopants that set the temperature coefficient of an X7R dielectric. They are rare-earth minerals mined and separated in small tonnages, and their price was a visible line item in MLCC costing.",
+                          "description": "Lanthanum, dysprosium and yttrium oxides, ground and sieved to sub-micron, are the donor dopants that set the temperature coefficient of an X7R dielectric. The sub-micron sieve is the whole difficulty: a barium titanate powder wants its additives soluble or finely dispersed so that no second phase forms, and an oxide bought at the separation plant's standard grade arrives as lumps. These are the most expensive few grams on the bill of materials and they were bought by the kilogram, not the tonne, so the MLCC maker was dependent on the same two plants as the television maker for the same handful of elements.",
                           "kind": "material",
                           "category": "passives",
                           "era": "ancient",
-                          "confidence": "medium",
-                          "children": [
+                          "inputs": [
+                            "metal.rare-earths.oxides"
+                          ],
+                          "facts": [
                             {
-                              "id": "mb.passives.caps.mlcc.powder.doping.dopant-oxides.bastnaesite",
-                              "name": "Rare-earth concentrates (bastnaesite, monazite)",
-                              "description": "Rare-earth minerals are worked chiefly from carbonatite and monazite/bastnaesite concentrates, with the world supply dominated by one mining complex and its associated separation plants. The oxides are then produced by acid leach and solvent extraction.",
-                              "kind": "material",
-                              "category": "passives",
-                              "era": "ancient",
-                              "sources": [
-                                "https://en.wikipedia.org/wiki/Bastn%C3%A4site"
-                              ],
-                              "confidence": "medium",
-                              "note": "The rare-earth separation chain is complex; flagged medium because it is deliberately compressed here."
+                              "label": "Which oxides",
+                              "value": "lanthanum, dysprosium and yttrium, as donor dopants"
+                            },
+                            {
+                              "label": "Particle size",
+                              "value": "ground and sieved to sub-micron, or they will not disperse in the barium titanate"
+                            },
+                            {
+                              "label": "Cost position",
+                              "value": "among the most expensive grams in the component, and bought in kilogram quantities"
                             }
-                          ]
+                          ],
+                          "confidence": "medium"
                         }
                       ]
                     }
