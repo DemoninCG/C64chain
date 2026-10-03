@@ -173,6 +173,9 @@
                     "kind": "material",
                     "category": "optics",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Borosilicate%20glass"
+                    ],
                     "description": "Funnel glass is a borosilicate with low alkali, formulated so that its thermal expansion matches the panel. The batch is silica sand, boric acid, soda ash, limestone and a little red lead or litharge as a fining agent, melted for tens of hours in a regenerative gas-fired tank furnace and then drawn into tubing.",
                     "inputs": [
                       "quartz sand",
@@ -223,7 +226,8 @@
                         ],
                         "note": "No canonical borate node exists anywhere in the tree yet, so this chain stays here; the colemanite diggings and the acid digestion are as deep as it goes."
                       }
-                    ]
+                    ],
+                    "note": "Borosilicate is the low-expansion family of glass: its main glass-formers are silica and boron trioxide and its coefficient of thermal expansion is about 3 x 10^-6 per K at 20 C, which is the order the figure here gives and the reason a funnel has to be formulated against the expansion of the panel it is sealed to. Not established: the 1380-1500 C melt temperature, the lehr cooling from 450 to 20 C over 10-20 hours, the regeneration gas firing, the red lead as fining agent, the forming of the funnel as drawn tubing, and the Toledo, Nemours and Tokyo works. A commercial lead borosilicate display-tube funnel glass was sold by the weight of its constituent oxides rather than by a published batch recipe."
                   },
                   {
                     "id": "peripheral.tv.crt.panel.frit",
@@ -300,6 +304,9 @@
                             "kind": "process",
                             "category": "metals",
                             "era": "ancient",
+                            "sources": [
+                              "https://en.wikipedia.org/wiki/Lead%20smelting"
+                            ],
                             "description": "The whole lead chain in one furnace hall. Concentrate is roasted in a fluid-bed roaster to litharge, PbO, with the SO2 sent to a contact plant for sulphuric acid; the litharge is mixed with sinter, coke and limestone and charged to a blast furnace that produces crude lead at about 1250 degrees C and 1100-1250 degrees C of shaft temperature. The crude is drossed and electrolytically refined to 99.99% Pb, then converted back to pure white PbO for the frit. The economics were dominated by the acid plant and by how much silver the Parkesine dross carried.",
                             "inputs": [
                               "galena concentrate",
@@ -338,7 +345,8 @@
                             "confidence": "medium",
                             "children": [
                               
-                            ]
+                            ],
+                            "note": "Primary lead production is documented as a sinter blast-furnace route: concentrated ore is sintered with iron, silica and limestone fluxes and coke, reduced in a blast furnace, the bullion is copper-drossed and drossed, the Parkes process is used to separate silver and gold from lead, and the metal is then refined, with the Betterton-Kroll process among the pyrometallurgical routes named. That much is the sequence this node describes. Not established: the fluid-bed roaster at 600-750 C and the PbS oxidation equation, the Dwight-Lloyd grate and the 1200-1400 C sinter, the 1100-1250 C shaft temperature and the 1250 C crude-lead figure, the 3-5% silver in the metal, the conversion of refined Pb back to white PbO in a reverberatory or fluid-bed converter, and the Herculaneum, Midland and Port Pirie works. The claimed dominance of the acid plant and of the silver in the dross is a plausible industrial argument, not a measurement."
                           }
                         ],
                         "note": "Named for what it is rather than for where it came from; the galena chain beneath it says where the lead came from. Galena, PbS, is the most important ore of lead, and lead is smelted in a blast furnace from lead sinter with coke, after which the bullion is drossed. Not established: the 600-750 C fluid-bed or reverberatory roast, the 1100-1250 C sinter smelt, the electrolytic refining to 99.99% Pb, and the Herculaneum, Midland and Broken Hill attributions.",
@@ -544,7 +552,8 @@
                           }
                         ],
                         "confidence": "medium",
-                        "children": []
+                        "children": [],
+                        "note": "No source was found for the three-roll mill in this position. A three-roll gap mill is a standard machine for dispersing a pigment paste and breaking agglomerates by shear between rollers, and a narrow particle-size distribution is a real requirement for a fine phosphor dot, so the machine is a reasonable choice. Not established: the roll gap of a few microns set by feel, the 2-6 micron particle size quoted for screen-printing grade phosphor, and that a three-roll mill rather than a ball mill, a colloid mill or a bead mill was what a CRT phosphor line actually ran. The gap figure in particular is a shop-floor rule of thumb rather than a specification."
                       }
                     ],
                     "note": "Printing and firing are one operation on the panel and are kept as one node, because the frit only becomes a binder in the furnace: you cannot specify one without the other. The three-roll mill that refines the slurry is a child because it is capital equipment standing beside the line; the frit and the vehicle are ingredients and are not."
@@ -697,6 +706,9 @@
                         "kind": "material",
                         "category": "metals",
                         "era": "1982",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Copper(II)%20oxide"
+                        ],
                         "description": "Copper, usually added as copper oxide, deepens the green and creates the donor level that the blue's co-activator needs. It came from copper concentrate, smelted and electrorefined to 99.99% copper and converted to CuO.",
                         "inputs": [
                           "metal.copper.concentrate",
@@ -708,7 +720,8 @@
                           "Zambia"
                         ],
                         "confidence": "medium",
-                        "children": []
+                        "children": [],
+                        "note": "Copper(II) oxide, CuO, is documented: it is a black solid, one of the two stable oxides of copper, and a product of copper mining that is the precursor to many other copper compounds. That is the substance this node names. Not established: that copper is the activator that deepens the green and creates the donor level the blue co-activator needs, that it was supplied to the phosphor maker as the oxide rather than as a copper salt or a copper concentrate, the sulphuric acid step, and the Chuquicamata, Butte and Zambia attributions. The activator roles of Ag, Au, Sb and Eu in the P22 phosphors are far better documented than copper, which is why this node is thinner than its neighbours."
                       },
                       {
                         "id": "peripheral.tv.crt.phosphor.zns.europium",
@@ -794,6 +807,9 @@
                     "kind": "material",
                     "category": "metals",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Rolling%20(metalworking)"
+                    ],
                     "description": "Low-carbon sheet with very little residual stress, because a mask that warped would break the geometry. It comes off the hot strip mill, is cold-reduced to 0.1-0.2 mm in a reversing mill, annealed in a hydrogen or nitrogen atmosphere, and slit.",
                     "inputs": [
                       "hot-rolled low-carbon slab",
@@ -862,7 +878,8 @@
                         ],
       "note": "Blast furnaces work by chemical reduction, carbon monoxide converting iron oxides to elemental iron, and blowing oxygen through molten pig iron lowers its carbon content to low-carbon steel; a modern converter takes a charge of up to 400 tons and makes steel in under 40 minutes. Not established: 1500-1600 C in the furnace, the 4-4.5% carbon of the hot metal, the 0.1-0.6% residual carbon, the 200-300 mm slab, and the Gary, Duisburg and Kawasaki attributions."
     }
-                    ]
+                    ],
+                    "note": "Cold rolling as a route is documented, and cold-reduced low-carbon sheet is the right family of material for a shadow mask: the mask has to hold a slot geometry through a stress-relieving heat treatment, so residual stress and flatness matter more than strength. Not established: the 1008 or 1010 grade designation and the sub-0.1% carbon, the 200-350 MPa yield strength for that grade, the hydrogen or nitrogen annealing atmosphere, the 700-800 C annealing temperature, the 0.1-0.2 mm final gauge, and the Gary, Kawasaki and Itaqui works. A mask alloy that matched the panel expansion was a real problem, which is why bimetallic and electroformed nickel masks exist at all; a single low-carbon steel sheet is the 1982 answer, but the specific grade is a reconstruction."
                   },
                   {
                     "id": "peripheral.tv.crt.mask.etch",
@@ -1113,7 +1130,8 @@
                           "cobalt metal"
                         ]
                       }
-                    ]
+                    ],
+                    "note": "An electron gun is built from a cathode and a stack of biased grids that shape and focus the beam, and that much is documented. Not established: that the grids were nickel sheet, that the stack was laser welded rather than spot welded (spot welding of nickel grid stacks was the normal joining method and laser welding of grids is a later technique), the alumina ceramic spot-welded spacers, the 400-800 V screen grid, the 1-5 kV focus grid on a small set, the graphite or aluminium anode block, and the nickel-zinc ferrite slug on the neck if one was fitted. The three-grid voltages given are plausible for a small set but no service data for a 1982 tube was consulted for them."
                   },
                   {
                     "id": "peripheral.tv.crt.gun.blackening",
@@ -1129,7 +1147,8 @@
                     "confidence": "medium",
                     "children": [
                       
-                    ]
+                    ],
+                    "note": "Carbon black is documented as the pigment made by the incomplete combustion of coal tar, vegetable matter or petroleum products, and a blackened surface to suppress stray emission is a real mechanism. Not established: acetylene as the sooting flame, that the inside of the funnel near the neck was blackened as well as the anode block, and that the blackening was done to absorb stray electrons rather than for heat or light control. Tube makers also graphitised the anode by firing in a reducing atmosphere, which is a different route to the same result, and this node describes only the flame route."
                   },
                   {
                     "id": "peripheral.tv.crt.gun.focus-coil",
@@ -1221,7 +1240,8 @@
                     "confidence": "medium",
                     "children": [
                       
-                    ]
+                    ],
+                    "note": "Ferrite is documented as an iron-oxide magnetic ceramic that is not electrically conductive, which is exactly why it suppresses eddy currents in a core, and soft ferites are documented as the material for efficient cores in transformers, inductors and antennas. A ferrite yoke is therefore a coherent choice. Not established: that a 1982 set used MnZn rather than MnNi or a bonded powdered iron, the 0.3-0.4 T saturation flux, the 100-200 MPa pressing load and the 1100-1250 C firing, the 0.6-0.8 T saturation claimed for powdered iron, the Ferralium-type alloy designation, and the Japan, Netherlands and United States works. The nickel oxide listed as an input does not belong to an MnZn ferrite; nickel oxide is an input to MnNi and to nickel-zinc ferrites."
                   },
                   {
                     "id": "peripheral.tv.crt.yoke.winding",
@@ -1264,9 +1284,11 @@
                         "confidence": "medium",
                         "children": [
                           
-                        ]
+                        ],
+                        "note": "Nylon 66 is a documented engineering thermoplastic, and a glass-filled grade of a thermoplastic is a normal coil former material where heat and mechanical strength both matter. Not established: that the bobbin was specifically PA66 rather than glass-filled PET, PBT or phenolic, the 30% chopped E-glass loading, the figure of about 150 C for the stiffness the glass fill buys, and the claim that phenolic would have cracked on a hot winding. Nylon 66 is also the material this file gives the cassette hub, which is the better-evidenced of the two uses; the coil former and the hub are different parts and are not evidence for each other."
                       }
-                    ]
+                    ],
+                    "note": "Magnet wire and enamelled copper wire are documented as the normal way a deflection coil is wound. Not established: the 0.2-0.4 mm wire gauge, bifilar or twisted-pair winding in the hum-bucking coils, epoxy or polyurethane immersion varnish, and the specific coil nesting of horizontals outside and verticals inside. The link drawn here between the opposed horizontal coils and the hum-cancelling head winding of a cassette deck is a design analogy, not a documented shared lineage; the head winding is documented on its own node, and nothing consulted says the yoke coil was wound to cancel mains hum."
                   },
                   {
                     "id": "peripheral.tv.crt.yoke.geometry",
@@ -1454,7 +1476,8 @@
                       "Germany"
                     ],
                     "confidence": "medium",
-                    "children": []
+                    "children": [],
+                    "note": "The flyback transformer is documented: also called a line output transformer, it was designed to generate high-voltage sawtooth signals at a relatively high frequency, and it is used extensively in switched-mode power supplies for both low and over-10 kV outputs. That establishes the device and its function. Not established: MnZn ferrite as the 1982 core material rather than a powdered iron or a ferrite of another grade, the 40-60 mm core size, the 0.1-0.5 mm gap and its paper or epoxy construction, the 40-100 turn primary and the 10,000-25,000 turn high-voltage winding, the epoxy potting, and the Japan, Taiwan and Germany works. Ferrite and powdered iron cores are both documented materials today; which one a particular 1982 set used is a service-manual detail that was not consulted."
                   },
                   {
                     "id": "peripheral.tv.crt.flyback.hv-rectifier",
@@ -1559,7 +1582,8 @@
                         ],
       "note": "The process converts metallurgical-grade silicon of about 98% purity to trichlorosilane and then to silicon, removing transition metal and dopant impurities; polysilicon can be as much as 99.9999% pure and metallurgical grade is 95-99%. Not established: the 200-1000 ohm cm resistivity and low oxygen needed to hold 25 kV, the 9-11 N figure for power devices, and the Jamestown, Jersey and Freiburg attributions."
     }
-                    ]
+                    ],
+                    "note": "A silicon rectifier diode as the single element that turns the flyback high-voltage pulses into the DC anode supply is the standard arrangement in that generation of sets. Not established: the 3-10 kV reverse rating and the 1-5 mA forward current as 1982 values, the two or three diode stack as an alternative, silicone rubber or epoxy potting rated for the full EHT, and the claim that a failing EHT rectifier was a common and unpleasant repair. The fault mode is certainly real, because the rectifier is the component that sees the full anode voltage; its frequency as a service complaint is not documented. High-voltage silicon rectifiers with forward currents of a few milliamperes are a long-established product class, so the order of magnitude here is defensible."
                   },
                   {
                     "id": "peripheral.tv.crt.flyback.anode-lead",
@@ -1615,7 +1639,8 @@
                         "children": [
                           "peripheral.tv.crt.panel.frit",
                           "peripheral.tv.crt.gun.grids.kovar"
-                        ]
+                        ],
+                        "note": "Glass-to-metal sealing is documented, and it states the two conditions this seal depends on: the molten glass must be capable of wetting the metal in order to form a tight bond, and the thermal expansion of the glass and metal must be closely matched so that the seal remains solid as the assembly cools. It also records that a seal whose metal has the larger expansion coefficient breaks on cooling. That is the whole physics of an anode button. Not established: lead borosilicate as the specific frit and any match to the panel seal frit, nickel or Kovar as the button material, the 430-460 C firing, the continuous belt kiln shared with the tube, the 3-6 mm silicone cap, and the St. Louis and Japan works. The document names only a few suppliers of specialty sealing glass, and it does not describe a television tube."
                       }
                     ]
                   }
@@ -1721,7 +1746,8 @@
                         "note": "It sits near the ferrite and the barite because the element is the same, but the getter is a barium-titanium-palladium foil, not a ferrite.",
                         "children": []
                       }
-                    ]
+                    ],
+                    "note": "No source was found for any of the figures here. The sequence described is the standard one for a vacuum tube or envelope - evacuate, leak-test, open the exhaust tip, flash the getter, then seal - and a barium getter that is flashed by heating and deposits a mirror film on the wall is a real and widely used mechanism. Not established: the 1e-6 to 1e-7 torr base pressure, the Ba-Ti-Pd flake composition and its RF induction flash, the tantalum or aluminium-magnesium tip cap, the mercury (BHK) pin pump as opposed to a diffusion pump, the spark-gap or ion gauge, and the St. Louis, Taiwan and Japan works. Barium for the getter is not specific to the get itself: the same alkaline-earth chain feeds the cathode coating, the speaker ferrite and the getter, and the three are separate buyers of the same ore."
                   },
                   {
                     "id": "peripheral.tv.crt.vacuum.rear-al",
@@ -1806,7 +1832,8 @@
                   }
                 ],
                 "confidence": "medium",
-                "children": []
+                "children": [],
+                "note": "A tuner is documented as the component that selects one wanted signal from the antenna feed, and the intermediate frequency stage downstream of the mixer is documented separately. Two switched tuned circuits on ferrite slug cores, tracking through a gang, is the standard VHF tuner arrangement of the period. Not established: 54-216 MHz as the band with four switched ranges, the 45 MHz sound IF and the picture IF implied by the switch contacts, nickel-zinc ferrite as the slug material, a rotor carrying printed or wound inductors to tap through the band, and the AFC or motor tuning. The frequency ranges and the IF figures are the ones that vary by market and standard and would need a service manual for the set in question."
               },
               {
                 "id": "peripheral.tv.tuner.uhf",
@@ -1864,9 +1891,11 @@
                       "silver plating on the contact fingers"
                     ],
                     "confidence": "medium",
-                    "children": []
+                    "children": [],
+                    "note": "No source was found for this construction. At UHF a printed board is generally abandoned in favour of a distributed resonator, so the metal cavity is the right kind of answer and the reasoning about radiation is sound. Not established: that the cavity was folded sheet or machined brass rather than nickel-plated steel or a die-cast zinc shell, the half-wavelength line dimension, the varactor mounted as a shunt capacitance across the open end, the tap for the transistor, and the silver plating on the contact fingers. The brass-to-copper-and-zinc statement at the end is correct as an alloy statement but the zinc it names is the zinc of a connector body, not necessarily of this cavity."
                   }
-                ]
+                ],
+                "note": "A varactor diode is documented: it is designed to exploit the voltage-dependent capacitance of a reverse-biased p-n junction, no DC current flows in that state, and varactors are used in the frequency synthesizers that tune radios, television sets and cellular telephones. That establishes the tuning element. Not established: that this 1982 set used a varactor rather than a mechanically rotated cavity, the 3-20 pF capacitance range, the 10-20 mm cavity dimension, the 12-24 V gearmotor with a plastic cam, and whether tuning was motorised, switched or by a rotating core. UHF tuners of the period used all three approaches, and which one a given set had is a service-manual detail."
               },
               {
                 "id": "peripheral.tv.tuner.front-end",
@@ -1973,9 +2002,11 @@
                               "Piedmont, North Carolina"
                             ],
                             "confidence": "medium",
-                            "children": []
+                            "children": [],
+                            "note": "Spodumene is documented: it is a pyroxene mineral consisting of lithium aluminium inosilicate and is a commercially important source of lithium, occurring in prismatic crystals; the naturally occurring low-temperature form is monoclinic and converts to the tetragonal high-temperature form above 900 C. That conversion figure is the one number here with a source behind it, and it matters because the conversion is what a sulphate roast has to drive through. Not established: the 6.0-7.0% Li2O figure as a pegmatite run-of-mine grade (that is closer to a concentrate figure and the 1-4% claimed in the inputs is the usual head grade), the 1050-1100 C sulphuric acid roast, the precipitation or calcine route for iron removal, and the Greenbushes, Bikita, Tanco and Piedmont works. The demand driver given here is the reason spodumene was mined in large tonnages, but the tonnage and its customer are not documented on this node."
                           }
-                        ]
+                        ],
+                        "note": "Lithium niobate is documented as a synthetic salt of niobium, lithium and oxygen whose single crystals are an important material for piezoelectric sensors and for optical applications, and it is a real commercial crystal grown by the Czochralski process. Not established: that lithium niobate rather than piezoelectric quartz or a tantalum-lithium niobate or germanate was the acoustic medium in a 1982 television trap filter, the 1100-1200 C growth and the 2-20 mm/h pull rate, the 6-30 C/m2 per N piezoelectric coefficient and the 6000 m/s surface velocity, the 0.25-0.5 mm wafer, the columbite residue and tantalum residue sourcing described here, and the Takasaki, Yibin and Jiangxi works. The claim that the tantalum industry was the source of the columbite residue is an industrial inference, not a documented statement. Surface acoustic wave devices are the application; the material choice inside one is a design decision."
                       }
                     ],
                     "sources": [
@@ -2279,7 +2310,8 @@
                         "note": "What is specific to a wafer, as against the wafer in the EHT rectifier, is the epitaxy and the oxide, and those are what the facts here give numbers for. Not established: the 4 micron 1982 process, the 100 or 125 mm wafer with 150 mm arriving in 1983, the 1-20 ohm cm p-type substrate, and the n+ 1000-2000 nm epitaxy at 1100-1200 C.",
                         "children": []
                       }
-                    ]
+                    ],
+                    "note": "The integrated circuit is documented as a compact assembly of electronic circuits fabricated onto a thin flat piece of semiconductor material, most commonly silicon, integrated circuits are integral to a wide variety of electronic devices including televisions, its three advantages over discrete components are size, cost and performance because the components are printed as a unit by photolithography rather than being constructed one transistor at a time, and the main disadvantage is the high initial design cost. That is the right framework for a 1982 video and chroma chip. Not established: that video, chroma and audio sat on one or two chips of 40 to 80 pins in a 1982 set, the 4-5 micron NMOS minimum line and 8-10 mask steps, the 3-5 mm die, the polysilicon-gate claim for that generation (an aluminium gate on polysilicon is a later generation than 1982), and the Santa Clara, Dallas and Tokyo works. The comment that this is what the C64 analogue chain also used is a comparison, not a shared sourcing record."
                   },
                   {
                     "id": "peripheral.tv.chassis.video.transistors",
@@ -2338,9 +2370,11 @@
                         "confidence": "medium",
                         "children": [
                           "peripheral.tv.chassis.video.ic.die"
-                        ]
+                        ],
+                        "note": "No independent source for the figures here. The mechanism described is documented on the integrated circuit itself: the components are printed as a unit by photolithography onto a thin flat piece of semiconductor material rather than being constructed one transistor at a time. What that source does not give is the geometry of a discrete small-signal die. Not established: the die area of a few hundred square microns to about 1 mm2, the beta of 100-400 for an IF or video transistor, the gain-bandwidth figures as 1982 values, the diamond-impregnated wheel cut, and the Santa Clara, Tokyo and Taipei works. A die a few hundred microns square with ten to forty transistors is a plausible reconstruction of what a TO-92 small-signal part contains, but no datasheet for a 1982 television transistor was consulted."
                       }
-                    ]
+                    ],
+                    "note": "A bipolar junction transistor is documented: it uses two p-n junctions between n-type and p-type regions of one crystal so that a small current injected at one terminal controls a much larger current between the other two, and hundreds can be made on one circuit at very low cost. The discrete-transistor set is coherent. Not established: 30-80 discrete transistors per set, that TO-18 metal-can packages were still common in the IF and video stages in 1982 (TO-92 had taken over most small-signal sockets by then, and metal cans went mainly to low-noise and high-voltage roles), the 10-40 transistor die, the gain-bandwidth range as a 1982 figure, and that the video, chroma and audio functions were discrete at all rather than integrated, which is the premise of the sibling video chip node."
                   },
                   {
                     "id": "peripheral.tv.chassis.video.agc",
@@ -2451,7 +2485,8 @@
                       }
                     ],
                     "confidence": "medium",
-                    "children": []
+                    "children": [],
+                    "note": "The flyback is documented as a line output transformer generating high-voltage sawtooth signals and used for outputs over 10 kV, which is the arrangement this node describes downstream of it. Not established: 20-25 kV DC as the anode supply of a 1982 set (tube screen sizes and standards set this, and it is a per-set figure), the 0.1-1 microfarad film capacitance at 2-5 kV per unit, the doubler or tripler topology, and the claim that a shorted film capacitor could throw both the rectifier and the flyback. A rectifier and a set of series capacitors is the standard single-ended EHT arrangement, so the topology is sound; the component values are not sourced."
                   },
                   {
                     "id": "peripheral.tv.chassis.line-out.hv-caps",
@@ -2476,7 +2511,8 @@
                       }
                     ],
                     "confidence": "medium",
-                    "children": []
+                    "children": [],
+                    "note": "Metallized film is documented as polymer plastic film coated with a thin layer of metal, usually aluminium, used for specialty applications including electronics, and polypropylene is a documented capacitor dielectric. Not established: the 2-5 kV DC continuous rating for a 1982 television EHT capacitor, polystyrene as an alternative dielectric in this position (polystyrene film was largely displaced by polypropylene in mains and pulse capacitors because of its dielectric loss and its temperature coefficient, so it is a poor choice at kilovolt pulse duty), zinc metallising as the cheap alternative to aluminium, and epoxy potting as standard. The self-healing mechanism is a real property of metallised film, but this node attributes it to the neighbouring mains capacitor rather than repeating it here."
                   }
                 ],
                 "sources": [
@@ -2616,7 +2652,8 @@
                           "peripheral.tv.chassis.video.ic.die"
                         ]
                       }
-                    ]
+                    ],
+                    "note": "The audio power amplifier is documented: it is the final electronic stage before the loudspeakers, its output may be a few watts for small consumer electronics devices such as clock radios, and many consumer electronics products including televisions have both a preamplifier and a power amplifier contained in a single chassis. That last sentence is direct backing for a television having its own amplifier. Not established: 2-5 W rms into 8 ohm from a 15-25 V DC rail as 1982 figures, the 5-20 W peak from a 115 V rail, the single 8-14 pin IC, the complementary NPN/PNP pair in a TO-3 or a plastic power package, and that the output stage ran class B or class AB. Whether the output was one IC or a discrete pair is a per-set design choice that no service manual was consulted for."
                   },
                   {
                     "id": "peripheral.tv.chassis.audio.volume-pot",
@@ -2898,7 +2935,8 @@
                   }
                 ],
                 "confidence": "medium",
-                "children": []
+                "children": [],
+                "note": "The voice coil is documented: a voice coil consisting of a former, collar and winding is the coil of wire attached to the apex of a loudspeaker cone, and it provides the motive force to the cone by the reaction of a magnetic field to the current passing through it. That is exactly this part. Not established: 40-60 turns in two layers, 8 ohm impedance with a 5-6 ohm DC resistance, on the order of a gram of copper, and the sub-millimetre gap. An 8 ohm two-layer winding of tens of turns on a small paper or aluminium former is the ordinary construction of a small television speaker, so the shape of the figures is right; the numbers themselves are a reconstruction."
               }
             ],
             "note": "The part of a small loudspeaker that decides what industry it belongs to is the sintered ferrite ring and the winding in its gap. Hard ferrites are used to make permanent magnets for loudspeakers, and the voice coil moves axially in a cylindrical gap in a permanent magnet's field. Not established: 8 ohm, 3.5-4 inch, 2-5 W, and the 200 Hz to 8-10 kHz response in a small cabinet.",
@@ -3088,7 +3126,8 @@
                   }
                 ],
                 "confidence": "medium",
-                "children": []
+                "children": [],
+                "note": "No source was found for any of this. A moulded or plated badge and moulded knobs on the front panel are certainly present on a 1982 set, and a metal core inside a knob to carry the moulding and the torque is ordinary practice. Not established: that the knob core was a zinc alloy or aluminium die casting and that this counted as an early high-pressure die casting use for a consumer knob, the embossed or plated plastic medallion badge, chrome or nickel plating, the moulded pointer, and the claim that cheap sets had a printed badge and good ones a plated insert. Neither the alloy nor the badge construction can be given for a particular set, and the wording of the claim about which end of the market did what is a generalisation about badged sets rather than a documented survey."
               }
             ]
           },
@@ -3167,9 +3206,11 @@
                     "confidence": "medium",
                     "children": [
                       "peripheral.tv.crt.phosphor.zns.silver"
-                    ]
+                    ],
+                    "note": "Silver is documented as having the highest electrical conductivity of any element, and gold is documented as dissolving in alkaline solutions of cyanide, which is used in both mining and electroplating - so cyanide plating is an established route for both metals. Not established: that mains switch and rotary tuner contacts were silver-plated rather than silver-clad or merely plated with a cheaper metal, the 2.5-25 micron thickness, and the claim that a 1982 tuner was good for 10,000-20,000 insertions. Plating thickness in the few microns is ordinary for a precious-metal contact, but the figure is a specification range rather than an observation. The silver in this branch comes from the anode slimes of copper refining, which is the same source documented for the phosphor silver and for the fuse wire."
                   }
-                ]
+                ],
+                "note": "No source was found for the construction. A mains on-off switch with a positive gap, and a cover interlock that prevents a partially disassembled set being energised, are both real and well-known features of sets of the period. Not established: silver-plated brass contacts as the universal contact material, a rating of a few amps at 250 V, the phenolic body with a snap-action mechanism, and the specific claim that the switch was rotary or push-pull on the front panel. A mains switch integrated with the volume control was also common, so the position of this switch is not settled either."
               },
               {
                 "id": "peripheral.tv.controls.vhf-dial",
@@ -3190,7 +3231,8 @@
                   }
                 ],
                 "confidence": "medium",
-                "children": []
+                "children": [],
+                "note": "No source was found for the mechanism. The problem described is a real one: a large number of channel numbers will not fit on a straight scale, so a drum, a fan-shaped card or a rotating disc is the ordinary solution and a cord and pulley drive from the knob is the ordinary way of turning it. Not established: that a printed card or drum sat behind a window, that the UHF channels were the reason for the drum specifically, the number of channels on the card, nylon gears, and the dial cord. The historical detail that channel numbers moved onto a disc and later onto a remote-control entry system is a design narrative, not a documented statement."
               }
             ],
       "note": "Not established: 5 kohm or 10 kohm linear pots for brightness and colour, 10 kohm or 100 kohm audio taper for volume, and the rotary mains switch on the volume pot shaft."
@@ -3273,9 +3315,11 @@
                       }
                     ],
                     "confidence": "medium",
-                    "children": []
+                    "children": [],
+                    "note": "Brass is documented as an alloy of copper and zinc in proportions that can be varied, with copper typically having the larger proportion, generally two thirds copper and one third zinc. So the 70/30 cartridge brass named in the facts is exactly the general case, and the 60/40 free-cutting figure is the far end of the same variation rather than a contradiction. Not established: that a free-cutting 60/40 brass was the alloy in an F connector body, the casting or extrusion route into fittings, and the attribution of the zinc to the same sphalerite concentrate and electrowinning route as the phosphor zinc sulphide. That last statement is a statement about the metal rather than about this node; both drew on zinc metal from the same kind of plant, but no document ties this connector to that plant."
                   }
-                ]
+                ],
+                "note": "The F connector is documented as the common coaxial television aerial connector, normally used with RG-6/U or RG-59/U cable, and coaxial replaced twin-lead. That is the function and the standard. Not established: the 60% Cu / 40% Zn brass body (an F connector body is commonly nickel-plated brass, but the exact alloy is not fixed by the standard), the nickel or cadmium plate, the PTFE or polyethylene dielectric insert, the silver or nickel plated centre contact, the 75 ohm characteristic impedance as a specification of the connector rather than of the cable, and the Taiwan and United States works. Note that the centre contact and the shell are separate plated parts and need not use the same finish; this node gives both without saying which is which."
               },
               {
                 "id": "peripheral.tv.aerial.coax",
@@ -3339,9 +3383,11 @@
                     "confidence": "medium",
                     "children": [
                       
-                    ]
+                    ],
+                    "note": "Polyethylene is documented as the most commonly produced plastic, with low-density and high-density forms and many variations, produced in excess of 100 million tonnes a year, and the low-density form is made at high pressure - which is the route the facts give for a cable grade. Not established: the 1000-3000 bar and 200 C figures as the specification for this grade, the 2NaCl to Cl2 plus 2Na equation and the claim of about 3 V and 30-40 C for salt electrolysis (the cell voltage and the electrolyte temperature are not the same quantity, and a chlor-alkali cell runs warm), the vinyl chloride route to PVC, chloromethane as the foam blowing agent, and the Teesside, Gulf Coast and Saudi Arabia works. The two paths meeting in a cable jacket - ethylene from a steam cracker and chlorine from brine electrolysis - is a genuine convergence of the petrochemical and salt chains."
                   }
-                ]
+                ],
+                "note": "Coaxial cable is documented: an inner centre conductor surrounded by a concentric conducting shield with the two separated by a dielectric, it is a type of unbalanced transmission line used to carry high-frequency electrical signals with low losses, it differs from other shielded cables because the dimensions of the cable and its connectors are controlled to give a precise, constant conductor spacing, and that separation from twin-lead is exactly the point this node makes about the alternative. Not established: RG-59 at 52 ohm and about 6.5 mm outside diameter, RG-6, 300 ohm flat twin-lead at 2 x 1.2 mm polyethylene-insulated conductors as the indoor dipole alternative, chemical blowing to make foam polyethylene as against solid PE, and that RG-59 was the era bench or indoor lead. The characteristic impedance and outside diameter of RG-59 are published cable specifications, but they were not confirmed against a cable datasheet here."
               },
               {
                 "id": "peripheral.tv.aerial.whip",
@@ -3390,9 +3436,11 @@
                     "confidence": "medium",
                     "children": [
                       "metal.chromite"
-                    ]
+                    ],
+                    "note": "Chrome plating and chromite are both documented subjects: chromium is plated for wear and corrosion resistance, and chromite is the ore from which chromium is obtained. Not established: the 0.25-1 micron hard chrome thickness over a nickel underlayer, the several decorative layers, and that the plating was what let the rod be extended and retracted thousands of times without wearing through - hard chrome is hard but thin, so the endurance argument is plausible rather than demonstrated. The Japan and Taiwan attributions are not established either. The chromite is the same ore as the chromium dioxide in a Type II cassette tape, which is a real convergence: one ore, two unrelated end uses."
                   }
-                ]
+                ],
+                "note": "No source was found for the construction. A telescopic whip on a portable set is a real and ordinary part, and a sectional rod sliding in a moulded base with a swivel is the standard way one is built. Not established: that the rod was carbon or stainless steel rather than solid brass or a steel tube with a plastic taper, the chrome plating being on the rod rather than a separate decorative sleeve, three to six sections, the ABS base, the ball joint, and the claim that UHF-only portables used an internal loop. The 3-6 mm diameter of a telescopic whip section is also unstated and unverified; the collapsed length is what constrained the diameter, and no drawing was consulted."
               }
             ],
             "sources": [
@@ -3503,9 +3551,11 @@
                       }
                     ],
                     "confidence": "medium",
-                    "children": []
+                    "children": [],
+                    "note": "Metallized film is documented as polymer plastic film coated with a thin layer of metal, usually aluminium, used for specialty applications including electronics. That establishes the construction. Not established: the 400-630 V DC working rating as a 1982 mains suppression rating, the self-healing mechanism as described (a fault punctures the oxide and vaporises the metallisation locally, which is the standard account, but no source was consulted for it here), polystyrene as a dielectric in this position, and epoxy potting. A film capacitor across the line has to be a safety-rated part, and a plain metallised film wrapped in epoxy is a different part from a certified X-rated one; which of the two a 1982 set carried is not established."
                   }
-                ]
+                ],
+                "note": "No source was found. The need is documented by the existence of the parts: a capacitor across line and neutral and a series choke or ferrite bead in a mains lead are ordinary EMI-suppression components, and they are here for emissions and for immunity rather than for filtering the supply itself. Not established: that the device was called an X capacitor in 1982 - the IEC safety capacitor classes X1, X2 and Y were introduced in the 1980s and the class name postdates many of the sets that already shipped the part - the 0.01-0.05 microfarad value, the 1-2 mH common-mode choke, and the claim that a drop-in epoxy X capacitor of the 1990s had not appeared. What is well documented is the end of the chain: modern mains filters are built from exactly these two elements."
               },
               {
                 "id": "peripheral.tv.mains.fuse",
@@ -3556,7 +3606,8 @@
                     "confidence": "medium",
                     "children": [
                       "peripheral.tv.crt.phosphor.zns.silver"
-                    ]
+                    ],
+                    "note": "A fuse is documented: its essential component is a metal wire or strip that melts when too much current flows through it, and it is a sacrificial device that becomes an open circuit once it has operated. Silver is documented as having the highest electrical conductivity of any element, which is why it was chosen for a fusing element. Not established: that a 1982 set used silver wire rather than a fusible alloy, the 3-4 A 250 V time-delay rating, quartz sand or chalk as the arc-quenching packing, soda-lime glass as the cartridge tube, and the IEC pattern and Japanese attributions. The lead-bismuth-tin eutectic named here as the alternative is one of several low-melting alloys used for exactly this purpose; the particular alloy is not documented."
                   }
                 ]
               }
@@ -3718,7 +3769,8 @@
                         "note": "The filler is deliberately angular and fused rather than spherical: the sharp interlocking particles give a high mechanical strength and a low water uptake, which is what kept moisture out of the die.",
                         "children": []
                       }
-                    ]
+                    ],
+                    "note": "The integrated circuit is documented as printed as a unit by photolithography onto a thin flat piece of semiconductor material, most commonly silicon, which is the mechanism this node describes for the drive logic. Not established: that a 1982 disk drive carried a 6502, a 6522 and a mask-programmed array on the same processes as each other (a CMOS or bipolar logic array is a different process from an NMOS CPU), the 3-5 micron and 5 micron line figures as drive silicon, phenolic mould compound, and the Hong Kong and Taiwan works. Those line figures belong to the machine processor and are documented there; a disk drive is a different buyer of the same industry. Aluminium interconnect over polysilicon is also a later generation than the early 1980s, so it should not be read as a 1982 statement."
                   },
                   {
                     "id": "peripheral.cassette.deck.logic.gold-wire",
@@ -3738,7 +3790,8 @@
                       }
                     ],
                     "confidence": "medium",
-                    "children": []
+                    "children": [],
+                    "note": "Gold is documented as dense, soft, malleable and ductile, resistant to most acids and to reaction with most chemicals, and its malleability, ductility and corrosion resistance together with electrical conductivity have led to its continued use in corrosion-resistant electrical connectors in all types of computerized devices. That backs the bonding-wire role. Not established: the 0.7-1.5 mil (18-38 micron) wire diameter and the 1-2 mil tinned copper alternative, ball bonding against wedge bonding as the technique of the period, and the quantity of gold in a 40-pin package - a few milligrams is a plausible order of magnitude for a bond-wire package, but no teardown was done. Gold from the anode slimes of copper refining is a real and very large share of supply; it is the same silver and gold that lead smelting recovers from bullion dross, so the metal arrives here by two quite separate routes."
                   }
                 ]
               },
@@ -3801,7 +3854,8 @@
                       }
                     ],
                     "confidence": "medium",
-                    "children": []
+                    "children": [],
+                    "note": "A stepper motor is documented as a brushless DC electric motor that rotates in a series of small and discrete angular steps and can be set to any given step position without needing a position sensor for feedback; switched-reluctance motors are described as very large stepping motors with a reduced pole count. The 1541 documentation confirms that the drive moved its head with a stepper motor, driven from the 6522 port B: PB 1 is STP 0, step motor for head movement. Not established: the 0.35-0.5 mm silicon steel lamination thickness, the sub-millimetre tooth pitch, 30-50 turns of 0.2-0.3 mm enamelled wire per pole, and that the laminations were the same grade as a television mains transformer used. A hybrid stepper rotor does carry many more teeth than the stator has poles, so the argument about the tooth pitch is sound; the numbers are not sourced."
                   },
                   {
                     "id": "peripheral.cassette.deck.stepper.rotor",
@@ -3833,7 +3887,8 @@
                       "Netherlands"
                     ],
                     "confidence": "medium",
-                    "children": []
+                    "children": [],
+                    "note": "Barium ferrite is documented: barium hexaferrite, BaFe12O19, and related ferrite materials are components in magnetic stripe cards and loudspeaker magnets. A hybrid stepper rotor is the same material in a toothed ring, so the choice is documented. Not established: strontium ferrite as the alternative in this position, the 160-250 kA/m coercivity figure, an Alnico 5 or 8 segmented rotor as an alternative construction, sinter-and-diamond-grinding of the teeth to a few microns of concentricity, magnetisation being radial or axial, and the Japan and Netherlands works. The requirement is real and checkable in one respect: the rotor has to survive being brought near demagnetising by the two stator fields, which is what the coercivity figure is about. Which of the three magnet families a particular drive used is not documented, and a small ferrite ring and a cast Alnico rotor are not interchangeable in cost or in volume."
                   },
                   {
                     "id": "peripheral.cassette.deck.stepper.housing",
@@ -4168,7 +4223,8 @@
                     "confidence": "medium",
                     "children": [
                       "peripheral.tv.chassis.power.reservoir"
-                    ]
+                    ],
+                    "note": "An aluminium electrolytic is documented as two aluminium foils separated by a paper spacer saturated with liquid or gel electrolyte, with the anode etched and formed, with commercial parts from 0.1 uF to 2.7 F at 4 V to 630 V - so a few hundred microfarad at a low voltage is comfortably inside the range and the reservoir at the other end of the same branch is a real comparator. Not established: that the drive regulated with a small linear regulator or a discrete zener-transistor as described, the 10-470 microfarad values, the tens of millivolts of ripple at the logic rail, and the Hong Kong and Taiwan works. The etched-foil construction is the technology; which capacitor values a given drive populated is a schematic detail. Two regulators in series would be a design smell, and whether this was one device or two is exactly what is not established here."
                   }
                 ]
               },
@@ -4647,7 +4703,8 @@
                       "United States"
                     ],
                     "confidence": "medium",
-                    "children": []
+                    "children": [],
+                    "note": "ABS is documented: a thermoplastic terpolymer of styrene, acrylonitrile and butadiene in common use since the 1950s, amorphous with no definitive melting point because of varying chain lengths and degrees of cross-linking, with a glass transition temperature of approximately 105 C, and usable between about -20 and 80 C for the majority of applications. That last range is the useful part here, because a cassette shell works near room temperature and has no thermal duty. Not established: that the shell was ABS rather than clear or smoke general-purpose polystyrene, the 1-2 mm wall, the 200-240 C injection moulding temperature, and the Japan, Europe and United States attributions. The claim that a shell needed to hold a dimension, and therefore that the stiffer of the two polymers was the one chosen, is an engineering argument; a shell could equally be a thin polystyrene moulding with ribs."
                   },
                   {
                     "id": "peripheral.cassette.tape.shell.hub",

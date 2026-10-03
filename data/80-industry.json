@@ -244,7 +244,8 @@
                     "facts": [ {"label": "Typical size", "value": "100,000-300,000 bbl/day"} ],
                     "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Oil_refinery"],
                     "children": [
-                      { "id": "facility.oil.lpg", "name": "LPG (propane/butane)", "description": "The liquid the Hong Kong and Japanese industrial estates burned for process heat and factory heating, and the feedstock for the 1980s alkylation route to isobutylene. Ends at the well or the refinery.", "kind": "material", "category": "industry", "era": "1983", "confidence": "medium"
+                      { "id": "facility.oil.lpg", "name": "LPG (propane/butane)", "description": "The liquid the Hong Kong and Japanese industrial estates burned for process heat and factory heating, and the feedstock for the 1980s alkylation route to isobutylene. Ends at the well or the refinery.", "kind": "material", "category": "industry", "era": "1983", "confidence": "medium",
+                      "note": "Established: liquefied petroleum gas as the propane-and-butane mixture sold as a bulk fuel for industrial heat, and its origin at the gas field or as a refinery stream. Not established: that the Hong Kong and Japanese industrial estates feeding this supply burned LPG rather than town gas, fuel oil or kerosene, or that this LPG was the feedstock for an alkylation unit; the location and route claims carry no source."
                     }
                     ] }
                 ] },
@@ -275,9 +276,15 @@
                 "children": [
                   { "id": "facility.power.uranium-ore", "name": "Uranium ore (U3O8)", "description": "Graded and leached in the 1970s-80s, largely from the Colorado Plateau (Uravan) and New Mexico, plus Namibia and Canada. Ends at the orebody.", "kind": "material", "category": "industry", "era": "1983", "places": ["Uravan, Colorado", "New Mexico", "Rossing, Namibia"], "confidence": "medium",
                     "children": [
-                      { "id": "facility.power.uranium-vanadium-ore", "name": "Vanadiferous uraninite ore", "description": "The US Colorado Plateau ore was processed mainly for vanadium with uranium as a by-product, in mills that roasted the ore with salt and soda ash and leached it with chlorine.", "kind": "material", "category": "industry", "era": "1983", "confidence": "medium" }
-                    ] }
-                ] }
+                      { "id": "facility.power.uranium-vanadium-ore", "name": "Vanadiferous uraninite ore", "description": "The US Colorado Plateau ore was processed mainly for vanadium with uranium as a by-product, in mills that roasted the ore with salt and soda ash and leached it with chlorine.", "kind": "material", "category": "industry", "era": "1983", "confidence": "medium",
+                      "note": "Established: that Colorado Plateau uranium ore was milled for vanadium as well as uranium, and that the salt-roast soda-ash-leach process was the standard vanadium route from about 1941, per the state geological survey study of the Colorado vanadium industry. Not established: that the mills serving this supply ran principally for vanadium with uranium as a by-product, or the flowsheet as stated here - roasting with salt and soda ash is documented but leaching with chlorine is not, the study describing a quench into a sodium carbonate liquor followed by sulphuric-acid precipitation of yellow cake."
+                    }
+                    ],
+                    "note": "Established: uranium ore as the mined feedstock, extraction by open pit, underground mining or in-situ leaching, and the near-total use of mined uranium as reactor fuel. Not established: that the ore feeding this supply was graded and leached in the 1970s-80s, or that it came from Uravan on the Colorado Plateau, from New Mexico, from Rossing in Namibia and from Canada; no mine or mill document was located for any of these places or for the flowsheet described."
+                  }
+                ],
+                "note": "Established: the front end of the fuel cycle in general terms - concentrate converted to UF6, enriched by isotope separation, then fabricated into ceramic UO2 pellets, sintered, ground to length, clad in zircaloy and assembled into a fuel element. Not established: the 2.5-3.5 percent U-235 figure as a 1983 light-water-reactor enrichment, the 8 mm pellet diameter, or the claim that in 1983 US HEU was being phased down and the world enrichment market was switching to centrifuge cascades; no reactor fuel specification or 1983 enrichment-market document backs them here."
+              }
             ] },
 
 
@@ -295,7 +302,9 @@
                   "confidence": "medium",
                   "children": [
                     
-                  ] },
+                  ],
+                  "note": "Not established: the construction and the endpoint as stated. The encyclopaedia has no article on aluminium conductor steel-reinforced cable (the title does not exist), and no conductor standard was located; aluminium strands around a steel core for tensile strength is generic industry practice, carried here without a source."
+                },
                 { "id": "facility.power.insulator-porcelain", "name": "Porcelain suspension insulator", "description": "Glazed (glassy) or unglazed (ceramic) insulator strings, 10-20 discs to hold a 230-500 kV line up in the air. Replaced later by composite polymer strings, which is why the classic transmission silhouette disappeared after 1990.", "kind": "part", "category": "power", "era": "1983",
                   "inputs": ["kaolin clay", "feldspar", "quartz"],
                   "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Transmission_tower"],
@@ -304,7 +313,9 @@
             { "id": "facility.power.grid.substation", "name": "Utility substation", "description": "Transformer bays, circuit breakers, buswork and the control house that steps transmission voltage down to the 11-34.5 kV distribution level. Utility substations outnumbered the plants; a 1980s industrial park typically had one primary substation feeding a ring of unit substation transformers.", "kind": "facility", "category": "energy", "era": "1960-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Substation"] },
             { "id": "facility.power.grid.distribution", "name": "Medium-voltage distribution feeder", "description": "Overhead or underground 11-13.8 kV feeders with reclosers, sectionalisers and fuses. Underground feeders were standard in the new Hong Kong industrial estates and in Japanese and Korean industrial parks; overhead was normal in the US outside cities.", "kind": "facility", "category": "energy", "era": "1960-1990",
               "facts": [ {"label": "Typical voltage", "value": "11 kV (Hong Kong), 20-22 kV (Taiwan), 13.8 kV (US)"} ],
-              "confidence": "medium" }
+              "confidence": "medium",
+              "note": "Established by the cited article: distribution substations step transmission voltage down to a medium-voltage band of 600 V to 35 kV, and primary distribution lines carry that medium voltage out to distribution transformers near the customer. Not established: the per-country figures of 11 kV for Hong Kong, 20-22 kV for Taiwan and 13.8 kV for the US, the claim that underground feeders were standard in the new Hong Kong industrial estates and in Japanese and Korean parks, and the recloser, sectionaliser and fuse line-up; none of these is stated in the source read, and no utility document was located for these territories."
+            }
           ] }
               ] },
 
@@ -337,7 +348,9 @@
                   "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Electrical_steel"],
                   "note": "Deliberately stiff magnetically so it laminates easily and does not ring when punched - 'GOES' is stamped on the laminations.",
                   "children": [
-                    { "id": "facility.electricity.grain-oriented-mill", "name": "Grain-oriented steel rolling mill", "description": "Hot band rolled to 2 mm, cold rolled to 0.3 mm, decarburised in a hydrogen atmosphere and given a final magnetic anneal. Ends at the ore and the coke oven.", "kind": "facility", "category": "magnetics", "era": "1983", "confidence": "medium" }
+                    { "id": "facility.electricity.grain-oriented-mill", "name": "Grain-oriented steel rolling mill", "description": "Hot band rolled to 2 mm, cold rolled to 0.3 mm, decarburised in a hydrogen atmosphere and given a final magnetic anneal. Ends at the ore and the coke oven.", "kind": "facility", "category": "magnetics", "era": "1983", "confidence": "medium",
+                    "note": "Established by the cited article: that the carbon level in electrical steel is reduced by annealing the alloy in a decarburising atmosphere such as hydrogen, that increasing the average crystal size decreases hysteresis loss so that a final heat treatment can be applied to form a normal grain size of about 150 micrometres, and that the material is supplied as cold-rolled strip less than 2 mm thick, cut into laminations and stacked into transformer cores. Not established: hot band rolled to 2 mm and cold rolled to 0.3 mm as a gauge schedule, and a separate named final magnetic anneal; the source gives a sub-2 mm strip thickness and one general heat treatment, not the two-stage rolling path or the anneal by name."
+                  }
                   ] },
                 { "id": "facility.electricity.insulating-oil", "name": "Transformer insulating oil", "description": "Mineral oil (naphthenic or paraffinic), a by-product of vacuum distillation of crude. Also Askarel (PCB-filled chlorinated dielectric) in older units - a PCB source that explains part of the PCB contamination of the Hudson/Superfund sites.", "kind": "material", "category": "fluids", "era": "1983",
                   "inputs": ["facility.oil"],
@@ -348,12 +361,16 @@
                       "confidence": "medium",
                       "children": [
                         { "id": "facility.electricity.chlorobenzene", "name": "Chlorinated aromatic feedstock", "description": "Chlorobenzene and biphenyl feedstock for the askarel blend, itself from the chlorination of benzene over a chloride catalyst. Ends at the aromatic hydrocarbon still.", "kind": "material", "category": "fluids", "era": "1983", "confidence": "low", "note": "Not verified for a specific 1980s askarel producer." }
-                      ] }
+                      ],
+                      "note": "Established by the cited article: askarel as a trade name under which PCBs were sold in the United Kingdom and the United States alongside Aroclor and Asbestol; the dielectric utility of PCBs resting on chemical stability, low flammability and high dielectric constant; insulating fluid for transformers and capacitors as a closed application; commercial production from 1929 under Swann Chemical and taken over by Monsanto in 1935; and the United States ban on domestic production under the Toxic Substances Control Act of 1976, effective January 1, 1978, with enclosed uses such as transformer insulating fluid allowed to remain in service. Not established: a 1980s end date - the legislation and its effective date in the source are 1976 and 1978, and the article separately dates commercial production bans to 1979, all earlier than the 1980s this node closes on. Also not established: the chlorobenzene and biphenyl feedstock route, which the article does not cover."
+                    }
                   ] },
                 { "id": "facility.electricity.porcelain-bushing", "name": "Porcelain bushings and standoff insulators", "description": "Glazed porcelain sheds, cemented with epoxy onto the winding ends, to bring the winding out to a terminal. These are the tall ribbed 'sheds' you see on any pole-top transformer.", "kind": "part", "category": "power", "era": "1983",
                   "inputs": ["kaolin", "quartz", "feldspar", "epoxy"],
                   "confidence": "medium",
-                  "children": [ { "id": "facility.electricity.feldspar", "name": "Feldspar", "description": "A potassium-sodium aluminosilicate used as a flux in porcelain and in the electrolytic alumina bath. Ends at the pegmatite quarry.", "kind": "material", "category": "industry", "era": "1983", "places": ["Pezzullo, Italy", "North Carolina"], "confidence": "medium" } ],
+                  "children": [ { "id": "facility.electricity.feldspar", "name": "Feldspar", "description": "A potassium-sodium aluminosilicate used as a flux in porcelain and in the electrolytic alumina bath. Ends at the pegmatite quarry.", "kind": "material", "category": "industry", "era": "1983", "places": ["Pezzullo, Italy", "North Carolina"], "confidence": "medium",
+                  "note": "Established by the cited article: feldspar as a group of aluminium tectosilicate minerals containing sodium, calcium or potassium, making up about 60 percent of the Earth crust; its use in the ceramic industry as a flux that forms a glassy phase in bodies during firing and promotes vitrification, and as a source of alkalies and alumina in glazes; and about 66 percent of United States consumption going to glassmaking, including glass fibre. Not established: the use in the electrolytic alumina bath, which the article does not mention, and the pegmatite quarry endpoint with the Pezzullo and North Carolina places; the article does describe pegmatites as very coarse igneous rock composed mainly of quartz, feldspar and mica, but ties no named quarry to this supply."
+                } ],
       "note": "Not established: the epoxy cementing of porcelain bushings onto transformer winding ends. Porcelain and glass insulators are documented for overhead lines; transformer bushing construction is not covered by the sources read."
     }
               ] },
@@ -374,7 +391,9 @@
                   "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Power_factor"] },
                 { "id": "facility.electricity.earthing", "name": "Earthing grid and lightning protection", "description": "Copper rod or bare conductor bonded under the floor and up the steelwork, plus air terminals and down conductors to earth rods. The grid is not decoration: it is the reference for every protective device on the switchboard, and in a fab with a raised floor the earth grid and the electrostatic-dissipative floor were often the same conductor, bonded to the pedestals.", "kind": "process", "category": "energy", "era": "1960-1990",
               "inputs": ["copper"],
-              "confidence": "medium" }
+              "confidence": "medium",
+              "note": "Established by the cited articles: that a grounding or earthing electrode is a piece of conducting material buried in the soil, connected to equipment by a grounding electrode conductor, and that the purpose of connecting a system to the physical ground is to limit the voltage imposed by lightning events and by contact with higher-voltage lines; that the Earth serves as a reference against which other potentials are measured; and that the same type of ground applies to lightning protection systems. Not established: copper rod bonded under the floor and up the steelwork, air terminals with down conductors to earth rods, and the claim that in a fab with a raised floor the earth grid and the electrostatic-dissipative floor were the same conductor bonded to the pedestals; the sources describe electrode and bonding practice but not this installation detail."
+            }
               ],
       "note": "Not established: that factory switchboards were air-circuit-breaker type at 480/415 V with a transformer tap selector, and that small machine power was tapped at 120/230 V through a plug. The switchgear article read does not state board construction or factory voltage practice."
     }
@@ -396,7 +415,9 @@
       "children": [
         { "id": "facility.steam.boiler-house", "name": "The boiler house", "description": "A tall, heavily built single-storey steel-framed building with a travelling crane, the boilers in a row, coal bunkers or an oil day tank alongside, and the chimney outside. Even in 1983 it was the tallest building on most industrial sites.", "kind": "facility", "category": "energy", "era": "1960-1990", "confidence": "medium",
           "children": [
-            { "id": "facility.steam.fuel-handling", "name": "Fuel handling and bunker", "description": "A conveyor, a hopper and a boiler feed screw, or an oil tank and a pump skid. Manual barrow-and-shovel coal handling was still normal at plants below about 10 t/h.", "kind": "tool", "category": "industry", "era": "1983", "confidence": "medium" }
+            { "id": "facility.steam.fuel-handling", "name": "Fuel handling and bunker", "description": "A conveyor, a hopper and a boiler feed screw, or an oil tank and a pump skid. Manual barrow-and-shovel coal handling was still normal at plants below about 10 t/h.", "kind": "tool", "category": "industry", "era": "1983", "confidence": "medium",
+            "note": "Established: that the heat source for a boiler is the combustion of coal, oil or natural gas, per the encyclopaedia article on boilers. Not established: the conveyor, hopper and boiler feed screw line-up, the oil tank and pump skid, and the claim that manual barrow-and-shovel coal handling was still normal at plants below about 10 t/h; the boiler article does not describe fuel handling plant, and no boiler-handling standard or plant survey was located."
+          }
           ],
       "note": "Not established: the description of the era's boiler house as a tall single-storey steel-framed building with a travelling crane, and that it was the tallest building on most industrial sites. Architectural description, not a sourced claim."
     },
@@ -412,19 +433,25 @@
                   "places": ["Hong Kong", "Japan", "Korea"],
                   "confidence": "medium",
                   "children": [
-                    { "id": "facility.steam.anthracite", "name": "Anthracite fines", "description": "Hard, high-carbon coal, largely imported to the Far East from South Wales, Vietnam and China. Ends at the anthracite seam.", "kind": "material", "category": "industry", "era": "Carboniferous", "places": ["South Wales", "Hòn Gai, Vietnam", "Pingxiang, China"], "confidence": "medium" }
+                    { "id": "facility.steam.anthracite", "name": "Anthracite fines", "description": "Hard, high-carbon coal, largely imported to the Far East from South Wales, Vietnam and China. Ends at the anthracite seam.", "kind": "material", "category": "industry", "era": "Carboniferous", "places": ["South Wales", "Hòn Gai, Vietnam", "Pingxiang, China"], "confidence": "medium",
+                    "note": "Established by the cited article: anthracite as a hard, compact variety of coal with the highest carbon content, the fewest impurities and the highest energy density of all coals; the South Wales anthracite field lying west of Swansea and Llanelli; China mining more than three-quarters of world anthracite output and Vietnam among the principal producing countries; and that anthracite is divided by size, with fines below 10 mm going to sintering and pelletising. Not established: the Far East import flow, the Hòn Gai and Pingxiang sources, and the use of anthracite fines as boiler fuel for the stations feeding this supply - the article says the principal use of anthracite is domestic heating and that its high value makes it prohibitively expensive for power plant use, and it names sintering and pelletising, not steam raising, as the fines applications."
+                  }
                   ],
       "note": "Not established: the 200 bar pressing pressure, the 100 g egg-shaped briquette and the claim that Hong Kong's industrial boiler load ran on this fuel. The encyclopaedia has no article on coal briquettes, and no Hong Kong fuel document was located."
     }
             ] },
-            { "id": "facility.steam.safety-valves", "name": "Safety valves and drum level control", "description": "Two spring-loaded safety valves per drum, a feedwater level regulator on the drum, and the refractory-lined sight-glass port that operators actually looked at. A steam plant is a place where the concrete is usually older than the manager.", "kind": "tool", "category": "industry", "era": "1983", "confidence": "medium" }
+            { "id": "facility.steam.safety-valves", "name": "Safety valves and drum level control", "description": "Two spring-loaded safety valves per drum, a feedwater level regulator on the drum, and the refractory-lined sight-glass port that operators actually looked at. A steam plant is a place where the concrete is usually older than the manager.", "kind": "tool", "category": "industry", "era": "1983", "confidence": "medium",
+            "note": "Established by the cited article: that a safety valve is a fail-safe pressure relief device that automatically releases a substance from a boiler, pressure vessel or other system when pressure or temperature exceeds preset limits; that safety valves were first developed for steam boilers during the Industrial Revolution and that early boilers without them were prone to explosion; and that industry is generally legally required to protect pressure vessels with relief valves under codes such as ASME and ISO 4126. Not established: two spring-loaded safety valves per drum, the drum feedwater level regulator, and the refractory-lined sight-glass port; the source describes the valve type and the legal requirement but states no drum valve count and no level-control arrangement."
+          }
           ] },
         { "id": "facility.steam.turbo-alternator", "name": "Industrial turbo-alternator", "description": "Where a plant burned coal continuously it made sense to take steam past 300 C and put it through a small turbine to make some of its own electricity. A 2-6 MW pass turbine driving a 480 V alternator, exporting a few hundred kW and buying back the rest at peak rates, was a standard arrangement in Taiwan, Korea and Britain.", "kind": "tool", "category": "power", "era": "1960-1990",
           "facts": [ {"label": "Typical", "value": "2-12 MW, 300-400 C, 15-25 bar"} ],
           "confidence": "medium",
           "note": "These units were called 'pass turbines' or 'back-pressure turbines' and were the main cogeneration technology before the 1980s gas-engine programme; natural-gas-fired turbine-generator sets took over from about 1980.",
           "children": [
-            { "id": "facility.steam.turbine-governor", "name": "Speed governor and overspeed trip", "description": "A flyball or hydraulic governor on the turbine shaft plus a mechanical overspeed trip and, in larger sets, a turbine protective device that tripped the generator breaker. The overspeed trip was the last line of defence against a runaway.", "kind": "tool", "category": "power", "era": "1983", "confidence": "medium" }
+            { "id": "facility.steam.turbine-governor", "name": "Speed governor and overspeed trip", "description": "A flyball or hydraulic governor on the turbine shaft plus a mechanical overspeed trip and, in larger sets, a turbine protective device that tripped the generator breaker. The overspeed trip was the last line of defence against a runaway.", "kind": "tool", "category": "power", "era": "1983", "confidence": "medium",
+            "note": "Established by the cited article: that steam turbine governing means controlling the flow rate of steam so as to maintain the speed of rotation; that the throttle governor on small turbines is actuated by a centrifugal governor of flying balls on a sleeve driven through gearing from the turbine shaft, and that larger turbines use an oil-operated servo and relay system; and that every turbine also carries independent emergency governors, or stop actuators, which close the throttle and stop valves and may open a bypass, actuated among other things by loss of control hydraulic pressure or a turbine protection trip. Not established: the mechanical overspeed trip as a named device and the turbine protective device tripping the generator breaker; the source documents the emergency trip function and its triggers but not that hardware line-up."
+          }
           ] },
         { "id": "facility.steam.header", "name": "Steam header and distribution", "description": "A large-diameter steel pipe - 300-800 mm - with flanged or socket-welded branches to each user, insulation lagged in magnesium-block or calcium-silicate, and a trap at every low point. Steam was distributed at constant pressure from a header rather than generated at each machine.", "kind": "facility", "category": "energy", "era": "1960-1990",
           "inputs": ["carbon steel", "magnesium block insulation", "asbestos lagging"],
@@ -505,7 +532,9 @@
     } ],
       "note": "Not established: that the Lehigh Valley, Chianan Plain and Hong Kong aquifers are confined sand-and-gravel of Pleistocene age. Aquifers as a concept are sourced; the per-place geology is not."
     }
-              ] }
+              ],
+                  "note": "Established by the cited article: that at the bottom of a well, depending on the formation, a screening device, filter pack, slotted casing or open borehole is left to allow the flow of water into the well; that constructed screens are typically used in unconsolidated formations such as sands and gravels, allowing water and a percentage of the formation to pass through so that a large area filter forms outside the screen; and that such screens are illustrated in stainless steel. Not established: the wire-wound screen type, the graded silica-sand or garnet gravel-pack grading, the geotextile wrap, and the claim about the aquifer silting up the pump; the article names filter pack and slotted casing as alternatives to a constructed screen but gives no gravel grading, no wrap material and no silting mechanism."
+                }
             ],
       "note": "Not established: the 150-300 mm casing to 100-300 m depths, and the specific claims about Lehigh Valley iron-bearing water and 100-300 m of Pleistocene gravel under Taiwan. No hydrogeological document located for these places."
     },

@@ -476,7 +476,8 @@
                 { "label": "Bonding room RH", "value": "~40%" },
                             { "label": "Mould press", "value": "50-100 ton hydraulic transfer press" }
               ],
-              "confidence": "medium"
+              "confidence": "medium",
+              "note": "Established: that Commodore was the first-party source of the four large custom chips on the 326498 mainboard - the 1992 service manual lists U7 6510 /t Processor C 906107-01, U1,U2 6526 CIA C 906108-01, U18 6581 SID C 906112-01 and U19 6567 VIC II C 906109-04 as Commodore-stocked part numbers, and U3/U4/U5 as 901226-01, 901227-03 and 901225-01. Not established: that die sort, sawing, bonding, moulding, trim-and-form and final test ran in the same building as the wafer fab at 950 Rittenhouse Road; the roughly 40 percent bonding-room relative humidity and its moisture-sensitivity rationale; the 50-100 ton clamp; and the multi-cavity transfer-press configuration. No public source describes the Norristown back-end line."
             }
           ]
         }
@@ -648,7 +649,8 @@
                 "si.mask.plate"
               ]
             }
-          ]
+          ],
+          "note": "Established: the memory organisation the mask set had to serve. The 1992 service manual circuit theory states: \"Eight 41 64 DRAMS provide 64k bytes of memory. One 2114 RAM (U6) provides 512 bytes of memory allocated for screen color data storage\", and its 326498 parts list carries the 4164 at 200 ns as U9-U12 and U21-U24, part 901505-01. Not established: the eight-to-ten mask level count; the level list (active area, n+ field, contact, poly 1, poly 2, poly 3, second diffusion, metal, passivation pad); the 5x reduction and plus or minus 0.2-0.3 um overlay; the 2.5x2.5 or 3x3 inch quartz reticle; and that any 4164 wafer of 1982-83 went through a 5x stepper rather than a 1:1 contact or proximity printer. The manual identifies the part as a purchased DIP and says nothing about how its masks were cut, how many there were, or which vendor made them."
         },
         {
           "id": "mb.ram.protection",
@@ -684,7 +686,8 @@
               "facts": [
                 { "label": "Specification", "value": "<0.04 alpha/cm2/h for low-alpha compound" }
               ],
-              "confidence": "medium"
+              "confidence": "medium",
+              "note": "Established: nothing about this part is documented for any 4164 fitted to a C64. The 1992 service manual mentions no cover pot, ceramic package, lid or alpha specification anywhere in its text or its 326498 parts list, where the 4164 appears as an ordinary moulded DIP at U9-U12 and U21-U24, part 901505-01. Not established: that a sintered alumina or silicon-nitride lid was diffusion-bonded to the lead-frame cavity on any of these parts; that the cavity was then filled with a low-alpha compound or left hermetic; the single-ended-versus-differential sense path; and the under 0.04 alpha per cm2 per hour figure, which is a purchased supplier qualification limit rather than a value in any C64 parts list. Alpha-particle soft errors in DRAMs are documented in general; the specific mitigation used on these dies is not, and no die photograph or teardown of a 4164 has been used here."
             }
           ]
         },
@@ -807,7 +810,8 @@
               "facts": [
                 { "label": "Signal", "value": "a few mV differential, amplified to a full logic swing" }
               ],
-              "confidence": "medium"
+              "confidence": "medium",
+              "note": "Established: only the identity of the parts. The 1992 service manual 326498 parts list gives U3 as 2364 Basic ROM C 901226-01 and U4 as 2364 Kernal ROM C 901227-03. Not established: the precharge-and-develop read scheme; the four-transistor-plus-load differential sense amplifier; the 10-15 percent of die area figure; and the few-millivolt differential signal. No source describes the internal circuit of either Commodore mask ROM, and no die photograph or decapping of a 901226-01 or 901227-03 has been used. A precharged bit line read by a differential sense amplifier is standard period NMOS mask-ROM practice, but which sense-amplifier topology these two parts used is not established, nor is the claim that the sense amplifiers were the largest block on the die."
             }
           ]
         },
@@ -825,10 +829,14 @@
             { "label": "Plate", "value": "1:1, chrome on glass, 5x7 inch" },
                     { "label": "Count", "value": "one plate per ROM revision" }
           ],
+          "sources": [
+            "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
+          ],
           "confidence": "medium",
           "children": [
             "si.mask.plate"
-          ]
+          ],
+          "note": "Established: that a change of ROM number is a change of part, which is what makes a separate mask unavoidable in principle. The 1992 service manual 326498 parts list gives three distinct Commodore-stocked ROM numbers: U3 2364 Basic ROM C 901226-01, U4 2364 Kernal ROM C 901227-03 and U5 2332 Char ROM C 901225-01. Not established: that a separate chrome-on-glass plate was cut and held in a mask library for each ROM revision; that the plate was 1:1 on 5x7 inch glass; that it was cut by the same pattern generator and inspected on the same comparison tool as the logic masks; and that Commodore kept ROM masks in house at all rather than buying the ROM as a finished part from an internal wafer run. The manual treats all three as stocked part numbers and says nothing about how they were made."
         },
             "si.package.24",
             "si.leadframe",
@@ -988,7 +996,8 @@
           "confidence": "medium",
           "children": [
             "si.probe-card"
-          ]
+          ],
+          "note": "Established: that the chip is a Commodore first-party part and how the service manual diagnoses it - the 326498 parts list gives U19 6567 VIC II C 906109-04, and the fault table for a blank screen on power up lists U19 (VIC II) among the parts to check. Not established: the 40-needle probe card; that the probe program checked that all six colour outputs swung the full 0-5 V; that all eighteen colour latches were decoded at probe; that a technician watched a test pattern on a monitor plugged into the tester video output; and the die-size comparison against the 6510. The 8562 die area is not published, and the 50-60 mm2 figure used elsewhere in this branch is an estimate. That die are probed on the wafer before dicing, with binning, by automatic test equipment is documented period practice; nothing documents the VIC-II probe program or its analogue coverage."
         }
       ]
     },
@@ -1095,7 +1104,8 @@
           "confidence": "medium",
           "children": [
             "si.mask.plate"
-          ]
+          ],
+          "note": "Established: only the identity of the part. The 1992 service manual 326498 parts list gives U18 as 6581 SID C 906112-01, and the 250466-01 C64-B3 list gives LSI SID 6581 R3 under the same number 906112-01, so the SID is a Commodore-stocked part with a marked revision. Not established: the nine-or-ten mask level count; that the analogue polysilicon resistor pattern was itself a mask level; the 1:1 AZ-1350 print on a contact or Micralign aligner; the 5x7 inch chrome-on-glass plate; the grid-broken alignment scheme; and that any maker laser-trimmed the resistor pattern. Polysilicon load resistors and 1:1 chrome-on-glass printing are documented period practice, but their application to this part is an inference from the NMOS-analogue genre, not a documented fact about the 6581."
         },
             "si.package.40",
             "si.leadframe",
@@ -1121,7 +1131,8 @@
           "confidence": "medium",
           "children": [
             "si.probe-card"
-          ]
+          ],
+          "note": "Established: that the 6581 was supplied in dated, revision-marked forms. The 1992 service manual 250466-01 C64-B3 parts list carries LSI SID 6581 R3 under Commodore number 906112-01, and the 250469-01 C64-E list carries the 8580 as U9 318013-01, so an R-suffix on the part number is documented practice at Commodore. Not established: the 40-needle probe card; that a functional audio test played a short score through the chip and measured the output on a spectrum analyser; that envelope and VCA threshold voltages were trended; and the claim that each revision was a measured change to the analogue thresholds discovered on probe. That die are probed on the wafer before dicing, with binning, by automatic test equipment is documented period practice. No source describes the 6581 electrical test program, its analogue coverage, or how the filter and envelope thresholds were controlled in production."
         },
         {
           "id": "mb.sid.revisions",
@@ -1220,7 +1231,8 @@
           "confidence": "medium",
           "children": [
             "si.mask.plate"
-          ]
+          ],
+          "note": "Established: that the C64 has two 6526 interface adapters and that each is a distinct part. The 1992 service manual 326498 parts list gives U1,U2 6526 CIA C 906108-01, and its fault table lists U1 and U2 separately as parts to check, which is what one expects of two mask sets decoding two different address ranges. Not established: the nine-or-ten mask level count; the level list; the 1:1 AZ-1350 print on a contact or Micralign aligner; the grid-broken alignment scheme with dummy structures; and the claim that the two CIAs and the VIA were the same process with three different mask sets. No source states Commodore's mask count, plate size, resist or alignment scheme for any part it made, and nothing describes the physical layout of a 6526 die."
         },
             "si.package.40",
             "si.leadframe",
@@ -1246,7 +1258,8 @@
           "confidence": "medium",
           "children": [
             "si.probe-card"
-          ]
+          ],
+          "note": "Established: the TOD chain is fed from the AC mains, and the service manual reaches the chip by substitution rather than by test - the 326498 fault table offers Check U1, U15, U7 for no cursor and Check U2, U7 for an intermittent blank screen. Not established: the 40-needle probe card; that the probe program clocked both 16-bit timers against a reference; the shift-register byte step; the interrupt-priority and port-handshake checks; the measurement of the TOD chain; and that the TOD accuracy test needed a calibrated frequency standard. Nothing documents the 6526 wafer probe or final-test regime. The 17-bit counter and the 470 kohm mains feed are documented from the CIA datasheet and the board; the test method above it is not."
         }
       ]
     },
@@ -1304,7 +1317,8 @@
           "confidence": "medium",
           "children": [
             "si.mask.plate"
-          ]
+          ],
+          "note": "Established: that nothing in the 1992 service manual documents a VIA on the breadbin mainboard. Its 326498 parts list names no 6522 at all: U15 is listed as 74LS139 901521-18, a TTL address decoder. The 6522 is a 40-pin NMOS part of the same family as the 6526, which is why the CSG standard flow is assumed for it here, but that is an inference from the part family rather than a documented fact. Not established: the nine-or-ten mask level count; the level list; the 1:1 AZ-1350 print on a contact or Perkin-Elmer Micralign proximity aligner; the chrome-on-glass plate; and the grid-broken alignment."
         },
             "si.package.40",
             "si.leadframe",
@@ -1329,7 +1343,8 @@
           "confidence": "medium",
           "children": [
             "si.probe-card"
-          ]
+          ],
+          "note": "Established: that nothing in the 1992 service manual documents a VIA on the breadbin mainboard. Its 326498 parts list names no 6522 at all: U15 is listed as 74LS139 901521-18, a TTL address decoder, so the fault-table entries that read Check U1, U15, U7 are checking that decoder and not a VIA. That die are probed on the wafer before dicing, with binning, by automatic test equipment is documented period practice. Not established: the 40-needle card; the timer, shift-register, port and interrupt test steps; that assembled parts were retested in a socket on an automatic tester; and that they were then inserted into the machined-pin socket on the board."
         }
       ]
     },
@@ -1632,7 +1647,13 @@
                             "Broken Hill, New South Wales",
                             "M IDA, China"
               ],
-              "confidence": "medium"
+              "sources": [
+                "https://en.wikipedia.org/wiki/Zinc_oxide",
+                    "https://en.wikipedia.org/wiki/Sphalerite",
+                "https://en.wikipedia.org/wiki/Varistor"
+              ],
+              "confidence": "medium",
+              "note": "Established: the carbothermal route to zinc oxide. \"The direct or American process starts with diverse contaminated zinc composites, such as zinc ores or smelter by-products. The zinc precursors are reduced (carbothermal reduction) by heating with a source of carbon such as anthracite to produce zinc vapor, which is then oxidized as in the indirect process. Because of the lower purity of the source material, the final product is also of lower quality in the direct process as compared to the indirect one.\" The reduction temperature is documented too: \"ZnO decomposes into zinc vapor and oxygen at around 1975 °C with a standard oxygen pressure. In a carbothermic reaction, heating with carbon converts the oxide into zinc vapor at a much lower temperature (around 950 °C).\" That 950 C figure is inside the 900-1100 C range given above; the fluidised-bed roast at 900-1000 C and the shaft or electrothermic furnace are not the documented route, since the documented sequence is reduction to vapour followed by air oxidation. The oxidising step is documented as well: \"metallic zinc is melted in a graphite crucible and vaporized at temperatures above 907 °C (typically around 1000 °C). Zinc vapor reacts with the oxygen in the air to give ZnO\". Not established: the 900-1000 C fluidised-bed roast; the shaft or electrothermic furnace reduction as described; the burn-back as a separate manufacturing step rather than part of vapour oxidation; and the 50-60% zinc content of run-of-mine sphalerite - the ore is documented as \"(Zn, Fe)S\", the most important ore of zinc, with iron substituting for zinc, which \"can reach up to 40%\", so the concentrate grade varies and no fixed percentage applies. Also not established: the Sullivan, Broken Hill and M IDA place names as the sources of a varistor-grade powder, and what makes an electronic-grade ZnO suitable for a varistor. The varistor behaviour itself is documented: the grains sit \"in a matrix of other metal oxides, such as small amounts of bismuth, cobalt, manganese oxides\", and each grain boundary \"forms a diode junction\"."
             }
           ]
         },
@@ -1773,7 +1794,8 @@
           "confidence": "medium",
           "children": [
             "si.mask.plate"
-          ]
+          ],
+          "note": "Established: that the colour memory was a bought-in part, so its mask set belonged to a semiconductor vendor rather than to Commodore. The 1992 service manual 326498 parts list gives U6 2114L-30 RAM 901453-01, and its circuit theory states: \"Eight 41 64 DRAMS provide 64k bytes of memory. One 2114 RAM (U6) provides 512 bytes of memory allocated for screen color data storage\". Not established: the eight-or-nine level count; the level list; the polysilicon load-resistor level; the 1:1 print from chrome-on-glass plates with grid-broken alignment; and whether the load device on the 2114L was a polysilicon resistor or a depletion transistor, which changes the level count. The 2114 datasheet describes the part electrically and says nothing about how many masks were cut for it."
         },
         {
           "id": "mb.color-ram.vic-interface",
@@ -2123,7 +2145,12 @@
                 "Glamorgan, Wales",
                 "Shanxi, China"
       ],
-      "confidence": "medium"
+      "sources": [
+        "https://en.wikipedia.org/wiki/Anthracite",
+            "https://en.wikipedia.org/wiki/Zinc_oxide"
+      ],
+      "confidence": "medium",
+      "note": "Established: anthracite as a hard, high-carbon, low-impurity coal used in metallurgy. \"It has the highest carbon content, the fewest impurities, and the highest energy density of all types of coal and is the highest ranking of coals.\" and \"The carbon content of anthracite is between 86% and 97%.\" and \"Anthracite is categorized into several grades. Standard grade anthracite is used predominantly in power generation, and high grade (HG) and ultra high grade (UHG) are used predominantly in the metallurgy sector.\" That it served as a carbothermal reductant in a furnace charge is documented for the zinc industry, not for silicon: \"The zinc precursors are reduced (carbothermal reduction) by heating with a source of carbon such as anthracite to produce zinc vapor, which is then oxidized as in the indirect process.\" The 86-97% fixed-carbon range is consistent with a less pure reductant than needle coke, which supports the low-carbon end of the comparison above, but the ash and iron figures are not stated in any source available. Not established: that any specific submerged arc furnace charged anthracite for silicon metal, and in what proportion to petroleum coke; that anthracite was used as a carbon source rather than as fuel; and that Schuylkill County, Glamorgan or Shanxi supplied silicon-grade anthracite. Documented only as coal fields: \"The Coal Region of Northeastern Pennsylvania in the United States has the largest known deposits of anthracite coal in the world\"."
     },
     
     
@@ -2245,12 +2272,17 @@
         { "label": "Synthesis", "value": "5-6 GPa, 1300-1600 C, Fe/Co/Ni catalyst" },
                 { "label": "Natural source", "value": "kimberlite pipe; Gaborone and Kimberley, South Africa" }
       ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Synthetic_diamond",
+            "https://en.wikipedia.org/wiki/Diamond"
+      ],
       "places": [
         "Kimberley and Botswana; De Beers",
                 "Element Six (De Beers), UK",
                 "Sumitomo Electric, Japan"
       ],
-      "confidence": "medium"
+      "confidence": "medium",
+      "note": "Established: that synthetic diamond was the commercially available source of saw-grade grit well before 1982, and that its first commercial synthesis was a belt process. \"Hall achieved the first commercially successful synthesis of diamond on December 16, 1954, and this was announced on February 15, 1955. His breakthrough came when he used a press with a hardened steel toroidal \"belt\" strained to its elastic limit wrapped around the sample, producing pressures above 10 GPa (1,500,000 psi) and temperatures above 2,000 °C (3,630 °F). The press used a pyrophyllite container in which graphite was dissolved within molten nickel, cobalt or iron. Those metals acted as a \"solvent-catalyst\", which both dissolved carbon and accelerated its conversion into diamond.\" The abrasive-versus-gem split is documented in the same passage: \"The largest diamond he produced was 0.15 mm (0.0059 in) across; it was too small and visually imperfect for jewelry, but usable in industrial abrasives.\" Contradicted by that source: the 5-6 GPa and 1300-1600 C conditions given above sit below the pressures and temperatures recorded for the belt process that made this material commercially available, and the solvent-catalyst metals are specifically nickel, cobalt and iron rather than a generic diamond-metal catalyst. Not established: which maker supplied saw blades to a wafer-slicing shop in 1982; the Kimberley and Botswana kimberlite origins as sources of natural industrial diamond, for which the documented fact is only that natural diamonds are carried to the surface in igneous rocks known as kimberlites; and the Element Six and Sumitomo attributions. That diamond serves cutting and polishing is documented: \"Diamond has the highest hardness and thermal conductivity of any natural material, properties that are used in major industrial applications such as cutting and polishing tools.\""
     },
     "si.wafer.finish": {
       "id": "si.wafer.finish",
