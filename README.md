@@ -70,20 +70,20 @@ the peripherals a 1983 user needed: a television, a cassette drive, a joystick.
 
 ## Scale
 
-3,590 nodes, 20 levels deep, 1,631 end points, 17 category buckets, written
-across 14 fragments by ten parallel research passes. The longest single chain is
-20 hops and runs:
+2,453 nodes, 15 levels deep, 1,300 end points, 16 category buckets, written
+across 13 fragments by parallel research passes. The longest single chain is
+15 hops and runs:
 
-> mainboard → RF modulator → audio amplifier transistor → wafer processing →
-> semiconductor silicon → high-purity quartz → quartzite quarry →
-> **quartz sandstone protolith**
+> mainboard → 74-series glue logic → 7406 hex inverter → how a 74LS chip is
+> made → junction-isolated bipolar flow → p-type wafer → polished CZ wafer →
+> polysilicon → trichlorosilane → fluid-bed chlorination …
 
 A useful way to feel the size of it: the deepest path from the power supply's
 heatsink screw does not stop at "aluminium". It stops at a quarry.
 
-Per-fragment contributions: petrochemicals 638, passives 542, metals 483,
-silicon 351, chassis 292, industry 305, power 252, peripherals 242, board 238,
-logic 228, chem gaps 12.
+Per-fragment contributions: metals 492, petrochemicals 472, passives 363,
+industry 267, peripherals 168, chassis 152, power 148, silicon 137, logic 128,
+board 105, chem gaps 15, spine 4, root 1.
 
 ## Using the viewer
 
@@ -105,8 +105,8 @@ that **the node you clicked stays on the same pixel**; otherwise everything
 below it shifts and the thing you were aiming at slides out from under the
 cursor.
 
-Search reveals matches **and every ancestor**, so a hit at level 19 arrives with
-its 19-level breadcrumb rather than an empty screen. The outline view is easier
+Search reveals matches **and every ancestor**, so a hit at level 14 arrives with
+its 14-level breadcrumb rather than an empty screen. The outline view is easier
 for reading prose. `dim unrelated` greys out everything that is neither an
 ancestor nor a descendant of the current selection, which is the fastest way to
 isolate one supply chain.
@@ -120,7 +120,7 @@ They are different and the tree keeps them apart.
 three ways: the string is already a node id; it normalises to a node name; or it
 matches an entry in `data/_ingredients.json`, which is the hand-reviewed
 synonym table. The link rate is reported on every build and currently sits at
-**about 61%** — 2,155 of 3,543 recorded ingredients became real links. The rest
+**80.7%** — 2,356 of 2,918 recorded ingredients became real links. The rest
 stay as prose, because inventing a target would be worse than admitting the gap.
 
 This is what fixed the rainbow badge: it recorded `ABS bezel surface` as text
@@ -138,11 +138,11 @@ The header switches between two views of the same data:
 | view | what it shows |
 | --- | --- |
 | **Full** | everything: components, materials, processes, tools, facilities |
-| **Components & materials** | entities only, 1,915 of 3,590 nodes |
+| **Components & materials** | entities only, 1,279 of 2,453 nodes |
 
 In the entity view a process node is **routed through**: the entities beneath it
 are lifted to sit where it was, at the same depth, so the chain stays connected
-and flat. The projection is lossless — all 1,915 entities are reachable both
+and flat. The projection is lossless — all 1,279 entities are reachable both
 before and after — and it costs nothing, because it is a view transform and the
 data is untouched.
 

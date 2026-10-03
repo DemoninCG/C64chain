@@ -202,7 +202,20 @@ node for the rockfill to belong to.
   ingredient link. Left in place deliberately: if that `from` edge ever goes, the
   exemption is needed again.
 
-## 1b. The audit only category-checks 5 of 16 categories
+## 1b. ~~The audit only category-checks 5 of 16 categories~~ DONE 2026-10-03
+
+`CAT_OK` now lists all sixteen categories in use. Each new set is exactly the
+kinds observed in that category across the 2,454-node tree, plus `note` (legal
+anywhere) — and the suspicious small-count cells were read by hand before
+encoding: hk-pcb under `board`, tower fill under `fluids`, the crystal
+cleanroom under `passives`, hk-injection under `plastics`, fuse glass and
+channel switching under `power`, the mill/mix-house/dies/presses under
+`magnetics` are all legitimate placements. So the extension fires 0 WARNs and
+the r3 coverage NOTE is gone. Its value is as a tripwire: any kind/category
+pair never before observed now warns instead of sitting unchecked. Note what
+it does *not* catch: `metal.benzene` is a *category* misfiling (benzene under
+`metals` while canonical `chem.styrene.benzene` is `plastics`), and no
+kind-table can see that — it is queued below as a duplicate-substance verdict.
 
 `CAT_OK` in `scripts/audit.mjs` lists five categories, so **2,200 of 2,438 nodes
 sit in a category whose kind combinations are never examined.** That is how
@@ -435,24 +448,33 @@ confidences down, 0 up. **High-confidence-no-source now stands at 0.**
 
 ## Carried over from the plan, not yet started
 
-- Re-run `scripts/probe.mjs` on the standard lines and produce the
-  consolidated before/after diff for the README.
+- ~~Re-run `scripts/probe.mjs` on the standard lines and produce the
+  consolidated before/after diff for the README.~~ DONE 2026-10-03: README
+  figures refreshed from the built tree — 2,453 nodes (was 3,590), depth 15
+  (was 20), 1,300 leaves (was 1,631), 16 categories (was 17), link rate 80.7%
+  = 2,356/2,918 (was ~61% = 2,155/3,543), entities 1,279 of 2,453 (was 1,915
+  of 3,590), longest chain 15 hops with a current example, per-fragment
+  counts recomputed.
 - Push the commits to `origin/main`.
 - Decide whether the large build artifacts (`public/tree.*`, `docs/TREE.md`)
   stay committed or move to a release artifact.
-- Worth a look while it is fresh: `metal.benzene` ("Crude benzene from the coke
-  oven", category `metals`) may be a duplicate of the canonical
-  `chem.styrene.benzene`. Not merged, because I had not confirmed it is the same
-  substance rather than a co-product of the coke ovens.
-- The `$qaPass` provenance blocks at the end of some fragments have never been
-  reviewed. They are file-level metadata rather than node text, so
-  `metalang.mjs` does not scan them.
-- `estimate.mjs` reports "full tree, max depth **NaN**" in its projection
-  section, and names "the two uncovered branches" as expected additions. Both
-  predate Phase 2 — the output is identical on a clean tree — so they are bugs
-  in the report, not findings about the data. The two uncovered branches it
-  meant were tungsten and cobalt, which Phase 2 has now written; the NaN has
-  not been looked at.
+- ~~`metal.benzene` ("Crude benzene from the coke oven", category `metals`) may be
+  a duplicate of the canonical `chem.styrene.benzene`~~ RESOLVED 2026-10-03:
+  duplicate confirmed — the same crude benzol from the same coke-oven gas
+  route as `chem.styrene.benzene.coal-tar`. Merged via
+  `data/_proposals/60-metals.json` + `applyproposals --apply`, which re-pointed
+  `metal.coke.gas` and `metal.pitch.from-pitch` and deleted the node (2,454 →
+  2,453 nodes). The wash-oil/steam-strip sentence was folded into the survivor
+  first, so nothing was lost.
+- ~~The `$qaPass` provenance blocks at the end of some fragments have never been
+  reviewed.~~ REVIEWED 2026-10-03: the one block (`50-power.json`, 33 deletion
+  entries) checks out — every deleted id is absent from the built tree and the
+  named receivers all exist. It stays as file-level provenance, not node text.
+- ~~`estimate.mjs` reports "full tree, max depth **NaN**" in its projection
+  section, and names "the two uncovered branches" as expected additions.~~
+  FIXED 2026-10-03: the walker was called as `w('c64')` with no depth, so every
+  `d` was `NaN` — now `w('c64', 0)`, reports 15. The "two uncovered branches"
+  line is also gone: those were tungsten and cobalt, written in Phase 2.
 - **The README's documented OCR path is wrong for two of its six reference
   documents.** It says each scan's text is at
   `archive.org/download/<id>/<id>_djvu.txt`. That holds for four of the six, but

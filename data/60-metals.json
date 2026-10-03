@@ -5440,7 +5440,7 @@
                   "https://en.wikipedia.org/wiki/Coke_oven"
                 ],
                 "children": [
-                  "metal.benzene"
+                  "chem.styrene.benzene.coal-tar"
                 ],
                 "inputs": [
                   "metal.coke.oven"
@@ -5535,7 +5535,7 @@
                     "confidence": "low",
                     "children": [
                       "metal.carbon.anode",
-                      "metal.benzene",
+                      "chem.styrene.benzene.coal-tar",
                       "metal.soft-pitch"
                     ],
       "note": "This is a routing note about how many branches a coke oven feeds, not a claim about the world. No document can support 'the single most connected node in the file after the quartzite'; that is a statement about the tree, not about the supply chain."
@@ -13211,32 +13211,7 @@
       ],
       "note": "The silver-electrode variant (that is, a silver counter-electrode) only became commercial around the turn of the 1990s; in 1982 nearly all molded tantalum capacitors used a manganese dioxide or silver-paste counter-electrode, so this node is a convergence of the tantalum and manganese branches."
     },
-    "metal.benzene": {
-      "id": "metal.benzene",
-      "name": "Crude benzene from the coke oven",
-      "description": "A 1982 coke oven produced a very large fraction of the world's synthetic benzene, and benzene was the root of the styrene-polystyrene, phenol-formaldehyde and epoxy industries - so this node is where the coal branch and the plastics branch join. The benzol was drawn out of the oven gas with a wash oil, and the wash oil was then steam-stripped. It is a dense, sweet-smelling, carcinogenic liquid and it is a document about the chemical industry that produced nylon, epoxy resin, phenol formaldehyde resin, styrene, and polyurethane precursors all at once.",
-      "kind": "material",
-      "category": "metals",
-      "era": "1982",
-      "confidence": "high",
-      "facts": [
-        {
-          "label": "Yield",
-          "value": "8-12 kg of benzene per tonne of coke"
-        },
-        {
-          "label": "Route",
-          "value": "wash oil absorption then steam stripping of the rich oil"
-        },
-        {
-          "label": "In 1982",
-          "value": "benzene was about 85-90% coal-based rather than petroleum-based; the coal route held on until roughly the 1990s-2000s before cracking economics killed it"
-        }
-      ],
-      "sources": [
-        "https://en.wikipedia.org/wiki/Benzene"
-      ]
-    },
+    
     "metal.iron.burden": {
       "id": "metal.iron.burden",
       "name": "Blast furnace burden: sinter, pellets, lump ore, coke and flux",

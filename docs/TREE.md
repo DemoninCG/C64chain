@@ -1,7 +1,7 @@
 # Production tree — Commodore 64
 
-2454 nodes, max depth 15, 1301 leaves.
-Generated 2026-10-03T10:32:59.468Z by `scripts/build.mjs`. Do not edit by hand.
+2453 nodes, max depth 15, 1300 leaves.
+Generated 2026-10-03T10:43:58.253Z by `scripts/build.mjs`. Do not edit by hand.
 
 # Commodore 64 (breadbin, ASSY 250407) `c64`
 
@@ -5994,9 +5994,9 @@ Quenching has three products, not one: the coke, the water with the fine carbon 
 
 The gas is the profit centre as well as the fuel. After cooling it goes through a primary cooler and a benzol washer, which strips out benzene, toluene and xylenes; then a saturator removes tar and ammonia; then a Quinolining or electrostatic precipitator removes the last of the dust. What is left is coke oven gas, which is burnt in the battery flues to supply exactly the heat the ovens need - the plant is roughly self-sufficient - and the surplus goes to the steelworks as fuel and to a chemical works as a benzene and ammonia feedstock. Crude benzene from the benzol washer is one of the most valuable by-products in the plant, and it is where the aromatic chemistry of the plastics agent's chain starts.
 
-###### Crude benzene from the coke oven `metal.benzene`
+###### Coke oven benzene `chem.styrene.benzene.coal-tar` _(medium)_
 
-A 1982 coke oven produced a very large fraction of the world's synthetic benzene, and benzene was the root of the styrene-polystyrene, phenol-formaldehyde and epoxy industries - so this node is where the coal branch and the plastics branch join. The benzol was drawn out of the oven gas with a wash oil, and the wash oil was then steam-stripped. It is a dense, sweet-smelling, carcinogenic liquid and it is a document about the chemical industry that produced nylon, epoxy resin, phenol formaldehyde resin, styrene, and polyurethane precursors all at once.
+Byproduct benzene from the coking of coal in an integral coke plant: the coke oven gas is cooled and the aromatics stripped out with a wash oil, which is then steam-stripped, giving a crude benzole with toluene and xylenes. In 1983 coal tar benzene was still a major share of world benzene - more so in Europe and Asia than in the United States - and it is the one benzene of that era that is not a petrochemical at all.
 
 ###### The quench tower and the coke push `metal.coke.quench-tower` _(medium)_
 
@@ -6022,7 +6022,7 @@ Putting the carbon branch together as one loop. Coal is distilled for rosin and 
 
 Calcined petroleum coke at 90-95% carbon, ground to 1-20 mm, mixed with 25-30% of crushed and baked coke returns and 25-30% coal-tar pitch as the binder, extruded through a die with a threaded stud on the end, and roasted at 1000-1100 C for 20-30 hours. The point of roasting rather than baking is to drive the volatiles out before the anode goes into the cell, because an anode that gases in the pot poisons the metal. Consumption is 0.45-0.55 t of anode per tonne of aluminium, and the anode is consumed continuously - which is what makes aluminium smelting a carbon business as much as an electrochemical one.
 
-                            - *Crude benzene from the coke oven* `metal.benzene` *(seen above)*
+                            - *Coke oven benzene* `chem.styrene.benzene.coal-tar` *(seen above)*
                             - *Soft pitch and hard pitch* `metal.soft-pitch` *(seen above)*
 ###### The battery, its flue and the chimney `metal.coke.battery`
 
@@ -8438,10 +8438,7 @@ Tetrahydrothiophene-1,1-dioxide, a polar aprotic solvent that dissolves aromatic
 
 The solvent that extracts benzene out of a naphtha stream is itself made out of the cracker's C4. Butadiene is reacted with sulfur dioxide and water to give tetrahydrothiophene 1,1-dioxide. So the styrene chain - benzene, ethylbenzene, styrene - is fed by butadiene twice over: once as the rubber in the ABS, and once as the solvent that separated the benzene. It is the clearest example in this file of a chemical park's flows being a web rather than a line. Butadiene plus SO2 at 100-140 C gives the sulfolene, a five-membered ring with one double bond left, and a second equivalent of water with a base opens the second ring to sulfolane; the sulphur dioxide comes from burning recovered elemental sulphur, usually the same Claus sulphur a nearby refinery took out of the same sour gas that fed the cracker.
 
-###### Coke oven benzene `chem.styrene.benzene.coal-tar` _(medium)_
-
-Byproduct benzene from the coking of coal in an integral coke plant: the coke oven gas is cooled and the aromatics stripped out, giving a crude benzole with toluene and xylenes. In 1983 coal tar benzene was still a major share of world benzene - more so in Europe and Asia than in the United States - and it is the one benzene of that era that is not a petrochemical at all.
-
+          - *Coke oven benzene* `chem.styrene.benzene.coal-tar` *(seen above)*
 ##### Ethylbenzene from benzene and ethylene `chem.styrene.ethylbenzene`
 
 Benzene plus ethylene in a large molar excess of benzene (3-6 to 1) over a zeolite or a phosphoric acid catalyst at 250-400 C and 10-30 bar. The 1980s breakthrough was the Mobil process using a shape-selective zeolite (the ZSM-5 family) at about 350 C, which gives over 97% selectivity to ethylbenzene and almost no diethylbenzene. The old process, phosphoric acid on silica at 140-180 C and 20-30 bar, had a diethylbenzene problem that ate benzene and made the distillation columns enormous.

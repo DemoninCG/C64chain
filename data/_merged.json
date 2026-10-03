@@ -3170,8 +3170,14 @@
       "why": "Phase 2. This node was always a tungsten ore node filed under molybdenum: its own name said 'the limestone vein alternative', i.e. relative to a molybdenum parent it was not really about. The previous pass recorded here that its description 'should be widened from molybdenum to both metals', which is the opposite of what it needed - it should have become a tungsten ore node. Its only real content was the greisen co-occurrence of scheelite CaWO4 and molybdenite MoS2, which is now a clause in metal.tungsten.ore and a clause in metal.molybdenum. The node also carried a build-process sentence about 'the point the brief made', which CHECKLIST 7a forbids.",
       "loserDescription": "Almost all molybdenum came from porphyry copper, but there is a second source: the molybdenite that sits in the tungsten skarn and vein deposits - the Climax and Henderson molybdenum orebodies in Colorado were actually a Colorado Clueca-type porphyry with a molybdenum-bearing skarn. The relevant geology is that molybdenum and tungsten share the hydrothermal vein environment, and scheelite (CaWO4) and molybdenite (MoS2) are sometimes intergrown in the same greisen. So the molybdenum in a C64's injection-moulding die could in principle have come out of the same vein as a tungsten electrode - which is the point the brief made when it said no tungsten in a 1982 C64, and this is where that fact becomes interesting: the tungsten was there, in the same rock, but it went into other industries.",
       "loserFacts": [
-        { "label": "Molybdenite", "value": "MoS2 in vein and skarn greisen" },
-        { "label": "Companion", "value": "scheelite CaWO4 and wolframite, often in the same vein" }
+        {
+          "label": "Molybdenite",
+          "value": "MoS2 in vein and skarn greisen"
+        },
+        {
+          "label": "Companion",
+          "value": "scheelite CaWO4 and wolframite, often in the same vein"
+        }
       ]
     },
     {
@@ -3185,10 +3191,22 @@
       "why": "Phase 2. Same name as the new canonical node, which is what the audit's duplicate-name rule flagged. The whole of the chemistry chain it described in one paragraph - digest to sodium tungstate, to APT, to WO3, hydrogen reduction, potassium doping, drawing - is now four real nodes under metal.tungsten, so a path-local copy that compressed four levels of supply chain into one description was the wrong shape as well as the wrong place. Its 'Korea and China were becoming dominant' note is now on metal.tungsten.ore.mine, where the supply claim belongs.",
       "loserDescription": "Tungsten does not exist as a pure ore anywhere. Wolframite (Fe,Mn)WO4 and scheelite CaWO4 are decomposed with caustic soda or sodium carbonate to sodium tungstate, then to APT (ammonium paratungstate), then to tungsten trioxide reduced with hydrogen at 800-1000 degrees C to a fine powder, which is doped with potassium and drawn.",
       "loserFacts": [
-        { "label": "APT", "value": "(NH4)10H2W12O42, the standard intermediate" },
-        { "label": "Reduction", "value": "800-1000 degrees C, H2, to W powder" },
-        { "label": "Drawing", "value": "doped powder, hydrogen-annealed, swaged and drawn to 0.04 mm" },
-        { "label": "Purity", "value": "99.9-99.95%, and the potassium content is controlled to control the grain" }
+        {
+          "label": "APT",
+          "value": "(NH4)10H2W12O42, the standard intermediate"
+        },
+        {
+          "label": "Reduction",
+          "value": "800-1000 degrees C, H2, to W powder"
+        },
+        {
+          "label": "Drawing",
+          "value": "doped powder, hydrogen-annealed, swaged and drawn to 0.04 mm"
+        },
+        {
+          "label": "Purity",
+          "value": "99.9-99.95%, and the potassium content is controlled to control the grain"
+        }
       ]
     },
     {
@@ -3202,8 +3220,14 @@
       "why": "Phase 2. Same name as the new canonical node. A mine is a facility, not a property of a television's heater, so the node belonged with the ore it produces. Its content is preserved verbatim in the survivor plus the 1980 supply shift.",
       "loserDescription": "Wolframite is dense and refractory, so the ore is mined, crushed and gravity-concentrated or floated to a 60-70% WO3 concentrate. Because the ore is often a by-product of a tin or molybdenum mine, tungsten supply followed the fortunes of tin mining, and the price spiked hard whenever the tin market wobbled.",
       "loserFacts": [
-        { "label": "Concentrate", "value": "60-70% WO3, roughly a 100x upgrade" },
-        { "label": "Mining", "value": "underground stoping and hand sorting, plus alluvial allutan placers on the Malay Archipelago tin belt" }
+        {
+          "label": "Concentrate",
+          "value": "60-70% WO3, roughly a 100x upgrade"
+        },
+        {
+          "label": "Mining",
+          "value": "underground stoping and hand sorting, plus alluvial allutan placers on the Malay Archipelago tin belt"
+        }
       ]
     },
     {
@@ -3241,8 +3265,39 @@
       "why": "Phase 2. Monazite was a duplicate mineral living under the tantalum branch, where it appears as an impurity to be filtered off a fluoride solution. That role is genuine and is kept - metal.tantalum.thorium still points here, and the survivor keeps the 5-30% ThO2 figure - but the mineral itself, its composition and its occurrence, belongs with the other rare-earth ore. Per CHECKLIST keep-rule 4 the name was relative to a parent ('the thorium and rare-earth carrier') and is now the general name.",
       "loserDescription": "Monazite, (Ce,La,Nd,Th)PO4, is a heavy placer mineral from the same beach sands as the ilmenite and the rutile - the Kerala and Queensland and Cape Breton sands. It is the world's main thorium source and, after a very difficult separation, a rare-earth source. In the tantalum circuit monazite is an impurity that has to be filtered off the fluoride solution. So the tantalum in a 1982 capacitor, the titanium dioxide in its casing, and the thorium residue all come out of the same Queensland beach sand.",
       "loserFacts": [
-        { "label": "Composition", "value": "(Ce,La,Nd,Th)PO4 with 5-30% ThO2" },
-        { "label": "Occurrence", "value": "heavy placer concentrates from a beach sand" }
+        {
+          "label": "Composition",
+          "value": "(Ce,La,Nd,Th)PO4 with 5-30% ThO2"
+        },
+        {
+          "label": "Occurrence",
+          "value": "heavy placer concentrates from a beach sand"
+        }
+      ]
+    },
+    {
+      "loser": "metal.benzene",
+      "loserName": "Crude benzene from the coke oven",
+      "loserFile": "60-metals.json",
+      "survivor": "chem.styrene.benzene.coal-tar",
+      "survivorName": "Coke oven benzene",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "60-metals.json",
+      "why": "same substance from the same route: crude benzol stripped from coke-oven gas. The wash-oil/steam-strip sentence has been folded into the survivor. Verdict 2026-10-03 (TODO carried-over item): not a co-product distinction, a duplicate.",
+      "loserDescription": "A 1982 coke oven produced a very large fraction of the world's synthetic benzene, and benzene was the root of the styrene-polystyrene, phenol-formaldehyde and epoxy industries - so this node is where the coal branch and the plastics branch join. The benzol was drawn out of the oven gas with a wash oil, and the wash oil was then steam-stripped. It is a dense, sweet-smelling, carcinogenic liquid and it is a document about the chemical industry that produced nylon, epoxy resin, phenol formaldehyde resin, styrene, and polyurethane precursors all at once.",
+      "loserFacts": [
+        {
+          "label": "Yield",
+          "value": "8-12 kg of benzene per tonne of coke"
+        },
+        {
+          "label": "Route",
+          "value": "wash oil absorption then steam stripping of the rich oil"
+        },
+        {
+          "label": "In 1982",
+          "value": "benzene was about 85-90% coal-based rather than petroleum-based; the coal route held on until roughly the 1990s-2000s before cracking economics killed it"
+        }
       ]
     }
   ]

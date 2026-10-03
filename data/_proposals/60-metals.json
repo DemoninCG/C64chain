@@ -1,6 +1,5 @@
 {
   "$comment": "Cross-fragment changes proposed by the agent that owns data/60-metals.json. Nothing here has been applied. Every `to` is an id defined in this fragment (in the `shared` map or inline in a branch root), so all of them are safe, stable merge targets - which is the whole reason this fragment was worth the pass. See docs/CHECKLIST.md section 8 before applying.",
-
   "merges": [
     {
       "from": "facility.steam.soda-ash",
@@ -161,24 +160,42 @@
       "from": "chem.fab-chemicals.hydrofluoric-acid",
       "to": "metal.hydrofluoric-acid",
       "why": "'Electronic-grade hydrofluoric acid' is a purified grade of the same molecule, not a different substance. If the grade is worth keeping it belongs as a named grade under metal.hydrofluoric-acid. Same argument for chem.fab-chemicals.hydrochloric-acid -> metal.hydrochloric-acid."
+    },
+    {
+      "from": "metal.benzene",
+      "to": "chem.styrene.benzene.coal-tar",
+      "why": "same substance from the same route: crude benzol stripped from coke-oven gas. The wash-oil/steam-strip sentence has been folded into the survivor. Verdict 2026-10-03 (TODO carried-over item): not a co-product distinction, a duplicate."
     }
   ],
-
   "advisory_no_action_needed": [
     {
-      "ids": ["si.polysilicon.brine", "c64.case.abs-resin.chlor-alkali", "chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali", "facility.compressed-air.membrane-cell"],
+      "ids": [
+        "si.polysilicon.brine",
+        "c64.case.abs-resin.chlor-alkali",
+        "chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali",
+        "facility.compressed-air.membrane-cell"
+      ],
       "note": "Four chlor-alkali cells. They are NOT the same machine: metal.chlor-alkali is the 1982 diaphragm cell (asbestos-lined), the industry fragment's is a membrane cell, and the two petrochemical/chassis ones are generic references. Worth collapsing the two generic ones into metal.chlor-alkali and leaving the membrane cell as a named later design, but I am not proposing it because the distinction is real."
     },
     {
-      "ids": ["si.polysilicon.coke", "si.polysilicon.coke.anthracite", "si.polysilicon.coke.crude", "mb.logic.bipolar.wafer.quartz.coke"],
+      "ids": [
+        "si.polysilicon.coke",
+        "si.polysilicon.coke.anthracite",
+        "si.polysilicon.coke.crude",
+        "mb.logic.bipolar.wafer.quartz.coke"
+      ],
       "note": "Five petroleum-coke nodes. metal.coke owns the coking branch (coal seam -> coke oven -> quench -> tar/pitch) and metal.silica.petcoke owns the calcined grade used in the silicon furnace. The petrochemical fragment's chem.refining.delayed-coding.calcined-coke is already proposed into metal.silica.petcoke above; the others are best left to their owners."
     },
     {
-      "ids": ["si.polysilicon.quartz-leach", "si.polysilicon.gangue", "si.polysilicon.quartz", "metal.quartz"],
+      "ids": [
+        "si.polysilicon.quartz-leach",
+        "si.polysilicon.gangue",
+        "si.polysilicon.quartz",
+        "metal.quartz"
+      ],
       "note": "Four quartz nodes. They are genuinely different things - metal.quartz is crystal-grade vein quartz for resonators, si.polysilicon.quartz is lump quartz for the furnace, si.polysilicon.quartz-leach is the semiconductor-grade purification step - so they should be siblings under one quartz parent, not merged. If the maintainer wants that parent it is metal.quartzite."
     }
   ],
-
   "renames": [
     {
       "id": "metal.cyanide-precursor",
@@ -191,7 +208,6 @@
       "why": "NOT a merge, and important: this fragment's metal.solder is 63/37 and the petrochemical fragment's is 60/40. Those are different alloys with different solidus behaviour, so the two must not be merged. metal.solder's facts ('Liquidus and solidus: 183 C exactly - a eutectic') are correct for 63/37; 60/40 is not a eutectic and solidifies over a range. Whoever owns the petrochemical copy should re-check the number and then rename the node so the two are distinguishable."
     }
   ],
-
   "shared_infrastructure_needs": [
     {
       "file": "data/_fixes.json",
@@ -214,7 +230,6 @@
       "why": "Soda ash is Na2CO3, not rock salt. It currently resolves to metal.salt-brine, a different substance."
     }
   ],
-
   "evidence_for_other_agents": [
     {
       "rule": "CHECKLIST 1a",
@@ -237,6 +252,5 @@
       ]
     }
   ],
-
   "note": "60-metals.json is 476 nodes (was 483) and now contributes no FAIL and no WARN to `node scripts/audit.mjs --file 60-metals.json`; the 40 selftest checks pass. THE KEY RESULT, the shared-vs-inline split: all 60 nodes this fragment publishes in its `shared` map are now reachable from its 21 branch roots, so the generated unlinked.catalogue holds no metals node at all. At the start of the pass eight of them sat there and were visible only as catalogue entries - metal.quartz, metal.cryolite, metal.rosin, metal.zinc.ingot, metal.chromium.aod, metal.chromium.metal, metal.chromate-passivation, metal.hex-chrome-plating. I went through all eight and none of them is a genuinely different substance: metal.quartz is the vein quartz charged to the hydrothermal growth step of the clock-crystal branch, metal.cryolite is the Hall-Heroult bath solvent (and the branch had no electrolyte node at all before), metal.rosin is the flux core physically inside metal.solder.wire, metal.zinc.ingot is the terminal product of the zinc branch downstream of cathode stripping, and the four chromium nodes are chromium's two other markets - stainless via AOD and plating via electrolytic metal - in a branch that had only chromite and ferrochrome in it. Each is now wired into the branch it belongs to rather than left adrift. Two inline copies in my own file were the mirror image of the same failure and are deleted. The other 52 published nodes were already the branch node rather than a duplicate, so nothing there needed to move. Deletions were only ever made after re-pointing every reference inside this fragment: metal.coal.tailings (byte-identical duplicate of metal.coal-tailings), metal.copper.crushing (folded into metal.copper.grinding), metal.aluminum.foil-slitting and metal.aluminum.foil-annealing (folded into metal.aluminum.cold-rolling), metal.aluminum.foil-pore (folded into metal.aluminum.anode-foil) - the last three are the exact examples CHECKLIST section 5 names. No id was changed, so every merge target below is safe to point other fragments at."
 }

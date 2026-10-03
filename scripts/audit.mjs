@@ -45,6 +45,26 @@ const CAT_OK = {
   logistics: new Set(['process', 'facility', 'note']),
   packaging: new Set(['part', 'material', 'process', 'tool', 'note']),
   assembly: new Set(['process', 'part', 'tool', 'facility', 'note']),
+  /* Extended 2026-10-03 (TODO §1b): every set below is exactly the kinds
+   * observed in that category across the 2,454-node tree, plus `note` (legal
+   * anywhere). The suspicious small-count cells were read by hand first:
+   * hk-pcb under board, tower fill under fluids, the crystal cleanroom under
+   * passives, hk-injection under plastics, fuse glass under power, channel
+   * switching under power, and the mill/mix-house/dies/presses under
+   * magnetics are all legitimate. So the extension turns up no WARNs by
+   * construction — its value is as a tripwire: any kind/category pair never
+   * before observed now fires, instead of sitting in the 94% nobody checks. */
+  board: new Set(['material', 'process', 'facility', 'note', 'part', 'tool']),
+  fluids: new Set(['material', 'process', 'facility', 'tool', 'part', 'note']),
+  industry: new Set(['note', 'material', 'tool', 'part', 'facility', 'process']),
+  interconnect: new Set(['process', 'note', 'material', 'part', 'tool']),
+  magnetics: new Set(['material', 'facility', 'tool', 'process', 'part', 'note']),
+  metals: new Set(['material', 'process', 'facility', 'tool', 'part', 'note']),
+  optics: new Set(['material', 'part', 'process', 'tool', 'note']),
+  passives: new Set(['material', 'process', 'part', 'tool', 'note', 'facility']),
+  plastics: new Set(['facility', 'material', 'process', 'tool', 'note', 'part']),
+  power: new Set(['facility', 'tool', 'part', 'material', 'note', 'process']),
+  silicon: new Set(['facility', 'part', 'process', 'note', 'material', 'tool']),
 };
 
 // cross-cutting services: must never be a `children` edge (CHECKLIST 1a)
