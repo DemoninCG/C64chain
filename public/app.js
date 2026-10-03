@@ -152,30 +152,58 @@ function buildConfChips() {
 
 const kidsOf = (n) => (n.children ?? []).map((c) => N[c]).filter(Boolean);
 
-function passes(n) {
+const ENTITY = new Set(['part', 'material']);
+const PROCESSISH = new Set(['process', 'tool', 'facility']);
+let projection = 'full';      // 'full' | 'entities'
+let showChips = true;         // dead-end process nodes, shown as leaves on their parent
+let showEditorial = false;
+
+const passes = (n) => {
   if (catOff.has(n.category)) return false;
   if (kindOff.has(n.kind)) return false;
   if (confOff.has(n.confidence ?? 'unspecified')) return false;
   return true;
+};
+
+/* Does anything below this node survive the projection? */
+const hasEntityMemo = new Map();
+function hasEntityBelow(id) {
+  if (hasEntityMemo.has(id)) return hasEntityMemo.get(id);
+  const n = N[id];
+  if (!n) return false;
+  let found = false;
+  for (const c of n.children ?? []) {
+    const cn = N[c];
+    if (!cn) continue;
+    if (ENTITY.has(cn.kind) || hasEntityBelow(c)) { found = true; break; }
+  }
+  hasEntityMemo.set(id, found);
+  return found;
 }
 
 function buildVisible() {
   vis = [];
   let uid = 0;
-  // An empty query set means "no matches"; don't let that blank the canvas.
   const filtering = query && pathIds.size > 0;
+  const projecting = projection === 'entities';
+  // Entity-only view needs fresh subtree answers for the node count this call.
+  if (projecting) hasEntityMemo.clear();
+
+  function mk(n, depth, pkey, chip) {
+    return {
+      id: n.id, n, depth, uid: uid++, pid: pkey, key: `${pkey}/${n.id}`,
+      kids: [], expandable: false, open: false, chip: !!chip,
+      shared: (parents[n.id]?.length ?? 0) > 1,
+    };
+  }
 
   function visit(n, depth, pkey) {
     if (!passes(n)) return null;
-    const onPath = filtering ? pathIds.has(n.id) : true;
-    if (!onPath) return null;
+    if (n.editorial && !showEditorial && !filtering) return null;
+    if (projecting && !ENTITY.has(n.kind)) return null;
+    if (filtering && !pathIds.has(n.id)) return null;
     const kids = kidsOf(n);
-    const inst = {
-      id: n.id, n, depth, uid: uid++, pid: pkey, key: `${pkey}/${n.id}`,
-      kids: [], expandable: kids.length > 0, open: false, shared: (parents[n.id]?.length ?? 0) > 1,
-    };
-    // A node is forced open if it is on a revealed path — otherwise the depth
-    // limit would hide the very path we just asked to see.
+    const inst = mk(n, depth, pkey);
     const forced = filtering || forceOpen.has(n.id);
     const open = kids.length > 0 && (forced || (!collapsed.has(n.id) && depth < depthLimit));
     inst.open = open;
@@ -185,10 +213,68 @@ function buildVisible() {
     return inst;
   }
 
-  visit(N[ROOT], 0, '');
-  // Keyed by the stable ancestor path, not by uid: uid is a per-render counter
-  // and shifts whenever the visible set changes, so a lookup by uid against a
-  // node rendered before the last re-layout can silently miss.
+  /* A hidden process node is not simply dropped and is not simply shown.
+   * projectEntity emits an entity and, for each child:
+   *   - entity child        -> projected normally
+   *   - process child       -> promoted: the top-most entities beneath it are
+   *                            lifted to sit where the process was, at the same
+   *                            depth, so the chain stays connected and flat
+   *   - process with nothing material below -> kept as a dimmed chip
+   */
+  function chip(n, depth, pkey) {
+    const inst = mk(n, depth, pkey, true);
+    vis.push(inst); // mk() only builds the object; a chip still has to be rendered
+    return inst;
+  }
+
+  function promote(n, depth, pkey) {
+    const out = [];
+    // A process the search explicitly matched stays reachable as a chip, or the
+    // search would silently drop it from a view that only draws entities.
+    if (filtering && pathIds.has(n.id)) out.push(chip(n, depth, pkey));
+    for (const k of kidsOf(n)) {
+      if (!passes(k)) continue;
+      if (k.editorial && !showEditorial && !filtering) continue;
+      if (ENTITY.has(k.kind)) {
+        const e = projectEntity(k, depth, pkey);
+        if (e) out.push(e);
+      } else out.push(...promote(k, depth, pkey));
+    }
+    return out;
+  }
+
+  function projectEntity(n, depth, pkey) {
+    if (filtering && !pathIds.has(n.id)) return null;
+    const kids = kidsOf(n);
+    const inst = mk(n, depth, pkey);
+    const forced = filtering || forceOpen.has(n.id);
+    const open = kids.length > 0 && (forced || (!collapsed.has(n.id) && depth < depthLimit));
+    inst.open = open;
+    vis.push(inst);
+
+    const out = [];
+    for (const k of kids) {
+      if (!passes(k)) continue;
+      if (k.editorial && !showEditorial && !filtering) continue;
+      if (ENTITY.has(k.kind)) {
+        const e = projectEntity(k, depth + 1, inst.key);
+        if (e) out.push(e);
+      } else {
+        const lifted = promote(k, depth + 1, inst.key);
+        if (lifted.length) out.push(...lifted);
+        else if (showChips && !(k.editorial && !showEditorial)) out.push(chip(k, depth + 1, inst.key));
+      }
+    }
+    inst.kids = out;
+    inst.expandable = kids.length > 0;
+    if (!inst.kids.length) inst.open = false;
+    return inst;
+  }
+
+  if (projecting) {
+    const rootInst = projectEntity(N[ROOT], 0, '');
+    if (!rootInst) vis = [];
+  } else visit(N[ROOT], 0, '');
   byKey = new Map(vis.map((v) => [v.key, v]));
   return vis;
 }
@@ -233,14 +319,14 @@ function renderTree() {
   const pos = new Map();
   let cursor = 0;
   function place(inst) {
-    if (!inst.open) {
-      const p = { x: colX[inst.depth], y: cursor * ROW + ROW / 2 };
+    if (!inst.open || !inst.kids.length) {
+      const p = { x: colX[inst.depth] ?? 0, y: cursor * ROW + ROW / 2 };
       pos.set(inst.uid, p);
       cursor++;
       return p;
     }
     const ps = inst.kids.map(place);
-    const p = { x: colX[inst.depth], y: (ps[0].y + ps[ps.length - 1].y) / 2 };
+    const p = { x: colX[inst.depth] ?? 0, y: (ps[0].y + ps[ps.length - 1].y) / 2 };
     pos.set(inst.uid, p);
     return p;
   }
@@ -291,6 +377,10 @@ function renderTree() {
     if (!inst.open || !inst.kids.length) continue;
     for (const k of inst.kids) {
       const q = pos.get(k.uid);
+      // A child of a closed node is never laid out, so it has no position.
+      // Skip it rather than dereferencing undefined -- this was crashing the
+      // whole render and taking every process chip down with it.
+      if (!p || !q) continue;
       const dx = Math.max(24, (q.x - p.x) * 0.5);
       const hot = related && (related.has(inst.id) && related.has(k.id));
       linksG.appendChild(el('path', {
@@ -302,8 +392,9 @@ function renderTree() {
 
   for (const inst of vis) {
     const p = pos.get(inst.uid);
+    if (!p) continue;
     const n = inst.n;
-    const name = n.name.length > 52 ? `${n.name.slice(0, 51)}…` : n.name;
+    const name = (n.name.length > 52 ? `${n.name.slice(0, 51)}…` : n.name) + (inst.chip ? ' ⚙' : '');
     const w = name.length * CHARW + 26;
     const x = p.x;
     const y = p.y - BOXH / 2;
@@ -312,6 +403,7 @@ function renderTree() {
     if (selected === inst.id) classes.push('sel');
     if (matches.has(inst.id)) classes.push('match');
     if (related && !related.has(inst.id)) classes.push('faint');
+    if (inst.chip) classes.push('chip');
 
     const gg = el('g', {
       class: classes.join(' '),
@@ -472,6 +564,13 @@ function renderPanel(id) {
   const inputs = Array.isArray(n.inputs) && n.inputs.length
     ? `<dl class="meta"><dt>from</dt><dd>${n.inputs.map(esc).join(' · ')}</dd></dl>` : '';
 
+  // Resolved ingredient links — the `from` relation built by scripts/build.mjs.
+  const fromLinks = Array.isArray(n.from) && n.from.length
+    ? `<div class="kids"><h4>made of — ${n.from.length} linked</h4><ol>${n.from
+        .map((f) => N[f] ? `<li><a data-go="${f}"><i class="sw" style="background:${colorOf(N[f].category)}"></i>${esc(N[f].name)}<span class="c">${KIND_LABEL[N[f].kind] ?? N[f].kind}</span></a></li>` : '')
+        .join('')}</ol></div>`
+    : '';
+
   const places = Array.isArray(n.places) && n.places.length
     ? `<dl class="meta"><dt>where</dt><dd>${n.places.map(esc).join(' · ')}</dd></dl>` : '';
 
@@ -501,7 +600,7 @@ function renderPanel(id) {
     <div class="kindline">${badges}</div>
     <div class="desc">${esc(n.description ?? '')}</div>
     ${n.note ? `<div class="note">${esc(n.note)}</div>` : ''}
-    ${facts}${inputs}${places}${sources}${from}
+    ${facts}${inputs}${places}${sources}${fromLinks}
     ${kidHtml}
     <div class="act">
       ${kids.length ? '<button data-act="expand">expand subtree</button>' : ''}
@@ -588,6 +687,14 @@ function anchorTo(inst) {
   const p = layoutByKey.get(inst.key);
   if (!p) return;
   anchorPending = { key: inst.key, sx: p.x * cam.k + cam.x, sy: p.y * cam.k + cam.y };
+}
+
+function updateProjNote() {
+  const chips = N ? Object.keys(N).length : 0;
+  $('#projNote').textContent = projection === 'entities'
+    ? 'Processes are routed through, so components stay connected to their raw materials. A process with nothing material below it is kept as a chip rather than dropped.'
+    : 'Everything is shown: components, materials, processes, tools and facilities.';
+  void chips;
 }
 
 function applyTransform() {
@@ -789,15 +896,31 @@ function wire() {
   svg.addEventListener('pointercancel', endDrag);
 
   // view switch
-  document.querySelectorAll('.seg button').forEach((b) => {
+  document.querySelectorAll('[data-view]').forEach((b) => {
     b.onclick = () => {
-      document.querySelectorAll('.seg button').forEach((x) => x.classList.toggle('on', x === b));
+      document.querySelectorAll('[data-view]').forEach((x) => x.classList.toggle('on', x === b));
       view = b.dataset.view;
       cam.y = 0;
       render();
       if (view === 'tree') fit();
     };
   });
+
+  // projection switch
+  document.querySelectorAll('[data-proj]').forEach((b) => {
+    b.onclick = () => {
+      document.querySelectorAll('[data-proj]').forEach((x) => x.classList.toggle('on', x === b));
+      projection = b.dataset.proj;
+      collapsed.clear();
+      forceOpen.clear();
+      render();
+      fit();
+      updateProjNote();
+    };
+  });
+  $('#showChips').onchange = (e) => { showChips = e.target.checked; render(); };
+  $('#showEditorial').onchange = (e) => { showEditorial = e.target.checked; render(); };
+  updateProjNote();
 
   // search
   const search = $('#search');

@@ -108,10 +108,70 @@ for reading prose. `dim unrelated` greys out everything that is neither an
 ancestor nor a descendant of the current selection, which is the fastest way to
 isolate one supply chain.
 
+## Two relations, not one
+
+`children` means **contains / breaks down into**. `from` means **is made of**.
+They are different and the tree keeps them apart.
+
+`from` is derived at build time from each node's recorded `inputs`, resolved
+three ways: the string is already a node id; it normalises to a node name; or it
+matches an entry in `data/_ingredients.json`, which is the hand-reviewed
+synonym table. The link rate is reported on every build and currently sits at
+**about 61%** — 2,155 of 3,543 recorded ingredients became real links. The rest
+stay as prose, because inventing a target would be worse than admitting the gap.
+
+This is what fixed the rainbow badge: it recorded `ABS bezel surface` as text
+while a perfectly good ABS node sat in the tree unlinked. It now resolves to
+ABS resin and aluminium flake, and the detail panel lists them under
+*made of*.
+
+Ingredients deliberately do **not** become children. The ABS subtree is ~80
+nodes, and a child edge per part would multiply it into thousands.
+
+## Projections
+
+The header switches between two views of the same data:
+
+| view | what it shows |
+| --- | --- |
+| **Full** | everything: components, materials, processes, tools, facilities |
+| **Components & materials** | entities only, 1,915 of 3,590 nodes |
+
+In the entity view a process node is **routed through**: the entities beneath it
+are lifted to sit where it was, at the same depth, so the chain stays connected
+and flat. The projection is lossless — all 1,915 entities are reachable both
+before and after — and it costs nothing, because it is a view transform and the
+data is untouched.
+
+Where a process has nothing material beneath it, a terminal step like *"etch 45
+min in ferric chloride"*, there is nothing to lift. Those are kept as a **dimmed
+chip** marked ⚙ on the parent, so their descriptions are not lost. About 3,200
+of them exist; the toggle is under *Projection* in the left rail.
+
+Both `unlinked.catalogue` and the three spine branches are **not** flagged as
+commentary even though they are scaffolding, because hiding a container hides
+its contents: the catalogue is the sole parent of ~377 published material nodes.
+
 Exports are in `public/`: `tree.json` (flat node map, for your own tooling),
 `tree.dot` (Graphviz — this is the one to render as a poster), `tree.mmd`
 (Mermaid mindmap, top 4 levels), and `docs/TREE.md` (the full outline with every
 description inline).
+
+## Reference documents
+
+Six unrestricted scans are on the Internet Archive, each with searchable OCR
+text at `archive.org/download/<id>/<id>_djvu.txt`:
+
+- `The_Anatomy_of_the_Commodore_64`
+- `The_Anatomy_of_the_1541_Disk_Drive`
+- `commodore-128-troubleshooting-and-repair-c128`
+- `Commodore_128_Book_1_Internals`
+- `c-64-c-128-parallel-interface-92000-g-version-6`
+- `C64-C64C_Service_Manual_1992-03_Commodore`
+
+The service manual alone is 75,000 characters of OCR containing 901226/901227/
+901225, the 6567, the 4164, the 4066, the 4044, the 74LS139 and schematic
+numbers 251696 and 251469.
 
 ## Honest caveats
 

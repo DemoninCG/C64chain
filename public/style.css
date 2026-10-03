@@ -229,6 +229,19 @@ aside {
 .lk.hot { stroke: #4b6bbd; }
 .nd rect.box { fill: #141926; stroke: #2c3346; stroke-width: 1; }
 .nd rect.accent { rx: 1; }
+/* A process chip: a terminal process step kept visible in the components-only
+ * view. Deliberately quieter and dashed so it never reads as a component. */
+.nd.chip rect.box { fill: #12151f; stroke-dasharray: 3 3; stroke: #3a4157; }
+.nd.chip text { fill: #8f98ad; font-style: italic; }
+.nd.chip rect.accent { opacity: .45; }
+.nd.chip:hover rect.box { fill: #171b28; }
+
+.note-inline {
+  margin: 9px 0 0;
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: var(--fg-faint);
+}
 .nd text { fill: var(--fg); font-size: 12px; }
 .nd text.sub { fill: var(--fg-faint); font-size: 10px; }
 .nd { cursor: pointer; }

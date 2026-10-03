@@ -182,6 +182,42 @@ has('the adopted node is in tree.json', !!t2.nodes['pub.unlinked']);
 has('the adopted node is reachable', (t2.nodes['c64'].children ?? []).length > 0);
 has('says nothing about it being unlinked', !/"pub\.unlinked".*never linked/.test(o2));
 
+// --- ingredient resolution: `inputs` prose must become real `from` edges -----
+await writeFile(path.join(data, '_ingredients.json'), JSON.stringify({
+  map: { 'widget resin': 'a.shared' },
+}, null, 2));
+{
+  const p = path.join(data, '10-a.json');
+  const doc = JSON.parse(await readFile(p, 'utf8'));
+  doc.root.inputs = ['a.shared', 'widget resin', 'mystery powder'];
+  doc.root.children.push('a.ingrediented');
+  await writeFile(p, JSON.stringify(doc, null, 2));
+}
+await writeFile(path.join(data, '60-ingrediented.json'), JSON.stringify({
+  nodes: {
+    'a.ingrediented': {
+      id: 'a.ingrediented', name: 'Something with ingredients', description: 'Has prose inputs that should resolve.',
+      kind: 'part', category: 'metals',
+      inputs: ['Copper ore for the leaf', 'a.shared', 'unlisted chemical'],
+    },
+  },
+}, null, 2));
+
+let o4 = '';
+try {
+  const r = await run(process.execPath, [path.join(HERE, 'build.mjs')], {
+    env: { ...process.env, DATA_DIR: data, PUBLIC_DIR: pub, DOCS_DIR: doc },
+  });
+  o4 = (r.stdout ?? '') + (r.stderr ?? '');
+} catch (e) { o4 = (e.stdout ?? '') + (e.stderr ?? ''); }
+const t4 = JSON.parse(await readFile(path.join(pub, 'tree.json'), 'utf8'));
+
+has('emits a "from" edge array', Array.isArray(t4.nodes['a.ingrediented'].from));
+has('resolves an exact id input', (t4.nodes['a.ingrediented'].from ?? []).includes('a.shared'));
+has('drops inputs that match no node', !(t4.nodes['a.ingrediented'].from ?? []).some((f) => f.includes('unlisted')));
+has('reports ingredient link rate', /ingredients resolved into real "from" links/.test(o4));
+has('keeps the original prose inputs', Array.isArray(t4.nodes['a.ingrediented'].inputs));
+
 let bad = 0;
 for (const [label, ok, note] of checks) {
   console.log(`  ${ok ? 'PASS' : 'FAIL'}  ${label}${ok || !note ? '' : `  (${note})`}`);

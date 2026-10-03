@@ -1,7 +1,7 @@
 # Production tree — Commodore 64
 
 3590 nodes, max depth 20, 1631 leaves.
-Generated 2026-10-03T00:00:15.956Z by `scripts/build.mjs`. Do not edit by hand.
+Generated 2026-10-03T01:49:13.691Z by `scripts/build.mjs`. Do not edit by hand.
 
 # Commodore 64 (breadbin, ASSY 250407) `c64`
 

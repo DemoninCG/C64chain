@@ -1,0 +1,50 @@
+{
+  "$comment": "Hand-curated corrections, applied by scripts/build.mjs. Kept out of the fragment files so the fix is one reviewable list rather than 30 scattered edits, and so the original authoring is preserved.",
+
+  "kind": {
+    "_note": "Nodes typed `process` whose subject is a SUBSTANCE, not an operation. Found by scanning all 1,702 process-kind nodes, then reviewed by hand: a regex first flagged 173 candidates, but most were correct processes that merely mention a substance ('Gold WIRE wedge bonding' matched on 'wire'). Only these are genuinely misfiled. Several keep children describing their production, which is fine and desirable -- a material whose making is documented beneath it.",
+
+    "mb.discretes.varistor.zinc": "material",
+    "metal.zinc-oxide-powder": "material",
+    "c64.decor.metallised.flake": "material",
+    "chem.thermosets.phenolic": "material",
+    "chem.polyester.unsaturated": "material",
+    "chem.polyamide.nylon-66": "material",
+    "chem.polyester.pet.terephthalic-acid": "material",
+    "chem.acrylonitrile.downstream.acrylic-acid": "material",
+    "chem.natural-gas": "material",
+    "chem.photoresist.novolac": "material",
+    "c64.case.other-polymers.adipic-acid": "material",
+    "c64.case.other-polymers.methanol": "material",
+    "c64.case.other-polymers.terephthalic-acid": "material",
+    "c64.keyboard-switches.pcb-resin": "material",
+    "c64.keyboard-switches.matrix.pcb.copper-foil": "material",
+    "c64.switches.power-slider.body.melamine.melamine-resin": "material",
+    "c64.joystick.microswitches.plastic-case.nylon.nylon-6-6": "material",
+    "mb.crystal.y1.cutting.cleanroom.deionised-water.ion-exchange": "material",
+    "mb.passives.resistors.discrete-axial.metal-foil.foil-roll.etch.nitric": "material",
+    "mb.passives.caps.alu-electrolytic.anode-foil.forming.phosphoric-acid": "material",
+    "metal.lime.scavenger": "material",
+    "metal.habers-catalyst": "material",
+    "metal.iron.burden": "material",
+    "metal.steel.sheet": "material",
+    "metal.ferronickel": "material",
+    "metal.hydrofluoric-acid": "material",
+    "metal.aluminum.anode-foil": "material",
+
+    "_note2": "Equipment, not a process: the scrubber is a vessel in the flue.",
+    "facility.power.coal-plant.scrubber": "tool",
+
+    "_note3": "A group of people is a facility in the taxonomy, not an operation.",
+    "logistics.people.design-team": "facility"
+  },
+
+  "editorialNote": "Nodes that are commentary or scaffolding rather than a thing in the supply chain. Flagged, hidden by default, never deleted. Two traps learned the hard way: (1) the three spine branches (c64.peripherals, c64.extras, c64.bottoms-out) are scaffolding but are also the ONLY route to the television, cassette and metals subtrees; (2) unlinked.catalogue is a filing artefact by name, but it is the sole parent of ~377 published metal/material nodes, so hiding it hides real content. Neither is listed. Only genuine commentary.",
+  "editorial": [
+    "mb.pla.failures",
+    "c64.keyboard-switches.shift-lock",
+    "c64.connector-jacks.expansion-port.spec",
+    "logistics.shipping.c64-count",
+    "peripheral.why-rf"
+  ]
+}

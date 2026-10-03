@@ -25,6 +25,10 @@
       <input id="search" type="search" placeholder="Search 2,000+ nodes…  ( / )" autocomplete="off" spellcheck="false">
       <div id="results" class="results" hidden></div>
     </div>
+    <div class="seg" role="group" aria-label="What to show">
+      <button data-proj="full" class="on" title="Everything: components, materials, processes, tools and facilities">Full</button>
+      <button data-proj="entities" title="Components and materials only. Processes are routed through, and terminal ones become chips.">Components &amp; materials</button>
+    </div>
     <div class="seg" role="group" aria-label="View">
       <button data-view="tree" class="on" title="Dendrogram">Tree</button>
       <button data-view="outline" title="Indented outline">Outline</button>
@@ -48,6 +52,12 @@
     <section>
       <h3>Confidence</h3>
       <div id="confFilter" class="chips"></div>
+    </section>
+    <section>
+      <h3>Projection</h3>
+      <label class="check"><input type="checkbox" id="showChips" checked> show terminal process steps as chips</label>
+      <label class="check"><input type="checkbox" id="showEditorial"> show commentary nodes</label>
+      <p class="note-inline" id="projNote"></p>
     </section>
     <section>
       <h3>Depth</h3>

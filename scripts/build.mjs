@@ -20,6 +20,7 @@ const PUBLIC = path.resolve(process.env.PUBLIC_DIR ?? path.join(ROOT, 'public'))
 const DOCS = path.resolve(process.env.DOCS_DIR ?? path.join(ROOT, 'docs'));
 
 const VALID_KINDS = new Set(['part', 'process', 'material', 'facility', 'tool']);
+const ENTITY_LIKE = new Set(['part', 'material']);
 // Categories answer "what industry made this", not "where does it sit in the
 // machine". The machine-position distinction is structural and lives in the
 // spine (c64.peripherals, c64.extras, c64.bottoms-out), which is why there is
@@ -87,6 +88,24 @@ try {
   Object.assign(aliases, JSON.parse(await readFile(path.join(DATA, '_aliases.json'), 'utf8')));
 } catch { /* no alias table */ }
 const aliasHits = [];
+
+/* Curated corrections: node id -> {kind, editorial}. Hand-reviewed, not
+ * pattern-matched -- see the file for why a regex was not good enough. */
+let fixes = { kind: {}, editorial: [] };
+try {
+  const raw = JSON.parse(await readFile(path.join(DATA, '_fixes.json'), 'utf8'));
+  fixes = {
+    kind: Object.fromEntries(Object.entries(raw.kind ?? {}).filter(([k]) => !k.startsWith('_'))),
+    editorial: (raw.editorial ?? []).filter((k) => !k.startsWith('_')),
+  };
+} catch { /* no fixes table */ }
+
+/* Ingredient synonyms: prose ingredient name -> node id, so that a recorded
+ * `inputs` entry can become a real link instead of free text. */
+let ingredients = {};
+try {
+  ingredients = JSON.parse(await readFile(path.join(DATA, '_ingredients.json'), 'utf8')).map ?? {};
+} catch { /* no ingredient table */ }
 
 for (const { file, doc } of docs) {
   // a document may be a bare node (the spine file), or a wrapper with
@@ -255,7 +274,28 @@ for (const site of refSites) {
   if (!aliasHits.includes(label)) aliasHits.push(label);
 }
 
-/* -------------------------------------------------- dangling references */
+/* ---------------------------------- curated kind fixes and editorial flags */
+const editorialSet = new Set(fixes.editorial);
+// Some flagged ids (the generated catalogue) do not exist yet at this point;
+// they are flagged once the adopt step has created them.
+const editorialPending = new Set();
+let kindFixed = 0;
+for (const [id, kind] of Object.entries(fixes.kind)) {
+  const n = defs.get(id);
+  if (!n) { warn(`fixes: "${id}" is not a node in this tree, skipping kind fix`); continue; }
+  if (n.kind !== kind) {
+    warn(`fixes: ${id} retyped ${n.kind} -> ${kind}`);
+    n.kind = kind;
+    kindFixed++;
+  }
+}
+for (const id of editorialSet) {
+  const n = defs.get(id);
+  if (n) n.editorial = true;
+  else editorialPending.add(id);
+}
+
+/* ---------------------------------------------- dangling references */
 
 const dangling = [];
 for (const { id, parent, file } of refSites) {
@@ -288,6 +328,46 @@ function dist(a, b) {
   return prev[n];
 }
 
+/* ---------------------------------------------- resolve `inputs` -> `from`
+ * `children` means "contains / breaks down into". `from` means "is made of".
+ * They are different relations and conflating them is what left the rainbow
+ * badge listing "ABS bezel surface" as prose while a perfectly good ABS node
+ * sat in the tree unlinked. Ingredients never become children: the ABS subtree
+ * is ~80 nodes and a child edge per part would multiply it into thousands.
+ */
+const normKey = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim();
+
+const nameIndex = new Map();
+for (const [id, n] of defs) {
+  if (!n.name || !ENTITY_LIKE.has(n.kind)) continue;
+  const k = normKey(n.name);
+  if (k && !nameIndex.has(k)) nameIndex.set(k, id);
+  // also index the last dotted segment of the id, which is often the bare
+  // substance name ("metal.copper.foil" -> "foil")
+  const tail = normKey(id.split('.').pop());
+  if (tail.length >= 6 && !nameIndex.has(tail)) nameIndex.set(tail, id);
+}
+
+const ingredientStats = { exact: 0, byName: 0, byTable: 0, prose: 0, selfRef: 0 };
+const ingredientUnresolved = [];
+for (const [id, n] of defs) {
+  const from = new Set();
+  for (const raw of n.inputs ?? []) {
+    const s = String(raw).trim();
+    if (!s) continue;
+    if (defs.has(s)) { from.add(s); ingredientStats.exact++; continue; }
+    const k = normKey(s);
+    if (nameIndex.has(k)) { from.add(nameIndex.get(k)); ingredientStats.byName++; continue; }
+    const t = ingredients[k] ?? ingredients[normKey(s.split('.').pop())];
+    if (t && defs.has(t)) { from.add(t); ingredientStats.byTable++; continue; }
+    ingredientStats.prose++;
+    if (ingredientUnresolved.length < 400) ingredientUnresolved.push(`${id}\t${s}`);
+  }
+  from.delete(id);
+  if (from.size !== (n.from?.length ?? 0)) ingredientStats.selfRef += 0;
+  n.from = [...from];
+}
+
 /* ------------------------------------------------------------ validate */
 
 for (const [id, node] of defs) {
@@ -302,6 +382,8 @@ for (const [id, node] of defs) {
     err(`${id}: confidence "${node.confidence}" must be high|medium|low`);
   }
   if (node.inputs !== undefined && !Array.isArray(node.inputs)) err(`${id}: "inputs" must be an array`);
+  if (node.from !== undefined && !Array.isArray(node.from)) err(`${id}: "from" must be an array`);
+  else for (const f of node.from ?? []) if (!defs.has(f)) err(`${id}: "from" references unknown id "${f}"`);
   if (node.facts !== undefined && !Array.isArray(node.facts)) err(`${id}: "facts" must be an array`);
   if (node.sources !== undefined && !Array.isArray(node.sources)) err(`${id}: "sources" must be an array`);
 }
@@ -389,9 +471,14 @@ if (adopted?.length) {
     children: adopted,
   };
   defs.set(node.id, node);
+  if (editorialSet.has(node.id)) node.editorial = true;
   const host = defs.has('c64.bottoms-out') ? defs.get('c64.bottoms-out') : defs.get(rootId);
   host.children = [...(host.children ?? []), node.id];
   seen = reachable(rootId);
+}
+for (const id of editorialPending) {
+  if (defs.has(id)) { defs.get(id).editorial = true; editorialPending.delete(id); }
+  else warn(`fixes: editorial id "${id}" matched no node`);
 }
 const orphans = [...defs.keys()].filter((id) => !seen.has(id));
 // Only report what is still unreachable after adoption: adopting a parent can
@@ -454,9 +541,11 @@ function strip(node) {
   for (const k of ['name', 'description', 'kind', 'category', 'era', 'confidence', 'note']) {
     if (node[k] !== undefined) o[k] = node[k];
   }
+  if (node.editorial) o.editorial = true;
   for (const k of ['inputs', 'facts', 'places', 'sources']) {
     if (Array.isArray(node[k]) && node[k].length) o[k] = node[k];
   }
+  if (Array.isArray(node.from) && node.from.length) o.from = node.from;
   o.children = node.children ?? [];
   return o;
 }
@@ -574,6 +663,16 @@ if (collisions.length) {
   console.log(`\n  ${collisions.length} DUPLICATE ID COLLISION(S) — content was thrown away:`);
   for (const c of collisions) console.log(`    X ${c}`);
 }
+{
+  const tot = ingredientStats.exact + ingredientStats.byName + ingredientStats.byTable + ingredientStats.prose;
+  const linked = tot - ingredientStats.prose;
+  console.log(`\n  ingredients resolved into real "from" links: ${linked}/${tot}` +
+    `  (${((linked / tot) * 100).toFixed(1)}%)`);
+  console.log(`    exact id ${ingredientStats.exact} · by name ${ingredientStats.byName} · via _ingredients.json ${ingredientStats.byTable} · still prose ${ingredientStats.prose}`);
+  console.log(`  nodes given a "from" edge: ${[...defs.values()].filter((n) => n.from?.length).length}`);
+}
+if (kindFixed) console.log(`\n  ${kindFixed} node(s) retyped by data/_fixes.json`);
+if (editorialSet.size) console.log(`  ${[...defs.values()].filter((n) => n.editorial).length} node(s) flagged editorial (hidden by default in the viewer)`);
 if (stubs.length) {
   console.log(`\n  ${stubs.length} PLACEHOLDER STUB(S) — advertised ids with no subtree written:`);
   for (const s of stubs) console.log(`    ? ${s}`);
