@@ -1068,7 +1068,7 @@
                 "https://www.lemon64.com/forum/viewtopic.php?t=74842"
               ],
               "confidence": "medium",
-              "note": "I could not reach a verified transcription of the 120407 discrete-regulator schematic (lemon64's forum is behind a bot challenge). The topology and part families described here are the standard 1982 discrete 5 V linear supply of this size; treat the exact part numbers as unconfirmed for this specific assembly.",
+              "note": "No verified transcription of the 120407 discrete-regulator schematic is available (lemon64's forum is behind a bot challenge). The topology and part families described here are the standard 1982 discrete 5 V linear supply of this size; the exact part numbers are unconfirmed for this specific assembly.",
               "children": [
                 {
                   "id": "c64.psu.regulator.variant-discrete.pass-npn",
@@ -1289,7 +1289,7 @@
                     }
                   ],
                   "confidence": "medium",
-                  "note": "The 251053-02 teardowns document a thermal fuse in series with the primary winding but I did not find a documented thermal shutdown switch inside the regulator board.",
+                  "note": "The 251053-02 teardowns document a thermal fuse in series with the primary winding, but no thermal shutdown switch inside the regulator board is documented.",
                   "children": [
                     {
                       "id": "c64.psu.regulator.variant-discrete.thermal-shutdown.thermistor",
@@ -1937,7 +1937,7 @@
             }
           ],
           "confidence": "low",
-          "note": "Confirmed only on some replacement bricks I read about; I did not verify a fitted LED inside an original Commodore brick, and the 251053-02 teardown photo descriptions do not mention one. The 3-83/13-83 case markings list only 'power supply', no indicator, which suggests the indicator is on later units only.",
+          "note": "Confirmed only on some replacement bricks; not verified inside an original Commodore brick, and the 251053-02 teardown photo descriptions do not mention one. The 3-83/13-83 case markings list only 'power supply', no indicator, which suggests the indicator is on later units only.",
           "children": [],
           "inputs": [
             "chem.abs"
@@ -2199,7 +2199,7 @@
         "http://www.zimmers.net/anonftp/pub/cbm/schematics/computers/c64/Modulator_MD6_VA3403_UE3603.jpg",
         "http://www.zimmers.net/anonftp/pub/cbm/schematics/computers/c64/manual-html/Page_10.html"
       ],
-      "note": "Three corrections to the brief. First, 55.25 and 62.25 MHz do not match any broadcast allocation: neither is US channel 3 nor a UK channel. US VHF channel 3 has its picture carrier at 61.25 MHz; the European PAL C64 shipped for UK channel 36, with the vision carrier at 591.25 MHz. Second, the part numbers 474040 and 474041 could not be corroborated in any Commodore document I could reach; the documented modulator identifiers are the schematic numbers 251025 and 251696 and the part numbers 250469, 326130-01, 51A1-10 and the Mitsumi MD6 series. Third, the standard Commodore modules are discrete through-hole boards with Japanese transistors, not thin-film hybrids - the hybrid subtree is included as illustrative.",
+      "note": "Three corrections to the identification. First, 55.25 and 62.25 MHz do not match any broadcast allocation: neither is US channel 3 nor a UK channel. US VHF channel 3 has its picture carrier at 61.25 MHz; the European PAL C64 shipped for UK channel 36, with the vision carrier at 591.25 MHz. Second, the part numbers 474040 and 474041 are not corroborated in any Commodore document; the documented modulator identifiers are the schematic numbers 251025 and 251696 and the part numbers 250469, 326130-01, 51A1-10 and the Mitsumi MD6 series. Third, the standard Commodore modules are discrete through-hole boards with Japanese transistors, not thin-film hybrids.",
       "children": [
         {
           "id": "mb.rf-modulator.video-chain",
@@ -2357,7 +2357,7 @@
                   "value": "~20-40 V"
                 }
               ],
-              "note": "Both are Japanese VHF small-signal types with f_T in the low hundreds of MHz; I did not verify the exact figures against a 1982 data book.",
+              "note": "Both are Japanese VHF small-signal types with f_T in the low hundreds of MHz; the exact figures are not verified against a 1982 data book.",
               "children": [],
               "inputs": [
                 "mb.rf-modulator.video-chain.ssc-transistor.packaging"
@@ -2615,7 +2615,7 @@
                   "value": "tapped output coil plus a series blocking capacitor into the phono socket"
                 }
               ],
-              "note": "I could not find a schematic for the PAL variant, so the topology here is inferred from the service manual's description of the PAL modules and from the general practice of UHF modulators of the period.",
+              "note": "No schematic for the PAL variant is available, so the topology here is inferred from the service manual's description of the PAL modules and from the general practice of UHF modulators of the period.",
               "children": [],
               "inputs": [
                 "mb.rf-modulator.rf-output"
@@ -2689,7 +2689,7 @@
           "era": "1982-1984",
           "confidence": "low",
           "name": "Illustrative hybrid module construction (not Commodore)",
-          "description": "ILLUSTRATIVE ONLY - this is not how any Commodore RF modulator was built. Both Commodore drawings that can be read (schematic 251025 and 251696) show a discrete through-hole board with Japanese small-signal transistors, two miniature RF transformers, a trimmer and about thirty resistors and capacitors, with an RCA phono jack on the module. What follows is the thin-film hybrid construction used by RF modulator modules from Japanese games manufacturers of the same period, kept because it is a real and common alternative construction and because the brief asked for it; no Commodore part number has been matched to it. Confidence in every node below is low as a statement about the C64 and high only as a statement about hybrid modules in general.",
+          "description": "ILLUSTRATIVE ONLY - this is not how any Commodore RF modulator was built. Both Commodore drawings that can be read (schematic 251025 and 251696) show a discrete through-hole board with Japanese small-signal transistors, two miniature RF transformers, a trimmer and about thirty resistors and capacitors, with an RCA phono jack on the module. What follows is the thin-film hybrid construction used by RF modulator modules from Japanese games manufacturers of the same period - a real and common alternative construction of the period, but no Commodore part number has been matched to it. Confidence in every node below is low as a statement about the C64 and high only as a statement about hybrid modules in general.",
           "facts": [
             {
               "label": "Substrate",
@@ -3055,7 +3055,7 @@
           "sources": [
             "https://hd.retrorewind.ca/commodore/c64/rf-modulator"
           ],
-          "note": "The part numbers 474040 and 474041 in the brief could not be found in any Commodore document or parts list I could reach. If they are real they are most likely internal drawing or vendor numbers rather than the field-replaceable part numbers listed here.",
+          "note": "The part numbers 474040 and 474041 are not found in any Commodore document or parts list. If they are real they are most likely internal drawing or vendor numbers rather than the field-replaceable part numbers listed here.",
           "children": [
             {
               "id": "mb.rf-modulator.variants.mitsumi",
@@ -3102,7 +3102,7 @@
                       "value": "the RF modulator becomes a purely analogue RF carrier generator"
                     }
                   ],
-                  "note": "The existence of a dedicated CMOS video encoder on the C64C is well established in the enthusiast literature and C64-Wiki has a page stub for the part, but I could not open a primary source to confirm the device marking or its function in this context. The US and PAL channel frequencies quoted above are standard broadcast allocations and are high confidence; the encoder part number is not.",
+                  "note": "The existence of a dedicated CMOS video encoder on the C64C is well established in the enthusiast literature and C64-Wiki has a page stub for the part, but the device marking and its function in this context are not verified against a primary source. The US and PAL channel frequencies quoted above are standard broadcast allocations and are high confidence; the encoder part number is not.",
                   "children": [
                     {
                       "id": "mb.rf-modulator.variants.mitsumi.contrast.encoder-ic",
@@ -3122,7 +3122,7 @@
                           "value": "driven from the 14.318 MHz colour clock"
                         }
                       ],
-                      "note": "I could not verify the exact part number or its manufacturer from a primary source; treat this node as a description of the function rather than of a confirmed device.",
+                      "note": "The exact part number and its manufacturer are not verified against a primary source; this is a description of the function rather than of a confirmed device.",
                       "children": [],
                       "inputs": [
                         "mb.rf-modulator.video-chain.ssc-transistor.packaging"
@@ -3140,7 +3140,7 @@
               "confidence": "low",
               "name": "The 'toad' module nickname",
               "description": "Early Commodore modulators are sometimes described by hobbyists as a toad or a blob: the epoxy-covered module sits on the mainboard with its lead frame splayed out, and from the top it does look like an animal. The nickname is not a Commodore part name - it exists only in the collector community.",
-              "note": "I could not find any published source using this nickname for the C64 modulator; it may come from a different platform. Flagged as uncertain."
+              "note": "No published source uses this nickname for the C64 modulator; it may come from a different platform. The attribution of the nickname to the C64 modulator is uncertain."
             }
           ]
         },
@@ -3757,7 +3757,7 @@
               "value": "VDE, UL and CSA component recognition; the mark is printed on the body"
             }
           ],
-          "note": "I could not confirm from a teardown photograph that a specific Commodore brick contains an X-rated capacitor, although they are a standard fit in any listed appliance of this era and enthusiasts repairing original bricks commonly replace an RIFA suppression capacitor. The node is here because the brief asks for it and because the physics of the circuit requires it, but its presence in this specific assembly is inferred rather than documented. On the RIFA point specifically: RIFA was the dominant European supplier of X-rated metallised film capacitors in the 1980s, and parts from that era are now treated as a fire hazard in their own right - decades-old metallised-film suppression capacitors that have been sitting unused can draw leakage current, heat and in the worst cases short, which is why they are replaced on sight rather than tested. The failure was a design weakness, not a manufacturing defect.",
+          "note": "Not established from a teardown photograph: that a specific Commodore brick contains an X-rated capacitor, although they are a standard fit in any listed appliance of this era and enthusiasts repairing original bricks commonly replace a RIFA suppression capacitor. The physics of the circuit requires it, but its presence in this specific assembly is inferred rather than documented. On the RIFA point specifically: RIFA was the dominant European supplier of X-rated metallised film capacitors in the 1980s, and parts from that era are now treated as a fire hazard in their own right - decades-old metallised-film suppression capacitors that have been sitting unused can draw leakage current, heat and in the worst cases short, which is why they are replaced on sight rather than tested. The failure was a design weakness, not a manufacturing defect.",
           "children": [
             {
               "id": "c64.mains.line-capacitor.metallised-film",

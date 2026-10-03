@@ -435,7 +435,7 @@
               "category": "silicon",
               "era": "1982",
               "confidence": "low",
-              "note": "Flagged low confidence deliberately: the existence, location and equipment of any Commodore mask shop in 1982 is not something I could verify."
+              "note": "Flagged low confidence deliberately: the existence, location and equipment of any Commodore mask shop in 1982 is not established."
             },
             {
               "id": "mb.cpu.fab.assembly",
@@ -1655,7 +1655,7 @@
     {
               "id": "mb.color-ram.cell.load",
               "name": "The load device: polysilicon resistor or depletion transistor",
-              "description": "This is the real difference between a 2114 and a CMOS SRAM, and it is an extra process step. A ratioed NMOS latch needs something in series with the pull-down transistor to act as a load: on 1982 parts this was typically an undoped or lightly doped polysilicon resistor deposited in the same LPCVD step as the gate, or a depletion-mode NMOS transistor (gate tied to source, threshold deliberately shifted negative by an extra implant) acting as a current source. The depletion option needed one more implant than the resistor option. I could not establish which the C64's 2114 used.",
+              "description": "This is the real difference between a 2114 and a CMOS SRAM, and it is an extra process step. A ratioed NMOS latch needs something in series with the pull-down transistor to act as a load: on 1982 parts this was typically an undoped or lightly doped polysilicon resistor deposited in the same LPCVD step as the gate, or a depletion-mode NMOS transistor (gate tied to source, threshold deliberately shifted negative by an extra implant) acting as a current source. The depletion option needed one more implant than the resistor option. Not established: which option the C64's 2114 used.",
               "kind": "part",
               "category": "silicon",
               "era": "1970s-1982",
@@ -1668,7 +1668,7 @@
                             { "label": "Option B", "value": "depletion-mode NMOS load, one extra implant" }
               ],
               "confidence": "low",
-              "note": "Both were standard period practice and the two are visually distinguishable on a die. The specific load device on a 2114L from 1982 is not documented in any source I could find. Lithium-doped polysilicon was used in some early NMOS logic but I found no evidence it was used here."
+              "note": "Both were standard period practice and the two are visually distinguishable on a die. The specific load device on a 2114L from 1982 is not documented in any available source. Lithium-doped polysilicon was used in some early NMOS logic, but no evidence was found that it was used here."
             },
             {
               "id": "mb.color-ram.cell.access",
@@ -1682,7 +1682,7 @@
                             { "label": "Address", "value": "A0-A5 row, A6-A9 column" }
               ],
               "confidence": "medium",
-              "note": "A 32 x 32 organisation with two decoders is the natural way to build 1024 x 4 and is what other period 1K x 4 SRAMs used; I have not seen a published die shot of the 2114 to confirm the split."
+              "note": "A 32 x 32 organisation with two decoders is the natural way to build 1024 x 4 and is what other period 1K x 4 SRAMs used; No published die shot of the 2114 has been seen to confirm the split."
             }
           ]
         },
@@ -1792,7 +1792,7 @@
         {
           "id": "mb.pla.process",
           "name": "NMOS process for the 906114-01 (node not claimed)",
-          "description": "The device-level facts are solid: it is NMOS, mask programmed, made at Norristown, and running a lower VOH than the bipolar original. The process details are not published anywhere. On the evidence of die markings, the era and the same fab, it is almost certainly the house silicon-gate NMOS flow used for the 6510, 6522 and 6526 - n+ diffusion, LOCOS field oxide, LPCVD polysilicon, self-aligned source/drain, contact cuts, one aluminium layer, PSG or nitride passivation - run at whatever line width that flow was at the time. I am deliberately not asserting a specific figure for that line width, because no source states one for this part.",
+          "description": "The device-level facts are solid: it is NMOS, mask programmed, made at Norristown, and running a lower VOH than the bipolar original. The process details are not published anywhere. On the evidence of die markings, the era and the same fab, it is almost certainly the house silicon-gate NMOS flow used for the 6510, 6522 and 6526 - n+ diffusion, LOCOS field oxide, LPCVD polysilicon, self-aligned source/drain, contact cuts, one aluminium layer, PSG or nitride passivation - run at whatever line width that flow was at the time. No specific figure is asserted for that line width, because no source states one for this part.",
           "kind": "process",
           "category": "silicon",
           "era": "1982-1988",
@@ -1846,7 +1846,7 @@
                     { "label": "Mask route", "value": "3-6 week cycle from artwork to tested parts; minimum order one wafer run" }
           ],
           "confidence": "medium",
-          "note": "The 82S100 that gave the C64 PLA its name was originally marketed as a field-programmable bipolar array of this kind. Whether early C64 82S100 parts arrived pre-programmed from Signetics or were programmed in-house is not something I could establish."
+          "note": "The 82S100 that gave the C64 PLA its name was originally marketed as a field-programmable bipolar array of this kind. Whether early C64 82S100 parts arrived pre-programmed from Signetics or were programmed in-house is not established."
         },
         {
           "id": "mb.pla.vs-pal",
@@ -1901,7 +1901,7 @@
                     { "label": "Consequence", "value": "single-sourced, no drop-in replacement, counterfeiting pressure" }
           ],
           "confidence": "medium",
-          "note": "The specific dollar cost of a mask set in 1982 is not something I found; period sources put a full 8-10 level NMOS mask set in the low tens of thousands of dollars, with mask plates alone a few hundred to a couple of thousand per level."
+          "note": "No published figure was found for the specific dollar cost of a mask set in 1982; period sources put a full 8-10 level NMOS mask set in the low tens of thousands of dollars, with mask plates alone a few hundred to a couple of thousand per level."
         },
             "si.package.28",
             "si.leadframe",

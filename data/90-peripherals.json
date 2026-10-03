@@ -37,7 +37,7 @@
           }
         ],
         "confidence": "medium",
-        "note": "The modulator board is usually treated as part of the C64, not as a peripheral, so it lives here as the hinge of this branch. Output power figures vary between sources; treat them as order-of-magnitude. A TV modulator injected at the aerial socket needs a floating (isolated) aerial input or the local TV signal will back-feed and wash out the computer picture, which is why sets with an isolated aerial socket were prized. Retyped from part to note in the fragment itself, to match what data/_fixes.json already does to it centrally. Its two children are notes too, so this whole three-node subtree is commentary about why a television was needed, not a supply chain. The modulator itself is documented in the mainboard fragment as mb.rf-modulator.",
+        "note": "The modulator board is usually treated as part of the C64, not as a peripheral, so it lives here as the hinge of this branch. Output power figures vary between sources; treat them as order-of-magnitude. A TV modulator injected at the aerial socket needs a floating (isolated) aerial input or the local TV signal will back-feed and wash out the computer picture, which is why sets with an isolated aerial socket were prized. The modulator itself is documented in the mainboard as mb.rf-modulator.",
         "children": [
           {
             "id": "peripheral.why-rf.tv-loses-75-ohm",
@@ -46,7 +46,7 @@
             "category": "interconnect",
             "description": "A broadcast TV station transmitted tens of kilowatts; a C64 modulator put out about a milliwatt. The set had to be tuned by hand, and reception quality was a function of the modulator's output impedance matching the aerial input. Anyone who ever moved the TV or unplugged the aerial lead knows how marginal this was.",
             "confidence": "low",
-            "note": "Quantitative comparison of received signal levels is reconstructed from general receiver-sensitivity reasoning rather than from a measurement of a specific 1.1902-type modulator. Retyped part -> note: a signal-level comparison is a sentence about the chain, not a thing in it.",
+            "note": "Quantitative comparison of received signal levels is reconstructed from general receiver-sensitivity reasoning rather than from a measurement of a specific 1.1902-type modulator.",
             "children": []
           },
           {
@@ -57,7 +57,7 @@
             "era": "1985-1990",
             "description": "Commodore's own 1702 monitor took a composite luma-and-blank input over a 5-pin DIN, and in 1985-86 Commodore adopted the DE-9 connector used by the C128's RGBI monitors, which carried separate red, green and blue analogue signals on pins 5, 6, 7 with no modulation at all. There was still no standard, which is why the C128 ended up with a proprietary DIN-8 video connector rather than a DE-15.",
             "confidence": "medium",
-            "note": "Retyped part -> note. The content is a comparison with later practice, which is exactly the \"compared with today\" shape CHECKLIST section 2 sends to note. The 1702 and the C128 RGBI monitors are real objects but they are not upstream of a 1982 C64, so they do not belong on a supply line.",
+            "note": "The 1702 and the C128 RGBI monitors are real objects but they are not upstream of a 1982 C64, so they do not belong on a supply line.",
             "children": []
           }
         ],
@@ -109,7 +109,7 @@
           "Japan"
         ],
         "confidence": "high",
-        "note": "The prompt called the line output a 12 kHz stage; that is the PAL/SECAM figure. NTSC is 15,734 Hz and every number on this branch is NTSC. 12.5 kHz is the line rate of the 50 Hz NTSC variants used in Japan and some export markets. Also worth stating plainly: there is no analogue TV transmitter here. A broadcast transmitter was a 100 kW-10 MW superstructure of tetrodes and a directional panel array; a home C64 needed a one-square-inch modulator board and a household set instead.",
+        "note": "The PAL/SECAM line rate is 12 kHz; NTSC is 15,734 Hz and every number on this branch is NTSC. 12.5 kHz is the line rate of the 50 Hz NTSC variants used in Japan and some export markets. Also worth stating plainly: there is no analogue TV transmitter here. A broadcast transmitter was a 100 kW-10 MW superstructure of tetrodes and a directional panel array; a home C64 needed a one-square-inch modulator board and a household set instead.",
         "children": [
           {
             "id": "peripheral.tv.crt",
@@ -165,7 +165,7 @@
                   }
                 ],
                 "confidence": "medium",
-                "note": "The 24% PbO figure in the brief is the number quoted for the standard X-ray absorbing lead frit of the era; real formulations ran from about a quarter to two thirds PbO depending on whether the set was sold as a colour tube with a separate shadow mask or a lower-cost monochrome-style lead frit. Treat 24% as representative, not universal.",
+                "note": "A 24% PbO figure is what is usually quoted for the standard X-ray absorbing lead frit of the era, and it is representative rather than universal: real formulations ran from about a quarter to two thirds PbO depending on whether the set was sold as a colour tube with a separate shadow mask or a lower-cost monochrome-style lead frit.",
                 "children": [
                   {
                     "id": "peripheral.tv.crt.panel.funnel-glass",
@@ -221,7 +221,7 @@
                         "children": [
                           
                         ],
-                        "note": "Recategorised from energy to metals. No canonical borate node exists anywhere in the tree yet, so this chain stays here; the colemanite diggings and the acid digestion are as deep as it goes."
+                        "note": "No canonical borate node exists anywhere in the tree yet, so this chain stays here; the colemanite diggings and the acid digestion are as deep as it goes."
                       }
                     ]
                   },
@@ -432,7 +432,7 @@
                         ],
                         "confidence": "medium",
                         "children": [],
-                        "note": "The alumina in a panel batch is refractory-grade alumina from the Bayer process, not the four-nines rolled foil used behind the phosphor. The child node here used to point at the foil, which was a wrong edge; it is now an ingredient edge to metal.alumina, which is the canonical alumina in this tree."
+                        "note": "The alumina in a panel batch is refractory-grade alumina from the Bayer process, not the four-nines rolled foil used behind the phosphor; metal.alumina, the canonical alumina in this tree, is the ingredient it takes."
                       }
                     ]
                   }
@@ -567,7 +567,7 @@
                       }
                     ],
                     "confidence": "high",
-                    "note": "This is the vacuum-deposited aluminium behind the phosphor, and it is not the same part as the aluminium coating on the funnel wall behind the gun, which is a rear-facing mirror to recover light that would otherwise bounce around inside the tube. Both were often present; they are documented at peripheral.tv.crt.vacuum.rear-al and both are fed from one roll of four-nines foil. A brief that says \"aluminium-backed faceplate\" is describing this node, not the other one.",
+                    "note": "This is the vacuum-deposited aluminium behind the phosphor, and it is not the same part as the aluminium coating on the funnel wall behind the gun, which is a rear-facing mirror to recover light that would otherwise bounce around inside the tube. Both were often present; they are documented at peripheral.tv.crt.vacuum.rear-al and both are fed from one roll of four-nines foil.",
                     "children": [
                       
                     ],
@@ -728,11 +728,11 @@
                           "Bayan Obo, Inner Mongolia"
                         ],
                         "confidence": "low",
-                        "note": "Confidence stays low and should. The red formulation of any particular 1982 tube was proprietary, and I cannot say which manufacturer used CaS:Eu against Eu-doped ZnS; both were in service. CaS:Eu has the better red chromaticity but is hygroscopic and needs protection from moisture, which is the trade the industry was making in 1982. Europium itself is not the scarce thing here - bastnasite is about 0.1% rare earths, so it was mined in large tonnages - and the same concentrate supplied the samarium in the deflection magnets.",
+                        "note": "Confidence on the formulation is low: the red formulation of any particular 1982 tube was proprietary, and which manufacturer used CaS:Eu against Eu-doped ZnS is not established; both were in service. CaS:Eu has the better red chromaticity but is hygroscopic and needs protection from moisture, which is the trade the industry was making in 1982. Europium itself is not the scarce thing here - bastnasite is about 0.1% rare earths, so it was mined in large tonnages - and the same concentrate supplied the samarium in the deflection magnets.",
                         "children": []
                       }
                     ],
-                    "note": "Recategorised from metals to optics. It starts as a zinc mineral but it is bought by the phosphor industry, and the category is supposed to answer what industry made this. The zinc chain underneath it (sphalerite, the roast, the acid plant) stays metals, which is right: those are metallurgy."
+                    "note": "It starts as a zinc mineral but it is bought by the phosphor industry, so it belongs to optics rather than metals. The zinc chain underneath it (sphalerite, the roast, the acid plant) stays metals, which is right: those are metallurgy."
                   }
                 ],
                 "sources": [
@@ -771,7 +771,7 @@
                   "France"
                 ],
                 "confidence": "medium",
-                "note": "The brief's '0.6 mm slot pitch etched from 0.05 mm low-carbon steel' is directionally right on pitch but the sheet gauge in practice was thicker than 0.05 mm. A mask at 0.05 mm would deflect itself into a catenary under its own weight during the 600 degree C stress relief; the industry used 0.1-0.2 mm cold-reduced low-carbon (1008) steel, and Sony's aperture-grille wires are about 0.12-0.15 mm diameter plated with nickel and chrome. 0.6 mm pitch is right for a 1982 set.",
+                "note": "A 0.6 mm slot pitch etched from 0.05 mm low-carbon steel is directionally right on pitch but the sheet gauge in practice was thicker than 0.05 mm. A mask at 0.05 mm would deflect itself into a catenary under its own weight during the 600 degree C stress relief; the industry used 0.1-0.2 mm cold-reduced low-carbon (1008) steel, and Sony's aperture-grille wires are about 0.12-0.15 mm diameter plated with nickel and chrome. 0.6 mm pitch is right for a 1982 set.",
                 "children": [
                   {
                     "id": "peripheral.tv.crt.mask.steel",
@@ -973,7 +973,7 @@
                         "kind": "material",
                         "category": "metals",
                         "era": "1982",
-                        "description": "The cup that carries the emitting coating: a nickel-chromium alloy, about 82% Ni with 18% Cr, spun or deep drawn to a shallow cup. The alloy is chosen because it does not react with the alkaline-earth oxides fired onto it and does not outgas badly in a vacuum that has to hold for the life of the tube. It is an alloy, not a pure metal, so it draws on the blast furnace for its iron as well as on the nickel refinery, which is why the iron, nickel and cobalt behind it are ingredients rather than children.",
+                        "description": "The cup that carries the emitting coating: a nickel-chromium alloy, about 82% Ni with 18% Cr, spun or deep drawn to a shallow cup. The alloy is chosen because it does not react with the alkaline-earth oxides fired onto it and does not outgas badly in a vacuum that has to hold for the life of the tube. It is an alloy, not a pure metal, so it draws on the blast furnace for its iron as well as on the nickel refinery.",
                         "inputs": [
                           "nickel cathode",
                           "chromium",
@@ -995,7 +995,7 @@
                         ],
                         "confidence": "medium",
                         "children": [],
-                        "note": "The cup metal and the emitting coating are two different substances, so they are two different nodes. The barium, strontium and calcium carbonates that become the BaO-SrO-CaO coating belong to the cathode, not to the alloy, and hang there; this node is only the alloy the cup is formed from. It has no child of its own: the nickel sheet it is drawn from lives once, under the grid stack, and reaches this node as an ingredient."
+                        "note": "The cup metal and the emitting coating are two different substances. The barium, strontium and calcium carbonates that become the BaO-SrO-CaO coating belong to the cathode, not to the alloy, so the alloy is only the metal the cup is formed from."
                       }
                     ],
                     "inputs": [
@@ -1145,7 +1145,7 @@
                           }
                         ],
                         "confidence": "medium",
-                        "note": "Category corrected to metals. Kovar was standard in every CRT factory and its own supply chain came from nickel and iron rather than anything exotic. The child node called \"The iron and nickel behind Kovar\" was an ingredient bag holding three references and one sentence of commentary. An alloy is made of its metals, so those are now `from` edges: blast-furnace iron, electrolytic cathode nickel, and cobalt metal, for which no canonical node exists anywhere in this tree yet. Cobalt was a genuinely scarce metal in 1982 and set the price of the alloy.",
+                        "note": "Kovar was standard in every CRT factory and its own supply chain came from nickel and iron rather than anything exotic. An alloy is made of its metals, so it draws on blast-furnace iron, electrolytic cathode nickel, and cobalt metal, for which no canonical node exists anywhere in this tree yet. Cobalt was a genuinely scarce metal in 1982 and set the price of the alloy.",
                         "children": [],
                         "inputs": [
                           "metal.iron",
@@ -1347,7 +1347,7 @@
                         ],
                         "confidence": "medium",
                         "children": [],
-                        "note": "The child edge that used to point at the europium node was simply wrong: a correction magnet is Alnico or Sm-Co, and europium is a phosphor activator. The samarium does come from bastnasite, the same rare-earth concentrate the europium came from, so that relationship is now a sentence here instead of a false structural edge."
+                        "note": "A correction magnet is Alnico or Sm-Co; europium is a phosphor activator. The samarium does come from bastnasite, the same rare-earth concentrate the europium came from."
                       }
                     ]
                   }
@@ -1387,7 +1387,7 @@
                   }
                 ],
                 "confidence": "high",
-                "note": "The brief said the line output swung about 1 kV across the yoke. That is the figure for a large 25 inch set with a 110 degree tube and a high line current. On a 13 inch set with a 90 degree deflection the yoke current is of the order of 1-2 A peak to peak into a few tens of ohms, so the voltage across the yoke is tens to a couple of hundred volts, and the flyback still steps it to 20-25 kV. The 1 kV figure is also sometimes quoted as the voltage on the yoke during retrace once the damper is included.",
+                "note": "A line output swinging about 1 kV across the yoke is the figure for a large 25 inch set with a 110 degree tube and a high line current. On a 13 inch set with a 90 degree deflection the yoke current is of the order of 1-2 A peak to peak into a few tens of ohms, so the voltage across the yoke is tens to a couple of hundred volts, and the flyback still steps it to 20-25 kV. The 1 kV figure is also sometimes quoted as the voltage on the yoke during retrace once the damper is included.",
                 "children": [
                   {
                     "id": "peripheral.tv.crt.flyback.core",
@@ -1512,7 +1512,7 @@
                               "Ishikiri, Japan"
                             ],
                             "confidence": "high",
-                            "note": "Renamed off \"for the arc furnace\", which rule 6 forbids; this is metal-grade quartz lump, not glass sand, and the furnace is in the description.",
+                            "note": "Metal-grade quartz lump, not glass sand; it is reduced with coke in a submerged arc furnace, where the arc itself is the only heat source.",
                             "children": []
                           }
                         ]
@@ -1676,7 +1676,7 @@
                           "Guizhou, China"
                         ],
                         "confidence": "medium",
-                        "note": "Recategorised from magnetics to metals. It sits near the ferrite and the barite because the element is the same, but the getter is a barium-titanium-palladium foil, not a ferrite.",
+                        "note": "It sits near the ferrite and the barite because the element is the same, but the getter is a barium-titanium-palladium foil, not a ferrite.",
                         "children": []
                       }
                     ]
@@ -1693,7 +1693,7 @@
                       "metal.aluminum"
                     ],
                     "confidence": "medium",
-                    "note": "Both the aluminium funnel coating and the phosphor aluminium layer are real and were often both present. The prompt's 'aluminium-backed faceplate' is a reasonable description of the phosphor back layer, and the funnel coating is the separate, less discussed item. The foil node that used to sit here was a restatement of the four-nines aluminium chain; it has been replaced by an ingredient edge to that chain so the two mirrors behind a tube are visibly the same 4N foil.",
+                    "note": "Both the aluminium funnel coating and the phosphor aluminium layer are real and were often both present. An aluminium-backed faceplate is a reasonable description of the phosphor back layer, and the funnel coating is the separate, less discussed item. Both mirrors behind a tube come from the same roll of four-nines foil.",
                     "children": []
                   }
                 ]
@@ -1739,7 +1739,7 @@
               "Mexico"
             ],
             "confidence": "high",
-            "note": "The prompt describes a 4-gang or varactor tuner with a UHF/VHF split. A 4-gang was the older high-quality approach (separate RF and mixer coils for both bands in one switch); by 1982 varactor tuning with a motor and AFC was increasingly common, and a mechanical rotary tuner with a 4-gang arrangement was still on plenty of sets. Recategorised from optics to interconnect. The television branch uses optics for CRT glass and phosphors; a tuner is a 75-ohm RF port and nothing in this node is optical.",
+            "note": "A 4-gang tuner, separate RF and mixer coils for both bands in one switch, was the older high-quality approach; by 1982 varactor tuning with a motor and AFC was increasingly common, and a mechanical rotary tuner with a 4-gang arrangement was still on plenty of sets.",
             "children": [
               {
                 "id": "peripheral.tv.tuner.vhf",
@@ -2002,7 +2002,7 @@
                   "steel shaft"
                 ],
                 "confidence": "high",
-                "note": "The polyester dial cord is the same base polymer as the tape leader and the oven bag: PET again. Recategorised from assembly to computing. The category answers what industry made this, and `assembly` is reserved for operations; a dial cord and its gear train is an object.",
+                "note": "The polyester dial cord is the same base polymer as the tape leader and the oven bag: PET again.",
                 "children": []
               }
             ],
@@ -2104,7 +2104,7 @@
                       }
                     ],
                     "confidence": "medium",
-                    "note": "The same E-glass concept was invented for the printed circuit board and, by 1982, was also being pulled as optical fibre for telecommunications. Both start as melted quartz sand drawn to a fine filament. Recategorised from optics to board, because glass fibre is the board industry's reinforcement. The node that used to sit here named its own parent (\"The silica the E-glass comes from\") and carried nothing but the silica node and two numbers; it is now an ingredient edge to the one silica node in this file, with its two numbers kept as facts here.",
+                    "note": "The same E-glass concept was invented for the printed circuit board and, by 1982, was also being pulled as optical fibre for telecommunications. Both start as melted quartz sand drawn to a fine filament. Glass fibre is the board industry's reinforcement; optical fibre is the telecommunications industry's, off the same melted quartz sand.",
                     "children": []
                   },
                   
@@ -2144,7 +2144,7 @@
                 "sources": [
                   "https://en.wikipedia.org/wiki/Printed_circuit_board"
                 ],
-                "note": "The solder-mask and silkscreen step was a bare process node with two facts and nothing else, so it has been folded into this description and its numbers kept here. Colour sets of the period were green or brown-black; the tan-and-brown \"Tiger\" FR-4 everyone associates with the era was common but not universal."
+                "note": "Colour sets of the period were green or brown-black; the tan-and-brown Tiger FR-4 everyone associates with the era was common but not universal."
               },
               {
                 "id": "peripheral.tv.chassis.video",
@@ -2233,7 +2233,7 @@
                           }
                         ],
                         "confidence": "high",
-                        "note": "The feedstock chain is documented once, at peripheral.tv.crt.flyback.hv-rectifier.silicon; this node deliberately does not repeat it. What is specific to a wafer is the epitaxy and the oxide, and those are what the facts here give numbers for.",
+                        "note": "What is specific to a wafer, as against the wafer in the EHT rectifier, is the epitaxy and the oxide, and those are what the facts here give numbers for.",
                         "children": []
                       }
                     ]
@@ -2307,7 +2307,7 @@
                     "era": "1982",
                     "description": "The AGC samples the DC level off the video detector and feeds a reverse bias back to the first two IF stages, holding the picture bright whether the aerial is good or the C64 modulator is a milliwatt away from nothing. This was the one part of a TV that genuinely cared about the C64 signal, because a C64 was a much weaker source than a broadcast station and the AGC had to find a way to open up. A key-operated AGC defeat, or a 'manual gain' switch, was a modification for fringe-area reception.",
                     "confidence": "medium",
-                    "note": "Kept as a part rather than folded into the video chain, and rather than retyped as a note. In a set of this vintage the AGC was a discrete little circuit block with its own transistors and its own fault symptom - a dim, over-driven picture when fed from a milliwatt modulator - and it was the one stage a user or a serviceman actually touched with a screwdriver. A circuit block is a thing you can point at on a board.",
+                    "note": "In a set of this vintage the AGC was a discrete little circuit block with its own transistors and its own fault symptom - a dim, over-driven picture when fed from a milliwatt modulator - and it was the one stage a user or a serviceman actually touched with a screwdriver. A circuit block is a thing you can point at on a board.",
                     "children": []
                   }
                 ]
@@ -2342,7 +2342,7 @@
                   }
                 ],
                 "confidence": "high",
-                "note": "The brief's '12 kHz' figure is PAL. NTSC is 15,734 Hz, and a 13 inch US set of 1982 is a 15.7 kHz machine. The '1 kV across the yoke' figure is a large-set number; see the flyback note.",
+                "note": "A 12 kHz line rate is the PAL figure. NTSC is 15,734 Hz, and a 13 inch US set of 1982 is a 15.7 kHz machine. A 1 kV swing across the yoke is a large-set number.",
                 "children": [
                   {
                     "id": "peripheral.tv.chassis.line-out.oscillator",
@@ -2701,7 +2701,7 @@
                 ]
               }
             ],
-            "note": "Recategorised from computing to board: this node is the set's printed circuit board and its subassemblies, not a whole machine. The set itself stays computing."
+            "note": "This node is the set's printed circuit board and its subassemblies, not a whole machine; the set itself stays computing."
           },
           {
             "id": "peripheral.tv.speaker",
@@ -2780,7 +2780,7 @@
                     "value": "spot welded or riveted to the magnet"
                   }
                 ],
-                "note": "The basket is stamped from the same cold-reduced low-carbon sheet as the shadow mask, and it now says so with an ingredient edge to the one node for that sheet in this file instead of a local copy that named its own parent."
+                "note": "The basket is stamped from the same cold-reduced low-carbon sheet as the shadow mask."
               },
               {
                 "id": "peripheral.tv.speaker.magnet",
@@ -2837,7 +2837,7 @@
                 "children": []
               }
             ],
-            "note": "Recategorised from optics to magnetics: the part of a small loudspeaker that decides what industry it belongs to is the sintered ferrite ring and the winding in its gap."
+            "note": "The part of a small loudspeaker that decides what industry it belongs to is the sintered ferrite ring and the winding in its gap."
           },
           {
             "id": "peripheral.tv.cabinet",
@@ -2866,7 +2866,7 @@
               "Japan"
             ],
             "confidence": "high",
-            "note": "Wood-plastic (particle board faced with a melamine or polyester woodgrain laminate) was used on the console-style and portable sets of the era; the true ABS shell took over on the small sets. The brief's 'wood-plastic or ABS cabinet with a woodgrain print or a real wood veneer' covers both, and both appear here.",
+            "note": "Wood-plastic (particle board faced with a melamine or polyester woodgrain laminate) was used on the console-style and portable sets of the era; the true ABS shell took over on the small sets. Both the woodgrain-print cabinet and the real veneer cabinet are worth covering, and both appear here.",
             "children": [
               
               {
@@ -2914,7 +2914,7 @@
                 ],
                 "confidence": "high",
                 "children": [],
-                "note": "An injection-moulding operation does not contain its mould steel, so that is now a `from` edge, and it points at the P20 node the chassis fragment already publishes rather than at a third copy. The composition and plating figures from the deleted node are kept as a fact here."
+                "note": "The mould is P20 tool steel with a nickel-chromium plating, held at 1000-2000 bar against the melt."
               },
               {
                 "id": "peripheral.tv.cabinet.wood",
@@ -2943,7 +2943,7 @@
                   }
                 ],
                 "confidence": "medium",
-                "note": "Again the one renewable leaf. A veneer cabinet is a tree, cut and sliced. Recategorised from plastics to packaging: a veneered or laminated cabinet is wood and board, not a polymer. Check the type on a console set of the period and it is very often plastic, but this node is the case where it was not, so the category should not claim that it is.",
+                "note": "Again the one renewable leaf: a veneer cabinet is wood and board, not a polymer. A tree, cut and sliced. Check the type on a console set of the period and it is very often plastic, but this node is the case where it was not.",
                 "children": []
               },
               {
@@ -3378,7 +3378,7 @@
                   }
                 ],
                 "confidence": "medium",
-                "note": "The prompt said the IEC-ish inlet was owned by another agent, which is fair: it belongs to the C64's own power supply unit, not the television. What belongs to the television is the hard-wired cord and the moulded plug, which are covered here.",
+                "note": "An IEC-ish inlet belongs to the C64's own power supply unit, not to the television. What belongs to the television is the hard-wired cord and the moulded plug, which are covered here.",
                 "children": []
               },
               {
@@ -3485,7 +3485,7 @@
                 ]
               }
             ],
-            "note": "Recategorised from energy to power. This is the set's power entry: a cord, a suppression network and a fuse. `energy` in this taxonomy means generation and the grid, and a mains lead is neither."
+            "note": "This is the set's power entry: a cord, a suppression network and a fuse."
           }
         ],
         "sources": [
@@ -3586,7 +3586,7 @@
                   "Philadelphia (MOS Technology lineage), then Japan, Taiwan and Hong Kong for the volume runs"
                 ],
                 "confidence": "medium",
-                "note": "The 1541's clock is a point of real uncertainty. It does not run a free oscillator; it takes a timebase from the cassette-port timing supplied by the C64's VIC-II, and the CPU is clocked at about 1 MHz derived from that. The exact divider chain is a reverse-engineering result, not a design intent, and I am not confident enough to state a figure more precisely than 'about 1 MHz'. The M50174's process technology is also uncertain; it may have been bipolar rather than CMOS.",
+                "note": "The 1541's clock is a point of real uncertainty. It does not run a free oscillator; it takes a timebase from the cassette-port timing supplied by the C64's VIC-II, and the CPU is clocked at about 1 MHz derived from that. The exact divider chain is a reverse-engineering result, not a design intent, so no figure more precise than about 1 MHz is established. The M50174's process technology is also uncertain; it may have been bipolar rather than CMOS.",
                 "children": [
                   {
                     "id": "peripheral.cassette.deck.logic.silicon",
@@ -3696,7 +3696,7 @@
                   }
                 ],
                 "confidence": "medium",
-                "note": "The 1541's motor step angle and rotor construction are not something I can state confidently from memory; the qualitative description (two-phase hybrid PM motor driving the capstan through a worm reduction, with the same rotation also positioning the head load) is solid, the numbers are not. Some sources describe the 1541 motor as a 2.5-degree step with 40 steps per revolution; others suggest a coarser angle with half-stepping. Treat the numbers as indicative.",
+                "note": "The 1541's motor step angle and rotor construction are not established; the qualitative description (two-phase hybrid PM motor driving the capstan through a worm reduction, with the same rotation also positioning the head load) is solid, the numbers are not. Some sources describe the 1541 motor as a 2.5-degree step with 40 steps per revolution; others suggest a coarser angle with half-stepping. Treat the numbers as indicative.",
                 "children": [
                   {
                     "id": "peripheral.cassette.deck.stepper.stator",
@@ -3778,7 +3778,7 @@
                       }
                     ],
                     "confidence": "low",
-                    "note": "The 1541's motor bearings were a well-known source of squeal and alignment trouble; whether they were bronze or sintered iron I am not certain of. Recategorised from plastics to magnetics: the end bells and bushings are stamped steel and sintered bronze, and the part belongs to the motor.",
+                    "note": "The 1541's motor bearings were a well-known source of squeal and alignment trouble; whether they were bronze or sintered iron is not established. The end bells and bushings are stamped steel and sintered bronze, and the part belongs to the motor.",
                     "children": [
                       {
                         "id": "peripheral.cassette.deck.stepper.housing.materials",
@@ -3810,7 +3810,7 @@
                         ],
                         "confidence": "medium",
                         "children": [],
-                        "note": " The two edges that used to be `children` here were `from` edges in disguise: stamped end bells are made of cold-reduced sheet steel and the bushings are made of copper and tin, so a motor housing does not contain a blast furnace or a tin deposit. They are ingredients now, and the tin points at metal.cassiterite rather than at a local copy of the cassiterite chain that has been folded into the solder plating step."
+                        "note": "Stamped end bells are made of cold-reduced sheet steel and the bushings are made of copper and tin, so a motor housing draws on the steel and the tin rather than containing them."
                       }
                     ]
                   }
@@ -3849,7 +3849,7 @@
                   }
                 ],
                 "confidence": "medium",
-                "note": "The 1541 kept the head in contact with the tape at all times rather than loading it, which is part of why it was so noisy and why a 1541 could hear your programme as well as read it. The exact worm ratio and whether the head was loadable I am not certain of; several 1541 variants kept the head permanently engaged. Recategorised from assembly to computing: `assembly` is reserved for operations and this is a mechanism. The capstan, pinch roller and worm are objects, not steps.",
+                "note": "The 1541 kept the head in contact with the tape at all times rather than loading it, which is part of why it was so noisy and why a 1541 could hear your programme as well as read it. The exact worm ratio is not established, and whether the head was loadable is not either; several 1541 variants kept the head permanently engaged.",
                 "children": [
                   {
                     "id": "peripheral.cassette.deck.transport.pinch-roller",
@@ -4031,7 +4031,7 @@
                   }
                 ],
                 "confidence": "high",
-                "note": "The FR-4 laminate, copper foil, solder mask and tin-lead solder are the same chain as the television's PCB, documented under peripheral.tv.chassis.pcb. The 1541's board converged on that rather than repeating it. The child node called \"Laminate, foil and solder on the 1541 board\" was a routing point in disguise: its whole content was two references and a sentence saying they are the same as the television's. It is gone and the two edges are now ingredients of this board.",
+                "note": "The FR-4 laminate, copper foil, solder mask and tin-lead solder are the same chain as the television's PCB, documented under peripheral.tv.chassis.pcb, and they are ingredients of this board rather than parts of it.",
                 "children": [],
                 "inputs": [
                   "peripheral.tv.chassis.pcb",
@@ -4060,7 +4060,7 @@
                   }
                 ],
                 "confidence": "medium",
-                "note": "The exact regulator topology of a 1541 varies by revision and I am not confident enough to name a part. What is certain and important is that the drive was powered entirely from the computer, which is why a 1541 and its C64 shared one power supply and one mains lead.",
+                "note": "The exact regulator topology of a 1541 varies by revision, and no part can be named with confidence. What is certain and important is that the drive was powered entirely from the computer, which is why a 1541 and its C64 shared one power supply and one mains lead.",
                 "children": [
                   {
                     "id": "peripheral.cassette.deck.psu.chain",
@@ -4123,7 +4123,7 @@
                 ],
                 "confidence": "high",
                 "children": [],
-                "note": "The child node called \"Converges on the ABS resin chain\" was a pointer with a description restating its own reference. It is gone; the case now takes chem.abs.grade as an ingredient, which is where ABS lives once, and it reaches the monomers through the petrochemical fragment rather than through the television's cabinet."
+                "note": "The case is moulded from the same ABS grade as a television cabinet, and it reaches the monomers through the styrene-butadiene-acrylonitrile petrochemical chain rather than through the cabinet."
               },
               {
                 "id": "peripheral.cassette.deck.led",
@@ -4180,7 +4180,7 @@
                       "Lauterbourg, Germany"
                     ],
                     "confidence": "medium",
-                    "note": "Gallium became a controlled export commodity in the 2010s because the LED and power-device industries depended on this by-product stream. The connection to a television is the 2 mA indicator lamp on the front of a 1541, which is a very small consumption but the same chain. Gallium is recovered from the Bayer liquor during the digestion of bauxite, so this is now a `from` edge to metal.alumina, the smelter-grade alumina whose production is that digestion. It used to be a `children` edge to the four-nines aluminium foil chain, which is the wrong product and the wrong relation.",
+                    "note": "Gallium became a controlled export commodity in the 2010s because the LED and power-device industries depended on this by-product stream. The connection to a television is the 2 mA indicator lamp on the front of a 1541, which is a very small consumption but the same chain. Gallium is recovered from the Bayer liquor during the digestion of bauxite, so metal.alumina, the smelter-grade alumina whose production is that digestion, is the ingredient here rather than the four-nines foil of the phosphor back layer.",
                     "children": []
                   }
                 ]
@@ -4191,7 +4191,7 @@
                 "kind": "part",
                 "category": "interconnect",
                 "era": "1982",
-                "description": "The 1541 connected to the C64 by a nine-pin high-density D-subminiature cable carrying the serial bus, which is how the drive knew there was a computer and the computer knew there was a drive. This is the peripheral-plug branch's territory and is cross-referenced there rather than duplicated.",
+                "description": "The 1541 connected to the C64 by a nine-pin high-density D-subminiature cable carrying the serial bus, which is how the drive knew there was a computer and the computer knew there was a drive.",
                 "children": [
                   "peripheral.plug.serial-link"
                 ],
@@ -4324,7 +4324,7 @@
                     ],
                     "confidence": "medium",
                     "children": [],
-                    "note": "The child node called \"Converges on the iron ore\" was a pointer; the iron now takes the one iron-ore node in this file as an ingredient. One grade of ore fed both the steel of a shadow mask and the oxide on a cassette, by two completely different routes."
+                    "note": "One grade of ore fed both the steel of a shadow mask and the oxide on a cassette, by two completely different routes."
                   },
                   {
                     "id": "peripheral.cassette.tape.oxide.surfactant",
@@ -4387,7 +4387,7 @@
                       "Albania and Kazakhstan (chromite)"
                     ],
                     "confidence": "medium",
-                    "note": "Chromium dioxide tape is what the brief called chromium dioxide, and it is correct, but it was the Type II high-bias formulation. The 1541 wrote standard-bias, so a Type II tape on a 1541 would have been biased 1200 ns against a 120 ns machine; it would record, but not well. Ferrite Type I was the right tape.",
+                    "note": "Chromium dioxide tape is the Type II high-bias formulation. The 1541 wrote standard-bias, so a Type II tape on a 1541 would have been biased 1200 ns against a 120 ns machine; it would record, but not well. Ferrite, the IEC Type I formulation, was the right tape.",
                     "children": [
                       
                     ]
@@ -4502,7 +4502,7 @@
                     ],
                     "confidence": "medium",
                     "children": [],
-                    "note": "The child node called \"Converges on the carbon black chain\" was a pointer; the backing coat now takes the carbon black node as an ingredient."
+                    "note": "The carbon black comes as an ingredient, out of the petroleum-coke chain."
                   }
                 ]
               },
@@ -4536,7 +4536,7 @@
                   }
                 ],
                 "confidence": "high",
-                "note": "The five pressure-pad windows are the IEC C-1 to C-5 positions. The felt pad inside the shell, pressed against the tape by the capstan bulge, biases the tape against one of the shell's internal ribs so that, depending on how the shell is placed in the deck, the tape passes over the erase head, between the erase and R/P heads, over the R/P head, or not in contact with either. That is why a cassette's orientation and which end is which mattered, and why a mis-loaded tape would write nothing. I am confident about the mechanism; the precise numbering of which position does what I am less certain of.",
+                "note": "The five pressure-pad windows are the IEC C-1 to C-5 positions. The felt pad inside the shell, pressed against the tape by the capstan bulge, biases the tape against one of the shell's internal ribs so that, depending on how the shell is placed in the deck, the tape passes over the erase head, between the erase and R/P heads, over the R/P head, or not in contact with either. That is why a cassette's orientation and which end is which mattered, and why a mis-loaded tape would write nothing. The mechanism is certain; the precise numbering of which position does what is less certain.",
                 "children": [
                   {
                     "id": "peripheral.cassette.tape.shell.abs",
@@ -4587,7 +4587,7 @@
                     ],
                     "confidence": "low",
                     "children": [],
-                    "note": "The six-slot hub pattern and the general hub geometry are certain; the bore diameter I have not verified against the IEC dimension, so it is stated loosely and flagged low. The child node called \"Converges on the nylon chain\" pointed back into the television's yoke bobbin, which tangled the cassette branch to the television branch for no supply reason. The hub now takes chem.polyamide.nylon-66, the canonical nylon in the petrochemical fragment, as an ingredient."
+                    "note": "The six-slot hub pattern and the general hub geometry are certain; the bore diameter is not verified against the IEC dimension, so it is stated loosely. The hub is moulded from nylon 66, chem.polyamide.nylon-66."
                   }
                 ]
               },
@@ -4645,7 +4645,7 @@
                     ],
                     "confidence": "medium",
                     "children": [],
-                    "note": "The two edges that used to be `children` here were `from` edges in disguise: a strip of 300-series stainless is made of blast-furnace iron and ferrochrome, and the spring is chrome-plated, but a pad does not contain a blast furnace. They are ingredients now. The chrome-plating reference still crosses from the television branch into the cassette branch, because the chromium supply was documented on the whip and nowhere else; that reference disappears the moment peripheral.cassette.tape.oxide.chromium.chromite is merged into metal.chromite, which is proposed in data/_proposals/90-peripherals.json."
+                    "note": "A strip of 300-series stainless is made of blast-furnace iron and ferrochrome, and the spring is chrome-plated, so both are ingredients of the pad rather than things it contains."
                   }
                 ]
               },
@@ -4677,7 +4677,7 @@
                   }
                 ],
                 "confidence": "high",
-                "note": "A C-60 and a C-90 differ in length and gauge. A C-60 at 12 microns and a C-90 at 9 microns hold about the same total oxide per side, so the C-90 has to be made of a higher-output oxide (often cobalt-modified) to hold as much. The child node called \"The polyester film that is slit\" was a second copy of the tape base film sitting inside its own slitting step. It is gone; slitting now takes the one film node as an ingredient.",
+                "note": "A C-60 and a C-90 differ in length and gauge. A C-60 at 12 microns and a C-90 at 9 microns hold about the same total oxide per side, so the C-90 has to be made of a higher-output oxide (often cobalt-modified) to hold as much. The polyester base film is an ingredient of the slitting step.",
                 "children": []
               }
             ],
@@ -4698,7 +4698,7 @@
         "kind": "part",
         "category": "interconnect",
         "era": "1982",
-        "description": "Three connectors that made a C64 usable rather than just powered: the aerial socket the RF modulator hijacked, the nine-pin link to the 1541, and the 34-conductor ribbon on the back that opened the machine up. This branch is deliberately short. The mains plug and the C64's own power inlet belong to another agent's branch.",
+        "description": "Three connectors that made a C64 usable rather than just powered: the aerial socket the RF modulator hijacked, the nine-pin link to the 1541, and the 34-conductor ribbon on the back that opened the machine up.",
         "confidence": "high",
         "children": [
           {
@@ -4727,7 +4727,7 @@
             ],
             "confidence": "high",
             "children": [],
-            "note": "The child node called \"Converges on the coaxial antenna lead\" was a pointer whose description was a list of where to look elsewhere. It is gone; the two nodes it pointed at are now ingredients of this plug."
+            "note": "The modulator's coax lead and the set's own aerial lead are both ingredients of this socket rather than parts of it."
           },
           {
             "id": "peripheral.plug.serial-link",
@@ -4785,7 +4785,7 @@
               "United States"
             ],
             "confidence": "medium",
-            "note": "A ribbon cable of this type is a laminated structure: parallel copper conductors, 0.03-0.05 mm thick, separated by a polyester film, laminated between films, wrapped in a mylar or aluminium-foil shield and a PVC jacket. The foil and the polyester are petroleum and silica products respectively. Whether the 1982 C64 user port card edge was gold-plated or plain nickel I am not certain of; many were simply tin-plated board edge.",
+            "note": "A ribbon cable of this type is a laminated structure: parallel copper conductors, 0.03-0.05 mm thick, separated by a polyester film, laminated between films, wrapped in a mylar or aluminium-foil shield and a PVC jacket. The foil and the polyester are petroleum and silica products respectively. Whether the 1982 C64 user port card edge was gold-plated or plain nickel is not established; many were simply tin-plated board edge.",
             "children": [
               {
                 "id": "peripheral.plug.userport.pvc",
@@ -4817,7 +4817,7 @@
                 ],
                 "confidence": "medium",
                 "children": [],
-                "note": "The child node called \"Converges on the salt for chlorine\" pointed into the television's coax dielectric, recategorised as energy, for no supply reason. It is gone; the PVC now takes metal.salt-brine, the canonical salt, as an ingredient."
+                "note": "The PVC takes metal.salt-brine, the canonical salt, as an ingredient."
               },
               {
                 "id": "peripheral.plug.userport.connectors",
@@ -4873,7 +4873,7 @@
               }
             ],
             "confidence": "medium",
-            "note": "The sense pin was how the C64 knew a motorised deck was present, and the motor pin was how it started a consumer recorder. I am not certain of the exact pinout ordering and do not want to state one that is wrong; the functional set of connections is the reliable part.",
+            "note": "The sense pin was how the C64 knew a motorised deck was present, and the motor pin was how it started a consumer recorder. The exact pinout ordering is not established, and a wrong one is worse than none; the functional set of connections is the reliable part.",
             "children": []
           }
         ]

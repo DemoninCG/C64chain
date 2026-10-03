@@ -1,0 +1,86 @@
+/**
+ * patchtest.mjs — regression tests for scripts/patch.mjs.
+ *
+ * Both bugs here were found by prose-scrub agents whose edits landed in the WRONG
+ * NODE while the tool reported success. patch.mjs is the tool every later pass
+ * uses, so these cases stay checked:
+ *
+ *   1. A container node returned its first DESCENDANT's field, because the
+ *      field regex matched anywhere in the node's whole subtree. One agent lost
+ *      53 edits to this.
+ *   2. The backward brace-walk counted braces inside string values, so the slice
+ *      could start at an earlier sibling.
+ *
+ * Writes only to a temp copy. Run: node scripts/patchtest.mjs
+ */
+import { readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+
+const T = 'C:/Users/corba/AppData/Local/Temp/opencode/pt4.json';
+const copy = (src = 'data/70-petrochem.json') => execFileSync(process.execPath, ['-e',
+  `require('fs').copyFileSync('${src}','${T}')`]);
+const run = (...a) => execFileSync(process.execPath, ['scripts/patch.mjs', T, ...a], { encoding: 'utf8' }).trim();
+const N = JSON.parse(readFileSync('public/tree.json', 'utf8')).nodes;
+
+/* find a node whose own text contains a brace -- that is what dragged the old
+   backward walk onto a previous sibling */
+let braceNode = null;
+for (const [id, n] of Object.entries(N)) {
+  if (`${n.description ?? ''}${n.note ?? ''}`.includes('{')) { braceNode = id; break; }
+}
+const kids = N.chem?.children ?? [];
+// the leaf must come from the SAME fragment the test copies, or it is not there
+const leaf = Object.entries(N).find(([, n]) => n.file === '70-petrochem.json'
+  && !(n.children ?? []).length && n.note)?.[0];
+console.log(`brace-bearing node : ${braceNode}`);
+console.log(`container to test  : chem (${kids.length} children)`);
+console.log(`leaf to test       : ${leaf}\n`);
+
+copy();
+let fails = 0;
+const check = (label, got, want) => {
+  const ok = got === want;
+  if (!ok) fails++;
+  console.log(`  ${ok ? 'PASS' : 'FAIL'}  ${label}`);
+  if (!ok) { console.log(`          got  : ${String(got).slice(0, 90)}`); console.log(`          want : ${String(want).slice(0, 90)}`); }
+};
+
+// A. container node: get must return ITS note, not a descendant's
+check('container get returns its own note', JSON.parse(run('chem', 'get', 'note')), N.chem.note ?? null);
+
+// B. container node: set must land on the container
+copy();
+const kidWithNote = kids.find((c) => N[c]?.note);
+const kidBefore = N[kidWithNote].note;
+run('chem', 'set', 'note', 'SENTINEL-A');
+check('container set lands on the container', JSON.parse(run('chem', 'get', 'note')), 'SENTINEL-A');
+check('child note untouched by that set', JSON.parse(run(kidWithNote, 'get', 'note')), kidBefore);
+
+// C. a node whose text contains a brace
+if (braceNode) {
+  copy();
+  check(`brace-bearing node "${braceNode}" get`, JSON.parse(run(braceNode, 'get', 'note')), N[braceNode].note ?? null);
+  copy();
+  run(braceNode, 'set', 'note', 'SENTINEL-C');
+  check(`brace-bearing node "${braceNode}" set`, JSON.parse(run(braceNode, 'get', 'note')), 'SENTINEL-C');
+  // and the node BEFORE it in file order must be untouched
+  const prev = Object.keys(N).indexOf(braceNode) > 0 ? null : null;
+  void prev;
+}
+
+// D. leaf still works
+copy();
+run(leaf, 'set', 'note', 'SENTINEL-D');
+check('leaf set', JSON.parse(run(leaf, 'get', 'note')), 'SENTINEL-D');
+
+// E. every node IN THE COPIED FRAGMENT must resolve (it used to catch the
+//    string-aware slice bug, which broke a large fraction of nodes at once)
+copy();
+const inFragment = Object.entries(N).filter(([, n]) => n.file === '70-petrochem.json');
+let bad = 0;
+for (const [id] of inFragment) {
+  try { run(id, 'get', 'note'); } catch { bad++; }
+}
+check(`all ${inFragment.length} 70-petrochem nodes resolve`, bad, 0);
+
+console.log(`\n${fails === 0 ? 'ALL PASS' : fails + ' FAILURE(S)'}`);

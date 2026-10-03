@@ -169,7 +169,7 @@
                     "category": "industry",
                     "era": "1980s",
                     "confidence": "medium",
-                    "note": "Retyped material -> note: a cost and success rate is a statement about the industry, not a substance you can weigh."
+                    "note": "A cost and success rate is a statement about the industry, not a substance you can weigh."
                   }
                 ]
               },
@@ -195,7 +195,7 @@
                       }
                     ],
                     "confidence": "medium",
-                    "note": "Retyped material -> note: reserve uncertainty and a world ultimately-recoverable figure are commentary about reserve booking."
+                    "note": "Reserve uncertainty and a world ultimately-recoverable figure are commentary about reserve booking."
                   }
                 ],
                 "confidence": "medium"
@@ -674,7 +674,7 @@
                   {
                     "id": "chem.crude.well-completion.perforation.entry-hole",
                     "name": "Entry hole into the pay zone",
-                    "description": "The first connection to the reservoir is itself a jet-perforated hole in cement, and it is the smallest diameter in the whole production system: a few millimetres through which the entire well's flow must pass. That single fact justifies the next node in the tree.",
+                    "description": "The first connection to the reservoir is itself a jet-perforated hole in cement, and it is the smallest diameter in the whole production system: a few millimetres through which the entire well flow must pass.",
                     "kind": "part",
                     "category": "industry",
                     "era": "1980s"
@@ -822,7 +822,7 @@
                         "kind": "material",
                         "category": "fluids",
                         "era": "1970s",
-                        "note": "Retyped process -> material: an amine corrosion inhibitor is a substance sold in drums, not an operation. Its child, acid-resistant tubing, moved up to the acidising step it belongs with."
+                        "note": "An amine corrosion inhibitor is a substance sold in drums, not an operation."
                       }
                     ],
                     "inputs": [
@@ -835,7 +835,7 @@
                   {
                     "id": "chem.crude.stimulation.acidising.mud-acid.corrosion-inhibitor.tubing",
                     "name": "Acid-resistant tubing",
-                    "description": "Coiled tubing and the acid lines were, by the mid-1980s, routinely nickel alloy - a nickel-molybdenum alloy such as Alloy C-276 or a titanium grade - rather than carbon steel, because the inhibitor was never perfect and the steel was never quite good enough. Nickel alloys and titanium both come out of a metallurgical chain that this file does not own; the reason they are here is that the acid chemistry forced them there.",
+                    "description": "Coiled tubing and the acid lines were, by the mid-1980s, routinely nickel alloy - a nickel-molybdenum alloy such as Alloy C-276 or a titanium grade - rather than carbon steel, because the inhibitor was never perfect and the steel was never quite good enough. Nickel alloys and titanium come out of a metallurgical chain rather than a petrochemical one, but it is the acid chemistry that puts them into this operation.",
                     "kind": "material",
                     "category": "fluids",
                     "era": "1980s",
@@ -844,7 +844,7 @@
                       "titanium"
                     ],
                     "confidence": "medium",
-                    "note": "Alloy selection for acid service is metallurgy rather than petrochemistry; this node marks the boundary of the subsystem. Moved up from the corrosion inhibitor: acid-resistant tubing is used by the acidising step, not contained in the inhibitor."
+                    "note": "Alloy selection for acid service is metallurgy rather than petrochemistry; this node marks the boundary of the subsystem. Acid-resistant tubing is used by the acidising step, not contained in the inhibitor."
                   }
                 ]
               }
@@ -958,7 +958,7 @@
                 "value": "0.4-0.6 wt% S"
               }
             ],
-            "note": "The five standard measurements that were separate nodes (API gravity, sulphur, simulated distillation, Conradson, pour point) are folded into this description and their numbers into its facts, so the assay is one node with the numbers on it rather than five sentences pretending to be processes. Its \"from\" edge is the crude it measures."
+            "note": "The five standard measurements are API gravity, sulphur, simulated distillation, Conradson carbon residue and pour point, and their numbers are facts of this node. Its from edge is the crude it measures."
           },
           {
             "id": "chem.crude.c64-fraction",
@@ -985,7 +985,7 @@
               }
             ],
             "confidence": "medium",
-            "note": "The 2 kg crude per kg of olefin-derived polymer figure is a widely used mass-balance rule of thumb; the 1983 world production number is approximately 57-60 Mb/d for liquids. Retyped material -> note: \"one C64's share of the wellhead\" is an order-of-magnitude aside, not a material. The crude itself is chem.petroleum."
+            "note": "The 2 kg crude per kg of olefin-derived polymer figure is a widely used mass-balance rule of thumb; the 1983 world production number is approximately 57-60 Mb/d for liquids. One C64 share of the wellhead is an order-of-magnitude aside. The crude itself is chem.petroleum."
           }
         ],
         "note": "Category industry throughout the exploration, drilling, completion, stimulation, separation and assay branches: upstream oil and gas is an extraction industry, and the category table reserves energy for power generation and the grid. The bulk process fluids inside it (muds, cement slurry, acid, fracturing fluid) stay fluids, and the crude itself is fluids."
@@ -1005,7 +1005,7 @@
             "kind": "note",
             "category": "fluids",
             "era": "ancient",
-            "note": "Routing point demoted to a note (CHECKLIST 2): the question was where the composition lived, not a substance. Methane, ethane and propane, nitrogen and hydrogen sulphide hang directly off the gas field."
+            "note": "Methane, ethane and propane, nitrogen and hydrogen sulphide hang directly off the gas field."
           },
           {
             "id": "chem.natural-gas.sources",
@@ -1014,7 +1014,7 @@
             "kind": "note",
             "category": "fluids",
             "era": "ancient",
-            "note": "Routing point demoted to a note (CHECKLIST 2). Associated gas, the gas-only field, the gas reservoir and the gas hydrate are now direct children of the gas field."
+            "note": "Associated gas, the gas-only field, the gas reservoir and the gas hydrate hang directly off the gas field."
           },
           {
             "id": "chem.natural-gas.processing",
@@ -1125,7 +1125,7 @@
                     "era": "1980s"
                   }
                 ],
-                "note": "Category logistics: a pipeline and an LNG carrier move a bulk stream, they do not make one. The gas plant itself is industry. Retyped part -> facility: a pipeline, a riser and an LNG carrier are installations that move a bulk stream, not objects you can hold, and logistics is the category for transport. The gas plant that feeds them is industry."
+                "note": "A pipeline and an LNG carrier move a bulk stream, they do not make one, so transport is the category here and the gas plant that feeds them is a plant."
               }
             ],
             "note": "LPG end point: chem.natural-gas.composition.ethane-propane."
@@ -1137,7 +1137,7 @@
             "kind": "note",
             "category": "fluids",
             "era": "1980s",
-            "note": "Routing point demoted to a note (CHECKLIST 2). Acetylene, hydrogen, fuel and fertiliser ammonia are now direct children of the gas field."
+            "note": "Acetylene, hydrogen, fuel and fertiliser ammonia hang directly off the gas field."
           },
           {
             "id": "chem.natural-gas.composition.methane",
@@ -1221,7 +1221,7 @@
                     "inputs": [
                       "chem.crude.rig.drilling-mud.bentonite"
                     ],
-                    "note": "Gas wells were drilled with the same bentonite mud as oil wells, so the clay chain is linked once, to the oilfield bentonite node, instead of being written out again (CHECKLIST 1b)."
+                    "note": "The mud is the same oilfield bentonite mud as on an oil well."
                   },
                   {
                     "id": "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.sweetening",
@@ -1278,7 +1278,7 @@
                 "note": "The seismic acquisition chain is shared with the oil branch: chem.crude.exploration.seismic-survey."
               }
             ],
-            "note": "Retyped process -> facility: a gas field is a place that is worked, not an operation. Category industry: gas and oil extraction, which the category table reserves energy for power generation only."
+            "note": "A gas field is a place that is worked, not an operation. Gas and oil extraction is industry, and the energy category is reserved for power generation and the grid."
           },
           {
             "id": "chem.natural-gas.sources.methane-hydrate",
@@ -1488,7 +1488,7 @@
             ]
           }
         ],
-        "note": "This is the shared commodity node other fragments reference. It reaches the tree as a \"from\" ingredient (35 reference sites) and is published in the shared map so it is never lost; the three question-framed children below were demoted to notes and their children reattached here, per CHECKLIST 2."
+        "note": "This is the shared commodity node, reaching the tree as a from ingredient."
       },
       {
         "id": "chem.refining",
@@ -1524,7 +1524,7 @@
               }
             ],
             "confidence": "medium",
-            "note": "Refinery counts and capacities are approximate; the 1983 figures bracket a decade-long plateau in OECD capacity. Retyped material -> note: the refinery count and capacity table is commentary about the industry, not a substance."
+            "note": "Refinery counts and capacities are approximate; the 1983 figures bracket a decade-long plateau in OECD capacity. The refinery count and capacity figures are commentary about the industry, not a substance."
           },
           {
             "id": "chem.refining.atmospheric-distillation",
@@ -2138,7 +2138,7 @@
                 "note": "The fuel-oil share of 1983 refinery output and the regulatory context are order-of-magnitude figures; exact shares varied widely by region."
               }
             ],
-            "note": "Retyped material -> note: \"refinery products and by-products\" is a heading for the three streams beneath it rather than a substance of its own. Lubricant base oils, waxes and fuel oil remain as nodes."
+            "note": "Refinery products and by-products is a heading for the three streams beneath it rather than a substance of its own. Lubricant base oils, waxes and fuel oil remain as nodes."
           },
           {
             "id": "chem.refining.polymer-feedstocks",
@@ -2158,7 +2158,7 @@
                 "children": [
                   "chem.ethylene.feedstock.naphtha"
                 ],
-                "note": "Detail under chem.ethylene.steam-cracking. The steam-dilution numbers for a naphtha cracker are recorded once, on the steam cracking step at chem.ethylene.steam-cracking; this duplicate sentence was deleted rather than left to drift."
+                "note": "The steam-dilution numbers for a naphtha cracker are recorded on the steam cracking step at chem.ethylene.steam-cracking."
               }
             ],
             "note": "Detail under chem.butadiene."
@@ -2430,7 +2430,7 @@
                 "value": "<5 ppmv"
               }
             ],
-            "note": "Drying and oxygen/CO2 removal are folded in here; the four numbers that define the grade are its facts."
+            "note": "Drying and oxygen/CO2 removal are part of this step; the four numbers that define the grade are its facts."
           },
           {
             "id": "chem.ethylene.ethylene-oxide",
@@ -2496,7 +2496,7 @@
                   }
                 ],
                 "confidence": "medium",
-                "note": "Flammability limits for ethylene oxide are commonly quoted as roughly 3-80% by volume; the flash point is about -20 C. Retyped process -> note: this is the hazard commentary about ethylene oxide, kept with the substance it is about."
+                "note": "Flammability limits for ethylene oxide are commonly quoted as roughly 3-80% by volume; the flash point is about -20 C. This is the hazard commentary about ethylene oxide, kept with the substance it is about."
               }
             ]
           },
@@ -3332,7 +3332,7 @@
                           "Taipeh, Taiwan"
                         ],
                         "confidence": "high",
-                        "note": "The soda-silica route is the classical one for both glass and silica sol; its scale-up is the industrial glassmaking reaction. Category metals: industrial minerals live in the metals bucket of this tree (see metal.silica-sand). This is not wafer chemistry, so silicon would be wrong."
+                        "note": "The soda-silica route is the classical one for both glass and silica sol; its scale-up is the industrial glassmaking reaction. It is an industrial mineral rather than wafer chemistry, and it sits with metal.silica-sand."
                       }
                     ],
                     "note": "Lobed extrudates and the calcination temperature range are standard catalyst-manufacturing practice."
@@ -3393,7 +3393,7 @@
                 "value": "10 ppm 8-hour TWA"
               }
             ],
-            "note": "Occupational limits for acrylonitrile were being revised downward through the 1980s and the figures above are the era's order of magnitude rather than a single legal value. The separate \"acrylonitrile hazard\" node was folded in here and retyped as commentary: it describes a danger, not an operation. It sat alongside four numbers - boiling point 77 C, flammable range 3-20 vol%, flash point about 6 C, and a 1980s US limit of 10 ppm as an 8-hour average - which are kept as facts."
+            "note": "Occupational limits for acrylonitrile were being revised downward through the 1980s and the figures are the era order of magnitude rather than a single legal value. The hazard figures for acrylonitrile: boiling point 77 C, flammable range 3-20 vol%, flash point about 6 C, and a 1980s US limit of 10 ppm as an 8-hour average."
           },
           {
             "id": "chem.acrylonitrile.downstream",
@@ -3552,7 +3552,7 @@
                       }
                     ],
                     "confidence": "medium",
-                    "note": "The analytical methods are period-correct and standard; the specific limits are those quoted elsewhere in this file. The \"how the monomer was actually specified\" node was folded in here and retyped as commentary: it was a question about the chain, and the four numbers it carried are now facts of this node."
+                    "note": "The analytical methods are period-correct and standard; the specific limits are those quoted in the description."
                   }
                 ]
               },
@@ -4085,7 +4085,7 @@
                     "inputs": [
                       "chem.butadiene.sources.sounsby"
                     ],
-                    "note": "Upstream: chem.butadiene and chem.butadiene.polymerisation.lithium-catalyst. Renamed from \"Butadiene monomer for the rubber phase\": a name relative to its parent is meaningless on its own (CHECKLIST 6). Its extraction subtree was deleted as a duplicate of chem.butadiene.sources.sounsby, whose two solvent nodes now carry the same content."
+                    "note": "Upstream: chem.butadiene and chem.butadiene.polymerisation.lithium-catalyst."
                   },
                   "chem.butadiene.polymerisation"
                 ],
@@ -4111,7 +4111,7 @@
                   }
                 ],
                 "confidence": "high",
-                "note": "Exact initiator levels vary with the licensor's process; the persulphate-in-aqueous-phase rationale is standard. Shared with the SBR emulsion process, which uses the same potassium persulphate; the two copies were merged here rather than left to drift (CHECKLIST 4)."
+                "note": "Exact initiator levels vary with the licensor process; the persulphate-in-aqueous-phase rationale is standard. Shared with the SBR emulsion process, which uses the same potassium persulphate."
               },
               {
                 "id": "chem.abs.grafting.chelant",
@@ -4130,7 +4130,7 @@
                 "category": "plastics",
                 "era": "1960s",
                 "confidence": "medium",
-                "note": "Shared with the SBR emulsion process: the same mercaptan chain-transfer agent serves both polymerisations, so one node now carries both descriptions (CHECKLIST 4)."
+                "note": "Shared with the SBR emulsion process: the same mercaptan chain-transfer agent serves both polymerisations."
               }
             ],
             "facts": [
@@ -4168,7 +4168,7 @@
               }
             ],
             "confidence": "high",
-            "note": "Particle morphology terminology (salt-like, sandwich) and graft-level thresholds vary by producer; these are the standard descriptions. The \"graft level and particle morphology\" and \"reaction medium\" nodes were both folded into this step and retyped as commentary: they describe how the step behaves, not a second operation."
+            "note": "Particle morphology terminology (salt-like, sandwich) and graft-level thresholds vary by producer; these are the standard descriptions. Graft level, particle morphology and reaction medium describe how this step behaves rather than a second operation."
           },
           {
             "id": "chem.abs.san-matrix",
@@ -4193,7 +4193,7 @@
               "chem.styrene",
               "chem.styrene.polymerisation"
             ],
-            "note": "A second \"styrene monomer\" node was deleted here: the SAN matrix is made of the styrene the styrene branch already documents, so the edge is a \"from\" link to chem.styrene (CHECKLIST 1b). The standalone SAN node was folded into chem.styrene.polymerisation, so that is where the matrix polymer is now documented; it is an ingredient of this matrix, not a component of it."
+            "note": "The SAN matrix is made from the styrene documented in the styrene branch; the styrene is an ingredient of the matrix, not a component of it."
           },
           {
             "id": "chem.abs.blending",
@@ -4846,7 +4846,7 @@
                       }
                     ],
                     "confidence": "high",
-                    "note": "Retyped material -> note: \"why it was chosen\" is the reason polycarbonate is on a C64, not a property of a substance."
+                    "note": "The why it was chosen question is the reason polycarbonate is on a C64, not a property of a substance."
                   }
                 ],
                 "facts": [
@@ -4955,7 +4955,7 @@
                           }
                         ],
                         "confidence": "medium",
-                        "note": "Retyped process -> material, matching the hand-curated fix in data/_fixes.json: the node is the acid, and the oxidation that makes it is described in its own text. Its feedstock edge now points at the refinery aromatics complex."
+                        "note": "The node is the acid, and the oxidation that makes it is described in the text of the acid itself; the feedstock is the refinery aromatics complex."
                       },
                       {
                         "id": "chem.polyester.pet.ethylene-glycol",
@@ -4964,7 +4964,7 @@
                         "kind": "material",
                         "category": "plastics",
                         "era": "1950s",
-                        "note": "Upstream: chem.ethylene.ethylene-glycol. Renamed from \"Ethylene glycol side\": a name that only means something next to another node is not a name (CHECKLIST 6)."
+                        "note": "Upstream: chem.ethylene.ethylene-glycol."
                       }
                     ]
                   },
@@ -5023,7 +5023,7 @@
                         "category": "plastics",
                         "era": "1970s",
                         "confidence": "medium",
-                        "note": "Whether a given board was conformal-coated is a plant practice, not a material fact; most consumer boards of this era were not. Retyped process -> note: conformal coating is a practice described in commentary, not a substance or an operation on this tree."
+                        "note": "Whether a given board was conformal-coated is a plant practice, not a material fact; most consumer boards of this era were not. Conformal coating is a practice described in commentary, not a substance or an operation."
                       },
                       {
                         "id": "chem.silicone.polymer.key-domes",
@@ -5145,7 +5145,7 @@
                     "category": "plastics",
                     "era": "1980s",
                     "confidence": "low",
-                    "note": "POM use in a C64 is likely but small and not documented in the sources used here. Retyped material -> note: \"where POM sat in a 1983 machine\" is a statement about the machine, not a substance."
+                    "note": "POM use in a C64 is likely but small and not documented in the sources used here. Where POM sat in a 1983 machine is a statement about the machine, not a substance."
                   }
                 ],
                 "note": "Acetal chemistry is standard; the exact comonomer loadings vary by grade."
@@ -5203,8 +5203,7 @@
                   }
                 ]
               }
-            ],
-            "note": "Renamed from \"The other polymers in and around a C64\": a name that refers to a sibling list is meaningless outside its own parent (CHECKLIST 6)."
+            ]
           }
         ,
         "c64.case.abs-resin.phthalo-blue"
@@ -5256,8 +5255,7 @@
                     "label": "Worst-case make-up",
                     "value": "up to 20% of tank charge per month"
                   }
-                ],
-                "note": "The \"how fast the solvent went\" node was folded in here and retyped as commentary: it is a question about emissions, and the two loss rates it carried are now facts of this node."
+                ]
               }
             ],
             "facts": [
@@ -5580,11 +5578,11 @@
                     "category": "fluids",
                     "era": "1980s",
                     "confidence": "medium",
-                    "note": "This node summarises a substitution whose timetable varied by country and by sector; it is a direction-of-travel statement rather than a dated claim. Retyped process -> note, with the rest of the regulation branch, because the substitution of isopropanol, NMP and hydrocarbons for the chlorinated solvents is a statement about what industry did. The \"why the substitute was also cheaper to make\" node was folded into the description above and retyped at the same time."
+                    "note": "This node summarises a substitution whose timetable varied by country and by sector; it is a direction-of-travel statement rather than a dated claim. The substitution of isopropanol, NMP and hydrocarbons for the chlorinated solvents is a statement about what industry did."
                   }
                 ],
                 "confidence": "medium",
-                "note": "US solvent regulation is jurisdiction-specific and layered; the dates above are the commonly cited anchors rather than a single statute. Retyped process -> note: a regulation or a treaty is a statement about the supply chain, not an operation in it. It keeps its children, so nothing is lost."
+                "note": "US solvent regulation is jurisdiction-specific and layered; the dates above are the commonly cited anchors rather than a single statute. A regulation or a treaty is a statement about the supply chain, not an operation in it."
               },
               {
                 "id": "chem.solvents.regulation.montreal",
@@ -5608,7 +5606,7 @@
                   }
                 ],
                 "confidence": "high",
-                "note": "The C64's corrugated shipping carton was a paperboard box; the polystyrene foam end caps in consumer electronics packaging of that era commonly used CFC or HCFC blowing agent. Retyped process -> note: a regulation or a treaty is a statement about the supply chain, not an operation in it. It keeps its children, so nothing is lost."
+                "note": "The C64's corrugated shipping carton was a paperboard box; the polystyrene foam end caps in consumer electronics packaging of that era commonly used CFC or HCFC blowing agent. A regulation or a treaty is a statement about the supply chain, not an operation in it."
               },
               {
                 "id": "chem.solvents.regulation.occupational",
@@ -5618,10 +5616,10 @@
                 "category": "fluids",
                 "era": "1980s",
                 "confidence": "low",
-                "note": "The specific 1980s limit values changed year to year and differ between the ACGIH TLV and the OSHA PEL; the values here are indicative of the direction and magnitude of change. Retyped process -> note: exposure limits and their revision are commentary about the chain, not a step in it."
+                "note": "The specific 1980s limit values changed year to year and differ between the ACGIH TLV and the OSHA PEL; the values here are indicative of the direction and magnitude of change. Exposure limits and their revision are commentary about the chain, not a step in it."
               }
             ],
-            "note": "Retyped process -> note: a regulation or a treaty is a statement about the supply chain, not an operation in it. It keeps its children, so nothing is lost. Retyped process -> note: the whole regulation branch is commentary about why the solvent list changed. Its children keep the detail."
+            "note": "A regulation or a treaty is a statement about the supply chain, not an operation in it. The whole regulation branch is commentary about why the solvent list changed; its children keep the detail."
           }
         ]
       },
@@ -5703,7 +5701,7 @@
             "inputs": [
               "chem.natural-gas.uses.hydrogen"
             ],
-            "note": "The HCl synthesis is chem.natural-gas.uses.hydrogen. The \"hydrogen to hydrochloric acid\" step was folded into chem.natural-gas.uses.hydrogen and is now a \"from\" edge: electronic-grade HCl is made from that hydrogen."
+            "note": "The hydrogen for the chlorine and hydrogen burner is chem.natural-gas.uses.hydrogen."
           },
           {
             "id": "chem.fab-chemicals.nitric-acid",
@@ -5759,7 +5757,7 @@
                 "kind": "material",
                 "category": "silicon",
                 "era": "1960s",
-                "note": "The phenol chain is chem.propylene.cumene.cleavage.phenol and the formaldehyde chain is chem.pom.formaldehyde. Retyped process -> material (the node is the resin, not the making of it)."
+                "note": "The phenol chain is chem.propylene.cumene.cleavage.phenol and the formaldehyde chain is chem.pom.formaldehyde. The node is the resin, not the making of it."
               },
               {
                 "id": "chem.photoresist.diazonaphthoquinone",
@@ -5790,7 +5788,7 @@
                 "inputs": [
                   "chem.fab-chemicals.tmah"
                 ],
-                "note": "Resist stripping is folded into this node, which is why there is nothing under it; the stripping numbers are in its description."
+                "note": "Resist stripping belongs to this step; the stripping numbers are in its description."
               },
               {
                 "id": "chem.photoresist.negative",
@@ -5800,7 +5798,7 @@
                 "category": "silicon",
                 "era": "1980s",
                 "confidence": "medium",
-                "note": "Retyped process -> note: negative and image-reversal resists are a family of chemistries described here rather than an operation in the 1980s line, so this stays as commentary with its text intact."
+                "note": "Negative and image-reversal resists are a family of chemistries described here rather than an operation in the 1980s line."
               },
               {
                 "id": "chem.photoresist.plasma-resist",
@@ -5810,7 +5808,7 @@
                 "category": "silicon",
                 "era": "1980s",
                 "confidence": "low",
-                "note": "Plasma-polymerised (polysilane) resists were a research topic through the 1980s; commercial DUV resists arrived later. Retyped process -> note: the silicon-containing resists were a research topic through the 1980s, which is a statement about the state of the art rather than a step in the process. Confidence stays low."
+                "note": "Plasma-polymerised (polysilane) resists were a research topic through the 1980s; commercial DUV resists arrived later. The silicon-containing resists were a research topic through the 1980s, which is a statement about the state of the art rather than a step in the process. Confidence stays low."
               }
             ],
             "facts": [
@@ -5886,7 +5884,7 @@
                 "category": "silicon",
                 "era": "1980s",
                 "confidence": "medium",
-                "note": "BCl3 is made by chlorinating boron oxide or elemental boron; the chemistry is standard but the 1980s supply details are not well documented here. Renamed from \"Chlorine and BCl3 for the aluminium etch\": a name that names its use instead of its substance is meaningless outside its parent (CHECKLIST 6)."
+                "note": "BCl3 is made by chlorinating boron oxide or elemental boron; the chemistry is standard but the 1980s supply details are not well documented."
               },
               {
                 "id": "chem.fab-chemicals.etch-gases.nf3",
@@ -6148,7 +6146,7 @@
               }
             ],
             "confidence": "high",
-            "note": "Retyped process -> note: the purity ladder is a way of describing the chain, and its numbers are the substance of the node."
+            "note": "The purity ladder is a way of describing the chain, and its numbers are the substance of the node."
           },
           {
             "id": "chem.fab-chemicals.ammonium-hydroxide",
@@ -6361,7 +6359,7 @@
             "category": "board",
             "era": "1990s",
             "confidence": "medium",
-            "note": "This is deliberately a forward-looking marker node; the substitution dates vary by region and by regulation. Retyped process -> note: this node marks where 1983 practice differs from today and is not itself a 1983 process."
+            "note": "This is deliberately a forward-looking marker node; the substitution dates vary by region and by regulation. It marks where 1983 practice differs from today and is not itself a 1983 process."
           }
         ],
         "facts": [
@@ -6374,7 +6372,7 @@
             "value": "~150-200 microns wet, cured at 150 C"
           }
         ],
-        "note": "The solder-mask and silkscreen node was folded in here: two inks and their cure are one story, not an operation with nothing under it."
+        "note": "The solder mask and the silkscreen legend are two inks and one cure rather than two separate operations."
       },
       {
         "id": "chem.solder-chemicals",
@@ -6478,7 +6476,7 @@
               }
             ],
             "confidence": "medium",
-            "note": "Rosin production figures for the early 1980s are order-of-magnitude; the chemistry and the softening point ranges are standard. Category plastics: rosin (colophony) is a resin, and resin is what the plastics bucket means in this tree. Tall oil, which comes from a kraft mill, stays packaging."
+            "note": "Rosin production figures for the early 1980s are order-of-magnitude; the chemistry and the softening point ranges are standard. Rosin (colophony) is a resin and is treated as a plastics material. Tall oil, which comes from a kraft mill, stays packaging."
           },
           {
             "id": "chem.solder-chemicals.rosin-flux",
@@ -6625,7 +6623,7 @@
             "value": "not detected (<0.001% by the standard test)"
           }
         ],
-        "note": "No-clean fluxes arrived commercially in the mid-1980s; the halide-free specification is measured against a standard ion chromatography test. The \"no-clean flux\" node was folded in here and retyped as commentary: it describes a technology change that arrived after the C64, not an operation in the 1983 chain. Its one number - halide not detected, under 0.001% by the standard test - is kept as a fact of this node."
+        "note": "No-clean fluxes arrived commercially in the mid-1980s; the halide-free specification is measured against a standard ion chromatography test, and the figure quoted for it is halide not detected - under 0.001% by that test."
       },
       {
         "id": "chem.petroleum",
@@ -6661,14 +6659,14 @@
           "Aberdeen, Scotland"
         ],
         "confidence": "medium",
-        "note": "Saudi Light at 38-39 API is the classic light sour grade; Arab Light (35-36 API) is the heavier sour crude that historically dominated Saudi exports. Assay figures vary by stream and year. Moved up to sit beside chem.crude as the commodity the whole trunk consumes, the way metal.iron sits beside the metals trunk: \"oil column in the pore space contains the oil\" said the same thing twice. Category fluids: a barrel of crude is a bulk hydrocarbon stream, and the category table reserves energy for power generation and the grid. This is the shared commodity node other fragments reference as an ingredient (23 sites); all of those are now \"from\" edges, and the one children edge it keeps is its home in the petrochemical trunk, which scripts/audit.mjs accepts as a branch owner."
+        "note": "Saudi Light at 38-39 API is the classic light sour grade; Arab Light (35-36 API) is the heavier sour crude that historically dominated Saudi exports. Assay figures vary by stream and year. A barrel of crude is a bulk hydrocarbon stream, not a power-generation one, so it is a fluid rather than energy. This is the commodity the whole petrochemical trunk consumes, and other branches reference it as an ingredient."
       }
     ],
     "inputs": [
       "chem.natural-gas",
       "chem.petroleum"
     ],
-    "note": "The two shared commodities, light sour crude oil and field gas, are attached here as \"from\" ingredients rather than as children: no chemical plant contains an oil reservoir or a gas field. They are also referenced from 35 places elsewhere in the tree, and CHECKLIST 1a requires the edge, not the node, to change."
+    "note": "The two shared commodities, light sour crude oil and field gas, are supplied to this branch rather than produced by it: no chemical plant contains an oil reservoir or a gas field."
   },
   "shared": {
     "chem.petroleum": "Crude oil, light sour grade (Arab Light 35-36 API / Saudi Light 38-39 API / Brent 38.5). Leaf node: the dig-it-out origin of the whole tree.",

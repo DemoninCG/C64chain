@@ -394,7 +394,7 @@
             "chem.rubber"
           ],
           "confidence": "medium",
-          "note": "Whether the C64 feet are insert-moulded SBR or simply flexible moulded-in stubs varies between units and I could not confirm the exact compound. Modern restorers often replace them with stick-on silicone bumpers, which suggests the originals were not always reliable.",
+          "note": "Whether the C64 feet are insert-moulded SBR or simply flexible moulded-in stubs varies between units, and the exact compound is not established. Modern restorers often replace them with stick-on silicone bumpers, which suggests the originals were not always reliable.",
           "children": [
             {
               "id": "c64.case.feet.elastomer",
@@ -1022,7 +1022,7 @@
                     "steel castings"
                   ],
                   "confidence": "high",
-                  "note": "A mechanical node rather than a chemical one, but the press is capital equipment that traces back to cast iron, cast steel and oil."
+                  "note": "The hydraulics are mechanical rather than chemical, and the press is capital equipment that traces back to cast iron, cast steel and oil."
                 }
               ],
               "facts": [
@@ -1287,7 +1287,7 @@
               "https://wiki.themk.org/index.php/Commodore_64",
               "https://deskthority.net/viewtopic.php?t=8102"
               ],
-              "note": "RESOLVED 2026-10-03, after the QA pass recorded an unresolved conflict here against c64.keyboard-switches.keycap.double-shot. This node previously claimed the legends were pad-printed \"on the cap top\", which was wrong for the 1982 breadbin: the tops are double-shot moulded. What is right here is the front wall. Evidence: Keyboard Wiki (themk.org) - \"The front-printed \"PETSCII\" legends are likely pad-printed\"; Deskthority 8102 - \"The front legends are printed. If you look closely you should see the difference between double shot on the top and printed on the front of the caps.\" Confidence is held at medium deliberately, and for a specific reason: that the front legends are PRINTED is well attested by two independent collector sources, but the sources do not agree on the method - the Keyboard Wiki hedges with \"likely\" while Deskthority only says \"printed\". The ink and pad-printing detail retained here follows the pad-printing reading and should be treated as the weaker half of this node."
+              "note": "The front legends are printed and the cap tops are not: this node covers the front wall only. The 1982 breadbin keycap is double-shot moulded on top (see c64.keyboard-switches.keycap.double-shot) and printed on the front. Evidence: Keyboard Wiki (themk.org) - \"The front-printed \"PETSCII\" legends are likely pad-printed\"; Deskthority 8102 - \"The front legends are printed. If you look closely you should see the difference between double shot on the top and printed on the front of the caps.\" Confidence is held at medium for a specific reason: that the front legends are PRINTED is well attested by two independent collector sources, but the sources do not agree on the method - the Keyboard Wiki hedges with \"likely\" while Deskthority only says \"printed\". The ink and pad-printing detail retained here follows the pad-printing reading and should be treated as the weaker half of this node."
               },
             {
               "id": "c64.keyboard.keycaps.colours",
@@ -1364,7 +1364,7 @@
             "gold-plated contact"
           ],
           "confidence": "high",
-          "note": "Retroleum's keyboard notes describe Type 1 keyboards with black plungers, springs under all keys and about 5 mm cross-points, versus Type 2 with white four-pronged plungers, grey rubber bubble contacts and a metal spring only under the space bar. The board material and the copper and gold plating processes belong to the PCB subsystem; this node exists so the switch itself is complete.",
+          "note": "Retroleum's keyboard notes describe Type 1 keyboards with black plungers, springs under all keys and about 5 mm cross-points, versus Type 2 with white four-pronged plungers, grey rubber bubble contacts and a metal spring only under the space bar. The board material and the copper and gold plating processes belong to the PCB subsystem.",
           "children": [
             {
               "id": "c64.keyboard.switches.plunger",
@@ -1504,7 +1504,7 @@
             "gold-plated contact pads"
           ],
           "confidence": "high",
-          "note": "The board material and the copper and gold plating processes belong to the board subsystem; this node exists so the keyboard's own parts are complete. On the earliest VIC-20-derived Commodore keyboards the activation pads were bare copper, which oxidises into a high-resistance film - that is why some early keyboards need periodic cleaning and later ones generally do not.",
+          "note": "The board material and the copper and gold plating processes belong to the board subsystem. On the earliest VIC-20-derived Commodore keyboards the activation pads were bare copper, which oxidises into a high-resistance film - that is why some early keyboards need periodic cleaning and later ones generally do not.",
           "children": [
             {
               "id": "c64.keyboard.pcb.matrix",
@@ -2220,7 +2220,7 @@
                   "confidence": "high"
                 }
               ],
-              "note": "The moulded mains plug is duplicated in the mains branch, which documents the plug fitted to the machine's own IEC inlet rather than the detachable lead. The two are the same bought part from the same moulder; the proposal to merge them is filed with this fragment."
+              "note": "The plug supplied on the detachable mains lead is the same bought part from the same moulder as the plug fitted directly to the machine's own IEC inlet."
             }
           ],
           "note": "Cord assembly is one of the lowest-marginal-cost steps in consumer electronics, which is why Commodore and its contract manufacturers made leads in enormous volume in Hong Kong and Taiwan. The lead is tested for continuity and insulation resistance, and for coax a capacitance or impedance check, on a semi-automatic line tester."
@@ -2288,7 +2288,7 @@
         "c64.packaging.polybag",
         "c64.packaging.kraft-liner"
       ],
-      "note": "Internal packaging varied by region, by production run and by whether the machine was sold boxed or shipped in bulk to a distributor, so 'the C64 box' is really several packages: an early plain brown box with a rainbow stripe, later 'rainbow' graphics, and machined-in plain boxes. The user's manual is documented as Commodore part 320974 in the service-manual parts list. I could not verify the exact internal foam arrangement for every region.",
+      "note": "Internal packaging varied by region, by production run and by whether the machine was sold boxed or shipped in bulk to a distributor, so 'the C64 box' is really several packages: an early plain brown box with a rainbow stripe, later 'rainbow' graphics, and machined-in plain boxes. The user's manual is documented as Commodore part 320974 in the service-manual parts list. Not verified: the exact internal foam arrangement for every region.",
       "children": [
         {
           "id": "c64.packaging.retail-box",
@@ -2790,7 +2790,7 @@
                 "c64.packaging.kraft-pulp"
               ],
               "confidence": "low",
-              "note": "The exact internal arrangement of the C64 box varied by region, production run and whether the machine was sold boxed or shipped in bulk to a distributor, and no particular arrangement has been verified for every region. What is recorded here is that a tray or folded pulp cradle for the loose items existed as a standard 1980s arrangement."
+              "note": "The exact internal arrangement of the C64 box varied by region, production run and whether the machine was sold boxed or shipped in bulk to a distributor, and no particular arrangement has been verified for every region. A tray or folded pulp cradle for the loose items existed as a standard 1980s arrangement."
             }
           ]
         },
@@ -2968,7 +2968,7 @@
             "chem.ethylene.polyethylene"
           ],
           "confidence": "high",
-          "note": "Antistatic bags with an added conductive agent existed by the early 1980s but were not standard for a consumer computer at this price point; I could not verify an antistatic bag in the C64 box, so the bag is recorded as a plain polyethylene sleeve.",
+          "note": "Antistatic bags with an added conductive agent existed by the early 1980s but were not standard for a consumer computer at this price point, and no antistatic bag is documented in the C64 box, so the bag is a plain polyethylene sleeve.",
           "children": [
             {
               "id": "c64.packaging.film-blowing",
@@ -3020,7 +3020,7 @@
             "c64.packaging.manual.printing"
           ],
           "confidence": "high",
-          "note": "The C64 manual is well known for the fold-in-fold format and for its colour printing on cheap stock - a deliberate cost decision on a product being sold through discount and supermarket channels. Some regional printings differ. Letterpress is sometimes claimed for Commodore collateral of the period, but no particular C64 manual printing has been verified as letterpress rather than litho, so that possibility is recorded here rather than as a node.",
+          "note": "The C64 manual is well known for the fold-in-fold format and for its colour printing on cheap stock - a deliberate cost decision on a product being sold through discount and supermarket channels. Some regional printings differ. Letterpress is sometimes claimed for Commodore collateral of the period, but no particular C64 manual printing has been verified as letterpress rather than litho.",
           "children": [
             {
               "id": "c64.packaging.manual.paper",
@@ -3098,7 +3098,7 @@
             "c64.packaging.offset-litho"
           ],
           "confidence": "high",
-          "note": "Warranty terms and the presence of a registration card varied by market; this node records the printed card as a class of object rather than claiming specific wording."
+          "note": "Warranty terms and the presence of a registration card varied by market; the printed card is a class of object and no specific wording is claimed."
         },
         {
           "id": "c64.packaging.master-carton",
@@ -3234,7 +3234,7 @@
         "c64.decor.metallised",
         "chem.abs.additives.pigment-masterbatch"
       ],
-      "note": "Two-shot moulding, in-mould labelling, sprayed lacquer, hot foil stamping and bonded overlay film all existed as techniques in 1982 and none of them was used on the breadbin case; they are recorded here once, in this note, rather than as separate nodes. The lacquer detail is worth keeping because the haze it leaves is what is sometimes mistaken for moulded-in colour: a solvent-borne acrylic or nitrocellulose film, 20-40 um wet, stoved for 20-30 minutes at 60-80 C in a gas-fired batch oven - routine on the plastic accessories, and the only fossil fuel on a decorating line, even though the beige case itself is unpainted. Overlay film, a screen-printed polyester film bonded into a recess in the cap or a two-shot printed insert, is recorded for completeness at low confidence: Commodore keycaps are printed rather than overlaid, though the technique appears on some accessories and on the memory-expansion modules. The badge is a raised, untextured island of the bezel moulding, so the ink sits proud of the grain around it.",
+      "note": "Two-shot moulding, in-mould labelling, sprayed lacquer, hot foil stamping and bonded overlay film all existed as techniques in 1982 and none of them was used on the breadbin case. The lacquer detail is worth keeping because the haze it leaves is what is sometimes mistaken for moulded-in colour: a solvent-borne acrylic or nitrocellulose film, 20-40 um wet, stoved for 20-30 minutes at 60-80 C in a gas-fired batch oven - routine on the plastic accessories, and the only fossil fuel on a decorating line, even though the beige case itself is unpainted. Overlay film, a screen-printed polyester film bonded into a recess in the cap or a two-shot printed insert, is recorded for completeness at low confidence: Commodore keycaps are printed rather than overlaid, though the technique appears on some accessories and on the memory-expansion modules. The badge is a raised, untextured island of the bezel moulding, so the ink sits proud of the grain around it.",
       "children": [
         {
           "id": "c64.decor.pad-printing",
@@ -3368,7 +3368,7 @@
                 "metal.copper"
               ],
               "confidence": "high",
-              "note": "Which of the two routes Commodore used is not recorded anywhere I can find, and it does not change what the cliche is: a copper electrotype with a ground-back relief, or a photopolymer plate on a steel backing. The electrotype is the older route and the one a print shop could repair; the photopolymer plate is cheaper per plate and better on fine detail, which matters for a 66-character legend set.",
+              "note": "Not established: which of the two routes Commodore used, and it does not change what the cliche is - a copper electrotype with a ground-back relief, or a photopolymer plate on a steel backing. The electrotype is the older route and the one a print shop could repair; the photopolymer plate is cheaper per plate and better on fine detail, which matters for a 66-character legend set.",
               "children": [
                 {
                   "id": "c64.decor.pad-print.electroplating",
@@ -3633,7 +3633,7 @@
             "c64.decor.metallised.binders"
           ],
           "confidence": "high",
-          "note": "Flake ink is a genuine compromise: randomly oriented flakes reflect only a fraction of the light, so metallised ink looks duller than metal unless it is burnished, which is why a good badge feels smoother than the plastic around it. Hot foil stamping is recorded here as the era-standard alternative that lost, rather than as a node of its own.",
+          "note": "Flake ink is a genuine compromise: randomly oriented flakes reflect only a fraction of the light, so metallised ink looks duller than metal unless it is burnished, which is why a good badge feels smoother than the plastic around it. Hot foil stamping was the era-standard alternative that lost.",
           "children": [
             {
               "id": "c64.decor.metallised.flake",

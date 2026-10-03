@@ -1,7 +1,7 @@
 # Production tree — Commodore 64
 
 2438 nodes, max depth 15, 1293 leaves.
-Generated 2026-10-03T06:01:34.548Z by `scripts/build.mjs`. Do not edit by hand.
+Generated 2026-10-03T06:28:08.645Z by `scripts/build.mjs`. Do not edit by hand.
 
 # Commodore 64 (breadbin, ASSY 250407) `c64`
 
@@ -1174,7 +1174,7 @@ Each of the 1024 nibbles is six transistors: two cross-coupled NMOS inverters fo
 
 ##### The load device: polysilicon resistor or depletion transistor `mb.color-ram.cell.load` _(low)_
 
-This is the real difference between a 2114 and a CMOS SRAM, and it is an extra process step. A ratioed NMOS latch needs something in series with the pull-down transistor to act as a load: on 1982 parts this was typically an undoped or lightly doped polysilicon resistor deposited in the same LPCVD step as the gate, or a depletion-mode NMOS transistor (gate tied to source, threshold deliberately shifted negative by an extra implant) acting as a current source. The depletion option needed one more implant than the resistor option. I could not establish which the C64's 2114 used.
+This is the real difference between a 2114 and a CMOS SRAM, and it is an extra process step. A ratioed NMOS latch needs something in series with the pull-down transistor to act as a load: on 1982 parts this was typically an undoped or lightly doped polysilicon resistor deposited in the same LPCVD step as the gate, or a depletion-mode NMOS transistor (gate tied to source, threshold deliberately shifted negative by an extra implant) acting as a current source. The depletion option needed one more implant than the resistor option. Not established: which option the C64's 2114 used.
 
 ##### Pass transistors and the two-decoder structure `mb.color-ram.cell.access` _(medium)_
 
@@ -1392,7 +1392,7 @@ Two arrays of transistors and a set of 'links'. The fixed AND array is a matrix 
       - *Photolithography: coat, bake, expose, develop* `si.litho` *(seen above)*
 #### NMOS process for the 906114-01 (node not claimed) `mb.pla.process` _(low)_
 
-The device-level facts are solid: it is NMOS, mask programmed, made at Norristown, and running a lower VOH than the bipolar original. The process details are not published anywhere. On the evidence of die markings, the era and the same fab, it is almost certainly the house silicon-gate NMOS flow used for the 6510, 6522 and 6526 - n+ diffusion, LOCOS field oxide, LPCVD polysilicon, self-aligned source/drain, contact cuts, one aluminium layer, PSG or nitride passivation - run at whatever line width that flow was at the time. I am deliberately not asserting a specific figure for that line width, because no source states one for this part.
+The device-level facts are solid: it is NMOS, mask programmed, made at Norristown, and running a lower VOH than the bipolar original. The process details are not published anywhere. On the evidence of die markings, the era and the same fab, it is almost certainly the house silicon-gate NMOS flow used for the 6510, 6522 and 6526 - n+ diffusion, LOCOS field oxide, LPCVD polysilicon, self-aligned source/drain, contact cuts, one aluminium layer, PSG or nitride passivation - run at whatever line width that flow was at the time. No specific figure is asserted for that line width, because no source states one for this part.
 
 #### Mask programming of the link pattern `mb.pla.mask-programming`
 
@@ -2110,7 +2110,7 @@ A heavily doped PN junction reverse-biased into breakdown. The doping is so heav
 
 #### Illustrative hybrid module construction (not Commodore) `mb.rf-modulator.hybrid-module` _(low)_
 
-ILLUSTRATIVE ONLY - this is not how any Commodore RF modulator was built. Both Commodore drawings that can be read (schematic 251025 and 251696) show a discrete through-hole board with Japanese small-signal transistors, two miniature RF transformers, a trimmer and about thirty resistors and capacitors, with an RCA phono jack on the module. What follows is the thin-film hybrid construction used by RF modulator modules from Japanese games manufacturers of the same period, kept because it is a real and common alternative construction and because the brief asked for it; no Commodore part number has been matched to it. Confidence in every node below is low as a statement about the C64 and high only as a statement about hybrid modules in general.
+ILLUSTRATIVE ONLY - this is not how any Commodore RF modulator was built. Both Commodore drawings that can be read (schematic 251025 and 251696) show a discrete through-hole board with Japanese small-signal transistors, two miniature RF transformers, a trimmer and about thirty resistors and capacitors, with an RCA phono jack on the module. What follows is the thin-film hybrid construction used by RF modulator modules from Japanese games manufacturers of the same period - a real and common alternative construction of the period, but no Commodore part number has been matched to it. Confidence in every node below is low as a statement about the C64 and high only as a statement about hybrid modules in general.
 
 ##### Alumina substrate and its ceramic processing `mb.rf-modulator.hybrid-module.alumina-substrate`
 
@@ -4130,7 +4130,7 @@ A cup-shaped nickel-chromium alloy base, sprayed with barium, strontium and calc
 
 ###### Nickel-chromium cathode base metal `peripheral.tv.crt.gun.cathode.nio-cr` _(medium)_
 
-The cup that carries the emitting coating: a nickel-chromium alloy, about 82% Ni with 18% Cr, spun or deep drawn to a shallow cup. The alloy is chosen because it does not react with the alkaline-earth oxides fired onto it and does not outgas badly in a vacuum that has to hold for the life of the tube. It is an alloy, not a pure metal, so it draws on the blast furnace for its iron as well as on the nickel refinery, which is why the iron, nickel and cobalt behind it are ingredients rather than children.
+The cup that carries the emitting coating: a nickel-chromium alloy, about 82% Ni with 18% Cr, spun or deep drawn to a shallow cup. The alloy is chosen because it does not react with the alkaline-earth oxides fired onto it and does not outgas badly in a vacuum that has to hold for the life of the tube. It is an alloy, not a pure metal, so it draws on the blast furnace for its iron as well as on the nickel refinery.
 
 ###### Tungsten heater filament `peripheral.tv.crt.gun.heater`
 
@@ -4641,7 +4641,7 @@ A red or amber LED of the period was gallium phosphide or gallium arsenide phosp
 
 ##### The nine-pin serial link to the C64 `peripheral.cassette.deck.link`
 
-The 1541 connected to the C64 by a nine-pin high-density D-subminiature cable carrying the serial bus, which is how the drive knew there was a computer and the computer knew there was a drive. This is the peripheral-plug branch's territory and is cross-referenced there rather than duplicated.
+The 1541 connected to the C64 by a nine-pin high-density D-subminiature cable carrying the serial bus, which is how the drive knew there was a computer and the computer knew there was a drive.
 
 ###### Nine-pin serial link to the drive `peripheral.plug.serial-link`
 
@@ -4705,7 +4705,7 @@ The coating line made a web a metre or more wide; it was then slit into 3.81 mm 
 
 ### The connectors: aerial socket, serial link, user port, cassette port `peripheral.plug`
 
-Three connectors that made a C64 usable rather than just powered: the aerial socket the RF modulator hijacked, the nine-pin link to the 1541, and the 34-conductor ribbon on the back that opened the machine up. This branch is deliberately short. The mains plug and the C64's own power inlet belong to another agent's branch.
+Three connectors that made a C64 usable rather than just powered: the aerial socket the RF modulator hijacked, the nine-pin link to the 1541, and the 34-conductor ribbon on the back that opened the machine up.
 
 #### The aerial socket, hijacked `peripheral.plug.rf`
 
@@ -7115,7 +7115,7 @@ A copper or steel cone lined with a high explosive (RDX/HMX or HMX-wax, 5-30 g p
 
 ###### Entry hole into the pay zone `chem.crude.well-completion.perforation.entry-hole`
 
-The first connection to the reservoir is itself a jet-perforated hole in cement, and it is the smallest diameter in the whole production system: a few millimetres through which the entire well's flow must pass. That single fact justifies the next node in the tree.
+The first connection to the reservoir is itself a jet-perforated hole in cement, and it is the smallest diameter in the whole production system: a few millimetres through which the entire well flow must pass.
 
 ###### Packer and completion hardware `chem.crude.well-completion.packer`
 
@@ -7171,7 +7171,7 @@ Hydrofluoric acid at 12% and hydrochloric acid at 12%, pumped down a steel coil,
 
 ###### Acid-resistant tubing `chem.crude.stimulation.acidising.mud-acid.corrosion-inhibitor.tubing` _(medium)_
 
-Coiled tubing and the acid lines were, by the mid-1980s, routinely nickel alloy - a nickel-molybdenum alloy such as Alloy C-276 or a titanium grade - rather than carbon steel, because the inhibitor was never perfect and the steel was never quite good enough. Nickel alloys and titanium both come out of a metallurgical chain that this file does not own; the reason they are here is that the acid chemistry forced them there.
+Coiled tubing and the acid lines were, by the mid-1980s, routinely nickel alloy - a nickel-molybdenum alloy such as Alloy C-276 or a titanium grade - rather than carbon steel, because the inhibitor was never perfect and the steel was never quite good enough. Nickel alloys and titanium come out of a metallurgical chain rather than a petrochemical one, but it is the acid chemistry that puts them into this operation.
 
 ##### Wellhead and terminal separation `chem.crude.separation`
 
@@ -9666,7 +9666,7 @@ Where a C64 physically came from, and the only place in this tree where the map 
 
 ##### The corporate chain that owned all of it `facility.foundries.corporate-structure`
 
-From the US Tax Court record: Commodore Holding B.V. (Netherlands) at the top; Commodore International Ltd (Bahamas); Commodore Electronics Ltd (CEL, Bahamas) as the principal operating corporation; Commodore Business Machines Inc (CBM, West Chester PA) as the US sales subsidiary and the site of the semiconductor division; Commodore Japan Ltd (CJL); Commodore Electronics (Hong Kong) Ltd (CE(HK)L) and, after April 1982, the Hong Kong branch of CEL; Commodore Buromaschinen GmbH (West Germany); and CBM International Sales Inc, the DISC. MOS Technology was merged into CBM on 1 January 1981 and carried on as a division - which is why all the chips were still stamped with the MOS logo until 1989.
+From the US Tax Court record: Commodore Holding B.V. (Netherlands) at the top; Commodore International Ltd (Bahamas); Commodore Electronics Ltd (CEL, Bahamas) as the principal operating corporation; Commodore Business Machines Inc (CBM, West Chester PA) as the US sales subsidiary and the site of the semiconductor division; Commodore Japan Ltd (CJL); Commodore Electronics (Hong Kong) Ltd (CE(HK)L) and, after April 1982, the Hong Kong branch of CEL; Commodore Buromaschinen GmbH (West Germany); and CBM International Sales Inc, the DISC. MOS Technology became a division of CBM on 1 January 1981 - which is why all the chips were still stamped with the MOS logo until 1989.
 
 ###### Vertical integration as a strategy `facility.foundries.vertical-integration`
 

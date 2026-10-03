@@ -17,7 +17,7 @@
         { "label": "Softening point", "value": "about 820 C, against a 1400-1500 C melt" }
       ],
       "sources": ["https://en.wikipedia.org/wiki/E-glass", "https://en.wikipedia.org/wiki/Glass_fibre", "https://en.wikipedia.org/wiki/FR-4"],
-      "note": "Chopped strand for glass-filled phenolic connector bodies and glass-filled nylon is the same melt run through a hammer mill instead of a winder, so it shares this batch but not this filament; the phenolic and nylon connector housings elsewhere in the tree carry their own short copies of that chain.",
+      "note": "Chopped strand for glass-filled phenolic connector bodies and glass-filled nylon is the same melt run through a hammer mill instead of a winder, so it shares this batch but not this filament.",
       "children": [
         {
           "id": "chem.glass-fiber.batch",
@@ -33,7 +33,7 @@
             { "label": "Target tolerance", "value": "+/-1 wt% on the major constituents" }
           ],
           "sources": ["https://en.wikipedia.org/wiki/E-glass"],
-          "note": "The five raw materials are children here rather than 'made of' edges: a glass batch is a mixture, so its constituents are siblings that melt into each other, and a reader following the chain needs to land on the sand and the limestone, not on a link list. Each one is referenced by id, not inlined.",
+          "note": "The five raw materials are children here rather than made-of edges: a glass batch is a mixture, so its constituents are siblings that melt into each other, and a reader following the chain needs to land on the sand and the limestone, not on a link list.",
           "children": [
             "metal.silica-sand",
             "metal.limestone",
@@ -56,7 +56,7 @@
             { "label": "Where the boron came from", "value": "colemanite and ulexite ore, Turkey and California dominant by the 1980s" }
           ],
           "sources": ["https://en.wikipedia.org/wiki/Borax", "https://en.wikipedia.org/wiki/Colemanite"],
-          "note": "Three other fragments write their own borax node (boric-acid.tincalconite under the electrolytic capacitor electrolyte, base.boron.borax under the bipolar base diffusion, and funnel-glass.borax under the television's funnel glass). This one is the keeper: it is the only one whose name is general, whose category is right, and whose chain reaches the ore.",
+          "note": "Borax appears under other names elsewhere in the supply chain: tincalconite or boric acid for the electrolytic capacitor electrolyte, and a separate borax for the television funnel glass.",
           "children": [
             {
               "id": "chem.glass-fiber.borax.acid",
@@ -156,7 +156,7 @@
           ],
           "inputs": ["chem.glass-fiber.attenuation"],
           "sources": ["https://en.wikipedia.org/wiki/Glass_fibre", "https://en.wikipedia.org/wiki/Plain_weave", "https://en.wikipedia.org/wiki/FR-4"],
-          "note": "The 100-300 g/m2 range and style 7628 are figures I would defend; the yarn tex and ends-per-cm figures are the same ones the board fragment states on its own cloth node, and I have not checked either against a 1983 laminate datasheet."
+          "note": "The 100-300 g/m2 range and style 7628 are the better-supported figures; the yarn tex and ends-per-cm figures are not checked against a 1983 laminate datasheet."
         },
         {
           "id": "chem.glass-fiber.cloth-sizing",
@@ -190,7 +190,7 @@
         { "label": "The split", "value": "redistributing HSiCl3 gives SiH4, a pyrophoric gas; alkylchlorosilane plus alcohol gives RSi(OR')3, a liquid coupling agent" }
       ],
       "sources": ["https://en.wikipedia.org/wiki/Silane", "https://en.wikipedia.org/wiki/Trichlorosilane"],
-      "note": "This node is a routing point and is typed as a note on purpose: it is a statement about the supply chain, not a substance. It has two children because both branches are real materials that other fragments cite by id, and CHECKLIST rule 2 keeps a note with real children intact - the entity-only view routes through it exactly as it routes through a process. It cannot be dissolved, because many nodes across the silicon, logic and board fragments already reference this id and the fragments that own them cannot be rewritten from here.",
+      "note": "A statement about the supply chain rather than a substance: it covers monosilane gas and organosilane liquid chemistry together, and the two real materials hang beneath it.",
       "children": [
         {
           "id": "chem.silane.monosilane",
@@ -263,7 +263,7 @@
           ],
           "inputs": ["metal.silica.tcs", "chem.ethanol"],
           "sources": ["https://en.wikipedia.org/wiki/E-glass", "https://en.wikipedia.org/wiki/Composite_material"],
-          "note": "Retyped from process to material: a coupling agent is a substance with a composition, and the operation that applies it to cloth is a separate step in the glass-fibre branch (chem.glass-fiber.cloth-sizing), which is where the tree now keeps it. The tree has no alkylchlorosilane node, so the silicon-chlorine feedstock is linked to the trichlorosilane node that shares the front end; methanol is the route to the methoxy silanes and is left as prose rather than tied to one branch's copy of it. 20-board writes its own short version of the same molecule at mb.pcb.laminate.cloth.fibre.size.silane; that is the duplicate to retire."
+          "note": "A coupling agent is a substance with a composition, and the operation that applies it to cloth is a separate step in the glass-fibre branch (chem.glass-fiber.cloth-sizing). Methanol is the route to the methoxy silanes, and the silicon-chlorine front end is the same one that makes trichlorosilane."
         }
       ]
     }

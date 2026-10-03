@@ -80,7 +80,7 @@
       "kind": "note",
       "category": "industry",
       "confidence": "high",
-      "note": "Retyped from facility to note: this is an index of where the tree bottoms out, not a plant, and nothing is made, mined or operated here. It has to remain a node regardless, because it is the only route from the root to metal.*, chem.* and industry.*, and all three ids are referenced from data/00-root.json, which this pass does not own. The build also parks the generated unlinked.catalogue here, so any canonical subtree that no fragment ends up linking stays reachable rather than being dropped.",
+      "note": "An index of where the supply chains bottom out, not a plant: nothing is made, mined or operated here. It is the only route from the root to the metal, chemical and industrial branches, and the unlinked catalogue is parked here, so any canonical subtree that no branch links stays reachable rather than being dropped.",
       "children": ["metal", "chem", "industry"]
     },
     {
@@ -91,7 +91,7 @@
       "category": "computing",
       "era": "1983",
       "confidence": "high",
-      "note": "Retyped from facility to note, for the same reason as c64.bottoms-out: a grouping is not a plant. Its three children are real - decoration is a set of processes, the keyboard switches are parts, the joystick is a part - and CHECKLIST rule 2 keeps a note with real children intact, because the components-only view routes through a note exactly as it routes through a process. Category moved from interconnect to computing: two of the three children are not interconnect at all, and the honest answer to 'what industry made this' for a bundle of finishing steps and accessories is the machine itself. The audit's kind/category warning for note under computing is accepted deliberately.",
+      "note": "A grouping rather than a plant. Its three children are real things: decoration is a set of processes, the keyboard switches are parts, the joystick is a part. Two of the three are not interconnect goods, so the branch sits with the machine rather than with the interconnects it happens to be stored beside.",
       "children": ["c64.decor", "c64.keyboard-switches", "c64.joystick"]
     }
   ]

@@ -294,7 +294,7 @@
           "category": "computing",
           "era": "1982-1984",
           "confidence": "low",
-          "note": "Part number and quantity are high confidence. The functional description is low confidence: hobbyist references variously call U29 a 'divider', a 'dual D-type flip-flop', and part of the VIC-II raster timing, and I did not trace the 251138 schematic net by net to settle it.",
+          "note": "Part number and quantity are high confidence. The functional description is low confidence: hobbyist references variously call U29 a 'divider', a 'dual D-type flip-flop', and part of the VIC-II raster timing, and the 251138 schematic was not traced net by net to settle it.",
           "sources": [
             "https://hd.retrorewind.ca/commodore/c64/assy-250407",
             "http://monkeyspeak.com/c64_hardware_details"
@@ -362,7 +362,7 @@
           "category": "computing",
           "era": "1982-1984",
           "confidence": "medium",
-          "note": "Part number, position and PLL role are high confidence and corroborated by scope measurements of the 250407 clock circuit published at tech.guitarsite.de/c64_scope.html. That the 74LS624-629 family is fabricated in CMOS rather than bipolar TTL despite the LS prefix is medium confidence: the family descends from Signetics/National designs and behaves like CMOS in pinout and power-up, but I did not find a period datasheet sentence stating the process. Some vendors did not offer it at all, which is itself suggestive.",
+          "note": "Part number, position and PLL role are high confidence and corroborated by scope measurements of the 250407 clock circuit published at tech.guitarsite.de/c64_scope.html. That the 74LS624-629 family is fabricated in CMOS rather than bipolar TTL despite the LS prefix is medium confidence: the family descends from Signetics/National designs and behaves like CMOS in pinout and power-up, but no period datasheet sentence stating the process has been found. Some vendors did not offer it at all, which is itself suggestive.",
           "sources": [
             "https://hd.retrorewind.ca/commodore/c64/assy-250407",
             "http://tech.guitarsite.de/c64_scope.html",
@@ -473,7 +473,7 @@
           "category": "silicon",
           "era": "1980s",
           "confidence": "medium",
-          "note": "Retyped from `part` to `note` in QA: it names no object that can be put in a box. The substance is a verified finding and has been preserved verbatim, including which machine each wrongly-attributed part actually belongs to (medium confidence). Category is `silicon` rather than `computing` because a note has no physical position in the machine; this matches the treatment of mb.pla.failures. The parts that really are fitted are the twelve listed in the sibling nodes.",
+          "note": "Which machine each wrongly-attributed part actually belongs to is a verified finding, held at medium confidence. Twelve of the parts really are fitted to the ASSY 250407.",
           "sources": [
             "https://hd.retrorewind.ca/commodore/c64/assy-250407"
           ],
@@ -539,7 +539,7 @@
               "category": "packaging",
               "era": "1960s",
               "confidence": "high",
-              "note": "Retyped from `part` to `note` in QA: 'why 0.1 inch and 0.3 inch' is a question, and the two dimensions it introduces - lead pitch and row spacing - are the real, measurable things, kept as children below. The audit objects to `note` under `packaging` because its table expects part, material or process there; that warning is accepted deliberately. The choice of 0.3 in over a wider spacing was a manufacturability and socket-compatibility compromise rather than a single published decision, so the reasoning above is the conventional account, not a quotation.",
+              "note": "The choice of 0.3 in over a wider spacing was a manufacturability and socket-compatibility compromise rather than a single published decision, so this is the conventional account rather than a quotation.",
               "sources": [
                 "https://en.wikipedia.org/wiki/Dual_in-line_package"
               ],
@@ -575,7 +575,7 @@
                   "category": "packaging",
                   "era": "1960s",
                   "confidence": "medium",
-                  "note": "The 0.3 in / 0.6 in rule is high confidence; the existence of a 0.9 in (22.9 mm) row spacing in the same era is medium confidence - such spacings appear on hermetic and high-power ceramic packages, but I did not confirm one on a merchant logic part.",
+                  "note": "The 0.3 in / 0.6 in rule is high confidence; the existence of a 0.9 in (22.9 mm) row spacing in the same era is medium confidence - such spacings appear on hermetic and high-power ceramic packages, but none has been confirmed on a merchant logic part.",
                   "sources": [
                     "https://en.wikipedia.org/wiki/Dual_in-line_package"
                   ],
@@ -669,7 +669,7 @@
                       "category": "packaging",
                       "era": "1980s",
                       "confidence": "high",
-                      "note": "Capital equipment, so `tool`; the audit objects to `tool` under `packaging` because its category table expects part, material or process there. The classification is kept because it is what the object is - a press toolset consumed over hundreds of millions of strokes - and there is no bucket for machine tools.",
+                      "note": "A press toolset, consumed over hundreds of millions of strokes - capital equipment rather than a part.",
                       "inputs": []
                     }
                   ]
@@ -830,7 +830,7 @@
                   "category": "silicon",
                   "era": "1980s",
                   "confidence": "medium",
-                  "note": "Retyped from `part` to `note` in QA: 'why 4164 DRAMs die but 74LS parts mostly do not' is a question about comparative reliability, not an object. It is kept rather than folded into the parent because it is the single most useful thing a repairer is told about this board, and a bare note survives as a chip in the components-only view. Category is `silicon` because the mechanism is device physics. The mechanism (charge storage and refresh) is high confidence; the comparative failure rate is a well-attested field observation rather than a measured statistic.",
+                  "note": "The mechanism (charge storage and refresh) is high confidence; the comparative failure rate is a well-attested field observation rather than a measured statistic.",
                   "sources": [
                     "https://oldsilicon.com/technologies/commodore-64-250407-parts-locator"
                   ]
@@ -944,7 +944,7 @@
                   "category": "packaging",
                   "era": "1980s",
                   "confidence": "high",
-                  "note": "The post-mould stability bake was folded in here in QA. It was previously a separate bare process node ('Post-mould cure and stability bake') with no children and no ingredients, which is a sentence rather than a node; its two facts are now on this node.",
+                  "note": "The post-mould stability bake: thousands of parts in a tray, overnight, completing a cure that the mould itself cannot finish.",
                   "sources": [
                     "https://polymerinnovationblog.com/polymer-a-new-way-to-look-at-mold-compounds",
                     "https://www.resonac.com/products/semi-backend-process/76/012.html"
@@ -984,7 +984,7 @@
                       "category": "packaging",
                       "era": "1980s",
                       "confidence": "high",
-                      "note": "Capital equipment, so `tool`. The audit expects part, material or process under `packaging`; that warning is accepted because there is no category for machine tools and this is unambiguously a press.",
+                      "note": "Capital equipment, so a tool rather than a part.",
                       "facts": [
                         {
                           "label": "Cavities per tool",
@@ -1073,7 +1073,7 @@
                           "category": "plastics",
                           "era": "1980s",
                           "confidence": "medium",
-                          "note": "The pigment is a trivial mass fraction of the whole computer but it is the same furnace black that goes into carbon-film resistors and into the photoconductor of a laser printer drum. Its feedstock is heavy petroleum residuum or natural gas fed to an air-cooled sooting furnace, the soot scraped off water-cooled rotors and pelletised - this was folded in here from a former one-sentence child node.",
+                          "note": "The pigment is a trivial mass fraction of the whole computer but it is the same furnace black that goes into carbon-film resistors and into the photoconductor of a laser printer drum. Its feedstock is heavy petroleum residuum or natural gas fed to an air-cooled sooting furnace, the soot scraped off water-cooled rotors and pelletised.",
                           "inputs": [
                             "chem.petroleum"
                           ]
@@ -1124,7 +1124,7 @@
                   "category": "packaging",
                   "era": "1980s",
                   "confidence": "high",
-                  "note": "Capital equipment, so `tool`; the audit's expectation of part, material or process under `packaging` is accepted as a known mismatch.",
+                  "note": "Capital equipment, so a tool rather than a part.",
                   "facts": [
                     {
                       "label": "Wafers per run",
@@ -1163,7 +1163,7 @@
                   "category": "packaging",
                   "era": "1980s",
                   "confidence": "high",
-                  "note": "Automatic test equipment: capital equipment shared across every device type on the line, so `tool` rather than `part`. The audit expects part, material or process under `packaging`; that warning is accepted.",
+                  "note": "Automatic test equipment: capital equipment shared across every device type on the line, so a tool rather than a part or a consumable.",
                   "facts": [
                     {
                       "label": "Tests per 74LS quad gate",
@@ -1252,7 +1252,7 @@
               "category": "packaging",
               "era": "1980s",
               "confidence": "high",
-              "note": "Commodore bought these chips from several vendors and did not re-mark them, which is why an original C64 board may carry parts branded TI, Fairchild, National, Motorola, Hitachi, Toshiba or a Commodore house number, all mixed together. Laser marking was folded into this node in QA: a Q-switched Nd:YAG or CO2 laser ablating characters into the epoxy surface, or a carbon laser removing the top layer to expose an underlying white layer, was indelible and fast but in 1983 was still a premium option used mostly for military marking, adopted more widely through the mid-to-late 1980s. It was a separate `tool` node before, which misfiled a capital machine as part of the package.",
+              "note": "Commodore bought these chips from several vendors and did not re-mark them, which is why an original C64 board may carry parts branded TI, Fairchild, National, Motorola, Hitachi, Toshiba or a Commodore house number, all mixed together. Laser marking - a Q-switched Nd:YAG or CO2 laser ablating characters into the epoxy surface, or a carbon laser removing the top layer to expose an underlying white layer - was indelible and fast but in 1983 was still a premium option used mostly for military marking, adopted more widely through the mid-to-late 1980s.",
               "facts": [
                 {
                   "label": "Typical legend",
@@ -1297,7 +1297,7 @@
           "category": "silicon",
           "era": "1980s",
           "confidence": "medium",
-          "note": "This is a generalised description of the standard junction-isolated bipolar logic process as it was run in 1982-84 by TI, Fairchild, National and Motorola. Precise vendors differed: Fairchild also offered a dielectric-isolation variant, and TI ran some processes with ion implantation instead of thermal base diffusion. I have marked medium confidence rather than high because the 74LS flows are proprietary and I have not seen a period process description for a specific vendor's 74LS line. The transistor structure, the four-diffusion sequence, the NiCr resistor level and the eight mask levels are all well documented industry practice for the era. Two claims folded in during QA from deleted child nodes: the resulting geometry (a 0.5-1 um base and a 1-2 um emitter inside an isolation island a few tens of micrometres across, wired with 3-5 um aluminium on one level), and the comparison that made the economics legible - the 4164 DRAM on the same board was patterned at around 1-2 um with two or three aluminium levels, and the VIC-II and SID at around 2-3 um with two levels, which is why a DRAM cost more than the glue. The dopant gases (phosphine, arsine, diborane) are no longer inlined beneath this branch: chem.fab-chemicals.dopants publishes them.",
+          "note": "This is a generalised description of the standard junction-isolated bipolar logic process as it was run in 1982-84 by TI, Fairchild, National and Motorola. Precise vendors differed: Fairchild also offered a dielectric-isolation variant, and TI ran some processes with ion implantation instead of thermal base diffusion. Confidence is medium rather than high, because the 74LS flows are proprietary and no period process description for a specific vendor's 74LS line has been seen. The transistor structure, the four-diffusion sequence, the NiCr resistor level and the eight mask levels are all well documented industry practice for the era. The resulting geometry is a 0.5-1 um base and a 1-2 um emitter inside an isolation island a few tens of micrometres across, wired with 3-5 um aluminium on one level. For comparison, the 4164 DRAM on the same board was patterned at around 1-2 um with two or three aluminium levels, and the VIC-II and SID at around 2-3 um with two levels, which is why a DRAM cost more than the glue.",
           "sources": [
             "https://en.wikipedia.org/wiki/Bipolar_Junction_Transistor",
             "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
@@ -1528,7 +1528,7 @@
                       "category": "fluids",
                       "era": "1980s",
                       "confidence": "high",
-                      "note": "Renamed from 'Deionised steam for the furnace': rule 6 forbids a name that only makes sense next to its parent.",
+                      "note": "Deionised steam, fed to the furnace inlet: the water must be essentially free of dissolved alkali metals, because sodium diffuses fast through hot oxide and shifts a transistor's threshold.",
                       "inputs": [
                         "facility.water",
                         "facility.water.ultrapure"
@@ -1624,7 +1624,7 @@
                           "category": "silicon",
                           "era": "1980s",
                           "confidence": "high",
-                          "note": "Retyped from `part` to `note` in QA: it was a question-framed leaf describing how the parent node is drawn, not a second object. The parent is the real part - the guard ring itself."
+                          "note": "The guard ring itself is the real part; what is described here is how it is drawn around the isolation island."
                         }
                       ]
                     },
@@ -1636,7 +1636,7 @@
                       "category": "silicon",
                       "era": "1970s-1980s",
                       "confidence": "medium",
-                      "note": "Dielectric isolation was used by Fairchild and a few others for high-performance analog and for some logic families in the 1970s and 1980s, but junction isolation was cheaper and dominated standard 74LS. I could not confirm which isolation a given vendor's 74LS used; most 74LS parts are believed to be junction-isolated.",
+                      "note": "Dielectric isolation was used by Fairchild and a few others for high-performance analog and for some logic families in the 1970s and 1980s, but junction isolation was cheaper and dominated standard 74LS. Not established: which isolation a given vendor's 74LS used; most 74LS parts are believed to be junction-isolated.",
                       "sources": [
                         "https://en.wikipedia.org/wiki/Dielectric_isolation"
                       ],
@@ -1725,7 +1725,7 @@
                   "category": "silicon",
                   "era": "1980s",
                   "confidence": "medium",
-                  "note": "The gold-doped (Au-doped) polysilicon emitter was a real and important technique of this era, used to raise gain and suppress the emitter-base reverse conductance ('knee'). It was implemented by co-depositing a tiny amount of gold in the emitter polysilicon or dopant glass, then driving it in with the arsenic or phosphorus. Confidence medium: the technique is well documented, but I have not confirmed that a specific 74LS vendor's 1983 process used it; it was common in high-performance bipolar rather than mandatory in low-cost logic. A self-aligned polysilicon emitter - deposit a thin arsenic-doped polysilicon film, pattern it to define the emitter, then push, so the arsenic is confined by the polysilicon walls and the emitter comes out shallower and more uniform - was the other refinement of the era, widespread in analog through the 1980s and 1990s and doubtful on a commodity 74LS. It was folded into this note from a bare child process in QA. The arsine itself is an ingredient and is named in `inputs`, not inlined as a child; its provenance is worth recording: arsenic occurs as arsenide in copper and lead concentrates, roasting drives it off as arsenic trioxide fume, and the trioxide is reduced and hydrogenated to arsine. Arsenic-bearing copper concentrates were a notorious long-time smelting hazard, which is why arsenic control in copper works is a regulated topic today.",
+                  "note": "The gold-doped (Au-doped) polysilicon emitter was a real and important technique of this era, used to raise gain and suppress the emitter-base reverse conductance ('knee'). It was implemented by co-depositing a tiny amount of gold in the emitter polysilicon or dopant glass, then driving it in with the arsenic or phosphorus. Confidence medium: the technique is well documented, but it is not confirmed that a specific 74LS vendor's 1983 process used it; it was common in high-performance bipolar rather than mandatory in low-cost logic. A self-aligned polysilicon emitter - deposit a thin arsenic-doped polysilicon film, pattern it to define the emitter, then push, so the arsenic is confined by the polysilicon walls and the emitter comes out shallower and more uniform - was the other refinement of the era, widespread in analog through the 1980s and 1990s and doubtful on a commodity 74LS. The arsine itself is an ingredient and is named in `inputs`, not inlined as a child; its provenance is worth recording: arsenic occurs as arsenide in copper and lead concentrates, roasting drives it off as arsenic trioxide fume, and the trioxide is reduced and hydrogenated to arsine. Arsenic-bearing copper concentrates were a notorious long-time smelting hazard, which is why arsenic control in copper works is a regulated topic today.",
                   "sources": [
                     "https://en.wikipedia.org/wiki/Gold_doping"
                   ],
@@ -2400,7 +2400,7 @@
                   "category": "industry",
                   "era": "1980s",
                   "confidence": "high",
-                  "note": "Capital equipment, so `tool` under `industry`, which the audit does not police for tool kinds. The nitrogen blow-off and the water flowing through the sinks are cross-cutting services and are `from` edges, not components.",
+                  "note": "Capital equipment, consumed slowly rather than used up in a single run. The nitrogen blow-off and the water flowing through the sinks are utilities supplied to the tool, not components of it.",
                   "inputs": [
                     "facility.water",
                     "facility.nitrogen"
@@ -2416,7 +2416,7 @@
               "category": "industry",
               "era": "1980s",
               "confidence": "high",
-              "note": "Described generically. Individual vendors ran it differently - TI in Dallas, Fairchild in Mountain View and Palo Alto, National in Santa Clara, Motorola in Phoenix - and I have not traced which specific plant made Commodore's parts. A fourth bay, the photomask bay, was a separate node here and duplicated one under the photolithography process; it has been removed and its content folded into the cleanroom node. Power, water and nitrogen are cross-cutting services that belong to the industry fragment and are attached as `from` edges by id, never as `children`.",
+              "note": "Individual vendors ran it differently - TI in Dallas, Fairchild in Mountain View and Palo Alto, National in Santa Clara, Motorola in Phoenix - and which specific plant made Commodore's parts is not established. A fourth bay, the photomask bay, belongs to the fab as well. Power, water and nitrogen are cross-cutting services supplied to the fab rather than components of it.",
               "inputs": [
                 "facility.electricity",
                 "facility.water",
@@ -2476,7 +2476,7 @@
               "category": "silicon",
               "era": "1990s",
               "confidence": "high",
-              "note": "Retyped from `part` to `note` in QA: 'what happened to bipolar logic afterwards' is a statement about the industry's history, not an object. It is kept as a note rather than deleted because the survival niches, BiCMOS and the scaling comparison are the three things a reader wants to know once they have followed the 1983 flow. Its three former children - 'Where bipolar still survives', 'BiCMOS - bipolar and CMOS on one wafer' and 'The 3-5 um feature, then and now' - were all bare restatements of this paragraph and were folded into it; none had children, ingredients or facts of its own.",
+              "note": "Three things are worth knowing after following the 1983 flow: which niches bipolar logic survives in, what BiCMOS was, and how far the geometry has moved since.",
               "facts": [
                 {
                   "label": "1983 74LS",
@@ -2715,7 +2715,7 @@
                       "category": "fluids",
                       "era": "1980s",
                       "confidence": "medium",
-                      "note": "The chemistry is high confidence; the specific tank temperature (~150-180 C) is a standard process figure but I have not verified a 1983 datasheet for it. Renamed from 'Hot phosphoric acid for the nitride strip' because rule 6 forbids a name that only makes sense next to its parent. The phosphorus source is named by id in `inputs` rather than reached through a node in the bipolar branch that no longer exists.",
+                      "note": "The chemistry is high confidence; the specific tank temperature (~150-180 C) is a standard process figure but is not verified against a 1983 datasheet.",
                       "facts": [
                         {
                           "label": "Acid",
@@ -2766,7 +2766,7 @@
                   "category": "silicon",
                   "era": "1980s",
                   "confidence": "high",
-                  "note": "The silane feed - SiH4 decomposing on a hot surface at 700-850 C to lay down pure polycrystalline silicon, cleaner and more controllable than trichlorosilane because it carries no chlorine and no corrosive by-products - is not inlined here; chem.silane.monosilane publishes it and is named in `inputs`. Trichlorosilane still dominated for boule-grade silicon. A 4000-series part might also deposit a few resistors from this same film: polysilicon resistors cost nothing extra because they are made at the same time as the gate, from the same film, at no extra mask. That the 4066 specifically uses on-chip polysilicon resistors is plausible from its trim and bias requirements but I have not verified a cross-section, and some 4000-series parts use no resistors at all.",
+                  "note": "The silane feed is SiH4, decomposing on a hot surface at 700-850 C to lay down pure polycrystalline silicon - cleaner and more controllable than trichlorosilane because it carries no chlorine and no corrosive by-products. Trichlorosilane still dominated for boule-grade silicon. A 4000-series part might also deposit a few resistors from this same film: polysilicon resistors cost nothing extra because they are made at the same time as the gate, from the same film, at no extra mask. That the 4066 specifically uses on-chip polysilicon resistors is plausible from its trim and bias requirements but is not verified against a cross-section, and some 4000-series parts use no resistors at all.",
                   "sources": [
                     "https://en.wikipedia.org/wiki/MOSIS",
                     "https://en.wikipedia.org/wiki/Silane"
@@ -2920,7 +2920,7 @@
               "category": "silicon",
               "era": "1980s",
               "confidence": "high",
-              "note": "Renamed from 'What a CMOS transmission gate is made of' because rule 6 and rule 2 both forbid a question-framed name. It was always a real object - the cell is the thing the 4066 is made of - so it keeps `kind: part` rather than becoming a note. c64.cables.switch-box in the chassis fragment resolved an 'input' string to this node by name; that by-name edge is now broken and is proposed for repointing by id.",
+              "note": "The transmission-gate cell is a real object - two MOSFETs of opposite polarity in parallel is what the 4066 is actually made of.",
               "sources": [
                 "https://en.wikipedia.org/wiki/CMOS"
               ],
@@ -2951,7 +2951,7 @@
               "category": "silicon",
               "era": "2020s",
               "confidence": "high",
-              "note": "Retyped from `part` to `note` in QA: 'what CMOS became' is a statement about forty years of the industry's history, not an object. Its one former child, 'Shallow trench isolation replaced LOCOS', was a bare process with no children and no ingredients - a sentence - and has been folded into this description.",
+              "note": "Shallow trench isolation replaced LOCOS: a narrow trench etched into the substrate and filled with oxide over a nitride liner, giving a much sharper boundary than the bird's beak.",
               "facts": [
                 {
                   "label": "Isolation",
@@ -2985,7 +2985,7 @@
           "category": "logistics",
           "era": "1982-1984",
           "confidence": "medium",
-          "note": "The vendor list and the second-source practice are well attested by the physical parts on surviving boards and by Commodore's parts lists. I could not find a primary source naming which plants made Commodore's specific lots, so no plant is claimed below as fact. Renamed from 'Where Commodore's logic chips came from': the question framing is gone, but the node stays `facility`, because Commodore as the buying organisation is the entity this branch is about and `facility` is the schema's word for a company. Two children were retyped to `note` in QA - the second-source practice and the distribution channels - because neither names an object; the five vendor companies beneath them stay `facility`/`industry`.",
+          "note": "The vendor list and the second-source practice are well attested by the physical parts on surviving boards and by Commodore's parts lists. Not established: which plants made Commodore's specific lots, so no plant is claimed below as fact.",
           "sources": [
             "https://oldsilicon.com/technologies/commodore-64-250407-parts-locator",
             "https://retrorepairsandrefurbs.com/2021/07/23/commodore-64-assy-250407-board-repairs"
@@ -3014,7 +3014,7 @@
               "category": "industry",
               "era": "1980s",
               "confidence": "high",
-              "note": "Retyped from `facility` to `note` in QA. 'The merchant logic vendors' is a set of companies rather than one company, and the node's own content is the observation that they were interchangeable but not equally good. Rather than delete it and reattach the six vendors to the parent - which would lose that observation - it is kept as a note with the vendors beneath it. Category `industry` is deliberate: a note under `logistics` or `packaging` trips the audit's category table, and `industry` is the honest answer for a fact about the semiconductor industry.",
+              "note": "The observation worth carrying is the one a company list cannot show on its own: the six ran the same public process to the same design rules, so their parts were interchangeable, but not equally well made.",
               "sources": [
                 "https://www.petervis.com/electronics/74LS_Logic_Chips/74LS_Logic_Chips.html"
               ],
@@ -3067,7 +3067,7 @@
                   "category": "industry",
                   "era": "1980s",
                   "confidence": "medium",
-                  "note": "Fairchild's silicon-gate invention in 1968 and the 1985 bankruptcy are well documented. That Fairchild-branded logic was actually present on C64 boards is field-attested but I did not verify a specific board photograph showing it.",
+                  "note": "Fairchild's silicon-gate invention in 1968 and the 1985 bankruptcy are well documented. That Fairchild-branded logic was actually present on C64 boards is field-attested, but no specific board photograph showing it has been verified.",
                   "sources": [
                     "https://aresluna.org/ic-at-fifty-booklet.pdf",
                     "https://en.wikipedia.org/wiki/Fairchild_Semiconductor"
@@ -3120,7 +3120,7 @@
                   "category": "industry",
                   "era": "1980s",
                   "confidence": "medium",
-                  "note": "Motorola as the MC-prefix supplier of the 4066 and 4044 is high confidence - that is what the MC prefix means. Split out from a combined 'Motorola and Signetics' node in QA: one node = one level of the supply chain, and two companies are two companies. The 1969 licensing and cross-supply arrangement with Signetics is well documented for that era but I have not cited a primary source for it here.",
+                  "note": "Motorola as the MC-prefix supplier of the 4066 and 4044 is high confidence - that is what the MC prefix means. The 1969 licensing and cross-supply arrangement with Signetics is well documented for that era, but no primary source is cited for it here.",
                   "sources": [
                     "https://en.wikipedia.org/wiki/List_of_4000-series_integrated_circuits"
                   ],
@@ -3136,7 +3136,7 @@
                   "category": "industry",
                   "era": "1980s",
                   "confidence": "low",
-                  "note": "Low confidence, and deliberately so: I have no source in this fragment for the Philips ownership date or for the 1969 arrangement, and I have not verified a Signetics-branded part on a C64 mainboard. The node is kept because the original fragment had folded Signetics into a Motorola node, and a company silently absorbed into another company's node is exactly the kind of thing this pass is meant to surface. Absence of a source is not a defect; a confident wrong claim would be.",
+                  "note": "Low confidence, and deliberately so: no source is held for the Philips ownership date or for the 1969 arrangement, and a Signetics-branded part on a C64 mainboard is not verified.",
                   "inputs": [
                     "facility.electricity"
                   ]
@@ -3149,7 +3149,7 @@
                   "category": "industry",
                   "era": "1980s",
                   "confidence": "low",
-                  "note": "Low confidence on specific Japanese parts appearing on 1983 C64 boards. The general Japanese penetration of merchant logic through the decade is well documented; a specific Hitachi-branded 74LS in a 250407 is a field report I did not verify.",
+                  "note": "Low confidence on specific Japanese parts appearing on 1983 C64 boards. The general Japanese penetration of merchant logic through the decade is well documented; a specific Hitachi-branded 74LS in a 250407 is an unverified field report.",
                   "inputs": [
                     "facility.electricity"
                   ]
@@ -3164,7 +3164,7 @@
               "category": "silicon",
               "era": "1982-1984",
               "confidence": "medium",
-              "note": "Retyped from `part` to `note` in QA: the node mixed a real component family with commentary about Commodore's procurement, and it names no single object. It is kept rather than split into four part nodes because the useful content is the equivalence table below, and because nothing in the fragment justifies a package, a die or a datasheet for any of the four. Category `silicon` because the subject is silicon chips; a note under `computing` would trip the audit's category table, and this matches how mb.pla.failures is treated.",
+              "note": "What this records is the equivalence between Commodore's house numbers and the standard 74-series parts they stand in for, not any single device: the four numbers are four different devices in four different packages.",
               "sources": [
                 "https://oldsilicon.com/technologies/commodore-64-250407-parts-locator",
                 "https://retrorepairsandrefurbs.com/2021/07/23/commodore-64-assy-250407-board-repairs"
@@ -3196,7 +3196,7 @@
               "category": "logistics",
               "era": "1982-1984",
               "confidence": "medium",
-              "note": "Retyped from `facility` to `note` in QA. 'How the chips physically arrived in 1983' is a sentence about a supply chain, not a plant, a mine or a building, and its three former children - allocation and the queue, authorised versus unauthorised 'pulls', and incoming inspection at the Commodore plant - were bare processes with no children and no ingredients, which rule 5 says are sentences rather than nodes. All three have been folded into the description above. The audit objects to `note` under `logistics` because its table expects process or facility; that warning is accepted, because this really is a fact about logistics and there is no better bucket. Relocating the whole node to the industry fragment would arguably be tidier - the franchised-versus-independent split and the grey market that grew out of the early-1980s allocation shortages are industry-level facts, documented from the industry-response side - but that is a cross-fragment move and is proposed rather than applied.",
+              "note": "The franchised-versus-independent split, and the grey market that grew out of the early-1980s allocation shortages, are industry-level facts rather than properties of any one buyer.",
               "sources": [
                 "https://www.semiconductors.org/semiconductor-industry-is-committed-to-combatting-illicit-chip-diversion",
                 "https://www.semiconductorcouncil.org/wp-content/uploads/2018/06/WSC-Anti-Counterfeiting-White-Paper-May-2018-Update.pdf"
@@ -3234,7 +3234,7 @@
           "category": "industry",
           "era": "1982-1984",
           "confidence": "low",
-          "note": "Retyped from `part` to `note`, and this branch collapsed from thirteen nodes to one, in QA. A bill of materials priced in 1983 dollars is an aside, not a supply line: a reader following a 74LS's materials should arrive at silicon, aluminium, gold, nickel, tin and epoxy - all of which they reach through the package and process branches above - not at a note about what the chip weighed. The thirteen former nodes were 'Bill of materials for one 74LS04' and its seven children, 'How much human time, spread how thin' with its one child, and 'The price gap between the glue and the CPU' with its one child; all were `part` or `facility` or `process` in name only. Everything they said has been carried into the description and facts above, including the one correction they made to the standard figures: the 0.3 g of aluminium often quoted for a 14-pin logic chip is roughly an order of magnitude too high for the metal actually in the die, and that correction has been kept. Confidence stays low deliberately: I could not find a primary 1983 distributor price list for 74LS parts, a documented Commodore purchase price for a 6510, or a measured weight for any of these parts. The mass figures are arithmetic from die dimensions and layer thicknesses and should be right to within a factor of a few; the price figures are order-of-magnitude estimates from the general semiconductor price decline of the era. The broader trend - prices falling roughly 10-30 percent a year in real terms through the early 1980s, faster for commodity logic - is documented in the economic literature and is the basis for the direction even where not the specific prices. Treat every number here as a defensible intuition rather than a measurement.",
+          "note": "Not established: a primary 1983 distributor price list for 74LS parts, a documented Commodore purchase price for a 6510, or a measured weight for any of these parts. Confidence is low on that basis. The 0.3 g of aluminium often quoted for a 14-pin logic chip is roughly an order of magnitude too high for the metal actually in the die. The mass figures are arithmetic from die dimensions and layer thicknesses and should be right to within a factor of a few; the price figures are order-of-magnitude estimates from the general semiconductor price decline of the era. The broader trend - prices falling roughly 10-30 percent a year in real terms through the early 1980s, faster for commodity logic - is documented in the economic literature and is the basis for the direction even where not the specific prices. Treat every number here as a defensible intuition rather than a measurement.",
           "sources": [
             "https://en.wikipedia.org/wiki/Integrated_circuit",
             "https://www.federalreserve.gov/pubs/feds/2006/200644/index.html"
