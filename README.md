@@ -23,8 +23,10 @@ No dependencies. Node 18+.
 | --- | --- |
 | `data/*.json` | the tree, one file per subsystem |
 | `docs/SCHEMA.md` | the node schema — read this before editing |
+| `docs/CHECKLIST.md` | the QA standard every fragment was held to |
+| `docs/TODO.md` | known-wrong, known-missing and deliberately unresolved |
 | `scripts/build.mjs` | merge, resolve cross-references, validate, export |
-| `scripts/selftest.mjs` | 19 checks on the builder itself |
+| `scripts/selftest.mjs` | 40 checks on the builder itself |
 | `scripts/serve.mjs` | static server |
 | `public/` | the viewer (`index.html`, `app.js`, `style.css`) and generated `tree.json` |
 | `docs/TREE.md` | generated full outline |
