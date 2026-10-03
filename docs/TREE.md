@@ -1,9 +1,9 @@
 # Production tree — Commodore 64
 
-2453 nodes, max depth 15, 1300 leaves.
-Generated 2026-10-03T10:43:58.253Z by `scripts/build.mjs`. Do not edit by hand.
+2448 nodes, max depth 15, 1299 leaves.
+Generated 2026-10-03T22:43:13.883Z by `scripts/build.mjs`. Do not edit by hand.
 
-# Commodore 64 (breadbin, ASSY 250407) `c64`
+# Commodore 64 (breadbin, ASSY 250407) `c64` _(medium)_
 
 A home computer sold from 1982. This tree traces every physical component back through the industrial processes of the early 1980s to the ore, crude oil and quartz sand it began as. Roughly 320 discrete parts from about twenty distinct manufacturing industries. The chips were designed in Pennsylvania and fabricated there; the board was populated and the machine was boxed in Hong Kong, with some runs contract-manufactured in Japan.
 
@@ -531,10 +531,6 @@ A tough, self-lubricating engineering thermoplastic used where a moving slider n
 
 30 % chopped glass fibre in the PA66, for stiffness at a thin wall and for dimensional stability against the moulded detent. The same filler as in the connector housings.
 
-###### Nylon 6,6 (PA66) `c64.switches.power-slider.body.nylon.nylon-6-6` _(medium)_
-
-The base polymer of PA66, a condensation polymer of hexamethylenediamine and adipic acid - not of caprolactam, which makes nylon 6, a different nylon with a lower melting point. The 6,6 grade was preferred for mechanical parts because of its moisture stability and its higher melting point, and both of its monomers are petrochemical.
-
 ###### Solder terminals and anchor `c64.switches.power-slider.body.terminal` _(medium)_
 
 The pins of the switch are brass, either solid or a brass tube over a steel mandrel with a solder tail. Brass is used because it wets tin-lead solder reliably and does not need nickel underplate for a low-voltage contact.
@@ -683,11 +679,11 @@ The board is baked dry, the film is fed from a spool, heated, and pressed onto t
 
 Before the resist goes on, the board is degreased and dried so the film lies flat. A tack-free prep was unusual on period boards; wet resist had an easier time of it, which is one reason modern processes moved.
 
-##### Photoresist chemistry `chem.photoresist`
+##### Photoresist chemistry `chem.photoresist` _(low)_
 
 The organic photoresists of 1983 were almost all positive-working diazonaphthoquinone resins on a novolac: the light-sensitive group is a diazonaphthoquinone sulphonate ester on a phenolic novolac made from phenol and formaldehyde. Exposing the resist converts the ester to a carboxylic acid, which makes the exposed resin soluble in the alkaline developer, so the image is positive. It is a strictly positive image because of the mechanism, not because of anything clever - the exposure destroys the very group that was holding the resin together. Development ran 0.2-0.3 N TMAH at 20-25 C by spray or immersion for 30-60 seconds, controlled to a fraction of a degree and a fraction of a per cent because the image is only about half a micrometre deep and the process window is correspondingly narrow; spray development, introduced in the early 1980s, removed the meniscus and particle problems of immersion and became the standard within a few years.
 
-###### Novolac resin from phenol and formaldehyde `chem.photoresist.novolac`
+###### Novolac resin from phenol and formaldehyde `chem.photoresist.novolac` _(low)_
 
 Phenol condensed with formaldehyde under acid to a thermoplastic, low-molecular-weight resin with no epoxide or methylol functionality left. The resin is not the photosensitive part; it is the part that gives the film its mechanical integrity and its dissolution behaviour in the developer. Its phenolic hydroxyl groups are why the novolac dissolves so readily in TMAH - and why an alkaline developable resist could not have worked with the old novolac-epoxy resists of the early 1960s.
 
@@ -695,7 +691,7 @@ Phenol condensed with formaldehyde under acid to a thermoplastic, low-molecular-
 
 The photosensitive ester: 1,2-naphthoquinone-2-diazide-5-sulphonic acid esterified onto the phenolic hydroxyls of the novolac. The 1,4-isomer was the one the 1980s photoresist industry settled on because it gives the higher photospeed and less outgrowth. The whole resist is about 20-30% diazo compound by weight; the rest is novolac and a small amount of sensitiser.
 
-###### Dehydration bake and hard bake `chem.photoresist.hard-bake`
+###### Dehydration bake and hard bake `chem.photoresist.hard-bake` _(low)_
 
 A dehydration bake at 150-200 C to drive the water out of the spin-coated film before exposure, and a post-exposure hard bake at 120-180 C to crosslink or densify the remaining image. The hard bake is what makes the resist resistant to the plasma etch and to the buffered HF, and it is also what makes it harder to strip - which is why the industry moved to plasma stripping and to ozonised water by the late 1980s, and why the old solvent strippers (phenol and sulphuric acid) disappeared from the process. Stripping progressed through a phenolic-plus-sulphuric-acid liquid strip to an ozone/water clean and an oxygen plasma ash, driven by the ion contamination of the liquid strippers and by the fact that a hard-baked resist had become impossible to remove in a controlled way; plasma ashing runs at about 1 mbar and 250-400 C.
 
@@ -1108,7 +1104,7 @@ The key DRAM process problem in 1982. A second conformal polysilicon layer had t
 
 The 4116 needed +5, +12, -5 and a boosted write supply, which is why it had a VBB pin and why the C64 prototype had extra regulators. The 4164 collapsed this to +5 V alone by generating the negative substrate bias on chip: an on-chip oscillator drives a capacitor, and the resulting AC is rectified to about -5 V and fed to the substrate, which also forward-biases the pn junction between the substrate and the n+ wells. Sense amplifiers bootstrap the bit line to +7-8 V during restore, and a second internal supply raises the word line above VDD.
 
-#### Two-level polysilicon NMOS DRAM process `mb.ram.process`
+#### Two-level polysilicon NMOS DRAM process `mb.ram.process` _(low)_
 
 Same basic silicon-gate NMOS flow as the CPU but heavier: thicker field oxide, more polysilicon depositions (three), a heavier arsenic source/drain, a thicker aluminium (2-3 um) for the bit lines that have to survive repeated bootstrapped swings, and usually two mask levels for bit-line precharge and sense amp. Eight to ten mask levels and 100-150 process steps, versus ~50 for the CPU.
 
@@ -2368,10 +2364,6 @@ Steatite is a mixture of talc with clay. Talc is mined from metamorphosed dolomi
 
 The wound wire is coated in a glassy enamel and baked, which is why wirewounds are glassy-bodied. Continuous operation above about 200 C needs cement or silicone instead.
 
-###### Vitreous enamel `mb.passives.resistors.discrete-axial.wirewound.enamel.glass`
-
-A glassy coating on the wound wire, applied as a slurry and baked. The enamel is what makes a wirewound part look like a glass-bodied component and is what lets it run hot without the wire oxidising.
-
 ###### Resistance alloy wire (NiCr / FeCr / CuNi) `mb.passives.resistors.discrete-axial.wirewound.alloy` _(medium)_
 
 Nichrome has the highest resistivity of the common resistance alloys and so minimises the wire length needed; constantan (CuNi) is used where a lower temperature coefficient matters more.
@@ -2527,10 +2519,6 @@ Lanthanum, dysprosium and yttrium oxides, ground and sieved to sub-micron, are t
 ###### Tape-casting slurry (powder + frit + binder) `mb.passives.caps.mlcc.slurry` _(medium)_
 
 The BaTiO3 powder is blended with a glass frit - an aid to sintering and to dielectric strength at the electrode interface - and an organic binder into a homogeneous, flowable slip. In 1982 this was an acrylic or PVA binder in water, or a cellulose ester in an organic solvent; fully water-based PVA systems became dominant later.
-
-###### Glass frit in the slurry `mb.passives.caps.mlcc.slurry.glass-frit` _(medium)_
-
-A few per cent of low-melting glass, added so that on sintering it wets the barium titanate grains, closes the porosity and gives the internal electrode a hermetic interface. Without it the MLCC is not gas-tight and its insulation resistance collapses.
 
 ###### Tape casting to green sheets `mb.passives.caps.mlcc.tape-cast` _(medium)_
 
@@ -4028,10 +4016,6 @@ The tube is made of two glass parts that must expand at the same rate or the tub
 
 Funnel glass is a borosilicate with low alkali, formulated so that its thermal expansion matches the panel. The batch is silica sand, boric acid, soda ash, limestone and a little red lead or litharge as a fining agent, melted for tens of hours in a regenerative gas-fired tank furnace and then drawn into tubing.
 
-###### Boric acid `peripheral.tv.crt.panel.funnel-glass.borax` _(medium)_
-
-Borates lower the glass's expansion coefficient and its melting point, which is exactly what a funnel that must survive a 25 kV implosion needs. Most borax for the western hemisphere came from borate ores in southern California and from Turkey.
-
 ###### Lead borosilicate sealing frit `peripheral.tv.crt.panel.frit` _(medium)_
 
 The seal that makes a television tube possible, and a substance rather than an object: a glass with a recipe, printed onto the parts that have to become one. Lead oxide, silica, boric oxide and alkali are mixed with a water-soluble or organic vehicle into a paste and screen-printed through a 60-100 mesh onto the rim of the panel and the flange of the funnel, then dried and fired at 600-700 degrees C to drive the vehicle off and devitrify the band. Panel and funnel are then brought together in a continuous belt kiln, where the frit softens and fuses at 430-460 degrees C. Lead does three jobs: it drops the sealing temperature far below the point where the base glass would slump, it can be tuned to match the expansion of either glass, and its high atomic number soaks up the bremsstrahlung X-rays that 25 kV of beam current unavoidably produces inside the tube. The printed band has to be dimensionally exact - too narrow and it will not seal, too wide and it costs lead.
@@ -4180,7 +4164,7 @@ A pair of small magnets sitting on the neck of the tube, arranged to tilt the de
 
 An iron-aluminium-nickel alloy with a high Curie point and a hard, brittle, unmachinable structure. Alnico is cast or sintered as a solid block, aged for days at 600-800 C to precipitate its magnetic phase, and then magnetised in a strong field - and it cannot be ground to shape afterwards, so the geometry of the magnet has to be cast in, which is exactly why a set's pincushion and width adjustments are a fixed arrangement of magnets rather than something the customer can trim. The recipe varies across the family and the variation matters for this tree: the original grades were cobalt-free, but the high-coercivity grades of the 1950s onwards added cobalt, titanium and copper, so an Alnico 5 magnet on a 1982 set is an iron-cobalt alloy and the cobalt in it came out of the Copperbelt, not out of the aluminium or the nickel.
 
-###### Samarium-cobalt correction magnet `peripheral.tv.crt.yoke.geometry.magnets.smco`
+###### Samarium-cobalt correction magnet `peripheral.tv.crt.yoke.geometry.magnets.smco` _(low)_
 
 A rare-earth permanent magnet with roughly twice the energy product of Alnico from a fraction of the volume, made by sintering or bonding finely divided samarium-cobalt powder and magnetising it. Its coercivity comes from samarium's affinity for cobalt, which holds the grains from rotating back into alignment, so the magnet resists demagnetisation far better than Alnico and does not need the iron it replaced. That is a real advantage on a deflection magnet, and it is exactly why the material was developed for this job and then priced out of a domestic set: samarium oxide was one of the more expensive rare-earth fractions, so the magnet cost was set by the separation plant rather than by the metallurgy.
 
@@ -5044,10 +5028,6 @@ A small moulded case in a filled thermoset or a glass-filled nylon, chosen so th
 
 A glass-filled nylon case gives a microswitch enough stiffness to keep its contact force with a thin wall, and enough toughness to survive being dropped. It is the standard material for that class of switch through the 1980s.
 
-###### Nylon-6-6 resin `c64.joystick.microswitches.plastic-case.nylon.nylon-6-6`
-
-The base polymer of the glass-filled nylon case, made from hexamethylenediamine and adipic acid. Caprolactam is the route to nylon 6, a different grade. A single C64 contains nylon in its switch housings, its joystick bushings and its microswitch cases.
-
 ###### Through-hole mounting and solder lugs `c64.joystick.microswitches.plastic-case.solder-lugs` _(medium)_
 
 The switches are pushed into holes in the joystick's printed board and their pins soldered from underneath. Positioning them on that board is what sets how far the gate has to travel before a direction registers - the mechanical timing of the whole joystick.
@@ -5686,7 +5666,7 @@ Calcium fluoride rock, the only commercial source of fluorine. A 1982 hydrofluor
 
 ###### Fluorite open-pit and underground mine `metal.fluorspar.mine` _(medium)_
 
-Fluorite fills the cavities and fracture zones of limestone, so it is mined either as a replacement body in a working limestone quarry or as a vein. Mexican fluorite was underground at Naica - where it grows the famous 12 m transparent crystals in a cave - and in open pits in Chihuahua. The South African deposits are in the carbonate sequences of the Transvaal Group, and the Chinese and Mongolian ones, which became dominant in the late 1980s, are in greisen and vein systems related to granite.
+Fluorite fills the cavities and fracture zones of limestone, so it is mined either as a replacement body in a working limestone quarry or as a vein. Mexican fluorite was mined underground at Naica and in open pits in Chihuahua. (Not Naica's famous giant crystals: those are selenite gypsum, up to 11.4 m, in a cave in the mine's limestone host rock — not fluorite.) The South African deposits are in the carbonate sequences of the Transvaal Group, and the Chinese and Mongolian ones, which became dominant in the late 1980s, are in greisen and vein systems related to granite.
 
 ###### Fluorite vein in limestone `metal.fluorspar.vein`
 
@@ -5833,7 +5813,7 @@ The wire that went through a C64 assembly line: a solid 63/37 core inside a flux
 
 The sticky amber solid left when turpentine is distilled out of pine resin. Most rosin is made from pine stumps - the resinous wood left behind when a tree is cut for pulp - by destructive distillation: the stump is chipped, heated in a still to about 150-200 C, turpentine and pine oil come over, and the residue is the rosin, which is then graded by colour and by softening point. About 700,000-800,000 tonnes of rosin were made in the early 1980s, mostly in China, the United States and Brazil. The black liquor from a kraft pulp mill carries resin acids and fatty acids - tall oil - which is distilled into fatty acids, tall-oil fatty acids and a pitch and can be processed further into rosin equivalents.
 
-###### Stump distillation and grading `chem.rosin.distillation`
+###### Stump distillation and grading `chem.rosin.distillation` _(low)_
 
 Rosin is made by distilling the resin out of pine stumps. The stump is chipped into 5-10 cm pieces, charged to a still, and heated; turpentine comes over first and is condensed and separated by distillation into alpha-pinene, beta-pinene and dipentene, and then pine oil and a heavy residue come over, and what is left in the pot is the crude rosin. The rosin is then graded - by colour (X, WW, WW, W) and by softening point (batter 75 C, fir 80 C, Norway 85 C, I 90 C, P 110 C, S 120 C) - and the Y grade, at about 165 C softening point and clear, is the one the flux core needs because it has almost no crystallisation and it does not go brittle. Grading is colour against a reference chip, softening point by the ring-and-ball method and acid value by titration, and the flux maker's specification is colour and softening point with the abietic acid content following from them.
 
@@ -6956,15 +6936,15 @@ Fifteen elements that differ only in the number of electrons in one inner shell 
 
 The output of the separation plant is a set of individual oxides rather than a mixture: europium oxide for the red activator in a colour television phosphor, samarium oxide for the samarium-cobalt magnet, neodymium oxide for the lanthanide rubber catalyst and for the cracking-catalyst zeolite, lanthanum and dysprosium oxides ground to sub-micron as the donor dopants of a ceramic dielectric, and yttrium oxide as both a dopant and a stabiliser. Grades are quoted by purity - 99.9% or 99.99% for the phosphor and magnet grades - and the price differences between them are large enough that the tonnages are shaped by which grade happens to be wanted, not by how much of the element there is in the ground.
 
-### Petrochemicals and process chemistry `chem`
+### Petrochemicals and process chemistry `chem` _(low)_
 
 Everything on the C64 that began as crude oil or natural gas: the polymers of the case and the keyboard, the solvents of the assembly plant, the wet chemicals and photoresists of the silicon fab, the laminate resin and flux of the board, and the fuels that moved all of it. Traces roughly a tonne of hydrocarbons per kilogram of plastic back to a barrel of light sour crude. The two feedstocks are named as ingredients, not children, because a petrochemical complex does not contain the oilfield it buys from.
 
-#### Crude oil: finding it, drilling it, lifting it `chem.crude`
+#### Crude oil: finding it, drilling it, lifting it `chem.crude` _(low)_
 
 The upstream end of the chain. Seismic surveys pick a structure, a rig drills a 5-7 km hole through rock, casing and cement line the hole, the well is completed and perforated into the reservoir, then often artificially stimulated. An 8 kg C64 case corresponds to only 1-3 litres of crude oil, but that crude was found under 5-10 km of overburden using a drilling rig that cost tens of millions of dollars.
 
-##### Petroleum exploration `chem.crude.exploration`
+##### Petroleum exploration `chem.crude.exploration` _(low)_
 
 Finding a commercial accumulation of oil before spending the exploration well. In 1980s practice this was reflection seismology over regional grids, closed by wildcat drilling. Cost per barrel discovered had fallen from tens of dollars to roughly $2-8 by the early 1980s. A mud-logging unit beside the rig sampled cuttings and gas continuously with a hot-wire or infrared hydrocarbon detector, and it was the shows it found that decided whether to run a full log suite.
 
@@ -6972,47 +6952,47 @@ Finding a commercial accumulation of oil before spending the exploration well. I
 
 A surface source sends a pressure wave down through the rock section; reflectors return it to hydrophones and the travel times are stacked into a two-dimensional depth section. Seismic is a time-domain method: it maps reflectivity contrasts (sandstone/shale, gas-sand amplitude dimming) and gives no direct information about fluid type. The record was stacked and migrated on a mainframe or minicomputer: common-midpoint stacking, normal-moveout correction from velocity analysis, deconvolution and depth conversion, with the 1980s emphasis on multiple suppression and on early 3-D, where a single field cost $1-3 million per acre-foot. A log response indicating oil or gas - high resistivity, low neutron density, a gas effect on the seismic - is a test, not a discovery: a discovery needed a producing well, and industry experience was one test in eight to one in thirty commercial.
 
-###### Seismic vibrator truck `chem.crude.exploration.seismic-survey.vibrator`
+###### Seismic vibrator truck `chem.crude.exploration.seismic-survey.vibrator` _(medium)_
 
 A truck-mounted hydraulic vibrator sweeps 10-80 Hz into the ground under hold-and-hold conditions; on land it replaced explosive shot holes because it gave repeatable, higher-energy sources with no shothole cleanup. Regionally a 1,000-2,000 m shotpoint spacing was normal in 1980s 2-D work.
 
-###### Airgun and marine seismic source `chem.crude.exploration.seismic-survey.airgun-array`
+###### Airgun and marine seismic source `chem.crude.exploration.seismic-survey.airgun-array` _(low)_
 
 Offshore and in shallow water the source was a 1,000-10,000 cu-in (16-160 litre) airgun array fired every 10-15 s from the stern of a seismic vessel. Compressed air from compressor trucks on deck; a single 1980s 3-D crew vessel carried up to four sources.
 
-###### Dynamite shothole source `chem.crude.exploration.seismic-survey.explosive-shot`
+###### Dynamite shothole source `chem.crude.exploration.seismic-survey.explosive-shot` _(low)_
 
 Still used for small onshore surveys in the early 1980s: 0.5-5 kg of packaged explosive in a borehole, fired from a firing truck, with the shot hole re-drilled for the next shot. Cheap per shot but slow, noisy and it polluted a producing field's drill cuttings.
 
-###### Seismic shot-hole explosive ammunition `chem.crude.exploration.seismic-survey.explosive-shot.ammo-case`
+###### Seismic shot-hole explosive ammunition `chem.crude.exploration.seismic-survey.explosive-shot.ammo-case` _(low)_
 
 Cast or pressed explosive in aluminium or paper shells with electric or vacuum-fire detonators, supplied on the same chemical logistics as any blasting operation. This is a one-off consumable of a survey, not part of any C64 material.
 
-###### Marine seismic streamer and hydrophone cable `chem.crude.exploration.seismic-survey.streamer-cable`
+###### Marine seismic streamer and hydrophone cable `chem.crude.exploration.seismic-survey.streamer-cable` _(low)_
 
 A towed cable up to 3 km long carrying hundreds of hydrophone elements at 12.5-25 m groups; it was a synthetic-fibre-wrapped, oil-filled or water-filled analogue/digital telemetry line whose integrity was the limiting factor on data quality. Hydrophone elements used piezoelectric ceramic (PZT-5) discs coupled to silicone oil in a pressure-compensated housing.
 
-###### PZT-5 piezoelectric hydrophone element `chem.crude.exploration.seismic-survey.streamer-cable.pzt-element`
+###### PZT-5 piezoelectric hydrophone element `chem.crude.exploration.seismic-survey.streamer-cable.pzt-element` _(low)_
 
 Lead zirconate titanate ceramic discs, typically 25-50 mm diameter, epoxied onto a diaphragm and back-electrode in a silicone-oil-filled housing; sensitivity about -190 dB re 1 V/uPa in the 10-60 Hz band. Silicone oil here is one of the petrochemical elastomers/fluids, unrelated to the case material.
 
-###### Seismic geophone array `chem.crude.exploration.seismic-survey.geophone-array`
+###### Seismic geophone array `chem.crude.exploration.seismic-survey.geophone-array` _(low)_
 
 On land, 12 to 48 groups of 10-60 Hz moving-coil geophones per station, each on a spike planted in a levelled hole, cabled and buried. In 1980s 2-D the fold of coverage (usually 6-fold to 24-fold) was chosen by geophone group interval and source spacing, not by 3-D binning.
 
-###### Moving-coil geophone `chem.crude.exploration.seismic-survey.geophone-array.geophone`
+###### Moving-coil geophone `chem.crude.exploration.seismic-survey.geophone-array.geophone` _(low)_
 
 A 1-2 kg mass suspended in a magnetic field inside a case 3-5 cm across; coil movement induces a signal proportional to ground velocity. A second coil acts as a position feedback for the servo. Cost per channel in the early 1980s was several hundred to a few thousand dollars.
 
-###### Geophone takeout cable and junction box `chem.crude.exploration.seismic-survey.geophone-array.takeout-cable`
+###### Geophone takeout cable and junction box `chem.crude.exploration.seismic-survey.geophone-array.takeout-cable` _(low)_
 
 Polythene-insulated multi-pair takeout cable to a junction box, then a line-trap and telemetry radio link to the recording truck. Cable insulation here is polyethylene from the same steam-cracking chain as the C64's power cord jacket.
 
-###### Seismic recording system `chem.crude.exploration.seismic-survey.recording-truck`
+###### Seismic recording system `chem.crude.exploration.seismic-survey.recording-truck` _(low)_
 
 Field recording on 1/2 in or 1 in nine-track magnetic tape (typically 2000 inch/s, 12.5-50 Hz bandwidth) or, from the early 1980s, 12-bit digital field recorders writing 3M/IBM-compatible cartridges. The whole array recorded simultaneously; it was common for the record to be demultiplexed and copied to a computer tape for onshore stacking.
 
-###### Exploration (wildcat) well `chem.crude.exploration.exploration-well`
+###### Exploration (wildcat) well `chem.crude.exploration.exploration-well` _(low)_
 
 The first hole into a prospect. Cheap success-failure logging with mud logging and core, drilled to the deepest prognosis rather than the shallowest pay. Exploration wells in the early 1980s averaged about 3,000-5,000 m of hole and took 30-90 days offshore.
 
@@ -7028,39 +7008,39 @@ Volumetric and material-balance estimates, presented to a board and to governmen
 
 Undiscovered reserves behind existing fields were treated as of similar magnitude to proved reserves. The industry view of world ultimately-recoverable oil in 1983 was around 1,500-2,000 billion stock-tank barrels, versus about 700 billion produced or proved.
 
-##### The reservoir: where the oil sits `chem.crude.reservoir`
+##### The reservoir: where the oil sits `chem.crude.reservoir` _(low)_
 
 Oil exists in pore space between grains of sandstone or in fractures and vugs of carbonate, held down by an overburden of rock and by an overlying gas cap or water. This is the physical thing that the whole upstream industry is trying to reach. Oil squeezed out of the source rock moves updip along a permeable sandstone or through a fault until it is trapped, driven by a buoyancy of roughly 0.2-0.4 degrees API per 1,000 ft, with the column height set by the capillary entry pressure of the seal.
 
-###### Sedimentary basin `chem.crude.reservoir.sedimentary-basin`
+###### Sedimentary basin `chem.crude.reservoir.sedimentary-basin` _(low)_
 
 A subsiding basin in which organic mud is buried, buried deeper, cooked and squeezed; the whole petroleum system is source, maturation, migration, reservoir, seal and trap, and it takes 1-100 million years of that history. By 1983 the world's producing basins were a few hundred in number, with the Middle East and the Gulf of Mexico dominating reserves.
 
-###### Source rock and kerogen `chem.crude.reservoir.source-rock`
+###### Source rock and kerogen `chem.crude.reservoir.source-rock` _(low)_
 
 Organic-rich marine shale. Type I and type II kerogen give oil; type III, humic and mainly terrestrial, gives gas. Maturation is measured by vitrinite reflectance, with the oil window at roughly 0.6-1.3% Ro and the gas window above about 1.3%. Between about 60 and 160 C the kerogen breaks down into oil and at higher rank into wet and then dry gas: the same thermal-cracking chemistry, far slower and uncatalysed, that a steam cracker performs in seconds.
 
-###### Geological trap `chem.crude.reservoir.trap`
+###### Geological trap `chem.crude.reservoir.trap` _(low)_
 
 Anticline, fault, pinch-out or stratigraphic trap. The Ghawar field in Saudi Arabia, discovered in 1948, remained the largest oil field on earth for decades, holding some 100+ billion stock-tank barrels in a stacked series of Arabian carbonate reservoirs.
 
-###### Reservoir rock: sandstone and carbonate `chem.crude.reservoir.reservoir-rock`
+###### Reservoir rock: sandstone and carbonate `chem.crude.reservoir.reservoir-rock` _(low)_
 
 Porosity 15-35% and permeability 50-2,000 mD for a good sandstone; carbonate reservoirs have most of their porosity as vugs and fractures and typically 5-25% matrix porosity. Around 60% of world oil reserves and 80% of world gas reserves were in carbonate rock, most of it fractured Arab-type in the Middle East.
 
-###### Marine carbonate (Arab-type) reservoir `chem.crude.reservoir.reservoir-rock.marine-carbonate`
+###### Marine carbonate (Arab-type) reservoir `chem.crude.reservoir.reservoir-rock.marine-carbonate` _(low)_
 
 Dolomitised limestone and dolomite of the Arabian shelf: high initial productivity, typically 4,000-10,000 bbl/d per well with strong water drive, but rapid flow assurance decline and high water cut. Saudi production was essentially all of this rock type in 1983.
 
-###### Oil column in the pore space `chem.crude.reservoir.oil-column`
+###### Oil column in the pore space `chem.crude.reservoir.oil-column` _(low)_
 
 An oil column of tens to hundreds of metres stands between a gas cap and a water contact, with oil saturation in the pay zone often only 50-80% of pore volume. That gap, plus the reservoir rock and the seal, is why recovery factors are 15-35% and why hydraulic fracturing and acidising exist.
 
-###### Oil in place `chem.crude.reservoir.oil-column.oil-in-place`
+###### Oil in place `chem.crude.reservoir.oil-column.oil-in-place` _(low)_
 
 The volume of hydrocarbons physically present in the rock, before any recovery factor. Multiply it by the C64 scale: the entire world shipped about 200,000 Commodore 64s in 1983, so the machine is a rounding error on a single wellhead's hourly output.
 
-###### Asphaltenes and resins `chem.petroleum.asphaltene`
+###### Asphaltenes and resins `chem.petroleum.asphaltene` _(low)_
 
 The heavy, aromatic, high-molecular-weight end of crude. Roughly 2-20% of crude, soluble in the light ends and precipitated by heptane in the standard n-heptane asphaltene test. Asphaltenes are the coke precursors in every thermal cracker, coker and reformer, and their content is what decides whether a crude makes a good or bad feedstock.
 
@@ -7068,19 +7048,19 @@ The heavy, aromatic, high-molecular-weight end of crude. Roughly 2-20% of crude,
 
 Rotary drilling: the drill string is rotated from the surface, the bit mills a hole, mud circulates to carry cuttings out and to control formation pressure. Offshore this is a jack-up, a semisubmersible or a drillship; onshore it is a land rig with a derrick. 1980s rigs reached 6,000-7,500 m total depth on routine programs.
 
-###### Rotary drilling `chem.crude.rig.rotary-drilling`
+###### Rotary drilling `chem.crude.rig.rotary-drilling` _(medium)_
 
 A rotary table or top drive turns the string at 30-150 rpm with 10-40 kN-m torque while 200-450 kN of weight is set off the bit. Weight-on-bit and torque are the two variables the driller steers with; the drilling engineer watches torque and bit exponent while the driller watches penetration rate.
 
-###### Drill string `chem.crude.rig.rotary-drilling.drillstring`
+###### Drill string `chem.crude.rig.rotary-drilling.drillstring` _(low)_
 
 Drill pipe, drill collars and a bit, threaded or coupled API 5-1/2 in and 6-5/8 in in the 1980s, with 3-1/2 in drill collar subs. Length is a queue of 5,000-7,000 m of 5 in pipe plus 200-400 m of collars; the string must be strong enough for tensile load at the maximum string weight yet remain within the derrick.
 
-###### Mud circulation system `chem.crude.rig.rotary-drilling.mud-system`
+###### Mud circulation system `chem.crude.rig.rotary-drilling.mud-system` _(low)_
 
 Active and reserve pits, the pump, the surface mixing hopper (mud pit) and the flowline over the shaker. 1980s volumes for a single rig were 400-1,500 m3 of active mud with 150-400 m3 of reserve, and the pit room needed chemical dosing, dilution and waste disposal for one well's worth of chemically treated clay.
 
-###### Drilling mud (drilling fluid) `chem.crude.rig.drilling-mud`
+###### Drilling mud (drilling fluid) `chem.crude.rig.drilling-mud` _(low)_
 
 A thixotropic clay-water or oil-water emulsion that removes cuttings, lubricates and cools the bit, carries hydraulic pressure to the formation, and crucially gels to hold formation pressure when the pumps stop. In practice it was a chemically engineered suspension with four control jobs: viscosity at the bit, gel strength in the hole, filtrate control to stop the formation claying off, and compatibility with the formation. Four numbers decide whether a mud works: funnel viscosity, plastic viscosity, yield point and the PV/YP ratio, with PV/YP held at or below 3 for hole cleaning, plus a low-pressure filtration rate (Baroid/API) to limit the filtrate that causes formation damage and differential sticking.
 
@@ -7088,7 +7068,7 @@ A thixotropic clay-water or oil-water emulsion that removes cuttings, lubricates
 
 Sodium montmorillonite from the Cretaceous Bentonite beds of Wyoming and South Dakota; the single most important mud component. It gives the thixotropy: at rest a high gel strength to suspend cuttings, under shear it drops to low viscosity so the bit can cut. Drilling-grade bentonite is API 13/14 with a viscosity of 30+ s/qt and a low montmorillonite ratio.
 
-###### Montmorillonite and the bentonite bed `chem.crude.rig.drilling-mud.bentonite.montmorillonite`
+###### Montmorillonite and the bentonite bed `chem.crude.rig.drilling-mud.bentonite.montmorillonite` _(low)_
 
 Sodium montmorillonite is a dioctahedral 2:1 smectite: two tetrahedral silica sheets sandwiching an octahedral aluminium sheet, with the negative layer charge balanced by exchangeable sodium. Between the layers is water, and that water is why the clay swells, gels and gives the mud its thixotropy. The drilling grade comes from the Cretaceous Bentonite bed of Wyoming and South Dakota, a marine sediment about 65-72 million years old that is a calcium montmorillonite until it is mined and soda-ashed to the sodium form.
 
@@ -7100,7 +7080,7 @@ The pit clay is a calcium montmorillonite and has to be converted. The clay is b
 
 A 10-20 m thick bentonite bed, opened up and worked as an open pit or a shallow underground mine, in a landscape that looks like a lunar plain because the clay is grey-white when fresh and weathers to a pale crust. It is the last dig-it-out node of the crude branch's drilling chain, and it is the point at which a machine that will one day hold a C64's case first touches something that came out of the ground with no hydrocarbons in it at all.
 
-###### Barite (barium sulphate) weighting agent `chem.crude.rig.drilling-mud.barite`
+###### Barite (barium sulphate) weighting agent `chem.crude.rig.drilling-mud.barite` _(low)_
 
 Almost all the weight in a mud: API-grade barite at 4.28 g/cm3 (42.8 ppg) added to a base mud of about 1.03-1.2. Barite is also the standard drilling weighting because it is nearly insoluble in water. The same mineral appears as filler in the plastics and cable branches of this file, via metal.barium-carbonate.
 
@@ -7108,7 +7088,7 @@ Almost all the weight in a mud: API-grade barite at 4.28 g/cm3 (42.8 ppg) added 
 
 The classic high-temperature mud: a water-in-oil (invert) emulsion with oil as the continuous phase, bentonite in the aqueous phase, and calcium carbonate and a lime (Ca(OH)2) emulsion. Chrome/lime muds were standard to about 120-150 C but they fail in a cement job because the calcium in cement breaks the emulsion, so a salt-water mud or a chrome-free lime mud had to be switched in first.
 
-###### Oil-based (diesel) mud `chem.crude.rig.drilling-mud.oil-based-mud`
+###### Oil-based (diesel) mud `chem.crude.rig.drilling-mud.oil-based-mud` _(low)_
 
 Diesel or mineral oil as the continuous phase with water as the dispersed phase, organophilic clay (amine-treated montmorillonite) for viscosity. Chosen for high-temperature deep wells and for formations where water filtrate would swell clay. Its environmental reputation in the Gulf in the 1980s was poor, and it had to be stabilised with organophilic bentonite and lime.
 
@@ -7120,7 +7100,7 @@ Where barite was unavailable or too expensive, ground iron ore was blended in as
 
 The 1980s mud chemist's standard additive cabinet: phosphate and polyphosphate sequestrants for calcium, lignosulphonate and polyacrylamide viscosifiers, benzyl alcohol defoamer, and glutaraldehyde or formaldehyde-based biocides against sulphate-reducing bacteria, which produce hydrogen sulphide and sour the cuttings.
 
-###### Drill bits `chem.crude.rig.bit`
+###### Drill bits `chem.crude.rig.bit` _(low)_
 
 The cutting tool at the bottom of the string. In 1980s practice a soft-formation bit was a sealed journal bearing with a cone of natural diamond, a medium bit a sealed or unsealed mud turbine with tungsten-carbide nose buttons, and a hard rock bit a milled-steel body with tungsten-carbide inserts on the three cones.
 
@@ -7128,11 +7108,11 @@ The cutting tool at the bottom of the string. In 1980s practice a soft-formation
 
 WC-Co cemented carbide: 6-12% cobalt binder, 900-1,600 HV, pressed and sintered in a vacuum furnace then brazed onto the cone or into a milled-steel body. Cemented-carbide rock-bit consumption was the largest single use of tungsten carbide in the world in the 1980s, comparable to carbide tooling.
 
-###### Natural diamond (soft-formation bit) `chem.crude.rig.bit.natural-diamond`
+###### Natural diamond (soft-formation bit) `chem.crude.rig.bit.natural-diamond` _(low)_
 
 Gem-quality or bort diamond in a matrix of tungsten and cobalt sintered into a cone. Natural diamond bits dominate soft sandstone and were the standard drag-bit insert in 1980s drilling; synthetic (polycrystalline) diamond began to displace them in abrasive sandstone late in the decade.
 
-###### PDC (polycrystalline diamond compact) bit `chem.crude.rig.bit.pdc-bit`
+###### PDC (polycrystalline diamond compact) bit `chem.crude.rig.bit.pdc-bit` _(low)_
 
 The emerging bit of the early 1980s: sintered diamond compact cutters brazed to a steel body with no cones and no bearings, turning rather than grinding. PDC began as a hard-rock bit, spread into soft rock in the mid-1980s and largely replaced roller cones in soft formations by the early 1990s. In 1983 it was perhaps 10-20% of the market.
 
@@ -7140,7 +7120,7 @@ The emerging bit of the early 1980s: sintered diamond compact cutters brazed to 
 
 Diamond powder sintered at 5,000-6,000 bar and 1,400-1,600 C with a cobalt metal catalyst from the diamond-graphite phase boundary. Over a 1980s field life a soft-formation PDC cutter could cut tens of kilometres of sandstone; hard-rock PDC arrived later with tungsten-carbide substrates and domed cutters.
 
-###### Casing and cementing `chem.crude.rig.casing-cement`
+###### Casing and cementing `chem.crude.rig.casing-cement` _(low)_
 
 Steel casing is run to isolate the hole and to carry the pressure; cement is pumped between casing and formation (and sometimes inside the casing) to seal the annulus. Without a good cement job the whole completion leaks and stimulation injects into the wrong zone. Cementing is one of the few oilfield jobs that is nearly a repeatability disaster: 10-30% of wells take a cement squeeze.
 
@@ -7152,7 +7132,7 @@ Portland-type cement with 40-60 wt% Class G sulphate-resisting blend, gypsum for
 
 Sulfonated naphthalene formaldehyde condensates (BNS) or sulfonated formaldehyde melamine (SFM) to keep the slurry workable at low water; and bentonite as an extender. Early 1980s practice was to optimise with laboratory thickening-time tests before the job, because a primary cement job cost $0.2-1 million.
 
-###### Casing string and cement sheath `chem.crude.rig.casing-cement.casing-string`
+###### Casing string and cement sheath `chem.crude.rig.casing-cement.casing-string` _(low)_
 
 Conductor, surface, intermediate and production casing, each cemented across its shoe. The C64-scale point: even a modest producing well consumes tens to hundreds of tonnes of cement and hundreds of metres of steel, dwarfing the machine it ultimately supplies.
 
@@ -7160,23 +7140,23 @@ Conductor, surface, intermediate and production casing, each cemented across its
 
 Jack-up rigs (4-6 legs, 60-90 m water-depth limit) and fixed derricks onshore; semisubmersibles (700-1,000 m, self-propelled, expensive); drillships (ice-strengthened, for deep water and harsh climates). Costs in the early 1980s: onshore rig $1-3 million, jack-up $20-45 million, drillship $30-70 million, semisubmersible $60-120 million. Offshore dayrates in 1983 ran $25,000-60,000 a day.
 
-###### Well control: BOP, diverter and kill `chem.crude.rig.pressure-control`
+###### Well control: BOP, diverter and kill `chem.crude.rig.pressure-control` _(low)_
 
 The blowout preventer stack (annular preventer plus 3-5 ram preventers) and the choke manifold above the wellhead, rated 5,000-15,000 psi. Before the 1970s and 1980s safety emphasis, the classic profile was a vertical string, overbalanced mud and a diverter; 1980s practice added the above-the-bit diverter packoff for kick tolerance.
 
-###### Core drilling and coring `chem.crude.rig.core-drilling`
+###### Core drilling and coring `chem.crude.rig.core-drilling` _(low)_
 
 Diamond core barrels cut 1-4 in core in a special drilling string, giving the reservoir rock, its porosity, its saturation and its capillary properties undamaged. A cored well is the most expensive way to get reservoir data, so it was used on 1-3 wells out of 20 and almost always on the discovery well.
 
-###### Diamond core barrel `chem.crude.rig.core-drilling.core-barrel`
+###### Diamond core barrel `chem.crude.rig.core-drilling.core-barrel` _(low)_
 
 A steel or aluminium tube with a diamond-set reaming shell and a core lifter, run on the bottom hole assembly at low RPM (20-100) and low weight. Carbit tungsten-carbide bits dominated abrasive sandstone, PCD for softer beds, and set diamond for carbonate.
 
-##### Well completion `chem.crude.well-completion`
+##### Well completion `chem.crude.well-completion` _(medium)_
 
 Turning a drilled hole into a producing well: set production casing, cement to the pay, run and perforate the tubing, pack the annulus, and install a tree. This is where the reservoir is deliberately connected to the borehole for the first time. A completed well was logged with spinner and turbine flowmeters, noise logs and temperature logs, and tested with a multi-hour rate and pressure buildup.
 
-###### Perforation `chem.crude.well-completion.perforation`
+###### Perforation `chem.crude.well-completion.perforation` _(low)_
 
 Shaped charges fired down the casing to punch 1-3 cm holes through steel, cement and formation in one shot, linking pay zone to borehole. A 1980s completion might be 4-6 perforations per metre of pay; perforation is done in stages so only the best footage is shot.
 
@@ -7184,23 +7164,23 @@ Shaped charges fired down the casing to punch 1-3 cm holes through steel, cement
 
 A copper or steel cone lined with a high explosive (RDX/HMX or HMX-wax, 5-30 g per shot in the 1980s) with a steel or ceramic liner; the detonated cone forms a copper or tungsten-alloy jet at 8-10 km/s which drills the hole. Charges were fired on a wireline in a gun barrel or in a TCP (tubing conveyed perforator).
 
-###### Entry hole into the pay zone `chem.crude.well-completion.perforation.entry-hole`
+###### Entry hole into the pay zone `chem.crude.well-completion.perforation.entry-hole` _(medium)_
 
 The first connection to the reservoir is itself a jet-perforated hole in cement, and it is the smallest diameter in the whole production system: a few millimetres through which the entire well flow must pass.
 
-###### Packer and completion hardware `chem.crude.well-completion.packer`
+###### Packer and completion hardware `chem.crude.well-completion.packer` _(low)_
 
 An elastomer-sealed packer run and set in the casing to isolate zones and provide a seat for the tubing hanger. In 1980s completions this was single- or dual-packer tubing with sliding sleeves or selective stimulation, increasingly mechanical rather than hydraulic.
 
-###### Packer elastomer (nitrile / HNBR) `chem.crude.well-completion.packer.elastomer`
+###### Packer elastomer (nitrile / HNBR) `chem.crude.well-completion.packer.elastomer` _(medium)_
 
 A nitrile (acrylonitrile-butadiene) or HNBR element that swells or mechanically expands to grip the casing. Nitrile is the same chemistry as chem.butadiene in the polymer branch: acrylonitrile copolymerised with butadiene.
 
-###### Christmas tree (wellhead assembly) `chem.crude.well-completion.christmas-tree`
+###### Christmas tree (wellhead assembly) `chem.crude.well-completion.christmas-tree` _(low)_
 
 The valve stack on top of the casing: casing spool, tubing spool, master valve, wing valves with gauges, and the flowline tee off the wing. Every stream the well ever produces has to pass through this steel gatework, which is why it is the most pressure-rated cluster of parts in the business.
 
-##### Well stimulation: fracturing and acidising `chem.crude.stimulation`
+##### Well stimulation: fracturing and acidising `chem.crude.stimulation` _(low)_
 
 Almost no reservoir delivers its whole potential through a millimetre perforation. Stimulation makes the rock permeable by fracture or by dissolving the rock; it is one of the biggest single levers on oil and gas supply and it consumes enormous volumes of water, sand and, for acidising, corrosive acid. Heavy oil and tar sands were stimulated with steam at 250-350 C, injected, soaked and then produced on at Cold Lake and Athabasca scale; one steam cycle costs several tonnes of water and roughly 0.5-1 barrel of 60% fuel oil per tonne of steam.
 
@@ -7216,7 +7196,7 @@ Water plus a viscosity builder (hydroxyethyl cellulose in water, or a hydrocarbo
 
 Sized, round, silica sand or resin-coated sand, typically 20/40 or 30/50 mesh (0.4-0.6 mm), graded to carry a hundred thousand tonnes a year in a region. Ottawa River and Illinois Basin sands were the standard, with regional sources in Texas and Arkansas. It was a heavy, low-value, high-bulk freight commodity.
 
-###### Fracturing sand and its plant `chem.crude.stimulation.hydraulic-fracturing.proppant.sand-processing`
+###### Fracturing sand and its plant `chem.crude.stimulation.hydraulic-fracturing.proppant.sand-processing` _(low)_
 
 The proppant is a silica sand that has been sieved, washed, resin-coated and graded, and the plant that does it is a small mineral processing operation that exists in the Permian basin because the proppant has to be nearby. The oilfield sands of the Permian have a problem that glass sands do not: a weak grain crushes under the closure stress of a hydraulic fracture, so the 1980s industry coated a fraction of the proppant with a phenolic resin to make it stronger. By the late 1980s a fraction of the sand (5-30% depending on the basin) was coated with a cured phenolic or furfural resin so it would not embed on closure, which turned a mineral commodity into a single-use consumable and created a solid waste stream of its own.
 
@@ -7224,11 +7204,11 @@ The proppant is a silica sand that has been sieved, washed, resin-coated and gra
 
 A sand quarry that happens to contain almost pure silica in a dune, worked at 1,000-10,000 tonnes a day. The last dig-it-out node of the crude branch's stimulation chain, and a reminder that a hydraulic fracture is largely a mineral supply chain: the water, the sand and the chemicals are all mining and manufacturing, and only the pressure is petroleum engineering.
 
-###### Fracturing pumping equipment `chem.crude.stimulation.hydraulic-fracturing.frac-equipment`
+###### Fracturing pumping equipment `chem.crude.stimulation.hydraulic-fracturing.frac-equipment` _(low)_
 
 Blender trucks, sand trucks and a high-pressure pump unit (one pumping unit at 25,000 psi), laid out in a yard over the rig. A 1980s job mobilised 10-40 trucks and 100-200 people, and it was the largest single water consumer in the oilfield outside steam flooding.
 
-###### Matrix acidising and fracture acidising `chem.crude.stimulation.acidising`
+###### Matrix acidising and fracture acidising `chem.crude.stimulation.acidising` _(low)_
 
 Hydrochloric or hydrofluoric acid injected to dissolve or acid-fracture the rock, typically 15-28% HCl in sandstone and HF-containing mud acid in carbonate. Sandstone acidising only reached the late 1970s as a standard service; carbonate mud-acid fracturing with a 12% HCl-3% HF system had become the standard carbonate treatment by the mid-1980s. Placement mattered more than chemistry: acid was bullheaded down casing or coiled-tubed into the perforation tunnels, and because HF precipitates calcium fluoride a 1.2-1.5 m HCl preflush was always pumped first to keep calcium out of the rock.
 
@@ -7236,7 +7216,7 @@ Hydrochloric or hydrofluoric acid injected to dissolve or acid-fracture the rock
 
 Hydrochloric acid to dissolve carbonate, with 1-3 wt% HF to attack the clay in sandstone and 2-5 wt% HF in carbonate muds. The reason for mud acid was a reserve shift: by the early 1980s mudstone was around 80% of world oil reserves, and mudstone cannot be treated with pure HCl because of its clay reactivity. Acid is pumped downhole in steel or titanium coils, with corrosion inhibitors (amines, thiourea) and a surfactant.
 
-###### Acid corrosion inhibitor `chem.crude.stimulation.acidising.mud-acid.corrosion-inhibitor`
+###### Acid corrosion inhibitor `chem.crude.stimulation.acidising.mud-acid.corrosion-inhibitor` _(low)_
 
 Hydrofluoric acid at 12% and hydrochloric acid at 12%, pumped down a steel coil, will remove a hundredth of an inch of steel a day. The inhibitors - a long-chain amine, thiourea, an acetylenic alcohol - adsorb on the steel and cut the corrosion rate by several orders of magnitude without touching the rock. It is a thin grey film of chemistry doing the work, and it is the reason mud-acid jobs of the 1980s could be pumped downhole at all.
 
@@ -7244,15 +7224,15 @@ Hydrofluoric acid at 12% and hydrochloric acid at 12%, pumped down a steel coil,
 
 Coiled tubing and the acid lines were, by the mid-1980s, routinely nickel alloy - a nickel-molybdenum alloy such as Alloy C-276 or a titanium grade - rather than carbon steel, because the inhibitor was never perfect and the steel was never quite good enough. Nickel alloys and titanium come out of a metallurgical chain rather than a petrochemical one, but it is the acid chemistry that puts them into this operation.
 
-##### Wellhead and terminal separation `chem.crude.separation`
+##### Wellhead and terminal separation `chem.crude.separation` _(low)_
 
 The wellstream arrives at 15-100 bar and 60-100 C as an oil/gas/water froth. It is separated in stages: test separator, stock tanks, heaters and desalters, gas-oil separator, and finally a train of electrostatic and coalescing vessels that make a storable crude. Field separation is where the crude assay is determined and where the oil is counted.
 
-###### Test separator `chem.crude.separation.test-separator`
+###### Test separator `chem.crude.separation.test-separator` _(low)_
 
 The first vessel, sized 1-5% of the field's liquid capacity, where the wellstream is bled at 25-70 bar to a stable pressure and temperature. Its records are the raw data for reservoir performance, gas-oil ratio and oil assay. A field with 100,000 bbl/d of oil needed a test separator of a few hundred bbl.
 
-###### Three-phase separator and stock tanks `chem.crude.separation.three-phase`
+###### Three-phase separator and stock tanks `chem.crude.separation.three-phase` _(low)_
 
 A horizontal or vertical vessel at 2-10 bar with a mechanical or electrostatic coalescing section that separates oil, gas and water, then atmospheric storage tanks that settle the remaining water and sediment. Stock tank bottoms and the settled water carry the production's salt and heavy ends, and their disposal was the field's environmental problem in the 1980s.
 
@@ -7260,7 +7240,7 @@ A horizontal or vertical vessel at 2-10 bar with a mechanical or electrostatic c
 
 Nonylphenol- or alcohol-based surfactants dosed at 5-50 ppm to break the oil-water emulsion; in the 1980s a growing share of demulsifiers were polyalkoxyamine and polyglycol ethers. A stable water-in-oil emulsion (chocolate mousse) could hold 20-50% water into the crude and was the single largest quality loss on a wet field.
 
-###### Heater-treater and desalter `chem.crude.separation.heater-treater`
+###### Heater-treater and desalter `chem.crude.separation.heater-treater` _(low)_
 
 A crude preheater to 150-200 C followed by a settler and then a desalter, where the crude is washed with recycled water to strip salts. Needed because sour Middle East crudes carry 1-3 wt% dissolved salts, and because naphthenic acids plus water at 200 C will corrode the hot exchanger on the way to the refinery. A crude desalter separates maybe 90-95% of the salt in one stage.
 
@@ -7272,7 +7252,7 @@ Charged droplets are attracted into the water phase, collapsing the emulsion in 
 
 A packed or membrane device that lets separated water droplets out of the crude without carrying oil. Produced-water disposal in 1983 was to a pit or a treatment plant; the offshore discharge limit under the 1983 amendments to the US Clean Water Act required 42 ppm oil and no visible sheen, which is why coalescers and hydrocyclones appeared on offshore platforms.
 
-##### Crude assay `chem.crude.assay`
+##### Crude assay `chem.crude.assay` _(low)_
 
 What the seller is paid for: a barrel of crude is specified by a handful of standardised numbers, and every downstream decision - which cracker, which desulphuriser, whether it can be shipped - is made from them. Density and API gravity set the transport economics, sulphur splits sweet from sour, the simulated boiling curve sets the cut points, the trace metals set the catalyst life, and the cold-flow properties decide whether it can be pumped.
 
@@ -7284,31 +7264,31 @@ The plastic mass of a C64 is about 350-400 g of ABS in the case plus 100-200 g i
 
 Methane, mostly: either the gas cap sitting on an oil reservoir or a gas-only field. In 1983 world gas production was roughly 2.9-3.0 trillion cubic metres a year, of which about 70% was still associated with oil and much of it was flared or burned at the wellhead. Gas matters to a C64 three ways: as acetylene for PVC and chlorinated solvents, as hydrogen for ammonia and hydrochloric acid, and as the fuel that moved the plastics.
 
-##### What natural gas is `chem.natural-gas.composition`
+##### What natural gas is `chem.natural-gas.composition` _(low)_
 
 A mixture, not a compound. A sour gas well may deliver methane with 2-10% ethane and propane, 1-8% C4, 1-20% hydrogen sulphide, 0.5-5% carbon dioxide and up to 15% nitrogen. Everything downstream - the pipelines, the dew point specification, the hydrogen plant - is set by those five impurities.
 
-##### Where the gas comes from `chem.natural-gas.sources`
+##### Where the gas comes from `chem.natural-gas.sources` _(low)_
 
 Associated gas from the gas cap of an oil reservoir, and non-associated (gas-only) gas. The distinction matters industrially: associated gas was a by-product that had to be flared or reinjected until the late 1970s made it commercial, while gas-only fields carry the pipelines and the LNG trains.
 
-##### Gas processing and transport `chem.natural-gas.processing`
+##### Gas processing and transport `chem.natural-gas.processing` _(low)_
 
 The plants that turn a wet, sour wellstream into a pipeline gas, a liquefied gas or a natural-gas-liquids fraction. A large 1980s gas plant handled 5-30 billion standard cubic feet a day; the North Sea, Gulf and Middle Eastern plants of that decade were among the largest chemical plants ever built. Ethane, propane, butane and pentane are stripped out as natural gas liquids - ethane for crackers, propane and butane for LPG, C5+ for gasoline - and a cryogenic plant recovers 90-99% of the methane but less of the heavy end, so the design trade is expander against absorption.
 
-###### Cryogenic separation (expander plant) `chem.natural-gas.processing.cryogenic-separation`
+###### Cryogenic separation (expander plant) `chem.natural-gas.processing.cryogenic-separation` _(low)_
 
 The JT-expander process that became the industry standard for large gas plants in the 1980s: the gas is chilled by expansion through a turbine to -30 to -80 C and the resulting cold box distils methane from ethane and heavier. The plant cost is dominated by the aluminium cold boxes, which remain one of the largest single uses of aluminium in the world per tonne produced.
 
-###### Cryogenic turboexpander `chem.natural-gas.processing.cryogenic-separation.expander`
+###### Cryogenic turboexpander `chem.natural-gas.processing.cryogenic-separation.expander` _(low)_
 
 A radial or axial turbine in the cold box, handling 10,000-40,000 kW on a big plant, recovering 5-15% of the gas enthalpy and reaching -30 to -80 C. The expander train was the mechanical heart of the 1980s gas plant and its efficiency set the plant cost.
 
-###### Aluminium cold box `chem.natural-gas.processing.cryogenic-separation.cold-box`
+###### Aluminium cold box `chem.natural-gas.processing.cryogenic-separation.cold-box` _(low)_
 
 A brazed plate-and-fin aluminium exchanger 10-30 m long, cryogenic to -80 C, containing dozens of channels. Aluminium-brazed cold boxes replaced copper wound exchangers in the 1970s and are one reason the gas plant business grew so fast in that decade.
 
-###### LNG liquefaction `chem.natural-gas.processing.liquefaction`
+###### LNG liquefaction `chem.natural-gas.processing.liquefaction` _(low)_
 
 Chilling gas to -162 C so it becomes a liquid at atmospheric pressure, cutting volume about 600-fold for the same energy. In 1983 world LNG trade was roughly 55-70 billion m3 a year, about 2-3% of world gas production, on a network of roughly 60-70 liquefaction trains. The dominant cycles were the propane-precooled mixed refrigerant (9 stages, about 7-8% specific power) and the nitrogen expander cycle.
 
@@ -7324,23 +7304,23 @@ A vacuum-insulated cylindrical tank of 20,000-160,000 m3 with a nickel-alloy inn
 
 A 70,000-125,000 m3 membrane or independent-tank ship with a re-liquefaction plant, because LNG boils off at 0.1-0.3% a day and the load has to be reliquefied in transit. The world LNG fleet in 1983 was of the order of 90-130 ships at $40-90 million each.
 
-###### Gas pipeline `chem.natural-gas.processing.pipeline`
+###### Gas pipeline `chem.natural-gas.processing.pipeline` _(low)_
 
 Line pipe 0.6-1.4 m in diameter, API 5L grade X52-X70, laid by a lay barge or a trenching spread and internally coated with epoxy and polyethylene powder. Transmission lines run at 60-100 bar with compressors every 100-200 km. The 1980s were the years of the great gas transmission builds: the Central Asia-Centre system, the Norwegian and North Sea systems and the Trans-Med pipelines all date from this decade.
 
-###### Subsea pipeline and riser `chem.natural-gas.processing.pipeline.subsea`
+###### Subsea pipeline and riser `chem.natural-gas.processing.pipeline.subsea` _(low)_
 
 Concrete weight-coated line with a hot-water or electrical trace heater for hydrate prevention, and a wet-insulated riser with a buoyancy module for the first 100-300 m of water. Deepwater gas tiebacks of the 1980s established the standard development: subsea wellhead manifold, a dedicated line to a central platform, gas gathered ashore.
 
-##### What the gas is for `chem.natural-gas.uses`
+##### What the gas is for `chem.natural-gas.uses` _(low)_
 
 Three jobs in 1983: burn it, crack it, or reform it. Burning dominated volume; the petrochemical jobs - acetylene, hydrogen, ammonia - were small in tonnage but disproportionate in value, and they are the reason the polymer industry existed at all. The largest single use of gas is plain combustion: boilers, industrial furnaces and gas turbines. A 40-100 MW gas turbine of the 1980s fired gas at 15-25 bar through a dual-fuel combustor, and a gas-fired polyethylene furnace ran 10-30% excess oxygen.
 
-##### Methane `chem.natural-gas.composition.methane`
+##### Methane `chem.natural-gas.composition.methane` _(low)_
 
 CH4, 80-98% of a dry gas, 39.8 MJ/m3 gross calorific value, -161.5 C boiling point. The single molecule most of this branch is about: because methane is hard to polymerise and hard to functionalise, the industry of the 1980s broke it into acetylene at extreme temperature or into hydrogen over a nickel catalyst, and those two products underwrote most of the polymer industry.
 
-##### Ethane and propane (LPG) `chem.natural-gas.composition.ethane-propane`
+##### Ethane and propane (LPG) `chem.natural-gas.composition.ethane-propane` _(low)_
 
 The C2 and C3 that make natural gas liquids, recovered as LPG at 1.5-8 bar in the field and as a debottlenecking liquid at the gas plant, then split for heating or fed to a cracker. LPG was the preferred cracker feedstock precisely because it is already light and needs no naphtha handling. A dedicated propane cracker needs far less steam dilution (20-40 mol% against 200-400 mol% for naphtha) and so makes far less process gas per tonne of ethylene, but it makes almost no co-product: the propylene and butenes streams shrink and the C4 stream effectively disappears.
 
@@ -7348,27 +7328,27 @@ The C2 and C3 that make natural gas liquids, recovered as LPG at 1.5-8 bar in th
 
 1-15% N2 in many fields. It is the impurity that most affects heating value, that forces the Wobbe index (a measure of interchangeability between gas supplies) onto a pipeline tariff, and that makes a gas which is 90% N2 unsaleable as town gas.
 
-##### Hydrogen sulphide (sour gas) `chem.natural-gas.composition.h2s`
+##### Hydrogen sulphide (sour gas) `chem.natural-gas.composition.h2s` _(low)_
 
 A lethal, corrosive, smelly component that must be taken to a few ppmv before the gas enters a steel pipeline, because H2S embrittles steel and attacks copper alloys. Sweetening it produces a concentrated acid gas stream whose H2S is the feedstock for the Claus sulphur plant in the refining branch.
 
-##### Associated (oil-associated) gas `chem.natural-gas.sources.associated-gas`
+##### Associated (oil-associated) gas `chem.natural-gas.sources.associated-gas` _(low)_
 
 Gas from the gas cap of an oil field, produced at roughly 50-150 m3 of gas per barrel of oil. Around 70% of world gas production was associated gas in 1983, and a large share was still flared: world flaring ran at the order of 100-130 billion m3 a year in the early 1980s, several million tonnes of hydrocarbons a year simply burned at the wellhead. A flare tip burns whatever the oil plant cannot handle, and in 1980s practice it was sized for peak oil rate, so routine gas-cap growth had to be reinjected into the reservoir or sold.
 
-##### Non-associated (gas-only) field `chem.natural-gas.sources.non-associated-gas`
+##### Non-associated (gas-only) field `chem.natural-gas.sources.non-associated-gas` _(low)_
 
 A gas reservoir with no oil at the contact. The North Sea fields of the late 1970s - Frigg (1977), Heimdal, Sleipner, Troll (discovered 1979) - turned Europe from an import market into a gas market, and the Norwegian and British gas grids of the early 1980s were built around them. In the US the equivalent discovery was the tight and geopressured gas of the Anadarko and Rocky Mountain basins. Tight low-permeability sandstone and coalbed methane had to be stimulated rather than merely completed, with the oil branch's massive hydraulic fracturing and with dewatering for coal seams; in 1983 tight gas was a real but small share of US supply.
 
-###### Discovering and drilling a gas field `chem.natural-gas.sources.non-associated-gas.discovery-and-drilling`
+###### Discovering and drilling a gas field `chem.natural-gas.sources.non-associated-gas.discovery-and-drilling` _(low)_
 
 Gas fields are found by the same seismic and drilled with the same rig as oil fields, but the completion differs: the log response that proves a gas column is high resistivity with low neutron density, and the well must be tested for absolute gas flow rather than liquid rate. Gas viscosity is about a hundred times lower than oil but its compressibility ten times higher, so the well responds to drawdown very differently. Gas sands are often visible before they are drilled, because gas lowers the acoustic impedance of the rock so the reflector dims and sometimes inverts; the amplitude anomaly is also produced by a shale lens or a tuning effect, which is why the prospect still had to be drilled. The casing and completion hardware is identical to an oil well but the discipline is not: a gas well perforated below the point of no return has to be tested to destruction of casing and tubing, because the column is light and there is no fluid level to swallow a leak. A wellhead separator and a test separator drop the liquid out of the gas at 30-70 bar before the gas goes to a knockout drum and the gathering system; the liquid is the same crude or condensate as in the oil case.
 
-###### Drilling fluid for a gas well `chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.drill-fluid`
+###### Drilling fluid for a gas well `chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.drill-fluid` _(low)_
 
 Gas wells were drilled with the same bentonite mud as oil wells, with two differences: a low filter loss was mandatory because filtrate invasion had to be reversed before logging, and a gas-cut mud had to be controlled because entrained gas reduced hydrostatic pressure and made the well hard to control. The standard 1980s control was a mechanical gas trap plus defoamer.
 
-###### Sweetening to pipeline specification `chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.sweetening`
+###### Sweetening to pipeline specification `chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.sweetening` _(low)_
 
 H2S and CO2 are removed with a 20-35 wt% alkanolamine in an absorber at 30-45 C and 20-70 bar, with the rich amine regenerated at 120-130 C and 1.5-2 bar in a reboiler. By the early 1980s the trend was to diethanolamine for economy and MDEA for lower heat duty and no carbamate degradation.
 
@@ -7376,11 +7356,11 @@ H2S and CO2 are removed with a 20-35 wt% alkanolamine in an absorber at 30-45 C 
 
 Monoethanolamine (MEA, primary), diethanolamine (DEA, secondary), methyldiethanolamine (MDEA, tertiary). MDEA was the growth amine of the 1980s because it does not form carbamate with CO2, so its degradation and reboiler duty are lower; the penalty is a slower absorption rate and a lower equilibrium loading.
 
-###### Dehydration to pipeline dew point `chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration`
+###### Dehydration to pipeline dew point `chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration` _(low)_
 
 Gas must arrive at the pipeline dew point or the higher-pressure steps downstream condense water out and the line fills with liquid. By 1980s practice that meant a glycol unit (triethylene glycol at 80-95 wt% purity, contactor at 20-50 C and 40-70 bar, reboiler 120-140 C) and increasingly a 3A or 4A molecular sieve adsorption unit for the last kilogram of water per million standard cubic metres.
 
-###### Triethylene glycol `chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol`
+###### Triethylene glycol `chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol` _(low)_
 
 A heavy glycol made by reacting ethylene oxide with diethylene glycol; the standard dehydration absorbent because of its low vapour pressure at the contactor temperature. The 1980s trend was towards 95 wt% TEG purity, because glycol vapour carried upstream into a gas turbine or a carburettor was a real emission problem.
 
@@ -7388,7 +7368,7 @@ A heavy glycol made by reacting ethylene oxide with diethylene glycol; the stand
 
 Methane trapped as a clathrate of water, stable below about 20 C at surface pressure. Known since the 1930s and already recognised in the deep ocean and permafrost as a potentially enormous resource, but in the early 1980s it was a hazard - it plugged subsea pipelines and was one reason offshore gas lines carried inhibitors and heated risers - not a supply.
 
-##### Acetylene from natural gas `chem.natural-gas.uses.acetylene`
+##### Acetylene from natural gas `chem.natural-gas.uses.acetylene` _(low)_
 
 The Reppe process, commercialised from 1959-1965: a mixture of roughly 6-8% methane with 30-38% air and 55-60% hydrogen is fired through a water-cooled burner at 1,200-1,800 C and quenched to below 100 C within milliseconds. The acetylene yield per pass is only 2-3% of the feed, so the process has to recycle a large stream, and the furnace consumes several GWh of electricity per tonne of acetylene. It survived because it made a C2 unit out of a C1 feed - the only route that can make vinyl chloride, and hence PVC, without cracking a barrel of naphtha. Cracking acetylene at 1,200-1,400 C in a water-cooled steel retort and quenching in nitrogen gave a fine high-surface-area channel black for rubber reinforcement and printing inks, largely displaced in tyres during the 1960s by furnace black made from natural gas. Acetylene plus chlorine also gives tetrachloroethane and from it trichloroethylene and chloroform, while methyl chloride for the chlorosilane chain comes from the same high-temperature HCl chemistry, so field gas reaches the C64's chips as well as its case.
 
@@ -7400,19 +7380,19 @@ Methane is partially oxidised to CO and H2, which then combine to acetylene at f
 
 The hot gas is quenched to below 100 C within milliseconds, then acetylene is absorbed selectively from the acetylene-hydrogen-methane-hydrogen-sulphide mixture by acetone at 10-20 C and 5-15 bar (about 2.2 volumes of acetylene per volume of solvent), stripped and the solvent recirculated. Recovered acetylene is 99.5-99.8% pure once hydrogen sulphide and water are removed. The last step before the acetylene goes to the vinyl chloride plant is a drying and finishing train - a molecular sieve or a chilled water wash to get the water under 10 ppm, then a caustic or amine wash for the last of the hydrogen sulphide - because vinyl chloride hydrolyses in water and the last drying step is not optional.
 
-###### The absorption and recovery train `chem.natural-gas.uses.acetylene.quench.absorption-train`
+###### The absorption and recovery train `chem.natural-gas.uses.acetylene.quench.absorption-train` _(low)_
 
 The acetylene is absorbed out of the cracked mixture in a solvent and taken off the top of the tower at high purity, which is the whole reason for doing the separation this way. Acetone's job is to hold acetylene - which at 20 C and 12 bar will dissolve to about 2.2 volumes of solvent per volume of acetylene - while letting the hydrogen, methane and carbon monoxide straight through. The dark, dangerous part of this plant is not the chemistry but the acetylene itself: above 2 bar in the presence of a metal, acetylene will detonate into its own decomposition products, and the whole extraction plant is designed around never letting that happen.
 
-###### Absorber and stripper `chem.natural-gas.uses.acetylene.quench.absorption-train.absorber`
+###### Absorber and stripper `chem.natural-gas.uses.acetylene.quench.absorption-train.absorber` _(low)_
 
 A 20-40 tray absorber at 10-20 C and 5-15 bar with the acetone circulated, and a stripper that takes the pure acetylene overhead at 3-5 bar and the solvent off the bottom for recycle. The solvent must be regenerated at intervals because it accumulates the hydrogen sulphide and the water from the feed gas, and because the acetylene polymerises in it if it is left standing - the plant has a permanent low-temperature nitrogen blanketing problem.
 
-###### Acetone as the selective solvent `chem.natural-gas.uses.acetylene.quench.absorption-train.absorber.acetone-solvent`
+###### Acetone as the selective solvent `chem.natural-gas.uses.acetylene.quench.absorption-train.absorber.acetone-solvent` _(low)_
 
 The choice of solvent is a compromise. Acetone has a high acetylene solubility and a low methane solubility and a manageable vapour pressure, and it is made from cumene on the same site, which is the practical reason it was chosen. It is also flammable and it is a reproductive toxin, which is a modern objection to a molecule the industry has used since 1945.
 
-###### Acetylene to vinyl chloride `chem.natural-gas.uses.acetylene.to-vinyl-chloride`
+###### Acetylene to vinyl chloride `chem.natural-gas.uses.acetylene.to-vinyl-chloride` _(low)_
 
 The reason the whole acetylene industry existed. Acetylene plus anhydrous hydrogen chloride over a 0.3-0.5% mercuric chloride catalyst on charcoal at 20-60 C and 1-2 bar absolute gives vinyl chloride at 15-25% conversion per pass and 90-95% selectivity, the low conversion forced by the HCl ratio and by the fact that vinyl chloride is a vinylogous acrylate that polymerises readily.
 
@@ -7420,7 +7400,7 @@ The reason the whole acetylene industry existed. Acetylene plus anhydrous hydrog
 
 Anhydrous HCl is adsorbed onto a mercuric chloride-charcoal catalyst and ethyne adds across it. The catalyst is a genuine environmental liability: mercury lost from a large acetylene plant was tens of kilograms a year, and by the 1980s both West Germany and the Netherlands were restricting mercury emission from chlor-alkali and vinyl chloride plants.
 
-##### Hydrogen by steam methane reforming `chem.natural-gas.uses.hydrogen`
+##### Hydrogen by steam methane reforming `chem.natural-gas.uses.hydrogen` _(low)_
 
 CH4 + H2O -> CO + 3H2 over nickel at 750-850 C and 20-30 bar, followed by the water-gas shift (iron oxide/chromia, 350-450 C) to raise the hydrogen fraction, then CO2 removal and cryogenic or PSA purification. A world-scale 1980s plant made 50-100 million m3 of hydrogen a day. Almost all of it went to ammonia; the rest to hydrotreating and to hydrochloric acid. The second largest industrial use of hydrogen is hydrochloric acid: H2 + Cl2 at 250-400 C over a synthesis catalyst, absorbed into demineralised water to 31-37%. The refinery's hydrogen - desulphurisation, hydrocracking, reforming - came from naphtha reformers and, as sour crudes grew, from dedicated gas reformers; in 1983 hydrogen was roughly 3-5% of refinery energy consumption and a genuine bottleneck.
 
@@ -7428,11 +7408,11 @@ CH4 + H2O -> CO + 3H2 over nickel at 750-850 C and 20-30 bar, followed by the wa
 
 Nickel on alumina, or the older nickel-chromium used in the pre-1957 Topsoe SMR-180. By the 1980s the modern multi-bed reformer ran 25-40 tubes of 10-16 inch diameter at 30-50 bar, with an inlet temperature near 550 C and an outlet at 850-870 C, burning gas in a process furnace alongside the tubes.
 
-###### Hydrogen to ammonia (Haber-Bosch) `chem.natural-gas.uses.hydrogen.to-ammonia`
+###### Hydrogen to ammonia (Haber-Bosch) `chem.natural-gas.uses.hydrogen.to-ammonia` _(low)_
 
 N2 + 3H2 -> 2NH3 over promoted iron or ruthenium at 400-500 C and 150-250 bar, in a 1,000-2,500 tonne a day synthesis loop fed from a purge cascade. Ammonia is the single largest use of hydrogen, and it matters to the C64 in two places: the nitrogen for the polybutadiene and SAN polymerisations, and the acrylonitrile ammoxidation. The aqueous form the fab buys is at chem.fab-chemicals.ammonium-hydroxide.
 
-###### Ammonia synthesis catalyst `chem.natural-gas.uses.hydrogen.to-ammonia.catalyst`
+###### Ammonia synthesis catalyst `chem.natural-gas.uses.hydrogen.to-ammonia.catalyst` _(low)_
 
 The Haber-Bosch catalyst is promoted iron: magnetite reduced to alpha-iron, promoted with potassium oxide and with alumina or calcium oxide. Ruthenium is better by an order of magnitude but was, in 1983, still a research curiosity as far as ammonia plants were concerned. The catalyst is made by melting magnetite with the promoters, granulating, and reducing it in situ with hydrogen, and a 1980s ammonia plant had a few hundred tonnes of it.
 
@@ -7444,7 +7424,7 @@ Fe3O4, the reduction product of hematite, and the raw material for the ammonia c
 
 About 80% of ammonia goes to fertiliser, a demand that sets the size of the hydrogen industry and therefore, indirectly, the amount of ammonia available for the acrylonitrile ammoxidation. The link to the C64 is indirect but real: the same ammonia plants that fertilised the fields also supplied the nitrogen that went into the case polymer.
 
-##### Gas reservoir `chem.natural-gas.sources.non-associated-gas.gas-reservoir`
+##### Gas reservoir `chem.natural-gas.sources.non-associated-gas.gas-reservoir` _(low)_
 
 Gas fills a porous sandstone or a fractured carbonate just as oil does, but with a lower density and a higher compressibility, so gas in place is quoted in trillions of standard cubic feet rather than billions of barrels. The largest gas fields in the world in the early 1980s were the giant Permian Basin fields (US), Urengoy and Yamburg in West Siberia, and Groningen (Netherlands, discovered 1959).
 
@@ -7452,7 +7432,7 @@ Gas fills a porous sandstone or a fractured carbonate just as oil does, but with
 
 Trillions of standard cubic metres of gas in the pore space. The C64-scale fact: all the natural gas used worldwide in 1983 was of the order of 3,000 billion cubic metres a year, so one machine's plastics and energy are far below a thousandth of a cubic metre.
 
-#### Refining: turning crude into fuels and feedstocks `chem.refining`
+#### Refining: turning crude into fuels and feedstocks `chem.refining` _(low)_
 
 Atmospheric and vacuum distillation to cut crude into fractions, then conversion and upgrading processes to make the specific products industry wants. For the C64 the interesting products are not the fuels but the naphtha that gets steam-cracked to ethylene, the benzene for styrene, the LPG for crackers, and the elemental sulphur recovered from hydrogen sulphide. In 1983 world refining capacity was roughly 65-70 million barrels a day, about 30% above demand, and the industry was running at 65-75% utilisation.
 
@@ -7460,11 +7440,11 @@ Atmospheric and vacuum distillation to cut crude into fractions, then conversion
 
 Around 750-850 refineries existed worldwide, of which more than 300 were in the United States alone (US capacity about 19 million bbl/d). The largest refining regions in 1983 were the US Gulf Coast, the US Midwest, Western Europe (Rotterdam, Antwerp, Fos-sur-Mer), the Caribbean (USVI, Curaçao), Japan and Singapore, and the Middle East (Ras Tanura, Ruwais, Kuwait). About 3-5% of the crude throughput was burned as refinery fuel gas.
 
-##### Atmospheric distillation `chem.refining.atmospheric-distillation`
+##### Atmospheric distillation `chem.refining.atmospheric-distillation` _(low)_
 
 Fractional distillation of crude at atmospheric pressure in a 35-50 m fractionating tower, separating a barrel of crude into naphtha, kerosene, gas oil, and a 700 F residue. It is the first process every molecule of the polymer industry passes through, and it is where the difference between a 30 and a 40 degree API crude turns into a 200 versus 260 dollar a tonne cracker feedstock. The naphtha overhead is where refinery corrosion happens: water condenses out of the vapour, dissolves the HCl that came in with the crude brine and dissolves H2S into very aggressive sulphuric acid, and 1980s practice attacked it with an ammonia or amine neutraliser injected into the overhead condenser plus a wash-water draw.
 
-###### Crude preheat train `chem.refining.atmospheric-distillation.crude-preheat`
+###### Crude preheat train `chem.refining.atmospheric-distillation.crude-preheat` _(low)_
 
 A train of shell-and-tube exchangers that takes crude from ambient to 220-300 C by recovering heat from every hot stream in the refinery, then the fired heater takes it the rest of the way to 350-370 C. Preheating was the classic refinery heat-integration project: a crude preheat train alone recovers tens of megawatts and pays for itself in fuel. Everything in the refinery hotter than crude - coker bottoms gas, FCC slurry oil, diesel bottoms, hot water - fouls one exchanger in the hundred, and the 1980s counter-measures were a deliberately high shell-side velocity, online cleaning with a pigging system and, in a few cases, a differential-pressure monitor as a leading indicator.
 
@@ -7472,7 +7452,7 @@ A train of shell-and-tube exchangers that takes crude from ambient to 220-300 C 
 
 A radiant box furnace with 150-400 coils of cast alloy or wrought-alloy tube (Cr-Mo, 5 in outside diameter, 0.3 m apart), firing gas at 30-80 MW. Tube metallurgy matters: the coil sees a 30-40 C metal temperature above the oil temperature, and the 1980s move to coiled tubing and to higher radiant efficiency cut fuel use several percent.
 
-###### Fractionating tower `chem.refining.atmospheric-distillation.fractionating-tower`
+###### Fractionating tower `chem.refining.atmospheric-distillation.fractionating-tower` _(low)_
 
 A 35-50 m column with 40-50 trays, at about 1.1-1.5 bar overhead and 2.5-3 bar at the bottom, condensing a vapour-liquid staircase in which each tray separates hydrocarbons by boiling range. A large atmospheric tower is a pressure vessel of 100-200 tonnes, and it is still the cheapest separation device ever built per tonne of product. A modern valve tray is 70-90% efficient against an ideal stage and the tower needs enough reflux (a few per cent of the feed) to wet the trays; cutting reflux to save furnace duty is the classic operating trade and it costs separation.
 
@@ -7480,11 +7460,11 @@ A 35-50 m column with 40-50 trays, at about 1.1-1.5 bar overhead and 2.5-3 bar a
 
 Valve, sieve, bubble-cap or proprietary proprietary-type trays at 0.4-0.6 m spacing. In 1980s practice a new refinery would install valve or sieve trays, and an old one would often be kept and given a new tray-packing section on the vacuum side.
 
-###### Reboilers and side strippers `chem.refining.atmospheric-distillation.fractionating-tower.reboiler`
+###### Reboilers and side strippers `chem.refining.atmospheric-distillation.fractionating-tower.reboiler` _(medium)_
 
 A fired or steam reboiler supplies the vapour to the bottom of the tower, and side strippers remove the light ends from the kerosene and gas-oil draws so the side columns are not loaded with vapour. Kerosene is stripped with a few hundred kPa of steam; diesel often went straight to the bottom because the vacuum column handled its light ends.
 
-###### Overhead condenser and gas recovery `chem.refining.atmospheric-distillation.fractionating-tower.overhead`
+###### Overhead condenser and gas recovery `chem.refining.atmospheric-distillation.fractionating-tower.overhead` _(low)_
 
 The naphtha overhead is condensed in a shell-and-tube condenser with a reflux drum, and the non-condensable gas (methane, ethane, hydrogen, H2S) goes off to the fuel gas header. In 1980s practice the gas was usually simply burned, although the recovery unit for ethane and propane (an absorber) was standard in complex refineries because it paid for itself. In complex refineries an absorber or a deethaniser-absorber recovered 60-90% of the ethane and propane from the fuel gas before it was burnt, and that recovered propane and butane is the LPG which feeds the crackers.
 
@@ -7492,7 +7472,7 @@ The naphtha overhead is condensed in a shell-and-tube condenser with a reflux dr
 
 The fractions a refinery aims for, by boiling range: naphtha (C5 to about 200 F end point, roughly 30-40% of crude), kerosene/jet (200-300 F, 8-15%), gas oil (300-700 F, 20-30%), and the atmospheric residue (700 F plus, 25-40%). Naphtha is the fraction that matters to this tree: it is the steam-cracker feedstock, and its exact end point and sulphur decide whether a cracker will run at 800 or 850 C.
 
-###### Naphtha hydrotreating before the cracker `chem.refining.atmospheric-distillation.fractionating-tower.naphtha-hydrotreating`
+###### Naphtha hydrotreating before the cracker `chem.refining.atmospheric-distillation.fractionating-tower.naphtha-hydrotreating` _(low)_
 
 The cracker feedstock was almost never straight-run naphtha. It was hydrotreated to under 0.5 wt% total sulphur (often 0.05-0.3 wt%) and under 0.5 ppmw nitrogen, because sulphur poisons the reforming and cracking catalysts and nitrogen poisons the polymerisation catalysts downstream. Naphtha hydrotreating is the first place refinery chemistry meets polymer chemistry.
 
@@ -7500,11 +7480,11 @@ The cracker feedstock was almost never straight-run naphtha. It was hydrotreated
 
 Sulphided Co-Mo or Ni-Mo on alumina in a fixed bed at 300-400 C and 20-50 bar hydrogen, with an H2/hydrocarbon ratio of 200-1,000. Lumping several reactors in series gave 0.2-0.5 wt% sulphur naphtha; a naphtha cracker in 1980s practice wanted 0.5 wt% S or less. The cobalt is not a promoter in the small sense - it is roughly 2-6% Co2O3 beside 10-30% MoO3 on the same alumina support, and the two together are what makes the catalyst active, so a refinery bought the same refined cobalt that a drill-bit maker bought, and it arrived as oxide on a support rather than as anything recognisable as a metal.
 
-###### Sour water stripper `chem.refining.atmospheric-distillation.fractionating-tower.naphtha-hydrotreating.sour-water`
+###### Sour water stripper `chem.refining.atmospheric-distillation.fractionating-tower.naphtha-hydrotreating.sour-water` _(low)_
 
 The hydrogenating reactors make water and ammonia, and the separator water carries dissolved H2S and NH3. A stripper removes them, otherwise the recycled hydrogen carries ammonia into the cracker, where ammonia poisons the polymerisation catalysts and shows up as a colour defect in the polymer.
 
-###### Vacuum distillation `chem.refining.atmospheric-distillation.vacuum-column`
+###### Vacuum distillation `chem.refining.atmospheric-distillation.vacuum-column` _(low)_
 
 A second column at 25-50 mmHg absolute (740-760 mmHg vacuum) that distils the 700 F plus residue down to a vacuum gas oil and a vacuum residue of 2-5% of the crude, without cracking it. Lowering the pressure raises the boiling points' relative spacing so heavy molecules can be distilled instead of decomposed, and the vacuum is made by steam ejectors or by a barometric leg. Below about 350 C the residue cracks rather than distils, so the flash zone is run at 340-370 C and the vacuum gas oil carries some cracked material; the side reactions make coke and acids, which is why the column needs wash sections and anti-fouling coatings.
 
@@ -7512,11 +7492,11 @@ A second column at 25-50 mmHg absolute (740-760 mmHg vacuum) that distils the 70
 
 Three-stage steam ejectors holding 25-50 mmHg, using 10-25 t of steam per hour for a mid-size unit. Ejectors are simple but they cost a lot of steam; by the 1980s mechanical vacuum pumps (rotary or liquid-ring, with a surface condenser) were being installed to save that steam, and most plants still had ejectors as backup.
 
-##### Converting the vacuum residue `chem.refining.vacuum-residue-processing`
+##### Converting the vacuum residue `chem.refining.vacuum-residue-processing` _(low)_
 
 The 2-5% of crude that will not distil is the hardest material in the refinery. It must be converted - into coke, into gasoline, or into distillate - or it is sold as fuel oil. This is where the refinery's biggest single units and its biggest capital decisions sit. Hydrocracking cracked heavy oil and hydrogenated the fragments in one step at 350-450 C and 80-200 bar of hydrogen over cobalt-molybdenum or nickel-molybdenum on alumina, giving 70-90% diesel with almost no sulphur - the process that let a refinery make diesel rather than fuel oil.
 
-###### Delayed coking `chem.refining.delayed-coking`
+###### Delayed coking `chem.refining.delayed-coking` _(low)_
 
 Vacuum residue is heated to 350-400 C and held in large coke drums for 12-24 hours, during which it cracks to 15-25% petroleum coke while the vapours are continuously drawn off and fractionated. Delayed coking was the dominant residue conversion process of the 1960s and remained so through the 1980s, handling maybe 40-50% of vacuum residue in a complex refinery, largely because it makes the anode-grade coke the aluminium industry needs.
 
@@ -7524,7 +7504,7 @@ Vacuum residue is heated to 350-400 C and held in large coke drums for 12-24 hou
 
 A 6-11 m diameter vessel 20-35 m tall holding 100-400 tonnes of coke per cycle, switched in parallel with a fractionator overhead. Switching a drum is the highest-risk operation in a refinery: the drum is water-quenched and de-coked with a full-diameter drill and coke cutter while the neighbouring drum runs at temperature.
 
-###### Green coke `chem.refining.delayed-coking.green-coke`
+###### Green coke `chem.refining.delayed-coking.green-coke` _(low)_
 
 The unreformed coke straight out of the drum: 85-92 wt% carbon, 8-15% volatiles, with all the feed's sulphur and metals still in it. Green coke is the intermediate between the coker drum and the calciner, and it is also what the plastics industry noticed in the 1980s: green coke is a needle-coke precursor, and it is the reason carbon fibre of aerospace grade became possible after the large-scale-carbon-fibre work of the late 1960s.
 
@@ -7536,7 +7516,7 @@ Vacuum gas oil is contacted with a zeolite catalyst at 500-530 C and 1-3 bar in 
 
 The riser reactor is a vertical pipe 10-20 m long with the catalyst and feed entering at the bottom; the cyclone separators strip entrained catalyst back; the regenerator burns the coke off the catalyst with air. A 1980s unit's two-stage regeneration was the standard answer to how to get more heat into the reactor while cutting carbon monoxide from the stack.
 
-###### FCC zeolite catalyst `chem.refining.fluid-catalytic-cracking.zeolite-catalyst`
+###### FCC zeolite catalyst `chem.refining.fluid-catalytic-cracking.zeolite-catalyst` _(low)_
 
 A synthetic zeolite (USY, made by dealuminating Y zeolite) dispersed in a silica-alumina or silica matrix, rare-earth exchanged by lanthanum and neodymium. The zeolite gives shape-selective acid sites; the matrix gives attrition resistance and heat capacity. This is the same family of materials as the zeolites that would crack naphtha for styrene a decade later. Vanadium and nickel in the feed deposit as mobile vanadates and nickel species that destroy zeolite acid sites and accelerate dehydrogenation, so passivation additives - an aluminium monohydride slurry, antimony compounds - were standard by the 1980s, with gasoline desulphurisation additives appearing at the end of the decade.
 
@@ -7548,19 +7528,19 @@ Amorphous silica-alumina, precipitated from sodium silicate and aluminium sulpha
 
 A small-pore zeolite (mordenite framework, 10-membered rings) blended at 3-15% into the USY catalyst to crack the C7-C10 straight chains that were killing octane after the lead phase-down. This is the direct ancestor of the propylene and isobutylene it also made: ZSM-5 selectively shapes the products towards C3 and C4 olefins.
 
-###### Making the FCC zeolite `chem.refining.fluid-catalytic-cracking.zeolite-catalyst.zeolite-manufacture`
+###### Making the FCC zeolite `chem.refining.fluid-catalytic-cracking.zeolite-catalyst.zeolite-manufacture` _(low)_
 
 A synthetic zeolite is not mined; it is crystallised. The reagents are an alumina source, a silica source, an alkali and a template, and the product is a 3-5 micron crystal of a lattice so regular that it was named after the mineral zeolite. The FCC catalyst's lattice is what makes it a shape-selective acid, and the same recipe with a different template and a different silica-to-alumina ratio gives the MFI zeolite of the styrene alkylation and the 3A sieve of the cracker drier. One family of chemistry, four jobs, and about a tenth of a tonne of catalyst per year for every 10,000 bbl/d of FCC capacity. The Y zeolite is grown from an aluminosilicate gel at 100-200 C with a seed and then dealuminated - by acid leaching, by chlorination with HCl or ammonium persulphate, or thermally with steam - to raise its silica-to-alumina ratio from about 5 to about 6-10.
 
-###### Cracked gasoline and the propylene route `chem.refining.fluid-catalytic-cracking.cracked-gasoline`
+###### Cracked gasoline and the propylene route `chem.refining.fluid-catalytic-cracking.cracked-gasoline` _(low)_
 
 FCC gasoline is high in olefins, aromatics and isoparaffins, with an octane number well above the reformer's, and it is the blending component that let the industry drop lead. Its propylene stream - 2-4% of FCC feed - fed the old chemical industry: by 1983 propylene from FCC and from crackers together supplied roughly half the world's propylene, and the older propylene splitter process existed precisely to make more of it.
 
-##### Hydrotreating and desulphurisation `chem.refining.hydrotreating`
+##### Hydrotreating and desulphurisation `chem.refining.hydrotreating` _(low)_
 
 The refinery's chemistry of taking things out: sulphur, nitrogen, oxygen and metals, plus saturation. It is the answer to sour crude, and it is the process that made Arab Light and Mexican crudes usable in 1980s refineries. It also produces the acid gas from which elemental sulphur is recovered. Naphtha hydrotreating at 300-400 C and 20-50 bar of hydrogen over cobalt-molybdenum on alumina to 0.2-0.5 wt% sulphur is the pretreatment that makes a crude usable in a cracker. Gas oil was hydrodesulphurised at 300-400 C and 30-80 bar over Co-Mo or Ni-Mo to 0.1-0.3 wt% S, with a 0.05 wt% deep-desulphurisation variant developed in the late 1970s for the 1990 fuel specifications; every barrel desulphurised is a barrel of fuel oil turned into saleable middle distillate. Jet kerosene has to be under 3 wt% sulphur and free of water, because it passes through a turbine at 800-1,000 C with water condensing in the fuel-oil nozzles, so the kero hydrotreater runs at 300-400 C and 30-50 bar and carries a naphthenic acid problem of its own.
 
-###### Acid gas to the Claus unit `chem.refining.hydrotreating.acid-gas`
+###### Acid gas to the Claus unit `chem.refining.hydrotreating.acid-gas` _(low)_
 
 Every hydrotreater and every amine unit makes an acid gas of mostly H2S with some CO2. In 1983 that stream was worth real money: recovering its sulphur turns a disposal liability into a product, and about 80-90% of world sulphur production was elemental sulphur recovered this way. A 20-35 wt% MEA or DEA absorber took the H2S and CO2 out of the hydrogen recycle gas and the rich amine was stripped in a 120-130 C reboiler; the amine was degraded by the oxygen and hydrocarbons in the gas, and the amine/oil/water effluent was one of the refinery's worst waste streams of the period.
 
@@ -7576,7 +7556,7 @@ A refractory-lined furnace at 250-400 C where a third of the H2S is burned with 
 
 High-surface-area alumina, sometimes promoted with titanium, in two or three fixed beds at 200-350 C with interstage reheating. Because the reaction is exothermic and reversible, a multi-bed converter with controlled quench keeps the equilibrium favourable; a single-bed converter cannot get above about 80% overall recovery.
 
-###### Claus alumina catalyst and its support `chem.refining.claus.catalyst.alumina-catalyst`
+###### Claus alumina catalyst and its support `chem.refining.claus.catalyst.alumina-catalyst` _(low)_
 
 The catalyst is not a mystery material: it is activated alumina, and the alumina is refined from bauxite. A Claus unit's catalyst life is measured in years and its loss rate is what sets the unit's sulphur recovery, so a good 1980s unit used a promoted, high-surface-area alumina with a shape (extrudate or cylindrical) chosen to hold surface area at 300-400 C.
 
@@ -7593,11 +7573,11 @@ Reforming naphtha over platinum at 500-540 C and 15-30 bar converts paraffins an
 
 Platinum crystallites of about 1 nm on gamma-alumina promoted with chlorine to keep the metal and the acid function in balance. Platinum is one of the most expensive catalysts in the plant, so catalyst regeneration and platinum recovery are real economics: the platinum in a 1980s reformer was worth tens of thousands of dollars, and the catalyst was shipped off site for reclamation.
 
-##### Isomerisation and octane boosting `chem.refining.isomerisation`
+##### Isomerisation and octane boosting `chem.refining.isomerisation` _(low)_
 
 The C5 and C6 straight-chain paraffins in naphtha have terrible octane numbers; isomerising them to the branched isomers does something about that with almost no yield loss. This is the cheap half of the unleaded-gasoline story; MTBE and alkylate were the expensive half. C5/C6 isomerisation over platinum on chlorided alumina, or from the 1980s a zeolite unit at 250-350 C with an aromatics-rich recycle, yields 98-99% and buys 8-12 octane numbers - trivial per barrel, material at a million barrels a day. Alkylate is isobutane plus isobutylene or propylene over anhydrous HF at 20-40 C, and HF alkylation was a large and dangerous business in 1980s practice: an HF cloud is dense, water-soluble and burns deeply, so the units had their own HF storage and a dedicated water curtain.
 
-###### MTBE (methyl tert-butyl ether) `chem.refining.isomerisation.mtbe`
+###### MTBE (methyl tert-butyl ether) `chem.refining.isomerisation.mtbe` _(low)_
 
 Methanol plus isobutylene over an acidic ion-exchange resin (Amberlyst, sulphonic acid polystyrene, about 100 C, 5-10 bar), giving a 100+ octane component. MTBE was the big gasoline technology story of the late 1970s and early 1980s in the United States, and its feedstock - isobutylene - came from the crackers and the FCC, which is the direct petrochemical link: the same C4 that becomes butadiene rubber becomes the octane booster in American petrol.
 
@@ -7605,15 +7585,15 @@ Methanol plus isobutylene over an acidic ion-exchange resin (Amberlyst, sulphoni
 
 A macroporous or gel-type sulphonic-acid polystyrene resin, the same chemistry as the ion exchange resins used in water treatment. MTBE resins had to be replaced every 10,000-20,000 hours in the 1980s as they aged.
 
-##### Lead phase-down and the unleaded problem `chem.refining.octane`
+##### Lead phase-down and the unleaded problem `chem.refining.octane` _(low)_
 
 Tetraethyl lead was phased out of most industrialised markets between 1978 and 1985 as catalytic converters spread. The lead phase-down is the single most consequential fuel specification change of the decade and it is the reason MTBE, alkylate, isomerate and the ZSM-5 additive were all developed on that timescale. Without lead the refiner needed 3-8 octane numbers from somewhere, and in 1983 the United States solved it with MTBE, ZSM-5 and alkylate while Europe, with a smaller and cleaner car fleet, was much less short - which is why MTBE uptake was overwhelmingly American.
 
-###### Tetraethyl lead `chem.refining.octane.tetraethyl-lead`
+###### Tetraethyl lead `chem.refining.octane.tetraethyl-lead` _(low)_
 
 Pb(C2H5)4 blended at a few grams per litre, discovered in 1921 and the cheapest octane technology for fifty years. It was the cheapest route to octane and the most expensive in externalities: it destroyed the lead and phosphorus catalysts that were the whole point of the catalytic converter. Teledyne and DuPont stopped adding it to road fuel in most markets by 1985.
 
-##### Refinery products and by-products `chem.refining.products`
+##### Refinery products and by-products `chem.refining.products` _(medium)_
 
 Fuels, lubricants, waxes, coke and sulphur. For this tree the interesting list is short: naphtha to the crackers, benzene to styrene, LPG to crackers, propylene and butylene to the older chemical plants, and sulphur to rubber and to sulphuric acid.
 
@@ -7629,19 +7609,19 @@ Waxy distillate from solvent deasphalting, deoiled on a centrifuge train to give
 
 The bottom of the barrel: a 1-3% sulphur residue sold to power stations and ships. After 1973, and especially after the 1980s tanker accidents, the political life of fuel oil in Europe and the US got hard, and the refinery's answer was more conversion. In 1983 fuel oil still took about 25-30% of world refinery production.
 
-##### Refinery to polymer: the handover `chem.refining.polymer-feedstocks`
+##### Refinery to polymer: the handover `chem.refining.polymer-feedstocks` _(low)_
 
 Three handovers matter. Naphtha plus steam into a cracker gives ethylene and propylene. C4 from the same cracker gives butadiene and isobutylene. Reformer naphtha into the aromatics complex gives benzene, which with ethylene gives styrene. This node is the place where the fuel industry stops and the polymer industry starts, and it is the join that makes a C64 physically possible. The cracker hands over a C4 stream of 1-butene, the 2-butenes and isobutylene, and extracting the butadiene out of it is a second plant; the isobutylene left behind goes to MTBE or alkylate and the butenes go to hydroformylation for plasticisers. Benzene out of the aromatics complex is alkylated with ethylene in excess benzene (to suppress diethylbenzene) to give ethylbenzene, which is then dehydrogenated.
 
-###### Naphtha to ethylene `chem.refining.polymer-feedstocks.naphtha-to-ethylene`
+###### Naphtha to ethylene `chem.refining.polymer-feedstocks.naphtha-to-ethylene` _(low)_
 
 The handover. Naphtha plus steam at 800-900 C over a cast alloy coil, giving 25-35% ethylene by weight with propylene, butenes and a benzene-rich C9+ residue. Roughly 70-80% of world cracker capacity in 1983 was naphtha-based, with the rest ethane and propane; the Gulf Coast and the Far East were naphtha and the Texas Gulf was liquid-fuelled ethane.
 
-###### Naphtha feedstock `chem.ethylene.feedstock.naphtha`
+###### Naphtha feedstock `chem.ethylene.feedstock.naphtha` _(low)_
 
 A C5 to 200-220 F hydrocarbon cut, hydrotreated to under 0.5 wt% sulphur and under 0.5 ppmw nitrogen. Beyond its hydrocarbon content what matters is the coniocarbon and the asphaltene content: those are what coke the coil. The naphtha from an Arabian light crude is comparatively clean, which is one reason Gulf crackers could run at a lower steam dilution than a naphtha cracker fed with heavy California naphtha.
 
-#### Ethylene: steam cracking and the polymers of it `chem.ethylene`
+#### Ethylene: steam cracking and the polymers of it `chem.ethylene` _(low)_
 
 Steam cracking naphtha at 800-900 C over cast alloy coils is the largest single chemical reaction in the world by tonnage. World ethylene capacity in 1983 was about 27-30 million tonnes a year, and roughly half of it went into polyethylene and the rest into ethylene oxide, styrene and solvents. Every polyethylene cable sheath, every styrene monomer and every polyester fibre in a C64 starts in a coiled coil furnace.
 
@@ -7649,7 +7629,7 @@ Steam cracking naphtha at 800-900 C over cast alloy coils is the largest single 
 
 About 27-30 Mt/yr of world ethylene capacity in 1983, of which the United States held roughly 19 Mt (about two thirds) and Western Europe about 8 Mt, with the Gulf Coast of the US, the Rhine-Ruhr, Antwerp, the Suez Gulf and the Japanese and Korean coasts as the clusters. A 1980s cracker cost $150-400 million and took three to five years to build.
 
-##### Cracker feedstock `chem.ethylene.feedstock`
+##### Cracker feedstock `chem.ethylene.feedstock` _(low)_
 
 Naphtha was 70-80% of world cracker capacity in 1983, ethane and propane 20-30%. The choice is regional and historical: US Gulf crackers run on ethane piped from the Gulf's gas fields because the ethane price under a gas contract made it unbeatable; European and Japanese crackers run on naphtha because they had no ethane to hand. A naphtha cracker is the one that makes propylene and butadiene as well as ethylene, which is why the older chemical industry grew up on it.
 
@@ -7679,7 +7659,7 @@ The coil is cast alloy, not steel: 25Cr-35Ni (Incoloy 800, 800H, 802) or the HP-
 
 Cracking alumina or silicon carbide coated onto the coil inside the furnace. The industry spent the 1970s and early 1980s trying to reduce coil metal temperature by 50-100 C; silicon carbide coatings (the CHA process, from Combustion Heat Exchanger) were the commercially successful route and let a furnace run hotter for the same metal temperature, which is worth several percent of ethylene yield.
 
-###### Coke and decoking `chem.ethylene.steam-cracking.decoking`
+###### Coke and decoking `chem.ethylene.steam-cracking.decoking` _(low)_
 
 Coke builds up on the coil, which insulates it, raises the skin temperature and finally blocks the tube. 1980s practice was to shut the furnace and decoke in place by burning the coke out with steam and air (off-line decoking), taking several hours and costing several thousand dollars a cycle; a shift to shorter, more frequent on-line decokes came later with the high-performance coils. The coke itself is a fine, hard, low-metal material that has to be disposed of.
 
@@ -7691,27 +7671,27 @@ A granular, high-carbon, low-hydrogen solid with vanadium and nickel that came o
 
 The cracked gas at 800-900 C is not simply cooled; in the 1980s it was let down through a turboexpander that recovered most of the sensible heat as work, doing the job of the quench exchanger. The expander recovered 10-20% of the cracking energy and was one of the reasons the energy crisis of the 1970s produced a generation of much more efficient crackers.
 
-##### Quenching and acetylene control `chem.ethylene.quench`
+##### Quenching and acetylene control `chem.ethylene.quench` _(low)_
 
 The cracked gas leaves the coil at 800-900 C and has to come down to under 40 C in a second or two before anything can be separated, or the reactor metallurgy melts. The choice of quench is a real fork in the road: a gas quench to 350-400 C followed by selective hydrogenation, or a direct spray quench to under 40 C. A spray quench injects liquid hydrocarbon or quench oil straight into the cracked gas, which is cheap and puts the gas into the quench-oil circuit at once but cannot be combined with selective hydrogenation, because the acetylene has already polymerised in the cooler.
 
-###### Gas quench to 350-400 C `chem.ethylene.quench.gas-quench`
+###### Gas quench to 350-400 C `chem.ethylene.quench.gas-quench` _(low)_
 
 The cracked gas is quenched with recycled process gas rather than directly with liquid, stopping at 350-400 C. This keeps the gas hot enough that the acetylene survives, so the acetylene can be destroyed deliberately afterwards in a selective hydrogenation reactor (palladium on alumina at 130-180 C, 10-30 bar hydrogen) rather than being allowed to polymerise into gums in the cooler. Ethylene purity of 99.9%+ with acetylene under 5 ppm is the target. Palladium on alumina at 130-180 C and 10-30 bar of hydrogen converts the acetylene to ethylene, and it is why a cracker carried a few tonnes of 0.5-2% Pd: the hydrogen partial pressure had to be held tightly, because too much of it makes ethane and costs ethylene yield.
 
-###### Decanter and quench oil circuit `chem.ethylene.quench.decanter`
+###### Decanter and quench oil circuit `chem.ethylene.quench.decanter` _(low)_
 
 The condensed liquid is settled and decanted, separating the heavy C9+ tar from the gasoline and C4 streams. The heavy fraction - about 5-10% of the cracker feed - was the benzene, toluene and xylenes rich C9+ cut in the 1980s, and it was the aromatics feed for the styrene plants and the solvent plants.
 
-##### Ethylene purification `chem.ethylene.purification`
+##### Ethylene purification `chem.ethylene.purification` _(low)_
 
 Before the ethylene can be polymerised it has to be dry and essentially free of oxygen and carbon dioxide, because both water and oxygen poison a radical or coordination polymerisation catalyst irreversibly. A cracker therefore had a molecular sieve drier taking water to under 1 ppm and a CO2/CO removal stage. 3A or 4A zeolite molecular sieve in beds switched in parallel took the water below 1 ppmv - the same family of material as the FCC catalyst and the styrene alkylation catalyst, which is the clearest single illustration that one piece of chemistry runs through the whole tree. Oxygen was held under 1 ppm and carbon dioxide under 5 ppm by an amine or a solid bed, and the CO2 was the dangerous one: it poisons the coordination catalysts and it reacts with the organoaluminium cocatalyst of a Ziegler-Natta polymerisation.
 
-##### Ethylene oxide `chem.ethylene.ethylene-oxide`
+##### Ethylene oxide `chem.ethylene.ethylene-oxide` _(low)_
 
 The oxidation of ethylene over silver at 200-300 C and 20-30 bar, in which every eighth or tenth ethylene molecule is burned to carbon dioxide and water instead of being oxidised. It was about 1.5-2.5 million tonnes a year in 1983, most of it going to ethylene glycol for polyester and to surfactants, and it is one of the most hazardous large-scale chemical processes in existence.
 
-###### Air-oxidation process (the industrial one) `chem.ethylene.ethylene-oxide.air-oxidation`
+###### Air-oxidation process (the industrial one) `chem.ethylene.ethylene-oxide.air-oxidation` _(low)_
 
 Ethylene and air over silver on low-surface-area alpha-alumina in a multi-tubular reactor at 200-300 C and 20-30 bar. Per-pass conversion is only 10-15% and the selectivity to ethylene oxide is 80-90%, so the unreacted ethylene is recycled with the inert diluent. The alternative process - the chlorohydrin route, ethylene plus hypochlorous acid to chloroethanol to oxide - was still running in the United States in the early 1980s but had been almost entirely displaced by air oxidation elsewhere. The superseded chlorohydrin route chlorinated ethylene in water and dehydrochlorinated with lime, and made a chlorinated calcium salt waste for every tonne of product, which is why it survived only in the United States: a process displaced not by yield but by waste.
 
@@ -7723,7 +7703,7 @@ Ethylene and air over silver on low-surface-area alpha-alumina in a multi-tubula
 
 Ethylene oxide boils at 10.7 C, so it is a liquid only just below ambient and a gas in a warm tank; its flammable range in air is 3-80% by volume and its ignition energy is about 0.06 millijoule. It is acutely toxic, it polymerises without catalyst into a runaway, and it is kept in equilibrium by a trace of tertiary butyl alcohol or hydrochlorinated hydrocarbon inhibitor. In 1980s practice the industry standard was a fixed tank or a pressure vessel with an inert blanket, nitrogen purging and a quench section that could handle a deflagration.
 
-##### Ethylene glycol and the glycols `chem.ethylene.ethylene-glycol`
+##### Ethylene glycol and the glycols `chem.ethylene.ethylene-glycol` _(low)_
 
 Monoethylene glycol, diethylene glycol and triethylene glycol, made by hydration of ethylene oxide in a 1:1 to 1:20 mole ratio of oxide to water, with the ratio chosen to steer the product distribution towards the wanted glycol. In 1980s practice monoethylene glycol was about half the output and went into polyester, antifreeze and diester coolant, and diethylene glycol went into antifreeze and into the unsaturated polyester resins of the same family as the C64's case resin. One tonne of ethylene glycol needs about 3.5 tonnes of ethylene oxide at full selectivity, world MEG capacity was around 4-5 million tonnes a year in 1983, and the big consumers were polyester fibre and film and PET. The older catalytic hydration put ethylene oxide over phosphoric acid on silica at 200-220 C and 60-70 bar with about 20% of the glycol recycled as diluent to suppress ether side products, at 85-90% selectivity to monoethylene glycol - and the whole plant economics is that selectivity, because the diethylene glycol and dioxane have to be sold at a discount. The Shell direct oxidation-hydratation, commercialised in 1965, converted ethylene, oxygen and water in one step over a supported silver-phosphorus-tungsten catalyst for a higher MEG yield and less waste water, at the price of needing very pure oxygen; both routes were still running side by side in 1983.
 
@@ -7735,7 +7715,7 @@ Water is removed in a multi-column vacuum system because the glycols boil at 197
 
 The largest use of ethylene: about 12-14 million tonnes of polyethylene were made in 1983, split roughly between low-density (free radical, high pressure) and high-density (coordination catalysis, low pressure). The C64-scale uses are the power cord's insulation and jacket, the moulded cable accessories, and the keyboard membrane's insulation. Metallocene catalysis - one sandwich compound with a zirconium atom between two cyclopentadienyl rings, activated with methylaluminoxane - was first reported in 1980 and was not yet industrial in 1983, but it was the obvious next step because it gives a narrow molecular weight distribution and predictable comonomer placement.
 
-###### LDPE: free-radical high-pressure process `chem.ethylene.polyethylene.ldpe`
+###### LDPE: free-radical high-pressure process `chem.ethylene.polyethylene.ldpe` _(low)_
 
 Ethylene is polymerised at 200-300 C and 1,000-2,000 bar in a jacketed or tubular reactor with a peroxide initiator, in the liquid phase (below about 280 C) or the gas phase (above it). The density of 0.91-0.93 comes entirely from chain branching: the very high pressure creates radicals on the growing chain, the chain folds, and the branches that stop it crystallising. In 1983 the process was mature to the point of being a cost exercise, and it still made most of the world polyethylene.
 
@@ -7747,7 +7727,7 @@ Di-tert-butyl peroxide, or in the autoclave process a mixture of di-tert-butyl p
 
 The autoclave process (Union Carbide, 1930s) stirred the gas-phase reaction; the tubular process (Sons, 1950s) had plug flow with injection quills and much better temperature control. By the 1980s the tubular reactor was the standard large unit because it gave a narrower molecular weight distribution and better ethylene conversion, and because the autoclave's bulk polymer needed devolatilising.
 
-###### HDPE: coordination catalysis at low pressure `chem.ethylene.polyethylene.hdpe`
+###### HDPE: coordination catalysis at low pressure `chem.ethylene.polyethylene.hdpe` _(low)_
 
 Ethylene at 20-60 bar and 150-260 C over a transition-metal catalyst gives linear polyethylene with almost no long-chain branching, so it crystallises tightly and has a density of 0.94-0.97. Because the polymer comes out of the reactor as a powder or a slurry rather than a melt, HDPE in 1983 was made in a slurry loop or a gas-phase fluidised bed and then converted by extrusion. The Phillips chromium oxide process (1952) ran chromium oxide on silica at 20-40 bar and 150-200 C in a slurry loop, and it is the reason a 1980s plastics plant had the diluent-recovery section that was its largest single energy consumer. Union Carbide's Unipoly gas-phase process polymerised ethylene as a gas in a fluidised bed at 20-30 bar and 70-100 C with the catalyst on a support: no diluent to recover and no slurry to centrifuge, and by the early 1980s the technology for every new large plant.
 
@@ -7759,7 +7739,7 @@ Titanium tetrachloride or titanium dichloride with an aluminium alkyl (triethyla
 
 TiCl4 supported on finely divided MgCl2, activated with an aluminium alkyl. The MgCl2 support is the whole trick: it generates about a hundred active titanium sites per gram of catalyst with a range of stereospecificity, and that is what turned HDPE from a family of blends into a graded set of grades.
 
-###### Titanium tetrachloride and the sponge route `chem.ethylene.polyethylene.hdpe.ziegler-natta.titanium-catalyst.tetrachloride`
+###### Titanium tetrachloride and the sponge route `chem.ethylene.polyethylene.hdpe.ziegler-natta.titanium-catalyst.tetrachloride` _(low)_
 
 The titanium tetrachloride of the Ziegler-Natta catalyst is made from titanium ore - rutile or ilmenite - by chlorinating it with coke and chlorine at 900-1,000 C, then distilling the TiCl4 out at 136 C. Titanium metal comes back by reducing the tetrachloride with magnesium (the Hunter process, which is the Kroll process in reverse) and distilling the magnesium chloride off. So the most important catalyst in the low-pressure polyethylene business is made in a plant that looks exactly like the zirconium and hafnium plants of the nuclear industry, because they all make volatile tetrachlorides. Rutile or ilmenite plus coke plus chlorine at 900-1,000 C gives TiCl4 with iron and vanadium chlorides that have to be removed by distillation - making a volatile chloride the cheapest way to get a pure element out of an oxide. TiCl4 plus magnesium at 800-900 C under argon in a sealed can, then vacuum distillation of the magnesium chloride at 1,000 C, leaves a porous titanium sponge.
 
@@ -7771,7 +7751,7 @@ The cocatalyst. It alkylates the titanium and reduces Ti(IV) to Ti(III), and it 
 
 Copolymers of ethylene with a small amount of alpha-olefin - 1-butene or 1-octene - which gives a linear chain with short branches: low density with high stiffness. LLDPE was the fastest-growing polyethylene family of the 1980s (about 10-15% of PE production by 1983 and climbing), and the switch from 1-butene to 1-octene was a change in the crackers' product slate rather than in the polymer plant.
 
-###### Polyethylene additives `chem.ethylene.polyethylene.additives`
+###### Polyethylene additives `chem.ethylene.polyethylene.additives` _(low)_
 
 Antioxidants (hindered phenols such as BHT, and phosphites), stabilisers, and pigment. The antioxidant is the reason a polyethylene cable in a C64's power supply does not go brittle: a radical from the mains or from a metal ion attacks the chain and causes scission or cross-linking, and a phenol traps it.
 
@@ -7783,7 +7763,7 @@ The workhorse antioxidant, dosed at 0.05-0.2 wt%. It is made by alkylating para-
 
 Concretely: the styrene monomer for the ABS case and the SAN matrix, the ethylene oxide route to ethylene glycol for anything polyester in the power supply, the polyethylene in the power cord's insulation and in the moulded cable accessories, and the C2 in the vinyl chloride monomer for the PVC jacket and for the keyboard's keycaps in the less common grades. A C64's ethylene demand is a few tens of grams.
 
-###### ABS resin plant, and the C64 case `chem.abs`
+###### ABS resin plant, and the C64 case `chem.abs` _(low)_
 
 Acrylonitrile-butadiene-styrene is not a copolymer but a polymer blend: a SAN matrix with a grafted polybutadiene rubber phase dispersed in it as 0.1-10 micron particles. Making it is four separate unit operations - make the rubber, graft styrene and acrylonitrile onto it, make the matrix, blend and pelletise - and then a fifth that most people forget, drying. The C64's case, its keyboard surround and the beige plastic of its keys are this material.
 
@@ -7791,15 +7771,15 @@ Acrylonitrile-butadiene-styrene is not a copolymer but a polymer blend: a SAN ma
 
 The heart of the process. 20-40 parts of a low-cis polybutadiene rubber dissolved in xylene or toluene is charged to a reactor, and styrene plus acrylonitrile is added at 60-80 C in the presence of a persulphate initiator, a chelating agent and a mercaptan chain transfer agent. The radicals abstract a hydrogen from the polybutadiene's 1,2-vinyl unit, creating a radical site on the rubber; styrene and acrylonitrile then copolymerise from that site, and SAN chains grow out of the rubber particle. Each particle therefore becomes a rubber core with a SAN shell. High-graft material, more than about 70% of the monomer grafted, gives a small uniform particle and the best impact strength, while low graft gives larger particles and worse impact; the particle is either salt-like (elastomeric core, rigid SAN shell) or sandwich-like, and which one forms is set by how fast the graft shell precipitates. The rubber is dissolved in xylene or toluene and the monomer emulsified in an aqueous phase carrying the initiator, chelant and transfer agent, and at the end the polymer is devolatilised at 220-250 C and 1-10 mbar to strip the xylene - the single biggest energy item in the plant, at one to two tonnes of solvent per tonne of polymer.
 
-###### The polybutadiene rubber phase `chem.abs.grafting.rubber-phase`
+###### The polybutadiene rubber phase `chem.abs.grafting.rubber-phase` _(low)_
 
 A low-cis (40-60% cis, therefore glassy rather than rubbery on its own) butyllithium-polymerised polybutadiene at 0.5-2% residual oil, with the whole chain ending in a couple of reactive sites. The low cis content is deliberate: a high-cis rubber dissolves in its own polymer at reactor temperature and the particle boundaries blur, whereas a low-cis rubber keeps a sharp core-shell particle that survives compounding.
 
-###### Butadiene monomer `chem.abs.grafting.rubber-phase.butadiene-raw`
+###### Butadiene monomer `chem.abs.grafting.rubber-phase.butadiene-raw` _(low)_
 
 99.0-99.7% butadiene from a cracker C4 extraction unit. The chain is why the C64's rubber phase is a petrochemical and not a natural rubber: the natural rubber alternative is cis-1,4-polyisoprene from latex, and the graft chemistry that works on polybutadiene's pendant vinyl group does not work on isoprene's chain. The 99.7% monomer comes out of the cracker C4 stream by the extractive route at chem.butadiene.sources.sounsby.
 
-###### How butadiene is polymerised `chem.butadiene.polymerisation`
+###### How butadiene is polymerised `chem.butadiene.polymerisation` _(low)_
 
 Three chemistries, chosen for what you were making. Emulsion polymerisation gives cis-1,4, trans-1,4 and vinyl-1,2 structures mixed - a rubber but not a specific one. Anionic polymerisation with lithium butyllithium gives cis-1,4 selectively and controls chain ends. Coordination polymerisation with neodymium or titanium gives cis-1,4 with an extremely high cis content. The 4-vinyl group left on a cis-1,4 chain is the reactive site that grafting later exploits.
 
@@ -7807,7 +7787,7 @@ Three chemistries, chosen for what you were making. Emulsion polymerisation give
 
 cis-1,4 (the elastomer; the chain is flexible below its glass transition), trans-1,4 (the chain is regular and crystalline, so it is a plastic not a rubber), 1,2-vinyl (a pendant vinyl group, also rubbery but with a high glass transition because of the pendant group), and 3,4-vinyl (rare). The rubbery ones are cis-1,4 and 1,2; the ratio between them is set by temperature, catalyst and solvent, and it is why polybutadiene rubber has a glass transition near -100 C and is the most flexible of the common rubbers. The ratio of the four microstructures is a dial, not an accident: a rare-earth or titanium coordination catalyst gives cis-1,4, lithium butyllithium gives more 1,2-vinyl in a polar solvent and more cis-1,4 in a hydrocarbon, and temperature moves it again.
 
-###### Lithium butyllithium polymerisation `chem.butadiene.polymerisation.lithium-catalyst`
+###### Lithium butyllithium polymerisation `chem.butadiene.polymerisation.lithium-catalyst` _(low)_
 
 The living anionic process: butyllithium in a hydrocarbon diluent (diesel oil or hexane) at 0-60 C, with the cis content set by solvent and temperature. Living means the chain end stays active, so the polymer can be chain-stopped with an electrophile - water, carbon dioxide, epoxide - and the whole molecule is a single block. This is the chemistry that makes the ABS graft rubber phase possible.
 
@@ -7835,15 +7815,15 @@ A polycarboxylic acid or its salt - trisodium citrate, ethylenediaminetetraaceti
 
 A mercaptan - diethyl dithiocarbamate, tetraethyl thiuram disulphide, or a dodecyl mercaptan - at 0.1-0.5 parts. It transfers the growing radical to the sulphur and caps the chain, which limits molecular weight and prevents the gelation that would otherwise turn a linear rubber into a useless network. Every emulsion polymerisation has one; in ABS it is called a modifier and it is the same chemistry. A mercaptan - typically a tertiary dodecyl mercaptan, or thioglycolic acid in some processes - at 0.2-1.5 parts. It transfers the growing radical, capping each SAN branch and setting the graft chain length. Too little transfer and the graft crosslinks into a gel that is insoluble and unprocessable; too much and the graft has too few grafts per rubber particle and the impact strength collapses.
 
-###### The SAN matrix `chem.abs.san-matrix`
+###### The SAN matrix `chem.abs.san-matrix` _(low)_
 
 The continuous phase: styrene with 24-32% acrylonitrile, made separately by bulk, emulsion or suspension polymerisation. It has to be made separately because it has to be a continuous phase, not a grafted one. In 1983 a large ABS plant bought its SAN in, or made it on site in a bulk reactor and then devolatilised - the two-route choice is a plant's economics, not a chemistry question.
 
-###### Acrylonitrile monomer `chem.abs.san-matrix.acrylonitrile-raw`
+###### Acrylonitrile monomer `chem.abs.san-matrix.acrylonitrile-raw` _(low)_
 
 99.5%+ acrylonitrile with less than 45 ppm of the stabiliser, from a SOVERE ammoxidation plant. Because acrylonitrile is acutely lethal through the skin, it arrived in the ABS plant in tankers and was handled in a closed system with an outside storage tank; the 1980s industry norm was glove boxes and an emergency shower at every sampling point.
 
-###### SOVERE ammoxidation process `chem.acrylonitrile.sovere`
+###### SOVERE ammoxidation process `chem.acrylonitrile.sovere` _(low)_
 
 A mixture of propylene, ammonia, oxygen and steam is passed at 400-460 C and 15-25 bar (1.5-2.5 MPa) over a bismuth molybdate or antimony-phosphorus-boron oxide catalyst in a fixed-bed or fluidised-bed reactor. The reaction is a partial oxidation plus an ammonia substitution in one step: propylene + 1.5 NH3 + 0.75 O2 -> acrylonitrile + 2 H2O. Per tonne of acrylonitrile the plant consumes about 1.0-1.1 t of propylene, 0.22-0.30 t of ammonia (most of which is lost to N2 and to acetonitrile) and 1.0-1.3 t of air, and it makes 0.04-0.08 t of acetonitrile as the main by-product. A side reaction makes hydrogen - propylene plus ammonia plus oxygen gives propene imine, which cracks to acetonitrile and hydrogen - and by the 1980s that hydrogen was being recovered from the purge gas, which is why the net oxygen demand of the process is lower than the stoichiometry suggests. Acrylonitrile inhibits cytochrome oxidase and causes methaemoglobinaemia, and it is absorbed through intact skin, so a 1980s plant ran gloves, face shields and showers at every sampling point.
 
@@ -7851,7 +7831,7 @@ A mixture of propylene, ammonia, oxygen and steam is passed at 400-460 C and 15-
 
 The original SOVERE design was a series of fixed beds with salt bath or oil bath cooling, giving 90-93% conversion and 85-92% selectivity. The 1980s industry had largely moved to fluidised-bed or moving-bed designs, which were easier to heat and to strip of coke, at the cost of a lower selectivity (about 80-90%). A 1980s plant was a 100,000-250,000 tonne a year unit with a salt bath or a hot water reactor jacket and a lot of downstream distillation.
 
-###### Heat removal from the ammoxidation `chem.acrylonitrile.sovere.reactor.heat-removal`
+###### Heat removal from the ammoxidation `chem.acrylonitrile.sovere.reactor.heat-removal` _(low)_
 
 The ammoxidation gives out roughly 1,000 kJ per kilogram of acrylonitrile, and the reactor has to be taken out at a rate the metallurgy can live with. That is the single hardest engineering problem in the process, and it is why the original SOVERE design was a salt-bath reactor and why the later fluidised beds were better: the fluidised catalyst carries its own heat around, so the temperature is uniform and there is no hot spot to crack the catalyst.
 
@@ -7863,7 +7843,7 @@ A tubular reactor immersed in a bath of a molten nitrate-nitrite salt (the worki
 
 A mixture of potassium nitrate, sodium nitrite and sometimes calcium nitrate, chosen for a melting point a little below the operating temperature and for a decomposition temperature a good deal above it. It is a beautiful heat-transfer medium and an oxidising one, and a small leak from the reactor puts hot nitrate into a hydrocarbon process - which is why the original SOVERE design was eventually superseded. The nitrate salts came from the same nitric acid that a fab's wet bench bought.
 
-###### Ammoxidation catalyst `chem.acrylonitrile.sovere.catalyst`
+###### Ammoxidation catalyst `chem.acrylonitrile.sovere.catalyst` _(low)_
 
 Three families existed. Bismuth molybdate on silica (Bi2Mo3O12 or Bi2(MoO4)3 on silica) was the original and still the industry standard for selectivity in fixed beds. Antimony oxide with phosphorus and boron oxides on a silica support (Sb2O3/P2O5/B2O3) was the workhorse of the fluidised-bed designs, cheaper and more active but a little less selective. Bismuth molybdate with vanadium and tungsten additives, and nickel or cobalt catalysts, were the newer directions. Coking from the organic by-products and the loss of phosphorus are the two deactivation routes, and a trace of halide promoter - a few hundred ppm of hydrogen chloride or an alkyl chloride - was the standard answer: it suppressed the side reactions that make hydrogen cyanide, and it is why the plant needed a chlorine supply of its own.
 
@@ -7875,7 +7855,7 @@ The standard catalyst, chosen for its selectivity to acrylonitrile and its resis
 
 The fluidised-bed catalyst: a silica support promoted with phosphorus and boron oxides so that the phosphorus does not volatilise away at 450 C. It was less selective but far more active and far more mechanically robust than the bismuth catalyst, which matters in a fluidised bed.
 
-###### Making the ammoxidation catalyst `chem.acrylonitrile.sovere.catalyst.catalyst-manufacture`
+###### Making the ammoxidation catalyst `chem.acrylonitrile.sovere.catalyst.catalyst-manufacture` _(low)_
 
 The ammoxidation catalyst is a shaped, robust porous solid, and making it is a small ceramics industry. A bismuth molybdate catalyst is prepared by impregnating precipitated bismuth molybdate or by sol-gel methods onto a silica support, then shaping it into 3-5 mm extrudates or spray-dried microspheres and calcining at 500-700 C. The support is silica gel, and silica gel is made from sand. That is the whole chain from a dune to a transistor's acrylonitrile in three steps. The powder is extruded into trilobe or quadrilobe shapes - the lobes give more external surface per unit volume than a cylinder, and less diffusion limitation - and then dried and calcined at 500-700 C, which converts the oxide precursor into the active bismuth molybdate phase.
 
@@ -7891,7 +7871,7 @@ Quartz sand is fused with sodium carbonate at about 1,300 C to make sodium silic
 
 Acetonitrile is the biggest by-product at 3-8% of the acrylonitrile and it had a real market - it went into solvent and into acrylonitrile copolymer fibres. Hydrogen cyanide was a small but lethal by-product, and its formation was the reason for the halide promoter. Acrylic acid came from the hydrolysis of a little of the acrylonitrile, and it was a nuisance in 1980s practice because it fouled the distillation train.
 
-###### Recovery and purification train `chem.acrylonitrile.sovere.distillation`
+###### Recovery and purification train `chem.acrylonitrile.sovere.distillation` _(low)_
 
 The reactor effluent is cooled and partly condensed, the unreacted propylene and ammonia are stripped and recycled, the acrylonitrile and acetonitrile are separated by distillation (acrylonitrile boiling 77 C, acetonitrile 81.6 C, which is a genuinely difficult separation and was the reason for the extractive or entrainer-assisted designs), and the acrylonitrile is finished to 99.9% with a stabiliser. In a plant where acrylonitrile boils at 77 C and is flammable from 3% in air, the distillation column was also the largest single gas hazard.
 
@@ -7903,7 +7883,7 @@ A phenolic or amine stabiliser (a small percentage of a phenol such as hydroquin
 
 The graft is mixed into the SAN at 25-50 parts graft per 100 parts SAN for a general purpose grade and up to 50-70 parts for a high-impact grade. That ratio - not the chemistry - is what a plastics buyer specifies: rubber content sets the impact strength, the heat distortion temperature and the price per kilogram.
 
-###### Compounding and pelletising `chem.abs.pelletising`
+###### Compounding and pelletising `chem.abs.pelletising` _(low)_
 
 The dry blend is melted in a twin-screw extruder at 230-260 C, the volatile xylene and the residual styrene are pulled out under vacuum, and the melt is cut into pellets. This is the operation that turns a powder into a product a moulding machine can eat, and it is where the ABS gets its second heat history - which is why the regrind content matters.
 
@@ -7931,11 +7911,11 @@ ABS is hygroscopic: its equilibrium moisture content is about 0.3-0.4% by weight
 
 A 3A or 4A zeolite in a heated bed at 200-350 C that adsorbs water to below 0.1% of its own weight, with a purge cycle on a hot air or nitrogen sweep. The same zeolite family as the cracker drier and the FCC catalyst, and in the 1980s this was the standard way every plastic was dried before moulding.
 
-###### The 3A molecular sieve itself `chem.abs.drying.desiccant.molecular-sieve`
+###### The 3A molecular sieve itself `chem.abs.drying.desiccant.molecular-sieve` _(low)_
 
 The desiccant in the dryer is a synthetic zeolite with a 3 angstrom pore opening, which admits the water molecule (kinetic diameter about 2.65 angstrom) and excludes anything bigger. That single geometric fact is why a molecular sieve can dry a plastic to 200 ppm: it is a molecular filter, not an absorber. The zeolite is made by hydrothermal synthesis from an alumina gel, a silica source and an organic template at 150-200 C and autogenous pressure in an autoclave - and then the template is burned out of the pore at 500-550 C, which is what opens the pores. A zeolite powder cannot go in a dryer bed - it dusts and it fluidises - so it is formed into 2-4 mm extruded pellets with about 4% of clay and silica binder, and the binder is the part that stops the pellet taking up water itself, because the bed's capacity is only 20-22% of its own weight. Alumina, sodium silicate and sodium hydroxide are gelled, seeded with a few crystals of the product zeolite and heated in an autoclave at 150-200 C for 24-96 hours, and nucleation and growth control is the whole art - which is why crystal size distribution is a commercial specification and a 2-micron zeolite for a cracker drier costs more than a 50-micron one.
 
-###### Compounding additives `chem.abs.additives`
+###### Compounding additives `chem.abs.additives` _(low)_
 
 Colour and processing aids, dosed into the twin screw before the vacuum vent so that anything volatile is stripped there: 1-3% of a pigment masterbatch, 0.1-0.5% of an external lubricant (a metal stearate, usually zinc or calcium stearate or an EBS wax), and a UV stabiliser. The beige of the C64's case is a pigment on top of the natural colour of the polymer; the grey of a later model is a carbon black or a titanium dioxide blend.
 
@@ -7959,7 +7939,7 @@ A high-impact, general purpose injection moulding grade in the family of the low
 
 About 350-400 g of ABS: a two-shot moulding, the beige or brown textured skin over the structural frame, with the moulding texture itself - a fine leather grain applied by the tool's EDM process - as the only decoration. Behind the front bezel there is a metal RF shield and a plastic shield can, and the vents are moulded through the wall. Everything visible on the outside of a C64, apart from the keycaps and the badge, is this one polymer.
 
-###### Other polymers in and around a C64 `chem.abs.other-polymers`
+###### Other polymers in and around a C64 `chem.abs.other-polymers` _(low)_
 
 A 1983 consumer electronic device used perhaps eight different engineering plastics and two rubbers. This branch traces each of them to its monomer, because they all come out of the same crackers, the same benzene and the same phenol. Each is a node with its own subtree; chem.pvc, chem.epoxy, chem.rubber, chem.polyester and chem.silicone are the ones other parts of this tree reference.
 
@@ -7971,7 +7951,7 @@ About 3.5 million tonnes of PVC in 1983, of which maybe 5-8% was flexible and th
 
 C2H3Cl, boiling at -13.4 C, so it is a liquid only under pressure. It is a proven human carcinogen (angiosarcoma of the liver), it is flammable from 4-33% in air, and it is the reason the PVC industry of the 1980s had an unusual public health profile. In 1983 world VCM capacity was of the order of 9-10 million tonnes a year. Oxychlorination of ethylene with chlorine and hydrogen chloride over copper(II) chloride at 150-250 C and 4-10 bar gives vinyl chloride at 85-95% selectivity, and the chlorine-to-HCl ratio decides whether the plant makes ethylene dichloride for the chlorinated-solvent business or vinyl chloride.
 
-###### Acetylene plus HCl (the mercury route) `chem.pvc.vcm.acetylene-route`
+###### Acetylene plus HCl (the mercury route) `chem.pvc.vcm.acetylene-route` _(low)_
 
 Acetylene and anhydrous hydrogen chloride over a mercuric chloride catalyst on charcoal at 20-60 C and 1-2 bar absolute, at 15-25% conversion per pass with 90-95% selectivity. This is the route that ties PVC to natural gas, because acetylene is made from methane. It survives where there is no cracker - in Western Europe, in India, in China and in the Soviet Union - and where there is one, the oxychlorination route is cheaper.
 
@@ -7992,7 +7972,7 @@ Partially hydrolysed polyvinyl alcohol at 0.5-2% of the water phase, with a seco
 
 Acyl peroxide or a persulphate at 0.05-0.5%, with a chain transfer agent (often chloroform, tetrachloromethane or an ester) to control molecular weight. The transfer agents are chlorinated for a reason: they also terminate the radicals that would otherwise go on to make chlorinated by-products, and the PVC industry has always been able to sell them.
 
-###### Heat stabilisation, and the lead problem `chem.pvc.stabilisation`
+###### Heat stabilisation, and the lead problem `chem.pvc.stabilisation` _(low)_
 
 PVC is unstable above about 140 C: the dehydrochlorination produces HCl, which catalyses more dehydrochlorination, which is why unstabilised PVC cannot be processed at all. The 1980s stabiliser systems were lead salts - dibasic lead phosphite, tribasic lead sulphate, lead stearate - which are excellent scavengers and which put lead into millions of tonnes of consumer product. Calcium-zinc systems based on stearates and organic co-stabilisers were the 1980s technology that began to displace them, and the reason is health regulation rather than performance.
 
@@ -8004,7 +7984,7 @@ The lead salts are cheap, opaque, and superb at scavenging HCl and chelating chl
 
 Calcium and zinc carboxylates (stearate, hydrostearate) with an organic co-stabiliser such as a beta-diketone or a polyol. Zinc carboxylates are the primary stabilisers and calcium carboxylates are the co-stabilisers that exchange zinc for calcium at the right moment. The 1980s engineering problem was matching the zinc-to-calcium ratio and the lubricant balance so the compound did not plate out on the extruder die, which is a real and stubborn processing problem rather than a trivial substitution.
 
-###### Plasticisers `chem.pvc.plasticiser`
+###### Plasticisers `chem.pvc.plasticiser` _(low)_
 
 A flexible PVC is PVC with 30-60 parts per 100 of a liquid plasticiser, and the plasticiser is where most of the toxicology lived. Di(2-ethylhexyl) phthalate (DEHP, DOP) was the standard from the 1950s into the 1990s, made by esterifying phthalic anhydride with 2-ethylhexanol - itself from butyraldehyde or oxo synthesis of propylene and a C6 or C8 fraction. In 1983 there was no accepted evidence of harm at the levels in use, and the reappraisal came later.
 
@@ -8016,7 +7996,7 @@ C8H17OOC-C6H4-COOC8H17, 391 g/mol, a colourless liquid with a very slight odour.
 
 The power cord: a two-core or three-core flexible PVC jacket, typically 1.5-3 mm of wall, with PVC insulation on the conductors and a PVC or PVC/rubber strain relief at the moulded connector. A C64 power cord is a couple of hundred grams of PVC. The keyboard keys and the side vents of the earlier cases were also often PVC or a PVC blend. A C64 whose power supply was the internal one had less of it, because the mains cable went to the brick.
 
-###### Epoxy: bisphenol A and epichlorohydrin `chem.epoxy`
+###### Epoxy: bisphenol A and epichlorohydrin `chem.epoxy` _(low)_
 
 DGEBA epoxy is made by hydrolyzing bisphenol A with epichlorohydrin, then dehydrochlorinating to close the epoxide ring. About 800,000-1,000,000 tonnes of epoxy resin were made in 1983, of which the largest single use was the glass-reinforced laminate for printed circuit boards. A C64 has epoxy in its board, in the transformer and coil potting of its power supply, in the die-attach of its chips, and in the adhesive that holds the SID's heatsink tab.
 
@@ -8028,15 +8008,15 @@ The workhorse epoxy: bisphenol A condensed with two moles of epichlorohydrin, gi
 
 1-chloro-2,3-epoxypropane: the C3 building block. The documented traditional manufacture is from allyl chloride in two steps - addition of hypochlorous acid to give a mixture of isomeric alcohols, then base treatment to give the epoxide - though a propylene-chlorohydrin route is also described and may have been the one in use in 1983. Which route this plant used is not established: us acid, dehydrochlorinated with a lime slurry - which is the same chlorohydrin chemistry that makes propylene oxide. It is a sensitiser and a carcinogen, and it is the reason the epoxy industry carried the same respiratory-protection regime as the propylene oxide plants.
 
-###### Bisphenol A from cumene `chem.epoxy.dgeba.bisphenol-a`
+###### Bisphenol A from cumene `chem.epoxy.dgeba.bisphenol-a` _(low)_
 
 Two phenol molecules plus acetone, condensed over a strong acid to give 4,4'-isopropylidenediphenol, with the water stripped. In 1983 most BPA was made this way from the cumene process's phenol, and the rest from the older two-step route using bis(4-chlorophenyl) ketone. The 1980s were the period when BPA's endocrine activity was being investigated by accident, and when the epoxy industry began to substitute boron oxides and novolac epoxies to remove it from can linings and bottle resins.
 
-###### Acetone as the BPA co-reactant `chem.epoxy.dgeba.bisphenol-a.acetone`
+###### Acetone as the BPA co-reactant `chem.epoxy.dgeba.bisphenol-a.acetone` _(medium)_
 
 The BPA reaction is where the case polymer meets the laminate resin: the phenol for BPA comes out of the cumene oxidation that also yields the acetone for the reaction, so the two halves of bisphenol A come from one reactor 20 km apart. The same bisphenol A went into the polycarbonate and the unsaturated polyester of the era.
 
-###### Curing agents `chem.epoxy.hardeners`
+###### Curing agents `chem.epoxy.hardeners` _(low)_
 
 An epoxy is useless until something cross-links it, and the curing agent decides the properties. Amines (aliphatic triethylenetetramine, cycloaliphatic diamines) give fast cures at room temperature and good mechanical properties; anhydrides give high-temperature cures and excellent electrical insulation, which is why the power supply's transformer potting and the chips' die attach were epoxy; and the phenols and novolacs give the flame-retardant laminates. A primary or secondary amine adds to the strained epoxide ring and that is what starts the cure, and the classic complaint of amine-cured epoxy is amine blush - a sticky hygroscopic film from an atmospheric amine-carbon dioxide reaction with surface epoxy - which is why the die-attach and potting processes of the 1980s used a controlled-amine epoxy with a controlled cure cycle.
 
@@ -8068,11 +8048,11 @@ Four places. The board's laminate resin. The power supply's transformer bobbin a
 
 Bisphenol A polycarbonate, made by the interfacial phosgene route from BPA and phosgene in dichloromethane, then melt polycondensed at 250-290 C. It is the transparent, tough, dimensionally stable engineering plastic of the 1980s, and in electronics it went into connector housings, terminal blocks, relay covers and the housings of the switchgear it replaced metal in. The C64 itself was not made of polycarbonate - the case was ABS - but the material surrounds the machine in the peripherals and in Commodore's later machines, and it shares the bisphenol A and the cumene chain with the epoxy and the polyester. Bisphenol A dissolved in aqueous caustic is reacted with phosgene in dichloromethane at 20-40 C with a tertiary amine catalyst; the chloroformate-terminated oligomer is washed and then polymerised by melt condensation at 250-290 C under 0.1-1 mbar.
 
-###### Phosgene `chem.polycarbonate.phosgene`
+###### Phosgene `chem.polycarbonate.phosgene` _(low)_
 
 Carbonyl chloride, COCl2, made by oxidising carbon monoxide with chlorine over activated carbon at 100-150 C. It is acutely toxic, and it is one of the reasons the polycarbonate industry of the 1980s was moving toward the non-phosgene route based on bisphenol A carbonate and on the methylene chloride and pyridine route. The bisphenol A it consumes is the same bisphenol A as the epoxy, and the chlorine is the same chlorine.
 
-###### Chlorine and carbon monoxide `chem.polycarbonate.phosgene.chlorine`
+###### Chlorine and carbon monoxide `chem.polycarbonate.phosgene.chlorine` _(medium)_
 
 Chlorine from brine electrolysis plus carbon monoxide from a reformer or from coke. This is the point at which the chlor-alkali industry - which needs hydrogen to sell its chlorine, and therefore needs natural gas - touches the plastics industry through a molecule with two chlorine atoms and one oxygen.
 
@@ -8080,7 +8060,7 @@ Chlorine from brine electrolysis plus carbon monoxide from a reformer or from co
 
 Amorphous at 100-150% linear retention, glass transition near 145 C, tensile strength 60-70 MPa, and a notched Izod of 8-15 kJ/m2. It is the transparent tough polymer of the 1980s: sunglasses lenses, camera and instrument housings, the disc of a compact disc from 1982, and the dome of the keyboard on some machines. It was also the first engineering polymer to be explicitly targeted at the electronics market as a metal replacement.
 
-###### Nylon 6 and nylon 6,6 `chem.polyamide`
+###### Nylon 6 and nylon 6,6 `chem.polyamide` _(low)_
 
 The two polyamides that a 1980s machine used for its precision parts. Nylon 6,6 from adipic acid and hexamethylenediamine, or nylon 6 from caprolactam which itself comes from phenol. Both are condensation polymers of a diamine and an acid or of a lactam, and both need the phenol-aromatic chain, so both are downstream of the same cracker benzene as the ABS.
 
@@ -8088,7 +8068,7 @@ The two polyamides that a 1980s machine used for its precision parts. Nylon 6,6 
 
 Adipic acid plus hexamethylenediamine condense to nylon salt at 250-270 C and 10-20 bar in a batch or continuous process, then polymerise at 270-280 C under a small nitrogen pressure. Adipic acid in 1983 came mostly from the oxidation of cyclohexane or of a C4 route with nitric acid; hexamethylenediamine came from adiponitrile hydrogenation or from adipic acid plus ammonia. The 1980s feedstock route was hydrocyanation of butadiene with hydrogen cyanide over a nickel catalyst followed by hydrogenation of both nitriles, which is what made a cracker-based nylon 6,6 possible at all.
 
-###### Nylon 6 from caprolactam `chem.polyamide.nylon-6`
+###### Nylon 6 from caprolactam `chem.polyamide.nylon-6` _(low)_
 
 Caprolactam is opened with water at 250-270 C in a hydrolysis-polymerisation reactor under 1-15 bar, giving a nylon 6 with a very narrow molecular weight distribution because the chemistry is a step growth from a single monomer. Nylon 6 is the form used where a low melt viscosity matters, and it was the standard for the textile filament and the carpet fibre trade.
 
@@ -8096,11 +8076,11 @@ Caprolactam is opened with water at 250-270 C in a hydrolysis-polymerisation rea
 
 Phenol hydrogenated to cyclohexanol, then dehydrogenated to cyclohexanone; cyclohexanone oximation to cyclohexanone oxime; the oxime rearranged with oleum (the Beckmann rearrangement, which expands the ring from six to seven members) to caprolactam, and the ammonium sulphate byproduct stripped and recycled. This is a five-step route from phenol and it is one of the longest petrochemical chains in the C64's ancestry. Phenol is hydrogenated over nickel or palladium at 120-180 C and 10-30 bar to cyclohexanol and dehydrogenated over copper at 250-300 C to cyclohexanone; the phenol comes from cumene and the cumene's propylene from the cracker, so nylon 6 is a third-generation descendant of the naphtha cracker. The Beckmann rearrangement needs concentrated sulphuric acid or oleum and produces 1.1-1.3 tonnes of ammonium sulphate per tonne of caprolactam, which has to be sold as fertiliser - the same sulphuric acid and the same fertiliser market the Claus sulphur plant feeds, which is why the industry was moving to oleum-free rearrangements over solid acid or a zeolite.
 
-###### Polyesters: PET, PBT and unsaturated polyester `chem.polyester`
+###### Polyesters: PET, PBT and unsaturated polyester `chem.polyester` _(low)_
 
 Three families that share the same two feedstocks - ethylene glycol or propylene glycol, and a terephthalic or maleic/fumaric acid. PET in 1983 was overwhelmingly a fibre and bottle business, PBT was the engineering thermoplastic, and unsaturated polyester was the resin of the glass-reinforced mouldings. In a 1983 electronic assembly, the polyester was the transformer bobbin insulation, the relay base, the film capacitors, and any glass-filled moulding. PBT is polymerised by transesterification and polycondensation like PET but with butanediol, giving a melting point of about 225 C against PET's 260 C and a faster crystallisation, which is why it is the engineering grade: it sets in a 5-10 mm wall in 5-10 seconds where PET needs a minute.
 
-###### PET from ethylene glycol and dimethyl terephthalate `chem.polyester.pet`
+###### PET from ethylene glycol and dimethyl terephthalate `chem.polyester.pet` _(low)_
 
 Dimethyl terephthalate plus ethylene glycol transesterified at 180-280 C over an antimony or titanium catalyst, then polycondensed at 270-290 C under 1-50 mbar. The bottleneck is the transesterification methanol coproduct, which is recovered and returned to the terephthalate plant, so the plant is a big methanol recovery column. The route through dimethyl terephthalate rather than terephthalic acid was chosen in the 1970s and 1980s because the acid route's oxidation step had the corrosion and the purity problems; by the late 1980s the acid route had caught up. Para-xylene is oxidised to terephthalic acid over cobalt-manganese acetate at 175-225 C and 15-30 bar, and it is that oxidation rather than the polymerisation which is where the capital in a PET plant sits.
 
@@ -8108,15 +8088,15 @@ Dimethyl terephthalate plus ethylene glycol transesterified at 180-280 C over an
 
 Para-xylene is separated from the C8 aromatics by adsorptive separation (UOP Parex, 4A zeolite) or by crystallisation, then oxidised with air over a cobalt-manganese-acetate catalyst at 175-225 C and 15-30 bar in acetic acid. The para isomer must be more than 99.5% pure because the meta and ortho isomers cannot be polymerised into a useful fibre.
 
-###### Ethylene glycol `chem.polyester.pet.ethylene-glycol`
+###### Ethylene glycol `chem.polyester.pet.ethylene-glycol` _(low)_
 
 About 2.2 tonnes of ethylene glycol per tonne of PET resin, from the ethylene oxide hydration branch. The glycol is purified to 99.9% because the water it carries ends up as a hydrolysis chain terminator and it is the single largest cause of high-acid-value polyester.
 
-###### Unsaturated polyester resin `chem.polyester.unsaturated`
+###### Unsaturated polyester resin `chem.polyester.unsaturated` _(low)_
 
 Maleic anhydride plus propylene glycol condensed to about 1,000-2,000 molecular weight and dissolved in styrene; the crosslinker is styrene itself and the cure is a peroxide (usually methyl ethyl ketone peroxide) at 20-80 C. In the 1980s it was the resin of glass-reinforced moulding compound and of the cast reinforced parts - and it is the resin family most associated with the styrene emission complaints of boat building, which is the same styrene that the ABS matrix uses.
 
-###### Silicone (polydimethylsiloxane) `chem.silicone`
+###### Silicone (polydimethylsiloxane) `chem.silicone` _(low)_
 
 The only engineering polymer whose backbone is not carbon. Built from chlorosilanes made by the Rochow direct process - silicon plus methyl chloride over copper at 280-350 C - then hydrolyzed and condensed. In 1983 silicones were everywhere in electronics: as RTV sealing gaskets, as conformal coatings and encapsulants, as dielectric greases for the variable capacitors, and as the flexible key domes.
 
@@ -8124,7 +8104,7 @@ The only engineering polymer whose backbone is not carbon. Built from chlorosila
 
 Metallurgical silicon plus methyl chloride over copper at 280-350 C gives dimethyldichlorosilane. The silicon comes from the quartz and coke reduction that the whole semiconductor industry depends on, so the silicone business and the chip business share an upstream - and share the same four-nines purity problem in their own way. The methyl chloride comes from the natural gas chlorination business, so the silicone plant and the semiconductor plant are both fed by chlorine and by methane.
 
-###### Silicone rubber and fluids `chem.silicone.polymer`
+###### Silicone rubber and fluids `chem.silicone.polymer` _(low)_
 
 The chlorosilane is hydrolyzed to a silanol and condensed with a silanol-terminated chain stopper, giving a silicone oil (low viscosity) or, with reinforcing silica and peroxide cure, a silicone rubber (elastomer). The 1980s mix in electronics was dominated by room-temperature-vulcanising silicone - a moisture-cured acetoxy or hydroxyl-terminated compound - because it cures in a fixture without heat, and by the fluorosilicone mould releases.
 
@@ -8136,11 +8116,11 @@ A 20-100 micron film of room-temperature-vulcanising silicone brushed or dipped 
 
 A switch contact made of a silicone or neoprene elastomer filled with carbon black - or with metal-plated hollow glass spheres - so that the rubber itself conducts. When the dome is pressed it shorts to a printed conductor beneath; the dome's force curve (about 0.5-2 N operating, 8-12 mm travel) is the feel of the keyboard. The conductive filler is a petroleum carbon black or a silvered microsphere, and the elastomer is usually a peroxide-cured silicone or a neoprene, chosen for its fatigue life in millions of actuations.
 
-###### Neoprene (polychloroprene) `chem.rubber.neoprene`
+###### Neoprene (polychloroprene) `chem.rubber.neoprene` _(low)_
 
 Chloroprene polymerised in emulsion at 40 C. It is oil-resistant, weather-resistant and flame-resistant, which makes it the rubber for gaskets, for the flexible jacket of a power cord, and for the cable's outer sheath when the cable is not PVC. It is made from acetylene and chlorine through vinylacetylene and dichloroacetylene - one more route that ends in acetylene, and therefore in natural gas. Acetylene dimerises to vinylacetylene, which chlorinates to 1,2-dichloro-2-butene; dehydrochlorination gives chloroprene, which polymerises in emulsion at 40 C.
 
-###### Elastomers: natural rubber, neoprene, EPDM `chem.rubber`
+###### Elastomers: natural rubber, neoprene, EPDM `chem.rubber` _(low)_
 
 Three rubbers for three different jobs in and around a 1983 machine: natural rubber for the feet and plinths and the moulded grips, neoprene for gaskets and the flexible cable jacket, and EPDM for the cable's weather-resistant insulation. The C64's case feet are elastomer pads stuck to the underside of the case, and they are the only rubber on the outside of the machine.
 
@@ -8149,15 +8129,15 @@ Three rubbers for three different jobs in and around a 1983 machine: natural rub
 Field latex tapped from Hevea brasiliensis, coagulated, smoked and pressed into bales. In 1983 world production was of the order of 3.0-3.5 million tonnes a year, two thirds of it in Malaysia, Thailand and Indonesia. It is cis-1,4-polyisoprene with a glass transition near -70 C, so it is the most resilient rubber at room temperature, and it needs vulcanisation with sulphur because the cis double bond is what makes it elastic. A quarter-spiral cut is made into the tapping panel about every other day and the latex is collected in a cup; about 30% of a mature tree's latex can be taken without killing it over a 25-30 year tapping life. Before the 1930s the whole article had to be vulcanised in the mould; by the 1930s the compound could be prevulcanised in a mixer - deliberately introducing some crosslink - so it was a flowable, uncured-on-the-surface material that could be shaped and then cured in the mould. Heated with sulphur and an accelerator, a thiuram or a sulphonamide, the cis double bonds get a short sulphur bridge between neighbouring chains: crosslinked, so the chains can no longer slide.
 
                 - *Neoprene (polychloroprene)* `chem.rubber.neoprene` *(seen above)*
-###### EPDM `chem.rubber.epdm`
+###### EPDM `chem.rubber.epdm` _(low)_
 
 Ethylene copolymerised with a diene (norbornene or a cyclic diene), the diene content giving the vulcanisable double bonds. It has no unsaturation in the main chain, so it is ozone-resistant and will not crack in sunlight, which is why it replaced natural rubber in weather-exposed cable insulation and in the C64's power cord as the flexible jacket material of preference.
 
-###### POM (acetal homopolymer and copolymer) `chem.pom`
+###### POM (acetal homopolymer and copolymer) `chem.pom` _(low)_
 
 Polyoxymethylene, made by polymerising formaldehyde - from the oxidation of methanol - either with an acetic anhydride chain transfer (giving the homopolymer, Delrin) or with a small amount of a diacetate comonomer (giving the Celcon-type copolymer). It is the 1980s precision engineering plastic: gears, cams, hinges, tolerance rings and the moving parts in a mechanism. The homopolymer route runs formaldehyde with acetic anhydride, the growing chain's hydroxyl end reacting with the anhydride to give an acetoxy end that stops polymerisation; the copolymer route uses formaldehyde with a 2-4% fraction of a methylol-substituted diacetate so the chain stops at an inert C-O-C end.
 
-###### Formaldehyde from methanol `chem.pom.formaldehyde`
+###### Formaldehyde from methanol `chem.pom.formaldehyde` _(low)_
 
 Methanol plus a controlled amount of oxygen over silver at 600-700 C, giving 25-35% formaldehyde in air (the Formox process), then concentrated to 60-70%. The methanol comes from synthesis gas, so this is a coal-or-gas-to-methanol-to-formaldehyde chain rather than a direct petroleum one - although in a 1980s plant the methanol would typically have been made from natural gas. Methanol plus about 0.4 mol of oxygen per mole over silver gauze at 600-700 C gives 25-35% formaldehyde at above 90% selectivity, in a packed bed of thousands of tubes.
 
@@ -8165,15 +8145,15 @@ Methanol plus a controlled amount of oxygen over silver at 600-700 C, giving 25-
 
 Small precision parts: the gear and cam of a fan, the hinges and catches, the insulator of a switch mechanism, the arm of a relay. In a 1983 home computer it was present in tens of grams at most, but it was there because nothing else moulded to a 0.05 mm tolerance with a low friction coefficient.
 
-###### Phenolic and amino thermosets `chem.thermosets`
+###### Phenolic and amino thermosets `chem.thermosets` _(low)_
 
 The two oldest synthetic plastics, still in a 1983 machine in the places where a thermoplastic will not do: phenolic for the switch and socket housings and the old-style bakelite knobs, and urea-formaldehyde and melamine-formaldehyde for the white insulating parts, the plug bodies and the coil-formers. Both are condensation networks: once cured they do not melt, and they are made from phenol or from urea, which comes from the same cumene and ammonia chain as everything else in this file.
 
-###### Phenolic resin (phenol-formaldehyde) `chem.thermosets.phenolic`
+###### Phenolic resin (phenol-formaldehyde) `chem.thermosets.phenolic` _(low)_
 
 Phenol condensed with formaldehyde under acid (novolac, with hexamine as the curing agent) or under base (resol, self-curing). Bakelite, patented in 1907, was the first wholly synthetic plastic. In 1980s electronics it was in the switchgear, the relay covers and the phenolic laminate (paper or cotton cloth in phenolic resin) for the low-cost circuit boards and for the insulating barriers in a power supply.
 
-###### The formaldehyde in a phenolic `chem.thermosets.phenolic.formaldehyde`
+###### The formaldehyde in a phenolic `chem.thermosets.phenolic.formaldehyde` _(low)_
 
 Methanol oxidised to formaldehyde over silver at 600-700 C. The same formaldehyde as the acetal plastics, from the same methanol, from the same synthesis gas. Phenolic resin and POM sitting a few hundred metres apart in a 1980s chemical park is not a coincidence; both are formaldehyde chemistry.
 
@@ -8182,7 +8162,7 @@ Methanol oxidised to formaldehyde over silver at 600-700 C. The same formaldehyd
 
 Formaldehyde plus ammonia, and it does double duty: it is the curing agent for novolac phenolic and it is a slow accelerator and a decomposition source of formaldehyde in rubber compounds. It is one of the few molecules in this file that reaches into three unrelated chemistries.
 
-###### Urea-formaldehyde and melamine-formaldehyde `chem.thermosets.urea-formaldehyde`
+###### Urea-formaldehyde and melamine-formaldehyde `chem.thermosets.urea-formaldehyde` _(low)_
 
 Urea condensed with formaldehyde gives a thermoset used for the white insulation of plugs, sockets and coil formers, and melamine gives the tougher, heat-resistant version used for the panel fittings. Both are white, both are cheap, and both are moisture-sensitive, which is the defect that kept them out of anything structural. The urea comes from ammonia and carbon dioxide - the Haber-Bosch product - so this is a nitrogen branch rather than a hydrocarbon one. 2NH3 plus CO2 at 180-220 C and 15-25 bar gives ammonium carbamate, which dehydrates to urea, and the ammonia comes from the Haber-Bosch loop fed by steam-reformed natural gas: a white appliance plug of 1983 is, four steps back, a gas field.
 
@@ -8204,11 +8184,11 @@ Para-xylene is selectively adsorbed from the mixed C8 aromatics onto a zeolite m
 
           - *PVC: vinyl chloride and suspension polymerisation* `chem.pvc` *(seen above)*
           - *Polyesters: PET, PBT and unsaturated polyester* `chem.polyester` *(seen above)*
-#### Propylene and its derivatives `chem.propylene`
+#### Propylene and its derivatives `chem.propylene` _(low)_
 
 Propylene is the C3 that the cracker makes whether you wanted it or not, and for two decades the propylene splitter process existed purely to turn that unwanted C3 into more of it. By 1983 most propylene came from the cracker and from FCC, and it went into polypropylene, propylene oxide, cumene for phenol and bisphenol A, and the acrylonitrile ammoxidation.
 
-##### Where propylene comes from `chem.propylene.sources`
+##### Where propylene comes from `chem.propylene.sources` _(low)_
 
 Three sources, in order of size in 1983: the steam cracker (roughly 40-45% of world propylene supply), catalytic cracking (roughly 30-35%), and dedicated processes. A naphtha cracker makes propylene at about 15% of its hydrocarbon product, so a cracker and a propylene splitter were bolted together in the 1960s to turn the whole C3 stream into pure propylene; by the 1980s the splitter had mostly been bypassed because the C3 could just be purified. The other half of the cracker C5 problem: isoprene was isolated from the FCC C5 stream or synthesised from isobutylene and formaldehyde until synthetic isoprene replaced it in the 1980s, and natural rubber was never seriously displaced because isoprene only gives cis-1,4-polyisoprene with a stereospecific catalyst, and that is a poor substitute for the natural article.
 
@@ -8216,7 +8196,7 @@ Three sources, in order of size in 1983: the steam cracker (roughly 40-45% of wo
 
 The propylene and propane that distil out of the cracker's quench separator. Naphtha crackers make roughly 0.15 t of propylene per tonne of feed, which on a 500,000 t/yr cracker is about 75,000 t/yr of propylene - more than a small polypropylene plant needs.
 
-###### C3 recovery and the propylene column `chem.propylene.sources.cracker-c3.c3-recovery`
+###### C3 recovery and the propylene column `chem.propylene.sources.cracker-c3.c3-recovery` _(low)_
 
 How the propylene actually leaves the cracker. The C3 and C4 streams are separated in a deethaniser, then the propane and propylene go to a propylene splitter column where the propylene is taken overhead. Before that column, the stream is caustic washed to remove the carbonyls and the oxygenates; in the 1980s this was an option rather than an obligation, and the plants that skipped it were the plants whose polymerisation catalyst was drinking acetone.
 
@@ -8224,7 +8204,7 @@ How the propylene actually leaves the cracker. The C3 and C4 streams are separat
 
 A 10-20% sodium hydroxide wash column that neutralises the acidic oxygenates - propanal, acetone, propionic acid, and the phenol and cresols from the C9+ - that the cracker makes. The spent caustic is a refinery effluent problem: it is a phenolic wastewater with a high chemical oxygen demand, and in the 1980s it was often incinerated on the site.
 
-###### Chlor-alkali (brine electrolysis) `chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali`
+###### Chlor-alkali (brine electrolysis) `chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali` _(low)_
 
 Salt water electrolyzed in a membrane or mercury cell at 60-90 C and 3-4 V DC to give chlorine, sodium hydroxide and hydrogen. It is the source of every chlorine molecule in this file - the PVC monomer, the epichlorohydrin, the chlorinated solvents, the hypochlorous acid of the propylene chlorohydrin, the phosgene of the polycarbonate, and the trichlorosilane precursor chain of the silicones - and the source of the caustic and the acid that made the phenol-formaldehyde and the ester plasticisers. It is the largest single tonnage of chemistry that a 1983 computer sits on top of, indirectly.
 
@@ -8252,7 +8232,7 @@ Reheated polypropylene was fed back to a reactor to recover the propylene it was
 
 The propylene has to be at 99.5-99.9% with less than 10-20 ppm of carbonyl compounds, because propanal and acetone stop an ionic polymerisation dead. In 1980s practice the purified propylene was made by distillation plus an alkaline wash, and by the later 1980s by hydrazine or hydrazone treatment which converts the carbonyls into something removable.
 
-##### Polypropylene `chem.propylene.polymerisation`
+##### Polypropylene `chem.propylene.polymerisation` _(low)_
 
 About 7 million tonnes of polypropylene in 1983, the fastest-growing major plastic. It needs a stereospecific catalyst to be anything but glue: isotactic polypropylene is crystalline and rigid, atactic is a sticky amorphous gum, syndiotactic is a curiosity in the 1980s. The 1980s advances were the high-yield supported catalyst and, on the way in, gas-phase and slurry-loop reactors.
 
@@ -8264,11 +8244,11 @@ Titanium trichloride or titanium tetrachloride on magnesium chloride with an alu
 
 The 1980s reactor competition: the slurry loop (heptane diluent, polymer as a slurry, then solvent recovery and devolatilising), the loop slurry with 30-50% solids, and the gas-phase fluidised bed with no solvent at all. The gas-phase process was the 1980s newcomer and its whole commercial case was the elimination of the solvent recovery section.
 
-##### Propylene oxide `chem.propylene.propylene-oxide`
+##### Propylene oxide `chem.propylene.propylene-oxide` _(low)_
 
 Propylene epoxidised, then made into propylene glycol, polyether polyols for polyurethane foam, and propylene chlorohydrin. World production was of the order of 0.7-0.9 million tonnes in 1983. Because the epoxidation of propylene was historically done with hypochlorous acid, a chlorinated by-product stream came with it, and that is why 1,2-dichloropropane and the flame retardants derived from it were part of the same business.
 
-###### Chlorohydrin route `chem.propylene.propylene-oxide.chlorohydrin`
+###### Chlorohydrin route `chem.propylene.propylene-oxide.chlorohydrin` _(low)_
 
 Propylene plus hypochlorous acid gives 1-chloro-2-propanol (about 90%) and 2-chloro-1-propanol (about 10%); the mixture is dehydrochlorinated with a lime or caustic slurry to propylene oxide and the chlorides are recycled as chlorine. The 10% isomer is the problem: it goes on to make propylene chlorohydrin and then the toxic 1,2-dichloropropane, so the plant had a dedicated caustic hydrolysis section for it.
 
@@ -8284,7 +8264,7 @@ The unwanted isomer stream, made when propylene chlorohydrin is treated with exc
 
 Propylene plus hydrogen peroxide over a titanium-on-silica catalyst at 40-80 C and 1-10 bar, with the propylene chlorohydrin recycled as the phase-transfer catalyst. It makes no chloride, it is nearly quantitative, and it depends on a cheap supply of hydrogen peroxide - which in 1983 was the reason the anthraquinone peroxide plant and the propylene oxide plant sat next to each other in a few integrated sites.
 
-##### Chlorinated flame retardants from propylene `chem.propylene.flame-retardants`
+##### Chlorinated flame retardants from propylene `chem.propylene.flame-retardants` _(medium)_
 
 Polymers and elastomers for electronics and furniture were made to burn slowly by chlorinating a paraffinic or a phosphate ester. Chlorinated paraffins, and the phosphorus esters derived from propylene oxide and phosphorus oxychloride, went into the flame-retardant grades of ABS, polypropylene and polyurethane foam that a consumer electronics company would specify for enclosures but not for a home computer.
 
@@ -8304,7 +8284,7 @@ Benzene plus propylene gives cumene; cumene plus oxygen gives cumene hydroperoxi
 
 Benzene with excess benzene over phosphoric acid on silica at 140-180 C and 20-30 bar in an adiabatic bed, or over a solid acid. The large excess of benzene (3-5 mol per mol of propylene) is deliberate: it suppresses the diethylbenzene and triisopropylbenzene by-products and stops the reactor polymerising the propylbenzene.
 
-###### Phosphoric acid on silica `chem.propylene.cumene.alkylation.phosphoric-acid-catalyst`
+###### Phosphoric acid on silica `chem.propylene.cumene.alkylation.phosphoric-acid-catalyst` _(low)_
 
 The classic cumene alkylation catalyst is orthophosphoric acid on a silica carrier: the acid is absorbed into the silica's pore structure and the pore structure holds it there, and the catalyst's whole life is the slow loss of that acid to the reactor walls. The 1980s industry answer was a solid acid and a moving-bed or slurry reactor; the answer that arrived later was a zeolite. Three catalysts for one reaction in fifty years, and the C64's epoxy resin is downstream of all three.
 
@@ -8316,7 +8296,7 @@ A silica gel of 200-400 m2/g surface area, and a strong family resemblance to th
 
 Cumene with air at 120-140 C, either with a hydroperoxide initiator or with a cobalt or manganese catalyst, gives cumene hydroperoxide at 20-40 wt%. This is a liquid-phase autoxidation, and it has the classic autoxidation hazard: the reaction is exothermic, it runs away above 150 C, and the product is a shock-sensitive organic peroxide.
 
-###### Acid cleavage to phenol and acetone `chem.propylene.cumene.cleavage`
+###### Acid cleavage to phenol and acetone `chem.propylene.cumene.cleavage` _(low)_
 
 The cumene hydroperoxide is cleaved with sulphuric acid (or with a zeolite in later plants) at 50-80 C, giving phenol and acetone with 85-95% selectivity. The 1980s safety concern was the rearrangement of the cumene hydroperoxide to the phenol and acetone, which is violently exothermic: a small holdup upstream of the cleavage reactor would flash-boil, and the famous 1979 and 1985 phenol plant incidents are what the modern design rules are written around.
 
@@ -8324,7 +8304,7 @@ The cumene hydroperoxide is cleaved with sulphuric acid (or with a zeolite in la
 
 The molecule that goes into bisphenol A for epoxy, into phenol-formaldehyde for the phenolic plastics of switches and sockets, and into caprolactam for nylon 6. 1983 world phenol production was of the order of 3.5-4 million tonnes a year, essentially all of it from cumene.
 
-###### Acetone `chem.propylene.cumene.cleavage.acetone`
+###### Acetone `chem.propylene.cumene.cleavage.acetone` _(low)_
 
 The co-product of the cumene process and, from 1960s, a major product in its own right from the acetone cyanohydrin process. Acetone was the electronics plant's solvent of choice for degreasing and photoresist stripping in 1980s practice, and it is also the feedstock for methyl methacrylate and for the bisphenol A plus chloroform route to epoxy.
 
@@ -8333,11 +8313,11 @@ The co-product of the cumene process and, from 1960s, a major product in its own
 The SOVERE process - SOx-free reductive ammoxidation - oxidises propylene with ammonia and air in one step to acrylonitrile. It was invented at Standard Oil of Ohio and licensed worldwide from 1960-1965, and by 1983 essentially all the world's roughly 1.2-1.5 million tonnes a year of acrylonitrile was made by it. Acrylonitrile is the most dangerous liquid in a polymer plant: it is acutely lethal by skin absorption, flammable at 3-20% in air, and boils at 77 C. The older nitric acid route nitrated propylene with 15-20% nitric acid at 30-60 C and 2-5 bar to a nitropropane mixture, converted the 1-nitropropane with a dialkyl amine to a propylhydroxylamine and dehydrated that to acrylonitrile: a 30-50% yield, a heavy nitrate waste stream and a very large plant, surviving in 1983 only in a few older Soviet and Eastern European works.
 
         - *SOVERE ammoxidation process* `chem.acrylonitrile.sovere` *(seen above)*
-##### Downstream acrylonitrile `chem.acrylonitrile.downstream`
+##### Downstream acrylonitrile `chem.acrylonitrile.downstream` _(low)_
 
 What the acrylonitrile was for in 1983: acrylic fibre (Orlon, Dralon, and in Japan the acrylics), nitrile rubber (butadiene copolymer), SAN and ABS copolymer, and the polyacrylonitrile precursor for carbon fibre. More than half the acrylonitrile made in the early 1980s went into acrylic fibre, and a growing slice of the fibre grade went into polyacrylonitrile precursor for carbon fibre, which needs a very pure comonomer (methyl acrylate at 0.5-3%) because any ionic impurity ends up as a carbon defect.
 
-###### Acrylic acid `chem.acrylonitrile.downstream.acrylic-acid`
+###### Acrylic acid `chem.acrylonitrile.downstream.acrylic-acid` _(low)_
 
 Made by hydrolysis of acrylonitrile in an 85-93% sulphuric acid solution at 90-120 C in a batch or continuous reactor in the 1980s (the later propane-oxidation route came later and took over). The acrylonitrile had to be purified first because the hydrolysis is irreversible and the by-product ammonium sulphate ends up in the polymer. Superabsorbent diapers drove the growth of this route from the late 1970s.
 
@@ -8345,11 +8325,11 @@ Made by hydrolysis of acrylonitrile in an 85-93% sulphuric acid solution at 90-1
 
 One tonne of acrylic acid from acrylonitrile hydrolysis throws out about one tonne of ammonium sulphate, which is a low-grade fertiliser that is expensive to dry and transport. It is the classic penalty of the hydrolysis route and the reason the later oxidation route won.
 
-###### Methyl methacrylate (acetone cyanohydrin route) `chem.acrylonitrile.downstream.methyl-methacrylate`
+###### Methyl methacrylate (acetone cyanohydrin route) `chem.acrylonitrile.downstream.methyl-methacrylate` _(low)_
 
 A separate molecule with the same nitrile: acetone plus hydrogen chloride gives acetone cyanohydrin, which is esterified with methanol and then dehydrated with sulphuric acid to methyl methacrylate. The acetone cyanohydrin route was introduced from 1938 and became dominant in the 1950s-60s. The hydrogen cyanide for it came either from the acrylonitrile plant's by-product or from its own Andrussow process, and the methanol came from synthesis gas.
 
-###### Acetone cyanohydrin `chem.acrylonitrile.downstream.methyl-methacrylate.acetone-cyanohydrin`
+###### Acetone cyanohydrin `chem.acrylonitrile.downstream.methyl-methacrylate.acetone-cyanohydrin` _(low)_
 
 A compound that made the C64 possible twice over: it is the intermediate for methyl methacrylate, and the HCN it carries is the feedstock for methyl methacrylate and for the older butadiene-adiponitrile route to nylon 6,6. It is acutely toxic and it has killed people by being absorbed through the skin, which is the reason the ACH plants had such aggressive containment.
 
@@ -8357,7 +8337,7 @@ A compound that made the C64 possible twice over: it is the intermediate for met
 
 Butadiene is the C4 diene that makes synthetic rubber, and in 1983 about 5-6 million tonnes a year of it was made, roughly 60% from cracker C4 by extractive distillation and the rest by dehydrogenation of butane. It is the molecule behind the rubber in the C64's case feet, the plinths, and the elasticity of the power cord's jacket - and behind the graft phase of the ABS case. Nitrile rubber is butadiene with 25-40% acrylonitrile, emulsion-polymerised the same way as SBR: the acrylonitrile buys oil and fuel resistance and costs low-temperature flexibility, and it is the material for oil seals and for the elastomer pads of many electrolytic capacitors. Two butadienes plus two hydrogen cyanides give adiponitrile by hydrocyanation over nickel(0) with a triphenylphosphine ligand, which is what finally let a nylon 6,6 plant be fed from a cracker rather than from adipic acid - and is the reason hydrogen cyanide, the toxic gas of the acrylonitrile and methyl methacrylate chemistry, sat on a plastics company's books.
 
-##### Butadiene sources `chem.butadiene.sources`
+##### Butadiene sources `chem.butadiene.sources` _(low)_
 
 Two industrial routes and a third that was still just about alive in 1983: extractive distillation of the steam cracker's C4 stream, dehydrogenation of n-butane, and thermal dimerisation of acetylene (the old Reppe route, dead by 1960). The choice between them is a function of whether a cracker was nearby and whether butane was cheap. Two acetylene molecules make butadiene over a copper catalyst, and before 1960 that is how the world made it: a route with perfect atom economy that died because acetylene was expensive relative to the C4 it displaced - the third instance in this file of the elegant gas route losing to the abundant naphtha route.
 
@@ -8365,7 +8345,7 @@ Two industrial routes and a third that was still just about alive in 1983: extra
 
 A NGL stream of 1-butene (15-25%), cis-2-butene (10-15%), trans-2-butene (30-35%), isobutylene (15-25%) and isobutane/isopentane, with butadiene at 20-30% of the C4 - which is 4-6% of the cracker's total hydrocarbon output. The butadiene has to be taken out by a separate, very large unit.
 
-###### C4 recovery and the depentaniser `chem.butadiene.sources.cracker-c4.c4-recovery`
+###### C4 recovery and the depentaniser `chem.butadiene.sources.cracker-c4.c4-recovery` _(low)_
 
 Before the butadiene extractor there is the C4 recovery section: a depentaniser that takes the C5+ out of the whole cracker liquid so the C4 unit does not have to handle pentanes and heavier, and then a C3/C4 splitter that separates propane from the butanes. Both columns are ordinary fractionations, but the depentaniser runs at 30-40 bar and is where a lot of the plant's fouling comes from, because the C5+ fraction carries the naphthalene and the heavier aromatics that the C4 extractor does not want.
 
@@ -8377,7 +8357,7 @@ A 40-60 tray column operating at 25-40 bar, taking the C5 cut point at about 50-
 
 A 60-80 tray column separating propane overhead from the butanes. It is a good example of a column that has nothing to do with the product of interest: the butadiene extractor's feed comes off the bottom of this splitter, and the splitter's job is only to keep the propane out of the extractor so the extractor's solvent does not have to separate propane from butadiene as well.
 
-###### Sounsby extractive distillation `chem.butadiene.sources.sounsby`
+###### Sounsby extractive distillation `chem.butadiene.sources.sounsby` _(low)_
 
 The standard butadiene recovery unit from 1962 onward: an extractive distillation with a selective polar solvent that dissolves butadiene and the butenes but not the saturated C4s, followed by a second stripper to recover the pure diene. A 1980s unit processing 100,000-400,000 tonnes a year of C4 stood about 60-100 m tall and was one of the tallest distillation towers in the world, because alpha-olefins and butadiene have a relative volatility of about 1.01 - the hardest separation in the whole C4 business. The process works because butadiene is the only diene and the only component that will add a second solvent molecule.
 
@@ -8385,7 +8365,7 @@ The standard butadiene recovery unit from 1962 onward: an extractive distillatio
 
 Furfural (furan-2-carbaldehyde) made from furfural-bark or from pentoses in bagasse hemihydrate pulping, with a boiling point of 161 C and a high selectivity for diene over alpha-olefin. It was the original Sounsby solvent and its dominant drawback is that it polymerises in the presence of acid, so the unit had to be kept dry and inhibited and it consumed make-up solvent continuously. The solvent is made from pentosan hemicellulose - a fifth of the dry weight of a hardwood - by acid and steam treatment of rice hulls, corn cobs or bagasse, so the extractant's own feedstock is agricultural residue rather than petroleum.
 
-###### N-methylpyrrolidone as the extractive solvent `chem.butadiene.sources.sounsby.nmp`
+###### N-methylpyrrolidone as the extractive solvent `chem.butadiene.sources.sounsby.nmp` _(low)_
 
 NMP (a strongly polar, high-boiling amide, 202 C) replaced furfural because it does not polymerise and needs less make-up. NMP was the 1980s solvent of choice and it is the same molecule that later arrived in the electronics plant as the chlorinated-solvent replacement for 1,1,1-trichloroethane. NMP is made from butanone and ethylenediamine, and its methylating agent is methanol: CO plus hydrogen at 200-300 C and 50-100 bar over a copper-zinc-aluminium catalyst, so the hydrogen in it comes from a reformer and the carbon monoxide from reformed methane.
 
@@ -8402,15 +8382,15 @@ n-Butane dehydrogenated endothermically at 480-550 C over platinum on alumina or
 Dehydrogenation of butane to butenes is endothermic, so the reactor is a bank of fired tubes - cast iron or cast alloy, several hundred tubes, with the furnace gas at 500-700 C. The catalyst inside is platinum on alumina or chromia, and the giveaway of a fouled furnace is the pressure drop across the tubes: the butene polymerises on the catalyst, makes green coke, and the coke blocks the tube. This unit is the reason the butadiene plant in a 1980s complex was often the noisiest building on the site.
 
         - *How butadiene is polymerised* `chem.butadiene.polymerisation` *(seen above)*
-##### Styrene-butadiene rubber (SBR) `chem.butadiene.styrene-butadiene-rubber`
+##### Styrene-butadiene rubber (SBR) `chem.butadiene.styrene-butadiene-rubber` _(low)_
 
 The largest synthetic rubber by a wide margin: of the order of 6-7 million tonnes a year in 1983, in a handful of grades. It is not a C64 material, but it is the material whose emulsion polymerisation recipe - cold, water, persulphate, rosin acid soap, chain transfer agent - is the same recipe the ABS graft phase uses, and the rosin in it is the same pine rosin as the solder flux. Cold emulsion polymerisation ran styrene at 23-25 parts to butadiene at 75-77 parts in water with a rosin or oleate soap at 2-5 parts and a persulphate at 0.05-0.2 parts, at 5 C for 8-12 hours to 60-70% conversion.
 
-###### Rosin acid soap emulsifier `chem.butadiene.styrene-butadiene-rubber.emulsifier`
+###### Rosin acid soap emulsifier `chem.butadiene.styrene-butadiene-rubber.emulsifier` _(low)_
 
 Sodium or potassium salts of pine rosins (about 60% abietic acid) and of tall oil fatty acids, mixed 50/50. Two jobs: the rosin part stabilises the polymer against oxidation, and the fatty acid part controls the particle size and the rate. Rosin emulsifiers also give the rubber a slightly tacky surface, which is why tread compounds still add tackifying resin.
 
-###### Fatty acid emulsifier and tallow `chem.butadiene.styrene-butadiene-rubber.emulsifier.fatty-acid-emulsifier`
+###### Fatty acid emulsifier and tallow `chem.butadiene.styrene-butadiene-rubber.emulsifier.fatty-acid-emulsifier` _(low)_
 
 About half of a cold SBR or ABS emulsifier system is a fatty acid salt, and the fatty acid came from tallow - the rendered fat of cattle and sheep - split into oleic and stearic acid and neutralised with sodium or potassium hydroxide. So part of the emulsifier that keeps the rubber particles apart in the graft reactor was, in 1983, a byproduct of the meat industry, which is a genuinely surprising provenance for a molecule that ends up inside a computer case.
 
@@ -8422,11 +8402,11 @@ Rendered animal fat, roughly 50% palmitic, stearic and oleic acid. Historically 
 
 Benzene is alkylated with ethylene to ethylbenzene, and the ethylbenzene is dehydrogenated to styrene. About 12-14 million tonnes of styrene were made in 1983, of which roughly two thirds went to polystyrene and the rest to SAN, ABS and SBR. Styrene is a C64 material in a way that is easy to miss: the SAN matrix of the case, the styrene in the graft phase, and the polystyrene that was in the packaging and in some of the mouldings.
 
-##### Benzene `chem.styrene.benzene`
+##### Benzene `chem.styrene.benzene` _(low)_
 
 The feedstock. In 1983 world benzene production was of the order of 15-17 million tonnes a year, and it came from three sources: catalytic reforming (about half), hydrodealkylation of toluene (roughly a quarter to a third, and the growth share of the 1980s), and coal tar from coke ovens (10-20%, and a bigger share outside North America and Western Europe). Toluene hydrodealkylation gave benzene plus methane at 500-600 C and 30-60 bar over cobalt-molybdenum or alumina, and it grew fastest through the 1980s because toluene was abundant and benzene was tight; it makes the same methane a reformer makes as hydrogen, so the two operations fit together.
 
-###### Aromatics recovery from reformer naphtha `chem.styrene.benzene.aromatics-recovery`
+###### Aromatics recovery from reformer naphtha `chem.styrene.benzene.aromatics-recovery` _(low)_
 
 The C6 to C8 aromatics have to be extracted from a naphtha stream where they are only a few percent by weight. The 1960s and 1980s workhorse was the UOP EdCo process: extractive distillation with sulfolane (a four-plus-four ring sulfone, 218 C boiling point) followed by azeotropic distillation with isooctane. Sulfolane replaced sulfuric acid extraction because it did not invert the alkylbenzenes and did not make a waste acid stream - and sulfuric acid hydrodealkylation was the older, waste-generating route.
 
@@ -8434,12 +8414,12 @@ The C6 to C8 aromatics have to be extracted from a naphtha stream where they are
 
 Tetrahydrothiophene-1,1-dioxide, a polar aprotic solvent that dissolves aromatics preferentially to paraffins and is thermally stable and non-corrosive. It is also the inhibitor chemistry's solvent cousin: sulfolane is used as a polymerisation inhibitor in the styrene dehydrogenation reactors, and it belongs to a small family of molecules - NMP, sulfolane, dimethylformamide - that turns up in three different jobs in this file.
 
-###### Sulfolane from butadiene `chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis`
+###### Sulfolane from butadiene `chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis` _(low)_
 
 The solvent that extracts benzene out of a naphtha stream is itself made out of the cracker's C4. Butadiene is reacted with sulfur dioxide and water to give tetrahydrothiophene 1,1-dioxide. So the styrene chain - benzene, ethylbenzene, styrene - is fed by butadiene twice over: once as the rubber in the ABS, and once as the solvent that separated the benzene. It is the clearest example in this file of a chemical park's flows being a web rather than a line. Butadiene plus SO2 at 100-140 C gives the sulfolene, a five-membered ring with one double bond left, and a second equivalent of water with a base opens the second ring to sulfolane; the sulphur dioxide comes from burning recovered elemental sulphur, usually the same Claus sulphur a nearby refinery took out of the same sour gas that fed the cracker.
 
           - *Coke oven benzene* `chem.styrene.benzene.coal-tar` *(seen above)*
-##### Ethylbenzene from benzene and ethylene `chem.styrene.ethylbenzene`
+##### Ethylbenzene from benzene and ethylene `chem.styrene.ethylbenzene` _(low)_
 
 Benzene plus ethylene in a large molar excess of benzene (3-6 to 1) over a zeolite or a phosphoric acid catalyst at 250-400 C and 10-30 bar. The 1980s breakthrough was the Mobil process using a shape-selective zeolite (the ZSM-5 family) at about 350 C, which gives over 97% selectivity to ethylbenzene and almost no diethylbenzene. The old process, phosphoric acid on silica at 140-180 C and 20-30 bar, had a diethylbenzene problem that ate benzene and made the distillation columns enormous.
 
@@ -8447,7 +8427,7 @@ Benzene plus ethylene in a large molar excess of benzene (3-6 to 1) over a zeoli
 
 A zeolite whose pore geometry lets a benzene molecule in, lets ethylbenzene out and does not let diethylbenzene in - the same shape selectivity that let ZSM-5 crack gasoline to high-octane and propylene, and that later let MFI zeolites make para-xylene. One catalyst family, three jobs, all in this file.
 
-##### Dehydrogenation to styrene `chem.styrene.dehydrogenation`
+##### Dehydrogenation to styrene `chem.styrene.dehydrogenation` _(low)_
 
 Ethylbenzene is dehydrogenated to styrene at 600-700 C and 1-3 bar over an iron oxide catalyst (the classic Feeders-Rudd, now UOP ST-110, a shell-and-tube bed of promoted magnetite with potassium and copper promoters). Single-pass conversion is 40-50% and the selectivity to styrene 90-93%. The conversion is deliberately held below completion because styrene polymerises over the same catalyst, and because the dehydrogenation is strongly endothermic and needs a large fired furnace.
 
@@ -8459,15 +8439,15 @@ Magnetite or hematite promoted with potassium oxide, copper oxide and sometimes 
 
 A bank of shell-and-tube reactors, 20-50 tubes 4-6 inch in diameter by 20-30 m long, at 1-3 bar, fired on the outside. A 1980s styrene plant had 8-20 such reactors per train and several trains. The furnace is the plant's energy hog, which is why the styrene industry was the largest single consumer of heat-integration improvements in this part of the chemical industry.
 
-###### The dehydrogenation furnace `chem.styrene.dehydrogenation.fired-furnace`
+###### The dehydrogenation furnace `chem.styrene.dehydrogenation.fired-furnace` _(low)_
 
 The dehydrogenation of ethylbenzene is strongly endothermic - about 0.22 GJ of heat per tonne of ethylbenzene - and it is carried out in a bank of shell-and-tube reactors with the heat applied from the outside. A 1980s styrene plant's furnaces were its largest energy consumers and its largest single source of stack emissions, which is why the industry spent the 1980s on better coil metallurgy, on vacuum insulation of the reactor, and on a staged feed arrangement that fed the preheated reactor's effluent straight back into the next reactor's inlet. Steam diluent keeps the partial pressure low and a polymerisation inhibitor - sulfolane, a chlorinated hydrocarbon or a proprietary organic - is dosed at tens of parts per million to hold the styrene down. Refinery fuel gas or natural gas, about 0.2 GJ of heat per tonne of ethylbenzene - worth stating plainly, because a substantial part of the carbon in a plastic is burned rather than polymerised.
 
-##### Styrene polymerisation `chem.styrene.polymerisation`
+##### Styrene polymerisation `chem.styrene.polymerisation` _(low)_
 
 Styrene polymerises readily by free-radical mechanisms because the benzyl radical it makes is resonance stabilised. Almost all commercial polystyrene is made by free-radical polymerisation; the ionic routes that give syndiotactic and isotactic polystyrene existed in the 1980s but were curiosities. Styrene-acrylonitrile copolymer carries 24-32% acrylonitrile, made in bulk at 130-180 C or in emulsion or suspension. SBS block copolymer is made by sequential addition to a living anionic chain - butadiene to a 60-80% cis polybutadiene block, then styrene to a polystyrene block at each end - so the hard end blocks are the physical crosslinks and the middle block is the rubber: the same butadiene and styrene as SBR and ABS in a completely different architecture. Expanded polystyrene carries 5-6% pentane or butane as a blowing agent, polymerised at 90-150 C and 1-5 bar with the beads expanding 10-30 times; it was the standard packing material for electronics and for the C64's carton inserts.
 
-###### General purpose polystyrene, bulk and suspension `chem.styrene.polymerisation.bulk-gpps`
+###### General purpose polystyrene, bulk and suspension `chem.styrene.polymerisation.bulk-gpps` _(low)_
 
 Bulk polymerisation at 140-200 C and 20-40 bar in a stirred or plug-flow reactor with a benzoyl peroxide or a hindered phenol initiator, the classic route for general purpose and crystal grade. Suspension polymerisation, in which styrene is dispersed as 0.1-2 mm beads in water with a suspending agent, is preferred for foam grades because the beads can be expanded. General purpose polystyrene production in the 1980s was of the order of 5-6 million tonnes a year.
 
@@ -8479,7 +8459,7 @@ Dibenzoyl peroxide, dosed at 0.05-0.5 wt%, thermally decomposed at 60-90 C to gi
 
 Gelatin, methylcellulose or polyvinyl alcohol, at 0.1-1% of the water phase. It has to hold the bead together without letting the bead coalesce, and the whole engineering of suspension polystyrene is the engineering of that balance: too little and the beads fuse, too much and the bead has a hard skin that traps monomer and leaves styrene odour in the bead.
 
-###### Finishing: devolatilisation and pelletising `chem.styrene.polymerisation.bulk-gpps.finishing`
+###### Finishing: devolatilisation and pelletising `chem.styrene.polymerisation.bulk-gpps.finishing` _(low)_
 
 Polystyrene has to be devolatilised after the bulk polymerisation, because the monomer left in the melt is both a smell and a peroxide risk. A 1980s finishing line was a twin-screw extruder at 200-240 C and 5-50 mbar with two vacuum vents, then a strand die into a water bath, then a rotary cutter - the same machine geometry as the ABS line, and for the same reason: somebody in the plastics industry decided once that devolatilisation and pelletising should be one operation and never went back.
 
@@ -8496,11 +8476,11 @@ Extruded through a die with 10-30 holes of 2-3 mm, quenched in a water bath at 2
 A 40/60 to 80/20 mixture of the two divinylbenzene isomers made by the same ethylbenzene route with a second vinyl group. About 1-2% of the styrene monomer, and essentially all of it goes into ion exchange resins and into the crosslinking monomer of unsaturated polyester. The cation exchange resin in the water treatment plant of a plastics factory is a styrene-divinylbenzene copolymer, so this molecule sits quietly in the supply chain of almost everything else in this file.
 
       - *ABS resin plant, and the C64 case* `chem.abs` *(seen above)*
-#### Solvents and degreasers in a 1980s plant `chem.solvents`
+#### Solvents and degreasers in a 1980s plant `chem.solvents` _(low)_
 
 Between half and three quarters of the organic solvent used in a 1980s electronics plant went into degreasing, mostly in a hot vapour degreaser. The solvent was almost always a chlorinated hydrocarbon - 1,1,1-trichloroethane or trichloroethylene in Europe and Asia, perchloroethylene in the United States - and the entire decade's regulatory story is the story of removing them. By 1990 in the United States, vapour degreasing with perchloroethylene and trichloroethylene was over, and what replaced it was isopropyl alcohol, N-methylpyrrolidone, or a hydrocarbon.
 
-##### The vapour degreaser `chem.solvents.vapour-degreaser`
+##### The vapour degreaser `chem.solvents.vapour-degreaser` _(low)_
 
 A tank of boiling solvent with a cold condenser coil above it. Parts are lowered into the vapour, the vapour condenses on the part and washes the grease off, the condensate runs back into the boil tank, and the distilled clean solvent is pumped to the sump. It was astonishingly effective and astonishingly cheap, and it filled a plant with vapour - which is why it was also the plant's largest solvent loss and its largest occupational and air-emission exposure. A large plant had three or four machines with 20-40 litre tanks. The tank runs continuously with a boiling sump and a distilled-solvent reservoir, and in practice 5-20% of the charge had to be replaced each month through dragout, evaporation and the azeotroping of oil and water back into the tank.
 
@@ -8508,7 +8488,7 @@ A tank of boiling solvent with a cold condenser coil above it. Parts are lowered
 
 A tank of hot solvent or water with a 20-80 kHz transducer. In 1983 the electronics plant used ultrasonic cleaning before the vapour degreaser for fine work - the watch crystals, the gears, the small press-fit parts - because a vapour degreaser will not clean a crevice and an ultrasonic tank will. It is also the machine that put solvent into the ultrasonic cleaner market, where 1,1,1-trichloroethane and perchloroethylene were the usual fills.
 
-###### The condenser and the tank `chem.solvents.vapour-degreaser.condenser-coil`
+###### The condenser and the tank `chem.solvents.vapour-degreaser.condenser-coil` _(low)_
 
 The machine has two working parts: a boiling sump at the bottom that supplies the vapour, and a water-cooled coil above it that condenses the vapour and drips it back clean. The whole design depends on the vapour being kept out of the room, so the machine had a lid and a draught, and the lid was opened to put the parts in - which is exactly when the vapour left. A 20-40 litre tank boiled away 1-3 litres of solvent a day in a well-run plant, and that vapour was the emission the regulator was measuring. Three losses ran at once - evaporation out of the open tank, drag-out on the parts and carry-over into the room ventilation - and the 1980s answers were a lid that stayed shut, a water-cooling coil with more area, a basket that dripped over the tank rather than the floor and, at the largest sites, a vapour condenser returning condensate to the distilled reservoir.
 
@@ -8516,11 +8496,11 @@ The machine has two working parts: a boiling sump at the bottom that supplies th
 
 CH3CCl3, boiling at 74 C, a non-flammable solvent that was the standard degreaser for precision metalwork and electronics through the 1950s to the 1980s. It was made from acetylene by hydrochlorination to vinylidene chloride and then chlorination to 1,1,1-trichloroethane - so it shares its whole upstream with vinyl chloride and with natural gas. It is toxic to the liver and kidney, mildly carcinogenic, and it was banned as a non-essential aerosol propellant in the United States in 1987 and phased out as a degreaser through the late 1980s and 1990s.
 
-###### 1,1,1-Trichloroethane from acetylene `chem.solvents.trichloroethane.vinylidene-chloride`
+###### 1,1,1-Trichloroethane from acetylene `chem.solvents.trichloroethane.vinylidene-chloride` _(low)_
 
 The synthesis that links a degreaser to a natural gas field. Acetylene plus HCl over a mercuric chloride catalyst gives vinylidene chloride, CH2=CCl2, and chlorinating that with chlorine gives 1,1,1-trichloroethane. Both steps are the same chemistry, and the same catalyst, as the vinyl chloride process - and therefore so are the same upstream, the same natural gas and the same mercury liability. Vinylidene chloride plus chlorine at 20-50 C gives 1,1,2-trichloroethane first and then 1,1,1-trichloroethane, separated by distillation.
 
-###### Mercury catalyst and its recovery `chem.solvents.trichloroethane.vinylidene-chloride.mercuric-cell`
+###### Mercury catalyst and its recovery `chem.solvents.trichloroethane.vinylidene-chloride.mercuric-cell` _(low)_
 
 HCl is adsorbed onto a mercuric chloride-charcoal catalyst and acetylene adds across it. The catalyst is what makes the chemistry work and what makes the plant a mercury emitter, and the 1980s answer was a mercury recovery system: the reactor effluent was stripped with an acid stream, the mercury concentrated to a recoverable 10-20% solution, and that solution taken back to the catalyst maker. It is the same engineering problem and the same answer as the PVC plant's, for the same reason.
 
@@ -8546,11 +8526,11 @@ CH2Cl2, boiling at 40 C, made by chlorinating methane to chloromethane and then 
 
 Trichlorofluoromethane (CFC-11, boiling 23.8 C) and trichloro-1,2,2-trifluoroethane (CFC-113, boiling 48 C) were the 1980s cleaners, refrigerants and foam blowing agents, and CFC-11 was the blowing agent in expanded polystyrene packaging until the late 1980s. In 1983 there was no regulation on them at all; by 1987 the Montreal Protocol had been signed and by 1989 the phase-out of the developed countries had begun.
 
-###### CFC synthesis from chloroform `chem.solvents.cfc.cfc-synthesis`
+###### CFC synthesis from chloroform `chem.solvents.cfc.cfc-synthesis` _(low)_
 
 CFC-11 (trichlorofluoromethane) is chloroform plus hydrogen fluoride in an antimony halide catalyst at 50-100 C; CFC-12 (dichlorodifluoromethane) is carbon tetrachloride plus hydrogen fluoride. Both therefore start from the chlorination of methane - the same methane the plastics industry buys - and both end in the ozone layer. The chain from a gas field to a chlorofluorocarbon is four steps long and it took twenty years of argument before anything was done about it.
 
-###### Methane chlorination `chem.solvents.cfc.cfc-synthesis.methane-chlorination`
+###### Methane chlorination `chem.solvents.cfc.cfc-synthesis.methane-chlorination` _(low)_
 
 Chlorine plus methane at 250-400 C gives chloromethane, and further chlorination gives chloroform and carbon tetrachloride. The chlorination is a free-radical chain reaction in a fluidised bed, and the product is a mixture that has to be distilled. The chloroform route to CFC-11 is therefore a natural gas route: methane, chlorine, fluorine - and fluorine is from fluorspar, the same rock as the HF that etched a silicon wafer. Methylene chloride, chloroform, carbon tetrachloride, the trichloroethane degreaser, vinyl chloride monomer and epichlorohydrin all start from the same brine electrolysis, and one electrochemical cell in a chemical park supplies the chlorine atom that appears in a dozen different industrial molecules.
 
@@ -8558,11 +8538,11 @@ Chlorine plus methane at 250-400 C gives chloromethane, and further chlorination
 
 C3H8O, boiling 82.6 C, and by the mid-1980s the solvent that had taken over most of the cleaning work the chlorinated solvents used to do. It is flammable, it is cheap, it evaporates cleanly, it dissolves flux residue and oil, and it does not dissolve the ABS or the polycarbonate the way a chlorinated solvent can - which is exactly why it became the electronics cleaner. Almost all of it was made from propylene, so the electronics plant's replacement solvent is the same cracker as the case plastic. The older route hydrogenates acetone over copper or nickel-zinc at 100-150 C and 5-20 bar with 95-98% selectivity and was still fully in use in 1983; both routes end at the same molecule and differ only in whether the plant owns a propylene oxide unit.
 
-##### KPO process (from propylene) `chem.isopropanol.kpo`
+##### KPO process (from propylene) `chem.isopropanol.kpo` _(low)_
 
 Propylene plus acetone gives propylene oxide; propylene oxide isomerises to acetone over a base catalyst; acetone plus hydrogen is hydrogenated to isopropanol. The isomerisation-hydrogenation loop is the unit that makes the process economical, and the 1970s introduction of the low-temperature isomerisation catalysts was what made the KPO route beat the older acetone-hydrogenation route on the balance sheet. About 0.6 t of acetone per tonne of isopropanol is circulated and has to be bought in or made on site, so an isopropanol plant without an acetone source was not viable; that is why the isopropanol business grew up attached to cumene plants, and why the electronics cleaner's supply chain in 1983 ran back through cumene, phenol and the cracker.
 
-##### Ethanol `chem.ethanol`
+##### Ethanol `chem.ethanol` _(low)_
 
 C2H6O, boiling 78.4 C. In 1980s electronics it was a solvent and a cleaning fluid for a few specialist applications, and it was the fuel additive competing with MTBE for the octane that lead had given up. Chemically it can be made either by hydrating ethylene over phosphoric acid at 300 C and 60-70 bar, or by fermenting sugar. Both routes existed in 1983; the fermentation route made most of the world's ethanol in that decade because it was cheaper. The synthetic route hydrates ethylene with steam over phosphoric acid on silica at 280-330 C and 60-70 bar for 4-6% ethanol per pass with the off-gas recycled; the limit is thermodynamic, since the reaction is an equilibrium, and the industry spent decades on catalysts and on pervaporation and extractive distillation to get around it. Sugar from cane, beet or starch is fermented by yeast at 30-35 C for two to three days and rectified to 95% or dehydrated to absolute.
 
@@ -8576,7 +8556,7 @@ The rest of the 1980s solvent shelf: methyl ethyl ketone and methyl isobutyl ket
 
           - *Isopropyl alcohol (propan-2-ol)* `chem.isopropanol` *(seen above)*
           - *Acetone* `chem.solvents.acetone` *(seen above)*
-##### Xylene, toluene and hexane `chem.solvents.aromatic-hydrocarbon`
+##### Xylene, toluene and hexane `chem.solvents.aromatic-hydrocarbon` _(low)_
 
 The hydrocarbon solvents. Xylene is the classic silkscreen and coatings solvent and it is what the screen printing ink of a PCB is thinned with. Toluene was the coatings and adhesive solvent. Hexane (extracted from the light ends by solvent extraction with furfural or NMP) was the degreaser for precision metalwork and the extraction solvent for the edible oils. All three are refinery fractions, and they are also the most flammable solvents on the shelf. Furfural (161 C) and NMP (202 C) were the classical solvents for separating aromatics from paraffins in a refinery, both displaced from most of their other duties during the 1970s and 1980s by better solvents and by pressure-swing and adsorption processes.
 
@@ -8584,7 +8564,7 @@ The hydrocarbon solvents. Xylene is the classic silkscreen and coatings solvent 
 
 A petroleum distillate boiling 150-200 C - roughly C8-C12 - sold as the standard paint and stencil solvent. It was the cheapest coating solvent there was and it was used in the silkscreen shop, in the stencil shop and in the assembly shop's fixture cleaning. Its defect was the same defect as xylene's: flash point around 30-40 C, which means it belongs in a room with no open flame and a bonded-earth tank.
 
-##### Regulation: why the solvent list changed `chem.solvents.regulation`
+##### Regulation: why the solvent list changed `chem.solvents.regulation` _(low)_
 
 Three forces rewrote a 1980s solvent shelf. The US Clean Air Act's 1970 and 1977 amendments and the resulting state implementation plans constrained volatile organic compound emissions, and because a chlorinated degreaser is an emission source, they hit the degreaser directly. The 1983-1989 federal halogenated solvent action set dates for the chlorinated degreasers. And the Montreal Protocol, signed in 1987, removed the CFCs and the halon-cleaning gases.
 
@@ -8604,11 +8584,11 @@ Signed in 1987, in force from 1989, and the most effective environmental treaty 
 
 The other half of the story. In 1980s practice every one of these solvents had a 1980s-era recommended limit, every one of them was under active review by the ACGIH, and the direction of travel through the decade was downward. Perchloroethylene's limit fell from 400 to 100 ppm, trichloroethylene from 200 to 50 ppm, and methylene chloride from 500 to 250 ppm. The engineering response was local exhaust ventilation with a hooded enclosure and a solvent recovery unit, not a respirator. Every one of these solvents carried a recommended limit in the 1980s and every limit was under active review: perchloroethylene fell from 400 to 100 ppm, trichloroethylene from 200 to 50 ppm and methylene chloride from 500 to 250 ppm.
 
-#### The wet chemicals of a 1980s silicon fab `chem.fab-chemicals`
+#### The wet chemicals of a 1980s silicon fab `chem.fab-chemicals` _(low)_
 
 A 1983 wafer fab consumed tens of thousands of gallons a day of ultrapure water and a few thousand gallons of five electronic-grade acids, and its entire chemistry was aimed at one thing: keeping a few hundred metallic atoms per square centimetre off the wafer. This branch traces those chemicals - sulphuric acid, hydrogen peroxide, the buffered HF etch, the plasma etch gases, the dopant gases and the photoresist - back to the sulphur, the chlorine, the fluorine, the ammonia and the natural gas they were made from. The wet bench of the period used 10-20 litre recirculating baths of buffered HF and piranha, and the chemicals came in returnable fluoropolymer containers or, for the largest users, by bulk tanker.
 
-##### Electronic-grade sulphuric acid `chem.fab-chemicals.sulfuric-acid`
+##### Electronic-grade sulphuric acid `chem.fab-chemicals.sulfuric-acid` _(low)_
 
 96-98% H2SO4 purified to 9N-10N, with a total metal content under 10-100 parts per billion depending on the grade. It was delivered in a fluoropolymer-lined tanker or in a 2,000-litre high-purity container and was used for the piranha clean, for the dehydration bake, for the sulphuric acid-hydrogen peroxide resist strip, and for the oxidation furnace as a carrier gas alternative. Its raw material is the elemental sulphur of a Claus plant, burned in a contact process. The last step to semiconductor grade is an azeotropic or vacuum distillation that takes the acid to 9N, driven by the fact that every metal with a volatility near the acid's has to be pumped out of it; that distillation, and the quartz or Teflon equipment it needed, is why electronic-grade acid cost 20-100 times a technical grade. The piranha clean mixes three parts concentrated sulphuric acid to one of 30% hydrogen peroxide at 80-120 C and strips all organic matter off a wafer, a quartz boat or a process chamber.
 
@@ -8617,15 +8597,15 @@ A 1983 wafer fab consumed tens of thousands of gallons a day of ultrapure water 
 Sulphur is burned to SO2 in a 900-1,200 C furnace, converted over a vanadium pentoxide catalyst at 420-450 C to SO3, and absorbed in 98% acid to make oleum, which is then diluted. The feedstock in 1983 was overwhelmingly recovered elemental sulphur, because the Claus plant had made it cheap; earlier the pyrites (iron pyrite, FeS2) route was used, and a number of Japanese plants still burned pyrites into their own acid.
 
             - *Elemental sulphur (brimstone)* `chem.sulfur` *(seen above)*
-##### Electronic-grade hydrogen peroxide `chem.fab-chemicals.hydrogen-peroxide`
+##### Electronic-grade hydrogen peroxide `chem.fab-chemicals.hydrogen-peroxide` _(low)_
 
 30-50% aqueous H2O2 purified to 99.999% with a total metal content in the tens of parts per billion. It was the other half of the piranha mix and the workhorse cleaner and oxidiser of the wet bench, and by the 1980s it had largely displaced the older sodium hydroxide and nitric acid cleaning recipes. Naphthalene or anthracene is converted to 9,10-anthraquinone over sulphuric acid, hydrogenated to the anthrahydroquinone at 50-60 C and 3-5 bar over palladium on carbon and re-oxidised by air at the same temperature and pressure, in a working solution 0.2-0.5 M in anthraquinone and at 90-95% yield.
 
-##### Electronic-grade hydrochloric acid `chem.fab-chemicals.hydrochloric-acid`
+##### Electronic-grade hydrochloric acid `chem.fab-chemicals.hydrochloric-acid` _(low)_
 
 20-37% HCl purified to about 10N. It was the second half of the piranha mix in some recipes, the dilute etch for the native oxide, the source of the chloride chemistry in the plasma etchants, and the chemical that keeps a fab's chemical room smelling of a swimming pool. It is made by absorbing the HCl gas from a chlorine and hydrogen burner in ultrapure water.
 
-##### Electronic-grade nitric acid `chem.fab-chemicals.nitric-acid`
+##### Electronic-grade nitric acid `chem.fab-chemicals.nitric-acid` _(low)_
 
 70% HNO3 at about 10N. Nitric acid was the oxidising component of the older cleaning recipes and a component of some of the early aluminium etchants. It was the least-used of the four big wet chemicals by the early 1980s because it had been largely replaced by hydrogen peroxide.
 
@@ -8634,12 +8614,12 @@ Sulphur is burned to SO2 in a 900-1,200 C furnace, converted over a vanadium pen
 Ammonia oxidised over a platinum-rhodium gauze at 800-900 C to nitric oxide, then to NO2 in excess air, then absorbed in water. Nitric acid is therefore an ammonia product, which means it is a natural-gas product: the Haber-Bosch ammonia of the 1980s was the source of the nitric acid and of the ammonium hydroxide, both of which a fab bought.
 
             - *Ammonia (NH3)* `metal.cyanide-precursor` *(seen above)*
-##### Tetramethylammonium hydroxide `chem.fab-chemicals.tmah`
+##### Tetramethylammonium hydroxide `chem.fab-chemicals.tmah` _(low)_
 
 TMAH, sold at 25 wt% in ultrapure water, used to develop the positive photoresists and - from the late 1970s - to wet-etch the aluminium interconnect of a dynamic random access memory. It arrived as a photoresist developer in the single most consequential materials change of the early 1980s: a chemist at IBM demonstrated in 1979 that an alkaline developer could work on a diazonaphthoquinone resist without image reversal, and that single result is the ancestor of essentially all modern photolithography. TMAH is made by the electrolysis of trimethylamine hydrochloride or by ion exchange from trimethylamine and a methyl chloride-derived quaternary salt, and the commercial 25% solution in ultrapure water had to be filtered sub-micron and low in sodium, because any sodium on a wafer is a threshold-shift defect.
 
         - *Photoresist chemistry* `chem.photoresist` *(seen above)*
-##### Plasma etch gases `chem.fab-chemicals.etch-gases`
+##### Plasma etch gases `chem.fab-chemicals.etch-gases` _(medium)_
 
 The gases that a barrel or planar plasma etcher used to etch silicon dioxide, polysilicon, aluminium and organic films. They are the fluorine and chlorine family, and they are the most expensive part of the etch cost after the electricity.
 
@@ -8647,7 +8627,7 @@ The gases that a barrel or planar plasma etcher used to etch silicon dioxide, po
 
 CF4, the workhorse oxide etch gas and the fluorine chemistry's workhorse generally. It is made from fluorine (from fluorspar) and carbon, or from a chlorofluorocarbon feedstock. In a plasma etcher it dissociates to fluorine radicals that etch silicon dioxide - it does not etch silicon, which is what made the selectivity possible - and it is the gas that made the barrel reactor the standard 1980s oxide etch.
 
-###### Fluorine from fluorspar `chem.fab-chemicals.etch-gases.cf4.fluorine-from-fluorspar`
+###### Fluorine from fluorspar `chem.fab-chemicals.etch-gases.cf4.fluorine-from-fluorspar` _(low)_
 
 Every fluorine atom in a fab's chemistry started as calcium fluoride. Fluorspar is treated with concentrated sulphuric acid at 200-250 C in a kiln or a retort to make anhydrous hydrogen fluoride, and the HF is either sold as the aqueous etch acid or chlorinated with chlorine to make the CFCs and the fluorocarbons. It is the same sulphuric acid, the same chlorine and the same rock as the oxide etch, the freons in the packaging and the halogenated degreasers.
 
@@ -8667,7 +8647,7 @@ An emerging chamber-cleaning gas in the 1980s, and later a feedstock for the NF3
 
 A quartz or alumina tube with electrodes at the top and bottom, gas fed in at the top, RF at 13.56 MHz, and wafers standing vertically in slots around the tube wall. It was the workhorse of the 1980s for silicon dioxide and aluminium etching and for resist ashing, and it was cheap, simple and gently non-uniform - which was acceptable when the field of view was small and the line was a couple of microns. The planar (magnetron) etcher, where the plasma is generated above the wafer by a magnetically confined source, gave the flatness that a later generation of chips needed.
 
-##### Dopant sources `chem.fab-chemicals.dopants`
+##### Dopant sources `chem.fab-chemicals.dopants` _(low)_
 
 The chemicals that put boron, phosphorus and arsenic into the silicon. The chemistry here is a closed loop back to the ammonia, the chlorine and the fluorspar of the rest of this tree, and the whole business is about the fact that a dopant source is gaseous, toxic and must be delivered to a few cubic centimetres of reactor at a controlled partial pressure. Diffusion in 1983 used a gas or a solid source - phosphorus from phosphine or a doped oxide, boron from diborane or boron nitride, arsenic from arsine - in a furnace at 800-1,100 C.
 
@@ -8675,7 +8655,7 @@ The chemicals that put boron, phosphorus and arsenic into the silicon. The chemi
 
 The n-type dopant source. In 1983 it was supplied two ways: as an ion-implantation source, and as a dopant gas diluted to 5-15% in hydrogen or nitrogen for the dopant gas deposition reactor. Phosphine is pyrophoric in the pure state and is one of the most acutely toxic gases in a fab, which is why it arrived diluted and in a gas cabinet.
 
-###### Where the phosphorus comes from `chem.fab-chemicals.dopants.phosphine.phosphorus-source`
+###### Where the phosphorus comes from `chem.fab-chemicals.dopants.phosphine.phosphorus-source` _(low)_
 
 The phosphine of a 1983 fab has a longer ancestry than most people assume. Elemental phosphorus is made in a submerged arc furnace from phosphate rock, coke and silica at 1,400-1,500 C, condensed as white phosphorus under water, and then either burned to phosphorus pentoxide (for fertiliser and for the pure phosphoric acid of this file) or reduced to phosphorous acid, which is then converted to phosphine. So an n-doped transistor junction in a C64's VIC-II traces back through a gas cylinder, an electric furnace, and a phosphate rock mine. Yellow phosphorus plus phosphorus pentasulphide is treated with caustic soda and water to give phosphorous acid and sodium hypophosphite, and acid plus hypophosphite is the standard industrial route to phosphine; the electronic gas is then diluted to 5-15% in hydrogen or nitrogen and cylinder-packaged, because pure phosphine is pyrophoric and because the cylinder is what the gas cabinet expects.
 
@@ -8687,7 +8667,7 @@ A 30-100 MW furnace in which phosphate rock, coke and silica are heated to 1,400
 
 A sedimentary rock of calcium phosphate - apatite - mined from the Florida phosphate belt and the Moroccan and Chinese deposits. It is one of the four rock types this whole tree ends in, alongside crude oil, natural gas and sand. The C64-scale fact is absurd but true: the quantity of phosphate rock mined for fertiliser every year is measured in tens of millions of tonnes, and the quantity used to make the phosphorus in a C64's transistors is a few grams, most of it going into fertiliser for somebody's field.
 
-###### Phosphoric acid (the wet-process acid) `chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphoric-acid`
+###### Phosphoric acid (the wet-process acid) `chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphoric-acid` _(low)_
 
 The wet process beats the phosphorus furnace, and it beats it because the furnace is only economical at a very large scale: ground phosphate rock is digested in 30-40% sulfuric acid, the calcium sulphate is filtered off as gypsum, and the phosphoric acid is concentrated to 54% P2O5. The C64-scale relevance of this acid is indirect - it is the fertiliser that came out of the phosphate rock, and it is also the semiconductor-grade acid a fab used for its own processes, purified further to 9N. Rock at 1-2 mm is digested in 30-40% sulphuric acid at 70-80 C and filtered, giving about 54% P2O5; the chemistry is a century old and limited by the solubility of calcium sulphate, so the gypsum cake is the waste stream and its disposal - often offshore or in a lined lagoon - is the industry's continuing environmental problem.
 
@@ -8695,7 +8675,7 @@ The wet process beats the phosphorus furnace, and it beats it because the furnac
 
 The other n-type source, used for heavier and shallower implants and for the arsenic source oxide. It is made by reducing arsenic trichoxide with zinc and hydrochloric acid or with hydrogen, and the arsenic comes from arsenic metal or from gallium arsenide production. Arsine is the most acutely toxic gas routinely used in a semiconductor fab; the 1980s limit of a few parts per billion in the exhaust was enforced with an ionising-type monitor, not a badge.
 
-###### Diborane (B2H6) and boron trifluoride `chem.fab-chemicals.dopants.diborane`
+###### Diborane (B2H6) and boron trifluoride `chem.fab-chemicals.dopants.diborane` _(low)_
 
 The p-type sources. Diborane is made from boron trifluoride and sodium hydride or from boron trichloride and a hydride, and it arrives at 0.5-5% in hydrogen; boron trifluoride was delivered neat from a cylinder. In 1983 p-type implantation was moving from boron to BF2+ (a molecular ion made in the ion source) because the heavier ion gave a shallower, more controllable junction - a change in the ion source chemistry, not in the wafer chemistry.
 
@@ -8703,11 +8683,11 @@ The p-type sources. Diborane is made from boron trifluoride and sodium hydride o
 
 BF3 is made by treating fluorspar with sulphuric acid or with fluosilicic acid, so the p-type dopant of a 1983 NMOS process is, three steps back, the same rock as the HF that etched the oxide. This is the tightest single chain in this whole tree from a mineral to a transistor.
 
-##### Bulk process gases `chem.fab-chemicals.process-gases`
+##### Bulk process gases `chem.fab-chemicals.process-gases` _(medium)_
 
 The three gases a fab inhaled by the thousand: nitrogen for inerting, purging and sparging; argon for the sputtering cathodes and for the anneal; and helium for the leak detector, the cryopump and some of the photolithography optics cooling.
 
-###### Nitrogen `chem.fab-chemicals.process-gases.nitrogen`
+###### Nitrogen `chem.fab-chemicals.process-gases.nitrogen` _(low)_
 
 99.999% and, for the very best, 99.9999%. Produced by cryogenic air separation for the large users and by pressure swing adsorption for the small ones. Its uses were the furnace tube atmospheres, the photoresist spin-coat bowl, the drying cabinets, the solvent flush and the packaging seal. A large C64 production line would have used a few hundred cubic metres of nitrogen a week.
 
@@ -8715,7 +8695,7 @@ The three gases a fab inhaled by the thousand: nitrogen for inerting, purging an
 
 Air is filtered, compressed to 30-100 bar, cooled and expanded through a cold box to fractionate it into oxygen, nitrogen and argon at -180 C. A unit producing 5,000-30,000 tonnes a day of nitrogen was a large industrial plant in its own right, and it shared its cold box technology with the natural gas processing business in this file.
 
-###### Helium `chem.fab-chemicals.process-gases.helium`
+###### Helium `chem.fab-chemicals.process-gases.helium` _(low)_
 
 Almost all helium is recovered as a by-product of the cryogenic separation of natural gas liquids - 0.05-0.7% of a helium-rich gas stream, separated to 99.999%. It is the cleanest gas in the plant and it is used in the helium leak detector that is how a fab proves a chamber is sealed, and in the cryopumps of the etch machines. It is the one process gas in a fab whose feedstock is unambiguously natural gas.
 
@@ -8731,7 +8711,7 @@ The 1980s specification ladder, from technical grade to the electronic grade tha
 
 Aqueous ammonia at 20-29 wt% in ultrapure water, made by sparging anhydrous ammonia into the water under a scrubbed laminar-flow hood, then filtered to sub-micron and to low sodium. It is the alkaline clean and the alkaline developer companion, and it is the one wet chemical that arrives as a gas: a fab's supply was a battery of electro-polished or fluoropolymer bottles on a nitrogen-purged cabinet, refilled from a bulk ammonia tank outside the cleanroom. The ammonia arrives as a liquid tanker from a Haber-Bosch plant about a day's drive away, is vaporised through a water or steam-heated vaporiser and is sparged into ultrapure water; the purity demanded was surprisingly modest next to the acids, because ammonia's job is to leave no alkali residue, and 99.9% anhydrous was generally adequate.
 
-#### The chemistry of making the board `chem.pcb-chemicals`
+#### The chemistry of making the board `chem.pcb-chemicals` _(low)_
 
 A 1983 bare board goes through about eleven wet operations, and each one is a chemical plant: laminate impregnation and pressing, copper foil treatment, dry-film lamination, alkaline or ferric etching, drilling, electroless copper, electroplating, solder mask, silkscreen, and a final clean. The C64's board is a single-layer FR-4 board with through-hole parts, which is the simplest case - one copper layer, no plating on the holes - and that removes the electroless copper and the gold entirely. Solder mask and silkscreen are two inks rather than one operation: the mask is an epoxy or acrylate screen-printed or curtain-coated through a 100-150 micron stencil and cured at 150 C, the green being a phthalocyanine green in a novolac epoxy vehicle, and the legend is a separate white epoxy ink cured the same way through a 150-200 micron stainless mesh.
 
@@ -8741,7 +8721,7 @@ Woven glass cloth impregnated with a brominated epoxy resin at 50-60% resin cont
 
           - *Branched and novolac epoxies* `chem.epoxy.branched-epoxy` *(seen above)*
           - *Brominated epoxy for FR-4* `chem.epoxy.brominated-epoxy` *(seen above)*
-##### Electrolytic copper foil `chem.pcb-chemicals.laminate.copper-foil`
+##### Electrolytic copper foil `chem.pcb-chemicals.laminate.copper-foil` _(low)_
 
 A 35-70 micron copper foil, electrodeposited on a rotating drum from a copper sulphate-acid bath and then treated on the bonding surface. The treatment is the interesting part chemically: the foil's teeth are made mechanically or electrochemically, and the surface is then covered with a nodular copper layer bonded to an organo-chrome or a zinc-oleate layer, and in the 1980s increasingly with a benzotriazole layer. Benzotriazole replaced the chromate because hexavalent chromium was being regulated out of the process.
 
@@ -8753,7 +8733,7 @@ BTA, a seven-membered ring with three adjacent nitrogens, adsorbs onto copper an
 
 A 25-40 micron dry film laminated hot onto the copper - a polyester or polyethylene terephthalate base carrying an acrylate photopolymer and an acrylated monomer that crosslinks on exposure. The exposure crosslinks the acrylate, so the exposed areas become insoluble and the unexposed areas are developed away, and the resulting image is negative - the opposite polarity to the wafer resists of the same decade, and the reason the two industries use opposite conventions for the same word. This is the clearest dated marker in the board chemistry.
 
-###### Laminating the dry film `chem.pcb-chemicals.dry-film-resist.lamination`
+###### Laminating the dry film `chem.pcb-chemicals.dry-film-resist.lamination` _(low)_
 
 The dry film comes off a protective polyester or polyethylene release liner, is laid on the cleaned and dried copper, and is squeezed onto it by a hot laminator at 110-150 C and 3-5 bar with a silicone rubber roller. The rollers are silicone because the film must not stick to them and the liner must, and the whole operation is a controlled vacuum or a controlled pressure depending on the machine: without the pressure, the air trapped between the film and the copper becomes a bubble and the bubble becomes an etch defect.
 
@@ -8761,7 +8741,7 @@ The dry film comes off a protective polyester or polyethylene release liner, is 
 
 A 25 micron polyester or polyethylene film with a slightly adhesive surface, peeled off and wound onto a take-up reel. In 1980s board plants the liners went into the waste stream by the kilogram - a 500 mm square panel of dry film consumes about a tenth of a square metre of liner - and a solvent-free laminator could run a plant's whole reel without a solvent drum in the room, which is another reason the industry went dry.
 
-##### Copper etching `chem.pcb-chemicals.etching`
+##### Copper etching `chem.pcb-chemicals.etching` _(low)_
 
 Ferric chloride at 35-42 degrees Baume, or cupric chloride, dissolves the exposed copper in 30-60 minutes. Ferric chloride was the 1980s default: cheap, fast, and it etches copper at a rate that keeps the undercut manageable. Its problems were regeneration (the spent etchant is worthless unless it is oxidised back, which needs chlorine or a peroxide and an electrolytic cell) and the ferric ion's attack on the epoxy of the laminate if the etch went long. By the early 1980s the alkaline sodium persulphate etch was spreading because it regenerated in place with peroxide and sodium hydroxide and because it would etch a finer line.
 
@@ -8769,11 +8749,11 @@ Ferric chloride at 35-42 degrees Baume, or cupric chloride, dissolves the expose
 
 FeCl3 at 35-42 degrees Baume (about 3-5 molar), which is an oxidising acid: the ferric ion takes an electron from the copper and the cupric ion falls back to ferrous. Regeneration is done either with chlorine (the industrial way, in a cell) or with hydrogen peroxide and acid. The byproduct is copper chloride, which in the 1980s was becoming a problem in its own right because of the copper discharge limits.
 
-###### Regenerating the ferric chloride etchant `chem.pcb-chemicals.etching.ferric-chloride.regeneration`
+###### Regenerating the ferric chloride etchant `chem.pcb-chemicals.etching.ferric-chloride.regeneration` _(low)_
 
 Spent ferric chloride is ferrous chloride and copper chloride, and it has to be oxidised back to ferric before it can etch again. The industrial way was a chlorination cell: chlorine into the ferrous solution at 60-80 C, converting ferrous back to ferric and precipitating the copper as cuprous chloride. The cell was a piece of the chlor-alkali plant's technology, and the chlorine in it was often the same chlorine that the plant bought for its own electroplating line. Chlorine regenerates the feric ion and the copper comes out as a precipitate, which in 1983 meant a chloride concentration that climbed and had to be bled off and a copper sludge with its own disposal limits.
 
-##### Plating baths `chem.pcb-chemicals.plating`
+##### Plating baths `chem.pcb-chemicals.plating` _(low)_
 
 A 1983 double-sided board is copper plated in an acid copper sulphate bath (with levelers and brighteners), then tin plated or gold plated. The chemistry is a small industry of its own: a copper electroplate with organic additives at 2-6 A/dm2 and 25-30 C; a tin or tin-lead bath; and, for the connectors, a nickel and gold stack. Immersion gold is not electroplated gold - it is a displacement reaction, a few hundred nanometres of gold out of a complexing bath, over a nickel layer that the board chemistry has to deposit first.
 
@@ -8781,7 +8761,7 @@ A 1983 double-sided board is copper plated in an acid copper sulphate bath (with
 
 Electroless nickel-phosphorus (hypophosphite reducer) gives a hard, corrosion-resistant, solderable surface, and immersion gold in a cyanide-complexed bath gives the contact surface its low contact resistance. The gold bath contains a complexing agent (EDTA, a phosphate or a cyanide) whose job is to hold the gold in solution so the surface reaction is slow and self-limiting at a few hundred nanometres. For a C64's single-layer board none of this is used - the pads are bare copper with a surface treatment.
 
-###### Electroless nickel-phosphorus and its reducer `chem.pcb-chemicals.plating.immersion-gold.electroless-nickel`
+###### Electroless nickel-phosphorus and its reducer `chem.pcb-chemicals.plating.immersion-gold.electroless-nickel` _(low)_
 
 The nickel under a gold surface is deposited by a chemical reduction: hypophosphite gives up a hydrogen atom to the nickel ion on the surface and the nickel comes down as metal, with phosphorus co-deposited at 3-9 wt% to make the layer hard and amorphous. The bath is nickel chloride or sulphate at 5-10 g/L, hypophosphite at 10-30 g/L, and 85-95 C for 30-90 minutes, and its uniformity is the reason it is the standard under immersion gold - it coats a via wall as evenly as it coats a pad.
 
@@ -8793,7 +8773,7 @@ The reducing agent is made from yellow phosphorus, caustic soda and sodium carbo
 
 Nothing in the 1983 process list was unusual except that it was chlorinated: ferric chloride, trichloroethane, a chlorinated epoxy and a brominated one. By 1995-2000 the industry had moved to alkaline etching, alkaline dry-film development, and epoxy laminates with a non-halogenated flame retardant system - and the drivers were the Montreal-adjacent ozone debate, the effluent limits on copper and hexavalent chromium, and the RoHS-style restrictions that arrived later. This node is the marker for where 1983 practice differs from today, not a description of a 1983 process. The industry answer by 1995-2000 was alkaline etching, alkaline dry-film development and epoxy laminates with a non-halogenated flame retardant, driven by the ozone debate, effluent limits on copper and hexavalent chromium, and the restrictions that came later.
 
-#### Solder, flux and rosin `chem.solder-chemicals`
+#### Solder, flux and rosin `chem.solder-chemicals` _(low)_
 
 A wave-soldered through-hole board of 1983 is assembled with a 60/40 tin-lead solder and a rosin flux core. The two facts that make this branch worth tracing are that the flux is pine rosin - a forestry product, the clearest non-fossil material in a C64 - and that the solder is 40% lead by weight, which is the reason solder is now the single most restricted substance in electronics. By the late 1980s the halide-free no-clean flux had arrived and was beginning to replace the RMA flux that the C64 was assembled with. A solder joint is not tin-lead metal. The technology change that arrived in the middle and late 1980s was a flux with no halide at all, built on organic acids and esters rather than amine hydrochlorides and leaving an ionic residue mild enough that the board did not have to be washed.
 
@@ -8803,7 +8783,7 @@ A wave-soldered through-hole board of 1983 is assembled with a 60/40 tin-lead so
 The flux core of the solder wire, or the liquid flux of the wave-solder machine: 25-40% rosin in a flux base with an activator. The rosin's job is to dissolve the surface oxide of the copper and the solder - the abietic acid is a mild acid and a mild chelant - and its virtue is that it is a good flux and then leaves an ionic residue that is not corrosive. RMA fluxes were specified with a halide content under 0.05% because halides are what makes a flux corrosive and what makes a circuit hiss. The C64's board was very likely assembled with a halide-bearing flux and cleaned afterwards.
 
           - *Pine rosin (colophony)* `chem.rosin` *(seen above)*
-###### Flux activator `chem.solder-chemicals.rosin-flux.activator`
+###### Flux activator `chem.solder-chemicals.rosin-flux.activator` _(low)_
 
 Rosin alone is a weak flux. The activator is what makes the flux work, and it is also what makes the residue corrosive, so the whole specification of a flux is a trade: enough acid to remove the oxide, not enough ion to eat the board. The 1980s activators were carboxylic acids (stearic acid, abietic acid itself, succinic acid and its anhydride), fatty acid salts such as the zinc and amine stearates, and - in the older RMA grades - amine hydrochlorides, which is where the halide came from.
 
@@ -8819,7 +8799,7 @@ A liquid flux is rosin, activator and solvent, and the solvent is what makes it 
 
 A tin-lead solder melting in the high 180s C, which is why a wave-solder bath sat at 250-260 C and a hand iron at 300-350 C: 70-80 C of superheat above the melting point, which keeps the bath molten at the top and fluxes the joint as it passes through. In 1983 about 60-70% of the world's solder was 60/40 tin-lead for electronics; the alloy is cheap, it has a low melting point, and its oxide comes off in a flux. The 40% lead was the subject of the entire lead-free soldering programme of the 1980s and 1990s, and the lead itself came out of a flotation concentrator, not out of a refinery.
 
-###### Where the tin came from `chem.solder-chemicals.solder-alloy.tin-source`
+###### Where the tin came from `chem.solder-chemicals.solder-alloy.tin-source` _(low)_
 
 The tin in a 60/40 solder was smelted from cassiterite, the tin ore, and cassiterite is one of the rarer tin deposits in the world: Bolivia's placer and vein cassiterite, the Cornish tin belt, the Nigerian and the Indonesian deposits, and the alluvial cassiterite of Malaysia and Thailand. In 1983 the world mined something like 25,000-30,000 tonnes of tin a year - a small metal market by volume and a strategically awkward one, because the electronics industry's solder demand is a large fraction of it.
 
@@ -8840,11 +8820,11 @@ The reason the soldering chemistry is mostly temperature management: a through-h
 
 The dig-it-out endpoint of the whole petrochemical chain. Crude is a mixture of thousands of hydrocarbons from methane to asphaltenes, plus sulphur compounds, nitrogen compounds, resins, asphaltenes and trace metals. The grades that feed the 1980s steam crackers are light, low-sulphur: Arab Light at 35-36 degrees API and Brent Blend at 38-39 were the benchmarks of the era.
 
-### Foundries, factories, utilities and logistics `industry`
+### Foundries, factories, utilities and logistics `industry` _(low)_
 
 The plant and the plumbing behind the Commodore 64: who made the chips, who assembled the box, what burned to light the lights, where the water came from, where the waste went, and how many hands and hours it took. A C64 is an artefact of eleven industries, not one. The eleven branches below are the shared utilities and the two hard-industry branches - manufacturing geography and freight - that every other subsystem points at.
 
-#### Industrial electricity supply (1983) `facility.power`
+#### Industrial electricity supply (1983) `facility.power` _(medium)_
 
 The electricity that ran every press, oven, wave-solder machine, conveyor and test rig. In 1983 the world's grids were coal, oil, gas and hydro - not the gas-turbine-dominated grids of today - and industrial customers bought it on a two-part tariff with a demand charge. This node is the utility's own end: the generating stations, the transmission network and the price. The customer's end, from the service drop to the machine tool, is the separate node facility.electricity.
 
@@ -8852,7 +8832,7 @@ The electricity that ran every press, oven, wave-solder machine, conveyor and te
 
 The workhorse baseload of the 1980s. Coal from a mine or a rail/barge unloading dock is crushed, pulverised to talcum fineness, blown into a furnace with preheated air, burned under a boiler, and the resulting steam drives a turbine-generator. Net efficiency typically 33-38% thermal to electricity on a unit built in the 1960s-70s.
 
-###### Steam coal (run-of-mine to sized) `facility.coal`
+###### Steam coal (run-of-mine to sized) `facility.coal` _(medium)_
 
 The fuel. Bituminous coal, 20-35 GJ/t, 0.5-3% sulphur, bought on the international steam coal market or delivered by rail from the field. Its ash and sulphur content set the flue-gas desulphuriser and the bottom-ash grinder bill.
 
@@ -8860,7 +8840,7 @@ The fuel. Bituminous coal, 20-35 GJ/t, 0.5-3% sulphur, bought on the internation
 
 In 1983 the relevant supply was room-and-pillar underground mining in the Appalachian basin (Pennsylvania, West Virginia, Kentucky) for the US East Coast grid, and open-pit truck-and-shovel or bucket-wheel in the Powder River Basin, Silesia, the Ruhr, the Bowen Basin and the Witbank coalfield.
 
-###### Longwall face `facility.coal.longwall`
+###### Longwall face `facility.coal.longwall` _(medium)_
 
 A mechanised shearer cuts a 2-3 m slice across the panel; the roof is allowed to cave into the goaf and the coal flows to a shearer loader. High recovery, high output, and a lot of subsidence.
 
@@ -8868,7 +8848,7 @@ A mechanised shearer cuts a 2-3 m slice across the panel; the roof is allowed to
 
 The raw input, full stop. In the northern Appalachian basin the commercial coal is in the middle and upper Pennsylvanian (Conemaugh, Monongahela, Kittanning, Freeport) formations - Carboniferous, roughly 300 million years old, laid down in swamp forests and buried under Pennsylvanian sediment.
 
-###### Room-and-pillar mining `facility.coal.room-pillar`
+###### Room-and-pillar mining `facility.coal.room-pillar` _(medium)_
 
 Still the dominant method for Appalachian metallurgical and steam coal: rooms driven to the pillar, pillars left behind to hold the roof. Cheap but leaves 30-50% of the seam underground.
 
@@ -8876,7 +8856,7 @@ Still the dominant method for Appalachian metallurgical and steam coal: rooms dr
 
 The same Carboniferous coal-bearing sequence as the longwall face, mined from a shaft or slope rather than a portal. Ends at the rock in the ground.
 
-###### Open-cut coal mine `facility.coal.opencut`
+###### Open-cut coal mine `facility.coal.opencut` _(medium)_
 
 Overburden stripped by dragline or shovel, coal ripped by bulldozer, loaded into 100-tonne rear-dump trucks. Dominant in the Powder River Basin, the Ruhr, Limburg, New South Wales and Limpopo.
 
@@ -8936,7 +8916,7 @@ Drum-type water-tube boiler, typically 300-900 MW, drum at ~15 MPa and 340-370 C
 
 A multistage expansion turbine: high-pressure, intermediate-pressure and low-pressure sections, the last with the long bladed rotor of a wet-steam half-pressure machine. Exhaust goes to the condenser at about 0.05 bar. Steam rate for a 1980s unit was roughly 9-11 MJ/kWh.
 
-###### Surface condenser `facility.power.coal-plant.condenser`
+###### Surface condenser `facility.power.coal-plant.condenser` _(medium)_
 
 Thousands of stainless-steel tubes with condensing exhaust steam outside and cooling water inside. The condensate is the plant's own feedwater; cleanliness here directly sets boiler-tube life.
 
@@ -9000,7 +8980,7 @@ A 60-150 m inclined steel tube rotating 1-2 rpm, burning coal or oil at 1450 C t
 
 The standard medium-head machine: water enters the spiral casing, turns a runner on a vertical or horizontal shaft at 100-750 rpm, and exits into the draft tube.
 
-###### Tailrace and reservoir `facility.power.hydro-plant.tailrace`
+###### Tailrace and reservoir `facility.power.hydro-plant.tailrace` _(low)_
 
 Where the water goes back to the river - and, downstream of the dam, the river itself is the raw water intake for the industrial park that the dam's power attracted.
 
@@ -9062,7 +9042,7 @@ Graded and leached in the 1970s-80s, largely from the Colorado Plateau (Uravan) 
 
 ###### Vanadiferous uraninite ore `facility.power.uranium-vanadium-ore` _(medium)_
 
-The US Colorado Plateau ore was processed mainly for vanadium with uranium as a by-product, in mills that roasted the ore with salt and soda ash and leached it with chlorine.
+The US Colorado Plateau ore, carnotite, carried vanadium as well as uranium: carnotite was first mined in the Uravan Mineral Belt from 1898, and vanadium was recovered alongside uranium as a by-product rather than being separable from it. The documented recovery route roasts the crushed ore with sodium chloride or sodium carbonate at about 850 C to give sodium metavanadate, whose aqueous extract is acidified to red cake and reduced with calcium metal.
 
 ###### Transmission and distribution network `facility.power.grid` _(medium)_
 
@@ -9100,7 +9080,7 @@ The chain from the utility's service drop to the machine tool. This is the branc
 
 A pad-mount or pole-mounted transformer on the utility side of the fence, with revenue metering and a fused cut-out. The customer owned everything downstream of the meter.
 
-###### Customer substation `facility.electricity.substation`
+###### Customer substation `facility.electricity.substation` _(medium)_
 
 Where a large factory bought at transmission or sub-transmission voltage: a fenced yard with the utility's metering, an incoming circuit breaker, a main transformer, a secondary switchgear line-up and the plant's own protection relays.
 
@@ -9264,7 +9244,7 @@ A small fraction of a C10H10 comonomer added to the styrene so the bead does not
 
 Every 1980s electronics and metals plant drank more water than it realised, and it arrived from one of two places. Two distinct demands sit on top of it: ordinary industrial water for cooling, rinsing, process and human use, and, in the fab, water pure enough to grow an oxide on silicon without introducing a defect. Point consumers at facility.water.industrial or facility.water.ultrapure rather than at this node, and attach them with `from` - a water treatment plant is an ingredient of the process, never a component of the product.
 
-##### Raw water intake `facility.water.raw-intake`
+##### Raw water intake `facility.water.raw-intake` _(low)_
 
 Either a surface intake from a river or reservoir, or a deep well into a confined aquifer. Surface water for cooling, well water for the ultrapure plant - because groundwater is already filtered by geology and low in organics.
 
@@ -9496,7 +9476,7 @@ The Permian Basin of west Texas and the southwest Kansas gas fields hold helium 
 
 Three routes in 1983: (a) bulk hydrogen from a merchant plant by tube trailer or by liquefaction; (b) on-site steam methane reforming of natural gas, the standard for anything above about 100 Nm3/h; and (c) electrolysis of demineralised water for the last, and highest, purity.
 
-###### Steam methane reforming `facility.gases.hydrogen.reforming`
+###### Steam methane reforming `facility.gases.hydrogen.reforming` _(medium)_
 
 Natural gas is desulphurised to under 0.5 ppm sulphur, mixed with steam at 3:1 and passed over a nickel-molybdenum or chromite catalyst at 800-850 C and 15-25 bar. This gives hydrogen plus CO, and the CO is shifted over an iron-chrome catalyst to CO2 and more hydrogen. Then CO2 is removed by amine scrubbing or molecular sieve.
 
@@ -9572,7 +9552,7 @@ A packed column of plastic Raschig or saddle rings on a support grid, fed with c
 
 Moulded plastic ring or saddle packing, chemically inert to acid and alkali where ceramic or metal would be attacked. The same vinyl chloride monomer chain that makes the conduit and the cable in the plant.
 
-#### Hazardous and industrial waste, 1980s practice `facility.hazardous-waste`
+#### Hazardous and industrial waste, 1980s practice `facility.hazardous-waste` _(low)_
 
 The part of the story usually left out. A 1980s electronics plant generated, per fab, tens of thousands of gallons of spent acid, spent solvent, cyanide-bearing rinse, and metal-bearing sludge a year, plus a smaller amount of contaminated equipment and packaging. What happened to it was loosely governed - in the US by RCRA, which had only been in force for three years in 1983 - and often not well.
 
@@ -9724,7 +9704,7 @@ A slotted quartz holder that carries 25-50 wafers through the diffusion furnace.
 
 A large 1983 fab ran 5,000-10,000 employees, of whom the majority working on the wafer lines were women - the largest single female industrial workforce in many of the regions where the plants went, because the tool operators and the wafer handling were culturally coded as women's work even though they were skilled and tightly controlled.
 
-#### The Commodore supply-chain geography `facility.foundries`
+#### The Commodore supply-chain geography `facility.foundries` _(medium)_
 
 Where a C64 physically came from, and the only place in this tree where the map is Commodore-specific rather than industrial. Commodore owned one fab, in Pennsylvania. The boards were printed in Hong Kong. The boxes were assembled in Hong Kong, Japan, West Germany, the United States and - from 1984 - Britain. The corporate records that survived the bankruptcy are unusually detailed and are the best source for this branch.
 
@@ -9840,7 +9820,7 @@ US customs value was the transaction value - the price actually paid or payable 
 
 The three documents that travelled with the container besides the bill of lading. The invoice stated the price actually paid or payable, which is the number customs used; the packing list was the count and weight the carrier checked against the manifest; the certificate of origin was what made the 807.00 assembly-relief deduction claimable. In a bonded warehouse or an export-processing-zone deal all three had to be issued and retained for years - which is why the tax case could reconstruct Commodore's internal transfer prices two decades later.
 
-#### The labour content of a C64 `logistics.people`
+#### The labour content of a C64 `logistics.people` _(medium)_
 
 Two labour populations with almost nothing in common: a tiny, very senior, very expensive American engineering team in Pennsylvania and Japan, and a large, low-paid, mostly female production workforce in Hong Kong and Japan. The design labour is amortised over millions of units and is invisible in the $35-50 bill of materials; the assembly labour is a few dollars per unit and is the reason Commodore could hit a $135 production cost. The Hong Kong branch of Commodore Electronics Ltd employed approximately 2,500 people when mass production of the production-redesigned C-64A began there in March 1983 - the single best-documented headcount in the whole Commodore manufacturing story.
 
@@ -9880,7 +9860,7 @@ The unsung labour in Commodore's story: David Ziembicki (production engineer, th
 
 Commodore's labour did not just build machines, it found and reworked other people's mistakes. The 'sparkle' defect was traced after three weeks to a ROM - not the VIC-II - with a pre-charging circuit that was sensitive to a bus contention spike; three million such ROMs were already in service. A logic error put 64 clock cycles on a scanline instead of 65 and took about five months into production to fix. Assembly-line workers over-adjusted the colour potentiometer until it saturated the colour and wiped out the luma. Electric screwdrivers cut traces on the disk-drive connector, and because those traces went to a connector nobody tested, they passed final inspection. Charles Winterble: 'It takes a very tough person to say I'm not shipping these because they're not as good as they could be - especially when people are clamoring to buy them.'
 
-#### Factory and engineering test equipment `facility.test-equipment`
+#### Factory and engineering test equipment `facility.test-equipment` _(low)_
 
 Every C64 that left the Hong Kong line had been through a functional test, and the boards had been tested electrically before population and after soldering. In-circuit testers and flying probes were the technology of the era; the automated ATE industry of the 1990s did not exist yet. The capital equipment here was made by the test-and-measurement industry, which is why it is categorised `industry` rather than `assembly` - assembly is reserved for the operations themselves.
 
@@ -9929,7 +9909,7 @@ The boron source, and the reason E-glass is a borosilicate at all. Borax decahyd
 
 ###### Boric acid from colemanite `chem.glass-fiber.borax.acid`
 
-Colemanite ore is crushed and boiled with sulfuric acid, which drives the calcium out as gypsum and leaves boric acid in solution: Ca2B6O11.5H2O + 2 H2SO4 + 2 H2O -> 2 CaSO4 + 6 H3BO3. The liquor is filtered hot and crystallised by cooling, and the crystals are dried at low temperature because boric acid dehydrates to B2O3 above about 100 C. Glass makers bought either this acid or the crude ash from dry lakes such as Searles Lake; the acid was the easier way to get a clean batch.
+Colemanite ore is crushed and boiled with sulfuric acid, which drives the calcium out as gypsum and leaves boric acid in solution: Ca2B6O11.5H2O + 2 H2SO4 + 2 H2O -> 2 CaSO4 + 6 H3BO3. The liquor is filtered hot and crystallised by cooling, and the crystals are dried at low temperature because boric acid dehydrates to B2O3 above about 100 C. Glass makers bought either this acid or the crude ash from dry lakes such as the ones at Boron and Kramer in southern California and at Bigadi in Turkey; the same boric acid is what the television-tube funnel glass borated, so that chain joins here. Searles Lake; the acid was the easier way to get a clean batch.
 
 ###### Colemanite and borate ore `chem.glass-fiber.borax.ore`
 

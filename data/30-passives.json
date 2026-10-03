@@ -845,19 +845,7 @@
                         "glass"
                       ],
                       "children": [
-                        {
-                          "id": "mb.passives.resistors.discrete-axial.wirewound.enamel.glass",
-                          "name": "Vitreous enamel",
-                          "description": "A glassy coating on the wound wire, applied as a slurry and baked. The enamel is what makes a wirewound part look like a glass-bodied component and is what lets it run hot without the wire oxidising.",
-                          "kind": "material",
-                          "category": "passives",
-                          "era": "1982-1984",
-                          "confidence": "high",
-                          "sources": ["https://en.wikipedia.org/wiki/Resistor"],
-                          "inputs": [
-                            "metal.silica-sand"
-                          ]
-                        }
+                        
                       ],
                       "note": "Not established: glassy enamel coating and baking as the finish on these wirewounds, and the about-200 C switchover to cement or silicone for continuous operation."
                     },
@@ -1671,19 +1659,7 @@
                     "metal.silica-sand"
                   ],
                   "children": [
-                    {
-                      "id": "mb.passives.caps.mlcc.slurry.glass-frit",
-                      "name": "Glass frit in the slurry",
-                      "description": "A few per cent of low-melting glass, added so that on sintering it wets the barium titanate grains, closes the porosity and gives the internal electrode a hermetic interface. Without it the MLCC is not gas-tight and its insulation resistance collapses.",
-                      "kind": "material",
-                      "category": "passives",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "metal.silica-sand"
-                      ],
-      "note": "Not established: the role of the glass frit in wetting the barium titanate grains and closing porosity, the hermetic interface it gives the internal electrode, and the claim that without it the insulation resistance collapses. No document consulted describes the MLCC frit addition."
-    }
+                    
                   ],
       "note": "Not established: the glass frit fraction of about 5 % by weight of the ceramic body, and the specific 1982 binder systems. What is documented is that the casting suspension is the powder with a suitable binder."
     },
@@ -4227,20 +4203,7 @@
     }
                   ]
                 },
-                {
-                  "id": "c64.switches.power-slider.body.nylon.nylon-6-6",
-                  "name": "Nylon 6,6 (PA66)",
-                  "description": "The base polymer of PA66, a condensation polymer of hexamethylenediamine and adipic acid - not of caprolactam, which makes nylon 6, a different nylon with a lower melting point. The 6,6 grade was preferred for mechanical parts because of its moisture stability and its higher melting point, and both of its monomers are petrochemical.",
-                  "kind": "material",
-                  "category": "plastics",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "note": "This node previously claimed that nylon 6,6 was made by hydrolytic ring-opening polymerisation of caprolactam. That is the route to nylon 6; the 6,6 chain is hexamethylenediamine plus adipic acid. Corrected here, and the caprolactam branch was deleted with it.",
-                  "inputs": [
-                    "chem.polyamide.nylon-66",
-                    "chem.petroleum"
-                  ]
-                },
+                
                 {
                   "id": "c64.switches.power-slider.body.terminal",
                   "name": "Solder terminals and anchor",
@@ -7116,21 +7079,7 @@
                     "chem.glass-fiber"
                   ],
                   "children": [
-                    {
-                      "id": "c64.joystick.microswitches.plastic-case.nylon.nylon-6-6",
-                      "name": "Nylon-6-6 resin",
-                      "description": "The base polymer of the glass-filled nylon case, made from hexamethylenediamine and adipic acid. Caprolactam is the route to nylon 6, a different grade. A single C64 contains nylon in its switch housings, its joystick bushings and its microswitch cases.",
-                      "kind": "material",
-                      "category": "plastics",
-                      "era": "1982-1984",
-                      "confidence": "high",
-                      "sources": ["https://en.wikipedia.org/wiki/Nylon"],
-                      "inputs": [
-                        "chem.polyamide.nylon-66",
-                        "chem.petroleum"
-                      ],
-      "note": "The chemistry is documented: nylon-6,6 is the condensation polymer of a diamine and a dicarboxylic acid, and nylon 6 is a different molecule made by ring-opening polymerisation of caprolactam. Not established: hexamethylenediamine and adipic acid as the specific pair - the sources give the general ABAB structure without naming the monomers for 6,6 - and the claim about nylon appearing in a single C64's switch housings, bushings and microswitch cases."
-    }
+                    
                   ],
       "note": "Glass-filled nylon is documented as increasing structural and impact strength and rigidity, with thermoplastic glass-filled composites quoted at 25-30 % glass fibre. Not established: glass-filled nylon as the standard microswitch case material through the 1980s, and that this is the case material in a 1982 joystick."
     },

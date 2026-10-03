@@ -3299,6 +3299,66 @@
           "value": "benzene was about 85-90% coal-based rather than petroleum-based; the coal route held on until roughly the 1990s-2000s before cracking economics killed it"
         }
       ]
+    },
+    {
+      "loser": "mb.passives.resistors.discrete-axial.wirewound.enamel.glass",
+      "loserName": "Vitreous enamel",
+      "loserFile": "30-passives.json",
+      "survivor": "peripheral.tv.crt.panel.frit",
+      "survivorName": "Lead borosilicate sealing frit",
+      "survivorFile": "90-peripherals.json",
+      "proposal": "tier2b.json",
+      "why": "Vitreous enamel is the same lead-borosilicate glass family, applied as a slurry and baked as a coating rather than as a seal band. Only the material copy merges; the coating operation stays behind in the parent process node mb.passives.resistors.discrete-axial.wirewound.enamel, whose glass input re-points at the survivor. The survivor's batch route (silica, boric oxide, lead oxide, alkali) covers it.",
+      "loserDescription": "A glassy coating on the wound wire, applied as a slurry and baked. The enamel is what makes a wirewound part look like a glass-bodied component and is what lets it run hot without the wire oxidising.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.joystick.microswitches.plastic-case.nylon.nylon-6-6",
+      "loserName": "Nylon-6-6 resin",
+      "loserFile": "30-passives.json",
+      "survivor": "chem.polyamide.nylon-66",
+      "survivorName": "Nylon 6,6 from adipic acid and HMDA",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "tier2b.json",
+      "why": "Same polymer by the same route; second path-local copy with identical inputs (chem.polyamide.nylon-66, chem.petroleum). Fold the C64-use sentence (switch housings, joystick bushings, microswitch cases) and the chemistry note into the survivor before deleting. Move the ingredients row 'nylon' with it. Same pattern as the already-proposed peripheral.tv.crt.yoke.winding.bobbin.nylon merge into this survivor.",
+      "loserDescription": "The base polymer of the glass-filled nylon case, made from hexamethylenediamine and adipic acid. Caprolactam is the route to nylon 6, a different grade. A single C64 contains nylon in its switch housings, its joystick bushings and its microswitch cases.",
+      "loserFacts": null
+    },
+    {
+      "loser": "mb.passives.caps.mlcc.slurry.glass-frit",
+      "loserName": "Glass frit in the slurry",
+      "loserFile": "30-passives.json",
+      "survivor": "peripheral.tv.crt.panel.frit",
+      "survivorName": "Lead borosilicate sealing frit",
+      "survivorFile": "90-peripherals.json",
+      "proposal": "tier2b.json",
+      "why": "Same substance family: low-melting borosilicate fusing glass, batched from silica, boric oxide, lead oxide and alkali, applied as a paste and fired. The loser (a few per cent of glass wetting barium titanate grains to close porosity and seal the internal electrode) is the generic MLCC account; the survivor is the richer account (six facts: ~24 wt% PbO, 430-460 C seal, 600-700 C devitrification, 60-100 mesh print). Fold the BaTiO3-wetting and insulation-resistance sentences into the survivor before deleting.",
+      "loserDescription": "A few per cent of low-melting glass, added so that on sintering it wets the barium titanate grains, closes the porosity and gives the internal electrode a hermetic interface. Without it the MLCC is not gas-tight and its insulation resistance collapses.",
+      "loserFacts": null
+    },
+    {
+      "loser": "peripheral.tv.crt.panel.funnel-glass.borax",
+      "loserName": "Boric acid",
+      "loserFile": "90-peripherals.json",
+      "survivor": "chem.glass-fiber.borax.acid",
+      "survivorName": "Boric acid from colemanite",
+      "survivorFile": "55-chem-gaps.json",
+      "proposal": "tier2b.json",
+      "why": "Same substance by the same route: boric acid from colemanite digested with sulphuric acid, calcium out as gypsum. The survivor carries the reaction, the sub-100 C drying limit and the 0.7-0.9 t yield with two sources at high confidence; the loser is a childless medium-confidence leaf. Union the loser's places (Boron/Kramer district, Bigadi Turkey) and its colemanite-diggings depth into the survivor. Kind friction is real and recorded: the survivor is typed process (it describes the digestion) while the loser is typed material (the acid); retype the survivor to material or keep the digestion as a child process. The parent funnel-glass batch already takes boric acid as an input, which resolves to the survivor through the ingredients table, so no edge dangles.",
+      "loserDescription": "Borates lower the glass's expansion coefficient and its melting point, which is exactly what a funnel that must survive a 25 kV implosion needs. Most borax for the western hemisphere came from borate ores in southern California and from Turkey.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.switches.power-slider.body.nylon.nylon-6-6",
+      "loserName": "Nylon 6,6 (PA66)",
+      "loserFile": "30-passives.json",
+      "survivor": "chem.polyamide.nylon-66",
+      "survivorName": "Nylon 6,6 from adipic acid and HMDA",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "tier2b.json",
+      "why": "Same polymer by the same route: nylon 6,6 from hexamethylenediamine and adipic acid, which the loser already takes as an input. The survivor is the published polymer node (salt formation, polymerisation conditions, butadiene-hydrocyanation feedstock route, Nylon 66 source). The loser is a path-local resin copy. Fold the loser's correction note (caprolactam makes nylon 6, not 6,6) into the survivor before deleting. This supersedes the 40-chassis proposal that made the loser the survivor for c64.case.other-polymers.nylon (a node no longer in the tree; that entry is stale): redirect it here too. Move the ingredients row 'nylon 6 6' with it.",
+      "loserDescription": "The base polymer of PA66, a condensation polymer of hexamethylenediamine and adipic acid - not of caprolactam, which makes nylon 6, a different nylon with a lower melting point. The 6,6 grade was preferred for mechanical parts because of its moisture stability and its higher melting point, and both of its monomers are petrochemical.",
+      "loserFacts": null
     }
   ]
 }

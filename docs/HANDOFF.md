@@ -5,7 +5,9 @@ the same day after Phase 2, for a fresh session picking up the remaining phases.
 
 **The project.** A supply-chain tree for the Commodore 64 (1982), traced from the
 machine back through early-1980s manufacturing to ore, crude oil and quartz sand.
-2,454 nodes. The data is the point; the viewer is secondary.
+2,448 nodes (2,459 at the start of the phase-4 work: eleven duplicate-substance
+nodes have since been merged away). The data is the point; the viewer is
+secondary.
 
 ---
 
@@ -22,15 +24,16 @@ machine back through early-1980s manufacturing to ore, crude oil and quartz sand
 
 | | |
 | --- | --- |
-| nodes | 2,454 (1,301 leaves, 0 unreachable, depth 15) |
+| nodes | 2,448 (1,299 leaves, 0 unreachable, depth 15) |
 | build | exit 0 |
 | selftest | 40/40 |
 | patchtest | all pass |
 | audit | **0 FAIL / 0 WARN**, 9 NOTE |
 | checktables | 0 missing targets, 1 expected merge chain |
 | ingredients | 0 mappings to a non-existent node |
-| ingredient links | 2,356 of 2,918 resolve (80.7%); 562 unresolved, mostly deliberate prose |
-| `unresolved --strict` | **0 rows** — nothing left is safe to apply unreviewed |
+| ingredient links | 2,348 of 2,910 resolve (80.7%); 562 unresolved, mostly deliberate prose |
+| `unresolved --strict` | **0 rows** - nothing left is safe to apply unreviewed |
+| confidence coverage | **every node has a `confidence`**; 0 high-without-source, 0 medium-without-a-note |
 | metalang | DELETE 1 (a known false positive), REWRITE 0 |
 | git | 8 commits, **none pushed to `origin/main`** |
 
@@ -126,8 +129,16 @@ Central corrections fixed ~30 contradicted claims in the prose itself (CN1
 20-pin, self-adhesive feet, pentane-first EPS history, kraft delignification,
 VIC-owned refresh, 28-pin SID, 14.31818 MHz clock, 63/37 eutectic, …),
 repointed 26 dead Wikipedia titles, removed 2 with reasons recorded, and fixed
-6 dead non-Wikipedia citations. Full write-up in `TODO.md` §9. Still open:
-Tier 2a (270 nodes with no `confidence`, mostly petrochem) and Tier 2b.
+6 dead non-Wikipedia citations. Full write-up in `TODO.md` §9.
+
+Tier 2 (DONE 2026-10-04) closed the two remaining gaps — the 273 nodes that had
+no `confidence` at all (254 of them petrochem) and the 352 that were `medium`
+with no note explaining what was unestablished. 8 further agents over disjoint
+fragments; every node now carries a confidence, a note, and a source wherever one
+was actually obtainable. Six further duplicate-substance merges took the tree
+2,459 -> 2,448 (benzene, two nylon 6,6 copies, two sealing-glass copies, boric
+acid). **The tree has no confidence-less node, no unsourced `high`, and no
+unannotated `medium`.**
 
 ### Also queued
 
@@ -250,6 +261,32 @@ response shape, and distrust any clean sweep that arrives too fast. The same
 caution applies to concurrent fetches generally: two live PDFs 404'd under
 8-way concurrency and returned 200 serially.
 
+**On Windows PowerShell 5.1, a note's double quotes are silently stripped.**
+`patch.mjs` writes string values, and passing a note containing `"` through `$var`
+to `node` as a native argument loses every one of them. The call reports
+success, the file still parses, the audit stays green, and only the note loses
+its quotation marks — so a verbatim quote inserted into a note evaporates with
+no error anywhere. Five notes were affected in one pass before it was caught.
+Escape before passing (`$e = $n -replace '"','\"'`), or write the note with the
+`edit` tool instead. Related: `Get-Content -Raw` without `-Encoding UTF8` on
+this host turns `°` into two Latin-1 characters.
+
+**A throttled Wikipedia API answers 200 with an empty extract.** Two traps in
+one session: a *multi-title* `action=query&prop=extracts` request returned HTTP
+200 with `extract: ""` for 4 of 5 titles while identical single-title requests
+succeeded, and after about six rapid single-title calls it began returning 429
+with a plain-text body. Assert on non-empty `extract` length, not just on
+`query.pages`, and back off. Nothing was recorded from a throttled response.
+
+**A subagent that reports "completed without a text response" may have written
+nothing at all.** One did, on a 30-node slice, while another slice in the same
+batch finished fully. Verify coverage against your own id list after every
+report rather than trusting the report's existence — a coverage script that
+reads the fragment files (not the stale `public/tree.json`) is the check that
+settles it in one command. When a relaunch is needed, hand the agent an explicit
+one-call-per-node method and a deadline for the first write; the failure was
+procedural, not a tool fault, and a probe confirmed the tool worked.
+
 **Never `git stash` while agents are writing.** Stash reverts the working tree
 under their feet: their pre-stash edits sit in the stash while their processes
 keep patching the reverted base, and `stash pop` then fails on the files they
@@ -336,5 +373,6 @@ From the last pass, in rough priority order:
 - Push the commits to `origin/main`.
 - Produce the consolidated `probe.mjs` before/after diff for the README.
 - Decide whether build artifacts stay in git.
-- **Phase 4 Tier 1 is done; Tier 2a (270 nodes with no `confidence`, mostly
-  petrochem) and Tier 2b are the remaining phase.**
+- **All four phases are done.** Nothing is blocked; the open items are the
+  push, the artifact decision, and a reading pass over the 1,860 numbers the
+  agents recorded as "not established" if you want any of them sourced.

@@ -205,27 +205,7 @@
                     "confidence": "medium",
                     "children": [
                       
-                      {
-                        "id": "peripheral.tv.crt.panel.funnel-glass.borax",
-                        "name": "Boric acid",
-                        "kind": "material",
-                        "category": "metals",
-                        "era": "ancient",
-                        "description": "Borates lower the glass's expansion coefficient and its melting point, which is exactly what a funnel that must survive a 25 kV implosion needs. Most borax for the western hemisphere came from borate ores in southern California and from Turkey.",
-                        "inputs": [
-                          "colemanite (calcium borate)",
-                          "sulphuric acid or hydrochloric acid"
-                        ],
-                        "confidence": "medium",
-                        "places": [
-                          "California (Boron / Kramer district)",
-                          "Bigadi, Turkey"
-                        ],
-                        "children": [
-                          
-                        ],
-                        "note": "No canonical borate node exists anywhere in the tree yet, so this chain stays here; the colemanite diggings and the acid digestion are as deep as it goes."
-                      }
+                      
                     ],
                     "note": "Borosilicate is the low-expansion family of glass: its main glass-formers are silica and boron trioxide and its coefficient of thermal expansion is about 3 x 10^-6 per K at 20 C, which is the order the figure here gives and the reason a funnel has to be formulated against the expansion of the panel it is sealed to. Not established: the 1380-1500 C melt temperature, the lehr cooling from 450 to 20 C over 10-20 hours, the regeneration gas firing, the red lead as fining agent, the forming of the funnel as drawn tubing, and the Toledo, Nemours and Tokyo works. A commercial lead borosilicate display-tube funnel glass was sold by the weight of its constituent oxides rather than by a published batch recipe."
                   },
@@ -1082,6 +1062,9 @@
                     "kind": "part",
                     "category": "optics",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Cathode-ray_tube"
+                    ],
                     "description": "The grid stack is a set of thin nickel foils laser-welded or spot-welded into a unit: G1 the Wehnelt and video modulator, G2 the screen grid at a few hundred volts, G3 the focus grid at 5-20% of the anode voltage, and the anode block itself in graphite or aluminium with a ceramic or mica spacer stack. Every surface is blackened.",
                     "facts": [
                       {
@@ -1139,6 +1122,9 @@
                     "kind": "process",
                     "category": "assembly",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Carbon%20black"
+                    ],
                     "description": "The anode block and the inside of the funnel near the neck are flame-blacked with a sooty acetylene flame so that any stray electrons are absorbed rather than bouncing around the tube. Carbon black, the same pigment as in the cabinet and in a car's tyres, does the job here.",
                     "inputs": [
                       "acetylene",
@@ -1211,6 +1197,9 @@
                     "kind": "material",
                     "category": "magnetics",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Ferrite%20(magnet)"
+                    ],
                     "description": "The yoke has to carry a 15 kHz sawtooth of several amps and not heat up, so the core is a high-permeability ferrite or a bonded powdered iron (ferrite dust in a phenolic or rubber binder), pressed and sintered. Ferrite is MnO with ZnO added to raise the saturation flux; powdered iron (Ferralium-type alloys) was used where saturation beat loss mattered.",
                     "inputs": [
                       "iron oxide",
@@ -1249,6 +1238,9 @@
                     "kind": "part",
                     "category": "magnetics",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Magnet%20wire"
+                    ],
                     "description": "Copper wire, 0.2-0.4 mm, enamel-insulated and wound onto a bobbin with the horizontal coils outside and the vertical coils inside, then immersed in epoxy or polyurethane varnish to lock the winding rigidly. The hum-cancelling trick on the read head of a cassette deck has an ancestor here: the horizontal coils are arranged so their fields oppose.",
                     "inputs": [
                       "enamelled copper wire",
@@ -1270,6 +1262,9 @@
                         "kind": "part",
                         "category": "plastics",
                         "era": "1982",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Nylon%2066"
+                        ],
                         "description": "Yoke bobbins and coil formers were glass-filled nylon (PA66-GF30) because the winding runs hot and phenolic would crack. Nylon 6,6 comes from adipic acid plus hexamethylenediamine, both from petroleum.",
                         "inputs": [
                           "nylon 6,6",
@@ -1450,6 +1445,10 @@
                     "kind": "material",
                     "category": "magnetics",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Ferrite%20(magnet)",
+                      "https://en.wikipedia.org/wiki/Flyback_transformer"
+                    ],
                     "description": "An open-frame core of MnZn ferrite or powdered iron with a gapped section. The gap is deliberate: the flyback has to store a lot of field energy and be reset every line. The core is wound on a bobbin, then potted in epoxy so the 15 kHz and 25 kV windings cannot move.",
                     "inputs": [
                       "MnZn ferrite or powdered iron",
@@ -1615,6 +1614,9 @@
                         "kind": "material",
                         "category": "optics",
                         "era": "1982",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Glass-to-metal%20seal"
+                        ],
                         "description": "The anode button was a nickel or Kovar cup frit-sealed into the funnel wall, and the external cap was moulded silicone rubber. The seal frit was the same lead borosilicate as the panel seal, which is why the button had to be fired at the same 430-460 degrees C in the same continuous kiln as the tube.",
                         "inputs": [
                           "lead borosilicate frit",
@@ -1815,6 +1817,10 @@
                 "kind": "part",
                 "category": "interconnect",
                 "era": "1982",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Tuner%20(radio)",
+                  "https://en.wikipedia.org/wiki/Intermediate%20frequency"
+                ],
                 "description": "Two tuned circuits on ferrite cores: an RF amplifier and a mixer, both switched through a gang so they track. The coils are a few turns of enamelled copper on ferrite slug cores; the switch has a rotor with printed or wound inductors that tap through the band, and an AFC or motor to pull it into lock.",
                 "inputs": [
                   "enamelled copper wire",
@@ -1841,6 +1847,9 @@
                 "kind": "part",
                 "category": "optics",
                 "era": "1982",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Varicap"
+                ],
                 "description": "At 500-800 MHz a lumped LC circuit is hopeless, so the UHF tuner used a coaxial cavity or a stripline distributed resonator made of folded sheet metal, with a silicon varactor diode as the tuning element. Reverse-biasing the diode changed its junction capacitance from tens to a few picofarads, which moved the resonance across the band. A small DC motor rotated the cavity to track, or a servo pushed a varactor.",
                 "facts": [
                   {
@@ -1943,6 +1952,9 @@
                         "kind": "material",
                         "category": "optics",
                         "era": "1982",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Lithium%20niobate"
+                        ],
                         "description": "The acoustic medium. Spodumene (LiAlSi2O6) ore is beneficiated and converted to lithium carbonate by sulphuric acid roasting; the carbonate is reacted with niobium pentoxide from pyrochlore (columbite-tantalite) tantalum residue in a lithium hydroxide or carbonate flux at 1000-1200 degrees C to grow Czochralski crystals of LiNbO3, which are sliced and polished to a 0.25-1 mm wafer. In 1982 much of the world's LiNbO3 came from Japanese and Chinese plants, with the tantalum industry as the source of the columbite residue.",
                         "inputs": [
                           "spodumene ore",
@@ -1981,6 +1993,9 @@
                             "kind": "material",
                             "category": "metals",
                             "era": "ancient",
+                            "sources": [
+                              "https://en.wikipedia.org/wiki/Spodumene"
+                            ],
                             "description": "A lithium aluminium silicate, 6.0-7.0% Li2O, that occurs in granitic pegmatites and is mined in enormous tonnages because a lithium battery plant in 1982 needed thousands of tonnes a year. Roasting with sulphuric acid turns it into lithium sulphate, and the impurity that everyone fights is iron.",
                             "inputs": [
                               "pegmatite ore, 1-4% Li2O"
@@ -2257,6 +2272,9 @@
                     "kind": "part",
                     "category": "silicon",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Integrated%20circuit"
+                    ],
                     "description": "The video, chroma and audio functions in a 1982 set were often one or two chips of 40 to 80 pins, made on a 4-5 micron NMOS or bipolar process. The die is a slice of 99.99% silicon, oxidised, photolithographically patterned through eight to ten mask steps, and packaged in epoxy or ceramic. Purity, oxide quality and aluminium interconnect over a polysilicon gate is the whole story of the 4-micron generation.",
                     "facts": [
                       {
@@ -2319,6 +2337,9 @@
                     "kind": "part",
                     "category": "silicon",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Bipolar%20junction%20transistor"
+                    ],
                     "description": "Most transistors in a 1982 set were discrete: a high-gain IF transistor, the video driver, the video output transistors, the horizontal oscillator and driver, the vertical output, the audio output, and the horizontal output. Each is a tiny die, 10-40 transistors, wire-bonded to a plastic or metal can. Metal-can transistors (TO-18) were still common in the IF and video stages where heat and shielding mattered.",
                     "facts": [
                       {
@@ -2342,6 +2363,9 @@
                         "kind": "part",
                         "category": "silicon",
                         "era": "1982",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Integrated%20circuit"
+                        ],
                         "description": "A small-signal NPN transistor is a few hundred square microns of silicon, aluminium metallised, mounted on a header and sealed in epoxy or metal. The die itself is a slice of the same 99.99% wafer as the video IC, cut with a diamond-impregnated wheel and diced on a saw.",
                         "inputs": [
                           "silicon wafer",
@@ -2469,6 +2493,9 @@
                     "kind": "part",
                     "category": "power",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Flyback_transformer"
+                    ],
                     "description": "After the flyback, a single silicon rectifier at 25 kV. On larger sets a doubler or tripler with plastic film capacitors at 2-5 kV each was used. The current was tiny (1-2 mA) so the capacitors were small in value but enormous in voltage rating, and their failure mode was spectacular and occasionally violent.",
                     "facts": [
                       {
@@ -2494,6 +2521,10 @@
                     "kind": "part",
                     "category": "passives",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Metallized%20film",
+                      "https://en.wikipedia.org/wiki/Polypropylene"
+                    ],
                     "description": "A metallised polypropylene or polystyrene film capacitor rated at kilovolts. The film is stretched polypropylene, metallised with a thin aluminium or zinc layer, wound, and the whole thing impregnated and potted. Zinc metallising was cheap and equivalent to aluminium for small values; aluminium became standard for reliability.",
                     "inputs": [
                       "polypropylene film",
@@ -2512,7 +2543,7 @@
                     ],
                     "confidence": "medium",
                     "children": [],
-                    "note": "Metallized film is documented as polymer plastic film coated with a thin layer of metal, usually aluminium, used for specialty applications including electronics, and polypropylene is a documented capacitor dielectric. Not established: the 2-5 kV DC continuous rating for a 1982 television EHT capacitor, polystyrene as an alternative dielectric in this position (polystyrene film was largely displaced by polypropylene in mains and pulse capacitors because of its dielectric loss and its temperature coefficient, so it is a poor choice at kilovolt pulse duty), zinc metallising as the cheap alternative to aluminium, and epoxy potting as standard. The self-healing mechanism is a real property of metallised film, but this node attributes it to the neighbouring mains capacitor rather than repeating it here."
+                    "note": "Metallized film is documented as polymer plastic film coated with a thin layer of metal, usually aluminium, used for specialty applications including electronics. Polypropylene is documented as a thermoplastic of the polyolefin group, partially crystalline and non-polar, slightly harder and more heat-resistant than polyethylene, and the second most widely produced commodity plastic after polyethylene. Not established: that either polymer was the dielectric in this position, the 2-5 kV DC continuous rating for a 1982 television EHT capacitor, polystyrene as an alternative dielectric here (polystyrene film was largely displaced by polypropylene in mains and pulse capacitors because of its dielectric loss and its temperature coefficient, so it is a poor choice at kilovolt pulse duty), zinc metallising as the cheap alternative to aluminium, and epoxy potting as standard. The self-healing mechanism is a real property of metallised film, but it is stated on the neighbouring mains capacitor rather than repeated here."
                   }
                 ],
                 "sources": [
@@ -2607,6 +2638,9 @@
                     "kind": "part",
                     "category": "silicon",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Audio%20power%20amplifier"
+                    ],
                     "description": "An integrated amplifier (a few watts, a single 8-14 pin IC) or a discrete predriver plus two complementary power transistors pushing 5-20 W peak into 8 ohms from a 115 V rail. The output stage ran in class B or class AB, and the bias and the idle current were the main design problem.",
                     "facts": [
                       {
@@ -2919,6 +2953,9 @@
                 "kind": "part",
                 "category": "metals",
                 "era": "1982",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Voice%20coil"
+                ],
                 "description": "Two layers of enamelled copper wire, about 40-60 turns, wound on a paper or aluminium former and centred in the magnet gap. It is a minute amount of copper, on the order of a gram, and it sits in a gap of under a millimetre.",
                 "inputs": [
                   "enamelled copper wire",
@@ -3184,6 +3221,10 @@
                     "kind": "material",
                     "category": "metals",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Silver",
+                      "https://en.wikipedia.org/wiki/Electroplating"
+                    ],
                     "description": "Mains switch and rotary tuner contacts were silver-plated brass or copper, because silver has the highest conductivity of any metal and does not oxidise. Silver plating was applied from a cyanide or an acid bath, and the silver itself came overwhelmingly from the anode slimes of copper refining.",
                     "inputs": [
                       "brass or copper contact",
@@ -3266,6 +3307,9 @@
                 "kind": "part",
                 "category": "interconnect",
                 "era": "1982",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/F%20connector"
+                ],
                 "description": "A threaded, quarter-turn connector for 75 ohm coax, usually brass with a nickel or cadmium plate and a dielectric insert of PTFE or polyethylene. Brass is copper-zinc, so this little part pulls from both the copper and the zinc industry; the zinc can also be the zinc plated steel shell.",
                 "inputs": [
                   "brass",
@@ -3299,6 +3343,9 @@
                     "kind": "material",
                     "category": "metals",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Brass"
+                    ],
                     "description": "Brass is melted from cathode copper and zinc ingot, roughly 60/40 for free-cutting brass, and cast or extruded into fittings. The zinc came from sphalerite and the copper from chalcopyrite, both already in this branch.",
                     "inputs": [
                       "metal.copper",
@@ -3327,6 +3374,9 @@
                 "kind": "material",
                 "category": "interconnect",
                 "era": "1982",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Coaxial%20cable"
+                ],
                 "description": "RG-59 or RG-6 coax: a copper or tinned copper braid, a polyethylene or PTFE dielectric, and a solid copper centre conductor. RG-59 is 52 ohm and was what an indoor or a bench lead of the era was. The alternative was 300 ohm flat twin-lead, which matched indoor dipoles and did not need coax. The polyethylene in the coax came from ethylene, which came from the cracker, which came from naphtha and from crude.",
                 "inputs": [
                   "copper centre conductor",
@@ -3356,6 +3406,9 @@
                     "kind": "material",
                     "category": "plastics",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Polyethylene"
+                    ],
                     "description": "Polyethylene is polymerised from ethylene, which comes from a steam cracker on naphtha. Where the chlorination route was used (for PVC or for the chloromethane that goes into the foam blowing), the chlorine came from salt electrolysis. Both the polymer and the chlorine are therefore descendants of crude oil and of halite, and both branches meet in the cable jacket.",
                     "inputs": [
                       "ethylene from naphtha cracking",
@@ -3384,7 +3437,7 @@
                     "children": [
                       
                     ],
-                    "note": "Polyethylene is documented as the most commonly produced plastic, with low-density and high-density forms and many variations, produced in excess of 100 million tonnes a year, and the low-density form is made at high pressure - which is the route the facts give for a cable grade. Not established: the 1000-3000 bar and 200 C figures as the specification for this grade, the 2NaCl to Cl2 plus 2Na equation and the claim of about 3 V and 30-40 C for salt electrolysis (the cell voltage and the electrolyte temperature are not the same quantity, and a chlor-alkali cell runs warm), the vinyl chloride route to PVC, chloromethane as the foam blowing agent, and the Teesside, Gulf Coast and Saudi Arabia works. The two paths meeting in a cable jacket - ethylene from a steam cracker and chlorine from brine electrolysis - is a genuine convergence of the petrochemical and salt chains."
+                    "note": "Polyethylene is documented as the most commonly produced plastic, with low-density and high-density forms and many variations, produced in excess of 100 million tonnes a year. Not established: the 1000-3000 bar and 200 C figures as the specification for this grade - the low-density grade is the high-pressure one and that is the route the facts take, but no polymerisation process source was consulted for the numbers - the 2NaCl to Cl2 plus 2Na equation and the claim of about 3 V and 30-40 C for salt electrolysis, where cell voltage and electrolyte temperature are not the same quantity and a chlor-alkali cell runs warm, the vinyl chloride route to PVC, chloromethane as the foam blowing agent, and the Teesside, Gulf Coast and Saudi Arabia works. The two paths meeting in a cable jacket - ethylene from a steam cracker and chlorine from brine electrolysis - is a genuine convergence of the petrochemical and salt chains."
                   }
                 ],
                 "note": "Coaxial cable is documented: an inner centre conductor surrounded by a concentric conducting shield with the two separated by a dielectric, it is a type of unbalanced transmission line used to carry high-frequency electrical signals with low losses, it differs from other shielded cables because the dimensions of the cable and its connectors are controlled to give a precise, constant conductor spacing, and that separation from twin-lead is exactly the point this node makes about the alternative. Not established: RG-59 at 52 ohm and about 6.5 mm outside diameter, RG-6, 300 ohm flat twin-lead at 2 x 1.2 mm polyethylene-insulated conductors as the indoor dipole alternative, chemical blowing to make foam polyethylene as against solid PE, and that RG-59 was the era bench or indoor lead. The characteristic impedance and outside diameter of RG-59 are published cable specifications, but they were not confirmed against a cable datasheet here."
@@ -3395,6 +3448,9 @@
                 "kind": "part",
                 "category": "interconnect",
                 "era": "1982",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Antenna%20(radio)"
+                ],
                 "description": "On a portable set, a telescopic whip: a chrome-plated steel rod in a plastic base, with a ball joint for the angle. It was a whip antenna for VHF, and on UHF-only portables it was a loop inside the cabinet.",
                 "inputs": [
                   "chromium-plated steel rod",
@@ -3414,6 +3470,9 @@
                     "kind": "process",
                     "category": "metals",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Chrome%20plating"
+                    ],
                     "description": "A telescopic rod plated in hard chrome over nickel, in several decorative layers so it could be extended and retracted thousands of times without wearing through. The chrome came from chromite ore, the same ore that made the chromium dioxide in a Type II cassette tape.",
                     "inputs": [
                       "carbon or stainless steel rod",
@@ -3437,7 +3496,7 @@
                     "children": [
                       "metal.chromite"
                     ],
-                    "note": "Chrome plating and chromite are both documented subjects: chromium is plated for wear and corrosion resistance, and chromite is the ore from which chromium is obtained. Not established: the 0.25-1 micron hard chrome thickness over a nickel underlayer, the several decorative layers, and that the plating was what let the rod be extended and retracted thousands of times without wearing through - hard chrome is hard but thin, so the endurance argument is plausible rather than demonstrated. The Japan and Taiwan attributions are not established either. The chromite is the same ore as the chromium dioxide in a Type II cassette tape, which is a real convergence: one ore, two unrelated end uses."
+                    "note": "Chrome plating is documented: it is a technique of electroplating a thin layer of chromium onto a metal object, the chromium layer can be decorative, provide corrosion resistance, facilitate cleaning, and increase surface hardness, and a less expensive substitute such as nickel may be used for aesthetic purposes. Not established: the 0.25-1 micron hard chrome thickness over a nickel underlayer, the several decorative layers, and that the plating was what let the rod be extended and retracted thousands of times without wearing through - hard chrome is hard but thin, so the endurance argument is plausible rather than demonstrated. The Japan and Taiwan attributions are not established either. The chromium here came from chromite, the same ore that made the chromium dioxide in a Type II cassette tape, which is a real convergence: one ore, two unrelated end uses."
                   }
                 ],
                 "note": "No source was found for the construction. A telescopic whip on a portable set is a real and ordinary part, and a sectional rod sliding in a moulded base with a swivel is the standard way one is built. Not established: that the rod was carbon or stainless steel rather than solid brass or a steel tube with a plastic taper, the chrome plating being on the rod rather than a separate decorative sleeve, three to six sections, the ABS base, the ball joint, and the claim that UHF-only portables used an internal loop. The 3-6 mm diameter of a telescopic whip section is also unstated and unverified; the collapsed length is what constrained the diameter, and no drawing was consulted."
@@ -3534,6 +3593,9 @@
                     "kind": "part",
                     "category": "passives",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Metallized%20film"
+                    ],
                     "description": "A polypropylene or polystyrene film, vacuum-metallised with a thin aluminium layer on both faces, wound and potted in epoxy. It was the capacitor of choice across the line because a self-healing metallisation would recover from a mains transient rather than failing short. Polystyrene was also used for its stability and low microphonics.",
                     "inputs": [
                       "polypropylene or polystyrene film",
@@ -3583,6 +3645,10 @@
                     "kind": "material",
                     "category": "metals",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Fuse%20(electrical)",
+                      "https://en.wikipedia.org/wiki/Silver"
+                    ],
                     "description": "A small glass or ceramic cartridge containing a link of silver or of a fusible alloy such as a lead-bismuth-tin eutectic, in a sand or chalk packing that quenched the arc when the link melted. The glass was soda-lime, drawn as a tube and sealed with an end cap.",
                     "inputs": [
                       "soda-lime glass tube",
@@ -3721,6 +3787,9 @@
                     "kind": "part",
                     "category": "silicon",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Integrated%20circuit"
+                    ],
                     "description": "The 6502, the 6522 and the PLA were all made on 1980-era processes: a 3-5 micron NMOS or bipolar line, or a custom bipolar array. The wafer was the same trichlorosilane-to-polysilicon-to-epitaxy chain already traced under the television's video IC, and the die was diced, wire-bonded and epoxy-moulded.",
                     "inputs": [
                       "99.99% silicon wafer",
@@ -3778,6 +3847,9 @@
                     "kind": "material",
                     "category": "metals",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Gold"
+                    ],
                     "description": "The 6502 was a 40-pin DIP with gold or tinned copper wires ball-bonded or wedge-bonded from the die pads to the lead frame. Gold came almost entirely from the anode slimes of copper electrolytic refining, and a modest 40-pin DIP of the period had a few milligrams of it.",
                     "inputs": [
                       "99.99% gold",
@@ -3833,6 +3905,10 @@
                     "kind": "part",
                     "category": "magnetics",
                     "era": "1982",
+                    "sources": [
+                      "https://archive.org/details/The_Anatomy_of_the_1541_Disk_Drive",
+                      "https://en.wikipedia.org/wiki/Stepper%20motor"
+                    ],
                     "description": "The stator is a stack of thin silicon steel laminations with fine teeth, each pole carrying a bobbin of magnet wire. The laminations are punched from the same 0.35 mm silicon steel as the television's mains transformer, but the teeth are punched to a pitch of well under a millimetre, which is the reason a hybrid stepper has far more rotor teeth than its stator poles.",
                     "inputs": [
                       "0.3-0.5 mm silicon steel laminations",
@@ -3863,6 +3939,11 @@
                     "kind": "material",
                     "category": "magnetics",
                     "era": "1982",
+                    "sources": [
+                      "https://archive.org/details/The_Anatomy_of_the_1541_Disk_Drive",
+                      "https://en.wikipedia.org/wiki/Barium%20ferrite",
+                      "https://en.wikipedia.org/wiki/Stepper%20motor"
+                    ],
                     "description": "The rotor is a ferrite or Alnico magnet with fine teeth machined or ground onto its circumference, magnetised radially or axially. A ferrite magnet is barium or strontium ferrite, the same material as a speaker magnet; a stepper rotor is a small ring of it.",
                     "inputs": [
                       "barium or strontium ferrite",
@@ -4200,6 +4281,9 @@
                     "kind": "part",
                     "category": "power",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Aluminium%20electrolytic%20capacitor"
+                    ],
                     "description": "The 1541 regulated the 9-12 V rail down to 5 V with a small linear regulator or a discrete zener-transmitter, and used a handful of aluminium electrolytics to ripple-filter it. Both are the same parts as the television reservoir: etched four-nines aluminium foil in a wound foil anode, with a fibre separator and a chloride or borate electrolyte.",
                     "inputs": [
                       "etched aluminium foil",
@@ -4686,6 +4770,9 @@
                     "kind": "material",
                     "category": "plastics",
                     "era": "1982",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Acrylonitrile%20butadiene%20styrene"
+                    ],
                     "description": "A cassette shell is thin and needs to hold a dimension, so it was moulded from general-purpose polystyrene (cheap, brittle, easy to mould) or from ABS for a stiffer shell. Audio tapes were conventionally clear or smoke polystyrene or ABS; computer and C64 tapes were frequently the same shells, since nothing about the shell distinguished them.",
                     "facts": [
                       {

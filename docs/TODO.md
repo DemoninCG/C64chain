@@ -410,8 +410,26 @@ confidences down, 0 up. **High-confidence-no-source now stands at 0.**
   conductor; the HCl azeotrope is 20.2%, not 32-37%.
 - The agents' P1-P4 unsourced-figure lists (in their reports, not repeated
   here) are the best inventory of what the tree asserts without backing.
-- Tier 2a (270 nodes with no `confidence` at all, 254 of them in
-  `70-petrochem`) and Tier 2b (mediums never given a note) are still open.
+### Tier 2 - DONE 2026-10-04
+
+Closed both remaining gaps with 8 further agents on disjoint fragments:
+
+- **2a:** the 273 nodes that had no `confidence` value at all (254 petrochem,
+  15 industry, 2 peripherals, 1 silicon, 1 root). Result: 19 high with sources,
+  the rest calibrated down, and every one of the 254 petrochem nodes now carries
+  a note naming exactly which of its figures are unestablished. The petrochem
+  slice's honest verdict was that almost all of its numbers — temperatures,
+  pressures, purities, 1983 tonnages — are not in any reachable document; that
+  is now recorded rather than implied.
+- **2b:** the 352 `medium` nodes with no note. All now annotated; ~110 gained a
+  `sources` array from a source actually read.
+- **11 duplicate-substance merges** now applied (benzene, two nylon 6,6 path
+  copies, two sealing-glass copies, boric acid), taking the tree 2,459 -> 2,448.
+
+The tree now has **0 nodes without a confidence, 0 `high` without a source, and
+0 `medium` without a note**. A PDF-specific trap turned up: PDFs cannot be read
+in this environment, so one citation had to be withdrawn and replaced with a
+Wikipedia source that could actually be verified.
 
 ### What central verification found that the agents could not
 
