@@ -93,17 +93,6 @@
       "confidence": "high",
       "note": "Retyped from facility to note, for the same reason as c64.bottoms-out: a grouping is not a plant. Its three children are real - decoration is a set of processes, the keyboard switches are parts, the joystick is a part - and CHECKLIST rule 2 keeps a note with real children intact, because the components-only view routes through a note exactly as it routes through a process. Category moved from interconnect to computing: two of the three children are not interconnect at all, and the honest answer to 'what industry made this' for a bundle of finishing steps and accessories is the machine itself. The audit's kind/category warning for note under computing is accepted deliberately.",
       "children": ["c64.decor", "c64.keyboard-switches", "c64.joystick"]
-    },
-    {
-      "id": "c64.peripherals",
-      "name": "Also required to use it",
-      "description": "A C64 shipped as a box with no screen, no way to save a program and no way to enter one. In 1983 the machine was useless without a television set, a cassette recorder and a joystick, and all three were arguably part of 'a computer' in the way the question was meant. The peripheral branch carries them, with the 1541 disk drive and the television and its CRT glass among them.",
-      "kind": "note",
-      "category": "computing",
-      "sources": ["https://en.wikipedia.org/wiki/Commodore_64"],
-      "confidence": "high",
-      "note": "Retyped from facility to note: nothing here is a plant or a company, it is a grouping of the things you plug into the machine. It has to stay a node because data/00-root.json lists it as a child of c64 and the id is referenced from there, which this pass does not own. c64.joystick is intentionally a child of both this node and c64.extras - it was bundled with the machine in some markets and it was also something you plugged in, and one five-node subtree shown twice is cheaper and clearer than two halves of it.",
-      "children": ["peripheral", "c64.joystick"]
     }
   ]
 }

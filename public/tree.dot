@@ -1248,7 +1248,6 @@ digraph c64 {
   "metal.silica.polysilicon.deposition" [label="Siemens deposition on UHF-heated rods" fillcolor="#f7768e22" color="#f7768e" tooltip="Trichlorosilane and hydrogen flow over silicon rods held just below their melting point by radio-frequency induction, and silicon atoms drop out as polycrystalline growth. Rod temperature is the whole ballgame: too cold and you get powder, too hot and you get liquid droplets that fall into the bed. "];
   "metal.silica.polysilicon.flaking" [label="Crushing, flaking and acid etching of the rod" fillcolor="#f7768e22" color="#f7768e" tooltip="The deposited rod is sawn with a slurry-impregnated circular saw, then the pieces are fractured and leached in hot hydrochloric-nitric acid to strip near-surface contamination from the seed end. What the puller wants is small pieces with clean fracture faces, because every surface is a chance to rec"];
   "metal.silica.polysilicon.doping" [label="Doped vs undoped polysilicon" fillcolor="#f7768e22" color="#f7768e" tooltip="Two grades were produced side by side in the same plant. UNdoped polysilicon went to the crystal puller for Czochralski ingots. Heavily doped material - p-type with boron or phosphorus, n-type with phosphorus or arsenic - went to subcollector plugs, to doped polysilicon films in later processes, and"];
-  "c64.extras" [label="Finishing and bundled extras" fillcolor="#ff007c22" color="#ff007c" tooltip="Three branches that hang off the machine rather than being part of it: how legends and colours were printed onto moulded plastic, how one keyboard key becomes a bit in the matrix, and the joystick that shipped in the box in some markets. None of them is needed to trace the machine's own supply line "];
   "c64.joystick" [label="Joystick controller" fillcolor="#7dcfff22" color="#7dcfff" tooltip="The self-centring 4-way joystick Commodore bundled with the C64 and sold with most of its software: a moulded gate plate held neutral by four springs, four miniature microswitches underneath it, a steel shaft with a ball top, a plastic knob, and a coiled cable to one of the DE-9 control ports. Five "];
   "c64.joystick.cable" [label="Coiled cable and DE-9 plug" fillcolor="#7dcfff22" color="#7dcfff" tooltip="A coiled cable of seven or nine conductors leaving the chassis bottom, terminating in a DE-9 male plug that looks mechanically identical to the socket it plugs into but has male pins. The plug's contacts are gold-flashed brass, made the same way and by the same stamping and plating route as the sock"];
   "c64.joystick.cable.plug" [label="DE-9 male plug contacts" fillcolor="#7dcfff22" color="#7dcfff" tooltip="Stamped brass pins, gold-flashed over nickel, moulded into a thermoplastic D-shell that keys to the socket's D-shape. Because the D-shell is polarised, the plug physically cannot be inserted backwards - the same mechanical trick as the moulded keyway on a D-sub generally."];
@@ -1281,6 +1280,7 @@ digraph c64 {
   "c64.joystick.gate.spring" [label="Centring springs" fillcolor="#9ece6a22" color="#9ece6a" tooltip="Four small compression or torsion springs push the gate back to neutral from every direction. They are the part that wears out: once the springs weaken, the stick stays pushed, which is the most common repair on a vintage joystick and the reason 'joystick centering' appears in every retro repair gui"];
   "c64.joystick.gate.spring.replacement" [label="Why springs are the failure point" fillcolor="#9ece6a22" color="#9ece6a" tooltip="Gate springs carry the whole centring duty and are cycled by every direction press. Once one is weakened the stick sits off-centre and the machine reads a direction the user is not pressing - the most common single joystick fault of the era."];
   "c64.joystick.gate.spring.wire" [label="Centring spring wire" fillcolor="#9ece6a22" color="#9ece6a" tooltip="Drawn music-wire or stainless spring wire, coiled and closed. Centring springs are the cheapest consumable in the whole joystick and the one that is always replaced rather than repaired."];
+  "c64.extras" [label="Finishing and bundled extras" fillcolor="#ff007c22" color="#ff007c" tooltip="Three branches that hang off the machine rather than being part of it: how legends and colours were printed onto moulded plastic, how one keyboard key becomes a bit in the matrix, and the joystick that shipped in the box in some markets. None of them is needed to trace the machine's own supply line "];
   "c64.keyboard-switches" [label="Keyboard matrix switches and domes" fillcolor="#ff007c22" color="#ff007c" tooltip="How one keystroke on a C64 becomes a 1 in memory: 63 rubber domes on a rigid printed circuit board, scanned by CIA #1 as an 8 x 8 matrix. The domes are carbon-loaded rubber pills that short two plated pads when a keycap's plunger drives them closed, and the scanned result is simply a pair of row and"];
   "c64.keyboard-switches.ribbon" [label="Flat ribbon cable to the mainboard" fillcolor="#7dcfff22" color="#7dcfff" tooltip="A flat multi-conductor ribbon leaves the keyboard board, loops through the case, and terminates at the pin header on the front-left edge of the mainboard. The ribbon is crimped into an insulation-displacement connector on the keyboard end in later designs, and soldered directly to the header on the "];
   "c64.keyboard-switches.ribbon.film" [label="PET/PVC flat flexible cable" fillcolor="#bb9af722" color="#bb9af7" tooltip="Parallel copper conductors laminated between polyester film layers with a PVC jacket. The jacket and the film are all hydrocarbon polymers, so this cable is chemically the same family as the switch housings and the case."];
@@ -1344,7 +1344,6 @@ digraph c64 {
   "c64.decor.pad-print.pad" [label="Silicone rubber printing pad" fillcolor="#bb9af722" color="#bb9af7" tooltip="A soft, solvent-resistant, low-surface-energy pad, almost always silicone rubber, cut or cast with the relief to pick up and transfer the image. It is the consumable that has to be replaced every few thousand impressions, and pad hardness relative to the detail size is the operator's main variable."];
   "c64.decor.pad-print.pad-compound" [label="Two-part silicone pad compound" fillcolor="#bb9af722" color="#bb9af7" tooltip="A polydimethylsiloxane casting system cured at room temperature with a tin catalyst, or an addition-cure platinum system. Pads are cast in a mould against the plate image so that the relief matches the cliche exactly; the chemistry is the same PDMS as the conductive rubber in the keyboard switch and"];
   "c64.decor.pad-print.machine" [label="Two-colour pad printing press" fillcolor="#bb9af722" color="#bb9af7" tooltip="A small cast frame with a plate table, an ink cup or doctor blade, a silicone pad on a shuttle head, and part fixtures on a rotating or indexing table. Each colour station is one table position with its own pad."];
-  "c64.peripherals" [label="Also required to use it" fillcolor="#ff007c22" color="#ff007c" tooltip="A C64 shipped as a box with no screen, no way to save a program and no way to enter one. In 1983 the machine was useless without a television set, a cassette recorder and a joystick, and all three were arguably part of 'a computer' in the way the question was meant. The peripheral branch carries the"];
   "peripheral" [label="Television, cassette drive and connectors" fillcolor="#ff007c22" color="#ff007c" tooltip="A C64 shipped with no screen. It drove a television set through an RF modulator, saved to a cassette deck through the 1541 drive, and took input from a joystick. Three separate supply chains meet here: the television, the cassette drive, and the connectors that carry the signal between them."];
   "peripheral.plug" [label="The connectors: aerial socket, serial link, user port, cassette port" fillcolor="#7dcfff22" color="#7dcfff" tooltip="Three connectors that made a C64 usable rather than just powered: the aerial socket the RF modulator hijacked, the nine-pin link to the 1541, and the 34-conductor ribbon on the back that opened the machine up. This branch is deliberately short. The mains plug and the C64's own power inlet belong to "];
   "peripheral.plug.cassette-port" [label="The six-pin cassette port" fillcolor="#7dcfff22" color="#7dcfff" tooltip="The connector that carries both the audio to a tape recorder and the power to a 1541. It is a 6-pin connector, carrying read, write, sense, motor, 5 V and the 9-12 V motor rail. Commodore's own cable turned it into a DIN-style socket that plugged into a consumer cassette recorder, so a C64 could sav"];
@@ -2450,8 +2449,9 @@ digraph c64 {
   "c64" -> "c64.mains";
   "c64" -> "c64.cables";
   "c64" -> "c64.packaging";
-  "c64" -> "c64.peripherals";
+  "c64" -> "peripheral";
   "c64" -> "c64.extras";
+  "c64" -> "c64.joystick";
   "c64" -> "c64.bottoms-out";
   "c64.bottoms-out" -> "metal";
   "c64.bottoms-out" -> "chem";
@@ -3751,9 +3751,6 @@ digraph c64 {
   "metal.silica.reducer" -> "metal.silica.petcoke";
   "metal.silica.polysilicon.deposition" -> "metal.silica.polysilicon.doping";
   "metal.silica.polysilicon.deposition" -> "metal.silica.polysilicon.flaking";
-  "c64.extras" -> "c64.decor";
-  "c64.extras" -> "c64.keyboard-switches";
-  "c64.extras" -> "c64.joystick";
   "c64.joystick" -> "c64.joystick.gate";
   "c64.joystick" -> "c64.joystick.microswitches";
   "c64.joystick" -> "c64.joystick.shaft";
@@ -3785,6 +3782,9 @@ digraph c64 {
   "c64.joystick.gate.friction.nylon-bushing" -> "c64.joystick.gate.friction.nylon-bushing.resin";
   "c64.joystick.gate.spring" -> "c64.joystick.gate.spring.wire";
   "c64.joystick.gate.spring" -> "c64.joystick.gate.spring.replacement";
+  "c64.extras" -> "c64.decor";
+  "c64.extras" -> "c64.keyboard-switches";
+  "c64.extras" -> "c64.joystick";
   "c64.keyboard-switches" -> "c64.keyboard-switches.matrix";
   "c64.keyboard-switches" -> "c64.keyboard-switches.domes";
   "c64.keyboard-switches" -> "c64.keyboard-switches.keycap";
@@ -3846,8 +3846,6 @@ digraph c64 {
   "c64.decor.pad-print.ink" -> "c64.decor.pad-print.ink-solvent";
   "c64.decor.pad-print.cliche" -> "c64.decor.pad-print.electroplating";
   "c64.decor.pad-print.pad" -> "c64.decor.pad-print.pad-compound";
-  "c64.peripherals" -> "peripheral";
-  "c64.peripherals" -> "c64.joystick";
   "peripheral" -> "peripheral.why-rf";
   "peripheral" -> "peripheral.tv";
   "peripheral" -> "peripheral.cassette";

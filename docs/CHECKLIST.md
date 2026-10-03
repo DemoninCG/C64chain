@@ -192,6 +192,44 @@ deserve their own line.
 - Do not describe a sibling node ("as described above", "see the etching
   section"). Describe the thing in front of you.
 
+### 7a. Write about the node, not about the pass
+
+Node text is read by someone who wants to know what a substance is and how it
+was made. It is not read by the next maintainer. So no sentence may be about the
+authoring process.
+
+**Delete** — anything describing what was done to the text:
+
+- "Retyped from facility to note", "renamed from X", "this pass does not own"
+- references to this checklist, its rules, or to `docs/`
+- "the audit's warning is accepted deliberately", "zero audit WARNs"
+- merge mechanics: "path-local copy", "keep-rule", "the canonical published
+  node", "was merged into"
+- agent-facing remarks: "this fragment", "the other agent deleted this"
+- graph mechanics: "referenced from 35 places in the tree", "dangling id"
+
+**Keep, but state it neutrally** — uncertainty is wanted; first person is not.
+The brief allows confidence levels, so the information stays and only the voice
+changes:
+
+| instead of | write |
+| --- | --- |
+| "I could not confirm which dopant gas a 1982 plant used" | "Not established: which dopant gas a 1982 plant used" |
+| "I have not verified it for the whole set" | "Not verified across the whole set" |
+| "I am not confident in this figure" | "Figure is uncertain" |
+
+**One thing not to over-apply.** Referring to "this tree" is usually *fine* and
+often useful — "the same petrochemical chain as everything else on this tree",
+"the largest single industrial electricity draw anywhere in this tree" orient a
+reader and are about the subject. Only the editorialising kind is build
+commentary: "the most extraordinary leaf in this tree", "the only reason
+potassium is in this tree". Measured on this tree, 49 of 59 occurrences were the
+legitimate kind, so do not strip the phrase mechanically.
+
+`node scripts/metalang.mjs` reports all three classes, and sorts them that way
+for exactly this reason. Treat its DELETE and REWRITE lists as a work list and
+its JUDGEMENT list as something to read.
+
 ---
 
 ## 8. What you may change freely, and what is a proposal

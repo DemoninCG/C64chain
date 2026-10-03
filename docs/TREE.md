@@ -1,7 +1,7 @@
 # Production tree — Commodore 64
 
-2439 nodes, max depth 15, 1293 leaves.
-Generated 2026-10-03T05:46:37.967Z by `scripts/build.mjs`. Do not edit by hand.
+2438 nodes, max depth 15, 1293 leaves.
+Generated 2026-10-03T06:01:34.548Z by `scripts/build.mjs`. Do not edit by hand.
 
 # Commodore 64 (breadbin, ASSY 250407) `c64`
 
@@ -4000,35 +4000,31 @@ Heavier double-wall corrugated, usually a recycled medium and recycled liners, w
 
 At the end of the case-moulding and assembly plant, machines are bagged, placed in the foam blocks, dropped into the printed box with the manual and the warranty card, and the box is closed, labelled and case-packed. This was semi-automatic and was the labour-heavy step that determined where a home computer was finally assembled.
 
-## Also required to use it `c64.peripherals`
-
-A C64 shipped as a box with no screen, no way to save a program and no way to enter one. In 1983 the machine was useless without a television set, a cassette recorder and a joystick, and all three were arguably part of 'a computer' in the way the question was meant. The peripheral branch carries them, with the 1541 disk drive and the television and its CRT glass among them.
-
-### Television, cassette drive and connectors `peripheral`
+## Television, cassette drive and connectors `peripheral`
 
 A C64 shipped with no screen. It drove a television set through an RF modulator, saved to a cassette deck through the 1541 drive, and took input from a joystick. Three separate supply chains meet here: the television, the cassette drive, and the connectors that carry the signal between them.
 
-#### Why a television set was mandatory `peripheral.why-rf` _(medium)_
+### Why a television set was mandatory `peripheral.why-rf` _(medium)_
 
 The VIC-II chip outputs a 1 MHz-ish analogue composite signal on its own pin: luma, blanking and a colour subcarrier, but no RF. In 1982 there was no agreed analogue video standard between a computer and a monitor, no DE-15 or VGA, and no DVI. Commodore's answer was a small RF modulator, a printed board with one video modulator oscillator and a VHF converter, whose output was injected into the aerial socket of an ordinary television. The TV then had to be tuned to channel 3 (61.75 MHz in the US) or channel 4, and the picture was in colour only if the TV had a colour decoder for that subcarrier frequency.
 
-##### Signal-level margin between a modulator and a transmitter `peripheral.why-rf.tv-loses-75-ohm` _(low)_
+#### Signal-level margin between a modulator and a transmitter `peripheral.why-rf.tv-loses-75-ohm` _(low)_
 
 A broadcast TV station transmitted tens of kilowatts; a C64 modulator put out about a milliwatt. The set had to be tuned by hand, and reception quality was a function of the modulator's output impedance matching the aerial input. Anyone who ever moved the TV or unplugged the aerial lead knows how marginal this was.
 
-##### Later video connectors: the 1702 DIN and the C128 RGBI `peripheral.why-rf.modern-comparison` _(medium)_
+#### Later video connectors: the 1702 DIN and the C128 RGBI `peripheral.why-rf.modern-comparison` _(medium)_
 
 Commodore's own 1702 monitor took a composite luma-and-blank input over a 5-pin DIN, and in 1985-86 Commodore adopted the DE-9 connector used by the C128's RGBI monitors, which carried separate red, green and blue analogue signals on pins 5, 6, 7 with no modulation at all. There was still no standard, which is why the C128 ended up with a proprietary DIN-8 video connector rather than a DE-15.
 
-#### Domestic colour television set, 13 inch NTSC `peripheral.tv`
+### Domestic colour television set, 13 inch NTSC `peripheral.tv`
 
 A 1982-84 US domestic set: 12.5 or 13 inch diagonal, 525-line NTSC, 60 Hz field rate, all-signal-in-a-can. It was the only display a C64 owner was likely to have, and the C64 looked terrible on it: no separate chrominance bandwidth, a modulated sound carrier that carried the computer's audio, and a colour subcarrier at a frequency the TV's chroma band had to be tuned to.
 
-##### The picture tube (CRT) `peripheral.tv.crt`
+#### The picture tube (CRT) `peripheral.tv.crt`
 
 A vacuum envelope of two pieces of glass welded together: a flat-ish panel carrying the phosphor screen inside its face, and a flanged funnel tapering to a cylindrical neck that carries the electron gun. The panel-to-funnel joint is sealed with a lead-oxide frit fired in a belt kiln. Inside the tube, electrons leave a hot cathode, are focused and accelerated to about 25 kV, steered magnetically across the panel, and slam into phosphor grains through a steel mask.
 
-###### Faceplate panel and funnel, borosilicate glass `peripheral.tv.crt.panel` _(medium)_
+##### Faceplate panel and funnel, borosilicate glass `peripheral.tv.crt.panel` _(medium)_
 
 The tube is made of two glass parts that must expand at the same rate or the tube shatters at the seal. The funnel is a leaded or unlead borosilicate; the panel is a flatter, alkali-free glass with a much lower thermal expansion coefficient. Their junction is a strip of lead borosilicate frit, printed onto both parts and fired, which melts at a temperature low enough that the base glass does not slump.
 
@@ -4064,7 +4060,7 @@ The panel is not the same glass as the funnel. It is alkali-free borosilicate wi
 
 Where the funnel batch leaned on lead and alkali for its expansion match, the panel batch deliberately excluded sodium and potassium and got its properties from silica, alumina and boric oxide plus a small amount of barium to suppress solarisation under the phosphor firing. It is the same silica sand as the funnel, but a batch designed to be unfriendly to sodium.
 
-###### P22 phosphor screen, blue/green/red `peripheral.tv.crt.phosphor` _(medium)_
+##### P22 phosphor screen, blue/green/red `peripheral.tv.crt.phosphor` _(medium)_
 
 The inside face of the panel carries a printed tri-colour phosphor: blue zinc sulphide doped with silver, green zinc sulphide doped with gold, and a red phosphor around 610 nm, arranged as a dot triad maybe 0.6-0.8 mm pitch behind the shadow mask. The whole layer is only about 25-40 microns thick wet and shrinks to 15-25 microns fired, then gets a mirror of aluminium vapour on top so the electron beam that misses the phosphor is absorbed instead of lighting the room.
 
@@ -4104,7 +4100,7 @@ Copper, usually added as copper oxide, deepens the green and creates the donor l
 
 The 1980s red was the least settled of the three. CaS:Eu and Eu-doped ZnS were both in service; CaS:Eu has the better red chromaticity but is hygroscopic and needs protection from moisture. The europium came from bastnasite, a light rare-earth carbonate, cracked with acid and solvent-extracted to 99.9% europium oxide.
 
-###### Shadow mask and aperture grille `peripheral.tv.crt.mask` _(medium)_
+##### Shadow mask and aperture grille `peripheral.tv.crt.mask` _(medium)_
 
 Without something to stop every beam landing on every phosphor, a CRT would be a monochrome tube with three faint colour washes. The shadow mask is a curved steel foil perforated with about 25,000 slots; the electron beam is steered so each of the three guns aims through the correct hole. The alternative is the aperture grille, two combs of tensioned vertical wires with no foil at all.
 
@@ -4124,7 +4120,7 @@ The flat sheet is cleaned, coated with photoresist, exposed through a master pla
 
 The alternative to a foil: two combs of vertical wires under tension, typically nickel-chrome plated steel wire, at a 0.5-0.6 mm pitch. Because the mask is vertical wires only, the beam can strike them from any horizontal position, which gives the Trinitron its famous vertically sharp picture and lets the two outer guns share a defocus. Two thin damper wires keep the combs from ringing.
 
-###### Electron gun, three guns `peripheral.tv.crt.gun`
+##### Electron gun, three guns `peripheral.tv.crt.gun`
 
 Three parallel electron guns in one pinch, one per phosphor, each with a hot cathode, a control grid, a screen grid, a focus grid and an anode. In a 13 inch set of 1982 they were usually separate but adjacent, converging at the screen; the convergence magnets on the neck bent them into line and the electrostatic or magnetic focus brought the three spot sizes down to about 0.5-1.0 mm at the panel.
 
@@ -4164,7 +4160,7 @@ The anode block and the inside of the funnel near the neck are flame-blacked wit
 
 On the cheaper sets the three guns were focused by one small coil slipped over the neck outside the vacuum envelope, adjustable from the back of the set. Sets without static focus simply ran the focus grid at a fixed voltage and adjusted focus only for the corners with a convergence adjustment in the yoke.
 
-###### Deflection yoke and deflection coils `peripheral.tv.crt.yoke`
+##### Deflection yoke and deflection coils `peripheral.tv.crt.yoke`
 
 A bell-shaped ferrite or powdered-iron core clamped on the tube neck carrying two orthogonal saddle windings. The horizontal winding is driven by the line output stage and sits in series with the flyback, so the scan current is the same current that steps up to 25 kV. The vertical winding is in the collector of the vertical output stage and carries a sawtooth at 60 Hz.
 
@@ -4188,7 +4184,7 @@ A 13 inch set with a 90 degree deflection had visible pincushion and barrel dist
 
 The small magnets that set the deflection centre and the geometry of a 1982 set were usually Alnico, an iron-aluminium-nickel alloy, or a small ferrite. Samarium-cobalt was the high-performance alternative but was too expensive and too new for a domestic set; it became standard in the small deflection magnets of the 1990s. Samarium is a rare earth, and the rare earths came from bastnasite.
 
-###### EHT / line output transformer (flyback) `peripheral.tv.crt.flyback`
+##### EHT / line output transformer (flyback) `peripheral.tv.crt.flyback`
 
 The flyback does three jobs at once: it steps the 120 V B+ up to 20-25 kV for the anode, it develops the high flyback pulse that the line output transistor uses to make its collector current fall fast, and it carries auxiliary windings that supply the 12-25 V the gun heater, the tuner motor, the oscillator and the horizontal oscillator circuits need. In 1982 it was an open-frame transformer on a laminated or ferrite core, wrapped in epoxy and varnished, mounted on the chassis next to the tube neck with several hundred volts between it and everything else.
 
@@ -4216,9 +4212,9 @@ The EHT gets into the tube through a metal button, usually a nickel or Kovar cup
 
 The anode button was a nickel or Kovar cup frit-sealed into the funnel wall, and the external cap was moulded silicone rubber. The seal frit was the same lead borosilicate as the panel seal, which is why the button had to be fired at the same 430-460 degrees C in the same continuous kiln as the tube.
 
-                - *Lead borosilicate sealing frit* `peripheral.tv.crt.panel.frit` *(seen above)*
-                - *Kovar, the Fe-Ni-Co lead-in glass match* `peripheral.tv.crt.gun.grids.kovar` *(seen above)*
-###### Implosion protection and the safety faceplate `peripheral.tv.crt.implosion` _(medium)_
+              - *Lead borosilicate sealing frit* `peripheral.tv.crt.panel.frit` *(seen above)*
+              - *Kovar, the Fe-Ni-Co lead-in glass match* `peripheral.tv.crt.gun.grids.kovar` *(seen above)*
+##### Implosion protection and the safety faceplate `peripheral.tv.crt.implosion` _(medium)_
 
 A colour TV tube holds about 0.5-1.5 tonnes per square metre of glass at a quarter atmosphere, and shatters into shards that will cut. Three defences: a laminate or thicker-than-necessary faceplate whose edges are the thickest part, a mask retaining ring that holds the faceplate to the frame rather than letting it come out, and a wraparound rim so the panel cannot pop forward. Cheap sets used less glass; expensive and safe sets used a tempered or laminated panel and, from the late 1970s, an implosion protection plate bonded to the front.
 
@@ -4234,15 +4230,15 @@ The getter is a thin foil strip of barium, titanium and palladium powder bonded 
 
 A separate aluminium mirror, vapour-deposited on the inside of the funnel behind the gun, intended to bounce stray light back towards the phosphor and raise light output. It is distinct from the phosphor back layer, which is where the black level comes from. Modern practice replaced it with a black internal coating on the neck to absorb stray light instead, and moved efficiency to the phosphor and to tinted faceplate glass.
 
-##### RF tuner, VHF and UHF `peripheral.tv.tuner`
+#### RF tuner, VHF and UHF `peripheral.tv.tuner`
 
 The front end. In 1982 the US TV band was VHF channels 2-13 (55-220 MHz) and UHF 14-83 (470-890 MHz), and most sets had either a combined tuner or two side-by-side ones behind a single dial. A high-quality set used a rotary switch with a chain of interlocking contacts; a cheap one used a varactor diode and a small motor, or a continuous mechanical tuning with a motor and a rotor. Whatever the mechanism, the output was always the same: a fixed 45 MHz intermediate frequency.
 
-###### VHF gangs: RF amplifier and mixer coils `peripheral.tv.tuner.vhf` _(medium)_
+##### VHF gangs: RF amplifier and mixer coils `peripheral.tv.tuner.vhf` _(medium)_
 
 Two tuned circuits on ferrite cores: an RF amplifier and a mixer, both switched through a gang so they track. The coils are a few turns of enamelled copper on ferrite slug cores; the switch has a rotor with printed or wound inductors that tap through the band, and an AFC or motor to pull it into lock.
 
-###### UHF tuner with varactor diode `peripheral.tv.tuner.uhf` _(medium)_
+##### UHF tuner with varactor diode `peripheral.tv.tuner.uhf` _(medium)_
 
 At 500-800 MHz a lumped LC circuit is hopeless, so the UHF tuner used a coaxial cavity or a stripline distributed resonator made of folded sheet metal, with a silicon varactor diode as the tuning element. Reverse-biasing the diode changed its junction capacitance from tens to a few picofarads, which moved the resonance across the band. A small DC motor rotated the cavity to track, or a servo pushed a varactor.
 
@@ -4254,7 +4250,7 @@ A reverse-biased silicon pn junction used as a voltage-variable capacitor. At ze
 
 The UHF resonant circuit is a piece of metal: folded sheet or machined brass forming a half-wavelength line, with the shunt capacitance of the varactor at the open end and a tap for the transistor. This is one of the few places in a television where the RF circuit is metal rather than a PCB, because at 800 MHz a printed board would radiate. Brass came from zinc and copper ores.
 
-###### RF amplifier and mixer `peripheral.tv.tuner.front-end`
+##### RF amplifier and mixer `peripheral.tv.tuner.front-end`
 
 A low-noise bipolar or MOSFET amplifier at the antenna frequency, then a mixer down to 45 MHz. In 1982 the RF device was often a silicon planar MOSFET (dual-gate, for the UHF) or a wideband bipolar. The whole RF section lived in a die-cast or stamped zinc-plated steel can to keep it away from the switching supply and the line output.
 
@@ -4270,7 +4266,7 @@ The acoustic medium. Spodumene (LiAlSi2O6) ore is beneficiated and converted to 
 
 A lithium aluminium silicate, 6.0-7.0% Li2O, that occurs in granitic pegmatites and is mined in enormous tonnages because a lithium battery plant in 1982 needed thousands of tonnes a year. Roasting with sulphuric acid turns it into lithium sulphate, and the impurity that everyone fights is iron.
 
-###### Die-cast zinc or stamped steel RF can `peripheral.tv.tuner.can` _(medium)_
+##### Die-cast zinc or stamped steel RF can `peripheral.tv.tuner.can` _(medium)_
 
 The tuner and front end were a sealed metal can soldered to the main board. On a cheap set it was a stamped zinc-plated steel can; on a good one a die-cast zinc or aluminium can with a machined seam. Zinc plating comes from zinc electroplating baths, so it is the same zinc industry as the galvanised chassis.
 
@@ -4278,15 +4274,15 @@ The tuner and front end were a sealed metal can soldered to the main board. On a
 
 The stamped steel RF can was plated in a zinc sulphate or zinc chloride bath with an aluminium or steel anode, then often given a chromate passivation. Zinc plating is cheap corrosion protection and it is the same zinc industry as the CRT phosphor and the die-cast tuner body.
 
-###### Dial cord and pulley gear train `peripheral.tv.tuner.dial-cord`
+##### Dial cord and pulley gear train `peripheral.tv.tuner.dial-cord`
 
 The channel knob turned a pulley that wound a braided cord onto another pulley geared to the tuner rotor. It was a real mechanical system that stretched, slipped and broke, and it is the reason every vintage-TV owner has a drawer of spare dial cords. The cord was a braided polyester or nylon sheath over a cotton core.
 
-##### The chassis: video, sync, line output, audio `peripheral.tv.chassis`
+#### The chassis: video, sync, line output, audio `peripheral.tv.chassis`
 
 The electronics of the set. By 1982 this was a single-sided or double-sided printed circuit board carrying a mix of discrete transistors, a handful of silicon integrated circuits (the video amplifier, the chroma, the vertical, the audio), a rotary switch bank and about forty electrolytic and film capacitors. The board sat in a zinc-plated steel chassis with a perforated steel cover, and the flyback sat beside it throwing both heat and electromagnetic noise.
 
-###### FR-4 epoxy-glass printed circuit board `peripheral.tv.chassis.pcb`
+##### FR-4 epoxy-glass printed circuit board `peripheral.tv.chassis.pcb`
 
 Glass-reinforced epoxy laminate with a copper foil laminated to each side and printed photolithographically. The glass fibre is the reason FR-4 has a low, controlled thermal expansion; the epoxy binds it. It is drilled, plated through with copper, mask-printed and silkscreened. After etching, the whole board is flooded with a green or brown epoxy solder mask about 10-25 microns thick, leaving only the pads open, and white epoxy legend ink is silkscreened through a fine mesh for the reference designators. The mask is itself an epoxy, and the legend is a screen-printable ink cured rather than melted. Mask is printed before the tin-lead dip, so it covers the copper that the dip is going to throw away.
 
@@ -4298,7 +4294,7 @@ The reinforcement is a textile of drawn glass filament: silica sand is melted in
 
 The board was dipped or dragged through a molten bath of 60/40 tin-lead, which left a solder film on the pads and bridged the copper under the mask. Immersion tin plating or gold-flash were also used, but a television of 1982 was overwhelmingly hot-tin-dipped. Tin from cassiterite, lead from galena, both of which are already in this tree.
 
-###### Video chain: IF, detector, video amp, colour `peripheral.tv.chassis.video`
+##### Video chain: IF, detector, video amp, colour `peripheral.tv.chassis.video`
 
 The 45 MHz IF is amplified, limited, then detected: the video signal rides on the picture carrier at 45.75 MHz, the colour subcarrier sits 3.58 MHz below it as a sideband, and the sound carrier sits 9 MHz above at 54.75 MHz. The synchronous detector recovers the baseband video; a PLL multiplies the recovered 3.58 MHz subcarrier up and phase-shifts it 90 degrees to drive the two demodulators; the result is U and V, added back to luminance to give R, G and B, which drive the gun cathodes.
 
@@ -4318,12 +4314,12 @@ Most transistors in a 1982 set were discrete: a high-gain IF transistor, the vid
 
 A small-signal NPN transistor is a few hundred square microns of silicon, aluminium metallised, mounted on a header and sealed in epoxy or metal. The die itself is a slice of the same 99.99% wafer as the video IC, cut with a diamond-impregnated wheel and diced on a saw.
 
-                - *Silicon wafer, P-type* `peripheral.tv.chassis.video.ic.die` *(seen above)*
+              - *Silicon wafer, P-type* `peripheral.tv.chassis.video.ic.die` *(seen above)*
 ###### Automatic gain control `peripheral.tv.chassis.video.agc` _(medium)_
 
 The AGC samples the DC level off the video detector and feeds a reverse bias back to the first two IF stages, holding the picture bright whether the aerial is good or the C64 modulator is a milliwatt away from nothing. This was the one part of a TV that genuinely cared about the C64 signal, because a C64 was a much weaker source than a broadcast station and the AGC had to find a way to open up. A key-operated AGC defeat, or a 'manual gain' switch, was a modification for fringe-area reception.
 
-###### Horizontal line output stage, 15,734 Hz `peripheral.tv.chassis.line-out`
+##### Horizontal line output stage, 15,734 Hz `peripheral.tv.chassis.line-out`
 
 The heart of the set's power and geometry. The line oscillator runs at 15,734 Hz; the driver and the output transistor switch the flyback primary, so the collector current rises linearly during scan and then collapses in the flyback retrace. The flyback uses that collapse to develop a high-voltage pulse, rectified to the EHT. The same transformer runs back through the damper to create a 200-250 V pump rail for the video output stage. In 1982 this was usually a discrete silicon EFT (a triple-diffused or a high-voltage epitaxial transistor) because a single silicon transistor could not safely switch a 900 V collector at 15.7 kHz.
 
@@ -4343,7 +4339,7 @@ After the flyback, a single silicon rectifier at 25 kV. On larger sets a doubler
 
 A metallised polypropylene or polystyrene film capacitor rated at kilovolts. The film is stretched polypropylene, metallised with a thin aluminium or zinc layer, wound, and the whole thing impregnated and potted. Zinc metallising was cheap and equivalent to aluminium for small values; aluminium became standard for reliability.
 
-###### Vertical output stage, 60 Hz `peripheral.tv.chassis.vertical`
+##### Vertical output stage, 60 Hz `peripheral.tv.chassis.vertical`
 
 The vertical sweep at 60 Hz. The oscillator ran at twice the line rate and a count-down circuit divided by two, a design that keeps the vertical locked to the horizontal. The output stage amplified a small ramp and drove the vertical yoke, with a small electrolytic capacitor across the coil to correct the crosstalk that coupling into the horizontal yoke produced. A IC did most of this, with one or two power transistors at the output.
 
@@ -4351,7 +4347,7 @@ The vertical sweep at 60 Hz. The oscillator ran at twice the line rate and a cou
 
 A single IC contained the oscillator, the count-down divider, the ramp generator and the driver, needing only two or three external transistors. It was one of the first large consumer uses of a mixed-analogue IC that made a television much easier to build, and it is the reason a 1982 TV was a single-board affair.
 
-###### Audio: 4.5 MHz intercarrier to a speaker `peripheral.tv.chassis.audio`
+##### Audio: 4.5 MHz intercarrier to a speaker `peripheral.tv.chassis.audio`
 
 The sound carrier is taken off the same IF strip at 54.75 MHz, recovered at 4.5 MHz above the video, limited and FM-demodulated, then amplified. The 4.5 MHz intercarrier was chosen so the sound did not interfere with the video and to let the sound survive a picture cut-off (the 'intercarrier' idea). Amplified to a few watts into an 8 ohm speaker, or about 2 W per speaker into two 8 ohm speakers in parallel. The C64's audio came out of this amplifier, which is why it was loud, thin and slightly buzzy.
 
@@ -4367,12 +4363,12 @@ An integrated amplifier (a few watts, a single 8-14 pin IC) or a discrete predri
 
 The device that actually pushed the current into the speaker: an NPN/PNP complementary pair on a thick die in a TO-3 or plastic power package, bolted to the chassis as its own heatsink. From 1990s multisilicon dice replaced the single-crystal die, but a 1982 set had one transistor per output channel.
 
-                - *Silicon wafer, P-type* `peripheral.tv.chassis.video.ic.die` *(seen above)*
+              - *Silicon wafer, P-type* `peripheral.tv.chassis.video.ic.die` *(seen above)*
 ###### Volume potentiometer, carbon track `peripheral.tv.chassis.audio.volume-pot`
 
 A rotary carbon track pot, typically 10 kohm or 100 kohm logarithmic (audio taper), spliced into the audio line. The track is a carbon film printed or sprayed on a phenolic or ceramic substrate; the wiper is a sprung brass or copper blade. This is the same technology as the volume control in a pocket radio, and the carbon comes from petroleum coke exactly as the CRT blackening does.
 
-###### Power supply: mains transformer and reservoir `peripheral.tv.chassis.power`
+##### Power supply: mains transformer and reservoir `peripheral.tv.chassis.power`
 
 Most 1982 sets were linear: a hot-chassis or a cold-chassis series/parallel mains transformer stepping 117 V down to about 110 V AC, a diode bridge rectifier, and a big electrolytic reservoir at 120 V feeding the line output. The main electrolytic was the largest, hottest component on the board and usually the first thing to dry out. A minority used a small switchmode supply for the logic rails with a flyback of its own.
 
@@ -4388,39 +4384,39 @@ The reservoir is a wound aluminium foil anode with an oxide film formed on it, a
 
 Four silicon diodes in a moulded bridge package, rated at a few amps and 100-200 V. Cheap sets rectified with two diodes and a centre-tapped transformer instead. The bridge was usually on the chassis edge with the heatsink tab or in free air.
 
-##### Loudspeaker, 8 ohm, 3-4 inch `peripheral.tv.speaker`
+#### Loudspeaker, 8 ohm, 3-4 inch `peripheral.tv.speaker`
 
 An 8 ohm speaker of about 3.5-4 inch diameter on a small set: a paper pulp cone, a pressed steel or plastic basket, a copper voice coil on a former, and a ferrite magnet. It was screwed to a baffle in the cabinet with the back magnet projecting into whatever space was left, which is why small speakers of the period often had a shallow magnet or a rear vent.
 
-###### Paper pulp cone `peripheral.tv.speaker.cone`
+##### Paper pulp cone `peripheral.tv.speaker.cone`
 
 The cone is a paper pulp: refined wood fibre pressed wet into a shaped blank and dried, giving a light, stiff, cheap diaphragm. It is essentially the same material as a paper bag, which is why it creases if you poke it. A small set used a paper cone; a later or better one a woven or moulded polypropylene cone.
 
-###### Pressed steel basket `peripheral.tv.speaker.basket` _(medium)_
+##### Pressed steel basket `peripheral.tv.speaker.basket` _(medium)_
 
 The cone is glued to a stamped steel basket that holds the magnet and the voice coil in register. It came off the same cold-reduced low-carbon sheet as the shadow mask and the chassis, with the same iron ore behind it.
 
-###### Ferrite magnet `peripheral.tv.speaker.magnet` _(medium)_
+##### Ferrite magnet `peripheral.tv.speaker.magnet` _(medium)_
 
 A ring or cup magnet of barium or strontium ferrite, sintered and magnetised across the gap. Barium ferrite needed barium carbonate, which is why barite mining also fed speakers. Ferrite, not Alnico, was the standard by 1982 because it was cheap and had a higher coercivity.
 
-###### Copper voice coil on a former `peripheral.tv.speaker.voice-coil` _(medium)_
+##### Copper voice coil on a former `peripheral.tv.speaker.voice-coil` _(medium)_
 
 Two layers of enamelled copper wire, about 40-60 turns, wound on a paper or aluminium former and centred in the magnet gap. It is a minute amount of copper, on the order of a gram, and it sits in a gap of under a millimetre.
 
-##### Cabinet and front bezel `peripheral.tv.cabinet`
+#### Cabinet and front bezel `peripheral.tv.cabinet`
 
 The outside of the set: a moulded plastics shell wrapped around the chassis and the tube, with a wood-grain print or a real veneer. A 1982 13 inch set was typically an injection-moulded ABS or ABS/polycarbonate cabinet, textured, with the front bezel carrying the speaker grille, the control knobs and the brand badge. Larger and older-style sets had a wood-veneered or wood-framed cabinet; the very cheapest had a printed paper laminate over a steel or plastic shell.
 
-###### Injection mould the cabinet `peripheral.tv.cabinet.moulding`
+##### Injection mould the cabinet `peripheral.tv.cabinet.moulding`
 
 ABS pellets were dried, melted at 230-260 degrees C, injected into a nickel-chromium plated steel mould at 1000-2000 bar, held under pressure to pack, cooled on a water circuit and ejected. The cabinet was a single moulding with the speaker grille, the bezel ledges, the screw bosses and the airflow slots all integral; the front bezel was often a separate moulding in a different colour. A 13 inch set's mould ran 10,000 to a few hundred thousand shots.
 
-###### Wood veneer or woodgrain laminate `peripheral.tv.cabinet.wood` _(medium)_
+##### Wood veneer or woodgrain laminate `peripheral.tv.cabinet.wood` _(medium)_
 
 A console or a large set of the early 1980s was often a real cabinet: a wood frame veneered with walnut, mahogany or teak, sometimes over particle board. The cheaper route was a printed polyester or melamine laminate, several sheets laminated and printed with a photographic woodgrain. A 13 inch portable used moulded ABS with the grain embossed into the mould texture and painted.
 
-###### Case screws and brackets `peripheral.tv.cabinet.screws` _(medium)_
+##### Case screws and brackets `peripheral.tv.cabinet.screws` _(medium)_
 
 The chassis was fastened into the cabinet with self-tapping screws into plastic bosses, and the back was held with a handful of machine screws into zinc-plated or black-oxide steel. The brackets that carried the tube and the board were zinc-plated sheet steel.
 
@@ -4428,15 +4424,15 @@ The chassis was fastened into the cabinet with self-tapping screws into plastic 
 
 Self-tapping screws into plastic bosses and a handful of machine screws into zinc-plated or black-oxide steel. Zinc plating is the cheapest corrosion protection for a small steel part and it came off the same zinc chain as everything else in this branch.
 
-###### Brand badge and control knobs `peripheral.tv.cabinet.badge` _(medium)_
+##### Brand badge and control knobs `peripheral.tv.cabinet.badge` _(medium)_
 
 The logo badge was an embossed or plated plastic medallion, and the knobs were moulded ABS or phenolic on a zinc or aluminium die-cast core with a moulded pointer. On a cheap set the badge was printed; on a good one it was a plated plastic insert.
 
-##### Front controls: pots, switches, dial `peripheral.tv.controls`
+#### Front controls: pots, switches, dial `peripheral.tv.controls`
 
 Brightness, contrast, colour, tint, volume and the channel selector, plus a fine-tuning and a V-hold behind the cabinet. The pots are carbon track or cermet; the switches are an AC line switch and often a rotary band switch or push-buttons for the a/v functions.
 
-###### AC line switch and interlock `peripheral.tv.controls.switch` _(medium)_
+##### AC line switch and interlock `peripheral.tv.controls.switch` _(medium)_
 
 A rotary or push-pull mains switch on the front panel, often interlocked so that a set with a back cover off could not be switched on (the 'interlock' on a portable). The switch contacts were silver-plated brass, and the whole switch was a snap-action mechanism in a phenolic body.
 
@@ -4444,16 +4440,16 @@ A rotary or push-pull mains switch on the front panel, often interlocked so that
 
 Mains switch and rotary tuner contacts were silver-plated brass or copper, because silver has the highest conductivity of any metal and does not oxidise. Silver plating was applied from a cyanide or an acid bath, and the silver itself came overwhelmingly from the anode slimes of copper refining.
 
-              - *Silver activator* `peripheral.tv.crt.phosphor.zns.silver` *(seen above)*
-###### VHF dial and channel drum `peripheral.tv.controls.vhf-dial` _(medium)_
+            - *Silver activator* `peripheral.tv.crt.phosphor.zns.silver` *(seen above)*
+##### VHF dial and channel drum `peripheral.tv.controls.vhf-dial` _(medium)_
 
 The channel numbers were on a printed drum or card behind a window, or on a flat dial plate, driven by the cord from the knob. The UHF channels 14-83 needed a drum or a fan-shaped card because there were 70 of them, which is why UHF dials of the period were a distinctive piece of mechanical design.
 
-##### Aerial input and antenna lead `peripheral.tv.aerial`
+#### Aerial input and antenna lead `peripheral.tv.aerial`
 
 The 75 ohm coaxial aerial socket at the back, the twin-lead alternative for indoor aerials, and the telescopic whip on a portable. The C64 was plugged into that socket, in parallel with whatever aerial the set had. The socket was either a threaded F-type, or a cheaper bayonet or push-on type in Europe.
 
-###### F-type coaxial connector `peripheral.tv.aerial.f-connector` _(medium)_
+##### F-type coaxial connector `peripheral.tv.aerial.f-connector` _(medium)_
 
 A threaded, quarter-turn connector for 75 ohm coax, usually brass with a nickel or cadmium plate and a dielectric insert of PTFE or polyethylene. Brass is copper-zinc, so this little part pulls from both the copper and the zinc industry; the zinc can also be the zinc plated steel shell.
 
@@ -4461,7 +4457,7 @@ A threaded, quarter-turn connector for 75 ohm coax, usually brass with a nickel 
 
 Brass is melted from cathode copper and zinc ingot, roughly 60/40 for free-cutting brass, and cast or extruded into fittings. The zinc came from sphalerite and the copper from chalcopyrite, both already in this branch.
 
-###### Coaxial or twin-lead antenna lead `peripheral.tv.aerial.coax` _(medium)_
+##### Coaxial or twin-lead antenna lead `peripheral.tv.aerial.coax` _(medium)_
 
 RG-59 or RG-6 coax: a copper or tinned copper braid, a polyethylene or PTFE dielectric, and a solid copper centre conductor. RG-59 is 52 ohm and was what an indoor or a bench lead of the era was. The alternative was 300 ohm flat twin-lead, which matched indoor dipoles and did not need coax. The polyethylene in the coax came from ethylene, which came from the cracker, which came from naphtha and from crude.
 
@@ -4469,7 +4465,7 @@ RG-59 or RG-6 coax: a copper or tinned copper braid, a polyethylene or PTFE diel
 
 Polyethylene is polymerised from ethylene, which comes from a steam cracker on naphtha. Where the chlorination route was used (for PVC or for the chloromethane that goes into the foam blowing), the chlorine came from salt electrolysis. Both the polymer and the chlorine are therefore descendants of crude oil and of halite, and both branches meet in the cable jacket.
 
-###### Telescopic whip antenna `peripheral.tv.aerial.whip` _(medium)_
+##### Telescopic whip antenna `peripheral.tv.aerial.whip` _(medium)_
 
 On a portable set, a telescopic whip: a chrome-plated steel rod in a plastic base, with a ball joint for the angle. It was a whip antenna for VHF, and on UHF-only portables it was a loop inside the cabinet.
 
@@ -4497,15 +4493,15 @@ Just below the chromitite seams of the Bushveld Complex lies a 0.4-1 m layer of 
 
 A normal open pit advances in benches 15 m high and 100-200 m wide, with haul roads on every bench. A chromite seam is 1-6 m thick, so the pit has to advance along the seam instead, and the benches are 100-200 m high with a 5-10 m working width and a haul road cut into the wall. The consequence is a bench width of a few tens of metres where a truck needs twenty, so the ore is either hauled a long way or handled by a shovel that strips the ore off the face and tips it down to a loading point on the bench floor. That is why the Bushveld pits look nothing like an iron ore pit even though they move similar tonnages, and it is a nice demonstration that mining cost is a function of geometry before it is a function of the rock.
 
-##### Mains lead, suppression filter and fuse `peripheral.tv.mains`
+#### Mains lead, suppression filter and fuse `peripheral.tv.mains`
 
 A 1982 set had a two or three core mains lead, an entrapment and bypass capacitor for radio interference, and one or two fuses. The mains filter is the reason a television did not buzz on an AM radio, and the reason the plastic of a 1980s set smelled faintly of phenolic. The fuse was a small glass or ceramic cartridge with a wire or a metal link.
 
-###### Mains cord, PVC jacket over stranded copper `peripheral.tv.mains.cord` _(medium)_
+##### Mains cord, PVC jacket over stranded copper `peripheral.tv.mains.cord` _(medium)_
 
 A flexible cord of 16 or 18 AWG stranded copper inside a PVC or rubber jacket, moulded on to the plug and to the set's inlet. The set's inlet on a 1982 television was not an IEC C13 appliance coupler (that became common on computers and later sets); most were a hard-wired rubber or vinyl cord straight into the chassis, with a moulded two-pin or three-pin plug at the wall end. A detachable cord on a set was unusual until the mid 1980s.
 
-###### Mains suppression: X capacitor and common-mode choke `peripheral.tv.mains.filter` _(medium)_
+##### Mains suppression: X capacitor and common-mode choke `peripheral.tv.mains.filter` _(medium)_
 
 A high-voltage capacitor across line and neutral (the X capacitor) plus a ferrite-beaded choke in series, to keep the set's switching noise out of the radio. In a 1982 set this was often a paper or film capacitor at 0.01 microfarad rated for mains transients; the modern purple or orange epoxy-drop X capacitor of the 1990s had not appeared, though a metallised film in a plastic case was used. The choke was a few turns on a ferrite or powdered-iron core.
 
@@ -4513,7 +4509,7 @@ A high-voltage capacitor across line and neutral (the X capacitor) plus a ferrit
 
 A polypropylene or polystyrene film, vacuum-metallised with a thin aluminium layer on both faces, wound and potted in epoxy. It was the capacitor of choice across the line because a self-healing metallisation would recover from a mains transient rather than failing short. Polystyrene was also used for its stability and low microphonics.
 
-###### Mains fuse `peripheral.tv.mains.fuse` _(medium)_
+##### Mains fuse `peripheral.tv.mains.fuse` _(medium)_
 
 A 3-4 amp buss fuse in the mains lead holder on sets with a detachable cord, or an internal fuse on the line. The fuse element was a low-melting alloy or a silver wire in a glass cartridge.
 
@@ -4521,16 +4517,16 @@ A 3-4 amp buss fuse in the mains lead holder on sets with a detachable cord, or 
 
 A small glass or ceramic cartridge containing a link of silver or of a fusible alloy such as a lead-bismuth-tin eutectic, in a sand or chalk packing that quenched the arc when the link melted. The glass was soda-lime, drawn as a tube and sealed with an end cap.
 
-              - *Silver activator* `peripheral.tv.crt.phosphor.zns.silver` *(seen above)*
-#### Datasette and cassette `peripheral.cassette`
+            - *Silver activator* `peripheral.tv.crt.phosphor.zns.silver` *(seen above)*
+### Datasette and cassette `peripheral.cassette`
 
 A C64 with no drive could not save. Commodore's answer was a 1530 or 1541 disk-shaped drive that took ordinary compact cassettes and wrote them with a magnetic head at 9,600 baud, plus a spool of tape that was mostly polyester film and mostly iron oxide. Saving a 1541 program to tape was a two minute operation of real-time winding, and the alignment problems of a 1541 were a running joke precisely because a cassette had no feedback.
 
-##### The 1541 disk drive `peripheral.cassette.deck`
+#### The 1541 disk drive `peripheral.cassette.deck`
 
 A disk-shaped grey box with a slot on top, containing a stepper motor, a capstan flywheel, a read/write head on a load arm, and a small circuit board with a 6502 CPU, a 6522 interface chip and a mask-programmed logic array. It reads and writes the same standard compact cassette as a music cassette deck, which is why Commodore's error messages included CLOAD and why a music cassette recorder could in principle play a C64 tape.
 
-###### 6502 CPU, 6522 PIA and M50174 PLA `peripheral.cassette.deck.logic` _(medium)_
+##### 6502 CPU, 6522 PIA and M50174 PLA `peripheral.cassette.deck.logic` _(medium)_
 
 The 1541's electronics are almost identical in content to the C64's, which is not a coincidence: Commodore reused its own chips. A 6502 runs the operating system and the serial protocol; a 6522 versatile interface adapter talks to the tape, drives the stepper and reads the serial bus to the C64; and a mask-programmed logic array, the M50174, handles the address decode and the stepper phase sequencing so the CPU does not have to bit-bang them.
 
@@ -4546,7 +4542,7 @@ The black or off-white plastic that a chip is set in. It is an epoxy novolac res
 
 The 6502 was a 40-pin DIP with gold or tinned copper wires ball-bonded or wedge-bonded from the die pads to the lead frame. Gold came almost entirely from the anode slimes of copper electrolytic refining, and a modest 40-pin DIP of the period had a few milligrams of it.
 
-###### Hybrid stepping motor `peripheral.cassette.deck.stepper` _(medium)_
+##### Hybrid stepping motor `peripheral.cassette.deck.stepper` _(medium)_
 
 A hybrid stepping motor: a permanent-magnet rotor with fine teeth running between two toothed stator poles, with coils on the poles. Two phases driven in sequence step the rotor a fraction of a degree at a time. This is how the 1541 knew where the tape was, and the motor's own inertia is why a 1541 could not skip forward as fast as it could seek.
 
@@ -4566,7 +4562,7 @@ The motor is held between two stamped steel end bells with bronze or sintered br
 
 The stamped steel end bells came off the same low-carbon sheet as the shadow mask and the speaker basket. The bushings were sintered bronze, a copper-tin alloy made by pressing bronze powder and sintering it in a reducing atmosphere so it had a connected pore structure that held oil. Copper and tin both feature elsewhere in this branch.
 
-###### Tape transport: capstan, pinch roller, worm reduction `peripheral.cassette.deck.transport` _(medium)_
+##### Tape transport: capstan, pinch roller, worm reduction `peripheral.cassette.deck.transport` _(medium)_
 
 The cassette slid in and the tape was pressed against a capstan on the drive by a rubber pinch roller, at 4.76 cm/s. The capstan was on a flywheel turned by the stepper motor through a worm reduction, which also let the motor's back-driving put the capstan in the right phase. The same motor rotation drove a cam that loaded the head against the tape. There was no tachometer, no position sensor and no closed loop: the drive simply counted steps and hoped.
 
@@ -4578,7 +4574,7 @@ A small roller of black nitrile or butyl rubber on a moulded plastic or nylon hu
 
 The stepper's rotation was reduced by a worm on the motor shaft running in a nylon or brass wheel on the capstan shaft. A worm gear is quiet and gives a high ratio in a small space and is self-locking, which is exactly what is wanted: when the power was off the capstan could not back-drive. The wheel was usually a moulded nylon or acetal wheel with a brass insert.
 
-###### Read/write head, gap about 1 micrometre `peripheral.cassette.deck.head` _(medium)_
+##### Read/write head, gap about 1 micrometre `peripheral.cassette.deck.head` _(medium)_
 
 A miniature magnetic recording head, essentially the same object as the one in a cassette deck but smaller and more carefully shielded. A ferrite or permalloy core with a laser-cut gap of about a micrometre, a figure-eight winding of lacquered copper to cancel hum from the drive's own motor, a mumetal shield can around the front, and a printed circuit board carrying the preamplifier right at the head to keep the signal short.
 
@@ -4618,11 +4614,11 @@ The wire enamel is a thermosetting urethane, made from a diol and a di-isocyanat
 
 A magnet-wire enamelling line is a 20-40 m long machine: a pay-off, a bunch of dies applying 10-20 coats with flash-off between them, a vertical cure oven 8-15 m tall, a capstan, a take-up. The cure oven is gas or electric at 150-220 C with the wire passing through it in a helix, and it is the cure schedule and not the coating that decides the wire's class. A class 155 wire needs a full hour at temperature; a class 130 wire can get away with less. In 1982 the whole world's magnet wire was made on lines of exactly this design, whether the wire came from Japan, France or the United States.
 
-###### The 1541 circuit board `peripheral.cassette.deck.board`
+##### The 1541 circuit board `peripheral.cassette.deck.board`
 
 A single FR-4 board with the CPU, the PIA, the PLA, a handful of logic gates, the head preamplifier, the stepper driver transistors, and the power regulators. It was a through-hole board in 1982, socketed for the CPU and the PIA so they could be replaced, and hand- or wave-soldered.
 
-###### Power supply: 5 V and 12 V from the C64 `peripheral.cassette.deck.psu` _(medium)_
+##### Power supply: 5 V and 12 V from the C64 `peripheral.cassette.deck.psu` _(medium)_
 
 The 1541 has no mains input. It gets 5 V and about 12 V DC from the C64 through the six-pin cassette port, and regulates them locally: the 12 V feeds the motor and the head bias, the 5 V feeds the logic, and a linear regulator or a discrete dropper makes the 5 V from a higher rail on some models. There was a fuse and a reverse-polarity protection diode because the port was known to be a point of user error.
 
@@ -4630,12 +4626,12 @@ The 1541 has no mains input. It gets 5 V and about 12 V DC from the C64 through 
 
 The 1541 regulated the 9-12 V rail down to 5 V with a small linear regulator or a discrete zener-transmitter, and used a handful of aluminium electrolytics to ripple-filter it. Both are the same parts as the television reservoir: etched four-nines aluminium foil in a wound foil anode, with a fibre separator and a chloride or borate electrolyte.
 
-              - *Aluminium electrolytic reservoir, 200 microfarad 160 V* `peripheral.tv.chassis.power.reservoir` *(seen above)*
-###### The 1541 plastic case `peripheral.cassette.deck.case`
+            - *Aluminium electrolytic reservoir, 200 microfarad 160 V* `peripheral.tv.chassis.power.reservoir` *(seen above)*
+##### The 1541 plastic case `peripheral.cassette.deck.case`
 
 A grey ABS clamshell, disc-shaped, about 40 cm across and 9 cm deep, moulded in two halves with the lid carrying the Commodore logo badge and the slot for the cassette. The material is the same ABS as a television cabinet, from the same styrene-butadiene-acrylonitrile chemistry.
 
-###### Activity LED `peripheral.cassette.deck.led`
+##### Activity LED `peripheral.cassette.deck.led`
 
 A small red LED on the front of the drive, lit while the motor was running or the head was active. It was a gallium arsenide or gallium phosphide die in a 2.5 mm epoxy lens, running at about 2-10 mA from the 5 V rail through a resistor. The LED itself was 1980s technology; the indicator lamps on earlier drives had been incandescent bulbs or neon.
 
@@ -4643,7 +4639,7 @@ A small red LED on the front of the drive, lit while the motor was running or th
 
 A red or amber LED of the period was gallium phosphide or gallium arsenide phosphide on a gallium arsenide substrate. Gallium is not mined on its own: it is recovered as a minor by-product from the Bayer liquor when bauxite is digested in caustic soda, because gallium is amphoteric and dissolves with the alumina. By 1982 gallium was becoming strategically important precisely because of this concentration in the aluminium industry.
 
-###### The nine-pin serial link to the C64 `peripheral.cassette.deck.link`
+##### The nine-pin serial link to the C64 `peripheral.cassette.deck.link`
 
 The 1541 connected to the C64 by a nine-pin high-density D-subminiature cable carrying the serial bus, which is how the drive knew there was a computer and the computer knew there was a drive. This is the peripheral-plug branch's territory and is cross-referenced there rather than duplicated.
 
@@ -4651,11 +4647,11 @@ The 1541 connected to the C64 by a nine-pin high-density D-subminiature cable ca
 
 The 1541 was not daisy-chained through the cassette port; it plugged into the C64's second serial port through a nine-pin high-density D-subminiature cable. That separate port is how the computer knew a disk drive was present at all: there was no other way for the 1541 to announce itself except by talking on this line, and the drive type was auto-detected from what it said.
 
-##### The cassette tape itself `peripheral.cassette.tape`
+#### The cassette tape itself `peripheral.cassette.tape`
 
 A compact cassette is a 3.81 mm wide strip of polyester film 12 microns thick, coated on one side with about one to two microns of acicular iron oxide pigment in a binder, and wound onto hubs inside a plastic shell. The C64 wrote 9,600 baud onto it, which at 4.76 cm/s works out to a flux transition every 200 to 300 microseconds, near the limit of what a standard-bias cassette could resolve. Almost everything in it is either crude oil or iron ore.
 
-###### Acicular iron oxide pigment `peripheral.cassette.tape.oxide` _(medium)_
+##### Acicular iron oxide pigment `peripheral.cassette.tape.oxide` _(medium)_
 
 The magnetic pigment is acicular gamma-iron(III) oxide, gamma-Fe2O3: needle-shaped crystals about 0.3 microns long by 0.08 microns across by 0.01 thick, an aspect ratio of about 3 to 5. It is precipitated from an iron(II) salt by oxidising with air while a surfactant is present, and the surfactant is what forces the crystals to grow as needles instead of spheres. That morphology is the whole reason a cassette can hold what it holds: the long axis lines up with the tape's direction of travel and the short axis resists it.
 
@@ -4671,11 +4667,11 @@ Crystal habit is controlled by what is adsorbed on the growing face. The pigment
 
 For high-bias Type II tape, chromium dioxide (CrO2): acicular, 20-50 nm, higher coercivity and higher signal-to-noise than ferrite. It is made by oxidising chromic chloride in the presence of a surfactant under pressure and heat, and was patented and controlled tightly by its Japanese inventors. Chromium came from chromite ore, which is mostly in South Africa and the Soviet bloc.
 
-###### The dispersion: pigment, binder, dispersant `peripheral.cassette.tape.dispersion` _(medium)_
+##### The dispersion: pigment, binder, dispersant `peripheral.cassette.tape.dispersion` _(medium)_
 
 The pigment was not coated as a powder. It was dispersed in a binder so that the needles separate and stay separated, and then magnetically oriented on the film. A typical binder was a cellulose lacquer, an acrylic or polyurethane, dissolved in a solvent such as toluene, xylene or methyl ethyl ketone; in the 1970s and early 1980s there was also a water-based polyurethane dispersion. The dispersant was a surfactant or a phosphate ester that wets the oxide surface so the needles do not clump back together. The pigment and the binder are combined and then refined on a three-roll mill or a sand mill, working the agglomerates apart from a few tens of microns down to a few microns at 50-70% solids, until the dispersion is smooth. Dispersion quality set the noise floor of the finished tape, because a clump of pigment is a defect that scatters the recording.
 
-###### Coating line: doctor blade, orientation field, cure ovens `peripheral.cassette.tape.coating` _(medium)_
+##### Coating line: doctor blade, orientation field, cure ovens `peripheral.cassette.tape.coating` _(medium)_
 
 A web of polyester film, a metre or more wide, unwinds and passes under a coating station where the magnetic dispersion is laid down in one or two passes by a doctor blade or a gravure roll, a few microns thick. It passes between magnets that align the acicular particles along the length of the film, then into an oven at 60-100 degrees C to drive off the solvent and cure the binder. A backing-coat station then applies the carbon-black anti-smear layer, and the whole web is slit to width.
 
@@ -4683,7 +4679,7 @@ A web of polyester film, a metre or more wide, unwinds and passes under a coatin
 
 On the back of the magnetic coating was a sub-micron layer of extra pigment and carbon black. It did two things: it gave the visible leader tape (the clear or white strip at the start of a cassette) its colour and its opacity so a deck could find it, and it suppressed print-through, where a signal on one layer of the wound tape magnetises the layer next to it and comes back as a ghost. Carbon black, again, from petroleum coke.
 
-###### Cassette shell and hubs `peripheral.cassette.tape.shell`
+##### Cassette shell and hubs `peripheral.cassette.tape.shell`
 
 The compact cassette case: two thin polystyrene or ABS shells, each with a hub, so that the tape is enclosed in a rigid 100 x 64 x 12 mm box with five windows on one edge for the head, capstan and the pressure pad, two hub windows, and the write-protect notches. The hubs were glass-filled nylon or moulded ABS with the six drive slots, running on the two hub spindles.
 
@@ -4695,7 +4691,7 @@ A cassette shell is thin and needs to hold a dimension, so it was moulded from g
 
 The reel hub runs on the shell's spindle and drives the tape through a wind process. It had to be dimensionally stable and dimensionally tight so the tape wound at a given radius came off at the right tension. It was glass-filled nylon or ABS, with the six drive slots on the inside face for the winding spindle.
 
-###### Pressure pad and felt `peripheral.cassette.tape.pad` _(medium)_
+##### Pressure pad and felt `peripheral.cassette.tape.pad` _(medium)_
 
 A small pad of felt or synthetic non-woven on a stainless steel leaf spring, mounted in a plastic carrier inside the shell behind the head window. Its job was to press the tape gently against the head so the head could read and write reliably, and to press the tape against the shell's ribs to select the C-1 to C-5 path. The felt was the one consumable part of a cassette; it shed debris into the head gap and a worn pad was a classic cause of a 1541 failing.
 
@@ -4703,162 +4699,34 @@ A small pad of felt or synthetic non-woven on a stainless steel leaf spring, mou
 
 The pad was wool felt or a bonded polyester fibre web about a millimetre thick, glued to a stainless steel leaf spring in a plastic carrier. Wool felt is carded wool fibre matted and pressed; the spring was a 300-series stainless, so the iron came from the blast furnace and the chromium from chromite, the same chromite as the chrome plating on a telescopic antenna.
 
-###### Slitting to 1/8 inch `peripheral.cassette.tape.slitting`
+##### Slitting to 1/8 inch `peripheral.cassette.tape.slitting`
 
 The coating line made a web a metre or more wide; it was then slit into 3.81 mm strips with rotary knives, tens of kilovolts of static keeping the thin film from clinging to the rollers. The slit tape was wound onto master reels, then onto cassette reels by a winding line that also cut it to length (45 m per side for a C-60), formed the leader, and inserted the hub.
 
-#### The connectors: aerial socket, serial link, user port, cassette port `peripheral.plug`
+### The connectors: aerial socket, serial link, user port, cassette port `peripheral.plug`
 
 Three connectors that made a C64 usable rather than just powered: the aerial socket the RF modulator hijacked, the nine-pin link to the 1541, and the 34-conductor ribbon on the back that opened the machine up. This branch is deliberately short. The mains plug and the C64's own power inlet belong to another agent's branch.
 
-##### The aerial socket, hijacked `peripheral.plug.rf`
+#### The aerial socket, hijacked `peripheral.plug.rf`
 
 The 75 ohm coaxial socket on the back of the television. The C64's modulator lead was a short 75 ohm coax with an F-type plug that went into it in parallel with the set's aerial. Because the modulator was a weak source, the lead had to be a good 75 ohm match and the set's aerial input had to be isolated or the local signal would back-feed.
 
-        - *Nine-pin serial link to the drive* `peripheral.plug.serial-link` *(seen above)*
-##### The 34-conductor user port ribbon `peripheral.plug.userport` _(medium)_
+      - *Nine-pin serial link to the drive* `peripheral.plug.serial-link` *(seen above)*
+#### The 34-conductor user port ribbon `peripheral.plug.userport` _(medium)_
 
 On the back of the C64, a 34-conductor edge connector on a card, which brought out the 6510's eight data lines, twelve address lines, the read and write strobes, the IRQ and NMI lines, the serial and parallel ports, and the 5 V and ground. It was the machine's expansion door, and it was how a disk interface, a printer interface, a sampler or an EPROM programmer reached the CPU. The cable was a flat ribbon with a mylar or tinned-copper conductor, a foil shield and a PVC or polyester jacket.
 
-###### PVC jacket and polyester film from crude oil `peripheral.plug.userport.pvc` _(medium)_
+##### PVC jacket and polyester film from crude oil `peripheral.plug.userport.pvc` _(medium)_
 
 The ribbon's jacket is PVC (from ethylene and salt-derived chlorine) and its insulation between conductors is polyester film (from the same PET chain as the cassette tape base). Both are grandchildren of crude oil, and both are the same two chemistries already traced elsewhere in this tree.
 
-###### Card-edge and D-sub connectors `peripheral.plug.userport.connectors` _(medium)_
+##### Card-edge and D-sub connectors `peripheral.plug.userport.connectors` _(medium)_
 
 The connectors were gold-plated or nickel-plated brass and copper contacts in a thermoplastic (usually glass-filled nylon or a phenolic) insulator, crimped or soldered to the ribbon. A D-sub has a metal shell (often tinned steel or nickel-plated brass) that both shields the connection and provides the mechanical polarisation that stops anyone plugging it in backwards.
 
-##### The six-pin cassette port `peripheral.plug.cassette-port` _(medium)_
+#### The six-pin cassette port `peripheral.plug.cassette-port` _(medium)_
 
 The connector that carries both the audio to a tape recorder and the power to a 1541. It is a 6-pin connector, carrying read, write, sense, motor, 5 V and the 9-12 V motor rail. Commodore's own cable turned it into a DIN-style socket that plugged into a consumer cassette recorder, so a C64 could save to a music deck. The same port carried the power for the 1541, which is why a 1541 has no power socket of its own.
-
-### Joystick controller `c64.joystick`
-
-The self-centring 4-way joystick Commodore bundled with the C64 and sold with most of its software: a moulded gate plate held neutral by four springs, four miniature microswitches underneath it, a steel shaft with a ball top, a plastic knob, and a coiled cable to one of the DE-9 control ports. Five moving electrical contacts and one mechanical centring mechanism, in a shell of black ABS.
-
-#### 4-way direction gate `c64.joystick.gate`
-
-A cross-shaped sliding gate that physically interlocks so only one of the four directions can be closed at a time - the same gating trick as a keyboard's 3-key rollover prevention. The gate rides on four ribs and is held centred by four springs, so it is self-centring and has no detented 'gate 2' half-way position.
-
-##### Centring springs `c64.joystick.gate.spring`
-
-Four small compression or torsion springs push the gate back to neutral from every direction. They are the part that wears out: once the springs weaken, the stick stays pushed, which is the most common repair on a vintage joystick and the reason 'joystick centering' appears in every retro repair guide.
-
-###### Centring spring wire `c64.joystick.gate.spring.wire`
-
-Drawn music-wire or stainless spring wire, coiled and closed. Centring springs are the cheapest consumable in the whole joystick and the one that is always replaced rather than repaired.
-
-###### Why springs are the failure point `c64.joystick.gate.spring.replacement`
-
-Gate springs carry the whole centring duty and are cycled by every direction press. Once one is weakened the stick sits off-centre and the machine reads a direction the user is not pressing - the most common single joystick fault of the era.
-
-##### Bushing and friction washer `c64.joystick.gate.friction` _(medium)_
-
-The shaft is supported by a plastic bushing or a nylon washer in the chassis, and a felt or fibre friction pad under the gate sets the feel. Friction pads compress and shed debris with age, which is the second classic cause of a stiff or drifting stick.
-
-###### Nylon bushing in the chassis `c64.joystick.gate.friction.nylon-bushing` _(medium)_
-
-A moulded nylon bushing in the ABS chassis that the steel shaft runs in. Nylon is used because it is self-lubricating and will not gall the shaft; a metal bushing would seize onto the shaft as it rimes.
-
-###### Lubricated nylon 6,6 bushing resin `c64.joystick.gate.friction.nylon-bushing.resin` _(medium)_
-
-A lubricated or unfilled nylon grade, chosen for low friction against steel. The base polymer is nylon 6,6 from hexamethylenediamine and adipic acid; caprolactam is the route to nylon 6, a different grade. The joystick contains nylon in this bushing, in its microswitch cases and in its gate.
-
-###### Friction pad `c64.joystick.gate.friction.felt-pad` _(medium)_
-
-A small felt or fibre pad under the gate that sets the lateral friction. Felt pads need almost no oil, dry-run cleanly, and shed a black dust that eventually gums the gate if the stick is never cleaned.
-
-###### Wool felt `c64.joystick.gate.friction.felt-pad.wool` _(medium)_
-
-Pressed wool felt sets the lateral friction of the gate. Unlike an oiled pad it needs no lubricant, which matters because an oiled pad in a 1982 joystick attracts dust and eventually gums.
-
-#### Four miniature microswitches `c64.joystick.microswitches`
-
-Four sealed miniature switches under the gate, one per direction. Each is a plastic case with a plunger and a fixed leaf plus a sprung leaf, gold-plated so the contact resistance stays low through millions of actuations. The plunger is depressed by a rib on the gate as it slides.
-
-##### Sprung leaf contact `c64.joystick.microswitches.leaves`
-
-Inside each switch a formed leaf is bowed against a fixed contact; pressing the plunger straightens the leaf onto it. The contacts are gold-plated over nickel because a joystick switch is a low-current, high-cycle signal contact where a stable millivolt-level resistance matters, and because the leaf is wiped clean on every actuation.
-
-###### Gold plating of the microswitch leaf `c64.joystick.microswitches.leaves.gold-plating`
-
-The contact is gold-plated over nickel so its resistance stays at the millivolt level through millions of cycles. Gold leaf contacts in this class of switch were a real reliability advantage over the silver and nickel contacts used in cheaper equivalents.
-
-##### Switch case polymer `c64.joystick.microswitches.plastic-case` _(medium)_
-
-A small moulded case in a filled thermoset or a glass-filled nylon, chosen so the case survives being dropped off a desk with the stick still in hand - which, for a joystick sold with a computer, was a frequent event.
-
-###### Glass-filled nylon case `c64.joystick.microswitches.plastic-case.nylon`
-
-A glass-filled nylon case gives a microswitch enough stiffness to keep its contact force with a thin wall, and enough toughness to survive being dropped. It is the standard material for that class of switch through the 1980s.
-
-###### Nylon-6-6 resin `c64.joystick.microswitches.plastic-case.nylon.nylon-6-6`
-
-The base polymer of the glass-filled nylon case, made from hexamethylenediamine and adipic acid. Caprolactam is the route to nylon 6, a different grade. A single C64 contains nylon in its switch housings, its joystick bushings and its microswitch cases.
-
-###### Through-hole mounting and solder lugs `c64.joystick.microswitches.plastic-case.solder-lugs`
-
-The switches are pushed into holes in the joystick's printed board and their pins soldered from underneath. Positioning them on that board is what sets how far the gate has to travel before a direction registers - the mechanical timing of the whole joystick.
-
-#### Steel shaft and ball top `c64.joystick.shaft`
-
-A cross-section steel shaft pressed into the gate, rising through the chassis with a moulded ball or ball-and-paddle top at the user end. The ball is the most-comforted part of the design and is also the part that wears smooth or cracks in old machines.
-
-##### Cold-drawn steel bar `c64.joystick.shaft.steel`
-
-Mild or low-alloy steel, cold-drawn to a square section and cut to length. The gate's press fit is what locates the shaft; the steel is unplated except where it passes through the chassis, where corrosion is a genuine failure mode on a machine stored in a damp shed. The steel begins as sintered hematite-magnetite pellets and lump ore charged with coke and limestone, and the bulk of world steel in 1982 was made that way, so rust and pitting on a forty-year-old joystick shaft is this ore still trying to get out.
-
-#### ABS knob and top button `c64.joystick.knob` _(medium)_
-
-The moulded handle on the top of the shaft. On a 2-button unit it is a plain grip knob; on a 3-button unit a fire switch is moulded into the shaft and a third button into the knob's top, sprung against the shaft and actuated by a rod inside it. Black ABS, textured on the grip faces.
-
-##### ABS (acrylonitrile-butadiene-styrene) `c64.joystick.knob.abs`
-
-The workhorse thermoplastic of consumer electronics housings in 1982: injection mouldable to a hard gloss surface, tough enough for a hand-held knob, and cheap. The same material as the keycaps, and largely the same hydrocarbon feedstock.
-
-###### Pigments and fillers in the ABS knob `c64.joystick.knob.abs.filler` _(medium)_
-
-The knob is black because of a pigment - usually a carbon black or an iron oxide - dispersed in the ABS before moulding, and it is stiffened with glass or mineral filler. Where a lighter colour was wanted the whitener was rutile titanium dioxide from ilmenite, which is the same titanium chain as the barium titanate capacitor powder.
-
-###### Pigment dispersion in the ABS `c64.joystick.knob.abs.filler.pigment-dispersion` _(medium)_
-
-The colourant is dispersed into the polymer in a compounding extruder before the moulding, not added at the press. A black joystick knob therefore contains a few per cent of carbon black and an antioxidant package.
-
-###### Titanium dioxide whitener `c64.joystick.knob.abs.filler.pigment-dispersion.tio2` _(medium)_
-
-Where a lighter colour was used, the whitener was rutile TiO2 from ilmenite - the same titanium chain as the barium titanate powder.
-
-###### Injection moulding of the knob `c64.joystick.knob.abs.moulding`
-
-The knob is a two-shot or single-shot ABS moulding, often with a moulded-in texture or a soft overmould. It has to be comfortable and it has to stay on the shaft for decades.
-
-###### Knob mould tool `c64.joystick.knob.abs.moulding.tool` _(medium)_
-
-A hardened steel cavity tool, polished so the knob has a gloss finish. Thousands of knobs per tool life; the polish is the difference between a shiny knob and a matt one.
-
-###### Fire button on shaft and knob `c64.joystick.knob.abs.fire-button` _(medium)_
-
-On 3-button sticks a fire switch is moulded into the shaft itself and a third button into the knob top, actuated by a rod inside the shaft. Each is a miniature microswitch of the same family as the direction switches.
-
-#### Coiled cable and DE-9 plug `c64.joystick.cable` _(medium)_
-
-A coiled cable of seven or nine conductors leaving the chassis bottom, terminating in a DE-9 male plug that looks mechanically identical to the socket it plugs into but has male pins. The plug's contacts are gold-flashed brass, made the same way and by the same stamping and plating route as the socket contacts on the machine.
-
-##### DE-9 male plug contacts `c64.joystick.cable.plug`
-
-Stamped brass pins, gold-flashed over nickel, moulded into a thermoplastic D-shell that keys to the socket's D-shape. Because the D-shell is polarised, the plug physically cannot be inserted backwards - the same mechanical trick as the moulded keyway on a D-sub generally.
-
-###### Cable assembly and strain relief `c64.joystick.cable.plug.cable-assembly`
-
-The conductors are crimped into the DE-9 pins and the cable is clamped by a moulded strain relief at the shell, so bending the cable does not work the pin out of the crimp. Strain relief is the single cheapest thing that decides whether a peripheral cable survives five years of use.
-
-###### Stranded conductor `c64.joystick.cable.plug.conductor` _(medium)_
-
-Fine-stranded copper, tinned, for flexibility. Seven or nine of them, depending on the joystick model - the C64 reads five signals plus the common and the fire button.
-
-###### Tinning of the conductor `c64.joystick.cable.plug.conductor.tinning` _(medium)_
-
-The stranded conductor is tinned so the crimp barrel grips cleanly and the joint is solderable. Tin from cassiterite, in a peripheral cable a few centimetres from the machine.
 
 ## Finishing and bundled extras `c64.extras`
 
@@ -5116,7 +4984,135 @@ Parallel copper conductors laminated between polyester film layers with a PVC ja
 
 The ribbon's outer jacket is extruded PVC, the cheapest flexible insulation available. Vinyl chloride is made by oxychlorinating ethylene with chlorine, and the chlorine comes from salt - rock salt mined or solution-mined - while the ethylene comes from a steam cracker. So the ribbon cable ends at both rock salt and crude oil.
 
-    - *Joystick controller* `c64.joystick` *(seen above)*
+### Joystick controller `c64.joystick`
+
+The self-centring 4-way joystick Commodore bundled with the C64 and sold with most of its software: a moulded gate plate held neutral by four springs, four miniature microswitches underneath it, a steel shaft with a ball top, a plastic knob, and a coiled cable to one of the DE-9 control ports. Five moving electrical contacts and one mechanical centring mechanism, in a shell of black ABS.
+
+#### 4-way direction gate `c64.joystick.gate`
+
+A cross-shaped sliding gate that physically interlocks so only one of the four directions can be closed at a time - the same gating trick as a keyboard's 3-key rollover prevention. The gate rides on four ribs and is held centred by four springs, so it is self-centring and has no detented 'gate 2' half-way position.
+
+##### Centring springs `c64.joystick.gate.spring`
+
+Four small compression or torsion springs push the gate back to neutral from every direction. They are the part that wears out: once the springs weaken, the stick stays pushed, which is the most common repair on a vintage joystick and the reason 'joystick centering' appears in every retro repair guide.
+
+###### Centring spring wire `c64.joystick.gate.spring.wire`
+
+Drawn music-wire or stainless spring wire, coiled and closed. Centring springs are the cheapest consumable in the whole joystick and the one that is always replaced rather than repaired.
+
+###### Why springs are the failure point `c64.joystick.gate.spring.replacement`
+
+Gate springs carry the whole centring duty and are cycled by every direction press. Once one is weakened the stick sits off-centre and the machine reads a direction the user is not pressing - the most common single joystick fault of the era.
+
+##### Bushing and friction washer `c64.joystick.gate.friction` _(medium)_
+
+The shaft is supported by a plastic bushing or a nylon washer in the chassis, and a felt or fibre friction pad under the gate sets the feel. Friction pads compress and shed debris with age, which is the second classic cause of a stiff or drifting stick.
+
+###### Nylon bushing in the chassis `c64.joystick.gate.friction.nylon-bushing` _(medium)_
+
+A moulded nylon bushing in the ABS chassis that the steel shaft runs in. Nylon is used because it is self-lubricating and will not gall the shaft; a metal bushing would seize onto the shaft as it rimes.
+
+###### Lubricated nylon 6,6 bushing resin `c64.joystick.gate.friction.nylon-bushing.resin` _(medium)_
+
+A lubricated or unfilled nylon grade, chosen for low friction against steel. The base polymer is nylon 6,6 from hexamethylenediamine and adipic acid; caprolactam is the route to nylon 6, a different grade. The joystick contains nylon in this bushing, in its microswitch cases and in its gate.
+
+###### Friction pad `c64.joystick.gate.friction.felt-pad` _(medium)_
+
+A small felt or fibre pad under the gate that sets the lateral friction. Felt pads need almost no oil, dry-run cleanly, and shed a black dust that eventually gums the gate if the stick is never cleaned.
+
+###### Wool felt `c64.joystick.gate.friction.felt-pad.wool` _(medium)_
+
+Pressed wool felt sets the lateral friction of the gate. Unlike an oiled pad it needs no lubricant, which matters because an oiled pad in a 1982 joystick attracts dust and eventually gums.
+
+#### Four miniature microswitches `c64.joystick.microswitches`
+
+Four sealed miniature switches under the gate, one per direction. Each is a plastic case with a plunger and a fixed leaf plus a sprung leaf, gold-plated so the contact resistance stays low through millions of actuations. The plunger is depressed by a rib on the gate as it slides.
+
+##### Sprung leaf contact `c64.joystick.microswitches.leaves`
+
+Inside each switch a formed leaf is bowed against a fixed contact; pressing the plunger straightens the leaf onto it. The contacts are gold-plated over nickel because a joystick switch is a low-current, high-cycle signal contact where a stable millivolt-level resistance matters, and because the leaf is wiped clean on every actuation.
+
+###### Gold plating of the microswitch leaf `c64.joystick.microswitches.leaves.gold-plating`
+
+The contact is gold-plated over nickel so its resistance stays at the millivolt level through millions of cycles. Gold leaf contacts in this class of switch were a real reliability advantage over the silver and nickel contacts used in cheaper equivalents.
+
+##### Switch case polymer `c64.joystick.microswitches.plastic-case` _(medium)_
+
+A small moulded case in a filled thermoset or a glass-filled nylon, chosen so the case survives being dropped off a desk with the stick still in hand - which, for a joystick sold with a computer, was a frequent event.
+
+###### Glass-filled nylon case `c64.joystick.microswitches.plastic-case.nylon`
+
+A glass-filled nylon case gives a microswitch enough stiffness to keep its contact force with a thin wall, and enough toughness to survive being dropped. It is the standard material for that class of switch through the 1980s.
+
+###### Nylon-6-6 resin `c64.joystick.microswitches.plastic-case.nylon.nylon-6-6`
+
+The base polymer of the glass-filled nylon case, made from hexamethylenediamine and adipic acid. Caprolactam is the route to nylon 6, a different grade. A single C64 contains nylon in its switch housings, its joystick bushings and its microswitch cases.
+
+###### Through-hole mounting and solder lugs `c64.joystick.microswitches.plastic-case.solder-lugs`
+
+The switches are pushed into holes in the joystick's printed board and their pins soldered from underneath. Positioning them on that board is what sets how far the gate has to travel before a direction registers - the mechanical timing of the whole joystick.
+
+#### Steel shaft and ball top `c64.joystick.shaft`
+
+A cross-section steel shaft pressed into the gate, rising through the chassis with a moulded ball or ball-and-paddle top at the user end. The ball is the most-comforted part of the design and is also the part that wears smooth or cracks in old machines.
+
+##### Cold-drawn steel bar `c64.joystick.shaft.steel`
+
+Mild or low-alloy steel, cold-drawn to a square section and cut to length. The gate's press fit is what locates the shaft; the steel is unplated except where it passes through the chassis, where corrosion is a genuine failure mode on a machine stored in a damp shed. The steel begins as sintered hematite-magnetite pellets and lump ore charged with coke and limestone, and the bulk of world steel in 1982 was made that way, so rust and pitting on a forty-year-old joystick shaft is this ore still trying to get out.
+
+#### ABS knob and top button `c64.joystick.knob` _(medium)_
+
+The moulded handle on the top of the shaft. On a 2-button unit it is a plain grip knob; on a 3-button unit a fire switch is moulded into the shaft and a third button into the knob's top, sprung against the shaft and actuated by a rod inside it. Black ABS, textured on the grip faces.
+
+##### ABS (acrylonitrile-butadiene-styrene) `c64.joystick.knob.abs`
+
+The workhorse thermoplastic of consumer electronics housings in 1982: injection mouldable to a hard gloss surface, tough enough for a hand-held knob, and cheap. The same material as the keycaps, and largely the same hydrocarbon feedstock.
+
+###### Pigments and fillers in the ABS knob `c64.joystick.knob.abs.filler` _(medium)_
+
+The knob is black because of a pigment - usually a carbon black or an iron oxide - dispersed in the ABS before moulding, and it is stiffened with glass or mineral filler. Where a lighter colour was wanted the whitener was rutile titanium dioxide from ilmenite, which is the same titanium chain as the barium titanate capacitor powder.
+
+###### Pigment dispersion in the ABS `c64.joystick.knob.abs.filler.pigment-dispersion` _(medium)_
+
+The colourant is dispersed into the polymer in a compounding extruder before the moulding, not added at the press. A black joystick knob therefore contains a few per cent of carbon black and an antioxidant package.
+
+###### Titanium dioxide whitener `c64.joystick.knob.abs.filler.pigment-dispersion.tio2` _(medium)_
+
+Where a lighter colour was used, the whitener was rutile TiO2 from ilmenite - the same titanium chain as the barium titanate powder.
+
+###### Injection moulding of the knob `c64.joystick.knob.abs.moulding`
+
+The knob is a two-shot or single-shot ABS moulding, often with a moulded-in texture or a soft overmould. It has to be comfortable and it has to stay on the shaft for decades.
+
+###### Knob mould tool `c64.joystick.knob.abs.moulding.tool` _(medium)_
+
+A hardened steel cavity tool, polished so the knob has a gloss finish. Thousands of knobs per tool life; the polish is the difference between a shiny knob and a matt one.
+
+###### Fire button on shaft and knob `c64.joystick.knob.abs.fire-button` _(medium)_
+
+On 3-button sticks a fire switch is moulded into the shaft itself and a third button into the knob top, actuated by a rod inside the shaft. Each is a miniature microswitch of the same family as the direction switches.
+
+#### Coiled cable and DE-9 plug `c64.joystick.cable` _(medium)_
+
+A coiled cable of seven or nine conductors leaving the chassis bottom, terminating in a DE-9 male plug that looks mechanically identical to the socket it plugs into but has male pins. The plug's contacts are gold-flashed brass, made the same way and by the same stamping and plating route as the socket contacts on the machine.
+
+##### DE-9 male plug contacts `c64.joystick.cable.plug`
+
+Stamped brass pins, gold-flashed over nickel, moulded into a thermoplastic D-shell that keys to the socket's D-shape. Because the D-shell is polarised, the plug physically cannot be inserted backwards - the same mechanical trick as the moulded keyway on a D-sub generally.
+
+###### Cable assembly and strain relief `c64.joystick.cable.plug.cable-assembly`
+
+The conductors are crimped into the DE-9 pins and the cable is clamped by a moulded strain relief at the shell, so bending the cable does not work the pin out of the crimp. Strain relief is the single cheapest thing that decides whether a peripheral cable survives five years of use.
+
+###### Stranded conductor `c64.joystick.cable.plug.conductor` _(medium)_
+
+Fine-stranded copper, tinned, for flexibility. Seven or nine of them, depending on the joystick model - the C64 reads five signals plus the common and the fire button.
+
+###### Tinning of the conductor `c64.joystick.cable.plug.conductor.tinning` _(medium)_
+
+The stranded conductor is tinned so the crimp barrel grips cleanly and the joint is solderable. Tin from cassiterite, in a peripheral cable a few centimetres from the machine.
+
+  - *Joystick controller* `c64.joystick` *(seen above)*
 ## Where every branch terminates `c64.bottoms-out`
 
 Everything above ends in one of three trunks: refined metals, petrochemicals, and the plants and utilities that supply both. Most component subtrees carry their own shorter copy of the relevant chain - a capacitor really does carry its own aluminium, and an ABS case really does carry its own acrylonitrile - so these are the canonical, deepest versions of the same chains, kept together so that one can be read end to end.
