@@ -231,11 +231,22 @@ const ancestorsOf = (id) => {
 
 /* ---------- filter to merges that are still actionable -------------------- */
 const alreadyDone = [];
+const voidProposals = [];
+const declined = [];
 const candidates = [];
 for (const m of raw) {
   if (!N[m.from]) { alreadyDone.push(m); continue; }          // agent applied it
   if (m.from === m.to) { alreadyDone.push(m); continue; }
-  if (N[m.from] && N[m.to] && ancestorsOf(m.to).has(m.from)) { alreadyDone.push(m); continue; }
+  /* An explicit decline is a decision, not an oversight, so it is honoured and
+     reported rather than deleted from the proposal file. A proposing agent
+     marks a merge as a judgement call; the integrator records the ruling. */
+  if (m.declined) { declined.push(m); continue; }
+  /* A proposal whose TARGET no longer exists is not applicable, and must never
+     fall through to the candidate list: `metal.rosin` was itself merged into
+     `chem.rosin`, which left the reciprocal proposal "chem.rosin -> metal.rosin"
+     pointing at nothing. Applying it would have deleted the survivor. */
+  if (!N[m.to]) { voidProposals.push(m); continue; }
+  if (ancestorsOf(m.to).has(m.from)) { alreadyDone.push(m); continue; }
   candidates.push(m);
 }
 
@@ -320,13 +331,28 @@ console.log(APPLY ? 'APPLYING PROPOSED MERGES' : 'DRY RUN — nothing written');
 console.log('='.repeat(78));
 console.log(`proposed              ${raw.length}`);
 console.log(`already applied by agent / self-merge / would eat the tree: ${alreadyDone.length}`);
+if (voidProposals.length) {
+  console.log(`void (target no longer exists): ${voidProposals.length}`);
+  for (const m of voidProposals) console.log(`  [${m.prop}] ${m.from} -> ${m.to}   (target "${m.to}" is gone)`);
+}
 console.log(`dropped as reciprocal-duplicate: ${dropped.length}`);
+if (declined.length) {
+  console.log(`declined on review: ${declined.length}`);
+  for (const m of declined) console.log(`  [${m.prop}] ${m.from} -> ${m.to}   (${m.why ?? 'no reason recorded'})`);
+}
 console.log(`merges to apply       ${plan.length}`);
 if (plan.length) {
   const files = new Set(plan.map((m) => N[m.from].file));
   console.log(`nodes to delete       ${plan.length} across ${files.size} file(s)`);
   const s = new Set(plan.map((m) => m.to));
   console.log(`survivors             ${s.size}`);
+  /* List them. A dry run that only prints counts is useless when the question
+     is "what is left?", which is the only reason to run a dry run. */
+  console.log('\nmerges this run would apply:');
+  for (const m of plan.sort((a, b) => a.prop.localeCompare(b.prop) || a.from.localeCompare(b.from))) {
+    console.log(`  [${m.prop}] ${m.from}`);
+    console.log(`      -> ${m.to}   (${N[m.to].name})`);
+  }
 }
 
 if (!APPLY) { console.log('\n(dry run: rerun with --apply)\n'); process.exit(0); }
@@ -463,9 +489,22 @@ for (const [f, t] of cache) {
   }
   writeFileSync(`${dataDir}/${f}`, t);
 }
-writeFileSync(`${dataDir}/_merged.json`, JSON.stringify({
-  $comment: 'Content of every node deleted by a cross-fragment merge, kept for the record so a merge is never a silent loss. Written by scripts/applyproposals.mjs.',
-  merges: provenance,
+/* ACCUMULATE, never overwrite. This file is the audit trail for every node a
+   merge has deleted, so a second run must add to it rather than replace it --
+   an earlier version overwrote it and silently discarded 158 records. */
+const mergedPath = `${dataDir}/_merged.json`;
+let history = [];
+if (existsSync(mergedPath)) {
+  try { history = JSON.parse(readFileSync(mergedPath, 'utf8')).merges ?? []; } catch { history = []; }
+}
+const seenLosers = new Set(history.map((m) => m.loser));
+const fresh = provenance.filter((m) => !seenLosers.has(m.loser));
+if (fresh.length !== provenance.length) {
+  console.log(`  note: ${provenance.length - fresh.length} record(s) already in the merge history, not duplicated`);
+}
+writeFileSync(mergedPath, JSON.stringify({
+  $comment: 'Content of every node deleted by a cross-fragment merge, kept for the record so a merge is never a silent loss. Written by scripts/applyproposals.mjs, which appends to this file rather than replacing it.',
+  merges: [...history, ...fresh],
 }, null, 2) + '\n');
 
-console.log(`wrote ${cache.size} fragment(s) + data/_merged.json (${provenance.length} deletions recorded)`);
+console.log(`wrote ${cache.size} fragment(s) + data/_merged.json (${fresh.length} new deletions recorded, ${history.length + fresh.length} total)`);

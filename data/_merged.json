@@ -1,5 +1,5 @@
 {
-  "$comment": "Content of every node deleted by a cross-fragment merge, kept for the record so a merge is never a silent loss. Written by scripts/applyproposals.mjs.",
+  "$comment": "Content of every node deleted by a cross-fragment merge, kept for the record so a merge is never a silent loss. Written by scripts/applyproposals.mjs, which appends to this file rather than replacing it.",
   "merges": [
     {
       "loser": "si.polysilicon.fluorspar-ore",
@@ -753,7 +753,9 @@
           "label": "Era",
           "value": "Parex commercial from 1962, universal by 1982"
         }
-      ]
+      ],
+      "merged": false,
+      "note": "DECLINED, not merged. The proposer flagged it as a judgement call and the ruling was to keep the isomer separate: o-xylene is a defined compound, whereas the proposed survivor is \"Xylene, toluene and hexane\", a blended stream. Merging would have filed a pure substance under a mixture and orphaned the UOP Parex step that isolates it. This record is retained deliberately so scripts/checktables.mjs reports it rather than hiding it."
     },
     {
       "loser": "c64.case.abs-resin.chalcopyrite",
@@ -3144,6 +3146,18 @@
           "value": "brass, nickel-plated"
         }
       ]
+    },
+    {
+      "loser": "facility.gases.nickel-catalyst",
+      "loserName": "Nickel reforming catalyst",
+      "loserFile": "80-industry.json",
+      "survivor": "chem.natural-gas.uses.hydrogen.nickel-catalyst",
+      "survivorName": "Nickel reforming catalyst",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "95-residual.json",
+      "why": "Both nodes are named 'Nickel reforming catalyst' and both are leaf materials at medium confidence. The 70-petrochem copy is the one on the canonical hydrogen-from-SMR path and is the richer of the two (it carries the pre-1957 Topsoe SMR-180 detail and the multi-bed reformer tube geometry). Kept per CHECKLIST keep-rule 1. This is the last of the duplicate-name groups left by the QA pass.",
+      "loserDescription": "Nickel oxide on alumina, or the classic nickel-molybdenum on alumina, formed by impregnating a porous pellet with nickel nitrate and calcining. Ends at the laterite and the bauxite.",
+      "loserFacts": null
     }
   ]
 }

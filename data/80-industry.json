@@ -461,7 +461,7 @@
                 
               ] }
           ] },
-        { "id": "facility.water.ultrapure", "name": "Ultrapure water for the fab", "description": "The water that rinses a silicon wafer between every process step, and the water in which the thermal oxide grows. Target in 1983 was 10-15 MOhm-cm (roughly 1 ppb total ionic impurities) held at 20-25 C, distributed in 304 stainless or PVDF-lined piping. The yellow-lit photolithography bay and the wet chemical benches were the biggest consumers; the C64 itself was an assembly operation, not a fab, but every IC on its board came from a plant running exactly this chain. A modern practice note: the same chain now ends with UV and ultrafiltration, not with a mixed bed.", "kind": "facility", "category": "fluids", "era": "1970-1990",
+        { "id": "facility.water.ultrapure", "name": "Ultrapure water", "description": "The water that rinses a silicon wafer between every process step, and the water in which the thermal oxide grows. Target in 1983 was 10-15 MOhm-cm (roughly 1 ppb total ionic impurities) held at 20-25 C, distributed in 304 stainless or PVDF-lined piping. The yellow-lit photolithography bay and the wet chemical benches were the biggest consumers; the C64 itself was an assembly operation, not a fab, but every IC on its board came from a plant running exactly this chain. A modern practice note: the same chain now ends with UV and ultrafiltration, not with a mixed bed.", "kind": "facility", "category": "fluids", "era": "1970-1990",
           "facts": [ {"label": "1983 practice", "value": "10-18 MOhm-cm; modern fabs specify 18 MOhm-cm at 25 C as a minimum"}, {"label": "Specification", "value": "TOC <5 ppb in modern practice; 1980s practice often 50-100 ppb"} ],
           "sources": ["https://www.c64-wiki.com/wiki/motherboard"],
           "confidence": "high",
@@ -633,12 +633,7 @@
             { "id": "facility.gases.hydrogen.reforming", "name": "Steam methane reforming", "description": "Natural gas is desulphurised to under 0.5 ppm sulphur, mixed with steam at 3:1 and passed over a nickel-molybdenum or chromite catalyst at 800-850 C and 15-25 bar. This gives hydrogen plus CO, and the CO is shifted over an iron-chrome catalyst to CO2 and more hydrogen. Then CO2 is removed by amine scrubbing or molecular sieve.", "kind": "process", "category": "industry", "era": "1970-1990",
               "inputs": ["chem.natural-gas", "steam", "catalyst"],
               "children": [
-                { "id": "facility.gases.nickel-catalyst", "name": "Nickel reforming catalyst", "description": "Nickel oxide on alumina, or the classic nickel-molybdenum on alumina, formed by impregnating a porous pellet with nickel nitrate and calcining. Ends at the laterite and the bauxite.", "kind": "material", "category": "industry", "era": "1983",
-                  "inputs": ["nickel laterite", "bauxite"],
-                  "confidence": "medium",
-                  "children": [
-                    
-                  ] }
+                
               ] },
             { "id": "facility.gases.hydrogen.electrolysis", "name": "Electrolysis of demineralised water", "description": "In a diaphragm or, from the 1970s, an alkaline cell, a nickel-plated or activated-titanium cathode makes hydrogen while a nickel anode makes oxygen. Fed with conductivity-grade water at 20-25 C. Output purity is 99.99% once the cell gas is passed over a palladium diffuser or an oxygen getter - the 'deoxo' step that killed the last 0.1% of oxygen.", "kind": "process", "category": "industry", "era": "1970-1990",
               "inputs": ["demineralised water", "electricity", "nickel"],

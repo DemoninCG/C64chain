@@ -118,7 +118,8 @@
     {
       "from": "c64.case.abs-resin.o-xylene",
       "to": "chem.solvents.aromatic-hydrocarbon",
-      "why": "o-xylene is one of the aromatics the survivor groups; if the maintainer would rather keep the isomer separate, this is the one merge in the ABS block that is a judgement call"
+      "declined": true,
+      "why": "DECLINED on review, 2026-10-03. The proposer flagged this as the one judgement call in the ABS block, and the answer is to keep the isomer. o-xylene is a single defined compound, not a mixture: chem.solvents.aromatic-hydrocarbon is 'Xylene, toluene and hexane', so merging would file a pure substance under a blended stream and lose the separation step that produces it. c64.case.abs-resin.o-xylene is confidence high and its child c8-aromatics-separation (UOP Parex) is the industrial process that ISOLATES it, which is exactly the kind of chain that should stay intact."
     },
     {
       "from": "c64.case.abs-resin.bauxite",

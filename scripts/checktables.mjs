@@ -55,4 +55,25 @@ if (fx) {
     }
   }
 }
+
+/* _merged.json is the record that a merge deleted a node. If a record names a
+   loser that is STILL in the tree, the deletion did not happen -- which is not
+   hypothetical: one apply run wrote 158 records while four of those excisions
+   silently failed to take, so the tree and the audit trail disagreed for a
+   whole commit. A record whose SURVIVOR has since been merged away is fine;
+ *  that is just a chain. */
+console.log('\n=== _merged.json ===');
+const mg = await read('_merged.json');
+if (mg?.merges?.length) {
+  const declined = mg.merges.filter((m) => m.merged === false);
+  const applied = mg.merges.filter((m) => m.merged !== false);
+  const stillThere = applied.filter((m) => N[m.loser]);
+  const survivorGone = applied.filter((m) => !N[m.survivor]);
+  console.log(`  records: ${mg.merges.length} (${applied.length} applied, ${declined.length} declined)`);
+  for (const m of stillThere) {
+    console.log(`      STALE ${m.loser} -> ${m.survivor}: the loser still exists, so that merge did not apply`);
+  }
+  console.log(`  (survivor since merged away, expected for chains: ${survivorGone.length})`);
+  for (const m of declined) console.log(`  declined on purpose: ${m.loser} -> ${m.survivor}`);
+}
 console.log('');

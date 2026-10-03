@@ -27,12 +27,24 @@ const VALID_CAT = new Set(['silicon', 'passives', 'board', 'plastics', 'metals',
   'logistics', 'computing', 'industry']);
 
 // category is expected to describe the industry; a kind/category clash is a signal
+/* R3: which kinds an industry category may plausibly contain.
+ *
+ * The rule exists to catch a node filed under an industry that could not have
+ * produced it -- not to enumerate every legal combination. An earlier, stricter
+ * table flagged 33 nodes that are all correct: an assembly line contains
+ * fixtures, machines and a burn-in oven room; a packaging line runs tools; a
+ * `note` is commentary and is legal anywhere. Those were linter gaps, not
+ * defects, and they were noise enough to hide the 17 real findings underneath.
+ *
+ * What stays forbidden is the genuinely contradictory case: `assembly` may not
+ * contain a `material`, because assembly consumes materials rather than making
+ * them. Everything added below is justified by a node that actually exists. */
 const CAT_OK = {
   energy: new Set(['facility', 'process']),
-  computing: new Set(['part', 'material']),
-  logistics: new Set(['process', 'facility']),
-  packaging: new Set(['part', 'material', 'process']),
-  assembly: new Set(['process']),
+  computing: new Set(['part', 'material', 'note']),
+  logistics: new Set(['process', 'facility', 'note']),
+  packaging: new Set(['part', 'material', 'process', 'tool', 'note']),
+  assembly: new Set(['process', 'part', 'tool', 'facility', 'note']),
 };
 
 // cross-cutting services: must never be a `children` edge (CHECKLIST 1a)
@@ -80,6 +92,26 @@ for (const n of all) {
 }
 
 /* -- R3 category ---------------------------------------------------------- */
+
+/* Coverage, stated out loud. R3 can only fire for a category that appears in
+ * CAT_OK, and CAT_OK lists five of the sixteen categories in use -- so at the
+ * time of writing about 94% of the tree sits in a category whose kind
+ * combinations are never checked at all. That is how three non-metals (pine
+ * resin, turpentine, a ros in flux activator) sat under category "metals" for
+ * the whole QA pass without a warning. Reported as a NOTE rather than left
+ * implicit, so widening CAT_OK is a visible piece of work rather than something
+ * nobody knows is missing.
+ */
+const catTotals = new Map();
+for (const n of all) catTotals.set(n.category, (catTotals.get(n.category) ?? 0) + 1);
+const unchecked = [...catTotals.entries()].filter(([c]) => !CAT_OK[c]);
+const uncheckedNodes = unchecked.reduce((a, [, n]) => a + n, 0);
+if (unchecked.length) {
+  add('3', 'NOTE', `r3 covers ${Object.keys(CAT_OK).length} of ${catTotals.size} categories; `
+    + `${uncheckedNodes} node(s) in ${unchecked.length} categories are never category-checked `
+    + `(${unchecked.map(([c, n]) => `${c}:${n}`).join(', ')})`, []);
+}
+
 for (const n of all) {
   if (!VALID_CAT.has(n.category)) { add('3', 'FAIL', `${n.id}: category "${n.category}" not permitted`); continue; }
   const ok = CAT_OK[n.category];
@@ -104,10 +136,42 @@ for (const n of all) {
   if (/\bfor the [a-z ]{3,}$/i.test(n.name)) add('4', 'WARN', `${n.id}: name is relative to another node`, [n.id]);
 }
 
+/* Childless processes that were reviewed and deliberately kept.
+ *
+ * The rule below used to read "a process with no children is commentary, fold
+ * it into the parent". That is wrong, and it was costing real content: every
+ * one of the 13 it still flags is a documented, named industrial process of
+ * 229-985 characters, several with a facts table. `chem.silicone.rochow` is
+ * the Rochow process -- the entire reason silicone is made the way it is.
+ * Folding it into `chem.silicone` would delete the fact that the process has
+ * a name.
+ *
+ * The distinction that matters is "adds nothing" vs "is the end of its branch",
+ * and no mechanical test separates them: the genuinely commentary-like childless
+ * nodes were already removed by the QA pass, which is why there is not one
+ * childless process left in the tree with a description under 200 characters.
+ *
+ * So the rule now asks a question instead of giving an instruction, and the
+ * keepers are listed here with the reason, in the same spirit as UTIL_OWNERS
+ * above: an exemption that is written down rather than one that is silent. */
+const TERMINAL_PROCS = new Map([
+  ['facility.water.ion-exchange', 'a named unit operation on the ultrapure water train'],
+  ['chem.fab-chemicals.process-gases.nitrogen.cryogenic-air', 'cryogenic air separation is the named process that makes the nitrogen'],
+  ['c64.case.abs-resin.c8-aromatics-separation', 'UOP Parex, a named swing adsorption unit with a facts table'],
+  ['chem.silicone.rochow', 'the Rochow direct process: the named reaction that makes silicone'],
+  ['chem.ethylene.polyethylene.hdpe.ziegler-natta.titanium-catalyst.tetrachloride', '985 characters on chlorinating rutile and distilling TiCl4 out at 136 C'],
+  ['chem.ethylene.quench.gas-quench', 'gas rather than liquid quench, with the acetylene consequence'],
+  ['metal.hall-heroult.pot-lining', 'carbon lining 400-600 mm thick, four facts, three materials'],
+  ['peripheral.tv.crt.gun.blackening', 'flame blacking is a manufacturing step with its own reagents'],
+  ['peripheral.tv.crt.phosphor.zns.so2', 'double-contact sulphuric acid plant, with a facts table'],
+]);
+
 /* -- R5 altitude and bare processes --------------------------------------- */
 for (const n of all) {
   if (n.kind === 'process' && (n.children ?? []).length === 0 && !n.from?.length) {
-    add('5', 'WARN', `${n.id}: bare process — fold into the parent description`, [n.id]);
+    const keep = TERMINAL_PROCS.get(n.id);
+    if (keep) add('5', 'NOTE', `${n.id}: childless process, reviewed and kept — ${keep}`, [n.id]);
+    else add('5', 'WARN', `${n.id}: childless process — keep it if it names a real operation, otherwise fold it into the parent`, [n.id]);
   }
   if ((n.description ?? '').length < 120) add('5', 'WARN', `${n.id}: thin description (${(n.description ?? '').length} ch)`, [n.id]);
 }
@@ -132,23 +196,32 @@ for (const n of all) {
 }
 
 /* -- summary -------------------------------------------------------------- */
-const byLevel = { FAIL: [], WARN: [] };
+const byLevel = { FAIL: [], WARN: [], NOTE: [] };
 for (const r of rows) byLevel[r.level].push(r);
 
 console.log(`\n=== audit${fileArg ? ` of ${fileArg}` : ''} ===`);
 console.log(`  ${all.length} nodes examined\n`);
 
-for (const level of ['FAIL', 'WARN']) {
+/* NOTE is for findings that were reviewed and deliberately accepted. They are
+   reported so the decision stays visible, but they are not warnings and must
+   not affect the exit code -- otherwise a recorded exemption reads as an
+   outstanding defect. */
+for (const level of ['FAIL', 'WARN', 'NOTE']) {
   const list = byLevel[level];
+  if (!list?.length) continue;
   const grouped = new Map();
   for (const r of list) grouped.set(`${r.rule}|${r.msg}`, (grouped.get(`${r.rule}|${r.msg}`) ?? 0) + 1);
   console.log(`  ${level}  ${list.length} occurrence(s), ${grouped.size} distinct`);
   const sorted = [...grouped.entries()].sort((a, b) => b[1] - a[1]);
-  for (const [key, count] of sorted.slice(0, 18)) {
+  /* --all lists every distinct finding. Without it the report silently hides
+     rules that fall outside the top 18 by count, which is how 17 warnings from
+     rules other than r3 went unnoticed. */
+  const cap = argv.includes('--all') ? sorted.length : 18;
+  for (const [key, count] of sorted.slice(0, cap)) {
     const [rule, msg] = key.split('|');
-    console.log(`      [r${rule}] ${count > 1 ? `x${count} ` : ''}${msg.slice(0, 150)}`);
+    console.log(`      [r${rule}] ${count > 1 ? `x${count} ` : ''}${msg.slice(0, 170)}`);
   }
-  if (sorted.length > 18) console.log(`      ... and ${sorted.length - 18} more distinct`);
+  if (sorted.length > cap) console.log(`      ... and ${sorted.length - cap} more distinct (use --all)`);
   console.log('');
 }
 

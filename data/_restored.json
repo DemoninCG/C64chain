@@ -1,35 +1,30 @@
 {
-  "$comment": "Nodes destroyed as collateral damage by scripts/applyproposals.mjs and recovered from git HEAD. The text is the pre-QA-pass version, so each needs a look against what the QA agent last intended before it is trusted.",
-  "restored": [
+  "$comment": "Nodes destroyed as collateral damage by scripts/applyproposals.mjs when a merge excised a parent that had them nested inline, and recovered from git HEAD (77dc066). Their text predates the QA pass, so it had never been through docs/CHECKLIST.md. Reviewed 2026-10-03; see `reviewed` on each entry.",
+  "reviewed": "2026-10-03, against docs/CHECKLIST.md and the conventions the rest of the tree now follows",
+  "outcome": "All six pass the mechanical checklist: valid kind and category, era and confidence present, absolute names, no id-shaped input that fails to resolve, and an id prefix matching the fragment that holds them. Their free-text inputs that do not resolve (coal, syngas, phthalic anhydride, nitrobenzene, ammonia, copper, steel, chromium, molybdenum, zinc-chloride) are prose naming a substance rather than a node id, which is the intended design. No rewrite was needed.",
+  "corrections": [
     {
       "id": "metal.pine-resin",
-      "hostFile": "data/60-metals.json",
-      "parent": "chem.rosin",
-      "recoveredFrom": "HEAD (77dc066)"
+      "change": "category metals -> plastics",
+      "why": "In this taxonomy `metals` means metals, ores and industrial minerals, and pine resin is none of those. It sat uncorrected through the whole QA pass because the audit's category rule only covers five of the sixteen categories in use, so `metals` was never checked at all."
     },
     {
-      "id": "metal.rosin.activator",
-      "hostFile": "data/60-metals.json",
-      "parent": "chem.rosin",
-      "recoveredFrom": "HEAD (77dc066)"
-    },
-    {
-      "id": "c64.case.other-polymers.methanol",
-      "hostFile": "data/40-chassis.json",
-      "parent": "c64.case.other-polymers",
-      "recoveredFrom": "HEAD (77dc066)"
-    },
-    {
-      "id": "c64.case.tooling.p20",
-      "hostFile": "data/40-chassis.json",
-      "parent": "c64.case.tooling",
-      "recoveredFrom": "HEAD (77dc066)"
-    },
-    {
-      "id": "c64.case.abs-resin.phthalo-blue",
-      "hostFile": "data/40-chassis.json",
-      "parent": "chem.abs",
-      "recoveredFrom": "HEAD (77dc066)"
+      "id": "metal.turpentine",
+      "change": "category metals -> fluids",
+      "why": "Turpentine is a solvent. Comparable solvent nodes in the tree (acetone, furfural, N-methylpyrrolidone) are categorised fluids. Same unchecked-category cause as above."
     }
+  ],
+  "stillWorth": [
+    "`metal.rosin.activator` keeps category `metals`, which is defensible: the halide is zinc chloride, an inorganic salt, and `metals` in this taxonomy already covers metal.limestone, metal.fluorspar and metal.salt-brine, none of which are metals either.",
+    "`metal.turpentine` came along inside the recovered `metal.pine-resin` object rather than being restored in its own right, so it has no entry of its own here.",
+    "The broader category question stands: widening CAT_OK to the eleven unchecked categories would make 2,200 further nodes reviewable. The audit now reports that gap as a NOTE so it stays visible."
+  ],
+  "restored": [
+    { "id": "metal.pine-resin", "hostFile": "data/60-metals.json", "parent": "chem.rosin", "recoveredFrom": "HEAD (77dc066)" },
+    { "id": "metal.rosin.activator", "hostFile": "data/60-metals.json", "parent": "chem.rosin", "recoveredFrom": "HEAD (77dc066)" },
+    { "id": "c64.case.other-polymers.methanol", "hostFile": "data/40-chassis.json", "parent": "c64.case.other-polymers", "recoveredFrom": "HEAD (77dc066)" },
+    { "id": "c64.case.tooling.p20", "hostFile": "data/40-chassis.json", "parent": "c64.case.tooling", "recoveredFrom": "HEAD (77dc066)" },
+    { "id": "c64.case.abs-resin.phthalo-blue", "hostFile": "data/40-chassis.json", "parent": "chem.abs", "recoveredFrom": "HEAD (77dc066)" },
+    { "id": "metal.turpentine", "hostFile": "data/60-metals.json", "parent": "metal.pine-resin", "recoveredFrom": "nested inside the recovered metal.pine-resin object" }
   ]
 }

@@ -26,7 +26,10 @@ if (!file || !nodeId || !mode || !key) {
 
 const raw = readFileSync(file, 'utf8');
 
-/* --- locate every occurrence of the node id ------------------------------ */
+/* --- locate the node's DEFINITION ----------------------------------------
+ * Only an occurrence that is the value of an "id" key counts. Matching the bare
+ * quoted id also matches a reference to it in a `children` or `inputs` array,
+ * which made a perfectly ordinary node look like a duplicate-id error. */
 function findNodeSlices(text, id) {
   const needle = `"${id}"`;
   const slices = [];
@@ -35,6 +38,7 @@ function findNodeSlices(text, id) {
     const at = text.indexOf(needle, from);
     if (at < 0) break;
     from = at + needle.length;
+    if (!/"id"\s*:\s*$/.test(text.slice(Math.max(0, at - 12), at))) continue;   // a reference, not a definition
     // walk backwards to the '{' that opens this node object
     let i = at - 1;
     let depth = 0;

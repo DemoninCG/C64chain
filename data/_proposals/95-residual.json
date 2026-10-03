@@ -1,0 +1,20 @@
+{
+  "$comment": "Merges arising from the residual audit sweep, not from a QA agent. Each is a duplicate the tree-wide audit rules could see but no single fragment owner could fix, because the two copies live in different fragments.",
+  "merges": [
+    {
+      "from": "facility.gases.nickel-catalyst",
+      "to": "chem.natural-gas.uses.hydrogen.nickel-catalyst",
+      "why": "Both nodes are named 'Nickel reforming catalyst' and both are leaf materials at medium confidence. The 70-petrochem copy is the one on the canonical hydrogen-from-SMR path and is the richer of the two (it carries the pre-1957 Topsoe SMR-180 detail and the multi-bed reformer tube geometry). Kept per CHECKLIST keep-rule 1. This is the last of the duplicate-name groups left by the QA pass."
+    },
+    {
+      "from": "c64.case.abs-resin.copper",
+      "to": "metal.copper",
+      "why": "Named 'Copper for the phthalocyanine centre', which rule 4 rejects as a name relative to its parent. It is also a path-local copy: metal.copper is the canonical published node, already at confidence high with eight children covering ore, concentrate, smelting, converting, anode, tankhouse, wire and foil. Kept per keep-rule 2, which prefers the canonical node over the contextual copy."
+    },
+    {
+      "from": "c64.case.abs-resin.chalcopyrite",
+      "to": "metal.copper.ore",
+      "why": "Child of the node merged above, and a second copy of the same ground: chalcopyrite is copper ore, which is what metal.copper.ore already publishes. Merged in the same pass rather than leaving a known duplicate one level down. Its two children, froth flotation and flash smelting, are adopted by metal.copper.ore; flotation is a documented terminal process in its own right and is listed in the audit's TERMINAL_PROCS exemptions."
+    }
+  ]
+}

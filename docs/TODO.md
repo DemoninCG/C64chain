@@ -9,63 +9,78 @@ checks it agrees — not when this file is edited.
 
 ---
 
-## 1. Keycap legends: both methods are present on the original caps
+## 1. ~~Keycap legends~~ RESOLVED 2026-10-03
 
-**Status:** two nodes currently contradict each other, both carry an
-`UNRESOLVED CONFLICT` note, and both are marked `confidence: medium`.
-
-- `c64.keyboard.keycaps.legend` (40-chassis.json) — legends pad-printed
-- `c64.keyboard-switches.keycap.double-shot` (30-passives.json) — legends
-  double-shot moulded
-
-**What the evidence says.** Neither claim is wholly wrong; they describe
-different faces of the same cap.
+Settled, and recorded on the nodes themselves. Both claims were partly right:
+they described different faces of the same cap.
 
 | part of the cap | method | confidence |
 |---|---|---|
-| top — letters, numbers, symbols | double-shot moulded, contrasting plastic legend | high |
-| front — PETSCII / graphics legends | printed, wearable | medium-high |
+| top — letters, numbers, symbols | double-shot moulded, cannot wear off | high |
+| front — PETSCII / graphics | printed, does wear off | medium (printed: well attested; pad printing specifically: hedged) |
 
-Quotable sources, fetched and confirmed 2026-10-03:
+`c64.keyboard-switches.keycap.double-shot` is now scoped to the top and raised
+to `confidence: high`; `c64.keyboard.keycaps.legend` is now "Printed front
+(PETSCII) legends" and no longer claims the cap top was printed. Both carry the
+sources.
 
-- Keyboard Wiki, *Commodore 64* — <https://wiki.themk.org/index.php/Commodore_64>
-  > The alphanumeric keys are double-shot white on a very dark brown. The
-  > front-printed "PETSCII" legends are **likely** pad-printed.
+The likely origin of the disagreement was the same Keyboard Wiki page, one
+section further on: the 1988 **C64C** has *"All legends … pad-printed on top of
+the keys"*. A blanket "the C64 legends were pad-printed" is true of the C64C and
+false of the 1982 breadbin.
 
-  Its infobox covers both: *"Spherical sculptured ABS, double-shot or
-  pad-printed"*.
+Remaining, if anyone wants them: the spacebar is reported *not* to be
+double-shot, and the C64C variant deserves its own node so the two machines
+stop being conflated.
 
-- Deskthority thread 8102 — <https://deskthority.net/viewtopic.php?t=8102>
-  > With the exception of the spacebar, they are all double shot injection
-  > molded keycaps
+---
 
-  > The front legends are printed. If you look closely you should see the
-  > difference between double shot on the top and printed on the front.
+## 1a. Phase 3 is much smaller than planned — read this before scoping it
 
-- CBMSTUFF keycap project (Indiegogo) — claims the VIC-20 and original C64
-  used double-shot caps, avoiding top printing. **Returns HTTP 403 to a
-  script**, so the wording is second-hand from the summary above and should
-  be read by hand before it is cited in the data.
-- Retroleum keyboard notes — <https://blog.retroleum.co.uk/electronics-articles/c64-keyboard-info/>
-  Reachable but the double-shot / pad-print wording did not appear in the
-  fetched text. Worth reading directly.
+I originally proposed resolving the unresolved ingredient strings as a bulk
+delegated pass. **Measured, that is wrong.** Of the 538 input strings that
+resolve by none of build's three routes:
 
-**The detail that probably caused the disagreement.** The same Keyboard Wiki
-page says of the **C64C** (1988):
+| | count |
+|---|---|
+| ambiguous — several nodes could be meant | 511 |
+| exactly one candidate node | 17 |
+| no plausible node at all | 10 |
 
-> All legends are pad-printed on top of the keys, in a different rounder font.
+And the 17 "unambiguous" ones are **~40% correct on hand review**: `liquefaction`
+matched *Hydrogen*, `soil` matched the *barite mud system*, `sunlight` matched
+*EPDM*, `dyes` matched a *BOPP film*. Having one candidate is weak evidence,
+because a rare word is by definition rare in node names too. Only **one** row
+survives the strictest test (`pyromellitic dianhydride`).
 
-So "the C64 legends were pad-printed" is true of the C64C and false of the
-1982 breadbin. Check whether the pad-print claim was imported from C64C
-documentation before rewriting it.
+By usage, the real reviewable scope is the long tail's opposite end:
 
-**Also worth capturing:** the spacebar is *not* double-shot (per Deskthority),
-and most keyboards have dark grey function keys with some orange ones.
+| uses | strings |
+|---|---|
+| 1 use | 480 — fine as prose, not worth touching |
+| 2 uses | 38 |
+| 3–4 uses | 13 |
+| 5+ uses | **7**, covering 48 edges |
 
-**Action.** Replace both nodes with one split pair — top legends (double-shot)
-and front/PETSCII legends (printed) — drop the conflict notes, add the
-sources, and put the C64C variant on its own node so the two machines stop
-being conflated. Raise both confidences once the sources are attached.
+**Action.** Scope Phase 3 at roughly 30–35 items: the 7 high-use strings, the 13
+mid-use, and the 17 single-candidate ones read by a human. It does not need
+subagents, and it must not be applied mechanically. `node scripts/ingredients.mjs
+unresolved --clean|--strict` reproduces the ranking.
+
+## 1b. The audit only category-checks 5 of 16 categories
+
+`CAT_OK` in `scripts/audit.mjs` lists five categories, so **2,200 of 2,439 nodes
+sit in a category whose kind combinations are never examined.** That is how
+`metal.pine-resin` and `metal.turpentine` sat under `metals` for the whole QA
+pass. Both are now recategorised; the audit reports the coverage gap as a NOTE
+so it stays visible.
+
+**Action.** Extend `CAT_OK` to the eleven unchecked categories — `metals`,
+`plastics`, `silicon`, `passives`, `industry`, `fluids`, `board`,
+`interconnect`, `magnetics`, `power`, `optics` — and work whatever it turns up.
+Expect real findings: `metal.benzene` ("Crude benzene from the coke oven") is
+still categorised `metals` while the canonical `chem.styrene.benzene` is
+`plastics`.
 
 ---
 
@@ -103,33 +118,25 @@ magnet branch each grow their own bastnasite chain, rather than sharing one.
 **Action.** Merge onto a single rare-earth branch, or accept the split
 deliberately and say why in a note.
 
-## 5. Six nodes restored from git HEAD need review
+## 5. Six nodes restored from git HEAD — REVIEWED 2026-10-03
 
-`data/_restored.json` lists them. They were destroyed as collateral damage
-when a merge excised a parent that had them nested inline, and were
-recovered from commit `77dc066` — which is the **pre-QA-pass** text, not what
-the QA agents last wrote.
+`data/_restored.json` records the outcome. All six pass the mechanical
+checklist and none needed rewriting. Two were recategorised (`metal.pine-resin`
+→ plastics, `metal.turpentine` → fluids) because they sat under `metals` in a
+category the audit never checks.
 
-- `metal.pine-resin`, `metal.turpentine`, `metal.rosin.activator`
-- `c64.case.other-polymers.methanol`
-- `c64.case.abs-resin.phthalo-blue`
-- `c64.case.tooling.p20`
+The wider lesson is item 1b above, not these six.
 
-**Action.** Diff each against what the owning agent's QA pass would have
-produced. All six are currently reachable and their references resolve, so
-nothing is broken — but their text has not been through the checklist.
+## 6. Unresolved ingredient inputs — rescoped, see item 1a
 
-## 6. Unresolved ingredient inputs
+707 `inputs` strings do not resolve to a node, but only ~30 are worth a
+decision. The original framing of this item as a bulk pass was wrong; the
+measurement is in 1a.
 
-707 `inputs` strings do not resolve to a node. Most are deliberate free text
-("copper", "ABS pellet", "mould base steel") that name a substance rather than
-a node id, which is the intended design. A minority are almost certainly
-missed links.
-
-**Action.** `node scripts/spotcheck.mjs` and work the `??` and `?` rows. The
-check in `scripts/` that compares each mapping's key against its target's
-name (which is how the borax and soda-ash errors were found) is worth keeping
-as a permanent script rather than a one-off.
+**Action.** Work the ~30-item list. The check that compares each mapping's key
+against its target's name is now permanent as `scripts/ingredients.mjs links`,
+and it is how the borax, soda-ash, barite and polyphenylene-sulfide errors were
+found. Keep it.
 
 ## 7. (checked, not an issue) boron
 
@@ -149,6 +156,10 @@ Two sides of one cut-off, not a contradiction. Nothing to do.
 
 - Re-run `scripts/probe.mjs` on the standard lines and produce the
   consolidated before/after diff for the README.
-- Push `c6a974d` and the follow-up commits to `origin/main`.
+- Push the Phase 0/1 commits to `origin/main`.
 - Decide whether the large build artifacts (`public/tree.*`, `docs/TREE.md`)
   stay committed or move to a release artifact.
+- Worth a look while it is fresh: `metal.benzene` ("Crude benzene from the coke
+  oven", category `metals`) may be a duplicate of the canonical
+  `chem.styrene.benzene`. Not merged, because I had not confirmed it is the same
+  substance rather than a co-product of the coke ovens.

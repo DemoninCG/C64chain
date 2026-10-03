@@ -94,111 +94,6 @@
     ]
     }
     ]
-    },
-    {
-    "id": "c64.case.abs-resin.copper",
-    "name": "Copper for the phthalocyanine centre",
-    "description": "Copper(II) salts, from electrorefined copper. Copper comes from chalcopyrite CuFeS2 ore or from ore sorted to a copper concentrate, then smelted, converted and electrorefined.",
-    "kind": "material",
-    "category": "metals",
-    "era": "1982",
-    "inputs": [
-    "chalcopyrite concentrate",
-    "electricity",
-    "metal.copper"
-    ],
-    "confidence": "high",
-    "children": [
-    {
-    "id": "c64.case.abs-resin.chalcopyrite",
-    "name": "Chalcopyrite (copper ore)",
-    "description": "CuFeS2, the dominant copper ore, mined underground or in large open pits and concentrated by flotation before smelting. The smelter's job is to strip the iron into slag so that copper matte can be converted and electrorefined.",
-    "kind": "material",
-    "category": "metals",
-    "era": "ancient",
-    "facts": [
-    {
-    "label": "Copper grade (run of mine)",
-    "value": "0.5-1.5% Cu"
-    },
-    {
-    "label": "Concentrate grade",
-    "value": "20-30% Cu"
-    },
-    {
-    "label": "Smelter",
-    "value": "flash smelting, 1200-1400 C"
-    }
-    ],
-    "inputs": [
-    "ore",
-    "flotation reagents",
-    "metal.copper",
-    "facility.electricity"
-    ],
-    "confidence": "high",
-    "children": [
-    {
-    "id": "c64.case.abs-resin.flotation",
-    "name": "Froth flotation of copper ore",
-    "description": "Crushed and ground ore is conditioned with xanthate collectors and frothers, and the copper sulfide particles are floated to the surface in a bank of rectangular flotation cells. This is how most of the world's copper is separated from its host rock.",
-    "kind": "process",
-    "category": "metals",
-    "era": "1910s-",
-    "facts": [
-    {
-    "label": "Grind",
-    "value": "to ~50-150 um"
-    },
-    {
-    "label": "Collector",
-    "value": "xanthate or dithiophosphonate"
-    },
-    {
-    "label": "Cells",
-    "value": "dozens in series, each a few m3"
-    }
-    ],
-    "inputs": [
-    "ground ore",
-    "lime",
-    "collectors",
-    "air"
-    ],
-    "confidence": "high"
-    },
-    {
-    "id": "c64.case.abs-resin.flash-smelting",
-    "name": "Flash smelting and converting",
-    "description": "Sulfide concentrate is blown with oxygen-enriched air in a flash furnace at ~1250 C, so that the sulfur burns and autogenous heat smelts the copper. The resulting matte is oxidised in converters, slagged of its iron, and the blister copper is electrorefined.",
-    "kind": "process",
-    "category": "metals",
-    "era": "1950s-",
-    "facts": [
-    {
-    "label": "Flash furnace temperature",
-    "value": "1200-1400 C"
-    },
-    {
-    "label": "Converter",
-    "value": "peirce-smith, oxygen airblown"
-    },
-    {
-    "label": "Next step",
-    "value": "tankhouse electrorefining"
-    }
-    ],
-    "inputs": [
-    "copper concentrate",
-    "oxygen",
-    "flux",
-    "electricity"
-    ],
-    "confidence": "high"
-    }
-    ]
-    }
-    ]
     }
     ]
     },
@@ -1354,47 +1249,46 @@
             },
             {
               "id": "c64.keyboard.keycaps.legend",
-              "name": "Printed keycap legends",
-              "description": "Legends are printed on the cap top with a two-colour pad printer (pad printing / tampo printing): a soft silicone pad picks up ink from a cliche, deforms against the slightly crowned cap, and transfers the character. White legends on the dark caps. On sets that also carry the shifted and graphic characters on the small front wall of the cap, those are printed there as well; printing a vertical face needs the pad tilted and a second fixture, which is why early sets avoided it and used a bolder single top legend instead.",
+              "name": "Printed front (PETSCII) legends",
               "kind": "process",
               "category": "plastics",
               "era": "1982",
+              "confidence": "medium",
+              "description": "The graphics characters on the small FRONT wall of the cap - the PETSCII and shifted-symbol set - are printed, not moulded. This is the other half of the keycap story from the double-shot top legends (c64.keyboard-switches.keycap.double-shot), and the difference is visible: these characters wear and rub off, so a cap whose front legend is faint while its top legend is crisp is normal rather than damaged. Printing a near-vertical face is harder than printing a top - the pad has to be tilted against the front wall with the cap held in a nest, which wants a second station and a second fixture - so front coverage improves gradually across a production run rather than switching on at a date. On sets with only a single top legend, the front face was left plain.",
               "facts": [
-                {
-                  "label": "Process",
-                  "value": "pad printing (tampo), 2-colour, ~2 stations"
-                },
-                {
-                  "label": "Why pad and not screen",
-                  "value": "a flat cap top with a slight crown will not lie flat under a screen; pad printing conforms"
-                },
-                {
-                  "label": "Ink",
-                  "value": "solvent-based or UV-curing screen/pad ink"
-                },
-                {
-                  "label": "Legends",
-                  "value": "single character on most keys; shifted and graphic characters on the front face of later sets"
-                },
-                {
-                  "label": "Front-face fixture",
-                  "value": "cap held tilted in a nest, so a second station and a second fixture"
-                },
-                {
-                  "label": "Front-face coverage",
-                  "value": "improves gradually across the production run rather than switching on at a date"
-                }
+              {
+              "label": "Applies to",
+              "value": "the front wall only - PETSCII and shifted graphics characters"
+              },
+              {
+              "label": "Process",
+              "value": "printed; the sources say pad printing but hedge it (\"likely pad-printed\")"
+              },
+              {
+              "label": "Wear",
+              "value": "yes - these are the legends that rub off, unlike the moulded tops"
+              },
+              {
+              "label": "Why a vertical face is harder",
+              "value": "the pad must be tilted against the front wall with the cap held in a nest"
+              },
+              {
+              "label": "Front-face coverage",
+              "value": "improves gradually across the production run rather than switching on at a date"
+              }
               ],
               "inputs": [
-                "c64.keyboard.keycaps.abs",
-                "cliche",
-                "silicone pad",
-                "pad ink"
+              "c64.keyboard.keycaps.abs",
+              "cliche",
+              "silicone pad",
+              "pad ink"
               ],
-              "confidence": "medium",
-              "note": "UNRESOLVED CONFLICT with c64.keyboard-switches.keycap.double-shot in 30-passives.json, which states the legends were double-shot moulded (a second shot in a second colour over uncoated islands of the first) rather than pad-printed. Checked 2026-10-03 against two primary sources: the Commodore C64/C64C Service Manual (1992-03) and The Anatomy of the Commodore 64 - neither discusses keycap printing at all, so the documents cannot settle it. Neither claim carries a source. This node's confidence has been lowered from high to medium for that reason: what IS established from the service manual is the 66-key count, 2.5-3.5 mm wall and rubber-dome-over-rigid-PCB construction. The two claims are not necessarily exclusive - two-tone caps and printed legends could coexist - but that is a hypothesis, not a finding. Do not treat either node as authoritative until a teardown photograph or a restorer source is checked.",
-              "children": []
-            },
+              "sources": [
+              "https://wiki.themk.org/index.php/Commodore_64",
+              "https://deskthority.net/viewtopic.php?t=8102"
+              ],
+              "note": "RESOLVED 2026-10-03, after the QA pass recorded an unresolved conflict here against c64.keyboard-switches.keycap.double-shot. This node previously claimed the legends were pad-printed \"on the cap top\", which was wrong for the 1982 breadbin: the tops are double-shot moulded. What is right here is the front wall. Evidence: Keyboard Wiki (themk.org) - \"The front-printed \"PETSCII\" legends are likely pad-printed\"; Deskthority 8102 - \"The front legends are printed. If you look closely you should see the difference between double shot on the top and printed on the front of the caps.\" Confidence is held at medium deliberately, and for a specific reason: that the front legends are PRINTED is well attested by two independent collector sources, but the sources do not agree on the method - the Keyboard Wiki hedges with \"likely\" while Deskthority only says \"printed\". The ink and pad-printing detail retained here follows the pad-printing reading and should be treated as the weaker half of this node."
+              },
             {
               "id": "c64.keyboard.keycaps.colours",
               "name": "Keycap colour: no coding on the breadbin keyboard",

@@ -6322,70 +6322,85 @@
             },
             {
               "id": "c64.keyboard-switches.keycap.double-shot",
-              "name": "Double-shot moulding of the legend",
-              "description": "The keycap is injection-moulded twice: once in the base colour, then a second shot of a second colour is injected into a slightly larger cavity, covering everything except the legend characters, which were left as uncoated islands of the first shot. This gives a legend that cannot wear off - the reason a forty-year-old C64 keycap still reads.",
+              "name": "Double-shot moulding of the top legends",
               "kind": "process",
               "category": "plastics",
-              "era": "1982-1984",
-              "confidence": "medium",
-              "note": "UNRESOLVED CONFLICT with c64.keyboard.keycaps.legend in 40-chassis.json, which states the C64 legends were pad-printed (tampo) rather than double-shot moulded. Checked 2026-10-03 against two primary sources: the Commodore C64/C64C Service Manual (1992-03) and The Anatomy of the Commodore 64 - neither discusses keycap printing at all, so the documents cannot settle it. Neither claim here is sourced. What is established: the C64 has 66 keys (8x8 = 64 in the CIA 1 matrix, RESTORE on its own NMI line, SHIFT LOCK sharing the shift lines), so a second legend method can account for the COUNT discrepancy but not the printing method. Do not treat either node as authoritative until a teardown photograph or a restorer source is checked.",
+              "era": "1982",
+              "confidence": "high",
+              "description": "The legends on the TOP of the keycap - letters, numbers and symbols - are moulded into the plastic, not printed on it. The cap is injection-moulded twice in one tool cycle: first in the dark brown-grey base colour, then a second shot of a contrasting lighter colour is injected into a slightly larger cavity, covering everything except the legend characters, which are left as uncoated islands of the first shot. Nothing is printed on the top face, so the legend cannot wear off - which is why a forty-year-old cap still reads cleanly, and why the mould line and the islands are visible when a cap is pulled off its stem. This covers the cap top only: the graphics characters on the front wall are a different process (c64.keyboard.keycaps.legend), and the two are told apart at a glance by whether the character wears.",
               "facts": [
-                {
-                  "label": "Shots",
-                  "value": "two injection mouldings, co-moulded in the same tool cycle"
-                },
-                {
-                  "label": "Legend",
-                  "value": "island of the base-colour shot, not a printed decal"
-                }
+              {
+              "label": "Applies to",
+              "value": "the cap top only - letters, numbers and symbols"
+              },
+              {
+              "label": "Shots",
+              "value": "two injection mouldings, co-moulded in the same tool cycle"
+              },
+              {
+              "label": "Legend",
+              "value": "island of the base-colour shot, not a printed decal"
+              },
+              {
+              "label": "Wear",
+              "value": "none - a moulded legend outlives the printed front characters"
+              },
+              {
+              "label": "Exception",
+              "value": "the spacebar is reported not to be double-shot; all other caps are"
+              }
               ],
               "inputs": [
-                "chem.abs",
-                "facility.electricity"
+              "chem.abs",
+              "facility.electricity"
+              ],
+              "sources": [
+              "https://wiki.themk.org/index.php/Commodore_64",
+              "https://deskthority.net/viewtopic.php?t=8102"
+              ],
+              "note": "RESOLVED 2026-10-03, after the QA pass recorded an unresolved conflict here against c64.keyboard.keycaps.legend. The two claims were not actually in conflict: they described different faces of the cap. This node is the top face, double-shot; the front PETSCII legends are printed, per the sibling node. Evidence: Keyboard Wiki (themk.org) - \"The alphanumeric keys are double-shot white on a very dark brown\"; Deskthority thread 8102 - \"With the exception of the spacebar, they are all double shot injection molded keycaps\". Neither the Commodore C64/C64C Service Manual nor The Anatomy of the Commodore 64 discusses keycap printing, so the earlier \"cannot be settled\" note was correct as to those two documents and wrong to conclude from them that no source existed. The likely origin of the disagreement: the same Keyboard Wiki page says the 1988 C64C has \"All legends ... pad-printed on top of the keys\", which is a true statement about a different machine. A C64C-only pad-printing description was probably read as a C64 one. Confidence raised from medium to high on the strength of the two sources.",
+              "children": [
+              {
+              "id": "c64.keyboard-switches.keycap.double-shot.legend-colour",
+              "name": "Second-shot colour",
+              "kind": "material",
+              "category": "passives",
+              "confidence": "medium",
+              "description": "The outer shot is pigmented with an organic or inorganic colourant at high loading. The light legends on the dark brown-grey caps - and, on some sets, the orange or grey function-key caps - are all achievable with pigmented ABS; the moulding must be run at high enough pressure that the two shots fuse rather than delaminate.",
+              "inputs": [
+              "chem.abs"
+              ],
+              "sources": [
+              "https://wiki.themk.org/index.php/Commodore_64",
+              "https://deskthority.net/viewtopic.php?t=8102"
               ],
               "children": [
-                {
-                  "id": "c64.keyboard-switches.keycap.double-shot.legend-colour",
-                  "name": "Second-shot colour",
-                  "description": "The outer shot is pigmented with an organic or inorganic colourant at high loading. Brown, red, orange and grey legends - the four C64 keycap colours - are all achievable with pigmented ABS; the moulding must be run at a high enough pressure that the two shots fuse rather than delaminate.",
-                  "kind": "material",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "inputs": [
-                    "chem.abs"
-                  ],
-                  "children": [
-                    {
-                      "id": "c64.keyboard-switches.keycap.double-shot.legend-colour.pigment",
-                      "name": "Colourant in the second shot",
-                      "description": "The second-shot colour is a pigment dispersed in the ABS matrix at high loading. Organic pigments give brighter colours and are more expensive; inorganic iron oxides give the earthier browns and reds.",
-                      "kind": "material",
-                      "category": "passives",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "chem.petroleum"
-                      ],
-                      "children": [
-                        {
-                          "id": "c64.keyboard-switches.keycap.double-shot.legend-colour.pigment.iron-oxide",
-                          "name": "Iron oxide pigments",
-                          "description": "Synthetic iron oxides, made by oxidising iron scrap, were the standard browns, reds and blacks of the period and are still used. They begin at iron ore and end up in the keycap.",
-                          "kind": "material",
-                          "category": "passives",
-                          "era": "ancient",
-                          "confidence": "medium",
-                          "inputs": [
-                            "metal.iron"
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
+              {
+              "id": "c64.keyboard-switches.keycap.double-shot.legend-colour.pigment",
+              "name": "Colourant in the second shot",
+              "kind": "material",
+              "category": "passives",
+              "confidence": "medium",
+              "description": "The second-shot colour is a pigment dispersed in the ABS matrix at high loading. Organic pigments give brighter colours and cost more; inorganic iron oxides give the earthier browns, reds and blacks. The moulder buys a masterbatch rather than raw pigment, so the colour arrives as a compounded material.",
+              "inputs": [
+              "chem.petroleum"
               ]
-            },
+              },
+              {
+              "id": "c64.keyboard-switches.keycap.double-shot.legend-colour.pigment.iron-oxide",
+              "name": "Iron oxide pigments",
+              "kind": "material",
+              "category": "metals",
+              "confidence": "medium",
+              "description": "Synthetic iron oxides, made by oxidising iron scrap or precipitating from an iron solution, were the standard browns, reds and blacks of the period and are still used. They begin at iron ore and end up in the keycap, which makes the keycap a surprisingly direct consumer of the iron chain.",
+              "inputs": [
+              "metal.iron"
+              ]
+              }
+              ]
+              }
+              ]
+              },
             {
               "id": "c64.keyboard-switches.keycap.spring",
               "name": "Coil return spring",

@@ -7,7 +7,6 @@
     "lead dioxide anode": "metal.lead.ingot",
     "aluminium hydroxide": "metal.alumina",
     "aluminum hydroxide": "metal.alumina",
-    "chrome alum": "metal.chromium.metal.cell",
     "argon": "facility.gases",
     "oxygen": "facility.gases",
     "zinc chloride": "metal.zinc.ingot",
@@ -17,7 +16,6 @@
     "kaolin": "metal.bauxite.kaolinite",
     "tungsten wire": "metal.molybdenum.scheelite",
     "beryllium copper": "metal.copper",
-    "polyphenylene sulfide": "chem.polyester",
     "spring probe": "facility.test-equipment",
     "pine resin": "metal.pine-resin",
     "pine stumps": "chem.rosin",
@@ -38,7 +36,7 @@
     "gold ore": "metal.gold.ore",
     "silver ore": "metal.silver.ingot",
     "tungsten ore": "metal.molybdenum.scheelite",
-    "barite": "metal.barium-carbonate",
+    "barite": "metal.barite",
     "fluorspar": "metal.fluorspar",
     "limestone": "metal.limestone",
     "salt": "metal.salt-brine",
@@ -84,7 +82,6 @@
     "polycarbonate": "chem.polycarbonate",
     "silicone": "chem.silicone",
     "natural rubber": "chem.rubber",
-    "polystyrene": "chem.abs",
     "rosin": "chem.rosin",
     "colophony": "chem.rosin",
     "solder": "metal.solder",
@@ -121,11 +118,11 @@
     "pvc insulation": "chem.pvc",
     "silane": "chem.silane",
     "trichlorosilane": "metal.silica.tcs",
-    "titanium tetrachloride": "chem.ethylene",
+    "titanium tetrachloride": "chem.ethylene.polyethylene.hdpe.ziegler-natta.titanium-catalyst",
     "photoresist": "chem.photoresist",
     "epoxy moulding compound": "chem.epoxy",
     "moulding compound": "chem.epoxy",
     "silica filler": "metal.silica-sand"
   },
-  "$note": "Tungsten still has no canonical metal node: \"tungsten wire\" points at the wolframite/scheelite branch, which is the ore it would be drawn from, not the metal itself. Review that mapping if a tungsten node is ever added."
+  "$note": "Tungsten still has no canonical metal node: \"tungsten wire\" points at the wolframite/scheelite branch, which is the ore it would be drawn from, not the metal itself. Review that mapping if a tungsten node is ever added. No node exists for polystyrene as a substance, for polyphenylene sulfide, or for chrome alum, so those input strings are left unresolved rather than mapped to a near neighbour. Several entries still point at `process` nodes, which inverts the `from` relation: it reads as \"this substance is made of this procedure\". Fixing those properly needs material nodes for the substances, not a better mapping."
 }

@@ -1,7 +1,7 @@
 # Production tree — Commodore 64
 
-2444 nodes, max depth 15, 1294 leaves.
-Generated 2026-10-03T04:43:20.510Z by `scripts/build.mjs`. Do not edit by hand.
+2439 nodes, max depth 15, 1293 leaves.
+Generated 2026-10-03T05:46:37.967Z by `scripts/build.mjs`. Do not edit by hand.
 
 # Commodore 64 (breadbin, ASSY 250407) `c64`
 
@@ -167,9 +167,9 @@ A housing-grade ABS, low rubber content so the moulded texture stays crisp and t
 
 Keycaps are made in small high-cavity tools - 4, 8 or 16 cavities in one block - because a cap is cheap and the tool has to be small enough to fit a small press. The tool is hardened tool steel and the caps come off a common gate, so the visible faces are identical across the set. A cap is the shortest flow in moulding: a shallow thin-walled box filled through a single gate, which is why the tool is small, multi-cavity and warm-moulded, and why the cycle is 15-30 s against 30-60 s for a case.
 
-#### Printed keycap legends `c64.keyboard.keycaps.legend` _(medium)_
+#### Printed front (PETSCII) legends `c64.keyboard.keycaps.legend` _(medium)_
 
-Legends are printed on the cap top with a two-colour pad printer (pad printing / tampo printing): a soft silicone pad picks up ink from a cliche, deforms against the slightly crowned cap, and transfers the character. White legends on the dark caps. On sets that also carry the shifted and graphic characters on the small front wall of the cap, those are printed there as well; printing a vertical face needs the pad tilted and a second fixture, which is why early sets avoided it and used a bolder single top legend instead.
+The graphics characters on the small FRONT wall of the cap - the PETSCII and shifted-symbol set - are printed, not moulded. This is the other half of the keycap story from the double-shot top legends (c64.keyboard-switches.keycap.double-shot), and the difference is visible: these characters wear and rub off, so a cap whose front legend is faint while its top legend is crisp is normal rather than damaged. Printing a near-vertical face is harder than printing a top - the pad has to be tilted against the front wall with the cap held in a nest, which wants a second station and a second fixture - so front coverage improves gradually across a production run rather than switching on at a date. On sets with only a single top legend, the front face was left plain.
 
 #### Keycap colour: no coding on the breadbin keyboard `c64.keyboard.keycaps.colours` _(medium)_
 
@@ -3068,7 +3068,7 @@ What happens between the bare board and the tested machine. Components are inser
 
 Every part goes into the board from the top. Because there are no vias and no bottom-side components, the whole machine is one-sided: one operator can see every joint from the solder side and there is no second-side insertion operation at all. Axial parts are cut to length and formed to a right angle or a left-right offset so they drop into a fixed hole pitch, and radial parts are spread to the board's lead spacing, usually 0.1 or 0.2 in; the forms are set in the machine and are a real cost, because a wrong form is a board that will not insert. Everything the machine could not do - the fuse clips, the connectors, the small-signal parts in awkward places, the wire jumpers - was worked by hand at the line from a traveller's list. Mixed human-and-machine insertion on one board is a recipe for a part inserted twice or missed entirely, so the line had a checking station: a verifier that confirms every part is present and seated before the board goes into the wave.
 
-##### Insertion pitch set for the machine `mb.assembly.insertion.layout`
+##### Component spacing dictated by the insertion machine `mb.assembly.insertion.layout`
 
 Component spacing on this board was dictated by the insertion machine rather than by the circuit designer, which is exactly the argument Commodore had with its Japanese plant and lost. The same board could not be hand-inserted efficiently and machine-inserted efficiently at once.
 
@@ -5064,21 +5064,21 @@ The acrylonitrile monomer is made by the Sohlo process: propylene, ammonia and o
 
 The ammoxidation catalyst is a bismuth molybdate or bismuth-antimony promoted silica. Bismuth came from bismuthinite, a comparatively rare ore worked chiefly in Bolivia and China, and it was a real bottleneck for acrylonitrile capacity in the 1980s.
 
-##### Double-shot moulding of the legend `c64.keyboard-switches.keycap.double-shot` _(medium)_
+##### Double-shot moulding of the top legends `c64.keyboard-switches.keycap.double-shot`
 
-The keycap is injection-moulded twice: once in the base colour, then a second shot of a second colour is injected into a slightly larger cavity, covering everything except the legend characters, which were left as uncoated islands of the first shot. This gives a legend that cannot wear off - the reason a forty-year-old C64 keycap still reads.
+The legends on the TOP of the keycap - letters, numbers and symbols - are moulded into the plastic, not printed on it. The cap is injection-moulded twice in one tool cycle: first in the dark brown-grey base colour, then a second shot of a contrasting lighter colour is injected into a slightly larger cavity, covering everything except the legend characters, which are left as uncoated islands of the first shot. Nothing is printed on the top face, so the legend cannot wear off - which is why a forty-year-old cap still reads cleanly, and why the mould line and the islands are visible when a cap is pulled off its stem. This covers the cap top only: the graphics characters on the front wall are a different process (c64.keyboard.keycaps.legend), and the two are told apart at a glance by whether the character wears.
 
 ###### Second-shot colour `c64.keyboard-switches.keycap.double-shot.legend-colour` _(medium)_
 
-The outer shot is pigmented with an organic or inorganic colourant at high loading. Brown, red, orange and grey legends - the four C64 keycap colours - are all achievable with pigmented ABS; the moulding must be run at a high enough pressure that the two shots fuse rather than delaminate.
+The outer shot is pigmented with an organic or inorganic colourant at high loading. The light legends on the dark brown-grey caps - and, on some sets, the orange or grey function-key caps - are all achievable with pigmented ABS; the moulding must be run at high enough pressure that the two shots fuse rather than delaminate.
 
 ###### Colourant in the second shot `c64.keyboard-switches.keycap.double-shot.legend-colour.pigment` _(medium)_
 
-The second-shot colour is a pigment dispersed in the ABS matrix at high loading. Organic pigments give brighter colours and are more expensive; inorganic iron oxides give the earthier browns and reds.
+The second-shot colour is a pigment dispersed in the ABS matrix at high loading. Organic pigments give brighter colours and cost more; inorganic iron oxides give the earthier browns, reds and blacks. The moulder buys a masterbatch rather than raw pigment, so the colour arrives as a compounded material.
 
 ###### Iron oxide pigments `c64.keyboard-switches.keycap.double-shot.legend-colour.pigment.iron-oxide` _(medium)_
 
-Synthetic iron oxides, made by oxidising iron scrap, were the standard browns, reds and blacks of the period and are still used. They begin at iron ore and end up in the keycap.
+Synthetic iron oxides, made by oxidising iron scrap or precipitating from an iron solution, were the standard browns, reds and blacks of the period and are still used. They begin at iron ore and end up in the keycap, which makes the keycap a surprisingly direct consumer of the iron chain.
 
 ##### Coil return spring `c64.keyboard-switches.keycap.spring` _(medium)_
 
@@ -8139,22 +8139,6 @@ One of the three xylene isomers separated out of the mixed aromatics from the re
 
 Para-xylene is selectively adsorbed from the mixed C8 aromatics onto a zeolite molecular sieve, desorbed with a purge, leaving o- and m-xylene. It is a swinging adsorption unit with hundreds of adsorbent beds and rotating valves.
 
-###### Copper for the phthalocyanine centre `c64.case.abs-resin.copper`
-
-Copper(II) salts, from electrorefined copper. Copper comes from chalcopyrite CuFeS2 ore or from ore sorted to a copper concentrate, then smelted, converted and electrorefined.
-
-###### Chalcopyrite (copper ore) `c64.case.abs-resin.chalcopyrite`
-
-CuFeS2, the dominant copper ore, mined underground or in large open pits and concentrated by flotation before smelting. The smelter's job is to strip the iron into slag so that copper matte can be converted and electrorefined.
-
-###### Froth flotation of copper ore `c64.case.abs-resin.flotation`
-
-Crushed and ground ore is conditioned with xanthate collectors and frothers, and the copper sulfide particles are floated to the surface in a bank of rectangular flotation cells. This is how most of the world's copper is separated from its host rock.
-
-###### Flash smelting and converting `c64.case.abs-resin.flash-smelting`
-
-Sulfide concentrate is blown with oxygen-enriched air in a flash furnace at ~1250 C, so that the sulfur burns and autogenous heat smelts the copper. The resulting matte is oxidised in converters, slagged of its iron, and the blister copper is electrorefined.
-
           - *PVC: vinyl chloride and suspension polymerisation* `chem.pvc` *(seen above)*
           - *Polyesters: PET, PBT and unsaturated polyester* `chem.polyester` *(seen above)*
 #### Propylene and its derivatives `chem.propylene`
@@ -9280,7 +9264,7 @@ Hard, coarse anthracite crushed to 1-2 mm as the coarse top layer. Same material
 
 A tall bed of coconut-shell, coal or lignite carbon catalytically activated in a furnace, removing humic colour, trihalomethane precursor, pesticide and industrial organics. In the ultrapure plant it was the last chance to remove organics before the ion-exchange resin and the RO membrane.
 
-##### Ultrapure water for the fab `facility.water.ultrapure`
+##### Ultrapure water `facility.water.ultrapure`
 
 The water that rinses a silicon wafer between every process step, and the water in which the thermal oxide grows. Target in 1983 was 10-15 MOhm-cm (roughly 1 ppb total ionic impurities) held at 20-25 C, distributed in 304 stainless or PVDF-lined piping. The yellow-lit photolithography bay and the wet chemical benches were the biggest consumers; the C64 itself was an assembly operation, not a fab, but every IC on its board came from a plant running exactly this chain. A modern practice note: the same chain now ends with UV and ultrafiltration, not with a mixed bed.
 
@@ -9455,10 +9439,6 @@ Three routes in 1983: (a) bulk hydrogen from a merchant plant by tube trailer or
 ###### Steam methane reforming `facility.gases.hydrogen.reforming`
 
 Natural gas is desulphurised to under 0.5 ppm sulphur, mixed with steam at 3:1 and passed over a nickel-molybdenum or chromite catalyst at 800-850 C and 15-25 bar. This gives hydrogen plus CO, and the CO is shifted over an iron-chrome catalyst to CO2 and more hydrogen. Then CO2 is removed by amine scrubbing or molecular sieve.
-
-###### Nickel reforming catalyst `facility.gases.nickel-catalyst` _(medium)_
-
-Nickel oxide on alumina, or the classic nickel-molybdenum on alumina, formed by impregnating a porous pellet with nickel nitrate and calcining. Ends at the laterite and the bauxite.
 
 ###### Electrolysis of demineralised water `facility.gases.hydrogen.electrolysis`
 
