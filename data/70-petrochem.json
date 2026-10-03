@@ -371,8 +371,11 @@
                                   "metal.soda-ash"
                                 ],
                                 "confidence": "high",
-                                "note": "Kept as a node because the conversion is what makes the drilling specification possible: the sodium form swells and the calcium form does not. Its soda ash is now a \"from\" edge to the metals fragment's sodium carbonate node instead of a line of prose."
-                              },
+                                "note": "Kept as a node because the conversion is what makes the drilling specification possible: the sodium form swells and the calcium form does not. Its soda ash is now a \"from\" edge to the metals fragment's sodium carbonate node instead of a line of prose.",
+                                "sources": [
+                                  "https://en.wikipedia.org/wiki/Bentonite"
+                                ]
+      },
                               {
                                 "id": "chem.crude.rig.drilling-mud.bentonite.montmorillonite.soda-ash.clay-pit",
                                 "name": "The clay pit",
@@ -384,8 +387,12 @@
                                   "Claymont, Wyoming",
                                   "Black Butte, South Dakota"
                                 ],
-                                "confidence": "high"
-                              }
+                                "confidence": "medium",
+                                "sources": [
+                                  "https://en.wikipedia.org/wiki/Bentonite"
+                                ],
+      "note": "Not established: the 10-20 m bed thickness and the open-pit versus shallow-underground working method. The grey-white lunar appearance and the Wyoming and South Dakota locations are consistent with the type locality but are not documented."
+    }
                             ]
                           }
                         ],
@@ -406,9 +413,13 @@
                           "Claymont, Wyoming",
                           "South Dakota"
                         ],
-                        "confidence": "high",
-                        "note": "Montmorillonite is a dioctahedral 2:1 smectite; Wyoming sodium bentonite is the reference grade because of its high cation-exchange capacity and layer charge."
-                      },
+                        "confidence": "medium",
+                        "note": "Montmorillonite is a dioctahedral 2:1 smectite; Wyoming sodium bentonite is the reference grade because of its high cation-exchange capacity and layer charge. Bentonite suspensions are usually thixotropic and shear-thinning, the Cretaceous Benton Shale near Rock River, Wyoming is the type locality, and United States production comes from between the Black Hills of South Dakota and the Bighorn Basin of Wyoming. Not established: the API 13/14 grading, the 30+ s/qt viscosity, the 20-60 kg/m3 loading and the 3-20 Pa yield stress targets.",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Bentonite",
+                          "https://en.wikipedia.org/wiki/Montmorillonite"
+                        ]
+      },
                       {
                         "id": "chem.crude.rig.drilling-mud.barite",
                         "name": "Barite (barium sulphate) weighting agent",
@@ -784,8 +795,9 @@
                             "inputs": [
                               "silica sand"
                             ],
-                            "confidence": "high"
-                          }
+                            "confidence": "medium",
+      "note": "Not established: the 1,000-10,000 tonne per day working rate and the near-pure silica dune grade. That a hydraulic fracture is largely a mineral and chemical supply chain rather than petroleum engineering is the reliable part of this node."
+    }
                         ],
                         "note": "Coating fractions and the date of commercial introduction vary by basin and supplier."
                       }
@@ -1450,9 +1462,12 @@
                         "inputs": [
                           "hematite iron ore"
                         ],
-                        "confidence": "high",
-                        "note": "The iron ore chain itself belongs to the metals subsystem; this node marks where it enters the ammonia catalyst."
-                      }
+                        "confidence": "medium",
+                        "note": "The iron ore chain itself belongs to the metals subsystem; this node marks where it enters the ammonia catalyst. The industrial ammonia synthesis catalyst is obtained from finely ground iron powder, itself obtained by reduction of high-purity magnetite. Not established: the 0.3-0.4 tonnes of iron per tonne of ammonia, the catalyst replacement interval, and that this is where the iron ore chain enters.",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Magnetite"
+                        ]
+      }
                     ]
                   }
                 ]
@@ -1638,8 +1653,12 @@
                         "value": "700 F+; 25-40 vol%"
                       }
                     ],
-                    "confidence": "high"
-                  },
+                    "confidence": "medium",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Oil%20refinery"
+                    ],
+      "note": "All the low boiling fractions of crude oil are separated by atmospheric distillation, vaporising below about 400 C at atmospheric pressure. Not established: the C5 and 200-220 F naphtha end point, the 30-40%, 8-15%, 20-30% and 25-40% yields, and the claim that naphtha end point and sulphur decide whether a cracker runs at 800 or 850 C."
+    },
                   {
                     "id": "chem.refining.atmospheric-distillation.fractionating-tower.naphtha-hydrotreating",
                     "name": "Naphtha hydrotreating before the cracker",
@@ -2302,8 +2321,12 @@
                     "value": "30-50 MW per furnace"
                   }
                 ],
-                "confidence": "high"
-              },
+                "confidence": "medium",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Steam%20cracking"
+                ],
+      "note": "Feed is mixed with very hot steam and briefly heated in a furnace with the reaction temperature around 850 C. Not established: the 20-40 m box with 40-80 coiled coils, the 4 in cast tube in ten passes, the 30-50 MW firing rate, and the roughly 70% radiant duty. The 800-900 C range is for modern units, not a 1982 figure."
+    },
               {
                 "id": "chem.ethylene.steam-cracking.furnace.coiled-coil",
                 "name": "Cracker coil metallurgy",
@@ -2487,8 +2510,12 @@
                         "value": "10-15%"
                       }
                     ],
-                    "confidence": "high"
-                  }
+                    "confidence": "medium",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Ethylene%20oxide"
+                    ],
+      "note": "Almost all industrial ethylene oxide has been made by direct oxidation of ethylene over a silver catalyst since 1940. Not established: 10-20% silver on low-surface-area alpha-alumina, the chlorine promoter, the 80-90% selectivity and 10-15% per-pass conversion, the 2-5 year catalyst life, and the silver recovery."
+    }
                 ],
                 "note": "Chlorohydrin EO production was already minor by the early 1980s and was essentially gone by the mid-1980s in Europe and Japan."
               },
@@ -2543,8 +2570,12 @@
                     "value": "30-100 mbar"
                   }
                 ],
-                "confidence": "high"
-              }
+                "confidence": "medium",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Ethylene%20glycol"
+                ],
+      "note": "Diethylene and triethylene glycol are the major byproducts and separating them from water is energy-intensive, which is the point this node makes. Not established: the 197, 245 and 285 C boiling points, the 30-100 mbar vacuum and the multi-column configuration."
+    }
             ],
             "facts": [
               {
@@ -2598,8 +2629,9 @@
                         "value": "0.91-0.93 g/cm3"
                       }
                     ],
-                    "confidence": "high"
-                  },
+                    "confidence": "medium",
+      "note": "Not established: di-tert-butyl peroxide with di-tert-butyl percarbonate as the 1980s autoclave initiator pair, the 200-300 C and 1,000-2,000 bar autoclave condition, and the 0.91-0.93 g/cm3 density range."
+    },
                   {
                     "id": "chem.ethylene.polyethylene.ldpe.autoclave",
                     "name": "Autoclave versus tubular reactor",
@@ -2664,8 +2696,12 @@
                             "value": "50-80 C, 50-100 bar, hydrocarbon diluent"
                           }
                         ],
-                        "confidence": "high"
-                      },
+                        "confidence": "medium",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Ziegler%E2%80%93Natta%20catalyst"
+                        ],
+      "note": "All modern supported Ziegler-Natta catalysts use TiCl4 as the active ingredient on an MgCl2 support, and the 1970s discovery that magnesium chloride greatly enhances titanium catalyst activity is what made the supported catalyst family dominant. Not established: the roughly hundred active sites per gram, the 50-80 C and 50-100 bar conditions, and the AlEt2Cl alternative cocatalyst."
+    },
                       {
                         "id": "chem.ethylene.polyethylene.hdpe.ziegler-natta.aluminium-alkyl",
                         "name": "Triethylaluminium",
@@ -2679,8 +2715,13 @@
                             "value": "Al(C2H5)3, 5-10% in hydrocarbon for handling"
                           }
                         ],
-                        "confidence": "high"
-                      }
+                        "confidence": "medium",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Triethylaluminium",
+                          "https://en.wikipedia.org/wiki/Ziegler%E2%80%93Natta%20catalyst"
+                        ],
+      "note": "Triethylaluminium is exceedingly pyrophoric and is the organoaluminium cocatalyst paired with titanium-based catalysts. Not established: its alkylation of titanium and reduction of Ti(IV) to Ti(III), its water and oxygen scavenging, and the 5-10% dilution in hydrocarbon as 1980s handling practice."
+    }
                     ]
                   },
                   {
@@ -2740,8 +2781,12 @@
                         "value": "0.05-0.2 wt%"
                       }
                     ],
-                    "confidence": "high"
-                  }
+                    "confidence": "medium",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Butylated%20hydroxytoluene"
+                    ],
+      "note": "Not established: the 0.05-0.2 wt% loading and the para-cresol alkylation with isobutylene. In particular the claim that BHT was the antioxidant of the C64 power supply's capacitor-filling fluid is unsupported - no such material appears in the 1992 service manual parts list."
+    }
                 ]
               }
             ],
@@ -2863,8 +2908,12 @@
                               "Salina, Kansas",
                               "Hockley, Worcestershire"
                             ],
-                            "confidence": "high"
-                          }
+                            "confidence": "medium",
+                            "sources": [
+                              "https://en.wikipedia.org/wiki/Sodium%20chloride"
+                            ],
+      "note": "Chlor-alkali electrolysis is conducted in a mercury, diaphragm or membrane cell, so the fouling this node describes is real. Not established: the saturated brine feed, the calcium and magnesium removal specification, and the Stassfurt, Salina and Hockley attributions."
+    }
                         ]
                       },
                       {
@@ -3119,23 +3168,28 @@
                         "kind": "material",
                         "category": "plastics",
                         "era": "1940s",
-                        "confidence": "high"
-                      }
+                        "confidence": "medium",
+      "note": "Silica gel is amorphous and porous with nanometre-scale voids, and the same material does appear as a support elsewhere in this chain. Not established: the 200-400 m2/g surface area of the alkylation catalyst's carrier, and the claim that all four supports in this file are one material."
+    }
                     ]
                   }
                 ],
                 "facts": [
                   {
                     "label": "Conditions",
-                    "value": "140-180 C, 20-30 bar, H3PO4 on silica"
+                    "value": "30 bar at 250 C over a Lewis acid catalyst; the source notes phosphoric acid is often favoured over the aluminium halides"
                   },
                   {
                     "label": "Benzene to propylene",
                     "value": "3-5 mol/mol"
                   }
                 ],
-                "confidence": "high"
-              },
+                "confidence": "medium",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Cumene%20process"
+                ],
+      "note": "Propylene and benzene are compressed together at 30 bar and 250 C over a catalytic Lewis acid, with phosphoric acid often favoured over aluminium halides. The 140-180 C, 20-30 bar, H3PO4-on-silica adiabatic-bed conditions and the 3-5 mol benzene per mol propylene ratio in this node are the licensor's industrial figures and are not established here."
+    },
               {
                 "id": "chem.propylene.cumene.oxidation",
                 "name": "Cumene oxidation to the hydroperoxide",
@@ -3157,8 +3211,12 @@
                     "value": "20-40 wt%"
                   }
                 ],
-                "confidence": "high"
-              },
+                "confidence": "medium",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Cumene%20process"
+                ],
+      "note": "Cumene is oxidised in air to cumene hydroperoxide. Not established: the 120-140 C liquid-phase autoxidation, the hydroperoxide initiator or cobalt/manganese catalyst option, the 20-40 wt% hydroperoxide concentration, and the runaway above 150 C."
+    },
               {
                 "id": "chem.propylene.cumene.cleavage",
                 "name": "Acid cleavage to phenol and acetone",
@@ -3293,11 +3351,15 @@
                     "facts": [
                       {
                         "label": "Catalyst family",
-                        "value": "Bi2Mo3O12 / bismuth molybdate on silica, with V or W promoters"
+                        "value": "bismuth phosphomolybdate (Bi9PMo12O52) on silica is given as one of the first useful catalysts; bismuth molybdate on silica with V or W promoters is the general ammoxidation catalyst. Which the 1983 plant ran is not established."
                       }
                     ],
-                    "confidence": "high"
-                  },
+                    "confidence": "medium",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Acrylonitrile"
+                    ],
+      "note": "Acrylonitrile comes from catalytic ammoxidation of propylene, and bismuth phosphomolybdate on silica was one of the first useful catalysts - a phosphorus-containing bismuth molybdate, not the Bi2Mo3O12 this node names. Not established: resistance to reduction by ammonia, the vanadium- and tungsten-promoted versions, and the above-90% acrylonitrile yield target."
+    },
                   {
                     "id": "chem.acrylonitrile.sovere.catalyst.antimony",
                     "name": "Antimony-phosphorus-boron oxide catalyst",
@@ -3332,8 +3394,12 @@
                             "value": "6-20 nm"
                           }
                         ],
-                        "confidence": "high"
-                      },
+                        "confidence": "medium",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Silica%20gel"
+                        ],
+      "note": "Silica gel is an amorphous, porous form of silicon dioxide with nanometre-scale voids and pores. Not established: the 300-700 m2/g surface area - desiccant grades are quoted around 750-800 m2/g - the 6-20 nm pore diameter, and the pore-size argument for the ammoxidation and FCC catalysts."
+    },
                       {
                         "id": "chem.acrylonitrile.sovere.catalyst.catalyst-manufacture.silica-support.soda-silica",
                         "name": "Soda silica from sand",
@@ -3349,8 +3415,8 @@
                           "Sandown, Cheshire",
                           "Taipeh, Taiwan"
                         ],
-                        "confidence": "high",
-                        "note": "The soda-silica route is the classical one for both glass and silica sol; its scale-up is the industrial glassmaking reaction. It is an industrial mineral rather than wafer chemistry, and it sits with metal.silica-sand."
+                        "confidence": "medium",
+                        "note": "The soda-silica route is the classical one for both glass and silica sol; its scale-up is the industrial glassmaking reaction. It is an industrial mineral rather than wafer chemistry, and it sits with metal.silica-sand. Not established: the fusion of quartz sand with sodium carbonate at about 1,300 C to make sodium silicate, and the gelling of the acidified silicate solution as the route both to silica sol and to fused silica."
                       }
                     ],
                     "note": "Lobed extrudates and the calcination temperature range are standard catalyst-manufacturing practice."
@@ -3668,8 +3734,12 @@
                         "value": "10-20 wt% in hexane"
                       }
                     ],
-                    "confidence": "high"
-                  }
+                    "confidence": "medium",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Organolithium%20chemistry"
+                    ],
+      "note": "Butyllithium is among the most used organolithium reagents. Not established: the 10-20 wt% solution in hexane, its pyrophoricity as a handling fact for this application, and the manufacture from lithium metal and butyl chloride or butane."
+    }
                 ]
               },
               {
@@ -3929,8 +3999,12 @@
                     "value": "600-700 C"
                   }
                 ],
-                "confidence": "high"
-              },
+                "confidence": "medium",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Ethylbenzene"
+                ],
+      "note": "Catalytic dehydrogenation of ethylbenzene gives hydrogen and styrene, and over 99% of ethylbenzene production goes to styrene. Not established: magnetite or hematite promoted with potassium oxide, copper oxide and molybdenum, the extruded ring or granular bed form, the 600-700 C, 40-50% per-pass conversion and 90-93% selectivity, and the sulfolane polymerisation inhibitor."
+    },
               {
                 "id": "chem.styrene.dehydrogenation.reactor",
                 "name": "ST-110 dehydrogenation reactor",
@@ -3986,8 +4060,12 @@
                         "value": "0.05-0.5 wt%"
                       }
                     ],
-                    "confidence": "high"
-                  },
+                    "confidence": "medium",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Benzoyl%20peroxide"
+                    ],
+      "note": "Benzoyl peroxide is a chain-growth radical initiator. Its half-life is one hour at 92 C and one minute at 131 C, so a 60-90 C dosing temperature is low for this initiator and the operating figure needs checking. Not established: the 0.05-0.5 wt% loading and the benzoic acid residue and yellowing claim."
+    },
                   {
                     "id": "chem.styrene.polymerisation.bulk-gpps.suspending-agent",
                     "name": "Suspending agent for suspension polystyrene",
@@ -4121,16 +4199,15 @@
                 "facts": [
                   {
                     "label": "Loading",
-                    "value": "0.1-0.5 parts per 100 monomer"
-                  },
-                  {
-                    "label": "Initiator loading",
-                    "value": "0.05-0.2 parts per 100 monomer"
+                    "value": "not established. This node previously carried two different figures in adjacent rows, 0.1-0.5 and 0.05-0.2 parts per 100 monomer; one of them was wrong, there is no source here to say which, and both have been withdrawn rather than one being picked."
                   }
                 ],
-                "confidence": "high",
-                "note": "Exact initiator levels vary with the licensor process; the persulphate-in-aqueous-phase rationale is standard. Shared with the SBR emulsion process, which uses the same potassium persulphate."
-              },
+                "confidence": "medium",
+                "note": "Exact initiator levels vary with the licensor process; the persulphate-in-aqueous-phase rationale is standard. Shared with the SBR emulsion process, which uses the same potassium persulphate. The persulfate dianion dissociates in solution to give radicals. The loading is stated twice in this node and differently - 0.1-0.5 and 0.05-0.2 parts per 100 monomer - and which of the two is right is not established. The residue explanation for why an emulsion polymer cannot be re-polymerised as a living chain is standard.",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Potassium%20persulfate"
+                ]
+      },
               {
                 "id": "chem.abs.grafting.chelant",
                 "name": "Chelating agent",
@@ -4185,8 +4262,8 @@
                 "value": "~1-2 t xylene"
               }
             ],
-            "confidence": "high",
-            "note": "Particle morphology terminology (salt-like, sandwich) and graft-level thresholds vary by producer; these are the standard descriptions. Graft level, particle morphology and reaction medium describe how this step behaves rather than a second operation."
+            "confidence": "medium",
+            "note": "Particle morphology terminology (salt-like, sandwich) and graft-level thresholds vary by producer; these are the standard descriptions. Graft level, particle morphology and reaction medium describe how this step behaves rather than a second operation. Not established: the 20-40 wt% rubber fraction, the 60-80 C graft temperature, the 40-80% graft conversion, the above-70% high-graft threshold and the salt-like and sandwich particle thresholds, which are producer- and licensor-specific. The 220-250 C and 1-10 mbar devolatilisation and the one to two tonnes of xylene per tonne of polymer vary most between plants."
           },
           {
             "id": "chem.abs.san-matrix",
@@ -4234,9 +4311,12 @@
                 "value": "~76 : 24"
               }
             ],
-            "confidence": "high",
-            "note": "Kept as its own node because the blend ratio is what a plastics buyer specifies, and its two ingredients are recorded as \"from\" edges: the blend is made of the graft and the SAN matrix, it does not contain them."
-          },
+            "confidence": "medium",
+            "note": "Kept as its own node because the blend ratio is what a plastics buyer specifies, and its two ingredients are recorded as \"from\" edges: the blend is made of the graft and the SAN matrix, it does not contain them. ABS proportions run 15-35% acrylonitrile, 5-30% butadiene and 40-60% styrene, and the elastic butadiene phase is what makes it impact resistant. Not established: the 25-50 and 50-70 parts graft per 100 parts SAN ratios, the 25-40% figure for high-impact grades, and the 76:24 styrene:acrylonitrile matrix.",
+            "sources": [
+              "https://en.wikipedia.org/wiki/Acrylonitrile%20butadiene%20styrene"
+            ]
+      },
           {
             "id": "chem.abs.pelletising",
             "name": "Compounding and pelletising",
@@ -4354,8 +4434,8 @@
                 "value": "~0.3-0.4 wt%"
               }
             ],
-            "confidence": "high",
-            "note": "The 200 ppm specification is a common engineering target; typical material arrives at 0.05-0.15%. The desiccant is recorded as a \"from\" ingredient: a drying step is made of its molecular sieve bed, it does not contain it."
+            "confidence": "medium",
+            "note": "The 200 ppm specification is a common engineering target; typical material arrives at 0.05-0.15%. The desiccant is recorded as a \"from\" ingredient: a drying step is made of its molecular sieve bed, it does not contain it. Not established: the 80-90 C for 2-4 h drying cycle, the under 0.02% moisture target, and the 3A molecular sieve bed as 1980s ABS practice. The 0.3-0.4 wt% equilibrium moisture figure and the silver-streak, void and lost-impact-strength failure mode are plausible but undocumented here."
           },
           {
             "id": "chem.abs.drying.desiccant",
@@ -4540,8 +4620,12 @@
                         "value": "85-95%"
                       }
                     ],
-                    "confidence": "high"
-                  },
+                    "confidence": "medium",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Vinyl%20chloride"
+                    ],
+      "note": "Vinyl chloride monomer is among the largest petrochemicals, is a flammable gas and is a proven carcinogen; angiosarcoma of the liver was reported from 1974. Not established: the -13.4 C boiling point, the 4-33 vol% flammable range, the 9-10 Mt/yr 1983 world capacity, and the 150-250 C, 4-10 bar CuCl2 oxychlorination at 85-95% selectivity."
+    },
                   {
                     "id": "chem.pvc.vcm.acetylene-route",
                     "name": "Acetylene plus HCl (the mercury route)",
@@ -4703,18 +4787,26 @@
                         "value": "DGEBA 100 parts, amine or anhydride hardener 20-60 parts"
                       }
                     ],
-                    "confidence": "high"
-                  },
+                    "confidence": "medium",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Epoxy"
+                    ],
+      "note": "DGEBA is the bisphenol A diglycidyl ether made from bisphenol A and epichlorohydrin. Not established: the 170-190 g/eq epoxide equivalent weight, the 4-12 C melting range of the liquid grades, and the 100 parts resin to 20-60 parts hardener formulation."
+    },
                   {
                     "id": "chem.epoxy.dgeba.epichlorohydrin",
                     "name": "Epichlorohydrin",
-                    "description": "1-chloro-2,3-epoxypropane: the C3 building block. In 1983 most of the world's epichlorohydrin was made by the chlorohydrin route - propylene chlorohydrin from propylene plus hypochlorous acid, dehydrochlorinated with a lime slurry - which is the same chlorohydrin chemistry that makes propylene oxide. It is a sensitiser and a carcinogen, and it is the reason the epoxy industry carried the same respiratory-protection regime as the propylene oxide plants.",
+                    "description": "1-chloro-2,3-epoxypropane: the C3 building block. The documented traditional manufacture is from allyl chloride in two steps - addition of hypochlorous acid to give a mixture of isomeric alcohols, then base treatment to give the epoxide - though a propylene-chlorohydrin route is also described and may have been the one in use in 1983. Which route this plant used is not established: us acid, dehydrochlorinated with a lime slurry - which is the same chlorohydrin chemistry that makes propylene oxide. It is a sensitiser and a carcinogen, and it is the reason the epoxy industry carried the same respiratory-protection regime as the propylene oxide plants.",
                     "kind": "material",
                     "category": "plastics",
                     "era": "1930s",
-                    "confidence": "high",
-                    "note": "The chlorohydrin chemistry is chem.propylene.propylene-oxide.chlorohydrin."
-                  },
+                    "confidence": "medium",
+                    "note": "The chlorohydrin chemistry is chem.propylene.propylene-oxide.chlorohydrin. The traditional manufacture of epichlorohydrin is from allyl chloride by addition of hypochlorous acid, not from propylene chlorohydrin. The lime-slurry dehydrochlorination and the propylene-plus-hypochlorous-acid route this node describes are not established here; the chlorohydrin analogy with propylene oxide may still hold, but on the allyl chloride route.",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Epichlorohydrin",
+                      "https://en.wikipedia.org/wiki/Epoxy"
+                    ]
+      },
                   {
                     "id": "chem.epoxy.dgeba.bisphenol-a",
                     "name": "Bisphenol A from cumene",
@@ -4863,9 +4955,12 @@
                         "value": "8-15 kJ/m2"
                       }
                     ],
-                    "confidence": "high",
-                    "note": "The why it was chosen question is the reason polycarbonate is on a C64, not a property of a substance."
-                  }
+                    "confidence": "medium",
+                    "note": "The why it was chosen question is the reason polycarbonate is on a C64, not a property of a substance. The glass transition temperature is about 147 C, so this node's 145 C is slightly low, and compact discs are a major polycarbonate market. Not established: the 60-70 MPa tensile strength, the 8-15 kJ/m2 notched Izod, and the 100-150% linear retention figure.",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Polycarbonate"
+                    ]
+      }
                 ],
                 "facts": [
                   {
@@ -4903,9 +4998,12 @@
                         "value": "equimolar acid + diamine, 250-270 C"
                       }
                     ],
-                    "confidence": "high",
-                    "note": "Upstream: chem.butadiene."
-                  },
+                    "confidence": "medium",
+                    "note": "Upstream: chem.butadiene. Nylon 66 is a polycondensation of hexamethylenediamine and adipic acid; equal amounts are combined in water and the salt is heated in batches or continuously. Not established: the 250-270 C and 10-20 bar salt conditions, the 270-280 C polymerisation under a small nitrogen pressure, and the butadiene hydrocyanation feedstock route attributed to the 1980s.",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Nylon%2066"
+                    ]
+      },
                   {
                     "id": "chem.polyamide.nylon-6",
                     "name": "Nylon 6 from caprolactam",
@@ -5448,8 +5546,12 @@
                 "value": "1996"
               }
             ],
-            "confidence": "high"
-          },
+            "confidence": "medium",
+            "sources": [
+              "https://en.wikipedia.org/wiki/Chlorofluorocarbon"
+            ],
+      "note": "CFCs are useful solvents and their boiling points make them suitable as refrigerants. Not established: the specific boiling points of 23.8 C for CFC-11 and 48 C for CFC-113, and CFC-11 as the expanded-polystyrene blowing agent until the late 1980s."
+    },
           {
             "id": "chem.isopropanol",
             "name": "Isopropyl alcohol (propan-2-ol)",
@@ -5471,8 +5573,12 @@
                 "value": "99.5-99.9%, low water, low residue"
               }
             ],
-            "confidence": "high"
-          },
+            "confidence": "medium",
+            "sources": [
+              "https://en.wikipedia.org/wiki/Isopropyl%20alcohol"
+            ],
+      "note": "Not established: the 82.6 C boiling point, the 2-12% flammable range, the acetone-hydrogenation conditions of 100-150 C and 5-20 bar at 95-98% selectivity, and the 99.5-99.9% electronics purity. The two industrial routes - hydration of propene and hydrogenation of acetone - are standard."
+    },
           {
             "id": "chem.isopropanol.kpo",
             "name": "KPO process (from propylene)",
@@ -5526,8 +5632,12 @@
                 "value": "2.5-13% in air"
               }
             ],
-            "confidence": "high"
-          },
+            "confidence": "medium",
+            "sources": [
+              "https://en.wikipedia.org/wiki/Acetone"
+            ],
+      "note": "About 83% of acetone is made by the cumene process and about a third of world supply is used as a solvent. Not established: the 56 C boiling point, the 2.5-13% flammable range, and the use for the epoxy residues of a coil winding."
+    },
           {
             "id": "chem.solvents.other-oxygenated",
             "name": "Ketones, esters and glycol ethers",
@@ -5623,9 +5733,12 @@
                     "value": "1996"
                   }
                 ],
-                "confidence": "high",
-                "note": "The C64's corrugated shipping carton was a paperboard box; the polystyrene foam end caps in consumer electronics packaging of that era commonly used CFC or HCFC blowing agent. A regulation or a treaty is a statement about the supply chain, not an operation in it."
-              },
+                "confidence": "medium",
+                "note": "The C64's corrugated shipping carton was a paperboard box; the polystyrene foam end caps in consumer electronics packaging of that era commonly used CFC or HCFC blowing agent. A regulation or a treaty is a statement about the supply chain, not an operation in it. Signed 16 September 1987, in force 1 January 1989, with the developed-country CFC phase-out complete by 1996. Not established: CFC-11 as the blowing agent in consumer-electronics polystyrene end caps and fitted inserts until about 1987, and pentane as the replacement that made the foam softer and heavier.",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Montreal%20Protocol"
+                ]
+      },
               {
                 "id": "chem.solvents.regulation.occupational",
                 "name": "Occupational exposure limits",
@@ -5674,9 +5787,12 @@
                     "value": "V2O5, 420-450 C"
                   }
                 ],
-                "confidence": "high",
-                "note": "The sulphur feedstock for sulphuric acid is chem.sulfur, and it arrives from the Claus plant."
-              }
+                "confidence": "medium",
+                "note": "The sulphur feedstock for sulphuric acid is chem.sulfur, and it arrives from the Claus plant. Industrial SO2 oxidation is carried out at about 420-620 C over vanadium(V) oxide catalysts, typically around 450 C, at near-atmospheric pressure. Not established: the 900-1,200 C sulphur burning furnace, the 98% acid oleum step, and the Japanese plants still burning pyrites into their own acid.",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Contact%20process"
+                ]
+      }
             ],
             "facts": [
               {
@@ -5746,8 +5862,11 @@
                   }
                 ],
                 "confidence": "high",
-                "note": "The ammonia chain: chem.natural-gas.uses.hydrogen.to-ammonia.ammonia."
-              }
+                "note": "The ammonia chain: chem.natural-gas.uses.hydrogen.to-ammonia.ammonia.",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Ostwald%20process"
+                ]
+      }
             ]
           },
           
@@ -5794,8 +5913,14 @@
                     "value": "g-line 436 nm, h-line 405 nm, i-line 365 nm"
                   }
                 ],
-                "confidence": "high"
-              },
+                "confidence": "medium",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Diazonaphthoquinone",
+                  "https://en.wikipedia.org/wiki/Novolak",
+                  "https://en.wikipedia.org/wiki/Photoresist"
+                ],
+      "note": "Diazonaphthoquinone sulfonate esters are mixed with novolac resin and act as a dissolution inhibitor; a conventional resist is resin, sensitiser and solvent, and novolac is a phenol-formaldehyde condensation polymer. Not established: the 1,4-isomer preference, the 20-30 wt% diazo content, the g-line, h-line and i-line exposure figures, and the outgrowth comparison."
+    },
               {
                 "id": "chem.photoresist.hard-bake",
                 "name": "Dehydration bake and hard bake",
@@ -5867,22 +5992,27 @@
                       {
                         "id": "chem.fab-chemicals.etch-gases.cf4.fluorine-from-fluorspar.anhydrous-hf",
                         "name": "Anhydrous hydrogen fluoride",
-                        "description": "Fluoride plus sulphuric acid at 200-250 C gives anhydrous HF, which is distilled off and shipped in a fluorine-lined tanker or a nickel tank. It is a strong acid, a violent poison, and it will dissolve most metals; the 1980s storage practice was a tank with a fluorine polymer lining and an emergency water curtain, and the fundamental tension in the whole HF business is that the only thing that will hold it is the same fluorine chemistry that makes the etch gases.",
+                        "description": "Fluoride plus concentrated sulphuric acid at about 265 C gives anhydrous HF, which is distilled off and shipped in a fluorine-lined tanker or a nickel tank. It is a strong acid, a violent poison, and it will dissolve most metals; the 1980s storage practice was a tank with a fluorine polymer lining and an emergency water curtain, and the fundamental tension in the whole HF business is that the only thing that will hold it is the same fluorine chemistry that makes the etch gases.",
                         "kind": "material",
                         "category": "silicon",
                         "era": "1940s",
                         "facts": [
                           {
                             "label": "Reaction",
-                            "value": "CaF2 + H2SO4 at 200-250 C"
+                            "value": "CaF2 + H2SO4 at about 265 C"
                           },
                           {
                             "label": "Product",
                             "value": "anhydrous HF, distilled"
                           }
                         ],
-                        "confidence": "high"
-                      }
+                        "confidence": "medium",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Hydrofluoric%20acid",
+                          "https://en.wikipedia.org/wiki/Fluorite"
+                        ],
+      "note": "Anhydrous hydrogen fluoride is made by treating fluorite, CaF2, with concentrated sulfuric acid. The 200-250 C figure in this node is not established: industrial practice is quoted at about 265 C. Also not established: the fluorine-polymer-lined tank, the water-curtain protection, and the emergency arrangements."
+    }
                     ]
                   }
                 ],
@@ -5892,8 +6022,12 @@
                     "value": "-128 C (a gas at room temperature)"
                   }
                 ],
-                "confidence": "high"
-              },
+                "confidence": "medium",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Carbon%20tetrafluoride"
+                ],
+      "note": "CF4 boils at -128 C. Not established: the dissociation to fluorine radicals as the reason selectivity against silicon works, manufacture from fluorine and carbon or from a chlorofluorocarbon feedstock, and CF4 as the standard 1980s oxide etch gas."
+    },
               {
                 "id": "chem.fab-chemicals.etch-gases.cl2",
                 "name": "Chlorine and boron trifluoride",
@@ -5931,8 +6065,12 @@
                     "value": "0.1-10 torr (10-1300 Pa)"
                   }
                 ],
-                "confidence": "high"
-              }
+                "confidence": "medium",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Plasma%20etching"
+                ],
+      "note": "Plasma etching uses RF excitation at 13.56 MHz, and a fluorine-bearing gas etches silicon dioxide selectively in conjunction with photolithography. Not established: the quartz or alumina barrel with top and bottom electrodes, the vertical wafer slots, the 0.1-10 torr range, and the barrel's description as the workhorse of the 1980s."
+    }
             ]
           },
           {
@@ -5976,8 +6114,12 @@
                             "value": "P4 vapour, condensed under water"
                           }
                         ],
-                        "confidence": "high"
-                      },
+                        "confidence": "medium",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Phosphorus"
+                        ],
+      "note": "Phosphate rock with sand and coke is heated to 1,200-1,500 C to give P4. Not established: the 30-100 MW furnace rating, the three graphite electrodes, the condensation and storage under water, and the 100,000-150,000 tonne per year US figure for a 1980s plant."
+    },
                       {
                         "id": "chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphate-rock",
                         "name": "Phosphate rock",
@@ -5992,9 +6134,12 @@
                           "Bone Valley, Florida",
                           "Casablanca, Morocco"
                         ],
-                        "confidence": "high",
-                        "note": "The phosphate rock mining and fertiliser chain is nominally outside this subsystem; this node exists because the n-type dopant chain terminates there. Category metals, for the same reason: phosphate rock is a mineral, not wafer chemistry."
-                      },
+                        "confidence": "medium",
+                        "note": "The phosphate rock mining and fertiliser chain is nominally outside this subsystem; this node exists because the n-type dopant chain terminates there. Category metals, for the same reason: phosphate rock is a mineral, not wafer chemistry. Phosphate rock is mined mainly in Florida and North Africa. Not established: the tens of millions of tonnes a year mined for fertiliser, and the Florida and Moroccan attributions as the supply actually behind semiconductor-grade phosphorus.",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Phosphorus"
+                        ]
+      },
                       {
                         "id": "chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphoric-acid",
                         "name": "Phosphoric acid (the wet-process acid)",
@@ -6035,8 +6180,12 @@
                     "value": "n-type (donor)"
                   }
                 ],
-                "confidence": "high"
-              },
+                "confidence": "medium",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Phosphine"
+                ],
+      "note": "Not established: the 5-15% dilution in hydrogen or nitrogen for the dopant gas reactor, the ion-implantation use, and the gas-cabinet practice in 1983."
+    },
               {
                 "id": "chem.fab-chemicals.dopants.arsine",
                 "name": "Arsine (AsH3)",
@@ -6054,8 +6203,12 @@
                     "value": "diluted in H2"
                   }
                 ],
-                "confidence": "high"
-              },
+                "confidence": "medium",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Arsine"
+                ],
+      "note": "Arsine is made by reducing arsenic(III) oxide with zinc in acid, and is flammable, pyrophoric and highly toxic. Not established: its use for heavier and shallower implants and for the arsenic source oxide, the dilution in hydrogen, and the parts-per-billion exhaust limit enforced with an ionising monitor."
+    },
               {
                 "id": "chem.fab-chemicals.dopants.diborane",
                 "name": "Diborane (B2H6) and boron trifluoride",
@@ -6075,8 +6228,12 @@
                       "fluorspar",
                       "sulphuric acid"
                     ],
-                    "confidence": "high"
-                  }
+                    "confidence": "high",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Boron%20trifluoride",
+                      "https://en.wikipedia.org/wiki/Fluorite"
+                    ]
+            }
                 ]
               }
             ],
@@ -6138,8 +6295,12 @@
                 "kind": "material",
                 "category": "silicon",
                 "era": "1970s",
-                "confidence": "high"
-              }
+                "confidence": "medium",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Argon"
+                ],
+      "note": "Argon is a byproduct of cryogenic air separation. Not established: the 1-3% of air figure, the 99.999% purity, and the description of argon filling sputtering cathodes and inerting the annealing and ashing steps in a 1980s fab."
+    }
             ]
           },
           {
@@ -6163,8 +6324,8 @@
                 "value": "9N-10N, total metals under 10 ppb"
               }
             ],
-            "confidence": "high",
-            "note": "The purity ladder is a way of describing the chain, and its numbers are the substance of the node."
+            "confidence": "medium",
+            "note": "The purity ladder is a way of describing the chain, and its numbers are the substance of the node. Not established: the 5N, 8N and 9N-10N ladder and the sub-10 ppb total metal specification as 1980s figures. The comparison the node makes - that at 10 parts per billion the metal atoms in the active volume outnumber the dopant atoms - follows from the atomic density of silicon and is the part that holds."
           },
           {
             "id": "chem.fab-chemicals.ammonium-hydroxide",
@@ -6179,9 +6340,12 @@
                 "value": "20-29 wt% NH3"
               }
             ],
-            "confidence": "high",
-            "note": "The ammonia itself is a natural-gas product: chem.natural-gas.uses.hydrogen.to-ammonia.ammonia."
-          }
+            "confidence": "medium",
+            "note": "The ammonia itself is a natural-gas product: chem.natural-gas.uses.hydrogen.to-ammonia.ammonia. Commercial ammonia solution is graded on the Baume scale, with about 30 wt% ammonia as the typical high-concentration product. Not established: the 20-29 wt% electronic-grade figure, the sub-micron filtration and low-sodium specification, and the 99.9% anhydrous ammonia a fab received.",
+            "sources": [
+              "https://en.wikipedia.org/wiki/Ammonia%20solution"
+            ]
+      }
         ],
         "note": "This node deliberately flags where practice diverged from today's; the specific substitution programmes and their dates vary by process step."
       },
@@ -6218,8 +6382,9 @@
                 "value": "50-60 wt%"
               }
             ],
-            "confidence": "high"
-          },
+            "confidence": "medium",
+      "note": "Not established: the 170-180 C and 0.3-1.5 MPa press cycle, the 50-60 wt% resin content, the brominated epoxy content and the 1.6 mm nominal thickness for a 1982 FR-4 board."
+    },
           {
             "id": "chem.pcb-chemicals.laminate.copper-foil",
             "name": "Electrolytic copper foil",
@@ -6279,8 +6444,8 @@
                 "value": "polyester (PET) or polyethylene"
               }
             ],
-            "confidence": "high",
-            "note": "The commercial introduction of aqueous-developable dry films dates from the early 1980s; by the middle of the decade they were the standard in North America."
+            "confidence": "medium",
+            "note": "The commercial introduction of aqueous-developable dry films dates from the early 1980s; by the middle of the decade they were the standard in North America. Not established: the 25-40 micron film thickness, the polyester (PET) or polyethylene base, the acrylate photopolymer and acrylated monomer chemistry, and the negative image convention as a description of 1980s dry film. The claim that aqueous-developable films arrived in the early 1980s and were standard in North America by the middle of the decade is the softest statement in this node."
           },
           {
             "id": "chem.pcb-chemicals.etching",
@@ -6317,8 +6482,12 @@
                     "value": "35-42 degrees Baume"
                   }
                 ],
-                "confidence": "high"
-              }
+                "confidence": "medium",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Iron(III)%20chloride"
+                ],
+      "note": "Copper etching by ferric chloride, with the copper(II) chloride rinsed away, is standard. Not established: the 35-42 degrees Baume working concentration, the about 3-5 molar figure, and the chlorine-cell and hydrogen-peroxide regeneration routes."
+    }
             ]
           },
           {
@@ -6560,7 +6729,7 @@
           {
             "id": "chem.solder-chemicals.solder-alloy",
             "name": "60/40 tin-lead solder",
-            "description": "The eutectic at 183 C, which is why a wave-solder bath sat at 250-260 C and a hand iron at 300-350 C: 70-80 C of superheat above the melting point, which keeps the bath molten at the top and fluxes the joint as it passes through. In 1983 about 60-70% of the world's solder was 60/40 tin-lead for electronics; the alloy is cheap, it has a low melting point, and its oxide comes off in a flux. The 40% lead was the subject of the entire lead-free soldering programme of the 1980s and 1990s, and the lead itself came out of a flotation concentrator, not out of a refinery.",
+            "description": "A tin-lead solder melting in the high 180s C, which is why a wave-solder bath sat at 250-260 C and a hand iron at 300-350 C: 70-80 C of superheat above the melting point, which keeps the bath molten at the top and fluxes the joint as it passes through. In 1983 about 60-70% of the world's solder was 60/40 tin-lead for electronics; the alloy is cheap, it has a low melting point, and its oxide comes off in a flux. The 40% lead was the subject of the entire lead-free soldering programme of the 1980s and 1990s, and the lead itself came out of a flotation concentrator, not out of a refinery.",
             "kind": "material",
             "category": "interconnect",
             "era": "ancient",
@@ -6588,15 +6757,19 @@
                       "Cornwall",
                       "Kinta Valley, Perak"
                     ],
-                    "confidence": "high"
-                  }
+                    "confidence": "medium",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Cassiterite"
+                    ],
+      "note": "Not established: the 78.8% tin by mass figure, the panning and flotation recovery route, and the Llallagu, Cornwall and Kinta Valley attributions as 1983 supply sources."
+    }
                 ]
               }
             ],
             "facts": [
               {
                 "label": "Melting point",
-                "value": "183 C (eutectic)"
+                "value": "188 C for 60/40. The 183 C eutectic belongs to 63/37 Sn-Pb, which is a different alloy and melts at a true point rather than over a range."
               },
               {
                 "label": "Wave bath temperature",
@@ -6607,9 +6780,12 @@
                 "value": "40 wt% (and later restricted)"
               }
             ],
-            "confidence": "high",
-            "note": "Lead comes from the lead/zinc mining and flotation chain, not from this subsystem."
-          },
+            "confidence": "medium",
+            "note": "Lead comes from the lead/zinc mining and flotation chain, not from this subsystem. The 183 C eutectic is 63/37 Sn-Pb, not 60/40; 60/40 is not a eutectic alloy and melts at 188 C. Not established: the 250-260 C wave-bath temperature, the 300-350 C iron temperature, and the 60-70% share of world solder in 1983.",
+            "sources": [
+              "https://en.wikipedia.org/wiki/Solder"
+            ]
+      },
           {
             "id": "chem.solder-chemicals.cleaning",
             "name": "Board cleaning after soldering",

@@ -341,8 +341,9 @@
             "facility.water",
             "facility.electricity"
           ],
-          "note": "Period text consistently quotes 42 deg Baume ferric chloride around 45 deg C. Sodium persulfate was a real alternative for some shops. Modern practice is still ferric chloride, but with tighter control and a copper-recovery loop. The etchant itself, its Baume range and its regeneration are the shared node chem.pcb-chemicals.etching.ferric-chloride; this node is the board-shop step that uses it.",
-          "confidence": "high"
+          "note": "The general step is established: chemical etching divides the copper into separate conducting lines called tracks or circuit traces, pads for connections, vias to pass connections between layers of copper, and features such as solid conductive areas for electromagnetic shielding. The 2 FeCl3 + Cu -> 2 FeCl2 + CuCl2 stoichiometry follows from that and is not separately cited. Not established: that this line used ferric chloride rather than sodium persulphate or a cupric chloride bath, the 42 deg Baume figure, the 40-50 deg C, the 20-45 minute etch time for 35 um copper, and the practice of dumping and remaking the bath as copper accumulates. Period text consistently quotes 42 deg Baume ferric chloride around 45 deg C. Sodium persulfate was a real alternative for some shops. Modern practice is still ferric chloride, but with tighter control and a copper-recovery loop. The etchant itself, its Baume range and its regeneration are the shared node chem.pcb-chemicals.etching.ferric-chloride; this node is the board-shop step that uses it.",
+          "confidence": "medium",
+          "sources": ["https://en.wikipedia.org/wiki/Printed_circuit_board"]
         },
         {
           "id": "mb.pcb.strip",
@@ -426,8 +427,9 @@
               "value": "hole set slightly oversize so the lead drops in freely for wave soldering"
             }
           ],
-          "note": "0.6 mm leads sat in roughly 0.8-1.0 mm holes. The oversize is deliberate: the wave has to fill the hole, and a tight hole makes an unfilled, dry joint.",
-          "confidence": "high",
+          "note": "That a through-hole board has one drilled hole per component lead is established: originally, every electronic component had wire leads, and a PCB had holes drilled for each wire of each component, and the component leads were then inserted through the holes and soldered to the copper PCB traces. Not established: the order-of-1200 hole count, the 1.1 mm dominant diameter, the 1.6-4.3 mm larger diameters, or that the drill programme was a bare component position list with no second drill file to reconcile. 0.6 mm leads sat in roughly 0.8-1.0 mm holes. The oversize is deliberate: the wave has to fill the hole, and a tight hole makes an unfilled, dry joint.",
+          "confidence": "medium",
+          "sources": ["https://en.wikipedia.org/wiki/Printed_circuit_board", "https://github.com/bwack/C64-250407-Replica-KiCad"],
           "children": [
             {
               "id": "mb.pcb.drill.ncd",
@@ -568,8 +570,8 @@
               "kind": "note",
               "category": "metals",
               "era": "1980s",
-              "note": "This node is intentionally a leaf. A verified reverse-engineered copy of the 250407 layout has zero vias and zero plated barrels, so there is no plating line to break down into; the branch exists to record the absence in one place rather than leave a reader assuming the usual modern sequence.",
-              "confidence": "high"
+              "note": "Not established: that the board has no plated barrels. The replica layout has no vias, but a bill of materials cannot evidence the absence of a plating line.",
+              "confidence": "medium"
             }
           ]
         },
@@ -714,8 +716,9 @@
           "value": "roughly 600 waved in one pass, the remainder hand-soldered"
         }
       ],
-      "note": "The eutectic was the right choice, and the reason is worth stating: at 63/37 the alloy melts and solidifies at one temperature instead of a mushy range, so a joint leaves the wave already set. 60/40, common for hand work, freezes over a range and gives duller, greyer joints. The alloy chain from cassiterite and galena through the ingot to the wire is owned by metal.solder and metal.tin / metal.lead, and the flux by chem.rosin; neither is repeated here. The flux was specified halide-free rather than no-clean: low-solids no-clean fluxes existed but were not the default here, and the goal was a non-ionic flux rather than a skipped cleaning step.",
-      "confidence": "high",
+      "note": "The alloy and the wave are established. On the alloy: in electronics assembly, the eutectic alloy with 63% tin and 37% lead (or 60/40, which is almost identical in melting point) has been the alloy of choice; 63/37 melts at 183 deg C and is the only mixture that melts at a point instead of over a range, while 60/40 melts between 183 and 190 deg C; and because a eutectic has the same liquidus and solidus temperature there is no plastic phase, which allows quicker setup as the solder cools, whereas a non-eutectic must remain still through the plastic phase and may crack. On the process: soldering could be done automatically by passing the board over a ripple, or wave, of molten solder in a wave-soldering machine. Not established: that about 600 joints on this board went through the wave in one pass, the 245-255 deg C pot temperature, the 1.5-2.5 m/min wave speed, and the split between waved and hand-soldered joints. The eutectic was the right choice, and the reason is worth stating: at 63/37 the alloy melts and solidifies at one temperature instead of a mushy range, so a joint leaves the wave already set. 60/40, common for hand work, freezes over a range and gives duller, greyer joints. The alloy chain from cassiterite and galena through the ingot to the wire is owned by metal.solder and metal.tin / metal.lead, and the flux by chem.rosin; neither is repeated here. The flux was specified halide-free rather than no-clean: low-solids no-clean fluxes existed but were not the default here, and the goal was a non-ionic flux rather than a skipped cleaning step.",
+      "confidence": "medium",
+      "sources": ["https://en.wikipedia.org/wiki/Soldering"],
       "inputs": [
         "metal.solder",
         "chem.rosin"
@@ -941,8 +944,8 @@
               "value": "brittle, cracks under thermal cycling"
             }
           ],
-          "note": "This is the product of the soldering rather than an ingredient of it, which is why it hangs off the operation instead of arriving as a `from` edge: once the tin has wetted the copper, this phase is what is actually holding the two together.",
-          "confidence": "high"
+          "note": "Not established: the Cu6Sn5 then Cu3Sn sequence, the diffusion-limited growth argument and the brittleness claim, from any source read for this node. The intermetallic bond is a standard result in soldering metallurgy but the specific phase sequence here is not cited.",
+          "confidence": "medium"
         },
         {
           "id": "mb.solder.hand",
@@ -1204,8 +1207,9 @@
           "kind": "note",
           "category": "assembly",
           "era": "1983",
-          "note": "Modern boards are dominated by reflow. This one is not.",
-          "confidence": "high"
+          "note": "Modern boards are dominated by reflow. This one is not. The absence is evidenced by the 250407 bill of materials: across 107 line items and 252 components, every footprint is a through-hole type - DIP, radial, axial, DIP socket, pin header, D-sub, solder jumper - and not one line is a chip resistor or chip capacitor package. That a switch to surface mount began in the 1980s is also established: since the 1980s, surface mount parts have increasingly replaced through-hole components, which dates this board to the end of the era rather than after it.",
+          "confidence": "high",
+          "sources": ["https://github.com/bwack/C64-250407-Replica-KiCad/blob/main/250407_bom.csv", "https://en.wikipedia.org/wiki/Printed_circuit_board"]
         },
         
         {
@@ -1215,8 +1219,8 @@
           "kind": "note",
           "category": "assembly",
           "era": "1980s",
-          "note": "If the tree you are building has conformal coating on the C64 mainboard, it is over-modelled.",
-          "confidence": "high"
+          "note": "Not established: that the C64 mainboard carried no conformal coating. This is an absence, and the 250407 parts list contains no coating material, but a parts list cannot evidence a process step that was never performed.",
+          "confidence": "medium"
         },
         {
           "id": "mb.assembly.shield",
@@ -1416,8 +1420,9 @@
                   "value": "no instruments needed; the machine tests itself and says so"
                 }
               ],
-              "confidence": "high"
-            },
+              "confidence": "medium",
+      "note": "Not established: the cartridge part number, the ROM contents and the identity of the diagnostic ROM. The C64 dead-test screen is associated with the service manual, but the per-page mirror at devili.iki.fi carries circuit-theory pages only and does not reproduce it."
+    },
             {
               "id": "mb.test.functional.cradle",
               "name": "Test cradle",
@@ -1724,7 +1729,9 @@
               "inputs": [
                 "facility.electricity"
               ],
-              "confidence": "high"
+              "confidence": "medium",
+              "note": "That vector photoplotters driven by Gerber format data were the dominant plotting technology for PCB artwork of this period is established: Standard Gerber was a numerical control format designed by Gerber Systems Corp to drive their vector photo plotters for the PCB industry in the 1960s and 1970s. Not established: that the exposure was a corona discharge from a stepped wire or shaped electrode, that flatbed machines laid a film flat and so became the standard for two-sided work, the hundreds of beds claim elsewhere in this branch, and that this machine was a Gerber-branded electrostatic plotter. Modern boards use direct imaging, for which Gerber is also the standard image input format, so the format outlived the machine.",
+              "sources": ["https://en.wikipedia.org/wiki/Gerber_format"]
             },
             {
               "id": "mb.photo.plotter.film",
@@ -1816,7 +1823,7 @@
               "value": "measure the narrowest trace on the panel under a measuring microscope"
             }
           ],
-          "confidence": "high",
+          "confidence": "low",
           "children": [
             {
               "id": "mb.photo.rephoto.master",
@@ -1830,8 +1837,9 @@
               ],
               "confidence": "medium"
             }
-          ]
-        },
+          ],
+      "note": "Not established: the rephotography step, the test coupon, and the practice of measuring the narrowest trace under a measuring microscope before committing a panel. Board-house procedure of the period is described in trade literature, which is not cited here."
+    },
         {
           "id": "mb.photo.mask",
           "name": "Printing the artwork onto the resist",

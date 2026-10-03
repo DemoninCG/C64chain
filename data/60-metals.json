@@ -8,12 +8,12 @@
     "kind": "material",
     "category": "metals",
     "era": "1982-1984",
-    "confidence": "high",
+    "confidence": "medium",
     "children": [
       {
         "id": "metal.silica",
         "name": "High-purity silicon feedstock (9N polysilicon)",
-        "description": "The refined element every chip in the machine is cut from. A 1982 Commodore 64 mainboard carried a handful of silicon dies and one 2 MHz quartz crystal, both traceable to this chain: quartzite or silica reduced to 98-99% metallurgical silicon, chlorinated to trichlorosilane, distilled to 9-nines, deposited as polysilicon, then pulled as a single Czochralski crystal. Note that the 6510 is NMOS, so the 1982 die uses ALUMINIUM gate metal and thermally grown field oxide, not a polysilicon gate; the polysilicon branch below is the industry feedstock route, which is where the energy and the boron problem lived.",
+        "description": "The refined element every chip in the machine is cut from. A 1982 Commodore 64 mainboard carried a handful of silicon dies and one quartz crystal, both traceable to this chain: quartzite or silica reduced to 96-99% metallurgical silicon, chlorinated to trichlorosilane, distilled to 9-nines, deposited as polysilicon, then pulled as a single Czochralski crystal. Two corrections to what this node previously said. The board's crystal Y1 is 14.31818 MHz, not 2 MHz; the 2 MHz line is a divided output of the clock circuitry, not a separate crystal, and the 6510 runs at about 1.02 MHz. And the 6510 is an HMOS part - silicon gate, depletion load - so its 1982 die does use a polysilicon gate, not aluminium gate metal; the polysilicon branch below is the route the machine's own chips were made by, not merely the wider industry's.",
         "kind": "material",
         "category": "metals",
         "era": "1982",
@@ -117,7 +117,7 @@
                 "kind": "material",
                 "category": "metals",
                 "era": "1982",
-                "confidence": "high",
+                "confidence": "medium",
                 "inputs": [
                   "metal.silica.czochralski",
                   "facility.gases.oxygen"
@@ -136,33 +136,40 @@
                     "value": "dry O2 for the thin gate oxide, wet steam for the thicker field oxide"
                   }
                 ],
-                "note": "Judgement call: the oxide is grown on the wafers sliced from the boule, not on the ingot, so the parent edge is loose. Kept under the crystal pull because that is where the silicon chain leaves the minerals business and becomes a device; the furnace-and-photoresist process that grows and etches it belongs to the logic fragment."
+                "note": "Documented: the silicon dioxide is grown on the wafer rather than deposited - it was first grown accidentally at Bell Labs in 1955 - and oxide layer formation is by thermal oxidation or, for the field regions, by local oxidation of silicon (LOCOS). Not established: the 1000-1150 C steam or dry-oxygen furnace, the hour-and-a-half cycle, the roughly 1000-1500 angstrom gate oxide of a 1982 NMOS process, and the 0.1% of wafer thickness consumed."
               }
             ]
           },
           {
             "id": "metal.silica.quartz-crystal",
-            "name": "2.048 MHz quartz clock crystal",
-            "description": "The C64's timing reference: an AT-cut quartz plate about 7.6 x 2.5 mm brazed between metal caps, resonating at 2.048 MHz. Quartz is the only material with a usable temperature-stable mechanical resonance that cheap. The plate itself is usually not natural rock - it is hydrothermally grown synthetic quartz in an autoclave of sodium hydroxide solution at about 400 C and 1.5 kbar.",
+            "name": "14.31818 MHz quartz clock crystal (Y1)",
+            "description": "The C64's timing reference is a 14.31818 MHz quartz crystal, designated Y1 and listed in the service-manual parts lists as part 900558-01 and as 251467-01, both described as 'Crystal 14.31818 MHz'. It feeds the 74LS629 voltage-controlled oscillator, whose output on pin 10 is itself a 14.31818 MHz colour clock, while the dot clock comes out at 8.1818 MHz; the divider and flip-flop chain beyond it produces the 2 MHz and 1 MHz lines and the 6510 runs at about 1.02 MHz. There is no 2.048 MHz crystal in this machine. Quartz is the only material with a usable temperature-stable mechanical resonance that cheap. The C64B changed the arrangement rather than the outcome: its manual section describes a 16 MHz fundamental feeding a clock-generator IC that still delivers the same 8.1818 MHz dot and 14.31818 MHz colour clocks.",
             "kind": "part",
             "category": "metals",
             "era": "1982",
-            "confidence": "high",
+            "confidence": "medium",
             "inputs": [
               "metal.silica.quartz-crystal.synthetic"
+            ],
+            "sources": [
+              "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
             ],
             "facts": [
               {
                 "label": "Frequency",
-                "value": "2.048 MHz (PAL/NTSC master clock)"
+                "value": "14.31818 MHz. The colour clock output is also 14.31818 MHz and the dot clock is 8.1818 MHz; 2 MHz and 1 MHz are divided down from the same source."
+              },
+              {
+                "label": "Service-manual part numbers",
+                "value": "900558-01 and 251467-01, both 'Crystal 14.31818 MHz'"
               },
               {
                 "label": "Cut",
-                "value": "AT-cut, ~35 degrees rotation"
+                "value": "AT-cut is the general choice for clock crystals, but no cut angle is documented for this part"
               },
               {
                 "label": "Tolerance",
-                "value": "order 10-50 ppm across 0-70 C for a consumer part"
+                "value": "not established for this part"
               }
             ],
             "children": [
@@ -200,8 +207,9 @@
                   "metal.quartz"
                 ]
               }
-            ]
-          }
+            ],
+      "note": "Corrected. This node previously named a 2.048 MHz crystal, which the 1992 C64/C64C service manual contradicts: it gives crystal Y1 as 14.31818 MHz on both documented board variants, with a divider producing the 2 MHz line and a flip-flop the 1 MHz line that clocks the 6510 at about 1.02 MHz, so there is no 2.048 MHz crystal in the machine. Still not established: the plate size, the cut angle, the 10-50 ppm tolerance, and the hydrothermal growth conditions of about 400 C and 1.5 kbar in sodium hydroxide. What is documented in general is that industrial quartz crystal is grown hydrothermally in an autoclave."
+    }
         ]
       },
       {
@@ -212,6 +220,11 @@
         "category": "metals",
         "era": "1982",
         "confidence": "high",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Chlor-alkali_process",
+          "https://en.wikipedia.org/wiki/Bayer_process",
+          "https://en.wikipedia.org/wiki/Soda_ash"
+        ],
         "children": [
           "metal.caustic-soda",
           {
@@ -304,7 +317,7 @@
                 "kind": "process",
                 "category": "metals",
                 "era": "1982",
-                "confidence": "high",
+                "confidence": "medium",
                 "inputs": [
                   "metal.limestone",
                   "metal.coke"
@@ -325,8 +338,9 @@
                 ],
                 "children": [
                   "metal.limestone"
-                ]
-              },
+                ],
+      "note": "The Solvay reference gives the limestone calcination as 950-1100 C, not 1000-1100 C, and says nothing about a shaft-kill gas of 40-45% carbon dioxide. Not established: the dry CO2 concentration of the kiln gas."
+    },
               {
                 "id": "metal.soda-ash.salt-recovery",
                 "name": "Causticise the spent brine to recover the salt",
@@ -362,7 +376,7 @@
         "kind": "material",
         "category": "metals",
         "era": "1982",
-        "confidence": "high",
+        "confidence": "medium",
         "inputs": [
           "metal.limestone",
           "coke"
@@ -726,8 +740,9 @@
               "metal.limestone"
             ]
           }
-        ]
-      },
+        ],
+      "note": "Documented: calcination of calcium carbonate in a lime kiln above 900 C gives quicklime, and adding water gives slaked lime. Not established: the 1000-1100 C kiln temperature, the roughly 44% loss on ignition and 56% CaO yield, the 65% mass gain on slaking, and the coke/coal-fines/anthracite fuel list."
+    },
       {
         "id": "metal.potassium",
         "name": "Potassium chloride (KCl) for tantalum reduction",
@@ -744,6 +759,10 @@
             "label": "Consumers",
             "value": "potash fertiliser dominated; tantalum metallurgy a small but non-negotiable share"
           }
+        ],
+        "sources": [
+          "https://en.wikipedia.org/wiki/Potassium",
+          "https://en.wikipedia.org/wiki/Potash"
         ],
         "children": [
           {
@@ -785,6 +804,11 @@
                     "label": "Depth",
                     "value": "750-1200 m in the Saskatchewan basin"
                   }
+                ],
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Potash",
+                  "https://en.wikipedia.org/wiki/Sylvinite",
+                  "https://en.wikipedia.org/wiki/Potassium"
                 ]
               },
               {
@@ -1171,6 +1195,9 @@
                             "label": "Oxidation profile",
                             "value": "leached zone, then mixed sulphide-secondary enrichment, then primary sulphide"
                           }
+                        ],
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Porphyry_copper_deposit"
                         ]
                       }
                     ]
@@ -1264,7 +1291,7 @@
                   }
                 ],
                 "sources": [
-                  "https://en.wikipedia.org/wiki/Grinding_(mineral_processing)"
+                  "https://en.wikipedia.org/wiki/Mill_(grinding)"
                 ],
                 "children": [
                   {
@@ -1540,7 +1567,7 @@
                 "kind": "material",
                 "category": "metals",
                 "era": "1982",
-                "confidence": "high",
+                "confidence": "medium",
                 "inputs": [
                   "metal.silica-sand"
                 ],
@@ -1597,12 +1624,16 @@
                             "label": "Deposit",
                             "value": "surface dune and beach sand, over bedrock or older sediment"
                           }
+                        ],
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Sand"
                         ]
                       }
                     ]
                   }
-                ]
-              },
+                ],
+      "note": "Not established: quartz sand or quartzite as the specific copper-smelter silica flux. General smelting references name limestone or dolomite as the usual flux for removing gangue as slag, and none of them gives a silica dosage of 5-15% of concentrate or the 0.1-1 mm sizing. The claim that the flux is dosed to match the silica the concentrate brings is plausible smelter practice but is not documented in the references fetched."
+    },
               "metal.sulphuric-acid",
               {
                 "id": "metal.copper.flash-furnace",
@@ -1926,7 +1957,7 @@
               }
             ],
             "sources": [
-              "https://en.wikipedia.org/wiki/Tin_smelting"
+              "https://en.wikipedia.org/wiki/Smelting"
             ],
             "note": "Tin smelting is one of the few pyro-metallurgical processes that did not move to electric furnaces until well after 1982.",
             "children": [
@@ -2053,7 +2084,7 @@
               }
             ],
             "sources": [
-              "https://en.wikipedia.org/wiki/Tin_processing",
+              "https://en.wikipedia.org/wiki/Tin",
               "https://www.britannica.com/technology/tin-processing"
             ],
             "children": [
@@ -2159,7 +2190,7 @@
                   }
                 ],
                 "sources": [
-                  "https://en.wikipedia.org/wiki/Sintering_(metallurgy)"
+                  "https://en.wikipedia.org/wiki/Sintering"
                 ]
               },
               {
@@ -2233,7 +2264,7 @@
                 "kind": "material",
                 "category": "metals",
                 "era": "1982",
-                "confidence": "high",
+                "confidence": "medium",
                 "facts": [
                   {
                     "label": "Assay",
@@ -2341,7 +2372,7 @@
                         ],
                         "note": "The drossing tower was a genuine 1980s innovation in lead refining; medium confidence on the precise vacuum figures.",
                         "sources": [
-                          "https://en.wikipedia.org/wiki/Continuous_drossing"
+                          "https://en.wikipedia.org/wiki/Lead_smelting"
                         ],
                         "inputs": [
                           "metal.lead.bullion"
@@ -2431,8 +2462,9 @@
                       "metal.lead.bullion"
                     ]
                   }
-                ]
-              },
+                ],
+      "note": "Documented: the blast furnace yields lead bullion that goes to drossing, the crude bullion contains significant copper, and the Parkes process separates silver or gold from lead. Not established: the 95-98% Pb / 1-3% Ag / 10-100 g/t Au assay, the 250-800 g/t silver equivalent, and the 950-1050 C tap temperature."
+    },
               "metal.lead.ingot"
             ]
           }
@@ -3415,7 +3447,7 @@
                 ],
                 "note": "Sherritt's own patents cover the details; medium confidence on the vessel dimensions.",
                 "sources": [
-                  "https://en.wikipedia.org/wiki/Nickel_processing"
+                  "https://en.wikipedia.org/wiki/Nickel_extraction"
                 ],
                 "children": [
                   {
@@ -3556,6 +3588,9 @@
                                 "label": "Rock",
                                 "value": "impact melt and suevite breccia, disseminated Ni-Cu sulphide"
                               }
+                            ],
+                            "sources": [
+                              "https://en.wikipedia.org/wiki/Sudbury_Basin"
                             ]
                           }
                         ]
@@ -3876,7 +3911,7 @@
                 "kind": "facility",
                 "category": "metals",
                 "era": "1982",
-                "confidence": "high",
+                "confidence": "medium",
                 "places": [
                   "Johannesburg, South Africa"
                 ],
@@ -3905,7 +3940,7 @@
                     "description": "The leaf: a 2.9 billion year old quartzite with rounded pebbles of quartz and jasper in a fine matrix - a fossil beach. The gold is in the matrix, as discrete grains a few microns across, and the deepest part of the deposit has the highest grade because it is the oldest and the most distal. It is one of the largest gold concentrations ever formed and it is a sediment.",
                     "kind": "material",
                     "category": "metals",
-                    "confidence": "high",
+                    "confidence": "medium",
                     "facts": [
                       {
                         "label": "Rock",
@@ -3944,10 +3979,12 @@
                           "https://en.wikipedia.org/wiki/Witwatersrand"
                         ]
                       }
-                    ]
-                  }
-                ]
-              }
+                    ],
+      "note": "Documented: gold sits in the conglomerate strata called banket, in layers the miners call reefs, where it occurs in streaks rather than uniformly, associated with pyrite and uraninite. One claim here is contradicted: the reference says the gold-bearing conglomerates occur chiefly in the upper, younger layers of the Supergroup, not in the deepest part, and the Supergroup is dated from about 2.97 Ga with the gold-bearing units among the younger members. Not established: the 2.9 Ga age as the age of the reef itself and the 5-40 g/t Far West Deep grade."
+    }
+                ],
+      "note": "Documented: gold mining in the buried parts of the Witwatersrand Supergroup is carried out at depths of 4 km below the surface. Not established: the 1000-6000 m depth range as a mine-by-mine figure, the 40-50 C rock temperature at 3000 m, the 3 C per 100 m gradient, the 20,000-40,000 t broken per shift, the longwall stoping with hydraulic sand fill, and the 60-70% recovery from a 10-40 g/t ore."
+    }
             ],
             "inputs": []
           },
@@ -4207,7 +4244,7 @@
                       }
                     ],
                     "sources": [
-                      "https://en.wikipedia.org/wiki/Wohlwill_electrolytic_refining_process"
+                      "https://en.wikipedia.org/wiki/Wohlwill_process"
                     ],
                     "inputs": [
                       "metal.gold.dore-melting"
@@ -4458,7 +4495,7 @@
                   }
                 ],
                 "sources": [
-                  "https://en.wikipedia.org/wiki/Amalgamation_(extractive_metallurgy)"
+                  "https://en.wikipedia.org/wiki/Pan_amalgamation"
                 ],
                 "children": [
                   {
@@ -4504,6 +4541,10 @@
                             "label": "Host",
                             "value": "brecciated and faulted carbonate rock, with clay and chalcedony"
                           }
+                        ],
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Cinnabar",
+                          "https://en.wikipedia.org/wiki/Mercury_(element)"
                         ]
                       }
                     ]
@@ -4546,6 +4587,10 @@
                     "category": "metals",
                     "era": "1982",
                     "confidence": "high",
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Silver_mining",
+                      "https://en.wikipedia.org/wiki/Lead_smelting"
+                    ],
                     "children": [
                       "metal.lead.blast-furnace"
                     ]
@@ -4581,7 +4626,7 @@
               }
             ],
             "sources": [
-              "https://en.wikipedia.org/wiki/Silver_refining"
+              "https://en.wikipedia.org/wiki/Silver"
             ],
             "children": [
               "metal.silver.ingot",
@@ -4789,6 +4834,10 @@
                         "label": "Grain size",
                         "value": "commonly 1-100 mm crystals"
                       }
+                    ],
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Pegmatite",
+                      "https://en.wikipedia.org/wiki/Columbite"
                     ],
                     "children": [
                       {
@@ -5158,7 +5207,7 @@
                     "description": "The leaf: a 2-3 m band of bright, banded, caking bituminous coal lying within a cyclothemic sequence of sandstone, shale and fireclay - the same sequence that holds the Pennsylvanian iron ore, coal and limestone together in the Appalachian basin, and the reason Pittsburgh is the steel capital of America. The Kittanning and the Freeport seams were the premium coking coals; the coal is Carboniferous, about 320 million years old, and it was deposited in a swamp.",
                     "kind": "material",
                     "category": "metals",
-                    "confidence": "high",
+                    "confidence": "low",
                     "facts": [
                       {
                         "label": "Age",
@@ -5168,8 +5217,9 @@
                         "label": "Setting",
                         "value": "cyclothemic sequence of coal, sandstone, shale and fireclay; a coastal plain swamp"
                       }
-                    ]
-                  }
+                    ],
+      "note": "Not established: the Kittanning and Freeport seam names, the roughly 320 Ma Middle Pennsylvanian age, the 2-3 m seam thickness and the cyclothemic sandstone-shale-fireclay sequence. The metallurgical-coal reference describes the coal's properties and caking ability but names no seam or Appalachian stratigraphy."
+    }
                 ]
               },
               {
@@ -5179,7 +5229,7 @@
                 "kind": "process",
                 "category": "metals",
                 "era": "1982",
-                "confidence": "high",
+                "confidence": "medium",
                 "facts": [
                   {
                     "label": "Crush",
@@ -5220,9 +5270,8 @@
                         "value": "the Buffalo Creek failure of February 1972, which killed 125 people, was the event that produced the law"
                       }
                     ],
-                    "note": "The Buffalo Creek death toll is well documented; medium confidence on the exact 1982 enforcement regime.",
+                    "note": "The Buffalo Creek death toll is well documented; medium confidence on the exact 1982 enforcement regime. The citation that used to sit here, en.wikipedia.org/wiki/Buffalo_Creek_Valley, does not exist: the Buffalo Creek coal-drainage disaster of the early 1970s has no article under that title. It was removed rather than repointed at a nearby place article, which would not support a claim about valley fill.",
                     "sources": [
-                      "https://en.wikipedia.org/wiki/Buffalo_Creek_Valley"
                     ],
                     "children": [
                       {
@@ -5248,7 +5297,7 @@
                         ],
                         "note": "Medium confidence; the contour-mining practice and the 1977 Act are both well documented.",
                         "sources": [
-                          "https://en.wikipedia.org/wiki/Contour_mining",
+                          "https://en.wikipedia.org/wiki/Surface_mining",
                           "https://en.wikipedia.org/wiki/Surface_Mining_Control_and_Reclamation_Act"
                         ],
                         "inputs": [
@@ -5260,8 +5309,9 @@
                 ],
                 "inputs": [
                   "metal.coking-coal"
-                ]
-              }
+                ],
+      "note": "Documented: a coal preparation plant washes coal of soil and rock, crushes it to graded sized chunks and stockpiles grades, and liberation is measured by float and sink analysis. Not established: crushing to under 50 mm, dense media at 1.4-1.6 specific gravity, jigs, and the ash below 10% and sulphur below 1.5% blend targets."
+    }
             ]
           },
           {
@@ -5429,7 +5479,7 @@
             "kind": "material",
             "category": "metals",
             "era": "1982",
-            "confidence": "high",
+            "confidence": "medium",
             "children": [
               {
                 "id": "metal.soft-pitch",
@@ -5482,13 +5532,14 @@
                     "kind": "note",
                     "category": "metals",
                     "era": "1982",
-                    "confidence": "high",
+                    "confidence": "low",
                     "children": [
                       "metal.carbon.anode",
                       "metal.benzene",
                       "metal.soft-pitch"
-                    ]
-                  }
+                    ],
+      "note": "This is a routing note about how many branches a coke oven feeds, not a claim about the world. No document can support 'the single most connected node in the file after the quartzite'; that is a statement about the tree, not about the supply chain."
+    }
                 ]
               }
             ],
@@ -5501,8 +5552,9 @@
                 "label": "Products",
                 "value": "crude tar, heavy creosote oil, and soft and hard pitch"
               }
-            ]
-          },
+            ],
+      "note": "Documented: coal-tar pitch is a coking by-product, is distilled into fractions including creosote and pitch, and is the binder in graphite green blocks and in Soderberg electrode paste. Not established: the 30-50 kg of crude tar per tonne of coke, and the few tens of kilos of soft pitch per tonne of tar."
+    },
           {
             "id": "metal.coke.battery",
             "name": "The battery, its flue and the chimney",
@@ -5685,7 +5737,7 @@
                     "kind": "part",
                     "category": "metals",
                     "era": "1982",
-                    "confidence": "high",
+                    "confidence": "medium",
                     "inputs": [
                       "metal.copper.cathode"
                     ],
@@ -5702,8 +5754,9 @@
                         "label": "Service life",
                         "value": "years to decades; they fail by fatigue at the waterway"
                       }
-                    ]
-                  }
+                    ],
+      "note": "Not established: the 400-900 staves per furnace, the cast-iron-backed composite construction, and failure by fatigue at the waterway. The blast furnace reference confirms water-cooled copper jackets are used in lead blast furnace walls, which is a different vessel from an iron furnace hearth."
+    }
                 ]
               }
             ]
@@ -5866,7 +5919,7 @@
                   }
                 ],
                 "sources": [
-                  "https://en.wikipedia.org/wiki/Graphite_electrode"
+                  "https://en.wikipedia.org/wiki/Graphite"
                 ],
                 "note": "The electrode/nickel cross-dependency of the early 1980s is well documented in the steel industry literature; medium-high confidence."
               }
@@ -5879,7 +5932,7 @@
             "kind": "note",
             "category": "metals",
             "era": "1982",
-            "confidence": "high",
+            "confidence": "low",
             "children": [
               {
                 "id": "metal.steel.ladle",
@@ -5919,11 +5972,12 @@
                 ],
                 "note": "Secondary metallurgy was genuinely new in the 1980s. The mechanisms are well established; the exact reagent dosages at any specific plant are not. Medium confidence.",
                 "sources": [
-                  "https://en.wikipedia.org/wiki/Secondary_metallurgy"
+                  "https://en.wikipedia.org/wiki/Steelmaking"
                 ]
               }
-            ]
-          },
+            ],
+      "note": "Not established: that three vessels made the world's steel in 1982 and that only one was winning. The steelmaking reference says basic oxygen and the electric arc furnace are now the two major commercial processes and that oxygen steelmaking has become more popular over time, but gives no 1982 shares and does not date the end of the open hearth."
+    },
           {
             "id": "metal.steel.caster",
             "name": "Continuous-cast the steel slab",
@@ -6832,6 +6886,9 @@
                         "label": "Setting",
                         "value": "hydrothermal vein or replacement body in carbonate rock"
                       }
+                    ],
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Baryte"
                     ]
                   },
                   {
@@ -7162,6 +7219,10 @@
               { "label": "Why hydrogen", "value": "carbon reduction makes WC rather than W" },
               { "label": "Product form", "value": "a porous sintered mass of micronscale crystallites, not a workable metal" }
             ],
+            "sources": [
+              "https://en.wikipedia.org/wiki/Tungsten",
+              "https://www.plansee.com/en/materials/tungsten/origin-and-procurement.html"
+            ],
             "children": [
               {
                 "id": "metal.tungsten.powder",
@@ -7190,7 +7251,7 @@
                     "kind": "material",
                     "category": "metals",
                     "era": "1982",
-                    "confidence": "high",
+                    "confidence": "medium",
                     "facts": [
                       { "label": "Filament", "value": "0.04-0.08 mm diameter, 60-150 mm long, 6.3 V heater" },
                       { "label": "Working", "value": "swaged, rolled and drawn with a hydrogen anneal between every reduction step" },
@@ -7202,8 +7263,9 @@
                     "from": [
                       "metal.tungsten.powder"
                     ],
-                    "children": []
-                  }
+                    "children": [],
+      "note": "Not established: the 0.04-0.08 mm filament diameter, the 60-150 mm length, the 6.3 V heater, the 0.01 g mass for 30 cm, and a ductile-to-brittle transition near room temperature. The tungsten reference states only that tungsten can be worked by forging, drawing, rolling or extruding, and that polycrystalline tungsten is intrinsically brittle."
+    }
                 ]
               }
             ]
@@ -7470,6 +7532,9 @@
                     "label": "Concentration",
                     "value": "gravity tables and spirals, then magnet and electrostatic separation"
                   }
+                ],
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Monazite"
                 ]
               },
               {
@@ -7542,8 +7607,9 @@
           }
         ]
       }
-    ]
-  },
+    ],
+      "note": "This is the orientation node for the branch. Its substance - the list of mineral streams behind a 1982 machine and the statement that each branch runs from the finished metal down to a quarry, pit, evaporite or seabed - is a statement about the tree rather than a claim about the world, so no document supports it. The one checkable assertion, that the rare earths arrive as only a few hundred tonnes of oxide, is not established here."
+    },
   "shared": {
     "metal.rosin.activator": {
       "id": "metal.rosin.activator",
@@ -7573,7 +7639,7 @@
       ],
       "note": "Flux grade nomenclature and the activator levels are standard; medium confidence on which grade Commodore specified in 1982.",
       "sources": [
-      "https://en.wikipedia.org/wiki/Flux_(soldering)"
+      "https://en.wikipedia.org/wiki/Flux"
       ]
       },
     "metal.pine-resin": {
@@ -7594,6 +7660,9 @@
       }
       ],
       "note": "By the 1980s the pulp-mill (wood rosin) route supplied the majority of industrial rosin; medium confidence on the exact 1982 split between gum and wood rosin.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rosin"
+      ],
       "children": [
       {
       "id": "metal.turpentine",
@@ -7677,14 +7746,15 @@
               "description": "The rock as a geologist would name it: a quartz-rich sandstone or siltstone, now a hard white metaquartzite of interlocking quartz grains with the bedding picked out by iron oxides. Some of the Norwegian material is a hydrothermal replacement body in a metasedimentary sequence. Either way the leaf of the silicon chain is a sedimentary or metamorphic rock exposed at the surface and dug out of a hillside.",
               "kind": "material",
               "category": "metals",
-              "confidence": "high",
+              "confidence": "medium",
               "facts": [
                 {
                   "label": "Rock type",
                   "value": "metaquartzite / quartzite; SiO2 >95% by definition"
                 }
-              ]
-            }
+              ],
+      "note": "The rock is right but one figure is not: quartzite is not defined as SiO2 >95%. The British Geological Survey classification quoted in the quartzite reference requires at least 80% quartz by volume. Not established from the references fetched: the claim that some Norwegian material is a hydrothermal replacement body in a metasedimentary sequence."
+    }
           ]
         }
       ]
@@ -7712,7 +7782,7 @@
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Metallurgical_silicon"
+        "https://en.wikipedia.org/wiki/Silicon"
       ],
       "children": [
         {
@@ -7756,6 +7826,9 @@
             }
           ],
           "note": "The off-gas silicon monoxide chemistry was well understood by the 1980s and was the basis of several recovery processes that were still being commercialised then.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Silicon"
+          ],
           "children": [
             {
               "id": "metal.silica.reducer",
@@ -8061,7 +8134,7 @@
       "kind": "material",
       "category": "metals",
       "era": "1982",
-      "confidence": "high",
+      "confidence": "medium",
       "inputs": [
         "metal.salt-brine",
         "electricity"
@@ -8189,7 +8262,8 @@
           ]
         },
         "metal.salt-brine"
-      ]
+      ],
+      "note": "Documented: sodium hydroxide is produced by variations of the electrolytic chloralkali process, first as a 32% solution and then evaporated to a 50% solution, with chlorine as the main by-product. Not established: the 100-200 kg of Na2O equivalent per tonne of alumina, the 300-400 t tanker size, and the lime causticisation reaction as written."
     },
     "metal.chlorine": {
       "id": "metal.chlorine",
@@ -8198,7 +8272,7 @@
       "kind": "material",
       "category": "metals",
       "era": "1982",
-      "confidence": "high",
+      "confidence": "medium",
       "facts": [
         {
           "label": "Water content spec",
@@ -8209,7 +8283,7 @@
           "value": "shipped as liquid at about -34 C, or as dry gas in tube trailers"
         }
       ],
-      "note": "The water specification varies by plant; stated as a typical order."
+      "note": "Documented: the chloralkali process is the technology that produces chlorine together with sodium hydroxide and hydrogen, and chlorine is a yellow-green gas at room temperature. Not established: the below-40 ppm water specification for electronic-grade silicon plants and the liquefaction point of about -34 C."
     },
     "metal.hydrogen": {
       "id": "metal.hydrogen",
@@ -8233,12 +8307,12 @@
     },
     "metal.hydrochloric-acid": {
       "id": "metal.hydrochloric-acid",
-      "name": "Hydrochloric acid (32-37%)",
+      "name": "Hydrochloric acid (commercial 32-37%)",
       "description": "The hydrochloric acid that chlorinates metallurgical silicon. Industrial acid is made by burning hydrogen in chlorine, both products of the chlor-alkali electrolysis of brine, so the silicon plant's feedstock chain runs back through a 1970s chlor-alkali plant and, behind that, a salt mine or a solar salt pan. The same acid is used for galvanising pickling, for the stainless pickling line, for the tinplate line, and for regenerating ferric chloride etchant at the board fab.",
       "kind": "material",
       "category": "metals",
       "era": "1982",
-      "confidence": "high",
+      "confidence": "low",
       "inputs": [
         "metal.chlorine",
         "metal.hydrogen"
@@ -8250,7 +8324,7 @@
         },
         {
           "label": "Commercial strength",
-          "value": "~32-37% w/w, the azeotrope"
+          "value": "commercial acid is sold at about 32-37% w/w; that is a sale grade, NOT the azeotrope. The HCl-water azeotrope is 20.2% HCl, constant-boiling at 108.6 C."
         },
         {
           "label": "Typical silicon-plant demand",
@@ -8279,9 +8353,13 @@
           "inputs": [
             "metal.hydrogen",
             "metal.chlorine"
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Hydrogen_chloride"
           ]
         }
-      ]
+      ],
+      "note": "Contradicted on the azeotrope. Hydrochloric acid as a binary mixture of HCl and water has a constant-boiling azeotrope at 20.2% HCl and 108.6 C, so the 32-37% figure is a commercial sale concentration, not the azeotrope this node calls it. The route is documented - hydrogen and chlorine are combined in an HCl burner and the gas absorbed in deionised water, and the acid is also obtained by absorbing by-product hydrogen chloride. Not established: the 10-30 t of acid per tonne of polysilicon plant output."
     },
     "metal.salt-brine": {
       "id": "metal.salt-brine",
@@ -8290,7 +8368,7 @@
       "kind": "material",
       "category": "metals",
       "era": "1982",
-      "confidence": "high",
+      "confidence": "medium",
       "children": [
         {
           "id": "metal.salt-rock",
@@ -8299,7 +8377,7 @@
           "kind": "material",
           "category": "metals",
           "era": "1982",
-          "confidence": "high",
+          "confidence": "medium",
           "places": [
             "Wieliczka, Poland",
             "Detroit, Michigan"
@@ -8327,10 +8405,15 @@
                   "label": "Lithology",
                   "value": "massive to bedded halite with gypsum, anhydrite and clay partings"
                 }
+              ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Evaporite",
+                "https://en.wikipedia.org/wiki/Halite"
               ]
             }
-          ]
-        },
+          ],
+      "note": "Not established: the NaCl 95-99% assay. The references give room-and-pillar mining at the Sifto mine under Lake Huron and describe mined salt as halite extracted from evaporite formations; neither states an assay, and the Wieliczka and Michigan saltbelt claims are not in either."
+    },
         {
           "id": "metal.salt-solar-pan",
           "name": "Evaporate brine in a solar salt pond",
@@ -8372,7 +8455,8 @@
           "label": "Per tonne of chlorine",
           "value": "roughly 1.0-1.1 t of NaCl, plus about 1 t of electrical energy"
         }
-      ]
+      ],
+      "note": "Not established: the saturated-brine figure of about 310 g/L NaCl, the 1.0-1.1 t of NaCl per tonne of chlorine, and the calcium/magnesium scale argument, which no general reference states. What the references do support is that the cell runs on concentrated NaCl brine and that rock salt forms as evaporite beds from restricted seas."
     },
     "metal.limestone": {
       "id": "metal.limestone",
@@ -8381,7 +8465,7 @@
       "kind": "material",
       "category": "metals",
       "era": "1982",
-      "confidence": "high",
+      "confidence": "medium",
       "inputs": [],
       "facts": [
         {
@@ -8404,14 +8488,15 @@
           "description": "The leaf: a fossiliferous carbonate rock, mostly calcite, laid down on a shallow warm sea floor and now quarried a few metres at a time out of a 10-40 m face.",
           "kind": "material",
           "category": "metals",
-          "confidence": "high",
+          "confidence": "medium",
           "facts": [
             {
               "label": "Rock",
               "value": "fossiliferous limestone, commonly a carbonate platform deposit"
             }
-          ]
-        },
+          ],
+      "note": "Not established: this node's specific claim that the rock is a carbonate-platform deposit quarried a few metres at a time out of a 10-40 m face. The limestone reference documents the rock's composition and its fossiliferous reef and shelf settings but gives no quarry geometry."
+    },
         {
           "id": "metal.limestone.quarry",
           "name": "Limestone quarry and crushing plant",
@@ -8419,7 +8504,7 @@
           "kind": "facility",
           "category": "metals",
           "era": "1982",
-          "confidence": "high",
+          "confidence": "medium",
           "facts": [
             {
               "label": "Bench height",
@@ -8433,9 +8518,11 @@
               "label": "Output",
               "value": "order 0.2-5 Mt/year for a chemical-grade supplier"
             }
-          ]
-        }
-      ]
+          ],
+      "note": "Not established: the 5-15 m bench height, the 10-40 m face, the 50-150 mm primary product, the three product fractions and the 0.2-5 Mt/year output. No reference fetched describes limestone quarrying practice at this level of detail."
+    }
+      ],
+      "note": "Documented: limestone is mostly calcite and aragonite, and in the blast furnace it binds with silica and other impurities to remove them from the iron. Not established: the CaCO3 92-98% / SiO2 0.5-2% assay, the 0.2-0.35 t per tonne of hot metal consumption rate, and the bench and crushing detail."
     },
     "metal.quartz": {
       "id": "metal.quartz",
@@ -8493,7 +8580,7 @@
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Graphite_electrode"
+        "https://en.wikipedia.org/wiki/Graphite"
       ],
       "note": "Pitch coke is the highest-grade carbon feedstock and is itself a coke-oven by-product; see metal.coke in this file for the oven that makes the tar."
     },
@@ -8701,6 +8788,9 @@
                   "label": "Rock",
                   "value": "limestone with fluorite veining"
                 }
+              ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Fluorite"
               ]
             }
           ]
@@ -8845,6 +8935,9 @@
               "label": "Composition",
               "value": "carbonate-fluorapatite with clays and quartz sand"
             }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Phosphorite"
           ]
         }
       ]
@@ -8886,7 +8979,7 @@
       "kind": "material",
       "category": "metals",
       "era": "1982",
-      "confidence": "high",
+      "confidence": "medium",
       "inputs": [
         "metal.bauxite",
         "metal.caustic-soda",
@@ -8949,7 +9042,7 @@
               "kind": "facility",
               "category": "metals",
               "era": "1982",
-              "confidence": "high",
+              "confidence": "medium",
               "facts": [
                 {
                   "label": "Method",
@@ -8975,7 +9068,7 @@
                   "description": "The leaf: a 3-12 m pisolitic blanket of iron-stained bauxite nodules sitting on a Cretaceous or Tertiary lateritic surface above a kaolinitic clay. Guinea's deposits are the classic tropical pisolite; the Australian Weipa and Gove ores are flat-lying terrace deposits on Cretaceous sediments. Either way the rock outcrops at the surface and is dug, not tunnelled.",
                   "kind": "material",
                   "category": "metals",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "facts": [
                     {
                       "label": "Thickness",
@@ -9044,7 +9137,7 @@
                               "kind": "material",
                               "category": "metals",
                               "era": "1982",
-                              "confidence": "high",
+                              "confidence": "medium",
                               "facts": [
                                 {
                                   "label": "Profile",
@@ -9054,8 +9147,9 @@
                                   "label": "Relief",
                                   "value": "a few metres over tens of kilometres, which is what makes surface mining cheap"
                                 }
-                              ]
-                            }
+                              ],
+      "note": "Documented: laterite forms by leaching of parent rock under a humid sub-tropical monsoon climate, leaving the more insoluble iron and aluminium oxides, and its composition depends on the parent rock and depth. Not established: that this is a Cretaceous laterite surface on sandstone with a bauxite horizon over kaolinite over saprolite, and the claim that its flatness over tens of kilometres is what makes surface mining cheap."
+    }
                           ],
                           "inputs": [
                             "metal.bauxite.laterite"
@@ -9066,8 +9160,9 @@
                         "metal.bauxite.laterite"
                       ]
                     }
-                  ]
-                },
+                  ],
+      "note": "Documented: laterite forms in hot wet tropical areas, is a source of aluminium ore, and consists largely of clay minerals and the hydroxides gibbsite, boehmite and diaspore so that it resembles bauxite. Not established: the pisolitic texture, the 3-12 m blanket thickness, and the description of the Australian Weipa and Gove ores as flat-lying terrace deposits on Cretaceous sediments."
+    },
                 {
                   "id": "metal.bauxite.beneficiation",
                   "name": "Bauxite crushing, washing and drying",
@@ -9099,8 +9194,9 @@
                   ],
                   "note": "Medium confidence on the mass fractions removed by washing; they are strongly ore-dependent."
                 }
-              ]
-            }
+              ],
+      "note": "Documented: bauxite is usually strip mined because it is almost always found near the surface with little or no overburden, and Guinea is the largest producer. Not established: the 10-20 m overburden bench, the 3-6 m ore bench, the walking dragline, the conveyor loading and the 25-50 mm primary crushing. The Weipa and Gove operations are named in this file's description but not in the bauxite reference."
+    }
           ]
         },
         {
@@ -9142,7 +9238,7 @@
               "kind": "process",
               "category": "metals",
               "era": "1982",
-              "confidence": "high",
+              "confidence": "medium",
               "inputs": [
                 "metal.bauxite",
                 "metal.caustic-soda",
@@ -9170,7 +9266,7 @@
                   "value": ">95% of the available alumina"
                 }
               ],
-              "note": "The pressure figure follows from the temperature; 1980s Bayer autoclaves were not pressure vessels in the modern sense.",
+              "note": "Documented: bauxite is heated in a pressure vessel with a sodium hydroxide solution at 150 to 200 C, and the aluminium dissolves as sodium aluminate, primarily Al(OH)4-. Not established, and partly in tension with that reference: the 140-150 C gibbsitic and 240-280 C diasporic split, the 150-300 g/L free caustic as Na2O, the 30-90 min residence and the greater than 95% extraction. The high-temperature Bayer plant for diasporic bauxite is real but is not described in this reference.",
               "children": [
                 {
                   "id": "metal.bayer.desilication",
@@ -9338,6 +9434,10 @@
                       "label": "Advantage",
                       "value": "uniform residence time, so alpha conversion completes in one pass"
                     }
+                  ],
+                  "sources": [
+                    "https://en.wikipedia.org/wiki/Aluminium_oxide",
+                    "https://en.wikipedia.org/wiki/Bauxite"
                   ]
                 }
               ],
@@ -9347,7 +9447,8 @@
             }
           ]
         }
-      ]
+      ],
+      "note": "Documented: smelter-grade alumina is the feedstock for the Hall-Heroult cell, is distinguished from refractory and abrasive grades, and is a mixture of transition aluminas and alpha-alumina whose phase composition depends on the calcination conditions. Not established: the 99.5% Al2O3 minimum with Fe2O3 and SiO2 below 0.02% and LOI below 1%, the 0.05-0.5 mm particle size and 1 t/m3 bulk density, and the 1.5-2 t bauxite to 1 t alumina ratio."
     },
     "metal.aluminum.ingot": {
       "id": "metal.aluminum.ingot",
@@ -9611,7 +9712,7 @@
           "kind": "process",
           "category": "metals",
           "era": "1982",
-          "confidence": "high",
+          "confidence": "medium",
           "facts": [
             {
               "label": "Reheat temperature",
@@ -9654,8 +9755,9 @@
           ],
           "inputs": [
             "metal.aluminum.homogenising"
-          ]
-        },
+          ],
+      "note": "Documented in general terms only: hot rolling is done above the recrystallization temperature and starts from ingots, slabs, blooms and billets, with the finishing temperature set above the recrystallization point. Not established for aluminium: the 300-400 C and 450-550 C preheat ranges, the 2-6 mm exit thickness, the 30% per-pass reduction limit and the hot descaler roll practice. The rolling reference is the general Rolling (metalworking) article and carries no aluminium-specific figures."
+    },
         {
           "id": "metal.aluminum.cold-rolling",
           "name": "Cold rolling on a Sendimir high-roll mill",
@@ -9908,7 +10010,7 @@
           "kind": "tool",
           "category": "metals",
           "era": "1982",
-          "confidence": "high",
+          "confidence": "medium",
           "facts": [
             {
               "label": "Press size",
@@ -9951,8 +10053,9 @@
               ],
               "note": "Medium confidence; the soak practice is standard but the times depend entirely on the section size."
             }
-          ]
-        },
+          ],
+      "note": "Not established: the 2300-2500 t and 500-1500 t press classes, the 200-500 mm container, the hydraulic intensifier, the 3-24 h soak at 420-500 C and the in-line stretcher. The extrusion reference reached in this pass is the general Extrusion article; there is no separate Wikipedia article on aluminium extrusion, so the specific press and soak figures have no encyclopaedic source."
+    },
         {
           "id": "metal.aluminum.extrusion.die",
           "name": "Steel extrusion die and its forging",
@@ -10028,7 +10131,7 @@
           "kind": "process",
           "category": "metals",
           "era": "1982",
-          "confidence": "high",
+          "confidence": "medium",
           "facts": [
             {
               "label": "Melting",
@@ -10070,8 +10173,9 @@
           ],
           "inputs": [
             "metal.copper.cathode"
-          ]
-        },
+          ],
+      "note": "Not established: the Properzi upcast route, the 250-450 kg ingot, the 1150-1250 C melt under a cover, the 6.0-8.0 mm wire rod diameters, and the 0.01-0.05% residual phosphorus. The copper refining reference reached in this pass resolves to the general Refining (metallurgy) article, which does not cover rod casting, and there is no Wikipedia article on wire-rod casting."
+    },
         "metal.copper.wire",
         "metal.copper.foil",
         {
@@ -10236,6 +10340,9 @@
               "value": "5-10 kV across the enamel"
             }
           ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Magnet_wire"
+          ],
           "children": [
             {
               "id": "metal.copper.enamel-resin",
@@ -10386,7 +10493,7 @@
               ],
               "note": "The exact chemistry shifted through the 1980s and the chromate-era process was being abandoned for toxicological reasons; medium confidence.",
               "sources": [
-                "https://en.wikipedia.org/wiki/Copper-clad_laminate"
+                "https://en.wikipedia.org/wiki/Printed_circuit_board"
               ]
             }
           ]
@@ -10667,7 +10774,7 @@
           ],
           "note": "The specific plating system used on Commodore's connectors is not something I can confirm; both chemistries were in use in 1982. Medium confidence.",
           "sources": [
-            "https://en.wikipedia.org/wiki/Tin_electroplating"
+            "https://en.wikipedia.org/wiki/Tinning"
           ]
         }
       ]
@@ -11836,7 +11943,7 @@
               "description": "The leaf: millimetre-to-centimetre potato-shaped concretions of Mn-Fe oxide lying unattached in a soft abyssal red clay. The metal has precipitated out of seawater around a nucleus, slowly, over millions of years. It is the most extraordinary leaf in this tree: the manganese in a C64's steel is, in principle, available from the floor of an ocean.",
               "kind": "material",
               "category": "metals",
-              "confidence": "high",
+              "confidence": "medium",
               "facts": [
                 {
                   "label": "Host",
@@ -11868,8 +11975,9 @@
                   ],
                   "note": "Medium confidence on the sedimentation rate range."
                 }
-              ]
-            },
+              ],
+      "note": "Documented: manganese nodules are concretions of iron and manganese oxides on the sea floor built in concentric layers around a nucleus, and the largest deposits lie on abyssal plains at 4,000-6,000 m. Not established: the 1-10 mm per million year growth rate, and the host described specifically as abyssal red clay."
+    },
             {
               "id": "metal.manganese.nodule-tech",
               "name": "Why the 1970s nodule trials were abandoned",
@@ -11963,7 +12071,7 @@
           "kind": "facility",
           "category": "metals",
           "era": "1982",
-          "confidence": "high",
+          "confidence": "medium",
           "places": [
             "Rustenburg, South Africa"
           ],
@@ -12002,6 +12110,10 @@
                   "label": "Age",
                   "value": "about 2.05 billion years"
                 }
+              ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Bushveld_Complex",
+                "https://en.wikipedia.org/wiki/Chromite"
               ],
               "children": [
                 {
@@ -12062,8 +12174,9 @@
                 "metal.chromite"
               ]
             }
-          ]
-        }
+          ],
+      "note": "Documented: chromite forms in layered intrusions as layers from 1 cm to 1 m thick, laterally up to 70 km, and the Bushveld is the type example with chromitite layers and PGM reefs. Not established: the 0.5-6 m seam, the 100-200 m norite cover, the 150-300 m pit depth, the crushing to about 100 mm and the 400 km haul - so the claim that these are among the deepest and most awkward open pits in the world is unsupported."
+    }
       ]
     },
     "metal.chromium.aod": {
@@ -12103,7 +12216,7 @@
         }
       ],
       "sources": [
-        "https://en.wikipedia.org/wiki/Argon%E2%80%93oxygen_decarburisation"
+        "https://en.wikipedia.org/wiki/Argon_oxygen_decarburization"
       ],
       "children": [
         {
@@ -12348,6 +12461,10 @@
                   "value": "alluvial gravel over limestone (Perak) or residual laterite over a lode (Bolivia, Cornwall)"
                 }
               ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Cassiterite",
+                "https://en.wikipedia.org/wiki/Tin_mining"
+              ],
               "children": [
                 {
                   "id": "metal.cassiterite.lode",
@@ -12387,6 +12504,10 @@
                           "label": "Host",
                           "value": "greisen and quartz vein in a granite cupploa"
                         }
+                      ],
+                      "sources": [
+                        "https://en.wikipedia.org/wiki/Greisen",
+                        "https://en.wikipedia.org/wiki/Cassiterite"
                       ],
                       "children": [
                         {
@@ -12459,7 +12580,7 @@
           "kind": "facility",
           "category": "metals",
           "era": "1982",
-          "confidence": "high",
+          "confidence": "medium",
           "places": [
             "Tri-State Mining District, Missouri"
           ],
@@ -12490,6 +12611,10 @@
                   "label": "Form",
                   "value": "replacement bodies and veins along bedding and fractures"
                 }
+              ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Galena",
+                "https://en.wikipedia.org/wiki/Lead_smelting"
               ]
             },
             {
@@ -12540,8 +12665,9 @@
                 "metal.galena"
               ]
             }
-          ]
-        }
+          ],
+      "note": "Documented: galena was a major mineral of the Tri-State district around Joplin, and occurs in low-temperature lead-zinc deposits within limestone beds. Not established: the room-and-pillar mining method, the 3-15 m ore bodies, the 3-6% Pb grade and the extent of hand sorting; none of these appear in the galena or lead smelting references."
+    }
       ]
     },
     "metal.sphalerite": {
@@ -12582,7 +12708,7 @@
           "kind": "facility",
           "category": "metals",
           "era": "1982",
-          "confidence": "high",
+          "confidence": "medium",
           "facts": [
             {
               "label": "Method",
@@ -12606,6 +12732,10 @@
                   "label": "Setting",
                   "value": "sediment-hosted massive sulphide lens in fine-grained clastic sediment"
                 }
+              ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Massive_sulfide_deposits",
+                "https://en.wikipedia.org/wiki/Sphalerite"
               ]
             },
             {
@@ -12720,8 +12850,9 @@
                 "https://en.wikipedia.org/wiki/Red_Dog_Mine"
               ]
             }
-          ]
-        }
+          ],
+      "note": "Documented: roughly half the world's sphalerite lead and zinc comes from sediment-hosted massive sulphide deposits - stratiform Pb-Zn sulphides hosted by shales, carbonates and siltstones - with combined grades typically 10-20%, and Red Dog, Sullivan, Mount Isa and Broken Hill are the named mines. Not established: galena at 7.6 and sphalerite at 4.1 specific gravity, the dense-media or differential gravity split between them, and the friction-hoist and mill-at-the-portal detail."
+    }
       ]
     },
     "metal.nickel.laterite": {
@@ -12801,6 +12932,11 @@
                   "label": "Setting",
                   "value": "tropical weathering profile, tens of metres thick, on an ultramafic body"
                 }
+              ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Peridotite",
+                "https://en.wikipedia.org/wiki/Serpentinite",
+                "https://en.wikipedia.org/wiki/Laterite"
               ]
             },
             {
@@ -13108,7 +13244,7 @@
       "kind": "material",
       "category": "metals",
       "era": "1982",
-      "confidence": "high",
+      "confidence": "medium",
       "facts": [
         {
           "label": "Sinter",
@@ -13163,7 +13299,7 @@
             }
           ],
           "sources": [
-            "https://en.wikipedia.org/wiki/Sinter_(iron_ore)"
+            "https://en.wikipedia.org/wiki/Sinter_plant"
           ],
           "children": [
             {
@@ -13173,7 +13309,7 @@
               "kind": "material",
               "category": "metals",
               "era": "1982",
-              "confidence": "high",
+              "confidence": "medium",
               "inputs": [
                 "metal.coke"
               ],
@@ -13186,8 +13322,9 @@
                   "label": "Use",
                   "value": "8-12% of the sinter mix as the fuel"
                 }
-              ]
-            }
+              ],
+      "note": "The coke reference defines coke breeze as the fraction under 10 mm, so the upper bound is right. Not established: the 3 mm lower bound and the 8-12% of the sinter mix share."
+    }
           ],
           "inputs": [
             "metal.hematite",
@@ -13265,7 +13402,8 @@
         "metal.coke",
         "metal.limestone",
         "metal.hematite"
-      ]
+      ],
+      "note": "Documented: the burden is ore, coke and limestone flux charged at the top, and the descending column must be porous enough for the flue gas to pass upward; slag forms when the ore's silica reacts with the calcined limestone. Not established: any of the five figures - sinter 55-65% Fe and basicity 1.0-1.6, pellets 62-66% Fe and 9-16 mm, coke 30-90 mm and a 0.3-0.5 t/t coke rate, and 0.25-0.35 t of limestone per tonne of hot metal."
     },
     "metal.electrical-steel": {
       "id": "metal.electrical-steel",
@@ -13341,7 +13479,7 @@
             }
           ],
           "sources": [
-            "https://en.wikipedia.org/wiki/Lamination_(electrical_engineering)"
+            "https://en.wikipedia.org/wiki/Lamination"
           ],
           "note": "The interlocked E-E stamping process was the standard for small transformers in the 1980s; confidence high."
         },
@@ -13527,6 +13665,10 @@
                   "label": "Mineral",
                   "value": "molybdenite MoS2, as 1-10 cm flakes in veinlets"
                 }
+              ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Molybdenite",
+                "https://en.wikipedia.org/wiki/Molybdenum"
               ]
             }
           ]
@@ -13574,6 +13716,10 @@
                   "label": "Mineral",
                   "value": "magnetite with Ti and V substitution; also a coexisting ilmenite"
                 }
+              ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Vanadium",
+                "https://en.wikipedia.org/wiki/Ilmenite"
               ]
             }
           ]
@@ -13605,7 +13751,7 @@
           ],
           "note": "Medium confidence; vacuum melting of tool steel is standard practice but the specific purity targets are supplier-specific.",
           "sources": [
-            "https://en.wikipedia.org/wiki/Vacuum_arc_furnace"
+            "https://en.wikipedia.org/wiki/Vacuum_arc_remelting"
           ]
         }
       ]
@@ -13697,6 +13843,9 @@
                   "value": "a marine chemical precipitate on a continental shelf"
                 }
               ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Banded_iron_formation"
+              ],
               "children": [
                 {
                   "id": "metal.bif-banding",
@@ -13705,7 +13854,7 @@
                   "kind": "material",
                   "category": "metals",
                   "era": "1982",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "facts": [
                     {
                       "label": "Band thickness",
@@ -13720,7 +13869,7 @@
                       "value": "the banded iron formations are associated with the rise of photosynthetic organisms and the Great Oxidation Event"
                     }
                   ],
-                  "note": "The biogenic origin of banded iron formations is now a well-established interpretation; high confidence."
+                  "note": "Two claims in this node are not supported and one is probably wrong: the ore-to-waste ratio of 1:2 to 1:5, and the statement that a phosphorus-rich band hosts the Sudbury nickel deposit and the Phalaborwa copper - Sudbury is an impact structure and Phalaborwa a carbonatite, neither a banded iron formation. The band-thickness scale is documented: macrobands several metres thick, mesobands millimetres to centimetres, microbands under a millimetre. The biogenic interpretation is stated in the references as theorized, which is weaker than well-established."
                 }
               ]
             },
@@ -13731,7 +13880,7 @@
               "kind": "process",
               "category": "metals",
               "era": "1982",
-              "confidence": "high",
+              "confidence": "low",
               "facts": [
                 {
                   "label": "Lump",
@@ -13748,8 +13897,9 @@
               ],
               "inputs": [
                 "metal.hematite"
-              ]
-            },
+              ],
+      "note": "Not established: the 6.3 mm lump/fines split point, the three-way split with a reject stream, the 30-45% Fe reject grade, and the 1982 steelmaker preference for direct-shipping lump. The iron ore reference distinguishes direct-shipping ore at over about 60% Fe from ore needing beneficiation but gives no size cut-off."
+    },
             {
               "id": "metal.hematite.stockyard",
               "name": "The ore stockyard and the ship loader",
@@ -13757,7 +13907,7 @@
               "kind": "tool",
               "category": "metals",
               "era": "1982",
-              "confidence": "high",
+              "confidence": "low",
               "facts": [
                 {
                   "label": "Stockyard",
@@ -13775,8 +13925,9 @@
                   "label": "Vessel",
                   "value": "180,000-250,000 dwt capesize, loaded in 12-24 h"
                 }
-              ]
-            }
+              ],
+      "note": "Not established: the 1-2 Mt stockyard capacity, the 100 m slewing gantry with trimming chute, the 1,500-10,000 t/h loading rate and the 12-24 h vessel loading time. The Pilbara reference gives the region's resource and production rate but no port or stockyard engineering, and the neighbouring ore-loader node carries the ship figures instead."
+    }
           ]
         }
       ]

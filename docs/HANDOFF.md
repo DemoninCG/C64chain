@@ -116,19 +116,18 @@ account. The short version, and the two things that matter for later work:
    tool that lists unreachable things. Fixed in `normKey`. If you write another
    script that normalises names, check it against `build.mjs` first.
 
-### Phase 4 — document confidence pass (the one place fan-out pays)
+### Phase 4 — document confidence pass - **DONE 2026-10-03**
 
-Partition **by fragment**, and give each agent the *full* document list.
-Partitioning by document would put every agent in every fragment.
-
-*Decided:* require verbatim quotes with document identifiers, and let `confidence`
-go **down** as readily as up. **Phase 3's gate is now met** — the mappings lint
-clean and `ingredients.mjs links` reports nothing new — so Phase 4 can start.
-
-Sizing: 942 nodes are at medium/low confidence and 1,915 carry no `sources` array
-at all. Source attribution, not confidence, is the gap. Note that the three new
-phase 2 branches were written with sources from the start, so the gap is now
-concentrated in the older branches.
+Tier 1 (835 high-confidence-no-source nodes) went to 7 agents on disjoint
+fragments with the full document list and verbatim-quote requirement, then
+through central verification (`p4verify.mjs`): 877 nodes touched, 647 sources
+added, 551 confidences down, 0 up. **High-confidence-no-source is now 0.**
+Central corrections fixed ~30 contradicted claims in the prose itself (CN1
+20-pin, self-adhesive feet, pentane-first EPS history, kraft delignification,
+VIC-owned refresh, 28-pin SID, 14.31818 MHz clock, 63/37 eutectic, …),
+repointed 26 dead Wikipedia titles, removed 2 with reasons recorded, and fixed
+6 dead non-Wikipedia citations. Full write-up in `TODO.md` §9. Still open:
+Tier 2a (270 nodes with no `confidence`, mostly petrochem) and Tier 2b.
 
 ### Also queued
 
@@ -197,11 +196,15 @@ was a sibling in the same `children` array and had no id reference anywhere, so
 nothing complained until `build.mjs` reported a dangling id — **and named the
 wrong node.** Look at what else lived in the block you removed.
 
-**`scripts/patch.mjs` had two bugs that wrote edits into the wrong node while
-reporting success.** One agent lost 53 edits and reverted the file. Both are
-fixed and `patchtest.mjs` holds the cases down — but it is **not parallel-safe**
-(it reads the whole file and writes the whole file back), so run patches
-serially. Prefer `patch.mjs` over round-tripping a fragment through
+**`scripts/patch.mjs` had four bugs, not two, and all four wrote bad data while
+reporting success.** The two from Phase 3 (edits landing in the wrong node) are
+fixed and held by `patchtest.mjs` — but Phase 4 found two more: `set` silently
+*replaced* a non-empty value, destroying nine real notes mid-phase (now refuses
+without `--force`), and the insert path's indent regex could never match, so
+every inserted key landed at six spaces and dedented its node's closing brace
+(367 sites; tool fixed, existing cosmetics left). It is still **not
+parallel-safe** (reads the whole file, writes the whole file back), so run
+patches serially. Prefer `patch.mjs` over round-tripping a fragment through
 `JSON.stringify`, which reformats the file and buries the edit. Note that
 `patch.mjs` writes **string** values only, so adding a node or changing an array
 needs the `edit` tool — which is byte-preserving too.
@@ -227,6 +230,39 @@ class numbers or numerals.
 match an `oldString` that ends in a newline. This cost three failed attempts
 during the Phase 2 doc update; check the byte before assuming a match is
 impossible.
+
+**`JSON.parse` keeps the last duplicate key and tells you nothing.** Three
+agents' custom `sources` inserters wrote a key that already existed in the same
+object (`note`, `facts`, `kind`/`category`/`era`). In two cases the corrected
+text was invisibly discarded; in one the stale *wrong* facts were invisibly
+winning. No script saw any of it — the build, the audit and the diff all parse
+the same way. Check for duplicates explicitly after any scripted insertion
+(`dupkey.mjs` in the session temp dir; promote it to `scripts/` if this
+recurs). Ban custom inserters: `patch.mjs` plus the `edit` tool cover
+everything, and the one agent that hand-rolled 62 `edit` calls put two of them
+in the wrong node.
+
+**A throttled API answers 200 with no data, which reads as "all clear".**
+The Wikipedia API rate-limits with a non-JSON body or a JSON body with no
+`query.pages`; a checker that does not test for both reports 0 missing out of
+474 titles, which is what happened first. Retry with backoff, assert on the
+response shape, and distrust any clean sweep that arrives too fast. The same
+caution applies to concurrent fetches generally: two live PDFs 404'd under
+8-way concurrency and returned 200 serially.
+
+**Fetch a cited URL exactly as written; never normalise it first.** Fetching
+bare `nepis.epa.gov/Exe/ZyPURL.cgi` returns 410 Gone while the real citations
+(`…?Dockey=91008R8P.TXT`) return 200 — testing the base URL manufactures a
+dead link. Rewriting a percent-encoded en dash to a hyphen does the same in
+the other direction (a false "dead" that then gets "fixed" into a real dead
+link). Check the bytes on the wire, not the cleaned-up string.
+
+**Derive the document list from the tree's own citations and you inherit its
+blind spot.** Phase 4's brief built the reading list from URLs the tree already
+cited, which is why zero nodes cited the six README primary sources and nobody
+noticed until mid-phase. The list had to be corrected from the README, with
+per-fragment applicability notes and a re-check instruction. Start from the
+README's reference section, not from the data.
 
 ---
 
@@ -263,7 +299,7 @@ Do not "fix" these without a decision.
 From the last pass, in rough priority order:
 
 1. **Decide globally-consistent things centrally; execute in parallel.**
-2. **Require incremental writes.** One agent spent 15.5 hours and wrote zero
+2. **Require incremental writes.** One agent ran long and wrote zero
    bytes. First edit early.
 3. **Ban new infrastructure.** `patch.mjs` already exists. An agent once spent
    its entire budget reinventing byte-preserving edits.
@@ -282,4 +318,5 @@ From the last pass, in rough priority order:
 - Push the commits to `origin/main`.
 - Produce the consolidated `probe.mjs` before/after diff for the README.
 - Decide whether build artifacts stay in git.
-- **Phase 4 is unblocked and is the only remaining phase.**
+- **Phase 4 Tier 1 is done; Tier 2a (270 nodes with no `confidence`, mostly
+  petrochem) and Tier 2b are the remaining phase.**

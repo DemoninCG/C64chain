@@ -125,8 +125,9 @@
                       "kind": "material",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
-                      "note": "Clay here is kaolin, not the ball clay used in porcelain.",
+                      "confidence": "medium",
+                      "sources": ["https://en.wikipedia.org/wiki/Resistor"],
+                      "note": "That a carbon film gives lower noise than a carbon composition resistor because of the precise distribution of the pure graphite without binding is documented, and that a carbon film is deposited on an insulating substrate with a helix cut in it. Not established: china clay as the diluent, phenolic binder in alcohol, and the claim that clay fraction is the coarse knob on resistance - the composition-resistor text makes that point for the bulk mix, not for a printed film.",
                       "inputs": [
                         "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black",
                         "facility.power.kaolin",
@@ -255,7 +256,7 @@
                           "kind": "process",
                           "category": "passives",
                           "era": "1982-1984",
-                          "confidence": "high",
+                          "confidence": "medium",
                           "facts": [
                             {
                               "label": "Sintering",
@@ -265,8 +266,9 @@
                           "inputs": [
                             "metal.alumina",
                             "facility.electricity"
-                          ]
-                        }
+                          ],
+      "note": "Not established: extrusion of plasticised alumina to a tube, the flying saw, and the 1500-1650 C sintering. A carbon film is documented as deposited on an insulating substrate, but the substrate's manufacture is not described in any source consulted."
+    }
                       ]
                     },
                     {
@@ -313,7 +315,7 @@
                           "kind": "tool",
                           "category": "passives",
                           "era": "1982-1984",
-                          "confidence": "high",
+                          "confidence": "medium",
                           "facts": [
                             {
                               "label": "Plate thickness",
@@ -324,8 +326,9 @@
                             "facility.electricity",
                             "facility.water",
                             "metal.nickel"
-                          ]
-                        },
+                          ],
+      "note": "Not established: barrel or belt plating of racks of resistors, and the 2-5 um nickel plate thickness. No document consulted describes axial resistor plating lines."
+    },
                         {
                           "id": "mb.passives.resistors.discrete-axial.carbon-film.termination.nickel-plating",
                           "name": "Electrolytic nickel plating bath",
@@ -333,7 +336,7 @@
                           "kind": "process",
                           "category": "passives",
                           "era": "1982-1984",
-                          "confidence": "high",
+                          "confidence": "medium",
                           "facts": [
                             {
                               "label": "Bath",
@@ -348,8 +351,9 @@
                             "metal.nickel.ingot",
                             "facility.electricity",
                             "facility.water"
-                          ]
-                        },
+                          ],
+      "note": "Not established: the sulfamate or pyrophosphate bath, the sulfonamide depolariser, the 30-50 g/L nickel, and the few A/dm2 current density. Plausible plating practice, but no source consulted supports it."
+    },
                         {
                           "id": "mb.passives.resistors.discrete-axial.carbon-film.termination.lead-wire",
                           "name": "Tinned copper lead wire",
@@ -357,7 +361,8 @@
                           "kind": "material",
                           "category": "metals",
                           "era": "1982-1984",
-                          "confidence": "high",
+                          "confidence": "medium",
+                          "sources": ["https://en.wikipedia.org/wiki/Resistor"],
                           "facts": [
                             {
                               "label": "Wire",
@@ -368,8 +373,9 @@
                             "metal.copper.wire",
                             "metal.tin",
                             "facility.electricity"
-                          ]
-                        }
+                          ],
+      "note": "The 0.6 mm tinned lead is documented, though the source states it for low-power wirewound resistors rather than carbon film: wire leads in low power wirewound resistors are usually between 0.6 and 0.8 mm in diameter and tinned for ease of soldering. Not established: the 230-250 C tin pot temperature, and the specific claim about oxidation between barrel plating and the board."
+    }
                       ]
                     },
                     {
@@ -380,6 +386,7 @@
                       "category": "passives",
                       "era": "1982-1984",
                       "confidence": "high",
+                      "sources": ["https://en.wikipedia.org/wiki/Resistor"],
                       "note": "Modern carbon film is still trimmed this way; laser trimming only ever made sense for thin film.",
                       "facts": [
                         {
@@ -399,7 +406,7 @@
                           "kind": "tool",
                           "category": "passives",
                           "era": "1982-1984",
-                          "confidence": "high",
+                          "confidence": "medium",
                           "inputs": [
                             "facility.electricity"
                           ],
@@ -411,13 +418,15 @@
                               "kind": "material",
                               "category": "passives",
                               "era": "1982-1984",
-                              "confidence": "high",
+                              "confidence": "medium",
                               "inputs": [
                                 "metal.alumina"
-                              ]
-                            }
-                          ]
-                        }
+                              ],
+      "note": "Not established: aluminium oxide as the standard grinding abrasive, or that synthetic diamond was used only where a finer cut was needed. No document consulted describes trim wheel abrasives."
+    }
+                          ],
+      "note": "Abrasive trimming is documented, as is cutting a helix in the film to create the resistive path. Not established: the thin abrasive wheel running at tens of thousands of revolutions per minute, or that each pass lengthens the path slightly."
+    }
                       ]
                     },
                     {
@@ -440,12 +449,13 @@
                           "kind": "process",
                           "category": "plastics",
                           "era": "1982-1984",
-                          "confidence": "high",
+                          "confidence": "medium",
                           "inputs": [
                             "chem.epoxy",
                             "facility.electricity"
-                          ]
-                        }
+                          ],
+      "note": "Not established: transfer-tool encapsulation in epoxy, the 150-175 C cure for several minutes, and the low-shrinkage argument. No document consulted describes how an axial resistor body is moulded. Note that the service manual's own note - 'ALL RESISTORS ARE 1/4 WATT 5% UNLESS OTHERWISE SPECIFIED' - and its separate line 'RESISTORS - All are carbon 1/4 watt, 5% unless noted' establish only the rating and the carbon technology, not the encapsulant."
+    }
                       ]
                     },
                     {
@@ -456,6 +466,7 @@
                       "category": "passives",
                       "era": "1982-1984",
                       "confidence": "high",
+                      "sources": ["https://en.wikipedia.org/wiki/Electronic_color_code", "https://en.wikipedia.org/wiki/Resistor"],
                       "note": "Bands are printed AFTER the part is trimmed and moulded - the trim determines the value, the print only reports it.",
                       "facts": [
                         {
@@ -480,10 +491,12 @@
                           "category": "passives",
                           "era": "1982-1984",
                           "confidence": "high",
+                          "sources": ["https://en.wikipedia.org/wiki/Electronic_color_code"],
                           "inputs": [
                             "chem.petroleum"
-                          ]
-                        }
+                          ],
+      "note": "That the bands were cheaply printed onto tiny components, and that printing technology later made printed numbers more practical, are both documented. Not established: the offset or rotogravure coater, the pigment-in-oil vehicle, and the cure at a few hundred degrees that keeps the bands from rubbing off or solvent attack."
+    }
                       ]
                     }
                   ]
@@ -525,6 +538,7 @@
                       "category": "passives",
                       "era": "1982-1984",
                       "confidence": "high",
+                      "sources": ["https://en.wikipedia.org/wiki/Resistor"],
                       "inputs": [
                         "metal.iron",
                         "chem.thermosets.phenolic"
@@ -538,13 +552,16 @@
                           "category": "passives",
                           "era": "ancient",
                           "confidence": "high",
+                          "sources": ["https://en.wikipedia.org/wiki/Resistor"],
                           "inputs": [
                             "metal.bauxite.kaolinite",
                             "facility.electricity.feldspar"
-                          ]
-                        }
-                      ]
-                    },
+                          ],
+      "note": "The substance of the claim is documented: the resistive element is a mixture of finely powdered carbon and an insulating material, usually ceramic, held together by a resin, and the resistance is set by the ratio of the fill material to the carbon. Not established: that the diluent was specifically kaolin."
+    }
+                      ],
+      "note": "The mix itself is documented: the resistive element is a mixture of finely powdered carbon and an insulating material, usually ceramic, held together by a resin, with resistance set by the fill-to-carbon ratio and higher carbon giving lower resistance. Not established: that this particular mix used clay rather than another ceramic, or phenolic rather than another resin."
+    },
                     {
                       "id": "mb.passives.resistors.discrete-axial.carbon-composition.moulding",
                       "name": "Compression moulding",
@@ -627,7 +644,7 @@
                       "kind": "part",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "metal.alumina"
                       ],
@@ -639,13 +656,15 @@
                           "kind": "material",
                           "category": "passives",
                           "era": "1982-1984",
-                          "confidence": "high",
+                          "confidence": "medium",
                           "inputs": [
                             "metal.alumina"
-                          ]
-                        }
-                      ]
-                    },
+                          ],
+      "note": "Not established: alumina ceramic bar or flat ceramic tube as the substrate, and the flatness argument. The general need for a smooth uniform substrate follows from the film resistance depending on track length, but no source consulted names the material."
+    }
+                      ],
+      "note": "Not established: that metal film parts use a flat alumina bar or flat ceramic tube rather than a tube-with-a-skin, and the causal link to stable laser scribing. No source consulted describes axial metal film substrates."
+    },
                     {
                       "id": "mb.passives.resistors.discrete-axial.metal-film.nichrome",
                       "name": "NiCr resistance alloy",
@@ -674,11 +693,11 @@
                     {
                       "id": "mb.passives.resistors.discrete-axial.metal-film.vacuum-deposition",
                       "name": "Vacuum deposition bell",
-                      "description": "Parts are racked in a bell jar under vacuum; NiCr is evaporated at high current and condenses as a sub-micron film over the resistive area only, defined by an evaporated aluminium mask. Vacuum deposited - not sputtered - was standard for axial resistors in 1982.",
+                      "description": "Parts are racked in a vacuum chamber and the resistive film is deposited over the resistive area only, defined by a mask. The documented method for thin film resistors is sputtering; metal film resistors are usually nickel chromium, deposited by vacuum techniques of which sputtering is one. That vacuum deposition was standard for axial resistors in 1982 is reasonable but the exclusion of sputtering is not supported.",
                       "kind": "tool",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "low",
                       "facts": [
                         {
                           "label": "Film thickness",
@@ -691,8 +710,9 @@
                       ],
                       "inputs": [
                         "facility.electricity"
-                      ]
-                    },
+                      ],
+      "note": "Contradicted as stated. The source says thin film resistors are made by sputtering, a method of vacuum deposition, and that metal film resistors are usually coated with nickel chromium by techniques that may include sputtering but need not be limited to it. Nothing supports 'vacuum deposited - not sputtered - was standard for axial resistors in 1982', nor the 50-500 nm film thickness or the 10^-3 to 10^-5 Torr figure."
+    },
                     {
                       "id": "mb.passives.resistors.discrete-axial.metal-film.laser-trim",
                       "name": "Laser scribing of the spiral",
@@ -700,7 +720,8 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
+                      "sources": ["https://en.wikipedia.org/wiki/Resistor"],
                       "facts": [
                         {
                           "label": "Trim rate",
@@ -717,8 +738,9 @@
                       ],
                       "inputs": [
                         "facility.electricity"
-                      ]
-                    },
+                      ],
+      "note": "The temperature coefficient is documented exactly: a metal film resistor cut by a helix through a NiCr coating gives 0.5 %, 1 % or 2 % tolerance and a temperature coefficient generally between 50 and 100 ppm/K. Not established: the 0.1-1 % tolerance claimed, the 1000-10000 parts per hour trim rate, and the claim that laser scribing rather than a mechanical wheel is what buys the precision - the source describes the helix cut without saying which tool makes it."
+    },
                     {
                       "id": "mb.passives.resistors.discrete-axial.metal-film.termination",
                       "name": "Termination cap and lead",
@@ -726,7 +748,7 @@
                       "kind": "part",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "metal.nickel"
                       ],
@@ -738,14 +760,16 @@
                           "kind": "material",
                           "category": "passives",
                           "era": "1982-1984",
-                          "confidence": "high",
+                          "confidence": "medium",
                           "inputs": [
                             "metal.nickel",
                             "metal.steel.sheet"
-                          ]
-                        }
-                      ]
-                    }
+                          ],
+      "note": "Not established: the cap alloy, the crimping, and the requirement that the plating be uniform for consistency. Nothing consulted describes axial metal film end caps."
+    }
+                      ],
+      "note": "Not established: the crimped steel or aluminium cap, the nickel plating, or the claim that metal film parts are always nickel-plated and never bare tin. No document consulted describes axial metal film terminations."
+    }
                   ]
                 },
                 {
@@ -779,7 +803,8 @@
                           "kind": "material",
                           "category": "passives",
                           "era": "1982-1984",
-                          "confidence": "high",
+                          "confidence": "medium",
+                          "sources": ["https://en.wikipedia.org/wiki/Resistor"],
                           "children": [
                             {
                               "id": "mb.passives.resistors.discrete-axial.wirewound.bobbin.steatite.talc",
@@ -793,8 +818,9 @@
                               ],
                               "confidence": "medium"
                             }
-                          ]
-                        }
+                          ],
+      "note": "That the winding core is ceramic - along with plastic or fibreglass - is documented. Not established: steatite specifically, and its green-machinability and firing behaviour. No source consulted names a magnesium-silicate bobbin for a wirewound resistor."
+    }
                       ]
                     },
                     {
@@ -817,6 +843,7 @@
                           "category": "passives",
                           "era": "1982-1984",
                           "confidence": "high",
+                          "sources": ["https://en.wikipedia.org/wiki/Resistor"],
                           "inputs": [
                             "metal.silica-sand"
                           ]
@@ -830,8 +857,9 @@
                       "kind": "material",
                       "category": "metals",
                       "era": "1982-1984",
-                      "confidence": "high",
-                      "note": "Constantan is 60/40 copper-nickel. Neither alloy is traced to ore here.",
+                      "confidence": "medium",
+                      "sources": ["https://en.wikipedia.org/wiki/Resistor"],
+                      "note": "Nichrome is documented as the usual winding wire. Not established: that it has the highest resistivity of the common resistance alloys, and that constantan is chosen where a lower temperature coefficient matters more - no constantan figure appears in the source consulted. Note also that the source gives two different Nichrome compositions, 80 Ni / 20 Cr and 60 Ni / 12 Cr / 26 Fe / 2 Mn, melting at 1350-1420 C.",
                       "inputs": [
                         "metal.nickel",
                         "metal.copper.wire"
@@ -997,8 +1025,9 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
-                      "note": "Lead-free base metals such as Ni were not yet standard in 1982; the Ni-bearing pastes the prompt alludes to became common later.",
+                      "confidence": "medium",
+                      "sources": ["https://en.wikipedia.org/wiki/Resistor"],
+                      "note": "The glass-frit conductor paste fired at about 850 C is documented. Not established: that the base metal was silver or silver-palladium with copper pastes needing a nitrogen atmosphere, and the late-1980s dating of nickel-bearing pastes.",
                       "facts": [
                         {
                           "label": "Firing",
@@ -1047,7 +1076,8 @@
                       "kind": "tool",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
+                      "sources": ["https://en.wikipedia.org/wiki/Resistor"],
                       "facts": [
                         {
                           "label": "Peak temperature",
@@ -1069,11 +1099,12 @@
                           "kind": "tool",
                           "category": "passives",
                           "era": "1982-1984",
-                          "confidence": "high",
+                          "confidence": "medium",
                           "inputs": [
                             "facility.electricity"
-                          ]
-                        },
+                          ],
+      "note": "Firing at about 850 C is documented. Not established: the belt or pusher tunnel with profiled hot zones, the drying and burnout stages, and the claim that too fast a cool micro-cracks the glass."
+    },
                         {
                           "id": "mb.passives.resistors.cermet-networks.substrate.sintering.refractory",
                           "name": "Refractory kiln furniture",
@@ -1086,8 +1117,9 @@
                             "metal.alumina"
                           ]
                         }
-                      ]
-                    }
+                      ],
+      "note": "The 850 C firing peak is documented. Not established: driving the resistors at 1.5 times rated power for 15-25 minutes to age them in the firing, which is the substantive claim here."
+    }
                   ]
                 },
                 {
@@ -1097,8 +1129,9 @@
                   "kind": "material",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
-                  "note": "Ruthenium is a platinum-group metal, recovered as a by-product of platinum ores; it was the most expensive thing in a 1980s thick-film resistor and a genuine cost driver. The ore-to-powder chain is not traced here.",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Resistor"],
+                  "note": "The paste construction is documented: the resistive ceramic phase is mixed with sintered powdered glass and a carrier liquid so the composite can be screen-printed, and the composite is fused at about 850 C. Ruthenium oxide is listed among the cermet conductors used. Not established: the 0.1-0.5 um RuO2 particle size, the lead-borosilicate glass frit specific to the 1980s, the butyl acetate / terpineol vehicle, and the 10 ohm/sq to 1 Mohm/sq sheet-resistance range.",
                   "facts": [
                     {
                       "label": "RuO2 powder",
@@ -1120,12 +1153,14 @@
                     {
                       "id": "mb.passives.resistors.cermet-networks.ruthenium-paste.ruo2",
                       "name": "Ruthenium dioxide powder",
-                      "description": "Anhydrous RuO2 is the only resistor phase that survives to 900 C without oxidising away; the surrounding glass is what actually carries the current. Its scarcity set the price of every cermet resistor made in the 1980s.",
+                      "description": "Ruthenium oxide is one of the conductive ceramic phases mixed into a cermet resistor paste, alongside tantalum nitride, lead oxide and others; it is the conductive phase that carries the current, and the glass phase mixed in with it is the insulator that binds the film and gives it its stability. The paste is screen-printed onto a substrate and fused at about 850 C. Ruthenium's scarcity has been a persistent cost driver for cermet resistors.",
                       "kind": "material",
                       "category": "metals",
                       "era": "1982-1984",
-                      "confidence": "high"
-                    },
+                      "confidence": "medium",
+                      "sources": ["https://en.wikipedia.org/wiki/Resistor"],
+      "note": "Ruthenium oxide is documented as one of the ceramic cermet conductors used in thick film resistors. Not established, and doubtful as stated: that RuO2 is the only phase that survives to 900 C without oxidising away (tantalum nitride and nickel chromium are in the same list), and that 'the surrounding glass is what actually carries the current' - glass is the insulator in a cermet, the conductive phase carries the current."
+    },
                     {
                       "id": "mb.passives.resistors.cermet-networks.ruthenium-paste.platinum-ore",
                       "name": "Platinum-group ore bearing ruthenium",
@@ -1165,7 +1200,8 @@
                   "kind": "tool",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Resistor"],
                   "facts": [
                     {
                       "label": "Screen mesh",
@@ -1187,13 +1223,15 @@
                       "kind": "tool",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "metal.stainless.304"
-                      ]
-                    }
-                  ]
-                },
+                      ],
+      "note": "Screen and stencil printing is documented for thick film. Not established: a woven stainless-steel or nylon mesh stretched over a frame and photo-imaged, and the abrasion argument. Note that the printed resistors are inside a sealed package, so the paste never meets the mesh in service."
+    }
+                  ],
+      "note": "Screen and stencil printing is documented as the thick film deposition method. Not established: the photoemulsion-through-a-film exposure route, the 250-400 mesh, the 10-25 um wet film thickness, and the thixotropy-from-frit-particle-shape argument."
+    },
                 {
                   "id": "mb.passives.resistors.cermet-networks.trim",
                   "name": "Laser trimming of the network",
@@ -1201,8 +1239,9 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
-                  "note": "In 1982 a good fraction of commodity SIP networks were still trimmed by abrasive nozzle jet rather than laser.",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Resistor"],
+                  "note": "Trimming is documented: the resistance of thick film resistors after manufacture is not highly accurate and is trimmed to value by abrasive or laser trimming. Not established: the excimer and Nd:YAG laser choice, the v-cut or slug bulk-trim alternative, a rate of 10,000 networks per hour, and a tolerance of 0.1 %. The documented history goes the other way on tolerance - thick film resistors started at 5 % and improved to 2 % or 1 %.",
                   "facts": [
                     {
                       "label": "Achievable tolerance",
@@ -1224,11 +1263,13 @@
                       "kind": "tool",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
+                      "sources": ["https://en.wikipedia.org/wiki/Resistor"],
                       "inputs": [
                         "facility.electricity"
-                      ]
-                    },
+                      ],
+      "note": "Not established: the pulsed laser head with in-line ohmmeter measuring thousands of times per second, and the excimer laser for fine-resolution cuts. The source establishes only that thick film resistors are trimmed by laser among other methods."
+    },
                     {
                       "id": "mb.passives.resistors.cermet-networks.trim.yag",
                       "name": "Nd:YAG laser crystal",
@@ -1250,7 +1291,7 @@
                   "kind": "process",
                   "category": "plastics",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "chem.epoxy",
                     "metal.silica-sand"
@@ -1263,12 +1304,13 @@
                       "kind": "material",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "chem.epoxy",
                         "metal.silica-sand"
-                      ]
-                    },
+                      ],
+      "note": "Not established: an epoxy loaded with fine glass or silica as the encapsulant, and that the body colour is the colourant in that coat. The small white dot denoting resistance on these packages is not explained by any source consulted."
+    },
                     {
                       "id": "mb.passives.resistors.cermet-networks.encapsulation.lead-frame",
                       "name": "Lead frame",
@@ -1276,14 +1318,16 @@
                       "kind": "part",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "metal.copper.wire",
                         "metal.tin"
-                      ]
-                    }
-                  ]
-                }
+                      ],
+      "note": "The 8-pin and 10-pin single-in-line form factor on a 2.54 mm pitch is documented by the parts list. Not established: that the leads come from a copper-alloy lead frame plated in tin or solder, and that the package is wave-soldered."
+    }
+                  ],
+      "note": "The on-board network is documented in the primary parts list as a Bourns part - RP1,RP2 '330, 8 Pin (Bourns No. 4308R-102-330)', RP3 '3.3KQ, 8 Pin (Bourns No. 4308R-101-332)', RP4 '3.3KQ, 10 Pin' - which settles the single-in-line pin count but not the encapsulant. Not established: a fire-resistant epoxy or phenolic varnish carrying the colour code, and that glass-filled epoxy was the standard SIP encapsulant."
+    }
               ]
             },
             {
@@ -1325,7 +1369,8 @@
                   "kind": "part",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Potentiometer", "https://en.wikipedia.org/wiki/Resistor"],
                   "facts": [
                     {
                       "label": "Element",
@@ -1349,14 +1394,16 @@
                       "kind": "material",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "metal.nickel.ingot",
                         "metal.iron"
-                      ]
-                    }
-                  ]
-                },
+                      ],
+      "note": "A springy phosphor bronze wiper moving over the resistive element is documented for potentiometers. Not established: nickel-alloy or precious-metal wipers on a cermet trimmer, and the sacrificial-wear design argument."
+    }
+                  ],
+      "note": "That a cermet - a ceramic/metal mixture - is a standard potentiometer resistive element is documented, as is ruthenium oxide among the cermet conductors. Not established: the 100 ohm to 1 Mohm per square sheet-resistance range, the specific wiper alloys, and the design intent of concentrating most of the resistance in the middle of the sweep."
+    },
                 {
                   "id": "mb.passives.resistors.trimmers.adjuster",
                   "name": "Adjuster screw and slider",
@@ -1377,12 +1424,13 @@
                       "kind": "part",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "metal.copper",
                         "metal.zinc.ingot"
-                      ]
-                    },
+                      ],
+      "note": "Not established: brass or stainless, knurled or slotted, and the anti-galling argument against a moulded slider. Multiturn trimmers use a lead screw and are documented; the material of this adjuster screw is not."
+    },
                     {
                       "id": "mb.passives.resistors.trimmers.adjuster.lock",
                       "name": "Epoxy lock",
@@ -1390,11 +1438,12 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "chem.epoxy"
-                      ]
-                    }
+                      ],
+      "note": "Not established: the epoxy lock and the account of the trimmer as a one-time factory adjustment. That trimmers are for infrequent adjustment during manufacture or repair is documented; the destructive epoxy lock is not, in any source consulted."
+    }
                   ]
                 }
               ]
@@ -1438,7 +1487,7 @@
               "category": "passives",
               "era": "1982-1984",
               "sources": [
-                "https://en.wikipedia.org/wiki/MLCC"
+                "https://en.wikipedia.org/wiki/Ceramic_capacitor"
               ],
               "confidence": "high",
               "note": "The 250407 parts list as transcribed by the replica-board project specifies 0.1 uF 50 V X7R, 0.22 uF Z5U and small C0G parts; Commodore's exact mix of ceramic disc versus monolithic changed between board revisions, and the X7R/Z5U designations are modern restatements of what were then simply 'ceramic'.",
@@ -1471,8 +1520,9 @@
                   "kind": "material",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
-                  "note": "Y5V, also a Class II code, is real but was not the dominant 1982 designation; the breadbin C64 parts are best described as X7R/Z5U-era ceramics.",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Ceramic_capacitor", "https://en.wikipedia.org/wiki/Barium_titanate"],
+                  "note": "Not established: the 0.2-1 um particle size attributed to early-1980s X7R powder. What is documented is the class 2 material set and its codes - barium titanate with aluminium silicate, magnesium silicate and aluminium oxide additives, permittivity 200 to 14000, X7R -55 to +125 C at plus or minus 15 %, Z5U +10 to +85 C at +22/-56 % - and a barium titanate Curie temperature of 120-130 C with dielectric constants to 7000, or 15000 over a narrow range. Those are material-class figures; they are not a figure for any particular commercial grade.",
                   "facts": [
                     {
                       "label": "Particle size",
@@ -1502,8 +1552,9 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
-                      "note": "Barium carbonate is one canonical node, metal.barium-carbonate. The calcination fire is 1050-1200 C; the 1150-1250 C figure sometimes quoted for \"BaTiO3 firing\" is the finished-body sinter, not this step.",
+                      "confidence": "medium",
+                      "sources": ["https://en.wikipedia.org/wiki/Barium_titanate"],
+                      "note": "Not established: the 1050-1200 C calcination temperature and the zirconia or nylon wet-milling detail. What is documented is the reaction itself - barium titanate manufactured by heating barium carbonate and titanium dioxide, the reaction proceeding via liquid phase sintering.",
                       "facts": [
                         {
                           "label": "Calcination",
@@ -1530,8 +1581,8 @@
                           "kind": "material",
                           "category": "passives",
                           "era": "1982-1984",
-                          "confidence": "high",
-                          "note": "Australia was the dominant ilmenite supplier to the ceramic-grade pigment chain in 1982.",
+                          "confidence": "medium",
+                          "note": "Barium titanate is documented as made by heating barium carbonate and titanium dioxide, so TiO2 is confirmed as a feed. Not established: the chlorination of ilmenite or rutile to TiCl4 and re-oxidation, the sulphuric acid route, low-iron pigment grade for insulation resistance, and the 1982 ilmenite supply geography.",
                           "inputs": [
                             "metal.ilmenite-sand"
                           ]
@@ -1585,7 +1636,8 @@
                   "kind": "material",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Ceramic_capacitor"],
                   "facts": [
                     {
                       "label": "Glass frit",
@@ -1603,13 +1655,15 @@
                       "kind": "material",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "metal.silica-sand"
-                      ]
-                    }
-                  ]
-                },
+                      ],
+      "note": "Not established: the role of the glass frit in wetting the barium titanate grains and closing porosity, the hermetic interface it gives the internal electrode, and the claim that without it the insulation resistance collapses. No document consulted describes the MLCC frit addition."
+    }
+                  ],
+      "note": "Not established: the glass frit fraction of about 5 % by weight of the ceramic body, and the specific 1982 binder systems. What is documented is that the casting suspension is the powder with a suitable binder."
+    },
                 {
                   "id": "mb.passives.caps.mlcc.tape-cast",
                   "name": "Tape casting to green sheets",
@@ -1617,8 +1671,9 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
-                  "note": "The 1-10 um green-sheet figure is a modern one; 1982 parts cast thicker, coarser sheets, to keep the layer count and the cost of handling down.",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Ceramic_capacitor"],
+                  "note": "Not established: the 5-20 um green-sheet thickness attributed to early-1980s parts. What is documented is that a thin ceramic foil is cast from a suspension of the powder with a suitable binder, and that dielectric layer thickness fell from 4 um in 1995 to 1 um in 2005 and about 0.5 um by 2010, with the layer thickness limited by the powder grain size.",
                   "facts": [
                     {
                       "label": "Green sheet thickness",
@@ -1640,11 +1695,12 @@
                       "kind": "tool",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "chem.petroleum"
-                      ]
-                    },
+                      ],
+      "note": "Not established: the continuous polyester carrier belt and the short in-line drying oven. No document consulted describes the tape-casting line layout."
+    },
                     {
                       "id": "mb.passives.caps.mlcc.tape-cast.doctor-blade",
                       "name": "Doctor blade",
@@ -1652,30 +1708,32 @@
                       "kind": "tool",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "metal.die-steel"
-                      ]
-                    }
+                      ],
+      "note": "Casting a thin ceramic foil from a powder-and-binder suspension to a controlled thickness is documented. Not established: the doctor blade itself - a ground steel or ceramic blade set to micrometres over a moving belt - and its description as the single most important tool in the manufacture."
+    }
                   ]
                 },
                 {
                   "id": "mb.passives.caps.mlcc.print-electrodes",
                   "name": "Screen-printing internal electrodes",
-                  "description": "A metal paste is printed onto the green sheets to define the buried internal electrodes. In 1982 the commodity MLCC used a base-metal nickel paste fired in a low-pO2 atmosphere, because silver would diffuse down the grain boundaries of the BaTiO3 and wreck its insulation resistance. The older, more expensive palladium-silver electrode was by then largely a legacy technology kept for a few high-reliability parts.",
+                  "description": "A metal paste is printed onto the green sheets to define the buried internal electrodes, the sheets being cut from the rolled foil afterwards. In 1982 the commodity MLCC still used a noble-metal paste: the displacement of palladium-bearing electrodes by cheaper nickel is dated to 1993 by TDK, with copper and nickel arriving later still after a late-1990s surge in noble-metal prices. So the older, expensive palladium-silver electrode was the mainstream choice at this date, not a legacy one.",
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
-                  "note": "Palladium-silver was the 1960s-70s internal electrode, not the 1980s one; nickel-palladium-silver composite pastes only became the standard after about 1985.",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Ceramic_capacitor"],
+                  "note": "Not established, and in tension with the source cited: the switch from palladium-bearing to nickel internal electrodes is dated there to 1993 by TDK, with cheaper base metals developing after a late-1990s noble-metal price surge, not to the 1982 commodity part. Screen-printing a metal paste onto the green sheets is documented; the 1982 nickel-versus-palladium-silver balance is not.",
                   "facts": [
                     {
                       "label": "1982 internal electrode",
-                      "value": "Ni base metal, dominant"
+                      "value": "palladium-silver or similar noble metal for a 1982 part; nickel only from 1993 and later base metals after that"
                     },
                     {
                       "label": "Legacy alternative",
-                      "value": "PdAg, mostly phased out by the early 1980s"
+                      "value": "nickel, from 1993 onward"
                     },
                     {
                       "label": "Print",
@@ -1694,8 +1752,8 @@
                       "kind": "material",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
-                      "note": "The nickel in a nickel internal electrode came ultimately from laterite ore or from imported nickel matte, and by 1982 the trade in ferronickel and matte was a well-developed global market - which is why a capacitor assembled in Hong Kong was sensitive to New Caledonian nickel. Palladium-silver was the 1960s-70s electrode; nickel-palladium-silver composites only became standard after about 1985.",
+                      "confidence": "medium",
+                      "note": "Screen-printing a metal paste that co-fires with the ceramic is documented, and nickel is documented as one of the cheaper base metals later used for internal electrodes. Not established: the sub-micron to 1 um particle size, the low-pO2 co-fire specifically for a nickel electrode, and that nickel was already the dominant 1982 internal electrode - the source dates that change to 1993.",
                       "facts": [
                         {
                           "label": "Particle size",
@@ -1716,7 +1774,8 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Ceramic_capacitor"],
                   "facts": [
                     {
                       "label": "Layers",
@@ -1742,13 +1801,15 @@
                       "kind": "tool",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "facility.electricity"
-                      ]
-                    }
-                  ]
-                },
+                      ],
+      "note": "Stacking and solidifying by pressure is documented. Not established: a heated hydraulic press, registration pins, or that this is the step that turns loose printed film into a solid bar."
+    }
+                  ],
+      "note": "Not established: the 10-60 active layer count for a 1982 0.1 uF 50 V part, the lamination pressure in tens of MPa, and the 200-400 C debind ramp. What is documented is that the printed sheets are stacked in the required number of layers, solidified by pressure, and that the binder is burnt out of the stack after cutting."
+    },
                 {
                   "id": "mb.passives.caps.mlcc.dicing",
                   "name": "Dicing into blanks",
@@ -1757,6 +1818,7 @@
                   "category": "passives",
                   "era": "1982-1984",
                   "confidence": "high",
+                  "sources": ["https://en.wikipedia.org/wiki/Ceramic_capacitor"],
                   "facts": [
                     {
                       "label": "Yield per bar",
@@ -1778,14 +1840,15 @@
                       "kind": "tool",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "facility.electricity"
                       ],
                       "children": [
                         
-                      ]
-                    }
+                      ],
+      "note": "Cutting the pressed stack into individual components is documented. Not established: that a resin-bonded diamond blade is used, or that this is 'the same abrasive technology as the crystal grinder'."
+    }
                   ]
                 },
                 {
@@ -1795,8 +1858,9 @@
                   "kind": "tool",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
-                  "note": "Two kiln temperatures are often confused: 1150-1250 C is the BaTiO3 powder calcination and about 1300 C is the finished body's sinter. Both are right for their step.",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Ceramic_capacitor"],
+                  "note": "Not established: the low oxygen partial pressure and forming-gas or nitrogen atmosphere, and the >99.5 % theoretical density figure. What is documented is the order of operations and the temperature - binder burnt out after cutting, then sintering at 1200-1450 C to give the final mainly crystalline structure. The atmosphere requirement is tied to which electrode metal is used and is not stated in the source.",
                   "facts": [
                     {
                       "label": "Peak temperature",
@@ -1823,12 +1887,13 @@
                       "kind": "part",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "metal.nickel",
                         "facility.electricity"
-                      ]
-                    }
+                      ],
+      "note": "The 1200-1450 C sinter is documented. Not established: that the kiln is heated by silicon-carbide or nichrome elements, or the hours-long soak. No element type or soak time appears in any source consulted."
+    }
                   ]
                 },
                 {
@@ -1887,15 +1952,15 @@
                 {
                   "id": "mb.passives.caps.alu-electrolytic.anode-foil",
                   "name": "High-purity anode foil, rolled and etched",
-                  "description": "99.5 %+ aluminium foil, chemically etched in a hot hydrochloric/nitric acid or chlorate bath to grow microscopic pits on the surface. Effective cathode area rises by a factor of fifty to a hundred, which is how a hundred microfarads fits into a 5 mm can.",
+                  "description": "High-purity aluminium foil, roughened by electrochemical etching so that the surface becomes a mass of microscopic pits, then anodically formed to grow an insulating alumina layer on it. Etching multiplies the effective area of the anode, which is how a hundred microfarads fits into a 5 mm can. The foil is wound with a separate cathode foil and absorbent separator, and the liquid electrolyte is the actual second electrode.",
                   "kind": "part",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "low",
                   "facts": [
                     {
                       "label": "Foil purity",
-                      "value": "99.5-99.7 % Al; higher for low-leakage grades"
+                      "value": "at least 99.99 % Al"
                     },
                     {
                       "label": "Etchant",
@@ -1903,11 +1968,11 @@
                     },
                     {
                       "label": "Surface area gain",
-                      "value": "x50-x100 after etching"
+                      "value": "up to about x200 relative to a smooth surface, depending on the rated voltage"
                     },
                     {
                       "label": "Foil thickness",
-                      "value": "~12-25 um"
+                      "value": "~20-100 um"
                     }
                   ],
                   "inputs": [
@@ -1921,8 +1986,9 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
-                      "note": "The phosphate for the bath is apatite ore, metal.phosphate-ore, burnt and absorbed in water to give the wet-process acid.",
+                      "confidence": "medium",
+                      "sources": ["https://en.wikipedia.org/wiki/Aluminium_electrolytic_capacitor"],
+                      "note": "Not established: the 90-200 V DC forming voltage quoted for parts rated 6-50 V. What is documented is the relationship - oxide thickness proportional to forming voltage, 14 nm at 10 V and 140 nm at 100 V, amorphous oxide 1.4 nm/V against 1.0 nm/V crystalline - together with the standardised safety margin that puts the forming voltage above the rated voltage.",
                       "facts": [
                         {
                           "label": "Forming voltage",
@@ -1971,8 +2037,9 @@
                         "metal.fluorspar"
                       ]
                     }
-                  ]
-                },
+                  ],
+      "note": "Not established, and contradicted by the standard construction description: the anode foil is quoted as at least 99.99 % pure aluminium and 20-100 um thick, and etching as giving a surface-area increase of up to a factor of 200. The 99.5-99.7 % purity, 12-25 um thickness and x50-x100 area gain quoted here are not supported by any source consulted, and the etch multiplies the anode area, not the cathode's."
+    },
                 {
                   "id": "mb.passives.caps.alu-electrolytic.cathode-foil",
                   "name": "Cathode foil",
@@ -1981,6 +2048,7 @@
                   "category": "passives",
                   "era": "1982-1984",
                   "confidence": "high",
+                  "sources": ["https://en.wikipedia.org/wiki/Aluminium_electrolytic_capacitor"],
                   "inputs": [
                     "metal.aluminum.foil"
                   ],
@@ -1993,6 +2061,7 @@
                       "category": "passives",
                       "era": "1982-1984",
                       "confidence": "high",
+                      "sources": ["https://en.wikipedia.org/wiki/Aluminium_electrolytic_capacitor"],
                       "inputs": [
                         "metal.aluminum.ingot",
                         "metal.alumina"
@@ -2007,7 +2076,8 @@
                   "kind": "material",
                   "category": "fluids",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Aluminium_electrolytic_capacitor"],
                   "facts": [
                     {
                       "label": "Solvents",
@@ -2069,7 +2139,7 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "facts": [
                         {
                           "label": "Route",
@@ -2087,17 +2157,20 @@
                           "kind": "process",
                           "category": "passives",
                           "era": "1982-1984",
-                          "confidence": "high",
+                          "confidence": "medium",
                           "inputs": [
                             "chem.ethylene",
                             "chem.petroleum",
                             "facility.electricity"
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
+                          ],
+      "note": "Not established: direct oxidation of ethylene over a silver or chromite catalyst, and the subsequent alcoholysis to the glycol ether. No source consulted establishes ethylene oxide."
+    }
+                      ],
+      "note": "Ethylene glycol with boric acid as the standard borax electrolyte, and DMF, DMA and gamma-butyrolactone as the anhydrous organics, are documented. Not established: the glycol-ether route from a steam cracker, and the claim that these replaced glycol-ester electrolytes of the 1950s."
+    }
+                  ],
+      "note": "Not established: dimethyl sulphoxide as a working electrolyte solvent. The documented non-solid systems are borax (ethylene glycol with boric acid) and the organic solvents DMF, DMA and gamma-butyrolactone. The conductivity figure of tens to hundreds of mS/cm is likewise unsourced."
+    },
                 {
                   "id": "mb.passives.caps.alu-electrolytic.separator",
                   "name": "Separator (paper or polyolefin)",
@@ -2106,6 +2179,7 @@
                   "category": "passives",
                   "era": "1982-1984",
                   "confidence": "high",
+                  "sources": ["https://en.wikipedia.org/wiki/Aluminium_electrolytic_capacitor"],
                   "note": "Paper was still the volume material in 1982; polypropylene separators had been commercial for years but were not yet dominant.",
                   "facts": [
                     {
@@ -2128,8 +2202,9 @@
                       "kind": "material",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
-                      "note": "Kraft pulp is a single node, c64.packaging.kraft-pulp, because the same pulp makes the machine's cartons.",
+                      "confidence": "medium",
+                      "sources": ["https://en.wikipedia.org/wiki/Aluminium_electrolytic_capacitor"],
+                      "note": "Not established: the 20-60 um separator thickness quoted here. The standard construction figure for a capacitor rated up to 100 V is 30-75 um, with duplex paper used at higher ratings.",
                       "facts": [
                         {
                           "label": "Thickness",
@@ -2154,6 +2229,7 @@
                   "category": "passives",
                   "era": "1982-1984",
                   "confidence": "high",
+                  "sources": ["https://en.wikipedia.org/wiki/Aluminium_electrolytic_capacitor"],
                   "facts": [
                     {
                       "label": "Impregnation",
@@ -2178,11 +2254,12 @@
                       "kind": "part",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "metal.steel.sheet"
-                      ]
-                    }
+                      ],
+      "note": "Automatic winding is documented. Not established: the mandrel material or its Teflon coating, or that mandrel diameter is set by the smallest foil thickness."
+    }
                   ]
                 },
                 {
@@ -2193,6 +2270,7 @@
                   "category": "passives",
                   "era": "1982-1984",
                   "confidence": "high",
+                  "sources": ["https://en.wikipedia.org/wiki/Aluminium_electrolytic_capacitor"],
                   "facts": [
                     {
                       "label": "Terminal",
@@ -2221,6 +2299,7 @@
                       "category": "passives",
                       "era": "1982-1984",
                       "confidence": "high",
+                      "sources": ["https://en.wikipedia.org/wiki/Aluminium_electrolytic_capacitor"],
                       "inputs": [
                         "chem.silicone"
                       ],
@@ -2246,7 +2325,7 @@
                       "kind": "part",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "facts": [
                         {
                           "label": "Alloy limit",
@@ -2259,8 +2338,9 @@
                       ],
                       "inputs": [
                         "metal.aluminum"
-                      ]
-                    }
+                      ],
+      "note": "Terminal welding to lead-out terminals during winding is documented. Not established: crimping, and the claim that pure aluminium is used because it will not form a galvanic or resistive joint with the foil, or the iron and silicon limits of a few tenths of a per cent."
+    }
                   ]
                 },
                 {
@@ -2304,11 +2384,12 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "facility.electricity"
-                      ]
-                    }
+                      ],
+      "note": "100 % final measurement of capacitance, leakage current and impedance after post-forming is documented, and the dissipation factor is documented as the datasheet alternative to ESR. Not established: testing at rated temperature specifically, the commodity rejection rate, and that leakage rejection catches a pinhole in the oxide."
+    }
                   ]
                 }
               ]
@@ -2332,23 +2413,23 @@
                 {
                   "id": "mb.passives.caps.tantalum.anode",
                   "name": "Sintered tantalum anode",
-                  "description": "Capacitor-grade tantalum powder is pressed around a tantalum wire anode lead and sintered at 1200-1400 C under vacuum, producing a porous body with an enormous internal surface area. The Ta2O5 dielectric then grows on that surface, which is why a gram of powder stores far more capacitance than a gram of film.",
+                  "description": "Capacitor-grade tantalum powder is pressed around a tantalum riser wire that becomes the anode connection, and the pellet is vacuum sintered at high temperature so that the powder takes on a sponge-like structure with all particles interconnected. The Ta2O5 dielectric then grows on that internal surface, which is why a gram of powder stores far more capacitance than a gram of film.",
                   "kind": "part",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "low",
                   "facts": [
                     {
                       "label": "Powder",
-                      "value": "sub-micron, high surface area (~2-4 m2/g)"
+                      "value": "typical particle size 2-10 um; finer grades give higher surface area per unit volume"
                     },
                     {
                       "label": "Sinter",
-                      "value": "~1200-1400 C under vacuum"
+                      "value": "typically 1200-1800 C under vacuum"
                     },
                     {
                       "label": "CV product",
-                      "value": "~100,000-200,000 uF.C/V per gram"
+                      "value": "about 20,000 uF.C/V per gram for the earlier material; the roughly ten-fold rise to 200,000 is described as a later achievement and so cannot be attributed to 1982"
                     }
                   ],
                   "inputs": [
@@ -2363,6 +2444,7 @@
                       "category": "passives",
                       "era": "1982-1984",
                       "confidence": "high",
+                      "sources": ["https://en.wikipedia.org/wiki/Tantalum_capacitor"],
                       "inputs": [
                         "metal.tantalum"
                       ]
@@ -2374,22 +2456,26 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
+                      "sources": ["https://en.wikipedia.org/wiki/Tantalum_capacitor"],
                       "inputs": [
                         "facility.electricity"
-                      ]
-                    }
-                  ]
-                },
+                      ],
+      "note": "Not established: that roughly half the pressed pellet's volume is void. What is documented is that sintering turns the powder into a sponge-like monolithic lattice that is highly porous with a large internal surface area, at 1200-1800 C under vacuum."
+    }
+                  ],
+      "note": "Contradicted on the powder figure: capacitor-grade tantalum powder is described as having a typical particle size of 2-10 um, not sub-micron, and the quoted CV/g range of 20k-200k is stated as a ten-fold improvement achieved since the mid-1980s, so 100k-200k uF.C/V per gram cannot be attributed to 1982. The sinter figure is also given as 1200-1800 C, wider than the 1200-1400 C here. The 2-4 m2/g surface area is unsourced."
+    },
                 {
                   "id": "mb.passives.caps.tantalum.dielectric",
                   "name": "Anodic Ta2O5 formation and MnO2 solid electrolyte",
-                  "description": "The sintered anode is anodised to grow the Ta2O5 dielectric, then coated with manganese dioxide by pyrolytically decomposing manganese chloride vapour on the surface - the classic 1980s solid tantalum part. A sintered silver-paste counter-electrode existed as an alternative construction. Today's conductive-polymer tantalum is a late-1990s development. The anode is anodised at a voltage above its rated working voltage, usually by a factor of 1.5-2, to build a defect-free oxide; the rated voltage of the part is set by that formation step and cannot be adjusted afterwards.",
+                  "description": "The sintered anode is anodised to grow the Ta2O5 dielectric, then coated with manganese dioxide by pyrolysing manganese nitrate: the pellet is dipped into an aqueous nitrate solution and baked at about 250 C to leave the dioxide coat - the classic 1980s solid tantalum part. A sintered silver-paste counter-electrode existed as an alternative construction. Today's conductive-polymer tantalum is a late-1990s development. The anode is anodised at a voltage above its rated working voltage, usually by a factor of 1.5-2, to build a defect-free oxide; the rated voltage of the part is set by that formation step and cannot be adjusted afterwards.",
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
-                  "note": "The standard 1980s solid tantalum counter-electrode was MnO2, not sintered silver paste; both constructions existed, which is why silver paste turns up in some period literature. Conductive-polymer tantalum is a late-1990s development.",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Tantalum_capacitor"],
+                  "note": "Two divergences from the documented process. The counter-electrode is described as made by pyrolysis of manganese NITRATE, not manganese chloride. And the safety margin between forming voltage and rated voltage for solid MnO2 tantalum is given as typically 2 to 4, not the 1.5-2 quoted here. The anodising step itself is documented: the pellet is submerged in a weak acid, DC is applied, and the total dielectric thickness is set by the final voltage held.",
                   "facts": [
                     {
                       "label": "Dielectric",
@@ -2397,11 +2483,11 @@
                     },
                     {
                       "label": "Counter-electrode",
-                      "value": "MnO2 from MnCl2 pyrolysis (standard); sintered Ag paste (alternative)"
+                      "value": "MnO2 from manganese nitrate pyrolysis (standard); sintered Ag paste (alternative)"
                     },
                     {
                       "label": "Forming",
-                      "value": "~50-200 V DC sets the working voltage"
+                      "value": "forming voltage sets the working voltage, with a safety margin in oxide thickness of typically 2 to 4 times the rated voltage"
                     }
                   ],
                   "inputs": [
@@ -2474,6 +2560,7 @@
                       "category": "passives",
                       "era": "1982-1984",
                       "confidence": "high",
+                      "sources": ["https://en.wikipedia.org/wiki/Tantalum_capacitor"],
                       "inputs": [
                         "chem.epoxy"
                       ],
@@ -2485,12 +2572,13 @@
                           "kind": "material",
                           "category": "plastics",
                           "era": "1982-1984",
-                          "confidence": "high",
+                          "confidence": "medium",
                           "inputs": [
                             "chem.styrene.benzene",
                             "chem.petroleum"
-                          ]
-                        }
+                          ],
+      "note": "Resin-dipped solid tantalum parts are documented. Not established: that the dip sealant was a bisphenol A epoxy cured with an amine, or that bisphenol A dominated capacitor sealants. No source consulted establishes epoxy or bisphenol A."
+    }
                       ]
                     }
                   ]
@@ -2606,7 +2694,8 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Ceramic_capacitor"],
                   "facts": [
                     {
                       "label": "Sinter",
@@ -2661,8 +2750,9 @@
                         }
                       ]
                     }
-                  ]
-                }
+                  ],
+      "note": "Not established: the 1200-1300 C sinter and the 700-850 C silver electrode fire through the glass frit. What is documented is the construction - the early ceramic disc style was a disc with metallisation on both sides contacted with tinned wires, and the modern disc style is a single-layer disc with a resin coating and through-hole leads. The single-electrode-pair structure is the documented reason a disc has no internal inductance cancellation."
+    }
               ]
             },
             {
@@ -2672,7 +2762,8 @@
               "kind": "part",
               "category": "passives",
               "era": "1982-1984",
-              "confidence": "high",
+              "confidence": "medium",
+              "sources": ["https://en.wikipedia.org/wiki/Film_capacitor","https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"],
               "facts": [
                 {
                   "label": "Dielectric",
@@ -2699,8 +2790,9 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
-                  "note": "Metallised film was the volume construction in 1982; separate-foil (film plus separate metal foil) was used for higher-voltage parts.",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Film_capacitor"],
+                  "note": "Not established: the 1-6 um film thickness quoted for 1982. The process is documented - biaxial stretching in longitudinal and transverse directions, a vacuum-deposited aluminium metallisation of about 0.03 um on one or both sides, wound onto a mother roll about 1 m wide - and the modern minimum film thickness is quoted as 0.6 um, so a 1982 figure would be thicker, not thinner.",
                   "facts": [
                     {
                       "label": "Film thickness",
@@ -2723,7 +2815,7 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "facts": [
                         {
                           "label": "Polymerisation",
@@ -2745,7 +2837,7 @@
                           "kind": "material",
                           "category": "passives",
                           "era": "1982-1984",
-                          "confidence": "high",
+                          "confidence": "medium",
                           "facts": [
                             {
                               "label": "Separation",
@@ -2754,10 +2846,12 @@
                           ],
                           "inputs": [
                             "chem.petroleum"
-                          ]
-                        }
-                      ]
-                    }
+                          ],
+      "note": "Not established: the Urex and Parex adsorption processes, the aromatics-complex location, and the 1982 shift of PET from bottle grade into film and capacitor dielectric. No document consulted covers paraxylene production."
+    }
+                      ],
+      "note": "Not established: the melt condensation route, the 250-290 C under vacuum, and the bis(2-hydroxyethyl) terephthalate intermediate. The one sourced PET fact in hand is the trade names Hostaphan and Mylar and the polyester family classification, which is not a synthesis route."
+    }
                   ]
                 },
                 {
@@ -2786,13 +2880,15 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
+                      "sources": ["https://en.wikipedia.org/wiki/Film_capacitor"],
                       "inputs": [
                         "chem.styrene.benzene",
                         "chem.ethylene",
                         "facility.electricity"
-                      ]
-                    },
+                      ],
+      "note": "Not established: brittleness and poor moisture resistance as the reason metallised polystyrene was restricted, and the free-radical or ionic polymerisation route. What is documented is the commercial outcome - polystyrene film could not be made thinner than 10 um and its maximum temperature rating reached only 85 C, so it was largely replaced by polyester; it was valued for high capacitance stability, low dissipation factor, low leakage and a near-zero temperature coefficient."
+    },
                     {
                       "id": "mb.passives.caps.film.polystyrene.metallisation",
                       "name": "Vacuum metallisation of PS film",
@@ -2807,8 +2903,9 @@
                     }
                   ]
                 }
-              ]
-            },
+              ],
+      "note": "Construction and era are documented: metallised aluminium or zinc deposited directly on the plastic film or a separate metal foil; paper and metallised paper almost completely replaced by PET film for low-power DC applications from around 1980; polystyrene used where its near-zero temperature coefficient suits tuned circuits. The board value is now confirmed from the primary parts lists - C20 and C21 are 'Film .22 /tF, 100V, 20%', and the 250425-01 list gives 'Film Rdl .22/iF 100V 20%'. Not established: that the film is polyester (the parts lists say only 'Film'), and the 63 VAC working class."
+    },
             {
               "id": "mb.passives.caps.mica",
               "name": "Mica capacitor",
@@ -2920,12 +3017,13 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "metal.aluminum.ingot",
                         "facility.electricity"
-                      ]
-                    }
+                      ],
+      "note": "Not established: that aluminium rather than silver was evaporated for the C64's mica capacitors, the manageability argument, and the silver electrodes used where maximum capacitance per unit area was needed. No source consulted describes mica capacitor electrode metallisation."
+    }
                   ]
                 }
               ]
@@ -2988,7 +3086,7 @@
                       "kind": "part",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "facts": [
                         {
                           "label": "Dielectric",
@@ -3007,13 +3105,15 @@
                           "kind": "material",
                           "category": "passives",
                           "era": "1982-1984",
-                          "confidence": "high",
+                          "confidence": "medium",
                           "inputs": [
                             "metal.alumina"
-                          ]
-                        }
-                      ]
-                    }
+                          ],
+      "note": "Not established: alumina as the rotor material, its polish and metallisation, and its role as a good insulator at the trimmer's working voltage. No document consulted describes trimmer rotor plates."
+    }
+                      ],
+      "note": "Not established: that this is the rotor and stator geometry, the spiral or interdigitated silver pattern, and the continuous overlap-to-capacitance relationship. The service manual lists CT-1 as 'Trimmer 7.7-40pF' but does not describe its construction, and the manual's PLLC replacement notes point to it as a variable."
+    }
                   ]
                 }
               ]
@@ -3041,6 +3141,7 @@
                   "category": "passives",
                   "era": "1982-1984",
                   "confidence": "high",
+                  "sources": ["https://en.wikipedia.org/wiki/Ceramic_capacitor", "https://en.wikipedia.org/wiki/Film_capacitor"],
                   "inputs": [
                     "chem.epoxy"
                   ],
@@ -3067,6 +3168,7 @@
                   "category": "passives",
                   "era": "1982-1984",
                   "confidence": "high",
+                  "sources": ["https://en.wikipedia.org/wiki/Capacitor", "https://en.wikipedia.org/wiki/Electronic_color_code"],
                   "inputs": [
                     "chem.petroleum"
                   ],
@@ -3252,8 +3354,9 @@
                   "kind": "tool",
                   "category": "silicon",
                   "era": "1982-1984",
-                  "confidence": "high",
-                  "note": "Both alkali routes were used, and KOH predominated for the highest-purity synthetic growth.",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Quartz"],
+                  "note": "Hydrothermal growth in an autoclave is documented, and that by the 1950s it produced synthetic quartz on an industrial scale so that today virtually all quartz crystal used in electronics is synthetic. Not established: the ~400 C and ~150 MPa conditions, the Hastelloy or 17-4PH liner, the NaOH or KOH solvent, the zoned seed plates, and the Rouquay-type process name.",
                   "facts": [
                     {
                       "label": "Conditions",
@@ -3281,12 +3384,13 @@
                       "kind": "material",
                       "category": "fluids",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "metal.caustic-soda",
                         "metal.salt-brine"
-                      ]
-                    }
+                      ],
+      "note": "Not established: hot concentrated sodium or potassium hydroxide as the growth solvent, and that the caustic is made by chlor-alkali electrolysis so the crystal chain reaches rock salt. Hydrothermal growth in an autoclave is documented; the alkali solvent and its chlorine link are not, in the sources consulted."
+    }
                   ]
                 },
                 {
@@ -3337,7 +3441,7 @@
                   "kind": "tool",
                   "category": "silicon",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "facts": [
                     {
                       "label": "Instrument",
@@ -3354,8 +3458,9 @@
                   ],
                   "inputs": [
                     "facility.electricity"
-                  ]
-                },
+                  ],
+      "note": "Quartz is documented as trigonal alpha-quartz in space group P3221 with a fixed cell, so crystallographic orientation by X-ray is meaningful. Not established: the four-circle diffractometer, the ~35 degree AT-cut as the mid-1980s general-purpose standard, and the claim that this angle flattens the frequency-temperature curve. The 573 C alpha-beta transition is documented but is not the frequency-temperature flatness argument."
+    },
                 {
                   "id": "mb.crystal.y1.blank-preparation.lapping",
                   "name": "Lapping and double-lap polishing",
@@ -3363,7 +3468,7 @@
                   "kind": "process",
                   "category": "silicon",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "facts": [
                     {
                       "label": "Final thickness",
@@ -3393,8 +3498,9 @@
                         "metal.silica-sand"
                       ]
                     }
-                  ]
-                }
+                  ],
+      "note": "Not established: the double-lap sequence, aluminium oxide down to colloidal silica, the 0.15 mm final thickness, and that blanks were lapped by outside lapidary shops. The tree's own source for the parent node is a lapping reference, not a crystal-process source; no document consulted here supports these figures."
+    }
               ]
             },
             {
@@ -3481,7 +3587,7 @@
                   "kind": "material",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "facts": [
                     {
                       "label": "Thickness",
@@ -3491,8 +3597,9 @@
                   "inputs": [
                     "metal.chromium",
                     "metal.chromite"
-                  ]
-                },
+                  ],
+      "note": "Not established: chromium as the adhesion layer, the 50-100 nm thickness, and the van der Waals argument. Chromium-on-gold adhesion layers are real practice, but no document consulted states this for crystal electrodes."
+    },
                 {
                   "id": "mb.crystal.y1.electrodes.gold-film",
                   "name": "Gold electrode film",
@@ -3500,7 +3607,7 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "facts": [
                     {
                       "label": "Thickness",
@@ -3525,8 +3632,9 @@
                         "metal.stainless.304"
                       ]
                     }
-                  ]
-                }
+                  ],
+      "note": "Not established: shadow-mask evaporation, the 200-400 nm gold thickness, and that mask area together with plate thickness sets the crystal capacitance. No source consulted describes crystal electrode metallisation."
+    }
               ]
             },
             {
@@ -3536,7 +3644,7 @@
               "kind": "process",
               "category": "silicon",
               "era": "1982-1984",
-              "confidence": "high",
+              "confidence": "medium",
               "facts": [
                 {
                   "label": "Bake",
@@ -3558,11 +3666,12 @@
                   "kind": "tool",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "facility.electricity"
-                  ]
-                },
+                  ],
+      "note": "Not established: the 0.03-0.05 mm resin-bonded diamond wheel thickness. Nothing consulted documents dicing saws for resonator plates."
+    },
                 {
                   "id": "mb.crystal.y1.cutting.cleanroom",
                   "name": "Cleaning between steps",
@@ -3570,7 +3679,7 @@
                   "kind": "facility",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "facility.water"
                   ],
@@ -3582,16 +3691,19 @@
                       "kind": "material",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "facility.water",
                         "facility.steam.ion-resin"
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
+                      ],
+      "note": "Not established: the specific claim that a single dissolved ion on a resonating plate changes the frequency measurably. Deionised rinse water as the standard is uncontroversial; the quantitative sensitivity assertion is not documented in any source consulted."
+    }
+                  ],
+      "note": "Not established: that cleaning from lapping onward is done washed and clean, and that a fingerprint on a 0.07 mm plate shifts the frequency. Sensible contamination control, but unsourced."
+    }
+              ],
+      "note": "Not established: the 350-400 C vacuum bake for 1-2 hours and its claimed removal of pyroelectric drift and the dope effect. No document consulted describes the post-cut bake or its mechanism. The one nearby documented quartz fact is the alpha-beta transformation at 573 C, well above this bake."
+    },
             {
               "id": "mb.crystal.y1.case",
               "name": "HC-49/U case: crimp, weld and argon fill",
@@ -3648,11 +3760,12 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "metal.nickel"
-                      ]
-                    },
+                      ],
+      "note": "Not established: that the HC-49/U can is deep-drawn from nickel-plated strip in a progressive tool and that the collar is rolled. Nothing in the sources consulted describes the mechanical sequence of can manufacture."
+    },
                     {
                       "id": "mb.crystal.y1.case.nickel-can.weld",
                       "name": "Welded lid and crimped collar",
@@ -3660,7 +3773,7 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "facility.electricity"
                       ],
@@ -3678,8 +3791,9 @@
                             "facility.argon"
                           ]
                         }
-                      ]
-                    }
+                      ],
+      "note": "Not established: spot or resistance welding of the lid in dry hydrogen or forming gas. This is the standard HC-49 hermetic-seal practice, but no source consulted describes it for this crystal, and the manual's circuit theory says nothing about the can."
+    }
                   ]
                 },
                 {
@@ -3689,7 +3803,7 @@
                   "kind": "material",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "facts": [
                     {
                       "label": "Pressure",
@@ -3703,8 +3817,9 @@
                   "inputs": [
                     "chem.fab-chemicals.process-gases.nitrogen.cryogenic-air",
                     "facility.argon"
-                  ]
-                },
+                  ],
+      "note": "Not established: argon or krypton fill gas, the few kPa pressure, the claim that argon cannot outgas, the acoustic damping role, and the later switch to vacuum-filled hybrid cans. No document consulted describes crystal can filling."
+    },
                 {
                   "id": "mb.crystal.y1.case.support-wire",
                   "name": "Spring-wire supports",
@@ -3712,7 +3827,8 @@
                   "kind": "part",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Quartz"],
                   "facts": [
                     {
                       "label": "Position",
@@ -3741,8 +3857,9 @@
                         "metal.nickel"
                       ]
                     }
-                  ]
-                }
+                  ],
+      "note": "The piezoelectric argument is documented: quartz develops an electric potential on mechanical stress, and the resonant frequency of a quartz crystal oscillator is changed by mechanically loading it. Not established: spot-welded gold or nickel wire supports at the nodal points of the resonating mode, which is the standard crystal-package construction but appears in no source consulted."
+    }
               ]
             }
           ]
@@ -3807,15 +3924,16 @@
             {
               "id": "mb.crystal.oscillator.pll",
               "name": "PLL: MC4044 into the 74LS629 VCO",
-              "description": "The 74LS629's second oscillator is a voltage-controlled oscillator. The MC4044 phase/frequency detector compares a divided colour clock against the VIC-II's phase-0 clock and returns a DC control voltage on pin 8, which the 74LS629's frequency-control pin steers. That is the whole of the C64's PLL: a crystal oscillator for the exact subcarrier, and a tracking VCO four times faster, locked to it, for the pixel clock.",
+              "description": "The 74LS629's second oscillator is a voltage-controlled oscillator. The MC4044 phase/frequency detector compares a divided colour clock against the VIC-II's phase clock and returns a DC control voltage on pin 8, which the 74LS629's frequency-control pin steers. That is the whole of the C64's PLL: a crystal oscillator holding the exact subcarrier frequency, and a tracking VCO running SLOWER than it at 8.1818 MHz, locked to it, for the dot clock.",
               "kind": "part",
               "category": "computing",
               "era": "1982-1984",
-              "confidence": "high",
+              "confidence": "medium",
+              "sources": ["https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"],
               "facts": [
                 {
                   "label": "Multiply",
-                  "value": "x4 (colour clock -> dot clock)"
+                  "value": "the dot clock is the lower of the two: 8.1818 MHz against the 14.31818 MHz colour clock, a ratio of 7/4. There is no frequency multiplication; the PLL lock is colour clock /14 against dot clock /8."
                 },
                 {
                   "label": "Divide",
@@ -3834,8 +3952,9 @@
                   "kind": "note",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
-                  "note": "The NTSC colour subcarrier is specified to about 5 parts in 10^7 and an untrimmed crystal and oscillator wander far more than that over temperature and supply. The trim element - R27 on breadbin boards, a capacitive trim later - lets the PLL be pulled onto the exact frequency at the factory and then hold it there."
+                  "confidence": "medium",
+                  "sources": ["https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"],
+                  "note": "The trim element is confirmed: the 250407 parts list has R27 as 'Pot 2K' (a 2 kilohm trimmer; a later board lists R27 as Pot 500Q), and the circuit theory says R27 can be adjusted to obtain exact output frequency. Not established: that the NTSC colour subcarrier is specified to about 5 parts in 10^7, and the account of the trim being locked at the factory."
                 },
                 {
                   "id": "mb.crystal.oscillator.pll.pal-variant",
@@ -3864,8 +3983,9 @@
                     }
                   ]
                 }
-              ]
-            }
+              ],
+      "note": "Topology confirmed on the 250407 board: U31 is a 74LS629 dual voltage-controlled oscillator, U32 an MC4044 phase/frequency detector whose dc output on pin 8 feeds the frequency-control input, pin 2, of U31. Not established, and contradicted by the same source: the 'x4 multiply' and 'a tracking VCO four times faster' claims. The service manual gives Y1 as 14.31818 MHz producing the colour clock and the second half of U31 as the 8.1818 MHz DOT clock, so the dot clock is the SLOWER of the two - 8.1818/14.31818 is 7/4, and the phase lock is colour clock divided by 14 against dot clock divided by 8."
+    }
           ]
         }
       ]
@@ -3915,7 +4035,8 @@
           "kind": "part",
           "category": "passives",
           "era": "1982-1984",
-          "confidence": "high",
+          "confidence": "medium",
+          "sources": ["https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"],
           "facts": [
             {
               "label": "Poles",
@@ -3972,7 +4093,7 @@
                   "kind": "material",
                   "category": "plastics",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "facts": [
                     {
                       "label": "Fillers",
@@ -3995,7 +4116,7 @@
                       "kind": "material",
                       "category": "plastics",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "facts": [
                         {
                           "label": "Melamine route",
@@ -4009,10 +4130,12 @@
                       "inputs": [
                         "chem.petroleum",
                         "facility.electricity"
-                      ]
-                    }
-                  ]
-                },
+                      ],
+      "note": "Not established: the urea-plus-formaldehyde route, the 150-200 C pressure condensation, and the methanol-from-synthesis-gas then silver-catalysed oxidation route to formaldehyde. No source consulted establishes melamine or formaldehyde."
+    }
+                  ],
+      "note": "Not established: that this switch body is melamine-formaldehyde, the cellulose or glass fibre fillers, compression moulding at 150-180 C and 10-30 MPa, and the arc-resistant property claim. Melamine-formaldehyde as an insulator for mains switches is plausible and the tree cites it elsewhere, but no source was consulted for this body."
+    },
                 {
                   "id": "c64.switches.power-slider.body.nylon",
                   "name": "Glass-filled nylon (PA66-GF)",
@@ -4044,11 +4167,12 @@
                       "kind": "material",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "chem.glass-fiber"
-                      ]
-                    }
+                      ],
+      "note": "Glass-filled thermoplastic composites are documented at 25-30 % glass fibre, with glass filling increasing structural strength and rigidity. Not established: 30 % chopped glass in PA66 for this switch body, that this body is nylon rather than a thermoset or PBT, and that the filler matches the one in the connector housings."
+    }
                   ]
                 },
                 {
@@ -4072,7 +4196,7 @@
                   "kind": "part",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "metal.copper"
                   ],
@@ -4084,14 +4208,16 @@
                       "kind": "material",
                       "category": "metals",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "metal.copper",
                         "metal.zinc.ingot"
-                      ]
-                    }
-                  ]
-                }
+                      ],
+      "note": "Not established: this terminal's brass wire or brass-over-mandrel stock, the springy-and-solderable property argument, and the heading operation."
+    }
+                  ],
+      "note": "Not established: brass pins solid or brass tube over a steel mandrel, and the claim that brass needs no nickel underplate at low voltage. No document consulted describes the switch's terminal construction."
+    }
               ]
             },
             {
@@ -4137,8 +4263,9 @@
                       "kind": "material",
                       "category": "passives",
                       "era": "ancient",
-                      "confidence": "high"
-                    }
+                      "confidence": "medium",
+      "note": "Not established: high-carbon hardened-and-tempered strip steel for this switch, and the shared origin with razor blades and automotive leaf springs."
+    }
                   ]
                 },
                 {
@@ -4162,8 +4289,8 @@
               "kind": "process",
               "category": "passives",
               "era": "1982-1984",
-              "confidence": "high",
-              "note": "For a 5 V DC power switch the plating is silver; the gold-flashed variety was for the low-level contacts of the pots and connectors.",
+              "confidence": "medium",
+              "note": "Wiping contacts are documented for potentiometers and rheostats. Not established: phosphor bronze or stainless leaves on this switch, silver or gold plating on a 5 V power contact, and the 50-200 g per-contact pressure.",
               "facts": [
                 {
                   "label": "Leaf alloy",
@@ -4214,8 +4341,9 @@
                 }
               ]
             }
-          ]
-        },
+          ],
+      "note": "The function is confirmed on the 250407 board: the external supply's regulated 5 VDC is applied to pins 5 and 1 of CN7, is filtered by L5, C97 and C100, and is then controlled by on/off switch S1, so the switch's only job is to interrupt the +5 V rail. Not established: the 6 A at 250 VAC resistive rating, the assertion that it is single-pole, and the positive detent at both ends."
+    },
         {
           "id": "c64.switches.level-sliders",
           "name": "Volume and brightness slide potentiometers",
@@ -4285,6 +4413,7 @@
                   "category": "passives",
                   "era": "1982-1984",
                   "confidence": "high",
+                  "sources": ["https://en.wikipedia.org/wiki/Potentiometer"],
                   "note": "The carbon-black furnace is mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black, linked here by id.",
                   "facts": [
                     {
@@ -4321,11 +4450,12 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "facility.electricity"
-                      ]
-                    }
+                      ],
+      "note": "Not established: firing the printed carbon track into the ceramic substrate in a tunnel oven at several hundred degrees to fuse the binder and glass frit. No document consulted describes how a printed potentiometer track is cured."
+    }
                   ]
                 }
               ]
@@ -4338,6 +4468,7 @@
               "category": "passives",
               "era": "1982-1984",
               "confidence": "high",
+              "sources": ["https://en.wikipedia.org/wiki/Potentiometer"],
               "note": "A worn carbon track is the classic reason a 1980s volume pot develops noise or drops to one end of its travel; contact cleaner and a rebuild pen were the standard fixes.",
               "facts": [
                 {
@@ -4361,7 +4492,7 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "metal.nickel"
                   ],
@@ -4381,8 +4512,9 @@
                         "facility.electricity"
                       ]
                     }
-                  ]
-                },
+                  ],
+      "note": "A springy wiper contact on a potentiometer element is documented, described as phosphor bronze. Not established: stamping from spring strip and plating in a nickel or precious-metal bath for this wiper, or the anti-galling argument against the carbon track."
+    },
                 {
                   "id": "c64.switches.level-sliders.wiper.precontact",
                   "name": "Pre-contact break and noise",
@@ -4390,7 +4522,8 @@
                   "kind": "note",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high"
+                  "confidence": "high",
+                  "sources": ["https://en.wikipedia.org/wiki/Potentiometer"]
                 }
               ]
             },
@@ -4421,7 +4554,7 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "facility.electricity"
                   ],
@@ -4439,8 +4572,9 @@
                         "chem.petroleum"
                       ]
                     }
-                  ]
-                },
+                  ],
+      "note": "That a potentiometer comprises a resistive element, a wiper, end terminals, a mechanism and a housing is documented. Not established: one-shot injection moulding of the terminal slots, detent rails and wiper guide, or that the tool was shared with world miniature slide-pot production."
+    },
                 {
                   "id": "c64.switches.level-sliders.housing.knob",
                   "name": "Moulded slider knob",
@@ -4622,7 +4756,7 @@
                   "kind": "material",
                   "category": "metals",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "facts": [
                     {
                       "label": "Hardness",
@@ -4632,8 +4766,9 @@
                   "inputs": [
                     "metal.die-steel",
                     "metal.iron"
-                  ]
-                },
+                  ],
+      "note": "Not established: P20 for the body with D2 or H13 cutting edges, the 55-62 HRC figure, and tens of millions of strokes as the reason the contact is a commodity. No source consulted establishes tool-steel."
+    },
                 {
                   "id": "c64.connector-jacks.metalworking.four-slide-die.coil-stock",
                   "name": "Coiled contact strip",
@@ -4641,13 +4776,14 @@
                   "kind": "material",
                   "category": "metals",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "metal.copper",
                     "metal.tin.ingot",
                     "metal.zinc.ingot"
-                  ]
-                }
+                  ],
+      "note": "Stamped progressive-die production from coil is documented as the reason connector contacts are a commodity. Not established: that the 44-position cartridge socket's contacts are 88 pieces from one coil, and the brass-strip specification."
+    }
               ]
             },
             {
@@ -4657,8 +4793,8 @@
               "kind": "material",
               "category": "metals",
               "era": "1982-1984",
-              "confidence": "high",
-              "note": "Blister copper from the smelter is refined electrolytically to 99.99 % cathode and cast to wire rod; that cathode is what rolls into foil here and into the cartridge-socket contact strip, and the anode slime it leaves is the main commercial source of silver, selenium and tellurium. The concentrate and the refinery are metal.copper and its children, linked here by id.",
+              "confidence": "medium",
+              "note": "Not established: 70/30 cartridge brass for this strip, the zinc-content and work-hardening argument, and full-hard strip for spring terminals. The general point that brass is formable, springs usefully and plates well is standard; the specific alloy and its temper for these contacts are not documented in any source consulted.",
               "facts": [
                 {
                   "label": "Composition",
@@ -4779,7 +4915,7 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "facts": [
                     {
                       "label": "Bath",
@@ -4824,8 +4960,9 @@
                         "metal.phosphate-ore"
                       ]
                     }
-                  ]
-                }
+                  ],
+      "note": "Not established: the nickel sulphate plus sodium hypophosphite bath, the 0.3-5 % phosphorus, the hardness and corrosion-resistance claims, and the dating of electroless nickel as standard underplate by the mid-1980s. No source consulted establishes electroless plating."
+    }
               ],
               "note2": "The 'immersion gold / electroless nickel' in the brief is right in kind. Immersion gold (a displacement process, a few tenths of a micron, no current) was used for the flash; electroless nickel was one of the two underplate processes, the other being electrolytic nickel. Both existed in 1982."
             },
@@ -4836,8 +4973,8 @@
               "kind": "material",
               "category": "metals",
               "era": "1982-1984",
-              "confidence": "high",
-              "note": "The cyanide gold baths of the period required strict effluent control and were the usual cause of plating-industry water pollution enforcement actions in the late 1970s and 1980s.",
+              "confidence": "medium",
+              "note": "Not established: the cyanide or sulphite bath chemistry, the gold strike, the 0.03-0.5 um flash thickness, and the account of gold as the only precious metal on the connector set. No source consulted establishes gold plating; the cyanide-effluent claim belongs to the plating file.",
               "facts": [
                 {
                   "label": "Thickness used",
@@ -4894,7 +5031,7 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "facts": [
                     {
                       "label": "Thickness",
@@ -4903,8 +5040,9 @@
                   ],
                   "inputs": [
                     "metal.gold"
-                  ]
-                },
+                  ],
+      "note": "Not established: the cyanide displacement process with no external current, and the 0.1-0.5 um thickness. Immersion gold flash is standard connector practice, but no document consulted describes it for these contacts."
+    },
                 {
                   "id": "c64.connector-jacks.metalworking.gold.dore",
                   "name": "Doré bullion as the metal feed",
@@ -4965,8 +5103,8 @@
               "kind": "material",
               "category": "plastics",
               "era": "1982-1984",
-              "confidence": "high",
-              "note": "Glass fibre is chem.glass-fiber and phenolic resin is chem.thermosets.phenolic; both are shared with the keyboard laminate and are linked here by id.",
+              "confidence": "medium",
+              "note": "Not established: that this housing is glass-filled phenol-formaldehyde rather than PBT or nylon, the 20-30 % by weight chopped E-glass figure, the UL94 V-0 rating, and the dimensional-stability and flame-retardancy claims. Black glass-filled phenolic is a plausible period material for a card-edge socket, but no source consulted identifies this housing's material.",
               "facts": [
                 {
                   "label": "Filler",
@@ -4989,11 +5127,12 @@
                   "kind": "tool",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "facility.electricity"
-                  ]
-                },
+                  ],
+      "note": "Not established: that phenolic bodies were compression rather than injection moulded for this connector, and the short-flow cheap-die argument. No source consulted establishes thermoset processing."
+    },
                 {
                   "id": "c64.connector-jacks.moulding.phenolic.resin-source",
                   "name": "Phenol and formaldehyde",
@@ -5001,7 +5140,7 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "chem.styrene.benzene",
                     "chem.petroleum"
@@ -5014,14 +5153,16 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "chem.styrene.benzene",
                         "chem.propylene"
-                      ]
-                    }
-                  ]
-                }
+                      ],
+      "note": "Not established: that phenol was made almost entirely by the cumene process in this period, and the cumene hydroperoxide acid-split sequence as described. No source consulted establishes cumene or phenol process."
+    }
+                  ],
+      "note": "Not established: phenol from cumene or chlorobenzene and formaldehyde from methanol oxidation as the feed for this part. The cumene route to phenol is real; no source consulted ties it to this housing."
+    }
               ]
             },
             {
@@ -5068,11 +5209,12 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "chem.petroleum"
-                      ]
-                    }
+                      ],
+      "note": "Not established: the paraxylene-to-terephthalic-acid-to-DMT route with butanediol, and the synthesis-gas origin of the methanol. No source consulted establishes polyester or DMT."
+    }
                   ]
                 },
                 {
@@ -5096,8 +5238,8 @@
               "kind": "tool",
               "category": "plastics",
               "era": "1982-1984",
-              "confidence": "high",
-              "note": "A multi-cavity steel tool clamped between the platens of a screw injection moulder makes the housing a commodity: the same part is made in hundreds of thousands for the entire electronics industry, which is why connector housings cost less than the contacts inside them. The tool steel is metal.die-steel.",
+              "confidence": "medium",
+              "note": "Engineering-grade thermoplastics are documented as processed by extrusion, casting and injection moulding. Not established: the multi-cavity tool, P20 or H13 steel at 48-52 HRC, a tool life of 10^5-10^6 shots, and the commodity-cost argument.",
               "facts": [
                 {
                   "label": "Tool steel",
@@ -5119,11 +5261,12 @@
                   "kind": "tool",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "metal.die-steel"
-                  ]
-                },
+                  ],
+      "note": "Not established: a nitrided steel screw and barrel at 230-280 C for this moulding. Processing temperatures of that order are general injection-moulding practice, but no source consulted ties them to this tool."
+    },
                 {
                   "id": "c64.connector-jacks.moulding.injection-press.tool-steel",
                   "name": "Mould tool steel",
@@ -5131,11 +5274,12 @@
                   "kind": "material",
                   "category": "metals",
                   "era": "ancient",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "metal.die-steel"
-                  ]
-                }
+                  ],
+      "note": "Not established: P20 stainless as the standard cavity steel in 1982, the 48-52 HRC figure, or that the housing's surface finish is entirely a function of cavity polish."
+    }
               ]
             }
           ]
@@ -5148,7 +5292,7 @@
           "category": "interconnect",
           "era": "1982-1984",
           "sources": [
-            "https://www.c64-wiki.com/wiki/User_port"
+            "https://www.c64-wiki.com/wiki/Userport"
           ],
           "confidence": "high",
           "facts": [
@@ -5183,7 +5327,7 @@
               "kind": "part",
               "category": "interconnect",
               "era": "1982-1984",
-              "confidence": "high",
+              "confidence": "medium",
               "facts": [
                 {
                   "label": "Contact force",
@@ -5202,12 +5346,13 @@
                   "kind": "material",
                   "category": "metals",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "metal.copper",
                     "metal.tin.ingot"
-                  ]
-                },
+                  ],
+      "note": "A springy phosphor bronze wiper/contact alloy is documented for potentiometer contacts. Not established: phosphor bronze or brass-tempered strip for this card-edge socket leaf, and the claim that it is the same material family as the switch and cartridge contacts."
+    },
                 {
                   "id": "c64.connector-jacks.user-port.contacts.solder-tail",
                   "name": "Solder tail and wave-solder attachment",
@@ -5215,13 +5360,15 @@
                   "kind": "process",
                   "category": "assembly",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "metal.tin"
-                  ]
-                }
-              ]
-            },
+                  ],
+      "note": "Not established: the flat pierced solder tail and the wave-solder fillet, and that it resists cable flexing. No document consulted describes the user port contact termination."
+    }
+              ],
+      "note": "The user port is documented as parallel port B of the second CIA made available on the user port, with SP1/SP2 serial ports and CNT1/CNT2 clocks. Not established: gold flash over nickel on formed spring leaves, the 50-200 g contact force, and the wiping argument."
+    },
             {
               "id": "c64.connector-jacks.user-port.pinout",
               "name": "User-port pin functions",
@@ -5230,7 +5377,7 @@
               "category": "interconnect",
               "era": "1982-1984",
               "sources": [
-                "https://www.c64-wiki.com/wiki/User_port"
+                "https://www.c64-wiki.com/wiki/Userport"
               ],
               "confidence": "medium",
               "note": "The broad grouping of signals is well documented, but individual pin numbers are not consistent between the breadbin and the C64C documentation, so they should be treated as unverified."
@@ -5292,11 +5439,12 @@
                   "kind": "note",
                   "category": "interconnect",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "silicon"
-                  ]
-                }
+                  ],
+      "note": "The circuit is documented: U7's P3 pin 26 outputs write data to CN3, P4 senses the play switch, P5 drives the cassette motor through Q1 and Q3, and read data enters CN3 to the CIA's FLAG input. The parts list gives CN3 as a 6-pin connector. Not established: that the whole tape interface is three transistors, a resistor and two electrolytics, and that this is why it is sensitive to capacitor leakage."
+    }
               ]
             }
           ]
@@ -5370,7 +5518,7 @@
               "kind": "note",
               "category": "interconnect",
               "era": "1982-1984",
-              "confidence": "high",
+              "confidence": "medium",
               "children": [
                 {
                   "id": "c64.connector-jacks.expansion-port.contact-wear.cleaning",
@@ -5384,8 +5532,9 @@
                     "chem.petroleum"
                   ]
                 }
-              ]
-            },
+              ],
+      "note": "Not established: the dead-cartridge symptom sequence and the routine-repair claim. Wear of card-edge sockets is general connector practice; no source consulted quantifies it for this connector."
+    },
             {
               "id": "c64.connector-jacks.expansion-port.spec",
               "name": "Commodore expansion port specification",
@@ -5402,7 +5551,7 @@
               "kind": "material",
               "category": "passives",
               "era": "1982-1984",
-              "confidence": "high",
+              "confidence": "medium",
               "inputs": [
                 "metal.copper",
                 "metal.tin.ingot"
@@ -5421,8 +5570,9 @@
                     "facility.electricity"
                   ]
                 }
-              ]
-            }
+              ],
+      "note": "The 44-pin card-edge form factor is documented twice - 'CARTRIDGE / EXPANSION (44-PIN FEMALE) CN6' in the circuit theory and '44 Pin Card Edge' in the parts list. Not established: phosphor bronze as the contact alloy, the gold flash over nickel, or the fatigue and wiping argument."
+    }
           ]
         },
         {
@@ -5532,7 +5682,7 @@
               "kind": "part",
               "category": "interconnect",
               "era": "1982-1984",
-              "confidence": "high",
+              "confidence": "medium",
               "inputs": [
                 "metal.nickel"
               ],
@@ -5544,14 +5694,16 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "metal.steel.sheet",
                     "metal.nickel"
-                  ]
-                }
-              ]
-            }
+                  ],
+      "note": "Not established: deep drawing from nickel-plated steel strip in a few progressive strokes, and the shell-ground function. No document consulted describes the DIN shell's manufacture."
+    }
+              ],
+      "note": "The service manual's parts list confirms an '8 Pin Din' video/audio connector. Not established: a drawn nickel-plated steel shell, the knurl being rolled in the same draw, the reasoning about plating after knurling, and that nickel plate on steel was the 1982 standard finish for this chassis connector."
+    }
           ]
         },
         {
@@ -5593,7 +5745,7 @@
               "category": "interconnect",
               "era": "1982-1984",
               "sources": [
-                "https://en.wikipedia.org/wiki/IEC_61030-3_port"
+                "https://en.wikipedia.org/wiki/List_of_IEC_standards"
               ],
               "confidence": "medium",
               "note": "Commodore's serial bus is an IEEE-488-influenced protocol but not literally IEEE-488; the source reference is indicative. The bus pin count and function split are well documented."
@@ -5661,8 +5813,9 @@
               "kind": "note",
               "category": "interconnect",
               "era": "1950s",
-              "confidence": "high"
-            },
+              "confidence": "medium",
+      "note": "The service manual's parts list confirms the control ports as 'Plug Assy, 9 Pin MINID' / 'Plug Assy, 9 Pin Rt. Angle', i.e. ordinary 9-pin D-sub hardware. Not established: MIL-DTL-24308 as the governing standard, the 1950s military/aerospace origin, the 2.77 mm pitch and 2.5 mm panel screw pattern figures as stated, and that DE-9 sockets are 'commercial' rather than the MIL-qualified variant."
+    },
             {
               "id": "c64.connector-jacks.control-ports.insulator",
               "name": "DE-9 insulator",
@@ -5683,12 +5836,14 @@
                   "kind": "material",
                   "category": "interconnect",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Nylon"],
                   "inputs": [
                     "chem.polyamide.nylon-66",
                     "chem.glass-fiber"
-                  ]
-                }
+                  ],
+      "note": "The polymer distinction is documented: nylon-6,6 from a diamine and a dicarboxylic acid, caprolactam for nylon 6, and glass-filled variants for stiffness and impact strength. Not established: that this particular insulator is glass-filled PA66, that it holds nine contact positions to a few hundredths of a millimetre, and that PA66 rather than a filled polyester or PBT was used. Note that polyamide is hygroscopic and moisture changes its electrical resistance."
+    }
               ]
             },
             {
@@ -5760,12 +5915,13 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "metal.copper",
                     "metal.zinc.ingot"
-                  ]
-                },
+                  ],
+      "note": "Not established: that this contact is a hollow brass tube with an interference crimp rather than a solder joint. No document consulted describes the C64 power-inlet contact construction; the parts list gives only '7 PIN MALE DIN'."
+    },
                 {
                   "id": "c64.connector-jacks.power-inlet.pin-5-fault",
                   "name": "The pin 5 damage fault",
@@ -5788,7 +5944,7 @@
           "category": "interconnect",
           "era": "1982-1984",
           "sources": [
-            "https://www.lemmon64.com/forum/viewtopic.php?t=80055"
+            "https://www.lemon64.com/forum/viewtopic.php?t=80055"
           ],
           "confidence": "low",
           "note": "The exact position count of the C64 keyboard header is not established from a primary source. C64 repair references consistently describe a 2.54 mm-pitch male header along the front-left board edge, and replacement parts are sold as 2.54 mm rows of varying length. The matrix needs at most 8 column lines plus 8 row lines plus shift-lock and the 6510 I/O port lines, so a 2 x 12 (24-way) header is plausible but unverified.",
@@ -5947,7 +6103,7 @@
                   "kind": "material",
                   "category": "board",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "facts": [
                     {
                       "label": "Foil thickness",
@@ -5957,8 +6113,9 @@
                   "inputs": [
                     "metal.copper.foil",
                     "facility.electricity"
-                  ]
-                },
+                  ],
+      "note": "Not established: acid copper sulphate electrodeposition on an insoluble anode for this board, and the 35 um (1 oz) foil thickness. Foil gauge is a boardhouse specification, not something a reference document states."
+    },
                 {
                   "id": "c64.keyboard-switches.matrix.pcb.pad-plating",
                   "name": "Plating of the key pads",
@@ -5995,8 +6152,8 @@
               "kind": "material",
               "category": "board",
               "era": "1960s-1982",
-              "confidence": "high",
-              "note": "Glass fibre is one canonical node, chem.glass-fiber, shared with the connector housings and the joystick switch board; it is linked here by id. The epoxy that binds it is chem.epoxy.",
+              "confidence": "medium",
+              "note": "FR-4 as the standard printed-circuit laminate is uncontroversial. Not established: that the keyboard board is specifically two-layer FR-4, and that it went through the same copper-foil lamination and drilling lines as the mainboard. The keyboard is normally a separate assembly on its own line.",
               "inputs": [
                 "chem.glass-fiber",
                 "chem.epoxy",
@@ -6010,12 +6167,13 @@
                   "kind": "material",
                   "category": "board",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "chem.epoxy",
                     "chem.petroleum"
-                  ]
-                }
+                  ],
+      "note": "Not established: that this laminate's epoxy is derived from bisphenol A and epichlorohydrin. That is the standard chemistry for the epoxy family, but no document consulted ties a particular 1982 keyboard PCB to it."
+    }
               ]
             }
           ]
@@ -6057,8 +6215,8 @@
               "kind": "material",
               "category": "plastics",
               "era": "1982-1984",
-              "confidence": "high",
-              "note": "The dome resistance being in the tens-to-hundreds of ohms range is why a dirty dome still 'works' for a 6526 input but why cleaning it matters; the characteristic failure is drift upward into the CMOS threshold region.",
+              "confidence": "medium",
+              "note": "Not established: the 20-60 phr carbon black loading and the contact resistance of tens to hundreds of ohms. Both are quantitative figures for a specific conductive-elastomer compound, and neither appears in any document consulted. The percolation mechanism is plausible but unsourced here.",
               "facts": [
                 {
                   "label": "Loading",
@@ -6108,8 +6266,8 @@
                   "kind": "material",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
-                  "note": "A high-structure furnace black gives a stronger percolation network at lower loading, so a dome can be made conductive with less filler and stay soft. The furnace that makes this powder is mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black.",
+                  "confidence": "medium",
+                  "note": "Not established: that a high-structure furnace black gives a stronger percolation network at lower loading, and that this is what distinguishes a responsive key from a stiff one. No carbon-black grade comparison is available in the sources consulted.",
                   "inputs": [
                     "chem.petroleum"
                   ]
@@ -6172,7 +6330,7 @@
                       "kind": "process",
                       "category": "passives",
                       "era": "1982-1984",
-                      "confidence": "high",
+                      "confidence": "medium",
                       "inputs": [
                         "facility.electricity"
                       ],
@@ -6192,8 +6350,9 @@
                             "chem.petroleum"
                           ]
                         }
-                      ]
-                    }
+                      ],
+      "note": "Spark erosion as a process is real, but not established: that it was used to cut one-micron hemispherical cavities in hardened tool steel for these dome tools, the micrometre gap, the microsecond pulse, and the copper electrode. Graphite is the electrode material actually cited elsewhere in the tree for dome tooling."
+    }
                   ]
                 }
               ]
@@ -6265,8 +6424,8 @@
                   "kind": "material",
                   "category": "plastics",
                   "era": "1982-1984",
-                  "confidence": "high",
-                  "note": "Butadiene, butadiene rubber and the cracker that makes them are one branch, under chem.butadiene; this node is the rubber phase as it appears in the keycap.",
+                  "confidence": "medium",
+                  "note": "Not established: that a polybutadiene phase is what makes these keycaps impact-resistant, and the propylene-to-butadiene cracker route. The butadiene polymer chain belongs to the chemicals file; this node asserts its presence in the keycap without evidence.",
                   "inputs": [
                     "chem.butadiene",
                     "chem.petroleum"
@@ -6440,7 +6599,7 @@
                   "kind": "tool",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "children": [
                     {
                       "id": "c64.keyboard-switches.keycap.spring.coil-winder.steel",
@@ -6454,8 +6613,9 @@
                         "metal.die-steel"
                       ]
                     }
-                  ]
-                }
+                  ],
+      "note": "Not established: that the keycap plunger springs were made on cam-controlled coil-winders at tens of thousands per hour. This is a general statement about spring manufacturing, not about this keyboard."
+    }
               ]
             }
           ]
@@ -6493,11 +6653,12 @@
               "kind": "part",
               "category": "passives",
               "era": "1982-1984",
-              "confidence": "high",
+              "confidence": "medium",
               "inputs": [
                 "chem.rubber"
-              ]
-            }
+              ],
+      "note": "Not established: the latching-dome mechanism itself. The service manual confirms that RESTORE and the off-matrix keys exist and that depressing RESTORE triggers U20 to generate a non-maskable interrupt, but nothing consulted describes how the SHIFT LOCK key latches, or that its matrix position is not scanned."
+    }
           ]
         },
         {
@@ -6507,8 +6668,9 @@
           "kind": "part",
           "category": "interconnect",
           "era": "1982-1984",
-          "confidence": "high",
-          "note": "Fatigue fracture where the ribbon flexes at the header is by far the most-reported C64 keyboard fault of the period and later; it produces keys that work only when the cable is bent a certain way.",
+          "confidence": "medium",
+          "sources": ["https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"],
+          "note": "The mainboard end is confirmed: the 250407 parts list has CN1 as 'Header w/LKG Sil 2.54 CTR 20 Pin', a 20-pin locking silicon header on a 2.54 mm pitch, which is what the ribbon plugs into. Not established: the 0.5-1.27 mm conductor pitch, the PVC jacket, the insulation-displacement crimp at the keyboard end, and the fatigue-fracture-at-the-header failure mode - none of that appears in the primary documentation.",
           "facts": [
             {
               "label": "Construction",
@@ -6531,8 +6693,8 @@
               "kind": "material",
               "category": "plastics",
               "era": "1982-1984",
-              "confidence": "high",
-              "note": "Insulation-displacement contacts on the keyboard end were common from the late 1970s; some Commodore designs used soldered connections at both ends.",
+              "confidence": "medium",
+              "note": "The mainboard end is a 20-pin 2.54 mm locking header per the primary parts list. Not established: parallel copper conductors laminated between polyester film with a PVC jacket, the 0.5-1.27 mm conductor pitch, and the insulation-displacement crimp. The 1992 manual does not describe the cable.",
               "facts": [
                 {
                   "label": "Pitch",
@@ -6661,7 +6823,7 @@
               "kind": "part",
               "category": "passives",
               "era": "1982-1984",
-              "confidence": "high",
+              "confidence": "medium",
               "facts": [
                 {
                   "label": "Wire",
@@ -6683,11 +6845,12 @@
                   "kind": "part",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "metal.iron"
-                  ]
-                },
+                  ],
+      "note": "Not established: music-wire or stainless spring wire as the material, and that these springs are always replaced rather than repaired."
+    },
                 {
                   "id": "c64.joystick.gate.spring.replacement",
                   "name": "Why springs are the failure point",
@@ -6695,10 +6858,12 @@
                   "kind": "note",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high"
-                }
-              ]
-            },
+                  "confidence": "medium",
+      "note": "The failure mode is plausible and repeatedly reported, but 'the most common single joystick fault of the era' is an unsourced ranking. No primary or encyclopaedic source consulted quantifies joystick fault frequency."
+    }
+              ],
+      "note": "That centring springs are the wear item and the common repair is widely attested in repair guides, but no document consulted is an acceptable source for that. Not established: music-wire or stainless spring wire as the material."
+    },
             {
               "id": "c64.joystick.gate.friction",
               "name": "Bushing and friction washer",
@@ -6802,8 +6967,8 @@
               "kind": "part",
               "category": "interconnect",
               "era": "1982-1984",
-              "confidence": "high",
-              "note": "Gold-plated microswitch contacts are correct for the era; many cost-built equivalents were silver- or nickel-plated instead.",
+              "confidence": "medium",
+              "note": "The sprung-leaf mechanism and the gold-over-nickel contact plating are standard practice for this switch class. Not established: the 0.1-0.5 um gold thickness and the 50-150 g operating force, neither of which appears in any document consulted for this machine.",
               "facts": [
                 {
                   "label": "Plating",
@@ -6822,13 +6987,14 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "metal.gold.ingot",
                     "metal.copper",
                     "metal.tin.ingot"
-                  ]
-                }
+                  ],
+      "note": "Not established: that these particular switch contacts were gold-plated over nickel. Gold plating is a real low-level-contact practice, but no document consulted identifies the plating in a 1982 joystick's microswitches."
+    }
               ]
             },
             {
@@ -6851,7 +7017,8 @@
                   "kind": "material",
                   "category": "plastics",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
+                  "sources": ["https://en.wikipedia.org/wiki/Nylon"],
                   "inputs": [
                     "chem.polyamide.nylon-66",
                     "chem.glass-fiber"
@@ -6865,13 +7032,16 @@
                       "category": "plastics",
                       "era": "1982-1984",
                       "confidence": "high",
+                      "sources": ["https://en.wikipedia.org/wiki/Nylon"],
                       "inputs": [
                         "chem.polyamide.nylon-66",
                         "chem.petroleum"
-                      ]
-                    }
-                  ]
-                },
+                      ],
+      "note": "The chemistry is documented: nylon-6,6 is the condensation polymer of a diamine and a dicarboxylic acid, and nylon 6 is a different molecule made by ring-opening polymerisation of caprolactam. Not established: hexamethylenediamine and adipic acid as the specific pair - the sources give the general ABAB structure without naming the monomers for 6,6 - and the claim about nylon appearing in a single C64's switch housings, bushings and microswitch cases."
+    }
+                  ],
+      "note": "Glass-filled nylon is documented as increasing structural and impact strength and rigidity, with thermoplastic glass-filled composites quoted at 25-30 % glass fibre. Not established: glass-filled nylon as the standard microswitch case material through the 1980s, and that this is the case material in a 1982 joystick."
+    },
                 {
                   "id": "c64.joystick.microswitches.plastic-case.solder-lugs",
                   "name": "Through-hole mounting and solder lugs",
@@ -6879,13 +7049,14 @@
                   "kind": "process",
                   "category": "assembly",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "metal.copper.foil",
                     "chem.glass-fiber",
                     "chem.epoxy"
-                  ]
-                }
+                  ],
+      "note": "Not established: that the microswitches were mounted in holes in a small printed board with through-hole pins soldered from underneath, and that board layout set the gate travel. On many 1980s joysticks the four microswitches were wired directly to the DE-9 with no local board at all."
+    }
               ]
             }
           ]
@@ -6897,7 +7068,7 @@
           "kind": "part",
           "category": "passives",
           "era": "1982-1984",
-          "confidence": "high",
+          "confidence": "medium",
           "facts": [
             {
               "label": "Shaft",
@@ -6919,7 +7090,7 @@
               "kind": "material",
               "category": "metals",
               "era": "1982-1984",
-              "confidence": "high",
+              "confidence": "low",
               "note": "The frozen-shaft failure is well documented across the vintage joystick genre; the steel chain itself belongs to the metals file.",
               "facts": [
                 {
@@ -6950,8 +7121,9 @@
                 "metal.iron.burden"
               ]
             }
-          ]
-        },
+          ],
+      "note": "Not established: which steel, the cold-drawn square section, and the 6 mm by 35 mm dimensions. The corrosion-at-the-bushing failure mode is well attested across the vintage joystick genre but is not a sourced measurement. The blast-furnace burden belongs to the metals file."
+    },
         {
           "id": "c64.joystick.knob",
           "name": "ABS knob and top button",
@@ -7061,7 +7233,7 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "facility.electricity"
                   ],
@@ -7078,8 +7250,9 @@
                         "metal.die-steel"
                       ]
                     }
-                  ]
-                },
+                  ],
+      "note": "Not established: whether the knob was two-shot or single-shot moulded, and whether it carried a moulded-in texture or soft overmould. Most 1980s joystick knobs were single-shot ABS; no document consulted describes it."
+    },
                 {
                   "id": "c64.joystick.knob.abs.fire-button",
                   "name": "Fire button on shaft and knob",
@@ -7131,8 +7304,8 @@
               "kind": "part",
               "category": "interconnect",
               "era": "1982-1984",
-              "confidence": "high",
-              "note": "The pins are stamped from the same brass coil, formed on the same four-slide machine and plated in the same nickel-then-gold sequence as the machine-side socket contacts.",
+              "confidence": "medium",
+              "note": "Not established: which metal and plating a 1982 joystick's DE-9 plug used. The D-shell polarisation is inherent to the DE-9 form factor, but nothing consulted states the pin alloy or plating for an aftermarket joystick.",
               "inputs": [
                 "metal.copper",
                 "metal.gold.ingot",
@@ -7146,12 +7319,13 @@
                   "kind": "process",
                   "category": "passives",
                   "era": "1982-1984",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "inputs": [
                     "metal.copper",
                     "chem.abs"
-                  ]
-                },
+                  ],
+      "note": "Not established: the crimped strain-relief construction and the claim that strain relief decides cable life. Plausible connector practice, but no document consulted describes a joystick cable assembly."
+    },
                 {
                   "id": "c64.joystick.cable.plug.conductor",
                   "name": "Stranded conductor",

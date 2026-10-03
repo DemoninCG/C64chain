@@ -1,7 +1,7 @@
 # Production tree — Commodore 64
 
 2454 nodes, max depth 15, 1301 leaves.
-Generated 2026-10-03T07:46:39.801Z by `scripts/build.mjs`. Do not edit by hand.
+Generated 2026-10-03T10:32:59.468Z by `scripts/build.mjs`. Do not edit by hand.
 
 # Commodore 64 (breadbin, ASSY 250407) `c64`
 
@@ -11,7 +11,7 @@ A home computer sold from 1982. This tree traces every physical component back t
 
 The C64 'breadbin' housing is a rear shell and a front bezel, both injection-moulded general-purpose ABS in a warm beige-brown. The rear shell carries the ventilation ribs, moulded screw bosses, connector cut-outs and the rubber feet; the bezel carries the keyboard window with its square key openings, the two knurled thumbscrews, the rainbow badge and the fine 'leather' grain. A foil-on-board RFI shield sits inside over the motherboard.
 
-### Rear shell (bottom half) `c64.case.rear-shell`
+### Rear shell (bottom half) `c64.case.rear-shell` _(medium)_
 
 The larger of the two mouldings. It forms the base pan, the raised side walls, the wrap-over top with its row of ventilation slots, the rear and side connector cut-outs, the internal ribs that stiffen the pan, the moulded screw bosses and standoffs, and the feet pads.
 
@@ -19,15 +19,15 @@ The larger of the two mouldings. It forms the base pan, the raised side walls, t
 
 A row of moulded louvre slots in the curved top panel behind the cartridge port, letting convective air out of the case over the SID and VIC-II. They are negative features cut into the tool, not separate ribs, and because they run across a thick section they leave visible flow lines and are a classic sink-mark site. Behind them the pan is stiffened with cross-ribs tying the top panel down to the base, moulded at roughly 60% of the adjacent wall gauge so the whole panel cools and shrinks as one piece.
 
-#### Moulded bosses and standoffs `c64.case.rear-shell.bosses`
+#### Moulded bosses and standoffs `c64.case.rear-shell.bosses` _(low)_
 
 Integral cylindrical bosses on the pan floor that carry the four case screws, the motherboard mounting screws, the keyboard PCB screws and the RF shield tabs. Each is a thick section relative to the 3 mm pan, so the tool must be cored to keep them from sinking, and each has a blind hole with a drafted self-tapping thread. Commodore did not mould metal inserts into them; the 1982 bosses are plain ABS and it is the screw that cuts its own thread on first insertion, which is why a snapped boss rather than a rusted screw is the characteristic forty-year failure.
 
-#### Rear and side connector openings `c64.case.rear-shell.connector-cutouts`
+#### Rear and side connector openings `c64.case.rear-shell.connector-cutouts` _(medium)_
 
 Rectangular and keyed cut-outs for the cartridge port, user port, cassette port, serial port, video DIN, power DIN and the two DE-9 control ports. Cut with knife-edged steel on the tool; the moulded lip around each port also acts as a draft and a finger stop, and the mouldings carry the connector bodies as separate inserts.
 
-### Front bezel (top half) `c64.case.bezel`
+### Front bezel (top half) `c64.case.bezel` _(medium)_
 
 The dished front panel with the keyboard window. It is the visible part of the machine, so it carries the fine leather-grain texture, the rainbow badge recess, the two knurled thumbscrews and the moulded-in 'COMMODORE' lettering on the lower lip.
 
@@ -45,7 +45,7 @@ The rainbow Commodore badge on the bezel: a shallow raised island, moulded as pa
 
 ### Case feet `c64.case.feet` _(medium)_
 
-Four small anti-vibration feet on the underside of the rear shell, moulded in a soft dark rubber or a flexible PVC, that stop the machine skating on a desk and stop the moulded ABS case from ringing against the desk.
+Four small anti-vibration feet on the underside of the bottom case that stop the machine skating on a desk and stop the ABS case from ringing against it. Commodore's own parts documentation lists them as self-adhesive stick-on feet, separate from the case, rather than as elastomer moulded into the shell.
 
 #### Foot elastomer compound `c64.case.feet.elastomer` _(medium)_
 
@@ -55,9 +55,9 @@ A soft, low-durometer elastomer drop-in-moulded over a small ABS boss, or a moul
 
 The C64 needed a conductive screen over the motherboard because a 1 MHz machine with a video oscillator radiates through a plastic case. Commodore used a die-cut sandwich of aluminium foil laminated to a cardboard or plastic-fibre spacer, bent into a box and stapled or taped to plastic standoffs, rather than a full metal can.
 
-#### Aluminium foil `c64.case.shield.foil`
+#### Aluminium foil `c64.case.shield.foil` _(medium)_
 
-Household or semi-rugged aluminium foil, 0.03-0.06 mm, slit and die-cut. Its job is not to be a Faraday cage in the strict sense but simply to be a continuous, grounded-ish conductor over the board so the radiated field collapses.
+Aluminium foil carried on a cardboard backing (catalogued as cardboard foil shields), slit and die-cut. Household foil is 0.016 mm and heavy-duty household foil 0.024 mm; this is not a semi-rugged grade but ordinary foil given stiffness by its backing. Its job is not to be a Faraday cage in the strict sense but simply to be a continuous, grounded-ish conductor over the board so the radiated field collapses.
 
 #### Shield spacer (board core) `c64.case.shield.spacer` _(medium)_
 
@@ -71,71 +71,71 @@ The screws that hold the C64 together: a handful of case-assembly screws plus th
 
 Modern repro cases and late Commodore tools mould a brass or stainless insert into the boss and use a real machine screw. The insert is placed by hand or by gravity feed and captured by the ABS on the next shot, giving a reusable metal thread.
 
-### Case tooling: H13 family mould with EDM texture `c64.case.tooling`
+### Case tooling: H13 family mould with EDM texture `c64.case.tooling` _(medium)_
 
 The two breadbin case moulds are large two-plate tools in pre-hardened or hardened hot-work steel, with the leather-grain texture cut by electrical discharge machining and the cavity polished and hard-chromed. A single mould produces thousands of C64 cases; its cost is amortised over millions of parts, so Commodore could afford a 5-cavity family tool.
 
-#### Machining of the cavity and core `c64.case.tooling.machining`
+#### Machining of the cavity and core `c64.case.tooling.machining` _(medium)_
 
 A 1982 tool shop would rough the cavity with large carbide or HSS milling cutters, leaving 0.3-0.5 mm, then finish-mill, then grind the critical faces flat and parallel to 0.01-0.02 mm across the plate. The parting plane is lapped to the same figure and put exactly at the joint line of the two halves, so the flash line around the case seam disappears into the seam. Only after that does the texture go in, because the texture electrode has to follow a cavity that is already dimensionally correct.
 
-##### EDM cutting of the leather grain `c64.case.tooling.edm`
+##### EDM cutting of the leather grain `c64.case.tooling.edm` _(medium)_
 
 The texture is the one feature of the case that cannot be milled: a random stochastic pattern of overlapping spherical dimples, 0.3-0.8 mm pitch and 0.05-0.15 mm deep. It is cut by sinking a shaped graphite or brass electrode into the hardened, ground cavity, or by wire-EDM scanning. Sinking EDM gives a whole panel at once and was well established by 1982, having been commercial since the 1960s; wire EDM gives resolution but is slower. What has not changed is that the texture is a negative in the steel and not a coating: on parts made in a second colour it can be partly buried, which is why grey aftermarket cases look so much cleaner than originals.
 
-###### Graphite electrode for EDM texturing `c64.case.tooling.graphite-electrode`
+###### Graphite electrode for EDM texturing `c64.case.tooling.graphite-electrode` _(medium)_
 
 Isostatic-pressed fine-grain graphite, turned or milled to the negative of the texture panel, or a CNC-shaped graphite block. Graphite is used because it is easy to machine, wears predictably as the electrode erodes, and does not damage the workpiece the way a metal electrode would.
 
-###### Natural graphite flake `c64.case.tooling.graphite-ore`
+###### Natural graphite flake `c64.case.tooling.graphite-ore` _(medium)_
 
 Flake graphite is mined in Sri Lanka, Madagascar, China and Brazil, purified by acid (or in the 1980s by chlorination) and pressed with pitch binder into tooling graphite.
 
-###### Brass electrode for fine detail `c64.case.tooling.brass-electrode`
+###### Brass electrode for fine detail `c64.case.tooling.brass-electrode` _(medium)_
 
 Copper-zinc alloy electrodes are used where the texture has fine features, because brass machines more accurately than graphite and can be reworked. Brass comes from copper and zinc ores smelted together.
 
-#### Lapping and polishing the cavity `c64.case.tooling.polishing`
+#### Lapping and polishing the cavity `c64.case.tooling.polishing` _(medium)_
 
 The cavity is progressively polished - progressively finer abrasives on cloth and stone - to a mirror. On a textured tool the polish is done to the whole surface and the texture simply stays; on flat surfaces it goes to Ra 0.05-0.1 um, which is what makes the plated ABS read as glossy.
 
-##### Abrasive polishing compounds `c64.case.tooling.lapping-compound`
+##### Abrasive polishing compounds `c64.case.tooling.lapping-compound` _(medium)_
 
 Aluminium oxide for the bulk stock removal and green chromium oxide for the final mirror, both graded by grain size and applied on cloth and stone. This is the most labour-intensive step in the whole case tool: a large textured housing cavity takes days of hand polishing on cast-iron blocks, which is why such tools cost tens of thousands of dollars and why the economics demanded millions of parts.
 
-###### Synthetic alumina abrasive `c64.case.tooling.synthetic-alumina`
+###### Synthetic alumina abrasive `c64.case.tooling.synthetic-alumina` _(medium)_
 
 Bauxite is refined to alumina and sintered or fused into corundum, then crushed and graded into abrasive powders. Hardness ~9 on the Mohs scale, second only to diamond, and the workhorse of metal finishing.
 
-#### Hard chrome plating of the cavity `c64.case.tooling.plating`
+#### Hard chrome plating of the cavity `c64.case.tooling.plating` _(medium)_
 
 The polished cavity is electroplated in a hexavalent chromium bath to a few microns. Chrome is much harder than the tool steel, so the tool wears far better; it is also what gives the moulded ABS its character - the gloss of a C64 case is the gloss of chrome, not of steel.
 
-##### Chromic acid `c64.case.tooling.chromium-acid`
+##### Chromic acid `c64.case.tooling.chromium-acid` _(medium)_
 
 Made by roasting chromite with soda ash and limestone, leaching the sodium chromate, and acidifying. So the chromium in the plating bath comes from the same chromite that came into the tool steel.
 
-#### Mould assembly: guide pins, ejectors, cooling `c64.case.tooling.mould-assembly`
+#### Mould assembly: guide pins, ejectors, cooling `c64.case.tooling.mould-assembly` _(medium)_
 
 The finished plates are set into a mould base with guide pillars or bushes, an ejector-plate assembly with pins under every feature that would imprint on the visible face, and water lines carrying coolant through the cores and plates to remove the heat of plasticisation.
 
-#### P20 pre-hardened tool steel `c64.case.tooling.p20`
+#### P20 pre-hardened tool steel `c64.case.tooling.p20` _(low)_
 
 A 0.38% C, 0.9% Cr, 0.4% Mo, 0.2% V steel supplied at HRC 30-35. Because it arrives hard, the whole cavity can be machined and polished with no risk of distortion from a later heat treatment, which is why it dominated housing tooling in 1982.
 
-### Injection moulding of the case `c64.case.moulding`
+### Injection moulding of the case `c64.case.moulding` _(medium)_
 
 The bezel and rear shell are moulded on a large toggle or hydraulic press in a multi-cavity family tool. Dried ABS is melted in a three- or four-zone barrel at 200-260 C, injected through a gate on the parting line at 1000-1500 bar, packed at 50-100 bar until the gate freezes, cooled against water channels at 40-60 C until the part has shrunk onto the tool, and pushed off the core on ejector pins that leave small round marks and a gate vestige on the seam. Because ABS shrinks 0.4-0.7% linearly the tool is cut oversize, and because the wall is only 2.5-3.5 mm the melt has to snake a long, thin, textured flow in under a second or it cools and frosts. That combination is why C64 cases carry visible flow marks: the two-point pattern is the frozen boundary where two melt fronts met and did not fully knit.
 
-#### Injection press (300-600 t) `c64.case.moulding.press`
+#### Injection press (300-600 t) `c64.case.moulding.press` _(medium)_
 
 A toggle or direct-hydraulic injection moulding machine with a screw plasticiser, a heated barrel with three or four zones, an oil or water temperature controller, and a mould base. Toggle machines clamp faster and are what most housing tools ran on. Oil hydraulics drive the toggle or the platen, provide injection and holding pressure, and drive the ejector; hydraulic pressure is the reason injection pressure reached 1000-1500 bar, against the about 500 bar of the older toggle-and-screw machines.
 
-##### Plasticising screw and barrel `c64.case.moulding.injection-screw`
+##### Plasticising screw and barrel `c64.case.moulding.injection-screw` _(medium)_
 
 A flighted screw turns in a heated barrel, conveying and melting pellets on the way back and injecting on the way forward. The screw is nitrided 33CrMoV or 40Cr steel, bimetallic-lined at the tip in later designs.
 
-##### Hydraulic clamp unit `c64.case.moulding.hydraulics`
+##### Hydraulic clamp unit `c64.case.moulding.hydraulics` _(medium)_
 
 Oil hydraulics drive the toggle or the platen, provide injection and holding pressure, and drive the ejector. A hydraulic press is the reason injection pressure reached 1000+ bar - compared with the ~500 bar of the older toggle-and-screw machines.
 
@@ -147,7 +147,7 @@ The ABS case is not the only plastic in the machine. This branch gathers the sec
 
 Polyester film is used as thin insulation, as overlay film on some keycap legends, and as the amber capacitor sleeve material in the power supply. It comes from terephthalic acid and ethylene glycol, both of which come out of the aromatics and olefin chains already used elsewhere in the machine.
 
-#### Methanol (from synthesis gas) `c64.case.other-polymers.methanol`
+#### Methanol (from synthesis gas) `c64.case.other-polymers.methanol` _(medium)_
 
 Made by reacting carbon monoxide and hydrogen from natural-gas reforming, a few hundred C and 50-100 bar over a copper/zinc oxide catalyst. Formaldehyde comes from methanol oxidation over silver or iron-molybdenum catalyst.
 
@@ -155,15 +155,15 @@ Made by reacting carbon monoxide and hydrogen from natural-gas reforming, a few 
 
 The C64's keyboard is a separate wired module that drops into the bezel: a steel backplate, a single-sided printed circuit board carrying the matrix, sixty-six individually moulded ABS keycaps, and beneath each cap a rubber-dome switch - a moulded plunger riding on a return spring and pressing a carbon-loaded rubber dome that bridges two plated pads on the board. The board is rigid: there is no printed flexible membrane and no silver-ink conductor anywhere in the C64 keyboard, and the only conductive element in the switch is the carbon-filled rubber itself. The legends are printed onto the cap tops with a two-colour pad printer.
 
-### Keycaps (66 individual moulded ABS caps) `c64.keyboard.keycaps`
+### Keycaps (66 individual moulded ABS caps) `c64.keyboard.keycaps` _(medium)_
 
 Not a single dished sheet: 66 separate rectangular caps, each moulded in dark brown-grey ABS with a slightly concave top, each dropping through its own square opening in the bezel onto its own plunger. Some breadbin sets had tan-coloured function keys, others grey.
 
-#### ABS grade for keycaps `c64.keyboard.keycaps.abs`
+#### ABS grade for keycaps `c64.keyboard.keycaps.abs` _(medium)_
 
 A housing-grade ABS, low rubber content so the moulded texture stays crisp and the cap does not feel gummy. Keycap ABS is usually a slightly higher-gloss, higher-flow grade than the case resin because the caps are thin and have to fill a short, tight flow path.
 
-#### Keycap tool (small multi-cavity, hardened steel) `c64.keyboard.keycaps.tool`
+#### Keycap tool (small multi-cavity, hardened steel) `c64.keyboard.keycaps.tool` _(medium)_
 
 Keycaps are made in small high-cavity tools - 4, 8 or 16 cavities in one block - because a cap is cheap and the tool has to be small enough to fit a small press. The tool is hardened tool steel and the caps come off a common gate, so the visible faces are identical across the set. A cap is the shortest flow in moulding: a shallow thin-walled box filled through a single gate, which is why the tool is small, multi-cavity and warm-moulded, and why the cycle is 15-30 s against 30-60 s for a case.
 
@@ -175,15 +175,15 @@ The graphics characters on the small FRONT wall of the cap - the PETSCII and shi
 
 Breadbin C64 caps are almost uniformly a dark brown-grey, with the function keys sometimes a lighter grey or tan. There is no per-number colour coding on the breadbin keyboard - that belongs to some other machines, and the VIC-20 had differently coloured function keys. What a C64 keycap has is a moulded-in colour, not a printed one, so the keycap colour is pigment in the ABS rather than a decoration applied afterwards.
 
-#### Cross-point fitting and cap underside `c64.keyboard.keycaps.cross-point`
+#### Cross-point fitting and cap underside `c64.keyboard.keycaps.cross-point` _(medium)_
 
 The underside of the cap carries a moulded cross that clips onto the matching cross-post on the plunger - about 5 mm on early breadbin caps, about 3 mm on later ones. The two are not interchangeable. The underside also has guide ribs that keep the cap square as it travels.
 
-### Hybrid switches (Mitsumi-style plunger, rubber dome, spring) `c64.keyboard.switches`
+### Hybrid switches (Mitsumi-style plunger, rubber dome, spring) `c64.keyboard.switches` _(medium)_
 
 The C64 does not use a rubber-dome-only membrane like a calculator, nor a mechanical switch like a typewriter. It uses a dome-and-plunger hybrid: a moulded plastic plunger carrying or driving a carbon-loaded rubber pad which bridges two plated pads on the rigid keyboard board when the cap is pressed, with a coil return spring under most keys. That gives a real click, a light touch and a definite bottom-out, which is why a C64 keyboard still feels mechanical in the 1980s sense. The rigid board is the point: there is no flexible membrane and no silver-ink trace layer in this keyboard.
 
-#### Switch plunger (moulded, with conductive rubber) `c64.keyboard.switches.plunger`
+#### Switch plunger (moulded, with conductive rubber) `c64.keyboard.switches.plunger` _(medium)_
 
 A small moulded body with a cross-post on top that the keycap clips onto, one or more arms that carry a conductive rubber pad, and a stem that slides in the keyboard body. Type 2 plungers have four prongs and carry a loose grey 'bubble' contact.
 
@@ -191,7 +191,7 @@ A small moulded body with a cross-post on top that the keycap clips onto, one or
 
 The plunger has to be dimensionally stable over millions of strokes and low-friction against the spring and the body. Acetal (POM) is the classic choice for its low friction and stiffness; glass-filled nylon or polycarbonate are also used. All three are moulded on small multi-cavity tools, and the formaldehyde and nylon chains are documented under the other-polymers branch of the case.
 
-#### Return spring (music wire) `c64.keyboard.switches.spring`
+#### Return spring (music wire) `c64.keyboard.switches.spring` _(medium)_
 
 A small coil spring under each key that returns the plunger. It is drawn from music wire (a high-carbon, low-carbon-content steel with a tight tensile range) and wound on a automatic spring coiler. Type 1 keyboards spring every key; Type 2 springs only the space bar and relies on the rubber dome elsewhere.
 
@@ -199,23 +199,23 @@ A small coil spring under each key that returns the plunger. It is drawn from mu
 
 The feel of a C64 key is a curve, not a number. The plunger rides down the spring, then the rubber dome on the board has to collapse, producing a peak in force; past the peak the force drops as the dome flattens, then rises again into the bottom-out. The peak-to-valley difference is what the finger reads as clicky, and it is the collapse of the dome rather than any metal leaf that produces it.
 
-### Keyboard PCB (matrix and contacts) `c64.keyboard.pcb`
+### Keyboard PCB (matrix and contacts) `c64.keyboard.pcb` _(medium)_
 
-A single-sided printed circuit board carrying the eight row and eight column traces of the matrix, drilled and plated through in the usual way, with one pair of plated pads terminating each key position. It plugs into a 24-pin header on the mainboard at CN1 and carries no logic of its own: it is a switch matrix and nothing more. It is a rigid glass-epoxy laminate board, not a printed flexible membrane.
+A single-sided printed circuit board carrying the eight row and eight column traces of the matrix, drilled and plated through in the usual way, with one pair of plated pads terminating each key position. It plugs into a 20-pin header on the mainboard at CN1 and carries no logic of its own: it is a switch matrix and nothing more. It is a rigid glass-epoxy laminate board, not a printed flexible membrane.
 
 #### How the 8 x 8 matrix and the two odd keys work `c64.keyboard.pcb.matrix`
 
 The CIA drives one of eight rows low and reads the eight columns; a pressed key connects one row to one column, and sixty-four positions are scanned. RESTORE is wired straight to the NMI line, bypassing the matrix entirely, which is why RESTORE works even while the CPU is jammed. SHIFT LOCK is a mechanically latching switch wired to the same two lines as the left SHIFT, so the firmware sees a shift and never sees a separate key.
 
-#### Contact pads (gold or carbon) `c64.keyboard.pcb.contacts`
+#### Contact pads (gold or carbon) `c64.keyboard.pcb.contacts` _(medium)_
 
 Each key position terminates in two pads on the rigid board. The carbon-loaded rubber dome that bridges them is the moving conductor: pressed, it closes the circuit between the pads; released, the pads are open. On gold-plated keyboards the pads are gold over nickel; on cheaper sets they are a carbon or graphite coating on the copper, which is the version that needs cleaning.
 
-### Steel backplate `c64.keyboard.backplate`
+### Steel backplate `c64.keyboard.backplate` _(medium)_
 
 A sheet-steel plate under the printed circuit board with openings punched for each plunger and rolled stiffening beads pressed into it. It carries the return springs, holds the plungers' travel against the board, and is screwed to the keyboard body with about twenty small gold-coloured screws. The openings are pierced on a punch press in a single stroke across the whole sheet and the beads roll-formed afterwards: a high-volume sheet-metal job, where a tonne of steel punched this way costs a fraction of a machined equivalent.
 
-### Keyboard body and its fasteners `c64.keyboard.body`
+### Keyboard body and its fasteners `c64.keyboard.body` _(medium)_
 
 A moulded ABS body that holds the plungers, the PCB and the backplate, and carries the cable. It is retained by about twenty small gold-coloured screws, and on the shift-lock position it has a black-backed keyswitch with one wire running diagonally to the PCB.
 
@@ -223,13 +223,13 @@ A moulded ABS body that holds the plungers, the PCB and the backplate, and carri
 
 The shift-lock position carries a tiny mechanically latching slide switch: a black plastic body with a metal leaf contact that holds itself in the shifted position until pressed again. It is not a matrix key at all - it is a separate latch that simply closes the shift lines, which is why the firmware cannot tell it from a held SHIFT. On teardown it reads as a black-backed keyswitch with one wire soldered diagonally across the board.
 
-#### Keyboard retaining screws (gold-coloured) `c64.keyboard.body.screws`
+#### Keyboard retaining screws (gold-coloured) `c64.keyboard.body.screws` _(medium)_
 
 Roughly twenty small self-tapping screws with a gold or brass finish hold the keyboard backplate and body together. The gold colour is a zinc-nickel or brass-look plating, chosen because it reads as 'quality' on a part the customer never sees.
 
-### Keyboard ribbon cable and connector `c64.keyboard.cable`
+### Keyboard ribbon cable and connector `c64.keyboard.cable` _(low)_
 
-A short flat ribbon or discrete-lead cable from the keyboard to the 24-pin header (CN1) on the front-left edge of the mainboard, terminating in a moulded connector housing. It carries the eight matrix rows, the eight columns, the RESTORE line and the power rails - twenty-four conductors.
+A short flat ribbon or discrete-lead cable from the keyboard to the 20-pin header (CN1) on the front-left edge of the mainboard, terminating in a moulded connector housing. It carries the eight matrix rows, the eight columns, the RESTORE line and a ground return - eighteen wires in all.
 
 #### Ribbon conductors `c64.keyboard.cable.conductor` _(medium)_
 
@@ -251,15 +251,15 @@ Almost every connector here is made the same way at the front end: a brass or ph
 
 Contacts are made on a multi-slide machine: a brass or copper-alloy strip is fed as a continuous coil, and each station in the slide performs one operation - piercing the terminal slot, forming the spring barrel, bending the solder tail, then cutting off the finished contact. Hundreds of thousands of identical contacts per hour, which is why connectors are cheap.
 
-###### Tool steel of the stamping die `c64.connector-jacks.metalworking.four-slide-die.tool-steel`
+###### Tool steel of the stamping die `c64.connector-jacks.metalworking.four-slide-die.tool-steel` _(medium)_
 
 The progressive die is made from hardened tool steel - P20 for the body, D2 or H13 for the cutting edges - with the contact geometry machined and ground. A stamping die outlasts tens of millions of strokes, which is why the contact is a commodity.
 
-###### Coiled contact strip `c64.connector-jacks.metalworking.four-slide-die.coil-stock`
+###### Coiled contact strip `c64.connector-jacks.metalworking.four-slide-die.coil-stock` _(medium)_
 
 The blank comes off the coil as a continuous ribbon of brass strip, the cheapest way to feed a high-speed press. The whole 44-position cartridge socket's 88 contacts are stamped from one coil.
 
-##### Brass strip (Cu-Zn) `c64.connector-jacks.metalworking.brass-stock`
+##### Brass strip (Cu-Zn) `c64.connector-jacks.metalworking.brass-stock` _(medium)_
 
 Cartridge brass, usually 70/30 copper-zinc, drawn into strip. Brass is used because it is easy to form, springs usefully, and takes nickel plating well; a strip's mechanical properties are set by the zinc content and by work hardening from the drawing die.
 
@@ -279,7 +279,7 @@ Blister copper from the smelter is refined electrolytically to 99.99 % cathode, 
 
 Two plating baths in sequence. First a nickel underplate (electroless nickel-phosphorus on some parts, barrel or rack electrolytic nickel on others) is laid down; this is the barrier layer that stops the base copper or brass diffusing into the gold, and nickel is also what the solder actually wets. Then a thin gold flash - typically 0.05-0.5 um over nickel - goes on the mating contact areas only, masked by selective plating or by tabbing the contact.
 
-###### Electroless nickel-phosphorus deposition `c64.connector-jacks.metalworking.plating.electroless-nickel`
+###### Electroless nickel-phosphorus deposition `c64.connector-jacks.metalworking.plating.electroless-nickel` _(medium)_
 
 A hypophosphite bath plates nickel onto the parts without an external current, by catalytic reduction on the brass surface. Because the deposit is amorphous nickel containing a few per cent of phosphorus, it is harder and more corrosion-resistant than pure electrolytic nickel and it does not need to be masked. It became the standard underplate for the whole connector industry by the mid-1980s.
 
@@ -287,7 +287,7 @@ A hypophosphite bath plates nickel onto the parts without an external current, b
 
 The hypophosphite reducing agent is made from white phosphorus, which was still produced in the 1980s by the electric-furnace reduction of phosphate rock - a route that consumed very large tonnages of low-grade apatite for a few tens of kilograms of elemental phosphorus.
 
-##### Refined gold for contact plating `c64.connector-jacks.metalworking.gold`
+##### Refined gold for contact plating `c64.connector-jacks.metalworking.gold` _(medium)_
 
 Gold is deposited from a cyanide or sulphite bath, by immersion displacement onto the nickel or by electroplating with a gold strike. It is the one precious metal on an entire C64's connector set, applied as a sub-micron skin over several square centimetres - a deliberate economics of just enough gold to make the contact.
 
@@ -299,7 +299,7 @@ Gold is plated from an alkaline cyanide bath with a gold anode that dissolves to
 
 The plating chemistry itself: gold is plated from an alkaline cyanide bath held deliberately low in free cyanide, so that the gold deposits preferentially rather than the base metal underneath. The cyanide is made from brine by chlor-alkali electrolysis and then from ammonia and carbon, and it is why the cyanide gold shops of the period carried a persistent effluent-control and safety burden through the late 1970s and 1980s.
 
-###### Immersion gold flash `c64.connector-jacks.metalworking.gold.immersion`
+###### Immersion gold flash `c64.connector-jacks.metalworking.gold.immersion` _(medium)_
 
 A displacement process: the nickel surface is briefly attacked by a cyanide solution and gold plates itself out by substitution, in a few tenths of a micron, with no current. It is fast, cheap and exactly the right thickness for a connector flash.
 
@@ -311,19 +311,19 @@ Most industrial gold plating in 1982 was fed from dore bullion - a semi-pure gol
 
 The insulator every connector sits in. Card-edge and card-guide style connectors used black glass-filled polyester or phenolic because it machines cleanly, has almost no moulding flow and stands soldering temperatures; D-sub and DIN shells used glass-filled nylon or PBT. All were injection-moulded in multi-cavity tools.
 
-##### Glass-filled phenolic (thermoset) `c64.connector-jacks.moulding.phenolic`
+##### Glass-filled phenolic (thermoset) `c64.connector-jacks.moulding.phenolic` _(medium)_
 
 Phenol-formaldehyde resin reinforced with chopped glass fibre and moulded under heat and pressure. Extremely dimensionally stable, heat resistant and flame retardant, which is why black glass-filled phenolic is the classic black body of terminal blocks, card-edge sockets and relay bases. The disadvantage is that it cannot be melted and reformed, so every detail - including the card guide slot - has to be in the tool.
 
-###### Phenolic compression press `c64.connector-jacks.moulding.phenolic.compression-press`
+###### Phenolic compression press `c64.connector-jacks.moulding.phenolic.compression-press` _(medium)_
 
 A heated platen press with matched metal dies, pressing the thermoset compound to shape and curing it in the same operation. Compression rather than injection is what makes phenolic bodies cheap: the flow is short and the die is simple.
 
-###### Phenol and formaldehyde `c64.connector-jacks.moulding.phenolic.resin-source`
+###### Phenol and formaldehyde `c64.connector-jacks.moulding.phenolic.resin-source` _(medium)_
 
 Phenol comes from cumene or chlorobenzene, both benzene derivatives; formaldehyde from methanol oxidation. So a black phenolic connector body is, like everything else on this board, two or three steps downstream of a steam cracker.
 
-###### Phenol from cumene `c64.connector-jacks.moulding.phenolic.resin-source.phenol`
+###### Phenol from cumene `c64.connector-jacks.moulding.phenolic.resin-source.phenol` _(medium)_
 
 Phenol was made almost entirely by the cumene process: cumene oxidised to cumene hydroperoxide, then acid-split to phenol and acetone. Both products of that split fed the phenolic and the epoxy chains.
 
@@ -335,7 +335,7 @@ Polybutylene terephthalate is moulded at normal injection temperatures, so a con
 
 PBT is a condensation polymer of DMT and 1,4-butanediol. DMT comes from paraxylene; butanediol came in the 1980s largely from maleic anhydride hydrogenation (a coal/route) or from butanediol dehydrogenation. Both are petrochemical or coal-chemical intermediates.
 
-###### Paraxylene and DMT `c64.connector-jacks.moulding.pbt.dmt.px`
+###### Paraxylene and DMT `c64.connector-jacks.moulding.pbt.dmt.px` _(medium)_
 
 Paraxylene is oxidised to terephthalic acid, esterified with methanol to DMT, then condensed with butanediol. Methanol was itself a cheap synthesis-gas product of that period, so DMT carries coal and gas chemistry as well as oil.
 
@@ -343,15 +343,15 @@ Paraxylene is oxidised to terephthalic acid, esterified with methanol to DMT, th
 
 PBT needs an ultraviolet absorber because it yellows and embrittles in light, plus a glass filler for stiffness. The absorber is a benzotriazole, and both additives are minor mass but were cost-relevant in a moulded part sold in tens of millions.
 
-##### Injection moulding press and tool `c64.connector-jacks.moulding.injection-press`
+##### Injection moulding press and tool `c64.connector-jacks.moulding.injection-press` _(medium)_
 
 A multi-cavity tool clamped between the platens of a screw injection moulder. The housing is a commodity: the same part is made in hundreds of thousands for the entire electronics industry, which is why connector housings cost less than the contacts inside them.
 
-###### Injection screw and barrel `c64.connector-jacks.moulding.injection-press.screw`
+###### Injection screw and barrel `c64.connector-jacks.moulding.injection-press.screw` _(medium)_
 
 A nitrided steel screw and barrel, heated to 230-280 C, plastifying the polymer and injecting it into the tool. The screw is itself a wear part made from tool steel, so the moulding industry is a steady consumer of alloy steel.
 
-###### Mould tool steel `c64.connector-jacks.moulding.injection-press.tool-steel`
+###### Mould tool steel `c64.connector-jacks.moulding.injection-press.tool-steel` _(medium)_
 
 P20 stainless tool steel was the industry standard cavity steel in 1982, hardened to ~48-52 HRC and polished to a fine finish. A connector housing's surface is entirely a function of the cavity polish.
 
@@ -359,15 +359,15 @@ P20 stainless tool steel was the industry standard cavity steel in 1982, hardene
 
 The C64's expansion bus. A 24-position double-row card-edge socket, 3.96 mm pitch, carrying the address, data and control lines plus regulated and unregulated power out to user-port peripherals. Spare parts for this connector are specified as gold-over-nickel contacts in a PBT UL94 V-0 insulator, which is a fair description of the period part.
 
-##### Gold-over-nickel card-edge contacts `c64.connector-jacks.user-port.contacts`
+##### Gold-over-nickel card-edge contacts `c64.connector-jacks.user-port.contacts` _(medium)_
 
 Each contact is a formed spring leaf whose nose protrudes from the insulator and sweeps the mating card's copper edge as it slides in. The wiping action means the gold never has to be thick to stay clean, and the nickel beneath carries the solder joint to the board.
 
-###### Spring leaf alloy `c64.connector-jacks.user-port.contacts.leaf-alloy`
+###### Spring leaf alloy `c64.connector-jacks.user-port.contacts.leaf-alloy` _(medium)_
 
 The leaf has to both wipe the mating edge and hold a contact force, so it is a hard-worked copper alloy - phosphor bronze or a brass-tempered strip. It is the same material family as the switch contacts and the cartridge socket.
 
-###### Solder tail and wave-solder attachment `c64.connector-jacks.user-port.contacts.solder-tail`
+###### Solder tail and wave-solder attachment `c64.connector-jacks.user-port.contacts.solder-tail` _(medium)_
 
 The tail is formed flat and pierced so it takes a fillet in the wave-solder bath, giving a mechanically strong joint that also resists the repeated flexing of a plugged-in peripheral cable.
 
@@ -383,7 +383,7 @@ The port that reads and writes Commodore DATAsette tapes. It is a 12-position ca
 
 One leg of the datasette sense line is held high by a single 3k3 1/4 W resistor on the mainboard - the same value and the same carbon-film part as the rest of the discrete resistors. It is a tiny detail that shows the whole board's design logic: discrete resistors where few are needed, a printed array where many identical ones are.
 
-###### Why the port exists at all `c64.connector-jacks.cassette-port.pull-up.signal`
+###### Why the port exists at all `c64.connector-jacks.cassette-port.pull-up.signal` _(medium)_
 
 The port carries analogue audio plus three DC control lines. The C64 read FSK-encoded data by timing transitions on the read line and generating the tones on the write line - the whole tape interface is three transistors, a resistor and two electrolytics, which is why it is so sensitive to capacitor leakage.
 
@@ -399,7 +399,7 @@ The socket body doubles as the mechanical guide: a moulded channel sets the card
 
 Because the socket body is a thermoset, the card channel, the stop face and the polarising key cannot be melted into place - they have to be present in the compression tool or machined afterwards. Both were normal for this part in 1982.
 
-##### Contact wear and the 'dead cartridge' problem `c64.connector-jacks.expansion-port.contact-wear`
+##### Contact wear and the 'dead cartridge' problem `c64.connector-jacks.expansion-port.contact-wear` _(medium)_
 
 A card-edge socket is a wear item: each insertion plucks the leaf contacts and sweeps the mating gold edge. Dust, oxide from the cartridge's board and accumulated plasticiser eventually make one or two contacts intermittent, which is the classic 'dead cartridge' symptom. Contact cleaning and, on a well-used machine, contact replacement were the routine repair.
 
@@ -411,7 +411,7 @@ The routine service answer to a marginal cartridge socket: an alcohol swab on th
 
 The 44-pin socket's pin assignment, pitch and card thickness were Commodore's own definition rather than a JEDEC standard, which is why cartridges for the C64, C128 and VIC-20 are interchangeable and C64C cartridges are not.
 
-##### Card-edge contact alloy (phosphor bronze) `c64.connector-jacks.expansion-port.contacts-alloy`
+##### Card-edge contact alloy (phosphor bronze) `c64.connector-jacks.expansion-port.contacts-alloy` _(medium)_
 
 Phosphor bronze was the standard card-edge contact alloy for this connector, gold-flashed over nickel. It is springy, fatigue-resistant and takes a good plating - the combination a card-edge socket needs, because it is wiped hard on every insertion.
 
@@ -439,11 +439,11 @@ The mating socket's cone is broached rather than turned, so the surface finish i
 
 The centre pin is nickel-plated with a gold or silver flash; the signal level here (composite video and line-level audio) is high enough that nickel alone would work, but gold was used for consistency with the other connectors. It is the same nickel-then-gold sequence as every other contact on the machine, on a tin or nickel base.
 
-##### Nickel-plated steel shell and shield can `c64.connector-jacks.av-din.shell`
+##### Nickel-plated steel shell and shield can `c64.connector-jacks.av-din.shell` _(medium)_
 
 The outer barrel is a drawn steel shell, nickel-plated for corrosion resistance and solderability, and crimped around the insulator. On a metal-panel or rear-case mounting it doubles as the shell ground. Nickel plate on steel is the standard 1982 finish for a mains-adjacent chassis connector. The knurled ring on a DIN plug is what a user grips to unscrew it, and on a socket the threaded barrel screws into the panel; the knurl is rolled into the shell in the same draw, because knurling a plated can afterwards would cut through the nickel.
 
-###### Drawn steel shell stock `c64.connector-jacks.av-din.shell.steel-strip`
+###### Drawn steel shell stock `c64.connector-jacks.av-din.shell.steel-strip` _(medium)_
 
 The barrel is deep-drawn from nickel-plated steel strip - a two-and-a-half type can be drawn in a few progressive strokes. The nickel plate carries the shell ground and resists the corrosion a rear-panel connector sees.
 
@@ -463,7 +463,7 @@ The two nine-pin D-sub sockets on the rear panel for joystick or paddle controll
 
 Each female contact carries a dimple on its mating face. Dimpling pushes the two contact surfaces into a defined line contact rather than a random point contact, which lowers the contact resistance and stops the surfaces rolling on each other. The plug's outer shell also contacts the socket shroud, so the plug's ground comes from its metal shell rather than from its pins.
 
-##### D-subminiature (MIL-DTL-24308) standard `c64.connector-jacks.control-ports.d-sub-standard`
+##### D-subminiature (MIL-DTL-24308) standard `c64.connector-jacks.control-ports.d-sub-standard` _(medium)_
 
 The D-sub was standardised for military/aerospace use in the 1950s and became universal electronics furniture. Its 2.77 mm pitch, D-shaped polarised shell and 2.5 mm panel-mount screw pattern are defined by the standard; the C64's control ports are ordinary commercial DE-9 sockets.
 
@@ -471,7 +471,7 @@ The D-sub was standardised for military/aerospace use in the 1950s and became un
 
 A black glass-filled thermoplastic insulator carrying the nine contacts, keyed to the metal shell. It has to hold position to a few hundredths of a millimetre because the contacts must all engage simultaneously in a stiff nine-pin plug.
 
-###### Glass-filled nylon insulator `c64.connector-jacks.control-ports.insulator.nylon`
+###### Glass-filled nylon insulator `c64.connector-jacks.control-ports.insulator.nylon` _(medium)_
 
 Glass-filled PA66 holds nine contact positions to a few hundredths of a millimetre over a plastic D-shell, and takes the insertion force of a stiff nine-pin plug without cracking. The base polymer is nylon 6,6 from hexamethylenediamine and adipic acid; caprolactam is the route to nylon 6, a different grade.
 
@@ -487,7 +487,7 @@ The rear-panel socket the external PSU brick plugs into. A 7-pin round connector
 
 A mains-adjacent DC supply connector needs its contacts to survive being tugged by the cable. The mating pins are a friction type with a deliberately stiff crimp barrel so a pull is taken by the metal, not the solder fillet; some Commodore supplies additionally used a friction-lock retention ring on the plug body.
 
-###### Crimp barrel construction `c64.connector-jacks.power-inlet.friction-lock.crimp`
+###### Crimp barrel construction `c64.connector-jacks.power-inlet.friction-lock.crimp` _(medium)_
 
 The pin is a hollow brass tube with an interference crimp onto the conductor rather than a solder joint. That is the actual meaning of a friction-lock contact: the metal grips the metal, so a tug on the cable is carried by a mechanical interference fit and not by the solder fillet.
 
@@ -507,7 +507,7 @@ The header's pins were pushed into the board and wave-soldered in one pass with 
 
 Three human-operated controls on a C64: the mains-free power slider SW1 on the right-hand case panel, and the two slide potentiometers for volume/tone and brightness on the top surface. The power switch gates the incoming 5 V rail; the two potentiometers are wired directly into the SID audio output and the VIC-II's analogue video level.
 
-#### SW1 power slider switch `c64.switches.power-slider`
+#### SW1 power slider switch `c64.switches.power-slider` _(medium)_
 
 A single-pole, double-throw or single-throw slide switch on the mainboard, actuated by a moulded slider that protrudes through a rectangular cut-out in the right-hand side of the case. Its only job in the C64 is to interrupt the incoming +5 V rail - everything else on the board runs off the switch's output side.
 
@@ -515,11 +515,11 @@ A single-pole, double-throw or single-throw slide switch on the mainboard, actua
 
 The insulator the whole mechanism lives in. Small slide switches of this generation used a filled thermoset (melamine-formaldehyde or glass-filled phenolic) or a glass-filled nylon; both mould well in simple two-plate tools and stand a soldering iron's heat. Melamine was the industry default because its arc resistance in a mains-adjacent switch is better than polystyrene's. The switch body was riveted or snapped into the mainboard and located by a moulded boss in the case; the boss and its snap feature are part of the case tooling, not the switch tooling.
 
-###### Melamine-formaldehyde thermoset `c64.switches.power-slider.body.melamine`
+###### Melamine-formaldehyde thermoset `c64.switches.power-slider.body.melamine` _(medium)_
 
 A thermoset built from melamine and formaldehyde, filled with cellulose or glass fibre, and compression-moulded hot. It is rigid, arc-resistant, dimensionally stable and cheap - the standard insulator for mains switches and domestic electrical accessories of the period.
 
-###### Melamine resin from urea and formaldehyde `c64.switches.power-slider.body.melamine.melamine-resin`
+###### Melamine resin from urea and formaldehyde `c64.switches.power-slider.body.melamine.melamine-resin` _(medium)_
 
 Melamine is made by condensing urea with formaldehyde. Urea comes from ammonia and carbon dioxide, both cheap industrial gases; formaldehyde comes from oxidising methanol, which comes from the catalytic conversion of synthesis gas. Both halves were pure petrochemical by 1982.
 
@@ -527,7 +527,7 @@ Melamine is made by condensing urea with formaldehyde. Urea comes from ammonia a
 
 A tough, self-lubricating engineering thermoplastic used where a moving slider needs low friction and good wear resistance against the moulded track. Injection-moulded into the actuator and often into the switch's own guide body.
 
-###### Glass filler in the nylon `c64.switches.power-slider.body.nylon.filler`
+###### Glass filler in the nylon `c64.switches.power-slider.body.nylon.filler` _(medium)_
 
 30 % chopped glass fibre in the PA66, for stiffness at a thin wall and for dimensional stability against the moulded detent. The same filler as in the connector housings.
 
@@ -535,11 +535,11 @@ A tough, self-lubricating engineering thermoplastic used where a moving slider n
 
 The base polymer of PA66, a condensation polymer of hexamethylenediamine and adipic acid - not of caprolactam, which makes nylon 6, a different nylon with a lower melting point. The 6,6 grade was preferred for mechanical parts because of its moisture stability and its higher melting point, and both of its monomers are petrochemical.
 
-###### Solder terminals and anchor `c64.switches.power-slider.body.terminal`
+###### Solder terminals and anchor `c64.switches.power-slider.body.terminal` _(medium)_
 
 The pins of the switch are brass, either solid or a brass tube over a steel mandrel with a solder tail. Brass is used because it wets tin-lead solder reliably and does not need nickel underplate for a low-voltage contact.
 
-###### Brass terminal stock `c64.switches.power-slider.body.terminal.brass-stock`
+###### Brass terminal stock `c64.switches.power-slider.body.terminal.brass-stock` _(medium)_
 
 Solid brass wire or a brass tube over a steel mandrel, cut and headed. Brass is chosen because it is springy enough to survive the assembly line and soft enough to take a solder joint.
 
@@ -551,7 +551,7 @@ The actuator is a moulded slider with ribs that engage moulded detent ramps in t
 
 A bent spring steel leaf that provides the over-centre force and the return to OFF. It is the part that fatigues: after enough actuations it loses tension and the switch no longer snaps crisply.
 
-###### Spring steel strip `c64.switches.power-slider.mechanism.leaf-spring.steel`
+###### Spring steel strip `c64.switches.power-slider.mechanism.leaf-spring.steel` _(medium)_
 
 A high-carbon strip steel, hardened and tempered, cut and blanked. Blade and coil spring steel of this quality came from the same integrated steel plants as the razor blades and the automotive leaf springs.
 
@@ -559,7 +559,7 @@ A high-carbon strip steel, hardened and tempered, cut and blanked. Blade and coi
 
 A stepped ramp moulded into the nylon body or actuator over which the slider rides, giving a definite position at each end. Moulding the detent rather than machining it is what keeps the part cheap at the volumes a consumer switch sold in.
 
-##### Leaf contacts and contact plating `c64.switches.power-slider.contacts`
+##### Leaf contacts and contact plating `c64.switches.power-slider.contacts` _(medium)_
 
 A pair of formed leaf springs - phosphor bronze or stainless - carry the current; one is fixed and one moves with the slider, wiping against its mate over a small spring pressure so the electrical contact area is always fresh. The wipe is the whole reason slide switches do not corrode: an oxide film is continuously displaced.
 
@@ -583,7 +583,7 @@ Carbon black ground into a binder to a printable ink, screen-printed along the s
 
 The carbon track is printed between two metallic end lands, usually fired silver, one at each end of the travel. The wiper bridges them; the centre terminal taps the wiper. All three terminals are solder pins on the pot's tail.
 
-###### Firing of the printed substrate `c64.switches.level-sliders.track.curvature.substrate-firing`
+###### Firing of the printed substrate `c64.switches.level-sliders.track.curvature.substrate-firing` _(medium)_
 
 The carbon or cermet track is fired into the ceramic substrate in a tunnel oven at several hundred degrees, fusing the binder and the glass frit so the track cannot be scratched off by the wiper.
 
@@ -591,7 +591,7 @@ The carbon or cermet track is fired into the ceramic substrate in a tunnel oven 
 
 A small sprung metal clip or blade, usually a copper-nickel-plated spring steel or nickel strip, presses onto the carbon track and taps the voltage off at whatever point along it the slider has dragged it to. It must carry current through a sliding contact, so its plating and its spring force are the two design limits.
 
-###### Plated spring-steel strip `c64.switches.level-sliders.wiper.nickel-strip`
+###### Plated spring-steel strip `c64.switches.level-sliders.wiper.nickel-strip` _(medium)_
 
 The wiper is stamped from spring strip and plated in a nickel or precious-metal bath so that it both springs correctly and carries current across a sliding contact without galling the carbon track.
 
@@ -607,7 +607,7 @@ A resistive track and a sliding contact inherently generate noise, and a cheap c
 
 A small injection-moulded thermoplastic body with the moulded detent rails for the slider, and a moulded knob with the finger rib that protrudes through the case cut-out. The same polymer families as the switch body: nylon, ABS or a filled phenoxy.
 
-###### Injection moulding of the pot body `c64.switches.level-sliders.housing.injection`
+###### Injection moulding of the pot body `c64.switches.level-sliders.housing.injection` _(medium)_
 
 The body is injection moulded with the three terminal slots, the detent rails and the wiper guide all in one shot, in a multi-cavity tool shared with the rest of the world's miniature slide pot production.
 
@@ -691,7 +691,7 @@ The organic photoresists of 1983 were almost all positive-working diazonaphthoqu
 
 Phenol condensed with formaldehyde under acid to a thermoplastic, low-molecular-weight resin with no epoxide or methylol functionality left. The resin is not the photosensitive part; it is the part that gives the film its mechanical integrity and its dissolution behaviour in the developer. Its phenolic hydroxyl groups are why the novolac dissolves so readily in TMAH - and why an alkaline developable resist could not have worked with the old novolac-epoxy resists of the early 1960s.
 
-###### Diazonaphthoquinone sulphonate `chem.photoresist.diazonaphthoquinone`
+###### Diazonaphthoquinone sulphonate `chem.photoresist.diazonaphthoquinone` _(medium)_
 
 The photosensitive ester: 1,2-naphthoquinone-2-diazide-5-sulphonic acid esterified onto the phenolic hydroxyls of the novolac. The 1,4-isomer was the one the 1980s photoresist industry settled on because it gives the higher photospeed and less outgrowth. The whole resist is about 20-30% diazo compound by weight; the rest is novolac and a small amount of sensitiser.
 
@@ -719,7 +719,7 @@ A hinged platen with a rubber diaphragm. Film and resist are clamped and then ev
 
 A quartz envelope filled with mercury vapour struck by an arc, rich in the near ultraviolet where the acrylate resists are sensitive. Needs a water-cooled jacket and a choke.
 
-#### Ferric chloride etching `mb.pcb.etch`
+#### Ferric chloride etching `mb.pcb.etch` _(medium)_
 
 The masked laminate goes into warm ferric chloride solution, which dissolves the unmasked copper and leaves traces, pads and ground pour standing. Copper removed along the way is recovered, and the etchant is periodically replenished or dumped. Because copper in solution poisons the bath, an etching line of this period was a chemical operation with a disposal problem attached, not just a tank.
 
@@ -735,7 +735,7 @@ In 1983 the board outline, the internal cut-outs and the expansion-port routing 
 
 A tungsten-carbide end mill, often with a diamond-like coating, cutting laminate that is mostly glass fibre. Glass dust is abrasive, so tool life is short and the cutter is changed on a schedule.
 
-#### Drilling every component hole `mb.pcb.drill`
+#### Drilling every component hole `mb.pcb.drill` _(medium)_
 
 The board is drilled on a numerical-control drill for every component lead, jumper, jack and mounting hole. Because there are no vias, the drill programme is just a component position list; there is no barrel to plate afterwards and no second drill file to reconcile.
 
@@ -767,7 +767,7 @@ Exposed copper is coated in molten solder by carrying the board through a wave o
 
 Only the contact surfaces get a hard, wear-resistant metal. The board is either plated overall and the gold stripped back from everywhere except the contacts, or the contacts alone are exposed to the bath with the rest shielded by a fountain-plater weir or a plating rack. The usual route is a nickel underplate followed by electrolytic gold: gold dissolves in a cyanide complex with a fine gold anode and plates onto the rack-held board, which is still the standard because the bath is stable and fast and still needs the same destruction-and-recovery regime. Sometimes the whole board was immersion gold-plated instead, which is simpler and gives softer gold.
 
-##### No plated-barrel line on this board `mb.pcb.finish.pth`
+##### No plated-barrel line on this board `mb.pcb.finish.pth` _(medium)_
 
 A deliberate absence, recorded here so it does not read as an omission. The C64 mainboard skips the entire through-hole plating sequence a via board runs: hole desmear, electroless copper seed, electrolytic copper build, nickel, gold. None of that equipment ever saw this board, and any account that puts electroless copper into a C64 mainboard is describing a different machine.
 
@@ -855,7 +855,7 @@ A metamorphosed, recrystallised quartz sandstone that is quarried rather than de
 
 The Norwegian quartzite quarry is a bench mine in metamorphosed sandstone: drilling, blasting, a primary jaw crusher, and a sorting step where workers - and, later, optical sorters - remove the visibly iron-stained lumps by hand. The rock is then crushed, washed on a sluice or in a scrubber, dried and size-graded, because a single grain of iron left in the batch makes a bad day of the whole furnace.
 
-###### Quartz sandstone protolith (metaquartzite) `metal.quartzite.rock`
+###### Quartz sandstone protolith (metaquartzite) `metal.quartzite.rock` _(medium)_
 
 The rock as a geologist would name it: a quartz-rich sandstone or siltstone, now a hard white metaquartzite of interlocking quartz grains with the bedding picked out by iron oxides. Some of the Norwegian material is a hydrothermal replacement body in a metasedimentary sequence. Either way the leaf of the silicon chain is a sedimentary or metamorphic rock exposed at the surface and dug out of a hillside.
 
@@ -863,7 +863,7 @@ The rock as a geologist would name it: a quartz-rich sandstone or siltstone, now
 
 Roughly half to two thirds of the silicon fed to a fluidised-bed chlorinator leaves as SiCl4 instead of HSiCl3, because oxygen in the oxide layer and the trace metals conspire. SiCl4 boils at 57.6 C and separates easily; it was largely dumped in the 1970s and later re-admitted as a chlorinating agent. The stoichiometric route that lets a plant recycle SiCl4 back into HSiCl3 by adding hydrogen and more silicon is the reason modern plants get the yields they do.
 
-###### Hydrochloric acid (32-37%) `metal.hydrochloric-acid`
+###### Hydrochloric acid (commercial 32-37%) `metal.hydrochloric-acid` _(low)_
 
 The hydrochloric acid that chlorinates metallurgical silicon. Industrial acid is made by burning hydrogen in chlorine, both products of the chlor-alkali electrolysis of brine, so the silicon plant's feedstock chain runs back through a 1970s chlor-alkali plant and, behind that, a salt mine or a solar salt pan. The same acid is used for galvanising pickling, for the stainless pickling line, for the tinplate line, and for regenerating ferric chloride etchant at the board fab.
 
@@ -875,7 +875,7 @@ Chlorine and hydrogen are fed to a steel burner with a plug of graphite or a wat
 
 The boule is ground round, a sapphire-orientation-reference crystal is used to find the (100) direction, and the wafer flats are laser-scribed with a ruby or Nd:YAG laser before cutting. Slicing was by OD saw, with blades up to 2.2 m in diameter turning at 2000 rpm for a 0.30 mm kerf, or on more advanced 1982 machines by ID saw, with the blade inside the crystal for a 0.25 mm kerf. The result is a 0.7 mm wafer, far too warped and marked to print on.
 
-###### Diamond-impregnated saw blade `si.wafer.saw`
+###### Diamond-impregnated saw blade `si.wafer.saw` _(medium)_
 
 A thin steel or resin-bonded wheel whose rim carries a diamond grit. Slicing 100 mm silicon at two to three wafers a minute relies on that grit: 20-40 um for a roughing cut and 3-5 um for the finish cut. Resin-bonded blades were introduced in the mid 1970s and gave a thinner kerf and less bow than the metal bond.
 
@@ -891,7 +891,7 @@ Saw-cut wafers are lapped double-sided on a rotating cast-iron plate against a c
 
 A 1982 fab cleaned more often and washed harder than a modern one, because particles rather than yield models set the pace. The sequence before a furnace step was megasonic at 1.6 MHz in deionised water, a hot Piranha of 3:1 H2SO4:H2O2 at 120 C to strip organics and metals, a dilute HF dip to remove native oxide, then RCA SC-1 (NH4OH:H2O2:H2O 1:1:5 at 75-80 C) or SC-2 (HCl:H2O2:H2O), and a megasonic rinse with particle-count filtration and an N2 blow-off. Between every mask level the same sequence ran again.
 
-#### Photolithography: coat, bake, expose, develop `si.litho`
+#### Photolithography: coat, bake, expose, develop `si.litho` _(medium)_
 
 Every layer of every die is defined the same way. The wafer is coated on a spinner at 2000-5000 rpm to 1-3 um of positive photoresist, soft-baked at 90-100 C, aligned to the mask on a 1:1 contact or proximity aligner, exposed through the chrome plate at 30-50 mJ/cm2, spray-developed in 5-10% tetramethylammonium hydroxide, hard-baked, stripped, and cleaned. Shipley AZ-1350 was the workhorse thin-film resist of the whole industry and the higher-solids AZ-1354 was used wherever the film had to stand up to a deep etch.
 
@@ -976,7 +976,7 @@ Contact windows are cut in the field oxide with an HF dip masked by photoresist 
 
 The aluminium is sealed under a phosphosilicate glass overcoat grown by CVD from TEOS and phosphine at 700-800 C, and in 1982-84 plants increasingly by plasma-enhanced CVD silicon nitride (~700 C, SiH4/NH3 or SiCl4/NH3 in a low-frequency glow discharge). Pad windows are opened with a hot phosphoric acid etch of the nitride followed by a buffered HF dip.
 
-##### Positive photoresist: spin, soft-bake, expose, develop `mb.cpu.fe.photoresist`
+##### Positive photoresist: spin, soft-bake, expose, develop `mb.cpu.fe.photoresist` _(medium)_
 
 Wafer coated on a spinner (2000-4000 rpm) to 1-2 um of AZ-1350, dried 90-100 C for 20-30 min on a hot plate, aligned to the mask in a Coburn 2400 contact printer or a Perkin-Elmer Micralign MA-2 optical proximity aligner, exposed through the chrome plate, then spray-developed in 5-10% tetramethylammonium hydroxide. Between every step: megasonic clean, dilute H2SO4:H2O2, and a hard bake.
 
@@ -996,11 +996,11 @@ Wet etches in quartz or PVDF tanks: HF for oxide, hot H3PO4 for aluminium, buffe
 
 A small Van de Graaff or mass-separated implant source (High Voltage Engineering, Extrion, or Veeco) accelerating arsenic to 50-150 keV, with a beam scanning and dose measurement unit. Implantation of the source/drain had largely replaced diffusion by 1982 in a well-equipped shop.
 
-#### Wafer probe (electrical die sort) `mb.cpu.probe`
+#### Wafer probe (electrical die sort) `mb.cpu.probe` _(medium)_
 
 Before dicing, each die is probed on a wafer with a probe card: a printed-circuit board with 40 microscopic tungsten or rhenium needles, one per 6510 bond pad. A Teradyne L-120 or Fairchild SICTEST automated tester drives a test program and logs wafer coordinates, so only known-good dice go to assembly. Probe cards in 1982 were hand-drilled needle cards; automatic stepping probes were still rare.
 
-##### Probe card: gold-plated needles on a printed board `si.probe-card`
+##### Probe card: gold-plated needles on a printed board `si.probe-card` _(medium)_
 
 Before dicing, every die is probed on the wafer through a probe card: a fibreglass or ceramic substrate with a pattern of gold-plated tungsten or rhenium needles on 0.1 inch centres, hanging on a probe ring over the die and stepping down with a few grams of force. In 1982 cards were hand-drilled or photofabricated; automatic stepping probe stations were still a novelty at these pad counts.
 
@@ -1020,7 +1020,7 @@ The die and its leads emerge from a stamped, plated strip. Frames were made from
 
 The standard low-CTE frame alloy: 42% nickel, 58% iron, with a coefficient of thermal expansion close to that of the die, so the bond survives temperature cycling. Melted in a vacuum induction furnace, cast, hot-rolled, then cold-rolled and annealed to 0.15-0.20 mm. Copper alloy C194 with 2.3% lead, and nickel itself, were the alternatives.
 
-##### Nickel strike and gold or tin plating of the lead frame `si.leadframe.plating`
+##### Nickel strike and gold or tin plating of the lead frame `si.leadframe.plating` _(medium)_
 
 A nickel strike first, because gold will not adhere directly to the iron-nickel alloy and the leads have to solder. Hermetic parts get a heavier gold plate over the nickel; plastic parts get tin or tin-lead over the nickel so the leads solder into the machine's sockets. The bonding tab is always gold-plated, because the die is eutectic-bonded to it.
 
@@ -1032,23 +1032,23 @@ What actually seals a 1982 plastic IC. A thermosetting epoxy or phenolic compoun
 
 Phenol and formaldehyde condensed under acid to a novolac resin, which is then reacted with epichlorohydrin and caustic soda to give the epoxy novolac that forms the backbone of the moulding compound. Phenol itself came from cumene-process oxidation of benzene - overwhelmingly a coal-tar derivative in 1982 - or from chlorobenzene hydrolysis.
 
-##### Crushed quartz filler from quartz sand `si.emc.silica`
+##### Crushed quartz filler from quartz sand `si.emc.silica` _(medium)_
 
 The single largest mass ingredient in any plastic package: 60-75% by weight of angular fused or ground silica of 0.5-3 um mean size, made by firing and grinding high-purity quartz. It is there to control the shrinkage coefficient and the thermal expansion, and it is why a decapsulated die sits in a white ceramic-looking blob.
 
-#### Die attach to the lead frame `si.attach`
+#### Die attach to the lead frame `si.attach` _(medium)_
 
 The die is placed circuit-side-up on a pre-plated gold lead frame tab and swept through a die bonder. The hot-tool bond raises die and frame to about 400-450 C: gold and silicon melt together at 361 C and, on cooling, form a hard Au-Si eutectic weld roughly 25-50 um thick. That is both the mechanical bond and the die's low-resistance thermal path out to the frame. The diced dice are inspected under a stereomicroscope at 20-50x, and under dark-field illumination for particles, before they are attached: a chip on a pad costs the whole package.
 
-#### Gold wire wedge bonding `si.bond`
+#### Gold wire wedge bonding `si.bond` _(medium)_
 
 A wire bonder pulls 25-30 um diameter gold wire from a spool through a ceramic capillary and welds it to the aluminium bond pads: a first wire from each pad out to the frame lead, then interconnect wires pad to pad for internal bussing. Gold is soft, so a wedge-shaped tool presses the wire flat rather than using the ultrasonic ball bond of aluminium bonding. A single 6510 carried about 60 wires, roughly 1.5 m of 25 um gold in total.
 
-#### Transfer moulding with silica-filled epoxy `si.mould`
+#### Transfer moulding with silica-filled epoxy `si.mould` _(medium)_
 
 The bonded frame sits in a multi-cavity transfer press and is encapsulated in silica-filled epoxy moulding compound. A typical cycle is 150-180 C at 700-1000 psi for one to three minutes per cavity, and plaques of flash at the parting line are trimmed off in a second press operation. The alternate route for hermetic parts is sintering an alumina ceramic shell at about 850-950 C with a glass frit seal - slower, more expensive, and used for military and aerospace grades.
 
-##### Hydraulic transfer moulding press `si.mould.press`
+##### Hydraulic transfer moulding press `si.mould.press` _(medium)_
 
 A 50-100 ton multi-cavity transfer press with a heated upper platen, a pot and plunger that pre-form the compound pellet, and the encapsulated lead-frame strip in the cavity. Cycle: close the press, 150-180 C, 700-1000 psi, one to three minutes dwell, then open and eject the encapsulated part still on its frame rail.
 
@@ -1060,17 +1060,17 @@ After moulding the leads are formed on an 8-16 station trim-and-form press - tri
 
 Assembled parts were run at elevated voltage - typically 7-9 V on a 5 V part - at 100-125 C for 24 to 168 hours in an oven loaded with sockets on a board, to weed out early-failure parts with contaminated junctions before they reached the customer. The C64 itself needed no burn-in: the chips were simply inserted into the board sockets.
 
-#### 40-pin plastic DIP package `si.package.40`
+#### 40-pin plastic DIP package `si.package.40` _(low)_
 
-The package the 6510, the 8562 VIC-II, the 6581 SID, the 6526 CIA and the 6522 VIA all shipped in: a 0.6 inch pitch, 40-leaded stamped lead frame with the die eutectic-bonded on its tab, 25 um gold wire to the pads, and a transfer-moulded body of silica-filled epoxy. A ceramic hermetic version existed for industrial and military customers.
+The package the 6510 CPU, the 8562 VIC-II and the 6526 CIA shipped in on the C64 mainboard: a 0.6 inch pitch, 40-leaded stamped lead frame with the die eutectic-bonded on its tab, gold wire to the pads, and a transfer-moulded body of silica-filled epoxy. A ceramic hermetic version existed for industrial and military customers. The 6581 SID is not in this package: it shipped in a 28-pin DIP, and the service manual's parts list carries 16-pin, 28-pin and 40-pin IC sockets for the board.
 
         - *Stamped DIP lead frame* `si.leadframe` *(seen above)*
         - *Silica-filled epoxy moulding compound* `si.emc` *(seen above)*
-##### Hermetic ceramic DIP sintering `si.package.ceramic`
+##### Hermetic ceramic DIP sintering `si.package.ceramic` _(medium)_
 
 For hermetic parts the die went into a 96% alumina ceramic shell, sealed with a devitrifying glass frit in a belt furnace at about 850-950 C, and the metal flange was brazed or glass-sealed to the header. Ceramic was slower and costlier than plastic and was used for military and industrial grades - but MOS shipped ceramic 40-pin parts of this kind, which is where the collectors' market for them comes from.
 
-###### Alumina ceramic DIP shell `si.package.ceramic.shell`
+###### Alumina ceramic DIP shell `si.package.ceramic.shell` _(medium)_
 
 A 96% alumina header: alumina powder pressed and sintered into a gas-tight body with a metallised cavity floor for the die, a glass-frit seal ring, and a flange carrying the frame leads. Alumina powder comes from bauxite, and that chain lives in the metals and packaging trees.
 
@@ -1100,11 +1100,11 @@ The C64's dynamic memory. The breadbin mainboard (PCB 326498-01) carries EIGHT 4
 
 Each of the 65,536 bits is one access transistor plus one capacitor. The cell uses THREE polysilicon layers: poly 1 is the word line crossing the device, poly 2 is the overlapping plate of the storage capacitor (the plate is doped n+ and shared with the bit line), poly 3 is the bit line itself. Around 3.5 um x 8 um per cell in 1982 - big compared with modern trench/stacked cells. Double-diffused poly (DDP) cells, where the source and drain are separately implanted so the cell can be offset, were used by several 64K DRAM makers.
 
-##### Second polysilicon layer: the storage capacitor `mb.ram.cell.doublepoly`
+##### Second polysilicon layer: the storage capacitor `mb.ram.cell.doublepoly` _(medium)_
 
 The key DRAM process problem in 1982. A second conformal polysilicon layer had to be deposited and patterned so that its edge was razor sharp and its overlap onto the access transistor was tight. Deposition was LPCVD silane at ~800-850 C; the plate was doped n+ with a phosphorus implant and annealed. Refractory metal silicides (WSi2, TiSi2) were being introduced on gates in 1983-84 but were not universal in 1982 64K DRAMs.
 
-#### On-chip -5 V substrate bias charge pump `mb.ram.vbb`
+#### On-chip -5 V substrate bias charge pump `mb.ram.vbb` _(medium)_
 
 The 4116 needed +5, +12, -5 and a boosted write supply, which is why it had a VBB pin and why the C64 prototype had extra regulators. The 4164 collapsed this to +5 V alone by generating the negative substrate bias on chip: an on-chip oscillator drives a capacitor, and the resulting AC is rectified to about -5 V and fed to the substrate, which also forward-biases the pn junction between the substrate and the n+ wells. Sense amplifiers bootstrap the bit line to +7-8 V during restore, and a second internal supply raises the word line above VDD.
 
@@ -1150,9 +1150,9 @@ The smallest and most common package in the machine: eight 4164 DRAMs, each a di
 Every die is probed with an 8-needle probe card and tested on an automated memory tester that runs a march-type pattern (write a checkerboard, read it, invert, repeat) through all 65,536 cells, then a refresh test holding 128 RAS cycles. Assembled parts go back into a socket on the same tester for a signature/AC timing check at 150 ns. Timing bins came out of this test - the C64 does not need the fastest grade, but the drive and the C128 memory expansions did.
 
         - *Probe card: gold-plated needles on a printed board* `si.probe-card` *(seen above)*
-#### RAS-only refresh `mb.ram.refresh`
+#### RAS-only refresh `mb.ram.refresh` _(low)_
 
-The 4164 has no refresh counter: the address must be presented on RAS every cycle to stay alive. The C64's 6510 does the counting in software - the KERNAL refresh routine puts a 7-bit value into $D012 and clocks the CIA's A12 line every seven machine cycles, so all eight chips are refreshed every 7 x 256 = 1792 cycles. That is why the KERNAL must be present for the machine to run at all.
+The 4164 has no refresh counter: the row address must be presented on RAS every cycle to stay alive. On the C64 the counting is done by the VIC-II, not by the CPU and not by a CIA. While the VIC has the bus it multiplexes refresh row addresses onto its own video-RAM address bus, generating RAS itself; AEC going low is what takes the bus away from the 6510, so refresh is transparent to the processor. The KERNAL's part is only to write the raster counter at $D012, which steps the VIC through its refresh addresses.
 
 ### U6 2114L colour RAM (1K x 4 static) `mb.color-ram`
 
@@ -1212,7 +1212,7 @@ The three mask-programmed NMOS ROMs on the C64 mainboard, all in 24-pin DIP: 901
 
       - *Polished 100 mm CZ silicon wafer* `si.wafer` *(seen above)*
       - *Photolithography: coat, bake, expose, develop* `si.litho` *(seen above)*
-#### NMOS mask ROM front end `mb.roms.process`
+#### NMOS mask ROM front end `mb.roms.process` _(medium)_
 
 The same silicon-gate NMOS flow as the CPU - n+ source/drain diffusion, LOCOS field oxide, polysilicon, self-aligned source/drain, contact cuts, 1-2 um aluminium, PSG/nitride passivation - with one extra mask level for the ROM programming pattern. A 24-pin DIP ROM die is small (a few mm2) and yields well; the constraint was mask cost, not yield.
 
@@ -1241,7 +1241,7 @@ The package of the BASIC, KERNAL and character ROMs: a 0.6 inch pitch, 24-leaded
       - *Gold wire wedge bonding* `si.bond` *(seen above)*
       - *Transfer moulding with silica-filled epoxy* `si.mould` *(seen above)*
       - *Trim, form, mark and final electrical test* `si.trim` *(seen above)*
-#### Verifying every ROM bit `mb.roms.verify`
+#### Verifying every ROM bit `mb.roms.verify` _(medium)_
 
 A mask ROM cannot be re-programmed, so its contents are verified twice. On the wafer, a 24-needle probe card runs a read-only pattern through the 8192 or 4096 addresses and sums the data; after assembly, the part goes into an automatic tester that reads the whole array and checks it against a resident signature and, for the C64's BASIC and KERNAL, the published checksum. Any failure meant a defective mask or a contamination particle, and the whole mask set had to be re-run.
 
@@ -1260,9 +1260,9 @@ The C64's video, colour and sprite chip at U19, in a 40-pin DIP. The 8562 is the
 
 The same silicon-gate NMOS sequence as the CPU, with extra care because the VIC-II mixes digital logic, a 6-bit DAC and analogue comparators on one die: 2 um minimum feature, ~400 A poly-oxide, LOCOS field oxide, self-aligned n+ source/drain, single 1-2 um aluminium layer, PSG plus plasma nitride passivation. The colour DAC outputs were open-source n-channel pull-downs that the external resistor ladder on the mainboard pulled up to +5 V.
 
-#### The 18-resistor PAL palette on the mainboard `mb.vic.palette`
+#### The VIC-II colour output network on the mainboard `mb.vic.palette` _(low)_
 
-The VIC-II itself does not know what colour is 'red'. It emits six 4-bit-weighted analogue voltages per colour channel; a resistor ladder and a 74LS175 shift register on the C64 mainboard combine them with the border colour to synthesise the 16-entry NTSC palette and the 20-colour PAL palette. Those resistors are ordinary thick-film or wirewound parts and belong to the passives tree, but they are the physical interface between this die and a television.
+The VIC-II does not name colours; it emits a set of analogue colour levels that circuitry on the mainboard has to turn into a usable video signal, and that circuitry is the physical interface between this die and a television. The specific network is not settled by the documents read: the 1992 service manual's 326298 parts list carries a 74LS373 octal latch at U26 together with resistor packs, and no resistor ladder or 74LS175 appears in that manual, in either Anatomy volume, or in the C128 Internals text.
 
 #### VIC-II photomask set `mb.vic.mask` _(medium)_
 
@@ -1297,7 +1297,7 @@ The 6510 and the SID both use undoped or lightly doped deposited polysilicon as 
 
 #### External components the SID needs from the board `mb.sid.external`
 
-The 6581 does not make sound by itself. The C64 mainboard provides the 11 MHz colour clock derived from the VIC-II, two 4066 CMOS bilateral switches and a 7406 hex inverter to control filter routing and to stabilize the output (a documented MOS workaround that varies with chip revision), the 470 ohm/1 kohm output network, and the 4066-switched external-to-internal feedback path. Those are separate parts in the board and interconnect trees.
+The 6581 does not make sound by itself. The C64 mainboard provides the 14.31818 MHz colour clock, which is the frequency of crystal Y1 itself rather than a divided or multiplied derivative, two 4066 CMOS bilateral switches and a 7406 hex inverter to control filter routing and to stabilize the output (a documented MOS workaround that varies with chip revision), the 470 ohm/1 kohm output network, and the 4066-switched external-to-internal feedback path. Those are separate parts in the board and interconnect trees.
 
 #### SID photomask set `mb.sid.mask` _(medium)_
 
@@ -1316,9 +1316,9 @@ Nine or ten levels for the 6581: n+ field, LOCOS active area, base/well, contact
 Probe testing a SID meant electrical tests (register access, oscillator counters, envelope thresholds, DAC linearity, filter self-oscillation) plus, on the better lines, a functional audio test: a short score stepped through the chip and the output listened to or measured on a spectrum analyser. Final test repeated it in a socket. This is why 6581 revisions are dated and marked (R4, R4AR, R5, R6) - each was a measured change to the analogue thresholds. The threshold voltages of the envelope generators and the VCA had to be trended, because the whole reason the 8580 sounds different is that its analogue section was redesigned and its thresholds tightened.
 
         - *Probe card: gold-plated needles on a printed board* `si.probe-card` *(seen above)*
-#### SID revisions as an analogue-process story `mb.sid.revisions`
+#### SID revisions as an analogue-process story `mb.sid.revisions` _(low)_
 
-The 6581 shipped as R4 (1982), R4AR, R5 and R6. Each revision was a change to the analogue block - VCA threshold voltages, filter resonance scaling, DAC linearity - discovered by listening to the parts on probe. The 8580 (R4, 1984; R5 and R6, 1992) moved to a later NMOS process with a redesigned analogue section and a much larger die, and is universally regarded as cleaner and quieter. Nothing about the digital side changed enough to matter.
+The 6581 shipped in an unsuffixed NMOS form from 1982, then as R3, R4 and R4AR between 1985 and 1987. Later parts changed the analogue behaviour - supply voltage on pin 28 and the value of the four filter capacitors - but the familiar account of each revision being a discrete change to the analogue block found by listening to parts on probe is not established here. The 8580 arrived in 1987 as an R5, built on an HMOS-II process rather than a later NMOS one, with 9 V on pin 28 and 22 nF filter capacitors in place of the 6581's 470 pF; it is generally regarded as the cleaner and quieter part.
 
 ### Two 6526 CIA complex interface adapters `mb.cia`
 
@@ -1359,9 +1359,9 @@ The 6522 Versatile Interface Adapter at U15 on the C64 mainboard: two 8-bit para
       - *Polished 100 mm CZ silicon wafer* `si.wafer` *(seen above)*
       - *Photolithography: coat, bake, expose, develop* `si.litho` *(seen above)*
       - *NMOS silicon-gate front end* `si.front-end` *(seen above)*
-#### Parallel ports and handshake lines `mb.ppi.userport`
+#### Parallel ports and handshake lines `mb.ppi.userport` _(low)_
 
-The 6522's two 8-bit ports are the C64's only general-purpose parallel I/O. Port A/B appear on the 12-way cartridge edge as the user port for printers, samplers and third-party cartridges, and as the cassette port on the mainboard. Both ports are quasi-bidirectional TTL with no bus contention protection beyond a weak pull-up, so driving them from two cards at once was a hardware error, not a negotiated one.
+The 6522's parallel ports are the C64's only general-purpose parallel I/O, and they appear on the 12-way cartridge edge as the user port for printers, samplers and third-party cartridges, and on the mainboard as the cassette port. The user port carries one 8-bit port, not two: on the cartridge edge it presents PB0-PB7 together with PA2 alone. CIA 2 sits at $DD00, and the lines are open collector with internal pull-ups rather than quasi-bidirectional TTL, so driving them from two cards at once was a hardware error rather than a negotiated one.
 
 #### 6522 photomask set `mb.ppi.mask` _(medium)_
 
@@ -1430,7 +1430,7 @@ A wide-body package, because the PLA needs 16 inputs, 8 outputs, an output enabl
 
 Three reasons stack up. First, it is a single point of failure: if any of its eight strobes misbehaves, the symptom is a dead or misbehaving machine rather than one dead chip. Second, its output enable and eight outputs switch hard on every 6510 cycle against the capacitive load of the whole board, so it is the highest-current part on the bus and the one that sees the worst ringing. Third, and decisively for longevity, it is the one chip that cannot be replaced: a dead 6510 can be bought new; a dead 906114-01 cannot, so in practice a dead PLA means a dead machine unless it is re-masked or emulated.
 
-#### Probe, truth-table test and final test `mb.pla.test`
+#### Probe, truth-table test and final test `mb.pla.test` _(medium)_
 
 A PLA is uniquely testable because its specification is a truth table rather than a waveform. On probe, a stored truth table is stepped through all 16 inputs x /OE combinations on all 8 outputs - a few thousand vectors - which catches a stuck link, a shorted link or a bad decoder in seconds. Assembled parts get the same vector set in a socket on an automatic tester, plus a timing check that the address decode settles inside a 6510 cycle.
 
@@ -1444,7 +1444,7 @@ The handful of non-IC semiconductors in the machine: small-signal NPN and PNP pl
 
 The 2N3904, 2N3906 and 2N4124 are all the same architecture, differentiated by polarity and voltage rating: a p-type substrate, a heavily arsenic- or phosphorus-doped n+ subcollector, then a 1-3 um epitaxial n collector layer grown in an ATCP radiant-heated reactor at ~1150-1250 C with AsH3 or PH3 in H2. Isolation diffusions of boron create the tub, then the base (boron, ~0.5-1 um deep) and finally the emitter (arsenic or phosphorus, heavily overdoped to a low base resistance) through separate photolithography steps. Aluminium metallization is deposited by evaporation, alloyed at 400 C to make ohmic contacts, then the wafer is probed.
 
-#### Radiant-heated epitaxial reactor `mb.discretes.epi`
+#### Radiant-heated epitaxial reactor `mb.discretes.epi` _(medium)_
 
 After the n+ subcollector diffusion, a 1-3 um n-type epitaxial layer was grown in a radiant-heated vertical reactor: the wafers sat on a graphite susceptor inside a quartz bell jar, inductively heated to 1150-1250 C, with AsH3 or PH3 in H2 flowing over them. Epitaxy gave the collector the uniformity and the carrier concentration that a diffusion simply could not, which is what made the 2N3904's gain and its saturation voltage repeatable.
 
@@ -1452,7 +1452,7 @@ After the n+ subcollector diffusion, a 1-3 um n-type epitaxial layer was grown i
 
 A boron diffusion deep enough to reach the subcollector creates a p-type tub around each transistor, isolating it from its neighbours through reverse-biased pn junctions rather than an oxide. The same oxide that covers the tub is later cut away in the base and emitter windows - this is the 'planar epitaxial' process invented at Fairchild in 1959 and still the standard discrete recipe in 1982.
 
-#### TO-92 epoxy mould package `mb.discretes.bjt-package`
+#### TO-92 epoxy mould package `mb.discretes.bjt-package` _(medium)_
 
 Discretes were diced, attached to the tab of a stamped lead frame, wire bonded or solder dipped, and transfer moulded in a black epoxy (a filled phenolic or epoxy compound loaded with carbon black for colour) with the leads formed to a 0.25 inch pitch. The 2N3904's die is under 1 square mm; the package volume is almost all mould compound.
 
@@ -1460,7 +1460,7 @@ Discretes were diced, attached to the tab of a stamped lead frame, wire bonded o
 
 A transistor's leads are a stamped 0.25-0.30 mm strip of nickel or copper alloy, plated with tin or tin-lead so they solder into a phenolic or epoxy-moulded phenolic board. The C64 mainboard is a solder-through board, so lead-frame plating was the difference between a working assembly and a cold joint.
 
-#### Rectifier, switching and zener diodes `mb.discretes.diodes`
+#### Rectifier, switching and zener diodes `mb.discretes.diodes` _(medium)_
 
 Three diode families with completely different construction. The 1N4001 is a diffused rectifier: an n- epitaxial layer on an n+ substrate with a heavily p-doped anode, rated 1 A / 50 V. The 1N4148 is a planar switching diode: a small npn with a Schottky-clamped base shorted to the cathode, rated 200 mA / 100 V, fast enough for 300 ns recovery. The 1N47xx is a zener: a heavily doped junction with a knee of 2.4-75 V, usually a diffused planar or, in the low-current versions, a temperature-compensated bandgap reference. All three were made by alloying or diffusing junctions into small silicon dice and moulding them in DO-35 glass or DO-41 plastic.
 
@@ -1468,7 +1468,7 @@ Three diode families with completely different construction. The 1N4001 is a dif
 
 The C64's power indicator is a 3 mm or 5 mm epoxy-domed LED: a liquid-phase epitaxially grown GaP or GaAsP junction die, die-bonded into a reflector cup on the cathode post, wire bonded to the anode, and encapsulated in a semi-transparent epoxy lens that also acts as a light pipe. Red (GaAsP, ~660 nm) and green (GaP, ~555 nm) were common; amber (GaAsP ~590 nm) and the increasingly cheap GaP red were also in use. Blue LEDs did not exist in 1982 at any price - the first practical blue GaN/InGaN device was 1993, and an efficient one 1995.
 
-##### Liquid-phase epitaxy of the GaP junction `mb.discretes.led.epi`
+##### Liquid-phase epitaxy of the GaP junction `mb.discretes.led.epi` _(medium)_
 
 A GaP or GaAsP wafer is dipped in a molten, boron-doped Ga/GaP/P solution in a horizontal tilting boat inside a long quartz tube furnace at ~850-900 C. The substrate is swept through many alternating supersaturated melts so that dozens of GaP layers a few microns thick grow in, alternating p-type (Zn-doped) and n-type (S-doped) to form the double-heterostructure junction that makes the bright 1980s LED. The process is epitaxial in the strict sense - it is the same technique used for GaAs microwave chips.
 
@@ -1488,7 +1488,7 @@ A MOV disc across the mains input: a disc of ZnO powder mixed with a few percent
 
 Sphalerite (ZnS) concentrate is roasted in a fluidised bed at 900-1000 C to zinc oxide, then reduced with carbon in a shaft or electrothermic furnace at 900-1100 C to zinc metal, burned back to ZnO, and purified to high-purity ZnO for the varistor mix.
 
-#### Probe, gain binning and final test of the discretes `mb.discretes.test`
+#### Probe, gain binning and final test of the discretes `mb.discretes.test` _(medium)_
 
 Discretes are probed on the wafer with a 3- or 10-needle card, then tested after packaging on a curve tracer or a dedicated bin tester. Bipolar small-signal parts are binned by hFE and by VCEO - the 2N3904's hFE spread runs roughly 100-300 - so a given lot is graded, and the C64's assembly only ever saw parts within the standard bin. Rectifiers are tested for reverse leakage and forward drop at rated current.
 
@@ -1517,7 +1517,7 @@ A slice of p-type silicon, lightly doped so that it is a good insulator between 
 
 The single most distinctive step of the bipolar process. The wafer is placed in a horizontal reactor and a few micrometres of lightly doped n-type silicon is grown on top of it in a hydrogen atmosphere at about 1100-1200 C. The growing layer inherits the crystal lattice of the wafer below, so the n-type collector sits on the p-type substrate as a perfect single crystal - a vertical diode. Without epi, a vertical bipolar transistor would be impossible.
 
-###### The horizontal epitaxial reactor `mb.logic.bipolar.process.epi.reactor`
+###### The horizontal epitaxial reactor `mb.logic.bipolar.process.epi.reactor` _(medium)_
 
 A quartz or silicon-carbide tube with a graphite susceptor that is heated by a radio-frequency induction coil. Silane or trichlorosilane and hydrogen flow past; the silicon atoms deposit on the hot wafer. Inductors rotate the wafer and provide the radiant heat. Loaded by hand or by a cassette elevator; a batch of 20-30 wafers takes an hour or two.
 
@@ -1545,11 +1545,11 @@ The first diffusion. Where the field oxide has windows, phosphorus is driven in 
 
 The wafer is coated with a phosphorus-bearing dopant source - a spun-on emulsion or a deposited glass - then pushed into a furnace at 1000-1150 C. Heat alone moves the phosphorus atoms down into the silicon, opening up and closing the junction as it goes. Diffusion, not implantation, because diffusion gives the smooth graded junctions that give a transistor its gain.
 
-###### Guard rings around the islands `mb.logic.bipolar.process.isolation.guardring`
+###### Guard rings around the islands `mb.logic.bipolar.process.isolation.guardring` _(medium)_
 
 A ring of n+ material, often tied to the most positive supply, laid around each sensitive island. It intercepts stray minority carriers and surface charge before they can reach the isolation junction, and it raises the breakdown voltage of the isolation. Guard rings are one of the oldest tricks in the planar process and were still drawn on a 1983 logic layout.
 
-###### What a guard ring physically is `mb.logic.bipolar.process.isolation.guardring.how`
+###### What a guard ring physically is `mb.logic.bipolar.process.isolation.guardring.how` _(medium)_
 
 Not a new material - just the same n+ diffusion, but drawn as a closed loop around the transistor instead of a small dot. The mask for the isolation diffusion draws the guard ring at the same time as the island, so it costs one more shape on one mask and no extra process step. That is the whole elegance of it.
 
@@ -1601,7 +1601,7 @@ A vacuum chamber pumped to a low argon pressure, a cathode holding the NiCr targ
 
 One more mask, which cuts small windows in the field oxide wherever a metal film needs to reach the silicon underneath - the collector, the base, the emitter. Each window is a hole a few micrometres across. The oxide elsewhere is untouched, and it is the oxide that keeps the aluminium from shorting to the substrate everywhere except where you wanted it to.
 
-###### Aluminium metallisation `mb.logic.bipolar.process.metal`
+###### Aluminium metallisation `mb.logic.bipolar.process.metal` _(medium)_
 
 The final mask. A layer of aluminium about 1 micrometre thick is deposited over the whole wafer - sputtered or evaporated - and a mask removes it everywhere except the wires. Those wires connect the transistor terminals, the resistors, and the bonding pads around the edge of the die. One single metal level, no vias, no second layer. This is the single biggest reason a 1983 logic chip was so simple to make: routing was almost free because the cells were small.
 
@@ -1649,7 +1649,7 @@ A machine with hot plates and spray-heads that automates spin-coat, soft-bake, d
 
 Resist will not stick to a wet wafer, so before every coat the wafer goes on a hot plate or in a dehydration oven at 150-250 C to drive off the adsorbed water from the previous wet step. Skipping it causes the single most common resist defect - the film lifting off in patches during development. Every one of the eight cycles repeats this.
 
-###### The dehydration hot plate `mb.logic.bipolar.litho.dehydration.hotplate`
+###### The dehydration hot plate `mb.logic.bipolar.litho.dehydration.hotplate` _(medium)_
 
 A temperature-controlled aluminium or ceramic plate the cassette sits on for a minute or two at 150-200 C. Cheap, essential, and present at every wet bench in the bay.
 
@@ -1677,7 +1677,7 @@ The exposed wafer is sprayed with an alkaline developer - for a positive resist,
 
 The patterned resist is the stencil; the wafer goes into an etchant. Buffered oxide etch - hydrofluoric acid buffered with ammonium fluoride - attacks the silicon dioxide where the resist is gone, opening the window, and stops at the silicon or at the oxide-nitride beneath. The wafer comes out with resist still on it, which is stripped next. In this era the oxide etch was still wet chemistry; dry plasma etching had not yet replaced it for the bulk oxide.
 
-###### Stripping the resist `mb.logic.bipolar.litho.strip`
+###### Stripping the resist `mb.logic.bipolar.litho.strip` _(medium)_
 
 With the etch done, the resist has served its purpose and is removed. In this era, because resist was often negative and organic, a chlorinated solvent strip in a hot bath was standard - historically xylene, then trichloroethylene, boiling at 87 C. Solvent stripping leaves ionic residue, which had to be followed by a piranha clean, a rinse, and a dehydration bake before the next coat. Trichloroethylene was ubiquitous as a resist strip and a vapour degreaser in this period and was being phased out for toxicity and ozone reasons through the 1980s, replaced by perchloroethylene and then by piranha wet strips.
 
@@ -1693,7 +1693,7 @@ A box of pleated glass-fibre or PTFE media in a sheet-metal housing, blowing fil
 
 A row of acid-resistant sinks - quartz or polypropylene - where wafers are rinsed and wet-etched. Because wet chemistry releases acid mist and organic solvent vapour, every wet bench sat under a Class 100 laminar-flow hood and exhausted to a scrubbed stack. The wet bench is the reason a 1980s logic line was not as cheap to run as the 'it is just photolithography' story suggests.
 
-###### The merchant logic fab that ran the process `mb.logic.bipolar.fab`
+###### The merchant logic fab that ran the process `mb.logic.bipolar.fab` _(medium)_
 
 A 1983 merchant logic line was a long building with a linear flow: wafers came in at the front and moved one way through cleaning, oxidation and diffusion, photolithography, etch and metallisation, then out to probe, then to assembly and test at the back. Because a logic process was so repeatable, one fab ran dozens of different part numbers on the same flow, changing only the mask set - which is exactly why the 74LS catalogue was so cheap.
 
@@ -1701,7 +1701,7 @@ A 1983 merchant logic line was a long building with a linear flow: wafers came i
 
 The hot end of the fab: tube furnaces for oxidation, source drive-in and anneal, plus the epitaxial reactors. This bay determined the cycle time of the whole line, because a diffusion push is hours and a furnace boat takes 20-40 wafers. An operator loaded boats in and out at a slow, deliberate rhythm all shift.
 
-###### Metallisation bay `mb.logic.bipolar.fab.baymetal`
+###### Metallisation bay `mb.logic.bipolar.fab.baymetal` _(medium)_
 
 The vacuum tool room: the sputterers that lay down the NiCr resistors and the aluminium metal, the evaporation stations, the sinter furnace, and the ion-implantation machines. Vacuum and cleanroom in one room; argon flows constantly.
 
@@ -1813,11 +1813,11 @@ A hardened, polished steel block with one to hundreds of identical cavities. For
 
 Die that fail are thrown away before they are worth a lead frame. The wafer is loaded onto a probe stage, a probe card with one needle per bonding pad is lowered onto it, and a tester runs every pattern and every DC parameter. Only known-good die are cut. This is why probe test and not final test is what sets the economics of a logic wafer: a yield loss after packaging has already cost you the moulding and the wire bonds too.
 
-###### The wafer probe station `mb.logic.package.probe.prober`
+###### The wafer probe station `mb.logic.package.probe.prober` _(medium)_
 
 A heavy cast stage that steps the wafer die by die under a fixed probe card: a vacuum or hot chuck on an x-y-z stage, a microscope to line the card up, and a needle interface to the tester. An operator loads a cassette of up to 25 wafers and unloads it at the end; everything in between was automatic.
 
-###### The probe card `mb.logic.package.probe.card`
+###### The probe card `mb.logic.package.probe.card` _(medium)_
 
 A ceramic or printed-circuit substrate carrying one cantilever needle per bonding pad, cantilevered down from an epoxy or quartz shell so the needles survive hundreds of thousands of touches on hard silicon. Building a card for a new part number took days and cost hundreds to thousands of dollars, which is why a device that sold for thirty cents could not afford a new probe card per variant.
 
@@ -1845,7 +1845,7 @@ A paste of powdered borosilicate glass with a small amount of binder is applied 
 
 Ink printing was still the norm in 1983: a pad or a dot-matrix printer lays the part number, the manufacturer's mark, a date code (year and week, e.g. 8341) and a lot or assembly code on the moulded surface. Laser marking was beginning to appear, mostly for military parts, and would take over within a decade because a laser-marked part cannot be relabelled.
 
-###### Marking ink `mb.logic.package.marking.ink`
+###### Marking ink `mb.logic.package.marking.ink` _(medium)_
 
 A phenolic or epoxy ink with a pigment, laid on and baked, or cured by UV. Cheap and utterly routine - but it is why an original C64 chip is still readable today and a modern BGA is not. (Ink marking was also curable by laser ablation of the mould compound, which is the mechanism the laser marking route exploits.)
 
@@ -1936,7 +1936,7 @@ Inside the active windows the thin gate oxide is grown, by dry oxidation in oxyg
 
 A layer of polycrystalline silicon is deposited over the whole wafer, then doped (usually with phosphorus from phosphine, or with POCL3 in a furnace) so that it conducts, then patterned. That patterned polysilicon is the gate. Crucially, it is also used as the mask for the source and drain implant immediately afterwards - so the gate aligns itself, and no extra mask is needed. The self-aligned gate and source/drain, invented at Fairchild in the late 1960s, is the single idea that made CMOS manufacturable at all.
 
-###### The self-aligned source and drain `mb.logic.cmos.process.sd`
+###### The self-aligned source and drain `mb.logic.cmos.process.sd` _(medium)_
 
 With the gate already patterned in polysilicon, the source and drain are implanted straight through the exposed silicon beside it, and the gate itself blocks the implant everywhere it is. No alignment mask is needed: the gate defines the gap between source and drain by its own edge. Two implants, phosphorus for the n-channel source/drain and boron for the p-channel, each masked by the opposite field oxide. This is 'self-aligned', and it is the reason a CMOS transistor's channel length is set by a printed line width and nothing else.
 
@@ -1945,7 +1945,7 @@ With the gate already patterned in polysilicon, the source and drain are implant
 After the implant the wafer goes back into a furnace briefly to heal the crystal damage and to activate the dopant atoms into substitutional positions. This is the one remaining high-temperature step, and it is why CMOS still used a furnace in the era when bipolar was moving to implantation.
 
               - *The emitter diffusion - and the gold in it* `mb.logic.bipolar.process.emitter` *(seen above)*
-###### Contact and aluminium interconnect `mb.logic.cmos.process.contact`
+###### Contact and aluminium interconnect `mb.logic.cmos.process.contact` _(medium)_
 
 The field oxide is etched away over the source, drain and gate to expose silicon, then aluminium is deposited and patterned into one single layer of interconnect. Exactly the same metallisation as the bipolar line, exactly the same problems (step coverage over the oxide steps, electromigration under current) and exactly the same solution in this era: one level, because at 3-5 um the cells were big enough to route around with a single layer.
 
@@ -2036,7 +2036,7 @@ The box on the C64 mainboard that turns the VIC-II's separate luma and colour ou
 
 Three small-signal transistors that take the VIC-II's pin 15 (sync + luminance) and pin 14 (colour), clip them with back-to-back diodes, and provide the two separate buffered outputs that go to the monitor connector as S-Video plus the summed composite that drives the RF section. Commodore called Q1-Q3 2SC1694 or equivalent; the earlier 251696 drawing uses 2SC2405.
 
-##### 2SC1694 small-signal NPN `mb.rf-modulator.video-chain.ssc-transistor`
+##### 2SC1694 small-signal NPN `mb.rf-modulator.video-chain.ssc-transistor` _(medium)_
 
 A TO-92 epoxy-potted silicon NPN with a 100-150 V collector rating, used as a common-emitter amplifier with a collector resistor and an unbypassed emitter resistor. The 2SC-prefix parts were the standard Japanese equivalents of the 2N series, and Commodore specified them as 'or equivalent'.
 
@@ -2044,7 +2044,7 @@ A TO-92 epoxy-potted silicon NPN with a 100-150 V collector rating, used as a co
 
 The die is a small epitaxial NPN on a 100 mm P-type <111> wafer, sawn with a diamond blade, die-attached with a silver-glass preform, wire-bonded with 50 um aluminium and transfer-moulded in an epoxy-filled TO-92 tool at 150-175 C.
 
-##### 1SS119 / MA151K clip diodes `mb.rf-modulator.video-chain.clip-diodes`
+##### 1SS119 / MA151K clip diodes `mb.rf-modulator.video-chain.clip-diodes` _(medium)_
 
 Small-signal switching diodes, typically 50 mA class in a DO-35 glass can, wired back to back across the sync input. They conduct only on the tips of the sync pulses and the colour burst, which clips the signal to the amplitude a television's AGC expects and stops the modulator over-modulating.
 
@@ -2080,7 +2080,7 @@ The audio signal is fed to the intercarrier oscillator's base through a series r
 
 On the C64 mainboard the SID's pin 27 output is amplified by Q2 before it reaches CN5 pin 3 and the modulator; the modulator's audio input then loads that amplifier. The stage is a common-emitter NPN with a bias divider and an emitter resistor, running from the CAN +5 V rail.
 
-##### Intercarrier selector terminal `mb.rf-modulator.audio-chain.intercarrier-selector`
+##### Intercarrier selector terminal `mb.rf-modulator.audio-chain.intercarrier-selector` _(medium)_
 
 A single link or jumper on terminal 8 that reconfigures the intercarrier oscillator between 4.5 and 5.5 MHz. It is the PAL/NTSC configuration link for the whole module, and it is why one board could serve both markets with a single part change.
 
@@ -2100,7 +2100,7 @@ At 591 MHz a single transistor oscillator cannot drive a 75 ohm television input
 
 A bead is just a pressed and fired ferrite with a hole through it, made on a bead press with a die that forms the cylinder in a few milliseconds. A 1982 board might carry a dozen: one on each supply line to the analogue section, one on the video line, one or two on the mains lead of the supply. The bead impedance is a rising curve with frequency, set entirely by the ferrite's complex permeability, and the bead's job is to convert a common-mode current into a small radiated field and a small conducted noise instead of a large one. The bead and the RF transformer are the same pressed powder.
 
-#### Modulator supply and zener stabiliser `mb.rf-modulator.supply`
+#### Modulator supply and zener stabiliser `mb.rf-modulator.supply` _(medium)_
 
 The modulator runs from the C64's ~9 V unregulated DC rail - the same rail that feeds the cassette motor - not from the clean 5 V. Q6 (2SC2120) buffers the feed and a zener with electrolytics sets the working voltage for the analog sections.
 
@@ -2116,7 +2116,7 @@ ILLUSTRATIVE ONLY - this is not how any Commodore RF modulator was built. Both C
 
 A thin, smooth, thermally conductive ceramic sheet. Alumina is made by calcining purified aluminium hydroxide, pressing or tape-casting it with an organic binder, sintering at 1500-1700 C, then lapping and laser-cutting the finished sheets to thickness. It is inert, dimensionally stable and easy to metallise.
 
-###### Magnesium oxide sintering aid `mb.rf-modulator.hybrid-module.alumina-substrate.sintering-aid`
+###### Magnesium oxide sintering aid `mb.rf-modulator.hybrid-module.alumina-substrate.sintering-aid` _(medium)_
 
 A few tenths of a percent of magnesium oxide is added to 96% alumina before sintering to stop the ceramic over-shrinking and to fire it at a lower temperature, which is what makes 96% alumina affordable for a hybrid substrate.
 
@@ -2128,7 +2128,7 @@ A magnesium carbonate rock mined in Austria, Spain, China and India, calcined at
 
 A film of nickel-chromium is deposited by vacuum evaporation or sputtering onto the alumina, then patterned by photolithography and etching. Because the sheet resistance of the film is very uniform the as-deposited value is already within a few percent, so a trim brings it to its exact value.
 
-##### Epoxy encapsulant as RF seal `mb.rf-modulator.hybrid-module.epoxy-encapsulant`
+##### Epoxy encapsulant as RF seal `mb.rf-modulator.hybrid-module.epoxy-encapsulant` _(medium)_
 
 A clear or opaque filled epoxy poured or transfer moulded over the finished substrate. In RF modules it does three jobs at once: it excludes moisture and contaminants, it holds the components against vibration, and - because it is a low-loss dielectric with a stable dielectric constant - it fixes the stray capacitance around the tank, which is what stops the carrier drifting with humidity. A conductive epoxy variant is used as a ground plane on the reverse of the substrate.
 
@@ -2140,11 +2140,11 @@ The substrate is attached to a lead frame by reflow or conductive epoxy, and the
 
 The die or chip components are bonded to the substrate, the lead frame is attached, and the whole assembly is transfer moulded in epoxy: a silicone-rubber mould loaded with epoxy powder is vibrated to pack it around the part, the encapsulant is pressed in, and it is cured at 150-175 C. This is the same process used for every integrated circuit in the machine.
 
-###### Attaching the substrate to the lead frame `mb.rf-modulator.hybrid-module.assembly.lead-bond`
+###### Attaching the substrate to the lead frame `mb.rf-modulator.hybrid-module.assembly.lead-bond` _(medium)_
 
 The substrate is aligned to the lead frame to within a few microns, given a thin coat of conductive epoxy - silver-filled epoxy is the usual choice because it cures at only 150-200 C - or a screen-printed solder paste is printed and reflowed, then the assembly is baked so the die attaches without stress. Silver-filled epoxy has no metallurgical bond and can debond with thermal cycling, which is the classic failure mode of a hybrid module.
 
-###### Silver-filled conductive epoxy `mb.rf-modulator.hybrid-module.assembly.lead-bond.epoxy`
+###### Silver-filled conductive epoxy `mb.rf-modulator.hybrid-module.assembly.lead-bond.epoxy` _(medium)_
 
 Epoxy resin loaded with 50-80% silver flakes. The flakes touch each other to form a percolating conductor while the epoxy gives mechanical strength and cures at a temperature the chip and substrate tolerate. Bulk resistivity is about 0.001-0.01 ohm.cm, two to three orders of magnitude worse than a metal, so it is used for bonding and for conductive fill, never for signal.
 
@@ -2212,7 +2212,7 @@ Three manufacturing routes to a 1/4 W axial resistor coexisted in 1982. The 2504
 
 The bulk of the board's resistors. A thin, discontinuous film of carbon and clay laid on a hollow alumina ceramic tube; carbon loading sets the resistance. Cheap, 5 percent, and tolerant of being bent during manual insertion.
 
-###### Resistor slurry (carbon + clay + binder) `mb.passives.resistors.discrete-axial.carbon-film.powder`
+###### Resistor slurry (carbon + clay + binder) `mb.passives.resistors.discrete-axial.carbon-film.powder` _(medium)_
 
 Carbon black mixed with china clay as a diluent and a phenolic binder in alcohol to a printable paste. Clay fraction is the coarse knob on resistance; binder keeps the film from flaking off the tube.
 
@@ -2240,7 +2240,7 @@ Phenol-formaldehyde, dissolved in alcohol, holds carbon and clay to the tube and
 
 A thin-wall extruded alumina tube, 0.5 mm outside diameter, whose wall carries the film. Hollow construction halves the ceramic mass per resistor, and the tube's inner bore is what the trimmer's abrasive cut reaches.
 
-###### Tube extrusion and firing `mb.passives.resistors.discrete-axial.carbon-film.substrate.extrusion`
+###### Tube extrusion and firing `mb.passives.resistors.discrete-axial.carbon-film.substrate.extrusion` _(medium)_
 
 Plasticised alumina is extruded through a die to a tube, cut to length on a flying saw, and fired in a tunnel kiln. Density is controlled so the film sees a reproducible surface.
 
@@ -2252,15 +2252,15 @@ The carbon-clay slurry is sprayed or dipped onto the rotating tube in a controll
 
 A lead is pushed down each end of the tube through the carbon film, and the assembly is barrel-plated in an electroless or electrolytic nickel bath so the film and lead make a low-resistance, solderable joint. In 1982 this was almost always nickel, sometimes with a thin silver flash.
 
-###### Electroplating line (sulfamate / alkaline nickel) `mb.passives.resistors.discrete-axial.carbon-film.termination.electroplating`
+###### Electroplating line (sulfamate / alkaline nickel) `mb.passives.resistors.discrete-axial.carbon-film.termination.electroplating` _(medium)_
 
 Racks of resistors are plated in a barrel or belt line, then rinsed and dried. Plate thickness is the mechanical anchor that stops the lead being pulled out.
 
-###### Electrolytic nickel plating bath `mb.passives.resistors.discrete-axial.carbon-film.termination.nickel-plating`
+###### Electrolytic nickel plating bath `mb.passives.resistors.discrete-axial.carbon-film.termination.nickel-plating` _(medium)_
 
 The lead and film are plated in a sulfamate or a Watts-type nickel bath. A sulfonamide-derived depolarising agent suppresses hydrogen evolution, so the deposit is ductile and the lead does not become brittle - which matters because a brittle lead snaps inside the resistor.
 
-###### Tinned copper lead wire `mb.passives.resistors.discrete-axial.carbon-film.termination.lead-wire`
+###### Tinned copper lead wire `mb.passives.resistors.discrete-axial.carbon-film.termination.lead-wire` _(medium)_
 
 The axial lead is drawn copper wire, cut to length, tinned in a molten tin or tin-lead pot so the resistor dips cleanly in the wave-solder bath. Tinning is what stops the bare copper wire from oxidising between the barrel plating step and the board.
 
@@ -2268,11 +2268,11 @@ The axial lead is drawn copper wire, cut to length, tinned in a molten tin or ti
 
 A diamond wheel cuts a narrow slot through the film from the end of the tube, lengthening the resistive path a few micrometres at a time until the measured resistance hits the middle of the tolerance band. This is why carbon film resistors are called 'film' and why their tolerance is fixed after firing rather than before.
 
-###### Abrasive cut-off wheel `mb.passives.resistors.discrete-axial.carbon-film.trim.wheel`
+###### Abrasive cut-off wheel `mb.passives.resistors.discrete-axial.carbon-film.trim.wheel` _(medium)_
 
 A thin abrasive wheel, run at tens of thousands of revolutions per minute, cuts a slot through the film. Each pass lengthens the resistive path slightly; a few passes reach value.
 
-###### Aluminium oxide abrasive `mb.passives.resistors.discrete-axial.carbon-film.trim.wheel.abrasive`
+###### Aluminium oxide abrasive `mb.passives.resistors.discrete-axial.carbon-film.trim.wheel.abrasive` _(medium)_
 
 The standard grinding abrasive of the era, made by calcining alumina. Synthetic diamond was used only where the cut had to be finer.
 
@@ -2280,7 +2280,7 @@ The standard grinding abrasive of the era, made by calcining alumina. Synthetic 
 
 The trimmed resistor is transfer-moulded in epoxy, or coated in a phenolic shell, sealing the film from humidity. Moulding compound is a phenolic or epoxy resin filled with silica flour.
 
-###### Epoxy moulding of the resistor body `mb.passives.resistors.discrete-axial.carbon-film.package.moulding`
+###### Epoxy moulding of the resistor body `mb.passives.resistors.discrete-axial.carbon-film.package.moulding` _(medium)_
 
 The resistor is placed in a transfer tool and encapsulated in epoxy resin cured at ~150-175 C for several minutes. Epoxy is chosen because it shrinks little and does not stress the film on cooling.
 
@@ -2320,11 +2320,11 @@ Soft tin or brass caps are pressed over the moulded slug, then a tinned copper w
 
 A NiCr or FeCr film vacuum-deposited onto an alumina substrate, then laser-trimmed to a tight tolerance. Where the VIC-II colour burst and the composite video level had to be set to a few parts in a thousand, a 1 percent metal film part was used instead of a 5 percent carbon film.
 
-###### Flat ceramic substrate (not a tube) `mb.passives.resistors.discrete-axial.metal-film.substrate`
+###### Flat ceramic substrate (not a tube) `mb.passives.resistors.discrete-axial.metal-film.substrate` _(medium)_
 
 Metal film parts use a flat alumina bar or a flat ceramic tube rather than a tube-with-a-skin, because the uniform flat substrate is what makes laser scribing produce a stable, precise spiral.
 
-###### Metal-film substrate material `mb.passives.resistors.discrete-axial.metal-film.substrate.ceramic`
+###### Metal-film substrate material `mb.passives.resistors.discrete-axial.metal-film.substrate.ceramic` _(medium)_
 
 Metal film resistors need a very flat and very uniform substrate because the film resistance is set by the length of the deposited track, not by the substrate geometry. Alumina ceramic bar or a flat ceramic tube is used for that flatness.
 
@@ -2332,19 +2332,19 @@ Metal film resistors need a very flat and very uniform substrate because the fil
 
 80/20 nickel-chromium, or 75/25 iron-chromium, evaporated or sputtered from a heated wire or boat in a vacuum bell. NiCr is chosen for its bulk resistivity (~1.1 uohm-m) and, critically, for having a near-zero temperature coefficient of resistivity.
 
-###### Vacuum deposition bell `mb.passives.resistors.discrete-axial.metal-film.vacuum-deposition`
+###### Vacuum deposition bell `mb.passives.resistors.discrete-axial.metal-film.vacuum-deposition` _(low)_
 
-Parts are racked in a bell jar under vacuum; NiCr is evaporated at high current and condenses as a sub-micron film over the resistive area only, defined by an evaporated aluminium mask. Vacuum deposited - not sputtered - was standard for axial resistors in 1982.
+Parts are racked in a vacuum chamber and the resistive film is deposited over the resistive area only, defined by a mask. The documented method for thin film resistors is sputtering; metal film resistors are usually nickel chromium, deposited by vacuum techniques of which sputtering is one. That vacuum deposition was standard for axial resistors in 1982 is reasonable but the exclusion of sputtering is not supported.
 
-###### Laser scribing of the spiral `mb.passives.resistors.discrete-axial.metal-film.laser-trim`
+###### Laser scribing of the spiral `mb.passives.resistors.discrete-axial.metal-film.laser-trim` _(medium)_
 
 A pulsed ruby or Nd:YAG laser ablates a thin groove across the film, lengthening the resistive path. A closed-loop measuring bridge runs thousands of cuts per second until the value converges. This - not a mechanical wheel - is what buys the 0.1-1 percent tolerance.
 
-###### Termination cap and lead `mb.passives.resistors.discrete-axial.metal-film.termination`
+###### Termination cap and lead `mb.passives.resistors.discrete-axial.metal-film.termination` _(medium)_
 
 A crimped steel or aluminium cap grips the lead and makes contact with the film, then the whole assembly is plated in nickel. Metal film parts are always nickel-plated leads, never bare tin.
 
-###### Termination cap material `mb.passives.resistors.discrete-axial.metal-film.termination.cap`
+###### Termination cap material `mb.passives.resistors.discrete-axial.metal-film.termination.cap` _(medium)_
 
 A nickel-plated steel or aluminium cap, crimped onto the lead and forming the low-resistance joint to the film. Metal film parts are always nickel-plated leads: the plating has to be uniform for the part to be consistent.
 
@@ -2356,7 +2356,7 @@ Resistance wire wound on a ceramic bobbin and vitreously enamelled. Used for the
 
 A grooved steatite or alumina former on which a length of enamelled resistance alloy wire is wound. Steatite (magnesium silicate) was the classic low-cost bobbin material.
 
-###### Steatite bobbin material `mb.passives.resistors.discrete-axial.wirewound.bobbin.steatite`
+###### Steatite bobbin material `mb.passives.resistors.discrete-axial.wirewound.bobbin.steatite` _(medium)_
 
 Steatite, a compacted and fired magnesium silicate, was the classic low-cost bobbin and ceramic insulator material: it machines green, fires to a hard white body and is cheap.
 
@@ -2372,7 +2372,7 @@ The wound wire is coated in a glassy enamel and baked, which is why wirewounds a
 
 A glassy coating on the wound wire, applied as a slurry and baked. The enamel is what makes a wirewound part look like a glass-bodied component and is what lets it run hot without the wire oxidising.
 
-###### Resistance alloy wire (NiCr / FeCr / CuNi) `mb.passives.resistors.discrete-axial.wirewound.alloy`
+###### Resistance alloy wire (NiCr / FeCr / CuNi) `mb.passives.resistors.discrete-axial.wirewound.alloy` _(medium)_
 
 Nichrome has the highest resistivity of the common resistance alloys and so minimises the wire length needed; constantan (CuNi) is used where a lower temperature coefficient matters more.
 
@@ -2404,7 +2404,7 @@ The four resistor arrays on the 250407: two 8-way isolated 33 ohm packs (series 
 
 A 0.6 mm thick 96 percent alumina bar, pre-fired and metallised. Conductive paste is printed through a photo-plated stainless screen onto the top face only, then the whole bar is fired to fuse the glass frit and mature the resistor.
 
-###### Thick-film conductor metallisation `mb.passives.resistors.cermet-networks.substrate.metallisation`
+###### Thick-film conductor metallisation `mb.passives.resistors.cermet-networks.substrate.metallisation` _(medium)_
 
 A base-metal paste of finely divided silver or copper in a glass frit, screen-printed and fired at ~850 C to form the end lands, jumpers and common bus the resistive tracks connect to. Silver-palladium pastes were common in this era; copper pastes needed a nitrogen atmosphere to avoid oxidising.
 
@@ -2412,11 +2412,11 @@ A base-metal paste of finely divided silver or copper in a glass frit, screen-pr
 
 The conductor paste is fine silver flake or powder, not a bulk metal: it has to print as a paste and then fuse into a continuous conductor at 850 C without melting. Domestically mined silver was almost entirely gone by 1982; the metal was bought on the London spot market.
 
-###### Tunnel-kiln firing of the printed bar `mb.passives.resistors.cermet-networks.substrate.sintering`
+###### Tunnel-kiln firing of the printed bar `mb.passives.resistors.cermet-networks.substrate.sintering` _(medium)_
 
 A continuous belt or pusher kiln takes the printed substrate through a controlled temperature ramp so the resistors are 'aged' in the firing. Thick-film resistors are typically driven 50 percent above their rating for 15-25 minutes to burn in the grain boundaries and stabilise the value.
 
-###### Continuous kiln `mb.passives.resistors.cermet-networks.substrate.sintering.kiln`
+###### Continuous kiln `mb.passives.resistors.cermet-networks.substrate.sintering.kiln` _(medium)_
 
 A belt or pusher kiln with profiled hot zones, carrying the printed bar through drying, burnout, peak and controlled cooling. The cooling rate matters as much as the peak, because too fast a cool micro-cracks the glass.
 
@@ -2424,13 +2424,13 @@ A belt or pusher kiln with profiled hot zones, carrying the printed bar through 
 
 Alumina setters and shelves carrying the fired substrates through the kiln, themselves made from tabular alumina. Furnace furniture consumption is a real cost line in ceramics, and it comes from the same alumina as the substrate.
 
-###### RuO2 cermet resistive paste `mb.passives.resistors.cermet-networks.ruthenium-paste`
+###### RuO2 cermet resistive paste `mb.passives.resistors.cermet-networks.ruthenium-paste` _(medium)_
 
 The resistive phase is sub-micron ruthenium dioxide powder blended with a lead-borosilicate glass frit and an organic vehicle (butyl acetate / terpineol) into a thixotropic paste. Its sheet resistance is a known function of powder loading, so a given RuO2 fraction sets a given ohms-per-square.
 
-###### Ruthenium dioxide powder `mb.passives.resistors.cermet-networks.ruthenium-paste.ruo2`
+###### Ruthenium dioxide powder `mb.passives.resistors.cermet-networks.ruthenium-paste.ruo2` _(medium)_
 
-Anhydrous RuO2 is the only resistor phase that survives to 900 C without oxidising away; the surrounding glass is what actually carries the current. Its scarcity set the price of every cermet resistor made in the 1980s.
+Ruthenium oxide is one of the conductive ceramic phases mixed into a cermet resistor paste, alongside tantalum nitride, lead oxide and others; it is the conductive phase that carries the current, and the glass phase mixed in with it is the insulator that binds the film and gives it its stability. The paste is screen-printed onto a substrate and fused at about 850 C. Ruthenium's scarcity has been a persistent cost driver for cermet resistors.
 
 ###### Platinum-group ore bearing ruthenium `mb.passives.resistors.cermet-networks.ruthenium-paste.platinum-ore` _(medium)_
 
@@ -2440,19 +2440,19 @@ Ruthenium occurs almost only as a minor by-product in platinum and nickel ores (
 
 Ruthenium and the other platinum-group metals have no ore of their own. They occur at a few parts per million in the Merensky Reef of the Bushveld Complex and in the Sudbury and Norilsk nickel-copper sulphide ores, so the resistor industry bought ruthenium as a refinery by-product at platinum-group prices.
 
-###### Screen printing through a photoemulsion `mb.passives.resistors.cermet-networks.screen-print`
+###### Screen printing through a photoemulsion `mb.passives.resistors.cermet-networks.screen-print` _(medium)_
 
 A stainless-steel mesh stretched over a frame, coated in photosensitive emulsion, contact-exposed through a film or direct-imaged artwork, developed, and then the paste squeegeed through the open areas onto the substrate. Line width is the resistance knob. Thixotropy is essential to the paste: it must flow under the squeegee and then stand without slumping, or the printed line blurs and the resistance drifts off value, and it comes from the shape of the glass frit particles.
 
-###### Stainless steel mesh `mb.passives.resistors.cermet-networks.screen-print.mesh`
+###### Stainless steel mesh `mb.passives.resistors.cermet-networks.screen-print.mesh` _(medium)_
 
 The printing screen is a woven stainless-steel or nylon mesh stretched over a frame and photo-imaged. Stainless was standard because it must survive repeated abrasion by the abrasive paste in the paste.
 
-###### Laser trimming of the network `mb.passives.resistors.cermet-networks.trim`
+###### Laser trimming of the network `mb.passives.resistors.cermet-networks.trim` _(medium)_
 
 An excimer or Nd:YAG laser ablates slots in each printed resistor until a closed-loop bridge calls out the right value. Bulk trimming can be 'slug' or 'v-cut' (pushing a wedge of resistive material aside) rather than ablating material away.
 
-###### Laser trimming system `mb.passives.resistors.cermet-networks.trim.laser`
+###### Laser trimming system `mb.passives.resistors.cermet-networks.trim.laser` _(medium)_
 
 A pulsed laser head over a moving substrate with an in-line ohmmeter, cutting and re-measuring thousands of times per second. Excimer lasers were used for fine-resolution cuts on thick films.
 
@@ -2460,15 +2460,15 @@ A pulsed laser head over a moving substrate with an in-line ohmmeter, cutting an
 
 Neodymium:yttrium-aluminium-garnet was the standard solid-state laser for resistor trimming: a garnet crystal doped with neodymium, pumped optically and emitting at 1.06 microns. The yttrium-aluminium-garnet host is grown from alumina and yttrium oxide.
 
-###### Epoxy potting and marking `mb.passives.resistors.cermet-networks.encapsulation`
+###### Epoxy potting and marking `mb.passives.resistors.cermet-networks.encapsulation` _(medium)_
 
 The trimmed network is coated in a fire-resistant epoxy or phenolic varnish that also carries the colour code - here a small white dot or body colour denoting the resistance. Glass-filled epoxy was the standard SIP encapsulant.
 
-###### Glass-filled epoxy coat `mb.passives.resistors.cermet-networks.encapsulation.glass-epoxy`
+###### Glass-filled epoxy coat `mb.passives.resistors.cermet-networks.encapsulation.glass-epoxy` _(medium)_
 
 The whole array is coated in an epoxy loaded with fine glass or silica, which both seals the tracks and gives the package its mechanical rigidity. The colour body is the colourant in that coat.
 
-###### Lead frame `mb.passives.resistors.cermet-networks.encapsulation.lead-frame`
+###### Lead frame `mb.passives.resistors.cermet-networks.encapsulation.lead-frame` _(medium)_
 
 The array's leads are formed from a copper-alloy lead frame, plated in tin or solder, so the package can be inserted on a 2.54 mm pitch and wave-soldered.
 
@@ -2476,11 +2476,11 @@ The array's leads are formed from a copper-alloy lead frame, plated in tin or so
 
 The single adjustable part on the 250407 is R27, a 500 ohm cermet trimmer potentiometer that biases U31's crystal oscillator so the 14.31818 MHz colour subcarrier lands exactly on NTSC's subcarrier frequency. It is the reason a C64 needs no colour adjustment in normal use but will show colour shimmer when the crystal ages.
 
-###### Cermet resistive element and track `mb.passives.resistors.trimmers.cermet-element`
+###### Cermet resistive element and track `mb.passives.resistors.trimmers.cermet-element` _(medium)_
 
 A thick-film RuO2 resistive track deposited on the top face of an alumina substrate, with a metal-foil wiper that slides along it. Because the element is a printed film rather than a carbon blob, the tracking is smooth and the part does not develop a scratchy potentiometer feel the way a carbon composition pot does. The usable travel is a fraction of the physical length, because the track is designed to put most of its resistance in the middle of the sweep - that is how a 500 ohm trimmer gets a usable 0-500 ohm range out of a single turn of the adjuster screw.
 
-###### Wiper alloy `mb.passives.resistors.trimmers.cermet-element.wiper`
+###### Wiper alloy `mb.passives.resistors.trimmers.cermet-element.wiper` _(medium)_
 
 A nickel-alloy or precious-metal spring contact rubbing on the RuO2 film. Because the cermet element is hard, the wiper is deliberately the sacrificial element and is made of a soft, wear-resistant alloy.
 
@@ -2488,11 +2488,11 @@ A nickel-alloy or precious-metal spring contact rubbing on the RuO2 film. Becaus
 
 A knurled brass or stainless screw drives a moulded slider that rides the wiper along the track. Backing-off epoxy locks the setting once the board is aligned.
 
-###### Adjuster screw `mb.passives.resistors.trimmers.adjuster.screw`
+###### Adjuster screw `mb.passives.resistors.trimmers.adjuster.screw` _(medium)_
 
 A brass or stainless screw, knurled or slotted, driving the slider. Brass is the usual choice because it machines cleanly at small diameters and does not gall against the moulded slider.
 
-###### Epoxy lock `mb.passives.resistors.trimmers.adjuster.lock`
+###### Epoxy lock `mb.passives.resistors.trimmers.adjuster.lock` _(medium)_
 
 After alignment a drop of epoxy is flowed over the adjuster so the setting cannot drift in service. On a machine with no calibration facility this trimmer is effectively a one-time factory adjustment for forty years. It is a deliberate, destructive lock: once the trim is set on the factory line that trimmer is not adjustable again.
 
@@ -2504,15 +2504,15 @@ The mainboard's decoupling, timing, filtering and coupling capacitors. Overwhelm
 
 The 0.1 uF bypass and small timing capacitors. Dozens of layers of barium-titanate ceramic with screen-printed metal electrodes buried between them, then fired and terminated. Monolithic construction gives huge capacitance in a tiny body because the electrode area is the whole face of every layer.
 
-###### Barium titanate dielectric powder `mb.passives.caps.mlcc.powder`
+###### Barium titanate dielectric powder `mb.passives.caps.mlcc.powder` _(medium)_
 
 The heart of the MLCC: sub-micron BaTiO3 crystallites, the only powder that has a very high dielectric constant AND survives the high-temperature processing. Chemistry is shifted from pure BaTiO3 by dopants to move the Curie point below room temperature, giving a Class II (X7R/Z5U) part with high capacitance that still decays with temperature.
 
-###### Solid-state BaTiO3 synthesis `mb.passives.caps.mlcc.powder.synthesis`
+###### Solid-state BaTiO3 synthesis `mb.passives.caps.mlcc.powder.synthesis` _(medium)_
 
 Barium carbonate and titanium dioxide are ball-milled with the dopants in water to a homogeneous slurry, then calcined in a kiln at about 1050-1200 C. The carbonate decomposes and the perovskite BaTiO3 crystallises. The mass is reground and wet-milled with a dispersant down to the target particle size.
 
-###### Titanium dioxide (TiO2) feed `mb.passives.caps.mlcc.powder.synthesis.titanium-dioxide`
+###### Titanium dioxide (TiO2) feed `mb.passives.caps.mlcc.powder.synthesis.titanium-dioxide` _(medium)_
 
 Ceramic-grade TiO2, made by chlorinating ilmenite or rutile to TiCl4 and re-oxidising, or by sulphuric acid digestion. Low-iron pigment-grade material is used so the fired ceramic has good insulation resistance.
 
@@ -2524,39 +2524,39 @@ Trivalent donor dopants (La2O3, Dy2O3, Y2O3) or pentavalent acceptors (Nb2O5, Ta
 
 Lanthanum, dysprosium and yttrium oxides, ground and sieved to sub-micron, are the donor dopants that set the temperature coefficient of an X7R dielectric. The sub-micron sieve is the whole difficulty: a barium titanate powder wants its additives soluble or finely dispersed so that no second phase forms, and an oxide bought at the separation plant's standard grade arrives as lumps. These are the most expensive few grams on the bill of materials and they were bought by the kilogram, not the tonne, so the MLCC maker was dependent on the same two plants as the television maker for the same handful of elements.
 
-###### Tape-casting slurry (powder + frit + binder) `mb.passives.caps.mlcc.slurry`
+###### Tape-casting slurry (powder + frit + binder) `mb.passives.caps.mlcc.slurry` _(medium)_
 
 The BaTiO3 powder is blended with a glass frit - an aid to sintering and to dielectric strength at the electrode interface - and an organic binder into a homogeneous, flowable slip. In 1982 this was an acrylic or PVA binder in water, or a cellulose ester in an organic solvent; fully water-based PVA systems became dominant later.
 
-###### Glass frit in the slurry `mb.passives.caps.mlcc.slurry.glass-frit`
+###### Glass frit in the slurry `mb.passives.caps.mlcc.slurry.glass-frit` _(medium)_
 
 A few per cent of low-melting glass, added so that on sintering it wets the barium titanate grains, closes the porosity and gives the internal electrode a hermetic interface. Without it the MLCC is not gas-tight and its insulation resistance collapses.
 
-###### Tape casting to green sheets `mb.passives.caps.mlcc.tape-cast`
+###### Tape casting to green sheets `mb.passives.caps.mlcc.tape-cast` _(medium)_
 
 The slip is doctor-bladed onto a moving polyester carrier film to a controlled dry thickness. This single step sets the eventual capacitance density, because capacitance is dielectric thickness divided by the number of electrode layers stacked.
 
-###### Moving carrier belt `mb.passives.caps.mlcc.tape-cast.belt`
+###### Moving carrier belt `mb.passives.caps.mlcc.tape-cast.belt` _(medium)_
 
 The green sheet is carried on a continuous polyester belt and dried in a short oven as the doctor blade lays it down, so the green thickness is set by blade clearance against a moving web rather than by a single-shot cast.
 
-###### Doctor blade `mb.passives.caps.mlcc.tape-cast.doctor-blade`
+###### Doctor blade `mb.passives.caps.mlcc.tape-cast.doctor-blade` _(medium)_
 
 A precisely-ground steel or ceramic blade with a controlled edge angle, set to micrometres over the belt. The single most important tool in MLCC making: it sets layer thickness and therefore capacitance density.
 
-###### Screen-printing internal electrodes `mb.passives.caps.mlcc.print-electrodes`
+###### Screen-printing internal electrodes `mb.passives.caps.mlcc.print-electrodes` _(medium)_
 
-A metal paste is printed onto the green sheets to define the buried internal electrodes. In 1982 the commodity MLCC used a base-metal nickel paste fired in a low-pO2 atmosphere, because silver would diffuse down the grain boundaries of the BaTiO3 and wreck its insulation resistance. The older, more expensive palladium-silver electrode was by then largely a legacy technology kept for a few high-reliability parts.
+A metal paste is printed onto the green sheets to define the buried internal electrodes, the sheets being cut from the rolled foil afterwards. In 1982 the commodity MLCC still used a noble-metal paste: the displacement of palladium-bearing electrodes by cheaper nickel is dated to 1993 by TDK, with copper and nickel arriving later still after a late-1990s surge in noble-metal prices. So the older, expensive palladium-silver electrode was the mainstream choice at this date, not a legacy one.
 
-###### Base-metal nickel paste `mb.passives.caps.mlcc.print-electrodes.nickel-paste`
+###### Base-metal nickel paste `mb.passives.caps.mlcc.print-electrodes.nickel-paste` _(medium)_
 
 The internal electrode paste: finely divided nickel in a glass frit and an organic vehicle, screen-printed onto the green sheet and co-fired with the ceramic. Nickel was chosen over silver for cost and over palladium for cost, and it is what let a 0.1 uF 50 V bypass capacitor be sold for a fraction of a cent.
 
-###### Stacking, lamination and debinding `mb.passives.caps.mlcc.stack-laminate`
+###### Stacking, lamination and debinding `mb.passives.caps.mlcc.stack-laminate` _(medium)_
 
 The printed green sheets are stacked offset so every sheet's electrode lands alternately on the two opposed faces, then compressed in a hydraulic laminator and the organic binder burned out slowly. The result is a monolithic bar of hundreds of ceramic layers with the electrodes sealed inside.
 
-###### Hydraulic laminator `mb.passives.caps.mlcc.stack-laminate.laminator`
+###### Hydraulic laminator `mb.passives.caps.mlcc.stack-laminate.laminator` _(medium)_
 
 A heated hydraulic press that stacks and consolidates hundreds of sheets at once, aligned by registration pins. This is the step that turns a pile of loose printed film into one solid bar.
 
@@ -2564,15 +2564,15 @@ A heated hydraulic press that stacks and consolidates hundreds of sheets at once
 
 The laminated bar is cut with a resin-bonded diamond saw into hundreds or thousands of identical blanks, each one capacitor body. One sintered bar yields thousands of capacitors and one furnace run yields many bars, so the economics only work at that scale - which is why MLCC production had consolidated into a handful of very large Japanese, European and later Taiwanese plants by the early 1980s.
 
-###### Resin-bonded diamond blade `mb.passives.caps.mlcc.dicing.blade`
+###### Resin-bonded diamond blade `mb.passives.caps.mlcc.dicing.blade` _(medium)_
 
 A thin, flat, run-of-the-mill diamond wheel; the same abrasive technology as the crystal grinder but applied to a sintered ceramic bar.
 
-###### Firing in a continuous belt kiln `mb.passives.caps.mlcc.belt-kiln`
+###### Firing in a continuous belt kiln `mb.passives.caps.mlcc.belt-kiln` _(medium)_
 
 The blanks go through a continuous belt or pusher kiln under a controlled low oxygen partial pressure, so the ceramic sinters dense and hermetic while the nickel internal electrodes are not oxidised away. Density matters enormously: a porous body lets moisture attack the electrode stack and destroys the insulation resistance. The atmosphere is a forming gas or nitrogen with an oxygen partial pressure held just low enough that nickel does not oxidise and high enough that the organic binder burns off cleanly; getting that window right is the hardest part of base-metal MLCC manufacture.
 
-###### Kiln heating elements `mb.passives.caps.mlcc.belt-kiln.elements`
+###### Kiln heating elements `mb.passives.caps.mlcc.belt-kiln.elements` _(medium)_
 
 Silicon-carbide or nichrome elements in a continuous belt kiln held at ~1300 C for hours. Long soaks at high temperature are what drive the ceramic to theoretical density.
 
@@ -2584,11 +2584,11 @@ After firing, the two exposed end faces are terminated with a conducting band th
 
 The polarised bulk capacitors: about fifteen 10 uF/25 V radial parts decoupling the SID and video analogue rails, plus larger axial 100-2200 uF parts on the rectified supply rails. Value comes from a nanometres-thick anodic oxide on etched aluminium foil soaked in electrolyte - cheap, large capacitance, and the bulk of the board's supply-rail filtering.
 
-###### High-purity anode foil, rolled and etched `mb.passives.caps.alu-electrolytic.anode-foil`
+###### High-purity anode foil, rolled and etched `mb.passives.caps.alu-electrolytic.anode-foil` _(low)_
 
-99.5 %+ aluminium foil, chemically etched in a hot hydrochloric/nitric acid or chlorate bath to grow microscopic pits on the surface. Effective cathode area rises by a factor of fifty to a hundred, which is how a hundred microfarads fits into a 5 mm can.
+High-purity aluminium foil, roughened by electrochemical etching so that the surface becomes a mass of microscopic pits, then anodically formed to grow an insulating alumina layer on it. Etching multiplies the effective area of the anode, which is how a hundred microfarads fits into a 5 mm can. The foil is wound with a separate cathode foil and absorbent separator, and the liquid electrolyte is the actual second electrode.
 
-###### Anodic formation (the real dielectric) `mb.passives.caps.alu-electrolytic.anode-foil.forming`
+###### Anodic formation (the real dielectric) `mb.passives.caps.alu-electrolytic.anode-foil.forming` _(medium)_
 
 The etched foil is made the anode in a phosphoric or boric acid bath at 90-200 V DC, growing a barrier-type aluminium oxide layer tens of nanometres thick. The rated working voltage of the finished capacitor is just the voltage the oxide can hold, so higher ratings need a thicker oxide and hence less capacitance for the same area.
 
@@ -2604,7 +2604,7 @@ Aluminium foil, usually a cheaper alloy and often unetched, serving as the retur
 
 High-purity aluminium rolled to a few tens of microns, often lightly etched, slit into ribbons for the winding. It uses the same aluminium as the anode but a looser specification, because no dielectric quality depends on it.
 
-###### Working electrolyte `mb.passives.caps.alu-electrolytic.electrolyte`
+###### Working electrolyte `mb.passives.caps.alu-electrolytic.electrolyte` _(medium)_
 
 The conducting liquid that soaks the separator and carries current between the oxide and the cathode: boric or phosphoric acid dissolved in ethylene glycol, dimethylformamide or dimethyl sulfoxide. The solvent must wet the porous separator without dissolving or attacking the oxide, and the acid concentration sets the oxide's equilibrium thickness.
 
@@ -2616,11 +2616,11 @@ Boric acid sets the oxide chemistry of the anode and, with phosphoric acid, is t
 
 Sodium tetraborate decahydrate occurs in the playas and evaporite deposits of closed desert basins, where boron-bearing volcanic hot springs have fed an evaporating lake for millions of years. It is mined, not synthesised, in the borate districts.
 
-###### Glycol-ether solvent from petrochemistry `mb.passives.caps.alu-electrolytic.electrolyte.glycol-ethers`
+###### Glycol-ether solvent from petrochemistry `mb.passives.caps.alu-electrolytic.electrolyte.glycol-ethers` _(medium)_
 
 Ethylene glycol and the glycol ethers used as high-voltage capacitor solvents were derived from ethylene oxide, itself made by oxidising ethylene from a steam cracker. They replaced the glycol-ester electrolytes of the 1950s because they dissolve the anode oxide without attacking it.
 
-###### Ethylene glycol ethers from ethylene oxide `mb.passives.caps.alu-electrolytic.electrolyte.glycol-ethers.ethylene-oxide`
+###### Ethylene glycol ethers from ethylene oxide `mb.passives.caps.alu-electrolytic.electrolyte.glycol-ethers.ethylene-oxide` _(medium)_
 
 Ethylene oxide is made by direct oxidation of ethylene over a silver or chromite catalyst, then reacts with an alcohol to give the glycol ether. The solvent chemistry of an aluminium electrolytic is therefore set two or three steps downstream of a steam cracker.
 
@@ -2628,7 +2628,7 @@ Ethylene oxide is made by direct oxidation of ethylene over a silver or chromite
 
 A porous, electrolyte-wicking separator keeping the foils apart while letting current through. Bleached kraft paper was still the standard for most 1980s aluminium electrolytics; low-porosity oriented polypropylene or polyethylene sleeves were the premium, longer-life alternative.
 
-###### Bleached kraft paper separator `mb.passives.caps.alu-electrolytic.separator.kraft-paper`
+###### Bleached kraft paper separator `mb.passives.caps.alu-electrolytic.separator.kraft-paper` _(medium)_
 
 A very thin, very porous cellulose tissue wound between the foils. It must be wetted completely by the electrolyte but must not contain ions that would raise the leakage current, so it is washed and bleached before use. Kraft paper separators are why the electrolyte is held in place at all.
 
@@ -2636,7 +2636,7 @@ A very thin, very porous cellulose tissue wound between the foils. It must be we
 
 Anode foil, separator and cathode foil are wound together on a rotating mandrel into a compact roll. Electrolyte is then vacuum- or pressure-impregnated into the wound roll, filling every pore and pushing out air, which is what finally gives the part its capacitance.
 
-###### Winding mandrel `mb.passives.caps.alu-electrolytic.winding.mandrel`
+###### Winding mandrel `mb.passives.caps.alu-electrolytic.winding.mandrel` _(medium)_
 
 A polished steel mandrel, often Teflon-coated, on which the foil sandwich is wound. Mandrel diameter and surface finish are set by the smallest foil thickness so the finished pack can be released without creasing.
 
@@ -2652,7 +2652,7 @@ A rubber or PVC disc that fills the end of the sleeve and retains the electrolyt
 
 Heat-cured silicone rubber, chosen because it stays soft and chemically inert in contact with the acid electrolyte for decades. Silicone is a siloxane polymer built on a quartz-derived silicon-oxygen backbone.
 
-###### Aluminium terminal tab `mb.passives.caps.alu-electrolytic.assembly.tab`
+###### Aluminium terminal tab `mb.passives.caps.alu-electrolytic.assembly.tab` _(medium)_
 
 A soft aluminium or aluminium-alloy tab, crimped onto the foil edge. Pure aluminium is used because it is the only metal that will not form a galvanic or resistive joint with the foil it must touch.
 
@@ -2664,7 +2664,7 @@ Finished parts are held at an elevated temperature under DC bias so the oxide re
 
 A temperature-controlled rack of trays in which finished parts are held at temperature and bias. A good capacitor plant in 1982 might burn in for hours or days, which is why vintage electrolytics so often arrive already formed.
 
-###### Capacitance and leakage test `mb.passives.caps.alu-electrolytic.aging.test`
+###### Capacitance and leakage test `mb.passives.caps.alu-electrolytic.aging.test` _(medium)_
 
 Parts are tested for capacitance, dissipation factor and leakage at rated temperature. Rejection rates in a commodity 10 uF 25 V part were small but non-zero, and every rejected part was a loss of scrap aluminium. A bridge or LCR meter at rated frequency and temperature gives capacitance and dissipation factor, and a DC bias step gives leakage; rejection on leakage is what catches a pinhole in the oxide, the classic failure mode of a fresh electrolytic.
 
@@ -2672,21 +2672,21 @@ Parts are tested for capacitance, dissipation factor and leakage at rated temper
 
 A polarised capacitor built around sintered tantalum powder with an anodic oxide dielectric and a solid electrolyte. Low leakage and very good stability for its size; in the early 1980s tantalum was the default decoupling choice on high-performance professional digital boards.
 
-###### Sintered tantalum anode `mb.passives.caps.tantalum.anode`
+###### Sintered tantalum anode `mb.passives.caps.tantalum.anode` _(low)_
 
-Capacitor-grade tantalum powder is pressed around a tantalum wire anode lead and sintered at 1200-1400 C under vacuum, producing a porous body with an enormous internal surface area. The Ta2O5 dielectric then grows on that surface, which is why a gram of powder stores far more capacitance than a gram of film.
+Capacitor-grade tantalum powder is pressed around a tantalum riser wire that becomes the anode connection, and the pellet is vacuum sintered at high temperature so that the powder takes on a sponge-like structure with all particles interconnected. The Ta2O5 dielectric then grows on that internal surface, which is why a gram of powder stores far more capacitance than a gram of film.
 
 ###### Drawn tantalum wire `mb.passives.caps.tantalum.anode.wire`
 
 The anode lead is fine drawn tantalum wire, spot-welded to the sintered pellet, drawn by the same machinery as refractory metals for furnace leads. Whether the anode body is built from reduced metallic powder or from sintered oxide powder, the specification is the same: extremely high purity, sub-micron, high surface area. Impurities here are the defect mechanism that causes tantalum dielectric failures, and every stage from columbite-tantalite concentrate to powder discards most of the feed, which is why a tantalum capacitor carried a high metal cost per cubic centimetre even in 1982.
 
-###### Anode pressing and sintering `mb.passives.caps.tantalum.anode.press`
+###### Anode pressing and sintering `mb.passives.caps.tantalum.anode.press` _(medium)_
 
 Powder is blended with a binder and pressed around the wire, then debound and sintered in vacuum or flowing hydrogen at 1200-1400 C. The pressed pellet is deliberately porous - roughly half its volume is void - because that void is where the dielectric forms.
 
-###### Anodic Ta2O5 formation and MnO2 solid electrolyte `mb.passives.caps.tantalum.dielectric`
+###### Anodic Ta2O5 formation and MnO2 solid electrolyte `mb.passives.caps.tantalum.dielectric` _(medium)_
 
-The sintered anode is anodised to grow the Ta2O5 dielectric, then coated with manganese dioxide by pyrolytically decomposing manganese chloride vapour on the surface - the classic 1980s solid tantalum part. A sintered silver-paste counter-electrode existed as an alternative construction. Today's conductive-polymer tantalum is a late-1990s development. The anode is anodised at a voltage above its rated working voltage, usually by a factor of 1.5-2, to build a defect-free oxide; the rated voltage of the part is set by that formation step and cannot be adjusted afterwards.
+The sintered anode is anodised to grow the Ta2O5 dielectric, then coated with manganese dioxide by pyrolysing manganese nitrate: the pellet is dipped into an aqueous nitrate solution and baked at about 250 C to leave the dioxide coat - the classic 1980s solid tantalum part. A sintered silver-paste counter-electrode existed as an alternative construction. Today's conductive-polymer tantalum is a late-1990s development. The anode is anodised at a voltage above its rated working voltage, usually by a factor of 1.5-2, to build a defect-free oxide; the rated voltage of the part is set by that formation step and cannot be adjusted afterwards.
 
 ###### Manganese chloride for pyrolysis `mb.passives.caps.tantalum.dielectric.manganese-chloride` _(medium)_
 
@@ -2704,7 +2704,7 @@ The anode lead is drawn tantalum wire, spot-welded to the sintered pellet, then 
 
 Solid tantalum parts were sealed by dipping in epoxy and curing, which protects the brittle MnO2/dielectric stack against handling and moisture. Wet-slug parts instead used a welded metal can with a glass or Teflon seal.
 
-###### Epoxy resin and bisphenol A `mb.passives.caps.tantalum.packaging.seal.bisphenol-a`
+###### Epoxy resin and bisphenol A `mb.passives.caps.tantalum.packaging.seal.bisphenol-a` _(medium)_
 
 The standard epoxy of the period: bisphenol A condensed with epichlorohydrin, cured with an amine. Both halves are petrochemical, and bisphenol A was the dominant resin for adhesive, coating, printed-board and capacitor sealants alike.
 
@@ -2728,7 +2728,7 @@ Columbite-tantalite is a solid solution of columbite and tantalite, mined both a
 
 A single fired barium-titanate disc with silver electrodes fired onto its two faces. Enormous capacitance for its size and very cheap, but microphonically noisy, temperature-drifty and physically large, with no self-cancelling inductance. On C64 boards of this era the small 0.1 uF parts were already largely the multilayer form.
 
-###### Pressing, sintering and silver-firing `mb.passives.caps.ceramic-disc.press-sinter`
+###### Pressing, sintering and silver-firing `mb.passives.caps.ceramic-disc.press-sinter` _(medium)_
 
 BaTiO3 powder is pressed into a disc, sintered at 1200-1300 C, then silver electrode paste is screen-printed onto each face and fired at 700-850 C so the silver is glass-bonded to the ceramic. Only two electrodes exist, so the part cannot cancel its own inductance - the structural reason a disc is useless at radio frequencies and a multilayer is not.
 
@@ -2744,19 +2744,19 @@ The ceramic body of a high-K disc is a modified barium titanate with a glass pha
 
 Low-firing ceramic substrates, steatite (magnesium silicate) or alumina, onto which the high-K layer is applied. Steatite is cheap and fires low; alumina is tougher and better at heat.
 
-##### Film capacitors (polyester / polystyrene) `mb.passives.caps.film`
+##### Film capacitors (polyester / polystyrene) `mb.passives.caps.film` _(medium)_
 
 Film capacitors use a thin metallised plastic film as the dielectric. Non-polar, stable, and tolerant of voltage and temperature excursions. The C64 uses polyester (Melinex/PET) for coupling and decoupling in the analogue paths; polystyrene appears in the precision timing networks of the same era's equipment.
 
-###### Vacuum-metallised polyester film `mb.passives.caps.film.polyester-metallisation`
+###### Vacuum-metallised polyester film `mb.passives.caps.film.polyester-metallisation` _(medium)_
 
 PET pellets are extruded into a cast film, then stretched fast in two perpendicular directions to several times their original length, orienting the polymer chains. That gives a very thin, very uniform, high-tensile dielectric; then a sub-micron metal layer is vacuum-deposited on one or both faces and the metallised film is wound on a core. No separate foil is used - the electrode IS the deposited layer.
 
-###### PET polymerisation `mb.passives.caps.film.polyester-metallisation.pet-polymerisation`
+###### PET polymerisation `mb.passives.caps.film.polyester-metallisation.pet-polymerisation` _(medium)_
 
 The film base is polyethylene terephthalate, made by condensing bis(2-hydroxyethyl) terephthalate - itself from ethylene glycol and terephthalic acid - in a melt polymeriser at ~250-290 C under vacuum. The terephthalic acid came from paraxylene, which came from the aromatics fraction of a steam cracker or a catalytic reformer.
 
-###### Para-xylene `mb.passives.caps.film.polyester-metallisation.pet-polymerisation.paraxylene`
+###### Para-xylene `mb.passives.caps.film.polyester-metallisation.pet-polymerisation.paraxylene` _(medium)_
 
 Paraxylene sits in the aromatics complex of a large refinery, separated from a mixed xylene fraction by fractional distillation and adsorption. It is the pivot molecule of the entire polyester industry: 1982 saw PET moving from bottle-grade into film, fibre and capacitor dielectric at once.
 
@@ -2764,7 +2764,7 @@ Paraxylene sits in the aromatics complex of a large refinery, separated from a m
 
 A polystyrene dielectric: exceptionally stable, very low dielectric absorption and low loss, historically the timing capacitor of choice for precision RC oscillators before polystyrene's poor mechanical behaviour pushed it into disfavour. Used in analogue equipment of the era, but not a significant part on the C64 mainboard.
 
-###### Styrene polymerisation to polystyrene `mb.passives.caps.film.polystyrene.styrene-polymerisation`
+###### Styrene polymerisation to polystyrene `mb.passives.caps.film.polystyrene.styrene-polymerisation` _(medium)_
 
 Free-radical or ionic polymerisation of styrene, in bulk suspension or emulsion, gives the amorphous thermoplastic. Unmodified polystyrene is brittle and has poor moisture resistance, which is precisely why metalised polystyrene was restricted to sealed precision parts and lost out to polypropylene.
 
@@ -2796,7 +2796,7 @@ A heated mica blade driven by a cement stick along the cleavage plane. The blade
 
 Aluminium or silver is evaporated or sputtered through a shadow-mask onto the mica sheets; sheets are stacked with a thin metallised layer between each, bonded under heat and pressure, and the stack is diced into individual capacitors.
 
-###### Aluminium electrode evaporation `mb.passives.caps.mica.metallisation.aluminium-evaporation`
+###### Aluminium electrode evaporation `mb.passives.caps.mica.metallisation.aluminium-evaporation` _(medium)_
 
 Aluminium is evaporated rather than sputtered because it is cheap and vapourises at a manageable temperature; it is then left unoxidised under vacuum. Silver electrodes were used where the highest capacitance per unit area was needed.
 
@@ -2808,11 +2808,11 @@ Small adjustable capacitors used to compensate or trim a circuit. On C64-family 
 
 Two sets of interdigitated metal plates with an adjustable overlap, separated by air or a thin film. Turning the screw changes the overlap and therefore the capacitance continuously, letting the factory trim the oscillator to the exact subcarrier frequency. The dielectric is air, which is why these parts are stable and non-drifting.
 
-###### Stator and rotor plates `mb.passives.caps.trim.air-gap.ceramic-plate`
+###### Stator and rotor plates `mb.passives.caps.trim.air-gap.ceramic-plate` _(medium)_
 
 The trimmer's rotor is a small disc of alumina ceramic, silver-metallised on one face through a spiral or interdigitated pattern. Turning the screw rotates the disc against a fixed plate, so the overlapping metallised area - and hence the capacitance - changes continuously.
 
-###### Alumina rotor plate material `mb.passives.caps.trim.air-gap.ceramic-plate.alumina`
+###### Alumina rotor plate material `mb.passives.caps.trim.air-gap.ceramic-plate.alumina` _(medium)_
 
 The rotor disc is alumina, polished and metallised with a spiral or interdigitated silver pattern. Alumina is used because it is dimensionally stable, machinable to a fine finish and a good insulator at the trimmer's working voltage.
 
@@ -2856,11 +2856,11 @@ Gem-quality clear quartz for crystal units came historically from the rock-cryst
 
 Because natural quartz is limited and variable, industry moved to growing it: an autoclave is charged with silica (often crushed natural quartz) in a hot sodium-hydroxide solution and heated at around 400 C and 150 MPa. Quartz grows on seed crystals hung in the solution, growing the rough in days rather than geological time. This is the source of nearly all quartz crystal blanks made from about the mid-1970s onward.
 
-###### Steel autoclave with seed crystals `mb.crystal.y1.natural-quartz.synthetic.autoclave`
+###### Steel autoclave with seed crystals `mb.crystal.y1.natural-quartz.synthetic.autoclave` _(medium)_
 
 A filled, sealed pressure vessel - usually Hastelloy or 17-4PH steel liner - held at high temperature and pressure so an alkaline solution dissolves silica from the feed and re-deposits it on thin zoned seed plates hung in the vessel. Temperature gradients create the supersaturation that drives growth, and the growth zones themselves are what later become the tuned crystal resonators.
 
-###### Alkali solvent `mb.crystal.y1.natural-quartz.synthetic.autoclave.caustic`
+###### Alkali solvent `mb.crystal.y1.natural-quartz.synthetic.autoclave.caustic` _(medium)_
 
 The growth solution is hot concentrated sodium or potassium hydroxide, which dissolves silica at the elevated temperature while quartz re-deposits on the seeds. The alkali is made by chlor-alkali electrolysis of brine, so the crystal ultimately touches rock salt as well as quartz sand.
 
@@ -2872,11 +2872,11 @@ The silica feedstock for the autoclave is cleaned quartz sand or lumps of milky 
 
 Rough crystal is sawn into blanks, then the cut face is lapped to about 0.15 mm and X-ray diffracted to find its crystallographic orientation. Orientation is everything: only an AT-cut at the right angle gives the flat temperature curve a frequency-stable oscillator needs.
 
-###### X-ray orientation and AT-cut angle selection `mb.crystal.y1.blank-preparation.xray-orienting`
+###### X-ray orientation and AT-cut angle selection `mb.crystal.y1.blank-preparation.xray-orienting` _(medium)_
 
 A synthetic rough is indexed by X-ray diffraction so its Z axis and X axis are known, then sawn at a chosen angle to the X axis (the 'AT-cut'). The mid-1980s standard for general-purpose oscillators was about 35 degrees; this angle is chosen because it lands the resonance on a flat, temperature-insensitive point in the quartz stiffness-temperature curve.
 
-###### Lapping and double-lap polishing `mb.crystal.y1.blank-preparation.lapping`
+###### Lapping and double-lap polishing `mb.crystal.y1.blank-preparation.lapping` _(medium)_
 
 The cut blank is lapped on rotating cast-iron plates with progressively finer abrasives (aluminium oxide, then colloidal silica) down to about 0.15 mm, then double-lapped against a second plate to remove bow and damage left by the saw. Crystal blanks for a 1982 oscillator were lapped on plates run by lapidary and lapping shops, not in the same plant that makes the finished crystal.
 
@@ -2900,11 +2900,11 @@ The four HC-49 leads are formed to a right angle and soldered onto the board in 
 
 Chromium is evaporated or sputtered onto both faces as an adhesion layer, then gold or silver is deposited over it as the conductive electrode, through a shadow mask that defines the electrode area. Chromium-gold is the classic 1980s crystal electrode stack: Cr to bond, Au to conduct.
 
-###### Chromium adhesion layer `mb.crystal.y1.electrodes.chromium`
+###### Chromium adhesion layer `mb.crystal.y1.electrodes.chromium` _(medium)_
 
 Chromium is evaporated as the adhesion layer because bare quartz will not hold gold by van der Waals forces alone. Chromium wets both the quartz surface and the gold film, and it is itself a hard, chemically inert metal.
 
-###### Gold electrode film `mb.crystal.y1.electrodes.gold-film`
+###### Gold electrode film `mb.crystal.y1.electrodes.gold-film` _(medium)_
 
 Gold evaporated through a shadow mask to give the electrode its final geometry and conductivity. The mask pattern fixes the electrode area, which together with the plate thickness is what sets the crystal capacitance.
 
@@ -2912,19 +2912,19 @@ Gold evaporated through a shadow mask to give the electrode its final geometry a
 
 A thin metal mask placed above the rotating blank during evaporation so the electrode pattern is defined. The mask is made from a drawn stainless or nickel strip, chemically etched to the electrode shape.
 
-##### Cutting the plate and vacuum baking `mb.crystal.y1.cutting`
+##### Cutting the plate and vacuum baking `mb.crystal.y1.cutting` _(medium)_
 
 The plated blank is cut with a diamond wheel into individual resonator plates, then the plates are vacuum-baked at around 400 C to drive off adsorbed moisture and contaminants. That vacuum bake is what removes the piezoelectric pyroelectric drift and the 'dope' effect - the stress-induced frequency shift as a crystal heats - and it is why a crystal that has been opened is never a good crystal.
 
-###### Diamond dicing saw `mb.crystal.y1.cutting.dicing-saw`
+###### Diamond dicing saw `mb.crystal.y1.cutting.dicing-saw` _(medium)_
 
 A thin resin-bonded diamond wheel, ~0.03-0.05 mm thick, cutting the plated blank into resonators. The wheel has to be extremely thin and extremely flat to avoid chipping a 0.07 mm plate.
 
-###### Cleaning between steps `mb.crystal.y1.cutting.cleanroom`
+###### Cleaning between steps `mb.crystal.y1.cutting.cleanroom` _(medium)_
 
 Every step from lapping onward is done washed and clean: a fingerprint on a 0.07 mm plate changes the frequency. Crystal preparation is one of the few wet, cold, dirty-looking processes in electronics.
 
-###### Deionised rinse water `mb.crystal.y1.cutting.cleanroom.deionised-water`
+###### Deionised rinse water `mb.crystal.y1.cutting.cleanroom.deionised-water` _(medium)_
 
 Every crystal process rinse uses deionised water, because a single dissolved ion on a resonating plate changes the frequency measurably. City water is nowhere good enough.
 
@@ -2936,11 +2936,11 @@ The plate sits on a pair of wire supports in a crimped and welded nickel can, fi
 
 HC-49/U cans were drawn from nickel or nickel-plated strip steel, or from brass with a nickel finish. Nickel is used because it matches the thermal expansion of the quartz and the electrode leads closely enough that the mounting stress does not drift the frequency.
 
-###### Drawn can stock `mb.crystal.y1.case.nickel-can.stock`
+###### Drawn can stock `mb.crystal.y1.case.nickel-can.stock` _(medium)_
 
 The HC-49/U can is deep-drawn from thin nickel-plated strip in a progressive tool, then the crimped collar is rolled and the lid welded on. Both operations happen before the plate goes in - the can is made empty and loaded later.
 
-###### Welded lid and crimped collar `mb.crystal.y1.case.nickel-can.weld`
+###### Welded lid and crimped collar `mb.crystal.y1.case.nickel-can.weld` _(medium)_
 
 The lid is spot-welded or resistance-welded to the collar in an atmosphere of dry hydrogen or forming gas, which keeps the internal oxide clean and lets the fill gas stay inert. Hermeticity is what makes a forty-year-old crystal hold its frequency.
 
@@ -2948,11 +2948,11 @@ The lid is spot-welded or resistance-welded to the collar in an atmosphere of dr
 
 A mixture of hydrogen and nitrogen used as a cover during the lid weld. Hydrogen also diffuses any internal oxide onto the getters, which is why a well-made can can have a getter mirror at the bottom after opening.
 
-###### Argon or krypton fill gas `mb.crystal.y1.case.argon-fill`
+###### Argon or krypton fill gas `mb.crystal.y1.case.argon-fill` _(medium)_
 
 The can is filled with a chemically inert gas before welding. Argon is preferred because it does not react with the electrode and cannot outgas; krypton was used where a slightly more hermetic atmosphere was wanted. The gas also damps acoustic vibration in the plate.
 
-###### Spring-wire supports `mb.crystal.y1.case.support-wire`
+###### Spring-wire supports `mb.crystal.y1.case.support-wire` _(medium)_
 
 Two short wires spot-welded to the plate's major faces at the nodal points. Because quartz is piezoelectric, mechanically stressing it shifts its resonant frequency, so the supports must sit where the strain of the vibrating mode is smallest - the whole reason the plate is bevelled and domed.
 
@@ -2968,11 +2968,11 @@ The crystal is only the frequency reference. Turning it into the machine's clock
 
 The crystal acts as a negative-resistance element in a Pierce oscillator with a small load capacitor at its CL and the drive level set by a series resistor. Its frequency is set by the crystal's CL, the load capacitors and the transistor's input capacitance all in series: at 14 MHz with a few tens of picofarads involved, a fraction of a millimetre of stray copper shifts the trim range, which is why the C64 needed an adjustable element here rather than a fixed capacitor. The oscillator is a high-gain positive-feedback amplifier at all frequencies until the crystal's impedance peaks at the design frequency, so the circuit is designed to start on noise and settle; a badly driven crystal never settles, which is the classic symptom of a cracked plate.
 
-##### PLL: MC4044 into the 74LS629 VCO `mb.crystal.oscillator.pll`
+##### PLL: MC4044 into the 74LS629 VCO `mb.crystal.oscillator.pll` _(medium)_
 
-The 74LS629's second oscillator is a voltage-controlled oscillator. The MC4044 phase/frequency detector compares a divided colour clock against the VIC-II's phase-0 clock and returns a DC control voltage on pin 8, which the 74LS629's frequency-control pin steers. That is the whole of the C64's PLL: a crystal oscillator for the exact subcarrier, and a tracking VCO four times faster, locked to it, for the pixel clock.
+The 74LS629's second oscillator is a voltage-controlled oscillator. The MC4044 phase/frequency detector compares a divided colour clock against the VIC-II's phase clock and returns a DC control voltage on pin 8, which the 74LS629's frequency-control pin steers. That is the whole of the C64's PLL: a crystal oscillator holding the exact subcarrier frequency, and a tracking VCO running SLOWER than it at 8.1818 MHz, locked to it, for the dot clock.
 
-###### Why a trim is required at all `mb.crystal.oscillator.pll.trim-range`
+###### Why a trim is required at all `mb.crystal.oscillator.pll.trim-range` _(medium)_
 
 The NTSC colour subcarrier is specified to about 5 parts in 10^7, and an untrimmed crystal and oscillator would wander far more than that over temperature and supply. The trim element (R27 on breadbin boards, a capacitive trim later) lets the whole PLL be pulled onto the exact frequency at the factory and then holds it there.
 
@@ -2980,7 +2980,7 @@ The NTSC colour subcarrier is specified to about 5 parts in 10^7, and an untrimm
 
 The PAL machine uses a 17.734475 MHz crystal (four times the 4.433619 MHz PAL subcarrier) in the same circuit, and the 74LS193 divider is switched to divide by nine instead of seven. Later C64B/C boards moved to a 16 MHz crystal and a dedicated clock-generator IC, dropping the discrete VCO.
 
-### Soldering the C64 mainboard `mb.solder`
+### Soldering the C64 mainboard `mb.solder` _(medium)_
 
 Every joint on the C64 mainboard is made with 63/37 tin-lead alloy activated by rosin flux: about 600 in one pass through a wave-soldering machine, the rest by hand afterwards on the connectors, fuse clips, big electrolytics and wire jumpers. This branch follows the machines, the settings and the bench that make those joints; the alloy itself, its wire and its bar, are the shared node metal.solder.
 
@@ -3036,7 +3036,7 @@ Why the big electrolytics are among the joints most often hand-touched after the
 
 The diagnostic vocabulary a line supervisor used in 1983, and it has barely changed since. Dull grainy joints mean a dirty pad or too little preheat. Dry joints and unfilled holes mean a hole too tight for the lead or a wave too slow. Solder balls and spatter mean moisture in the board. Bridging between fine pads means too much flux, a pot too hot, or a wave too shallow. Blowholes in the joint mean damp.
 
-#### Copper-tin intermetallic at the pad `mb.solder.reliability`
+#### Copper-tin intermetallic at the pad `mb.solder.reliability` _(medium)_
 
 Solder does not merely sit on a pad, it reacts with it. Within seconds of contact, tin and copper fuse at the surface into Cu6Sn5, and a Cu3Sn layer follows as the joint ages. That intermetallic is the actual metallurgical bond holding the joint, and because its growth is limited by diffusion through itself, higher-temperature solders containing silver or gold exist purely to slow the reaction at the pad. Fully intermetallised joints are brittle, which is the origin of solder fatigue and the reason a leaded joint is forgiving in a way a lead-free one is not.
 
@@ -3096,7 +3096,7 @@ A short length of fine tinned copper wire, cut and formed to the two holes, fitt
 
 A deliberate absence, recorded here so it does not read as an omission. It is worth being explicit that the C64 mainboard has no surface-mount parts and no reflow step: everything is through-hole, everything is either waved or hand-soldered. Reflow ovens were already known in 1983, but they were used for flat-pack IC packages and for small daughterboards. The analogue RF modulator is one of those daughterboards - a separate small board, covered by the mb.rf-modulator branch of this tree, not part of the main logic board. Any account that reflows the C64 mainboard is describing a different machine.
 
-#### No conformal coating on this board `mb.assembly.conformal`
+#### No conformal coating on this board `mb.assembly.conformal` _(medium)_
 
 A deliberate absence, recorded here so it does not read as an omission. The C64 mainboard was not conformally coated. Conformal coating existed in 1983 for military and automotive work and was increasingly common in commercial electronics, but not for a home computer in a dry indoor case.
 
@@ -3140,7 +3140,7 @@ A rack of switching electronics driving the fixture, with a go or no-go readout 
 
 The populated board is mounted in a test cradle with a power supply and a monitor, and the machine proves itself by running a diagnostic program from the cartridge port. This exercises the real boot path - CPU, ROM, RAM, character ROM, VIC, SID and the I/O chips - all in the configuration they will ship in. Using the cartridge port as the test-vector delivery mechanism is an elegant piece of period engineering: no extra fixture hardware, and it tests the bus the machine actually uses.
 
-##### Diagnostic and dead-test ROM `mb.test.functional.rom`
+##### Diagnostic and dead-test ROM `mb.test.functional.rom` _(medium)_
 
 A small EPROM in a cartridge shell which, on power-up, prints a screenful of named tests and runs each one, reporting RAM, ROM and video faults by pattern rather than by instrument. The operator's job is to look at the picture and read the verdict. These test ROMs were so successful that Commodore later sold the same idea to the public as the Dead Test cartridge, which is why they are so well documented today.
 
@@ -3224,7 +3224,7 @@ Every distinct pad shape and track width is assigned an aperture in a table the 
 
 The plot files drive a photoplotter that draws the copper artwork onto a transparent film. In 1983 these machines lived at the fabricator, not the design office, and were the company's most valuable single asset.
 
-##### Electrostatic plotter `mb.photo.plotter.electrostatic`
+##### Electrostatic plotter `mb.photo.plotter.electrostatic` _(medium)_
 
 The dominant plotting technology of the era. A fine wire or shaped electrode is stepped across the film under computer control and a corona discharge exposes the emulsion wherever copper is wanted. Flatbed machines laid a film flat and exposed quickly, which is why they became the standard for two-sided work. Gerber Scientific commercialised these plotters and the aperture-table format that drove them, so the format the industry still uses is a direct inheritance of this machine.
 
@@ -3252,7 +3252,7 @@ The film emulsion is silver halide; hydroquinone reduces the exposed grains to m
 
 The unexposed silver halide is dissolved away and the image made light-stable, so the film can be handled, stored and re-exposed without latent-image changes.
 
-#### Rephotography, the master, and the coupon `mb.photo.rephoto`
+#### Rephotography, the master, and the coupon `mb.photo.rephoto` _(low)_
 
 The plotted working film is rephotographed onto a higher-quality film to get a sharper, dimensionally stable master. Before a whole panel is committed, a test coupon is exposed and etched with every line width the panel uses, and the widths are measured under a measuring microscope. This is how a shop proves its process still holds tolerance, and it is the quiet heart of 1980s board making: a cheap, fast way to prove that the narrowest trace the designer asked for is still coming out, before a hundred boards are committed to it.
 
@@ -3284,7 +3284,7 @@ A stack of punched E and I laminations with interleaved joints, taped along the 
 
 One E and one I punched from a strip of grain-oriented electrical steel by a high-speed progression press, roughly 200-600 strokes per minute. The die is a hardened tool-steel stamping die with a compound profile; the strip is fed on a roll and the interlamination burr left by the punch is small enough not to short adjacent plates.
 
-###### High-speed stamping press `c64.psu.transformer.core.lamination.punch`
+###### High-speed stamping press `c64.psu.transformer.core.lamination.punch` _(medium)_
 
 A vertical crank or hydraulic press with the compound E+I die in the lower ram and a blanking punch above. In a 1982-era plant the strip ran on a powered roll feed with a pilot pin for registration; the same press also cut the mounting-hole side features and the interleaving key.
 
@@ -3312,7 +3312,7 @@ The shape is dictated by the winding, and the 1982 supply for small switchers wa
 
 An ungapped ferrite E core has a very high inductance and would not regulate a switch-mode supply; the switcher's magnetising current would be wrong and the whole design fails. So the gap is made deliberately, and on a 1982 E core it was cut with a carbide-tipped scraper - literally a hand blade run along the face of the centre leg - to 0.2-1.0 mm. Cutting rather than inserting a gap material keeps the inductance high and spreads the gap's fringing over an area, and it does it with a machine a ferrite buyer can operate. The tolerance of that hand cut is what sets the inductance tolerance, and the whole thing is one of the more beautiful pieces of 1980s manufacturing: a blade and a number.
 
-#### Enamelled copper winding `c64.psu.transformer.winding`
+#### Enamelled copper winding `c64.psu.transformer.winding` _(medium)_
 
 The primary, the 18 V centre-tapped secondary and the 9 V output secondary are wound in layers on a moulded bobbin, with a few hundred turns of 0.25-0.4 mm enamelled copper wire. Layer insulation between each pass and interleaved padding between the primary and the secondaries carry the 1000-1500 V RMS of the mains.
 
@@ -3336,7 +3336,7 @@ The workhorse magnet-wire enamel of the 1980s. The base is a polycondensation of
 
 A spool-shaped coil former in glass-filled or unfilled nylon 6 or nylon 6,6, with cheek flanges that locate it on the core leg and a continuous slot that keeps the layer insulation in place. Bobbins were (and still are) a Miles-Platts product line, which fits the 'MP' mark found on this transformer.
 
-###### Injection moulding the bobbin `c64.psu.transformer.winding.bobbin.moulding`
+###### Injection moulding the bobbin `c64.psu.transformer.winding.bobbin.moulding` _(medium)_
 
 Nylon is hygroscopic so the pellets are dried at 80 C for 4-8 h before moulding, then injection moulded at 240-280 C into a multi-cavity tool with hot runners and a mould temperature of 60-90 C. The mould cavity is polished because a flash of loose fibre on the winding slot would be a turn-coat defect.
 
@@ -3352,7 +3352,7 @@ A lightly crinkled, unbleached kraft paper that stretches to follow the winding 
 
 Softwood (spruce/fir) is debarked, chipped, steamed and refined in a disc or refiner mill; the long fibres are ideal for electrical insulation paper because they give high dielectric strength and mechanical strength in the thin sheet.
 
-###### Softwood pulp `c64.psu.transformer.winding.insulation.crepe-paper.pulp.softwood`
+###### Softwood pulp `c64.psu.transformer.winding.insulation.crepe-paper.pulp.softwood` _(medium)_
 
 The species matters as much as the process: long-fibre softwood pulp from spruce, fir or pine gives the dielectric strength and tear resistance that electrical insulation paper needs, while hardwood pulp from birch or aspen gives opacity and printability and is used in the thinner papers. Softwood is bought as chips or as market pulp.
 
@@ -3372,7 +3372,7 @@ The diacid anhydride half of Kapton is made by air oxidation of pseudocumene to 
 
 The protective-earth conductor is bonded to an aluminium or copper foil laid between the primary and the secondary windings - or sometimes to the transformer frame bolt. It does not leave the transformer: the earthing path is closed inside the potted block and never reaches the plastic case or the computer. The foil is plain rolled aluminium or copper, lapped and left uncut so it cannot tear, and it is deliberately insulated from both windings.
 
-##### Layer winding on a coil winder `c64.psu.transformer.winding.process`
+##### Layer winding on a coil winder `c64.psu.transformer.winding.process` _(medium)_
 
 A single-spindle or two-spindle coil winder turns the bobbin while traversing the wire, and the operator lays interleaved insulation between each layer with a slow-moving 'paper feeder'. Bobbin layers are counter-wound to flatten the coil, and the leads are brought out through the bobbin flange and dressed so they cannot chafe on the core.
 
@@ -3384,7 +3384,7 @@ The winding leads are soldered or, in the 1983-84 bricks, soldered directly to t
 
 The finished assembly is vacuum impregnated with a thermosetting polyester or epoxy varnish so the winding becomes a solid block and cannot move at 50 Hz. Viscous impregnating varnishes were standard by the early 1980s; the alternative is dip-and-bake in an epoxy or a polyurethane.
 
-###### Impregnating varnish `c64.psu.transformer.winding.impregnation.varnish`
+###### Impregnating varnish `c64.psu.transformer.winding.impregnation.varnish` _(medium)_
 
 A low-viscosity, high-solids unsaturated polyester resin dissolved in styrene, with an organic peroxide cure catalyst. It cures by crosslinking rather than by solvent loss, so it shrinks very little and fills completely.
 
@@ -3400,7 +3400,7 @@ Paper or cotton-linen web impregnated with phenol-formaldehyde resin under heat 
 
 Two or four stud-less axial rectifier diodes convert the 18 V centre-tapped secondary into pulsating DC. The 902503-02 uses two General Electric 400GI silicon rectifiers in a full-wave centre-tapped configuration, which saves the two extra dice of a bridge; other builds use four 1N5400s or a moulded bridge. The diodes are soldered directly onto the transformer pins.
 
-#### Axial rectifier diode `c64.psu.rectifier.diode`
+#### Axial rectifier diode `c64.psu.rectifier.diode` _(medium)_
 
 A single silicon junction in an axial package with a formed lead, cathode band marked with a stripe. Inside: a die a few hundred microns across with a heavy anode metallisation, a glass passivation, and epoxy or a voidless glass body filled with silicone stress-relief gel to survive the power cycling.
 
@@ -3408,7 +3408,7 @@ A single silicon junction in an axial package with a formed lead, cathode band m
 
 A 100-150 mm wafer ground to a die typically 2 x 2 x 0.3 mm, with a diffused N-type cathode and metallised anode. The same Czochralski silicon as the VIC-II and the 6510; the detailed wafer process belongs to the silicon branch of this tree.
 
-###### Die attach, wire bond and axial encapsulation `c64.psu.rectifier.diode.packaging`
+###### Die attach, wire bond and axial encapsulation `c64.psu.rectifier.diode.packaging` _(medium)_
 
 The die is die-attached to the anode lead with silver-loaded glass or a soft solder, one or two aluminium wires are wedge-bonded from the cathode metallisation to the cathode lead, then the whole assembly is transfer-moulded or cast in an epoxy body filled with silicone gel to relieve the thermal cycle between the glass and the leads.
 
@@ -3484,7 +3484,7 @@ The regulator tab or TO-3 can is bolted to the folded aluminium plate with a thi
 
 A thin aluminium plate folded into a U so that one leg clamps under the case and the other presents an area against the regulator. There are no fins: the design relies on the natural convection of a brick sitting under a desk. It is the reason the case runs at 60-70 C and the epoxy never fully cools. The sheet is commercial-purity aluminium folded on a press brake and tapped for the regulator screw, usually left mill finish or painted, occasionally black anodised.
 
-#### Sheet folding and tapping `c64.psu.heatsink.forming`
+#### Sheet folding and tapping `c64.psu.heatsink.forming` _(medium)_
 
 Strip or sheet is blanked, then folded on a press brake to a U; the mounting hole is punched or drilled and tapped with a thread-forming tap. Aluminium's low modulus means the fold must be given a generous inside radius or the sheet tears, and the tapped hole must be at least 1.5 diameters from the bend.
 
@@ -3492,7 +3492,7 @@ Strip or sheet is blanked, then folded on a press brake to a U; the mounting hol
 
 The single reservoir capacitor on the rectifier output. It is the part that has killed the most C64s: as the electrolyte dries out the ripple current is no longer smoothed, the series regulator loses headroom and starts pumping 100/120 Hz ripple onto the 5 V rail, and eventually the cap leaks current into the regulator's ground reference and pushes the output up past 5.5 V. Replacements are still sold as the C64 'fix' four decades later.
 
-#### Aluminium anode foil `c64.psu.bulk-cap.alu-foil`
+#### Aluminium anode foil `c64.psu.bulk-cap.alu-foil` _(medium)_
 
 The anode is a 12-20 um aluminium foil that has been chemically etched in a hot chlorate or permanganate bath to roughen the surface into a high-area sponge. Because capacitance is proportional to real surface area, the etch multiplies the effective area by 30-100x and is the entire reason a 4700 uF part fits in a 25 mm can. The foil gauge, the rolling lubricant and the last work-hardening pass matter as much as the etch: at 12 um the metal is barely thicker than the oxide skin on it, so a single pinhole becomes a short. The stock foil and its rolling chain are the shared metal.aluminum.foil line, from the rolling ingot down to the slitter.
 
@@ -3508,7 +3508,7 @@ Molten aluminium at 700-750 C is poured into a steel mould that is being withdra
 
 A long hold in a gas- or electrically-heated pit furnace, typically 12-24 h at 450-600 C, whose only job is to let the alloying elements diffuse evenly. Without it a slab rolled on one edge behaves differently from the same slab rolled on the other and the foil tears. It also rounds the dendritic structure into equiaxed grains, which is what makes the achievable surface quality possible.
 
-###### Hot rolling to 2-6 mm `metal.aluminum.hot-rolling`
+###### Hot rolling to 2-6 mm `metal.aluminum.hot-rolling` _(medium)_
 
 The ingot is preheated to 300-400 C for wide slab or 450-550 C for narrower, thicker slab, and a reversing hot mill takes it down to 2-6 mm in one or two passes. Aluminium's rolling window is famously narrow - too cold and it tears at the edges, too hot and the ingot surface oxidises and scales - so a 1980s reversing hot mill had two or three stands and quite tight control. Scale is removed with hot descaling rolls, which presses a rolled-in oxide pattern into the surface that later helps the lubricant out of the pores.
 
@@ -3532,19 +3532,19 @@ The ester lubricants are made from animal or vegetable fats - tallow, palm, rape
 
 The trick that made a decent electrolytic fit into an 8 mm diameter can. Plain anode foil etched in a hot acid bath grows an aluminium oxide/hydroxide layer over essentially the whole surface - up to about a hundred times the geometric area, and therefore a hundred times the capacitance per unit of volume. The 1980s etching chemistry was a chloride bath or, in the Japanese-dominated high-end market, a chlorate bath with acetic acid; the etch pits are then hardened with a phosphate or chromate formation treatment and the surface is impregnated with the electrolyte. The chloride ion eats its way into the foil along the grain boundaries and leaves a field of round tunnels 0.1-2 um across; oxidation inside those tunnels is what multiplies the area. A formation step then grows oxide in a controlled taper so the weakest point - the mouth of each pit - is the first to fail if the etch is wrong, which is why a 1982 capacitor that failed early failed as a short circuit and a vent rather than as a slow leak.
 
-##### Chemical etching of the anode foil `c64.psu.bulk-cap.alu-foil.etching`
+##### Chemical etching of the anode foil `c64.psu.bulk-cap.alu-foil.etching` _(medium)_
 
 The foil is threaded continuously through an etch tank at 70-80 C. Sodium chlorate with hydrochloric acid, or potassium permanganate, dissolves aluminium faster where the surface is already rough, so the etch runs away into a deep microscopic pore structure rather than eating away uniformly. The etched foil is rinsed, dried and cut to length.
 
-###### Potassium permanganate etchant `c64.psu.bulk-cap.alu-foil.etching.permanganate`
+###### Potassium permanganate etchant `c64.psu.bulk-cap.alu-foil.etching.permanganate` _(medium)_
 
 An alkaline potassium permanganate bath oxidises the aluminium surface; the loose MnO2 sludge is removed by brushing or a nitric acid dip. The alternative chlorate chemistry was being phased out for safety and environmental reasons through the 1980s because chlorate/dioxide is toxic.
 
-##### Electrolytic formation of the anode oxide `c64.psu.bulk-cap.alu-foil.formation`
+##### Electrolytic formation of the anode oxide `c64.psu.bulk-cap.alu-foil.formation` _(medium)_
 
 The wound wet cell is energised from a DC source at a voltage ramped up to the rated working voltage. At the anode the aluminium oxidises to a dense amorphous alumina film only a few nanometres thick - the dielectric. Raising the voltage thickens the film; raising the temperature thickens it faster but also lets it dissolve, which is why forming is done hot and forming voltage is always lower than the operating voltage.
 
-#### Electrolytic electrolyte `c64.psu.bulk-cap.electrolyte`
+#### Electrolytic electrolyte `c64.psu.bulk-cap.electrolyte` _(medium)_
 
 An aqueous solution of an ammonium or amine salt - ammonium pentaborate was the classic low-voltage recipe - that forms the counter-electrode ion layer against the oxide. In an aluminium electrolytic the cathode reaction deposits a hydrated aluminium oxide or tin layer from the metal ion, and the leakage current is exactly that reaction rate.
 
@@ -3552,11 +3552,11 @@ An aqueous solution of an ammonium or amine salt - ammonium pentaborate was the 
 
 A porous dielectric sheet between the anode and the cathode foil, keeping them apart without shorting. Low-voltage parts in 1980-82 used cellulose (paper) separators, which is the direct cause of the decades-later failure: paper is hygroscopic and absorbs electrolyte, and the carbonisation of that paper when leakage current rises shorts the cell.
 
-##### Polypropylene separator `c64.psu.bulk-cap.separator.polypropylene`
+##### Polypropylene separator `c64.psu.bulk-cap.separator.polypropylene` _(medium)_
 
 A microporous isotactic polypropylene film, 12-25 um thick and about 35-45% porous, made by extruding a film and stretching it or by solvent extraction so that the electrolyte fills the voids while the sheet still keeps the electrodes apart. It replaced paper because it absorbs no electrolyte and, when it overheats, softens instead of carbonising into a conductive bridge.
 
-##### Cellulose paper separator `c64.psu.bulk-cap.separator.cellulose`
+##### Cellulose paper separator `c64.psu.bulk-cap.separator.cellulose` _(medium)_
 
 A thin kraft paper sheet made on a Fourdrinier or twin-wire machine from long-fibre softwood pulp cooked at 160-180 C in sodium hydroxide; the lignin is washed out into a black liquor that is burned for process heat, roughly 1.2-1.5 t per tonne of pulp, and the pulp is bleached with chlorine or hypochlorite before an acid wash. The paper absorbs electrolyte and swells, and on ageing it chars and shorts.
 
@@ -3580,7 +3580,7 @@ From mid-1983 Commodore filled the case with a two-part epoxy so the whole assem
 
 A two-half injection-moulded case in black ABS, ~150 x 100 x 60 mm, with a tongue-and-groove seam, ribbing on the sides for stiffness, four case screws and one larger screw holding the cable clamp. On the potted builds the seam is a line of epoxy. Some units have the rating text moulded into the plastic; others have it printed on the underside and on a metallised label.
 
-#### Case screws `c64.psu.case.screws`
+#### Case screws `c64.psu.case.screws` _(medium)_
 
 Cross-recessed pan-head self-tapping screws into moulded bosses in the plastic, and in a mains appliance they must be short enough that they cannot reach the primary wiring - a specific check in the safety audit.
 
@@ -3588,7 +3588,7 @@ Cross-recessed pan-head self-tapping screws into moulded bosses in the plastic, 
 
 A moulded round DIN socket on the case face carrying the two 5 V conductors, the two 9 V AC conductors and, in the six-pin version, the second 9 V AC leg. Later builds reduced it to four pins. The C64's mainboard has the mating plug, and the two ends of the 5 V pair are deliberately larger-diameter so the plug cannot be inserted backwards.
 
-#### Connector nylon shell and brass pins `c64.psu.connector.nylon-shell`
+#### Connector nylon shell and brass pins `c64.psu.connector.nylon-shell` _(medium)_
 
 The shell is moulded from a glass-filled nylon (PA66-GF) with a chamfered keyway that defines the pin polarisation; the pins are brass, often nickel-plated for wear, and are a press-fit or riveted into the shell. The 5 V pins are larger so that the plug is keyed by power, not by numbering.
 
@@ -3600,7 +3600,7 @@ Not present on every brick. Where fitted it is a 3 mm red LED in a small nylon b
 
 The safety-critical data: input volts and frequency, VA input, 5 V DC watts, 9 V AC VA, the approval marks and the warning text. On the 3-83 build the text is moulded into the case; on the 13-83 it is printed on the underside, duplicated on a top label and given a date on a metallised sticker. Every approval scheme requires this data to be legible without opening the unit.
 
-#### Metallised polyester label `c64.psu.nameplate.metallised-label`
+#### Metallised polyester label `c64.psu.nameplate.metallised-label` _(medium)_
 
 A 25 um metallised polyester film printed with one or two hit spot colours and applied with an acrylic adhesive. Metallised polyester is used because it is tear-resistant, solvent-resistant and survives the polyester solvents in the potting epoxy, unlike paper.
 
@@ -3612,7 +3612,7 @@ Biaxially oriented polypropylene film, stretched in both directions so the molec
 
 A cast polypropylene or cast polyethylene film is stretched in the machine direction, cooled, then stretched again in the transverse direction and heat-set. The two stretching steps line the polymer chains up in both directions, so the film has high tensile strength and tear resistance whatever the pull direction - which is exactly why a torn BOPP label ends in a straight line rather than a ragged one.
 
-### Brick assembly and final test `c64.psu.assembly`
+### Brick assembly and final test `c64.psu.assembly` _(medium)_
 
 The order of operations is visible in the potted builds: the transformer is soldered to by the diodes and fuses at its own pins, the small board is populated, the LED and connector are fitted, the assembly is dropped into the case, epoxy is poured, the halves are screwed together, and the finished unit is then hi-pot tested, earth-continuity tested and burned in on load. Testing after potting is what lets a potted brick be safe and unrepairable at the same time.
 
@@ -3632,11 +3632,11 @@ The physical rules that make the layout safe: a primary-to-secondary creepage of
 
 Everything between the wall socket and the transformer primary: the three-conductor line cord and its moulded plug, the rocker switch, the line fuse, the X-rated suppression capacitor and the protective-earth bonding. The brick's case is entirely plastic, so the earth conductor never bonds to an enclosure - it terminates on the interwinding screen inside the transformer, and that is the whole of the earthing arrangement.
 
-### Rocker switch `c64.mains.switch`
+### Rocker switch `c64.mains.switch` _(medium)_
 
 A mains switch in the line conductor, mounted in the case wall so the rocker is the only part exposed. It is a snap-action mechanism: a spring-loaded plunger forces a moving contact against a fixed one with a definite wiping motion as it passes through centre, which both makes the circuit and scrapes oxide off the contact faces.
 
-#### Silver-alloy contacts and arc erosion `c64.mains.switch.contacts`
+#### Silver-alloy contacts and arc erosion `c64.mains.switch.contacts` _(medium)_
 
 Silver has the highest electrical and thermal conductivity of any metal and, unlike copper, its oxide is still conductive, so a silver contact keeps working even when it blackens. Contacts are riveted or welded to brass carriers so the spring force is set by the carrier rather than by the contact material. Every make operation evaporates a microscopic amount of metal as an arc; the contact is sized so that tens of thousands of makes erode it only slightly, and so that a failed contact fails open rather than welded shut.
 
@@ -3652,11 +3652,11 @@ Argentiferous lead concentrates are roasted and smelted, and the silver reports 
 
 An ancient refining step that survives into the 1980s for precious metals: the metal is melted with a lead oxide flux and blown with air, which oxidises the lead and the base metals to litharge that floats off, while the silver and gold stay as metal. Agricola described it in the 16th century and it is still the standard way to remove base metal from silver dross.
 
-#### Rocker actuator and case `c64.mains.switch.actuator`
+#### Rocker actuator and case `c64.mains.switch.actuator` _(medium)_
 
 The external rocker is moulded in a glass-filled thermoset or a self-extinguishing thermoplastic and clips over a phenolic or nylon body carrying the fixed contacts. The case must be rated for the insulation class and have the flammability rating appropriate to an appliance, and the actuator must not be able to be jammed in the on position.
 
-#### Glass-reinforced switch body `c64.mains.switch.actuator.filler`
+#### Glass-reinforced switch body `c64.mains.switch.actuator.filler` _(medium)_
 
 Glass fibre is added to the switch body at 20-30% by weight and the compound is compression moulded. The glass reduces creepage and raises the distortion temperature, which is what keeps the moulding from softening near a hot transformer.
 
@@ -3676,7 +3676,7 @@ The fuse tube is a drawn borosilicate or soda-lime glass tube, chosen because it
 
 The batch is a few hundred kilograms of silica sand, soda ash, limestone and cullet melted in a regenerative furnace at 1400-1500 C. The silica sand, dug from high-silica deposits, is the leaf of the glass chain.
 
-###### Regenerative furnace and cowper `c64.mains.fuses.glass-cartridge.tube-glass.batch.regenerator`
+###### Regenerative furnace and cowper `c64.mains.fuses.glass-cartridge.tube-glass.batch.regenerator` _(medium)_
 
 A glass furnace cannot simply burn gas, because glassmelting needs far more heat than combustion can deliver at that temperature. The answer is regeneration: a Cowper regenerator beside the furnace stores the heat of the exhaust in a refractory mass, then blows the air through it on the next firing. The two 1980s designs were the regenerative box furnace and the unit-regenerator furnace.
 
@@ -3716,7 +3716,7 @@ Made by polymerising propylene from a steam cracker in a slurry or gas-phase pro
 
 The film web is wound on a rotating vacuum-chamber drum while a wire feed head traverses it, laying down an aluminium layer 20-50 nm thick by resistive evaporation. At the same time a nucleation solution is dosed in to promote columnar crystal growth, so the metal grains follow the drum direction and the resulting capacitor has a low-loss, self-healing electrode. The web is slit to width and the capacitor is wound from slits onto a core.
 
-##### Cast film production `c64.mains.line-capacitor.metallised-film.winding.roll-film`
+##### Cast film production `c64.mains.line-capacitor.metallised-film.winding.roll-film` _(medium)_
 
 Polypropylene is extruded through a flat die onto a chilled cast roll, then stretched and heat-set so it is strong in both directions, then slit into webs 20-60 um wide. A plain film is wound on the same type of machine as the metallised film, so the two steps are usually separate plants.
 
@@ -3728,15 +3728,15 @@ The brick is entirely moulded ABS with no metal chassis, so there is nothing ext
 
 The brick is certified as a component rather than as an appliance. In the United States that is UL 478, Power Supply Units, with the file number moulded into the case - 13J5 with 'FOR USE WITH COMMODORE COMPUTER' on the 3-83 build. In Canada it is CSA, in Singapore the NLS scheme, and in West Germany VDE. Each is a recognised component mark; the finished C64 was then certified separately under whichever national scheme applied to the appliance.
 
-#### The safety file `c64.mains.approvals.safety-file`
+#### The safety file `c64.mains.approvals.safety-file` _(medium)_
 
 Listing is not just a test. The applicant submits a design file: schematic, printed-board artwork, bill of materials, critical-components list, the transformer's winding instruction and insulation system drawing, the enclosure material specifications, and the test report. The follow-up inspection checks that production still matches the file, and it is the reason a safe transformer cannot simply be substituted with a cheaper one after manufacture.
 
-#### Routine production tests `c64.mains.approvals.normal-tests`
+#### Routine production tests `c64.mains.approvals.normal-tests` _(medium)_
 
 Beyond the type tests, every unit gets a dielectric withstand test between the primary and the secondaries, an earth-continuity test, and a functional test with a load on both outputs. The dielectric withstand is the test that actually keeps people alive, because the failure it detects - a foil short, a pinched wire, a solder splash across the bobbin - is the fault that puts mains on a 5 V rail.
 
-##### Lot sampling and the critical-component control plan `c64.mains.approvals.normal-tests.aql`
+##### Lot sampling and the critical-component control plan `c64.mains.approvals.normal-tests.aql` _(medium)_
 
 Listing does not mean every unit is tested at every test. Instead the manufacturer submits a control plan: the dielectric withstand and earth continuity are 100% tests because they are the safety-critical ones, while the routine functional and leakage-current checks are sampled at an agreed quality level - typically one in three to one in thirty, with any failure escalating the lot to 100%. Critical components (the transformer, the switch, the fuse, the line capacitor, the cord set) come only from named manufacturers and are subject to incoming inspection.
 
@@ -3744,7 +3744,7 @@ Listing does not mean every unit is tested at every test. Instead the manufactur
 
 Three cables shipped with or sold alongside a breadbin C64, plus the optional TV switch box. The RF cable carries the modulator's VHF output from the machine's phono socket to a television's aerial input, so it is a 75-ohm coaxial. The A/V lead carries luma, chroma, composite and audio to a monitor through an 8-pin DIN. The mains cord is a two- or three-core PVC-jacketed cord with a moulded plug that feeds the external power supply.
 
-### RF cable (phono plug to TV plug) `c64.cables.rf-cable`
+### RF cable (phono plug to TV plug) `c64.cables.rf-cable` _(medium)_
 
 A 75-ohm coaxial lead. Its job is to get a 1 MHz video signal, sitting on a VHF carrier, into a television's analogue aerial input without picking up half the room on the way. Impedance matching and a decent screen are what keep the picture from ghosting.
 
@@ -3752,43 +3752,43 @@ A 75-ohm coaxial lead. Its job is to get a 1 MHz video signal, sitting on a VHF 
 
 The cable itself: a centre conductor, a dielectric, a braided screen and an outer PVC jacket, assembled in that order. The braid is what does the shielding; the jacket is only there to survive being dragged under a TV cabinet for twenty years. A consumer lead of this type was often thin-wall 75-ohm coax rather than a strict RG designation, and the important properties are 75 ohms and full-coverage screen.
 
-##### Centre conductor (copper, or copper-clad steel) `c64.cables.rf-cable.centre-conductor`
+##### Centre conductor (copper, or copper-clad steel) `c64.cables.rf-cable.centre-conductor` _(medium)_
 
 The signal-carrying core. Consumer coax uses solid bare copper or, to save money, copper-clad steel. At RF frequencies a copper-clad-steel core is perfectly adequate over a metre of cable, and the copper wire rod for it comes from the same electrolytic refinery as the winding wire and the contact metal elsewhere in the machine.
 
-###### Copper wire rod and drawing `c64.cables.rf-cable.copper-wire`
+###### Copper wire rod and drawing `c64.cables.rf-cable.copper-wire` _(medium)_
 
 Copper cathodes are melted, cast into wire rod, then drawn through a series of dies to the finished diameter. A cable plant buys rod and draws it in-house; drawing anneals and work-hardens the copper in the same step.
 
-##### Dielectric (polyethylene or PTFE) `c64.cables.rf-cable.dielectric`
+##### Dielectric (polyethylene or PTFE) `c64.cables.rf-cable.dielectric` _(medium)_
 
 The insulating foam between conductor and braid. Polyethylene is the volume material for consumer coax, often gas-injected or foam-injected to lower the dielectric constant and hold 75 ohm with a bigger centre conductor. PTFE (Teflon) is the low-loss, low-noise alternative used where a very clean signal or a tight bend radius matters.
 
-###### Low-density polyethylene (the volume dielectric) `c64.cables.rf-cable.ldpe`
+###### Low-density polyethylene (the volume dielectric) `c64.cables.rf-cable.ldpe` _(medium)_
 
 The bulk of consumer coax dielectric is LDPE made by high-pressure or low-pressure polymerisation of ethylene. LDPE is branched and low-density, which is exactly what you want here: the branching lowers the dielectric constant so the coaxial geometry lands on 75 ohm with a reasonable centre-conductor size.
 
-##### Coaxial cable PVC jacket `c64.cables.rf-cable.jacket`
+##### Coaxial cable PVC jacket `c64.cables.rf-cable.jacket` _(medium)_
 
 A lead-compounded PVC jacket, flexible grade with a plasticiser so the cable stays bendable. It has nothing to do with the signal; its job is abrasion and handling. The plasticiser is what makes the lead supple instead of stiff and brittle, and the phthalate ester it is made from comes off the same phthalic anhydride plant as the pigment in the case.
 
-###### Plasticiser in flexible PVC `c64.cables.rf-cable.plasticiser`
+###### Plasticiser in flexible PVC `c64.cables.rf-cable.plasticiser` _(medium)_
 
 Cable PVC is not rigid: it is compounded with a plasticiser such as dioctyl phthalate (DOP) or trimellitates, dropped into an extruder at 5-10% and mixed before extrusion. The plasticiser is what makes the lead supple instead of stiff and brittle.
 
-##### Braided screen (tinned copper) `c64.cables.rf-cable.braid`
+##### Braided screen (tinned copper) `c64.cables.rf-cable.braid` _(medium)_
 
 A flat bundle of tinned copper wires woven over the dielectric by a braiding machine, usually with a second pass to push coverage from ~70% toward 90%. Tinning reduces oxidation and makes the braid easier to terminate.
 
-##### Cable extrusion line `c64.cables.rf-cable.polymer-extrusion`
+##### Cable extrusion line `c64.cables.rf-cable.polymer-extrusion` _(medium)_
 
 A vertical or horizontal line where conductor is drawn through a die, dielectric tube is extruded or foamed around it, braid is laid on from a rotating carrier, and the jacket is extruded and cooled in a trough. Cable extrusion is one of the few polymer processes that is genuinely continuous and high-speed.
 
-#### Moulded phono plug and TV plug `c64.cables.rf-cable.plug`
+#### Moulded phono plug and TV plug `c64.cables.rf-cable.plug` _(medium)_
 
 Both ends are moulded: a phono (RCA) plug with a nickel-plated centre pin in a moulded barrel at the C64 end, and a television coaxial plug at the other. The pin is electroplated rather than bare so it survives being shoved into and out of the television a thousand times; nickel is the classic choice for a connector contact because its contact resistance stays low and it does not corrode in a socket. Brass is the standard pin material because it machines well, springs enough to take a wipe and does not rust.
 
-#### Strain-relief boot `c64.cables.rf-cable.strain-relief`
+#### Strain-relief boot `c64.cables.rf-cable.strain-relief` _(medium)_
 
 A moulded rubber or PVC boot at each cable end where it enters the plug body, taking the bending load so the conductor does not fatigue at the termination. Cheap to add, and the difference between a lead that survives ten years and one that breaks at the root.
 
@@ -3804,19 +3804,19 @@ A moulded DIN plug with a metal shell and a screw-on or clip-on backshell that c
 
 Stranded tinned copper conductors with PVC insulation, colour-coded to the DIN pinout, with the audio lines twisted or shielded to keep the 1 MHz clock out of the speaker. The wire gauge is not recorded in the sources available here.
 
-### Mains power cord `c64.cables.power-cord`
+### Mains power cord `c64.cables.power-cord` _(medium)_
 
 A detachable mains lead for the external power supply: two or three PVC-insulated copper conductors, twisted together on a planetary twister so the cord resists unwinding, then jacketed in a second extrusion over the twisted bundle. Each conductor is passed through a die and coated with rigid or semi-rigid PVC at a few hundred volts' worth of insulation, with the colour added by pigment masterbatch. At the supply end there is a moulded figure-8 or IEC C8 inlet; at the wall end a moulded mains plug whose cord body is the part that actually fails, because it is unbolted from the prongs and slides off the cable.
 
-#### Flexible stranded copper conductors `c64.cables.power-cord.conductors`
+#### Flexible stranded copper conductors `c64.cables.power-cord.conductors` _(medium)_
 
 Fine-strand flexible copper, made by bunching many small wires in a roving machine and twisting them. Flexible stranding is what lets a mains lead bend without breaking the strands, and class 2 or 5 stranding at 0.5-0.75 mm2 is what a 2.5-10 A cord of this period used.
 
-#### Moulded mains plug `c64.cables.power-cord.mains-plug`
+#### Moulded mains plug `c64.cables.power-cord.mains-plug` _(medium)_
 
 A plug with a thermoplastic cord body wrapped around the cable entry to take the bending strain, and two or three brass prongs riveted or crimped in. The cord body is the part that actually fails: the plug is unbolted from the prongs and slides off the cable.
 
-##### Cord body / strain-relief grip `c64.cables.power-cord.cord-body`
+##### Cord body / strain-relief grip `c64.cables.power-cord.cord-body` _(medium)_
 
 Moulded in PVC or polypropylene and over-moulded onto the jacket. It is deliberately flexible so the cable can swivel, which is also why a moulded cord body eventually tears at its root after years of being yanked out of a wall socket by the wire.
 
@@ -3828,7 +3828,7 @@ Commodore part 904778-01, an external box that let the C64's RF output share a t
 
 A breadbin C64 shipped in a corrugated board box printed lithographically with Commodore's rainbow graphics, with the machine cradled in two moulded polystyrene end blocks and wrapped in a polyethylene bag, plus the user's manual and a warranty card. Boxes went to a corrugated master carton on a timber skid for shipping to warehouses.
 
-### Retail corrugated box `c64.packaging.retail-box`
+### Retail corrugated box `c64.packaging.retail-box` _(medium)_
 
 A regular slotted container or a tuck-end box in single-wall corrugated board, printed on a sheet-fed or web offset press in up to four or six colours plus the rainbow gradient, then creased, cut, folded and glued. It is a commodity: the board is a mill product and the printing is a printshop product, not a Commodore product. The board gives the box its edge crush strength for the couple of Newtons of stacking force a pallet of them actually sees.
 
@@ -3836,43 +3836,43 @@ A regular slotted container or a tuck-end box in single-wall corrugated board, p
 
 Two kraft liners glued to a fluted medium, corrugated between two rotating fluted rolls with heat and starch glue and then glued to the liners. The flute is a beam, which is the whole reason a pizza box folds and a used sheet does not, and it is why a C64 box is B or C flute single wall rather than anything heavier. Medium paper is run onto the corrugator at 200-400 m/min and the sheet is then cut and creased.
 
-##### Kraft liner (topside and underside) `c64.packaging.kraft-liner`
+##### Kraft liner (topside and underside) `c64.packaging.kraft-liner` _(medium)_
 
-Unbleached paper made from long-fibre softwood pulp, typically 120-200 gsm. Its brown colour is the kraft process itself: the pulp is brown before it reaches the paper machine, because the kraft cook keeps the lignin.
+Unbleached paper made from long-fibre softwood pulp, typically 120-200 gsm. Kraft paper is also known as brown paper: the brown is the colour of the unbleached grade, not the consequence of a lignin-preserving cook, because the kraft cook in fact removes most of the lignin present in the wood.
 
-###### Kraft pulp `c64.packaging.kraft-pulp`
+###### Kraft pulp `c64.packaging.kraft-pulp` _(medium)_
 
-Wood chips are steamed, cooked in a kraft digester with sodium hydroxide and sodium sulfide, washed, and bleached only lightly. The brown colour is retained kraft lignin, which is why kraft paper is brown and recycling it is easy.
+Wood chips are steamed, cooked in a kraft digester with sodium hydroxide and sodium sulfide, washed, and bleached only lightly. The kraft cook is a delignifying cook: it removes most of the lignin originally present in the wood, and the surviving cellulose is what makes kraft pulp stronger than sulfite or mechanical pulp. Kraft pulp is darker than other wood pulps and is normally left unbleached for sack and liner grades.
 
-###### Wood chips from sawmill waste `c64.packaging.wood-chips`
+###### Wood chips from sawmill waste `c64.packaging.wood-chips` _(medium)_
 
 Roundwood is debarked and chipped into 20-30 mm chips in a disc chipper, ready for the digester. The chips are the whole reason the paper mill sits next to a forest: you cannot make paper without wood fibre.
 
-###### Roundwood logs `c64.packaging.log`
+###### Roundwood logs `c64.packaging.log` _(medium)_
 
 Trunk sections felled and delimbed, usually conifer in northern Europe and North America. Softwood is preferred for kraft because its long fibres give paper strength; hardwoods go into hardwood kraft or into mechanical pulp.
 
-###### Standing softwood in a managed plantation `c64.packaging.forest-stand`
+###### Standing softwood in a managed plantation `c64.packaging.forest-stand` _(medium)_
 
 Managed conifer plantations - spruce, pine or southern pine - felled on a rotation and replanted, where the fibre chain for a box begins. A box is wood, and the wood is a tree that was grown, cut and chipped.
 
-###### Kraft cooking (digestion) `c64.packaging.digestion`
+###### Kraft cooking (digestion) `c64.packaging.digestion` _(medium)_
 
 Chips are cooked in a spherical or continuous digester with white liquor (sodium hydroxide + sodium sulfide + sodium carbonate) at 160-180 C. The alkali dissolves the lignin; the sulfide keeps the dissolved lignin in solution so the fibres do not darken.
 
-###### Kraft grade versus bleached `c64.packaging.kraft-process`
+###### Kraft grade versus bleached `c64.packaging.kraft-process` _(medium)_
 
-Unbleached kraft keeps its brown colour and is the cheapest strong liner; the brown is the kraft process itself, because the pulp is brown before it reaches the paper machine. A bleached or semi-bleached top liner costs more and is used where the print needs a white background. Commodore's boxes are brown board with printing on top, so the brown liner is exactly right.
+Unbleached kraft keeps its brown colour and is the cheapest strong liner; kraft paper is also known as brown paper. The colour is a property of the unbleached grade rather than of retained lignin, since the kraft cook removes most of the wood's lignin. A bleached or semi-bleached top liner costs more and is used where the print needs a white background. Commodore's boxes are brown board with printing on top, so the brown liner is exactly right.
 
-##### Fluted medium (recycled) `c64.packaging.corrugated-medium`
+##### Fluted medium (recycled) `c64.packaging.corrugated-medium` _(medium)_
 
 The wavy centre of the board is usually made from 100% recycled paper, because the flute does not need virgin-fibre strength. Old corrugated boxes are collected, pulped (the recycled / OCF route), and run onto a corrugating machine.
 
-###### Recovered paper (OCC / mixed waste) `c64.packaging.wastepaper`
+###### Recovered paper (OCC / mixed waste) `c64.packaging.wastepaper` _(medium)_
 
 Collected corrugated and box board, baled, repulped in a hydrapulper and screened. The deinking stage is needed for printed waste; unprinted OCC is repulped as it is. The fibre in a C64 box's fluted medium is therefore almost certainly several previous boxes.
 
-###### Repulping and deinking `c64.packaging.deinking`
+###### Repulping and deinking `c64.packaging.deinking` _(medium)_
 
 Bales are dropped into a hydrapulper, torn up into fibre, screened, and deinked with a flotation cell and surfactant to remove printing inks. A high proportion of the world's corrugated medium fibre is recovered in exactly this way.
 
@@ -3880,15 +3880,15 @@ Bales are dropped into a hydrapulper, torn up into fibre, screened, and deinked 
 
 The glue holding the flutes and the liners is a corn- or tapioca-starch dextrin, cooked on the corrugator and applied hot. It is the standard adhesive in corrugated board and the reason the board is not a fire hazard in the way solvent glues would be.
 
-###### Corn (maize) starch `c64.packaging.corn-starch`
+###### Corn (maize) starch `c64.packaging.corn-starch` _(medium)_
 
 Starch is wet-milled from maize: the kernels are steeped in warm water to soften the germ, ground, and the starch is separated by gravity or centrifugally and dried. Every corrugated box is glued with a plant, not a petrochemical.
 
-###### Maize crop `c64.packaging.maize`
+###### Maize crop `c64.packaging.maize` _(medium)_
 
 A cereal grain grown in enormous tonnages in the US corn belt and in Europe, China and Brazil; the harvested cobs are shelled and the kernels go to wet milling. This is the agricultural end of the adhesive chain.
 
-#### Box printing (offset litho) and the rainbow graphics `c64.packaging.box-printing`
+#### Box printing (offset litho) and the rainbow graphics `c64.packaging.box-printing` _(medium)_
 
 The printed sheet is run on an offset litho press - sheet-fed for short runs, web-fed for long - in a small number of process colours, with the Commodore rainbow reproduced as a multi-stop gradient from duotone overprints at varying screen densities or, on later short runs, a spray unit. A thin aqueous varnish is often applied over the top for scuff resistance. Flexographic printing on corrugate with rubber or photopolymer plates became the normal route for high-run corrugated print during this period and later; for a mid-run consumer box in the early 1980s, sheet-fed offset on a liner was still common.
 
@@ -3896,7 +3896,7 @@ The printed sheet is run on an offset litho press - sheet-fed for short runs, we
 
 The image is on a flat plate, wetted with dampening solution so the image areas reject ink, and printed by a rubber blanket onto paper. Litho gives fine detail and consistent colour on uncoated board, at the cost of a plate-making step per colour.
 
-###### Lithographic printing plate `c64.packaging.litho-plate`
+###### Lithographic printing plate `c64.packaging.litho-plate` _(medium)_
 
 A thin aluminium or copper plate, grained and treated, with a photopolymer or metal-image layer carrying the separations. The classic long-run offset plate is an aluminium sheet electro-grained and anodised; short runs use photopolymer plates directly.
 
@@ -3908,15 +3908,15 @@ A pigment dispersed in a drying-oil-based vehicle (linseed/soy alkyd) with resin
 
 Built from vegetable oil (linseed or soybean) fatty acids condensed with a polyol and a phthalic or maleic anhydride, then crosslinked by oxidative polymerisation on the press. So the ink vehicle on the box traces back to a phthalic anhydride plant, the same chemistry as the pigment in the case.
 
-###### Soy or linseed oil (ink vehicle base) `c64.packaging.soy-oil`
+###### Soy or linseed oil (ink vehicle base) `c64.packaging.soy-oil` _(medium)_
 
 A vegetable oil pressed from a crop. It oxidises (dries) on the printed sheet, which is what 'drying ink' means. In 1982 soybean oil was becoming the preferred ink vehicle because of the 1970s linseed-oil shortages.
 
-###### Ink pigments (organic and inorganic) `c64.packaging.ink-pigment`
+###### Ink pigments (organic and inorganic) `c64.packaging.ink-pigment` _(medium)_
 
 In 1982 most packaging colourants were still inorganic: iron oxides, chrome yellow, ultramarine. The bright synthetic organic pigments (phthalocyanines, azo yellows) were used for the saturated rainbow, and the titanium dioxide white for the light areas.
 
-###### Offset press (sheet-fed or web) `c64.packaging.litho-press`
+###### Offset press (sheet-fed or web) `c64.packaging.litho-press` _(medium)_
 
 A printing press: plate cylinders, blanket cylinders, inking units, and either a sheet feed with a delivery stacker or a web unwind and rewind with a folder. For a corrugated box liner, the press is the capital equipment a converter owns.
 
@@ -3928,31 +3928,31 @@ Inside the box, below or beside the machine, the power cord, the A/V lead and th
 
 Two white expanded-polystyrene blocks that cradle the ends of the machine so the case cannot be crushed in the box and cannot slide. They are moulded to the machine's outline in a steam-heated block mould, then cut down to size.
 
-#### Expanded polystyrene (EPS) `c64.packaging.eps`
+#### Expanded polystyrene (EPS) `c64.packaging.eps` _(low)_
 
-Small beads of polystyrene, each already blown up with a chlorinated blowing agent, heated and expanded again in a mould so the beads fuse into a solid block shaped to the part. The polymer is the same styrene feedstock as the ABS and the SAN; only the physical form is different. In 1982 the blowing agent was still a chlorinated hydrocarbon, CFC-11 or dichloromethane, and it was phased out of packaging foam through the 1990s in favour of pentane and butane.
+Small beads of polystyrene, each already blown up with a blowing agent, heated and expanded again in a mould so the beads fuse into a solid block shaped to the part. The polymer is the same styrene feedstock as the ABS and the SAN; only the physical form is different. The documented blowing agent is pentane, an aliphatic hydrocarbon permeating the bead before expansion; chlorinated blowing agents were also used and were being eliminated from foam through the 1980s and 1990s.
 
-##### EPS beads (expanded in a bead expander) `c64.packaging.eps-beads`
+##### EPS beads (expanded in a bead expander) `c64.packaging.eps-beads` _(low)_
 
-Styrene is suspension-polymerised in water to small beads, then a chlorinated blowing agent is dissolved into them under pressure; on heating the agent flashes and expands each bead from ~0.5-1 mm to 2-6 mm, and the beads are chilled and sieved by size.
+Styrene is suspension-polymerised in water to small beads, then a blowing agent is dissolved into them under pressure; on heating the agent flashes and expands each bead, and the beads are chilled and sieved by size.
 
-###### Chlorinated blowing agent (CFC-11 / dichloromethane) `c64.packaging.chlorinated-blowing-agent`
+###### Chlorinated blowing agent (CFC-11 / dichloromethane) `c64.packaging.chlorinated-blowing-agent` _(medium)_
 
 Trichlorofluoromethane, or methylene chloride in the European trade. Both are excellent blowing agents: low boiling point, no flammability risk in the bead, and chemically inert enough to survive the polymerisation. They are also chlorinated, which is the whole problem - they destroy stratospheric ozone, so they were phased out of packaging foam through the 1990s and replaced by pentane and by butane.
 
-##### Bead expansion (bead expander) `c64.packaging.eps-expansion`
+##### Bead expansion (bead expander) `c64.packaging.eps-expansion` _(medium)_
 
 Beads are fed into a steam-heated expander where they expand, are held at temperature to sinter them into a cake, and are then cooled and dried in a silo. The expander is the machine that sets the final foam density.
 
-##### Block moulding in a steam-heated mould `c64.packaging.eps-moulding`
+##### Block moulding in a steam-heated mould `c64.packaging.eps-moulding` _(medium)_
 
 Beads are blown into a heated aluminium mould and the steam expands them to fill it; the mould is then cooled and the block ejected. A block mould makes a slab that is later cut on a band saw or hot wire into the end blocks. The mould is a heat exchanger - the steam lines run through it.
 
-### Polyethylene sleeve over the machine `c64.packaging.polybag`
+### Polyethylene sleeve over the machine `c64.packaging.polybag` _(medium)_
 
 A plain polyethylene bag over the boxed machine, to stop the moulded case and the printed manual from rubbing and to keep dust out during transit. It is a low-cost LDPE sleeve, blown as a tube on the same film-blowing line used for all commodity packaging film.
 
-#### Film blowing and bag making `c64.packaging.film-blowing`
+#### Film blowing and bag making `c64.packaging.film-blowing` _(medium)_
 
 LDPE pellets are blown as a thin tube through a die and a bubble, cooled in an air ring, collapsed and wound; the tube is then cut and heat-sealed into a bag. Film blowing is high-volume and very cheap - the bag is cents, not dollars.
 
@@ -3960,39 +3960,39 @@ LDPE pellets are blown as a thin tube through a die and a bubble, cooled in an a
 
 The Commodore 64 user's manual, part 320974 in the service-manual parts list, is a cheap but well-made fold-in-fold booklet: a single sheet of coated wood-pulp paper printed in colour on both sides, folded twice with a 16-page section glued into the middle crease. The result opens flat and costs almost nothing to assemble, and the construction is the same as a road atlas. A long sheet is printed with the page imposition for the 16-page booklet and the centre section is glued with PVA or hot-melt.
 
-#### Coated printing paper `c64.packaging.manual.paper`
+#### Coated printing paper `c64.packaging.manual.paper` _(medium)_
 
 Wood-pulp paper filled and coated with clay (kaolin) and a binder, then calendered, so the ink sits on the surface and the colours are bright and sharp. It is the same stock as a supermarket leaflet.
 
-#### Colour offset printing of the manual `c64.packaging.manual.printing`
+#### Colour offset printing of the manual `c64.packaging.manual.printing` _(medium)_
 
 Sheet-fed offset litho in four colours (CMYK), plus spot colours for the Commodore rainbow and the red 'RESTORE' key highlights. The manual's diagrams and BASIC listings were set in hot-metal or phototypeset, then printed from plates.
 
-### Warranty and registration card `c64.packaging.warranty-card`
+### Warranty and registration card `c64.packaging.warranty-card` _(medium)_
 
 A small printed card with the warranty terms and a serial-number registration slip. It is the same litho process as the manual on a heavier board stock, and it is the only part of the package with a legal function.
 
-### Shipping master carton and skid `c64.packaging.master-carton`
+### Shipping master carton and skid `c64.packaging.master-carton` _(medium)_
 
 Retail boxes were packed into corrugated master cartons, several to a carton, and banded on a timber skid for palletised shipping from the Hong Kong or Taiwan assembly plant to a regional warehouse. Skids - not euro-pallets - were the norm for export shipping of this period.
 
-#### Timber skid `c64.packaging.skids`
+#### Timber skid `c64.packaging.skids` _(medium)_
 
 A wooden skid: three or more bearers with a top deck, or a bare skid with the cartons loaded straight onto it. Skids are made from rough-sawn softwood offcuts, which is why they are the cheapest way to make a heavy load forkable.
 
-##### Rough-sawn softwood `c64.packaging.timber`
+##### Rough-sawn softwood `c64.packaging.timber` _(medium)_
 
 Kiln-dried or green softwood, band-sawn to bearers and deckboards. The sawmill waste that cannot be pulped into paper - knots, ends, slabs - is exactly what a skid is made of, which is a neat closure of the wood chain.
 
-#### Strapping (steel or polypropylene) `c64.packaging.strapping`
+#### Strapping (steel or polypropylene) `c64.packaging.strapping` _(medium)_
 
 Steel band with a stamped seal, or the polypropylene strapping that had largely displaced it by the 1980s because it does not rust, does not cut the carton and is lighter to ship back as waste.
 
-#### Master-carton board `c64.packaging.carton-board`
+#### Master-carton board `c64.packaging.carton-board` _(medium)_
 
 Heavier double-wall corrugated, usually a recycled medium and recycled liners, with the shipping marks stencilled or flexo-printed rather than litho-printed.
 
-### Pack-out and case packing `c64.packaging.packaging-line`
+### Pack-out and case packing `c64.packaging.packaging-line` _(medium)_
 
 At the end of the case-moulding and assembly plant, machines are bagged, placed in the foam blocks, dropped into the printed box with the manual and the warranty card, and the box is closed, labelled and case-packed. This was semi-automatic and was the labour-heavy step that determined where a home computer was finally assembled.
 
@@ -4032,11 +4032,11 @@ Funnel glass is a borosilicate with low alkali, formulated so that its thermal e
 
 Borates lower the glass's expansion coefficient and its melting point, which is exactly what a funnel that must survive a 25 kV implosion needs. Most borax for the western hemisphere came from borate ores in southern California and from Turkey.
 
-###### Lead borosilicate sealing frit `peripheral.tv.crt.panel.frit`
+###### Lead borosilicate sealing frit `peripheral.tv.crt.panel.frit` _(medium)_
 
 The seal that makes a television tube possible, and a substance rather than an object: a glass with a recipe, printed onto the parts that have to become one. Lead oxide, silica, boric oxide and alkali are mixed with a water-soluble or organic vehicle into a paste and screen-printed through a 60-100 mesh onto the rim of the panel and the flange of the funnel, then dried and fired at 600-700 degrees C to drive the vehicle off and devitrify the band. Panel and funnel are then brought together in a continuous belt kiln, where the frit softens and fuses at 430-460 degrees C. Lead does three jobs: it drops the sealing temperature far below the point where the base glass would slump, it can be tuned to match the expansion of either glass, and its high atomic number soaks up the bremsstrahlung X-rays that 25 kV of beam current unavoidably produces inside the tube. The printed band has to be dimensionally exact - too narrow and it will not seal, too wide and it costs lead.
 
-###### Lead oxide (litharge), PbO `peripheral.tv.crt.panel.frit.pbo`
+###### Lead oxide (litharge), PbO `peripheral.tv.crt.panel.frit.pbo` _(medium)_
 
 The lead in the frit started as galena, PbS, roasted in air to a PbO litharge cake, then smelted. Nothing about this is exotic: it is the same 1900s Parkesine process that made lead-acid battery plates, refined to the point where the oxide is pure white and free of the bismuth and antimony that would grey it.
 
@@ -4076,7 +4076,7 @@ The single most important trick in a CRT, and a layer rather than an operation: 
 
 Zinc sulphide is the host crystal for all three P22 phosphors. It came from sphalerite, the zinc-iron sulphide ore, roasted in air to ZnO with the sulphur captured as SO2 for sulphuric acid. The ZnO was then converted back to high-purity ZnS, either by reacting with H2S or by reducing with hydrogen and re-sulphurising, because phosphor-grade sulphide has to be free of the iron and manganese that quench the emission.
 
-###### Convert sulphur dioxide to sulphuric acid `peripheral.tv.crt.phosphor.zns.so2`
+###### Convert sulphur dioxide to sulphuric acid `peripheral.tv.crt.phosphor.zns.so2` _(medium)_
 
 The roaster's off-gas is cleaned, converted to SO3 on a vanadium pentoxide catalyst at about 450 degrees C and absorbed in 98% acid in a double-contact plant. It is the reason a 1982 zinc smelter had an acid plant as large as the roaster.
 
@@ -4104,7 +4104,7 @@ Without something to stop every beam landing on every phosphor, a CRT would be a
 
 Low-carbon sheet with very little residual stress, because a mask that warped would break the geometry. It comes off the hot strip mill, is cold-reduced to 0.1-0.2 mm in a reversing mill, annealed in a hydrogen or nitrogen atmosphere, and slit.
 
-###### Smelt the iron and blow it in a basic oxygen furnace `peripheral.tv.crt.mask.steel.bf`
+###### Smelt the iron and blow it in a basic oxygen furnace `peripheral.tv.crt.mask.steel.bf` _(medium)_
 
 Sintered iron ore, coke and limestone are charged to a blast furnace at 1500-1600 degrees C. Hot metal comes out at about 4% carbon, is blown in a BOF to 0.05-0.1%, and is continuously cast into slabs that go to the hot strip mill.
 
@@ -4116,7 +4116,7 @@ The flat sheet is cleaned, coated with photoresist, exposed through a master pla
 
 The alternative to a foil: two combs of vertical wires under tension, typically nickel-chrome plated steel wire, at a 0.5-0.6 mm pitch. Because the mask is vertical wires only, the beam can strike them from any horizontal position, which gives the Trinitron its famous vertically sharp picture and lets the two outer guns share a defocus. Two thin damper wires keep the combs from ringing.
 
-##### Electron gun, three guns `peripheral.tv.crt.gun`
+##### Electron gun, three guns `peripheral.tv.crt.gun` _(medium)_
 
 Three parallel electron guns in one pinch, one per phosphor, each with a hot cathode, a control grid, a screen grid, a focus grid and an anode. In a 13 inch set of 1982 they were usually separate but adjacent, converging at the screen; the convergence magnets on the neck bent them into line and the electrostatic or magnetic focus brought the three spot sizes down to about 0.5-1.0 mm at the panel.
 
@@ -4128,11 +4128,11 @@ A cup-shaped nickel-chromium alloy base, sprayed with barium, strontium and calc
 
 The cup that carries the emitting coating: a nickel-chromium alloy, about 82% Ni with 18% Cr, spun or deep drawn to a shallow cup. The alloy is chosen because it does not react with the alkaline-earth oxides fired onto it and does not outgas badly in a vacuum that has to hold for the life of the tube. It is an alloy, not a pure metal, so it draws on the blast furnace for its iron as well as on the nickel refinery.
 
-###### Tungsten heater filament `peripheral.tv.crt.gun.heater`
+###### Tungsten heater filament `peripheral.tv.crt.gun.heater` _(medium)_
 
 A hair-fine tungsten wire folded into a flat zig-zag under the cathode cup and buried in its oxides. Typical wire 0.04-0.08 mm diameter, 60-150 mm long, running at 6.3 V. It is the only hot tungsten in the gun and by far the largest source of tube failure.
 
-###### Drawn tungsten wire `metal.tungsten.wire`
+###### Drawn tungsten wire `metal.tungsten.wire` _(medium)_
 
 The compact is swaged, then rolled, then drawn through carbide or diamond dies in a long series of steps, with a hydrogen anneal between them, because tungsten will not work cold: the ductile-to-brittle transition is close to room temperature and cold tungsten cracks rather than draws. A domestic television's heater ends up as wire 0.04-0.08 mm in diameter and 60-150 mm long, folded into a flat zig-zag under the cathode cup and run off 6.3 V; at that diameter a 30 cm length weighs about a hundredth of a gram and is the largest single reason a colour tube of that generation failed. The same carbide that draws this wire draws the enamelled magnet wire on the power-supply transformer, and the same wire stock makes the probe-card needles that touch every bond pad on a 6510 die.
 
@@ -4152,7 +4152,7 @@ The anode block and the inside of the funnel near the neck are flame-blacked wit
 
 On the cheaper sets the three guns were focused by one small coil slipped over the neck outside the vacuum envelope, adjustable from the back of the set. Sets without static focus simply ran the focus grid at a fixed voltage and adjusted focus only for the corners with a convergence adjustment in the yoke.
 
-##### Deflection yoke and deflection coils `peripheral.tv.crt.yoke`
+##### Deflection yoke and deflection coils `peripheral.tv.crt.yoke` _(medium)_
 
 A bell-shaped ferrite or powdered-iron core clamped on the tube neck carrying two orthogonal saddle windings. The horizontal winding is driven by the line output stage and sits in series with the flyback, so the scan current is the same current that steps up to 25 kV. The vertical winding is in the collector of the vertical output stage and carries a sawtooth at 60 Hz.
 
@@ -4172,7 +4172,7 @@ Yoke bobbins and coil formers were glass-filled nylon (PA66-GF30) because the wi
 
 A 13 inch set with a 90 degree deflection had visible pincushion and barrel distortion. Correction was partly mechanical: a pair of small magnets on the neck that tilted the field to change the deflection centre, a static C-core for pincushion, and inside the flyback a 'geometry' winding that shapes the scan current. The customer-facing result was a V-hold, H-hold, width, height, linearity and convergence control on the back of the chassis, and on a cheap set a bright-line adjustment they could get wrong.
 
-###### Correction magnets on the tube neck `peripheral.tv.crt.yoke.geometry.magnets`
+###### Correction magnets on the tube neck `peripheral.tv.crt.yoke.geometry.magnets` _(medium)_
 
 A pair of small magnets sitting on the neck of the tube, arranged to tilt the deflection field and move the deflection centre without touching the geometry circuit. In a 1982 domestic set these were almost always cast Alnico; the high-performance alternative, a samarium-cobalt magnet, cost several times as much for no benefit a consumer could see on a 13 inch screen, and only became standard in the small deflection magnets of the 1990s. The mass in either case is a few grams.
 
@@ -4196,15 +4196,15 @@ An open-frame core of MnZn ferrite or powdered iron with a gapped section. The g
 
 A single high-voltage silicon diode, or a small stack of them, rated 3-10 kV reverse and 1-5 mA forward, potted in silicone rubber or epoxy so the 25 kV does not arc. The cathode end of the HV winding goes to the rectifier and the anode to the tube's anode terminal. A set with a failing EHT rectifier was a common and unpleasant repair.
 
-###### High-purity silicon and polysilicon `peripheral.tv.crt.flyback.hv-rectifier.silicon`
+###### High-purity silicon and polysilicon `peripheral.tv.crt.flyback.hv-rectifier.silicon` _(medium)_
 
 The EHT rectifier needed silicon of 200-1000 ohm cm with very low oxygen, because the junction had to hold 25 kV without leakage or breakdown. High-purity silicon is made by reducing trichlorosilane or silane, in the trichlorosilane route, from metallurgical silicon, which itself is made in a submerged arc furnace from quartz and coke.
 
-###### Quartz lump for silicon reduction `peripheral.tv.crt.flyback.hv-rectifier.silicon.quartz`
+###### Quartz lump for silicon reduction `peripheral.tv.crt.flyback.hv-rectifier.silicon.quartz` _(medium)_
 
 Metal-grade quartz, not glass sand. The furnace needs the silicon dioxide to be chemically clean enough that the reduction goes to 98-99% silicon in one pass. Quarried rock is crushed and purified by acid leaching to quartz, then reduced with coke in a submerged arc furnace where the arc itself is the furnace's only heat source.
 
-###### Anode terminal: the lead burned through the funnel wall `peripheral.tv.crt.flyback.anode-lead`
+###### Anode terminal: the lead burned through the funnel wall `peripheral.tv.crt.flyback.anode-lead` _(medium)_
 
 The EHT gets into the tube through a metal button, usually a nickel or Kovar cup, sealed into the funnel wall with a glass frit and then fired. Above that terminal sits a silicone-rubber-covered anode cap that had to survive being touched with a screwdriver in a live set. A rubber anode cap failing was a genuine fire and electrocution hazard, and the safety information people remember about 1970s-80s TVs comes from exactly this part.
 
@@ -4250,7 +4250,7 @@ A reverse-biased silicon pn junction used as a voltage-variable capacitor. At ze
 
 The UHF resonant circuit is a piece of metal: folded sheet or machined brass forming a half-wavelength line, with the shunt capacitance of the varactor at the open end and a tap for the transistor. This is one of the few places in a television where the RF circuit is metal rather than a PCB, because at 800 MHz a printed board would radiate. Brass came from zinc and copper ores.
 
-##### RF amplifier and mixer `peripheral.tv.tuner.front-end`
+##### RF amplifier and mixer `peripheral.tv.tuner.front-end` _(medium)_
 
 A low-noise bipolar or MOSFET amplifier at the antenna frequency, then a mixer down to 45 MHz. In 1982 the RF device was often a silicon planar MOSFET (dual-gate, for the UHF) or a wideband bipolar. The whole RF section lived in a die-cast or stamped zinc-plated steel can to keep it away from the switching supply and the line output.
 
@@ -4274,11 +4274,11 @@ The tuner and front end were a sealed metal can soldered to the main board. On a
 
 The stamped steel RF can was plated in a zinc sulphate or zinc chloride bath with an aluminium or steel anode, then often given a chromate passivation. Zinc plating is cheap corrosion protection and it is the same zinc industry as the CRT phosphor and the die-cast tuner body.
 
-##### Dial cord and pulley gear train `peripheral.tv.tuner.dial-cord`
+##### Dial cord and pulley gear train `peripheral.tv.tuner.dial-cord` _(medium)_
 
 The channel knob turned a pulley that wound a braided cord onto another pulley geared to the tuner rotor. It was a real mechanical system that stretched, slipped and broke, and it is the reason every vintage-TV owner has a drawer of spare dial cords. The cord was a braided polyester or nylon sheath over a cotton core.
 
-#### The chassis: video, sync, line output, audio `peripheral.tv.chassis`
+#### The chassis: video, sync, line output, audio `peripheral.tv.chassis` _(medium)_
 
 The electronics of the set. By 1982 this was a single-sided or double-sided printed circuit board carrying a mix of discrete transistors, a handful of silicon integrated circuits (the video amplifier, the chroma, the vertical, the audio), a rotary switch bank and about forty electrolytic and film capacitors. The board sat in a zinc-plated steel chassis with a perforated steel cover, and the flyback sat beside it throwing both heat and electromagnetic noise.
 
@@ -4294,7 +4294,7 @@ The reinforcement is a textile of drawn glass filament: silica sand is melted in
 
 The board was dipped or dragged through a molten bath of 60/40 tin-lead, which left a solder film on the pads and bridged the copper under the mask. Immersion tin plating or gold-flash were also used, but a television of 1982 was overwhelmingly hot-tin-dipped. Tin from cassiterite, lead from galena, both of which are already in this tree.
 
-##### Video chain: IF, detector, video amp, colour `peripheral.tv.chassis.video`
+##### Video chain: IF, detector, video amp, colour `peripheral.tv.chassis.video` _(medium)_
 
 The 45 MHz IF is amplified, limited, then detected: the video signal rides on the picture carrier at 45.75 MHz, the colour subcarrier sits 3.58 MHz below it as a sideband, and the sound carrier sits 9 MHz above at 54.75 MHz. The synchronous detector recovers the baseband video; a PLL multiplies the recovered 3.58 MHz subcarrier up and phase-shifts it 90 degrees to drive the two demodulators; the result is U and V, added back to luminance to give R, G and B, which drive the gun cathodes.
 
@@ -4302,7 +4302,7 @@ The 45 MHz IF is amplified, limited, then detected: the video signal rides on th
 
 The video, chroma and audio functions in a 1982 set were often one or two chips of 40 to 80 pins, made on a 4-5 micron NMOS or bipolar process. The die is a slice of 99.99% silicon, oxidised, photolithographically patterned through eight to ten mask steps, and packaged in epoxy or ceramic. Purity, oxide quality and aluminium interconnect over a polysilicon gate is the whole story of the 4-micron generation.
 
-###### Silicon wafer, P-type `peripheral.tv.chassis.video.ic.die`
+###### Silicon wafer, P-type `peripheral.tv.chassis.video.ic.die` _(medium)_
 
 The wafer this die is cut from is a slice of 99.99% silicon: p-type boron-doped substrate with n-epitaxy grown on top for the bipolar transistors, then oxidised, patterned and metallised. A 4-micron process of 1982 ran on a 100 or 125 mm wafer, with 150 mm arriving in 1983. The difference between this wafer and the one in the EHT rectifier is the epitaxy and the oxide, not the feedstock: both come out of the same trichlorosilane and Siemens chain from quartz and metallurgical silicon.
 
@@ -4323,7 +4323,7 @@ The AGC samples the DC level off the video detector and feeds a reverse bias bac
 
 The heart of the set's power and geometry. The line oscillator runs at 15,734 Hz; the driver and the output transistor switch the flyback primary, so the collector current rises linearly during scan and then collapses in the flyback retrace. The flyback uses that collapse to develop a high-voltage pulse, rectified to the EHT. The same transformer runs back through the damper to create a 200-250 V pump rail for the video output stage. In 1982 this was usually a discrete silicon EFT (a triple-diffused or a high-voltage epitaxial transistor) because a single silicon transistor could not safely switch a 900 V collector at 15.7 kHz.
 
-###### Line oscillator and AFC `peripheral.tv.chassis.line-out.oscillator`
+###### Line oscillator and AFC `peripheral.tv.chassis.line-out.oscillator` _(medium)_
 
 A free-running LC oscillator locked to the incoming video by a sync separator and an automatic frequency control loop. When the set was fed a C64 signal it was free-running off the internal oscillator and being pulled by the modulator's sync; it could not lock to a broadcast, so it did not drift. Most of the visible misbehaviour of a C64 on a TV (rolling, tearing, drifting) came from this loop or from the modulator's own sync, not from the computer.
 
@@ -4339,7 +4339,7 @@ After the flyback, a single silicon rectifier at 25 kV. On larger sets a doubler
 
 A metallised polypropylene or polystyrene film capacitor rated at kilovolts. The film is stretched polypropylene, metallised with a thin aluminium or zinc layer, wound, and the whole thing impregnated and potted. Zinc metallising was cheap and equivalent to aluminium for small values; aluminium became standard for reliability.
 
-##### Vertical output stage, 60 Hz `peripheral.tv.chassis.vertical`
+##### Vertical output stage, 60 Hz `peripheral.tv.chassis.vertical` _(medium)_
 
 The vertical sweep at 60 Hz. The oscillator ran at twice the line rate and a count-down circuit divided by two, a design that keeps the vertical locked to the horizontal. The output stage amplified a small ramp and drove the vertical yoke, with a small electrolytic capacitor across the coil to correct the crosstalk that coupling into the horizontal yoke produced. A IC did most of this, with one or two power transistors at the output.
 
@@ -4347,11 +4347,11 @@ The vertical sweep at 60 Hz. The oscillator ran at twice the line rate and a cou
 
 A single IC contained the oscillator, the count-down divider, the ramp generator and the driver, needing only two or three external transistors. It was one of the first large consumer uses of a mixed-analogue IC that made a television much easier to build, and it is the reason a 1982 TV was a single-board affair.
 
-##### Audio: 4.5 MHz intercarrier to a speaker `peripheral.tv.chassis.audio`
+##### Audio: 4.5 MHz intercarrier to a speaker `peripheral.tv.chassis.audio` _(medium)_
 
 The sound carrier is taken off the same IF strip at 54.75 MHz, recovered at 4.5 MHz above the video, limited and FM-demodulated, then amplified. The 4.5 MHz intercarrier was chosen so the sound did not interfere with the video and to let the sound survive a picture cut-off (the 'intercarrier' idea). Amplified to a few watts into an 8 ohm speaker, or about 2 W per speaker into two 8 ohm speakers in parallel. The C64's audio came out of this amplifier, which is why it was loud, thin and slightly buzzy.
 
-###### Intercarrier sound trap and SAW filter `peripheral.tv.chassis.audio.traps`
+###### Intercarrier sound trap and SAW filter `peripheral.tv.chassis.audio.traps` _(medium)_
 
 The 4.5 MHz intercarrier has to be lifted out of the video baseband without disturbing the 3.58 MHz colour subcarrier, so a trap or SAW filter at 4.5 MHz ran between the video detector and the audio detector. A ceramic or SAW trap on 4.5 MHz was a very visible part in a 1982 set.
 
@@ -4364,31 +4364,31 @@ An integrated amplifier (a few watts, a single 8-14 pin IC) or a discrete predri
 The device that actually pushed the current into the speaker: an NPN/PNP complementary pair on a thick die in a TO-3 or plastic power package, bolted to the chassis as its own heatsink. From 1990s multisilicon dice replaced the single-crystal die, but a 1982 set had one transistor per output channel.
 
               - *Silicon wafer, P-type* `peripheral.tv.chassis.video.ic.die` *(seen above)*
-###### Volume potentiometer, carbon track `peripheral.tv.chassis.audio.volume-pot`
+###### Volume potentiometer, carbon track `peripheral.tv.chassis.audio.volume-pot` _(medium)_
 
 A rotary carbon track pot, typically 10 kohm or 100 kohm logarithmic (audio taper), spliced into the audio line. The track is a carbon film printed or sprayed on a phenolic or ceramic substrate; the wiper is a sprung brass or copper blade. This is the same technology as the volume control in a pocket radio, and the carbon comes from petroleum coke exactly as the CRT blackening does.
 
-##### Power supply: mains transformer and reservoir `peripheral.tv.chassis.power`
+##### Power supply: mains transformer and reservoir `peripheral.tv.chassis.power` _(medium)_
 
 Most 1982 sets were linear: a hot-chassis or a cold-chassis series/parallel mains transformer stepping 117 V down to about 110 V AC, a diode bridge rectifier, and a big electrolytic reservoir at 120 V feeding the line output. The main electrolytic was the largest, hottest component on the board and usually the first thing to dry out. A minority used a small switchmode supply for the logic rails with a flyback of its own.
 
-###### Mains transformer, E-I silicon steel `peripheral.tv.chassis.power.transformer`
+###### Mains transformer, E-I silicon steel `peripheral.tv.chassis.power.transformer` _(medium)_
 
 A laminated core of thin silicon steel (about 0.35 mm) stamped into E and I shapes and stacked, with copper windings on bobbins, potted in epoxy or wrapped in tape and varnished. The laminations were needed because mains hum would otherwise magnetostrict the core; the 1982 design was exactly the design from the 1930s.
 
-###### Aluminium electrolytic reservoir, 200 microfarad 160 V `peripheral.tv.chassis.power.reservoir`
+###### Aluminium electrolytic reservoir, 200 microfarad 160 V `peripheral.tv.chassis.power.reservoir` _(medium)_
 
 The reservoir is a wound aluminium foil anode with an oxide film formed on it, an aluminium cathode can, and a paper or synthetic-fibre separator soaked in electrolyte (an ammonium borate or an aluminium chloride solution in glycol). Formed at a few hundred volts, it hums and it leaks, and in a hot chassis it did the most to kill itself.
 
-###### Mains rectifier bridge `peripheral.tv.chassis.power.bridge`
+###### Mains rectifier bridge `peripheral.tv.chassis.power.bridge` _(medium)_
 
 Four silicon diodes in a moulded bridge package, rated at a few amps and 100-200 V. Cheap sets rectified with two diodes and a centre-tapped transformer instead. The bridge was usually on the chassis edge with the heatsink tab or in free air.
 
-#### Loudspeaker, 8 ohm, 3-4 inch `peripheral.tv.speaker`
+#### Loudspeaker, 8 ohm, 3-4 inch `peripheral.tv.speaker` _(medium)_
 
 An 8 ohm speaker of about 3.5-4 inch diameter on a small set: a paper pulp cone, a pressed steel or plastic basket, a copper voice coil on a former, and a ferrite magnet. It was screwed to a baffle in the cabinet with the back magnet projecting into whatever space was left, which is why small speakers of the period often had a shallow magnet or a rear vent.
 
-##### Paper pulp cone `peripheral.tv.speaker.cone`
+##### Paper pulp cone `peripheral.tv.speaker.cone` _(medium)_
 
 The cone is a paper pulp: refined wood fibre pressed wet into a shaped blank and dried, giving a light, stiff, cheap diaphragm. It is essentially the same material as a paper bag, which is why it creases if you poke it. A small set used a paper cone; a later or better one a woven or moulded polypropylene cone.
 
@@ -4404,11 +4404,11 @@ A ring or cup magnet of barium or strontium ferrite, sintered and magnetised acr
 
 Two layers of enamelled copper wire, about 40-60 turns, wound on a paper or aluminium former and centred in the magnet gap. It is a minute amount of copper, on the order of a gram, and it sits in a gap of under a millimetre.
 
-#### Cabinet and front bezel `peripheral.tv.cabinet`
+#### Cabinet and front bezel `peripheral.tv.cabinet` _(medium)_
 
 The outside of the set: a moulded plastics shell wrapped around the chassis and the tube, with a wood-grain print or a real veneer. A 1982 13 inch set was typically an injection-moulded ABS or ABS/polycarbonate cabinet, textured, with the front bezel carrying the speaker grille, the control knobs and the brand badge. Larger and older-style sets had a wood-veneered or wood-framed cabinet; the very cheapest had a printed paper laminate over a steel or plastic shell.
 
-##### Injection mould the cabinet `peripheral.tv.cabinet.moulding`
+##### Injection mould the cabinet `peripheral.tv.cabinet.moulding` _(medium)_
 
 ABS pellets were dried, melted at 230-260 degrees C, injected into a nickel-chromium plated steel mould at 1000-2000 bar, held under pressure to pack, cooled on a water circuit and ejected. The cabinet was a single moulding with the speaker grille, the bezel ledges, the screw bosses and the airflow slots all integral; the front bezel was often a separate moulding in a different colour. A 13 inch set's mould ran 10,000 to a few hundred thousand shots.
 
@@ -4428,7 +4428,7 @@ Self-tapping screws into plastic bosses and a handful of machine screws into zin
 
 The logo badge was an embossed or plated plastic medallion, and the knobs were moulded ABS or phenolic on a zinc or aluminium die-cast core with a moulded pointer. On a cheap set the badge was printed; on a good one it was a plated plastic insert.
 
-#### Front controls: pots, switches, dial `peripheral.tv.controls`
+#### Front controls: pots, switches, dial `peripheral.tv.controls` _(medium)_
 
 Brightness, contrast, colour, tint, volume and the channel selector, plus a fine-tuning and a V-hold behind the cabinet. The pots are carbon track or cermet; the switches are an AC line switch and often a rotary band switch or push-buttons for the a/v functions.
 
@@ -4445,7 +4445,7 @@ Mains switch and rotary tuner contacts were silver-plated brass or copper, becau
 
 The channel numbers were on a printed drum or card behind a window, or on a flat dial plate, driven by the cord from the knob. The UHF channels 14-83 needed a drum or a fan-shaped card because there were 70 of them, which is why UHF dials of the period were a distinctive piece of mechanical design.
 
-#### Aerial input and antenna lead `peripheral.tv.aerial`
+#### Aerial input and antenna lead `peripheral.tv.aerial` _(medium)_
 
 The 75 ohm coaxial aerial socket at the back, the twin-lead alternative for indoor aerials, and the telescopic whip on a portable. The C64 was plugged into that socket, in parallel with whatever aerial the set had. The socket was either a threaded F-type, or a cheaper bayonet or push-on type in Europe.
 
@@ -4477,7 +4477,7 @@ A telescopic rod plated in hard chrome over nickel, in several decorative layers
 
 A hard, black, opaque spinel - FeO plus chromium oxide in a cubic lattice - that occurs not as veins but as layer after layer in the lower part of the Bushveld Complex and the Transvaal Group. It is unusually resistant to both chemical attack and heat, which is why chromite is also found in beach placer sands in Oregon and California, and it is effectively the only chromium ore of commercial scale. The Bushveld chromite pits run 200 m deep on a 1-6 m seam, which is one of the more extreme geometries in mining. This is a convergence node for the ferrochrome furnace, the AOD vessel and the chromium metal plant.
 
-###### Layer-seam chromite open pit, 200 m deep `metal.chromite.mine`
+###### Layer-seam chromite open pit, 200 m deep `metal.chromite.mine` _(medium)_
 
 The Bushveld chromite mines are among the deepest and most geometrically awkward open pits in the world. A 1-6 m chromitite layer is covered by 100-200 m of layered norite, and the pit must be advanced strip by strip along the seam, so the benches are narrow and the truck travels a long way for every tonne. The waste is platinum-group ore, so the chromite mines and the platinum mines are the same mines, and their combined revenue is what made the region what it is. The ore is crushed to about 100 mm and shipped to a smelter, sometimes 400 km away.
 
@@ -4493,7 +4493,7 @@ Just below the chromitite seams of the Bushveld Complex lies a 0.4-1 m layer of 
 
 A normal open pit advances in benches 15 m high and 100-200 m wide, with haul roads on every bench. A chromite seam is 1-6 m thick, so the pit has to advance along the seam instead, and the benches are 100-200 m high with a 5-10 m working width and a haul road cut into the wall. The consequence is a bench width of a few tens of metres where a truck needs twenty, so the ore is either hauled a long way or handled by a shovel that strips the ore off the face and tips it down to a loading point on the bench floor. That is why the Bushveld pits look nothing like an iron ore pit even though they move similar tonnages, and it is a nice demonstration that mining cost is a function of geometry before it is a function of the rock.
 
-#### Mains lead, suppression filter and fuse `peripheral.tv.mains`
+#### Mains lead, suppression filter and fuse `peripheral.tv.mains` _(medium)_
 
 A 1982 set had a two or three core mains lead, an entrapment and bypass capacitor for radio interference, and one or two fuses. The mains filter is the reason a television did not buzz on an AM radio, and the reason the plastic of a 1980s set smelled faintly of phenolic. The fuse was a small glass or ceramic cartridge with a wire or a metal link.
 
@@ -4522,7 +4522,7 @@ A small glass or ceramic cartridge containing a link of silver or of a fusible a
 
 A C64 with no drive could not save. Commodore's answer was a 1530 or 1541 disk-shaped drive that took ordinary compact cassettes and wrote them with a magnetic head at 9,600 baud, plus a spool of tape that was mostly polyester film and mostly iron oxide. Saving a 1541 program to tape was a two minute operation of real-time winding, and the alignment problems of a 1541 were a running joke precisely because a cassette had no feedback.
 
-#### The 1541 disk drive `peripheral.cassette.deck`
+#### The 1541 disk drive `peripheral.cassette.deck` _(medium)_
 
 A disk-shaped grey box with a slot on top, containing a stepper motor, a capstan flywheel, a read/write head on a load arm, and a small circuit board with a 6502 CPU, a 6522 interface chip and a mask-programmed logic array. It reads and writes the same standard compact cassette as a music cassette deck, which is why Commodore's error messages included CLOAD and why a music cassette recorder could in principle play a C64 tape.
 
@@ -4582,7 +4582,7 @@ A miniature magnetic recording head, essentially the same object as the one in a
 
 The gap has to be made with both faces flat and parallel to a micron or so across a couple of millimetres, which ferrite does well by lapping and permalloy does well by etching. A high-permeability nickel-iron alloy, permalloy, gives the inductance needed for the playback winding; the mu-metal shield can around the front suppresses external fields.
 
-###### Lacquered copper wire, figure-eight `peripheral.cassette.deck.head.winding`
+###### Lacquered copper wire, figure-eight `peripheral.cassette.deck.head.winding` _(medium)_
 
 The winding was a fine enamelled (lacquered) copper wire, typically 40 AWG, a few hundred to a couple of thousand turns, wound so that it sits astride the gap with two halves that see the drive motor's stray field in opposite directions. The hum-cancelling figure-eight was the reason a 1541 did not pick up the buzz of its own motor. The lacquer itself is the same polyurethane-imide over a polyester base as a television yoke winding.
 
@@ -4614,7 +4614,7 @@ The wire enamel is a thermosetting urethane, made from a diol and a di-isocyanat
 
 A magnet-wire enamelling line is a 20-40 m long machine: a pay-off, a bunch of dies applying 10-20 coats with flash-off between them, a vertical cure oven 8-15 m tall, a capstan, a take-up. The cure oven is gas or electric at 150-220 C with the wire passing through it in a helix, and it is the cure schedule and not the coating that decides the wire's class. A class 155 wire needs a full hour at temperature; a class 130 wire can get away with less. In 1982 the whole world's magnet wire was made on lines of exactly this design, whether the wire came from Japan, France or the United States.
 
-##### The 1541 circuit board `peripheral.cassette.deck.board`
+##### The 1541 circuit board `peripheral.cassette.deck.board` _(medium)_
 
 A single FR-4 board with the CPU, the PIA, the PLA, a handful of logic gates, the head preamplifier, the stepper driver transistors, and the power regulators. It was a through-hole board in 1982, socketed for the CPU and the PIA so they could be replaced, and hand- or wave-soldered.
 
@@ -4627,11 +4627,11 @@ The 1541 has no mains input. It gets 5 V and about 12 V DC from the C64 through 
 The 1541 regulated the 9-12 V rail down to 5 V with a small linear regulator or a discrete zener-transmitter, and used a handful of aluminium electrolytics to ripple-filter it. Both are the same parts as the television reservoir: etched four-nines aluminium foil in a wound foil anode, with a fibre separator and a chloride or borate electrolyte.
 
             - *Aluminium electrolytic reservoir, 200 microfarad 160 V* `peripheral.tv.chassis.power.reservoir` *(seen above)*
-##### The 1541 plastic case `peripheral.cassette.deck.case`
+##### The 1541 plastic case `peripheral.cassette.deck.case` _(medium)_
 
 A grey ABS clamshell, disc-shaped, about 40 cm across and 9 cm deep, moulded in two halves with the lid carrying the Commodore logo badge and the slot for the cassette. The material is the same ABS as a television cabinet, from the same styrene-butadiene-acrylonitrile chemistry.
 
-##### Activity LED `peripheral.cassette.deck.led`
+##### Activity LED `peripheral.cassette.deck.led` _(medium)_
 
 A small red LED on the front of the drive, lit while the motor was running or the head was active. It was a gallium arsenide or gallium phosphide die in a 2.5 mm epoxy lens, running at about 2-10 mA from the 5 V rail through a resistor. The LED itself was 1980s technology; the indicator lamps on earlier drives had been incandescent bulbs or neon.
 
@@ -4643,7 +4643,7 @@ A red or amber LED of the period was gallium phosphide or gallium arsenide phosp
 
 The 1541 connected to the C64 by a nine-pin high-density D-subminiature cable carrying the serial bus, which is how the drive knew there was a computer and the computer knew there was a drive.
 
-###### Nine-pin serial link to the drive `peripheral.plug.serial-link`
+###### Nine-pin serial link to the drive `peripheral.plug.serial-link` _(medium)_
 
 The 1541 was not daisy-chained through the cassette port; it plugged into the C64's second serial port through a nine-pin high-density D-subminiature cable. That separate port is how the computer knew a disk drive was present at all: there was no other way for the 1541 to announce itself except by talking on this line, and the drive type was auto-detected from what it said.
 
@@ -4679,7 +4679,7 @@ A web of polyester film, a metre or more wide, unwinds and passes under a coatin
 
 On the back of the magnetic coating was a sub-micron layer of extra pigment and carbon black. It did two things: it gave the visible leader tape (the clear or white strip at the start of a cassette) its colour and its opacity so a deck could find it, and it suppressed print-through, where a signal on one layer of the wound tape magnetises the layer next to it and comes back as a ghost. Carbon black, again, from petroleum coke.
 
-##### Cassette shell and hubs `peripheral.cassette.tape.shell`
+##### Cassette shell and hubs `peripheral.cassette.tape.shell` _(medium)_
 
 The compact cassette case: two thin polystyrene or ABS shells, each with a hub, so that the tape is enclosed in a rigid 100 x 64 x 12 mm box with five windows on one edge for the head, capstan and the pressure pad, two hub windows, and the write-protect notches. The hubs were glass-filled nylon or moulded ABS with the six drive slots, running on the two hub spindles.
 
@@ -4699,15 +4699,15 @@ A small pad of felt or synthetic non-woven on a stainless steel leaf spring, mou
 
 The pad was wool felt or a bonded polyester fibre web about a millimetre thick, glued to a stainless steel leaf spring in a plastic carrier. Wool felt is carded wool fibre matted and pressed; the spring was a 300-series stainless, so the iron came from the blast furnace and the chromium from chromite, the same chromite as the chrome plating on a telescopic antenna.
 
-##### Slitting to 1/8 inch `peripheral.cassette.tape.slitting`
+##### Slitting to 1/8 inch `peripheral.cassette.tape.slitting` _(medium)_
 
 The coating line made a web a metre or more wide; it was then slit into 3.81 mm strips with rotary knives, tens of kilovolts of static keeping the thin film from clinging to the rollers. The slit tape was wound onto master reels, then onto cassette reels by a winding line that also cut it to length (45 m per side for a C-60), formed the leader, and inserted the hub.
 
-### The connectors: aerial socket, serial link, user port, cassette port `peripheral.plug`
+### The connectors: aerial socket, serial link, user port, cassette port `peripheral.plug` _(medium)_
 
-Three connectors that made a C64 usable rather than just powered: the aerial socket the RF modulator hijacked, the nine-pin link to the 1541, and the 34-conductor ribbon on the back that opened the machine up.
+Three connectors that made a C64 usable rather than just powered: the aerial socket the RF modulator hijacked, the nine-pin link to the 1541, and the cartridge-edge expansion connector on the back that opened the machine up - documented as a 44-pin card edge, not a 34-conductor ribbon.
 
-#### The aerial socket, hijacked `peripheral.plug.rf`
+#### The aerial socket, hijacked `peripheral.plug.rf` _(medium)_
 
 The 75 ohm coaxial socket on the back of the television. The C64's modulator lead was a short 75 ohm coax with an F-type plug that went into it in parallel with the set's aerial. Because the modulator was a weak source, the lead had to be a good 75 ohm match and the set's aerial input had to be isolated or the local signal would back-feed.
 
@@ -4728,11 +4728,11 @@ The connectors were gold-plated or nickel-plated brass and copper contacts in a 
 
 The connector that carries both the audio to a tape recorder and the power to a 1541. It is a 6-pin connector, carrying read, write, sense, motor, 5 V and the 9-12 V motor rail. Commodore's own cable turned it into a DIN-style socket that plugged into a consumer cassette recorder, so a C64 could save to a music deck. The same port carried the power for the 1541, which is why a 1541 has no power socket of its own.
 
-## Finishing and bundled extras `c64.extras`
+## Finishing and bundled extras `c64.extras` _(low)_
 
 Three branches that hang off the machine rather than being part of it: how legends and colours were printed onto moulded plastic, how one keyboard key becomes a bit in the matrix, and the joystick that shipped in the box in some markets. None of them is needed to trace the machine's own supply line - they are the finishing and the bundled accessories, gathered here so they are not mistaken for part of the board.
 
-### Decorating the case and the keycaps `c64.decor`
+### Decorating the case and the keycaps `c64.decor` _(medium)_
 
 Getting colour and type onto moulded plastic in 1982 meant printing it, not moulding colour into it. Commodore pad printed the sixty-six keycap legends in two colours and printed the rainbow Commodore badge on the bezel with the same two-colour tampo press; the shiny bars of the badge used ink loaded with atomised aluminium flake. Screen printing went onto flat panels and labels elsewhere in the machine but could not hold the fine leather grain of the bezel, which is exactly why pad printing won on the case. The case itself was single-colour: the beige-brown is pigment let down into the resin at the compounding line, not a coating sprayed or printed onto the part.
 
@@ -4740,7 +4740,7 @@ Getting colour and type onto moulded plastic in 1982 meant printing it, not moul
 
 The workhorse decorating process on this machine. A soft silicone rubber pad is pressed onto a flat metal cliche carrying the image in wet ink, picks the ink up on its raised relief, then deforms against the curved or textured plastic part and transfers the image. One pad, one colour, one station; two stations give the two-colour keycap legends. It is chosen over screen printing precisely because the parts are curved, crowned and leather-grained, none of which a flat screen will lie against.
 
-##### Two-colour pad printing press `c64.decor.pad-print.machine`
+##### Two-colour pad printing press `c64.decor.pad-print.machine` _(medium)_
 
 A small cast frame with a plate table, an ink cup or doctor blade, a silicone pad on a shuttle head, and part fixtures on a rotating or indexing table. Each colour station is one table position with its own pad.
 
@@ -4748,7 +4748,7 @@ A small cast frame with a plate table, an ink cup or doctor blade, a silicone pa
 
 A soft, solvent-resistant, low-surface-energy pad, almost always silicone rubber, cut or cast with the relief to pick up and transfer the image. It is the consumable that has to be replaced every few thousand impressions, and pad hardness relative to the detail size is the operator's main variable.
 
-###### Two-part silicone pad compound `c64.decor.pad-print.pad-compound`
+###### Two-part silicone pad compound `c64.decor.pad-print.pad-compound` _(medium)_
 
 A polydimethylsiloxane casting system cured at room temperature with a tin catalyst, or an addition-cure platinum system. Pads are cast in a mould against the plate image so that the relief matches the cliche exactly; the chemistry is the same PDMS as the conductive rubber in the keyboard switch and as the pad-printing pad itself.
 
@@ -4756,11 +4756,11 @@ A polydimethylsiloxane casting system cured at room temperature with a tin catal
 
 The flat copper or nickel electrotype that carries the image, sunk into a plate table and flooded with ink. The traditional route photographs the artwork onto a sensitised copper plate, electroplates it up to about 1 mm and then grinds and polishes the surface back so that only the image stands proud; the photopolymer plate is the same object made from a photosensitive polymer film on a steel backing, exposed through the artwork film and washed out in relief, which needs no electroplating step and suits short runs. A flat pad-print cliche is a simpler object than a litho plate because there is no water damping - it is essentially a stencil on a copper block - which is why pad printing was chosen for short runs as well as long ones.
 
-###### Copper electrotyping the plate `c64.decor.pad-print.electroplating`
+###### Copper electrotyping the plate `c64.decor.pad-print.electroplating` _(medium)_
 
 The sensitised copper plate is electroplated in an acid copper bath to build a thick deposit on the image, then the surface is ground and polished back so only the image stands proud. It is an old, slow process, but it gives an image hard enough to print millions of impressions.
 
-##### Pad-printing ink (solvent or UV) `c64.decor.pad-print.ink`
+##### Pad-printing ink (solvent or UV) `c64.decor.pad-print.ink` _(medium)_
 
 A free-flowing, low-viscosity ink that will transfer off a soft pad and then dry on a plastic part. In 1982 most pad inks were solvent-based (glycol ether / xylene / ester solvent with an alkyd or acrylic resin and a pigment); UV-curing pad inks existed and were gaining ground, and were faster but needed a lamp.
 
@@ -4768,7 +4768,7 @@ A free-flowing, low-viscosity ink that will transfer off a soft pad and then dry
 
 The film-forming part of the ink: an alkyd built from drying-oil fatty acids and a polyacid (the same chemistry as the printing ink vehicle on the box), or an acrylic copolymer. It is chosen for adhesion to ABS, which is notoriously hard to print on without a surface treatment.
 
-###### Legend and logo pigments `c64.decor.pad-print.ink-pigment`
+###### Legend and logo pigments `c64.decor.pad-print.ink-pigment` _(medium)_
 
 The legend white is almost always titanium dioxide in an alkyd binder; the rainbow logo uses a set of saturated organic pigments - phthalocyanine blue, quinacridone magenta, azo yellow - and sometimes a metallised flake for the bright bars.
 
@@ -4776,7 +4776,7 @@ The legend white is almost always titanium dioxide in an alkyd binder; the rainb
 
 The volatile carrier that gives pad ink its low viscosity. Common 1980s pad-ink solvents were propylene glycol ethers, dibutyl phthalate or xylene blends. It flashes off the pad quickly enough to give a sharp print and slowly enough that the impression can be placed.
 
-##### UV curing of ink `c64.decor.uv-curing`
+##### UV curing of ink `c64.decor.uv-curing` _(medium)_
 
 A mercury or metal-halide lamp floods the printed part in under a second and the photo-initiator in the ink polymerises it in place. It was the big printing-technology change of the late 1970s and early 1980s: instant cure, no solvent, no oven, and a harder, more abrasion-resistant print.
 
@@ -4784,11 +4784,11 @@ A mercury or metal-halide lamp floods the printed part in under a second and the
 
 Silk screening through a mesh, used on Commodore parts where the surface is flat enough: printed panels, cartridge labels and some case markings. It cannot print the grain-textured bezel reliably, which is exactly why pad printing won on the case and on the keycaps.
 
-##### Screen mesh (nylon monofilament or stainless wire) `c64.decor.screen-print.mesh`
+##### Screen mesh (nylon monofilament or stainless wire) `c64.decor.screen-print.mesh` _(medium)_
 
 A woven mesh stretched and glued to an aluminium frame. Nylon is used where solvent or epoxy inks would attack a wire screen; stainless wire is used where long life under abrasive inks matters. Both are woven from a drawn filament or wire on a loom.
 
-##### Screen emulsion (PVA or diazo) `c64.decor.screen-print.emulsion`
+##### Screen emulsion (PVA or diazo) `c64.decor.screen-print.emulsion` _(medium)_
 
 The photosensitive coating that becomes the stencil. Diazo emulsions, standard in 1982, are washed out with water after exposure; PVA emulsion requires a separate exposure through the base and is more solvent-resistant. The stencil is exposed through a film positive and then washed.
 
@@ -4804,11 +4804,11 @@ Polychloroprene, chosen because it resists the solvents in screen ink and wears 
 
 A one-component epoxy or polyester ink with a latent hardener, screen-printed through the stencil and then heat-cured. Epoxy ink is unusually durable on plastics and is what screen-printed Commodore product panels and keycap overlays used.
 
-#### Metallised and pearlescent ink `c64.decor.metallised`
+#### Metallised and pearlescent ink `c64.decor.metallised` _(medium)_
 
 The shiny bars in the Commodore rainbow badge are metallised ink: pigment-grade aluminium flake suspended in a binder and printed, then optionally burnished between heated polished rollers so the flakes lie flat and mirror rather than scatter. The same effect could be had from a hot foil, pressed from vacuum-metallised polyester or aluminium film with a type plate, but on a textured ABS case the foil needs a rougher surface or a soft die, which is why flake ink won.
 
-##### Atomised aluminium flake `c64.decor.metallised.flake`
+##### Atomised aluminium flake `c64.decor.metallised.flake` _(medium)_
 
 Molten aluminium atomised with air into 5-15 um flakes, then washed, sieved by size and coated with an oxidation-inhibiting lacquer so they do not go grey. The same atomisation principle as the aluminium in the EMI shield, at a different scale: the flake is pigment, the foil is sheet.
 
@@ -4816,19 +4816,19 @@ Molten aluminium atomised with air into 5-15 um flakes, then washed, sieved by s
 
 A drying ink binder that holds the flakes flat and lets them reflect. Formulated so the flake lies parallel to the surface; this is what produces the flat metallic look rather than a sparkly one.
 
-#### Prepress: artwork to film and plate `c64.decor.prepress`
+#### Prepress: artwork to film and plate `c64.decor.prepress` _(medium)_
 
 Every legend and every logo started as artwork, composed mechanically or photographically in 1982, then copied onto black-and-white film by a process camera; the film was used to expose a plate, either a photopolymer or an electrotyped copper one. Text was set in hot metal or phototype, and the Commodore rainbow artwork was assembled from hand-painted separations.
 
-##### Ortho photographic film (negative) `c64.decor.prepress.film`
+##### Ortho photographic film (negative) `c64.decor.prepress.film` _(medium)_
 
 The black-and-white film that carries the image to the plate. It is a cellulose or polyester film coated with a silver-halide emulsion; exposed in a process camera or a contact frame, then developed and fixed in a chemical line.
 
-###### Film base (cellulose triacetate or polyester) `c64.decor.prepress.film-base`
+###### Film base (cellulose triacetate or polyester) `c64.decor.prepress.film-base` _(medium)_
 
 A flexible transparent film on which the emulsion is cast. Cellulose triacetate was the standard photographic film base, made from acetic anhydride and cellulose; polyester (PET) film base became common later for its dimensional stability.
 
-###### Acetic acid and acetic anhydride `c64.decor.prepress.acetic-acid`
+###### Acetic acid and acetic anhydride `c64.decor.prepress.acetic-acid` _(medium)_
 
 Made by catalytic oxidation of ethanol, or by the carbonylation of methanol. Methanol comes from synthesis gas, which comes from natural-gas reforming.
 
@@ -4836,7 +4836,7 @@ Made by catalytic oxidation of ethanol, or by the carbonylation of methanol. Met
 
 Dissolved from wood pulp and regenerated into fibre. The film route is a small, high-purity use of cellulose compared with paper, but it is the same feedstock: a tree.
 
-###### Silver halide emulsion `c64.decor.prepress.silver-halide`
+###### Silver halide emulsion `c64.decor.prepress.silver-halide` _(medium)_
 
 Silver bromide or silver iodide crystals suspended in gelatin. The silver comes from silver ore, and most photographic silver of the era was recovered as a byproduct of lead and copper refining rather than mined for itself.
 
@@ -4852,7 +4852,7 @@ Eight column lines snake around the board and eight row lines snake around the o
 
 A glass-epoxy laminate board, drilled and plated through in the usual way, carrying the matrix traces as copper and terminating each key position in a pair of plated pads. On the breadbin keyboard the pads are plated metal; on the earlier VIC-20-derived boards they were bare copper, and bare copper oxidises into a high-resistance film - the reason those keyboards need periodic cleaning and later ones generally do not.
 
-###### Electrodeposited copper foil `c64.keyboard-switches.matrix.pcb.copper-foil`
+###### Electrodeposited copper foil `c64.keyboard-switches.matrix.pcb.copper-foil` _(medium)_
 
 The matrix traces are copper, deposited on the laminate by an electroplating line using acid copper sulphate solution and an insoluble anode. The same copper foil process as the mainboard, at a much thinner gauge.
 
@@ -4864,11 +4864,11 @@ The exposed pads are plated - gold over nickel on later keyboards - so the carbo
 
 A thin gold flash over nickel on the key pads. Gold does not oxidise, so the dome keeps making contact for decades; where the flash is thin or gone, the key stops working until cleaned.
 
-##### Glass-epoxy laminate (FR-4) `c64.keyboard-switches.matrix.pcb-glass-epoxy`
+##### Glass-epoxy laminate (FR-4) `c64.keyboard-switches.matrix.pcb-glass-epoxy` _(medium)_
 
 Woven glass-fibre cloth impregnated with epoxy and pressed into a sheet. The standard printed-circuit laminate since the 1960s, replacing the older phenolic paper board. The keyboard board is a trivial two-layer FR-4 part, but it goes through the same copper foil lamination and hole-drilling lines as a mainboard.
 
-###### Epoxy resin of the laminate `c64.keyboard-switches.pcb-resin`
+###### Epoxy resin of the laminate `c64.keyboard-switches.pcb-resin` _(medium)_
 
 The epoxy that binds the glass cloth is derived from bisphenol A and epichlorohydrin, both of which are petrochemical. A two-layer keyboard PCB is thus a woven silica sheet glued with a fossil-derived resin and clad in copper.
 
@@ -4876,7 +4876,7 @@ The epoxy that binds the glass cloth is derived from bisphenol A and epichlorohy
 
 Each key position has a small moulded rubber pill, domed upwards, whose underside carries a conductive carbon-loaded contact that bridges two pads when the dome is crushed. Because carbon is loaded into the rubber as a filler rather than plated on, the dome is its own contact - it wears slightly with use and it is the consumable part of the switch.
 
-##### Carbon-filled elastomer compound `c64.keyboard-switches.domes.composition`
+##### Carbon-filled elastomer compound `c64.keyboard-switches.domes.composition` _(medium)_
 
 Carbon black is compounded into the elastomer at a few tens of per cent by weight. The particles form a percolation network so the dome conducts along its own bulk, and the higher the loading the lower the resistance - but too much loading makes the dome brittle. This is the same black powder that goes into resistor films and pot tracks.
 
@@ -4888,7 +4888,7 @@ The dome body. Silicone (polydimethylsiloxane) was favoured for its high compres
 
 Silicone rubber is built on a silicon-oxygen backbone and is filled with reinforcing silica. It stays elastic over a wide temperature range and does not take up much oil, which is why a silicone dome does not swell and seize.
 
-###### Carbon black filler (petroleum-derived) `c64.keyboard-switches.domes.composition.carbon-black`
+###### Carbon black filler (petroleum-derived) `c64.keyboard-switches.domes.composition.carbon-black` _(medium)_
 
 The same furnace-black feedstock used in the resistors, compounded into the elastomer. The dome's conductivity and its wear rate are both set by the grade and loading of this powder. A high-structure furnace black gives a stronger percolation network at lower loading, so a dome can be made conductive with less filler and stay soft; the grade choice is the difference between a responsive key and a stiff one.
 
@@ -4904,7 +4904,7 @@ A hydraulic flat-bed press with heated platens holds a multi-cavity dome tool ag
 
 A machined or spark-eroded steel tool with one hemispherical cavity per key. It has to be replaced as the dome geometry is re-specified, and its surface finish is what the dome's mating face is polished against.
 
-###### Spark-erosion machining of the dome cavity `c64.keyboard-switches.domes.moulding.tool.spark-erosion`
+###### Spark-erosion machining of the dome cavity `c64.keyboard-switches.domes.moulding.tool.spark-erosion` _(medium)_
 
 A fine copper electrode is brought within micrometres of the workpiece in a dielectric bath and pulses of a few microseconds melt a microscopic crater per pulse. Spark erosion is how a one-micron hemispherical cavity gets cut in hardened tool steel without any mechanical stress on the surface.
 
@@ -4920,7 +4920,7 @@ A double-shot moulded keycap on a cross-shaped plastic stem. The stem sits in a 
 
 Acrylonitrile-butadiene-styrene: a styrene-acrylonitrile matrix rubberised with polybutadiene. It is tough, dimensionally stable, chemically scratch-resistant and - crucially for legends - it takes paint and plating well. Almost every C64 keycap is ABS or ABS/PC.
 
-###### Polybutadiene rubber phase `c64.keyboard-switches.keycap.abs.butadiene`
+###### Polybutadiene rubber phase `c64.keyboard-switches.keycap.abs.butadiene` _(medium)_
 
 The elastic phase that makes ABS impact-resistant, made by polymerising butadiene derived from refinery butadiene, which itself comes from steam cracking propylene. This is the hydrocarbon tree: propylene to butadiene to the rubber in the keycap's grip surface.
 
@@ -4956,7 +4956,7 @@ A small stainless or music-wire spring inside the plunger barrel returning the k
 
 A high-carbon steel wire, patented and drawn to a fine diameter, with a very high tensile strength - which is what lets a millimetre-thick coil inside a keycap return thousands of times without taking a set.
 
-###### Spring coiling machine `c64.keyboard-switches.keycap.spring.coil-winder`
+###### Spring coiling machine `c64.keyboard-switches.keycap.spring.coil-winder` _(medium)_
 
 A cam-controlled coiler winds a coil spring from wire, sets its free length and closes the ends, tens of thousands per hour. Every keycap plunger spring on the keyboard was made on a machine of this type.
 
@@ -4968,15 +4968,15 @@ The coiler tool is hardened tool steel, and the coiler is a Camweld or similar a
 
 Two of the 66 keys are not in the scanned 8x8 matrix. SHIFT LOCK is wired in parallel with LSHIFT on the same wire, so the firmware cannot tell the two apart and pressing SHIFT LOCK simply holds the shift bit down. RESTORE is on a completely different wire, straight to the 6510 NMI pin, so pressing it halts the CPU with no firmware involvement at all - a hardware reset, not a key.
 
-##### Latching dome for SHIFT LOCK `c64.keyboard-switches.shift-lock.latching-dome`
+##### Latching dome for SHIFT LOCK `c64.keyboard-switches.shift-lock.latching-dome` _(medium)_
 
 A dome that latches: pressing it collapses it and it stays collapsed, requiring a second, firmer press (or a press on a neighbouring key) to release. Mechanically it is a deformation of the rubber dome itself rather than a separate switch, which is why no space in the matrix is spent on it. The latch works because the rubber is shaped so that under a light press it collapses past its own elastic limit and stays collapsed, which makes it a mechanical latch rather than an electrical one - and is why the firmware has no idea a separate key exists.
 
-#### Flat ribbon cable to the mainboard `c64.keyboard-switches.ribbon`
+#### Flat ribbon cable to the mainboard `c64.keyboard-switches.ribbon` _(medium)_
 
 A flat multi-conductor ribbon leaves the keyboard board, loops through the case, and terminates at the pin header on the front-left edge of the mainboard. The ribbon is crimped into an insulation-displacement connector on the keyboard end in later designs, and soldered directly to the header on the mainboard end.
 
-##### PET/PVC flat flexible cable `c64.keyboard-switches.ribbon.film`
+##### PET/PVC flat flexible cable `c64.keyboard-switches.ribbon.film` _(medium)_
 
 Parallel copper conductors laminated between polyester film layers with a PVC jacket. The jacket and the film are all hydrocarbon polymers, so this cable is chemically the same family as the switch housings and the case.
 
@@ -4992,15 +4992,15 @@ The self-centring 4-way joystick Commodore bundled with the C64 and sold with mo
 
 A cross-shaped sliding gate that physically interlocks so only one of the four directions can be closed at a time - the same gating trick as a keyboard's 3-key rollover prevention. The gate rides on four ribs and is held centred by four springs, so it is self-centring and has no detented 'gate 2' half-way position.
 
-##### Centring springs `c64.joystick.gate.spring`
+##### Centring springs `c64.joystick.gate.spring` _(medium)_
 
 Four small compression or torsion springs push the gate back to neutral from every direction. They are the part that wears out: once the springs weaken, the stick stays pushed, which is the most common repair on a vintage joystick and the reason 'joystick centering' appears in every retro repair guide.
 
-###### Centring spring wire `c64.joystick.gate.spring.wire`
+###### Centring spring wire `c64.joystick.gate.spring.wire` _(medium)_
 
 Drawn music-wire or stainless spring wire, coiled and closed. Centring springs are the cheapest consumable in the whole joystick and the one that is always replaced rather than repaired.
 
-###### Why springs are the failure point `c64.joystick.gate.spring.replacement`
+###### Why springs are the failure point `c64.joystick.gate.spring.replacement` _(medium)_
 
 Gate springs carry the whole centring duty and are cycled by every direction press. Once one is weakened the stick sits off-centre and the machine reads a direction the user is not pressing - the most common single joystick fault of the era.
 
@@ -5028,11 +5028,11 @@ Pressed wool felt sets the lateral friction of the gate. Unlike an oiled pad it 
 
 Four sealed miniature switches under the gate, one per direction. Each is a plastic case with a plunger and a fixed leaf plus a sprung leaf, gold-plated so the contact resistance stays low through millions of actuations. The plunger is depressed by a rib on the gate as it slides.
 
-##### Sprung leaf contact `c64.joystick.microswitches.leaves`
+##### Sprung leaf contact `c64.joystick.microswitches.leaves` _(medium)_
 
 Inside each switch a formed leaf is bowed against a fixed contact; pressing the plunger straightens the leaf onto it. The contacts are gold-plated over nickel because a joystick switch is a low-current, high-cycle signal contact where a stable millivolt-level resistance matters, and because the leaf is wiped clean on every actuation.
 
-###### Gold plating of the microswitch leaf `c64.joystick.microswitches.leaves.gold-plating`
+###### Gold plating of the microswitch leaf `c64.joystick.microswitches.leaves.gold-plating` _(medium)_
 
 The contact is gold-plated over nickel so its resistance stays at the millivolt level through millions of cycles. Gold leaf contacts in this class of switch were a real reliability advantage over the silver and nickel contacts used in cheaper equivalents.
 
@@ -5040,7 +5040,7 @@ The contact is gold-plated over nickel so its resistance stays at the millivolt 
 
 A small moulded case in a filled thermoset or a glass-filled nylon, chosen so the case survives being dropped off a desk with the stick still in hand - which, for a joystick sold with a computer, was a frequent event.
 
-###### Glass-filled nylon case `c64.joystick.microswitches.plastic-case.nylon`
+###### Glass-filled nylon case `c64.joystick.microswitches.plastic-case.nylon` _(medium)_
 
 A glass-filled nylon case gives a microswitch enough stiffness to keep its contact force with a thin wall, and enough toughness to survive being dropped. It is the standard material for that class of switch through the 1980s.
 
@@ -5048,15 +5048,15 @@ A glass-filled nylon case gives a microswitch enough stiffness to keep its conta
 
 The base polymer of the glass-filled nylon case, made from hexamethylenediamine and adipic acid. Caprolactam is the route to nylon 6, a different grade. A single C64 contains nylon in its switch housings, its joystick bushings and its microswitch cases.
 
-###### Through-hole mounting and solder lugs `c64.joystick.microswitches.plastic-case.solder-lugs`
+###### Through-hole mounting and solder lugs `c64.joystick.microswitches.plastic-case.solder-lugs` _(medium)_
 
 The switches are pushed into holes in the joystick's printed board and their pins soldered from underneath. Positioning them on that board is what sets how far the gate has to travel before a direction registers - the mechanical timing of the whole joystick.
 
-#### Steel shaft and ball top `c64.joystick.shaft`
+#### Steel shaft and ball top `c64.joystick.shaft` _(medium)_
 
 A cross-section steel shaft pressed into the gate, rising through the chassis with a moulded ball or ball-and-paddle top at the user end. The ball is the most-comforted part of the design and is also the part that wears smooth or cracks in old machines.
 
-##### Cold-drawn steel bar `c64.joystick.shaft.steel`
+##### Cold-drawn steel bar `c64.joystick.shaft.steel` _(low)_
 
 Mild or low-alloy steel, cold-drawn to a square section and cut to length. The gate's press fit is what locates the shaft; the steel is unplated except where it passes through the chassis, where corrosion is a genuine failure mode on a machine stored in a damp shed. The steel begins as sintered hematite-magnetite pellets and lump ore charged with coke and limestone, and the bulk of world steel in 1982 was made that way, so rust and pitting on a forty-year-old joystick shaft is this ore still trying to get out.
 
@@ -5080,7 +5080,7 @@ The colourant is dispersed into the polymer in a compounding extruder before the
 
 Where a lighter colour was used, the whitener was rutile TiO2 from ilmenite - the same titanium chain as the barium titanate powder.
 
-###### Injection moulding of the knob `c64.joystick.knob.abs.moulding`
+###### Injection moulding of the knob `c64.joystick.knob.abs.moulding` _(medium)_
 
 The knob is a two-shot or single-shot ABS moulding, often with a moulded-in texture or a soft overmould. It has to be comfortable and it has to stay on the shaft for decades.
 
@@ -5096,11 +5096,11 @@ On 3-button sticks a fire switch is moulded into the shaft itself and a third bu
 
 A coiled cable of seven or nine conductors leaving the chassis bottom, terminating in a DE-9 male plug that looks mechanically identical to the socket it plugs into but has male pins. The plug's contacts are gold-flashed brass, made the same way and by the same stamping and plating route as the socket contacts on the machine.
 
-##### DE-9 male plug contacts `c64.joystick.cable.plug`
+##### DE-9 male plug contacts `c64.joystick.cable.plug` _(medium)_
 
 Stamped brass pins, gold-flashed over nickel, moulded into a thermoplastic D-shell that keys to the socket's D-shape. Because the D-shell is polarised, the plug physically cannot be inserted backwards - the same mechanical trick as the moulded keyway on a D-sub generally.
 
-###### Cable assembly and strain relief `c64.joystick.cable.plug.cable-assembly`
+###### Cable assembly and strain relief `c64.joystick.cable.plug.cable-assembly` _(medium)_
 
 The conductors are crimped into the DE-9 pins and the cable is clamped by a moulded strain relief at the shell, so bending the cable does not work the pin out of the crimp. Strain relief is the single cheapest thing that decides whether a peripheral cable survives five years of use.
 
@@ -5113,17 +5113,17 @@ Fine-stranded copper, tinned, for flexibility. Seven or nine of them, depending 
 The stranded conductor is tinned so the crimp barrel grips cleanly and the joint is solderable. Tin from cassiterite, in a peripheral cable a few centimetres from the machine.
 
   - *Joystick controller* `c64.joystick` *(seen above)*
-## Where every branch terminates `c64.bottoms-out`
+## Where every branch terminates `c64.bottoms-out` _(low)_
 
 Everything above ends in one of three trunks: refined metals, petrochemicals, and the plants and utilities that supply both. Most component subtrees carry their own shorter copy of the relevant chain - a capacitor really does carry its own aluminium, and an ABS case really does carry its own acrylonitrile - so these are the canonical, deepest versions of the same chains, kept together so that one can be read end to end.
 
-### Metals, ores and industrial minerals `metal`
+### Metals, ores and industrial minerals `metal` _(medium)_
 
 Every mineral stream behind a 1982 Commodore 64: the quartzite that becomes silicon, the bauxite and cryolite that becomes aluminium foil, the porphyry copper that becomes PCB track and transformer magnet wire, the tin and lead that become 63/37 solder, the iron ore and coke that become the steel chassis and the transformer laminations, and the specialty metals - gold, silver, nickel, tantalum, zinc, chromium, manganese, cobalt, tungsten - that end up plating contacts, filling ceramic capacitors, binding carbide cutters and drawing the filament in a television's gun. The rare earths are here too, as oxides rather than metals, because they arrive as oxides and are only a few hundred tonnes of them. Each branch runs from the finished metal down to the quarry, the open pit, the evaporite bed or the seabed.
 
 #### High-purity silicon feedstock (9N polysilicon) `metal.silica`
 
-The refined element every chip in the machine is cut from. A 1982 Commodore 64 mainboard carried a handful of silicon dies and one 2 MHz quartz crystal, both traceable to this chain: quartzite or silica reduced to 98-99% metallurgical silicon, chlorinated to trichlorosilane, distilled to 9-nines, deposited as polysilicon, then pulled as a single Czochralski crystal. Note that the 6510 is NMOS, so the 1982 die uses ALUMINIUM gate metal and thermally grown field oxide, not a polysilicon gate; the polysilicon branch below is the industry feedstock route, which is where the energy and the boron problem lived.
+The refined element every chip in the machine is cut from. A 1982 Commodore 64 mainboard carried a handful of silicon dies and one quartz crystal, both traceable to this chain: quartzite or silica reduced to 96-99% metallurgical silicon, chlorinated to trichlorosilane, distilled to 9-nines, deposited as polysilicon, then pulled as a single Czochralski crystal. Two corrections to what this node previously said. The board's crystal Y1 is 14.31818 MHz, not 2 MHz; the 2 MHz line is a divided output of the clock circuitry, not a separate crystal, and the 6510 runs at about 1.02 MHz. And the 6510 is an HMOS part - silicon gate, depletion load - so its 1982 die does use a polysilicon gate, not aluminium gate metal; the polysilicon branch below is the route the machine's own chips were made by, not merely the wider industry's.
 
         - *Polysilicon ingot and rod, 9N* `metal.silica.polysilicon` *(seen above)*
 ##### Czochralski monocrystalline ingot `metal.silica.czochralski`
@@ -5134,13 +5134,13 @@ Where the polysilicon chain ends and the semiconductor business begins. A 2 kg c
 
 The crucible the melt sits in is made from the same silicon chain one step further down, from high-purity quartz fused in vacuum or wet hydrogen to knock out the alkali that would poison a p-type wafer. It is expensive, fragile, and replaced every few hundred pulls.
 
-###### Thermally grown silicon dioxide (SiO2) `metal.silica.field-oxide`
+###### Thermally grown silicon dioxide (SiO2) `metal.silica.field-oxide` _(medium)_
 
 The gate oxide, the field oxide and the photoresist mask oxide of a 1982 NMOS die are not bought - they are grown out of the silicon itself. A wafer goes into a 1000-1150 C steam or dry-oxygen furnace for an hour and a half and roughly a thousand angstroms of SiO2 comes off the wafer, consuming about 0.1% of its thickness. The machine's entire insulation is therefore chemically the same element as the chip, oxidised in place, and the 6510's gate dielectric is aluminium on oxide rather than a polysilicon gate.
 
-##### 2.048 MHz quartz clock crystal `metal.silica.quartz-crystal`
+##### 14.31818 MHz quartz clock crystal (Y1) `metal.silica.quartz-crystal` _(medium)_
 
-The C64's timing reference: an AT-cut quartz plate about 7.6 x 2.5 mm brazed between metal caps, resonating at 2.048 MHz. Quartz is the only material with a usable temperature-stable mechanical resonance that cheap. The plate itself is usually not natural rock - it is hydrothermally grown synthetic quartz in an autoclave of sodium hydroxide solution at about 400 C and 1.5 kbar.
+The C64's timing reference is a 14.31818 MHz quartz crystal, designated Y1 and listed in the service-manual parts lists as part 900558-01 and as 251467-01, both described as 'Crystal 14.31818 MHz'. It feeds the 74LS629 voltage-controlled oscillator, whose output on pin 10 is itself a 14.31818 MHz colour clock, while the dot clock comes out at 8.1818 MHz; the divider and flip-flop chain beyond it produces the 2 MHz and 1 MHz lines and the 6510 runs at about 1.02 MHz. There is no 2.048 MHz crystal in this machine. Quartz is the only material with a usable temperature-stable mechanical resonance that cheap. The C64B changed the arrangement rather than the outcome: its manual section describes a 16 MHz fundamental feeding a clock-generator IC that still delivers the same 8.1818 MHz dot and 14.31818 MHz colour clocks.
 
 ###### Grow the clock crystal hydrothermally `metal.silica.quartz-crystal.synthetic` _(medium)_
 
@@ -5154,7 +5154,7 @@ Vein and pegmatite quartz, of which Brazil's Minas Gerais was the world source f
 
 Sodium is not in the machine as a metal, but the C64 could not exist without it: caustic soda dissolves bauxite to make alumina, and the same chlor-alkali industry that makes the caustic soda also makes the chlorine and hydrogen that become the hydrochloric acid for the silicon plant. Behind both sits a bed of rock salt or a bucket of evaporite from a solar salt pan.
 
-##### Caustic soda (NaOH), 50% solution `metal.caustic-soda`
+##### Caustic soda (NaOH), 50% solution `metal.caustic-soda` _(medium)_
 
 Two entirely different consumers in this tree. The Bayer process digestion liquor, where a caustic grade tanker holds roughly 300-400 t of 50% solution and a refinery's caustic and steam costs dominate its operating cost. And the chlor-alkali industry, where the same product comes out of the same cell as the chlorine and hydrogen that make the hydrochloric acid for the silicon plant. Cost accounting in aluminium is dominated by caustic and steam; every tonne of caustic lost to red mud is recovered by lime in the causticisation circuit or bought.
 
@@ -5162,7 +5162,7 @@ Two entirely different consumers in this tree. The Bayer process digestion liquo
 
 2NaCl + 2H2O -> 2NaOH + H2 + Cl2. In 1982 almost all of it was a diaphragm cell or a mercury cell. The diaphragm cell - an asbestos-cloth cathode separator - gave low-purity caustic loaded with salt and was steadily displaced through the late 1970s and 1980s by the membrane cell, which delivers 50% NaOH essentially free of salt. Mercury cell caustic went to a short finishing step, causticisation with sodium carbonate, to strip the last mercury; the Hooker Chemical conversion of its Niagara Falls works to membrane in 1984 is the emblematic date.
 
-###### Chlorine gas (Cl2) `metal.chlorine`
+###### Chlorine gas (Cl2) `metal.chlorine` _(medium)_
 
 A pale yellow-green gas denser than air, made in the chlor-alkali plant and piped or tanker-shipped to the hydrochloric acid synthesis unit. Around 1982 much of it went to solvent makers and to water treatment as chlorinated organics; only a fraction ever reached a silicon plant, and silicon-grade chlorine must be bone dry, because water plus trichlorosilane gives hydrochloric acid and hexasiloxane gel that plugs the fluidised bed.
 
@@ -5190,11 +5190,11 @@ The barium carbonate that comes out of the carbonation tank is 99.0-99.5% pure b
 
 The ceramic-grade barium carbonate specification is essentially a statement about two impurities. Iron, carried through from the barite and from the flue of the reduction kiln, if it survives into barium titanate, acts as an acceptor and shifts the Curie point and the dielectric constant and hurts the loss - so iron has to be below a few hundred ppm. Sulphur, carried from the reduction and not removed by the carbonation, sits at the grain boundary of the fired ceramic and hurts the breakdown voltage. Both of them are the same answer as in the ferrite branch: wash, precipitate, and calcine in a controlled atmosphere. It is a recurring theme in ceramics that the last hundred ppm is the whole specification.
 
-###### Rock salt and solar salt brine `metal.salt-brine`
+###### Rock salt and solar salt brine `metal.salt-brine` _(medium)_
 
 Two very different-looking things that are the same feedstock. Rock salt is a bed of halite pushed up by evaporation of a restricted sea and then mined; solar salt is the same chemistry done in the sun, in shallow evaporation ponds that turn a square mile of bay into a crystalliser. The chlor-alkali cell does not care which it gets: what matters is a saturated brine with the calcium and magnesium removed, because both precipitate as scale in the diaphragm cell and would otherwise carry oxygen into the chlorine.
 
-###### Halite bed: Wieliczka, Michigan, the saltbelt `metal.salt-rock`
+###### Halite bed: Wieliczka, Michigan, the saltbelt `metal.salt-rock` _(medium)_
 
 Salt deposited in an evaporating sea and buried later; mined by room-and-pillar, with the salt crushed and screened for the brine saturator. The Wieliczka mine in Poland is the oldest deep salt mine still working, and Polish rock salt was the classic feed for the eastern European chlor-alkali industry.
 
@@ -5218,19 +5218,19 @@ A 20-30 m steel tower with a conical bottom, fed at the top with ammoniated brin
 
 In 1982 most ammonia in the soda industry still came from the gasworks: coke plus steam and iron passed over a hot carbonaceous catalyst, then cracked to nitrogen and hydrogen. Natural gas-based steam reforming had largely displaced this in North America and Western Europe, but coke-based ammonia remained standard in India, China and much of Eastern Europe - which is where much of the world's soda ash, and hence much of its glass, was made.
 
-###### The lime kilns that feed the Solvay tower `metal.soda-ash.lime-kiln`
+###### The lime kilns that feed the Solvay tower `metal.soda-ash.lime-kiln` _(medium)_
 
 The Solvay process needs carbon dioxide and it gets it by burning limestone in a shaft kiln beside the tower, in the same way a sugar mill burns bagasse. The kiln gas, after the dust is knocked out and the gas is cooled and scrubbed, is about 40-45% carbon dioxide on a dry basis - lower than the 98% a dedicated CO2 plant would produce, but it came free with the lime the process also needed. The Solvay works was therefore a self-contained chemical plant that took limestone and salt and made soda ash, calcium chloride and CO2 in one site.
 
-###### Limestone (CaCO3) quarry `metal.limestone`
+###### Limestone (CaCO3) quarry `metal.limestone` _(medium)_
 
 High-calcium limestone for the Solvay towers, the blast furnaces, the Bayer plant, the lead sinter and the lime kilns. Quarried by bench mining with a face shovel or a chain dragline, crushed, and graded; a blast furnace wants roughly a third of a tonne of limestone per tonne of hot metal. The same rock is the flux in the copper flash furnace, the causticisation reagent in alumina refining, and the neutraliser at the board fab.
 
-###### Carbonate platform limestone `metal.limestone.bed`
+###### Carbonate platform limestone `metal.limestone.bed` _(medium)_
 
 The leaf: a fossiliferous carbonate rock, mostly calcite, laid down on a shallow warm sea floor and now quarried a few metres at a time out of a 10-40 m face.
 
-###### Limestone quarry and crushing plant `metal.limestone.quarry`
+###### Limestone quarry and crushing plant `metal.limestone.quarry` _(medium)_
 
 A 5-15 m bench taken out of a 10-40 m face with a face shovel or a chain dragline, drilled and blasted where the rock is competent, then a primary jaw or gyratory crusher to 50-150 mm and a crushing and screening plant that produces three fractions: 0.5-5 cm for the sinter plant, 5-40 mm for the blast furnace and the kilns, and a fines fraction that goes back. A limestone quarry is one of the least complicated mines there is, which is why lime is cheap everywhere and why the Bayer process's caustic and lime costs are the alumina industry's real cost base.
 
@@ -5238,7 +5238,7 @@ A 5-15 m bench taken out of a 10-40 m face with a face shovel or a chain draglin
 
 The Solvay process does not consume the salt: the ammonium chloride in the spent brine is causticised with lime back to ammonia and sodium chloride, and the brine is re-saturated. The plant therefore closes its salt loop, and its only real consumption is limestone and energy and the ammonia. That closure is the whole reason Solvay was so cheap for a century and why it was so hard to displace until the chlor-alkali-soda ash route had caught up.
 
-#### Lime (CaO) and calcium `metal.lime`
+#### Lime (CaO) and calcium `metal.lime` _(medium)_
 
 Lime is one of the most-used industrial chemicals there is, and this tree touches it in four places: the Bayer plant uses it to desilicate and to causticise, the blast furnace uses limestone directly as flux, the PCB fabricator regenerates ferric chloride etchant and neutralises with it, and the metallurgical silicon and tin circuits use lime as a flux and a scavenger. Lime is roasted limestone; limestone is quarried rock.
 
@@ -5339,7 +5339,7 @@ The only reason potassium is in this tree. Potassium chloride is added to the ta
 
 Where the C64's aluminium comes from. Bauxite is dug, digested in caustic soda to alumina, and electrolysed in molten cryolite to 99.7% metal - about 13,000-17,000 kWh per tonne, the largest single industrial electricity draw anywhere in this tree. The ingot is then DC-cast to a rolling ingot and rolled down to 6-25 um foil for the electrolytic capacitors in the power supply, to sheet for the case and shield cans, and extruded for the heat sinks. Note that the capacitor foil and the plain foil are different jobs for the same rolling mill.
 
-##### Smelter-grade alumina, 99.5% Al2O3 `metal.alumina`
+##### Smelter-grade alumina, 99.5% Al2O3 `metal.alumina` _(medium)_
 
 A white, sandy, hygroscopic powder delivered to the smelter in railcars or 1-2 t bags. The contract is brutal: 99.5% Al2O3 minimum, loss on ignition below about 1%, total iron below 0.02%, because every gram of iron that reaches the cell ends up in the metal and the ingot stops being 99.7%. In 1982 this was a global commodity with about a dozen producers - Alcoa, Alcan, Kaiser, Norsk Hydro, Sumitomo, and the Australian and Jamaican national producers. This is the deliberate convergence point for the bauxite and the pot branch: both hang off it.
 
@@ -5347,11 +5347,11 @@ A white, sandy, hygroscopic powder delivered to the smelter in railcars or 1-2 t
 
 A soft, red-brown, pisolitic or clayey laterite, 45-60% Al2O3, still essentially the ore it was before anybody wanted it. Ore below about 180 C of gibbsite digest easily at low temperature and is called low-temperature bauxite; ore with diaspore and boehmite needs 240-280 C and is called high-temperature bauxite, which costs much more in steam. The three great districts in 1982 were Boke and Kindia in Guinea, the Weipa and Gove platforms in northern Australia, and the Clarendon and Saint Ann parishes in Jamaica.
 
-###### Open-cast bauxite mine with dragline `metal.bauxite.mine`
+###### Open-cast bauxite mine with dragline `metal.bauxite.mine` _(medium)_
 
 Strip mining on a 10-20 m bench height, with a bucket-wheel excavator or a walking dragline stripping 10-50 m of overburden and then a bench of bauxite perhaps only 3-6 m thick. The dragline is the point: it digs the bauxite, swings and dumps it onto a ramp, and strips the next strip of cover, all in one machine. Loading is by conveyor, almost never by truck. The Weipa and Gove operations were built this way.
 
-###### Lateritic bauxite profile `metal.bauxite.laterite`
+###### Lateritic bauxite profile `metal.bauxite.laterite` _(medium)_
 
 The leaf: a 3-12 m pisolitic blanket of iron-stained bauxite nodules sitting on a Cretaceous or Tertiary lateritic surface above a kaolinitic clay. Guinea's deposits are the classic tropical pisolite; the Australian Weipa and Gove ores are flat-lying terrace deposits on Cretaceous sediments. Either way the rock outcrops at the surface and is dug, not tunnelled.
 
@@ -5363,7 +5363,7 @@ The leaf of the aluminium branch, and the reason the alumina process exists in t
 
 The last leaf of the aluminium branch. In the Weipa and Gove deposits on the Cretaceous laterite surface, bauxite is dug in the wet season and the clay is washed out of it in a creek: a 200 m long, 30 m wide sluice excavated along the edge of the terrace, into which the bauxite is tipped and a stream of water is run, and the light clay washes away over a long distance while the pisolitic bauxite nodules, 5-50 mm and iron-stained, stay behind and are recovered by hand or by a mechanical rake. It is a 1980s technology on a Cretaceous rock surface in tropical Queensland, and it is the reason those deposits look the way they do.
 
-###### The Cretaceous laterite surface `metal.laterite-terrace`
+###### The Cretaceous laterite surface `metal.laterite-terrace` _(medium)_
 
 The leaf, geologically: a flat, deeply weathered surface on Cretaceous sandstone where a tropical lateritic profile has developed over tens of millions of years, with a bauxite horizon at the top, kaolinite below it, and the saprolite and fresh rock beneath. The flatness is the point - it is why the pits are cheap and the ore is shallow - and it is a direct consequence of the rock type and of the extraordinarily long, warm, wet chemical weathering that made it.
 
@@ -5375,7 +5375,7 @@ The Bayer plant does not want a 300 mm boulder and it certainly does not want th
 
 A 110-year-old caustic-leach purification that every tonne of aluminium still goes through. Five steps: crush and wash, digest in caustic at pressure, clarify and throw away the red mud, cool and precipitate pure aluminium hydroxide, calcine to alumina. It works because the alumina in bauxite is amphoteric - it dissolves in hot caustic as sodium aluminate - while the iron and titanium oxides are not, and silica is neutralised by lime into a harmless calcium silicate.
 
-###### Caustic digestion in autoclaves `metal.bayer.digestion`
+###### Caustic digestion in autoclaves `metal.bayer.digestion` _(medium)_
 
 Bauxite slurry and 150-300 g/L free caustic (as Na2O) are charged into stirred autoclaves and held at temperature for 30-90 minutes. The alumina dissolves as NaAl(OH)4; the iron oxide stays as a red slurry. Older low-temperature plants used a bank of horizontal autoclaves with indirect steam heating; high-temperature plants used vertical autoclaves. The pressure was only 5-15 bar because the vessel was not a modern high-pressure autoclave but a horizontal drum with a vapour space.
 
@@ -5452,7 +5452,7 @@ The rolling mill is not a refinery. It melts primary ingot, remelted can scrap a
 
 A hot billet is forced through a steel die by a ram at 420-500 C, at 20-100 MN of pressure, at several metres a second, and the profile that comes out is straight and, if the die is good, dimensionally within a fraction of a millimetre. The Commodore case is a complicated extrusion: the cooling fins, the rail and the case walls are all one profile, and the visible finish is a consequence of the die geometry. The rectifier and regulator heat sinks are separate small extrusions or machined blocks.
 
-###### Hydraulic extrusion press, 500-2500 t `metal.aluminum.extrusion.press`
+###### Hydraulic extrusion press, 500-2500 t `metal.aluminum.extrusion.press` _(medium)_
 
 The industry standard was the 2300-2500 t class press with a 200-500 mm container, driven by a hydraulic intensifier that gave a hard step change in speed at the start of the stroke. A heated soak furnace beside the press holds the billets, a shear cuts them to length, and the runout bench stretches the profile while it is still hot. A C64 case would have been pressed at a Taiwanese or Hong Kong extrusion shop on a machine of exactly this size.
 
@@ -5532,7 +5532,7 @@ The flotation concentrate at 25-30% Cu arrives as a pulp at 10-20% solids and ha
 
 Concentrate, silica flux and limestone are dropped into a vertical reverberatory shaft where a hot gas blast, 40-60% oxygen-enriched, burns the concentrate as it falls. Three reactions happen simultaneously: the sulphides oxidise to copper oxide and iron oxide, the oxides react with each other to form a copper-iron matte, and the iron oxide reacts with the silica flux to make a slag. The furnace runs at 1250-1400 C and the products settle into three layers - matte at the bottom, slag above it, and offgas above that - which are tapped separately. By 1982 the flash furnace had largely displaced the reverberatory furnace: it is smaller, faster and needs less fuel, and it works on concentrate straight from the flotation circuit with only a small amount of dried concentrate added as fuel.
 
-###### Silica flux from a sand quarry `metal.silica-flux`
+###### Silica flux from a sand quarry `metal.silica-flux` _(medium)_
 
 The smelter adds sand or quartzite so that the iron in the concentrate can be thrown off as a slag instead of entering the matte. The quartz is often a cheap nearby dune sand - which is exactly the same material the glass industry buys, and the reason a copper smelter in the 1980s had a sand dryer and a small silica prep plant. The flux is dosed so the slag's silica content matches what the concentrate brings.
 
@@ -5608,7 +5608,7 @@ Traditional cupels are made of calcined bone - tricalcium phosphate - ground and
 
 Two of the minor metals that pay for a copper smelter. The slime is roasted in a fluidised bed and the selenium volatilises as SeO2, caught in a hot cyclone or an electrostatic precipitator; the tellurium comes out of the roasted residue by leaching and electrowinning. Both are a few per cent of the slime's mass and both sell at a price per kilogram above the copper, so by 1982 a smelter could not afford to throw them away.
 
-###### Copper ingot and rod casting `metal.copper.ingot-casting`
+###### Copper ingot and rod casting `metal.copper.ingot-casting` _(medium)_
 
 The cathode is melted in an induction furnace or a reverberatory with a controlled sulphur addition, then cast - either continuously into wire rod by the Properzi upcast method or into 250-450 kg ingots for further processing. The 1980s standard route to rod was continuous casting; the alternative, longer route was a DC casting machine feeding a wire rod mill. Melting loses almost nothing because copper does not oxidise appreciably; the real problem is gas absorption.
 
@@ -5736,7 +5736,7 @@ Lead is the soft, low-melting, cheap half of the solder alloy, and it is the rea
 
 Galena is cubic, bright grey when fresh and dull grey when oxidised, extremely heavy at 7.6 g/cm3, and it is one of the few common ores that a prospector could identify by eye. The great mining districts in 1982 were the Tri-State district of Missouri, Oklahoma and Kansas (which supplied most of the United States' lead and is a fossil limestone-hosted deposit), the Broken Hill and Mount Isa districts of Australia, Cerro de Pasco and Huancavelica in Peru, and the Iberian and Atlas belts. Concentrates assay 40-75% Pb and are always accompanied by enough silver and zinc to make a good deal of the mine's revenue.
 
-###### Underground lead-zinc mine `metal.galena.mine`
+###### Underground lead-zinc mine `metal.galena.mine` _(medium)_
 
 The Tri-State district's galena bodies sit as veins and bedding replacements in Mississippian limestone only a few metres thick, and they were worked by room-and-pillar mining - essentially taking the limestone out and leaving the lead in place, because the ore grade at 3-6% Pb did not pay for selective mining. The mineral was hand-picked off the back of the working face and off the cars. This is a soft-rock, shallow, cheap mining operation, and its day had largely gone by 1982 as the deeper and lower-grade Missouri deposits took over.
 
@@ -5768,7 +5768,7 @@ Sinter is not simply roasted concentrate. The mix is designed so the sintered ca
 
 A lead blast furnace looks like an iron blast furnace but is only 4-7 m tall, because lead reduces so easily. Self-fluxing sinter, coke and limestone are charged at the top; a blast of 200-350 C air is blown in at the hearth; the PbO is reduced to lead by CO at 1000-1100 C and the metal runs out. The sinter, coke and limestone charge comes down a shaft that is deliberately kept chilled so the metallic lead freezes before it goes further down - if it melted it would run into the tuyeres. Two outputs: crude lead bullion at 950-1050 C at the bottom, and a slag carrying off the iron and silica.
 
-###### Crude lead bullion with silver and gold `metal.lead.bullion`
+###### Crude lead bullion with silver and gold `metal.lead.bullion` _(medium)_
 
 Tapped at 950-1050 C, the bullion is about 95-98% lead with 1-3% silver, a little gold, and copper, arsenic, antimony and bismuth. Silver at 1-3% is not a trace - it is often the difference between a viable mine and a marginal one, and the Parkes process that recovers it is the reason lead smelters have a refinery at all. By 1982 crude lead was increasingly sold as a low-grade bullion to the refinery and the smelter/ refinery was one continuous plant.
 
@@ -5925,7 +5925,7 @@ Zinc is the fourth non-ferrous metal and the most recycled one. In a 1982 C64 it
 
 Sphalerite is one of the few ores that is not visually recognisable: it is a black to honey-brown cubic crystal whose colour depends on the iron substituting in the lattice, so the industry grades it in grades of iron - a 4% iron concentrate looks black and a 12% iron concentrate looks ruby red-brown. Concentration is by flotation with an amine or xanthate collector. The great districts were the Red Dog and the Sullivan mine in British Columbia, Broken Hill, the Cerro Rico of Potosi, the Rammelsberg of Goslar, and the Appalachian and Midwestern US zinc districts such as the Bartlesville and the Tennessee mines.
 
-###### Underground zinc-lead mine `metal.sphalerite.mine`
+###### Underground zinc-lead mine `metal.sphalerite.mine` _(medium)_
 
 The Red Dog and Sullivan type deposit: a massive sulphide body in a sedimentary basin, mined underground from a ramp or a shaft, with the ore hoisted in a friction hoist or a skip, and the mill right at the portal. Broken Hill's Broken Hill Proprietary was the other archetype, an open pit above a very large primary orebody that was mined for sixty years. Where the zinc and lead are in separate veins, gravity and flotation split them: galena at 7.6 and sphalerite at 4.1 do separate well on a dense-medium separator.
 
@@ -5962,11 +5962,11 @@ Not any coal: a blend of coals that fuse and solidify into a coherent cellular c
 
 A coking coal mine in 1982 was almost always a mechanised longwall: a shearer cuts a 1.5-3 m thick seam across the face, the roof is allowed to collapse, the coal is loaded onto a pan chain conveyor and a main belt carries it to a preparation plant and up the shaft. The seam is a few metres thick, so the mine is a thin dark ribbon of coal a kilometre wide. Pennsylvania, the Ruhr and the Kuzbass are the three great coking coal provinces, and they are the geological reason those three places have both the coke ovens and the blast furnaces - the coal is too bulky to ship, so the steel industry grows where the coal is.
 
-###### Bituminous coal seam (Middle and Lower Kittanning) `metal.coking-coal.seam`
+###### Bituminous coal seam (Middle and Lower Kittanning) `metal.coking-coal.seam` _(low)_
 
 The leaf: a 2-3 m band of bright, banded, caking bituminous coal lying within a cyclothemic sequence of sandstone, shale and fireclay - the same sequence that holds the Pennsylvanian iron ore, coal and limestone together in the Appalachian basin, and the reason Pittsburgh is the steel capital of America. The Kittanning and the Freeport seams were the premium coking coals; the coal is Carboniferous, about 320 million years old, and it was deposited in a swamp.
 
-###### Coal preparation: crushing, washing, blending `metal.coal-preparation`
+###### Coal preparation: crushing, washing, blending `metal.coal-preparation` _(medium)_
 
 Run-of-mine coking coal is crushed to under 50 mm and washed, because the ash that matters is the mineral matter - clay bands and pyritic nodules - that can be taken off by a dense-media wash at about 1.4-1.6 specific gravity. The washed coal then goes to a blending yard, because a coke oven wants a consistent blend and no single seam is consistent. Blending is done by a stacker-reclaimer in a yard, and the recipe is a metallurgical decision that is still made on the basis of the dilatation and the sulphur.
 
@@ -6002,7 +6002,7 @@ A 1982 coke oven produced a very large fraction of the world's synthetic benzene
 
 The physical heart of the battery: a tall steel tower with spray nozzles fed by a 300 mm main, a receiving pan, and a surge hopper from which a 2-3 m pusher car pushes the cooled coke onto a belt. Behind it stands the battery, bricked with about 20,000 refractory bricks per oven chamber in the modern design and castable in the older one, all of which has to survive 1300 C cycling every twenty hours forever. The doors are the coke-side door on top and the charging door below, and the charging machinery is driven by a single large winch.
 
-###### Coal tar and pitch: the binder under everything `metal.coke.tar-pitch`
+###### Coal tar and pitch: the binder under everything `metal.coke.tar-pitch` _(medium)_
 
 The tar that comes off a coke oven condenses as a dense black liquid, and it is the source of three of the most important carbonaceous materials in this file. Distilled, it gives crude tar, heavy creosote oil, and pitch - the binder in the carbon anode, the coke-battery electrode, the extrusion die lubricant and the aluminium pot lining. A tonne of coke gives roughly 30-50 kg of crude tar, and a tonne of that tar gives a few tens of kilos of soft pitch. So the coke oven is upstream of the aluminium pot, the coke battery and the graphite electrode, and the carbon-anode branch of this file is not an independent industry at all - it is the coke oven's tar still.
 
@@ -6014,7 +6014,7 @@ Pitch is classified by softening point: soft pitch around 40-70 C, medium 70-110
 
 The tar is separated into a light fraction (benzol wash oil and crude benzene), a middle fraction of heavy oils used as a coking-plant quench medium and a wood preservative, and a heavy pitch fraction. Creosote as a wood preservative is a genuinely large market and it is the same molecule family as the pentachlorophenol and the coal-tar pitch that the board and case coatings used. So the coke branch of this tree touches the plastics, the coatings and the timber-preservation branches as well as the metals one.
 
-###### The coke oven feeds six branches of this tree `metal.pitch.from-pitch`
+###### The coke oven feeds six branches of this tree `metal.pitch.from-pitch` _(low)_
 
 Putting the carbon branch together as one loop. Coal is distilled for rosin and turpentine on one side and for tar and pitch on the other; the pitch becomes the binder in the carbon anode, which becomes aluminium; the coke from the same oven becomes the fuel for the silica reduction that becomes the metallurgical silicon that becomes the polysilicon; the coke breeze becomes the sinter plant's fuel; and the benzene becomes the styrene and the phenol and the epoxy resin. One oven on a 1982 coking plant therefore feeds at least six branches of this tree, and it is the single most connected node in the file after the quartzite.
 
@@ -6243,7 +6243,7 @@ The leaf of the manganese branch's rock: the manganese in a supergene ore is not
 
 The other, entirely different source: polymetallic nodules lying in thousands of square kilometres of the Clarion-Clipperton Zone and the Peru Basin at 4,000-6,000 m depth, containing 30% Mn, 2% Ni, 1% Cu and 25% Fe. Collecting them means a 10,000-tonne ship dragging a pipe across the seabed for 20,000 hours a year. It was never commercial in 1982 - technology trials were running but no mine was producing - and the incentive that eventually made it real was nickel, not manganese. This node is here because the 1980s seabed mining industry was built by exactly the people looking at the ore as a nickel resource, and by 1982 the C64's nickel supply chain and this geological curiosity were the same corporate conversation.
 
-###### Manganese oxide concretions on pelagic clay `metal.manganese.nodule-rock`
+###### Manganese oxide concretions on pelagic clay `metal.manganese.nodule-rock` _(medium)_
 
 The leaf: millimetre-to-centimetre potato-shaped concretions of Mn-Fe oxide lying unattached in a soft abyssal red clay. The metal has precipitated out of seawater around a nucleus, slowly, over millions of years. It is the most extraordinary leaf in this tree: the manganese in a C64's steel is, in principle, available from the floor of an ocean.
 
@@ -6338,11 +6338,11 @@ Gold at a few parts per million is not visible and not dense in a hand specimen 
 
 Run-of-mine ore, after a cyanide spray test, is crushed to a few centimetres and stacked in 100,000-tonne heaps on an impermeable pad. It is flooded with 0.02-0.05% NaCN solution, allowed to percolate for 30-60 days, and then drained and sprayed again. The pregnant solution is sent through a carbon bed and then an electrowinning cell. A heap-leach pad is a piece of civil engineering first and a chemical plant second: the entire economics depend on the liner holding and the pad draining properly, and the cyanide inventory on a large heap is the largest single cyanide hazard in mining. After the leach the cyanide is destroyed with lime and ferrous sulphate and the pad is detoxified before closure.
 
-###### Witwatersrand underground gold mining `metal.gold.wits-mine`
+###### Witwatersrand underground gold mining `metal.gold.wits-mine` _(medium)_
 
 The other end of the industry. A 15 cm to 3 m band of gold-bearing conglomerate called 'the reef' lies at 1000-6000 m below the Witwatersrand, and from 1886 to 1982 the industry sank shafts and drove long decline haulages and ventilation and cooling galleries into it. Ventilation was the limiting factor: rock at 3000 m is at 40-50 C because of the geothermal gradient and because the rock is 3-6 C warmer than surface, so a mine 4 km deep needed refrigeration and a shaft fan development that took hours to boost air through the raises. Each shift broke perhaps 30,000 tonnes of reef in the mine and treated 100,000 tonnes in the plant, so the metallurgy was crushing a very hard quartzite and recovering maybe 60-70% of a 10-40 g/t ore.
 
-###### Witwatersrand gold reef conglomerate `metal.gold.reef`
+###### Witwatersrand gold reef conglomerate `metal.gold.reef` _(medium)_
 
 The leaf: a 2.9 billion year old quartzite with rounded pebbles of quartz and jasper in a fine matrix - a fossil beach. The gold is in the matrix, as discrete grains a few microns across, and the deepest part of the deposit has the highest grade because it is the oldest and the most distal. It is one of the largest gold concentrations ever formed and it is a sediment.
 
@@ -6566,7 +6566,7 @@ Steel is the machine's frame, its shields, its fasteners and its tooling, and in
 
 A 25-30 m tall, 8-11 m wide stack, charged at the top with sinter, pellets, lump ore, coke and limestone, and blown at the bottom through 3-4 tuyeres with 1000-1300 C blast at a pressure of 2-4 bar. The iron oxide is reduced in stages on the way down - hematite to magnetite at 400-600 C, magnetite to wüstite at 700-900 C, wüstite to iron below 1000 C - and the carbon goes out as CO. The iron arrives at the hearth as a liquid at about 1450-1550 C, containing 3.5-4.5% carbon, 0.3-1% silicon, 0.1-0.2% manganese, 0.05-0.1% phosphorus and about 0.5% sulphur, and it is tapped every 4-6 hours. The slag floats on top and is tapped separately. A 1982 furnace made 5,000-15,000 t of hot metal a day on 3,000-4,500 m3 of volume and consumed about 400,000 m3 of blast a minute.
 
-###### Blast furnace burden: sinter, pellets, lump ore, coke and flux `metal.iron.burden`
+###### Blast furnace burden: sinter, pellets, lump ore, coke and flux `metal.iron.burden` _(medium)_
 
 The furnace eats a precisely weighed blend, batched in 1-3 t bins and dumped in a rotating order around the bell-less throat so the burden descends evenly. Sinter is 55-65% Fe and 8-12% gangue; pellets are 62-66% Fe and are nearly always the majority of the iron-bearing burden in a modern furnace because they are uniform and permeable; lump ore is 45-60% Fe and is in retreat. The blend is sized and ground so it is permeable enough for the gas to reach the burden and rigid enough not to collapse into the raceways.
 
@@ -6574,7 +6574,7 @@ The furnace eats a precisely weighed blend, batched in 1-3 t bins and dumped in 
 
 Fine iron ore cannot be charged into a blast furnace - it would be blown away or it would pack. So it is sintered: mixed with 8-12% returning sinter fines, 5-7% coke and 10-20% lime, moistened to 6-8%, spread in a 0.7-1.0 m bed on a travelling grate, and ignited. At 1200-1400 C the bed self-fuses into a porous 100-150 mm cake. A modern sinter strand produces 3,000-6,000 t of sinter an hour and consumes about 1 GJ of fuel per tonne. It is the same machine as the lead sinter and the manganese sinter, and it emits a great deal of dust.
 
-###### Coke breeze: the sinter fuel `metal.coke-breeze`
+###### Coke breeze: the sinter fuel `metal.coke-breeze` _(medium)_
 
 The 3-10 mm fraction of coke, screened out at the coke plant, that would be too small for the blast furnace. A steelworks' sinter plant is therefore a consumer of its own coke plant's fines - a neat example of an internal recycling loop in the iron and carbon chain that closes from the coke oven's quench, through the sinter plant, back into the blast furnace's burn.
 
@@ -6590,7 +6590,7 @@ A sodium bentonite with a high swelling capacity, mined from a montmorillonite c
 
 The 20-30 m stack is lined with 1,000-2,000 mm of refractory and carries the burden down through a rotating throat seal into a stock column. The burden rests on a 'ledge' in the wall where the gas changes from upward to horizontal flow - the place every blast furnace operator watches, because if the burden descends too fast the gas gets through and the furnace races. At the bottom, the bustle pipe wraps the furnace and delivers the blast through the tuyeres, with the hot blast stoves - Cowper stoves, 8-12 per furnace, each 8-12 m tall - heating the air to 1000-1300 C on the gas from the previous cycle. A 1982 furnace is a machine about 25 m tall and 9 m wide with a 3,500 m3 working volume, and it holds about 100 tonnes of burden in flight at any moment.
 
-###### Copper stave hearth cooling `metal.iron.copper-cooler`
+###### Copper stave hearth cooling `metal.iron.copper-cooler` _(medium)_
 
 The stave coolers that protect the hearth from 1500 C molten iron are made of copper or copper alloy with a water passage cast into them, because copper conducts heat far better than cast iron. They are a copper industry product, and they are one of the more elegant cross-links in this tree: the blast furnace cannot survive without a copper casting technology. On a modern furnace the stave is cast as a composite with a cast-iron backing and a copper water-cooled front, and about 400-900 staves are fitted.
 
@@ -6610,7 +6610,7 @@ The other route, and the one that was growing fastest in the 1980s. Three carbon
 
 The EAF, the submerged arc furnaces of the ferroalloy industries, the aluminium pot anodes and the large carbon blocks of the blast furnace all consume the same two materials: calcined petroleum coke or needle coke, and coal-tar pitch as a binder. An electrode is milled green - coke, pitch and sometimes a sulphur or metal additive - extruded, and baked at 800-1200 C in a graphitising furnace to above 2500 C. The 1980s problem was exactly the nickel crisis showing up here: the EAF plants had no electrodes of their own in Japan, and when the 1979-80 nickel spike also hit electrode prices, Japanese steelmakers found that making steel required nickel, in the electrodes. UHP electrodes and the shift to larger electrode sizes was the industry response.
 
-##### Choosing the steelmaking vessel in 1982 `metal.steel.vessel-choice`
+##### Choosing the steelmaking vessel in 1982 `metal.steel.vessel-choice` _(low)_
 
 Three vessels made the world's steel in 1982 and only one of them was winning. A short parent node so the basic oxygen furnace, the dying open hearth and the scrap-based electric arc furnace sit side by side instead of inside one another.
 
@@ -6708,15 +6708,15 @@ The Pilbara mines in 1982 were the mining engineering standard for the industry.
 
 The leaf of the whole iron and steel branch, and one of the great ones. Around 2.0-1.8 billion years ago, the oceans contained dissolved ferrous iron and oxygen appeared in the atmosphere as a result of an earlier generation of photosynthetic organisms. Wherever the oxygen-rich surface water sank and met the anoxic iron-rich deep water, the iron oxidised and precipitated, as a jelly of iron oxide that settled as a chemical mud. It compacted into alternating silica and iron bands, and it is that banding which gives the rock its name and which makes the high-grade hematite ore bodies on the Hamersley Range the size they are. So the iron in a C64 chassis began, two billion years ago, as an oxide precipitating out of an ocean.
 
-###### The silica and iron oxide banding `metal.bif-banding`
+###### The silica and iron oxide banding `metal.bif-banding` _(medium)_
 
 The leaf, described properly: a stack of alternating 1 mm to 10 m bands of chert (cryptocrystalline silica) and iron oxide, the whole thing metamorphosed, with the hematite in the oxidised upper part and magnetite in the reduced lower part and the P-rich band - the band that gives the Sudbury nickel deposit and the Phalaborwa copper - where fossil bacteria oxidised the iron. Each band is a single depositional event or a group of them, and the ore-to-waste ratio of a Banded Iron Formation is often 1:2, so the pit that produces a tonne of iron ore has to move three tonnes of rock.
 
-###### Crushing, screening and the lump/fines split `metal.hematite.crushing`
+###### Crushing, screening and the lump/fines split `metal.hematite.crushing` _(low)_
 
 The ore is crushed in a gyratory and then on a screen, and the product is split three ways: lump ore above 6.3 mm that goes straight into the blast furnace, fines below 6.3 mm that must be sintered or pelletised, and a reject stream of the banded iron formation that is too low grade to smelt. The lump/fines split is a commercial decision rather than a metallurgical one: in 1982 the steelmakers wanted as much direct-shipping lump as possible because it avoided the sintering plant's capital and its fuel.
 
-###### The ore stockyard and the ship loader `metal.hematite.stockyard`
+###### The ore stockyard and the ship loader `metal.hematite.stockyard` _(low)_
 
 Because the ships are 180,000-250,000 dwt and the mine's output is lumpy, the ore goes into a 1-2 million tonne stockyard with a stacker and a travelling shiploader. The shiploader is a 100 m long gantry on rails with a slewing chute that trims the ship's hold as it loads, so a 250,000 dwt vessel is filled flat without a bulker or a trimming machine. The whole Pilbara export chain - mine, conveyor, stockyard, loader, ship - was built to move one commodity in enormous tonnage at very low cost, and it is the reason Australian iron ore is the cheapest iron in the world.
 
@@ -7084,7 +7084,7 @@ Active and reserve pits, the pump, the surface mixing hopper (mud pit) and the f
 
 A thixotropic clay-water or oil-water emulsion that removes cuttings, lubricates and cools the bit, carries hydraulic pressure to the formation, and crucially gels to hold formation pressure when the pumps stop. In practice it was a chemically engineered suspension with four control jobs: viscosity at the bit, gel strength in the hole, filtrate control to stop the formation claying off, and compatibility with the formation. Four numbers decide whether a mud works: funnel viscosity, plastic viscosity, yield point and the PV/YP ratio, with PV/YP held at or below 3 for hole cleaning, plus a low-pressure filtration rate (Baroid/API) to limit the filtrate that causes formation damage and differential sticking.
 
-###### Bentonite (montmorillonite clay) `chem.crude.rig.drilling-mud.bentonite`
+###### Bentonite (montmorillonite clay) `chem.crude.rig.drilling-mud.bentonite` _(medium)_
 
 Sodium montmorillonite from the Cretaceous Bentonite beds of Wyoming and South Dakota; the single most important mud component. It gives the thixotropy: at rest a high gel strength to suspend cuttings, under shear it drops to low viscosity so the bit can cut. Drilling-grade bentonite is API 13/14 with a viscosity of 30+ s/qt and a low montmorillonite ratio.
 
@@ -7096,7 +7096,7 @@ Sodium montmorillonite is a dioctahedral 2:1 smectite: two tetrahedral silica sh
 
 The pit clay is a calcium montmorillonite and has to be converted. The clay is blunged with water, treated with sodium carbonate so that the exchangeable calcium is replaced by sodium, and then dried and milled. That step is what turns a geological curiosity into an industrial material, and it is also the step that makes the drilling specification possible, because the sodium form swells and the calcium form does not.
 
-###### The clay pit `chem.crude.rig.drilling-mud.bentonite.montmorillonite.soda-ash.clay-pit`
+###### The clay pit `chem.crude.rig.drilling-mud.bentonite.montmorillonite.soda-ash.clay-pit` _(medium)_
 
 A 10-20 m thick bentonite bed, opened up and worked as an open pit or a shallow underground mine, in a landscape that looks like a lunar plain because the clay is grey-white when fresh and weathers to a pale crust. It is the last dig-it-out node of the crude branch's drilling chain, and it is the point at which a machine that will one day hold a C64's case first touches something that came out of the ground with no hydrocarbons in it at all.
 
@@ -7220,7 +7220,7 @@ Sized, round, silica sand or resin-coated sand, typically 20/40 or 30/50 mesh (0
 
 The proppant is a silica sand that has been sieved, washed, resin-coated and graded, and the plant that does it is a small mineral processing operation that exists in the Permian basin because the proppant has to be nearby. The oilfield sands of the Permian have a problem that glass sands do not: a weak grain crushes under the closure stress of a hydraulic fracture, so the 1980s industry coated a fraction of the proppant with a phenolic resin to make it stronger. By the late 1980s a fraction of the sand (5-30% depending on the basin) was coated with a cured phenolic or furfural resin so it would not embed on closure, which turned a mineral commodity into a single-use consumable and created a solid waste stream of its own.
 
-###### Frac sand mine `chem.crude.stimulation.hydraulic-fracturing.proppant.sand-processing.sand-mine`
+###### Frac sand mine `chem.crude.stimulation.hydraulic-fracturing.proppant.sand-processing.sand-mine` _(medium)_
 
 A sand quarry that happens to contain almost pure silica in a dune, worked at 1,000-10,000 tonnes a day. The last dig-it-out node of the crude branch's stimulation chain, and a reminder that a hydraulic fracture is largely a mineral supply chain: the water, the sand and the chemicals are all mining and manufacturing, and only the pressure is petroleum engineering.
 
@@ -7436,7 +7436,7 @@ N2 + 3H2 -> 2NH3 over promoted iron or ruthenium at 400-500 C and 150-250 bar, i
 
 The Haber-Bosch catalyst is promoted iron: magnetite reduced to alpha-iron, promoted with potassium oxide and with alumina or calcium oxide. Ruthenium is better by an order of magnitude but was, in 1983, still a research curiosity as far as ammonia plants were concerned. The catalyst is made by melting magnetite with the promoters, granulating, and reducing it in situ with hydrogen, and a 1980s ammonia plant had a few hundred tonnes of it.
 
-###### Magnetite from iron ore `chem.natural-gas.uses.hydrogen.to-ammonia.catalyst.magnetite`
+###### Magnetite from iron ore `chem.natural-gas.uses.hydrogen.to-ammonia.catalyst.magnetite` _(medium)_
 
 Fe3O4, the reduction product of hematite, and the raw material for the ammonia catalyst. It is also the mineral in the Claus catalyst's neighbourhood and in the polishing lapidary industry. A tonne of ammonia carries about 0.3-0.4 tonnes of iron in its catalyst, and the catalyst is replaced every few years, so the ammonia business has a real, if modest, appetite for iron ore.
 
@@ -7488,7 +7488,7 @@ A fired or steam reboiler supplies the vapour to the bottom of the tower, and si
 
 The naphtha overhead is condensed in a shell-and-tube condenser with a reflux drum, and the non-condensable gas (methane, ethane, hydrogen, H2S) goes off to the fuel gas header. In 1980s practice the gas was usually simply burned, although the recovery unit for ethane and propane (an absorber) was standard in complex refineries because it paid for itself. In complex refineries an absorber or a deethaniser-absorber recovered 60-90% of the ethane and propane from the fuel gas before it was burnt, and that recovered propane and butane is the LPG which feeds the crackers.
 
-###### Cut points and the product slate `chem.refining.atmospheric-distillation.fractionating-tower.cut-points`
+###### Cut points and the product slate `chem.refining.atmospheric-distillation.fractionating-tower.cut-points` _(medium)_
 
 The fractions a refinery aims for, by boiling range: naphtha (C5 to about 200 F end point, roughly 30-40% of crude), kerosene/jet (200-300 F, 8-15%), gas oil (300-700 F, 20-30%), and the atmospheric residue (700 F plus, 25-40%). Naphtha is the fraction that matters to this tree: it is the steam-cracker feedstock, and its exact end point and sulphur decide whether a cracker will run at 800 or 850 C.
 
@@ -7667,7 +7667,7 @@ The heavier option, chosen when naphtha and gas oil were both dear: a 300-700 F 
 
 A hydrocarbon feed mixed with steam is brought to 800-900 C in a few tenths of a second in a serpentine coil inside a radiant furnace, at 1-3 bar. The chemistry is brutal free-radical chain cracking: the large molecules fall apart into smaller ones and a large hydrogen-rich tail gas. What decides the plant is how fast the coil can be taken to temperature without coking it, and how fast it can be cooled again. Steam does two jobs: it lowers the hydrocarbon partial pressure so radicals recombine into smaller molecules rather than into carbon, and it carries the heat into the coil.
 
-###### Cracker furnace and radiant section `chem.ethylene.steam-cracking.furnace`
+###### Cracker furnace and radiant section `chem.ethylene.steam-cracking.furnace` _(medium)_
 
 A refractory-lined box 20-40 m long with 40-80 coiled coils hung side by side, each coil 30-80 m of 4 in (100 mm) cast tube in ten passes of 10-20 m. The fire is gas- or oil-fired at 30-50 MW per furnace, and the radiant duty is the whole point: roughly 70% of the process heat has to arrive by radiation because convection through the gas is too slow to get the coil to 850 C in half a second.
 
@@ -7715,7 +7715,7 @@ The oxidation of ethylene over silver at 200-300 C and 20-30 bar, in which every
 
 Ethylene and air over silver on low-surface-area alpha-alumina in a multi-tubular reactor at 200-300 C and 20-30 bar. Per-pass conversion is only 10-15% and the selectivity to ethylene oxide is 80-90%, so the unreacted ethylene is recycled with the inert diluent. The alternative process - the chlorohydrin route, ethylene plus hypochlorous acid to chloroethanol to oxide - was still running in the United States in the early 1980s but had been almost entirely displaced by air oxidation elsewhere. The superseded chlorohydrin route chlorinated ethylene in water and dehydrochlorinated with lime, and made a chlorinated calcium salt waste for every tonne of product, which is why it survived only in the United States: a process displaced not by yield but by waste.
 
-###### Silver on alpha-alumina catalyst `chem.ethylene.ethylene-oxide.air-oxidation.silver-catalyst`
+###### Silver on alpha-alumina catalyst `chem.ethylene.ethylene-oxide.air-oxidation.silver-catalyst` _(medium)_
 
 10-20% silver on low-surface-area alpha-alumina, promoted by chlorine. Silver is the only catalyst that works: it is the only metal that both activates oxygen and lets ethylene through, and the geometry matters as much as the chemistry, because the low surface area keeps the pore diameter small enough to suppress the combustion pathway. Catalyst life is 2-5 years and the silver is recovered at the end of it.
 
@@ -7727,7 +7727,7 @@ Ethylene oxide boils at 10.7 C, so it is a liquid only just below ambient and a 
 
 Monoethylene glycol, diethylene glycol and triethylene glycol, made by hydration of ethylene oxide in a 1:1 to 1:20 mole ratio of oxide to water, with the ratio chosen to steer the product distribution towards the wanted glycol. In 1980s practice monoethylene glycol was about half the output and went into polyester, antifreeze and diester coolant, and diethylene glycol went into antifreeze and into the unsaturated polyester resins of the same family as the C64's case resin. One tonne of ethylene glycol needs about 3.5 tonnes of ethylene oxide at full selectivity, world MEG capacity was around 4-5 million tonnes a year in 1983, and the big consumers were polyester fibre and film and PET. The older catalytic hydration put ethylene oxide over phosphoric acid on silica at 200-220 C and 60-70 bar with about 20% of the glycol recycled as diluent to suppress ether side products, at 85-90% selectivity to monoethylene glycol - and the whole plant economics is that selectivity, because the diethylene glycol and dioxane have to be sold at a discount. The Shell direct oxidation-hydratation, commercialised in 1965, converted ethylene, oxygen and water in one step over a supported silver-phosphorus-tungsten catalyst for a higher MEG yield and less waste water, at the price of needing very pure oxygen; both routes were still running side by side in 1983.
 
-###### Glycol finishing by vacuum distillation `chem.ethylene.ethylene-glycol.vacuum-distillation`
+###### Glycol finishing by vacuum distillation `chem.ethylene.ethylene-glycol.vacuum-distillation` _(medium)_
 
 Water is removed in a multi-column vacuum system because the glycols boil at 197, 245 and 285 C and water outranks them everywhere; a set of vacuum columns at 30-100 mbar separates mono-, di- and triethylene glycol and recovers the unreacted oxide. This is one of the clearest cases in the whole tree where the separation, not the chemistry, is the expensive part.
 
@@ -7739,7 +7739,7 @@ The largest use of ethylene: about 12-14 million tonnes of polyethylene were mad
 
 Ethylene is polymerised at 200-300 C and 1,000-2,000 bar in a jacketed or tubular reactor with a peroxide initiator, in the liquid phase (below about 280 C) or the gas phase (above it). The density of 0.91-0.93 comes entirely from chain branching: the very high pressure creates radicals on the growing chain, the chain folds, and the branches that stop it crystallising. In 1983 the process was mature to the point of being a cost exercise, and it still made most of the world polyethylene.
 
-###### Peroxide initiator `chem.ethylene.polyethylene.ldpe.initiator`
+###### Peroxide initiator `chem.ethylene.polyethylene.ldpe.initiator` _(medium)_
 
 Di-tert-butyl peroxide, or in the autoclave process a mixture of di-tert-butyl peroxide with di-tert-butyl percarbonate. The initiator decomposes at temperature to give the two tert-butoxy radicals that start the chain, and the choice of half-life at operating temperature sets the run length.
 
@@ -7755,7 +7755,7 @@ Ethylene at 20-60 bar and 150-260 C over a transition-metal catalyst gives linea
 
 Titanium tetrachloride or titanium dichloride with an aluminium alkyl (triethylaluminium or diethylaluminium chloride) at 50-100 bar and 50-80 C in a hydrocarbon diluent. Ziegler was the 1953 discovery that started the whole low-pressure polyethylene industry; by the 1960s it had become Ziegler-Natta by supporting the titanium on magnesium chloride, which gave the multiplicity of active sites and therefore the control of molecular weight distribution that made high-density pipe grades possible.
 
-###### Titanium-magnesium chloride catalyst `chem.ethylene.polyethylene.hdpe.ziegler-natta.titanium-catalyst`
+###### Titanium-magnesium chloride catalyst `chem.ethylene.polyethylene.hdpe.ziegler-natta.titanium-catalyst` _(medium)_
 
 TiCl4 supported on finely divided MgCl2, activated with an aluminium alkyl. The MgCl2 support is the whole trick: it generates about a hundred active titanium sites per gram of catalyst with a range of stereospecificity, and that is what turned HDPE from a family of blends into a graded set of grades.
 
@@ -7763,7 +7763,7 @@ TiCl4 supported on finely divided MgCl2, activated with an aluminium alkyl. The 
 
 The titanium tetrachloride of the Ziegler-Natta catalyst is made from titanium ore - rutile or ilmenite - by chlorinating it with coke and chlorine at 900-1,000 C, then distilling the TiCl4 out at 136 C. Titanium metal comes back by reducing the tetrachloride with magnesium (the Hunter process, which is the Kroll process in reverse) and distilling the magnesium chloride off. So the most important catalyst in the low-pressure polyethylene business is made in a plant that looks exactly like the zirconium and hafnium plants of the nuclear industry, because they all make volatile tetrachlorides. Rutile or ilmenite plus coke plus chlorine at 900-1,000 C gives TiCl4 with iron and vanadium chlorides that have to be removed by distillation - making a volatile chloride the cheapest way to get a pure element out of an oxide. TiCl4 plus magnesium at 800-900 C under argon in a sealed can, then vacuum distillation of the magnesium chloride at 1,000 C, leaves a porous titanium sponge.
 
-###### Triethylaluminium `chem.ethylene.polyethylene.hdpe.ziegler-natta.aluminium-alkyl`
+###### Triethylaluminium `chem.ethylene.polyethylene.hdpe.ziegler-natta.aluminium-alkyl` _(medium)_
 
 The cocatalyst. It alkylates the titanium and reduces Ti(IV) to Ti(III), and it scavenges the water and oxygen that would kill the catalyst. It is pyrophoric, and the 1980s industry response to that fact was the standard practice of diluting it to 5-10% in a hydrocarbon before it ever left the cylinder.
 
@@ -7775,7 +7775,7 @@ Copolymers of ethylene with a small amount of alpha-olefin - 1-butene or 1-octen
 
 Antioxidants (hindered phenols such as BHT, and phosphites), stabilisers, and pigment. The antioxidant is the reason a polyethylene cable in a C64's power supply does not go brittle: a radical from the mains or from a metal ion attacks the chain and causes scission or cross-linking, and a phenol traps it.
 
-###### BHT (2,6-di-tert-butyl-4-methylphenol) `chem.ethylene.polyethylene.additives.bht`
+###### BHT (2,6-di-tert-butyl-4-methylphenol) `chem.ethylene.polyethylene.additives.bht` _(medium)_
 
 The workhorse antioxidant, dosed at 0.05-0.2 wt%. It is made by alkylating para-cresol with isobutylene over a solid acid or an aluminium chloride catalyst, and it was also in the C64's power supply as a capacitor-filling fluid (as the antioxidant of the impregnant).
 
@@ -7787,7 +7787,7 @@ Concretely: the styrene monomer for the ABS case and the SAN matrix, the ethylen
 
 Acrylonitrile-butadiene-styrene is not a copolymer but a polymer blend: a SAN matrix with a grafted polybutadiene rubber phase dispersed in it as 0.1-10 micron particles. Making it is four separate unit operations - make the rubber, graft styrene and acrylonitrile onto it, make the matrix, blend and pelletise - and then a fifth that most people forget, drying. The C64's case, its keyboard surround and the beige plastic of its keys are this material.
 
-###### Graft copolymerisation: growing SAN on the rubber `chem.abs.grafting`
+###### Graft copolymerisation: growing SAN on the rubber `chem.abs.grafting` _(medium)_
 
 The heart of the process. 20-40 parts of a low-cis polybutadiene rubber dissolved in xylene or toluene is charged to a reactor, and styrene plus acrylonitrile is added at 60-80 C in the presence of a persulphate initiator, a chelating agent and a mercaptan chain transfer agent. The radicals abstract a hydrogen from the polybutadiene's 1,2-vinyl unit, creating a radical site on the rubber; styrene and acrylonitrile then copolymerise from that site, and SAN chains grow out of the rubber particle. Each particle therefore becomes a rubber core with a SAN shell. High-graft material, more than about 70% of the monomer grafted, gives a small uniform particle and the best impact strength, while low graft gives larger particles and worse impact; the particle is either salt-like (elastomeric core, rigid SAN shell) or sandwich-like, and which one forms is set by how fast the graft shell precipitates. The rubber is dissolved in xylene or toluene and the monomer emulsified in an aqueous phase carrying the initiator, chelant and transfer agent, and at the end the polymer is devolatilised at 220-250 C and 1-10 mbar to strip the xylene - the single biggest energy item in the plant, at one to two tonnes of solvent per tonne of polymer.
 
@@ -7811,7 +7811,7 @@ cis-1,4 (the elastomer; the chain is flexible below its glass transition), trans
 
 The living anionic process: butyllithium in a hydrocarbon diluent (diesel oil or hexane) at 0-60 C, with the cis content set by solvent and temperature. Living means the chain end stays active, so the polymer can be chain-stopped with an electrophile - water, carbon dioxide, epoxide - and the whole molecule is a single block. This is the chemistry that makes the ABS graft rubber phase possible.
 
-###### Butyllithium `chem.butadiene.polymerisation.lithium-catalyst.butyllithium`
+###### Butyllithium `chem.butadiene.polymerisation.lithium-catalyst.butyllithium` _(medium)_
 
 A pyrophoric organolithium, always supplied as a 10-20% solution in hexane and never in bulk. In 1980s practice it was the initiator for the solution polymerisation of polybutadiene and for the SBR made by anionic polymerisation, and its manufacture from lithium metal and butyl chloride or butane was a speciality chemical operation with a lot of solvent handling.
 
@@ -7823,7 +7823,7 @@ The high-cis technology of the 1980s: a neodymium (or lanthanide) compound with 
 
 The high-cis polybutadiene catalyst wants the neodymium as a soluble organometallic rather than as the oxide, so the oxide comes out of the separation plant, is converted to a halide and then alkylated, and is dosed at a few hundredths of a percent. The neodymium is the fraction of the bastnasite that nobody had predicted would matter: a light rare earth sold by the tonne for glass polishing and ceramic glaze suddenly became worth several times its price per kilogram for a rubber catalyst, and by the mid-1980s the separation plants were being run to make more of the neodymium-praseodymium fraction than of anything else. A C64's rubber therefore begins in a carbonatite in California or an iron-ore pit in Inner Mongolia, passes through a mixer-settler train several hundred stages long, and ends up dosed into a hydrocarbon diluent at about one part in a thousand.
 
-###### Potassium persulphate initiator `chem.abs.grafting.initiator`
+###### Potassium persulphate initiator `chem.abs.grafting.initiator` _(medium)_
 
 K2S2O8 or the cheaper sodium persulphate, thermally decomposed to sulphate radical, generating the first polymer radicals at the aqueous droplet surface. Persulphate initiators leave a residue of sulphate groups on the chain ends, which is why an emulsion SBR cannot be re-polymerised as a living polymer and has to be made in one shot. K2S2O8 at 0.1-0.5 parts per 100 monomer, thermally decomposed in the aqueous-organic system at 60-80 C.
 
@@ -7867,7 +7867,7 @@ A mixture of potassium nitrate, sodium nitrite and sometimes calcium nitrate, ch
 
 Three families existed. Bismuth molybdate on silica (Bi2Mo3O12 or Bi2(MoO4)3 on silica) was the original and still the industry standard for selectivity in fixed beds. Antimony oxide with phosphorus and boron oxides on a silica support (Sb2O3/P2O5/B2O3) was the workhorse of the fluidised-bed designs, cheaper and more active but a little less selective. Bismuth molybdate with vanadium and tungsten additives, and nickel or cobalt catalysts, were the newer directions. Coking from the organic by-products and the loss of phosphorus are the two deactivation routes, and a trace of halide promoter - a few hundred ppm of hydrogen chloride or an alkyl chloride - was the standard answer: it suppressed the side reactions that make hydrogen cyanide, and it is why the plant needed a chlorine supply of its own.
 
-###### Bismuth molybdate on silica `chem.acrylonitrile.sovere.catalyst.bismuth-molybdate`
+###### Bismuth molybdate on silica `chem.acrylonitrile.sovere.catalyst.bismuth-molybdate` _(medium)_
 
 The standard catalyst, chosen for its selectivity to acrylonitrile and its resistance to reduction by ammonia. The 1980s development targets were the vanadium- and tungsten-promoted versions and, later in the decade, the bismuth-molybdenum-phosphorus systems aimed at raising the acrylonitrile yield above 90%.
 
@@ -7879,11 +7879,11 @@ The fluidised-bed catalyst: a silica support promoted with phosphorus and boron 
 
 The ammoxidation catalyst is a shaped, robust porous solid, and making it is a small ceramics industry. A bismuth molybdate catalyst is prepared by impregnating precipitated bismuth molybdate or by sol-gel methods onto a silica support, then shaping it into 3-5 mm extrudates or spray-dried microspheres and calcining at 500-700 C. The support is silica gel, and silica gel is made from sand. That is the whole chain from a dune to a transistor's acrylonitrile in three steps. The powder is extruded into trilobe or quadrilobe shapes - the lobes give more external surface per unit volume than a cylinder, and less diffusion limitation - and then dried and calcined at 500-700 C, which converts the oxide precursor into the active bismuth molybdate phase.
 
-###### Silica gel support `chem.acrylonitrile.sovere.catalyst.catalyst-manufacture.silica-support`
+###### Silica gel support `chem.acrylonitrile.sovere.catalyst.catalyst-manufacture.silica-support` _(medium)_
 
 A porous amorphous silica of 300-700 m2/g surface area and a 6-20 nm pore diameter. The pore diameter matters twice over in this file: in the ammoxidation catalyst a small pore keeps the diene from cracking, and in the FCC catalyst a large pore lets the bulky alkylated intermediates in. The silica gel is made by hydrolysing a silicate solution and gelling it, and the silicate solution is made from silica sand.
 
-###### Soda silica from sand `chem.acrylonitrile.sovere.catalyst.catalyst-manufacture.silica-support.soda-silica`
+###### Soda silica from sand `chem.acrylonitrile.sovere.catalyst.catalyst-manufacture.silica-support.soda-silica` _(medium)_
 
 Quartz sand is fused with sodium carbonate at about 1,300 C to make sodium silicate, which is dissolved in hot water to make the silicate solution, which is acidified to gel. This is the same soda-silica chain that gives the silica sol for the polysilicon ingot's crucibles and the quartz for the fused silica, and it is the industrial descendant of a two-thousand-year-old glassmaking reaction. It is the last dig-it-out node in this branch: sand.
 
@@ -7899,7 +7899,7 @@ The reactor effluent is cooled and partly condensed, the unreacted propylene and
 
 A phenolic or amine stabiliser (a small percentage of a phenol such as hydroquinone, or a hindered amine) is added to prevent anionic polymerisation of the monomer in storage. Acrylonitrile has a third-order rate constant for anionic polymerisation that is high enough that a drum of uninhibited monomer left in a warm warehouse can polymerise from the bottom up, and this was a real and recurring accident.
 
-###### Blending the graft into the matrix `chem.abs.blending`
+###### Blending the graft into the matrix `chem.abs.blending` _(medium)_
 
 The graft is mixed into the SAN at 25-50 parts graft per 100 parts SAN for a general purpose grade and up to 50-70 parts for a high-impact grade. That ratio - not the chemistry - is what a plastics buyer specifies: rubber content sets the impact strength, the heat distortion temperature and the price per kilogram.
 
@@ -7923,7 +7923,7 @@ The melt is extruded through a die plate as a number of strands into a circulati
 
 A motionless packed element in the transfer pipe or the die adapter that blends the pigment and the regrind into the melt without shear. It matters because the impact property depends on the particle size distribution surviving, and every unnecessary shear element costs you 0.5-1 micron of particle size.
 
-###### Drying `chem.abs.drying`
+###### Drying `chem.abs.drying` _(medium)_
 
 ABS is hygroscopic: its equilibrium moisture content is about 0.3-0.4% by weight, and a wet pellet in a mould produces a part with silver streaks on the surface, voids, and a lower impact strength than the design assumed. The moulding shop therefore dried the pellets at 80-90 C for 2-4 hours in a dehumidifying dryer before every moulding run. This is the step that separates a plastics engineer from a chemist and it is done with the pellets in a hopper with a 3A molecular sieve bed.
 
@@ -7967,7 +7967,7 @@ A 1983 consumer electronic device used perhaps eight different engineering plast
 
 About 3.5 million tonnes of PVC in 1983, of which maybe 5-8% was flexible and the rest rigid. Two-thirds of the monomer came from the oxychlorination of ethylene and the rest from acetylene and HCl. The C64 used it in the power cord's jacket and insulation, in the moulded cable accessories, and in the odd keycap or knob; the stability system matters because unstabilised PVC decomposes at 140 C. Suspension polymerisation in water with a suspending agent is 65-70% of world PVC: VCM dispersed as 0.1-1 mm beads at 50-70 C and 6-12 bar for 5-10 hours to 70-85% conversion.
 
-###### Vinyl chloride monomer `chem.pvc.vcm`
+###### Vinyl chloride monomer `chem.pvc.vcm` _(medium)_
 
 C2H3Cl, boiling at -13.4 C, so it is a liquid only under pressure. It is a proven human carcinogen (angiosarcoma of the liver), it is flammable from 4-33% in air, and it is the reason the PVC industry of the 1980s had an unusual public health profile. In 1983 world VCM capacity was of the order of 9-10 million tonnes a year. Oxychlorination of ethylene with chlorine and hydrogen chloride over copper(II) chloride at 150-250 C and 4-10 bar gives vinyl chloride at 85-95% selectivity, and the chlorine-to-HCl ratio decides whether the plant makes ethylene dichloride for the chlorinated-solvent business or vinyl chloride.
 
@@ -8020,13 +8020,13 @@ The power cord: a two-core or three-core flexible PVC jacket, typically 1.5-3 mm
 
 DGEBA epoxy is made by hydrolyzing bisphenol A with epichlorohydrin, then dehydrochlorinating to close the epoxide ring. About 800,000-1,000,000 tonnes of epoxy resin were made in 1983, of which the largest single use was the glass-reinforced laminate for printed circuit boards. A C64 has epoxy in its board, in the transformer and coil potting of its power supply, in the die-attach of its chips, and in the adhesive that holds the SID's heatsink tab.
 
-###### DGEBA (diglycidyl ether of bisphenol A) `chem.epoxy.dgeba`
+###### DGEBA (diglycidyl ether of bisphenol A) `chem.epoxy.dgeba` _(medium)_
 
 The workhorse epoxy: bisphenol A condensed with two moles of epichlorohydrin, giving a resin with an epoxide group at each end of the molecule and epoxide number 172-190 equivalents per 100 g. It is a solid at room temperature (melting 4-12 C for the liquid grades) and it cures into a cross-linked network with anything that has active hydrogen or amino groups.
 
-###### Epichlorohydrin `chem.epoxy.dgeba.epichlorohydrin`
+###### Epichlorohydrin `chem.epoxy.dgeba.epichlorohydrin` _(medium)_
 
-1-chloro-2,3-epoxypropane: the C3 building block. In 1983 most of the world's epichlorohydrin was made by the chlorohydrin route - propylene chlorohydrin from propylene plus hypochlorous acid, dehydrochlorinated with a lime slurry - which is the same chlorohydrin chemistry that makes propylene oxide. It is a sensitiser and a carcinogen, and it is the reason the epoxy industry carried the same respiratory-protection regime as the propylene oxide plants.
+1-chloro-2,3-epoxypropane: the C3 building block. The documented traditional manufacture is from allyl chloride in two steps - addition of hypochlorous acid to give a mixture of isomeric alcohols, then base treatment to give the epoxide - though a propylene-chlorohydrin route is also described and may have been the one in use in 1983. Which route this plant used is not established: us acid, dehydrochlorinated with a lime slurry - which is the same chlorohydrin chemistry that makes propylene oxide. It is a sensitiser and a carcinogen, and it is the reason the epoxy industry carried the same respiratory-protection regime as the propylene oxide plants.
 
 ###### Bisphenol A from cumene `chem.epoxy.dgeba.bisphenol-a`
 
@@ -8076,7 +8076,7 @@ Carbonyl chloride, COCl2, made by oxidising carbon monoxide with chlorine over a
 
 Chlorine from brine electrolysis plus carbon monoxide from a reformer or from coke. This is the point at which the chlor-alkali industry - which needs hydrogen to sell its chlorine, and therefore needs natural gas - touches the plastics industry through a molecule with two chlorine atoms and one oxygen.
 
-###### Why it was chosen `chem.polycarbonate.properties`
+###### Why it was chosen `chem.polycarbonate.properties` _(medium)_
 
 Amorphous at 100-150% linear retention, glass transition near 145 C, tensile strength 60-70 MPa, and a notched Izod of 8-15 kJ/m2. It is the transparent tough polymer of the 1980s: sunglasses lenses, camera and instrument housings, the disc of a compact disc from 1982, and the dome of the keyboard on some machines. It was also the first engineering polymer to be explicitly targeted at the electronics market as a metal replacement.
 
@@ -8084,7 +8084,7 @@ Amorphous at 100-150% linear retention, glass transition near 145 C, tensile str
 
 The two polyamides that a 1980s machine used for its precision parts. Nylon 6,6 from adipic acid and hexamethylenediamine, or nylon 6 from caprolactam which itself comes from phenol. Both are condensation polymers of a diamine and an acid or of a lactam, and both need the phenol-aromatic chain, so both are downstream of the same cracker benzene as the ABS.
 
-###### Nylon 6,6 from adipic acid and HMDA `chem.polyamide.nylon-66`
+###### Nylon 6,6 from adipic acid and HMDA `chem.polyamide.nylon-66` _(medium)_
 
 Adipic acid plus hexamethylenediamine condense to nylon salt at 250-270 C and 10-20 bar in a batch or continuous process, then polymerise at 270-280 C under a small nitrogen pressure. Adipic acid in 1983 came mostly from the oxidation of cyclohexane or of a C4 route with nitric acid; hexamethylenediamine came from adiponitrile hydrogenation or from adipic acid plus ammonia. The 1980s feedstock route was hydrocyanation of butadiene with hydrogen cyanide over a nickel catalyst followed by hydrogenation of both nitriles, which is what made a cracker-based nylon 6,6 possible at all.
 
@@ -8190,15 +8190,15 @@ Urea condensed with formaldehyde gives a thermoset used for the white insulation
 
 Copper phthalocyanine (PB15), an intensely coloured, heat-stable, lightfast blue used for the cool grey-blue tones on some cases. Copper plus four phthalonitrile rings, assembled in a violent exotherm.
 
-###### Phthalic anhydride `c64.case.abs-resin.phthalic-anhydride`
+###### Phthalic anhydride `c64.case.abs-resin.phthalic-anhydride` _(medium)_
 
 Made by air oxidation of o-xylene over vanadia-titania catalysts at ~450 C. It is the classic route to phthalocyanine pigments and to glycidyl ester epoxy resins.
 
-###### o-Xylene `c64.case.abs-resin.o-xylene`
+###### o-Xylene `c64.case.abs-resin.o-xylene` _(medium)_
 
 One of the three xylene isomers separated out of the mixed aromatics from the reformer by adsorption (UOP Parex-type) or by distillation. The ortho isomer is the one that gets oxidised to phthalic anhydride.
 
-###### C8 aromatics separation (UOP Parex) `c64.case.abs-resin.c8-aromatics-separation`
+###### C8 aromatics separation (UOP Parex) `c64.case.abs-resin.c8-aromatics-separation` _(medium)_
 
 Para-xylene is selectively adsorbed from the mixed C8 aromatics onto a zeolite molecular sieve, desorbed with a purge, leaving o- and m-xylene. It is a swinging adsorption unit with hundreds of adsorbent beds and rotating valves.
 
@@ -8232,7 +8232,7 @@ Salt water electrolyzed in a membrane or mercury cell at 60-90 C and 3-4 V DC to
 
 The cell type that replaced the mercury cell through the 1980s: a perfluorosulfonate membrane separating the anode and cathode, giving chlorine at 99.5%+ without the mercury the older cell had to manage. The conversion of the world's chlor-alkali from mercury to membrane was one of the largest and fastest industrial changeovers of the decade, and it was driven by mercury emissions - the same environmental logic that removed mercury from the PVC acetylene process.
 
-###### Brine (salt) `chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali.brine`
+###### Brine (salt) `chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali.brine` _(medium)_
 
 A saturated sodium chloride solution, made from a salt mine or a solar evaporation pond, purified to remove calcium and magnesium because they foul the membrane and foul the diaphragm. Salt is the one raw material in this branch that is dug out of the ground rather than taken from a refinery, and it is the true end of the chlorine chain.
 
@@ -8300,7 +8300,7 @@ The organophosphate flame retardant made from propylene oxide and phosphorus oxy
 
 Benzene plus propylene gives cumene; cumene plus oxygen gives cumene hydroperoxide; the hydroperoxide is cleaved with acid to give phenol and acetone. About a million tonnes a year of phenol in 1983 came out of this route, and phenol went to bisphenol A (and therefore to the C64's epoxy laminate resin), to phenol-formaldehyde plastics, and to caprolactam. Acetone came out of the other end of the same reaction, which is why acetone supply in the 1980s was really cumene capacity in disguise.
 
-###### Cumene alkylation `chem.propylene.cumene.alkylation`
+###### Cumene alkylation `chem.propylene.cumene.alkylation` _(medium)_
 
 Benzene with excess benzene over phosphoric acid on silica at 140-180 C and 20-30 bar in an adiabatic bed, or over a solid acid. The large excess of benzene (3-5 mol per mol of propylene) is deliberate: it suppresses the diethylbenzene and triisopropylbenzene by-products and stops the reactor polymerising the propylbenzene.
 
@@ -8308,11 +8308,11 @@ Benzene with excess benzene over phosphoric acid on silica at 140-180 C and 20-3
 
 The classic cumene alkylation catalyst is orthophosphoric acid on a silica carrier: the acid is absorbed into the silica's pore structure and the pore structure holds it there, and the catalyst's whole life is the slow loss of that acid to the reactor walls. The 1980s industry answer was a solid acid and a moving-bed or slurry reactor; the answer that arrived later was a zeolite. Three catalysts for one reaction in fifty years, and the C64's epoxy resin is downstream of all three.
 
-###### Silica carrier (the same silica as the cracker drier) `chem.propylene.cumene.alkylation.phosphoric-acid-catalyst.silica-carrier`
+###### Silica carrier (the same silica as the cracker drier) `chem.propylene.cumene.alkylation.phosphoric-acid-catalyst.silica-carrier` _(medium)_
 
 A silica gel of 200-400 m2/g surface area, and a strong family resemblance to the 3A molecular sieve's carrier and to the FCC catalyst's matrix and to the ammoxidation catalyst's support. One amorphous silica, made from sand by the soda-silica route, appears in this file as a support four different times, and it is the petrochemical branch's quietest link to a mineral.
 
-###### Cumene oxidation to the hydroperoxide `chem.propylene.cumene.oxidation`
+###### Cumene oxidation to the hydroperoxide `chem.propylene.cumene.oxidation` _(medium)_
 
 Cumene with air at 120-140 C, either with a hydroperoxide initiator or with a cobalt or manganese catalyst, gives cumene hydroperoxide at 20-40 wt%. This is a liquid-phase autoxidation, and it has the classic autoxidation hazard: the reaction is exothermic, it runs away above 150 C, and the product is a shock-sensitive organic peroxide.
 
@@ -8454,7 +8454,7 @@ A zeolite whose pore geometry lets a benzene molecule in, lets ethylbenzene out 
 
 Ethylbenzene is dehydrogenated to styrene at 600-700 C and 1-3 bar over an iron oxide catalyst (the classic Feeders-Rudd, now UOP ST-110, a shell-and-tube bed of promoted magnetite with potassium and copper promoters). Single-pass conversion is 40-50% and the selectivity to styrene 90-93%. The conversion is deliberately held below completion because styrene polymerises over the same catalyst, and because the dehydrogenation is strongly endothermic and needs a large fired furnace.
 
-###### Promoted iron oxide catalyst `chem.styrene.dehydrogenation.iron-catalyst`
+###### Promoted iron oxide catalyst `chem.styrene.dehydrogenation.iron-catalyst` _(medium)_
 
 Magnetite or hematite promoted with potassium oxide, copper oxide and sometimes molybdenum or chromium, formed as extruded rings or as a granular bed. Steam is used as a diluent to keep the partial pressure low and to suppress coking, and a trace of a polymerisation inhibitor (sulfolane or a chlorinated hydrocarbon) is fed to hold the polymer down.
 
@@ -8474,7 +8474,7 @@ Styrene polymerises readily by free-radical mechanisms because the benzyl radica
 
 Bulk polymerisation at 140-200 C and 20-40 bar in a stirred or plug-flow reactor with a benzoyl peroxide or a hindered phenol initiator, the classic route for general purpose and crystal grade. Suspension polymerisation, in which styrene is dispersed as 0.1-2 mm beads in water with a suspending agent, is preferred for foam grades because the beads can be expanded. General purpose polystyrene production in the 1980s was of the order of 5-6 million tonnes a year.
 
-###### Benzoyl peroxide initiator `chem.styrene.polymerisation.bulk-gpps.benzoyl-peroxide`
+###### Benzoyl peroxide initiator `chem.styrene.polymerisation.bulk-gpps.benzoyl-peroxide` _(medium)_
 
 Dibenzoyl peroxide, dosed at 0.05-0.5 wt%, thermally decomposed at 60-90 C to give a benzoyloxy radical and then a phenyl radical. It leaves a benzoic acid residue in the polymer and a trace of styrene in the reactor bottoms, which is why polystyrene made with it has a characteristic faint smell and a yellowing tendency that the 1980s stabiliser industry existed to fix.
 
@@ -8545,7 +8545,7 @@ Cl2C=CCl2, boiling at 119 C, made by chlorinating ethylene to 1,2-dichloroethane
 
 CH2Cl2, boiling at 40 C, made by chlorinating methane to chloromethane and then to dichloromethane, or by the chlorination of formaldehyde. It was the fastest-evaporating chlorinated solvent and was used for paint stripping, for the epoxy and flux residues that a slow solvent would not remove, and in place of perchloroethylene in some cleaning operations. Its 1980s regulatory moment came at the end of the decade, when the US EPA designated it a hazardous air pollutant and set a phase-out of its use in degreasing and in the aerosol propellant market.
 
-##### CFCs and HCFCs (halons and freons) `chem.solvents.cfc`
+##### CFCs and HCFCs (halons and freons) `chem.solvents.cfc` _(medium)_
 
 Trichlorofluoromethane (CFC-11, boiling 23.8 C) and trichloro-1,2,2-trifluoroethane (CFC-113, boiling 48 C) were the 1980s cleaners, refrigerants and foam blowing agents, and CFC-11 was the blowing agent in expanded polystyrene packaging until the late 1980s. In 1983 there was no regulation on them at all; by 1987 the Montreal Protocol had been signed and by 1989 the phase-out of the developed countries had begun.
 
@@ -8557,7 +8557,7 @@ CFC-11 (trichlorofluoromethane) is chloroform plus hydrogen fluoride in an antim
 
 Chlorine plus methane at 250-400 C gives chloromethane, and further chlorination gives chloroform and carbon tetrachloride. The chlorination is a free-radical chain reaction in a fluidised bed, and the product is a mixture that has to be distilled. The chloroform route to CFC-11 is therefore a natural gas route: methane, chlorine, fluorine - and fluorine is from fluorspar, the same rock as the HF that etched a silicon wafer. Methylene chloride, chloroform, carbon tetrachloride, the trichloroethane degreaser, vinyl chloride monomer and epichlorohydrin all start from the same brine electrolysis, and one electrochemical cell in a chemical park supplies the chlorine atom that appears in a dozen different industrial molecules.
 
-##### Isopropyl alcohol (propan-2-ol) `chem.isopropanol`
+##### Isopropyl alcohol (propan-2-ol) `chem.isopropanol` _(medium)_
 
 C3H8O, boiling 82.6 C, and by the mid-1980s the solvent that had taken over most of the cleaning work the chlorinated solvents used to do. It is flammable, it is cheap, it evaporates cleanly, it dissolves flux residue and oil, and it does not dissolve the ABS or the polycarbonate the way a chlorinated solvent can - which is exactly why it became the electronics cleaner. Almost all of it was made from propylene, so the electronics plant's replacement solvent is the same cracker as the case plastic. The older route hydrogenates acetone over copper or nickel-zinc at 100-150 C and 5-20 bar with 95-98% selectivity and was still fully in use in 1983; both routes end at the same molecule and differ only in whether the plant owns a propylene oxide unit.
 
@@ -8569,7 +8569,7 @@ Propylene plus acetone gives propylene oxide; propylene oxide isomerises to acet
 
 C2H6O, boiling 78.4 C. In 1980s electronics it was a solvent and a cleaning fluid for a few specialist applications, and it was the fuel additive competing with MTBE for the octane that lead had given up. Chemically it can be made either by hydrating ethylene over phosphoric acid at 300 C and 60-70 bar, or by fermenting sugar. Both routes existed in 1983; the fermentation route made most of the world's ethanol in that decade because it was cheaper. The synthetic route hydrates ethylene with steam over phosphoric acid on silica at 280-330 C and 60-70 bar for 4-6% ethanol per pass with the off-gas recycled; the limit is thermodynamic, since the reaction is an equilibrium, and the industry spent decades on catalysts and on pervaporation and extractive distillation to get around it. Sugar from cane, beet or starch is fermented by yeast at 30-35 C for two to three days and rectified to 95% or dehydrated to absolute.
 
-##### Acetone `chem.solvents.acetone`
+##### Acetone `chem.solvents.acetone` _(medium)_
 
 Propanone, boiling 56 C. It was the general cleaning solvent for glass, for the epoxy residues of a coil winding operation, and for some stencil and screen operations, and it is the solvent in the acetylene absorption step of the acetylene process and in the electrophotography of copying. It came out of the cumene process and the acetone cyanohydrin process, both of which are propylene plants.
 
@@ -8599,7 +8599,7 @@ The 1970 Clean Air Act amendments listed chlorinated solvents as hazardous air p
 
 What actually replaced the chlorinated degreasers, and why it took about ten years rather than two. The candidates were isopropyl alcohol, N-methylpyrrolidone, and increasingly hydrocarbon solvents and aqueous detergents. Each was available, each worked, and none of them was free: isopropanol is flammable, NMP has reproductive toxicity concerns, and hydrocarbons have a low flash point too. The substitution was driven by regulation and by the fact that a chlorinated degreaser needed a permit and an oxygen emission permit and a reporting line to the regulator, and by nothing else at all. The substitution was easy because it was a move along an existing supply chain: isopropyl alcohol sat next to the acetone plant in a complex that already had propylene, and the chlorinated solvent it replaced was the only one on the list that needed a mercury-catalysed acetylene route or a chlorine plant to make.
 
-###### Montreal Protocol `chem.solvents.regulation.montreal`
+###### Montreal Protocol `chem.solvents.regulation.montreal` _(medium)_
 
 Signed in 1987, in force from 1989, and the most effective environmental treaty ever agreed. It phased out CFCs and halons, and it is the reason expanded polystyrene packaging lost its CFC blowing agent and the electronics plant lost its CFC cleaning gas. A C64 in 1983 was packed in a CFC-blown foam box; a C64 in 1993 was not. The most visible effect of the Protocol on a household object was in its packaging: until about 1987 the end caps and fitted inserts in consumer electronics cartons were expanded polystyrene blown with CFC-11, and pentane blowing took over, which made the foam softer and slightly heavier and pushed the structural part of the problem into the carton.
 
@@ -8615,7 +8615,7 @@ A 1983 wafer fab consumed tens of thousands of gallons a day of ultrapure water 
 
 96-98% H2SO4 purified to 9N-10N, with a total metal content under 10-100 parts per billion depending on the grade. It was delivered in a fluoropolymer-lined tanker or in a 2,000-litre high-purity container and was used for the piranha clean, for the dehydration bake, for the sulphuric acid-hydrogen peroxide resist strip, and for the oxidation furnace as a carrier gas alternative. Its raw material is the elemental sulphur of a Claus plant, burned in a contact process. The last step to semiconductor grade is an azeotropic or vacuum distillation that takes the acid to 9N, driven by the fact that every metal with a volatility near the acid's has to be pumped out of it; that distillation, and the quartz or Teflon equipment it needed, is why electronic-grade acid cost 20-100 times a technical grade. The piranha clean mixes three parts concentrated sulphuric acid to one of 30% hydrogen peroxide at 80-120 C and strips all organic matter off a wafer, a quartz boat or a process chamber.
 
-###### Contact process and sulphur burning `chem.fab-chemicals.sulfuric-acid.contact-process`
+###### Contact process and sulphur burning `chem.fab-chemicals.sulfuric-acid.contact-process` _(medium)_
 
 Sulphur is burned to SO2 in a 900-1,200 C furnace, converted over a vanadium pentoxide catalyst at 420-450 C to SO3, and absorbed in 98% acid to make oleum, which is then diluted. The feedstock in 1983 was overwhelmingly recovered elemental sulphur, because the Claus plant had made it cheap; earlier the pyrites (iron pyrite, FeS2) route was used, and a number of Japanese plants still burned pyrites into their own acid.
 
@@ -8646,7 +8646,7 @@ TMAH, sold at 25 wt% in ultrapure water, used to develop the positive photoresis
 
 The gases that a barrel or planar plasma etcher used to etch silicon dioxide, polysilicon, aluminium and organic films. They are the fluorine and chlorine family, and they are the most expensive part of the etch cost after the electricity.
 
-###### Tetrafluoromethane `chem.fab-chemicals.etch-gases.cf4`
+###### Tetrafluoromethane `chem.fab-chemicals.etch-gases.cf4` _(medium)_
 
 CF4, the workhorse oxide etch gas and the fluorine chemistry's workhorse generally. It is made from fluorine (from fluorspar) and carbon, or from a chlorofluorocarbon feedstock. In a plasma etcher it dissociates to fluorine radicals that etch silicon dioxide - it does not etch silicon, which is what made the selectivity possible - and it is the gas that made the barrel reactor the standard 1980s oxide etch.
 
@@ -8654,9 +8654,9 @@ CF4, the workhorse oxide etch gas and the fluorine chemistry's workhorse general
 
 Every fluorine atom in a fab's chemistry started as calcium fluoride. Fluorspar is treated with concentrated sulphuric acid at 200-250 C in a kiln or a retort to make anhydrous hydrogen fluoride, and the HF is either sold as the aqueous etch acid or chlorinated with chlorine to make the CFCs and the fluorocarbons. It is the same sulphuric acid, the same chlorine and the same rock as the oxide etch, the freons in the packaging and the halogenated degreasers.
 
-###### Anhydrous hydrogen fluoride `chem.fab-chemicals.etch-gases.cf4.fluorine-from-fluorspar.anhydrous-hf`
+###### Anhydrous hydrogen fluoride `chem.fab-chemicals.etch-gases.cf4.fluorine-from-fluorspar.anhydrous-hf` _(medium)_
 
-Fluoride plus sulphuric acid at 200-250 C gives anhydrous HF, which is distilled off and shipped in a fluorine-lined tanker or a nickel tank. It is a strong acid, a violent poison, and it will dissolve most metals; the 1980s storage practice was a tank with a fluorine polymer lining and an emergency water curtain, and the fundamental tension in the whole HF business is that the only thing that will hold it is the same fluorine chemistry that makes the etch gases.
+Fluoride plus concentrated sulphuric acid at about 265 C gives anhydrous HF, which is distilled off and shipped in a fluorine-lined tanker or a nickel tank. It is a strong acid, a violent poison, and it will dissolve most metals; the 1980s storage practice was a tank with a fluorine polymer lining and an emergency water curtain, and the fundamental tension in the whole HF business is that the only thing that will hold it is the same fluorine chemistry that makes the etch gases.
 
 ###### Chlorine and boron trifluoride `chem.fab-chemicals.etch-gases.cl2` _(medium)_
 
@@ -8666,7 +8666,7 @@ A chlorine-based plasma - Cl2, or BCl3 with Cl2 - is used for aluminium, because
 
 An emerging chamber-cleaning gas in the 1980s, and later a feedstock for the NF3-based etch chemistry. It is a very strong oxidiser, it is a gas at room temperature, and the reason it took so long to industrialise in the United States was a supply constraint rather than a performance one - the production chemistry needed fluorine.
 
-###### The barrel plasma etcher `chem.fab-chemicals.etch-gases.barrel-etcher`
+###### The barrel plasma etcher `chem.fab-chemicals.etch-gases.barrel-etcher` _(medium)_
 
 A quartz or alumina tube with electrodes at the top and bottom, gas fed in at the top, RF at 13.56 MHz, and wafers standing vertically in slots around the tube wall. It was the workhorse of the 1980s for silicon dioxide and aluminium etching and for resist ashing, and it was cheap, simple and gently non-uniform - which was acceptable when the field of view was small and the line was a couple of microns. The planar (magnetron) etcher, where the plasma is generated above the wafer by a magnetically confined source, gave the flatness that a later generation of chips needed.
 
@@ -8674,7 +8674,7 @@ A quartz or alumina tube with electrodes at the top and bottom, gas fed in at th
 
 The chemicals that put boron, phosphorus and arsenic into the silicon. The chemistry here is a closed loop back to the ammonia, the chlorine and the fluorspar of the rest of this tree, and the whole business is about the fact that a dopant source is gaseous, toxic and must be delivered to a few cubic centimetres of reactor at a controlled partial pressure. Diffusion in 1983 used a gas or a solid source - phosphorus from phosphine or a doped oxide, boron from diborane or boron nitride, arsenic from arsine - in a furnace at 800-1,100 C.
 
-###### Phosphine (PH3) `chem.fab-chemicals.dopants.phosphine`
+###### Phosphine (PH3) `chem.fab-chemicals.dopants.phosphine` _(medium)_
 
 The n-type dopant source. In 1983 it was supplied two ways: as an ion-implantation source, and as a dopant gas diluted to 5-15% in hydrogen or nitrogen for the dopant gas deposition reactor. Phosphine is pyrophoric in the pure state and is one of the most acutely toxic gases in a fab, which is why it arrived diluted and in a gas cabinet.
 
@@ -8682,11 +8682,11 @@ The n-type dopant source. In 1983 it was supplied two ways: as an ion-implantati
 
 The phosphine of a 1983 fab has a longer ancestry than most people assume. Elemental phosphorus is made in a submerged arc furnace from phosphate rock, coke and silica at 1,400-1,500 C, condensed as white phosphorus under water, and then either burned to phosphorus pentoxide (for fertiliser and for the pure phosphoric acid of this file) or reduced to phosphorous acid, which is then converted to phosphine. So an n-doped transistor junction in a C64's VIC-II traces back through a gas cylinder, an electric furnace, and a phosphate rock mine. Yellow phosphorus plus phosphorus pentasulphide is treated with caustic soda and water to give phosphorous acid and sodium hypophosphite, and acid plus hypophosphite is the standard industrial route to phosphine; the electronic gas is then diluted to 5-15% in hydrogen or nitrogen and cylinder-packaged, because pure phosphine is pyrophoric and because the cylinder is what the gas cabinet expects.
 
-###### The submerged arc phosphorus furnace `chem.fab-chemicals.dopants.phosphine.phosphorus-source.electric-furnace`
+###### The submerged arc phosphorus furnace `chem.fab-chemicals.dopants.phosphine.phosphorus-source.electric-furnace` _(medium)_
 
 A 30-100 MW furnace in which phosphate rock, coke and silica are heated to 1,400-1,500 C by three graphite electrodes dipped into the charge, and the phosphorus vapour - P4 - is taken off, condensed under water and stored under water because it ignites in air. A 1980s US plant made 100,000-150,000 tonnes of yellow phosphorus a year, and the greater part of that went to phosphoric acid for fertiliser rather than to any electronics use.
 
-###### Phosphate rock `chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphate-rock`
+###### Phosphate rock `chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphate-rock` _(medium)_
 
 A sedimentary rock of calcium phosphate - apatite - mined from the Florida phosphate belt and the Moroccan and Chinese deposits. It is one of the four rock types this whole tree ends in, alongside crude oil, natural gas and sand. The C64-scale fact is absurd but true: the quantity of phosphate rock mined for fertiliser every year is measured in tens of millions of tonnes, and the quantity used to make the phosphorus in a C64's transistors is a few grams, most of it going into fertiliser for somebody's field.
 
@@ -8694,7 +8694,7 @@ A sedimentary rock of calcium phosphate - apatite - mined from the Florida phosp
 
 The wet process beats the phosphorus furnace, and it beats it because the furnace is only economical at a very large scale: ground phosphate rock is digested in 30-40% sulfuric acid, the calcium sulphate is filtered off as gypsum, and the phosphoric acid is concentrated to 54% P2O5. The C64-scale relevance of this acid is indirect - it is the fertiliser that came out of the phosphate rock, and it is also the semiconductor-grade acid a fab used for its own processes, purified further to 9N. Rock at 1-2 mm is digested in 30-40% sulphuric acid at 70-80 C and filtered, giving about 54% P2O5; the chemistry is a century old and limited by the solubility of calcium sulphate, so the gypsum cake is the waste stream and its disposal - often offshore or in a lined lagoon - is the industry's continuing environmental problem.
 
-###### Arsine (AsH3) `chem.fab-chemicals.dopants.arsine`
+###### Arsine (AsH3) `chem.fab-chemicals.dopants.arsine` _(medium)_
 
 The other n-type source, used for heavier and shallower implants and for the arsenic source oxide. It is made by reducing arsenic trichoxide with zinc and hydrochloric acid or with hydrogen, and the arsenic comes from arsenic metal or from gallium arsenide production. Arsine is the most acutely toxic gas routinely used in a semiconductor fab; the 1980s limit of a few parts per billion in the exhaust was enforced with an ionising-type monitor, not a badge.
 
@@ -8722,15 +8722,15 @@ Air is filtered, compressed to 30-100 bar, cooled and expanded through a cold bo
 
 Almost all helium is recovered as a by-product of the cryogenic separation of natural gas liquids - 0.05-0.7% of a helium-rich gas stream, separated to 99.999%. It is the cleanest gas in the plant and it is used in the helium leak detector that is how a fab proves a chamber is sealed, and in the cryopumps of the etch machines. It is the one process gas in a fab whose feedstock is unambiguously natural gas.
 
-###### Argon `chem.fab-chemicals.process-gases.argon`
+###### Argon `chem.fab-chemicals.process-gases.argon` _(medium)_
 
 A by-product of the air separation unit at 1-3% of the air, purified to 99.999%. It fills the sputtering cathodes - the argon ions are accelerated across the gap and knock atoms out of the aluminium or titanium target - and it is the inert atmosphere of the annealing and ashing steps. The sputtering itself is the metals chain, but the gas that drives it is an air separation product.
 
-##### The purity ladder `chem.fab-chemicals.spec-purity`
+##### The purity ladder `chem.fab-chemicals.spec-purity` _(medium)_
 
 The 1980s specification ladder, from technical grade to the electronic grade that a wafer demanded: a technical acid at about 5N with metals at tens and hundreds of parts per million; an electronic acid at about 8N; and the 9N-10N grade with a total metal content under 10 parts per billion. The reason the ladder existed was the relationship between a metal atom's concentration and the device: a wafer with 10 parts per billion of iron in a cubic centimetre of silicon has more iron atoms in the active volume than it has dopant atoms.
 
-##### Electronic-grade ammonium hydroxide `chem.fab-chemicals.ammonium-hydroxide`
+##### Electronic-grade ammonium hydroxide `chem.fab-chemicals.ammonium-hydroxide` _(medium)_
 
 Aqueous ammonia at 20-29 wt% in ultrapure water, made by sparging anhydrous ammonia into the water under a scrubbed laminar-flow hood, then filtered to sub-micron and to low sodium. It is the alkaline clean and the alkaline developer companion, and it is the one wet chemical that arrives as a gas: a fab's supply was a battery of electro-polished or fluoropolymer bottles on a nitrogen-purged cabinet, refilled from a bulk ammonia tank outside the cleanroom. The ammonia arrives as a liquid tanker from a Haber-Bosch plant about a day's drive away, is vaporised through a water or steam-heated vaporiser and is sparged into ultrapure water; the purity demanded was surprisingly modest next to the acids, because ammonia's job is to leave no alkali residue, and 99.9% anhydrous was generally adequate.
 
@@ -8738,7 +8738,7 @@ Aqueous ammonia at 20-29 wt% in ultrapure water, made by sparging anhydrous ammo
 
 A 1983 bare board goes through about eleven wet operations, and each one is a chemical plant: laminate impregnation and pressing, copper foil treatment, dry-film lamination, alkaline or ferric etching, drilling, electroless copper, electroplating, solder mask, silkscreen, and a final clean. The C64's board is a single-layer FR-4 board with through-hole parts, which is the simplest case - one copper layer, no plating on the holes - and that removes the electroless copper and the gold entirely. Solder mask and silkscreen are two inks rather than one operation: the mask is an epoxy or acrylate screen-printed or curtain-coated through a 100-150 micron stencil and cured at 150 C, the green being a phthalocyanine green in a novolac epoxy vehicle, and the legend is a separate white epoxy ink cured the same way through a 150-200 micron stainless mesh.
 
-##### Epoxy-glass laminate (FR-4) `chem.pcb-chemicals.laminate`
+##### Epoxy-glass laminate (FR-4) `chem.pcb-chemicals.laminate` _(medium)_
 
 Woven glass cloth impregnated with a brominated epoxy resin at 50-60% resin content, then pressed at 170-180 C and 0.3-1.5 MPa in a multi-daylight press. The cloth comes from the mineral chain (chem.glass-fiber); the resin is chem.epoxy; the hardener in a high-temperature board is the DDS of the epoxy branch. In 1983 FR-4 was the default board material and a typical single-layer C64 board was 1.6 mm of it.
 
@@ -8752,7 +8752,7 @@ A 35-70 micron copper foil, electrodeposited on a rotating drum from a copper su
 
 BTA, a seven-membered ring with three adjacent nitrogens, adsorbs onto copper and stops it reacting with anything else - it is the corrosion inhibitor and the adhesion promoter in one. It is a beautiful small molecule for this tree because the same triazole ring chemistry appears in the corrosion inhibitors of every other metal in the book, and because the copper underneath is a metal chain node and the BTA is a petrochemical.
 
-##### Dry-film photoresist `chem.pcb-chemicals.dry-film-resist`
+##### Dry-film photoresist `chem.pcb-chemicals.dry-film-resist` _(medium)_
 
 A 25-40 micron dry film laminated hot onto the copper - a polyester or polyethylene terephthalate base carrying an acrylate photopolymer and an acrylated monomer that crosslinks on exposure. The exposure crosslinks the acrylate, so the exposed areas become insoluble and the unexposed areas are developed away, and the resulting image is negative - the opposite polarity to the wafer resists of the same decade, and the reason the two industries use opposite conventions for the same word. This is the clearest dated marker in the board chemistry.
 
@@ -8768,7 +8768,7 @@ A 25 micron polyester or polyethylene film with a slightly adhesive surface, pee
 
 Ferric chloride at 35-42 degrees Baume, or cupric chloride, dissolves the exposed copper in 30-60 minutes. Ferric chloride was the 1980s default: cheap, fast, and it etches copper at a rate that keeps the undercut manageable. Its problems were regeneration (the spent etchant is worthless unless it is oxidised back, which needs chlorine or a peroxide and an electrolytic cell) and the ferric ion's attack on the epoxy of the laminate if the etch went long. By the early 1980s the alkaline sodium persulphate etch was spreading because it regenerated in place with peroxide and sodium hydroxide and because it would etch a finer line.
 
-###### Ferric chloride etchant `chem.pcb-chemicals.etching.ferric-chloride`
+###### Ferric chloride etchant `chem.pcb-chemicals.etching.ferric-chloride` _(medium)_
 
 FeCl3 at 35-42 degrees Baume (about 3-5 molar), which is an oxidising acid: the ferric ion takes an electron from the copper and the cupric ion falls back to ferrous. Regeneration is done either with chlorine (the industrial way, in a cell) or with hydrogen peroxide and acid. The byproduct is copper chloride, which in the 1980s was becoming a problem in its own right because of the copper discharge limits.
 
@@ -8818,15 +8818,15 @@ A triethanolamine or an alkylamine neutralised with a mineral acid, giving a hal
 
 A liquid flux is rosin, activator and solvent, and the solvent is what makes it a liquid. Through the 1980s the solder wire's core was a rope of activated rosin flux in an alcohol or glycol ether solvent (isopropyl alcohol, or a glycol ether), and the core was drawn into a wire of solder by a wire-drawing machine. The active rosin in the core had to be clean enough to be drawn: any acid-value drift or gum would tear the wire. A solder wire is a core-drawing operation: a rope of activated flux is drawn together with a tube of alloy through successive dies until the wire is 0.3-0.8 mm across and the flux core 0.1-0.3 mm.
 
-##### 60/40 tin-lead solder `chem.solder-chemicals.solder-alloy`
+##### 60/40 tin-lead solder `chem.solder-chemicals.solder-alloy` _(medium)_
 
-The eutectic at 183 C, which is why a wave-solder bath sat at 250-260 C and a hand iron at 300-350 C: 70-80 C of superheat above the melting point, which keeps the bath molten at the top and fluxes the joint as it passes through. In 1983 about 60-70% of the world's solder was 60/40 tin-lead for electronics; the alloy is cheap, it has a low melting point, and its oxide comes off in a flux. The 40% lead was the subject of the entire lead-free soldering programme of the 1980s and 1990s, and the lead itself came out of a flotation concentrator, not out of a refinery.
+A tin-lead solder melting in the high 180s C, which is why a wave-solder bath sat at 250-260 C and a hand iron at 300-350 C: 70-80 C of superheat above the melting point, which keeps the bath molten at the top and fluxes the joint as it passes through. In 1983 about 60-70% of the world's solder was 60/40 tin-lead for electronics; the alloy is cheap, it has a low melting point, and its oxide comes off in a flux. The 40% lead was the subject of the entire lead-free soldering programme of the 1980s and 1990s, and the lead itself came out of a flotation concentrator, not out of a refinery.
 
 ###### Where the tin came from `chem.solder-chemicals.solder-alloy.tin-source`
 
 The tin in a 60/40 solder was smelted from cassiterite, the tin ore, and cassiterite is one of the rarer tin deposits in the world: Bolivia's placer and vein cassiterite, the Cornish tin belt, the Nigerian and the Indonesian deposits, and the alluvial cassiterite of Malaysia and Thailand. In 1983 the world mined something like 25,000-30,000 tonnes of tin a year - a small metal market by volume and a strategically awkward one, because the electronics industry's solder demand is a large fraction of it.
 
-###### Cassiterite (SnO2) `chem.solder-chemicals.solder-alloy.tin-source.cassiterite`
+###### Cassiterite (SnO2) `chem.solder-chemicals.solder-alloy.tin-source.cassiterite` _(medium)_
 
 Tin oxide, 78.8% tin by mass, the principal tin ore. Recovered from placer deposits by panning and gravity concentration and from hard-rock veins by flotation, then smelted or reduced to tin. The C64-scale observation is the interesting one: a single soldered joint holds a few milligrams of tin, and there are a hundred and fifty million of them, so the tin industry exists in part because of solder joints.
 
@@ -8887,7 +8887,7 @@ Overburden stripped by dragline or shovel, coal ripped by bulldozer, loaded into
 
 Burden stripped in benches to reach the coal seam - often 10-60 m of rock and dirt per metre of coal in the Powder River Basin. The overburden itself becomes a backfill and a landfill-pond liner.
 
-###### Coal preparation plant `facility.coal.prep-plant`
+###### Coal preparation plant `facility.coal.prep-plant` _(medium)_
 
 Crushed, screened, washed and dried at the mine mouth. 1980s plants were dense-medium washers plus hydrocyclones; the resulting 2-inch x 0 coal with 8-12% moisture is what a boiler of that era was designed to burn. Thermal drying was the last step - a screen-deck or flash dryer brought the fuel down to about 8-12% moisture, because wetter coal burns slower, raises stack temperature and can quench a boiler screen tube.
 
@@ -8987,7 +8987,7 @@ A 3-6 m diameter steel or concrete conduit carrying water from the intake at hea
 
 Dams of the era were built of quarried rock tipped into the river and compacted, faced with concrete or asphaltic membrane. Ends at the quarry face.
 
-###### Aggregate and riprap quarry `facility.power.aggregate-quarry`
+###### Aggregate and riprap quarry `facility.power.aggregate-quarry` _(low)_
 
 Granite/gneiss quarried, crushed and screened for dam rock, concrete aggregate and filter material. Ends at the rock in the hillside.
 
@@ -9007,11 +9007,11 @@ The standard medium-head machine: water enters the spiral casing, turns a runner
 
 Where the water goes back to the river - and, downstream of the dam, the river itself is the raw water intake for the industrial park that the dam's power attracted.
 
-###### The river itself `facility.power.river`
+###### The river itself `facility.power.river` _(low)_
 
 A glacial or monsoonal river carrying suspended sediment, hardness and organic colour. This is the actual origin of most of the ultrapure water in this tree.
 
-###### Oil-fired steam power plant `facility.power.oil-plant`
+###### Oil-fired steam power plant `facility.power.oil-plant` _(medium)_
 
 The 1980s default in much of Asia and the Middle East, and the reason Taiwan's grid was 58.8% oil in 1980. Residual fuel oil and fuel oil burned in a boiler instead of coal - cheaper to handle, dirtier, and dead on arrival once the 1979 oil shock and OPEC reset prices.
 
@@ -9023,7 +9023,7 @@ The liquid fuel of the whole industrial world in 1983. Kuwait and Saudi Arabian 
 
 A rotary or cable-tool hole completed into sandstone or carbonate. In 1983 the Far East's oil was largely onshore (Gawair in Kuwait, Ghawar-equivalent fields) with growing offshore production.
 
-###### Sandstone or carbonate oil reservoir `facility.oil.reservoir`
+###### Sandstone or carbonate oil reservoir `facility.oil.reservoir` _(low)_
 
 Porous sedimentary rock (typically Tertiary sandstone or Jurassic carbonate) saturated with oil under pressure. This is where the story actually ends for oil.
 
@@ -9095,7 +9095,7 @@ Transformer bays, circuit breakers, buswork and the control house that steps tra
 
 Overhead or underground 11-13.8 kV feeders with reclosers, sectionalisers and fuses. Underground feeders were standard in the new Hong Kong industrial estates and in Japanese and Korean industrial parks; overhead was normal in the US outside cities.
 
-##### Electricity at the factory wall `facility.electricity`
+##### Electricity at the factory wall `facility.electricity` _(medium)_
 
 The chain from the utility's service drop to the machine tool. This is the branch other subsystems should reference whenever they need 'mains power': the substation, the transformer, the low-voltage switchboard, the motor control centre, and finally the cord and plug.
 
@@ -9131,7 +9131,7 @@ A chlorinated biphenyl dielectric used from the 1930s until the 1980s ban. Ends 
 
 Chlorobenzene and biphenyl feedstock for the askarel blend, itself from the chlorination of benzene over a chloride catalyst. Ends at the aromatic hydrocarbon still.
 
-###### Porcelain bushings and standoff insulators `facility.electricity.porcelain-bushing`
+###### Porcelain bushings and standoff insulators `facility.electricity.porcelain-bushing` _(medium)_
 
 Glazed porcelain sheds, cemented with epoxy onto the winding ends, to bring the winding out to a terminal. These are the tall ribbed 'sheds' you see on any pole-top transformer.
 
@@ -9139,7 +9139,7 @@ Glazed porcelain sheds, cemented with epoxy onto the winding ends, to bring the 
 
 A potassium-sodium aluminosilicate used as a flux in porcelain and in the electrolytic alumina bath. Ends at the pegmatite quarry.
 
-###### Low-voltage switchboard `facility.electricity.switchgear`
+###### Low-voltage switchboard `facility.electricity.switchgear` _(medium)_
 
 Air-circuit-breaker switchboards at 480/415 V, with bolted busbar, fuses/MCCBs per outgoing way and a transformer tap-selector. Most factory power for small machines was tapped off the board at 120/230 V through a plug.
 
@@ -9167,11 +9167,11 @@ Copper or aluminium busbar in an epoxy-impregnated sandwich ('busway') for high-
 
 Industrial customers never paid a simple price per kWh. The tariff was two-part: an energy charge per kWh plus a demand charge per kW of measured maximum demand over a 15 or 30 minute interval. The demand charge rewarded flat load and punished a factory that ran its ovens and its wave-solder line together. Tariff classes ('medium general service', 'large power and light') were negotiated against contract demand and often a five-year commitment.
 
-#### Industrial steam plant `facility.steam`
+#### Industrial steam plant `facility.steam` _(medium)_
 
 Process steam for soldering, cleaning, degreasing, autoclaving and heating the building. Most industrial steam plants of 1983 were coal- or oil-fired package/field-assembled water-tube boilers, often with their own turbo-alternator so that the site exported some of its own electricity.
 
-##### The boiler house `facility.steam.boiler-house`
+##### The boiler house `facility.steam.boiler-house` _(medium)_
 
 A tall, heavily built single-storey steel-framed building with a travelling crane, the boilers in a row, coal bunkers or an oil day tank alongside, and the chimney outside. Even in 1983 it was the tallest building on most industrial sites.
 
@@ -9187,7 +9187,7 @@ Two-drum or three-drum evaporators with a superheater. Industrial boilers of 4-2
 
 Anthracite, bituminous coal, fuel oil or - very commonly in Hong Kong, Japan and Taiwan - coal briquettes pressed from imported anthracite fines in a ring-die or pillow press.
 
-###### Coal briquette (hongsha / pressed coal) `facility.steam.briquette`
+###### Coal briquette (hongsha / pressed coal) `facility.steam.briquette` _(medium)_
 
 Binderless or starch-bound anthracite fines pressed at 200 bar into egg-shaped briquettes about 100 g each, fired on a grate. Hong Kong's thermal power and much of its industrial boiler load ran on exactly this fuel.
 
@@ -9207,7 +9207,7 @@ Where a plant burned coal continuously it made sense to take steam past 300 C an
 
 A flyball or hydraulic governor on the turbine shaft plus a mechanical overspeed trip and, in larger sets, a turbine protective device that tripped the generator breaker. The overspeed trip was the last line of defence against a runaway.
 
-##### Steam header and distribution `facility.steam.header`
+##### Steam header and distribution `facility.steam.header` _(medium)_
 
 A large-diameter steel pipe - 300-800 mm - with flanged or socket-welded branches to each user, insulation lagged in magnesium-block or calcium-silicate, and a trap at every low point. Steam was distributed at constant pressure from a header rather than generated at each machine.
 
@@ -9263,7 +9263,7 @@ Produced by dehydrogenating ethylbenzene or by cracking benzene, both from the a
 
 A small fraction of a C10H10 comonomer added to the styrene so the bead does not dissolve in the caustic used for regeneration. This crosslinking is what makes the resin insoluble and gives it its capacity.
 
-#### Water for a factory `facility.water`
+#### Water for a factory `facility.water` _(medium)_
 
 Every 1980s electronics and metals plant drank more water than it realised, and it arrived from one of two places. Two distinct demands sit on top of it: ordinary industrial water for cooling, rinsing, process and human use, and, in the fab, water pure enough to grow an oxide on silicon without introducing a defect. Point consumers at facility.water.industrial or facility.water.ultrapure rather than at this node, and attach them with `from` - a water treatment plant is an ingredient of the process, never a component of the product.
 
@@ -9271,7 +9271,7 @@ Every 1980s electronics and metals plant drank more water than it realised, and 
 
 Either a surface intake from a river or reservoir, or a deep well into a confined aquifer. Surface water for cooling, well water for the ultrapure plant - because groundwater is already filtered by geology and low in organics.
 
-###### Deep well and well pump `facility.water.well`
+###### Deep well and well pump `facility.water.well` _(medium)_
 
 A 150-300 mm steel or PVC casing to 100-300 m with a deep-turbine or submersible pump. In the Lehigh Valley the sand-and-gravel aquifer gave soft, iron-bearing water that had to be degreased; in Taiwan the wells hit 100-300 m of Pleistocene gravel.
 
@@ -9279,19 +9279,19 @@ A 150-300 mm steel or PVC casing to 100-300 m with a deep-turbine or submersible
 
 Wire-wound or slotted screen with a graded silica-sand or garnet gravel pack, wrapped in geotextile. Stops the well pumping sand and the aquifer silting up the pump.
 
-###### Aquifer sand and gravel `facility.water.aquifer-gravel`
+###### Aquifer sand and gravel `facility.water.aquifer-gravel` _(medium)_
 
 Glacial outwash and alluvial gravel forming the confined aquifer; the raw material of the well itself and the source of the hardness and iron.
 
-###### Confined sand-and-gravel aquifer `facility.water.aquifer`
+###### Confined sand-and-gravel aquifer `facility.water.aquifer` _(medium)_
 
 The buried glacial outwash and alluvial gravel bed, laid down in the Pleistocene and now saturated under pressure by an impermeable cap. It is the rock the well is drilled into, the source of the hardness and dissolved iron that the treatment plant has to remove, and the reason groundwater was preferred over river water for an ultrapure plant. Ends at the ground.
 
-###### River / reservoir intake and pump house `facility.water.surface-intake`
+###### River / reservoir intake and pump house `facility.water.surface-intake` _(medium)_
 
 A screened intake structure with travelling-bar screens, coarse screens and a low-lift pump house on the bank. In practice many 1980s plants - including Commodore's Taiwanese subcontractors in the export-processing zones - bought municipal or industrial-zone water from the local authority and paid a tariff, rather than taking their own.
 
-###### The river or reservoir `facility.water.river-intake`
+###### The river or reservoir `facility.water.river-intake` _(medium)_
 
 Turbid, hard, seasonally variable. The Schuylkill at Norristown, the Sham Chun at Hong Kong, the Tamsui at Taipei, the Keelung river, and the many dams that supplied Hong Kong from the 1960s (Plover Cove, 1973).
 
@@ -9299,7 +9299,7 @@ Turbid, hard, seasonally variable. The Schuylkill at Norristown, the Sham Chun a
 
 Coagulation, clarification, multimedia filtration and activated carbon, all in one reinforced-concrete block that dominated the plant footprint. The purpose is to strip the water of the things that would poison an ion-exchange resin or foul an RO membrane: suspended solids, colour, hardness, chlorine, organics and silica. It feeds both the ultrapure plant and the ordinary industrial side.
 
-###### Coagulation and clarification `facility.water.coagulation`
+###### Coagulation and clarification `facility.water.coagulation` _(medium)_
 
 Alum or ferric chloride plus lime and a coagulant aid is flash-mixed, then the floc is grown in a flocculation bay and settled out over 2-4 hours in a clarifier. Residual turbidity had to be under about 1-2 NTU for the sand filters to be worth having.
 
@@ -9307,19 +9307,19 @@ Alum or ferric chloride plus lime and a coagulant aid is flash-mixed, then the f
 
 The workhorse coagulant. Made from bauxite (or domestic low-grade bauxite/clay) digested in sulphuric acid and crystallised. Ended at the bauxite mine by way of the same chain that makes the aluminium in the grid conductor.
 
-###### Multimedia (sand) filtration `facility.water.multimedia-filtration`
+###### Multimedia (sand) filtration `facility.water.multimedia-filtration` _(medium)_
 
 Pressure filters in lead/catalysed iron tanks, 3.5-4.5 m diameter, containing 600-700 mm of graded media - typically 100 mm anthracite on 50 mm sand on 25 mm garnet. Backwashed with air scour plus water at 20-40 m/h.
 
-###### Silica filter sand `facility.water.filter-sand`
+###### Silica filter sand `facility.water.filter-sand` _(low)_
 
 Washed, graded, nearly pure SiO2 sand with effective size 0.5-0.7 mm. A large, unglamorous, and genuinely scarce mineral input to any waterworks.
 
-###### Sand and gravel extraction pit `facility.water.sand-quarry`
+###### Sand and gravel extraction pit `facility.water.sand-quarry` _(low)_
 
 A pit worked by river dredging or by bank excavation beside a watercourse, screening the outwash into a concrete-aggregate fraction and a finer silica fraction. Filter sand is scarce: it has to be nearly pure SiO2 with an effective size of 0.5-0.7 mm, and most river gravel is too dirty to wash up to standard. Ends at the sand deposit.
 
-###### Anthracite filter coal `facility.water.anthracite`
+###### Anthracite filter coal `facility.water.anthracite` _(medium)_
 
 Hard, coarse anthracite crushed to 1-2 mm as the coarse top layer. Same material as the boiler fuel, just graded differently.
 
@@ -9335,11 +9335,11 @@ The water that rinses a silicon wafer between every process step, and the water 
 
 Strong-acid cation then strong-base anion exchange, then a mixed-bed polish. Removed >95% of the ionic load of the filtered water and got to 10-15 MOhm-cm. It could not remove silica, organics or colloids, and the resin was a huge organic load in itself.
 
-###### Mixed-bed deioniser `facility.water.mixed-bed`
+###### Mixed-bed deioniser `facility.water.mixed-bed` _(medium)_
 
 A single resin bed with the cation and anion beads thoroughly mixed, polishing the effluent of the two-bed demineraliser down to a few tens of parts per billion of the sodium-chloride equivalent. It was the top of the 1980s purity curve and was standard offtake to the wet benches; the resin was regenerated with caustic and acid at the same time rather than in sequence, which is what gave the single-pass polish its quality.
 
-###### Reverse osmosis `facility.water.ro`
+###### Reverse osmosis `facility.water.ro` _(medium)_
 
 Cellulose acetate or thin-film composite spiral-wound elements in 6-inch pressure vessels rejecting 90-99% of dissolved ions, 95-98% of organics and, importantly for the 1980s plant, most of the silica and hardness. The first RO units were installed at plants like this from the mid-1970s; by 1983 they were displacing two beds of ion exchange ahead of the polishers.
 
@@ -9351,27 +9351,27 @@ A 0.2-1.5 micrometre-thick selective layer on a polysulphone support, wound into
 
 A 254 nm germicidal lamp in a stainless vessel, dosing typically 30-40 mJ/cm2, to kill bacteria and oxidise the last of the organics. Added in the late 1980s onward, mostly for the reclaim loop, because a 1970s fab did not sterilise its ultrapure water at all.
 
-###### Low-pressure mercury lamp `facility.water.uv-lamp`
+###### Low-pressure mercury lamp `facility.water.uv-lamp` _(medium)_
 
 A quartz envelope with a low-pressure mercury vapour discharge emitting 254 nm, immersed in a quartz sleeve in the water. Same lamp chemistry as the germicidal fittings in hospitals.
 
-###### Ultrapure distribution loop `facility.water.di-loop`
+###### Ultrapure distribution loop `facility.water.di-loop` _(medium)_
 
 Slotted 316L stainless or PVDF-lined pipework in a continuous recirculating loop, running hot at 60-80 C to suppress bacteria, with take-off points at each wet bench. A loop that is not constantly moving will grow biofilm within a day - the single hardest problem in 1980s ultrapure water. Modern fabs add a terminal ultrafiltration barrier here (1-100 nm hollow-fibre membranes at 1-4 bar, stripping colloids, bacteria and endotoxin); in the 1980s the state of the art was a 0.2 micrometre-rated PTFE or nylon cartridge on the last loop, or nothing at all, and the loop ran hot instead. The liquid leaving the plant is the 10-15 MOhm-cm water the wet benches are plumbed to.
 
-###### PVDF (polyvinylidene fluoride) `facility.water.pvdf`
+###### PVDF (polyvinylidene fluoride) `facility.water.pvdf` _(medium)_
 
 A fluoropolymer from vinylidene fluoride, chemically inert to ultrapure water and to most process acids, used as a liner or as solid pipe in ultrapure service. Melting point about 170 C, and it will not support microbial growth.
 
-###### Polypropylene piping `facility.water.pp`
+###### Polypropylene piping `facility.water.pp` _(medium)_
 
 Polypropylene was the cheapest acid- and chemical-resistant pipe for wet-bench waste lines and reclaim, and (as spun-bonded fabric) the material of the 1980s 'class 100' air filter pre-filter.
 
-##### Ordinary industrial water `facility.water.industrial`
+##### Ordinary industrial water `facility.water.industrial` _(medium)_
 
 The 99% of the plant's water use: cooling, washing, rinsing, boiler feed, human use. Deliberately not ultrapure, deliberately recycled. This branch is what a factory that needs cooling towers, a degreasing line or boiler make-up should point at; it draws the same raw intake as the ultrapure plant. Everything the plant throws away comes back through two routes: acid, solvent and dump rinses are collected, neutralised, filtered and returned to the pretreatment inlet - water conservation in a 1983 fab was a cost decision, not an environmental one, and a mature plant typically recovered 50-70% of its demand - while the liquid that could not be reclaimed was neutralised, settled and, where the acidity and fluoride demanded it, lime-neutralised with fluoride precipitation, then discharged to a municipal sewer under a permit or to an outfall.
 
-###### Induced-draught cooling tower `facility.water.cooling-tower`
+###### Induced-draught cooling tower `facility.water.cooling-tower` _(medium)_
 
 A 20-60 m concrete or steel shell packed with fill, with fan blades in the base drawing air up through the falling film of circulating water. Water evaporates, concentrates the dissolved solids, and is purged to the drain or the recovery plant.
 
@@ -9383,7 +9383,7 @@ Cellulose (Kraft), PVC or polystyrene film fill media in a lattice or dendritic 
 
 Chromate-based corrosion inhibitors (the dominant, and environmentally toxic, 1980s chemistry), or the newer phosphate/phosphonate/zinc formulations, plus biocide (chlorine or an organomercurial/isothiazolinone blend) and an antiscalant acid. This is where a large share of the plant's chemical consumption went.
 
-###### Sodium chromate inhibitor `facility.water.chromate`
+###### Sodium chromate inhibitor `facility.water.chromate` _(medium)_
 
 A dichromate/chromate film former that passivates the steel of the cooling system. Enormously effective, and the reason thousands of 1980s cooling towers are a chromate source in the groundwater.
 
@@ -9399,19 +9399,19 @@ A stratiform chromite seam (UG2 in the Bushveld) worked by stoping or by open pi
 
 A finned coil with water sprayed over it and an induced-draft fan. Far cheaper than a chiller and it worked well in Hong Kong, Taiwan and Singapore, where the wet-bulb temperature was already low; useless in a humid July in Pennsylvania.
 
-###### Reciprocating chiller `facility.water.chiller`
+###### Reciprocating chiller `facility.water.chiller` _(medium)_
 
 A compressor, condenser and evaporator in a packaged unit, cooling water or air cooled. The alternative to evaporative cooling wherever the wet-bulb was too high. 1980s chillers were almost all ammonia or R-12/CFC-11, and therefore both a refrigerant-ozone problem and a safety problem.
 
-#### Industrial gas supply `facility.gases`
+#### Industrial gas supply `facility.gases` _(medium)_
 
 The bulk gases a 1980s electronics plant bought by the tanker load: nitrogen, oxygen, argon and hydrogen, plus helium and carbon dioxide. Supplied either by an on-site air separation unit, an on-site PSA/membrane/electrolyser, or delivered as liquid from a merchant producer in a road tanker. Everything in this branch except helium and CO2 starts from the same place: atmospheric air.
 
-##### Nitrogen supply `facility.nitrogen`
+##### Nitrogen supply `facility.nitrogen` _(medium)_
 
 The single largest bulk gas. Used for inerting storage tanks and vessels, blanketing, purging, and as the carrier gas in diffusion furnaces and plasma etchers. Small plants bought a few tonnes a month of liquid N2; a furnace-loaded fab wanted tens of tonnes a day and built its own ASU.
 
-###### Atmospheric air `facility.nitrogen.atmospheric-air`
+###### Atmospheric air `facility.nitrogen.atmospheric-air` _(medium)_
 
 78.08% nitrogen, 20.95% oxygen, 0.93% argon, plus water and CO2. The single source of every bulk industrial gas. Delivered to an ASU intake through a windowless, acoustically baffled multi-bay intake so it arrived at a steady temperature, humidity and free of the dust that would plug a cryogenic plant.
 
@@ -9419,31 +9419,31 @@ The single largest bulk gas. Used for inerting storage tanks and vessels, blanke
 
 A tall concrete or brick stack with louvres facing away from the prevailing wind, feeding a plenum and the air compressor. Intakes were sited so that no two of them - for air, for cooling water, for the coal yard - were close enough to contaminate each other.
 
-###### Cryogenic air separation unit (ASU) `facility.nitrogen.cryogenic-asu`
+###### Cryogenic air separation unit (ASU) `facility.nitrogen.cryogenic-asu` _(medium)_
 
 Air is filtered, compressed in a large multi-stage compressor to about 6-7 bar, cooled against the cold product streams until it liquefies, then fractionally distilled in a low-temperature column to make oxygen and a nitrogen-argon mixture. A unit also making argon has a separate argon column fed from the top of the nitrogen column. Typical small unit: 1,000-5,000 Nm3/h of oxygen.
 
-###### Cold box (plate-fin heat exchanger) `facility.nitrogen.asu-heat-exchanger`
+###### Cold box (plate-fin heat exchanger) `facility.nitrogen.asu-heat-exchanger` _(medium)_
 
 A stack of aluminium brazed plate-fin exchangers, some 10-20 m tall, in which the compressed air is progressively cooled to -196 C by the outgoing oxygen and nitrogen. The heart of every ASU.
 
-###### Fractionating columns `facility.nitrogen.asu-tower`
+###### Fractionating columns `facility.nitrogen.asu-tower` _(medium)_
 
 Insulated stainless-steel columns 5-10 m tall with trays or packing, holding the low-temperature distillation that separates oxygen (bottoms, warmer) from nitrogen and argon (top, colder). A common 1980s arrangement was a single low-temperature column producing oxygen plus a nitrogen-argon mixture, with a side argon column.
 
-###### Expansion turbine (expander) `facility.nitrogen.expander`
+###### Expansion turbine (expander) `facility.nitrogen.expander` _(medium)_
 
 A turbine in the cold box that recovers the enthalpy drop of the expanding nitrogen and uses it to generate power, offsetting part of the ASU's compression energy. Standard from the 1960s onward.
 
-###### PSA / molecular-sieve nitrogen generator `facility.nitrogen.psa`
+###### PSA / molecular-sieve nitrogen generator `facility.nitrogen.psa` _(medium)_
 
 Pressure swing adsorption: compressed air is adsorbed on beds of zeolite molecular sieve at 7-10 bar, then dropped to near atmospheric and purged with a slice of product to release the nitrogen. Gave 90-99% nitrogen cheaply at small scale; the 1980s workhorse for factories of under a few hundred kW load.
 
-###### Zeolite molecular sieve (synthetic) `facility.nitrogen.zeolite`
+###### Zeolite molecular sieve (synthetic) `facility.nitrogen.zeolite` _(medium)_
 
 Crystalline hydrated aluminosilicate with a uniform 3-5 angstrom pore, made by hydrothermal crystallisation of bentonite, kaolin or synthetic gels. Uniform aperture size is what makes PSA possible - a zeolite with 3A pores excludes N2 and adsorbs only O2 and H2O; the 4A and 5A grades are used elsewhere in gas drying.
 
-###### Membrane nitrogen generator `facility.nitrogen.membrane`
+###### Membrane nitrogen generator `facility.nitrogen.membrane` _(medium)_
 
 Hollow-fibre asymmetric polyimide or cellulose acetate membranes in a pressure vessel, 20-40 bar feed, with N2 diffusing through the wall faster than O2. Cheap, silent, no regeneration heat, and limited to about 90-95% nitrogen - which is fine for blanketing and not fine for a furnace. By 1983 membrane units were new and uncommon; they took the small-plant market from PSA in the 1990s.
 
@@ -9451,51 +9451,51 @@ Hollow-fibre asymmetric polyimide or cellulose acetate membranes in a pressure v
 
 A thin-walled asymmetric fibre, about 0.1-0.2 micrometre wall, with a selectively permeable outer skin. Making a defect-free fibre over a 1 m length was, and is, the hard part.
 
-###### Bulk cryogenic liquid storage `facility.nitrogen.liquid-storage`
+###### Bulk cryogenic liquid storage `facility.nitrogen.liquid-storage` _(medium)_
 
 A double-walled vacuum-insulated stainless tank on a skirt, with a vacuum-insulated transfer line (a double pipe with perlite or multilayer reflective insulation between) from the ASU or the delivery tanker. The tank is a pressure vessel rated to about 700-1000 kPa on the inner shell.
 
-###### Tube trailer (bulk gas road delivery) `facility.nitrogen.tube-trailer`
+###### Tube trailer (bulk gas road delivery) `facility.nitrogen.tube-trailer` _(medium)_
 
 A tractor-trailer carrying 30-40 high-pressure cylinders or a single multi-compartment tube bundle of 6,000-15,000 litres, delivering liquid nitrogen, oxygen or argon from a merchant plant. In 1983 this was how a factory without an on-site ASU got its gases; the driver's unload was a vent line that fogged the yard and alarmed the neighbours.
 
-##### Oxygen supply `facility.gases.oxygen`
+##### Oxygen supply `facility.gases.oxygen` _(medium)_
 
 Supplied as liquid oxygen from a merchant AS U or from the site unit. Used for the oxy-acetylene flame of the mechanical and maintenance shops, the gas-shielded welding of the metal frames, and increasingly for the oxygen plasma strip in a fab.
 
-###### Oxy-acetylene flame for tool and frame welding `facility.gases.oxygen-acetylene`
+###### Oxy-acetylene flame for tool and frame welding `facility.gases.oxygen-acetylene` _(medium)_
 
 Oxygen plus a locally generated acetylene from calcium carbide (in the Far East, imported cylinder acetylene was common). This is the flame that welded every sheet-metal chassis, rack and jig in the factory.
 
-###### Acetylene cylinder `facility.gases.acetylene-cylinder`
+###### Acetylene cylinder `facility.gases.acetylene-cylinder` _(medium)_
 
 Dissolved acetylene at 15 bar in a porous monolithic mass (calcium carbide + acetone), in a steel shell. Calcium carbide came from the electric arc furnace carbide plant, i.e. ultimately from coal coke and quicklime.
 
-##### Argon `facility.argon`
+##### Argon `facility.argon` _(medium)_
 
 Argon is not made; it is separated out. It is the third component of air and comes off the top of the ASU's nitrogen column, either as an argon-nitrogen mixture from a simple unit or as 99.99% pure from a dedicated argon column. Most 1980s plants bought it by the tanker as a by-product of someone else's oxygen plant.
 
-###### Argon recovery column `facility.argon.argon-column`
+###### Argon recovery column `facility.argon.argon-column` _(medium)_
 
 A second, smaller column that separates the nitrogen-argon mixture from the top of the nitrogen column into pure argon bottoms and nitrogen tops. Installed when the oxygen plant needed the argon value or the customer paid for it - usually in a semiconductor or welding-wire plant, not in a steelworks.
 
-##### Helium `facility.helium`
+##### Helium `facility.helium` _(low)_
 
 In 1983 helium was a genuinely scarce, genuinely odd commodity. Most of the world's supply came from a handful of natural-gas fractionation plants in Texas, Wyoming, Kansas and New Mexico, which extracted the 0.0005-0.005% helium in the gas as a crude 50-75% mixture. The rest came from four dedicated underground helium fields - the hug gas of Amarillo, Texas, and the Dixon and Harley fields in Kansas. Cryogenic separation of helium from LNG did not become industrial until the late 1990s.
 
-###### Cryogenic helium separation from natural gas `facility.helium.cryo-separation`
+###### Cryogenic helium separation from natural gas `facility.helium.cryo-separation` _(medium)_
 
 The gas is chilled to -190 C through a train of plate-fin heat exchangers; helium, having the second-lowest boiling point, stays in the vapour phase and is drawn off from the top of the cold box as a crude 50-75% helium stream. Then purified by cryogenic adsorption, catalytic dehydrogenation of the residual hydrogen and activated-carbon adsorption of the nitrogen - the last step adsorbs the nitrogen on a char bed at 77 K to give 99.995% (5N) or 99.9999% (6N) helium. The same activated-carbon adsorption principle as the water-treatment carbon, run at liquid-nitrogen temperature.
 
-###### Liquid helium dewar (4.2 K) `facility.helium.liquid-helium`
+###### Liquid helium dewar (4.2 K) `facility.helium.liquid-helium` _(medium)_
 
 A double-walled stainless vessel with a superinsulating vacuum jacket, holding 4.2 K liquid helium for a cryostat or a superconducting magnet. Expensive, evaporating at about 0.5-1% a day, and topped up by truck in a dewar that looked like a scaled-down rocket stage.
 
-###### Hug gas from an underground helium reservoir `facility.helium.hug-gas`
+###### Hug gas from an underground helium reservoir `facility.helium.hug-gas` _(medium)_
 
 The Permian Basin of west Texas and the southwest Kansas gas fields hold helium that never migrated out of the crust, trapped under impermeable salt and anhydrite since geological time. These are drilled specifically for helium, at tiny volumes - Amarillo field production was only tens of millions of cubic feet a year even in its peak.
 
-##### Hydrogen `facility.gases.hydrogen`
+##### Hydrogen `facility.gases.hydrogen` _(medium)_
 
 Three routes in 1983: (a) bulk hydrogen from a merchant plant by tube trailer or by liquefaction; (b) on-site steam methane reforming of natural gas, the standard for anything above about 100 Nm3/h; and (c) electrolysis of demineralised water for the last, and highest, purity.
 
@@ -9503,7 +9503,7 @@ Three routes in 1983: (a) bulk hydrogen from a merchant plant by tube trailer or
 
 Natural gas is desulphurised to under 0.5 ppm sulphur, mixed with steam at 3:1 and passed over a nickel-molybdenum or chromite catalyst at 800-850 C and 15-25 bar. This gives hydrogen plus CO, and the CO is shifted over an iron-chrome catalyst to CO2 and more hydrogen. Then CO2 is removed by amine scrubbing or molecular sieve.
 
-###### Electrolysis of demineralised water `facility.gases.hydrogen.electrolysis`
+###### Electrolysis of demineralised water `facility.gases.hydrogen.electrolysis` _(medium)_
 
 In a diaphragm or, from the 1970s, an alkaline cell, a nickel-plated or activated-titanium cathode makes hydrogen while a nickel anode makes oxygen. Fed with conductivity-grade water at 20-25 C. Output purity is 99.99% once the cell gas is passed over a palladium diffuser or an oxygen getter - the 'deoxo' step that killed the last 0.1% of oxygen.
 
@@ -9515,7 +9515,7 @@ Used in the plant for refrigerant cargo, for the dry-ice shipping of perishables
 
 Hydrocarbon and silicone greasing, hydrogen annealing of the copper and the metallisation, the reducing atmosphere in the diffusion furnace and the epitaxial reactor, and - for the tie-in with this story - the hydrogen atmosphere in the case of a lamp or a nickel/plated through-hole fill was not yet standard practice.
 
-##### Where argon went in a 1980s plant `facility.argon.uses`
+##### Where argon went in a 1980s plant `facility.argon.uses` _(medium)_
 
 TIG welding of the sheet metal and the transformer laminations, the inert blanket over the 1800 C silicon melt in the crystal puller, and - increasingly - argon sputter deposition of the aluminium interconnect in a fab. Almost all of it went into joining metal, not into making silicon.
 
@@ -9527,15 +9527,15 @@ US Bureau of Mines and then BLM administered the supply; the Cliffside field ran
 
 Every factory ran on compressed air. Instrument air was dried, oil-free air fed to the air-line and to the logic valves; plant air was for the pneumatic tools, the automated insertion machines and the ejectors. The classic 1980s split was a dedicated compressor for instrument air and one or more dirty machines for everything else.
 
-##### Air compressor `facility.compressed-air.compressor`
+##### Air compressor `facility.compressed-air.compressor` _(medium)_
 
 Reciprocating or, from the 1960s onward, oil-injected rotary screw machines. A large electronics plant ran several 100-300 kW screw units; a small sub-contractor ran one 30 kW reciprocating machine under a concrete acoustic enclosure.
 
-###### Intake silencer and inlet filter `facility.compressed-air.intake-silencer`
+###### Intake silencer and inlet filter `facility.compressed-air.intake-silencer` _(medium)_
 
 An intake filter-silencer combination that kept the machine from eating the dust and the unfiltered outside air. In a coastal site (Kaohsiung, Hong Kong, Long Beach) the sea salt went straight onto the rotors if this was neglected.
 
-###### Drive motor `facility.compressed-air.motor`
+###### Drive motor `facility.compressed-air.motor` _(medium)_
 
 A TEFC or, in a corrosive coastal plant, an explosion-proof motor. 400 V three-phase induction motor with a direct-on-line or star-delta starter; speed control only by pole changing.
 
@@ -9547,19 +9547,19 @@ A water-cooled or finned-air heat exchanger that takes the discharge air from ~1
 
 An automatic drain pot or cyclone knock-out that removes the condensed water and, in an oil-injected screw machine, the injected oil. This vessel was the source of most of the 'the air is wet' complaints in the shop.
 
-##### Air dryer `facility.compressed-air.dryer`
+##### Air dryer `facility.compressed-air.dryer` _(medium)_
 
 Two chemistries in 1983. Refrigerant (absorption or adsorption, e.g. a zeolite unit chilled to 1-3 C) gave a pressure dew point of about 2-10 C, good enough for most pneumatic machinery and marginal for instrument air. Desiccant (two alternating towers of silica gel or molecular sieve with a heatless regeneration on the off-line tower) got the dew point down to -40 to -70 C, which was what a pneumatic logic valve or a moisture-sensitive process needed.
 
-##### Air receiver (accumulator) `facility.compressed-air.receiver`
+##### Air receiver (accumulator) `facility.compressed-air.receiver` _(medium)_
 
 A vertical ASME code air vessel, 1-10 m3, acting as a buffer so the compressor could unload on a pressure switch. It also stored enough air to ride through a power cut for a few minutes - which in a fab meant keeping the wet-bench exhaust and the compressors together.
 
-##### Ring main and distribution `facility.compressed-air.ring-main`
+##### Ring main and distribution `facility.compressed-air.ring-main` _(medium)_
 
 Black steel pipe - galvanised or, better, painted steel - in a ring around the plant with drop-legs to each machine. A ring rather than a spine so that a single closed valve could isolate a section for maintenance. Drops went through a service unit with a tap, a pressure regulator, a filter and a flowmeter at each bench.
 
-##### Nitrogen purge of the air system `facility.compressed-air.nitrogen-purge`
+##### Nitrogen purge of the air system `facility.compressed-air.nitrogen-purge` _(medium)_
 
 Before opening a vessel, a line, or a tank that had held flammable or reactive material, it was purged with nitrogen and tested with an oxygen analyser. The purge itself was fed from the nitrogen header or, in a small plant, from a bottled cylinder.
 
@@ -9583,15 +9583,15 @@ The part of the story usually left out. A 1980s electronics plant generated, per
 
 The Resource Conservation and Recovery Act became law on 21 October 1976. Its Subtitle C hazardous waste regulations were promulgated 26 February and 19 May 1980 and took effect 19 November 1980 - so in 1983 the whole American electronics industry was three years into the most consequential change in waste handling since the Clean Air Act. Generators must determine whether a waste is hazardous, accumulate it in a closed, labelled, inspected area for no more than 90 days, describe it on a manifest, and ship it only to a permitted treatment, storage or disposal facility.
 
-##### Spent acid, solvent and plating waste streams `facility.hazardous-waste.generation`
+##### Spent acid, solvent and plating waste streams `facility.hazardous-waste.generation` _(medium)_
 
 The three physical waste streams that carried almost all of a 1980s electronics plant's hazardous load: the spent acids and alkalis from etching and cleaning, the spent organic solvents and resist stripper from photolithography and degreasing, and the cyanide- and metal-bearing rinses from gold and tin plating. Each was a bulk liquid, collected in a tank, and each needed its own treatment route. Small generators - which in 1983 was most of Commodore's Hong Kong subcontractor base - had almost no obligations at all beyond a monthly manifest.
 
-###### Spent acid and alkali `facility.hazardous-waste.spent-acid`
+###### Spent acid and alkali `facility.hazardous-waste.spent-acid` _(medium)_
 
 Sulfuric and hydrochloric acid exhausted by the etchers and the wet benches, plus the caustic and the alkaline develop and strip baths. Neutralised with lime into a metal hydroxide sludge; the arsenic-containing liquor from the diffusion furnaces went the same way.
 
-###### Spent organic solvent and resist stripper `facility.hazardous-waste.spent-solvent`
+###### Spent organic solvent and resist stripper `facility.hazardous-waste.spent-solvent` _(medium)_
 
 Acetone, xylene, toluene, isopropanol and cellosolve acetate from the degreasers, plus the spent developer (tetramethylammonium hydroxide from positive photoresist) and stripper from the coat-develop track. Recovered by activated-carbon adsorption and distillation where that was economical, and otherwise vapour-incinerated.
 
@@ -9599,15 +9599,15 @@ Acetone, xylene, toluene, isopropanol and cellosolve acetate from the degreasers
 
 Rinse water carrying gold, tin, copper, nickel and chromium out of the plating line. The cyanide-bearing stream needed alkaline chlorination before discharge; the acid-bearing stream went to the neutralisation tank. Both ended up in the same hydroxide sludge.
 
-##### Acid neutralisation with lime `facility.hazardous-waste.neutralisation`
+##### Acid neutralisation with lime `facility.hazardous-waste.neutralisation` _(medium)_
 
 The cheapest and by far the most common treatment: slaked lime or limestone slurry is dosed into a reaction tank, the acid is neutralised, the metal hydroxides precipitate out, and the tank is then settled and the supernatant discharged. It converts an acid into a sludge - which is still a hazardous waste, just a solid one.
 
-###### Heavy-metal hydroxide sludge `facility.hazardous-waste.metal-hydroxide-sludge`
+###### Heavy-metal hydroxide sludge `facility.hazardous-waste.metal-hydroxide-sludge` _(medium)_
 
 A wet, low-solids sludge of iron, aluminium, chromium, copper, nickel, zinc and cadmium hydroxides, filtered on a plate-and-frame or belt press to 15-25% solids and trucked to a hazardous landfill in a lined, covered cell. In 1983 this was the default destination and the reason so many US sites are now Superfund sites.
 
-###### Settling pond / lagoon `facility.hazardous-waste.settling-pond`
+###### Settling pond / lagoon `facility.hazardous-waste.settling-pond` _(medium)_
 
 An unlined or clay-lined earthen basin into which treated effluent was discharged and solids allowed to settle, with the supernatant decanted to a stream or a municipal sewer. Thousands of these existed in 1983; the liner requirements came later. The pond was often the plant's cheapest and worst idea.
 
@@ -9679,7 +9679,7 @@ The lithography bay was lit only through yellow filters - either yellow-lens flu
 
 Mask aligners, coat/develop tracks, bake ovens and the mask storage cabinets. In a 1980s 1-micron NMOS fab the lithography bay was Class 100 with the amber lighting, the operators wore yellow-room coats and face shields, and the photoresist was spun from a solvent (Shipley AZ1350, based on a novolak resin sensitised with a diazonium salt) with xylene or cellosolve acetate.
 
-##### Passivation and packaging areas `facility.cleanroom.passivation`
+##### Passivation and packaging areas `facility.cleanroom.passivation` _(medium)_
 
 Passivation (the final silicon nitride or phosphosilicate glass over the completed aluminium) and then the back-end: wafer probe, dice, die attach, wire bond, and the moulding of the ceramic or plastic package. The back end in 1983 was Class 10000 to Class 1000, not Class 100 - the contaminating work (bonding, moulding compound) happened there.
 
@@ -9711,7 +9711,7 @@ Glass melted and blown into coarse fibres and felted into a mat. The same glassf
 
 Garments were not laundryable in the era - a hooded coverall was worn once and destroyed. The plant bought enormous quantities of spun-bonded polypropylene garments, hoods, overshoes, gloves, wipes and tacky mats, and washed nothing. One 1980s 5,000-person fab burned something like a million garments a year.
 
-###### Spun-bonded polypropylene `facility.cleanroom.spunbond-pp`
+###### Spun-bonded polypropylene `facility.cleanroom.spunbond-pp` _(medium)_
 
 Polypropylene melt-spun into continuous filaments and laid down in a random web, then bonded by heat or needle punching. Cheapest possible cleanroom garment material, and the raw material for the 'tacky mat' that caught shoe-borne particles at every airlock.
 
@@ -9895,7 +9895,7 @@ A bed-of-nails fixture pressing 1000 or so spring-loaded probes onto the bare bo
 
 A powered-up test station running a test program from ROM that exercised the VIC-II registers, checked the RAM, drove the keyboard matrix and read back the RAM. On a Commodore line this was a dedicated fixture with a monitor and a keyboard, and the operator's job was to load, run, read the result, box or quarantine.
 
-##### Test ROM in the final-test fixture `facility.test-equipment.test-rom`
+##### Test ROM in the final-test fixture `facility.test-equipment.test-rom` _(medium)_
 
 A dedicated test ROM - the '501' diagnostic ROM is the one most C64 owners meet - loaded into the machine's own ROM socket during factory final test so the machine could self-test its own RAM, character ROM, CIA timers and VIC registers. It is the same object a user later used to prove the machine worked.
 
@@ -9980,11 +9980,11 @@ Silane decomposes on hot silicon in a diffusion tube at 600-850 C, laying down a
 
 Bifunctional organosilanes: a hydrolysable alkoxy or chloro group that bonds to the silanol groups on a glass surface, and an organic group - vinyl, amino, epoxy or methacrylate - that reacts with the resin. Aminopropyltriethoxysilane and vinyltrimethoxysilane are the workhorses; methacryloxypropyltrimethoxysilane and 3-glycidoxypropyltrimethoxysilane were the ones chosen where the resin was an epoxy. They are made from the same silicon-chlorine chemistry as monosilane by substituting an alcohol for the hydrogen: methyltrichlorosilane plus methanol gives the trimethoxysilane and releases HCl. Applied to woven glass cloth at a few tenths of a per cent by weight, they are the reason epoxy bonds to glass rather than merely wetting it - and therefore the reason a C64 mainboard does not delaminate in a solder pot.
 
-#### Helium over the CZ melt `si.cz.atmosphere`
+#### Helium over the CZ melt `si.cz.atmosphere` _(low)_
 
 High-purity helium, bled over the melt to carry off the intense blackbody heat and to sweep volatile boron compounds away. Argon, or a helium-argon mix, was the cheaper alternative and produced more oxygen precipitation in the finished boule.
 
-#### Quartz sand melted into crucible glass `si.cz.crucible-sand`
+#### Quartz sand melted into crucible glass `si.cz.crucible-sand` _(medium)_
 
 High-purity quartz sand, acid-leached to remove aluminium and iron, is melted in a flame or arc furnace around a rotating graphite mandrel at about 2000 C into a clear, annealed vitreous silica blank. The graphite is then burnt off in air at 800-1000 C.
 
@@ -9992,7 +9992,7 @@ High-purity quartz sand, acid-leached to remove aluminium and iron, is melted in
 
 A short (100)-oriented sliver cut from a previous ingot, used to set the orientation and the defect-free growth of the new boule. Its diameter has to match the finished boule, so a seed is cut and ground for each crystal-pulling station.
 
-#### Chlor-alkali brine electrolysis `si.polysilicon.brine`
+#### Chlor-alkali brine electrolysis `si.polysilicon.brine` _(low)_
 
 Salt dissolved in water and electrolyzed in a membrane or mercury cell at 3-4 V to make chlorine and hydrogen. The hydrogen is what reduces the trichlorosilane, and the chlorine is one half of the hydrochloric acid that chlorinates the metallurgical silicon in the first place.
 
@@ -10001,11 +10001,11 @@ Salt dissolved in water and electrolyzed in a membrane or mercury cell at 3-4 V 
 
 The other traditional reductant for the submerged arc furnace, mined from the hard coal fields of Pennsylvania, Wales and Shanxi. Lower carbon, higher ash and higher iron than petroleum coke, so it was used as a blend component.
 
-#### Delayed coking and calcination of petroleum coke `si.polysilicon.coke.calciner`
+#### Delayed coking and calcination of petroleum coke `si.polysilicon.coke.calciner` _(medium)_
 
 Vacuum residue from crude oil distillation is heated in a battery of delayed-coking heaters to 500 C and held in a large coking drum for 12-24 hours; the green coke is then calcined in a rotary kiln at 1200-1350 C to drive off volatiles and leave needle coke at 0.5-2% sulphur. Silicon furnaces blend petroleum coke with anthracite coal.
 
-##### Sour crude residue, vacuum distilled `si.polysilicon.coke.crude`
+##### Sour crude residue, vacuum distilled `si.polysilicon.coke.crude` _(medium)_
 
 Heavy Venezuelan or Middle East crude sent to a vacuum tower at 350-400 C and 30-50 mmHg; the bottoms are a dense black pitch of asphaltenes and metal porphyrins, and are the feed for the coke. Vanadium and nickel concentrate in this residue, so coke made from it carries trace vanadium that the silicon plant has to tolerate.
 

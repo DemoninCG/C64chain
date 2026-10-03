@@ -61,11 +61,11 @@
                             { "id": "facility.coal.seam", "name": "Bituminous coal seam in sedimentary rock", "description": "The raw input, full stop. In the northern Appalachian basin the commercial coal is in the middle and upper Pennsylvanian (Conemaugh, Monongahela, Kittanning, Freeport) formations - Carboniferous, roughly 300 million years old, laid down in swamp forests and buried under Pennsylvanian sediment.", "kind": "material", "category": "industry", "era": "Carboniferous",
                               "facts": [ {"label": "Age", "value": "~300 Ma (Pennsylvanian) in the Appalachians"}, {"label": "Typical seam", "value": "1-6 m thick"} ],
                               "places": ["Appalachian Basin, Pennsylvania", "Powder River Basin, Wyoming", "Bowen Basin, Queensland", "Witbank, South Africa"],
-                              "confidence": "high" }
+                              "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Coal"] }
                           ] },
                         { "id": "facility.coal.room-pillar", "name": "Room-and-pillar mining", "description": "Still the dominant method for Appalachian metallurgical and steam coal: rooms driven to the pillar, pillars left behind to hold the roof. Cheap but leaves 30-50% of the seam underground.", "kind": "process", "category": "industry", "era": "1983",
                           "children": [
-                            { "id": "facility.coal.room-pillar-seam", "name": "Seam between shale and sandstone beds", "description": "The same Carboniferous coal-bearing sequence as the longwall face, mined from a shaft or slope rather than a portal. Ends at the rock in the ground.", "kind": "material", "category": "industry", "era": "Carboniferous", "confidence": "high" }
+                            { "id": "facility.coal.room-pillar-seam", "name": "Seam between shale and sandstone beds", "description": "The same Carboniferous coal-bearing sequence as the longwall face, mined from a shaft or slope rather than a portal. Ends at the rock in the ground.", "kind": "material", "category": "industry", "era": "Carboniferous", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Coal"] }
                           ] },
                         { "id": "facility.coal.opencut", "name": "Open-cut coal mine", "description": "Overburden stripped by dragline or shovel, coal ripped by bulldozer, loaded into 100-tonne rear-dump trucks. Dominant in the Powder River Basin, the Ruhr, Limburg, New South Wales and Limpopo.", "kind": "process", "category": "industry", "era": "1983",
                           "children": [
@@ -77,7 +77,7 @@
                     { "id": "facility.coal.prep-plant", "name": "Coal preparation plant", "description": "Crushed, screened, washed and dried at the mine mouth. 1980s plants were dense-medium washers plus hydrocyclones; the resulting 2-inch x 0 coal with 8-12% moisture is what a boiler of that era was designed to burn. Thermal drying was the last step - a screen-deck or flash dryer brought the fuel down to about 8-12% moisture, because wetter coal burns slower, raises stack temperature and can quench a boiler screen tube.", "kind": "facility", "category": "industry", "era": "1983",
                       "inputs": ["run-of-mine coal", "process water"],
                       "facts": [ {"label": "Product moisture", "value": "8-12% after drying"} ],
-                      "confidence": "high",
+                      "confidence": "medium",
                       "children": [
                         { "id": "facility.coal.washing", "name": "Dense-medium coal washing", "description": "Raw coal is floated on a magnetite/water slurry of specific gravity ~1.35; the light coal floats, the ash-rich shale sinks. This is where the mountaintop-removal debate's 'coal refuse' piles come from.", "kind": "process", "category": "industry", "era": "1983",
                           "inputs": ["magnetite", "coal slurry water"],
@@ -90,20 +90,22 @@
                                 { "id": "facility.coal.magnetite-ore", "name": "Magnetite ore body", "description": "Magnetite is rare as a bulk ore and common as a concentrates: the dense-medium coal washer only needs a few grams of Fe3O4 per litre of circulating slurry, so the ore was mined in small tonnages - often lake-shore or gabbro deposits - and concentrated by flotation and magnetic separation. Ends at the ore body in the ground.", "kind": "material", "category": "metals", "era": "1983", "confidence": "medium" }
                               ] }
                           ] }
-                      ] }
+                      ],
+      "note": "Not established: that 1980s plants were dense-medium washers plus hydrocyclones, and the 8-12% product moisture figure and 2-inch x 0 top size. The encyclopaedia has no article on coal preparation (the title does not exist), and no coal preparation manual was located."
+    }
                 ] },
                 { "id": "facility.power.coal-plant.receiving", "name": "Coal receiving and stockyard", "description": "Unload from rail unit trains or self-unloading barges into a yard. In the 1980s the East Coast plants were fed by unit trains; Japan's and Korea's coal came by Panamax and post-Panamax bulker.", "kind": "facility", "category": "industry", "era": "1983",
                   "inputs": ["facility.coal"],
                   "confidence": "medium" },
                 { "id": "facility.power.coal-plant.pulveriser", "name": "Coal pulveriser (mill)", "description": "A ball or roller mill grinds run-of-mine coal to a powder with at least 70% through 200 mesh (75 micrometres) so that it will burn in suspension. This was the technology that made the 1950s-80s boiler possible at all.", "kind": "tool", "category": "industry", "era": "1960-1985",
                   "facts": [ {"label": "Fineness", "value": ">=70% through 75 micrometre (200 mesh)"}, {"label": "Mill power", "value": "40-70 kW per mill, 2-4 mills per boiler"} ],
-                  "confidence": "high",
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Pulverized_coal-fired_boiler"],
                   "children": [
                     { "id": "facility.power.coal-plant.fan", "name": "Hot-air fan and primary air", "description": "A fan supplies the 60-80% of combustion air that dries and suspends the powder in the furnace and the remainder that sweeps it out between the boiler tube banks.", "kind": "tool", "category": "industry", "era": "1983", "confidence": "medium" }
                   ] },
                 { "id": "facility.power.coal-plant.furnace", "name": "Boiler furnace and combustion", "description": "A refractory- and water-wall-lined firebox. Coal and preheated air enter at the burners, burn at 1300-1600 C, and give up radiation to the water walls lining the furnace walls.", "kind": "process", "category": "energy", "era": "1960-1985",
                   "inputs": ["coal powder", "preheated air"],
-                  "confidence": "high",
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Pulverized_coal-fired_boiler"],
                   "children": [
                     { "id": "facility.power.air-preheater", "name": "Ljungstrom / regenerative air preheater", "description": "The flue gas gives up its heat to the incoming combustion air through a slow-rotating bank of corrugated steel plates - exhaust gas at ~300 C, air at ~300 C. This alone recovered several percent of the coal's energy.", "kind": "tool", "category": "industry", "era": "1960-1985", "confidence": "medium" },
                     { "id": "facility.power.coal-plant.scrubber", "name": "Wet flue-gas desulphuriser (scrubber)", "description": "Required in the US from about 1978 onward once new-source performance standards took effect. Slaked lime or limestone slurry absorbs SO2 to calcium sulphite, which is then forced-oxidised to gypsum; the stack gas is reheated so the plume still rises.", "kind": "process", "category": "industry", "era": "1978-1990",
@@ -113,7 +115,7 @@
                       "children": [
                         { "id": "facility.power.limestone", "name": "Limestone (calcium carbonate) slurry", "description": "Crushed and slaked to calcium hydroxide for wet scrubbing, or used directly in dry/semi-dry scrubbers. Ends at the quarry.", "kind": "material", "category": "industry", "era": "1983",
                           "inputs": ["limestone quarry"],
-                          "confidence": "high",
+                          "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Flue-gas_desulfurization"],
                           "children": [
                             
                           ] }
@@ -121,10 +123,10 @@
                   ] },
                 { "id": "facility.power.coal-plant.boiler", "name": "Water-tube boiler and evaporator", "description": "Drum-type water-tube boiler, typically 300-900 MW, drum at ~15 MPa and 340-370 C. Feedwater circulates through downcomers and up risers around a flame path several hundred passes long; saturated steam leaves the drum to be superheated. Superheaters raise that saturated steam to 540-565 C by hanging banks of tube bundles in the radiant and convective pass, and reheaters do the same again to the steam coming back out of the high-pressure turbine - higher steam temperature is the single biggest lever on plant thermal efficiency. An economiser, a bank of finned tubes in the flue-gas path, preheats feedwater from about 120 C to the saturation temperature using the last 8-10% of the flue-gas heat. Ash from the boiler hoppers was quenched, then either dewatered and trucked to a landfill or put wet into a hopper and pumped as slurry; fly ash was collected in electrostatic precipitators or baghouses and trucked dry or ponded.", "kind": "tool", "category": "industry", "era": "1960-1985",
                   "facts": [ {"label": "Drum pressure", "value": "15-17 MPa"}, {"label": "Steam temp", "value": "540-565 C at the turbine inlet"}, {"label": "Superheat", "value": "saturation (~340 C) to 540-565 C"}, {"label": "Ash yield", "value": "8-15% of coal mass"} ],
-                  "confidence": "high" },
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Boiler", "https://en.wikipedia.org/wiki/Pulverized_coal-fired_boiler"] },
                 { "id": "facility.power.coal-plant.turbine", "name": "Steam turbine", "description": "A multistage expansion turbine: high-pressure, intermediate-pressure and low-pressure sections, the last with the long bladed rotor of a wet-steam half-pressure machine. Exhaust goes to the condenser at about 0.05 bar. Steam rate for a 1980s unit was roughly 9-11 MJ/kWh.", "kind": "tool", "category": "industry", "era": "1960-1985",
                   "facts": [ {"label": "Steam rate", "value": "9-11 MJ per kWh"}, {"label": "Rotor speed", "value": "3000 rpm (50 Hz) or 3600 rpm (60 Hz)"} ],
-                  "confidence": "high",
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Steam_turbine", "https://en.wikipedia.org/wiki/Thermal_power_station"],
                   "children": [
                     { "id": "facility.power.coal-plant.condenser", "name": "Surface condenser", "description": "Thousands of stainless-steel tubes with condensing exhaust steam outside and cooling water inside. The condensate is the plant's own feedwater; cleanliness here directly sets boiler-tube life.", "kind": "tool", "category": "industry", "era": "1960-1985",
                       "children": [
@@ -133,19 +135,19 @@
                           "confidence": "medium",
                           "children": [ { "id": "facility.power.iron-ore", "name": "Iron ore (hematite/magnetite)", "description": "The blast-furnace feed, and the reason a power station's turbine steel has a supply chain at all. US supply was Mesabi Range hematite and taconite in the Lake Superior district, shipped by rail to the blast furnaces of the Great Lakes steel belt; Europe and Japan imported Brazilian pellets and ore. Ends at the orebody.", "kind": "material", "category": "metals", "era": "1983",
                             "inputs": ["open-pit mine"],
-                            "confidence": "high",
-                            "children": [ { "id": "facility.power.iron-ore-pit", "name": "Iron ore open pit (Mesabi)", "description": "Taconite and hematite are dug by 15-tonne payload shovels and hauled in 90-tonne trucks from a strip 60 m deep. Ends at the orebody.", "kind": "facility", "category": "metals", "era": "1983", "places": ["Mesabi Range, Minnesota", "Carajás, Brazil"], "confidence": "high" } ] },
-                          { "id": "facility.power.coke", "name": "Metallurgical coke", "description": "Bituminous coal coked in batteries of 30-45 ovens to make the fuel and the reductant for the blast furnace. Ends at the coking plant.", "kind": "material", "category": "industry", "era": "1983", "inputs": ["coking coal"], "confidence": "high", "children": [ { "id": "facility.power.coking-coal-seam", "name": "High-Bituminous coking coal seam", "description": "A very specific subset of bituminous coal - the seam that swells and fuses in the coke oven, distinct from the steam coal the power station burns. The Pennsylvania/Kentucky/West Virginia 'High Bituminous' field.", "kind": "material", "category": "industry", "era": "Carboniferous", "places": ["Connellsville, Pennsylvania", "Kuznetsk Basin", "Ruhr"], "confidence": "medium" } ] }
+                            "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Iron_ore", "https://en.wikipedia.org/wiki/Mesabi_Range"],
+                            "children": [ { "id": "facility.power.iron-ore-pit", "name": "Iron ore open pit (Mesabi)", "description": "Taconite and hematite are dug by 15-tonne payload shovels and hauled in 90-tonne trucks from a strip 60 m deep. Ends at the orebody.", "kind": "facility", "category": "metals", "era": "1983", "places": ["Mesabi Range, Minnesota", "Carajás, Brazil"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Mesabi_Range", "https://en.wikipedia.org/wiki/Iron_ore"] } ] },
+                          { "id": "facility.power.coke", "name": "Metallurgical coke", "description": "Bituminous coal coked in batteries of 30-45 ovens to make the fuel and the reductant for the blast furnace. Ends at the coking plant.", "kind": "material", "category": "industry", "era": "1983", "inputs": ["coking coal"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Coke_(fuel)"], "children": [ { "id": "facility.power.coking-coal-seam", "name": "High-Bituminous coking coal seam", "description": "A very specific subset of bituminous coal - the seam that swells and fuses in the coke oven, distinct from the steam coal the power station burns. The Pennsylvania/Kentucky/West Virginia 'High Bituminous' field.", "kind": "material", "category": "industry", "era": "Carboniferous", "places": ["Connellsville, Pennsylvania", "Kuznetsk Basin", "Ruhr"], "confidence": "medium" } ] }
                         ] }
                       ] },
                     { "id": "facility.power.coal-plant.generator", "name": "Generator (turbo-alternator)", "description": "The turbine shaft turns a 2- or 4-pole alternator at 3000/3600 rpm. A 500 MVA water-cooled unit is about 12 m long and 6 m wide. Output was 13.8 kV or 21 kV - far too low to transmit, hence the step-up transformer next door.", "kind": "tool", "category": "power", "era": "1960-1985",
                   "facts": [ {"label": "Terminal voltage", "value": "13.8 or 21 kV"}, {"label": "Typical unit", "value": "300-1000 MW"} ],
-                  "confidence": "high" },
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Thermal_power_station"] },
                 { "id": "facility.power.coal-plant.stepup-transformer", "name": "Generator step-up transformer (GSU)", "description": "A single-phase or three-phase bank of 240-500 kV oil-filled transformers that takes 21 kV from the alternator to the transmission line. This is the piece of iron that makes the whole grid possible, and it is why every power station has a lumpy, oil-filled, bunded yard next door.", "kind": "tool", "category": "power", "era": "1960-1985",
                   "facts": [ {"label": "Ratio", "value": "21 kV / 230-500 kV"}, {"label": "Rating", "value": "400-700 MVA"} ],
-                  "confidence": "high",
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Substation"],
                   "inputs": ["copper", "electrical steel", "transformer oil", "porcelain insulators"] },
-                { "id": "facility.power.coal-plant.switchyard", "name": "Switchyard and circuit breakers", "description": "Outdoor busbars, disconnectors, dead-tank and live-tank oil circuit breakers and surge arresters, on a steel lattice gantry. The step-up point where the plant connects to the transmission network.", "kind": "facility", "category": "energy", "era": "1960-1985", "confidence": "high" }
+                { "id": "facility.power.coal-plant.switchyard", "name": "Switchyard and circuit breakers", "description": "Outdoor busbars, disconnectors, dead-tank and live-tank oil circuit breakers and surge arresters, on a steel lattice gantry. The step-up point where the plant connects to the transmission network.", "kind": "facility", "category": "energy", "era": "1960-1985", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Substation", "https://en.wikipedia.org/wiki/Busbar"] }
               ] },
           { "id": "facility.power.hydro-plant", "name": "Hydroelectric power plant", "description": "Genuinely important for the 1980s Far East: Taiwan took 13.9% of its supply from hydro in 1980 and 24.5% by 1990 (Sun Moon Lake, Tachia, Feitsui, Wujie), and Taiwan's run-of-river stations are exactly the kind of small plant Commodore's Taiwanese subcontractors drew from. Elsewhere hydro was the cheap baseload of Norway, Sweden, Switzerland and Canada.", "kind": "facility", "category": "energy", "era": "1960-1990",
             "facts": [ {"label": "Taiwan hydro 1980", "value": "13.9% of grid supply"} ],
@@ -156,42 +158,50 @@
                 "inputs": ["cement", "steel plate", "rockfill"],
                 "confidence": "medium",
                 "children": [
-                  { "id": "facility.power.rockfill", "name": "Rockfill dam and riprap", "description": "Dams of the era were built of quarried rock tipped into the river and compacted, faced with concrete or asphaltic membrane. Ends at the quarry face.", "kind": "material", "category": "industry", "era": "1960-1990", "confidence": "medium", "children": [ { "id": "facility.power.aggregate-quarry", "name": "Aggregate and riprap quarry", "description": "Granite/gneiss quarried, crushed and screened for dam rock, concrete aggregate and filter material. Ends at the rock in the hillside.", "kind": "facility", "category": "industry", "era": "1960-1990", "confidence": "high" } ] },
-                  { "id": "facility.power.cement-portland", "name": "Portland cement", "description": "Limestone plus clay, fired in a rotary kiln at 1450 C, ground with gypsum. The universal structural binder of the 1980s industrial plant: dams, cooling towers, substation foundations, effluent tanks, the fab's raised floor.", "kind": "material", "category": "industry", "era": "1983", "inputs": ["limestone", "clay", "gypsum"], "confidence": "high",
-                    "children": [ { "id": "facility.power.cement-kiln", "name": "Rotary cement kiln", "description": "A 60-150 m inclined steel tube rotating 1-2 rpm, burning coal or oil at 1450 C to drive off CO2 and drive the reaction forward. Ends at the limestone and clay pits.", "kind": "tool", "category": "industry", "era": "1983", "confidence": "high" } ] }
+                  { "id": "facility.power.rockfill", "name": "Rockfill dam and riprap", "description": "Dams of the era were built of quarried rock tipped into the river and compacted, faced with concrete or asphaltic membrane. Ends at the quarry face.", "kind": "material", "category": "industry", "era": "1960-1990", "confidence": "medium", "children": [ { "id": "facility.power.aggregate-quarry", "name": "Aggregate and riprap quarry", "description": "Granite/gneiss quarried, crushed and screened for dam rock, concrete aggregate and filter material. Ends at the rock in the hillside.", "kind": "facility", "category": "industry", "era": "1960-1990", "confidence": "low",
+      "note": "Not established: that granite or gneiss was quarried for dam rock, concrete aggregate and filter material in this supply chain. No quarry or aggregate statistics document was located."
+    } ] },
+                  { "id": "facility.power.cement-portland", "name": "Portland cement", "description": "Limestone plus clay, fired in a rotary kiln at 1450 C, ground with gypsum. The universal structural binder of the 1980s industrial plant: dams, cooling towers, substation foundations, effluent tanks, the fab's raised floor.", "kind": "material", "category": "industry", "era": "1983", "inputs": ["limestone", "clay", "gypsum"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Portland_cement"],
+                    "children": [ { "id": "facility.power.cement-kiln", "name": "Rotary cement kiln", "description": "A 60-150 m inclined steel tube rotating 1-2 rpm, burning coal or oil at 1450 C to drive off CO2 and drive the reaction forward. Ends at the limestone and clay pits.", "kind": "tool", "category": "industry", "era": "1983", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Cement_kiln"] } ] }
                 ] },
               { "id": "facility.power.hydro-plant.turbine", "name": "Francis turbine", "description": "The standard medium-head machine: water enters the spiral casing, turns a runner on a vertical or horizontal shaft at 100-750 rpm, and exits into the draft tube.", "kind": "tool", "category": "industry", "era": "1960-1990",
                 "facts": [ {"label": "Efficiency", "value": "90-94%"}, {"label": "Head", "value": "60-250 m typical"} ],
-                "confidence": "high" },
+                "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Francis_turbine"] },
               { "id": "facility.power.hydro-plant.tailrace", "name": "Tailrace and reservoir", "description": "Where the water goes back to the river - and, downstream of the dam, the river itself is the raw water intake for the industrial park that the dam's power attracted.", "kind": "facility", "category": "industry", "era": "1960-1990",
                 "children": [ { "id": "facility.power.river", "name": "The river itself", "description": "A glacial or monsoonal river carrying suspended sediment, hardness and organic colour. This is the actual origin of most of the ultrapure water in this tree.", "kind": "material", "category": "fluids", "era": "1983",
                   "places": ["Sun Moon Lake, Nantou, Taiwan", "Schuylkill and Delaware, Pennsylvania", "Sham Chun, Hong Kong", "Han River basin, Korea"],
-                  "confidence": "high" } ] }
+                  "confidence": "low",
+      "note": "Not established: the named rivers and reservoirs and their characterisations, including Sun Moon Lake, the Sham Chun, the Han River basin, and the claim that this is the actual origin of most of the ultrapure water on the tree. No water authority document located."
+    } ] }
             ] },
           { "id": "facility.power.oil-plant", "name": "Oil-fired steam power plant", "description": "The 1980s default in much of Asia and the Middle East, and the reason Taiwan's grid was 58.8% oil in 1980. Residual fuel oil and fuel oil burned in a boiler instead of coal - cheaper to handle, dirtier, and dead on arrival once the 1979 oil shock and OPEC reset prices.", "kind": "facility", "category": "energy", "era": "1960-1990",
             "inputs": ["facility.oil"],
-            "confidence": "high",
+            "confidence": "medium",
             "children": [
               { "id": "facility.oil", "name": "Crude petroleum and fuel oil", "description": "The liquid fuel of the whole industrial world in 1983. Kuwait and Saudi Arabian Light for the Far East, plus North Sea Brent and US domestic crude for Europe and the US East Coast.", "kind": "material", "category": "industry", "era": "1983",
                 "facts": [ {"label": "Residual fuel oil price", "value": "~$25-30/bbl in 1983, down from ~$37 in 1980"} ],
-                "confidence": "high",
+                "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Petroleum"],
                 "children": [
                   { "id": "facility.oil.well", "name": "Oil and gas well", "description": "A rotary or cable-tool hole completed into sandstone or carbonate. In 1983 the Far East's oil was largely onshore (Gawair in Kuwait, Ghawar-equivalent fields) with growing offshore production.", "kind": "facility", "category": "industry", "era": "1983",
                     "places": ["Ghawar, Saudi Arabia", "Burgan, Kuwait", "North Sea (Ekofisk, Forties)", "Prudhoe Bay, Alaska"],
-                    "confidence": "high",
+                    "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Ghawar_Field", "https://en.wikipedia.org/wiki/Petroleum"],
                     "children": [
-                      { "id": "facility.oil.reservoir", "name": "Sandstone or carbonate oil reservoir", "description": "Porous sedimentary rock (typically Tertiary sandstone or Jurassic carbonate) saturated with oil under pressure. This is where the story actually ends for oil.", "kind": "material", "category": "industry", "era": "Tertiary", "confidence": "high" }
+                      { "id": "facility.oil.reservoir", "name": "Sandstone or carbonate oil reservoir", "description": "Porous sedimentary rock (typically Tertiary sandstone or Jurassic carbonate) saturated with oil under pressure. This is where the story actually ends for oil.", "kind": "material", "category": "industry", "era": "Tertiary", "confidence": "low",
+      "note": "Not established: that the reservoirs supplying the Far East trade of 1983 were typically Tertiary sandstone or Jurassic carbonate. No petroleum-geology document was located for these fields."
+    }
                     ] },
                   { "id": "facility.oil.refinery", "name": "Refinery", "description": "Atmospheric and vacuum distillation plus hydrotreating to make fuel oil and, in a complex refinery, the naphtha feed for the hydrogen and ethylene crackers. Ali Qaido in Kuwait (1945) or Amuay in Venezuela (1962) typified the scale.", "kind": "facility", "category": "industry", "era": "1983",
                     "facts": [ {"label": "Typical size", "value": "100,000-300,000 bbl/day"} ],
-                    "confidence": "high",
+                    "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Oil_refinery"],
                     "children": [
                       { "id": "facility.oil.lpg", "name": "LPG (propane/butane)", "description": "The liquid the Hong Kong and Japanese industrial estates burned for process heat and factory heating, and the feedstock for the 1980s alkylation route to isobutylene. Ends at the well or the refinery.", "kind": "material", "category": "industry", "era": "1983", "confidence": "medium" }
                     ] }
                 ] },
-              { "id": "facility.power.oil-plant.boiler", "name": "Oil-fired boiler", "description": "Same water-tube boiler as the coal plant, but with oil burners instead of a pulveriser and an induced-draft fan sized for the lower flue-gas volume. Two to four boilers typically share one stack.", "kind": "tool", "category": "industry", "era": "1960-1990", "confidence": "high" },
-              { "id": "facility.power.oil-plant.stack", "name": "Tall chimney", "description": "A 150-250 m concrete or steel chimney to get the plume above the inversion layer and disperse sulphur dioxide over a large area. Not a pollution control device - a dilution device.", "kind": "facility", "category": "energy", "era": "1960-1990", "confidence": "high" }
-            ] },
+              { "id": "facility.power.oil-plant.boiler", "name": "Oil-fired boiler", "description": "Same water-tube boiler as the coal plant, but with oil burners instead of a pulveriser and an induced-draft fan sized for the lower flue-gas volume. Two to four boilers typically share one stack.", "kind": "tool", "category": "industry", "era": "1960-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Boiler"] },
+              { "id": "facility.power.oil-plant.stack", "name": "Tall chimney", "description": "A 150-250 m concrete or steel chimney to get the plume above the inversion layer and disperse sulphur dioxide over a large area. Not a pollution control device - a dilution device.", "kind": "facility", "category": "energy", "era": "1960-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Chimney"] }
+            ],
+      "note": "Not established here: that Taiwan's grid was 58.8% oil in 1980. That figure is quoted with sources on the parent node facility.power; it has not been checked against a primary statistical series for this node. The description of oil-fired generation as the 1980s default in much of Asia is not sourced either."
+    },
           { "id": "facility.power.gas-plant", "name": "Gas-fired power plant", "description": "Two different things share this name. For the 1983 industrial economy the honest answer is that almost none of the grid came from natural gas - gas turbines ran mainly for peak load, standby and cogeneration. Taiwan's first LNG cargo arrived in 1983 and natural gas did not become a grid fuel until the 1990s.", "kind": "facility", "category": "energy", "era": "1970-1990",
             "facts": [ {"label": "Taiwan gas share 1980", "value": "1.2% rising from ~0"} ],
             "sources": ["https://en.agi.or.jp/media/publications/workingpaper/WP2015-10.pdf"],
@@ -200,7 +210,7 @@
             "children": [
               { "id": "facility.power.gas-plant.turbine", "name": "Gas turbine", "description": "A compressor, a combustor at 1400-1600 C and a turbine in a single shaft or two. Open-cycle efficiency only 25-35% in 1983 - the poor number that made gas peakers expensive until combined cycle became standard in the 1990s.", "kind": "tool", "category": "power", "era": "1970-1990",
                 "facts": [ {"label": "Open-cycle efficiency", "value": "25-35%"} ],
-                "confidence": "high",
+                "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Gas-turbine_engine"],
                 "inputs": ["nickel superalloy", "natural gas"] }
             ] },
           { "id": "facility.power.nuclear-plant", "name": "Nuclear power plant", "description": "Not a 'coal/oil/gas/hydro' machine, but it was 10.2% of Taiwan's electricity in 1980 - the first reactor at Chinshan came on line in 1978, followed by Chinshan 2 (1979), Chinshan 3, Feitsui and Lungmen. Any 1983 power bill in northern Taiwan could legitimately be traced to a uranium fuel rod.", "kind": "facility", "category": "energy", "era": "1978-1990",
@@ -228,7 +238,7 @@
           "children": [
             { "id": "facility.power.grid.line", "name": "Overhead transmission line", "description": "Steel lattice towers or wooden H-poles carrying three phases on aluminium conductor, with shield wires and porcelain or glass suspension insulators. The thermal rating of the conductor, not the voltage, is the limit.", "kind": "facility", "category": "energy", "era": "1960-1990",
               "inputs": ["aluminium conductor", "steel tower", "porcelain insulator"],
-              "confidence": "high",
+              "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Transmission_tower"],
               "children": [
                 { "id": "facility.power.acsr-conductor", "name": "Aluminium conductor steel-reinforced (ACSR)", "description": "Aluminium strands around a steel core for tensile strength, twisted and stranded on the line. Ends at an aluminium smelter fed by alumina.", "kind": "material", "category": "metals", "era": "1983",
                   "confidence": "medium",
@@ -237,10 +247,10 @@
                   ] },
                 { "id": "facility.power.insulator-porcelain", "name": "Porcelain suspension insulator", "description": "Glazed (glassy) or unglazed (ceramic) insulator strings, 10-20 discs to hold a 230-500 kV line up in the air. Replaced later by composite polymer strings, which is why the classic transmission silhouette disappeared after 1990.", "kind": "part", "category": "power", "era": "1983",
                   "inputs": ["kaolin clay", "feldspar", "quartz"],
-                  "confidence": "high",
-                  "children": [ { "id": "facility.power.kaolin", "name": "Kaolin (china clay)", "description": "A white kaolinite clay from a kaolin pit, washed and beneficiated for the ceramic and paper trades. Ends at the clay pit.", "kind": "material", "category": "industry", "era": "1983", "places": ["Cornwall", "Georgia kaolin belt"], "confidence": "high" } ] }
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Transmission_tower"],
+                  "children": [ { "id": "facility.power.kaolin", "name": "Kaolin (china clay)", "description": "A white kaolinite clay from a kaolin pit, washed and beneficiated for the ceramic and paper trades. Ends at the clay pit.", "kind": "material", "category": "industry", "era": "1983", "places": ["Cornwall", "Georgia kaolin belt"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Kaolinite"] } ] }
               ] },
-            { "id": "facility.power.grid.substation", "name": "Utility substation", "description": "Transformer bays, circuit breakers, buswork and the control house that steps transmission voltage down to the 11-34.5 kV distribution level. Utility substations outnumbered the plants; a 1980s industrial park typically had one primary substation feeding a ring of unit substation transformers.", "kind": "facility", "category": "energy", "era": "1960-1990", "confidence": "high" },
+            { "id": "facility.power.grid.substation", "name": "Utility substation", "description": "Transformer bays, circuit breakers, buswork and the control house that steps transmission voltage down to the 11-34.5 kV distribution level. Utility substations outnumbered the plants; a 1980s industrial park typically had one primary substation feeding a ring of unit substation transformers.", "kind": "facility", "category": "energy", "era": "1960-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Substation"] },
             { "id": "facility.power.grid.distribution", "name": "Medium-voltage distribution feeder", "description": "Overhead or underground 11-13.8 kV feeders with reclosers, sectionalisers and fuses. Underground feeders were standard in the new Hong Kong industrial estates and in Japanese and Korean industrial parks; overhead was normal in the US outside cities.", "kind": "facility", "category": "energy", "era": "1960-1990",
               "facts": [ {"label": "Typical voltage", "value": "11 kV (Hong Kong), 20-22 kV (Taiwan), 13.8 kV (US)"} ],
               "confidence": "medium" }
@@ -258,27 +268,27 @@
 
     { "id": "facility.electricity", "name": "Electricity at the factory wall", "description": "The chain from the utility's service drop to the machine tool. This is the branch other subsystems should reference whenever they need 'mains power': the substation, the transformer, the low-voltage switchboard, the motor control centre, and finally the cord and plug.", "kind": "facility", "category": "energy", "era": "1960-1990",
       "facts": [ {"label": "Factory service voltage", "value": "11-13.8 kV into the plant, 480 V three-phase or 220 V single-phase out of the transformer in the US; 380-415 V in HK/Europe"} ],
-      "confidence": "high",
+      "confidence": "medium",
       "children": [
-        { "id": "facility.electricity.service", "name": "Utility service and metering", "description": "A pad-mount or pole-mounted transformer on the utility side of the fence, with revenue metering and a fused cut-out. The customer owned everything downstream of the meter.", "kind": "facility", "category": "energy", "era": "1960-1990", "confidence": "high" },
+        { "id": "facility.electricity.service", "name": "Utility service and metering", "description": "A pad-mount or pole-mounted transformer on the utility side of the fence, with revenue metering and a fused cut-out. The customer owned everything downstream of the meter.", "kind": "facility", "category": "energy", "era": "1960-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Distribution_transformer"] },
         { "id": "facility.electricity.substation", "name": "Customer substation", "description": "Where a large factory bought at transmission or sub-transmission voltage: a fenced yard with the utility's metering, an incoming circuit breaker, a main transformer, a secondary switchgear line-up and the plant's own protection relays.", "kind": "facility", "category": "energy", "era": "1960-1990",
           "inputs": ["transformer oil", "switchgear", "copper busbar"],
           "children": [
             { "id": "facility.electricity.transformer", "name": "Distribution transformer", "description": "A laminated silicon-steel core with copper or aluminium windings on pressboard and paper insulation, immersed in mineral oil or Askarel. Oil-immersed units dominated until the 1980s-90s fire codes and the economics of dry-type began to change the picture in Europe and Japan.", "kind": "tool", "category": "power", "era": "1960-1990",
               "facts": [ {"label": "Typical rating", "value": "500-2500 kVA, 480/277 V or 400/230 V secondary"} ],
               "inputs": ["electrical steel", "copper wire", "insulating oil", "porcelain bushings"],
-              "confidence": "high",
+              "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Distribution_transformer", "https://en.wikipedia.org/wiki/Polychlorinated_biphenyl"],
               "children": [
                 { "id": "facility.electricity.electrical-steel", "name": "Grain-oriented silicon steel (GOES)", "description": "3.2% silicon steel rolled so its crystallographic grain lies parallel to the flux direction, giving a core loss an order of magnitude lower than hot-rolled steel. Made in a special continuous-annealing line. This is the same material used in the C64's switch-mode transformer and in every mains transformer in the world.", "kind": "material", "category": "magnetics", "era": "1983",
                   "inputs": ["iron ore", "coke", "silicon"],
-                  "confidence": "high",
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Electrical_steel"],
                   "note": "Deliberately stiff magnetically so it laminates easily and does not ring when punched - 'GOES' is stamped on the laminations.",
                   "children": [
                     { "id": "facility.electricity.grain-oriented-mill", "name": "Grain-oriented steel rolling mill", "description": "Hot band rolled to 2 mm, cold rolled to 0.3 mm, decarburised in a hydrogen atmosphere and given a final magnetic anneal. Ends at the ore and the coke oven.", "kind": "facility", "category": "magnetics", "era": "1983", "confidence": "medium" }
                   ] },
                 { "id": "facility.electricity.insulating-oil", "name": "Transformer insulating oil", "description": "Mineral oil (naphthenic or paraffinic), a by-product of vacuum distillation of crude. Also Askarel (PCB-filled chlorinated dielectric) in older units - a PCB source that explains part of the PCB contamination of the Hudson/Superfund sites.", "kind": "material", "category": "fluids", "era": "1983",
                   "inputs": ["facility.oil"],
-                  "confidence": "high",
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Polychlorinated_biphenyl"],
                   "note": "Askarel transformers were phased out in the US after the EPA began classifying PCBs as hazardous in 1979; by 1983 new units were mineral-oil or dry-type.",
                   "children": [
                     { "id": "facility.electricity.askarel", "name": "Askarel (PCB-filled transformer dielectric)", "description": "A chlorinated biphenyl dielectric used from the 1930s until the 1980s ban. Ends at the chlorinated benzene/aromatics stream.", "kind": "material", "category": "fluids", "era": "1983",
@@ -289,56 +299,66 @@
                   ] },
                 { "id": "facility.electricity.porcelain-bushing", "name": "Porcelain bushings and standoff insulators", "description": "Glazed porcelain sheds, cemented with epoxy onto the winding ends, to bring the winding out to a terminal. These are the tall ribbed 'sheds' you see on any pole-top transformer.", "kind": "part", "category": "power", "era": "1983",
                   "inputs": ["kaolin", "quartz", "feldspar", "epoxy"],
-                  "confidence": "high",
-                  "children": [ { "id": "facility.electricity.feldspar", "name": "Feldspar", "description": "A potassium-sodium aluminosilicate used as a flux in porcelain and in the electrolytic alumina bath. Ends at the pegmatite quarry.", "kind": "material", "category": "industry", "era": "1983", "places": ["Pezzullo, Italy", "North Carolina"], "confidence": "medium" } ] }
+                  "confidence": "medium",
+                  "children": [ { "id": "facility.electricity.feldspar", "name": "Feldspar", "description": "A potassium-sodium aluminosilicate used as a flux in porcelain and in the electrolytic alumina bath. Ends at the pegmatite quarry.", "kind": "material", "category": "industry", "era": "1983", "places": ["Pezzullo, Italy", "North Carolina"], "confidence": "medium" } ],
+      "note": "Not established: the epoxy cementing of porcelain bushings onto transformer winding ends. Porcelain and glass insulators are documented for overhead lines; transformer bushing construction is not covered by the sources read."
+    }
               ] },
             { "id": "facility.electricity.switchgear", "name": "Low-voltage switchboard", "description": "Air-circuit-breaker switchboards at 480/415 V, with bolted busbar, fuses/MCCBs per outgoing way and a transformer tap-selector. Most factory power for small machines was tapped off the board at 120/230 V through a plug.", "kind": "tool", "category": "power", "era": "1960-1990",
-              "confidence": "high",
+              "confidence": "medium",
               "children": [
                 { "id": "facility.electricity.mcc", "name": "Motor control centre", "description": "A vertical lineup of combination starters and contactors with a fused disconnect per motor, feeding the compressors, injection-moulding presses, conveyors and extract fans. The 1980s unit had no variable-frequency drives at all - speed control was a pole-changing or slip-ring motor.", "kind": "tool", "category": "power", "era": "1983",
                   "facts": [ {"label": "Typical", "value": "415 V, 30-250 A per cubicle"} ],
-                  "confidence": "high",
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Motor_control_center"],
                   "note": "Adjustable-frequency drives only became normal in the late 1980s-90s, and the first-generation IGBT VFDs cost more than the motor.",
                   "children": [
                     { "id": "facility.electricity.contactors", "name": "AC contactors and overload relays", "description": "Silver-alloy contacts on a moulded phenolic base with a shading ring to stop contact chatter, plus a bimetal or electronic overload. The bimetal overload relay, unchanged since the 1920s, was the industrial motor's main protection.", "kind": "part", "category": "power", "era": "1983",
                       "inputs": ["silver alloy", "phenolic resin", "copper"],
-                      "confidence": "high" }
+                      "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Contactor", "https://en.wikipedia.org/wiki/Motor_control_center"] }
                   ] },
                 { "id": "facility.electricity.power-factor", "name": "Power factor correction capacitors", "description": "Motor loads are inductive, so a big factory runs at 0.7-0.85 power factor and gets penalised by the utility. Banks of switched capacitor kVAr corrected it. A capacitor is the cheapest industrial electronics ever made - a polypropylene film between two aluminium foils.", "kind": "part", "category": "power", "era": "1983",
                   "inputs": ["polypropylene film", "aluminium foil", "PCB dielectric"],
-                  "confidence": "high" },
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Power_factor"] },
                 { "id": "facility.electricity.earthing", "name": "Earthing grid and lightning protection", "description": "Copper rod or bare conductor bonded under the floor and up the steelwork, plus air terminals and down conductors to earth rods. The grid is not decoration: it is the reference for every protective device on the switchboard, and in a fab with a raised floor the earth grid and the electrostatic-dissipative floor were often the same conductor, bonded to the pedestals.", "kind": "process", "category": "energy", "era": "1960-1990",
               "inputs": ["copper"],
               "confidence": "medium" }
-              ] }
+              ],
+      "note": "Not established: that factory switchboards were air-circuit-breaker type at 480/415 V with a transformer tap selector, and that small machine power was tapped at 120/230 V through a plug. The switchgear article read does not state board construction or factory voltage practice."
+    }
           ] },
         { "id": "facility.electricity.distribution-busbar", "name": "Busbar trunking and cable", "description": "Copper or aluminium busbar in an epoxy-impregnated sandwich ('busway') for high-current runs, and PVC/PVDF-insulated copper or aluminium cable in conduit or tray for the rest. Flexible conduit was still common above machine tools.", "kind": "part", "category": "power", "era": "1983",
           "inputs": ["copper", "aluminium", "PVC", "XPLE"],
-          "confidence": "high" }
-      ] },
+          "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Busbar", "https://en.wikipedia.org/wiki/Insulator_(electricity)"] }
+      ],
+      "note": "Not established: the factory service voltages quoted in the facts (11-13.8 kV in, 480 V three-phase or 220 V single-phase out in the US, 380-415 V in Hong Kong and Europe). No utility or standards document was located for these values."
+    },
 
     { "id": "facility.steam", "name": "Industrial steam plant", "description": "Process steam for soldering, cleaning, degreasing, autoclaving and heating the building. Most industrial steam plants of 1983 were coal- or oil-fired package/field-assembled water-tube boilers, often with their own turbo-alternator so that the site exported some of its own electricity.", "kind": "facility", "category": "energy", "era": "1960-1990",
       "facts": [ {"label": "Typical pressures", "value": "6-10 bar saturated for process; 25-45 bar / 250-400 C for turbo-alternator schemes"} ],
-      "confidence": "high",
+      "confidence": "medium",
       "children": [
-        { "id": "facility.steam.boiler-house", "name": "The boiler house", "description": "A tall, heavily built single-storey steel-framed building with a travelling crane, the boilers in a row, coal bunkers or an oil day tank alongside, and the chimney outside. Even in 1983 it was the tallest building on most industrial sites.", "kind": "facility", "category": "energy", "era": "1960-1990", "confidence": "high",
+        { "id": "facility.steam.boiler-house", "name": "The boiler house", "description": "A tall, heavily built single-storey steel-framed building with a travelling crane, the boilers in a row, coal bunkers or an oil day tank alongside, and the chimney outside. Even in 1983 it was the tallest building on most industrial sites.", "kind": "facility", "category": "energy", "era": "1960-1990", "confidence": "medium",
           "children": [
             { "id": "facility.steam.fuel-handling", "name": "Fuel handling and bunker", "description": "A conveyor, a hopper and a boiler feed screw, or an oil tank and a pump skid. Manual barrow-and-shovel coal handling was still normal at plants below about 10 t/h.", "kind": "tool", "category": "industry", "era": "1983", "confidence": "medium" }
-          ] },
+          ],
+      "note": "Not established: the description of the era's boiler house as a tall single-storey steel-framed building with a travelling crane, and that it was the tallest building on most industrial sites. Architectural description, not a sourced claim."
+    },
         { "id": "facility.steam.boiler", "name": "Water-tube boiler", "description": "Two-drum or three-drum evaporators with a superheater. Industrial boilers of 4-20 t/h fired coal at about 6-9 bar saturated, directly into the plant's heating and process network. Economisers and feedwater heaters recovered heat; a fraction of the boiler water was blown down to keep total dissolved solids and alkalinity inside limits, which is why the make-up had to be soft or demineralised or the cycles of concentration collapsed. That blowdown went to a flash tank for heat recovery and then to the cooling-water basin. Two spring-loaded safety valves per drum, a feedwater level regulator and a refractory-lined sight-glass port were the bits an operator actually watched.", "kind": "tool", "category": "industry", "era": "1960-1990",
           "facts": [ {"label": "Capacity", "value": "2-20 t/h industrial; 50-300 t/h for power-house duty"}, {"label": "Working pressure", "value": "6-9 bar saturated"} ],
-          "confidence": "high",
+          "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Boiler"],
           "children": [
             { "id": "facility.steam.fuel", "name": "Industrial boiler fuel", "description": "Anthracite, bituminous coal, fuel oil or - very commonly in Hong Kong, Japan and Taiwan - coal briquettes pressed from imported anthracite fines in a ring-die or pillow press.", "kind": "material", "category": "industry", "era": "1983",
               "inputs": ["facility.coal", "facility.oil"],
-              "confidence": "high",
+              "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Anthracite", "https://en.wikipedia.org/wiki/Petroleum"],
               "children": [
                 { "id": "facility.steam.briquette", "name": "Coal briquette (hongsha / pressed coal)", "description": "Binderless or starch-bound anthracite fines pressed at 200 bar into egg-shaped briquettes about 100 g each, fired on a grate. Hong Kong's thermal power and much of its industrial boiler load ran on exactly this fuel.", "kind": "material", "category": "industry", "era": "1983",
                   "places": ["Hong Kong", "Japan", "Korea"],
-                  "confidence": "high",
+                  "confidence": "medium",
                   "children": [
                     { "id": "facility.steam.anthracite", "name": "Anthracite fines", "description": "Hard, high-carbon coal, largely imported to the Far East from South Wales, Vietnam and China. Ends at the anthracite seam.", "kind": "material", "category": "industry", "era": "Carboniferous", "places": ["South Wales", "Hòn Gai, Vietnam", "Pingxiang, China"], "confidence": "medium" }
-                  ] }
+                  ],
+      "note": "Not established: the 200 bar pressing pressure, the 100 g egg-shaped briquette and the claim that Hong Kong's industrial boiler load ran on this fuel. The encyclopaedia has no article on coal briquettes, and no Hong Kong fuel document was located."
+    }
             ] },
             { "id": "facility.steam.safety-valves", "name": "Safety valves and drum level control", "description": "Two spring-loaded safety valves per drum, a feedwater level regulator on the drum, and the refractory-lined sight-glass port that operators actually looked at. A steam plant is a place where the concrete is usually older than the manager.", "kind": "tool", "category": "industry", "era": "1983", "confidence": "medium" }
           ] },
@@ -351,112 +371,136 @@
           ] },
         { "id": "facility.steam.header", "name": "Steam header and distribution", "description": "A large-diameter steel pipe - 300-800 mm - with flanged or socket-welded branches to each user, insulation lagged in magnesium-block or calcium-silicate, and a trap at every low point. Steam was distributed at constant pressure from a header rather than generated at each machine.", "kind": "facility", "category": "energy", "era": "1960-1990",
           "inputs": ["carbon steel", "magnesium block insulation", "asbestos lagging"],
-          "confidence": "high",
+          "confidence": "medium",
           "children": [
             { "id": "facility.steam.insulation", "name": "Steam pipe insulation", "description": "Moulded magnesium-block sections, calcium silicate or, on hot surfaces, an asbestos-based rope and canvas wrap. Asbestos lagging was utterly routine on a 1980s steam line and is the reason so many power and chemical plants have mesothelioma claims decades later.", "kind": "material", "category": "industry", "era": "1983",
               "inputs": ["magnesium oxide", "calcium silicate", "asbestos"],
-              "confidence": "high",
+              "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Calcium_silicate", "https://en.wikipedia.org/wiki/Magnesium_oxide", "https://en.wikipedia.org/wiki/Asbestos"],
               "children": [
                 { "id": "facility.steam.asbestos", "name": "Asbestos (chrysotile) mineral", "description": "Fibrous magnesium silicate mined from open pits and shafts in Quebec, South Africa, Italy and the Soviet Union, and spun, carded and woven into rope, cloth and board. This is the single most under-acknowledged raw material in any 1980s industrial plant.", "kind": "material", "category": "industry", "era": "1983",
                   "places": ["Thetford Mines, Quebec", "Priesa, Transvaal", "Balangero, Italy"],
-                  "confidence": "high",
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Asbestos"],
                   "children": [
-                    { "id": "facility.steam.asbestos-mine", "name": "Asbestos mine and mill", "description": "A serpentinite or chrysotile orebody worked by open pit or underground, then crushed, graded and carded. Ends at the serpentinite rock in the ground.", "kind": "facility", "category": "industry", "era": "1983", "confidence": "high" }
+                    { "id": "facility.steam.asbestos-mine", "name": "Asbestos mine and mill", "description": "A serpentinite or chrysotile orebody worked by open pit or underground, then crushed, graded and carded. Ends at the serpentinite rock in the ground.", "kind": "facility", "category": "industry", "era": "1983", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Asbestos"] }
                   ] }
               ] }
-          ] },
+          ],
+      "note": "Not established: the 300-800 mm header diameter, the magnesium-block and calcium-silicate lagging practice, and the socket-welded branch detail. No piping or steam-distribution standard was located."
+    },
         { "id": "facility.steam.condensate-return", "name": "Condensate return", "description": "Steam traps in every steam-consuming process returned hot condensate to the hotwell. Recovering it saved both fuel and water-treatment chemical, and the copper condensate pipework of a 1980s plant was a continuous, weeping mess of unions and gaskets.", "kind": "process", "category": "energy", "era": "1960-1990",
           "facts": [ {"label": "Typical recovery", "value": "50-70% of steam as condensate"} ],
-          "confidence": "high",
+          "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Steam_trap"],
           "children": [
             { "id": "facility.steam.trap", "name": "Steam trap", "description": "A thermostatic (bimetallic or liquid-expansion) or mechanical bucket trap with a strainer upstream. Failed-open traps cost fuel; failed-closed traps flooded the plant. Every steam system of the era leaked at a few percent of its steam load, largely from these.", "kind": "part", "category": "industry", "era": "1983",
               "inputs": ["cast iron", "brass", "stainless steel"],
-              "confidence": "high" }
+              "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Steam_trap"] }
           ] },
-        { "id": "facility.steam.feedwater-treatment", "name": "Boiler feedwater treatment", "description": "Two chemistries: lime-soda softening for the low-pressure plant, and ion-exchange demineralisation for anything above about 20 bar. By 1983 the whole industry standard was sodium-cycle cation plus strong-base anion demineralisation with a mixed-bed polish.", "kind": "process", "category": "energy", "era": "1960-1990", "confidence": "high",
+        { "id": "facility.steam.feedwater-treatment", "name": "Boiler feedwater treatment", "description": "Two chemistries: lime-soda softening for the low-pressure plant, and ion-exchange demineralisation for anything above about 20 bar. By 1983 the whole industry standard was sodium-cycle cation plus strong-base anion demineralisation with a mixed-bed polish.", "kind": "process", "category": "energy", "era": "1960-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Boiler_feedwater"],
           "children": [
             { "id": "facility.steam.lime-soda", "name": "Lime-soda softening", "description": "Slaked lime Ca(OH)2 and soda ash Na2CO3 are dosed into a hot reaction basin, converting the scale-forming calcium and magnesium hardness into calcium carbonate and magnesium hydroxide sludge, which settles in a clarifier. This is the classic 1900-1960 process, still running at small industrial plants in 1983. Produces a lot of sludge.", "kind": "process", "category": "energy", "era": "1900-1990",
               "inputs": ["slaked lime", "soda ash", "raw water"],
-              "confidence": "high",
+              "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Water_softening"],
               "children": [
                 { "id": "facility.steam.lime", "name": "Burn and hydrate lime", "description": "Quicklime CaO is burnt from limestone in a vertical or flash calciner at about 1000 C, losing its carbon dioxide as CO2 and leaving a caustic porous solid; it is then hydrated, an exothermic reaction that turns it into slaked lime Ca(OH)2 for the lime-soda process. Ends at the limestone quarry face.", "kind": "process", "category": "industry", "era": "1983",
                   "facts": [ {"label": "Calcination temperature", "value": "about 1000 C"}, {"label": "Yield", "value": "roughly 0.56 t CaO per tonne of pure CaCO3"} ],
                   "inputs": ["metal.limestone"],
-                  "confidence": "high" },
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Lime_(material)"] },
                 
                 { "id": "facility.steam.hardness-sludge", "name": "Calcium carbonate / magnesium hydroxide sludge", "description": "The lumpy waste from lime-soda softening, pumped to a thickener and then to a drying bed or trucked to landfill wet. This is the sludge that fills the lagoons around old steel and chemical works.", "kind": "material", "category": "industry", "era": "1983",
                   "inputs": ["lime", "soda ash", "hard water"],
-                  "confidence": "high" }
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Water_softening"] }
               ] },
             { "id": "facility.steam.demineralisation", "name": "Ion-exchange demineralisation", "description": "A cation exchanger in the sodium form swaps Ca/Mg for Na; a strongly basic anion exchanger then swaps the bicarbonate/sulphate/chloride anions for OH; CO2 is degassed between the two beds by a packed or bubble column, because skipping the degasser overloaded the anion resin with carbonic acid and shortened its life; the effluent is then polished in a mixed bed to the sodium-chloride equivalent of a few tens of ppb. Resin is regenerated with 10-20% caustic and 6-12% hydrochloric or sulphuric acid, and each regeneration blew a large slug of acidic or alkaline brine once or twice a day that had to go somewhere - in 1983 usually a lined lagoon, a settling pond and then a discharge permit.", "kind": "process", "category": "industry", "era": "1960-1990",
               "facts": [ {"label": "Demineralised water", "value": "typically 0.1-1.0 us/cm (10-100 Mohm-cm) after a mixed bed"}, {"label": "Regeneration frequency", "value": "once or twice a day per bed"} ],
               "inputs": ["softened water", "caustic soda", "hydrochloric acid", "ion exchange resin"],
-              "confidence": "high",
+              "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Ion-exchange_resin"],
               "note": "Modern practice adds a second pass of RO/mixed bed and typically achieves 18 Mohm-cm; the 1980s benchmark for a good mixed bed was 10-15 Mohm-cm.",
               "children": [
                 { "id": "facility.steam.ion-resin", "name": "Ion-exchange resin (polystyrene-DVB)", "description": "A gel-type cation resin (sulfonic acid groups) or an anion resin (quaternary ammonium groups) on a cross-linked polystyrene-divinylbenzene bead. Beads of 0.3-1.0 mm, sieved into size fractions so the fine resin could be kept out of the top of the bed.", "kind": "material", "category": "industry", "era": "1983",
                   "inputs": ["styrene", "divinylbenzene"],
-                  "confidence": "high",
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Divinylbenzene", "https://en.wikipedia.org/wiki/Ion-exchange_resin"],
                   "children": [
                     { "id": "facility.steam.styrene", "name": "Styrene monomer", "description": "Produced by dehydrogenating ethylbenzene or by cracking benzene, both from the aromatic fraction of an oil refinery. A C8H8 molecule - the same feedstock family as the styrene in the ABS case of the C64.", "kind": "material", "category": "plastics", "era": "1983",
                       "inputs": ["facility.oil"],
-                      "confidence": "high" },
-                    { "id": "facility.steam.divinylbenzene", "name": "Divinylbenzene crosslinker", "description": "A small fraction of a C10H10 comonomer added to the styrene so the bead does not dissolve in the caustic used for regeneration. This crosslinking is what makes the resin insoluble and gives it its capacity.", "kind": "material", "category": "plastics", "era": "1983", "inputs": ["benzene"], "confidence": "high" }
+                      "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Styrene"] },
+                    { "id": "facility.steam.divinylbenzene", "name": "Divinylbenzene crosslinker", "description": "A small fraction of a C10H10 comonomer added to the styrene so the bead does not dissolve in the caustic used for regeneration. This crosslinking is what makes the resin insoluble and gives it its capacity.", "kind": "material", "category": "plastics", "era": "1983", "inputs": ["benzene"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Divinylbenzene"] }
                   ] }
               ] }
           ] }
-      ] },
+      ],
+      "note": "Not established: that most industrial steam plants of 1983 were field-assembled water-tube boilers with their own turbo-alternator, and the 6-10 bar process and 25-45 bar turbo-alternator pressure figures."
+    },
 
     { "id": "facility.water", "name": "Water for a factory", "description": "Every 1980s electronics and metals plant drank more water than it realised, and it arrived from one of two places. Two distinct demands sit on top of it: ordinary industrial water for cooling, rinsing, process and human use, and, in the fab, water pure enough to grow an oxide on silicon without introducing a defect. Point consumers at facility.water.industrial or facility.water.ultrapure rather than at this node, and attach them with `from` - a water treatment plant is an ingredient of the process, never a component of the product.", "kind": "facility", "category": "fluids", "era": "1960-1990",
       "facts": [ {"label": "Industrial process water", "value": "hundreds of m3 per day for cooling; tens of m3 per day of ultrapure"} ],
-      "confidence": "high",
+      "confidence": "medium",
       "children": [
         { "id": "facility.water.raw-intake", "name": "Raw water intake", "description": "Either a surface intake from a river or reservoir, or a deep well into a confined aquifer. Surface water for cooling, well water for the ultrapure plant - because groundwater is already filtered by geology and low in organics.", "kind": "facility", "category": "fluids", "era": "1960-1990",
           "children": [
             { "id": "facility.water.well", "name": "Deep well and well pump", "description": "A 150-300 mm steel or PVC casing to 100-300 m with a deep-turbine or submersible pump. In the Lehigh Valley the sand-and-gravel aquifer gave soft, iron-bearing water that had to be degreased; in Taiwan the wells hit 100-300 m of Pleistocene gravel.", "kind": "facility", "category": "fluids", "era": "1983",
-              "confidence": "high",
+              "confidence": "medium",
               "children": [
                 { "id": "facility.water.well-screen", "name": "Well screen and gravel pack", "description": "Wire-wound or slotted screen with a graded silica-sand or garnet gravel pack, wrapped in geotextile. Stops the well pumping sand and the aquifer silting up the pump.", "kind": "part", "category": "industry", "era": "1983",
                   "inputs": ["stainless steel", "silica gravel"],
                   "confidence": "medium",
-                  "children": [ { "id": "facility.water.aquifer-gravel", "name": "Aquifer sand and gravel", "description": "Glacial outwash and alluvial gravel forming the confined aquifer; the raw material of the well itself and the source of the hardness and iron.", "kind": "material", "category": "industry", "era": "Pleistocene", "places": ["Lehigh Valley, Pennsylvania", "Chianan Plain, Taiwan", "Hong Kong"], "confidence": "high", "children": [ { "id": "facility.water.aquifer", "name": "Confined sand-and-gravel aquifer", "description": "The buried glacial outwash and alluvial gravel bed, laid down in the Pleistocene and now saturated under pressure by an impermeable cap. It is the rock the well is drilled into, the source of the hardness and dissolved iron that the treatment plant has to remove, and the reason groundwater was preferred over river water for an ultrapure plant. Ends at the ground.", "kind": "material", "category": "industry", "era": "Pleistocene", "confidence": "high" } ] }
+                  "children": [ { "id": "facility.water.aquifer-gravel", "name": "Aquifer sand and gravel", "description": "Glacial outwash and alluvial gravel forming the confined aquifer; the raw material of the well itself and the source of the hardness and iron.", "kind": "material", "category": "industry", "era": "Pleistocene", "places": ["Lehigh Valley, Pennsylvania", "Chianan Plain, Taiwan", "Hong Kong"], "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Aquifer"], "children": [ { "id": "facility.water.aquifer", "name": "Confined sand-and-gravel aquifer", "description": "The buried glacial outwash and alluvial gravel bed, laid down in the Pleistocene and now saturated under pressure by an impermeable cap. It is the rock the well is drilled into, the source of the hardness and dissolved iron that the treatment plant has to remove, and the reason groundwater was preferred over river water for an ultrapure plant. Ends at the ground.", "kind": "material", "category": "industry", "era": "Pleistocene", "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Aquifer"],
+      "note": "Not established: the Pleistocene age and glacial origin of the buried outwash the node describes, and the claim that groundwater was preferred over river water for an ultrapure plant. The aquifer article supports the confined-aquifer concept only."
+    } ],
+      "note": "Not established: that the Lehigh Valley, Chianan Plain and Hong Kong aquifers are confined sand-and-gravel of Pleistocene age. Aquifers as a concept are sourced; the per-place geology is not."
+    }
               ] }
-            ] },
-            { "id": "facility.water.surface-intake", "name": "River / reservoir intake and pump house", "description": "A screened intake structure with travelling-bar screens, coarse screens and a low-lift pump house on the bank. In practice many 1980s plants - including Commodore's Taiwanese subcontractors in the export-processing zones - bought municipal or industrial-zone water from the local authority and paid a tariff, rather than taking their own.", "kind": "facility", "category": "fluids", "era": "1960-1990", "confidence": "high",
+            ],
+      "note": "Not established: the 150-300 mm casing to 100-300 m depths, and the specific claims about Lehigh Valley iron-bearing water and 100-300 m of Pleistocene gravel under Taiwan. No hydrogeological document located for these places."
+    },
+            { "id": "facility.water.surface-intake", "name": "River / reservoir intake and pump house", "description": "A screened intake structure with travelling-bar screens, coarse screens and a low-lift pump house on the bank. In practice many 1980s plants - including Commodore's Taiwanese subcontractors in the export-processing zones - bought municipal or industrial-zone water from the local authority and paid a tariff, rather than taking their own.", "kind": "facility", "category": "fluids", "era": "1960-1990", "confidence": "medium",
               "children": [
                 { "id": "facility.water.river-intake", "name": "The river or reservoir", "description": "Turbid, hard, seasonally variable. The Schuylkill at Norristown, the Sham Chun at Hong Kong, the Tamsui at Taipei, the Keelung river, and the many dams that supplied Hong Kong from the 1960s (Plover Cove, 1973).", "kind": "material", "category": "fluids", "era": "1983",
                   "places": ["Schuylkill River, Norristown PA", "Sham Chun, Hong Kong", "Tamsui River, Taipei", "Keelung River"],
-                  "confidence": "high" }
-              ] }
+                  "confidence": "medium",
+      "note": "Not established: the named intakes and their characterisations. In particular the Sham Chun, Tamsui and Keelung river claims and Plover Cove's 1973 date are not tied to a water authority document here."
+    }
+              ],
+      "note": "Not established: that Commodore's Taiwanese subcontractors in the export-processing zones bought municipal or industrial-zone water rather than taking their own. No waterworks or government document located on Taiwanese industrial water supply in that period."
+    }
           ] },
-        { "id": "facility.water.pretreatment", "name": "Water pretreatment plant", "description": "Coagulation, clarification, multimedia filtration and activated carbon, all in one reinforced-concrete block that dominated the plant footprint. The purpose is to strip the water of the things that would poison an ion-exchange resin or foul an RO membrane: suspended solids, colour, hardness, chlorine, organics and silica. It feeds both the ultrapure plant and the ordinary industrial side.", "kind": "facility", "category": "fluids", "era": "1960-1990", "confidence": "high",
+        { "id": "facility.water.pretreatment", "name": "Water pretreatment plant", "description": "Coagulation, clarification, multimedia filtration and activated carbon, all in one reinforced-concrete block that dominated the plant footprint. The purpose is to strip the water of the things that would poison an ion-exchange resin or foul an RO membrane: suspended solids, colour, hardness, chlorine, organics and silica. It feeds both the ultrapure plant and the ordinary industrial side.", "kind": "facility", "category": "fluids", "era": "1960-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Water_treatment"],
           "children": [
             { "id": "facility.water.coagulation", "name": "Coagulation and clarification", "description": "Alum or ferric chloride plus lime and a coagulant aid is flash-mixed, then the floc is grown in a flocculation bay and settled out over 2-4 hours in a clarifier. Residual turbidity had to be under about 1-2 NTU for the sand filters to be worth having.", "kind": "process", "category": "fluids", "era": "1960-1990",
               "inputs": ["alum", "ferric chloride", "lime", "raw water"],
               "facts": [ {"label": "Dose", "value": "20-80 mg/L alum"}, {"label": "Target", "value": "<2 NTU after clarification"} ],
-              "confidence": "high",
+              "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Coagulation_(water_treatment)"],
               "children": [
                 { "id": "facility.water.alum", "name": "Alum (hydrated aluminium sulfate)", "description": "The workhorse coagulant. Made from bauxite (or domestic low-grade bauxite/clay) digested in sulphuric acid and crystallised. Ended at the bauxite mine by way of the same chain that makes the aluminium in the grid conductor.", "kind": "material", "category": "metals", "era": "1983",
                   "inputs": ["bauxite", "sulphuric acid"],
-                  "confidence": "high",
+                  "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Aluminium_sulfate"],
                   "children": [
                     
                   ] }
-              ] },
+              ],
+      "note": "Not established: the 20-80 mg/L alum dose, the 2-4 hour settling period and the under-2 NTU target. The coagulation article supports the mechanism and the role of alum but states none of these figures."
+    },
             { "id": "facility.water.multimedia-filtration", "name": "Multimedia (sand) filtration", "description": "Pressure filters in lead/catalysed iron tanks, 3.5-4.5 m diameter, containing 600-700 mm of graded media - typically 100 mm anthracite on 50 mm sand on 25 mm garnet. Backwashed with air scour plus water at 20-40 m/h.", "kind": "process", "category": "fluids", "era": "1960-1990",
               "inputs": ["clarified water", "backwash water"],
               "facts": [ {"label": "Filtration rate", "value": "8-15 m/h"}, {"label": "Media", "value": "anthracite / sand / garnet"} ],
-              "confidence": "high",
+              "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Water_treatment"],
               "children": [
                 { "id": "facility.water.filter-sand", "name": "Silica filter sand", "description": "Washed, graded, nearly pure SiO2 sand with effective size 0.5-0.7 mm. A large, unglamorous, and genuinely scarce mineral input to any waterworks.", "kind": "material", "category": "industry", "era": "1983",
                   "inputs": ["sand quarry"],
-                  "confidence": "high",
-                  "children": [ { "id": "facility.water.sand-quarry", "description": "A pit worked by river dredging or by bank excavation beside a watercourse, screening the outwash into a concrete-aggregate fraction and a finer silica fraction. Filter sand is scarce: it has to be nearly pure SiO2 with an effective size of 0.5-0.7 mm, and most river gravel is too dirty to wash up to standard. Ends at the sand deposit.", "kind": "facility", "category": "industry", "era": "1983", "name": "Sand and gravel extraction pit", "confidence": "high" } ] },
-                { "id": "facility.water.anthracite", "name": "Anthracite filter coal", "description": "Hard, coarse anthracite crushed to 1-2 mm as the coarse top layer. Same material as the boiler fuel, just graded differently.", "kind": "material", "category": "industry", "era": "1983", "inputs": ["facility.coal"], "confidence": "high" }
-              ] },
+                  "confidence": "low",
+                  "children": [ { "id": "facility.water.sand-quarry", "description": "A pit worked by river dredging or by bank excavation beside a watercourse, screening the outwash into a concrete-aggregate fraction and a finer silica fraction. Filter sand is scarce: it has to be nearly pure SiO2 with an effective size of 0.5-0.7 mm, and most river gravel is too dirty to wash up to standard. Ends at the sand deposit.", "kind": "facility", "category": "industry", "era": "1983", "name": "Sand and gravel extraction pit", "confidence": "low",
+      "note": "Not established: that filter sand is scarce because most river gravel is too dirty to wash up to standard. No document located."
+    } ],
+      "note": "Not established: that filter sand has an effective size of 0.5-0.7 mm and that it is a scarce mineral input. The encyclopaedia has no article on filter or silica sand for water treatment (the Silica sand article redirects to sand casting), and no waterworks standard was located."
+    },
+                { "id": "facility.water.anthracite", "name": "Anthracite filter coal", "description": "Hard, coarse anthracite crushed to 1-2 mm as the coarse top layer. Same material as the boiler fuel, just graded differently.", "kind": "material", "category": "industry", "era": "1983", "inputs": ["facility.coal"], "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Anthracite"],
+      "note": "Not established: the 1-2 mm grading as a filter medium. Anthracite is documented as a hard, high-carbon coal used for power generation and metallurgy; its use as crushed filter coal is not stated in the cited article."
+    }
+              ],
+      "note": "Not established: the 3.5-4.5 m vessel diameter, the 100/50/25 mm anthracite-sand-garnet bed and the 20-40 m/h backwash rate. No standard or waterworks manual was located stating multimedia filter bed specifications."
+    },
             { "id": "facility.water.activated-carbon", "name": "Activated carbon adsorption", "description": "A tall bed of coconut-shell, coal or lignite carbon catalytically activated in a furnace, removing humic colour, trihalomethane precursor, pesticide and industrial organics. In the ultrapure plant it was the last chance to remove organics before the ion-exchange resin and the RO membrane.", "kind": "process", "category": "fluids", "era": "1960-1990",
               "inputs": ["water", "activated carbon"],
-              "confidence": "high",
+              "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Water_treatment", "https://en.wikipedia.org/wiki/Activated_carbon"],
               "children": [
                 
               ] }
@@ -468,16 +512,18 @@
           "children": [
             { "id": "facility.water.ion-exchange", "name": "Demineralisation by ion exchange", "description": "Strong-acid cation then strong-base anion exchange, then a mixed-bed polish. Removed >95% of the ionic load of the filtered water and got to 10-15 MOhm-cm. It could not remove silica, organics or colloids, and the resin was a huge organic load in itself.", "kind": "process", "category": "fluids", "era": "1960-1990",
               "inputs": ["filtered water", "caustic soda", "hydrochloric acid"],
-              "confidence": "high" },
+              "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Ion-exchange_resin"] },
             { "id": "facility.water.mixed-bed", "name": "Mixed-bed deioniser", "description": "A single resin bed with the cation and anion beads thoroughly mixed, polishing the effluent of the two-bed demineraliser down to a few tens of parts per billion of the sodium-chloride equivalent. It was the top of the 1980s purity curve and was standard offtake to the wet benches; the resin was regenerated with caustic and acid at the same time rather than in sequence, which is what gave the single-pass polish its quality.", "kind": "process", "category": "fluids", "era": "1960-1990",
               "inputs": ["facility.water.ion-exchange"],
               "facts": [ {"label": "Resistivity", "value": "10-18 MOhm-cm"} ],
-              "confidence": "high" },
+              "confidence": "medium",
+      "note": "Not established: the few tens of parts per billion NaCl equivalent outturn and the 10-18 Mohm-cm resistivity figure. The ion-exchange resin article documents resin types and regeneration but not the mixed-bed polish performance of a semiconductor water plant."
+    },
             { "id": "facility.water.ro", "name": "Reverse osmosis", "description": "Cellulose acetate or thin-film composite spiral-wound elements in 6-inch pressure vessels rejecting 90-99% of dissolved ions, 95-98% of organics and, importantly for the 1980s plant, most of the silica and hardness. The first RO units were installed at plants like this from the mid-1970s; by 1983 they were displacing two beds of ion exchange ahead of the polishers.", "kind": "process", "category": "fluids", "era": "1970-1990",
               "inputs": ["filtered water", "high-pressure pump"],
               "facts": [ {"label": "Operating pressure", "value": "10-15 bar (brackish) to 55-70 bar (sea water)"}, {"label": "Salt rejection", "value": "95-99.5%"} ],
-              "confidence": "high",
-              "note": "Modern practice is two-pass RO with antiscalant dosing and a final UV and ultrafiltration; the 1980s plant had a single pass and no antiscalant.",
+              "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Reverse_osmosis"],
+              "note": "Modern practice is two-pass RO with antiscalant dosing and a final UV and ultrafiltration; the 1980s plant had a single pass and no antiscalant. Not established: the 10-15 bar brackish and 55-70 bar seawater operating pressures and the 95-99.5% salt rejection figures. The reverse osmosis article gives 2-17 bar for fresh and brackish water and 40-82 bar for seawater, and states no rejection percentage.",
               "children": [
                 { "id": "facility.water.ro-membrane", "name": "Cellulose acetate / TFC membrane", "description": "A 0.2-1.5 micrometre-thick selective layer on a polysulphone support, wound into a spiral and potted with epoxy. This is the same membrane family as the 1541 floppy's read/write head gap in spirit - a nanoscale selective barrier - but the RO element was 1 m long.", "kind": "material", "category": "fluids", "era": "1983",
                   "inputs": ["cellulose acetate", "aromatics"],
@@ -487,32 +533,38 @@
               "confidence": "medium",
               "note": "1948-1983 practice: no UV, no ultrafiltration in most plants; bacteria were managed by keeping the loop hot (60-80 C for hot DI water) or by chlorination upstream.",
               "children": [
-                { "id": "facility.water.uv-lamp", "name": "Low-pressure mercury lamp", "description": "A quartz envelope with a low-pressure mercury vapour discharge emitting 254 nm, immersed in a quartz sleeve in the water. Same lamp chemistry as the germicidal fittings in hospitals.", "kind": "part", "category": "industry", "era": "1983", "inputs": ["quartz glass", "mercury"], "confidence": "high" }
+                { "id": "facility.water.uv-lamp", "name": "Low-pressure mercury lamp", "description": "A quartz envelope with a low-pressure mercury vapour discharge emitting 254 nm, immersed in a quartz sleeve in the water. Same lamp chemistry as the germicidal fittings in hospitals.", "kind": "part", "category": "industry", "era": "1983", "inputs": ["quartz glass", "mercury"], "confidence": "medium",
+      "note": "Not established: the 254 nm emission figure and the low-pressure mercury quartz-envelope construction. The germicidal UV article covers lamp dose and EPA dosage guidance but gives the emission wavelength only in an unsourced table template."
+    }
               ] },
             { "id": "facility.water.di-loop", "name": "Ultrapure distribution loop", "description": "Slotted 316L stainless or PVDF-lined pipework in a continuous recirculating loop, running hot at 60-80 C to suppress bacteria, with take-off points at each wet bench. A loop that is not constantly moving will grow biofilm within a day - the single hardest problem in 1980s ultrapure water. Modern fabs add a terminal ultrafiltration barrier here (1-100 nm hollow-fibre membranes at 1-4 bar, stripping colloids, bacteria and endotoxin); in the 1980s the state of the art was a 0.2 micrometre-rated PTFE or nylon cartridge on the last loop, or nothing at all, and the loop ran hot instead. The liquid leaving the plant is the 10-15 MOhm-cm water the wet benches are plumbed to.", "kind": "facility", "category": "fluids", "era": "1970-1990",
               "facts": [ {"label": "Material", "value": "electropolished 316L stainless, or PVDF-lined"}, {"label": "Loop temperature", "value": "60-80 C (1980s practice); 20-25 C (modern practice, with UV/UF)"} ],
               "inputs": ["18 Mohm-cm water", "PVDF", "316L stainless"],
-              "confidence": "high",
-              "note": "Modern fabs run the loop cold and sterilise it; running hot was the 1980s answer to bio-growth.",
+              "confidence": "medium",
+              "note": "Modern fabs run the loop cold and sterilise it; running hot was the 1980s answer to bio-growth. Not established: the 60-80 C hot-loop practice, the 10-15 Mohm-cm offtake figure, and the terminal ultrafiltration comparison for 1980s plants. No document was located on 1980s ultrapure water distribution loop temperature.",
               "children": [
                 { "id": "facility.water.pvdf", "name": "PVDF (polyvinylidene fluoride)", "description": "A fluoropolymer from vinylidene fluoride, chemically inert to ultrapure water and to most process acids, used as a liner or as solid pipe in ultrapure service. Melting point about 170 C, and it will not support microbial growth.", "kind": "material", "category": "plastics", "era": "1983",
                   "inputs": ["vinylidene fluoride", "R22"],
-                  "confidence": "high" },
+                  "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Polyvinylidene_fluoride"],
+      "note": "Not established: the 170 C melting point and the claim that PVDF will not support microbial growth. The PVDF article supports its origin by polymerising vinylidene difluoride and its non-reactive character; the numbers are not in it."
+    },
                 { "id": "facility.water.pp", "name": "Polypropylene piping", "description": "Polypropylene was the cheapest acid- and chemical-resistant pipe for wet-bench waste lines and reclaim, and (as spun-bonded fabric) the material of the 1980s 'class 100' air filter pre-filter.", "kind": "material", "category": "plastics", "era": "1983",
-                  "inputs": ["propylene"], "confidence": "high" }
+                  "inputs": ["propylene"], "confidence": "medium",
+      "note": "Not established: that polypropylene was the cheapest acid-resistant pipe for 1980s wet-bench waste lines, or that spun-bonded polypropylene was the standard air-filter pre-filter material of the decade."
+    }
               ] }
           ] },
         { "id": "facility.water.industrial", "name": "Ordinary industrial water", "description": "The 99% of the plant's water use: cooling, washing, rinsing, boiler feed, human use. Deliberately not ultrapure, deliberately recycled. This branch is what a factory that needs cooling towers, a degreasing line or boiler make-up should point at; it draws the same raw intake as the ultrapure plant. Everything the plant throws away comes back through two routes: acid, solvent and dump rinses are collected, neutralised, filtered and returned to the pretreatment inlet - water conservation in a 1983 fab was a cost decision, not an environmental one, and a mature plant typically recovered 50-70% of its demand - while the liquid that could not be reclaimed was neutralised, settled and, where the acidity and fluoride demanded it, lime-neutralised with fluoride precipitation, then discharged to a municipal sewer under a permit or to an outfall.", "kind": "facility", "category": "fluids", "era": "1960-1990",
           "facts": [ {"label": "Reclaim recovery", "value": "50-70% of plant demand in a mature 1980s plant"} ],
           "inputs": ["facility.water.raw-intake"],
-          "confidence": "high",
+          "confidence": "medium",
           "children": [
             { "id": "facility.water.cooling-tower", "name": "Induced-draught cooling tower", "description": "A 20-60 m concrete or steel shell packed with fill, with fan blades in the base drawing air up through the falling film of circulating water. Water evaporates, concentrates the dissolved solids, and is purged to the drain or the recovery plant.", "kind": "tool", "category": "fluids", "era": "1960-1990",
               "facts": [ {"label": "Evaporation loss", "value": "~1% of circulating flow per 10 C of wet-bulb depression"}, {"label": "Cycles of concentration", "value": "4-8 typical"} ],
-              "confidence": "high",
+              "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Cooling_tower"],
               "children": [
                 { "id": "facility.water.tower-filling", "name": "Tower fill and eliminator", "description": "Cellulose (Kraft), PVC or polystyrene film fill media in a lattice or dendritic pack, plus a drift eliminator of PVC chevron sheets at the top. Cellulose fill was being replaced by flame-retardant PVC in the mid-1980s for fire reasons.", "kind": "part", "category": "fluids", "era": "1983",
-                  "inputs": ["cellulose", "PVC"], "confidence": "high" },
+                  "inputs": ["cellulose", "PVC"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Cooling_tower"] },
                 { "id": "facility.water.chem-treatment", "name": "Cooling-water chemical treatment", "description": "Chromate-based corrosion inhibitors (the dominant, and environmentally toxic, 1980s chemistry), or the newer phosphate/phosphonate/zinc formulations, plus biocide (chlorine or an organomercurial/isothiazolinone blend) and an antiscalant acid. This is where a large share of the plant's chemical consumption went.", "kind": "process", "category": "fluids", "era": "1983",
                   "inputs": ["chromate", "phosphate", "biocide"],
                   "confidence": "medium",
@@ -520,115 +572,155 @@
                   "children": [
                     { "id": "facility.water.chromate", "name": "Sodium chromate inhibitor", "description": "A dichromate/chromate film former that passivates the steel of the cooling system. Enormously effective, and the reason thousands of 1980s cooling towers are a chromate source in the groundwater.", "kind": "material", "category": "fluids", "era": "1983",
                       "inputs": ["chromite ore"],
-                      "confidence": "high",
+                      "confidence": "medium",
                       "children": [
                         { "id": "facility.water.chromite", "name": "Chromite ore (FeCr2O4)", "description": "The only economic source of chromium. Mined by underground stoping in the Bushveld Complex of South Africa and elsewhere, then smelted to ferrochrome.", "kind": "material", "category": "metals", "era": "1983",
                           "places": ["Bushveld Complex, South Africa", "Oman", "Kola Peninsula, USSR"],
-                          "confidence": "high",
+                          "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Chromite", "https://en.wikipedia.org/wiki/Bushveld_Igneous_Complex"],
                           "children": [
-                            { "id": "facility.water.chromite-mine", "name": "Chromite mine", "description": "A stratiform chromite seam (UG2 in the Bushveld) worked by stoping or by open pit. Ends at the chromitite layer in the ground.", "kind": "facility", "category": "metals", "era": "1983", "confidence": "high" }
+                            { "id": "facility.water.chromite-mine", "name": "Chromite mine", "description": "A stratiform chromite seam (UG2 in the Bushveld) worked by stoping or by open pit. Ends at the chromitite layer in the ground.", "kind": "facility", "category": "metals", "era": "1983", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Bushveld_Igneous_Complex", "https://en.wikipedia.org/wiki/Chromite"] }
                           ] }
-                      ] }
+                      ],
+      "note": "Not established: that chromate was a film-forming corrosion inhibitor in cooling systems, and the claim about thousands of chromate-bearing cooling towers in the 1980s. The encyclopaedia article on sodium chromate is a bare formula page and states none of this."
+    }
                   ] }
-              ] },
-            { "id": "facility.water.evaporative-cooling", "name": "Evaporative (swamp) cooler", "description": "A finned coil with water sprayed over it and an induced-draft fan. Far cheaper than a chiller and it worked well in Hong Kong, Taiwan and Singapore, where the wet-bulb temperature was already low; useless in a humid July in Pennsylvania.", "kind": "tool", "category": "fluids", "era": "1960-1990", "confidence": "high" },
-            { "id": "facility.water.chiller", "name": "Reciprocating chiller", "description": "A compressor, condenser and evaporator in a packaged unit, cooling water or air cooled. The alternative to evaporative cooling wherever the wet-bulb was too high. 1980s chillers were almost all ammonia or R-12/CFC-11, and therefore both a refrigerant-ozone problem and a safety problem.", "kind": "tool", "category": "fluids", "era": "1960-1990", "confidence": "high" }
-          ] }
-      ] },
+              ],
+      "note": "Not established: the evaporation loss of about 1% of circulating flow per 10 C of wet-bulb depression, the 4-8 cycles of concentration figure, and the 20-60 m shell height. The cooling tower cited describes evaporative cooling and drift eliminators but gives none of these figures."
+    },
+            { "id": "facility.water.evaporative-cooling", "name": "Evaporative (swamp) cooler", "description": "A finned coil with water sprayed over it and an induced-draft fan. Far cheaper than a chiller and it worked well in Hong Kong, Taiwan and Singapore, where the wet-bulb temperature was already low; useless in a humid July in Pennsylvania.", "kind": "tool", "category": "fluids", "era": "1960-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Evaporative_cooler"] },
+            { "id": "facility.water.chiller", "name": "Reciprocating chiller", "description": "A compressor, condenser and evaporator in a packaged unit, cooling water or air cooled. The alternative to evaporative cooling wherever the wet-bulb was too high. 1980s chillers were almost all ammonia or R-12/CFC-11, and therefore both a refrigerant-ozone problem and a safety problem.", "kind": "tool", "category": "fluids", "era": "1960-1990", "confidence": "medium",
+      "note": "Not established: that 1980s chillers were almost all ammonia or R-12/CFC-11. Modern chillers are documented as vapour-compression units on a separate condenser water loop; the refrigerant mix of the 1980s is not sourced here."
+    }
+          ],
+      "note": "Not established: that a mature 1980s plant typically recovered 50-70% of its water demand, and the description of the fluoride-precipitation discharge route. Water reuse of that order is plausible industrial practice but no document states it."
+    }
+      ],
+      "note": "Not established: the water volumes. Hundreds of m3 per day for cooling and tens of m3 per day of ultrapure water are not tied to any document for a plant of this size in 1983."
+    },
 
     { "id": "facility.gases", "name": "Industrial gas supply", "description": "The bulk gases a 1980s electronics plant bought by the tanker load: nitrogen, oxygen, argon and hydrogen, plus helium and carbon dioxide. Supplied either by an on-site air separation unit, an on-site PSA/membrane/electrolyser, or delivered as liquid from a merchant producer in a road tanker. Everything in this branch except helium and CO2 starts from the same place: atmospheric air.", "kind": "facility", "category": "fluids", "era": "1960-1990",
       "facts": [ {"label": "Typical purity", "value": "N2 99.99%+; O2 99.5%; Ar 99.99%; H2 99.99% (1980s merchant standard)"} ],
-      "confidence": "high",
-      "note": "Attach these gases with `from`, never `children`: a nitrogen generator or a tube trailer is an ingredient of a process step, not a component of it. Nitrogen, argon and oxygen are also published as ids other fragments reference directly, so they must keep their names and ids stable.",
+      "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Air_separation"],
+      "note": "Attach these gases with \from, never children: a nitrogen generator or a tube trailer is an ingredient of a process step, not a component of it. Nitrogen, argon and oxygen are also published as ids other fragments reference directly, so they must keep their names and ids stable. Not established: the 1980s merchant purity specification quoted in the facts (N2 99.99%+, O2 99.5%, Ar 99.99%, H2 99.99%). The air separation article supports ASU output purities of 97.5-99.5% oxygen and co-production of argon, not a merchant-grade table.",
       "children": [
         { "id": "facility.nitrogen", "name": "Nitrogen supply", "description": "The single largest bulk gas. Used for inerting storage tanks and vessels, blanketing, purging, and as the carrier gas in diffusion furnaces and plasma etchers. Small plants bought a few tonnes a month of liquid N2; a furnace-loaded fab wanted tens of tonnes a day and built its own ASU.", "kind": "material", "category": "fluids", "era": "1983",
           "inputs": ["atmospheric air"],
           "facts": [ {"label": "Purity grades", "value": "99.9% (roughing/purging), 99.99% (blanketing), 99.999% (5N, furnace and process)"} ],
-          "confidence": "high",
+          "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Air_separation"],
           "children": [
             { "id": "facility.nitrogen.atmospheric-air", "name": "Atmospheric air", "description": "78.08% nitrogen, 20.95% oxygen, 0.93% argon, plus water and CO2. The single source of every bulk industrial gas. Delivered to an ASU intake through a windowless, acoustically baffled multi-bay intake so it arrived at a steady temperature, humidity and free of the dust that would plug a cryogenic plant.", "kind": "material", "category": "fluids", "era": "1983",
               "facts": [ {"label": "Composition", "value": "N2 78.08%, O2 20.95%, Ar 0.93%, CO2 0.03%"} ],
-              "confidence": "high",
+              "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Atmosphere_of_Earth"],
               "children": [
                 { "id": "facility.nitrogen.atmospheric-air.intake", "name": "Air intake stack", "description": "A tall concrete or brick stack with louvres facing away from the prevailing wind, feeding a plenum and the air compressor. Intakes were sited so that no two of them - for air, for cooling water, for the coal yard - were close enough to contaminate each other.", "kind": "facility", "category": "fluids", "era": "1960-1990", "confidence": "medium" }
-              ] },
+              ],
+      "note": "CO2 figure uncertain: the quoted 0.03% is the pre-1990 concentration. The standard reference composition of dry air gives carbon dioxide as 0.04%. The nitrogen, oxygen and argon figures are the standard 78.08 / 20.95 / 0.93%."
+    },
             { "id": "facility.nitrogen.cryogenic-asu", "name": "Cryogenic air separation unit (ASU)", "description": "Air is filtered, compressed in a large multi-stage compressor to about 6-7 bar, cooled against the cold product streams until it liquefies, then fractionally distilled in a low-temperature column to make oxygen and a nitrogen-argon mixture. A unit also making argon has a separate argon column fed from the top of the nitrogen column. Typical small unit: 1,000-5,000 Nm3/h of oxygen.", "kind": "facility", "category": "fluids", "era": "1960-1990",
               "facts": [ {"label": "Oxygen delivery pressure", "value": "typically 0.5-0.6 MPa at the battery limit, piped up to 3-4 MPa"} ],
               "inputs": ["atmospheric air"],
-              "confidence": "high",
-              "note": "Oxygen delivery pressure is the one number that gets conflated: 4000-6000 kPa is the high-pressure liquid-oxygen case, pumped at 50-100 bar before the warm end of the vaporiser, while a plant that piped oxygen directly would normally run at 400-600 kPa.",
+              "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Air_separation"],
+              "note": "Oxygen delivery pressure is the one number that gets conflated: 4000-6000 kPa is the high-pressure liquid-oxygen case, pumped at 50-100 bar before the warm end of the vaporiser, while a plant that piped oxygen directly would normally run at 400-600 kPa. Not established: the 1,000-5,000 Nm3/h small-unit size and the oxygen delivery pressures as figures. The air separation article describes the cycle and the high- and low-pressure columns; it gives no delivery pressure and no unit size.",
               "children": [
-                { "id": "facility.nitrogen.asu-heat-exchanger", "name": "Cold box (plate-fin heat exchanger)", "description": "A stack of aluminium brazed plate-fin exchangers, some 10-20 m tall, in which the compressed air is progressively cooled to -196 C by the outgoing oxygen and nitrogen. The heart of every ASU.", "kind": "tool", "category": "fluids", "era": "1960-1990", "inputs": ["aluminium", "stainless steel"], "confidence": "high" },
-                { "id": "facility.nitrogen.asu-tower", "name": "Fractionating columns", "description": "Insulated stainless-steel columns 5-10 m tall with trays or packing, holding the low-temperature distillation that separates oxygen (bottoms, warmer) from nitrogen and argon (top, colder). A common 1980s arrangement was a single low-temperature column producing oxygen plus a nitrogen-argon mixture, with a side argon column.", "kind": "tool", "category": "fluids", "era": "1960-1990", "confidence": "high" },
-                { "id": "facility.nitrogen.expander", "name": "Expansion turbine (expander)", "description": "A turbine in the cold box that recovers the enthalpy drop of the expanding nitrogen and uses it to generate power, offsetting part of the ASU's compression energy. Standard from the 1960s onward.", "kind": "tool", "category": "fluids", "era": "1960-1990", "confidence": "high" }
+                { "id": "facility.nitrogen.asu-heat-exchanger", "name": "Cold box (plate-fin heat exchanger)", "description": "A stack of aluminium brazed plate-fin exchangers, some 10-20 m tall, in which the compressed air is progressively cooled to -196 C by the outgoing oxygen and nitrogen. The heart of every ASU.", "kind": "tool", "category": "fluids", "era": "1960-1990", "inputs": ["aluminium", "stainless steel"], "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Air_separation"],
+      "note": "Not established: the 10-20 m height of the cold box. The air separation article confirms the plate fin brazed aluminium heat exchangers inside a cold box and the 1-2 K approach between the combined condenser and reboiler; the height is not stated."
+    },
+                { "id": "facility.nitrogen.asu-tower", "name": "Fractionating columns", "description": "Insulated stainless-steel columns 5-10 m tall with trays or packing, holding the low-temperature distillation that separates oxygen (bottoms, warmer) from nitrogen and argon (top, colder). A common 1980s arrangement was a single low-temperature column producing oxygen plus a nitrogen-argon mixture, with a side argon column.", "kind": "tool", "category": "fluids", "era": "1960-1990", "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Air_separation"],
+      "note": "Not established: the 5-10 m insulated stainless column height and the claim about the common 1980s single-column arrangement. The air separation article documents the high-pressure and low-pressure distillation columns and the 1.2-1.3 bar LP column, not column dimensions."
+    },
+                { "id": "facility.nitrogen.expander", "name": "Expansion turbine (expander)", "description": "A turbine in the cold box that recovers the enthalpy drop of the expanding nitrogen and uses it to generate power, offsetting part of the ASU's compression energy. Standard from the 1960s onward.", "kind": "tool", "category": "fluids", "era": "1960-1990", "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Air_separation"],
+      "note": "Not established: that expansion turbines were standard from the 1960s onward and drove the air compressor. The air separation article says modern ASUs use expansion turbines for cooling with the output helping to drive the air compressor; it does not date the practice."
+    }
               ] },
             { "id": "facility.nitrogen.psa", "name": "PSA / molecular-sieve nitrogen generator", "description": "Pressure swing adsorption: compressed air is adsorbed on beds of zeolite molecular sieve at 7-10 bar, then dropped to near atmospheric and purged with a slice of product to release the nitrogen. Gave 90-99% nitrogen cheaply at small scale; the 1980s workhorse for factories of under a few hundred kW load.", "kind": "facility", "category": "fluids", "era": "1980-1990",
               "inputs": ["compressed air", "zeolite"],
               "facts": [ {"label": "Output", "value": "90-99% N2, 0.1-0.5% O2 at 7-10 bar"} ],
-              "confidence": "high",
-              "note": "A PSA unit will not deliver oxygen, at any pressure; 4-6 MPa is a liquid-oxygen or high-pressure-pipeline convention and belongs to the cryogenic branch, not to this one.",
+              "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Pressure_swing_adsorption"],
+              "note": "A PSA unit will not deliver oxygen, at any pressure; 4-6 MPa is a liquid-oxygen or high-pressure-pipeline convention and belongs to the cryogenic branch, not to this one. Not established: the 90-99% nitrogen output and the 7-10 bar operating pressure. The pressure swing adsorption article documents the mechanism and the adsorbents (zeolite, activated carbon, silica gel, alumina, synthetic resins) but states no product purity or pressure.",
               "children": [
                 { "id": "facility.nitrogen.zeolite", "name": "Zeolite molecular sieve (synthetic)", "description": "Crystalline hydrated aluminosilicate with a uniform 3-5 angstrom pore, made by hydrothermal crystallisation of bentonite, kaolin or synthetic gels. Uniform aperture size is what makes PSA possible - a zeolite with 3A pores excludes N2 and adsorbs only O2 and H2O; the 4A and 5A grades are used elsewhere in gas drying.", "kind": "material", "category": "industry", "era": "1983",
                   "inputs": ["bentonite", "sodium silicate", "aluminium hydroxide"],
-                  "confidence": "high",
-                  "note": "The same chemistry gives the 4A sieve that fills the R-2400 filter's perforated shell in the C64's power supply, if the cartridge was the zeolite type rather than the coil type." }
+                  "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Zeolite", "https://en.wikipedia.org/wiki/Pressure_swing_adsorption"],
+                  "note": "The same chemistry gives the 4A sieve that fills the R-2400 filter's perforated shell in the C64's power supply, if the cartridge was the zeolite type rather than the coil type. Not established: the 3-5 angstrom pore size and the claim that a 3A pore excludes N2 while adsorbing O2 and water. The zeolite article confirms that the major molecular sieves 3A, 4A and 5A are all LTA type and defines molecular sieving by size exclusion; the pore figures and the selective-adsorption detail are not in it." }
               ] },
             { "id": "facility.nitrogen.membrane", "name": "Membrane nitrogen generator", "description": "Hollow-fibre asymmetric polyimide or cellulose acetate membranes in a pressure vessel, 20-40 bar feed, with N2 diffusing through the wall faster than O2. Cheap, silent, no regeneration heat, and limited to about 90-95% nitrogen - which is fine for blanketing and not fine for a furnace. By 1983 membrane units were new and uncommon; they took the small-plant market from PSA in the 1990s.", "kind": "facility", "category": "fluids", "era": "1980s",
               "inputs": ["compressed air"],
               "facts": [ {"label": "Purity", "value": "90-95% N2"}, {"label": "Pressure", "value": "20-40 bar"} ],
-              "confidence": "high",
+              "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Air_separation"],
               "children": [
                 { "id": "facility.nitrogen.membrane-polyimide", "name": "Hollow-fibre polyimide membrane", "description": "A thin-walled asymmetric fibre, about 0.1-0.2 micrometre wall, with a selectively permeable outer skin. Making a defect-free fibre over a 1 m length was, and is, the hard part.", "kind": "material", "category": "plastics", "era": "1980s", "inputs": ["pyromellitic dianhydride", "diamines"], "confidence": "medium" }
-              ] },
+              ],
+      "note": "Not established: the 90-95% purity ceiling, the 20-40 bar feed pressure, and that membrane units were new and uncommon by 1983 and took the small-plant market from PSA only in the 1990s. Membrane separation is documented as an alternative to cryogenic air separation; the numbers and the dated market history are not."
+    },
             { "id": "facility.nitrogen.liquid-storage", "name": "Bulk cryogenic liquid storage", "description": "A double-walled vacuum-insulated stainless tank on a skirt, with a vacuum-insulated transfer line (a double pipe with perlite or multilayer reflective insulation between) from the ASU or the delivery tanker. The tank is a pressure vessel rated to about 700-1000 kPa on the inner shell.", "kind": "facility", "category": "fluids", "era": "1960-1990",
               "facts": [ {"label": "Tank sizes", "value": "5-60 m3 merchant tankers; 50-500 m3 on-site bulk tanks"} ],
               "inputs": ["stainless steel", "perlite", "aluminium"],
-              "confidence": "high" },
+              "confidence": "medium",
+      "note": "Not established: the 700-1000 kPa inner-shell rating, the perlite or multilayer insulation detail, and the 5-60 m3 tanker and 50-500 m3 on-site tank sizes. No cryogenic tank standard was located."
+    },
             { "id": "facility.nitrogen.tube-trailer", "name": "Tube trailer (bulk gas road delivery)", "description": "A tractor-trailer carrying 30-40 high-pressure cylinders or a single multi-compartment tube bundle of 6,000-15,000 litres, delivering liquid nitrogen, oxygen or argon from a merchant plant. In 1983 this was how a factory without an on-site ASU got its gases; the driver's unload was a vent line that fogged the yard and alarmed the neighbours.", "kind": "tool", "category": "fluids", "era": "1960-1990",
               "facts": [ {"label": "Capacity", "value": "roughly 2,000-9,000 m3 of gaseous equivalent"} ],
               "inputs": ["high-pressure steel", "liquefaction"],
-              "confidence": "high",
-              "note": "Oxygen road tankers in that era were often marked with a diamond placard and were the single most dangerous vehicle in the industrial park." }
-          ] },
+              "confidence": "medium",
+              "note": "Oxygen road tankers in that era were often marked with a diamond placard and were the single most dangerous vehicle in the industrial park. Not established: the 30-40 cylinder or 6,000-15,000 litre capacity, the 2,000-9,000 m3 gaseous equivalent figure, and that this was the 1983 delivery method for a factory without an on-site ASU. No document located on bulk cryogenic road delivery of that decade." }
+          ],
+      "note": "Not established: the three purity grades quoted (99.9% roughing, 99.99% blanketing, 99.999% furnace) and the tonnage split between small plants and a furnace-loaded fab."
+    },
         { "id": "facility.gases.oxygen", "name": "Oxygen supply", "description": "Supplied as liquid oxygen from a merchant AS U or from the site unit. Used for the oxy-acetylene flame of the mechanical and maintenance shops, the gas-shielded welding of the metal frames, and increasingly for the oxygen plasma strip in a fab.", "kind": "material", "category": "fluids", "era": "1983",
           "inputs": ["atmospheric air"],
           "facts": [ {"label": "Purity", "value": "99.5% O2 merchant, 99.6% industrial"} ],
-          "confidence": "high",
+          "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Air_separation"],
           "children": [
             { "id": "facility.gases.oxygen-acetylene", "name": "Oxy-acetylene flame for tool and frame welding", "description": "Oxygen plus a locally generated acetylene from calcium carbide (in the Far East, imported cylinder acetylene was common). This is the flame that welded every sheet-metal chassis, rack and jig in the factory.", "kind": "process", "category": "industry", "era": "1983",
               "inputs": ["oxygen", "acetylene"],
-              "confidence": "high" },
+              "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Acetylene"],
+      "note": "Not established: that locally generated carbide acetylene was the practice in the Far East with imported cylinders common, and that this flame welded every sheet-metal chassis in the factory. Acetylene's use for welding and cutting is documented; the site practice is not."
+    },
             { "id": "facility.gases.acetylene-cylinder", "name": "Acetylene cylinder", "description": "Dissolved acetylene at 15 bar in a porous monolithic mass (calcium carbide + acetone), in a steel shell. Calcium carbide came from the electric arc furnace carbide plant, i.e. ultimately from coal coke and quicklime.", "kind": "part", "category": "industry", "era": "1983",
               "inputs": ["calcium carbide"],
-              "confidence": "high" }
-          ] },
+              "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Acetylene"],
+      "note": "Not established: the 15 bar filling pressure and the porous monolithic calcium-carbide-and-acetone mass. The acetylene article confirms acetylene solubility in acetone and that calcium carbide production needs an electric arc furnace; the cylinder charging pressure is not stated in the text read."
+    }
+          ],
+      "note": "Not established: the 99.6% industrial grade figure and the oxygen plasma strip use in fabs. Air separation units producing 97.5-99.5% oxygen are documented; merchant liquid oxygen grades are not."
+    },
         { "id": "facility.argon", "name": "Argon", "description": "Argon is not made; it is separated out. It is the third component of air and comes off the top of the ASU's nitrogen column, either as an argon-nitrogen mixture from a simple unit or as 99.99% pure from a dedicated argon column. Most 1980s plants bought it by the tanker as a by-product of someone else's oxygen plant.", "kind": "material", "category": "fluids", "era": "1983",
           "inputs": ["atmospheric air"],
           "facts": [ {"label": "In air", "value": "0.93% by volume"}, {"label": "Typical purity", "value": "99.99%"} ],
-          "confidence": "high",
+          "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Atmosphere_of_Earth", "https://en.wikipedia.org/wiki/Air_separation"],
           "children": [
-            { "id": "facility.argon.argon-column", "name": "Argon recovery column", "description": "A second, smaller column that separates the nitrogen-argon mixture from the top of the nitrogen column into pure argon bottoms and nitrogen tops. Installed when the oxygen plant needed the argon value or the customer paid for it - usually in a semiconductor or welding-wire plant, not in a steelworks.", "kind": "tool", "category": "industry", "era": "1960-1990", "confidence": "high" }
-          ] },
+            { "id": "facility.argon.argon-column", "name": "Argon recovery column", "description": "A second, smaller column that separates the nitrogen-argon mixture from the top of the nitrogen column into pure argon bottoms and nitrogen tops. Installed when the oxygen plant needed the argon value or the customer paid for it - usually in a semiconductor or welding-wire plant, not in a steelworks.", "kind": "tool", "category": "industry", "era": "1960-1990", "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Air_separation"],
+      "note": "Partly established: a separate argon column downstream of the nitrogen column, and the high reflux ratio it needs, are documented. Not established: the description of pure argon bottoms and nitrogen tops, and the claim that it was installed in semiconductor or welding-wire plants rather than steelworks."
+    }
+          ],
+      "note": "Not established: that most 1980s plants bought argon by the tanker as a by-product of someone else's oxygen plant, and the 99.99% typical purity. The 0.93% abundance in air is the standard figure."
+    },
         { "id": "facility.helium", "name": "Helium", "description": "In 1983 helium was a genuinely scarce, genuinely odd commodity. Most of the world's supply came from a handful of natural-gas fractionation plants in Texas, Wyoming, Kansas and New Mexico, which extracted the 0.0005-0.005% helium in the gas as a crude 50-75% mixture. The rest came from four dedicated underground helium fields - the hug gas of Amarillo, Texas, and the Dixon and Harley fields in Kansas. Cryogenic separation of helium from LNG did not become industrial until the late 1990s.", "kind": "material", "category": "fluids", "era": "1983",
           "facts": [ {"label": "Content in natural gas", "value": "0.05-0.5 vol% typically"}, {"label": "Crude purity", "value": "50-75% He before purification"} ],
-          "confidence": "high",
-          "note": "Helium was rationed and price-controlled in the US until the 1996 helium policy change; a factory that needed it in 1983 wrote to a supplier, waited, and paid whatever was quoted.",
+          "confidence": "low", "sources": ["https://en.wikipedia.org/wiki/Helium"],
+          "note": "Helium was rationed and price-controlled in the US until the 1996 helium policy change; a factory that needed it in 1983 wrote to a supplier, waited, and paid whatever was quoted. Not established: the helium content of natural gas quoted here (0.05-0.5 vol%, and 0.0005-0.005% in the description) and the 50-75% crude purity. Reference sources give helium in natural gas as up to several per cent by volume in the richest fields, which does not support these figures either way. Also not established: that cryogenic separation of helium from LNG did not become industrial until the late 1990s. Cryogenic separation from natural gas was in commercial use from the 1920s, and no source was located that dates LNG-based recovery as claimed.",
           "children": [
             { "id": "facility.helium.cryo-separation", "name": "Cryogenic helium separation from natural gas", "description": "The gas is chilled to -190 C through a train of plate-fin heat exchangers; helium, having the second-lowest boiling point, stays in the vapour phase and is drawn off from the top of the cold box as a crude 50-75% helium stream. Then purified by cryogenic adsorption, catalytic dehydrogenation of the residual hydrogen and activated-carbon adsorption of the nitrogen - the last step adsorbs the nitrogen on a char bed at 77 K to give 99.995% (5N) or 99.9999% (6N) helium. The same activated-carbon adsorption principle as the water-treatment carbon, run at liquid-nitrogen temperature.", "kind": "process", "category": "industry", "era": "1970-1990",
               "facts": [ {"label": "Purified purity", "value": "99.995% (5N) to 99.9999% (6N) after the char bed"} ],
               "inputs": ["chem.natural-gas"],
-              "confidence": "high",
+              "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Helium"],
               "children": [
-                { "id": "facility.helium.liquid-helium", "name": "Liquid helium dewar (4.2 K)", "description": "A double-walled stainless vessel with a superinsulating vacuum jacket, holding 4.2 K liquid helium for a cryostat or a superconducting magnet. Expensive, evaporating at about 0.5-1% a day, and topped up by truck in a dewar that looked like a scaled-down rocket stage.", "kind": "tool", "category": "industry", "era": "1983", "inputs": ["helium-4"], "confidence": "high" }
-              ] },
+                { "id": "facility.helium.liquid-helium", "name": "Liquid helium dewar (4.2 K)", "description": "A double-walled stainless vessel with a superinsulating vacuum jacket, holding 4.2 K liquid helium for a cryostat or a superconducting magnet. Expensive, evaporating at about 0.5-1% a day, and topped up by truck in a dewar that looked like a scaled-down rocket stage.", "kind": "tool", "category": "industry", "era": "1983", "inputs": ["helium-4"], "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Helium"],
+      "note": "Not established: the 4.2 K figure, the 0.5-1% per day evaporation rate and the truck top-up practice. The helium article confirms that most helium is liquefied by a cryogenic process and that the safety issues resemble liquid nitrogen; the numbers are not in it."
+    }
+              ],
+      "note": "Not established: the -190 C cold box temperature, the 77 K char-bed temperature, the catalytic dehydrogenation and cryogenic adsorption steps, and the 6N (99.9999%) grade. The helium article confirms that the crude gas is purified by successive cooling and that activated charcoal is the final step giving 99.995% Grade-A helium."
+    },
             { "id": "facility.helium.hug-gas", "name": "Hug gas from an underground helium reservoir", "description": "The Permian Basin of west Texas and the southwest Kansas gas fields hold helium that never migrated out of the crust, trapped under impermeable salt and anhydrite since geological time. These are drilled specifically for helium, at tiny volumes - Amarillo field production was only tens of millions of cubic feet a year even in its peak.", "kind": "facility", "category": "industry", "era": "1983",
               "facts": [ {"label": "Fields", "value": "Cliffside, Amarillo and Bush, Texas; Hugoton, Kansas"}, {"label": "Age of the source", "value": "helium accumulated since Precambrian radiogenic decay"} ],
               "places": ["Amarillo, Texas", "Dixon, Kansas"],
-              "confidence": "high" }
+              "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Helium"],
+      "note": "Partly established: the Cliffside field near Amarillo, Texas and the Bushton, Kansas connection are documented. Not established: the field list (Cliffside, Amarillo and Bush in Texas; Hugoton in Kansas), the Dixon, Kansas place entry, the Precambrian radiogenic accumulation as the age of the specific source, and the claim that Amarillo production was only tens of millions of cubic feet a year at peak."
+    }
           ] },
         { "id": "facility.gases.hydrogen", "name": "Hydrogen", "description": "Three routes in 1983: (a) bulk hydrogen from a merchant plant by tube trailer or by liquefaction; (b) on-site steam methane reforming of natural gas, the standard for anything above about 100 Nm3/h; and (c) electrolysis of demineralised water for the last, and highest, purity.", "kind": "material", "category": "fluids", "era": "1983",
           "facts": [ {"label": "Purities", "value": "95% (reformer), 99.99% (electrolytic, with deoxo polish)"} ],
-          "confidence": "high",
+          "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Hydrogen_production"],
           "children": [
             { "id": "facility.gases.hydrogen.reforming", "name": "Steam methane reforming", "description": "Natural gas is desulphurised to under 0.5 ppm sulphur, mixed with steam at 3:1 and passed over a nickel-molybdenum or chromite catalyst at 800-850 C and 15-25 bar. This gives hydrogen plus CO, and the CO is shifted over an iron-chrome catalyst to CO2 and more hydrogen. Then CO2 is removed by amine scrubbing or molecular sieve.", "kind": "process", "category": "industry", "era": "1970-1990",
               "inputs": ["chem.natural-gas", "steam", "catalyst"],
@@ -638,53 +730,71 @@
             { "id": "facility.gases.hydrogen.electrolysis", "name": "Electrolysis of demineralised water", "description": "In a diaphragm or, from the 1970s, an alkaline cell, a nickel-plated or activated-titanium cathode makes hydrogen while a nickel anode makes oxygen. Fed with conductivity-grade water at 20-25 C. Output purity is 99.99% once the cell gas is passed over a palladium diffuser or an oxygen getter - the 'deoxo' step that killed the last 0.1% of oxygen.", "kind": "process", "category": "industry", "era": "1970-1990",
               "inputs": ["demineralised water", "electricity", "nickel"],
               "facts": [ {"label": "Energy", "value": "about 50-55 kWh per kg of hydrogen"}, {"label": "Purity", "value": "99.99% after deoxo"} ],
-              "confidence": "high" }
-          ] },
+              "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Electrolysis_of_water"],
+      "note": "Not established: the 50-55 kWh per kg energy figure, the nickel anode and activated-titanium cathode construction, the palladium diffuser deoxo step, and the 99.99% output purity. The electrolysis article confirms water electrolysis gives hydrogen at the cathode and oxygen at the anode and describes the palladium-diffusion problem; it does not state the specific cell chemistry or energy figure of that era."
+    }
+          ],
+      "note": "Not established: the 100 Nm3/h threshold above which steam methane reforming was the standard, and the 95% reformer / 99.99% electrolytic purity pair. Steam methane reforming as the cheapest source of industrial hydrogen is documented; the sizes and purities are not."
+    },
         { "id": "facility.gases.carbon-dioxide", "name": "Carbon dioxide (dry ice)", "description": "Used in the plant for refrigerant cargo, for the dry-ice shipping of perishables, and - in the electronics plant - for nothing much; the two dry-ice applications in a 1980s C64 supply chain were chilling the shipped goods and cleaning moulds of frost. A large part of the 1980s merchant supply came not from an oil refinery but from hydrogen- and ammonia-based fertiliser plants, where the shift-reactor CO2 was captured and dried; it ends at natural gas and air.", "kind": "material", "category": "fluids", "era": "1983",
           "inputs": ["facility.oil", "ammonia"],
           "confidence": "medium" },
         { "id": "facility.gases.hydrogen.uses", "name": "Where hydrogen went in a 1980s electronics plant", "description": "Hydrocarbon and silicone greasing, hydrogen annealing of the copper and the metallisation, the reducing atmosphere in the diffusion furnace and the epitaxial reactor, and - for the tie-in with this story - the hydrogen atmosphere in the case of a lamp or a nickel/plated through-hole fill was not yet standard practice.", "kind": "note", "category": "industry", "era": "1983", "confidence": "medium" },
-        { "id": "facility.argon.uses", "name": "Where argon went in a 1980s plant", "description": "TIG welding of the sheet metal and the transformer laminations, the inert blanket over the 1800 C silicon melt in the crystal puller, and - increasingly - argon sputter deposition of the aluminium interconnect in a fab. Almost all of it went into joining metal, not into making silicon.", "kind": "note", "category": "industry", "era": "1983", "confidence": "high" },
+        { "id": "facility.argon.uses", "name": "Where argon went in a 1980s plant", "description": "TIG welding of the sheet metal and the transformer laminations, the inert blanket over the 1800 C silicon melt in the crystal puller, and - increasingly - argon sputter deposition of the aluminium interconnect in a fab. Almost all of it went into joining metal, not into making silicon.", "kind": "note", "category": "industry", "era": "1983", "confidence": "medium",
+      "note": "Not established: the claim that argon sputter deposition of aluminium interconnect was growing in fabs by 1983, and that almost all argon went into joining metal. Argon is documented as a by-product of air separation; its 1983 distribution of uses is not."
+    },
         { "id": "facility.helium.supply-constraint", "name": "The 1980s helium shortage", "description": "US Bureau of Mines and then BLM administered the supply; the Cliffside field ran out in the mid-1970s and production was rationed, so helium became genuinely rationed and expensive for laboratories and for leak testing. This is a real constraint on the 1980s helium supply chain, not a later phenomenon.", "kind": "note", "category": "industry", "era": "1970s-1980s", "confidence": "medium" }
       ] },
 
     { "id": "facility.compressed-air", "name": "Instrument air and plant air", "description": "Every factory ran on compressed air. Instrument air was dried, oil-free air fed to the air-line and to the logic valves; plant air was for the pneumatic tools, the automated insertion machines and the ejectors. The classic 1980s split was a dedicated compressor for instrument air and one or more dirty machines for everything else.", "kind": "facility", "category": "energy", "era": "1960-1990",
       "facts": [ {"label": "Header pressure", "value": "6-7 bar at the ring main"} ],
-      "confidence": "high",
+      "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Compressed_air"],
       "children": [
         { "id": "facility.compressed-air.compressor", "name": "Air compressor", "description": "Reciprocating or, from the 1960s onward, oil-injected rotary screw machines. A large electronics plant ran several 100-300 kW screw units; a small sub-contractor ran one 30 kW reciprocating machine under a concrete acoustic enclosure.", "kind": "tool", "category": "industry", "era": "1960-1990",
           "facts": [ {"label": "Plant machines", "value": "150-400 kW free air delivery each"}, {"label": "Discharge", "value": "7-8 bar"} ],
           "inputs": ["atmospheric air"],
-          "confidence": "high",
+          "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Air_compressor"],
           "children": [
-            { "id": "facility.compressed-air.intake-silencer", "name": "Intake silencer and inlet filter", "description": "An intake filter-silencer combination that kept the machine from eating the dust and the unfiltered outside air. In a coastal site (Kaohsiung, Hong Kong, Long Beach) the sea salt went straight onto the rotors if this was neglected.", "kind": "part", "category": "industry", "era": "1983", "inputs": ["filter media", "steel casing"], "confidence": "high" },
-            { "id": "facility.compressed-air.motor", "name": "Drive motor", "description": "A TEFC or, in a corrosive coastal plant, an explosion-proof motor. 400 V three-phase induction motor with a direct-on-line or star-delta starter; speed control only by pole changing.", "kind": "tool", "category": "power", "era": "1983", "confidence": "high" }
-          ] },
-        { "id": "facility.compressed-air.aftercooler", "name": "Aftercooler", "description": "A water-cooled or finned-air heat exchanger that takes the discharge air from ~100 C down to ~40 C. Without it the machine would not hold pressure in a hot climate and the separator would not work.", "kind": "tool", "category": "industry", "era": "1960-1990", "confidence": "high" },
-        { "id": "facility.compressed-air.separator", "name": "Water (and oil) separator", "description": "An automatic drain pot or cyclone knock-out that removes the condensed water and, in an oil-injected screw machine, the injected oil. This vessel was the source of most of the 'the air is wet' complaints in the shop.", "kind": "tool", "category": "industry", "era": "1960-1990", "confidence": "high" },
+            { "id": "facility.compressed-air.intake-silencer", "name": "Intake silencer and inlet filter", "description": "An intake filter-silencer combination that kept the machine from eating the dust and the unfiltered outside air. In a coastal site (Kaohsiung, Hong Kong, Long Beach) the sea salt went straight onto the rotors if this was neglected.", "kind": "part", "category": "industry", "era": "1983", "inputs": ["filter media", "steel casing"], "confidence": "medium",
+      "note": "Not established: the sea-salt corrosion mechanism at coastal sites and the intake filter-silencer combination as a distinct item. No document located."
+    },
+            { "id": "facility.compressed-air.motor", "name": "Drive motor", "description": "A TEFC or, in a corrosive coastal plant, an explosion-proof motor. 400 V three-phase induction motor with a direct-on-line or star-delta starter; speed control only by pole changing.", "kind": "tool", "category": "power", "era": "1983", "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Induction_motor"],
+      "note": "Not established: that speed control on a 1983 compressor was by pole changing only, and that explosion-proof motors were used in coastal plants. The induction motor article documents three-phase squirrel-cage drives and TEFC enclosure cooling only."
+    }
+          ],
+      "note": "Not established: the 150-400 kW per machine and 7-8 bar discharge figures, and the claim that oil-injected screw machines were standard from the 1960s onward. The air compressor article documents the reciprocating, vane and screw types only."
+    },
+        { "id": "facility.compressed-air.aftercooler", "name": "Aftercooler", "description": "A water-cooled or finned-air heat exchanger that takes the discharge air from ~100 C down to ~40 C. Without it the machine would not hold pressure in a hot climate and the separator would not work.", "kind": "tool", "category": "industry", "era": "1960-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Compressed_air"] },
+        { "id": "facility.compressed-air.separator", "name": "Water (and oil) separator", "description": "An automatic drain pot or cyclone knock-out that removes the condensed water and, in an oil-injected screw machine, the injected oil. This vessel was the source of most of the 'the air is wet' complaints in the shop.", "kind": "tool", "category": "industry", "era": "1960-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Compressed_air"] },
         { "id": "facility.compressed-air.dryer", "name": "Air dryer", "description": "Two chemistries in 1983. Refrigerant (absorption or adsorption, e.g. a zeolite unit chilled to 1-3 C) gave a pressure dew point of about 2-10 C, good enough for most pneumatic machinery and marginal for instrument air. Desiccant (two alternating towers of silica gel or molecular sieve with a heatless regeneration on the off-line tower) got the dew point down to -40 to -70 C, which was what a pneumatic logic valve or a moisture-sensitive process needed.", "kind": "tool", "category": "industry", "era": "1960-1990",
           "facts": [ {"label": "Refrigerant dryer dew point", "value": "2-10 C"}, {"label": "Desiccant dryer dew point", "value": "-40 to -70 C"} ],
           "inputs": ["silica gel", "molecular sieve", "refrigerant"],
-          "confidence": "high",
-          "note": "Modern practice is a zero-pressure-change desiccant dryer with a heated purge and dew-point controlled switching; in 1983 the purge air was thrown away, which is why instrument-air plants were noisy and hot.",
+          "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Compressed_air"],
+          "note": "Modern practice is a zero-pressure-change desiccant dryer with a heated purge and dew-point controlled switching; in 1983 the purge air was thrown away, which is why instrument-air plants were noisy and hot. Not established: the 2-10 C refrigerant and -40 to -70 C desiccant dew points, and the claim that the purge air was thrown away in 1983. The compressed air article shows a Joule-Thomson refrigerated dryer on a compressor set; it gives no dew points and says nothing about desiccant units of that period.",
           "children": [
             
           ] },
         { "id": "facility.compressed-air.receiver", "name": "Air receiver (accumulator)", "description": "A vertical ASME code air vessel, 1-10 m3, acting as a buffer so the compressor could unload on a pressure switch. It also stored enough air to ride through a power cut for a few minutes - which in a fab meant keeping the wet-bench exhaust and the compressors together.", "kind": "tool", "category": "industry", "era": "1960-1990",
           "facts": [ {"label": "Typical", "value": "2-10 m3 at 8 bar"} ],
-          "confidence": "high" },
+          "confidence": "medium", "sources": ["https://en.wikipedia.org/wiki/Pressure_vessel"],
+      "note": "Not established: the 2-10 m3 capacity at 8 bar and the claim that the receiver rode through a power cut for a few minutes. The ASME code vessel is sourced; the sizing is not."
+    },
         { "id": "facility.compressed-air.ring-main", "name": "Ring main and distribution", "description": "Black steel pipe - galvanised or, better, painted steel - in a ring around the plant with drop-legs to each machine. A ring rather than a spine so that a single closed valve could isolate a section for maintenance. Drops went through a service unit with a tap, a pressure regulator, a filter and a flowmeter at each bench.", "kind": "facility", "category": "energy", "era": "1960-1990",
           "facts": [ {"label": "Working pressure", "value": "6-7 bar"} ],
           "inputs": ["carbon steel pipe", "brass fittings"],
-          "confidence": "high" },
-        { "id": "facility.compressed-air.nitrogen-purge", "name": "Nitrogen purge of the air system", "description": "Before opening a vessel, a line, or a tank that had held flammable or reactive material, it was purged with nitrogen and tested with an oxygen analyser. The purge itself was fed from the nitrogen header or, in a small plant, from a bottled cylinder.", "kind": "process", "category": "industry", "era": "1983", "inputs": ["facility.nitrogen"], "confidence": "high" },
+          "confidence": "medium",
+      "note": "Not established: the 6-7 bar working pressure, the choice of black steel pipe, the ring-versus-spine layout and the service unit (tap, regulator, filter, flowmeter) at each bench. The compressed air article covers moisture in the distribution system, not the piping design."
+    },
+        { "id": "facility.compressed-air.nitrogen-purge", "name": "Nitrogen purge of the air system", "description": "Before opening a vessel, a line, or a tank that had held flammable or reactive material, it was purged with nitrogen and tested with an oxygen analyser. The purge itself was fed from the nitrogen header or, in a small plant, from a bottled cylinder.", "kind": "process", "category": "industry", "era": "1983", "inputs": ["facility.nitrogen"], "confidence": "medium",
+      "note": "Not established: that purging with nitrogen and testing with an oxygen analyser was the 1983 practice before opening a vessel, and that small plants purged from a bottled cylinder. No standard or process-engineering source was located for purge practice of that decade."
+    },
         { "id": "facility.compressed-air.fab-exhaust", "name": "Process exhaust (fab wet-bench and furnace)", "description": "A separate, larger system from the instrument air: a scrubbed chemical exhaust ducting the acid, base, solvent and furnace exhaust out of the building, usually to an alkaline scrubber on the roof. The neutral brine it discharges and the metal-bearing sludge it produces are the liquid and solid waste streams of the plant.", "kind": "facility", "category": "industry", "era": "1983", "confidence": "medium",
           "children": [
             { "id": "facility.compressed-air.scrubber-packing", "name": "Alkaline scrubber packing", "description": "A packed column of plastic Raschig or saddle rings on a support grid, fed with caustic soda or sodium carbonate, stripping acid mist and the base-mist equivalent out of the exhaust. Discharge is a neutral brine sent to the effluent system.", "kind": "tool", "category": "industry", "era": "1983",
               "inputs": ["polypropylene", "caustic soda"],
               "confidence": "medium",
               "children": [
-                { "id": "facility.compressed-air.pvc-packing", "name": "PVC / PP packing media", "description": "Moulded plastic ring or saddle packing, chemically inert to acid and alkali where ceramic or metal would be attacked. The same vinyl chloride monomer chain that makes the conduit and the cable in the plant.", "kind": "material", "category": "plastics", "era": "1983", "inputs": ["vinyl chloride"], "confidence": "high" }
+                { "id": "facility.compressed-air.pvc-packing", "name": "PVC / PP packing media", "description": "Moulded plastic ring or saddle packing, chemically inert to acid and alkali where ceramic or metal would be attacked. The same vinyl chloride monomer chain that makes the conduit and the cable in the plant.", "kind": "material", "category": "plastics", "era": "1983", "inputs": ["vinyl chloride"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Structured_packing"] }
               ] }
             ] }
           ]
@@ -698,31 +808,43 @@
           "confidence": "high",
           "note": "A regulatory regime, not a thing in the supply chain, hence a note. The 1984 Hazardous and Solid Waste Amendments tightened this substantially, including the ban on land disposal of untreated hazardous waste; in 1983 that ban did not yet exist and land disposal of untreated sludge was routine and lawful." },
         { "id": "facility.hazardous-waste.generation", "name": "Spent acid, solvent and plating waste streams", "description": "The three physical waste streams that carried almost all of a 1980s electronics plant's hazardous load: the spent acids and alkalis from etching and cleaning, the spent organic solvents and resist stripper from photolithography and degreasing, and the cyanide- and metal-bearing rinses from gold and tin plating. Each was a bulk liquid, collected in a tank, and each needed its own treatment route. Small generators - which in 1983 was most of Commodore's Hong Kong subcontractor base - had almost no obligations at all beyond a monthly manifest.", "kind": "material", "category": "fluids", "era": "1983",
-          "confidence": "high",
+          "confidence": "medium",
           "children": [
-            { "id": "facility.hazardous-waste.spent-acid", "name": "Spent acid and alkali", "description": "Sulfuric and hydrochloric acid exhausted by the etchers and the wet benches, plus the caustic and the alkaline develop and strip baths. Neutralised with lime into a metal hydroxide sludge; the arsenic-containing liquor from the diffusion furnaces went the same way.", "kind": "material", "category": "fluids", "era": "1983", "confidence": "high" },
-            { "id": "facility.hazardous-waste.spent-solvent", "name": "Spent organic solvent and resist stripper", "description": "Acetone, xylene, toluene, isopropanol and cellosolve acetate from the degreasers, plus the spent developer (tetramethylammonium hydroxide from positive photoresist) and stripper from the coat-develop track. Recovered by activated-carbon adsorption and distillation where that was economical, and otherwise vapour-incinerated.", "kind": "material", "category": "fluids", "era": "1983", "confidence": "high",
-              "inputs": ["facility.hazardous-waste.trichloroethene"] },
-            { "id": "facility.hazardous-waste.plating-rinse", "name": "Cyanide- and metal-bearing plating rinse", "description": "Rinse water carrying gold, tin, copper, nickel and chromium out of the plating line. The cyanide-bearing stream needed alkaline chlorination before discharge; the acid-bearing stream went to the neutralisation tank. Both ended up in the same hydroxide sludge.", "kind": "material", "category": "fluids", "era": "1983", "confidence": "high" }
-          ] },
+            { "id": "facility.hazardous-waste.spent-acid", "name": "Spent acid and alkali", "description": "Sulfuric and hydrochloric acid exhausted by the etchers and the wet benches, plus the caustic and the alkaline develop and strip baths. Neutralised with lime into a metal hydroxide sludge; the arsenic-containing liquor from the diffusion furnaces went the same way.", "kind": "material", "category": "fluids", "era": "1983", "confidence": "medium",
+      "note": "Not established: that the diffusion furnaces' arsenic-containing liquor was neutralised into the same hydroxide sludge stream. No document was located on 1980s semiconductor arsenic waste handling."
+    },
+            { "id": "facility.hazardous-waste.spent-solvent", "name": "Spent organic solvent and resist stripper", "description": "Acetone, xylene, toluene, isopropanol and cellosolve acetate from the degreasers, plus the spent developer (tetramethylammonium hydroxide from positive photoresist) and stripper from the coat-develop track. Recovered by activated-carbon adsorption and distillation where that was economical, and otherwise vapour-incinerated.", "kind": "material", "category": "fluids", "era": "1983", "confidence": "medium",
+              "inputs": ["facility.hazardous-waste.trichloroethene"],
+      "note": "Not established: that tetramethylammonium hydroxide developer and cellosolve acetate stripper were the specific 1980s resist-track waste streams, and that activated-carbon recovery was preferred for cost reasons even in 1983. No document was located for the photolithography waste chemistry of that decade."
+    },
+            { "id": "facility.hazardous-waste.plating-rinse", "name": "Cyanide- and metal-bearing plating rinse", "description": "Rinse water carrying gold, tin, copper, nickel and chromium out of the plating line. The cyanide-bearing stream needed alkaline chlorination before discharge; the acid-bearing stream went to the neutralisation tank. Both ended up in the same hydroxide sludge.", "kind": "material", "category": "fluids", "era": "1983", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Electroplating"] }
+          ],
+      "note": "Not established: that small generators such as Commodore's Hong Kong subcontractor base had almost no obligations beyond a monthly manifest in 1983. RCRA's small-quantity-generator rules are in the Subtitle C regime, and the number of copies on a manifest is set by regulation, not established here."
+    },
         { "id": "facility.hazardous-waste.neutralisation", "name": "Acid neutralisation with lime", "description": "The cheapest and by far the most common treatment: slaked lime or limestone slurry is dosed into a reaction tank, the acid is neutralised, the metal hydroxides precipitate out, and the tank is then settled and the supernatant discharged. It converts an acid into a sludge - which is still a hazardous waste, just a solid one.", "kind": "process", "category": "industry", "era": "1960-1990",
           "inputs": ["spent acid", "slaked lime", "limestone"],
-          "confidence": "high",
+          "confidence": "medium",
           "children": [
             { "id": "facility.hazardous-waste.metal-hydroxide-sludge", "name": "Heavy-metal hydroxide sludge", "description": "A wet, low-solids sludge of iron, aluminium, chromium, copper, nickel, zinc and cadmium hydroxides, filtered on a plate-and-frame or belt press to 15-25% solids and trucked to a hazardous landfill in a lined, covered cell. In 1983 this was the default destination and the reason so many US sites are now Superfund sites.", "kind": "material", "category": "industry", "era": "1983",
               "facts": [ {"label": "Solids", "value": "15-25% after dewatering"} ],
-              "confidence": "high" },
-            { "id": "facility.hazardous-waste.settling-pond", "name": "Settling pond / lagoon", "description": "An unlined or clay-lined earthen basin into which treated effluent was discharged and solids allowed to settle, with the supernatant decanted to a stream or a municipal sewer. Thousands of these existed in 1983; the liner requirements came later. The pond was often the plant's cheapest and worst idea.", "kind": "facility", "category": "industry", "era": "1960-1990", "confidence": "high" },
-            { "id": "facility.hazardous-waste.landfill", "name": "Hazardous waste landfill", "description": "In 1983 a hazardous landfill was typically a clay-lined cell with a leachate collection system and groundwater monitoring wells, licensed under RCRA or operating under interim status. Because the Land Disposal Restrictions did not yet exist, most of it received untreated sludge and incinerator ash.", "kind": "facility", "category": "industry", "era": "1970-1990", "confidence": "high" }
-          ] },
+              "confidence": "medium",
+      "note": "Not established: the 15-25% solids figure after plate-and-frame or belt press dewatering, and the characterisation of lined covered cells as the default 1983 destination. The sludge composition claim is not sourced either."
+    },
+            { "id": "facility.hazardous-waste.settling-pond", "name": "Settling pond / lagoon", "description": "An unlined or clay-lined earthen basin into which treated effluent was discharged and solids allowed to settle, with the supernatant decanted to a stream or a municipal sewer. Thousands of these existed in 1983; the liner requirements came later. The pond was often the plant's cheapest and worst idea.", "kind": "facility", "category": "industry", "era": "1960-1990", "confidence": "medium",
+      "note": "Not established: that thousands of unlined settling ponds existed in 1983, and the claim that liner requirements came later is not tied to a dated regulation here."
+    },
+            { "id": "facility.hazardous-waste.landfill", "name": "Hazardous waste landfill", "description": "In 1983 a hazardous landfill was typically a clay-lined cell with a leachate collection system and groundwater monitoring wells, licensed under RCRA or operating under interim status. Because the Land Disposal Restrictions did not yet exist, most of it received untreated sludge and incinerator ash.", "kind": "facility", "category": "industry", "era": "1970-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Resource_Conservation_and_Recovery_Act"] }
+          ],
+      "note": "No document located that describes lime or limestone neutralisation of semiconductor waste streams as the commonest treatment. The general chemistry is not in question; the claim about frequency of practice in the 1980s electronics industry is unsourced."
+    },
         { "id": "facility.hazardous-waste.incineration", "name": "Incineration of solvent vapours", "description": "Vapour incineration (afterburner / thermal oxidiser) for the xylene, toluene and trichloroethane vapour from the resist track and the degreaser, plus a wet scrubber or a carbon absorber on the cool side. By the time the air came out it passed an oxidiser at 800-1000 C with a residence time of about one second. The afterburner burned gas or fuel oil, which is what put a burner on the roof next to the acid scrubber.", "kind": "tool", "category": "industry", "era": "1970-1990",
           "inputs": ["chem.natural-gas"],
           "facts": [ {"label": "Temperature", "value": "800-1000 C"}, {"label": "Residence time", "value": "~1 s at temperature"} ],
-          "confidence": "high",
+          "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Thermal_oxidizer"],
           "note": "Solvent recovery by activated-carbon adsorption and distillation was increasingly preferred for cost reasons even in 1983 - recovery plant cost money to buy but paid back in solvent." },
         { "id": "facility.hazardous-waste.manifest", "name": "The RCRA manifest", "description": "A multi-part paper form - the shipping paper, the generator certification and the transporter and facility certifications - carried with the load from generator to treatment, storage or disposal facility, with signed copies returned to the generator. This is the paper trail that later made it possible to reconstruct where Commodore's waste went.", "kind": "part", "category": "packaging", "era": "1983",
           "facts": [ {"label": "Copies", "value": "at least 4 (generator, transporter, TSDF, and the returned copy)"} ],
-          "confidence": "high" },
+          "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Resource_Conservation_and_Recovery_Act"] },
         { "id": "facility.hazardous-waste.ocean-outfall", "name": "Ocean outfall", "description": "In the coastal Far East - Taiwan, Hong Kong, Singapore, the Philippines - dilute effluent was and is discharged through a permitted outfall diffuser into the sea, often at a designated ocean disposal zone beyond the territorial limit. The dilution argument is real; so is the fact that the 1980s outfalls had almost no metals monitoring.", "kind": "facility", "category": "industry", "era": "1970-1990", "confidence": "medium",
           "note": "The offshore dumping of raw sludge - not diluted effluent - was also common in the Far East until the early 1990s and was progressively banned." },
         { "id": "facility.hazardous-waste.commodore-site", "name": "Commodore's own solvent site: the CSG Superfund case", "description": "The clearest documented example in this whole story. A 250-gallon underground concrete tank at the MOS Technology site at 950 Rittenhouse Road, Norristown, Pennsylvania - installed with the building in 1970 - leaked in 1974. It stored the trichloroethene and other solvents used to clean silicon wafers. MOS replaced it with an unlined steel tank, which leaked too. In 1978 the Audubon Water Company, which supplied the public water system, detected trichloroethene in its wells. PADER concluded by 1979 that the contamination could not be excavated. A ground-water recovery well and a spray/treatment system began in November 1981; an air stripper began in February 1984. The site went on the Superfund National Priorities List on 4 October 1989 and the fab was closed in 1992.", "kind": "facility", "category": "industry", "era": "1978-1994",
@@ -733,9 +855,9 @@
           "children": [
             { "id": "facility.hazardous-waste.trichloroethene", "name": "Trichloroethene (TCE)", "description": "A chlorinated solvent, 1,1,2-trichloroethene, once the standard vapour-degreasing and wafer-cleaning solvent in the semiconductor industry. A suspected carcinogen; a common groundwater contaminant; the specific reason the Norristown site is on the National Priorities List.", "kind": "material", "category": "fluids", "era": "1983",
               "inputs": ["ethylene", "chlorine"],
-              "confidence": "high",
+              "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Trichloroethylene"],
               "children": [
-                { "id": "facility.hazardous-waste.tce-feedstock", "name": "Ethylene from the steam cracker", "description": "The chlorination of ethylene, or the oxychlorination of 1,2-dichloroethane, which is itself from the chlorination of ethylene. The ethylene came from naphtha steam cracking - the same petrochemical chain as everything else on this tree. Ends at the crude oil still.", "kind": "material", "category": "fluids", "era": "1983", "inputs": ["facility.oil", "naphtha"], "confidence": "high" }
+                { "id": "facility.hazardous-waste.tce-feedstock", "name": "Ethylene from the steam cracker", "description": "The chlorination of ethylene, or the oxychlorination of 1,2-dichloroethane, which is itself from the chlorination of ethylene. The ethylene came from naphtha steam cracking - the same petrochemical chain as everything else on this tree. Ends at the crude oil still.", "kind": "material", "category": "fluids", "era": "1983", "inputs": ["facility.oil", "naphtha"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Trichloroethylene"] }
               ] }
           ] }
       ] },
@@ -748,44 +870,46 @@
       "children": [
         { "id": "facility.cleanroom.raised-floor", "name": "Raised floor and plenum", "description": "A 600 mm or 900 mm void under a load-rated pedestal floor, with all the process exhaust, the cold water, the nitrogen, the vacuum and the electrical cabling running underneath. The whole architectural idea of the fab is that the floor is a duct. This is also why the 1980s fabs needed full basements and 4.5-6 m ceilings.", "kind": "facility", "category": "silicon", "era": "1970-1990",
           "inputs": ["concrete", "steel pedestal", "access floor panel"],
-          "confidence": "high" },
+          "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Raised_floor"] },
         { "id": "facility.cleanroom.access-floor", "name": "Access floor panel", "description": "A 600 mm square steel or aluminium-frame panel with a steel or cast-iron skin, on adjustable pedestals with seismic and electrical bonding. The panel had to be load-rated for a 1000 kg diffusion furnace cart and still be light enough for two people to lift.", "kind": "part", "category": "silicon", "era": "1983",
           "inputs": ["steel sheet", "calcium sulphate core", "epoxy"],
-          "confidence": "high" },
+          "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Raised_floor"] },
         { "id": "facility.cleanroom.hepa", "name": "HEPA (absolute) filter", "description": "Deep pleated borosilicate glass-fibre media in a galvanised steel casing, rated 99.97% efficient at 0.3 micrometres - the most penetrating particle size, hence 'most penetrating diameter'. A 2.4 m x 1.2 m filter was the ceiling module of every 1980s fab, ceiling and laminar-flow bench alike.", "kind": "part", "category": "silicon", "era": "1983",
           "facts": [ {"label": "Efficiency", "value": "99.97% at 0.3 um (HEPA), i.e. 0.03% penetration"}, {"label": "Media", "value": "borosilicate glass microfibre on aluminium separator"} ],
           "inputs": ["borosilicate glass fibre", "aluminium foil", "steel casing"],
-          "confidence": "high",
+          "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/HEPA"],
           "note": "HEPA rated at 0.3 um is the number quoted then; it is a worst-case penetration figure, not the true 0.5 um count the class designation used.",
           "children": [
             { "id": "facility.cleanroom.hepa-glass-fibre", "name": "Borosilicate glass microfibre", "description": "Glass melted at 1400 C and blown into fibres a few micrometres across, then laid into a paper and fired at 800-900 C to set a bonding agent, and chopped into slivers. Every 1980s fab consumed tens of thousands of these filters a year and changed them on a schedule rather than on condition.", "kind": "material", "category": "silicon", "era": "1983",
               "inputs": ["silica", "boric acid", "feldspar"],
-              "confidence": "high",
+              "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Glass_fiber"],
               "children": [
-                { "id": "facility.cleanroom.silica", "name": "High-purity silica", "description": "The same raw material as the fused-quartz diffusion tube, the photomask substrate and the ceramic package: high-purity SiO2. In 1983 most came from Brazil or from the US inland deposit, and by the mid-80s the industry moved to synthetic vapour-deposited silicon tetrafluoride because natural high-purity quartz was getting scarce.", "kind": "material", "category": "silicon", "era": "1983", "inputs": ["quartz", "sand"], "confidence": "high" }
+                { "id": "facility.cleanroom.silica", "name": "High-purity silica", "description": "The same raw material as the fused-quartz diffusion tube, the photomask substrate and the ceramic package: high-purity SiO2. In 1983 most came from Brazil or from the US inland deposit, and by the mid-80s the industry moved to synthetic vapour-deposited silicon tetrafluoride because natural high-purity quartz was getting scarce.", "kind": "material", "category": "silicon", "era": "1983", "inputs": ["quartz", "sand"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Fused_quartz"] }
               ] }
           ] },
         { "id": "facility.cleanroom.ffu", "name": "Fan filter unit and laminar flow", "description": "A 2.4 x 1.2 m fan-filter unit or a fan coil with an integral HEPA, blowing filtered air down through perforated ceiling tiles at 0.3-0.5 m/s to give unidirectional ('laminar') flow. Open cleanroom used ceiling FFUs over the whole floor; the 1980s move was to a 'minienvironment' - a small FFU box over each process tool inside a Class 1000 room - which was the direct ancestor of today's SMIF pods.", "kind": "tool", "category": "silicon", "era": "1970-1990",
           "facts": [ {"label": "Face velocity", "value": "0.3-0.5 m/s (about 30-90 fpm)"}, {"label": "Filter bank", "value": "typically 5-10% of floor area in FFU ceiling"} ],
-          "confidence": "high" },
+          "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Fan_filter_unit", "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"] },
         { "id": "facility.cleanroom.classes", "name": "Class 100 and Class 1000 zoning", "description": "Federal Standard 209E Class 100 in the lithography, etch and metallisation bays; Class 1000 in the diffusion, cleaning and packaging areas; Class 10,000 in the corridors, the airlock and the material store. The class was maintained by air pressure differentials - the Class 100 room slightly positive to the Class 1000 room, which was positive to the corridor - which is why the doors of a 1980s fab always felt like they were being blown open.", "kind": "facility", "category": "silicon", "era": "1970-1990",
           "facts": [ {"label": "Pressure differential", "value": "0.01-0.05 in. water (2.5-12 Pa) between classes"} ],
-          "confidence": "high",
+          "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/ISO_14644", "https://en.wikipedia.org/wiki/Cleanroom"],
           "note": "Modern practice: ISO 14644-1/2, ISO Class 5 (equivalent to the old Class 100) and Class 7 (Class 1000), with ISO Class 8 corridors and much tighter pressure control." },
         { "id": "facility.cleanroom.amber-room", "name": "Amber (yellow) room for photolithography", "description": "The lithography bay was lit only through yellow filters - either yellow-lens fluorescent fixtures or, later, a laminated film - so that no light below about 500 nm reached the photoresist. The 1980s specification was that irradiance from 350 to 500 nm should stay below roughly 0.5 W/m2 at the work surface, with the rest of the spectrum unrestricted. Resists of the period were sensitive to the mercury g-line (436 nm), h-line (405 nm) and i-line (365 nm).", "kind": "facility", "category": "silicon", "era": "1970-1990",
           "facts": [ {"label": "UV limit", "value": "<~0.5 W/m2 over 350-500 nm"}, {"label": "Actinic lines", "value": "g 436 nm, h 405 nm, i 365 nm (mercury lamp)"} ],
           "sources": ["https://www.chiphistory.org/128-an-intel-wafer-fab-cleanroom-circa-1980", "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=91008R8P.TXT"],
           "note": "The classic 1980s yellow room was a room with yellow fluorescent tubes. That alone was often not enough - later measurement work has shown legacy 'yellow' tube lighting can still expose resist within an hour - so good fabs added a second, external filter film. Modern practice is to run the room in white light and rely on the area's low-actinic-UV requirement plus dosimetry.",
           "confidence": "medium" },
-        { "id": "facility.cleanroom.litho-area", "name": "Photolithography area", "description": "Mask aligners, coat/develop tracks, bake ovens and the mask storage cabinets. In a 1980s 1-micron NMOS fab the lithography bay was Class 100 with the amber lighting, the operators wore yellow-room coats and face shields, and the photoresist was spun from a solvent (Shipley AZ1350, based on a novolak resin sensitised with a diazonium salt) with xylene or cellosolve acetate.", "kind": "facility", "category": "silicon", "era": "1970-1990", "confidence": "high" },
-        { "id": "facility.cleanroom.passivation", "name": "Passivation and packaging areas", "description": "Passivation (the final silicon nitride or phosphosilicate glass over the completed aluminium) and then the back-end: wafer probe, dice, die attach, wire bond, and the moulding of the ceramic or plastic package. The back end in 1983 was Class 10000 to Class 1000, not Class 100 - the contaminating work (bonding, moulding compound) happened there.", "kind": "facility", "category": "silicon", "era": "1970-1990", "confidence": "high" },
+        { "id": "facility.cleanroom.litho-area", "name": "Photolithography area", "description": "Mask aligners, coat/develop tracks, bake ovens and the mask storage cabinets. In a 1980s 1-micron NMOS fab the lithography bay was Class 100 with the amber lighting, the operators wore yellow-room coats and face shields, and the photoresist was spun from a solvent (Shipley AZ1350, based on a novolak resin sensitised with a diazonium salt) with xylene or cellosolve acetate.", "kind": "facility", "category": "silicon", "era": "1970-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Cleanroom", "https://en.wikipedia.org/wiki/Photolithography"] },
+        { "id": "facility.cleanroom.passivation", "name": "Passivation and packaging areas", "description": "Passivation (the final silicon nitride or phosphosilicate glass over the completed aluminium) and then the back-end: wafer probe, dice, die attach, wire bond, and the moulding of the ceramic or plastic package. The back end in 1983 was Class 10000 to Class 1000, not Class 100 - the contaminating work (bonding, moulding compound) happened there.", "kind": "facility", "category": "silicon", "era": "1970-1990", "confidence": "medium",
+      "note": "Not established: that the 1983 back end ran at Class 10000 to Class 1000 rather than Class 100. No standard or manufacturer document was located stating the cleanroom class of a 1980s semiconductor assembly and test area."
+    },
         { "id": "facility.cleanroom.makeup-air", "name": "Make-up air and air change rate", "description": "The fab's single largest utility load. Because the Class 100 rooms were almost entirely recirculating, the make-up air was only the leakage plus the exhaust: the acid and solvent fume hoods, the furnace exhaust, the ion-implant exhaust. Even so, a 1980s fab typically ran 100-1000 air changes per hour in the clean bays and 20-60 in the support areas, and the air-handling plant cost tens of millions of dollars and dominated the energy bill.", "kind": "facility", "category": "energy", "era": "1970-1990",
           "facts": [ {"label": "Clean bay ACH", "value": "100-1000 per hour (vs 5-10 in an office)"} ],
           "sources": ["https://www.construction-physics.com/p/how-to-build-a-20-billion-semiconductor"],
           "confidence": "high",
           "note": "Modern practice is roughly the same air-change figure but with far better heat recovery, a 6-second air exchange in Class 1 areas, and much higher total electrical intensity per square foot because the process tools now dominate." },
-        { "id": "facility.cleanroom.hvac", "name": "Temperature and humidity control", "description": "20-22 C and 40-60% relative humidity, tighter than any other building of the era, and the single most expensive thing in the building to get right. The 1980s control was a system of pneumatic controllers and a mechanical chart recorder; a modern fab uses thousands of sensors and a BMS.", "kind": "facility", "category": "energy", "era": "1970-1990", "confidence": "high" },
-        { "id": "facility.cleanroom.airlock", "name": "Gowning and airlock", "description": "A two-stage airlock - a 'dirty airlock' for incoming components and personnel in street clothes, and a 'clean airlock' with a cross-over bench for gowning. The costume of the era was a hooded coverall plus boots; in the amber room a yellow-coated garment as well.", "kind": "facility", "category": "silicon", "era": "1970-1990", "confidence": "high" },
+        { "id": "facility.cleanroom.hvac", "name": "Temperature and humidity control", "description": "20-22 C and 40-60% relative humidity, tighter than any other building of the era, and the single most expensive thing in the building to get right. The 1980s control was a system of pneumatic controllers and a mechanical chart recorder; a modern fab uses thousands of sensors and a BMS.", "kind": "facility", "category": "energy", "era": "1970-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Cleanroom"] },
+        { "id": "facility.cleanroom.airlock", "name": "Gowning and airlock", "description": "A two-stage airlock - a 'dirty airlock' for incoming components and personnel in street clothes, and a 'clean airlock' with a cross-over bench for gowning. The costume of the era was a hooded coverall plus boots; in the amber room a yellow-coated garment as well.", "kind": "facility", "category": "silicon", "era": "1970-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Cleanroom"] },
         { "id": "facility.cleanroom.cost", "name": "What the building cost (1983 dollars)", "description": "For scale: a small 4-inch fab cost about $4 million in 1970 (about $31 million in 2024 money); a full production fab in 1983 ran from roughly $100 million to several hundred million dollars - National Semiconductor announced a $100 million, 290,000 sq ft plant in August 1983, and UMC spent about $200 million on a 1.2 micron fab in the same year. That is why owning a fab was only ever available to very large firms.", "kind": "note", "category": "silicon", "era": "1983",
           "facts": [ {"label": "National Semiconductor, Arlington TX, 1983", "value": "$100 M, 290,000 sq ft"}, {"label": "UMC, 1983", "value": "~$200 M for a 1.2 micron fab"} ],
           "sources": ["https://www.upi.com/Archives/1983/08/15/National-Semiconductor-Corp-citing-an-economic-resurgence-announced-Monday/6498429768000/", "https://www.asianometry.com/p/the-economics-of-tsmcs-giga-fabs"],
@@ -793,9 +917,9 @@
           "note": "The $100-300 M figure quoted for a 1980s production fab is right for a 1980s production fab; the $4 M figure is right for an early small 4-inch fab like MOS's, and the two should not be compared without saying which decade and which class of plant is meant." },
         { "id": "facility.cleanroom.prefilter", "name": "Pre-filter bank", "description": "Bag or panel filters (2-5 micrometre) ahead of the HEPA units, on the make-up air ducts and on the return air. The 1980s standard pre-filter was a 5-ply disposable bag of coarse glass fibre in a steel frame, or a V-bank of 1-inch washable aluminium-header panels. It existed because a HEPA that gets loaded with dust is an expensive mistake.", "kind": "part", "category": "silicon", "era": "1983",
           "inputs": ["glass fibre", "steel frame", "aluminium header"],
-          "confidence": "high",
+          "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Fan_filter_unit", "https://en.wikipedia.org/wiki/HEPA"],
           "children": [
-            { "id": "facility.cleanroom.prefilter-media", "name": "Coarse glass-fibre filter media", "description": "Glass melted and blown into coarse fibres and felted into a mat. The same glassfibre technology as the HEPA medium but 100-1000x coarser and far cheaper. Ends at the glass batch.", "kind": "material", "category": "silicon", "era": "1983", "inputs": ["silica", "boric acid"], "confidence": "high" }
+            { "id": "facility.cleanroom.prefilter-media", "name": "Coarse glass-fibre filter media", "description": "Glass melted and blown into coarse fibres and felted into a mat. The same glassfibre technology as the HEPA medium but 100-1000x coarser and far cheaper. Ends at the glass batch.", "kind": "material", "category": "silicon", "era": "1983", "inputs": ["silica", "boric acid"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Glass_fiber"] }
           ] },
         { "id": "facility.cleanroom.gowning-supplies", "name": "Garment and consumable supply", "description": "Garments were not laundryable in the era - a hooded coverall was worn once and destroyed. The plant bought enormous quantities of spun-bonded polypropylene garments, hoods, overshoes, gloves, wipes and tacky mats, and washed nothing. One 1980s 5,000-person fab burned something like a million garments a year.", "kind": "process", "category": "logistics", "era": "1983",
           "inputs": ["spun-bonded polypropylene"],
@@ -803,14 +927,16 @@
           "confidence": "medium",
           "note": "The garment figure is an order-of-magnitude estimate; No published 1983 consumption figure was found. Modern fabs launder and reuse garments and use more reusable materials, which was one of the first sustainability targets in the industry.",
           "children": [
-            { "id": "facility.cleanroom.spunbond-pp", "name": "Spun-bonded polypropylene", "description": "Polypropylene melt-spun into continuous filaments and laid down in a random web, then bonded by heat or needle punching. Cheapest possible cleanroom garment material, and the raw material for the 'tacky mat' that caught shoe-borne particles at every airlock.", "kind": "material", "category": "plastics", "era": "1983", "inputs": ["propylene"], "confidence": "high" }
+            { "id": "facility.cleanroom.spunbond-pp", "name": "Spun-bonded polypropylene", "description": "Polypropylene melt-spun into continuous filaments and laid down in a random web, then bonded by heat or needle punching. Cheapest possible cleanroom garment material, and the raw material for the 'tacky mat' that caught shoe-borne particles at every airlock.", "kind": "material", "category": "plastics", "era": "1983", "inputs": ["propylene"], "confidence": "medium",
+      "note": "Not established: that spun-bonded polypropylene was the standard 1980s cleanroom garment material or the standard tacky-mat material. Spun-bonded fabric has no separate encyclopaedia article, and no standard or industry document was located for this material in the cleanroom trade in that decade."
+    }
           ] },
         { "id": "facility.cleanroom.bobbin-and-tools", "name": "Wafer carriers and handling hardware", "description": "In 1983 a wafer still travelled in a quartz boat inside a plastic carrier, or hand-carried in a PTFE-wafer cassette from process to process. The SMIF FOUP - the sealed nitrogen-purged single-wafer container that made the whole modern fab possible - arrived with SEMI E10 in the early 1990s. Before that, every transfer was an opportunity for a particle, and a large fraction of the total defect budget.", "kind": "part", "category": "silicon", "era": "1983",
           "inputs": ["quartz", "PTFE", "polypropylene"],
-          "confidence": "high",
+          "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"],
           "note": "Modern practice is the 300 mm FOUP in a minienvironment with automatic material handling; the 1980s practice was a person carrying a cassette.",
           "children": [
-            { "id": "facility.cleanroom.quartz-boat", "name": "Fused-quartz wafer boat", "description": "A slotted quartz holder that carries 25-50 wafers through the diffusion furnace. Fused quartz is used because it survives 1000 C, expands predictably, and is chemically inert to the dopants. Made from high-purity synthetic quartz rod, ground and flame-polished.", "kind": "part", "category": "silicon", "era": "1983", "inputs": ["synthetic fused silica"], "confidence": "high" }
+            { "id": "facility.cleanroom.quartz-boat", "name": "Fused-quartz wafer boat", "description": "A slotted quartz holder that carries 25-50 wafers through the diffusion furnace. Fused quartz is used because it survives 1000 C, expands predictably, and is chemically inert to the dopants. Made from high-purity synthetic quartz rod, ground and flame-polished.", "kind": "part", "category": "silicon", "era": "1983", "inputs": ["synthetic fused silica"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Fused_quartz"] }
           ] },
         { "id": "facility.cleanroom.workforce", "name": "Fab workforce, 1980s", "description": "A large 1983 fab ran 5,000-10,000 employees, of whom the majority working on the wafer lines were women - the largest single female industrial workforce in many of the regions where the plants went, because the tool operators and the wafer handling were culturally coded as women's work even though they were skilled and tightly controlled.", "kind": "note", "category": "industry", "era": "1983",
           "facts": [ {"label": "Typical large fab", "value": "5,000-10,000 employees"} ],
@@ -927,7 +1053,7 @@
           "facts": [ {"label": "Transpacific", "value": "~12-14 days port to port"}, {"label": "Europe-Asia via Suez", "value": "~22-26 days port to port"} ],
           "confidence": "medium",
           "note": "These are order-of-magnitude figures derived from distances and 1980s liner speeds; No published 1983 schedule for a specific Commodore carrier service was found." },
-        { "id": "logistics.shipping.bill-of-lading", "name": "The bill of lading", "description": "The negotiable document that made containerised trade possible: a carrier-issued contract of carriage naming the shipper, the consignee, the port of loading and discharge, the freight terms, and the description of the goods. Without it the goods did not move; with it, the bank paid on presentation. The 1983 electronic BOL did not exist - the paper document was the mechanism.", "kind": "part", "category": "packaging", "era": "1983", "confidence": "high" },
+        { "id": "logistics.shipping.bill-of-lading", "name": "The bill of lading", "description": "The negotiable document that made containerised trade possible: a carrier-issued contract of carriage naming the shipper, the consignee, the port of loading and discharge, the freight terms, and the description of the goods. Without it the goods did not move; with it, the bank paid on presentation. The 1983 electronic BOL did not exist - the paper document was the mechanism.", "kind": "part", "category": "packaging", "era": "1983", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Bill_of_lading"] },
         { "id": "logistics.shipping.air-freight", "name": "Air freight for the high-value parts", "description": "Customs values tell the story: a box of 300 C64s entered at, say, $150-200 declared value each would carry $45,000-60,000 of electronics inside a container whose ocean freight was a few hundred dollars. The ICs were the opposite case: a 6510 and a VIC-II at internal transfer value were a tiny fraction of the customs value of the finished case, so nobody flew the chips - the chips came by sea inside the container, and the container moved once. Air freight was for prototypes, for a replacement part in an emergency, and for the tape and the spares.", "kind": "note", "category": "industry", "era": "1983", "confidence": "medium",
           "note": "Air freight in 1983 was priced by weight with a minimum weight, so the economics made it essentially unusable for consumer electronics inbound freight; it was used for sample and prototype shipments and for urgent replacement parts." },
         { "id": "logistics.shipping.demurrage", "name": "Demurrage, detention and the inventory cost", "description": "Two separate costs. Demurrage is the charge for leaving a container on the terminal beyond the free time; in 1983 free time was commonly four to five days and the daily charge escalated. Detention is the charge for keeping the container beyond the time allowed at the other end. On top of both sat the real cost: eight to twelve weeks of sea transit each way meant Commodore had to hold inventory in transit and in the destination warehouse, which is exactly the cost structure that rewarded the 'just-in-time' port-to-port discipline and punished Commodore's famous spotty availability in 1983.", "kind": "note", "category": "industry", "era": "1983", "confidence": "medium",
@@ -996,16 +1122,18 @@
       "children": [
         { "id": "facility.test-equipment.ict", "name": "In-circuit tester (ICT)", "description": "A bed-of-nails fixture pressing 1000 or so spring-loaded probes onto the bare board's pads, measuring resistance, capacitance, diode voltage and, at an increasing share, functional signatures at each node - all in a few seconds. By 1983 the analogue resistance-only tester was giving way to the analogue-plus-functional 'in-circuit functional tester' that could catch an unpopulated IC or a wrong-orientation part without a board-level functional test.", "kind": "tool", "category": "industry", "era": "1983",
           "inputs": ["bed-of-nails fixture", "spring probe"],
-          "confidence": "high",
+          "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/In-circuit_testing"],
           "note": "The bed-of-nails fixture itself is bespoke per board revision - which is one of the reasons a new motherboard revision was expensive to introduce and why the 250407 revision mattered." },
         { "id": "facility.test-equipment.functional", "name": "Functional tester", "description": "A powered-up test station running a test program from ROM that exercised the VIC-II registers, checked the RAM, drove the keyboard matrix and read back the RAM. On a Commodore line this was a dedicated fixture with a monitor and a keyboard, and the operator's job was to load, run, read the result, box or quarantine.", "kind": "tool", "category": "industry", "era": "1983", "confidence": "medium" },
         { "id": "facility.test-equipment.test-rom", "name": "Test ROM in the final-test fixture", "description": "A dedicated test ROM - the '501' diagnostic ROM is the one most C64 owners meet - loaded into the machine's own ROM socket during factory final test so the machine could self-test its own RAM, character ROM, CIA timers and VIC registers. It is the same object a user later used to prove the machine worked.", "kind": "part", "category": "silicon", "era": "1983",
           "facts": [ {"label": "Test ROM", "value": "the 501 diagnostic"} ],
-          "confidence": "high" },
+          "confidence": "medium",
+      "note": "Not established: that Commodore's factory final test loaded the 501 diagnostic ROM into the machine's own ROM socket, or that the 501 ROM was the diagnostic most C64 owners met. The existence of a 501 test ROM is not in doubt; its use in final-test fixtures is."
+    },
         { "id": "facility.test-equipment.burn-in", "name": "Burn-in oven and sockets", "description": "A forced-air oven at 70-100 C with burn-in sockets, holding hundreds of boards for 24-72 hours so that early-life component failures - bad solder joints, marginal ICs, leaky capacitors - showed up on the line instead of in the customer's house. Commodore's 1982-83 quality record suggests it was not always run long enough.", "kind": "tool", "category": "industry", "era": "1983",
           "facts": [ {"label": "Temperature", "value": "typically 70-100 C"}, {"label": "Duration", "value": "24-72 hours"} ],
           "confidence": "medium" },
-        { "id": "facility.test-equipment.bare-board", "name": "Bare-board test and flying probe", "description": "Bare PCB test came first: a bed-of-nails grid fixture to prove every net was etched and plated correctly, catching a shorts-heavy board before it was populated and therefore before the parts were on it. The flying probe - a robot or CNC head with a moving needle that touched nets individually without a fixture - existed by the early 1980s as an engineering diagnostic, and only later became the standard production tester once it got fast enough.", "kind": "tool", "category": "industry", "era": "1983", "confidence": "high",
+        { "id": "facility.test-equipment.bare-board", "name": "Bare-board test and flying probe", "description": "Bare PCB test came first: a bed-of-nails grid fixture to prove every net was etched and plated correctly, catching a shorts-heavy board before it was populated and therefore before the parts were on it. The flying probe - a robot or CNC head with a moving needle that touched nets individually without a fixture - existed by the early 1980s as an engineering diagnostic, and only later became the standard production tester once it got fast enough.", "kind": "tool", "category": "industry", "era": "1983", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/In-circuit_testing"],
           "note": "Today the flying probe has largely displaced the bed-of-nails in production, which removes the per-revision fixture cost - a genuine change in the economics of board design between 1983 and now.",
           "children": [
             { "id": "facility.test-equipment.needle-probe", "name": "Spring probe and tungsten needle", "description": "The bed-of-nails is a field of sprung tungsten-rhenium or beryllium-copper pins on a 2.54 mm grid, each pressing a few grams onto a pad to make contact. The 1980s fixtures were drilled and wired by hand or on a numerical-control machine from the Gerber artwork - which is why a board layout change meant a new fixture.", "kind": "part", "category": "industry", "era": "1983",

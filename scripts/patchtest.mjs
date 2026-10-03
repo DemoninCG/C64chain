@@ -20,6 +20,16 @@ const T = 'C:/Users/corba/AppData/Local/Temp/opencode/pt4.json';
 const copy = (src = 'data/70-petrochem.json') => execFileSync(process.execPath, ['-e',
   `require('fs').copyFileSync('${src}','${T}')`]);
 const run = (...a) => execFileSync(process.execPath, ['scripts/patch.mjs', T, ...a], { encoding: 'utf8' }).trim();
+/* runExpectFail: patch.mjs must REFUSE and write nothing. Used for the
+ * overwrite guard, which is the third bug this file now holds down. */
+const runFail = (...a) => {
+  try {
+    execFileSync(process.execPath, ['scripts/patch.mjs', T, ...a], { encoding: 'utf8', stdio: 'pipe' });
+    return null;
+  } catch (e) {
+    return `${e.stderr ?? ''}${e.stdout ?? ''}`;
+  }
+};
 const N = JSON.parse(readFileSync('public/tree.json', 'utf8')).nodes;
 
 /* find a node whose own text contains a brace -- that is what dragged the old
@@ -48,29 +58,51 @@ const check = (label, got, want) => {
 // A. container node: get must return ITS note, not a descendant's
 check('container get returns its own note', JSON.parse(run('chem', 'get', 'note')), N.chem.note ?? null);
 
-// B. container node: set must land on the container
+// B. container node: set must land on the container.
+//    `chem` already has a note, so this needs --force: patch.mjs now refuses to
+//    overwrite a non-empty value without it (see case B2).
 copy();
 const kidWithNote = kids.find((c) => N[c]?.note);
 const kidBefore = N[kidWithNote].note;
-run('chem', 'set', 'note', 'SENTINEL-A');
+run('chem', 'set', 'note', 'SENTINEL-A', '--force');
 check('container set lands on the container', JSON.parse(run('chem', 'get', 'note')), 'SENTINEL-A');
 check('child note untouched by that set', JSON.parse(run(kidWithNote, 'get', 'note')), kidBefore);
+
+// B2. the overwrite guard. `set note` used to replace silently, which destroyed
+//     nine real notes during phase 4 -- the call reported success and the file
+//     still parsed, so nothing noticed. It must now refuse, and write nothing.
+copy();
+const noteBefore = JSON.parse(run('chem', 'get', 'note'));
+const refused = runFail('chem', 'set', 'note', 'SENTINEL-B');
+check('overwrite of a non-empty note is refused', refused !== null && /refusing to overwrite/.test(refused), true);
+check('refused overwrite wrote nothing', JSON.parse(run('chem', 'get', 'note')), noteBefore);
+
+// and it must still be possible to set a key that does not exist yet
+copy();
+const emptyKey = ['era', 'category'].find((k) => !(k in N.chem)) ?? null;
+if (emptyKey) {
+  run('chem', 'set', emptyKey, '1982-test');
+  check(`absent key "${emptyKey}" still settable without --force`, JSON.parse(run('chem', 'get', emptyKey)), '1982-test');
+} else {
+  check('absent key still settable without --force', true, true);
+}
 
 // C. a node whose text contains a brace
 if (braceNode) {
   copy();
   check(`brace-bearing node "${braceNode}" get`, JSON.parse(run(braceNode, 'get', 'note')), N[braceNode].note ?? null);
   copy();
-  run(braceNode, 'set', 'note', 'SENTINEL-C');
+  run(braceNode, 'set', 'note', 'SENTINEL-C', '--force');
   check(`brace-bearing node "${braceNode}" set`, JSON.parse(run(braceNode, 'get', 'note')), 'SENTINEL-C');
   // and the node BEFORE it in file order must be untouched
   const prev = Object.keys(N).indexOf(braceNode) > 0 ? null : null;
   void prev;
 }
 
-// D. leaf still works
+// D. leaf still works. --force because the chosen leaf already has a note, and
+//    the overwrite guard now refuses without it (case B2).
 copy();
-run(leaf, 'set', 'note', 'SENTINEL-D');
+run(leaf, 'set', 'note', 'SENTINEL-D', '--force');
 check('leaf set', JSON.parse(run(leaf, 'get', 'note')), 'SENTINEL-D');
 
 // E. every node IN THE COPIED FRAGMENT must resolve (it used to catch the

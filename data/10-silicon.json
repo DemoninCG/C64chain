@@ -21,7 +21,7 @@
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/MOS_6510",
-            "https://6502.org/documents/datasheets/mos/mos_6510_mpu.pdf",
+            "https://www.6502.org/documents/datasheets/mos/mos_6510_mpu.pdf",
             "https://www.commodore.ca/commodore-history/the-rise-of-mos-technology-the-6502"
       ],
       "confidence": "high",
@@ -166,7 +166,7 @@
                             { "label": "Bird's beak", "value": "~1-2 um lateral encroachment - the reason a field-gate design was attractive" }
               ],
               "sources": [
-                "https://en.wikipedia.org/wiki/LOCALOX"
+                "https://en.wikipedia.org/wiki/Planar_process"
               ],
               "confidence": "high",
               "note": "LOCOS was still the isolation scheme in 1982; trench isolation was a few years away."
@@ -188,7 +188,11 @@
                             { "label": "Thickness", "value": "4000-8000 A" },
                             { "label": "Grain size", "value": "0.2-1 um sputtered-like polycrystalline grains" }
               ],
-              "confidence": "high",
+              "sources": [
+                  "https://en.wikipedia.org/wiki/Polycrystalline_silicon",
+                  "https://en.wikipedia.org/wiki/Epitaxy"
+                ],
+                            "confidence": "high",
               "note": "Dichlorosilane was cheaper per deposited atom than silane and preferred for thick films, but carried chlorine that required a careful post-deposition clean."
             },
             {
@@ -206,7 +210,10 @@
                             { "label": "Thickness", "value": "350-450 A (~800 A grown to allow for later poly oxidation)" },
                             { "label": "Breakdown field", "value": "~3-4 MV/cm" }
               ],
-              "confidence": "high"
+              "sources": [
+                  "https://en.wikipedia.org/wiki/Thermal_oxidation"
+                ],
+                            "confidence": "high"
             },
             {
               "id": "mb.cpu.fe.self-aligned",
@@ -224,7 +231,11 @@
                             { "label": "Anneal", "value": "1000-1100 C, 30-60 min" },
                             { "label": "Why it matters", "value": "self-alignment is what made 2 um silicon-gate NMOS practical in a small fab" }
               ],
-              "confidence": "high"
+              "sources": [
+                  "https://en.wikipedia.org/wiki/Ion_implantation",
+                  "https://en.wikipedia.org/wiki/Photolithography"
+                ],
+                            "confidence": "high"
             },
             {
               "id": "mb.cpu.fe.contacts",
@@ -278,8 +289,8 @@
                 "tetramethylammonium hydroxide",
                 "1,1,1-trichloroethane"
               ],
-              "confidence": "high",
-              "note": "Contact printing at 1:1 could reach 1 um; the Micralign (Perkin-Elmer) introduced in the mid 1970s was the cheap alternative that projected the image without touching the wafer. True 10x reduction steppers (GCA, Canon, Magnifire) were being installed in 1982-83 but were expensive."
+              "confidence": "medium",
+              "note": "The contact and proximity print modes, the roughly 5 um proximity gap and the alkaline tetramethylammonium hydroxide developer are documented. Not established: the AZ-1350 resist and its thickness, the 90-100 C bake, the Coburn 2400 and Perkin-Elmer Micralign MA-2 model numbers, and when 10x reduction steppers became available."
             },
             {
               "id": "mb.cpu.fe.furnace",
@@ -292,7 +303,10 @@
     "facility.electricity",
                 "metal.silica-sand"
               ],
-              "confidence": "high"
+              "sources": [
+                  "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
+                ],
+                            "confidence": "high"
             },
             {
               "id": "mb.cpu.fe.deposition",
@@ -301,7 +315,11 @@
               "kind": "tool",
               "category": "silicon",
               "era": "1970s-1980s",
-              "confidence": "high"
+              "sources": [
+                  "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication",
+                  "https://en.wikipedia.org/wiki/Polycrystalline_silicon"
+                ],
+                            "confidence": "high"
             },
             {
               "id": "mb.cpu.fe.etcher",
@@ -334,8 +352,8 @@
           "inputs": [
     "facility.test-equipment.functional"
           ],
-          "confidence": "high",
-          "note": "In-process testing (wafer sort) reduced assembly cost only if the yield was high; at 6510 yields in the tens of percent, a large fraction of dies were packaged and sorted after assembly instead.",
+          "confidence": "medium",
+          "note": "That die are probed on the wafer by automatic test equipment, with binning, before dicing is documented. Not established: the 40-needle tungsten or rhenium card, the Teradyne L-120 or Fairchild SICTEST models, the wafer-coordinate logging, or that stepping probe stations were rare in 1982.",
           "children": [
             "si.probe-card"
           ]
@@ -347,7 +365,10 @@
           "kind": "process",
           "category": "silicon",
           "era": "1970s-1982",
-          "confidence": "high",
+          "sources": [
+              "https://en.wikipedia.org/wiki/Die_singulation"
+            ],
+                    "confidence": "high",
           "children": [
     {
               "id": "mb.cpu.dice-tool",
@@ -364,7 +385,10 @@
                 { "label": "Kerf", "value": "50-100 um (saw) or none (scribe-and-break)" },
                             { "label": "Coolant", "value": "deionized water or a solvent jet" }
               ],
-              "confidence": "high"
+              "sources": [
+                  "https://en.wikipedia.org/wiki/Die_singulation"
+                ],
+                            "confidence": "high"
             }
           ]
         },
@@ -403,7 +427,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/MOS_Technology",
                     "https://www.commodore.ca/commodore-history/the-rise-of-mos-technology-the-6502",
-                    "http://archive.6502.org/datasheets/mos_6500_mpu_preliminary_may_1976.pdf",
+                    "https://www.6502.org/documents/datasheets/mos/mos_6500_mpu_preliminary_may_1976.pdf",
                     "https://hackaday.com/author/williamherd"
           ],
           "confidence": "high",
@@ -425,7 +449,10 @@
                 { "label": "Work area", "value": "class 100 (ISO 5)" },
                             { "label": "Background", "value": "class 1000" }
               ],
-              "confidence": "high"
+              "sources": [
+                  "https://en.wikipedia.org/wiki/Cleanroom"
+                ],
+                            "confidence": "high"
             },
             {
               "id": "mb.cpu.fab.maskshop",
@@ -522,8 +549,8 @@
                 { "label": "Deposition", "value": "LPCVD SiH4, 800-850 C" },
                             { "label": "Thickness", "value": "3000-5000 A" }
               ],
-              "confidence": "high",
-              "note": "Difference from today: 2020s DRAM uses a sputtered AL2O3/HZO or high-k capacitor on a finFET access transistor with a deep recessed plate; none of that existed here. The capacitor area was bought by making the cell long and thin."
+              "confidence": "medium",
+              "note": "Polysilicon is documented as the gate material deposited by LPCVD and doped in the same step with phosphine. Not established: that the storage node is a second conformal polysilicon plate, the 800-850 C deposition, the 3000-5000 A thickness, or the 1983-84 arrival of tungsten and titanium silicides. The second-layer polysilicon plate is not described in the sources available."
             }
           ]
         },
@@ -539,8 +566,8 @@
                     { "label": "Bootstrap", "value": "bit line restored to ~+8 V" },
                     { "label": "Refresh", "value": "128 RAS cycles, 2 ms; RAS-only (no internal counter on most parts)" }
           ],
-          "confidence": "high",
-          "note": "Because the 8-pin 4164 has no VBB pin, two 4164s cannot be stacked in the C128 the way 4116s were; the C64's stacked-DRAM mods all use 16-pin -10 parts."
+          "confidence": "medium",
+          "note": "Not established: that the 4164 generates a -5 V substrate bias on chip, the -8/-12 part suffixes, the bit-line bootstrap to +7-8 V, or the boosted word line. No datasheet is cited. What is documented is that the 4164 is 65,536 x 1 bits and that the C64 needs eight of them."
         },
         {
           "id": "mb.ram.process",
@@ -611,7 +638,10 @@
                 { "label": "CTE", "value": "quartz ~0.5e-6/K vs glass ~3.7e-6/K" },
                             { "label": "Absorber", "value": "Cr 100-150 nm, sputtered" }
               ],
-              "confidence": "high",
+              "sources": [
+                  "https://en.wikipedia.org/wiki/Photomask"
+                ],
+                            "confidence": "high",
               "children": [
                 "si.mask.plate"
               ]
@@ -687,16 +717,16 @@
         {
           "id": "mb.ram.refresh",
           "name": "RAS-only refresh",
-          "description": "The 4164 has no refresh counter: the address must be presented on RAS every cycle to stay alive. The C64's 6510 does the counting in software - the KERNAL refresh routine puts a 7-bit value into $D012 and clocks the CIA's A12 line every seven machine cycles, so all eight chips are refreshed every 7 x 256 = 1792 cycles. That is why the KERNAL must be present for the machine to run at all.",
+          "description": "The 4164 has no refresh counter: the row address must be presented on RAS every cycle to stay alive. On the C64 the counting is done by the VIC-II, not by the CPU and not by a CIA. While the VIC has the bus it multiplexes refresh row addresses onto its own video-RAM address bus, generating RAS itself; AEC going low is what takes the bus away from the 6510, so refresh is transparent to the processor. The KERNAL's part is only to write the raster counter at $D012, which steps the VIC through its refresh addresses.",
           "kind": "part",
           "category": "silicon",
           "era": "1982",
           "facts": [
-            { "label": "Refresh period", "value": "2 ms maximum, 7-bit (128 cycle) parts required" },
-                    { "label": "Counter", "value": "in the 6510's software, not on the DRAM" }
+            { "label": "Refresh period", "value": "4164 refresh interval is specified in the datasheet; the VIC-II issues the row address and the RAS strobe on the C64. Any figure for this machine's refresh cycle is not established here." },
+                    { "label": "Counter", "value": "in the VIC-II, not on the DRAM and not in the 6510; the CIA does not drive the row address" }
           ],
-          "confidence": "high",
-          "note": "The German C64 manual states explicitly that only 7-bit-refresh 64K parts must be used, so a 128-cycle-refresh 4164 rather than a 256-cycle one is a hardware requirement, not a preference - a nice example of a software workaround becoming a hardware constraint."
+          "confidence": "low",
+          "note": "Contradicted by the source. The refresh addresses do not come from the CIA: when the VIC-II takes the bus with AEC low it drives the refresh row address itself onto its own multiplexed video-RAM address bus (pins 24-31 and 30-34), and the VIC generates the row-address strobe. What the KERNAL does is write the raster counter at $D012 so the VIC steps through its eight refresh addresses; it does not clock a CIA A12 line. Not established: the 7-bit, 128-cycle and 1792-cycle figures, or the German-manual statement that only 7-bit-refresh parts may be used."
         }
       ]
     },
@@ -719,7 +749,7 @@
       "sources": [
         "https://github.com/thorpej/c64-rom-326298",
             "http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/c64",
-            "https://mist64.github.io/c64rom/"
+            "https://github.com/mist64/c64rom"
       ],
       "confidence": "high",
       "note": "The brief said '901229 KERNAL ROM'; for the C64 the part is 901227-0x. 901229-05 belongs to the 1541 disk drive. The 901225-01 character ROM is a 4 KB part although only about 2.3 KB of it carries character data - the rest is un-decoded filler.",
@@ -744,8 +774,9 @@
             { "label": "Mask levels", "value": "8 + 1 ROM-programming level" },
                     { "label": "Metal", "value": "single aluminium layer" }
           ],
-          "confidence": "high"
-        },
+          "confidence": "medium",
+      "note": "Not established: the mask level count for a mask ROM (eight plus one programming level), the claim that the constraint was mask cost rather than yield, or that the ROM die is small enough to yield well. A mask-programmed ROM is one extra mask level above the same NMOS front end, but no source gives the level count for these parts."
+    },
         {
           "id": "mb.roms.programming",
           "name": "Mask programming: one mask set per ROM revision",
@@ -818,11 +849,12 @@
             { "label": "Probe card", "value": "24 needles, 0.1 inch pitch" },
                     { "label": "Coverage", "value": "all 8192 (or 4096) bytes, bit for bit" }
           ],
-          "confidence": "high",
+          "confidence": "medium",
           "children": [
             "si.probe-card"
-          ]
-        },
+          ],
+      "note": "Not established: the 24-needle probe card, the 0.1 inch pin pitch, the read-only sum of the whole array, or the published checksum comparison for BASIC and KERNAL. That a ROM die is verified on the wafer by automatic test equipment and again after assembly is the documented practice."
+    },
         {
           "id": "mb.roms.revisions",
           "name": "ROM revisions are mask revisions",
@@ -894,8 +926,8 @@
         },
         {
           "id": "mb.vic.palette",
-          "name": "The 18-resistor PAL palette on the mainboard",
-          "description": "The VIC-II itself does not know what colour is 'red'. It emits six 4-bit-weighted analogue voltages per colour channel; a resistor ladder and a 74LS175 shift register on the C64 mainboard combine them with the border colour to synthesise the 16-entry NTSC palette and the 20-colour PAL palette. Those resistors are ordinary thick-film or wirewound parts and belong to the passives tree, but they are the physical interface between this die and a television.",
+          "name": "The VIC-II colour output network on the mainboard",
+          "description": "The VIC-II does not name colours; it emits a set of analogue colour levels that circuitry on the mainboard has to turn into a usable video signal, and that circuitry is the physical interface between this die and a television. The specific network is not settled by the documents read: the 1992 service manual's 326298 parts list carries a 74LS373 octal latch at U26 together with resistor packs, and no resistor ladder or 74LS175 appears in that manual, in either Anatomy volume, or in the C128 Internals text.",
           "kind": "part",
           "category": "silicon",
           "era": "1982",
@@ -903,11 +935,12 @@
     "thin-film resistor"
           ],
           "facts": [
-            { "label": "Count", "value": "18 resistors, 2 x 9" },
-                    { "label": "Values", "value": "binary-weighted 1k-10k, 1% metal film or thick film" }
+            { "label": "Count", "value": "not established; the 326298 parts list shows resistor packs, not a 2 x 9 ladder" },
+                    { "label": "Values", "value": "not established; the parts list names 330 ohm and 3.3 kohm packs" }
           ],
-          "confidence": "high"
-        },
+          "confidence": "low",
+      "note": "Not established by anything read: an 18-resistor, 2 x 9 palette network, its values, the 1 k-10 k binary weighting, or a 74LS175 shift register forming the palette. No palette resistor ladder or 74LS175 appears in the 1992 service manual parts list or circuit theory, in either Anatomy book, or in the C128 Internals text. The 326298 board instead carries a 74LS373 at U26 and a 3.3 k resistor pack. The VIC-II side of the claim - that it emits weighted analogue voltages and knows nothing of colour names - is not documented either."
+    },
         {
           "id": "mb.vic.mask",
           "name": "VIC-II photomask set",
@@ -1021,7 +1054,10 @@
                 { "label": "Sheet resistance", "value": "30-100 ohm/sq (undoped poly)" },
                             { "label": "Tempco", "value": "~+0.1 to +0.3 %/C - poor by modern thin-film standards" }
               ],
-              "confidence": "high",
+              "sources": [
+                  "https://en.wikipedia.org/wiki/Polycrystalline_silicon"
+                ],
+                            "confidence": "high",
               "note": "Silicon-barrier anodes, nitride barriers and copper lines did not exist; a 1982 IC resistor could drift several hundred ppm per year with humidity."
             }
           ]
@@ -1029,11 +1065,15 @@
         {
           "id": "mb.sid.external",
           "name": "External components the SID needs from the board",
-          "description": "The 6581 does not make sound by itself. The C64 mainboard provides the 11 MHz colour clock derived from the VIC-II, two 4066 CMOS bilateral switches and a 7406 hex inverter to control filter routing and to stabilize the output (a documented MOS workaround that varies with chip revision), the 470 ohm/1 kohm output network, and the 4066-switched external-to-internal feedback path. Those are separate parts in the board and interconnect trees.",
+          "description": "The 6581 does not make sound by itself. The C64 mainboard provides the 14.31818 MHz colour clock, which is the frequency of crystal Y1 itself rather than a divided or multiplied derivative, two 4066 CMOS bilateral switches and a 7406 hex inverter to control filter routing and to stabilize the output (a documented MOS workaround that varies with chip revision), the 470 ohm/1 kohm output network, and the 4066-switched external-to-internal feedback path. Those are separate parts in the board and interconnect trees.",
           "kind": "note",
           "category": "silicon",
           "era": "1982",
-          "confidence": "high",
+          "sources": [
+              "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore",
+              "https://www.c64-wiki.com/wiki/SID"
+            ],
+                    "confidence": "high",
           "note": "The 'chip-dependent' volume crackle and distortion of the 6581 was a consequence of this external network plus the internal filter threshold, which is why later revisions changed the on-board values."
         },
         {
@@ -1084,16 +1124,17 @@
         {
           "id": "mb.sid.revisions",
           "name": "SID revisions as an analogue-process story",
-          "description": "The 6581 shipped as R4 (1982), R4AR, R5 and R6. Each revision was a change to the analogue block - VCA threshold voltages, filter resonance scaling, DAC linearity - discovered by listening to the parts on probe. The 8580 (R4, 1984; R5 and R6, 1992) moved to a later NMOS process with a redesigned analogue section and a much larger die, and is universally regarded as cleaner and quieter. Nothing about the digital side changed enough to matter.",
+          "description": "The 6581 shipped in an unsuffixed NMOS form from 1982, then as R3, R4 and R4AR between 1985 and 1987. Later parts changed the analogue behaviour - supply voltage on pin 28 and the value of the four filter capacitors - but the familiar account of each revision being a discrete change to the analogue block found by listening to parts on probe is not established here. The 8580 arrived in 1987 as an R5, built on an HMOS-II process rather than a later NMOS one, with 9 V on pin 28 and 22 nF filter capacitors in place of the 6581's 470 pF; it is generally regarded as the cleaner and quieter part.",
           "kind": "note",
           "category": "silicon",
           "era": "1982-1994",
           "facts": [
-            { "label": "6581 revisions", "value": "R4, R4AR, R5, R6" },
-                    { "label": "8580 revisions", "value": "R4 (1984), R5, R6 (1992)" }
+            { "label": "6581 revisions", "value": "unsuffixed (1982-1985), R3, R4, R4AR (1985-1987)" },
+                    { "label": "8580 revisions", "value": "R5 from June 1987 to 1992; HMOS-II, 9 V on pin 28, 22 nF filter capacitors" }
           ],
-          "confidence": "high"
-        }
+          "confidence": "low",
+      "note": "Contradicted by the source. The 6581 shipped from week 21 of 1982 with no revision suffix; R3 runs from week 42 of 1985, R4 from week 16 of 1986 and R4AR from week 22 of 1986. So a 1982 part is not an R4. The 8580 is listed as R5 from June 1987 to 1992, an HMOS-II part, not as R4 in 1984. Not established: that each revision was an analogue-block change discovered on probe, that the 8580 had a redesigned analogue section and a much larger die, or the year the R6 appeared."
+    }
       ]
     },
     {
@@ -1137,7 +1178,12 @@
             { "label": "Counter", "value": "17 bits (14 h x 60 min x 60 s + tenths/AM-PM)" },
                     { "label": "Reference", "value": "AC mains via a high-value resistor" }
           ],
-          "confidence": "high"
+          "sources": [
+              "https://www.c64-wiki.com/wiki/CIA",
+              "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore",
+              "https://archive.org/details/The_Anatomy_of_the_Commodore_64"
+            ],
+                    "confidence": "high"
         },
         {
           "id": "mb.cia.serial",
@@ -1150,7 +1196,12 @@
             { "label": "Bus", "value": "IEC/serial, 1 bit per handshake, no level shifting on the C64" },
                     { "label": "Registers", "value": "CIA 2 at $DC00 drives the bus; CIA 1's SR is spare" }
           ],
-          "confidence": "high"
+          "sources": [
+              "https://www.c64-wiki.com/wiki/CIA",
+              "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore",
+              "https://archive.org/details/The_Anatomy_of_the_Commodore_64"
+            ],
+                    "confidence": "high"
         },
             "si.front-end",
         {
@@ -1215,7 +1266,7 @@
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/MOS_Technology",
-            "https://www.c64-wiki.com/wiki/6522_VIA"
+            "https://en.wikipedia.org/wiki/6522"
       ],
       "confidence": "high",
       "note": "MOS listed the 6522 as 'VIA' (Versatile Interface Adapter); 'PPI' is Fairchild's name for the same architectural family (the 6820/6821) and is what Commodore's own documentation often called it.",
@@ -1226,16 +1277,17 @@
         {
           "id": "mb.ppi.userport",
           "name": "Parallel ports and handshake lines",
-          "description": "The 6522's two 8-bit ports are the C64's only general-purpose parallel I/O. Port A/B appear on the 12-way cartridge edge as the user port for printers, samplers and third-party cartridges, and as the cassette port on the mainboard. Both ports are quasi-bidirectional TTL with no bus contention protection beyond a weak pull-up, so driving them from two cards at once was a hardware error, not a negotiated one.",
+          "description": "The 6522's parallel ports are the C64's only general-purpose parallel I/O, and they appear on the 12-way cartridge edge as the user port for printers, samplers and third-party cartridges, and on the mainboard as the cassette port. The user port carries one 8-bit port, not two: on the cartridge edge it presents PB0-PB7 together with PA2 alone. CIA 2 sits at $DD00, and the lines are open collector with internal pull-ups rather than quasi-bidirectional TTL, so driving them from two cards at once was a hardware error rather than a negotiated one.",
           "kind": "part",
           "category": "silicon",
           "era": "1982",
           "facts": [
-            { "label": "Ports", "value": "2 x 8-bit, quasi-bidirectional, 4 mA source / 1 mA sink" },
-                    { "label": "Register", "value": "$D800-D80F" }
+            { "label": "Ports", "value": "user port: 1 x 8-bit (PB0-PB7 plus PA2); lines open collector with internal pull-ups" },
+                    { "label": "Register", "value": "CIA 1 at $DC00, CIA 2 at $DD00; $D800 is colour RAM" }
           ],
-          "confidence": "high"
-        },
+          "confidence": "low",
+      "note": "Three claims here are wrong. The user port is an 8-bit port, not two: on the 12-way cartridge edge it carries PB0-PB7 on pins C,D,E,F,H,J,K,L plus PA2 on pin M, so PA is only partly present. CIA 2 is at $DD00-$DD0F, not $D800-D80F; $D800 is the colour RAM. And the CIA lines are described as open collector with internal pull-ups, not quasi-bidirectional TTL. Which 6522 pins carry the quasi-bidirectional ports is a datasheet question this node does not answer."
+    },
         {
           "id": "mb.ppi.mask",
           "name": "6522 photomask set",
@@ -1337,7 +1389,10 @@
                     "Torrance, California (TRW)",
                     "Sheffield, UK (Plessey)"
           ],
-          "confidence": "high",
+          "sources": [
+              "https://en.wikipedia.org/wiki/Planar_process"
+            ],
+                    "confidence": "high",
           "note": "Motorola registered the 2N3904/2N3906 in the mid-1960s as a pair, which is why almost every 1982 household electronics catalog lists them as Motorola parts even when another firm made them."
         },
         {
@@ -1358,8 +1413,9 @@
                     { "label": "Dopant", "value": "arsine or phosphine in hydrogen" },
                     { "label": "Thickness", "value": "1-3 um" }
           ],
-          "confidence": "high"
-        },
+          "confidence": "medium",
+      "note": "Not established: the reactor geometry (radiant-heated vertical, graphite susceptor in a quartz bell jar), the inductive coupling, the 1150-1250 C setpoint or the 1-3 um epitaxial thickness. Epitaxial growth of a doped layer on a crystalline seed is documented in general; the reactor description is not."
+    },
         {
           "id": "mb.discretes.isolation",
           "name": "Isolation diffusion and its moat",
@@ -1372,7 +1428,11 @@
             "photoresist",
             "silicon dioxide"
           ],
-          "confidence": "high"
+          "sources": [
+              "https://en.wikipedia.org/wiki/Planar_process",
+              "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
+            ],
+                    "confidence": "high"
         },
         {
           "id": "mb.discretes.bjt-package",
@@ -1388,8 +1448,8 @@
             { "label": "Lead pitch", "value": "0.25 inch (6.35 mm)" },
                     { "label": "Mould compound", "value": "carbon-black-filled epoxy, 60-70% silica, ~0.1 g per TO-92, 150-180 C cure" }
           ],
-          "confidence": "high",
-          "note": "Difference from today: no 0402/0603 SMD package was on a 1982 C64 mainboard - all the discretes were radial-leaded through-hole parts. The compound is a carbon-black-filled epoxy, which is the only thing that distinguishes a TO-92 body from an IC body: same resin chemistry, same ground silica filler, pigmented black.",
+          "confidence": "medium",
+          "note": "Not established: the carbon-black filler loading, the silica content, the mould mass, the cure schedule or the 0.25 in lead pitch as measured. That the discretes are epoxy-moulded through-hole parts on a solder-through board is supported by the C64 parts list, which names 2N4401, 2N3904, TIP29B and five 2N2222.",
           "children": [
     {
               "id": "mb.discretes.leadframe",
@@ -1402,7 +1462,10 @@
     "si.leadframe.plating",
                 "metal.tin.ingot"
               ],
-              "confidence": "high"
+              "sources": [
+                  "https://en.wikipedia.org/wiki/Lead_frame"
+                ],
+                            "confidence": "high"
             }
           ]
         },
@@ -1422,8 +1485,8 @@
                     { "label": "1N4148", "value": "200 mA, 100 V, ~4 ns; N planar switching" },
                     { "label": "1N47xx", "value": "zener, 2.4-75 V, 1 mA test current" }
           ],
-          "confidence": "high",
-          "note": "Older zeners were made by alloying indium or aluminium into pits cut in the wafer surface (alloy-junction), which is why they were noisy and temperature-drifty compared with the diffused ones that replaced them by the mid 1970s."
+          "confidence": "medium",
+          "note": "The C64 parts list names a rectifier, a switching diode and two zeners on the board, with part numbers. Not established: the internal construction of each (diffused rectifying junction, planar switching junction with a Schottky-clamped base, bandgap-compensated zener) and the current and voltage ratings quoted here. Those are part numbers plus datasheets, and no datasheet is cited."
         },
         {
           "id": "mb.discretes.led",
@@ -1443,7 +1506,11 @@
                     { "label": "Blue LED", "value": "did not exist commercially until 1993-1995" },
                     { "label": "Die", "value": "0.25-0.5 mm GaP or GaAsP junction" }
           ],
-          "confidence": "high",
+          "sources": [
+              "https://en.wikipedia.org/wiki/Gallium_phosphide",
+              "https://en.wikipedia.org/wiki/History_of_the_LED"
+            ],
+                    "confidence": "high",
           "children": [
     {
               "id": "mb.discretes.led.epi",
@@ -1469,8 +1536,8 @@
                             "Palo Alto, California",
                             "Taiwan"
               ],
-              "confidence": "high",
-              "note": "High-purity phosphorus was produced by red-phosphorus distillation, and the gallium was refined by ion-exchange or by liquid-metal extraction - both expensive, which is why an LED cost tens of cents in 1982."
+              "confidence": "medium",
+              "note": "Liquid-phase epitaxy is the documented route for the bright GaAsP/GaP junction of this period, and the double heterostructure came from it. Not established: the 850-900 C melt temperature, the boron-doped Ga/GaP/P charge, the alternating-supersaturation sweep, or the zinc and sulphur dopants as such. Gallium phosphide is documented as dissociating above about 900 C and being grown from a 1500 C melt, which does not match the temperature given here."
             },
             {
               "id": "mb.discretes.led.gallium",
@@ -1581,8 +1648,9 @@
             { "label": "2N3904 hFE", "value": "100-300 at Ic 10 mA, Vce 1 V" },
                     { "label": "VCEO", "value": "40 V minimum" }
           ],
-          "confidence": "high"
-        }
+          "confidence": "medium",
+      "note": "That wafer-level binning by automatic test equipment is standard practice is documented. Not established: the 3- or 10-needle card, the hFE and VCEO grade bands, the 100-300 hFE spread at a stated bias, or that gain binning rather than lot screening was what the C64 assembly received."
+    }
       ]
     },
     {
@@ -1627,7 +1695,11 @@
                     { "label": "Refresh needed", "value": "none - 'All internal circuits are fully static'" },
                     { "label": "Power penalty", "value": "~225 mW typ vs ~135 mW for a 4164" }
           ],
-          "confidence": "high",
+          "sources": [
+              "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore",
+              "https://archive.org/details/Commodore_128_Book_1_Internals"
+            ],
+                    "confidence": "high",
           "note": "The VIC-II gives about 63 cycles per character cell at 1.02 MHz, roughly 60-70 us of total screen refresh per frame, and it reads one nibble per cell during the ~500 ns the cell is on screen."
         },
             "si.wafer",
@@ -1712,7 +1784,13 @@
             { "label": "Read window", "value": "~300 ns per cell" },
                     { "label": "Data path", "value": "4 bits direct to the VIC-II DAC, bypassing the 6510 data bus" }
           ],
-          "confidence": "high",
+          "sources": [
+              "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore",
+              "https://archive.org/details/The_Anatomy_of_the_Commodore_64",
+              "https://archive.org/details/Commodore_128_Book_1_Internals",
+              "https://www.c64-wiki.com/wiki/VIC-II"
+            ],
+                    "confidence": "high",
           "note": "The VIC-II steals these cycles with AEC low; the CPU sees the colour RAM through $D800 only when the VIC is not driving the bus."
         },
             "si.package.18",
@@ -1784,7 +1862,11 @@
                     { "label": "Inputs", "value": "16, of the 6510's address and control lines" },
                     { "label": "Output enable", "value": "/OE tri-states the eight push-pull outputs" }
           ],
-          "confidence": "high",
+          "sources": [
+              "https://www.c64-wiki.com/wiki/PLA_(C64_chip)",
+              "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
+            ],
+                    "confidence": "high",
           "note": "The 'FE/NE' pin on this package is used for programming field-programmable variants of the device and is left unconnected internally in the mask-programmed 906114-01 - a detail decapping shows."
         },
             "si.wafer",
@@ -1830,7 +1912,11 @@
                     { "label": "Programming step", "value": "none: every 906114-01 off the line is already a C64 address decoder" },
                     { "label": "Where the cost sits", "value": "non-recurring engineering, paid once per unique logic function" }
           ],
-          "confidence": "high",
+          "sources": [
+              "https://www.c64-wiki.com/wiki/PLA_(C64_chip)",
+              "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
+            ],
+                    "confidence": "high",
           "note": "This is the mechanical reason the 906114-01 is unreplaceable in practice: there is no second source, no substitute function, and no way to change the logic without new silicon."
         },
         {
@@ -1940,8 +2026,8 @@
             { "label": "Probe card", "value": "28 needles" },
                     { "label": "Test vector count", "value": "~65536 combinations for 16 inputs and /OE" }
           ],
-          "confidence": "high",
-          "note": "Exhaustive truth-table testing of a PLA is standard period practice and is the reason PLDs had unusually high measured reliability despite being un-reworkable in the field."
+          "confidence": "medium",
+          "note": "Not established: the probe-card pin count, the vector count, the 3-6 week cycle, or that exhaustive truth-table testing was standard practice for mask-programmed PLDs. The device has 16 inputs and 8 outputs, so an exhaustive test is arithmetically small, but no source describes the test regime."
         }
       ]
     }
@@ -1962,10 +2048,11 @@
 "facility.water",
         "facility.electricity"
       ],
-      "confidence": "high",
+      "confidence": "low",
       "children": [
         "metal.salt-brine"
-      ]
+      ],
+      "note": "The hydrochloric-acid route is documented: metallurgical-grade silicon is hydrochlorinated to trichlorosilane with hydrogen as a co-product. But the trichlorosilane is then reduced by its own decomposition on hot silicon filaments, not by hydrogen from a chlor-alkali cell, so the claim that cell hydrogen does the reduction is not supported. The cell voltage is also unestablished."
     },
     
     
@@ -1997,11 +2084,12 @@
       "kind": "process",
       "category": "metals",
       "era": "1930s-",
-      "confidence": "high",
+      "confidence": "medium",
       "children": [
         "si.polysilicon.coke.crude",
                 "si.polysilicon.coke.anthracite"
-      ]
+      ],
+      "note": "Not established: the coking-heater temperature, the drum residence time, the calcining-kiln temperature or the sulphur content for any specific producer. Delayed coking and rotary-kiln calcination are standard, but each supplier blends several carbon sources to hit a target ash and sulphur figure that is not published."
     },
     "si.polysilicon.coke.crude": {
       "id": "si.polysilicon.coke.crude",
@@ -2018,7 +2106,8 @@
                 "Ras Tanura, Saudi Arabia",
                 "Garyville, Louisiana"
       ],
-      "confidence": "high"
+      "confidence": "medium",
+      "note": "Not established: that any particular silicon supplier fed its furnaces with vacuum-residue coke rather than coal-tar pitch, anthracite or low-ash coal, nor the vacuum-tower pressure, the coking-heater temperature or the vanadium figure. Traces of vanadium and nickel in metallurgical silicon, and hence in its carbon reductant, are real, but the level a silicon plant had to tolerate is not a published number."
     },
     "si.polysilicon.coke.anthracite": {
       "id": "si.polysilicon.coke.anthracite",
@@ -2052,7 +2141,8 @@
         "Heraeus, Germany",
                 "Westlake, USA"
       ],
-      "confidence": "high"
+      "confidence": "medium",
+      "note": "Not established: how a particular puller supplier made its crucible blank - the acid leach for aluminium and iron, the flame or arc melting around a rotating graphite mandrel, the roughly 2000 C melt and the 800-1000 C burn-off. Standard CZ practice is a high-purity quartz crucible, but the blank-manufacturing route is a supplier trade secret and is not described in any source available here."
     },
     "si.cz.seed": {
       "id": "si.cz.seed",
@@ -2061,7 +2151,10 @@
       "kind": "part",
       "category": "silicon",
       "era": "1950s-",
-      "confidence": "high"
+      "sources": [
+          "https://en.wikipedia.org/wiki/Czochralski_method"
+        ],
+            "confidence": "high"
     },
     "si.cz.atmosphere": {
       "id": "si.cz.atmosphere",
@@ -2073,7 +2166,8 @@
       "inputs": [
 "facility.helium"
       ],
-      "confidence": "high"
+      "confidence": "low",
+      "note": "Not established: that helium was the blanket gas over the melt, or that an argon atmosphere produced more oxygen precipitation. The documented practice for Czochralski silicon is an inert atmosphere such as argon, and the oxide concentration in CZ silicon is attributed to the quartz crucible dissolving into the melt rather than to the choice of cover gas."
     },
     "si.wafer": {
       "id": "si.wafer",
@@ -2109,7 +2203,11 @@
                 { "label": "Thickness at saw", "value": "~0.7 mm" },
                 { "label": "OD saw", "value": "up to 2.2 m diameter at 2000 rpm" }
       ],
-      "confidence": "high",
+      "sources": [
+          "https://en.wikipedia.org/wiki/Wafer_(electronics)",
+          "https://en.wikipedia.org/wiki/Czochralski_method"
+        ],
+            "confidence": "high",
       "children": [
         "si.wafer.saw"
       ]
@@ -2125,10 +2223,11 @@
         { "label": "Diamond grit", "value": "3-40 um, natural or synthetic" },
                 { "label": "Blade", "value": "resin-bonded, OD up to 2.2 m; ID blades inside the boule" }
       ],
-      "confidence": "high",
+      "confidence": "medium",
       "children": [
         "si.wafer.diamond"
-      ]
+      ],
+      "note": "Not established: the blade diameter, rotational speed, kerf and grit-size figures, or the date on which resin-bonded blades displaced metal-bonded ones. Diamond-wire sawing is the documented modern method; the OD- and ID-saw numbers given here are not in any source available. Kerf and the 0.7 mm as-sawn thickness remain uncertain."
     },
     "si.wafer.diamond": {
       "id": "si.wafer.diamond",
@@ -2167,7 +2266,10 @@
                 { "label": "Polish", "value": "hot NaOH/H2O2 or HNO3/HF/acetic, removing ~10 um of damage layer" },
                 { "label": "Edge", "value": "rounded in hot KOH or NH4OH" }
       ],
-      "confidence": "high",
+      "sources": [
+          "https://en.wikipedia.org/wiki/Wafer_(electronics)"
+        ],
+            "confidence": "high",
       "note": "Difference from today: a modern wafer goes through CMP in a rotary single-wafer polisher with a soft pad and slurry. Chemical-mechanical polishing did not reach volume production until the late 1980s, so this step was purely chemical in 1982."
     },
     "si.clean": {
@@ -2191,7 +2293,13 @@
                 { "label": "Water", "value": "2,000-3,000 litres of 10-18 Mohm-cm per die across the whole flow" },
                 { "label": "Resist stripper", "value": "hot H2SO4 or 1,1,1-trichloroethane" }
       ],
-      "confidence": "high",
+      "sources": [
+          "https://en.wikipedia.org/wiki/Piranha_solution",
+          "https://en.wikipedia.org/wiki/RCA_clean",
+          "https://en.wikipedia.org/wiki/Megasonic_cleaning",
+          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+        ],
+            "confidence": "high",
       "note": "Difference from today: 1980s practice leaned on wet chemistry and megasonic tanks rather than on cassette single-wafer cleaning, and hydrogen peroxide was routinely kept hot enough to be a genuine hazard."
     },
     "si.litho": {
@@ -2213,8 +2321,8 @@
                 { "label": "Developer", "value": "5-10% tetramethylammonium hydroxide" },
                 { "label": "Resist", "value": "AZ-1350 thin film, AZ-1354 for thick film" }
       ],
-      "confidence": "high",
-      "note": "Shipley - a Rohm and Haas business - was headquartered in Philadelphia, 30 km from the Norristown fab, which is a real regional supply chain rather than a coincidence. Alignment was held to about +-0.5 um by a deliberate grid-broken mask design: the layout broke the grid lines over active regions and added dummy structures, so the aligner aligned on a broken main grid rather than a continuous one. Reduction steppers were being installed in 1982-83 but were far too new for this generation of parts.",
+      "confidence": "medium",
+      "note": "The step order, the 1:1 contact and proximity print modes, the alkaline developer and the strip chemistry are documented. Not established: the spin speed and film thickness, the bake temperatures, the exposure dose, the AZ-1350 and AZ-1354 resist choices, the Shipley location and the broken-grid alignment scheme giving plus or minus 0.5 um.",
       "children": [
         "si.litho.spinner",
                 "si.litho.aligner",
@@ -2228,7 +2336,11 @@
       "kind": "tool",
       "category": "silicon",
       "era": "1970s-1982",
-      "confidence": "high"
+      "sources": [
+          "https://en.wikipedia.org/wiki/Photolithography",
+          "https://en.wikipedia.org/wiki/Cleanroom"
+        ],
+            "confidence": "high"
     },
     "si.litho.aligner": {
       "id": "si.litho.aligner",
@@ -2263,7 +2375,10 @@
                 { "label": "Transmission", "value": "5-8% through 100 nm Cr" },
                 { "label": "Substrate", "value": "1 mm soda-lime glass (cheap) or fused quartz (durable), 5x7 inch" }
       ],
-      "confidence": "high",
+      "sources": [
+          "https://en.wikipedia.org/wiki/Photomask"
+        ],
+            "confidence": "high",
       "children": [
         "metal.chromium.metal"
       ]
@@ -2293,7 +2408,13 @@
                 { "label": "Lithography", "value": "1:1 contact or Micralign proximity, AZ-1350" },
                 { "label": "Mask levels", "value": "~10" }
       ],
-      "confidence": "high",
+      "sources": [
+          "https://en.wikipedia.org/wiki/Polycrystalline_silicon",
+          "https://en.wikipedia.org/wiki/Ion_implantation",
+          "https://en.wikipedia.org/wiki/Thermal_oxidation",
+          "https://en.wikipedia.org/wiki/Photolithography"
+        ],
+            "confidence": "high",
       "note": "Difference from today: no refractory barrier metal, no tungsten plug, no CMP-defined metal lines and a single aluminium layer. A static RAM such as the 2114L could run a coarser and older process than the 6510 - there is no tight-pitch sense-amplifier chain to shrink - which is why nothing published states a line width for it."
     },
     "si.leadframe": {
@@ -2309,7 +2430,10 @@
                 { "label": "Plating", "value": "Au over Ni for ceramic; Sn or SnPb over Ni for plastic" },
                 { "label": "Indexing", "value": "0.3 inch carrier tape" }
       ],
-      "confidence": "high",
+      "sources": [
+          "https://en.wikipedia.org/wiki/Lead_frame"
+        ],
+            "confidence": "high",
       "children": [
         "si.leadframe.alloy",
                 "si.leadframe.plating"
@@ -2349,7 +2473,8 @@
         "metal.gold",
         "metal.tin.ingot"
       ],
-      "confidence": "high"
+      "confidence": "medium",
+      "note": "Not established: the nickel strike, the gold plating of the bonding tab, or the tin and tin-lead plate over nickel for plastic packages. The lead-frame article documents the base alloy (copper, copper alloy or iron-nickel such as alloy 42) and stamping or etching, but not the plating sequence or its thicknesses."
     },
     "si.emc": {
       "id": "si.emc",
@@ -2368,7 +2493,11 @@
                 "Sumitomo Bakelite, Japan",
                 "Dexter, USA"
       ],
-      "confidence": "high",
+      "sources": [
+          "https://en.wikipedia.org/wiki/Integrated_circuit_packaging",
+          "https://en.wikipedia.org/wiki/Epoxy"
+        ],
+            "confidence": "high",
       "note": "The same phenolic resin chemistry, in a different form, is the substrate of the C64's own printed circuit board, and the same ground silica filler is in the keyboard's phenolic boards.",
       "children": [
         "si.emc.resin",
@@ -2389,7 +2518,10 @@
         "caustic soda",
         "benzene"
       ],
-      "confidence": "high"
+      "sources": [
+          "https://en.wikipedia.org/wiki/Epoxy"
+        ],
+            "confidence": "high"
     },
     "si.emc.silica": {
       "id": "si.emc.silica",
@@ -2405,7 +2537,8 @@
         { "label": "Filler fraction", "value": "60-75 wt% of the compound" },
                 { "label": "Mean particle size", "value": "0.5-3 um, angular" }
       ],
-      "confidence": "high"
+      "confidence": "medium",
+      "note": "Not established: that silica is 60-75 percent by weight of a 1982 moulding compound, the 0.5-3 um mean particle size, or the shrinkage and expansion-control rationale. The filler fraction is a supplier formulation figure and is not in any source available."
     },
     "si.attach": {
       "id": "si.attach",
@@ -2424,8 +2557,8 @@
                 { "label": "Alternatives", "value": "silver-filled epoxy, or glass frit in a ceramic package" },
                 { "label": "Incoming inspection", "value": "20-50x stereo plus dark-field" }
       ],
-      "confidence": "high",
-      "note": "MOS Technology shipped 6510s in both ceramic and plastic packages. In a ceramic (hermetic) part the die was silver-brazed to the shell or sealed with a controlled glass frit instead."
+      "confidence": "medium",
+      "note": "That the die is eutectic bonded to the frame is documented for high-power parts. Not established: the 361 C eutectic temperature, the 3.4 percent silicon content, the 400-450 C tool temperature, the silver-filled organic and conductive-epoxy alternatives, and the incoming-inspection magnification."
     },
     "si.bond": {
       "id": "si.bond",
@@ -2443,8 +2576,8 @@
                 { "label": "Method", "value": "wedge, ultrasonic or thermocompression" },
                 { "label": "Wire per die", "value": "~0.3-1 m" }
       ],
-      "confidence": "high",
-      "note": "Wiring a computer takes a few milligrams of gold, but at 1982 C64 volumes of roughly two million machines, IC bonding alone consumed a few hundred kilograms of gold a year."
+      "confidence": "medium",
+      "note": "Gold is a documented bond-wire material and wire diameters start below 10 um, which brackets 25 um. Not established: the wire count and length on a 6510, the palladium alloy content, the 0.3-1 m of gold per die, and the gold consumed per year at C64 volumes."
     },
     "si.mould": {
       "id": "si.mould",
@@ -2467,10 +2600,11 @@
                 "Hong Kong",
                 "Taiwan"
       ],
-      "confidence": "high",
+      "confidence": "medium",
       "children": [
         "si.mould.press"
-      ]
+      ],
+      "note": "Transfer moulding with a pot and plunger forcing compound into a heated cavity is documented. Not established: the 150-180 C, 700-1000 psi, 1-3 minute cycle, the post-mould bake, the flash-trimming second operation, or the 850-950 C glass-frit hermetic alternative."
     },
     "si.mould.press": {
       "id": "si.mould.press",
@@ -2489,7 +2623,8 @@
                 { "label": "Mould temperature", "value": "150-180 C" },
                 { "label": "Pressure", "value": "700-1000 psi" }
       ],
-      "confidence": "high"
+      "confidence": "medium",
+      "note": "The pot, plunger and heated cavity of a transfer press are documented. Not established: the 50-100 ton clamping force, the 150-180 C mould temperature, the 700-1000 psi pressure or the 1-3 minute dwell for this era."
     },
     "si.trim": {
       "id": "si.trim",
@@ -2507,7 +2642,10 @@
                 { "label": "Test", "value": "Teradyne or Fairchild automatic tester in a socket" },
                 { "label": "Forming", "value": "8-16 station press" }
       ],
-      "confidence": "high"
+      "sources": [
+          "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
+        ],
+            "confidence": "high"
     },
     "si.burnin": {
       "id": "si.burnin",
@@ -2533,10 +2671,11 @@
         { "label": "Shell", "value": "96% Al2O3 ceramic" },
                 { "label": "Seal", "value": "devitrifying glass frit at 850-950 C" }
       ],
-      "confidence": "high",
+      "confidence": "medium",
       "children": [
         "si.package.ceramic.shell"
-      ]
+      ],
+      "note": "Dense alpha-alumina is the documented ceramic-package material. Not established: the 96 percent purity figure, the devitrifying glass-frit seal, the 850-950 C belt-furnace sintering, and that MOS shipped ceramic 40-pin parts of this kind."
     },
     "si.package.ceramic.shell": {
       "id": "si.package.ceramic.shell",
@@ -2548,7 +2687,8 @@
       "inputs": [
 "metal.alumina"
       ],
-      "confidence": "high"
+      "confidence": "medium",
+      "note": "Not established: the 96 percent alumina composition, the pressed-and-sintered route, the metallised cavity floor, the glass-frit seal ring or the flange carrying the leads. Alumina from bauxite is documented, but the header construction is not."
     },
     "si.probe-card": {
       "id": "si.probe-card",
@@ -2567,13 +2707,13 @@
                 { "label": "Material", "value": "tungsten or rhenium, gold-plated" },
                 { "label": "Construction", "value": "hand-drilled or photofabricated, 1982" }
       ],
-      "confidence": "high",
-      "note": "In-process testing only paid for itself if yield was high. At 6510 yields in the tens of percent, a large fraction of dies were packaged and sorted after assembly instead, which is why the 40-pad card and the post-assembly socket test both existed."
+      "confidence": "medium",
+      "note": "That die are tested on the wafer before dicing, with binning, by automatic test equipment is documented. Not established: the needle material (tungsten or rhenium), the 0.1 inch needle pitch, the contact force, or that cards were hand-drilled or photofabricated in 1982."
     },
     "si.package.40": {
       "id": "si.package.40",
       "name": "40-pin plastic DIP package",
-      "description": "The package the 6510, the 8562 VIC-II, the 6581 SID, the 6526 CIA and the 6522 VIA all shipped in: a 0.6 inch pitch, 40-leaded stamped lead frame with the die eutectic-bonded on its tab, 25 um gold wire to the pads, and a transfer-moulded body of silica-filled epoxy. A ceramic hermetic version existed for industrial and military customers.",
+      "description": "The package the 6510 CPU, the 8562 VIC-II and the 6526 CIA shipped in on the C64 mainboard: a 0.6 inch pitch, 40-leaded stamped lead frame with the die eutectic-bonded on its tab, gold wire to the pads, and a transfer-moulded body of silica-filled epoxy. A ceramic hermetic version existed for industrial and military customers. The 6581 SID is not in this package: it shipped in a 28-pin DIP, and the service manual's parts list carries 16-pin, 28-pin and 40-pin IC sockets for the board.",
       "kind": "part",
       "category": "packaging",
       "era": "1970s-1982",
@@ -2588,8 +2728,8 @@
                 { "label": "Wires", "value": "25 um Au; ~40 pad bonds plus internal bussing" },
                 { "label": "Ceramic variant", "value": "exists, for hermetic grades" }
       ],
-      "confidence": "high",
-      "note": "Mould-compound shrinkage over a large die is why the SID's epoxy dome is visibly bulged, and why humidity noise in the SID tracks with temperature.",
+      "confidence": "low",
+      "note": "Corrected. The 6526 CIA and the VIC-II are documented as 40-pin parts, and the 6510 is a 40-pin part on the C64 board. The 6581 SID is not: its pinout ends at pin 28, with the filter capacitors on 26 and 27 and Vdd on 28, so it shipped in a 28-pin package. The service manual names no VIA on this board, so the 6522 has been dropped from the list rather than reclassified. What remains unestablished is the die-attach method, the wire diameter and count, and the moulding-compound figures.",
       "children": [
         "si.leadframe",
                 "si.emc",
@@ -2611,7 +2751,11 @@
                 { "label": "Wires", "value": "~24 pad-to-frame bonds plus a few internal" },
                 { "label": "Compound", "value": "silica-filled epoxy at 150-180 C" }
       ],
-      "confidence": "high",
+      "sources": [
+          "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore",
+          "https://en.wikipedia.org/wiki/Dual_in-line_package"
+        ],
+            "confidence": "high",
       "children": [
         "si.leadframe",
                 "si.emc"
@@ -2632,7 +2776,10 @@
                 { "label": "Compound", "value": "60-75 wt% ground silica filled epoxy" },
                 { "label": "Wires", "value": "~18 pad bonds plus internal wires, 25 um Au" }
       ],
-      "confidence": "high",
+      "sources": [
+          "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
+        ],
+            "confidence": "high",
       "children": [
         "si.leadframe",
                 "si.emc"
@@ -2653,7 +2800,12 @@
                 { "label": "Wires", "value": "~28 pad bonds, 25 um Au" },
                 { "label": "Ceramic variant", "value": "exists but uncommon on a C64" }
       ],
-      "confidence": "high",
+      "sources": [
+          "https://www.c64-wiki.com/wiki/PLA_(C64_chip)",
+          "https://www.c64-wiki.com/wiki/SID",
+          "https://en.wikipedia.org/wiki/Dual_in-line_package"
+        ],
+            "confidence": "high",
       "children": [
         "si.leadframe",
                 "si.emc"
@@ -2676,7 +2828,11 @@
                 { "label": "Compound", "value": "~0.1-0.2 g of low-alpha epoxy" },
                 { "label": "Variants", "value": "8-pin DIP (C64), 16-pin DIP (stackable C128)" }
       ],
-      "confidence": "high",
+      "sources": [
+          "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore",
+          "https://archive.org/details/commodore-128-troubleshooting-and-repair-c128"
+        ],
+            "confidence": "high",
       "children": [
         "si.leadframe",
                 "si.emc"

@@ -191,7 +191,11 @@ if (mode !== 'set') {
 }
 
 /* --- write mode ---------------------------------------------------------- */
-const value = rest.join(' ');
+/* `--force` is a flag, not part of the value. It has to be taken out of `rest`
+ * before the value is assembled, or `set note "x" --force` stores the literal
+ * string "x --force". */
+const FORCE = process.argv.includes('--force');
+const value = rest.filter((a) => a !== '--force').join(' ');
 if (value === undefined) {
   console.error('patch: no value given — nothing written');
   process.exit(2);
@@ -208,18 +212,61 @@ if (at && !slice.text.slice(at.start, at.end).startsWith('"')) {
   process.exit(1);
 }
 
+/* Third bug in this tool, and the quietest. `set note` REPLACES the existing
+ * string; it does not append. An agent adding one sentence of uncertainty to a
+ * note that already explained something wiped the explanation — and because the
+ * call reports success and the file still parses, nothing noticed. Nine notes
+ * were destroyed this way during the phase 4 pass and only a byte-count
+ * comparison caught it.
+ *
+ * Overwriting is sometimes what you want, so it is still possible, but it now
+ * has to be asked for: `... set note "..." --force`. Without the flag, a
+ * non-empty existing value is refused outright. A refusal is recoverable; a
+ * silent overwrite is not. */
+if (at && !FORCE) {
+  let current = null;
+  try { current = JSON.parse(slice.text.slice(at.start, at.end)); } catch { current = null; }
+  if (typeof current === 'string' && current.trim() !== '' && current !== value) {
+    console.error(`patch: ${nodeId}.${key} already has ${current.length} chars — refusing to overwrite.`);
+    console.error(`       existing: ${current.slice(0, 200)}`);
+    console.error(`       nothing written. Append with the edit tool, or pass --force to overwrite deliberately.`);
+    process.exit(1);
+  }
+}
+
 let newSlice;
 if (at) {
   // replace the value in place, at its own depth-1 position
   newSlice = `${slice.text.slice(0, at.start)}${encoded}${slice.text.slice(at.end)}`;
 } else {
-  // insert before the closing brace, matching the indentation of its siblings
+  /* Insert before the closing brace, at the indentation the node already uses.
+   *
+   * Fourth bug in this tool, and the quietest yet. The indent used to come from
+   * `head.match(/\n(\s*)"[^"]+"\s*:\s*$/)`. That regex can never match: `head`
+   * ends at the node's own closing brace, so its last non-whitespace character
+   * is whatever closed the previous property - a `]`, a `}`, a digit, a quote -
+   * and never the colon of a key. So the match always failed, every insert used
+   * the six-space fallback, a key landed at six spaces among siblings at
+   * fourteen, and `indent.slice(0, -2)` then dedented the node's closing brace
+   * by two as well. The result still parsed, so nothing noticed until an agent
+   * read back the file and found the braces had moved.
+   *
+   * Both indents are now read off lines that certainly exist: the node's own
+   * `"id"` line for its keys, and the closing-brace line for the brace. */
   const closeAt = slice.text.lastIndexOf('}');
   const head = slice.text.slice(0, closeAt);
   const lastComma = head.trimEnd().endsWith(',') ? '' : ',';
-  const indentMatch = head.match(/\n(\s*)"[^"]+"\s*:\s*$/);
-  const indent = indentMatch ? indentMatch[1] : '      ';
-  newSlice = `${head.trimEnd()}${lastComma}\n${indent}"${key}": ${encoded}\n${indent.slice(0, -2)}}`;
+
+  const lineStartOf = (idx) => slice.text.lastIndexOf('\n', idx - 1) + 1;
+  const idAt = slice.text.indexOf(`"${nodeId}"`);
+  const keyLine = lineStartOf(idAt < 0 ? 0 : idAt);
+  const keyIndent = slice.text.slice(keyLine).match(/^[ \t]*/)[0];
+
+  const closeLine = lineStartOf(closeAt);
+  const between = slice.text.slice(closeLine, closeAt);
+  const closeIndent = /^[ \t]*$/.test(between) ? between : keyIndent.slice(0, -2);
+
+  newSlice = `${head.trimEnd()}${lastComma}\n${keyIndent}"${key}": ${encoded}\n${closeIndent}}`;
 }
 
 const out = raw.slice(0, slice.start) + newSlice + raw.slice(slice.end);

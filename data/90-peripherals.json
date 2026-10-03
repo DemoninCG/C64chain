@@ -258,8 +258,8 @@
                         "value": "430-460 degrees C in a continuous tunnel or belt kiln"
                       }
                     ],
-                    "confidence": "high",
-                    "note": "Because the frit is a lead glass, a 1982 television tube is one of the largest deliberate lead-containing objects in the house. Real formulations ran from about a quarter to two thirds PbO depending on whether the set was sold as a colour tube with a separate shadow mask or a lower-cost monochrome-style lead frit, so treat 24% as representative, not universal. Modern seal bands use a photo-patterned photopaste so the frit only fires where it is needed, and modern sets moved to glass-to-glass bonding with the lead out of the frit entirely; the 1982 process was plain screen printing into a continuous belt kiln. Confidence on the chemistry is high; confidence on any particular tube's formulation is not, because the recipes were proprietary.",
+                    "confidence": "medium",
+                    "note": "Because the frit is a lead glass, a 1982 television tube is one of the largest deliberate lead-containing objects in the house. Real formulations ran from about a quarter to two thirds PbO depending on whether the set was sold as a colour tube with a separate shadow mask or a lower-cost monochrome-style lead frit, so treat 24% as representative, not universal. Modern seal bands use a photo-patterned photopaste so the frit only fires where it is needed, and modern sets moved to glass-to-glass bonding with the lead out of the frit entirely; the 1982 process was plain screen printing into a continuous belt kiln. Confidence on the chemistry is high; confidence on any particular tube's formulation is not, because the recipes were proprietary. Not established: the roughly 24 wt% PbO figure and the 88.05 keV lead K-absorption edge, the 60-100 mesh print, the 1-2 mm wet band thickness and the 430-460 C seal temperature. The 600-700 C devitrification appears elsewhere in this file under the panel glass node. The recipes were proprietary, so no particular tube's formulation can be given.",
                     "children": [
                       {
                         "id": "peripheral.tv.crt.panel.frit.pbo",
@@ -292,7 +292,7 @@
                           "Midland, Texas",
                           "Broken Hill, NSW"
                         ],
-                        "confidence": "high",
+                        "confidence": "medium",
                         "children": [
                           {
                             "id": "peripheral.tv.crt.panel.frit.pbo.roast-smelt",
@@ -341,8 +341,12 @@
                             ]
                           }
                         ],
-                        "note": "Named for what it is rather than for where it came from; the galena chain beneath it says where the lead came from."
-                      }
+                        "note": "Named for what it is rather than for where it came from; the galena chain beneath it says where the lead came from. Galena, PbS, is the most important ore of lead, and lead is smelted in a blast furnace from lead sinter with coke, after which the bullion is drossed. Not established: the 600-750 C fluid-bed or reverberatory roast, the 1100-1250 C sinter smelt, the electrolytic refining to 99.99% Pb, and the Herculaneum, Midland and Broken Hill attributions.",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Lead%20smelting",
+                          "https://en.wikipedia.org/wiki/Galena"
+                        ]
+      }
                     ]
                   },
                   {
@@ -438,7 +442,7 @@
                   }
                 ],
                 "sources": [
-                  "https://en.wikipedia.org/wiki/Frit_(glass)"
+                  "https://en.wikipedia.org/wiki/Glass_frit_bonding"
                 ]
               },
               {
@@ -626,11 +630,16 @@
                             "value": "98-99% H2SO4"
                           }
                         ],
-                        "confidence": "high",
+                        "confidence": "medium",
                         "children": [
                           
-                        ]
-                      },
+                        ],
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Contact%20process",
+                          "https://en.wikipedia.org/wiki/Zinc"
+                        ],
+      "note": "Industrial SO2 oxidation is at about 420-620 C over vanadium(V) oxide catalysts, typically around 450 C, and zinc is refined by froth flotation, roasting and electrowinning, so the roaster off-gas really is a SO2 source. Not established: the 98-99% acid absorption, and the claim that a 1982 zinc smelter's acid plant was as large as the roaster."
+    },
                       {
                         "id": "peripheral.tv.crt.phosphor.zns.silver",
                         "name": "Silver activator",
@@ -843,11 +852,16 @@
                           "Duisburg",
                           "Kawasaki"
                         ],
-                        "confidence": "high",
+                        "confidence": "medium",
                         "children": [
                           
-                        ]
-                      }
+                        ],
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Basic%20oxygen%20steelmaking",
+                          "https://en.wikipedia.org/wiki/Blast%20furnace"
+                        ],
+      "note": "Blast furnaces work by chemical reduction, carbon monoxide converting iron oxides to elemental iron, and blowing oxygen through molten pig iron lowers its carbon content to low-carbon steel; a modern converter takes a charge of up to 400 tons and makes steel in under 40 minutes. Not established: 1500-1600 C in the furnace, the 4-4.5% carbon of the hot metal, the 0.1-0.6% residual carbon, the 200-300 mm slab, and the Gary, Duisburg and Kawasaki attributions."
+    }
                     ]
                   },
                   {
@@ -944,7 +958,7 @@
                     "value": "0.5-1.0 mm at the centre of screen"
                   }
                 ],
-                "confidence": "high",
+                "confidence": "medium",
                 "children": [
                   {
                     "id": "peripheral.tv.crt.gun.cathode",
@@ -1033,14 +1047,18 @@
                         "value": "3422 degrees C"
                       }
                     ],
-                    "confidence": "high",
+                    "confidence": "medium",
                     "inputs": [
                       "metal.tungsten.wire"
                     ],
                     "children": [
                       "metal.tungsten.wire"
-                    ]
-                  },
+                    ],
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Tungsten"
+                    ],
+      "note": "Tungsten has the highest melting point of all known elements, at 3,422 C, and is used in incandescent lamp filaments. Not established: the 0.04-0.08 mm wire diameter, the 60-150 mm length, and the claim that this filament is by far the largest source of tube failure."
+    },
                   {
                     "id": "peripheral.tv.crt.gun.grids",
                     "name": "Focus and screen grids, nickel sheet",
@@ -1134,8 +1152,9 @@
                     "note": "Static focus coils were common in small sets of the early 80s and largely disappeared as focus went entirely electrostatic.",
                     "children": []
                   }
-                ]
-              },
+                ],
+      "note": "Not established: the 6.3 V at 0.6-0.9 A per gun heater supply, the 2400-2600 C filament temperature, the 400-700 V cathode-first-anode voltage, and the 0.5-1.0 mm spot size at the centre of screen."
+    },
               {
                 "id": "peripheral.tv.crt.yoke",
                 "name": "Deflection yoke and deflection coils",
@@ -1165,7 +1184,7 @@
                     "value": "pins and a C-core on the yoke, or electronic linearity in the line stage"
                   }
                 ],
-                "confidence": "high",
+                "confidence": "medium",
                 "children": [
                   {
                     "id": "peripheral.tv.crt.yoke.core",
@@ -1283,14 +1302,11 @@
                           "Japan",
                           "Netherlands"
                         ],
-                        "confidence": "high",
+                        "confidence": "medium",
                         "children": [
                           {
                             "id": "peripheral.tv.crt.yoke.geometry.magnets.alnico",
                             "name": "Alnico correction magnet",
-                            "kind": "material",
-                            "category": "magnetics",
-                            "era": "1982",
                             "description": "An iron-aluminium-nickel alloy with a high Curie point and a hard, brittle, unmachinable structure. Alnico is cast or sintered as a solid block, aged for days at 600-800 C to precipitate its magnetic phase, and then magnetised in a strong field - and it cannot be ground to shape afterwards, so the geometry of the magnet has to be cast in, which is exactly why a set's pincushion and width adjustments are a fixed arrangement of magnets rather than something the customer can trim. The recipe varies across the family and the variation matters for this tree: the original grades were cobalt-free, but the high-coercivity grades of the 1950s onwards added cobalt, titanium and copper, so an Alnico 5 magnet on a 1982 set is an iron-cobalt alloy and the cobalt in it came out of the Copperbelt, not out of the aluminium or the nickel.",
                             "kind": "material",
                             "category": "magnetics",
@@ -1328,9 +1344,6 @@
                           {
                             "id": "peripheral.tv.crt.yoke.geometry.magnets.smco",
                             "name": "Samarium-cobalt correction magnet",
-                            "kind": "material",
-                            "category": "magnetics",
-                            "era": "1982",
                             "description": "A rare-earth permanent magnet with roughly twice the energy product of Alnico from a fraction of the volume, made by sintering or bonding finely divided samarium-cobalt powder and magnetising it. Its coercivity comes from samarium's affinity for cobalt, which holds the grains from rotating back into alignment, so the magnet resists demagnetisation far better than Alnico and does not need the iron it replaced. That is a real advantage on a deflection magnet, and it is exactly why the material was developed for this job and then priced out of a domestic set: samarium oxide was one of the more expensive rare-earth fractions, so the magnet cost was set by the separation plant rather than by the metallurgy.",
                             "kind": "material",
                             "category": "magnetics",
@@ -1360,12 +1373,16 @@
                             "children": []
                           }
                         ],
-                        "note": "A correction magnet is Alnico or Sm-Co. Europium is a separate use of the same concentrate: it is a phosphor activator, not a magnet alloy."
-                      }
+                        "note": "A correction magnet is Alnico or Sm-Co. Europium is a separate use of the same concentrate: it is a phosphor activator, not a magnet alloy. Of the commonly available magnets only rare-earth magnets such as neodymium and samarium-cobalt are stronger than alnico, which supports the cost-versus-benefit argument this node makes. Not established: that 1982 domestic sets almost always used cast alnico rather than a small ferrite, the samarium-cobalt cost multiple, and the Japan and Netherlands attributions.",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Alnico"
+                        ]
+      }
                     ]
                   }
-                ]
-              },
+                ],
+      "note": "Not established: the 90 degree typical deflection angle and 100 degree higher-power figure, the 1-2 A horizontal and 0.2-0.8 A vertical scan currents, and the 8-9 mm scan on a 13 inch tube."
+    },
               {
                 "id": "peripheral.tv.crt.flyback",
                 "name": "EHT / line output transformer (flyback)",
@@ -1496,7 +1513,7 @@
                           "Jersey, UK (ICI)",
                           "Freiburg, Germany (Wacker)"
                         ],
-                        "confidence": "high",
+                        "confidence": "medium",
                         "children": [
                           {
                             "id": "peripheral.tv.crt.flyback.hv-rectifier.silicon.quartz",
@@ -1524,12 +1541,21 @@
                               "Mönchengladbach, Germany",
                               "Ishikiri, Japan"
                             ],
-                            "confidence": "high",
-                            "note": "Metal-grade quartz lump, not glass sand; it is reduced with coke in a submerged arc furnace, where the arc itself is the only heat source.",
-                            "children": []
-                          }
-                        ]
-                      }
+                            "confidence": "medium",
+                            "note": "Metal-grade quartz lump, not glass sand; it is reduced with coke in a submerged arc furnace, where the arc itself is the only heat source. Silicon of 96-99% purity is made by carbothermically reducing quartzite or sand with highly pure coke in an electric arc furnace, with an excess of SiO2 to prevent silicon carbide. Not established: 1800-2000 C, the 2000-3500 ppm carbon and phosphorus figure, the acid leaching of quarried rock to metal-grade quartz, and the Spruce Pine, Mönchengladbach and Ishikiri attributions.",
+                            "children": [],
+                            "sources": [
+                              "https://en.wikipedia.org/wiki/Silicon",
+                              "https://en.wikipedia.org/wiki/Quartz"
+                            ]
+          }
+                        ],
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Polycrystalline%20silicon",
+                          "https://en.wikipedia.org/wiki/Silicon"
+                        ],
+      "note": "The process converts metallurgical-grade silicon of about 98% purity to trichlorosilane and then to silicon, removing transition metal and dopant impurities; polysilicon can be as much as 99.9999% pure and metallurgical grade is 95-99%. Not established: the 200-1000 ohm cm resistivity and low oxygen needed to hold 25 kV, the 9-11 N figure for power devices, and the Jamestown, Jersey and Freiburg attributions."
+    }
                     ]
                   },
                   {
@@ -1553,8 +1579,8 @@
                         "value": "20-25 kV DC at this terminal"
                       }
                     ],
-                    "confidence": "high",
-                    "note": "The internal portion of the anode button was itself the visible example of a glass-to-metal seal, and was where most early implosion-protection advertising pointed.",
+                    "confidence": "medium",
+                    "note": "The internal portion of the anode button was itself the visible example of a glass-to-metal seal, and was where most early implosion-protection advertising pointed. Not established: the nickel or Kovar button frit-sealed at 430-460 C, the 3-6 mm silicone cap, and the 20-25 kV figure at this terminal.",
                     "children": [
                       {
                         "id": "peripheral.tv.crt.flyback.anode-lead.seal",
@@ -1846,7 +1872,7 @@
                 "category": "silicon",
                 "era": "1982",
                 "description": "A low-noise bipolar or MOSFET amplifier at the antenna frequency, then a mixer down to 45 MHz. In 1982 the RF device was often a silicon planar MOSFET (dual-gate, for the UHF) or a wideband bipolar. The whole RF section lived in a die-cast or stamped zinc-plated steel can to keep it away from the switching supply and the line output.",
-                "confidence": "high",
+                "confidence": "medium",
                 "children": [
                   {
                     "id": "peripheral.tv.tuner.front-end.saw",
@@ -1953,8 +1979,9 @@
                       "https://en.wikipedia.org/wiki/Surface_acoustic_wave"
                     ]
                   }
-                ]
-              },
+                ],
+      "note": "Not established: the silicon planar dual-gate MOSFET as the 1982 UHF RF device, and the 45 MHz mixer output."
+    },
               {
                 "id": "peripheral.tv.tuner.can",
                 "name": "Die-cast zinc or stamped steel RF can",
@@ -2014,8 +2041,8 @@
                   "nylon gears",
                   "steel shaft"
                 ],
-                "confidence": "high",
-                "note": "The polyester dial cord is the same base polymer as the tape leader and the oven bag: PET again.",
+                "confidence": "medium",
+                "note": "The polyester dial cord is the same base polymer as the tape leader and the oven bag: PET again. Not established: the braided polyester or nylon sheath over a cotton core, and the geared pulley between the channel knob and the tuner rotor.",
                 "children": []
               }
             ],
@@ -2052,7 +2079,7 @@
               "Reynosa, Mexico",
               "Taipei, Taiwan"
             ],
-            "confidence": "high",
+            "confidence": "medium",
             "children": [
               {
                 "id": "peripheral.tv.chassis.pcb",
@@ -2187,8 +2214,8 @@
                 "places": [
                   "Japan (the IC houses)"
                 ],
-                "confidence": "high",
-                "note": "The video bandwidth of 4.5 MHz is why a C64's 320x200 pixels, drawn as a very narrow TV line, showed colour fringes and lost horizontal resolution on a set with no notch filter. A set with a notch filter and a comb filter, common on 1980s sets, recovered much of it. The 'quality' switch on a late-70s set simply inserted a notch at the colour subcarrier.",
+                "confidence": "medium",
+                "note": "The video bandwidth of 4.5 MHz is why a C64's 320x200 pixels, drawn as a very narrow TV line, showed colour fringes and lost horizontal resolution on a set with no notch filter. A set with a notch filter and a comb filter, common on 1980s sets, recovered much of it. The 'quality' switch on a late-70s set simply inserted a notch at the colour subcarrier. Not established: the 45.75 MHz picture carrier, the 3.58 MHz colour subcarrier, the 4.5 MHz video bandwidth and the 60-70 dB IF gain as this set's values.",
                 "children": [
                   {
                     "id": "peripheral.tv.chassis.video.ic",
@@ -2245,8 +2272,8 @@
                             "value": "n+ 1000-2000 nm at 1100-1200 degrees C"
                           }
                         ],
-                        "confidence": "high",
-                        "note": "What is specific to a wafer, as against the wafer in the EHT rectifier, is the epitaxy and the oxide, and those are what the facts here give numbers for.",
+                        "confidence": "medium",
+                        "note": "What is specific to a wafer, as against the wafer in the EHT rectifier, is the epitaxy and the oxide, and those are what the facts here give numbers for. Not established: the 4 micron 1982 process, the 100 or 125 mm wafer with 150 mm arriving in 1983, the 1-20 ohm cm p-type substrate, and the n+ 1000-2000 nm epitaxy at 1100-1200 C.",
                         "children": []
                       }
                     ]
@@ -2374,9 +2401,10 @@
                         "value": "a control that shifts the vertical frequency to stop the picture rolling"
                       }
                     ],
-                    "confidence": "high",
-                    "children": []
-                  },
+                    "confidence": "medium",
+                    "children": [],
+      "note": "Not established: the 15,734 Hz line frequency and the several-kilohertz AFC hold range. That a free-running oscillator is pulled by the modulator's sync and could not lock to a broadcast is the reliable part."
+    },
                   {
                     "id": "peripheral.tv.chassis.line-out.choke",
                     "name": "Line choke or choke-and-flyback combination",
@@ -2449,7 +2477,7 @@
                   }
                 ],
                 "sources": [
-                  "https://en.wikipedia.org/wiki/Line_output_stage"
+                  "https://en.wikipedia.org/wiki/Analog_television"
                 ]
               },
               {
@@ -2473,7 +2501,7 @@
                     "value": "0.2-0.8 A peak to peak"
                   }
                 ],
-                "confidence": "high",
+                "confidence": "medium",
                 "children": [
                   {
                     "id": "peripheral.tv.chassis.vertical.ic",
@@ -2492,8 +2520,9 @@
                     "note": "By the mid-1980s these verticals had integrated the whole deflection drive on to one chip including the line output; that trend began here.",
                     "children": []
                   }
-                ]
-              },
+                ],
+      "note": "Not established: the 60 Hz field rate, the 31.5 kHz oscillator at twice line rate, the 12-16 mm sweep and the 0.2-0.8 A output as figures for a specific set."
+    },
               {
                 "id": "peripheral.tv.chassis.audio",
                 "name": "Audio: 4.5 MHz intercarrier to a speaker",
@@ -2519,8 +2548,8 @@
                     "value": "about 200 Hz to 8-10 kHz on a small set"
                   }
                 ],
-                "confidence": "high",
-                "note": "The 75 kHz deviation and 15 kHz maximum audio are the NTSC TV audio figures. PAL/SECAM used 50 kHz deviation and a 6.5 MHz intercarrier for stereo, which is why PAL sets used a sound trap filter and NTSC sets used a notch.",
+                "confidence": "medium",
+                "note": "The 75 kHz deviation and 15 kHz maximum audio are the NTSC TV audio figures. PAL/SECAM used 50 kHz deviation and a 6.5 MHz intercarrier for stereo, which is why PAL sets used a sound trap filter and NTSC sets used a notch. Not established: the 54.75 MHz sound IF, the 4.5 MHz intercarrier, the 75 kHz deviation and the 15 kHz maximum audio as this set's figures. The PAL and SECAM contrast in the note is right in outline but is not documented here either.",
                 "children": [
                   {
                     "id": "peripheral.tv.chassis.audio.traps",
@@ -2529,9 +2558,10 @@
                     "category": "passives",
                     "era": "1982",
                     "description": "The 4.5 MHz intercarrier has to be lifted out of the video baseband without disturbing the 3.58 MHz colour subcarrier, so a trap or SAW filter at 4.5 MHz ran between the video detector and the audio detector. A ceramic or SAW trap on 4.5 MHz was a very visible part in a 1982 set.",
-                    "confidence": "high",
-                    "children": []
-                  },
+                    "confidence": "medium",
+                    "children": [],
+      "note": "Not established: a 4.5 MHz ceramic or SAW trap between the video detector and the audio detector as 1982 practice, and the 3.58 MHz colour subcarrier in that role."
+    },
                   {
                     "id": "peripheral.tv.chassis.audio.amp",
                     "name": "Audio output amplifier",
@@ -2602,11 +2632,16 @@
                         "value": "0.25-0.5 W"
                       }
                     ],
-                    "confidence": "high",
+                    "confidence": "medium",
                     "children": [
                       
-                    ]
-                  }
+                    ],
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Potentiometer",
+                      "https://en.wikipedia.org/wiki/Carbon%20black"
+                    ],
+      "note": "Potentiometers are commonly the volume control on audio equipment, and carbon black is made by the incomplete combustion of coal tar, vegetable matter or petroleum products. Not established: the carbon film on a phenolic or ceramic substrate, the sprung brass or copper wiper, the 10-100 kohm audio taper and the 0.25-0.5 W rating."
+    }
                 ]
               },
               {
@@ -2630,8 +2665,8 @@
                     "value": "E-I laminated silicon steel, 40-60 VA, potted or taped"
                   }
                 ],
-                "confidence": "high",
-                "note": "A cold-chassis set had the mains referenced to the line output and the whole board was at mains potential; a hot-chassis set had an isolated secondary and a common return. Repairing a 1982 TV meant first determining which, which is why it was dangerous and why sets were sold with the chassis not user-serviceable.",
+                "confidence": "medium",
+                "note": "A cold-chassis set had the mains referenced to the line output and the whole board was at mains potential; a hot-chassis set had an isolated secondary and a common return. Repairing a 1982 TV meant first determining which, which is why it was dangerous and why sets were sold with the chassis not user-serviceable. Not established: the 200-400 uF at 160 V reservoir value, the 115-120 V B+ at 0.4-0.6 A, and the 40-60 VA transformer rating for a 13 inch set.",
                 "children": [
                   {
                     "id": "peripheral.tv.chassis.power.transformer",
@@ -2664,10 +2699,13 @@
                       "Hong Kong",
                       "Japan"
                     ],
-                    "confidence": "high",
-                    "note": "The silicon steel is a different alloy from the low-carbon steel of the shadow mask: it is deliberately alloyed with silicon to raise resistivity and suppress eddy currents, and it is a thin, carefully annealed strip. Both, though, came off a blast furnace.",
-                    "children": []
-                  },
+                    "confidence": "medium",
+                    "note": "The silicon steel is a different alloy from the low-carbon steel of the shadow mask: it is deliberately alloyed with silicon to raise resistivity and suppress eddy currents, and it is a thin, carefully annealed strip. Both, though, came off a blast furnace. Electrical steel is made as cold-rolled strip under 2 mm thick, cut into laminations and stacked to form transformer cores, and grain-oriented grades run about 3% silicon. Not established: the 0.30-0.35 mm C5 or C21 lamination, the epoxy potting and taping, and the 40-60 VA rating for a 13 inch set.",
+                    "children": [],
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Electrical%20steel"
+                    ]
+          },
                   {
                     "id": "peripheral.tv.chassis.power.reservoir",
                     "name": "Aluminium electrolytic reservoir, 200 microfarad 160 V",
@@ -2689,12 +2727,15 @@
                         "value": "aluminium chloride or ammonium borate in ethylene glycol"
                       }
                     ],
-                    "confidence": "high",
-                    "note": "The etched aluminium anode here is the same technology as the 1970s-80s consumer electrolytic capacitor and is documented in the mainboard's own power-supply branch. A 1982 TV reservoir was often one of the largest aluminium electrolytics made that year in a consumer product.",
+                    "confidence": "medium",
+                    "note": "The etched aluminium anode here is the same technology as the 1970s-80s consumer electrolytic capacitor and is documented in the mainboard's own power-supply branch. A 1982 TV reservoir was often one of the largest aluminium electrolytics made that year in a consumer product. A wet aluminium electrolytic is two aluminium foils separated by a paper spacer saturated with liquid or gel electrolyte, with the anode etched and formed; commercial parts run from 0.1 uF to 2.7 F at 4 V to 630 V, so a 200 uF 160 V reservoir is well inside the range. Not established: aluminium chloride or ammonium borate in ethylene glycol as the electrolyte, the 99.99% anode foil figure, and the claim that this was among the largest consumer electrolytics of 1982.",
                     "children": [
                       
+                    ],
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Aluminum%20electrolytic%20capacitor"
                     ]
-                  },
+          },
                   {
                     "id": "peripheral.tv.chassis.power.bridge",
                     "name": "Mains rectifier bridge",
@@ -2708,13 +2749,17 @@
                         "value": "1-4 A, 100-400 V"
                       }
                     ],
-                    "confidence": "high",
-                    "children": []
-                  }
+                    "confidence": "medium",
+                    "children": [],
+                    "sources": [
+                      "https://en.wikipedia.org/wiki/Diode%20bridge"
+                    ],
+      "note": "A diode bridge is four diodes converting AC to DC, and since about 1950 it has been a single four-terminal component made in various voltage and current ratings. Not established: the 1-4 A and 100-400 V rating, the moulded package, the chassis-edge mounting, and the two-diode centre-tapped alternative."
+    }
                 ]
               }
             ],
-            "note": "This node is the set's printed circuit board and its subassemblies, not a whole machine; the set itself stays computing."
+            "note": "This node is the set's printed circuit board and its subassemblies, not a whole machine; the set itself stays computing. Not established: the 115-120 V B+ rail, the 4.5 MHz intercarrier audio and the 45.75 MHz picture carrier as values for a 1982 set."
           },
           {
             "id": "peripheral.tv.speaker",
@@ -2741,7 +2786,7 @@
                 "value": "about 200 Hz to 8-10 kHz in a small cabinet"
               }
             ],
-            "confidence": "high",
+            "confidence": "medium",
             "children": [
               {
                 "id": "peripheral.tv.speaker.cone",
@@ -2765,10 +2810,13 @@
                     "value": "a few grams for a 3.5 inch cone"
                   }
                 ],
-                "confidence": "high",
-                "note": "The sound cone is one of the few parts of a television that starts as a tree. Pulp is wood reduced to fibre, and the fibre is from softwood, which is a renewable, not a geological, raw material. It is the one leaf in this branch that is not dug out of the ground.",
-                "children": []
-              },
+                "confidence": "medium",
+                "note": "The sound cone is one of the few parts of a television that starts as a tree. Pulp is wood reduced to fibre, and the fibre is from softwood, which is a renewable, not a geological, raw material. It is the one leaf in this branch that is not dug out of the ground. The cone is one of the three common sound radiation systems, and driver diaphragms are made of paper or composite materials. Not established: the wet-pressed kraft pulp route, the kiln or belt drying, and a few grams for a 3.5 inch cone.",
+                "children": [],
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Loudspeaker"
+                ]
+          },
               {
                 "id": "peripheral.tv.speaker.basket",
                 "name": "Pressed steel basket",
@@ -2850,8 +2898,12 @@
                 "children": []
               }
             ],
-            "note": "The part of a small loudspeaker that decides what industry it belongs to is the sintered ferrite ring and the winding in its gap."
-          },
+            "note": "The part of a small loudspeaker that decides what industry it belongs to is the sintered ferrite ring and the winding in its gap. Hard ferrites are used to make permanent magnets for loudspeakers, and the voice coil moves axially in a cylindrical gap in a permanent magnet's field. Not established: 8 ohm, 3.5-4 inch, 2-5 W, and the 200 Hz to 8-10 kHz response in a small cabinet.",
+            "sources": [
+              "https://en.wikipedia.org/wiki/Loudspeaker",
+              "https://en.wikipedia.org/wiki/Ferrite%20(magnet)"
+            ]
+      },
           {
             "id": "peripheral.tv.cabinet",
             "name": "Cabinet and front bezel",
@@ -2878,8 +2930,8 @@
               "Taipei, Taiwan",
               "Japan"
             ],
-            "confidence": "high",
-            "note": "Wood-plastic (particle board faced with a melamine or polyester woodgrain laminate) was used on the console-style and portable sets of the era; the true ABS shell took over on the small sets. Both the woodgrain-print cabinet and the real veneer cabinet are worth covering, and both appear here.",
+            "confidence": "medium",
+            "note": "Wood-plastic (particle board faced with a melamine or polyester woodgrain laminate) was used on the console-style and portable sets of the era; the true ABS shell took over on the small sets. Both the woodgrain-print cabinet and the real veneer cabinet are worth covering, and both appear here. Not established: ABS or ABS/polycarbonate as the 1982 cabinet material, the 220-260 C and 40-70 s cycle, and the 13 inch size. The Reynosa, Taipei and Japan production attributions are not established either.",
             "children": [
               
               {
@@ -2925,10 +2977,13 @@
                   "Taipei",
                   "Reynosa"
                 ],
-                "confidence": "high",
+                "confidence": "medium",
                 "children": [],
-                "note": "The mould is P20 tool steel with a nickel-chromium plating, held at 1000-2000 bar against the melt."
-              },
+                "note": "The mould is P20 tool steel with a nickel-chromium plating, held at 1000-2000 bar against the melt. Moulds are generally made from tool steels, and presses are rated by the clamping force they can exert. Not established: 1000-2000 bar injection pressure, the 230-260 C melt temperature, the 40-70 s cycle, P20 or 1.2311 at 30-35 HRC with electroless nickel, and the 0.4-0.7% linear shrinkage.",
+                "sources": [
+                  "https://en.wikipedia.org/wiki/Injection%20moulding"
+                ]
+      },
               {
                 "id": "peripheral.tv.cabinet.wood",
                 "name": "Wood veneer or woodgrain laminate",
@@ -3055,7 +3110,7 @@
                 "value": "rotary AC mains switch on the volume pot shaft on many sets"
               }
             ],
-            "confidence": "high",
+            "confidence": "medium",
             "children": [
               
               {
@@ -3134,8 +3189,9 @@
                 "confidence": "medium",
                 "children": []
               }
-            ]
-          },
+            ],
+      "note": "Not established: 5 kohm or 10 kohm linear pots for brightness and colour, 10 kohm or 100 kohm audio taper for volume, and the rotary mains switch on the volume pot shaft."
+    },
           {
             "id": "peripheral.tv.aerial",
             "name": "Aerial input and antenna lead",
@@ -3157,7 +3213,7 @@
                 "value": "to 890 MHz for UHF"
               }
             ],
-            "confidence": "high",
+            "confidence": "medium",
             "children": [
               {
                 "id": "peripheral.tv.aerial.f-connector",
@@ -3335,8 +3391,12 @@
                   }
                 ]
               }
-            ]
-          },
+            ],
+            "sources": [
+              "https://en.wikipedia.org/wiki/F%20connector"
+            ],
+      "note": "The F connector is the common coaxial television aerial connector, normally used with RG-6/U or RG-59/U cable, and coaxial replaced twin-lead. Not established: 300 ohm balanced twin-lead as the alternative, the bayonet type in the UK, and the 890 MHz UHF bandwidth."
+    },
           {
             "id": "peripheral.tv.mains",
             "name": "Mains lead, suppression filter and fuse",
@@ -3362,7 +3422,7 @@
               "Taiwan",
               "Hong Kong"
             ],
-            "confidence": "high",
+            "confidence": "medium",
             "children": [
               {
                 "id": "peripheral.tv.mains.cord",
@@ -3498,7 +3558,7 @@
                 ]
               }
             ],
-            "note": "This is the set's power entry: a cord, a suppression network and a fuse."
+            "note": "This is the set's power entry: a cord, a suppression network and a fuse. Not established: the X-rated 0.01-0.05 uF bypass capacitor at 400-600 V, the 1-2 mH common-mode choke or ferrite strap, and the phenolic smell. 117 V 60 Hz and 240 V 50 Hz are regional mains rather than a figure for any one set."
           }
         ],
         "sources": [
@@ -3568,7 +3628,7 @@
               "Hong Kong",
               "Taipei"
             ],
-            "confidence": "high",
+            "confidence": "medium",
             "children": [
               {
                 "id": "peripheral.cassette.deck.logic",
@@ -4008,14 +4068,15 @@
                         "value": "figure-eight: two coils in series, opposed"
                       }
                     ],
-                    "confidence": "high",
+                    "confidence": "medium",
                     "children": [
                       "metal.copper.wire"
-                    ]
-                  }
+                    ],
+      "note": "Not established: 40 AWG or 0.1-0.13 mm enamelled copper, the figure-eight hum-cancelling winding, and the turns count for a 1541 read/write head."
+    }
                 ],
                 "sources": [
-                  "https://en.wikipedia.org/wiki/Magnetic_head"
+                  "https://en.wikipedia.org/wiki/Tape_head"
                 ]
               },
               {
@@ -4043,8 +4104,8 @@
                     "value": "1.6 mm single-sided FR-4, 35 micron copper foil, epoxy mask, 60/40 tin-lead"
                   }
                 ],
-                "confidence": "high",
-                "note": "The FR-4 laminate, copper foil, solder mask and tin-lead solder are the same chain as the television's PCB, documented under peripheral.tv.chassis.pcb, and they are ingredients of this board rather than parts of it.",
+                "confidence": "medium",
+                "note": "The FR-4 laminate, copper foil, solder mask and tin-lead solder are the same chain as the television's PCB, documented under peripheral.tv.chassis.pcb, and they are ingredients of this board rather than parts of it. Not established: the single-sided 1.6 mm FR-4 with 35 micron copper foil, the 40-pin DIP sockets for the 6502 and 6522, and the discrete-versus-IC stepper drive. The 6502 CPU, the 6522 interface chip and the mask-programmed logic array are documented under this node's own children.",
                 "children": [],
                 "inputs": [
                   "peripheral.tv.chassis.pcb",
@@ -4134,9 +4195,9 @@
                     "value": "two-shot clamshell, 230-260 degrees C ABS"
                   }
                 ],
-                "confidence": "high",
+                "confidence": "medium",
                 "children": [],
-                "note": "The case is moulded from the same ABS grade as a television cabinet, and it reaches the monomers through the styrene-butadiene-acrylonitrile petrochemical chain rather than through the cabinet."
+                "note": "The case is moulded from the same ABS grade as a television cabinet, and it reaches the monomers through the styrene-butadiene-acrylonitrile petrochemical chain rather than through the cabinet. Not established: the two-shot clamshell construction, the about 400 mm by 90 mm dimensions, the 230-260 C ABS moulding, and the claim that the drive's ABS was the same grade as a television cabinet's."
               },
               {
                 "id": "peripheral.cassette.deck.led",
@@ -4159,7 +4220,7 @@
                     "value": "2.5 mm or 3 mm, with the die mounted in a reflector cup"
                   }
                 ],
-                "confidence": "high",
+                "confidence": "medium",
                 "children": [
                   {
                     "id": "peripheral.cassette.deck.led.gallium",
@@ -4196,8 +4257,9 @@
                     "note": "Gallium became a controlled export commodity in the 2010s because the LED and power-device industries depended on this by-product stream. The connection to a television is the 2 mA indicator lamp on the front of a 1541, which is a very small consumption but the same chain. Gallium is recovered from the Bayer liquor during the digestion of bauxite, so metal.alumina, the smelter-grade alumina whose production is that digestion, is the ingredient here rather than the four-nines foil of the phosphor back layer.",
                     "children": []
                   }
-                ]
-              },
+                ],
+      "note": "Efficient diode emission from GaAs was patented in 1962 and commercial LEDs only became practical once they cost under five cents in the 1970s. Not established: GaAs or GaP die with a GaAsP window for red, the 1.7-2.2 V forward drop, the 2-10 mA running current, and the 2.5 mm epoxy lens with a reflector cup."
+    },
               {
                 "id": "peripheral.cassette.deck.link",
                 "name": "The nine-pin serial link to the C64",
@@ -4208,10 +4270,18 @@
                 "children": [
                   "peripheral.plug.serial-link"
                 ],
-                "confidence": "high"
+                "confidence": "high",
+                "sources": [
+                  "https://archive.org/details/The_Anatomy_of_the_1541_Disk_Drive",
+                  "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
+                ]
               }
+            ],
+      "note": "The drive is an intelligent peripheral with its own processor and control system, connected to the C64 or VIC-20 over the serial bus at device number 4-15. Not established: the GCR 4,800 or 9,600 baud rate, the about 1 micrometre head gap, the 170 KB per side as the 1541 used it, and the absence of a position sensor.",
+            "sources": [
+              "https://archive.org/details/The_Anatomy_of_the_1541_Disk_Drive"
             ]
-          },
+      },
           {
             "id": "peripheral.cassette.tape",
             "name": "The cassette tape itself",
@@ -4548,8 +4618,8 @@
                     "value": "five small screws joining the two shells, with the tape trapped between them"
                   }
                 ],
-                "confidence": "high",
-                "note": "The five pressure-pad windows are the IEC C-1 to C-5 positions. The felt pad inside the shell, pressed against the tape by the capstan bulge, biases the tape against one of the shell's internal ribs so that, depending on how the shell is placed in the deck, the tape passes over the erase head, between the erase and R/P heads, over the R/P head, or not in contact with either. That is why a cassette's orientation and which end is which mattered, and why a mis-loaded tape would write nothing. The mechanism is certain; the precise numbering of which position does what is less certain.",
+                "confidence": "medium",
+                "note": "The five pressure-pad windows are the IEC C-1 to C-5 positions. The felt pad inside the shell, pressed against the tape by the capstan bulge, biases the tape against one of the shell's internal ribs so that, depending on how the shell is placed in the deck, the tape passes over the erase head, between the erase and R/P heads, over the R/P head, or not in contact with either. That is why a cassette's orientation and which end is which mattered, and why a mis-loaded tape would write nothing. The mechanism is certain; the precise numbering of which position does what is less certain. Not established: the IEC C-1 to C-5 pressure-pad window numbering and which position lands on which head - the node's own note already concedes this - the about 22 mm hub bore, and glass-filled nylon as the hub material, since this file's hub node gives nylon 66. The five-screw two-shell construction and the 100 x 64 x 12 mm envelope are the standard part.",
                 "children": [
                   {
                     "id": "peripheral.cassette.tape.shell.abs",
@@ -4689,8 +4759,8 @@
                     "value": "9-12 microns of base film"
                   }
                 ],
-                "confidence": "high",
-                "note": "A C-60 and a C-90 differ in length and gauge. A C-60 at 12 microns and a C-90 at 9 microns hold about the same total oxide per side, so the C-90 has to be made of a higher-output oxide (often cobalt-modified) to hold as much. The polyester base film is an ingredient of the slitting step.",
+                "confidence": "medium",
+                "note": "A C-60 and a C-90 differ in length and gauge. A C-60 at 12 microns and a C-90 at 9 microns hold about the same total oxide per side, so the C-90 has to be made of a higher-output oxide (often cobalt-modified) to hold as much. The polyester base film is an ingredient of the slitting step. Not established: the coating-line web width, the rotary slitter knives, the static charge that holds the thin film off the rollers, and the 9-12 micron base gauge. The 3.81 mm strip width and the 45 m per side for a C-60 are the reliable parts.",
                 "children": []
               }
             ],
@@ -4711,8 +4781,8 @@
         "kind": "part",
         "category": "interconnect",
         "era": "1982",
-        "description": "Three connectors that made a C64 usable rather than just powered: the aerial socket the RF modulator hijacked, the nine-pin link to the 1541, and the 34-conductor ribbon on the back that opened the machine up.",
-        "confidence": "high",
+        "description": "Three connectors that made a C64 usable rather than just powered: the aerial socket the RF modulator hijacked, the nine-pin link to the 1541, and the cartridge-edge expansion connector on the back that opened the machine up - documented as a 44-pin card edge, not a 34-conductor ribbon.",
+        "confidence": "medium",
         "children": [
           {
             "id": "peripheral.plug.rf",
@@ -4738,9 +4808,13 @@
                 "value": "about 1.5 m of RG-59, supplied with the C64"
               }
             ],
-            "confidence": "high",
+            "confidence": "medium",
             "children": [],
-            "note": "The modulator's coax lead and the set's own aerial lead are both ingredients of this socket rather than parts of it."
+            "note": "The modulator's coax lead and the set's own aerial lead are both ingredients of this socket rather than parts of it. An RF cable was a listed C64 accessory (C 326189-01), and the RF modulator mixed sync/luminance, colour and audio to generate a TV composite signal on pin 5. Not established for the supplied lead: 75 ohm, RG-59 and the about 1.5 m length - the F connector is normally used with RG-6/U or RG-59/U.",
+            "sources": [
+              "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore",
+              "https://en.wikipedia.org/wiki/F%20connector"
+            ]
           },
           {
             "id": "peripheral.plug.serial-link",
@@ -4763,9 +4837,12 @@
                 "value": "a serial bus, logic levels at 5 V, not RS-232"
               }
             ],
-            "confidence": "high",
-            "note": "It was a 9-pin high-density D-sub on the drive side. On the C64 itself the drive port was a 9-pin D-sub, the same physical connector, and the signals were Commodore serial, not RS-232. Note the parallel with the user port below: the C64's expansion port was a 34-conductor card edge.",
-            "children": []
+            "confidence": "medium",
+            "note": "It was a 9-pin high-density D-sub on the drive side. On the C64 itself the drive port was a 9-pin D-sub, the same physical connector, and the signals were Commodore serial, not RS-232. Note the parallel with the user port below: the C64's expansion port was a 34-conductor card edge. Three CIA port lines drive the serial bus - ATN out, clock out and data out - each inverted through U8 before reaching the device, and the connector is a 9-pin Mini-D. Not established: the 0.1 inch pitch, the about 1 m cable length, and 5 V logic levels.",
+            "children": [],
+            "sources": [
+              "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
+            ]
           },
           {
             "id": "peripheral.plug.userport",
@@ -4865,7 +4942,7 @@
               }
             ],
             "sources": [
-              "https://en.wikipedia.org/wiki/Commodore_64_expansion_port"
+              "https://en.wikipedia.org/wiki/Commodore_64_peripherals"
             ]
           },
           {
@@ -4889,10 +4966,18 @@
             "note": "The sense pin was how the C64 knew a motorised deck was present, and the motor pin was how it started a consumer recorder. The exact pinout ordering is not established, and a wrong one is worse than none; the functional set of connections is the reliable part.",
             "children": []
           }
-        ]
-      }
+        ],
+        "note": "In the 1992 service manual parts list the back-panel expansion connector is a 44-pin card edge (CN6, C 906100-02) and the drive port is a 9-pin Mini-D (CN8/9, C 251057-01). The 34-conductor figure in this node is not established, nor is the aerial socket type.",
+            "sources": [
+              "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
+            ]
+          }
     ],
     "confidence": "high",
-    "description": "A C64 shipped with no screen. It drove a television set through an RF modulator, saved to a cassette deck through the 1541 drive, and took input from a joystick. Three separate supply chains meet here: the television, the cassette drive, and the connectors that carry the signal between them."
+    "description": "A C64 shipped with no screen. It drove a television set through an RF modulator, saved to a cassette deck through the 1541 drive, and took input from a joystick. Three separate supply chains meet here: the television, the cassette drive, and the connectors that carry the signal between them.",
+    "sources": [
+      "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore",
+      "https://archive.org/details/The_Anatomy_of_the_1541_Disk_Drive"
+    ]
   }
 }

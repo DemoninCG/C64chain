@@ -364,6 +364,75 @@ Two sides of one cut-off, not a contradiction. Nothing to do.
 
 ---
 
+## 9. Phase 4 - document confidence pass - DONE 2026-10-03
+
+Tier 1 (the 835 high-confidence-no-source nodes) was fanned out to 7 agents on
+disjoint fragments, then verified and corrected centrally. Counts from
+`p4verify.mjs` against HEAD: 877 nodes touched, 647 `sources` added, 551
+confidences down, 0 up. **High-confidence-no-source now stands at 0.**
+
+### What the fan-out found (kept, with thanks)
+
+- About 30 claims a source contradicts, most now corrected in the prose, not
+  just the confidence: CN1 is a 20-pin header, not 24-pin (`c64.keyboard.cable`
+  and three sibling mentions); the case feet are self-adhesive stick-on pads,
+  not moulded-in (`c64.case.feet`); pentane-bead EPS was patented in 1949, so
+  the tree's CFC-first history was backwards (`c64.packaging.eps`,
+  `.eps-beads`); kraft pulping *removes* most lignin, the brown is the colour
+  of the unbleached grade (`c64.packaging.kraft-*`, three nodes); the VIC
+  drives DRAM refresh itself, not via a CIA line (`mb.ram.refresh`); the SID
+  is a 28-pin part (`si.package.40`); the colour clock is 14.31818 MHz, not 11
+  (`mb.sid.external`, `metal.silica.quartz-crystal` and the crystal node,
+  which also lost its 2.048 MHz); a 1982 6581 is unsuffixed, R4 is 1986 and
+  the 8580 is an R5 from 1987 (`mb.sid.revisions`); no 74LS175 or 18-resistor
+  palette ladder appears in any source read (`mb.vic.palette`); the user port
+  is one 8-bit port at `$DD00` with open-collector lines (`mb.ppi.userport`);
+  60/40 solder melts at 188 C and is not the eutectic, 63/37 is
+  (`chem.solder-chemicals.solder-alloy`); HF from fluorspar runs at ~265 C
+  (`…fluorine-from-fluorspar.anhydrous-hf`); cumene alkylation is 30 bar at
+  250 C; the ammoxidation catalyst is the phosphomolybdate
+  (`chem.abs.grafting` neighbours); nickel MLCC electrodes date to 1993, not
+  1982; the dot clock is *slower* than the colour clock, no x4 multiply
+  (`mb.crystal.oscillator.pll`); glass is the insulator in a cermet, not the
+  conductor; the HCl azeotrope is 20.2%, not 32-37%.
+- The agents' P1-P4 unsourced-figure lists (in their reports, not repeated
+  here) are the best inventory of what the tree asserts without backing.
+- Tier 2a (270 nodes with no `confidence` at all, 254 of them in
+  `70-petrochem`) and Tier 2b (mediums never given a note) are still open.
+
+### What central verification found that the agents could not
+
+- **Duplicate JSON keys.** Three agents' `sources` inserters wrote a key that
+  already existed nearby (`c64.case.shield.foil` got a second `note`;
+  `c64.packaging.eps` a second `facts` with the *old wrong* content;
+  `c64.cables.rf-cable.centre-conductor` a second `note`; two magnet nodes a
+  second `kind`/`category`/`era`). `JSON.parse` keeps the last silently, so in
+  two cases the corrected text was invisibly discarded and in one the stale
+  wrong facts were invisibly winning. All merged/removed. There is now a
+  checker: `node C:\Users\corba\AppData\Local\Temp\opencode\dupkey.mjs`
+  (lives outside the repo; promote it to `scripts/` if dupes recur).
+- **31 dead Wikipedia titles** (2,454-node scan via the API, throttled and
+  retried): 26 repointed to the live article after verifying each exists
+  (`LOCALOX`→`Planar_process`, `Sinter_(iron_ore)`→`Sinter_plant`,
+  `Metallurgical_silicon`→`Silicon`, …), 2 removed with reasons recorded
+  (`Dielectric_isolation`, `Buffalo_Creek_Valley` — no live equivalent), and 3
+  fixed as typos/redirects (`6522_VIA`→`6522`, `User_port`→`Userport`,
+  `MLCC`→`Ceramic_capacitor`). Re-audit: **0 missing of 467 titles.**
+- **Non-Wikipedia reachability** (159 URLs, fetched exactly as written):
+  6 genuinely gone, all fixed (`6502.org` needed the `www.` host,
+  `lemmon64`→`lemon64`, `mist64.github.io/c64rom/`→ the GitHub repo,
+  `polymerinnovationblog`→`Transfer_molding`). 12 return 403 to bots but open
+  in a browser (incl. `plansee.com`, whose quoted sentence was verified
+  verbatim from a saved copy of the page) — left in place. Both NEPIS URLs are
+  alive; the earlier 410 was from fetching the bare `ZyPURL.cgi` without its
+  `?Dockey=` parameter.
+- **Two more `patch.mjs` bugs** (now four total, all fixed and covered in
+  `patchtest.mjs`): `set` replaced a non-empty value silently, destroying nine
+  real notes mid-phase (now refuses without `--force`); the insert path's
+  indent regex could never match, so every inserted key landed at six spaces
+  and dedented its node's closing brace (367 sites; tool fixed, existing
+  cosmetics left alone).
+
 ## Carried over from the plan, not yet started
 
 - Re-run `scripts/probe.mjs` on the standard lines and produce the
@@ -384,7 +453,21 @@ Two sides of one cut-off, not a contradiction. Nothing to do.
   in the report, not findings about the data. The two uncovered branches it
   meant were tungsten and cobalt, which Phase 2 has now written; the NaN has
   not been looked at.
-- `scripts/ingredients.mjs` and `scripts/build.mjs` now agree on normalisation,
+- **The README's documented OCR path is wrong for two of its six reference
+  documents.** It says each scan's text is at
+  `archive.org/download/<id>/<id>_djvu.txt`. That holds for four of the six, but
+  **404s** for two, because their internal filenames differ from the item id:
+
+  | item id | actual text file |
+  | --- | --- |
+  | `commodore-128-troubleshooting-and-repair-c128` | `Commodore_128_Troubleshooting_and_Repair_djvu.txt` |
+  | `c-64-c-128-parallel-interface-92000-g-version-6` | `C64-C128 Parallel-Interface 92000-G Version 6_djvu.txt` (spaces, needs percent-encoding) |
+
+  All six items exist and all six are reachable; only the derived path is
+  unreliable. Check a fetch before briefing anyone to use these documents. The
+  `/details/` page for each item is stable and is what should go in a `sources`
+  field; the `_djvu.txt` URL is only for fetching and quoting.
+- **`scripts/ingredients.mjs` and `scripts/build.mjs` now agree on normalisation,**
   but `scripts/ambig.mjs`, `analyse.mjs`, `spotcheck.mjs`, `project.mjs` and
   `estimate.mjs` were not re-checked for it and each carries its own copy of some
   part of the logic. Phase 3 only ever compared the two it knew about, so there
