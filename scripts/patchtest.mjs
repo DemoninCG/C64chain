@@ -116,3 +116,24 @@ for (const [id] of inFragment) {
 check(`all ${inFragment.length} 70-petrochem nodes resolve`, bad, 0);
 
 console.log(`\n${fails === 0 ? 'ALL PASS' : fails + ' FAILURE(S)'}`);
+
+// F. insert into a node whose `{` shares a line with its `"id"` (the style
+//    throughout 80-industry.json). The indent used to derive as "" and the new
+//    key landed at column 0 with the closing brace dedented (34 cosmetic
+//    sites in one pass). Build a minimal fixture in the temp file instead of
+//    depending on any fragment having that style.
+{
+  const { writeFileSync } = await import('node:fs');
+  const fixture = `{"roots": [{"id": "fixture.quoted",\n`
+    + `  "name": "Same-line brace fixture",\n`
+    + `  "confidence": "medium"\n`
+    + `}], "shared": {}}`;
+  writeFileSync(T, fixture);
+  run('fixture.quoted', 'set', 'note', 'SENTINEL-F');
+  const after = readFileSync(T, 'utf8');
+  const noteLine = after.split('\n').find((l) => l.includes('SENTINEL-F'));
+  check('same-line-brace insert keeps sibling indent', noteLine, '  "note": "SENTINEL-F"');
+  const closeIntact = after.includes('\n}], "shared": {}}');
+  check('same-line-brace insert leaves closing brace glued', closeIntact, true);
+  check('same-line-brace insert adds no column-0 brace', after.split('\n').every((l) => l !== '}'), true);
+}

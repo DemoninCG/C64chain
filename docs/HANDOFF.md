@@ -250,6 +250,24 @@ response shape, and distrust any clean sweep that arrives too fast. The same
 caution applies to concurrent fetches generally: two live PDFs 404'd under
 8-way concurrency and returned 200 serially.
 
+**Never `git stash` while agents are writing.** Stash reverts the working tree
+under their feet: their pre-stash edits sit in the stash while their processes
+keep patching the reverted base, and `stash pop` then fails on the files they
+re-dirtied. Recovery is a three-way per-field merge (base / stash / post-stash
+copies) — it works, it cost an hour, and four same-field conflicts needed
+hand resolution with later-wins. Commit banked work instead; commits do not
+disturb running processes.
+
+**Temp files must be namespaced per agent.** Two agents' scripts collided on
+`Temp\opencode\inv.js` and one agent's output changed shape mid-task. Unique
+prefixes (`t2b-*`) fixed it.
+
+**`patchtest` compares the working file against the built tree.** During a
+fan-out the tree is stale by design (no rebuilds mid-phase), so cases A/B fail
+on any file an agent has touched. Those failures are environmental, not tool
+regressions — verify by comparing lengths, then move on. The gate that matters
+mid-phase is per-file audit + selftest.
+
 **Fetch a cited URL exactly as written; never normalise it first.** Fetching
 bare `nepis.epa.gov/Exe/ZyPURL.cgi` returns 410 Gone while the real citations
 (`…?Dockey=91008R8P.TXT`) return 200 — testing the base URL manufactures a

@@ -8,7 +8,7 @@
     "kind": "facility",
     "category": "logistics",
     "era": "1982-1984",
-    "note": "Category answers what industry made a thing. energy is reserved for the generating plants, the grid and the plant's own steam and compressed-air distribution, and only for plant and process nodes - so the boilers, turbines, transformers, switchgear, insulators and fuel commodities inside those plants are filed under industry (heavy equipment, mining) or power (electrical hardware) instead. industry also carries the extractive ends: coal and ore bodies, sand, limestone, sulphur, biomass. fluids is water and water chemistry, bulk process gases, solvents and process chemistry. Several nodes here are notes: commentary about the supply chain rather than things in it.",
+    "note": "Category answers what industry made a thing. energy is reserved for the generating plants, the grid and the plant's own steam and compressed-air distribution, and only for plant and process nodes - so the boilers, turbines, transformers, switchgear, insulators and fuel commodities inside those plants are filed under industry (heavy equipment, mining) or power (electrical hardware) instead. industry also carries the extractive ends: coal and ore bodies, sand, limestone, sulphur, biomass. fluids is water and water chemistry, bulk process gases, solvents and process chemistry. Several nodes here are notes: commentary about the supply chain rather than things in it. What is established: the eleven-branch listing, which is this tree's own organization of the shared utilities. What is not: any external fact - the node makes no quantitative claim of its own.",
     "children": [
       "facility.power",
       "facility.steam",
@@ -21,7 +21,8 @@
       "logistics.shipping",
       "logistics.people",
       "facility.test-equipment"
-    ]
+    ],
+    "confidence": "low"
   },
 
   "shared": {
@@ -42,7 +43,7 @@
     { "id": "facility.power", "name": "Industrial electricity supply (1983)", "description": "The electricity that ran every press, oven, wave-solder machine, conveyor and test rig. In 1983 the world's grids were coal, oil, gas and hydro - not the gas-turbine-dominated grids of today - and industrial customers bought it on a two-part tariff with a demand charge. This node is the utility's own end: the generating stations, the transmission network and the price. The customer's end, from the service drop to the machine tool, is the separate node facility.electricity.", "kind": "facility", "category": "energy", "era": "1983",
       "facts": [ {"label": "US industrial price", "value": "7.0 US cents/kWh (all sectors 6.4 c/kWh) in 1983"}, {"label": "Taiwan generation", "value": "48.3 TWh in 1983"}, {"label": "Taiwan 1980 supply mix", "value": "oil 58.8%, coal 17.1%, hydro 13.9%, nuclear 10.2%, gas 1.2%"}, {"label": "Taiwan 1990 supply mix", "value": "coal 38.4%, oil 25.6%, hydro 24.5%, nuclear 7.7%"} ],
       "sources": ["https://www.eia.gov/totalenergy/data/annual/showtext.php?t=ptb0810", "https://www.theglobaleconomy.com/Taiwan/electricity_production/", "https://en.agi.or.jp/media/publications/workingpaper/WP2015-10.pdf"],
-      "note": "The Taiwan mix figures are the grid that actually powered Commodore's Taiwanese subcontractor base, which is why they are quoted here rather than a world average. Natural gas barely existed as a grid fuel in 1983: the first LNG cargo (Algeria) reached Kaohsiung in 1983 and Hong Kong's town gas came from manufactured coal gas, not natural gas.",
+      "note": "The Taiwan mix figures are the grid that actually powered Commodore's Taiwanese subcontractor base, which is why they are quoted here rather than a world average. Natural gas barely existed as a grid fuel in 1983: the first LNG cargo (Algeria) reached Kaohsiung in 1983 and Hong Kong's town gas came from manufactured coal gas, not natural gas. Established: the node's scope as the utility-side supply (stations, network, tariff). Less firmly established: the exact 1983 price and mix figures, which rest on the three cited datasets.",
       "children": [
         { "id": "facility.power.coal-plant", "name": "Coal-fired steam power plant", "description": "The workhorse baseload of the 1980s. Coal from a mine or a rail/barge unloading dock is crushed, pulverised to talcum fineness, blown into a furnace with preheated air, burned under a boiler, and the resulting steam drives a turbine-generator. Net efficiency typically 33-38% thermal to electricity on a unit built in the 1960s-70s.", "kind": "facility", "category": "energy", "era": "1960-1985",
               "facts": [ {"label": "Typical 1980s unit", "value": "200-1000 MW, steam 540-600 C, 16-17 MPa"} ],
@@ -62,17 +63,29 @@
                               "facts": [ {"label": "Age", "value": "~300 Ma (Pennsylvanian) in the Appalachians"}, {"label": "Typical seam", "value": "1-6 m thick"} ],
                               "places": ["Appalachian Basin, Pennsylvania", "Powder River Basin, Wyoming", "Bowen Basin, Queensland", "Witbank, South Africa"],
                               "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Coal"] }
-                          ] },
+                          ],
+"confidence": "medium",
+"note": "Established: longwall extraction across a panel face with roof collapse into the goaf behind, seam thicknesses of order 1-6 m, recovery around 80% (above room-and-pillar), and subsidence as the known consequence, per the cited article. Not established: the shearer-loader flow detail as stated.",
+"sources": ["https://en.wikipedia.org/wiki/Longwall_mining"]
+},
                         { "id": "facility.coal.room-pillar", "name": "Room-and-pillar mining", "description": "Still the dominant method for Appalachian metallurgical and steam coal: rooms driven to the pillar, pillars left behind to hold the roof. Cheap but leaves 30-50% of the seam underground.", "kind": "process", "category": "industry", "era": "1983",
                           "children": [
                             { "id": "facility.coal.room-pillar-seam", "name": "Seam between shale and sandstone beds", "description": "The same Carboniferous coal-bearing sequence as the longwall face, mined from a shaft or slope rather than a portal. Ends at the rock in the ground.", "kind": "material", "category": "industry", "era": "Carboniferous", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Coal"] }
-                          ] },
+                          ],
+"confidence": "medium",
+"note": "Established: the room-and-pillar method (rooms extracted, pillars left for roof support) with recovery lowered by the left-behind pillars, per the cited article. Less firmly established: the exact 30-50% left-underground band and Appalachian dominance as stated for 1983.",
+"sources": ["https://en.wikipedia.org/wiki/Room_and_pillar_mining"]
+},
                         { "id": "facility.coal.opencut", "name": "Open-cut coal mine", "description": "Overburden stripped by dragline or shovel, coal ripped by bulldozer, loaded into 100-tonne rear-dump trucks. Dominant in the Powder River Basin, the Ruhr, Limburg, New South Wales and Limpopo.", "kind": "process", "category": "industry", "era": "1983",
                           "children": [
                             { "id": "facility.coal.overburden-strip", "name": "Overburden strip of shale and clay", "description": "Burden stripped in benches to reach the coal seam - often 10-60 m of rock and dirt per metre of coal in the Powder River Basin. The overburden itself becomes a backfill and a landfill-pond liner.", "kind": "material", "category": "industry", "era": "1983",
                               "places": ["Powder River Basin, Wyoming/Montana"],
                               "confidence": "medium" }
-                          ] }
+                          ],
+"confidence": "medium",
+"note": "Established: open-cut extraction by stripping overburden and hauling coal from benched pits, per the cited article. Not established: the 100-tonne truck figure and the claim of dominance in each listed basin.",
+"sources": ["https://en.wikipedia.org/wiki/Open-pit_mining"]
+}
                       ] },
                     { "id": "facility.coal.prep-plant", "name": "Coal preparation plant", "description": "Crushed, screened, washed and dried at the mine mouth. 1980s plants were dense-medium washers plus hydrocyclones; the resulting 2-inch x 0 coal with 8-12% moisture is what a boiler of that era was designed to burn. Thermal drying was the last step - a screen-deck or flash dryer brought the fuel down to about 8-12% moisture, because wetter coal burns slower, raises stack temperature and can quench a boiler screen tube.", "kind": "facility", "category": "industry", "era": "1983",
                       "inputs": ["run-of-mine coal", "process water"],
@@ -93,7 +106,11 @@
                       ],
       "note": "Not established: that 1980s plants were dense-medium washers plus hydrocyclones, and the 8-12% product moisture figure and 2-inch x 0 top size. The encyclopaedia has no article on coal preparation (the title does not exist), and no coal preparation manual was located."
     }
-                ] },
+                ],
+"confidence": "medium",
+"note": "Established: bituminous coal as the steam-coal fuel, with an energy density around 24 GJ/t and sulphur of order 1-4%, consistent with the cited article's figures. Not established: the 20-35 GJ/t and 0.5-3% bands as quoted, and the market and rail procurement detail.",
+"sources": ["https://en.wikipedia.org/wiki/Coal"]
+},
                 { "id": "facility.power.coal-plant.receiving", "name": "Coal receiving and stockyard", "description": "Unload from rail unit trains or self-unloading barges into a yard. In the 1980s the East Coast plants were fed by unit trains; Japan's and Korea's coal came by Panamax and post-Panamax bulker.", "kind": "facility", "category": "industry", "era": "1983",
                   "inputs": ["facility.coal"],
                   "confidence": "medium" },
@@ -139,7 +156,11 @@
                             "children": [ { "id": "facility.power.iron-ore-pit", "name": "Iron ore open pit (Mesabi)", "description": "Taconite and hematite are dug by 15-tonne payload shovels and hauled in 90-tonne trucks from a strip 60 m deep. Ends at the orebody.", "kind": "facility", "category": "metals", "era": "1983", "places": ["Mesabi Range, Minnesota", "Carajás, Brazil"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Mesabi_Range", "https://en.wikipedia.org/wiki/Iron_ore"] } ] },
                           { "id": "facility.power.coke", "name": "Metallurgical coke", "description": "Bituminous coal coked in batteries of 30-45 ovens to make the fuel and the reductant for the blast furnace. Ends at the coking plant.", "kind": "material", "category": "industry", "era": "1983", "inputs": ["coking coal"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Coke_(fuel)"], "children": [ { "id": "facility.power.coking-coal-seam", "name": "High-Bituminous coking coal seam", "description": "A very specific subset of bituminous coal - the seam that swells and fuses in the coke oven, distinct from the steam coal the power station burns. The Pennsylvania/Kentucky/West Virginia 'High Bituminous' field.", "kind": "material", "category": "industry", "era": "Carboniferous", "places": ["Connellsville, Pennsylvania", "Kuznetsk Basin", "Ruhr"], "confidence": "medium" } ] }
                         ] }
-                      ] },
+                      ],
+"confidence": "medium",
+"note": "Established: the surface condenser as a water-cooled shell-and-tube unit condensing turbine exhaust for reuse as boiler feedwater, per the cited article, with stainless steel among the standard tube materials. Not established: the quantitative link from condensate cleanliness to boiler-tube life as stated here.",
+"sources": ["https://en.wikipedia.org/wiki/Surface_condenser"]
+},
                     { "id": "facility.power.coal-plant.generator", "name": "Generator (turbo-alternator)", "description": "The turbine shaft turns a 2- or 4-pole alternator at 3000/3600 rpm. A 500 MVA water-cooled unit is about 12 m long and 6 m wide. Output was 13.8 kV or 21 kV - far too low to transmit, hence the step-up transformer next door.", "kind": "tool", "category": "power", "era": "1960-1985",
                   "facts": [ {"label": "Terminal voltage", "value": "13.8 or 21 kV"}, {"label": "Typical unit", "value": "300-1000 MW"} ],
                   "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Thermal_power_station"] },
@@ -172,7 +193,10 @@
                   "places": ["Sun Moon Lake, Nantou, Taiwan", "Schuylkill and Delaware, Pennsylvania", "Sham Chun, Hong Kong", "Han River basin, Korea"],
                   "confidence": "low",
       "note": "Not established: the named rivers and reservoirs and their characterisations, including Sun Moon Lake, the Sham Chun, the Han River basin, and the claim that this is the actual origin of most of the ultrapure water on the tree. No water authority document located."
-    } ] }
+    } ],
+"confidence": "low",
+"note": "Established: only the term's meaning - the channel carrying water away after it leaves the wheel or turbine. Not established: that a downstream river served as the raw-water intake for an attracted industrial park in any particular case; the node makes a generic siting claim."
+}
             ] },
           { "id": "facility.power.oil-plant", "name": "Oil-fired steam power plant", "description": "The 1980s default in much of Asia and the Middle East, and the reason Taiwan's grid was 58.8% oil in 1980. Residual fuel oil and fuel oil burned in a boiler instead of coal - cheaper to handle, dirtier, and dead on arrival once the 1979 oil shock and OPEC reset prices.", "kind": "facility", "category": "energy", "era": "1960-1990",
             "inputs": ["facility.oil"],
@@ -264,7 +288,9 @@
           "sources": ["https://www.eia.gov/totalenergy/data/annual/showtext.php?t=ptb0810", "https://www.econ.umd.edu/sites/www.econ.umd.edu/files/pubs/Electricity_Prices_Quantities_ReStat_2013.pdf"],
           "note": "Modern practice is the same two-part structure, but with hourly and time-of-use pricing and, in some markets, deregulated retail suppliers; the 1980s tariff was a regulated cost-of-service tariff set by a public utility commission.",
           "confidence": "high" }
-      ] },
+      ],
+"confidence": "medium"
+},
 
     { "id": "facility.electricity", "name": "Electricity at the factory wall", "description": "The chain from the utility's service drop to the machine tool. This is the branch other subsystems should reference whenever they need 'mains power': the substation, the transformer, the low-voltage switchboard, the motor control centre, and finally the cord and plug.", "kind": "facility", "category": "energy", "era": "1960-1990",
       "facts": [ {"label": "Factory service voltage", "value": "11-13.8 kV into the plant, 480 V three-phase or 220 V single-phase out of the transformer in the US; 380-415 V in HK/Europe"} ],
@@ -325,7 +351,11 @@
               ],
       "note": "Not established: that factory switchboards were air-circuit-breaker type at 480/415 V with a transformer tap selector, and that small machine power was tapped at 120/230 V through a plug. The switchgear article read does not state board construction or factory voltage practice."
     }
-          ] },
+          ],
+"confidence": "medium",
+"note": "Established: the standard customer-substation function and equipment (transformation between voltage levels, circuit breaker, switchgear, protection), per the cited article. Not established: that any particular plant's yard matched this exact line-up; the node describes a typical yard.",
+"sources": ["https://en.wikipedia.org/wiki/Substation"]
+},
         { "id": "facility.electricity.distribution-busbar", "name": "Busbar trunking and cable", "description": "Copper or aluminium busbar in an epoxy-impregnated sandwich ('busway') for high-current runs, and PVC/PVDF-insulated copper or aluminium cable in conduit or tray for the rest. Flexible conduit was still common above machine tools.", "kind": "part", "category": "power", "era": "1983",
           "inputs": ["copper", "aluminium", "PVC", "XPLE"],
           "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Busbar", "https://en.wikipedia.org/wiki/Insulator_(electricity)"] }
@@ -462,7 +492,10 @@
               ],
       "note": "Not established: that Commodore's Taiwanese subcontractors in the export-processing zones bought municipal or industrial-zone water rather than taking their own. No waterworks or government document located on Taiwanese industrial water supply in that period."
     }
-          ] },
+          ],
+"confidence": "low",
+"note": "The node describes a generic intake choice (surface water for cooling, well water for the ultrapure plant) on the rationale that groundwater is geologically filtered and low in organics. No intake design, capacity, or water-quality figure is established here; the node makes no cited quantitative claim."
+},
         { "id": "facility.water.pretreatment", "name": "Water pretreatment plant", "description": "Coagulation, clarification, multimedia filtration and activated carbon, all in one reinforced-concrete block that dominated the plant footprint. The purpose is to strip the water of the things that would poison an ion-exchange resin or foul an RO membrane: suspended solids, colour, hardness, chlorine, organics and silica. It feeds both the ultrapure plant and the ordinary industrial side.", "kind": "facility", "category": "fluids", "era": "1960-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Water_treatment"],
           "children": [
             { "id": "facility.water.coagulation", "name": "Coagulation and clarification", "description": "Alum or ferric chloride plus lime and a coagulant aid is flash-mixed, then the floc is grown in a flocculation bay and settled out over 2-4 hours in a clarifier. Residual turbidity had to be under about 1-2 NTU for the sand filters to be worth having.", "kind": "process", "category": "fluids", "era": "1960-1990",
@@ -726,7 +759,11 @@
               "inputs": ["chem.natural-gas", "steam", "catalyst"],
               "children": [
                 
-              ] },
+              ],
+"confidence": "medium",
+"note": "Established: steam methane reforming over a nickel catalyst at 800-900 C and 20-30 bar with a 2.5-3:1 steam-to-carbon ratio, plus the water-gas shift step, per the cited article. Not established: the under-0.5 ppm desulphurisation figure and the nickel-molybdenum/chromite and iron-chrome catalyst specifics.",
+"sources": ["https://en.wikipedia.org/wiki/Steam_reforming"]
+},
             { "id": "facility.gases.hydrogen.electrolysis", "name": "Electrolysis of demineralised water", "description": "In a diaphragm or, from the 1970s, an alkaline cell, a nickel-plated or activated-titanium cathode makes hydrogen while a nickel anode makes oxygen. Fed with conductivity-grade water at 20-25 C. Output purity is 99.99% once the cell gas is passed over a palladium diffuser or an oxygen getter - the 'deoxo' step that killed the last 0.1% of oxygen.", "kind": "process", "category": "industry", "era": "1970-1990",
               "inputs": ["demineralised water", "electricity", "nickel"],
               "facts": [ {"label": "Energy", "value": "about 50-55 kWh per kg of hydrogen"}, {"label": "Purity", "value": "99.99% after deoxo"} ],
@@ -860,7 +897,11 @@
                 { "id": "facility.hazardous-waste.tce-feedstock", "name": "Ethylene from the steam cracker", "description": "The chlorination of ethylene, or the oxychlorination of 1,2-dichloroethane, which is itself from the chlorination of ethylene. The ethylene came from naphtha steam cracking - the same petrochemical chain as everything else on this tree. Ends at the crude oil still.", "kind": "material", "category": "fluids", "era": "1983", "inputs": ["facility.oil", "naphtha"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Trichloroethylene"] }
               ] }
           ] }
-      ] },
+      ],
+"confidence": "low",
+"note": "Established: RCRA as the 1976 US federal hazardous-waste law, per the cited article. Not established: the 'three years in force by 1983' reading (the Act dates to 1976; only the implementing regulations are circa 1980), and none of the per-fab volume figures.",
+"sources": ["https://en.wikipedia.org/wiki/Resource_Conservation_and_Recovery_Act"]
+},
 
     { "id": "facility.cleanroom", "name": "The semiconductor fab building", "description": "Where the C64's five custom chips were made. A 1-micron NMOS fab: a raised access floor over a service plenum, a ceiling of HEPA filters feeding laminar-flow hoods and open cleanroom, Class 100 in the process bays and Class 1000 in the support areas, and a yellow-lit room for photolithography. Air changed 100-1000 times an hour and consumed most of the plant's electricity.", "kind": "facility", "category": "silicon", "era": "1970-1990",
       "facts": [ {"label": "Class definition", "value": "Class 100 = <=100 particles >=0.5 um per cubic foot of air"}, {"label": "MOS process", "value": "1 micrometre NMOS, 4-inch wafers"}, {"label": "Fab capital cost", "value": "roughly $4 M in 1970 (a small fab) rising through $100-300 M for a full 1980s 100-300 mm fab"} ],
@@ -1030,7 +1071,9 @@
           "confidence": "medium",
           "note": "The wage index here is general, not Commodore-specific: ILO Bureau of Labour Statistics hourly compensation costs for production workers in US SIC 36 electronic and other electrical equipment. It is the cleanest single measure of why the work was in Hong Kong and Taiwan - roughly one-fifth to one-quarter of the American cost per hour - but it says nothing about Commodore specifically."
         }
-      ] },
+      ],
+"confidence": "medium"
+},
 
     { "id": "logistics.shipping", "name": "Moving 100,000 C64s", "description": "The C64 was assembled in East Asia and sold in North America and Europe. In 1983 that was containerised cargo on liner services, not break-bulk: a 40-foot box holds 250-350 C64s depending on how they were packed, and the whole industry's economics were shaped by the 1966-1980s transition from weight/measurement cargo to box rates.", "kind": "facility", "category": "logistics", "era": "1983",
       "confidence": "medium",
@@ -1116,7 +1159,9 @@
           "facts": [ {"label": "ROMs affected", "value": "3 million already in service when the sparkle cause was found"}, {"label": "Bus timing fix", "value": "about five months into production"}, {"label": "Cost of the C64A redesign", "value": "a substantial redesign was required to fix the Santa Clara build"} ],
           "sources": ["https://spectrum.ieee.org/commodore-64", "https://commodore.international/2021/12/05/early-commodore-64-production-and-production-engineering/"],
           "confidence": "high" }
-      ] },
+      ],
+"confidence": "medium"
+},
 
     { "id": "facility.test-equipment", "name": "Factory and engineering test equipment", "description": "Every C64 that left the Hong Kong line had been through a functional test, and the boards had been tested electrically before population and after soldering. In-circuit testers and flying probes were the technology of the era; the automated ATE industry of the 1990s did not exist yet. The capital equipment here was made by the test-and-measurement industry, which is why it is categorised `industry` rather than `assembly` - assembly is reserved for the operations themselves.", "kind": "tool", "category": "industry", "era": "1983",
       "children": [
@@ -1142,7 +1187,11 @@
               "confidence": "medium",
               "note": "Tungsten-rhenium was the common needle alloy in this era; beryllium copper became the standard later, and both carry real occupational-exposure caveats for the operators who handled them." }
           ] }
-      ] }
+      ],
+"confidence": "low",
+"note": "Established: in-circuit (bed-of-nails) and flying-probe testing as the era's board-test technologies, per the cited page. Not established: the claim that an automated test-equipment industry did not exist until the 1990s; programmable instrument buses date to the 1970s.",
+"sources": ["https://en.wikipedia.org/wiki/In-circuit_testing"]
+}
 
   ]
 }

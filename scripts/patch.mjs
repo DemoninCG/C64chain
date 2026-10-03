@@ -259,8 +259,21 @@ if (at) {
 
   const lineStartOf = (idx) => slice.text.lastIndexOf('\n', idx - 1) + 1;
   const idAt = slice.text.indexOf(`"${nodeId}"`);
-  const keyLine = lineStartOf(idAt < 0 ? 0 : idAt);
-  const keyIndent = slice.text.slice(keyLine).match(/^[ \t]*/)[0];
+  /* Fifth bug. When the node's `{` shares a line with its `"id"` (the style
+   * throughout 80-industry.json), there is no `\n` before the id *inside the
+   * slice*, so lastIndexOf returned -1, keyIndent came out as "", and every
+   * inserted key landed at column 0 with the closing brace dedented to match
+   * (34 cosmetic sites in one pass; values correct, files parsing, audits
+   * green — which is why nobody noticed). Fix: prefer the indent of the first
+   * key that starts its own line inside the slice; fall back to the id line's
+   * indent in the full file. */
+  const ownLineKey = slice.text.match(/\n([ \t]*)"[A-Za-z0-9_-]+"\s*:/);
+  let keyIndent;
+  if (ownLineKey) keyIndent = ownLineKey[1];
+  else {
+    const fileIdAt = slice.start + Math.max(0, idAt);
+    keyIndent = raw.slice(raw.lastIndexOf('\n', fileIdAt - 1) + 1).match(/^[ \t]*/)[0];
+  }
 
   const closeLine = lineStartOf(closeAt);
   const between = slice.text.slice(closeLine, closeAt);

@@ -589,7 +589,7 @@
                     { "label": "Aluminium", "value": "2-3 um (heavier than logic)" },
                     { "label": "Fab cycle time", "value": "~60-100 days for a 64K DRAM in 1982" }
           ],
-          "note": "DRAM wafers were commonly grown to a heavier oxygen content than logic wafers: a high bulk oxygen-precipitate density lengthens the trapped-charge lifetime and so buys refresh margin on a 64K part. That is the one place the 4164 substrate differs from the 6510's.",
+          "note": "DRAM wafers were commonly grown to a heavier oxygen content than logic wafers: a high bulk oxygen-precipitate density lengthens the trapped-charge lifetime and so buys refresh margin on a 64K part. That is the one place the 4164 substrate differs from the 6510's. Established: only the substrate-oxygen rationale above. Not established: the 8-10 mask, 100-150 step, 2-3 um aluminium and 60-100 day figures; no datasheet is cited.",
           "children": [
     {
               "id": "mb.ram.photolitho",
@@ -608,7 +608,8 @@
               "confidence": "medium",
               "note": "Some 64K DRAMs were still made on 1:1 proximity aligners in 1981-82; by 1984 5x steppers were standard across the industry."
             }
-          ]
+          ],
+          "confidence": "low"
         },
         {
           "id": "mb.ram.mask",
