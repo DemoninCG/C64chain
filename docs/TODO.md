@@ -7,6 +7,23 @@ Each item says what we know, what the evidence is, and what the action is. An
 item is done when the claim it describes is in the data and the script that
 checks it agrees — not when this file is edited.
 
+**For phase structure, the verification gate and the accumulated traps, read
+`docs/HANDOFF.md` first.** This file is the research backlog; that one is how to
+work on it.
+
+---
+
+## 0. Prose scrub — DONE 2026-10-03
+
+~170 fields across 165 nodes carried sentences about the authoring process rather
+than the node. All removed or rephrased. `CHECKLIST 7a` now states the rule so it
+does not recur, and `scripts/metalang.mjs` checks it.
+
+`metalang.mjs` REWRITE is now 0 tree-wide. Its DELETE class reports 1, which is a
+known false positive (*"flexible moulded-in stubs"*, an injection-moulding term).
+55 JUDGEMENT rows — `in this tree` phrases — were left alone deliberately; 49 of
+59 such occurrences tree-wide are ordinary orienting prose.
+
 ---
 
 ## 1. ~~Keycap legends~~ RESOLVED 2026-10-03
@@ -38,8 +55,9 @@ stop being conflated.
 ## 1a. Phase 3 is much smaller than planned — read this before scoping it
 
 I originally proposed resolving the unresolved ingredient strings as a bulk
-delegated pass. **Measured, that is wrong.** Of the 538 input strings that
-resolve by none of build's three routes:
+delegated pass. **Measured, that is wrong.** Of the **533** distinct input strings
+that resolve by none of build's three routes (build reports 697 unresolved
+*occurrences*, which counts each use separately):
 
 | | count |
 |---|---|
@@ -69,7 +87,7 @@ unresolved --clean|--strict` reproduces the ranking.
 
 ## 1b. The audit only category-checks 5 of 16 categories
 
-`CAT_OK` in `scripts/audit.mjs` lists five categories, so **2,200 of 2,439 nodes
+`CAT_OK` in `scripts/audit.mjs` lists five categories, so **2,200 of 2,438 nodes
 sit in a category whose kind combinations are never examined.** That is how
 `metal.pine-resin` and `metal.turpentine` sat under `metals` for the whole QA
 pass. Both are now recategorised; the audit reports the coverage gap as a NOTE
@@ -129,9 +147,9 @@ The wider lesson is item 1b above, not these six.
 
 ## 6. Unresolved ingredient inputs — rescoped, see item 1a
 
-707 `inputs` strings do not resolve to a node, but only ~30 are worth a
-decision. The original framing of this item as a bulk pass was wrong; the
-measurement is in 1a.
+697 input *occurrences* (533 distinct strings) do not resolve to a node, but only
+~30 are worth a decision. The original framing of this item as a bulk pass was
+wrong; the measurement is in 1a.
 
 **Action.** Work the ~30-item list. The check that compares each mapping's key
 against its target's name is now permanent as `scripts/ingredients.mjs links`,
@@ -156,10 +174,13 @@ Two sides of one cut-off, not a contradiction. Nothing to do.
 
 - Re-run `scripts/probe.mjs` on the standard lines and produce the
   consolidated before/after diff for the README.
-- Push the Phase 0/1 commits to `origin/main`.
+- Push the 5 commits to `origin/main`.
 - Decide whether the large build artifacts (`public/tree.*`, `docs/TREE.md`)
   stay committed or move to a release artifact.
 - Worth a look while it is fresh: `metal.benzene` ("Crude benzene from the coke
   oven", category `metals`) may be a duplicate of the canonical
   `chem.styrene.benzene`. Not merged, because I had not confirmed it is the same
   substance rather than a co-product of the coke ovens.
+- The `$qaPass` provenance blocks at the end of some fragments have never been
+  reviewed. They are file-level metadata rather than node text, so
+  `metalang.mjs` does not scan them.

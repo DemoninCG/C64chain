@@ -24,6 +24,7 @@ No dependencies. Node 18+.
 | `data/*.json` | the tree, one file per subsystem |
 | `docs/SCHEMA.md` | the node schema — read this before editing |
 | `docs/CHECKLIST.md` | the QA standard every fragment was held to |
+| `docs/HANDOFF.md` | current state, verification gate, remaining plan, known traps |
 | `docs/TODO.md` | known-wrong, known-missing and deliberately unresolved |
 | `scripts/build.mjs` | merge, resolve cross-references, validate, export |
 | `scripts/selftest.mjs` | 40 checks on the builder itself |
