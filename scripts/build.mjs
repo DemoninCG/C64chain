@@ -20,10 +20,15 @@ const PUBLIC = path.resolve(process.env.PUBLIC_DIR ?? path.join(ROOT, 'public'))
 const DOCS = path.resolve(process.env.DOCS_DIR ?? path.join(ROOT, 'docs'));
 
 const VALID_KINDS = new Set(['part', 'process', 'material', 'facility', 'tool']);
+// Categories answer "what industry made this", not "where does it sit in the
+// machine". The machine-position distinction is structural and lives in the
+// spine (c64.peripherals, c64.extras, c64.bottoms-out), which is why there is
+// deliberately no `peripherals` bucket here: it only ever held one node, and a
+// legend row reading "1" misleads rather than informs.
 const VALID_CATEGORIES = new Set([
   'silicon', 'passives', 'board', 'plastics', 'metals', 'magnetics',
   'interconnect', 'power', 'assembly', 'optics', 'fluids', 'energy',
-  'packaging', 'logistics', 'computing', 'peripherals', 'industry',
+  'packaging', 'logistics', 'computing', 'industry',
 ]);
 
 const errors = [];

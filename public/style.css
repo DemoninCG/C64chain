@@ -238,6 +238,10 @@ aside {
 .nd.faint { opacity: .13; }
 .nd path.tog { fill: #0e1220; stroke: #39415a; }
 .nd text.tog { fill: var(--fg-dim); font: 9px ui-monospace, Consolas, monospace; }
+/* The badge needs to catch the pointer even though it is visually just a glyph,
+   and must show the pointer is a control rather than the node body. */
+.nd .tog-hit { cursor: pointer; pointer-events: all; }
+.nd .tog-hit:hover { fill: #ffffff14; }
 .badge { font: 9px ui-monospace, Consolas, monospace; }
 
 /* ----------------------------------------------------------- outline */

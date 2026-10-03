@@ -24,9 +24,19 @@ and are stitched together by `scripts/build.mjs`.
   //   tool      capital equipment used by a process (factory, aligner, press)
   "kind": "material",
 
-  // REQUIRED — subsystem bucket, drives coloring in the UI:
+  // REQUIRED — subsystem bucket, drives colouring in the UI. This answers
+  // "what industry made this", NOT "where does it sit in the machine":
   //   silicon|passives|board|plastics|metals|magnetics|interconnect|
-  //   power|assembly|optics|fluids|energy|packaging|logistics|computing
+  //   power|assembly|optics|fluids|energy|packaging|logistics|computing|
+  //   industry
+  //
+  // There is deliberately no `peripherals` bucket. The machine-position
+  // distinction (part of the C64 / needed alongside it / industrial base) is
+  // structural and lives in the spine as c64.peripherals, c64.extras and
+  // c64.bottoms-out. As a category it held exactly one node, which makes a
+  // legend row reading "1" — misleading, since filtering by it appears to do
+  // nothing. If you want to add nodes to a category, you almost always want a
+  // material that no fragment has written yet.
   "category": "silicon",
 
   // OPTIONAL — when the process existed/was standard. 1982 = C64 production

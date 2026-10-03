@@ -84,13 +84,29 @@ logic 228, chem gaps 12.
 
 ## Using the viewer
 
-Open `index.html` via `npm start`. The dendrogram opens three levels deep;
-click a `+n` badge to open a node, double-click to open that level, scroll to
-zoom and drag to pan. Search reveals matches **and every ancestor**, so a hit at
-level 19 comes with its 19-level breadcrumb rather than an empty screen. The
-outline view is easier for reading prose. `dim unrelated` greys out everything
-that is neither an ancestor nor a descendant of the current selection, which is
-the fastest way to isolate one supply chain.
+Open `index.html` via `npm start`. The dendrogram opens three levels deep.
+
+| action | result |
+| --- | --- |
+| click a node | selects it and fills the detail panel |
+| click the `+n` / `−` badge | expands or collapses just that node |
+| double-click a node | opens it and everything below it |
+| scroll / drag | zoom / pan |
+| `Centre root` (or `0`) | jumps back to the C64 itself |
+
+Two behaviours worth knowing, because both were bugs and both are deliberate
+now. The root node sits at the vertical midpoint of the whole canvas — on a
+tree 8,000 px tall that is far below the window — so *Centre root* pans to it
+rather than just refitting. And when you expand a node, the pan is corrected so
+that **the node you clicked stays on the same pixel**; otherwise everything
+below it shifts and the thing you were aiming at slides out from under the
+cursor.
+
+Search reveals matches **and every ancestor**, so a hit at level 19 arrives with
+its 19-level breadcrumb rather than an empty screen. The outline view is easier
+for reading prose. `dim unrelated` greys out everything that is neither an
+ancestor nor a descendant of the current selection, which is the fastest way to
+isolate one supply chain.
 
 Exports are in `public/`: `tree.json` (flat node map, for your own tooling),
 `tree.dot` (Graphviz — this is the one to render as a poster), `tree.mmd`

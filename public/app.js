@@ -26,6 +26,8 @@ let confOff = new Set();
 let dimUnrelated = false;
 let markShared = true;
 let vis = [];                 // visible instances, pre-order
+let byKey = new Map();        // instance key -> instance
+let layoutByKey = new Map();  // instance key -> {x, y} in SVG user units
 let cam = { x: 0, y: 0, k: 1 };
 
 const ROW = 26;
@@ -184,6 +186,10 @@ function buildVisible() {
   }
 
   visit(N[ROOT], 0, '');
+  // Keyed by the stable ancestor path, not by uid: uid is a per-render counter
+  // and shifts whenever the visible set changes, so a lookup by uid against a
+  // node rendered before the last re-layout can silently miss.
+  byKey = new Map(vis.map((v) => [v.key, v]));
   return vis;
 }
 
@@ -243,6 +249,23 @@ function renderTree() {
   const W = colX[colX.length - 1] + 360;
   const H = Math.max(cursor * ROW, 80);
 
+  layoutByKey = new Map();
+  for (const inst of vis) {
+    const p = pos.get(inst.uid);
+    if (p) layoutByKey.set(inst.key, p);
+  }
+
+  // If the caller asked for an anchor, correct the pan so that node lands back
+  // on the pixel it was clicked at.
+  if (anchorPending) {
+    const p = layoutByKey.get(anchorPending.key);
+    if (p) {
+      cam.x = anchorPending.sx - p.x * cam.k;
+      cam.y = anchorPending.sy - p.y * cam.k;
+    }
+    anchorPending = null;
+  }
+
   const g = el('g', { id: 'g', transform: `translate(${cam.x} ${cam.y}) scale(${cam.k})` });
 
   // related set for dimming
@@ -292,7 +315,7 @@ function renderTree() {
 
     const gg = el('g', {
       class: classes.join(' '),
-      'data-uid': inst.uid,
+      'data-key': inst.key,
       transform: `translate(${x} ${p.y})`,
     });
     gg.appendChild(el('rect', { class: 'box', x: 0, y: -BOXH / 2, width: w, height: BOXH, rx: 5 }));
@@ -313,6 +336,14 @@ function renderTree() {
       const tt = el('text', { class: 'tog', x: lx, y: 3.5, 'text-anchor': 'middle' });
       tt.textContent = inst.open ? '−' : String(inst.n.children.length);
       gg.appendChild(tt);
+      // A real hit target for the badge. Hit-testing is done by asking which
+      // element the pointer is over, never by comparing coordinates: the
+      // viewport and SVG user units are different spaces once pan/zoom is
+      // applied, so any arithmetic between them silently misfires.
+      gg.appendChild(el('rect', {
+        class: 'tog-hit', x: lx - 10, y: -11, width: 20, height: 22, rx: 4,
+        fill: 'transparent', 'data-toggle': inst.key,
+      }));
     }
     nodesG.appendChild(gg);
   }
@@ -323,10 +354,7 @@ function renderTree() {
   svg.dataset.w = W;
   svg.dataset.h = H;
 
-  const vp = svg.getBoundingClientRect();
-  cam.x += (vp.width - W * cam.k) / 2;
-  if (cam.y === 0) cam.y = 24;
-  g.setAttribute('transform', `translate(${cam.x} ${cam.y}) scale(${cam.k})`);
+  applyTransform();
 }
 
 function renderOutline() {
@@ -517,35 +545,53 @@ function revealTo(id) {
 function select(id, opts = {}) {
   selected = id;
   if (opts.reveal) revealTo(id);
-  if (view === 'tree') { cam.y = 0; render(); }
-  else render();
+  render();
   renderPanel(id);
   if (opts.reveal) {
     const inst = vis.find((v) => v.id === id);
-    if (inst) centerOn(inst);
+    if (inst) centreOn(inst);
   }
 }
 
-function centerOn(inst) {
+function centreOn(inst) {
   if (view !== 'tree') {
     const row = $('#outline').querySelector('.orow.sel');
     row?.scrollIntoView({ block: 'center' });
     return;
   }
+  const p = layoutByKey.get(inst.key);
+  if (!p) return;
   const svg = $('#canvas');
-  const W = +svg.dataset.w, H = +svg.dataset.h;
   const vp = svg.getBoundingClientRect();
-  // find y by re-walking the layout: cheap because we stored it on the group
-  const g = svg.querySelector('#g');
-  const target = [...g.querySelectorAll('g.nd')].find((x) => +x.dataset.uid === inst.uid);
-  if (!target) return;
-  const m = target.getAttribute('transform').match(/translate\(([-\d.]+) ([-\d.]+)\)/);
-  if (!m) return;
-  const [, x, y] = m.map(Number);
-  cam.x = vp.width / 2 - x * cam.k;
-  cam.y = vp.height / 2 - y * cam.k;
-  g.setAttribute('transform', `translate(${cam.x} ${cam.y}) scale(${cam.k})`);
-  void W; void H;
+  cam.x = Math.max(16, vp.width / 3 - p.x * cam.k);
+  cam.y = vp.height / 2 - p.y * cam.k;
+  applyTransform();
+}
+
+function centreRoot() {
+  // Fit first, then centre. The root sits at the vertical midpoint of the whole
+  // canvas, which on a deep tree is thousands of pixels below the viewport, so
+  // fitting without panning to it would leave the button apparently inert.
+  fit();
+  const root = vis[0];
+  if (root) centreOn(root);
+}
+
+/* Keep the node you just acted on exactly where it was on screen.
+ *
+ * Without this, opening a node near the bottom of a 8000px canvas re-centres
+ * everything above it and the thing you clicked moves out from under the
+ * cursor — which is what made the tree feel impossible to track. */
+let anchorPending = null;
+function anchorTo(inst) {
+  if (view !== 'tree' || !inst) return;
+  const p = layoutByKey.get(inst.key);
+  if (!p) return;
+  anchorPending = { key: inst.key, sx: p.x * cam.k + cam.x, sy: p.y * cam.k + cam.y };
+}
+
+function applyTransform() {
+  $('#canvas').querySelector('#g')?.setAttribute('transform', `translate(${cam.x} ${cam.y}) scale(${cam.k})`);
 }
 
 function expandSubtree(id) {
@@ -643,19 +689,34 @@ const hl = (s, terms) => {
 function wire() {
   const svg = $('#canvas');
 
-  // node clicks
+  // node clicks — badge vs body, decided by element, not by arithmetic
   svg.addEventListener('click', (e) => {
+    if (suppressClick) { suppressClick = false; return; }
+    const badge = e.target.closest('[data-toggle]');
+    if (badge) {
+      const inst = byKey.get(badge.dataset.toggle);
+      if (!inst?.expandable) return;
+      // Decide from what the user can SEE, not from the collapsed set. The two
+      // can disagree — a node can be shut by the depth limit without being in
+      // `collapsed` — and asking `collapsed` first made the first click on a
+      // depth-limited node silently do nothing.
+      if (inst.open) {
+        collapsed.add(inst.id);
+      } else {
+        collapsed.delete(inst.id);
+        depthLimit = Math.max(depthLimit, inst.depth + 1);
+        const sl = $('#depthSlider');
+        sl.max = Math.max(4, META.maxDepth);
+        sl.value = Math.min(depthLimit, +sl.max);
+      }
+      anchorTo(inst);
+      render();
+      return;
+    }
     const g = e.target.closest('g.nd');
     if (!g) return;
-    const inst = vis[+g.dataset.uid];
-    if (!inst) return;
-    const toggleHit = e.offsetX > (g.querySelector('text')?.getComputedTextLength?.() ?? 0) + 40;
-    if (toggleHit && inst.expandable) {
-      collapsed.has(inst.id) ? collapsed.delete(inst.id) : collapsed.add(inst.id);
-      render();
-    } else {
-      select(inst.id);
-    }
+    const inst = byKey.get(g.dataset.key);
+    if (inst) select(inst.id);
   });
   svg.addEventListener('dblclick', (e) => {
     const g = e.target.closest('g.nd');
@@ -693,18 +754,37 @@ function wire() {
   }, { passive: false });
 
   let drag = null;
+  let suppressClick = false;
   svg.addEventListener('pointerdown', (e) => {
-    drag = { x: e.clientX, y: e.clientY, cx: cam.x, cy: cam.y };
-    svg.classList.add('dragging');
-    svg.setPointerCapture(e.pointerId);
+    if (e.button !== 0) return;
+    // Any new press clears a stale suppress flag. Without this, a drag whose
+    // trailing click never arrives leaves the latch set and the user's next
+    // real click is silently swallowed.
+    suppressClick = false;
+    drag = { x: e.clientX, y: e.clientY, cx: cam.x, cy: cam.y, moved: false };
   });
   svg.addEventListener('pointermove', (e) => {
     if (!drag) return;
-    cam.x = drag.cx + (e.clientX - drag.x);
-    cam.y = drag.cy + (e.clientY - drag.y);
+    const dx = e.clientX - drag.x;
+    const dy = e.clientY - drag.y;
+    // Only become a drag past a few pixels, so a click stays a click. Pointer
+    // capture is taken late, and only for real drags, so it can never retarget
+    // the click that follows.
+    if (!drag.moved && Math.hypot(dx, dy) < 4) return;
+    if (!drag.moved) {
+      drag.moved = true;
+      svg.classList.add('dragging');
+      try { svg.setPointerCapture(e.pointerId); } catch { /* not capturable */ }
+    }
+    cam.x = drag.cx + dx;
+    cam.y = drag.cy + dy;
     svg.querySelector('#g')?.setAttribute('transform', `translate(${cam.x} ${cam.y}) scale(${cam.k})`);
   });
-  const endDrag = () => { drag = null; svg.classList.remove('dragging'); };
+  const endDrag = () => {
+    if (drag?.moved) suppressClick = true;
+    drag = null;
+    svg.classList.remove('dragging');
+  };
   svg.addEventListener('pointerup', endDrag);
   svg.addEventListener('pointercancel', endDrag);
 
@@ -757,6 +837,7 @@ function wire() {
   });
 
   // controls
+  $('#centreRoot').onclick = () => centreRoot();
   $('#expandAll').onclick = () => { depthLimit = 99; collapsed.clear(); forceOpen.clear(); render(); fit(); };
   $('#collapseAll').onclick = () => expandToDepth(1);
   $('#depthSlider').oninput = (e) => {
@@ -776,8 +857,8 @@ function wire() {
     switch (e.key) {
       case '/': e.preventDefault(); search.focus(); search.select(); break;
       case '?': e.preventDefault(); $('#hint').textContent =
-        'click node = select · click the +n badge = expand/collapse · dbl-click = open that level · scroll = zoom · drag = pan · / = search · 0 = fit · Esc = clear search'; break;
-      case '0': fit(); break;
+        'click node = select · click the +n badge = expand/collapse · dbl-click = open that level · scroll = zoom · drag = pan · / = search · 0 = centre root · Esc = clear search'; break;
+      case '0': centreRoot(); break;
       case 'Escape': search.value = ''; runSearch(''); break;
       case 'ArrowDown': e.preventDefault(); if (vis[Math.min(vis.length - 1, cur + 1)]) { select(vis[Math.max(0, Math.min(vis.length - 1, cur + 1))].id, { reveal: true }); } break;
       case 'ArrowUp': e.preventDefault(); if (vis[Math.max(0, cur - 1)]) select(vis[Math.max(0, cur - 1)].id, { reveal: true }); break;
@@ -816,7 +897,7 @@ function fit() {
   cam.k = k;
   cam.x = 24;
   cam.y = 24;
-  svg.querySelector('#g')?.setAttribute('transform', `translate(${cam.x} ${cam.y}) scale(${cam.k})`);
+  applyTransform();
 }
 
 /* ------------------------------------------------------------------ paint */
