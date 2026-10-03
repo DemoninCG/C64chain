@@ -27,6 +27,7 @@
             "children": [
               {
                 "id": "chem.crude.exploration.seismic-survey",
+      "sources": ["https://en.wikipedia.org/wiki/Reflection_seismology"],
                 "name": "Reflection seismic survey",
                 "description": "A surface source sends a pressure wave down through the rock section; reflectors return it to hydrophones and the travel times are stacked into a two-dimensional depth section. Seismic is a time-domain method: it maps reflectivity contrasts (sandstone/shale, gas-sand amplitude dimming) and gives no direct information about fluid type. The record was stacked and migrated on a mainframe or minicomputer: common-midpoint stacking, normal-moveout correction from velocity analysis, deconvolution and depth conversion, with the 1980s emphasis on multiple suppression and on early 3-D, where a single field cost $1-3 million per acre-foot. A log response indicating oil or gas - high resistivity, low neutron density, a gas effect on the seismic - is a test, not a discovery: a discovery needed a producing well, and industry experience was one test in eight to one in thirty commercial.",
                 "kind": "process",
@@ -220,7 +221,8 @@
                     "note": "Reserve uncertainty and a world ultimately-recoverable figure are commentary about reserve booking."
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the recovery-factor ranges quoted for sandstone versus fractured carbonate reservoirs, the formation volume factor range for light crude, and which estimation method any particular early-1980s operator applied to a given field."
               }
             ],
             "confidence": "low",
@@ -342,6 +344,7 @@
           },
           {
             "id": "chem.crude.rig",
+      "sources": ["https://en.wikipedia.org/wiki/Drilling_rig"],
             "name": "The drilling rig",
             "description": "Rotary drilling: the drill string is rotated from the surface, the bit mills a hole, mud circulates to carry cuttings out and to control formation pressure. Offshore this is a jack-up, a semisubmersible or a drillship; onshore it is a land rig with a derrick. 1980s rigs reached 6,000-7,500 m total depth on routine programs.",
             "kind": "facility",
@@ -528,7 +531,8 @@
                           "iron ore fines",
                           "barite"
                         ],
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: how widely ground iron ore substituted for barite in early-1980s drilling muds, and whether lime or sulphide-film passivation against steel corrosion was standard practice."
                       },
                       {
                         "id": "chem.crude.rig.drilling-mud.chelant-biocide",
@@ -542,7 +546,8 @@
                           "polyacrylamide",
                           "surfactants"
                         ],
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: which sequestrant, viscosifier, defoamer and biocide formulations any particular early-1980s mud programme used, and at what dosages."
                       }
                     ],
                     "facts": [
@@ -586,7 +591,8 @@
                         "value": "a cone, or a milled-steel body with carbide inserts on the three cones"
                       }
                     ],
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the binder range and hardness figures quoted for rock-bit carbide grades, and the claim about cemented-carbide rock-bit consumption relative to carbide tooling in the 1980s."
                   },
                   {
                     "id": "chem.crude.rig.bit.natural-diamond",
@@ -623,7 +629,8 @@
                           "cobalt metal",
                           "tungsten-carbide substrate"
                         ],
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the sintering pressure and temperature ranges quoted, the cobalt catalyst detail, and the field-life distance claimed for 1980s soft-formation cutters."
                       }
                     ],
                     "confidence": "low",
@@ -658,7 +665,8 @@
                         "value": "1.7-2.0 g/cm3"
                       }
                     ],
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the blend proportions, slurry density range, pumping rates and thickening times quoted, and how widely silica flour and fluid-loss additives were used in early-1980s Class G jobs."
                   },
                   {
                     "id": "chem.crude.rig.casing-cement.dispersant",
@@ -830,6 +838,7 @@
             "children": [
               {
                 "id": "chem.crude.stimulation.hydraulic-fracturing",
+      "sources": ["https://en.wikipedia.org/wiki/Fracking"],
                 "name": "Hydraulic fracturing",
                 "description": "A water-based or gel fluid pumped down the casing into the pay, then into the perforations at 40-100 bbl/min and up to 6,000-10,000 psi surface pressure to part the rock; a proppant is carried in to hold the fracture open when pressure is released. Born in 1947 (experiments) and industrialised in the late 1950s (Massive Hydraulic Fracturing, 1961-1965), by the 1980s it was routine on low-permeability gas reservoirs and increasingly common on oil wells. A big 1980s job used 10,000-100,000 bbl of fluid and 500-2,000 tonnes of sand. A propped fracture's job is conductivity times length: the first fractures were vertical and planar, so 1980s design moved to multiple parallel fractures per zone, and conductive area had to be raised by resin-coated proppant or by larger grains because proppant embedment in soft rock closed fractures within months.",
                 "kind": "process",
@@ -849,7 +858,8 @@
                       "borax or zirconium chelant",
                       "sand"
                     ],
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the market share claimed for uncrosslinked waterfracs by the mid-1980s, and which viscosifier and crosslinker system any particular early-1980s fracturing job used."
                   },
                   {
                     "id": "chem.crude.stimulation.hydraulic-fracturing.proppant",
@@ -998,7 +1008,8 @@
                       "nonylphenol ethoxylate",
                       "polyalkoxyamine"
                     ],
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the dosing range quoted, the shift toward polyalkoxyamine and polyglycol ether demulsifiers in the 1980s, and the water content claimed for stable water-in-oil emulsions."
                   }
                 ],
                 "confidence": "low",
@@ -1112,6 +1123,7 @@
       },
       {
         "id": "chem.natural-gas",
+      "sources": ["https://en.wikipedia.org/wiki/Natural_gas"],
         "name": "Natural gas: the gas field",
         "description": "Methane, mostly: either the gas cap sitting on an oil reservoir or a gas-only field. In 1983 world gas production was roughly 2.9-3.0 trillion cubic metres a year, of which about 70% was still associated with oil and much of it was flared or burned at the wellhead. Gas matters to a C64 three ways: as acetylene for PVC and chlorinated solvents, as hydrogen for ammonia and hydrochloric acid, and as the fuel that moved the plastics.",
         "kind": "material",
@@ -1391,7 +1403,8 @@
                             "value": "120-130 C, 1.5-2.0 bar"
                           }
                         ],
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the concentration and reboiler ranges quoted, and the claim that MDEA was the growth amine of the 1980s with lower reboiler duty at the cost of slower absorption."
                       }
                     ],
                     "confidence": "low",
@@ -1437,7 +1450,8 @@
             "kind": "material",
             "category": "fluids",
             "era": "1970s",
-            "confidence": "medium"
+            "confidence": "medium",
+            "note": "Not established: the scale of the deep-ocean and permafrost hydrate resource as understood in the early 1980s, and how widely hydrate plugging and inhibitor practice figured in subsea gas lines of the period."
           },
           {
             "id": "chem.natural-gas.uses.acetylene",
@@ -1464,7 +1478,8 @@
                     "value": "2-3% of feed gas"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the furnace temperature range, pressure range and per-pass acetylene yield quoted, and the burner-material and soot-sensitivity claims."
               },
               {
                 "id": "chem.natural-gas.uses.acetylene.quench",
@@ -1519,7 +1534,8 @@
                     "value": "99.5-99.8%"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the quench temperature and timing, the acetone absorption conditions and solvent-capacity figure, the purity range quoted, and the sequence of the final drying and finishing steps for vinyl chloride service."
               },
               {
                 "id": "chem.natural-gas.uses.acetylene.to-vinyl-chloride",
@@ -1572,7 +1588,8 @@
                 "kind": "material",
                 "category": "fluids",
                 "era": "1960s",
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the tube count and dimensions, pressures and inlet and outlet temperatures quoted for early-1980s multi-bed reformers, and how widely the older nickel-chromium formulation persisted."
               },
               {
                 "id": "chem.natural-gas.uses.hydrogen.to-ammonia",
@@ -1626,7 +1643,8 @@
             "kind": "material",
             "category": "fluids",
             "era": "1950s",
-            "confidence": "medium"
+            "confidence": "medium",
+            "note": "Not established: the share of ammonia going to fertiliser quoted, and the implied sizing link between the fertiliser market, hydrogen capacity and ammonia availability for ammoxidation."
           },
           {
             "id": "chem.natural-gas.sources.non-associated-gas.gas-reservoir",
@@ -1649,7 +1667,8 @@
                     "value": "~2.9-3.0 x 10^12 m3/year"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the world gas production figure quoted for 1983, and the per-machine gas quantity implied for one computer's plastics and energy."
               }
             ],
             "confidence": "low",
@@ -1732,7 +1751,7 @@
                     "note": "Coil counts and duty vary widely by refinery; these are typical 1980s figures."
                   }
                 ],
-                "note": "Fouling monitoring practice varies; the mechanisms described are standard.",
+                "note": "Fouling monitoring practice varies; the mechanisms described are standard. Established: Crude preheat train with heat recovery to fired heater temperatures. Not established: the stated temperature ranges and integration specifics as given.",
                 "confidence": "low"
               },
               {
@@ -1776,7 +1795,7 @@
                         "value": "60-90% of the ethane and propane"
                       }
                     ],
-                    "note": "LPG endpoint: chem.natural-gas.composition.ethane-propane.",
+                    "note": "LPG endpoint: chem.natural-gas.composition.ethane-propane. Established: Overhead condenser with reflux and fuel gas recovery. Not established: the stated burning versus recovery practices as 1980s standard as given.",
                     "confidence": "low"
                   },
                   {
@@ -1843,7 +1862,8 @@
                             "value": "0.2-0.5 wt% S (pre-cracker)"
                           }
                         ],
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the temperature, pressure, gas-ratio and loading ranges quoted, the pre-cracker sulphur specification, and the claim that refineries bought the same refined cobalt stream as drill-bit makers."
                       },
                       {
                         "id": "chem.refining.atmospheric-distillation.fractionating-tower.naphtha-hydrotreating.sour-water",
@@ -1888,7 +1908,8 @@
                     "kind": "tool",
                     "category": "industry",
                     "era": "1930s",
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the vacuum level and steam-consumption ranges quoted for three-stage ejectors, and how far mechanical vacuum pumps had displaced ejectors by the early 1980s."
                   }
                 ],
                 "facts": [
@@ -1911,7 +1932,7 @@
                 "value": "1-3 mg KOH/g for Arabian heavy crude"
               }
             ],
-            "note": "Total acid number values are crude-specific and the threshold for accelerated attack is generally quoted as above about 2 mg KOH/g at the column temperature.",
+            "note": "Total acid number values are crude-specific and the threshold for accelerated attack is generally quoted as above about 2 mg KOH/g at the column temperature. Established: Atmospheric distillation as first crude fractionation with overhead corrosion control. Not established: the stated tower heights residue cut points and neutraliser specifics as given.",
             "confidence": "low"
           },
           {
@@ -1947,7 +1968,8 @@
                         "value": "12-24 hours"
                       }
                     ],
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the vessel dimensions, coke tonnage per cycle, yield range and cycle time quoted, and the characterisation of drum switching as the highest-risk refinery operation."
                   },
                   
                   {
@@ -1966,6 +1988,7 @@
               },
               {
                 "id": "chem.refining.fluid-catalytic-cracking",
+      "sources": ["https://en.wikipedia.org/wiki/Fluid_catalytic_cracking"],
                 "name": "Fluid catalytic cracking",
                 "description": "Vacuum gas oil is contacted with a zeolite catalyst at 500-530 C and 1-3 bar in a riser, cracked into gasoline, light ends and coke, and the catalyst is continuously regenerated in a fluidised-bed regenerator at 650-750 C. FCC was the largest refinery process by capacity in the early 1980s - a large unit processing 40,000-100,000 bbl/d - and the source of most of the world's leaded-free gasoline blending components and of the propylene that fed the older chemical crackers.",
                 "kind": "process",
@@ -2001,7 +2024,8 @@
                         "value": "4-6% of feed"
                       }
                     ],
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the reactor and regenerator temperature, pressure and yield figures quoted, and the claim that two-stage regeneration was standard 1980s practice."
                   },
                   {
                     "id": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst",
@@ -2021,7 +2045,8 @@
                         "kind": "material",
                         "category": "fluids",
                         "era": "1960s",
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the microsphere size range quoted, and the allocation of cracking activity and attrition resistance between matrix and zeolite."
                       },
                       {
                         "id": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.zsm-5",
@@ -2036,7 +2061,8 @@
                             "value": "3-15% of the catalyst"
                           }
                         ],
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the blend-level range quoted, the framework and ring-size description, and the claim linking lead phase-down octane demand to C3 and C4 olefin selectivity."
                       },
                       {
                         "id": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.zeolite-manufacture",
@@ -2059,7 +2085,7 @@
                             "value": "about 6-10, from about 5 for Y"
                           }
                         ],
-                        "note": "Dealumination silica-to-alumina ratios vary by process and product; the values are representative of the era's USY.",
+                        "note": "Dealumination silica-to-alumina ratios vary by process and product; the values are representative of the era's USY. Established: Synthetic FCC zeolite crystallisation from alumina silica alkali and template. Not established: the stated crystal sizes and lattice specifics as given.",
                         "confidence": "low"
                       }
                     ],
@@ -2079,7 +2105,7 @@
                         "value": "2-4% of FCC feed by mass"
                       }
                     ],
-                    "note": "The propylene branch: chem.propylene.",
+                    "note": "The propylene branch: chem.propylene. Established: Cracked gasoline as high octane olefinic blending component enabling lead removal. Not established: the stated octane advantage and propylene yield specifics as given.",
                     "confidence": "low"
                   }
                 ],
@@ -2108,7 +2134,7 @@
                 "children": [
                   "chem.refining.claus"
                 ],
-                "note": "Same amine chemistry as the gas sweetening plant: chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.sweetening.",
+                "note": "Same amine chemistry as the gas sweetening plant: chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.sweetening. Established: Acid gas as H2S rich stream to Claus sulphur recovery. Not established: the stated 1983 sulphur value shares and recovery specifics as given.",
                 "confidence": "low"
               }
             ],
@@ -2127,6 +2153,7 @@
           },
           {
             "id": "chem.refining.claus",
+      "sources": ["https://en.wikipedia.org/wiki/Claus_process"],
             "name": "Claus process: recovering elemental sulphur",
             "description": "Three-quarters of a mole of oxygen is used to burn a third of the hydrogen sulphide to sulphur dioxide, then the two react over an alumina catalyst to make sulphur and water: 2 H2S + SO2 -> 3 S + 2 H2O. The Claus unit turns the refinery's or gas plant's worst stream into a saleable commodity, and its output is the elemental sulphur that the whole 1980s chemical industry - rubber vulcanisation, fungicides, sulphuric acid - depended on. The Canadian oil sands' sulphur problem and the Arabian gas sweetening builds both exist because of this unit.",
             "kind": "process",
@@ -2150,7 +2177,8 @@
                     "value": "30-40% of the H2S to SO2"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the furnace temperature range and first-stage conversion figures quoted, and the operating claims about rich-side firing, oxygen excess and soot plugging."
               },
               {
                 "id": "chem.refining.claus.catalyst",
@@ -2185,7 +2213,8 @@
                     "note": "Established: The catalyst is not a mystery material: it is activated alumina, and the alumina is refined from bauxite as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the bed temperatures, staging arrangement and overall recovery claim quoted, and how widely titanium-promoted alumina was used in early-1980s converters."
               },
               {
                 "id": "chem.sulfur",
@@ -2204,7 +2233,8 @@
                     "value": "80-90%"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the world production and recovered-share figures quoted for 1983, and the end-use list as representative of early-1980s sulphur demand."
               }
             ],
             "confidence": "high",
@@ -2212,6 +2242,7 @@
           },
           {
             "id": "chem.refining.catalytic-reforming",
+      "sources": ["https://en.wikipedia.org/wiki/Catalytic_reforming"],
             "name": "Catalytic reforming and the aromatics complex",
             "description": "Reforming naphtha over platinum at 500-540 C and 15-30 bar converts paraffins and naphthenes into aromatics, releasing about 0.2-0.3 tonnes of hydrogen per tonne of feed and upgrading the octane number. It is where the world's benzene comes from, and therefore where the styrene in the C64's ABS comes from. Platforming (UOP, 1943) is the process that made the aromatised gasoline era possible: naphtha from C5 to about 220 C over 0.3-0.4 wt% platinum and rhenium on chlorided alumina at 500-540 C and 15-30 bar with an H2/hydrocarbon ratio of 5-6. The benzene plant extracts the C6 aromatics from the reformer effluent, separates benzene, toluene and the C8 isomers and hydrogenates the xylenes back to benzene, because a tonne of xylene is worth less than a tonne of benzene. Deactivated catalyst was shipped out and the platinum, rhenium and gallium recovered by chlorination, aqua regia dissolution and solvent extraction, which also disposed of the refinery's radioactive coke from the feed's radium.",
             "kind": "process",
@@ -2235,7 +2266,8 @@
                     "value": "0.1-0.5 wt%"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the platinum and rhenium loadings quoted, the crystallite-size and chlorine-promotion claims, and the economics of regeneration and off-site platinum reclamation."
               }
             ],
             "facts": [
@@ -2282,7 +2314,8 @@
                     "kind": "material",
                     "category": "fluids",
                     "era": "1970s",
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the resin lifetime range quoted in operating hours, and how widely the stated macroporous or gel-type sulphonic-acid polystyrene formulation was used in 1980s MTBE service."
                   }
                 ],
                 "confidence": "low",
@@ -2351,7 +2384,8 @@
                 "kind": "material",
                 "category": "fluids",
                 "era": "1930s",
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the deasphalting, deoiling and fractionation sequence described, and the end-use claims for slack wax and microcrystalline wax in paper, packaging and early hot-melt adhesives."
               },
               {
                 "id": "chem.refining.products.fuel-oil",
@@ -2364,7 +2398,7 @@
                 "note": "The fuel-oil share of 1983 refinery output and the regulatory context are order-of-magnitude figures; exact shares varied widely by region."
               }
             ],
-            "note": "Refinery products and by-products is a heading for the three streams beneath it rather than a substance of its own. Lubricant base oils, waxes and fuel oil remain as nodes.",
+            "note": "Refinery products and by-products is a heading for the three streams beneath it rather than a substance of its own. Lubricant base oils, waxes and fuel oil remain as nodes. Established: Refinery products list for naphtha benzene LPG olefins and sulphur. Not established: the stated routing to crackers and acid plants as given.",
             "confidence": "medium"
           },
           {
@@ -2385,15 +2419,15 @@
                 "children": [
                   "chem.ethylene.feedstock.naphtha"
                 ],
-                "note": "The steam-dilution numbers for a naphtha cracker are recorded on the steam cracking step at chem.ethylene.steam-cracking.",
+                "note": "The steam-dilution numbers for a naphtha cracker are recorded on the steam cracking step at chem.ethylene.steam-cracking. Established: Naphtha plus steam to ethylene propylene butenes and aromatics. Not established: the stated weight yields and capacity shares as given.",
                 "confidence": "low"
               }
             ],
-            "note": "Detail under chem.butadiene.",
+            "note": "Detail under chem.butadiene. Established: Refinery to polymer handover via naphtha C4 and reformer aromatics. Not established: the stated benzene to styrene routing specifics as given.",
             "confidence": "low"
           }
         ],
-        "note": "Category industry for the refinery units themselves and fluids for the hydrocarbon streams, catalysts and specs they handle: refining is a plant, and energy is reserved for power generation and the grid.",
+        "note": "Category industry for the refinery units themselves and fluids for the hydrocarbon streams, catalysts and specs they handle: refining is a plant, and energy is reserved for power generation and the grid. Established: Refining distillation conversion and upgrading to fuels and naphtha feedstocks. Not established: the stated naphtha to cracker routing specifics as given.",
         "confidence": "low"
       },
       {
@@ -2469,7 +2503,8 @@
                     "value": "20-40 mol% vs 200-400 mol% for naphtha"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the ethylene-yield and steam-dilution figures quoted, and the characterisation of the 1980s Gulf feedstock debate as a co-product valuation argument."
               },
               {
                 "id": "chem.ethylene.feedstock.gas-oil",
@@ -2478,7 +2513,8 @@
                 "kind": "material",
                 "category": "plastics",
                 "era": "1970s",
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the boiling-range cut, the relative ethylene cost claim, and the statement that gas-oil cracking had mostly disappeared by the 1980s."
               }
             ],
             "confidence": "low",
@@ -2486,6 +2522,7 @@
           },
           {
             "id": "chem.ethylene.steam-cracking",
+      "sources": ["https://en.wikipedia.org/wiki/Steam_cracking"],
             "name": "Steam cracking",
             "description": "A hydrocarbon feed mixed with steam is brought to 800-900 C in a few tenths of a second in a serpentine coil inside a radiant furnace, at 1-3 bar. The chemistry is brutal free-radical chain cracking: the large molecules fall apart into smaller ones and a large hydrogen-rich tail gas. What decides the plant is how fast the coil can be taken to temperature without coking it, and how fast it can be cooled again. Steam does two jobs: it lowers the hydrocarbon partial pressure so radicals recombine into smaller molecules rather than into carbon, and it carries the heat into the coil.",
             "kind": "process",
@@ -2568,7 +2605,8 @@
                     "kind": "material",
                     "category": "plastics",
                     "era": "1980s",
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the composition description including trace metals, and the annual tonnage range quoted for a large cracker."
                   }
                 ],
                 "confidence": "low",
@@ -2587,7 +2625,8 @@
                     "value": "10-20% of the cracking enthalpy"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the cracked-gas temperature range, the work-recovery share quoted, and the claim linking the 1970s energy crisis to a generation of more efficient crackers."
               }
             ],
             "facts": [
@@ -2810,6 +2849,7 @@
           },
           {
             "id": "chem.ethylene.polyethylene",
+      "sources": ["https://en.wikipedia.org/wiki/Polyethylene"],
             "name": "Polyethylene",
             "description": "The largest use of ethylene: about 12-14 million tonnes of polyethylene were made in 1983, split roughly between low-density (free radical, high pressure) and high-density (coordination catalysis, low pressure). The C64-scale uses are the power cord's insulation and jacket, the moulded cable accessories, and the keyboard membrane's insulation. Metallocene catalysis - one sandwich compound with a zirconium atom between two cyclopentadienyl rings, activated with methylaluminoxane - was first reported in 1980 and was not yet industrial in 1983, but it was the obvious next step because it gives a narrow molecular weight distribution and predictable comonomer placement.",
             "kind": "process",
@@ -2851,7 +2891,8 @@
                     "kind": "tool",
                     "category": "plastics",
                     "era": "1950s",
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the attribution of the autoclave and tubular processes to specific originators and decades, and the claims about molecular-weight distribution, conversion and devolatilising practice favouring tubular reactors by the 1980s."
                   }
                 ],
                 "confidence": "low",
@@ -2867,6 +2908,7 @@
                 "children": [
                   {
                     "id": "chem.ethylene.polyethylene.hdpe.ziegler-natta",
+      "sources": ["https://en.wikipedia.org/wiki/Ziegler%E2%80%93Natta_catalyst"],
                     "name": "Ziegler-Natta polymerisation",
                     "description": "Titanium tetrachloride or titanium dichloride with an aluminium alkyl (triethylaluminium or diethylaluminium chloride) at 50-100 bar and 50-80 C in a hydrocarbon diluent. Ziegler was the 1953 discovery that started the whole low-pressure polyethylene industry; by the 1960s it had become Ziegler-Natta by supporting the titanium on magnesium chloride, which gave the multiplicity of active sites and therefore the control of molecular weight distribution that made high-density pipe grades possible.",
                     "kind": "process",
@@ -3098,7 +3140,8 @@
                             "value": "10-20 wt% NaOH"
                           }
                         ],
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the caustic-strength range quoted, the list of acidic oxygenates removed, and the claim about incineration as the usual 1980s disposal route for spent phenolic caustic."
                       },
                       {
                         "id": "chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali",
@@ -3161,7 +3204,8 @@
                             "value": "15-25"
                           }
                         ],
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the tray count, column height, relative volatility and reflux-ratio figures quoted, and the description of 1980s low-pressure-drop and side-stripper developments."
                       }
                     ],
                     "confidence": "low",
@@ -3174,7 +3218,8 @@
                     "value": "~0.15 t/t feed"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the propylene-per-tonne-of-feed ratio and the annualised tonnage illustration for a 500000-tonne-per-year cracker."
               },
               {
                 "id": "chem.propylene.sources.propylene-splitter",
@@ -3213,7 +3258,7 @@
                 "note": "Reactor operation temperatures and the commercial fate of the process in the 1980s are not well documented; treat as a minor route."
               }
             ],
-            "note": "Isoprene is not a C64 material; it is here because it shares the C5 stream and the same cracking chemistry.",
+            "note": "Isoprene is not a C64 material; it is here because it shares the C5 stream and the same cracking chemistry. Established: Propylene from cracker FCC and dedicated routes with splitter purification. Not established: the stated supply shares and naphtha yield specifics as given.",
             "confidence": "low"
           },
           {
@@ -3236,7 +3281,8 @@
                 "value": "10-20 ppm"
               }
             ],
-            "confidence": "medium"
+            "confidence": "medium",
+            "note": "Not established: the purity and carbonyl-specification ranges quoted, and the timing claim for hydrazine or hydrazone carbonyl treatment entering practice in the later 1980s."
           },
           {
             "id": "chem.propylene.polymerisation",
@@ -3273,7 +3319,8 @@
                 "kind": "tool",
                 "category": "plastics",
                 "era": "1970s",
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the solids-content range quoted for loop slurry operation, and the commercial characterisation of the gas-phase process as the 1980s newcomer whose case rested on eliminating solvent recovery."
               }
             ],
             "confidence": "low",
@@ -3302,7 +3349,8 @@
                     "kind": "material",
                     "category": "plastics",
                     "era": "1940s",
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the toxicity and occupational-dermatitis claims, and the stated relationship between this intermediate, its dehydrochlorination to propylene oxide, and propylene chlorohydrin exposure."
                   },
                   {
                     "id": "chem.propylene.propylene-oxide.chlorohydrin.dichloropropane",
@@ -3311,7 +3359,8 @@
                     "kind": "material",
                     "category": "plastics",
                     "era": "1940s",
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the formation route via excess caustic, the toxicity claims, and the statement that 1980s producers reduced output via ether sales or the hydrogen peroxide route."
                   }
                 ],
                 "confidence": "low",
@@ -3360,7 +3409,8 @@
                 "kind": "material",
                 "category": "plastics",
                 "era": "1970s",
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the chlorination range quoted, the PVC-plasticiser use claim for the 1970s, and the statement that 1980s electronics housings moved toward phosphorus systems and thinner walls."
               },
               {
                 "id": "chem.propylene.flame-retardants.tdcpp",
@@ -3378,6 +3428,7 @@
           },
           {
             "id": "chem.propylene.cumene",
+      "sources": ["https://en.wikipedia.org/wiki/Cumene_process"],
             "name": "Cumene route to phenol and acetone",
             "description": "Benzene plus propylene gives cumene; cumene plus oxygen gives cumene hydroperoxide; the hydroperoxide is cleaved with acid to give phenol and acetone. About a million tonnes a year of phenol in 1983 came out of this route, and phenol went to bisphenol A (and therefore to the C64's epoxy laminate resin), to phenol-formaldehyde plastics, and to caprolactam. Acetone came out of the other end of the same reaction, which is why acetone supply in the 1980s was really cumene capacity in disguise.",
             "kind": "process",
@@ -3479,7 +3530,8 @@
                         "value": "~3.5-4 Mt/yr"
                       }
                     ],
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the world production figure quoted for 1983 and the claim that essentially all of it came from cumene."
                   },
                   {
                     "id": "chem.propylene.cumene.cleavage.acetone",
@@ -3488,7 +3540,7 @@
                     "kind": "material",
                     "category": "fluids",
                     "era": "1940s",
-                    "note": "The solvent uses are under chem.solvents.acetone.",
+                    "note": "The solvent uses are under chem.solvents.acetone. Established: Acetone co-product from cumene cleavage and cyanohydrin route. Not established: the stated degreasing and stripping uses as 1980s standard as given.",
                     "confidence": "low"
                   }
                 ],
@@ -3505,6 +3557,7 @@
       },
       {
         "id": "chem.acrylonitrile",
+      "sources": ["https://en.wikipedia.org/wiki/Acrylonitrile"],
         "name": "Acrylonitrile and the ammoxidation",
         "description": "The SOVERE process - SOx-free reductive ammoxidation - oxidises propylene with ammonia and air in one step to acrylonitrile. It was invented at Standard Oil of Ohio and licensed worldwide from 1960-1965, and by 1983 essentially all the world's roughly 1.2-1.5 million tonnes a year of acrylonitrile was made by it. Acrylonitrile is the most dangerous liquid in a polymer plant: it is acutely lethal by skin absorption, flammable at 3-20% in air, and boils at 77 C. The older nitric acid route nitrated propylene with 15-20% nitric acid at 30-60 C and 2-5 bar to a nitropropane mixture, converted the 1-nitropropane with a dialkyl amine to a propylhydroxylamine and dehydrated that to acrylonitrile: a 30-50% yield, a heavy nitrate waste stream and a very large plant, surviving in 1983 only in a few older Soviet and Eastern European works.",
         "kind": "process",
@@ -3617,7 +3670,8 @@
                     "kind": "material",
                     "category": "plastics",
                     "era": "1970s",
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the support and promoter description, the operating-temperature reference, and the selectivity, activity and mechanical-robustness comparison against the bismuth catalyst."
                   },
                   {
                     "id": "chem.acrylonitrile.sovere.catalyst.catalyst-manufacture",
@@ -3689,7 +3743,8 @@
                     "value": "3-8% of acrylonitrile production"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the acetonitrile yield range quoted, the market claim for acetonitrile in solvents and fibres, and the halide-promoter and fouling claims for hydrogen cyanide and acrylic acid."
               },
               {
                 "id": "chem.acrylonitrile.sovere.distillation",
@@ -3706,7 +3761,8 @@
                     "kind": "material",
                     "category": "plastics",
                     "era": "1960s",
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the stabiliser chemistry described, the polymerisation-rate claim, and the account of warm-warehouse polymerisation accidents with uninhibited monomer."
                   }
                 ],
                 "confidence": "low",
@@ -3757,7 +3813,8 @@
                     "kind": "material",
                     "category": "plastics",
                     "era": "1960s",
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the one-to-one mass ratio quoted between ammonium sulphate by-product and acrylic acid, and the claim that drying and transport cost as low-grade fertiliser drove adoption of the later oxidation route."
                   }
                 ],
                 "confidence": "low",
@@ -3795,6 +3852,7 @@
       },
       {
         "id": "chem.butadiene",
+      "sources": ["https://en.wikipedia.org/wiki/Butadiene"],
         "name": "Butadiene and the elastomers of it",
         "description": "Butadiene is the C4 diene that makes synthetic rubber, and in 1983 about 5-6 million tonnes a year of it was made, roughly 60% from cracker C4 by extractive distillation and the rest by dehydrogenation of butane. It is the molecule behind the rubber in the C64's case feet, the plinths, and the elasticity of the power cord's jacket - and behind the graft phase of the ABS case. Nitrile rubber is butadiene with 25-40% acrylonitrile, emulsion-polymerised the same way as SBR: the acrylonitrile buys oil and fuel resistance and costs low-temperature flexibility, and it is the material for oil seals and for the elastomer pads of many electrolytic capacitors. Two butadienes plus two hydrogen cyanides give adiponitrile by hydrocyanation over nickel(0) with a triphenylphosphine ligand, which is what finally let a nylon 6,6 plant be fed from a cracker rather than from adipic acid - and is the reason hydrogen cyanide, the toxic gas of the acrylonitrile and methyl methacrylate chemistry, sat on a plastics company's books.",
         "kind": "process",
@@ -3832,7 +3890,8 @@
                         "kind": "tool",
                         "category": "plastics",
                         "era": "1950s",
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the tray count, pressure and cut-point figures quoted, the stream-routing description, and the maintenance remark about furnace cleaning."
                       },
                       {
                         "id": "chem.butadiene.sources.cracker-c4.c4-recovery.c3-c4-splitter",
@@ -3841,7 +3900,8 @@
                         "kind": "tool",
                         "category": "plastics",
                         "era": "1950s",
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the tray count quoted and the claim that the column exists only to keep propane out of the downstream extractor feed."
                       }
                     ],
                     "confidence": "low",
@@ -3938,7 +3998,8 @@
                     "value": "40-50%"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the temperature, pressure, catalyst and single-pass conversion figures quoted, and the co-product and recirculation claims for isobutylene and MTBE service."
               }
             ],
             "confidence": "low",
@@ -4057,7 +4118,8 @@
                     "value": "97-99%"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the cis-content range quoted, the formulation description, and the market characterisation of linear low-cis growth versus lithium-process volume product in 1983."
               }
             ],
             "confidence": "low",
@@ -4150,6 +4212,7 @@
       },
       {
         "id": "chem.styrene",
+      "sources": ["https://en.wikipedia.org/wiki/Styrene"],
         "name": "Styrene: benzene plus ethylene, and the plastics of it",
         "description": "Benzene is alkylated with ethylene to ethylbenzene, and the ethylbenzene is dehydrogenated to styrene. About 12-14 million tonnes of styrene were made in 1983, of which roughly two thirds went to polystyrene and the rest to SAN, ABS and SBR. Styrene is a C64 material in a way that is easy to miss: the SAN matrix of the case, the styrene in the graft phase, and the polystyrene that was in the packaging and in some of the mouldings.",
         "kind": "process",
@@ -4197,11 +4260,12 @@
                             "value": "butadiene + SO2 at 100-140 C"
                           }
                         ],
-                        "note": "Sulfolane is industrially made by the butadiene/SO2/hydrolysis route; the conditions quoted are representative.",
+                        "note": "Sulfolane is industrially made by the butadiene/SO2/hydrolysis route; the conditions quoted are representative. Established: Sulfolane from butadiene for benzene extraction linking styrene chain to C4. Not established: the stated reaction conditions as representative specifics.",
                         "confidence": "low"
                       }
                     ],
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the thermal-stability and non-corrosiveness claims, the inhibitor-use claim in styrene dehydrogenation reactors, and the stated family relationship with NMP and dimethylformamide across jobs in this chain."
                   }
                 ],
                 "confidence": "low",
@@ -4214,7 +4278,8 @@
                 "kind": "material",
                 "category": "plastics",
                 "era": "ancient",
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the wash-oil and steam-stripping process description, and the claim about coal-tar benzene share of world benzene in 1983 by region."
               }
             ],
             "facts": [
@@ -4251,7 +4316,8 @@
                     "value": ">97%"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the selectivity figure quoted, the pore-geometry account of admitting benzene while excluding diethylbenzene, and the stated kinship with ZSM-5 and MFI para-xylene catalysis."
               }
             ],
             "confidence": "low",
@@ -4299,7 +4365,8 @@
                 "kind": "tool",
                 "category": "plastics",
                 "era": "1970s",
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the tube count, tube dimensions, pressure range and train arrangement quoted, and the claim that the furnace was the dominant plant energy consumer driving heat-integration work."
               },
               {
                 "id": "chem.styrene.dehydrogenation.fired-furnace",
@@ -4314,7 +4381,7 @@
                     "value": "~0.2 GJ per tonne of ethylbenzene"
                   }
                 ],
-                "note": "The heat of dehydrogenation of ethylbenzene is about 0.22 GJ/t; the figure here is rounded.",
+                "note": "The heat of dehydrogenation of ethylbenzene is about 0.22 GJ/t; the figure here is rounded. Established: Dehydrogenation furnace as endothermic shell and tube bank. Not established: the stated heat figure and 1980s furnace specifics as given.",
                 "confidence": "low"
               }
             ],
@@ -4363,7 +4430,8 @@
                     "kind": "material",
                     "category": "plastics",
                     "era": "1940s",
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the dosage range quoted for the water phase, and the account of bead coalescence versus hard-skin monomer entrapment as the central operating balance."
                   },
                   {
                     "id": "chem.styrene.polymerisation.bulk-gpps.finishing",
@@ -4394,7 +4462,8 @@
                             "value": "a few hundred ppm"
                           }
                         ],
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the melt-temperature, vacuum and residual-monomer figures quoted, and the stated operating window between melting and decomposition for polystyrene."
                       },
                       {
                         "id": "chem.styrene.polymerisation.bulk-gpps.finishing.pelletiser",
@@ -4403,7 +4472,8 @@
                         "kind": "tool",
                         "category": "plastics",
                         "era": "1950s",
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the die-hole count and diameter, bath-temperature and pellet-size figures quoted, and the claim that underwater pelletising was becoming the 1980s preference for polystyrene."
                       }
                     ],
                     "confidence": "low",
@@ -4428,7 +4498,7 @@
                 "value": "5-6% pentane or isobutane"
               }
             ],
-            "note": "SAN capacity in the early 1980s is an order-of-magnitude estimate.",
+            "note": "SAN capacity in the early 1980s is an order-of-magnitude estimate. Established: Styrene free radical polymerisation via resonance stabilised benzyl radical. Not established: the stated capacity and ionic route specifics as given.",
             "confidence": "low"
           },
           {
@@ -4438,7 +4508,8 @@
             "kind": "material",
             "category": "plastics",
             "era": "1940s",
-            "confidence": "medium"
+            "confidence": "medium",
+            "note": "Not established: the isomer-ratio range and treat-rate figures quoted, the stated production route, and the end-use and water-plant resin claims."
           }
         ],
         "confidence": "high",
@@ -4515,7 +4586,8 @@
                 "kind": "material",
                 "category": "plastics",
                 "era": "1960s",
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the dosage range quoted, the listed chelant identities, and the mechanism claim that trace transition metals would otherwise decompose persulphate into an uncontrolled radical rate."
               },
               {
                 "id": "chem.abs.grafting.chain-transfer-agent",
@@ -4676,7 +4748,8 @@
                     "value": "<500 ppm typical"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the vacuum range and residual-styrene specification quoted, and the claim linking high residual styrene to odour in ABS."
               },
               {
                 "id": "chem.abs.pelletising.cutter",
@@ -4695,7 +4768,8 @@
                     "value": "20-40 C circulating"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the bath-temperature and pellet-size figures quoted, the equipment sequence described, and the claim that underwater pelletising was becoming the 1980s preference for new lines."
               },
               {
                 "id": "chem.abs.pelletising.static-mixer",
@@ -4704,7 +4778,8 @@
                 "kind": "tool",
                 "category": "plastics",
                 "era": "1970s",
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the mechanism claim that unnecessary shear costs a stated amount of rubber particle size, and the role described for the mixer in blending pigment and regrind without degrading impact properties."
               }
             ],
             "confidence": "low",
@@ -4784,7 +4859,8 @@
                 "value": "200-350 C"
               }
             ],
-            "confidence": "medium"
+            "confidence": "medium",
+            "note": "Not established: the zeolite types, bed-temperature range and moisture-capacity figure quoted, and the claim that heated-bed molecular-sieve drying was the standard pre-moulding route for plastics in the 1980s."
           },
           {
             "id": "chem.abs.additives",
@@ -4801,7 +4877,8 @@
                 "kind": "material",
                 "category": "plastics",
                 "era": "1970s",
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the carrier, loading and let-down ranges quoted, the pigment list as representative of 1980s ABS colouring, and the dispersion mechanism claimed for masterbatch versus raw powder."
               },
               {
                 "id": "chem.abs.additives.stearate",
@@ -4810,7 +4887,8 @@
                 "kind": "material",
                 "category": "plastics",
                 "era": "1970s",
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the dosage range quoted, the tallow and C18-fraction origin claim for stearic acid, and the statement about the metal being the only heavy metal routinely added to a consumer plastic."
               }
             ],
             "confidence": "low",
@@ -4893,6 +4971,7 @@
             "children": [
               {
                 "id": "chem.pvc",
+      "sources": ["https://en.wikipedia.org/wiki/Polyvinyl_chloride"],
                 "name": "PVC: vinyl chloride and suspension polymerisation",
                 "description": "About 3.5 million tonnes of PVC in 1983, of which maybe 5-8% was flexible and the rest rigid. Two-thirds of the monomer came from the oxychlorination of ethylene and the rest from acetylene and HCl. The C64 used it in the power cord's jacket and insulation, in the moulded cable accessories, and in the odd keycap or knob; the stability system matters because unstabilised PVC decomposes at 140 C. Suspension polymerisation in water with a suspending agent is 65-70% of world PVC: VCM dispersed as 0.1-1 mm beads at 50-70 C and 6-12 bar for 5-10 hours to 70-85% conversion.",
                 "kind": "process",
@@ -4954,7 +5033,7 @@
                       },
                       "chem.natural-gas.uses.acetylene.to-vinyl-chloride"
                     ],
-                    "note": "The acetylene end of this route is chem.natural-gas.uses.acetylene.to-vinyl-chloride.",
+                    "note": "The acetylene end of this route is chem.natural-gas.uses.acetylene.to-vinyl-chloride. Established: Acetylene plus HCl mercury route to vinyl chloride tying PVC to gas. Not established: the stated conversion selectivity and temperature specifics as given.",
                     "confidence": "low"
                   },
                   {
@@ -4964,7 +5043,8 @@
                     "kind": "material",
                     "category": "plastics",
                     "era": "1960s",
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the storage-temperature range, blanket, inhibitor and temperature-limit claims quoted, and the account of vinyl chloride self-inhibition as a painful discovery turned safety feature."
                   },
                   {
                     "id": "chem.pvc.polymerisation.suspending-agent",
@@ -4983,7 +5063,8 @@
                     "kind": "material",
                     "category": "plastics",
                     "era": "1940s",
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the initiator dosage range quoted, the chain-transfer agents listed, and the dual-role claim that chlorinated transfer agents also suppress chlorinated by-products."
                   },
                   {
                     "id": "chem.pvc.stabilisation",
@@ -5006,7 +5087,8 @@
                             "value": "2-6 parts per 100 resin"
                           }
                         ],
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the loading range quoted for rigid PVC, the scavenging and chelation mechanism described, and the regulatory-tightening claim for lead in consumer products around 1983."
                       },
                       {
                         "id": "chem.pvc.stabilisation.ca-zn",
@@ -5015,7 +5097,8 @@
                         "kind": "material",
                         "category": "plastics",
                         "era": "1970s",
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the formulation and co-stabiliser list described, the zinc-calcium exchange mechanism, and the die plate-out account as a real processing constraint on substitution."
                       }
                     ],
                     "confidence": "low",
@@ -5137,7 +5220,7 @@
                         "kind": "material",
                         "category": "plastics",
                         "era": "1950s",
-                        "note": "The cumene chain is chem.propylene.cumene.",
+                        "note": "The cumene chain is chem.propylene.cumene. Established: Acetone as BPA co-reactant from shared cumene oxidation. Not established: the stated reactor proximity and bisphenol routing specifics as given.",
                         "confidence": "medium"
                       }
                     ],
@@ -5159,7 +5242,8 @@
                         "kind": "material",
                         "category": "plastics",
                         "era": "1950s",
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the loading and cure-temperature figures quoted, the sulphonation-nitration-reduction synthesis route described, and the cost and FR-4 grading claims."
                       },
                       {
                         "id": "chem.epoxy.hardeners.ddd",
@@ -5178,7 +5262,8 @@
                         "kind": "material",
                         "category": "plastics",
                         "era": "1950s",
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the cure-temperature range quoted, the anhydride and catalyst identities listed, and the dielectric and thermal-expansion claims for 1980s potting and die-attach service."
                       }
                     ],
                     "confidence": "low",
@@ -5191,7 +5276,8 @@
                     "kind": "material",
                     "category": "plastics",
                     "era": "1960s",
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the polyol reactants listed, the functionality and glass-transition claims, and the account of brominated novolac epoxy as the FR-4 flame-retardant system."
                   },
                   {
                     "id": "chem.epoxy.brominated-epoxy",
@@ -5235,6 +5321,7 @@
               },
               {
                 "id": "chem.polycarbonate",
+      "sources": ["https://en.wikipedia.org/wiki/Polycarbonate"],
                 "name": "Polycarbonate",
                 "description": "Bisphenol A polycarbonate, made by the interfacial phosgene route from BPA and phosgene in dichloromethane, then melt polycondensed at 250-290 C. It is the transparent, tough, dimensionally stable engineering plastic of the 1980s, and in electronics it went into connector housings, terminal blocks, relay covers and the housings of the switchgear it replaced metal in. The C64 itself was not made of polycarbonate - the case was ABS - but the material surrounds the machine in the peripherals and in Commodore's later machines, and it shares the bisphenol A and the cumene chain with the epoxy and the polyester. Bisphenol A dissolved in aqueous caustic is reacted with phosgene in dichloromethane at 20-40 C with a tertiary amine catalyst; the chloroformate-terminated oligomer is washed and then polymerised by melt condensation at 250-290 C under 0.1-1 mbar.",
                 "kind": "process",
@@ -5256,7 +5343,7 @@
                         "kind": "material",
                         "category": "fluids",
                         "era": "ancient",
-                        "note": "Chlorine electrolysis belongs to the chlorine subsystem; the hydrogen requirement is chem.natural-gas.uses.hydrogen.",
+                        "note": "Chlorine electrolysis belongs to the chlorine subsystem; the hydrogen requirement is chem.natural-gas.uses.hydrogen. Established: Chlorine from brine electrolysis plus carbon monoxide for phosgene. Not established: the stated reformer versus coke sourcing specifics as given.",
                         "confidence": "medium"
                       }
                     ],
@@ -5341,6 +5428,7 @@
                     "children": [
                       {
                         "id": "chem.polyamide.nylon-6.caprolactam",
+      "sources": ["https://en.wikipedia.org/wiki/Caprolactam"],
                         "name": "Caprolactam from phenol",
                         "description": "Phenol hydrogenated to cyclohexanol, then dehydrogenated to cyclohexanone; cyclohexanone oximation to cyclohexanone oxime; the oxime rearranged with oleum (the Beckmann rearrangement, which expands the ring from six to seven members) to caprolactam, and the ammonium sulphate byproduct stripped and recycled. This is a five-step route from phenol and it is one of the longest petrochemical chains in the C64's ancestry. Phenol is hydrogenated over nickel or palladium at 120-180 C and 10-30 bar to cyclohexanol and dehydrogenated over copper at 250-300 C to cyclohexanone; the phenol comes from cumene and the cumene's propylene from the cracker, so nylon 6 is a third-generation descendant of the naphtha cracker. The Beckmann rearrangement needs concentrated sulphuric acid or oleum and produces 1.1-1.3 tonnes of ammonium sulphate per tonne of caprolactam, which has to be sold as fertiliser - the same sulphuric acid and the same fertiliser market the Claus sulphur plant feeds, which is why the industry was moving to oleum-free rearrangements over solid acid or a zeolite.",
                         "kind": "process",
@@ -5355,7 +5443,7 @@
                             "value": "~1.1-1.3 t per t caprolactam"
                           }
                         ],
-                        "note": "Phenol's own route: chem.propylene.cumene.cleavage.phenol.",
+                        "note": "Phenol's own route: chem.propylene.cumene.cleavage.phenol. Established: Caprolactam as lactam precursor overwhelmingly for nylon 6. Not established: the stated Beckmann rearrangement and process specifics as given.",
                         "confidence": "high"
                       }
                     ],
@@ -5412,7 +5500,7 @@
                         "kind": "material",
                         "category": "plastics",
                         "era": "1950s",
-                        "note": "Upstream: chem.ethylene.ethylene-glycol.",
+                        "note": "Upstream: chem.ethylene.ethylene-glycol. Established: Ethylene glycol for PET with high purity hydrolysis control. Not established: the stated 2.2 tonne ratio and 99.9 percent purity specifics as given.",
                         "confidence": "low"
                       }
                     ],
@@ -5429,7 +5517,7 @@
                     "inputs": [
                       "chem.styrene"
                     ],
-                    "note": "The styrene comes from chem.styrene; the propylene glycol from the propylene and ethylene oxide chains.",
+                    "note": "The styrene comes from chem.styrene; the propylene glycol from the propylene and ethylene oxide chains. Established: Unsaturated polyester from maleic anhydride and propylene glycol in styrene with peroxide cure. Not established: the stated molecular weights temperatures and 1980s use specifics as given.",
                     "confidence": "low"
                   }
                 ],
@@ -5452,6 +5540,7 @@
                 "children": [
                   {
                     "id": "chem.silicone.rochow",
+      "sources": ["https://en.wikipedia.org/wiki/Direct_process"],
                     "name": "Rochow direct process",
                     "description": "Metallurgical silicon plus methyl chloride over copper at 280-350 C gives dimethyldichlorosilane. The silicon comes from the quartz and coke reduction that the whole semiconductor industry depends on, so the silicone business and the chip business share an upstream - and share the same four-nines purity problem in their own way. The methyl chloride comes from the natural gas chlorination business, so the silicone plant and the semiconductor plant are both fed by chlorine and by methane.",
                     "kind": "process",
@@ -5551,7 +5640,7 @@
                     "kind": "material",
                     "category": "plastics",
                     "era": "1930s",
-                    "note": "Neoprene's process chemistry is standard; the intermediate toxicity warnings are well established.",
+                    "note": "Neoprene's process chemistry is standard; the intermediate toxicity warnings are well established. Established: Neoprene as emulsion chloroprene rubber for gaskets and cable jackets. Not established: the stated polymerisation temperature and use specifics as given.",
                     "confidence": "low"
                   },
                   {
@@ -5561,7 +5650,7 @@
                     "kind": "material",
                     "category": "plastics",
                     "era": "1960s",
-                    "note": "The ethylene comes from the cracker: chem.ethylene.",
+                    "note": "The ethylene comes from the cracker: chem.ethylene. Established: EPDM as ethylene diene copolymer with ozone resistance. Not established: the stated diene types and replacement histories as given.",
                     "confidence": "low"
                   }
                 ],
@@ -5614,7 +5703,7 @@
                     "note": "POM use in a C64 is likely but small and not documented in the sources used here. Where POM sat in a 1983 machine is a statement about the machine, not a substance."
                   }
                 ],
-                "note": "Acetal chemistry is standard; the exact comonomer loadings vary by grade.",
+                "note": "Acetal chemistry is standard; the exact comonomer loadings vary by grade. Established: POM acetal homo and copolymer from formaldehyde with chain transfer or comonomer. Not established: the stated Delrin versus Celcon specifics and loading details as given.",
                 "confidence": "low"
               },
               {
@@ -5643,7 +5732,7 @@
                         "children": [
                           "chem.pom.formaldehyde"
                         ],
-                        "note": "Shared with chem.pom.formaldehyde.",
+                        "note": "Shared with chem.pom.formaldehyde. Established: Formaldehyde in phenolic from methanol oxidation over silver. Not established: the stated temperatures and park co-location specifics as given.",
                         "confidence": "low"
                       },
                       {
@@ -5653,7 +5742,8 @@
                         "kind": "material",
                         "category": "plastics",
                         "era": "1920s",
-                        "confidence": "medium"
+                        "confidence": "medium",
+                        "note": "Not established: the dual-role claim for hexamine as novolac curing agent and as rubber accelerator and formaldehyde source, and the statement that it reaches into three unrelated chemistries."
                       }
                     ],
                     "confidence": "low",
@@ -5669,7 +5759,7 @@
                     "inputs": [
                       "metal.cyanide-precursor"
                     ],
-                    "note": "Upstream: chem.natural-gas.uses.hydrogen.to-ammonia.ammonia.",
+                    "note": "Upstream: chem.natural-gas.uses.hydrogen.to-ammonia.ammonia. Established: Urea and melamine formaldehyde thermosets for white insulation and fittings. Not established: the stated moisture and heat resistance specifics as given.",
                     "confidence": "low"
                   }
                 ],
@@ -5713,7 +5803,8 @@
                 "kind": "tool",
                 "category": "fluids",
                 "era": "1960s",
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the frequency range quoted, the fill-solvent identities listed, and the claim that 1983 electronics plants used ultrasonic cleaning ahead of vapour degreasing for fine and crevice work."
               },
               {
                 "id": "chem.solvents.vapour-degreaser.condenser-coil",
@@ -5870,7 +5961,8 @@
             "kind": "material",
             "category": "fluids",
             "era": "1920s",
-            "confidence": "medium"
+            "confidence": "medium",
+            "note": "Not established: the boiling point, synthesis routes and end-use list quoted, and the regulatory account of late-1980s US EPA action on degreasing and aerosol-propellant uses."
           },
           {
             "id": "chem.solvents.cfc",
@@ -5899,7 +5991,7 @@
                       "chem.natural-gas.composition.methane",
                       "chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali"
                     ],
-                    "note": "The chlor-alkali chain is under chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali.",
+                    "note": "The chlor-alkali chain is under chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali. Established: Methane chlorination as free radical chain to chloromethanes. Not established: the stated temperature ranges and distillation specifics as given.",
                     "confidence": "low"
                   }
                 ],
@@ -6023,7 +6115,8 @@
               "chem.isopropanol",
               "chem.solvents.acetone"
             ],
-            "confidence": "medium"
+            "confidence": "medium",
+            "note": "Not established: the synthesis route described for methyl isobutyl ketone, and the stated niche allocation of ketones, esters, glycol ethers and dimethylformamide across coatings, cleaning, film and fibre uses."
           },
           {
             "id": "chem.solvents.aromatic-hydrocarbon",
@@ -6054,7 +6147,7 @@
                 "note": "White spirit definitions vary by standard; the 150-200 C range and the flash point are representative."
               }
             ],
-            "note": "The same two solvents appear in chem.butadiene.sources.sounsby and in the solvent replacement business.",
+            "note": "The same two solvents appear in chem.butadiene.sources.sounsby and in the solvent replacement business. Established: Hydrocarbon solvents xylene toluene and hexane for inks coatings and adhesives. Not established: the stated extraction and thinning specifics as given.",
             "confidence": "low"
           },
           {
@@ -6125,7 +6218,7 @@
                 "note": "The specific 1980s limit values changed year to year and differ between the ACGIH TLV and the OSHA PEL; the values here are indicative of the direction and magnitude of change. Exposure limits and their revision are commentary about the chain, not a step in it."
               }
             ],
-            "note": "A regulation or a treaty is a statement about the supply chain, not an operation in it. The whole regulation branch is commentary about why the solvent list changed; its children keep the detail.",
+            "note": "A regulation or a treaty is a statement about the supply chain, not an operation in it. The whole regulation branch is commentary about why the solvent list changed; its children keep the detail. Established: Solvent regulation by clean air VOC and emissions constraints. Not established: the stated amendment and implementation specifics as given.",
             "confidence": "low"
           }
         ],
@@ -6278,7 +6371,7 @@
                 "kind": "material",
                 "category": "silicon",
                 "era": "1960s",
-                "note": "The phenol chain is chem.propylene.cumene.cleavage.phenol and the formaldehyde chain is chem.pom.formaldehyde. The node is the resin, not the making of it.",
+                "note": "The phenol chain is chem.propylene.cumene.cleavage.phenol and the formaldehyde chain is chem.pom.formaldehyde. The node is the resin, not the making of it. Established: Novolac resin for film integrity distinct from photosensitive part. Not established: the stated molecular weight and functionality specifics as given.",
                 "confidence": "low"
               },
               {
@@ -6316,7 +6409,7 @@
                 "inputs": [
                   "chem.fab-chemicals.tmah"
                 ],
-                "note": "Resist stripping belongs to this step; the stripping numbers are in its description.",
+                "note": "Resist stripping belongs to this step; the stripping numbers are in its description. Established: Dehydration and hard bakes for water removal and image hardening. Not established: the stated temperature ranges and plasma resistance specifics as given.",
                 "confidence": "low"
               },
               {
@@ -6672,7 +6765,8 @@
                     "children": [
                       
                     ],
-                    "confidence": "medium"
+                    "confidence": "medium",
+                    "note": "Not established: the pressure range, product slate, separation temperature and daily-tonnage figures quoted, and the cold-box technology kinship claimed with natural-gas processing."
                   }
                 ],
                 "confidence": "low",
@@ -6880,7 +6974,7 @@
                     "inputs": [
                       "chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali"
                     ],
-                    "note": "The alkaline etch was spreading through the 1980s; the exact adoption date in a given plant is not documented here.",
+                    "note": "The alkaline etch was spreading through the 1980s; the exact adoption date in a given plant is not documented here. Established: Ferric chloride regeneration by chlorination oxidation. Not established: the stated temperatures and adoption dates as given.",
                     "confidence": "low"
                   }
                 ],
@@ -6973,7 +7067,7 @@
             "value": "~150-200 microns wet, cured at 150 C"
           }
         ],
-        "note": "The solder mask and the silkscreen legend are two inks and one cure rather than two separate operations.",
+        "note": "The solder mask and the silkscreen legend are two inks and one cure rather than two separate operations. Established: Board wet operations including laminate plating etching and solder mask. Not established: the stated eleven operation count and sequence specifics as given.",
         "confidence": "low"
       },
       {
@@ -7126,7 +7220,8 @@
                     "value": "~1-2 wt%"
                   }
                 ],
-                "confidence": "medium"
+                "confidence": "medium",
+                "note": "Not established: the solvent identities listed, the wire and core diameter ranges quoted, the flux-content figure, and the core-drawing process description including the acid-value drift claim."
               }
             ],
             "facts": [
@@ -7143,7 +7238,8 @@
                 "value": "organic acids, fatty acid salts, or amine halides"
               }
             ],
-            "confidence": "medium"
+            "confidence": "medium",
+            "note": "Not established: the rosin-content and halide-content ranges quoted, the activator list, the oxide-dissolution mechanism described, and the likelihood claim about halide-bearing flux on this machine's board."
           },
           {
             "id": "chem.solder-chemicals.solder-alloy",
@@ -7217,7 +7313,8 @@
             "children": [
               "chem.isopropanol"
             ],
-            "confidence": "medium"
+            "confidence": "medium",
+            "note": "Not established: the solvent identities and timing claim for the shift to isopropanol after 1983, and the characterisation of that substitution as regulatory- and cost-driven rather than performance-driven."
           },
           {
             "id": "chem.solder-chemicals.reflow-profile",
@@ -7229,7 +7326,8 @@
             "children": [
               
             ],
-            "confidence": "medium"
+            "confidence": "medium",
+            "note": "Not established: the wave and reflow temperature and time ranges quoted, and the intermetallic-growth and cold-joint accounts for over- and under-temperature soldering."
           }
         ],
         "facts": [
@@ -7238,7 +7336,7 @@
             "value": "not detected (<0.001% by the standard test)"
           }
         ],
-        "note": "No-clean fluxes arrived commercially in the mid-1980s; the halide-free specification is measured against a standard ion chromatography test, and the figure quoted for it is halide not detected - under 0.001% by that test.",
+        "note": "No-clean fluxes arrived commercially in the mid-1980s; the halide-free specification is measured against a standard ion chromatography test, and the figure quoted for it is halide not detected - under 0.001% by that test. Established: Solder flux and rosin branch with wave soldering practice. Not established: the stated arrival dates and test thresholds as given.",
         "confidence": "low"
       },
       {

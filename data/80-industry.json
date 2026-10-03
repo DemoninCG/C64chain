@@ -80,13 +80,17 @@
                           "children": [
                             { "id": "facility.coal.overburden-strip", "name": "Overburden strip of shale and clay", "description": "Burden stripped in benches to reach the coal seam - often 10-60 m of rock and dirt per metre of coal in the Powder River Basin. The overburden itself becomes a backfill and a landfill-pond liner.", "kind": "material", "category": "industry", "era": "1983",
                               "places": ["Powder River Basin, Wyoming/Montana"],
-                              "confidence": "medium" }
+                              "confidence": "medium",
+                              "note": "Not established: the 10-60 m of overburden per metre of Powder River coal, the benching method, or the reuse of stripped rock as backfill and pond liner for the mines feeding this supply; the figures and the Wyoming/Montana place carry no source."
+                            }
                           ],
 "confidence": "medium",
 "note": "Established: open-cut extraction by stripping overburden and hauling coal from benched pits, per the cited article. Not established: the 100-tonne truck figure and the claim of dominance in each listed basin.",
 "sources": ["https://en.wikipedia.org/wiki/Open-pit_mining"]
 }
-                      ] },
+                      ],
+                      "note": "Not established: that the 1983 US East Coast grid coal feeding the C64 supply came specifically from Appalachian room-and-pillar mines at 150-600 m depth, or from the listed Powder River, Silesian, Ruhr, Bowen Basin and Witbank sources; the basins and methods are generic industry description without a source tying them to this supply."
+                    },
                     { "id": "facility.coal.prep-plant", "name": "Coal preparation plant", "description": "Crushed, screened, washed and dried at the mine mouth. 1980s plants were dense-medium washers plus hydrocyclones; the resulting 2-inch x 0 coal with 8-12% moisture is what a boiler of that era was designed to burn. Thermal drying was the last step - a screen-deck or flash dryer brought the fuel down to about 8-12% moisture, because wetter coal burns slower, raises stack temperature and can quench a boiler screen tube.", "kind": "facility", "category": "industry", "era": "1983",
                       "inputs": ["run-of-mine coal", "process water"],
                       "facts": [ {"label": "Product moisture", "value": "8-12% after drying"} ],
@@ -100,9 +104,15 @@
                               "inputs": ["iron ore concentrate"],
                               "confidence": "medium",
                               "children": [
-                                { "id": "facility.coal.magnetite-ore", "name": "Magnetite ore body", "description": "Magnetite is rare as a bulk ore and common as a concentrates: the dense-medium coal washer only needs a few grams of Fe3O4 per litre of circulating slurry, so the ore was mined in small tonnages - often lake-shore or gabbro deposits - and concentrated by flotation and magnetic separation. Ends at the ore body in the ground.", "kind": "material", "category": "metals", "era": "1983", "confidence": "medium" }
-                              ] }
-                          ] }
+                                { "id": "facility.coal.magnetite-ore", "name": "Magnetite ore body", "description": "Magnetite is rare as a bulk ore and common as a concentrates: the dense-medium coal washer only needs a few grams of Fe3O4 per litre of circulating slurry, so the ore was mined in small tonnages - often lake-shore or gabbro deposits - and concentrated by flotation and magnetic separation. Ends at the ore body in the ground.", "kind": "material", "category": "metals", "era": "1983", "confidence": "medium",
+                                "note": "The cited article describes magnetite as one of the main iron ores, which sits against this node's framing of magnetite as rare as a bulk ore. Not established: the small-tonnage lake-shore or gabbro deposits, the flotation plus magnetic-separation concentration, or any mine feeding this supply."
+                              }
+                              ],
+                              "note": "Established by the cited article: magnetite is Fe3O4, an iron oxide, ferrimagnetic and one of the main iron ores. Not established: that the dense-medium washers feeding this supply used natural magnetite sand specifically, or the iron-ore-concentrate input as its source."
+                            }
+                          ],
+                          "note": "Established in general terms by the cited article: preparation plants wash coal of soil and rock and sort it into graded sizes. Not established: the magnetite-slurry specific gravity of about 1.35, the floating-versus-sinking separation as run for this supply, or the mountaintop-removal refuse characterisation."
+                        }
                       ],
       "note": "Not established: that 1980s plants were dense-medium washers plus hydrocyclones, and the 8-12% product moisture figure and 2-inch x 0 top size. The encyclopaedia has no article on coal preparation (the title does not exist), and no coal preparation manual was located."
     }
@@ -113,18 +123,24 @@
 },
                 { "id": "facility.power.coal-plant.receiving", "name": "Coal receiving and stockyard", "description": "Unload from rail unit trains or self-unloading barges into a yard. In the 1980s the East Coast plants were fed by unit trains; Japan's and Korea's coal came by Panamax and post-Panamax bulker.", "kind": "facility", "category": "industry", "era": "1983",
                   "inputs": ["facility.coal"],
-                  "confidence": "medium" },
+                  "confidence": "medium",
+                  "note": "Not established: that East Coast plants took coal from rail unit trains or self-unloading barges, or that Japanese and Korean coal came by Panamax and post-Panamax bulker, for the stations feeding this supply; the delivery modes carry no source."
+                },
                 { "id": "facility.power.coal-plant.pulveriser", "name": "Coal pulveriser (mill)", "description": "A ball or roller mill grinds run-of-mine coal to a powder with at least 70% through 200 mesh (75 micrometres) so that it will burn in suspension. This was the technology that made the 1950s-80s boiler possible at all.", "kind": "tool", "category": "industry", "era": "1960-1985",
                   "facts": [ {"label": "Fineness", "value": ">=70% through 75 micrometre (200 mesh)"}, {"label": "Mill power", "value": "40-70 kW per mill, 2-4 mills per boiler"} ],
                   "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Pulverized_coal-fired_boiler"],
                   "children": [
-                    { "id": "facility.power.coal-plant.fan", "name": "Hot-air fan and primary air", "description": "A fan supplies the 60-80% of combustion air that dries and suspends the powder in the furnace and the remainder that sweeps it out between the boiler tube banks.", "kind": "tool", "category": "industry", "era": "1983", "confidence": "medium" }
+                    { "id": "facility.power.coal-plant.fan", "name": "Hot-air fan and primary air", "description": "A fan supplies the 60-80% of combustion air that dries and suspends the powder in the furnace and the remainder that sweeps it out between the boiler tube banks.", "kind": "tool", "category": "industry", "era": "1983", "confidence": "medium",
+                    "note": "Not established: the 60-80 percent combustion-air share for drying and suspending pulverised coal, or that the same air swept the powder between the boiler tube banks on the stations feeding this supply; the split and the duty carry no source."
+                  }
                   ] },
                 { "id": "facility.power.coal-plant.furnace", "name": "Boiler furnace and combustion", "description": "A refractory- and water-wall-lined firebox. Coal and preheated air enter at the burners, burn at 1300-1600 C, and give up radiation to the water walls lining the furnace walls.", "kind": "process", "category": "energy", "era": "1960-1985",
                   "inputs": ["coal powder", "preheated air"],
                   "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Pulverized_coal-fired_boiler"],
                   "children": [
-                    { "id": "facility.power.air-preheater", "name": "Ljungstrom / regenerative air preheater", "description": "The flue gas gives up its heat to the incoming combustion air through a slow-rotating bank of corrugated steel plates - exhaust gas at ~300 C, air at ~300 C. This alone recovered several percent of the coal's energy.", "kind": "tool", "category": "industry", "era": "1960-1985", "confidence": "medium" },
+                    { "id": "facility.power.air-preheater", "name": "Ljungstrom / regenerative air preheater", "description": "The flue gas gives up its heat to the incoming combustion air through a slow-rotating bank of corrugated steel plates - exhaust gas at ~300 C, air at ~300 C. This alone recovered several percent of the coal's energy.", "kind": "tool", "category": "industry", "era": "1960-1985", "confidence": "medium",
+                    "note": "Established by the cited article: a preheater heats incoming air to raise thermal efficiency. Not established: the slow-rotating corrugated-plate regenerative type, the roughly-300 C gas and air figures, the several-percent recovery, or the 1960-1985 currency for the stations feeding this supply."
+                  },
                     { "id": "facility.power.coal-plant.scrubber", "name": "Wet flue-gas desulphuriser (scrubber)", "description": "Required in the US from about 1978 onward once new-source performance standards took effect. Slaked lime or limestone slurry absorbs SO2 to calcium sulphite, which is then forced-oxidised to gypsum; the stack gas is reheated so the plume still rises.", "kind": "process", "category": "industry", "era": "1978-1990",
                       "inputs": ["limestone", "flue gas"],
                       "facts": [ {"label": "SO2 removal", "value": "85-95% typical"} ],
@@ -136,7 +152,9 @@
                           "children": [
                             
                           ] }
-                      ] }
+                      ],
+                      "note": "Established by the cited article: flue-gas desulphurisation removes sulphur dioxide from fossil-plant exhaust. Not established: the post-1978 new-source-standards requirement, the slaked-lime or limestone slurry to calcium sulphite with forced oxidation to gypsum, the stack-gas reheat, or the 85-95 percent removal for the stations feeding this supply."
+                    }
                   ] },
                 { "id": "facility.power.coal-plant.boiler", "name": "Water-tube boiler and evaporator", "description": "Drum-type water-tube boiler, typically 300-900 MW, drum at ~15 MPa and 340-370 C. Feedwater circulates through downcomers and up risers around a flame path several hundred passes long; saturated steam leaves the drum to be superheated. Superheaters raise that saturated steam to 540-565 C by hanging banks of tube bundles in the radiant and convective pass, and reheaters do the same again to the steam coming back out of the high-pressure turbine - higher steam temperature is the single biggest lever on plant thermal efficiency. An economiser, a bank of finned tubes in the flue-gas path, preheats feedwater from about 120 C to the saturation temperature using the last 8-10% of the flue-gas heat. Ash from the boiler hoppers was quenched, then either dewatered and trucked to a landfill or put wet into a hopper and pumped as slurry; fly ash was collected in electrostatic precipitators or baghouses and trucked dry or ponded.", "kind": "tool", "category": "industry", "era": "1960-1985",
                   "facts": [ {"label": "Drum pressure", "value": "15-17 MPa"}, {"label": "Steam temp", "value": "540-565 C at the turbine inlet"}, {"label": "Superheat", "value": "saturation (~340 C) to 540-565 C"}, {"label": "Ash yield", "value": "8-15% of coal mass"} ],
@@ -154,8 +172,12 @@
                             "inputs": ["open-pit mine"],
                             "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Iron_ore", "https://en.wikipedia.org/wiki/Mesabi_Range"],
                             "children": [ { "id": "facility.power.iron-ore-pit", "name": "Iron ore open pit (Mesabi)", "description": "Taconite and hematite are dug by 15-tonne payload shovels and hauled in 90-tonne trucks from a strip 60 m deep. Ends at the orebody.", "kind": "facility", "category": "metals", "era": "1983", "places": ["Mesabi Range, Minnesota", "Carajás, Brazil"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Mesabi_Range", "https://en.wikipedia.org/wiki/Iron_ore"] } ] },
-                          { "id": "facility.power.coke", "name": "Metallurgical coke", "description": "Bituminous coal coked in batteries of 30-45 ovens to make the fuel and the reductant for the blast furnace. Ends at the coking plant.", "kind": "material", "category": "industry", "era": "1983", "inputs": ["coking coal"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Coke_(fuel)"], "children": [ { "id": "facility.power.coking-coal-seam", "name": "High-Bituminous coking coal seam", "description": "A very specific subset of bituminous coal - the seam that swells and fuses in the coke oven, distinct from the steam coal the power station burns. The Pennsylvania/Kentucky/West Virginia 'High Bituminous' field.", "kind": "material", "category": "industry", "era": "Carboniferous", "places": ["Connellsville, Pennsylvania", "Kuznetsk Basin", "Ruhr"], "confidence": "medium" } ] }
-                        ] }
+                          { "id": "facility.power.coke", "name": "Metallurgical coke", "description": "Bituminous coal coked in batteries of 30-45 ovens to make the fuel and the reductant for the blast furnace. Ends at the coking plant.", "kind": "material", "category": "industry", "era": "1983", "inputs": ["coking coal"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Coke_(fuel)"], "children": [ { "id": "facility.power.coking-coal-seam", "name": "High-Bituminous coking coal seam", "description": "A very specific subset of bituminous coal - the seam that swells and fuses in the coke oven, distinct from the steam coal the power station burns. The Pennsylvania/Kentucky/West Virginia 'High Bituminous' field.", "kind": "material", "category": "industry", "era": "Carboniferous", "places": ["Connellsville, Pennsylvania", "Kuznetsk Basin", "Ruhr"], "confidence": "medium",
+                          "note": "Established by the cited article: coking coal is the grade that produces good coke for the blast furnace. Not established: the swelling-and-fusing High Bituminous seam characterisation, or the Connellsville, Kuznetsk and Ruhr places, for the coke feeding this supply."
+                        } ] }
+                        ],
+                          "note": "Not established: the 540 C steam condition, the 0.5-0.8 percent chromium-molybdenum-vanadium high-pressure rotor steel, the austenitic stainless last stages, or the forging, normalising, stress-relief and creep-rupture proof test for the turbines feeding this supply; the alloy and treatment carry no source."
+                        }
                       ],
 "confidence": "medium",
 "note": "Established: the surface condenser as a water-cooled shell-and-tube unit condensing turbine exhaust for reuse as boiler feedwater, per the cited article, with stainless steel among the standard tube materials. Not established: the quantitative link from condensate cleanliness to boiler-tube life as stated here.",
@@ -181,10 +203,14 @@
                 "children": [
                   { "id": "facility.power.rockfill", "name": "Rockfill dam and riprap", "description": "Dams of the era were built of quarried rock tipped into the river and compacted, faced with concrete or asphaltic membrane. Ends at the quarry face.", "kind": "material", "category": "industry", "era": "1960-1990", "confidence": "medium", "children": [ { "id": "facility.power.aggregate-quarry", "name": "Aggregate and riprap quarry", "description": "Granite/gneiss quarried, crushed and screened for dam rock, concrete aggregate and filter material. Ends at the rock in the hillside.", "kind": "facility", "category": "industry", "era": "1960-1990", "confidence": "low",
       "note": "Not established: that granite or gneiss was quarried for dam rock, concrete aggregate and filter material in this supply chain. No quarry or aggregate statistics document was located."
-    } ] },
+    } ],
+      "note": "Established by the cited article: an embankment dam is placed and compacted soil or rock with a water-resistant covering. Not established: that the dams behind the stations feeding this supply were quarried rock tipped into the river and compacted with concrete or asphaltic facing, or that the fill ended at a quarry face."
+    },
                   { "id": "facility.power.cement-portland", "name": "Portland cement", "description": "Limestone plus clay, fired in a rotary kiln at 1450 C, ground with gypsum. The universal structural binder of the 1980s industrial plant: dams, cooling towers, substation foundations, effluent tanks, the fab's raised floor.", "kind": "material", "category": "industry", "era": "1983", "inputs": ["limestone", "clay", "gypsum"], "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Portland_cement"],
                     "children": [ { "id": "facility.power.cement-kiln", "name": "Rotary cement kiln", "description": "A 60-150 m inclined steel tube rotating 1-2 rpm, burning coal or oil at 1450 C to drive off CO2 and drive the reaction forward. Ends at the limestone and clay pits.", "kind": "tool", "category": "industry", "era": "1983", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Cement_kiln"] } ] }
-                ] },
+                ],
+                "note": "Established by the cited article: a penstock is an enclosed pipe delivering water to hydro turbines. Not established: the 3-6 m diameter steel-or-concrete conduit, the several-hundred-metre length, the 50-300 m head, or the 1960-1990 currency for the stations feeding this supply."
+              },
               { "id": "facility.power.hydro-plant.turbine", "name": "Francis turbine", "description": "The standard medium-head machine: water enters the spiral casing, turns a runner on a vertical or horizontal shaft at 100-750 rpm, and exits into the draft tube.", "kind": "tool", "category": "industry", "era": "1960-1990",
                 "facts": [ {"label": "Efficiency", "value": "90-94%"}, {"label": "Head", "value": "60-250 m typical"} ],
                 "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Francis_turbine"] },
@@ -218,7 +244,8 @@
                     "facts": [ {"label": "Typical size", "value": "100,000-300,000 bbl/day"} ],
                     "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Oil_refinery"],
                     "children": [
-                      { "id": "facility.oil.lpg", "name": "LPG (propane/butane)", "description": "The liquid the Hong Kong and Japanese industrial estates burned for process heat and factory heating, and the feedstock for the 1980s alkylation route to isobutylene. Ends at the well or the refinery.", "kind": "material", "category": "industry", "era": "1983", "confidence": "medium" }
+                      { "id": "facility.oil.lpg", "name": "LPG (propane/butane)", "description": "The liquid the Hong Kong and Japanese industrial estates burned for process heat and factory heating, and the feedstock for the 1980s alkylation route to isobutylene. Ends at the well or the refinery.", "kind": "material", "category": "industry", "era": "1983", "confidence": "medium"
+                    }
                     ] }
                 ] },
               { "id": "facility.power.oil-plant.boiler", "name": "Oil-fired boiler", "description": "Same water-tube boiler as the coal plant, but with oil burners instead of a pulveriser and an induced-draft fan sized for the lower flue-gas volume. Two to four boilers typically share one stack.", "kind": "tool", "category": "industry", "era": "1960-1990", "confidence": "high", "sources": ["https://en.wikipedia.org/wiki/Boiler"] },
