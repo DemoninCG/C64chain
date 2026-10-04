@@ -42,60 +42,7 @@
           "category": "metals",
           "era": "1982",
           "confidence": "low",
-          "children": [
-            {
-              "id": "metal.steel.ladle",
-              "name": "Ladle treatment, degassing and the steel's last chemistry",
-              "description": "In 1982 the most important development in steelmaking was not the furnace but the ladle. A 1980s steel ladle is a 100-200 t vessel on a rotating turret, and it is where three things happen in sequence. Secondary metallurgy: argon is stirred in to homogenise the temperature and composition and to flush hydrogen and nitrogen. Desulphurisation: calcium or a calcium-bearing reagent is added and stirred, taking the sulphur out as calcium sulphide in a basic slag. Deoxidation and inclusion control: aluminium is added as the last deoxidiser, and in a bottom-pour ladle the whole ladle is streamed through a nozzle to collect the inclusions in the nozzle. This is the technology that made clean, low-inclusion, low-carbon steel a reproducible product, and it is why modern sheet steel for tinplate and for deep drawing exists at all.",
-              "kind": "process",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "medium",
-              "inputs": [
-                "metal.steel.bof"
-              ],
-              "facts": [
-                {
-                  "label": "Ladle",
-                  "value": "100-200 t on a rotating turret"
-                },
-                {
-                  "label": "Stirring",
-                  "value": "argon at 0.1-0.5 Nm3/min/t"
-                },
-                {
-                  "label": "Deoxidation",
-                  "value": "0.5-2 kg of aluminium per tonne"
-                },
-                {
-                  "label": "Desulphurisation",
-                  "value": "CaO-Flux or Ca-Si, to below 0.005% S in a few minutes"
-                },
-                {
-                  "label": "Carbon",
-                  "value": "0.03-0.08% for deep drawing and for tinplate base"
-                }
-              ],
-              "note": "Secondary metallurgy was genuinely new in the 1980s. The mechanisms are well established; the exact reagent dosages at any specific plant are not. Medium confidence.",
-              "sources": [
-                "https://en.wikipedia.org/wiki/Steelmaking"
-              ],
-              "edges": [
-                {
-                  "to": "metal.aluminum.ingot",
-                  "rel": "consumes"
-                },
-                {
-                  "to": "chem.fab-chemicals.process-gases.argon",
-                  "rel": "consumes"
-                },
-                {
-                  "to": "metal.ferrosilicon",
-                  "rel": "consumes"
-                }
-              ]
-            }
-          ],
+          "children": [],
           "note": "Not established: that three vessels made the world's steel in 1982 and that only one was winning. The steelmaking reference says basic oxygen and the electric arc furnace are now the two major commercial processes and that oxygen steelmaking has become more popular over time, but gives no 1982 shares and does not date the end of the open hearth."
         }
       ],
@@ -2296,9 +2243,7 @@
             "https://en.wikipedia.org/wiki/Silver_mining",
             "https://en.wikipedia.org/wiki/Lead_smelting"
           ],
-          "children": [
-            "metal.lead.blast-furnace"
-          ]
+          "children": []
         }
       ],
       "edges": [
@@ -2863,6 +2808,58 @@
         {
           "to": "metal.iron.burden-shaft",
           "rel": "at"
+        }
+      ]
+    },
+    "metal.steel.ladle": {
+      "id": "metal.steel.ladle",
+      "name": "Ladle treatment, degassing and the steel's last chemistry",
+      "description": "In 1982 the most important development in steelmaking was not the furnace but the ladle. A 1980s steel ladle is a 100-200 t vessel on a rotating turret, and it is where three things happen in sequence. Secondary metallurgy: argon is stirred in to homogenise the temperature and composition and to flush hydrogen and nitrogen. Desulphurisation: calcium or a calcium-bearing reagent is added and stirred, taking the sulphur out as calcium sulphide in a basic slag. Deoxidation and inclusion control: aluminium is added as the last deoxidiser, and in a bottom-pour ladle the whole ladle is streamed through a nozzle to collect the inclusions in the nozzle. This is the technology that made clean, low-inclusion, low-carbon steel a reproducible product, and it is why modern sheet steel for tinplate and for deep drawing exists at all.",
+      "kind": "process",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "inputs": [
+        "metal.steel.bof"
+      ],
+      "facts": [
+        {
+          "label": "Ladle",
+          "value": "100-200 t on a rotating turret"
+        },
+        {
+          "label": "Stirring",
+          "value": "argon at 0.1-0.5 Nm3/min/t"
+        },
+        {
+          "label": "Deoxidation",
+          "value": "0.5-2 kg of aluminium per tonne"
+        },
+        {
+          "label": "Desulphurisation",
+          "value": "CaO-Flux or Ca-Si, to below 0.005% S in a few minutes"
+        },
+        {
+          "label": "Carbon",
+          "value": "0.03-0.08% for deep drawing and for tinplate base"
+        }
+      ],
+      "note": "Secondary metallurgy was genuinely new in the 1980s. The mechanisms are well established; the exact reagent dosages at any specific plant are not. Medium confidence.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Steelmaking"
+      ],
+      "edges": [
+        {
+          "to": "metal.aluminum.ingot",
+          "rel": "consumes"
+        },
+        {
+          "to": "chem.fab-chemicals.process-gases.argon",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.ferrosilicon",
+          "rel": "consumes"
         }
       ]
     }

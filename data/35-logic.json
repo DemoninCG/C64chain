@@ -1291,138 +1291,7 @@
                   "value": "same pinout and function, different vendor mark"
                 }
               ],
-              "children": [
-                {
-                  "id": "mb.logic.sourcing.makers.ti",
-                  "name": "Texas Instruments",
-                  "description": "The company that invented the 7400 series in 1964 and the Schottky TTL in 1964-65, and the largest supplier of the 74LS catalogue. It ran its own fabs (among them Dallas, Sugar Land in Texas, and Niceville in Florida) and also did foundry work for others - the fab-forum business was a real cash generator in the era.",
-                  "kind": "org",
-                  "category": "industry",
-                  "era": "1980s",
-                  "confidence": "medium",
-                  "note": "TI's role and the 7400/74S chronology are high confidence. Specific plant names are given as commonly-cited TI locations rather than verified suppliers of Commodore's lots.",
-                  "sources": [
-                    "https://aresluna.org/ic-at-fifty-booklet.pdf"
-                  ],
-                  "facts": [
-                    {
-                      "label": "7400 series introduced",
-                      "value": "1964 (SN5400/7400)"
-                    },
-                    {
-                      "label": "74S Schottky series",
-                      "value": "1964"
-                    },
-                    {
-                      "label": "Extra business",
-                      "value": "foundry / fab-forum for other semiconductor firms"
-                    }
-                  ],
-                  "inputs": []
-                },
-                {
-                  "id": "mb.logic.sourcing.makers.fairchild",
-                  "name": "Fairchild",
-                  "description": "The company where Faggin invented the silicon-gate technology that made CMOS practical, in 1968, and which shipped the first commercial silicon-gate MOS ICs. Fairchild went bankrupt in 1985 and its remaining operations were absorbed by National and by a French group, so by 1983 a Fairchild-branded 74LS was already a slightly awkward purchase.",
-                  "kind": "org",
-                  "category": "industry",
-                  "era": "1980s",
-                  "confidence": "medium",
-                  "note": "Fairchild's silicon-gate invention in 1968 and the 1985 bankruptcy are well documented. That Fairchild-branded logic was actually present on C64 boards is field-attested, but no specific board photograph showing it has been verified.",
-                  "sources": [
-                    "https://aresluna.org/ic-at-fifty-booklet.pdf",
-                    "https://en.wikipedia.org/wiki/Fairchild_Semiconductor"
-                  ],
-                  "facts": [
-                    {
-                      "label": "Silicon-gate CMOS",
-                      "value": "1968, Faggin"
-                    },
-                    {
-                      "label": "Status in 1983",
-                      "value": "independent but financially distressed"
-                    }
-                  ],
-                  "inputs": []
-                },
-                {
-                  "id": "mb.logic.sourcing.makers.national",
-                  "name": "National Semiconductor",
-                  "description": "A major second-source supplier of 74LS logic throughout the period, and the company that published the 74HC/74HCT databooks that turned high-speed CMOS into a genuine 74-series replacement. It later absorbed much of Fairchild.",
-                  "kind": "org",
-                  "category": "industry",
-                  "era": "1980s",
-                  "confidence": "medium",
-                  "note": "National as a 74LS supplier is high confidence. Its 74HC databooks (1983) are a well-documented and interesting artefact - the high-speed CMOS family arriving at the same moment as the C64.",
-                  "sources": [
-                    "https://en.wikipedia.org/wiki/List_of_7400-series_integrated_circuits"
-                  ],
-                  "facts": [
-                    {
-                      "label": "74HC introduced",
-                      "value": "1983 (per the 74-series literature)"
-                    },
-                    {
-                      "label": "Position",
-                      "value": "top-tier 74LS supplier"
-                    }
-                  ],
-                  "inputs": []
-                },
-                {
-                  "id": "mb.logic.sourcing.makers.motorola",
-                  "name": "Motorola",
-                  "description": "The dominant supplier of the 4000-series CMOS parts on this board: the MC4044 phase comparator at U32 and the two MC4066 bilateral switches. The MC prefix on those parts is Motorola's, which is why the C64's glue logic is not entirely a 74-series story. Motorola also ran one of the merchant 74LS lines, and in 1969 it licensed and cross-supplied with Signetics, so the two names turned up in the same catalogue and the same distribution literature of the era.",
-                  "kind": "org",
-                  "category": "industry",
-                  "era": "1980s",
-                  "confidence": "medium",
-                  "note": "Motorola as the MC-prefix supplier of the 4066 and 4044 is high confidence - that is what the MC prefix means. The 1969 licensing and cross-supply arrangement with Signetics is well documented for that era, but no primary source is cited for it here.",
-                  "sources": [
-                    "https://en.wikipedia.org/wiki/List_of_4000-series_integrated_circuits"
-                  ],
-                  "inputs": []
-                },
-                {
-                  "id": "mb.logic.sourcing.makers.signetics",
-                  "name": "Signetics",
-                  "description": "An early Silicon Valley logic house that second-sourced the 74 series through the 1960s and 1970s, and that had been owned by Philips since 1975. It is not attested by name on surviving ASSY 250407 boards. It appears in this branch only because it shared a licensing and cross-supply arrangement with Motorola from 1969, which is why the two marks appear together in period catalogues and why repair literature treats them as a pair.",
-                  "kind": "org",
-                  "category": "industry",
-                  "era": "1980s",
-                  "confidence": "low",
-                  "note": "Low confidence, and deliberately so: no source is held for the Philips ownership date or for the 1969 arrangement, and a Signetics-branded part on a C64 mainboard is not verified.",
-                  "inputs": [],
-                  "edges": [
-                    {
-                      "to": "org.philips",
-                      "rel": "owned by"
-                    }
-                  ]
-                },
-                {
-                  "id": "mb.logic.sourcing.makers.hitachi",
-                  "name": "Hitachi",
-                  "description": "Japanese logic vendor. C64 boards are found with Hitachi-branded parts. Commodore bought early and often, and the rising Japanese share was one reason the C64's bill of materials got cheaper every year.",
-                  "kind": "org",
-                  "category": "industry",
-                  "era": "1980s",
-                  "confidence": "low",
-                  "note": "Low confidence on specific Hitachi parts appearing on 1983 C64 boards. A Hitachi-branded 74LS in a 250407 is an unverified field report; Japanese penetration of merchant logic through the decade is well documented.",
-                  "inputs": []
-                },
-                {
-                  "id": "mb.logic.sourcing.makers.toshiba",
-                  "name": "Toshiba",
-                  "description": "Japanese logic and semiconductor vendor, among the Japanese suppliers that took a large share of world logic volume through the 1980s, undercutting American silicon. No Toshiba-branded logic part on a 250407 is specifically verified here; included as the second named Japanese supplier alongside Hitachi.",
-                  "kind": "org",
-                  "category": "industry",
-                  "era": "1980s",
-                  "confidence": "low",
-                  "note": "Low confidence; no specific Toshiba-branded 74LS in a 250407 verified. General Japanese penetration well documented; split from makers.japan list so each supplier is its own org rather than a bundled list.",
-                  "inputs": []
-                }
-              ]
+              "children": []
             },
             {
               "id": "mb.logic.sourcing.second-source",
@@ -4229,6 +4098,176 @@
       "confidence": "medium",
       "inputs": [],
       "note": "Not established: the ceramic or printed-circuit card substrate, the cantilever needle construction, the needle lifetime in touches, or the days and hundreds-to-thousands of dollars to build a card for a new part number. Wafer test before dicing is documented; the card is not."
+    },
+    "mb.logic.sourcing.makers.ti": {
+      "id": "mb.logic.sourcing.makers.ti",
+      "name": "Texas Instruments",
+      "description": "The company that invented the 7400 series in 1964 and the Schottky TTL in 1964-65, and the largest supplier of the 74LS catalogue. It ran its own fabs (among them Dallas, Sugar Land in Texas, and Niceville in Florida) and also did foundry work for others - the fab-forum business was a real cash generator in the era.",
+      "kind": "org",
+      "category": "industry",
+      "era": "1980s",
+      "confidence": "medium",
+      "note": "TI's role and the 7400/74S chronology are high confidence. Specific plant names are given as commonly-cited TI locations rather than verified suppliers of Commodore's lots.",
+      "sources": [
+        "https://aresluna.org/ic-at-fifty-booklet.pdf"
+      ],
+      "facts": [
+        {
+          "label": "7400 series introduced",
+          "value": "1964 (SN5400/7400)"
+        },
+        {
+          "label": "74S Schottky series",
+          "value": "1964"
+        },
+        {
+          "label": "Extra business",
+          "value": "foundry / fab-forum for other semiconductor firms"
+        }
+      ],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "mb.logic.sourcing.makers",
+          "rel": "about"
+        }
+      ]
+    },
+    "mb.logic.sourcing.makers.fairchild": {
+      "id": "mb.logic.sourcing.makers.fairchild",
+      "name": "Fairchild",
+      "description": "The company where Faggin invented the silicon-gate technology that made CMOS practical, in 1968, and which shipped the first commercial silicon-gate MOS ICs. Fairchild went bankrupt in 1985 and its remaining operations were absorbed by National and by a French group, so by 1983 a Fairchild-branded 74LS was already a slightly awkward purchase.",
+      "kind": "org",
+      "category": "industry",
+      "era": "1980s",
+      "confidence": "medium",
+      "note": "Fairchild's silicon-gate invention in 1968 and the 1985 bankruptcy are well documented. That Fairchild-branded logic was actually present on C64 boards is field-attested, but no specific board photograph showing it has been verified.",
+      "sources": [
+        "https://aresluna.org/ic-at-fifty-booklet.pdf",
+        "https://en.wikipedia.org/wiki/Fairchild_Semiconductor"
+      ],
+      "facts": [
+        {
+          "label": "Silicon-gate CMOS",
+          "value": "1968, Faggin"
+        },
+        {
+          "label": "Status in 1983",
+          "value": "independent but financially distressed"
+        }
+      ],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "mb.logic.sourcing.makers",
+          "rel": "about"
+        }
+      ]
+    },
+    "mb.logic.sourcing.makers.national": {
+      "id": "mb.logic.sourcing.makers.national",
+      "name": "National Semiconductor",
+      "description": "A major second-source supplier of 74LS logic throughout the period, and the company that published the 74HC/74HCT databooks that turned high-speed CMOS into a genuine 74-series replacement. It later absorbed much of Fairchild.",
+      "kind": "org",
+      "category": "industry",
+      "era": "1980s",
+      "confidence": "medium",
+      "note": "National as a 74LS supplier is high confidence. Its 74HC databooks (1983) are a well-documented and interesting artefact - the high-speed CMOS family arriving at the same moment as the C64.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_7400-series_integrated_circuits"
+      ],
+      "facts": [
+        {
+          "label": "74HC introduced",
+          "value": "1983 (per the 74-series literature)"
+        },
+        {
+          "label": "Position",
+          "value": "top-tier 74LS supplier"
+        }
+      ],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "mb.logic.sourcing.makers",
+          "rel": "about"
+        }
+      ]
+    },
+    "mb.logic.sourcing.makers.motorola": {
+      "id": "mb.logic.sourcing.makers.motorola",
+      "name": "Motorola",
+      "description": "The dominant supplier of the 4000-series CMOS parts on this board: the MC4044 phase comparator at U32 and the two MC4066 bilateral switches. The MC prefix on those parts is Motorola's, which is why the C64's glue logic is not entirely a 74-series story. Motorola also ran one of the merchant 74LS lines, and in 1969 it licensed and cross-supplied with Signetics, so the two names turned up in the same catalogue and the same distribution literature of the era.",
+      "kind": "org",
+      "category": "industry",
+      "era": "1980s",
+      "confidence": "medium",
+      "note": "Motorola as the MC-prefix supplier of the 4066 and 4044 is high confidence - that is what the MC prefix means. The 1969 licensing and cross-supply arrangement with Signetics is well documented for that era, but no primary source is cited for it here.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_4000-series_integrated_circuits"
+      ],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "mb.logic.sourcing.makers",
+          "rel": "about"
+        }
+      ]
+    },
+    "mb.logic.sourcing.makers.signetics": {
+      "id": "mb.logic.sourcing.makers.signetics",
+      "name": "Signetics",
+      "description": "An early Silicon Valley logic house that second-sourced the 74 series through the 1960s and 1970s, and that had been owned by Philips since 1975. It is not attested by name on surviving ASSY 250407 boards. It appears in this branch only because it shared a licensing and cross-supply arrangement with Motorola from 1969, which is why the two marks appear together in period catalogues and why repair literature treats them as a pair.",
+      "kind": "org",
+      "category": "industry",
+      "era": "1980s",
+      "confidence": "low",
+      "note": "Low confidence, and deliberately so: no source is held for the Philips ownership date or for the 1969 arrangement, and a Signetics-branded part on a C64 mainboard is not verified.",
+      "inputs": [],
+      "edges": [
+        {
+          "to": "org.philips",
+          "rel": "owned by"
+        },
+        {
+          "to": "mb.logic.sourcing.makers",
+          "rel": "about"
+        }
+      ]
+    },
+    "mb.logic.sourcing.makers.hitachi": {
+      "id": "mb.logic.sourcing.makers.hitachi",
+      "name": "Hitachi",
+      "description": "Japanese logic vendor. C64 boards are found with Hitachi-branded parts. Commodore bought early and often, and the rising Japanese share was one reason the C64's bill of materials got cheaper every year.",
+      "kind": "org",
+      "category": "industry",
+      "era": "1980s",
+      "confidence": "low",
+      "note": "Low confidence on specific Hitachi parts appearing on 1983 C64 boards. A Hitachi-branded 74LS in a 250407 is an unverified field report; Japanese penetration of merchant logic through the decade is well documented.",
+      "inputs": [],
+      "edges": [
+        {
+          "to": "mb.logic.sourcing.makers",
+          "rel": "about"
+        }
+      ]
+    },
+    "mb.logic.sourcing.makers.toshiba": {
+      "id": "mb.logic.sourcing.makers.toshiba",
+      "name": "Toshiba",
+      "description": "Japanese logic and semiconductor vendor, among the Japanese suppliers that took a large share of world logic volume through the 1980s, undercutting American silicon. No Toshiba-branded logic part on a 250407 is specifically verified here; included as the second named Japanese supplier alongside Hitachi.",
+      "kind": "org",
+      "category": "industry",
+      "era": "1980s",
+      "confidence": "low",
+      "note": "Low confidence; no specific Toshiba-branded 74LS in a 250407 verified. General Japanese penetration well documented; split from makers.japan list so each supplier is its own org rather than a bundled list.",
+      "inputs": [],
+      "edges": [
+        {
+          "to": "mb.logic.sourcing.makers",
+          "rel": "about"
+        }
+      ]
     }
   }
 }

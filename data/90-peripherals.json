@@ -38,27 +38,15 @@
         ],
         "confidence": "medium",
         "note": "The modulator board is usually treated as part of the C64, not as a peripheral, so it lives here as the hinge of this branch. Output power figures vary between sources; treat them as order-of-magnitude. A TV modulator injected at the aerial socket needs a floating (isolated) aerial input or the local TV signal will back-feed and wash out the computer picture, which is why sets with an isolated aerial socket were prized. The modulator itself is documented in the mainboard as mb.rf-modulator.",
-        "children": [
+        "children": [],
+        "edges": [
           {
-            "id": "peripheral.why-rf.tv-loses-75-ohm",
-            "name": "Signal-level margin between a modulator and a transmitter",
-            "kind": "note",
-            "category": "interconnect",
-            "description": "A broadcast TV station transmitted tens of kilowatts; a C64 modulator put out about a milliwatt. The set had to be tuned by hand, and reception quality was a function of the modulator's output impedance matching the aerial input. Anyone who ever moved the TV or unplugged the aerial lead knows how marginal this was.",
-            "confidence": "low",
-            "note": "Quantitative comparison of received signal levels is reconstructed from general receiver-sensitivity reasoning rather than from a measurement of a specific 1.1902-type modulator.",
-            "children": []
+            "to": "peripheral.why-rf.tv-loses-75-ohm",
+            "rel": "about"
           },
           {
-            "id": "peripheral.why-rf.modern-comparison",
-            "name": "Later video connectors: the 1702 DIN and the C128 RGBI",
-            "kind": "note",
-            "category": "interconnect",
-            "era": "1985-1990",
-            "description": "Commodore's own 1702 monitor took a composite luma-and-blank input over a 5-pin DIN, and in 1985-86 Commodore adopted the DE-9 connector used by the C128's RGBI monitors, which carried separate red, green and blue analogue signals on pins 5, 6, 7 with no modulation at all. There was still no standard, which is why the C128 ended up with a proprietary DIN-8 video connector rather than a DE-15.",
-            "confidence": "medium",
-            "note": "The 1702 and the C128 RGBI monitors are real objects but they are not upstream of a 1982 C64, so they do not belong on a supply line.",
-            "children": []
+            "to": "peripheral.why-rf.modern-comparison",
+            "rel": "about"
           }
         ],
         "sources": [
@@ -5568,6 +5556,27 @@
           "rel": "made of"
         }
       ]
+    },
+    "peripheral.why-rf.tv-loses-75-ohm": {
+      "id": "peripheral.why-rf.tv-loses-75-ohm",
+      "name": "Signal-level margin between a modulator and a transmitter",
+      "kind": "note",
+      "category": "interconnect",
+      "description": "A broadcast TV station transmitted tens of kilowatts; a C64 modulator put out about a milliwatt. The set had to be tuned by hand, and reception quality was a function of the modulator's output impedance matching the aerial input. Anyone who ever moved the TV or unplugged the aerial lead knows how marginal this was.",
+      "confidence": "low",
+      "note": "Quantitative comparison of received signal levels is reconstructed from general receiver-sensitivity reasoning rather than from a measurement of a specific 1.1902-type modulator.",
+      "children": []
+    },
+    "peripheral.why-rf.modern-comparison": {
+      "id": "peripheral.why-rf.modern-comparison",
+      "name": "Later video connectors: the 1702 DIN and the C128 RGBI",
+      "kind": "note",
+      "category": "interconnect",
+      "era": "1985-1990",
+      "description": "Commodore's own 1702 monitor took a composite luma-and-blank input over a 5-pin DIN, and in 1985-86 Commodore adopted the DE-9 connector used by the C128's RGBI monitors, which carried separate red, green and blue analogue signals on pins 5, 6, 7 with no modulation at all. There was still no standard, which is why the C128 ended up with a proprietary DIN-8 video connector rather than a DE-15.",
+      "confidence": "medium",
+      "note": "The 1702 and the C128 RGBI monitors are real objects but they are not upstream of a 1982 C64, so they do not belong on a supply line.",
+      "children": []
     }
   }
 }

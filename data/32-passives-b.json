@@ -308,19 +308,7 @@
               "category": "interconnect",
               "era": "1982-1984",
               "confidence": "medium",
-              "children": [
-                {
-                  "id": "c64.connector-jacks.expansion-port.contact-wear.cleaning",
-                  "name": "Contact cleaning regime",
-                  "description": "The routine service answer to a marginal cartridge socket: an alcohol swab on the contacts, a foam rod through the slots, and a bend of the leaf if it has lost tension. It is one of the few repairs on a 1982 machine that needs no parts.",
-                  "kind": "process",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "inputs": [],
-                  "note": "Not established: alcohol swab on the contacts with a foam rod through the slots plus re-tensioning the leaf by bending, as the routine no-parts service answer to a marginal cartridge socket."
-                }
-              ],
+              "children": [],
               "note": "Not established: the dead-cartridge symptom sequence and the routine-repair claim. Wear of card-edge sockets is general connector practice; no source consulted quantifies it for this connector."
             },
             {
@@ -2358,6 +2346,23 @@
         {
           "to": "mb.passives.resistors.discrete-axial.carbon-film.powder",
           "rel": "consumes"
+        }
+      ]
+    },
+    "c64.connector-jacks.expansion-port.contact-wear.cleaning": {
+      "id": "c64.connector-jacks.expansion-port.contact-wear.cleaning",
+      "name": "Contact cleaning regime",
+      "description": "The routine service answer to a marginal cartridge socket: an alcohol swab on the contacts, a foam rod through the slots, and a bend of the leaf if it has lost tension. It is one of the few repairs on a 1982 machine that needs no parts.",
+      "kind": "process",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: alcohol swab on the contacts with a foam rod through the slots plus re-tensioning the leaf by bending, as the routine no-parts service answer to a marginal cartridge socket.",
+      "edges": [
+        {
+          "to": "c64.connector-jacks.expansion-port.contact-wear",
+          "rel": "about"
         }
       ]
     }
