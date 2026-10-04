@@ -132,4 +132,4 @@ one-subtree expansion is required, not optional.
 - [x] TODO-10 substance nodes, then re-home their waiting edges. DONE 2026-10-05 (`d566967`, 23 nodes + 26 re-homes + 9 _ingredients).
 - [x] Duplicate-merge pass via `_proposals`. DONE 2026-10-05 (`838092a`, 8 merges, no BLOCKERs, facts unions, tantalum ingredients fix).
 - [x] Schema-gap ruling (extend once or permanent catalogue). DONE 2026-10-05 (`5b3f58e`, EXTEND ONCE tool->material contains + diamond chain; rest via content/reversals, no permanent catalogue for chain).
-- [x] Ownership chain DONE 2026-10-05 (`d566967`, 6 orgs + MOS/Kentron + makers split; 8/8 exist, drawable) + viewer (Wave 5) on `dump-edges` REMAINING (separate, independent).
+- [x] Ownership chain DONE 2026-10-05 (`d566967`, 6 orgs + MOS/Kentron + makers split; 8/8 exist, drawable) + viewer Wave 5 on `dump-edges` DONE 2026-10-05 (`2e4b03a`, typed relations, progressive refinement expansion, scope + made_by; verified live no errors, 708 rows).
