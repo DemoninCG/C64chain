@@ -747,6 +747,24 @@
       "ingredient_rows_may_not_fire": "Five of the six _ingredients.json strings I named are DEAD ROWS -- no node carries them in inputs -- so retargeting them changes nothing. I should have had agents check whether a row fires BEFORE recommending a retarget; four no-op edits were otherwise requested. There are 26 process-target rows, not the 22 I wrote.",
       "chem_gaps_comment_is_stale": "55-chem-gaps.json own $comment says glass fibre is reachable only via unlinked.catalogue and points at an mb.pcb.laminate.cloth.fibre.* duplicate. Neither is true: glass fibre has 18 other inbound edges and that subtree does not exist."
     },
-    "PHOSPHINE_WARNING": "DO NOT create a phosphine or arsine node. Both resolve. An agent that had trusted my brief instead of checking would have created duplicates of working nodes -- which is exactly the failure mode this whole pass exists to prevent, and it was introduced by me."
+    "PHOSPHINE_WARNING": "DO NOT create a phosphine or arsine node. Both resolve. An agent that had trusted my brief instead of checking would have created duplicates of working nodes -- which is exactly the failure mode this whole pass exists to prevent, and it was introduced by me.",
+    "FRAGMENT_BOUNDARIES_ARE_MEANINGLESS": {
+      "finding": "In 90-peripherals, 8 of the 27 edges leaving the cassette-and-plug scope point straight back into peripheral.tv.* -- the cassette drive and the connectors reach the earth THROUGH the television. Those 8 are also the only edges in that branch that stay inside their own fragment.",
+      "consequence": "The substance layer ignores the fragment structure almost entirely. This retires the idea that the 19 fragments are a meaningful partition of the work, and it is the strongest argument yet for partition-by-contention rather than by file.",
+      "two_blockers_from_it": "A felt pad recorded as `made of` chrome-plating a TV antenna rod; and a 160 V television reservoir capacitor sitting inside a 12 V rail via a `children` edge."
+    },
+    "CHAIN_ORDER_IS_A_THIRD_FAILURE_MODE": {
+      "metal_alumina": "Not the grade problem I described. Gallium is recovered from Bayer liquor, which is UPSTREAM of the alumina precipitation, so the consuming node sits BEFORE the node it consumes. No grade split and no retarget fixes this; the edge has to move to the right step.",
+      "why_it_matters": "I had treated \"wrong substance\" and \"wrong grade\" as the two alumina failure modes. There is a third: correct substance, correct step, but attached to the wrong end of its own chain. The five defect classes in GOLDEN-IDEA.md 5 have no home for it."
+    },
+    "MORE_CORRECTIONS_TO_MY_BRIEF": [
+      "chem.petroleum: I said the magnet is smeared one level too high in this branch. There are ZERO chem.petroleum edges in the cassette/plug scope at all, and 90-peripherals is not among the 8 fragments that own the 53. The over-claim here is PROSE ONLY -- four nodes claim crude-oil provenance with no edge at all -- so no audit rule will find it.",
+      "metal.alumina: see CHAIN_ORDER. I described it as a grade mismatch twice and that was wrong.",
+      "metal.caustic-soda has 28 inbound edges and was missing from my heavy-hub list.",
+      "facility.test-equipment holds FIVE instruments, not four, and has only TWO edges tree-wide; the 13 nodes that appear to depend on it reach it solely through `inputs` strings.",
+      "chem.pvc having no resin child is a FAMILY of about 11 nodes, not one bug. chem.polyester.pet now has 3 inbound from 2 fragments and blocks 20-board as well."
+    ],
+    "MORE_DRIFT_EVIDENCE_FOR_THE_NOTE_RULE": "Six nodes in this branch have `facts` that their own `note` retracts, and four nodes make prose claims of crude-oil provenance with no corresponding edge. This is the third independent confirmation that `note` and `facts` are newer than the edge arrays, and it means `facts` belongs on the untrusted list alongside `inputs`.",
+    "HOLES_AT_SCALE_IN_PERIPHERALS": "28 of 44 material and part nodes in this branch have no upstream edge, and there are ZERO producers tree-wide for the cassette materials. The capstan is named in its parent's own name and has no node. The peripherals branches are the least complete part of the tree, not the most broken -- a distinction worth keeping, because \"least complete\" and \"most broken\" call for different fixes."
   }
 }
