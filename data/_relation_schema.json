@@ -281,7 +281,8 @@
       "logistics.people",
       "logistics.shipping",
       "chem",
-      "metal.rare-earths"
+      "metal.rare-earths",
+      "mb.passives.caps"
     ],
     "material->material": {
       "edges": 898,
@@ -313,7 +314,7 @@
     "part->process": {
       "edges": 300,
       "decide": "produces (reversed) | step | REFILE as part>material | DELETE",
-      "test": "Three real questions, then delete. (1) Is the operation's output a DISTINCT COMPONENT that ends up inside me -- a separate object? A grading step makes a powder that goes into the capacitor; a metallising run makes the film that IS the dielectric. -> `REFILE as part>material`, and record it. NOT this when the operation changes a FEATURE of me rather than adding a separate object: plating, chroming, HASL, enamelling, potting, blackening, etching, printing, forming. A layer on me is not a component of me. (2) DID I EXIST AS MYSELF BEFORE THIS OPERATION? No -- the operation brings me into being, and its output is me as finally sold -> `produces`, stored on the process. Exactly one per node. Yes -- it refines, finishes, coats, trims, grades or tests me -> `step`. The board exists before the HASL dip. The mask exists before photoetching. The transistor exists before die-attach. (3) Is the operation's output a LARGER OBJECT THAT MERELY CONTAINS ME -- a cable assembly containing the plug, a PSU containing a bolting regulator, pack-out closing a box of already-finished parts? -> `DELETE`. The containment is recorded on the larger node, so this edge is a duplicate of it. (4) Otherwise `DELETE`, including any child that is commentary rather than an operation: report it, because `about` only accepts a `note` target and kind changes are central.",
+      "test": "Three real questions, then delete. (1) Is the operation's output a DISTINCT COMPONENT that ends up inside me -- a separate object? A grading step makes a powder that goes into the capacitor; a metallising run makes the film that IS the dielectric. -> `REFILE as part>material`, and record it. NOT this when the operation changes a FEATURE of me rather than adding a separate object: plating, chroming, HASL, enamelling, potting, blackening, etching, printing, PRESS FORMING. A layer on me is not a component of me. TWO EXCEPTIONS, both added in round 4: (a) if the output BECOMES the part's load-bearing element rather than an insert inside it -- a grown blank, a green sheet, an etched foil roll, a formed casing -- answer `REFILE` and record that the finishing step is unmodelled; (b) a SHARED material node (metal.solder, metal.copper) is never a component of me: if the material is the tree's canonical node for a substance rather than a part-specific one, it is not an insert. (2) DID I EXIST AS MYSELF BEFORE THIS OPERATION? No -- the operation brings me into being, and its output is me as finally sold -> `produces`, stored on the process. Exactly one per node. Yes -- it refines, finishes, coats, trims, grades or tests me -> `step`. The board exists before the HASL dip. The mask exists before photoetching. The transistor exists before die-attach. (3) Is the operation's output a LARGER OBJECT THAT MERELY CONTAINS ME -- a cable assembly containing the plug, a PSU containing a bolting regulator, pack-out closing a box of already-finished parts? -> `DELETE`. The containment is recorded on the larger node, so this edge is a duplicate of it. (4) Otherwise `DELETE`, including any child that is commentary rather than an operation: report it, because `about` only accepts a `note` target and kind changes are central.",
       "never_default_to_produces": "If nothing qualifies under clause 2's first limb, do NOT promote the last one. Report that nothing produces this node. Measured worse than first recorded: 8 of 27 sampled parents ended with no producer (round 2 recorded 4 of 20). That is a content gap worth surfacing, not a relation to invent.",
       "note": "ROUND 3: known-hard rows 8/9 = 89%, so the finishing clause works. FRESH rows 13/18 = 72%, and all six disagreements trace to three causes, two of them structural: (a) THREE of six were the assembly hole -- an operation whose output is a LARGER object containing the parent, which no clause covered; now clause 3. Both agents named it independently, and agent A said it 'arguably wants a contains-reversed relation, which the answer list does not offer'. (b) ONE was a kind bug: c64.mains.switch.contacts.copper-silver is named 'Copper and silver ores' and typed `part`. (c) TWO were clause 2 contradicting ITSELF: as written ('the operation's OUTPUT is a materially different precursor that becomes me') the output is the precursor, which selects an EARLY operation, while its own gloss ('the one operation that gets produces') requires the output to be me, which selects the LAST. Opposite answers wherever the output is an intermediate. Clause 2 is now keyed on 'did I exist as myself before this operation', which has no such ambiguity. Only one disagreement (process-node granularity: a node bundling a winding vs one bundling the whole capacitor) looks irreducible.",
       "calibration": "3/5 round 1, 12/20 round 2, 21/27 round 3 (fresh 13/18)"
@@ -451,6 +452,22 @@
         "answer_must_be_storable"
       ],
       "pattern_across_three_rounds": "Every round's deepest finding was STRUCTURAL, not editorial: four missing questions in round 1, a storage bug in round 2, two more storage bugs plus a self-contradictory clause in round 3. Agreement percentages hid all of them. 60% reads like unclear wording; it was twice an answer with nowhere to go."
+    },
+    "round4": {
+      "known_hard": "n/a -- round 4 was fresh-parents only, by design.",
+      "fresh": "22 edges, every parent unseen in rounds 2 and 3. Agent A: 12 high / 8 medium / 2 low confidence; answers 10 produces, 6 step, 5 REFILE, 1 DELETE.",
+      "what_is_fixed": "ALL 22 edges took a legal, storable answer. The storage defect that killed rounds 2 and 3 is gone. Clause 2 self-contradiction is gone -- \"did I exist as myself before\" worked on every row and never needed its parenthetical qualifier.",
+      "what_is_not": "Clause 1 pre-empts clause 2 on precursor-becomes-load-bearing-element: mica counter-electrode, tantalum dielectric, green sheets, etched foil roll. 4 of 22 fresh rows = 18%, so roughly 50 of the 300 edges. Agent A also found clause 1 contradicting itself via the word \"forming\" (in the carve-out list, but anodic formation is literally forming), and no shared-material carve-out, which is what let mainboard soldering reach clause 1 at all.",
+      "agent_A_verdict": "\"No -- but it is close, and the remaining fault is one sentence wide, not structural.\" Predicted agreement without the fixes: 75-80%. With its two edits plus the shared-material carve-out: apply to 300 edges unchanged.",
+      "fixes_applied": [
+        "clause 1: \"forming\" -> \"press forming\", removing the self-contradiction",
+        "clause 1 exception (a): output BECOMES the load-bearing element -> REFILE, and record the unmodelled finishing step",
+        "clause 1 exception (b): a SHARED material node is never a component of me",
+        "_index_parents += mb.passives.caps (a grouping node that was leaking into agent sets)",
+        "mb.solder.wave.preheat retyped part -> tool (an oven, so its edge can store as tool->process)"
+      ],
+      "score_after_fixes": "UNMEASURED. The user directed that Wave 2 proceed regardless, and three of the four causes are addressed. Treat part->process as calibrated-with-caveats and watch `step` share in Wave 3.",
+      "content_gap_persists": "6 of 22 fresh parents (27%) end with no producer, consistent with round 3's 8/27. Four have only a finishing operation modelled. This is a tree content gap, not a relation problem."
     }
   },
   "edge_attributes": {
