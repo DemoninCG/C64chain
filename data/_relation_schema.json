@@ -615,5 +615,93 @@
       "five separate paper nodes exist with nothing above them; no ferric-oxide or magnesite node exists at all, though two magnet edges need them."
     ],
     "known_content_gap": "27% of sampled parents in rounds 3 and 4 end with no producer. The tree under-models the operation that brings many parts into being. This is not a relation problem and Wave 2 confirms it is not an ingredient problem either."
+  },
+  "wave3_examinations": {
+    "method": "One read-only agent per branch, examining structure rather than individual edges. Fixed report template with a required \"what it blocks\" column, so findings are orderable. Eleven reports in so far; the point is the global picture, not per-edge verdicts.",
+    "THE_DOMINANT_DEFECT_one_pattern_named_independently_four_times": [
+      "petrochem/feedstock: 12 of the 14 children of the `chem` index are typed `process` and named \"Substance: <a route>\".",
+      "petrochem/polymers: 9 polymer branch heads typed `process`; FIVE have no substance node anywhere beneath them.",
+      "metals/cu-zn-pb-ni: 37 edges using `from` as process -> process chaining, which the schema forbids outright.",
+      "logic/bipolar: 23 mixed-kind child edges that no single relation can carry.",
+      "resistors/passives-b: 158 of 209 edges onto a `process` target come from a `part` or `material` parent -- the _ingredients.json bug reproduced in `from` edges, in every fragment."
+    ],
+    "why_it_is_not_a_taxonomy_problem": "`c64.case.other-polymers` contains the sentence \"A routing point rather than a substance: the honest kind for a branch head that only groups other materials\" -- and its twin `chem.abs.other-polymers` is typed `process`. The author already articulated the correct rule and violated it one file away. The rule exists; enforcement does not.",
+    "NOTE_IS_A_REPAIR_LOG_NEWER_THAN_THE_EDGES": {
+      "finding": "Two agents on different branches independently established that `note` beats not just `description` but the EDGE ARRAYS, always in the same direction.",
+      "logic_bipolar": "5 of 5 content conflicts, the note was right every time.",
+      "peripherals_tv": "Two notes that READ as authorisations are actually WARNINGS against the edges beneath them. peripheral.tv.tuner.can.zinc note explicitly disowns the `from > metal.sphalerite` edge it ships with. Same in peripheral.tv.cabinet.screws.zinc-plating.",
+      "consequence": "This reframes the migration. For a large fraction of the tree the repair ALREADY EXISTS in prose and `from`/`inputs` are the stale layer. My earlier recorded rule (\"notes are usually more reliable than descriptions\") is too weak: the rule is that where `note` and an edge disagree, the note wins and the edge is stale.",
+      "refinement_from_resistors": "Note COVERAGE runs opposite to precision in the passives fragments, so \"write a note\" is the wrong lesson. The right discipline is \"write the note that contradicts your own edge.\""
+    },
+    "MAGNETS_ARE_A_CLASS_NOT_A_LIST": {
+      "confirmed": [
+        "metal.silica (51 of 51 inbound wrong)",
+        "chem.petroleum (no correct edges, no producer)",
+        "chem.styrene.benzese -- NEW, 8 of 9 inbound wrong",
+        "metal.chromite (~5 of 12)",
+        "metal.silica-sand (~5 of 28)",
+        "metal.stainless.304 (~6 of 11)",
+        "metal.iron (ore index, NEW)"
+      ],
+      "shared_signature": "A node NAMED AS A SUBSTANCE that is actually a route, an ore index, or a catch-all. So the fix is a detector, not a longer list -- agents keep finding new ones.",
+      "biggest_hub_decision": "metal.nickel: 65 tree-wide inbound edges versus 15 to metal.nickel.ingot, and 41 of the 65 sit in the passives fragments. Worst instance is a node named \"Nickel can stock\"."
+    },
+    "TWO_KINDS_OF_DAMAGE_previously_conflated": {
+      "LOSS_not_misattribution": "peripherals/tv and chassis. The edges that resolve point at real nodes; ~380 `inputs` entries resolve to nothing (\"syngas\", \"cliche\", \"polishing blocks\", \"operator skill\"). 90-peripherals holds 220 of them, 40-chassis 160, 80-industry 133.",
+      "MISATTRIBUTION_AT_SCALE": "petrochem/polymers. 11 process-target rows in _ingredients.json AND, independently authored, 99 `from` edges pointing at a process. Fixing the table without moving those edges leaves the processes orphaned -- the two edits must land together.",
+      "the_resolver_will_not_help": "In 31/32/33-passives the `inputs` strings resolve at 96%, against 30% tree-wide, and every defect is in the ids themselves. A string resolver surfaces none of it."
+    },
+    "DEFECTS_IN_ARTEFACTS_I_OWN": {
+      "hub_rules_is_unstoreable": "An agent found the real collision is in _relation_schema.json, not in any node. `hub_rules` fixes the relation BY TARGET, overriding the kind-pair table -- the only place in the schema that can assign an answer `answer_must_be_storable` will then fail. It writes 49 UNSTOREABLE `consumes` and 8 mislabelled containment edges, including 4 of `industry`'s own children. Not mentioned in RELATIONS.md, not in GOLDEN-IDEA.md, and not in any audit rule.",
+      "wave0_retypes_stranded_edges": "Wave 0 retyped eight facility nodes to `material` and left every edge alone, so 40 `children` edges now land where no relation fits. 3 get relabelled `consumes` by the hub rule and cannot be stored; 8 get `at`, which reads backwards on every one.",
+      "wave0_made_a_problem_worse": "`facility.foundries` is a known index node that Wave 0 PROMOTED to `org` -- and `owned by` stores `*->org`, so the retype made it HARDER to dissolve, the opposite of the intent.",
+      "my_structural_finding_was_one_directional": "`wave2.THE_STRUCTURAL_FINDING` counts bad PARENTS (65 edges whose parent cannot store consumes). It does not count the 49 bad SOURCES that hub_rules assigns `consumes` anyway. Both directions are needed and I only had one.",
+      "no_question_for_the_both_directions_defect": "There is no judgement question and no audit rule for the same parent>child pair recorded in BOTH `children` and `from`. 144 tree-wide, 8 in industry alone. This is the fourth appearance of the \"a question that cannot say this edge is wrong\" pattern.",
+      "no_wafer_material_node_names_the_wrong_fix": "A wafer MATERIAL node would be a second si.wafer -- and one already exists as a bad duplicate (mb.logic.bipolar.process.substrate). The seven illegal `mb.*.process > si.wafer` edges need storage moved onto si.wafer as `step`, which is already a stored pair. The gap that IS real and unnamed is NO NODE FOR THE LAYERS -- field oxide, epilayer, diffusion products, films -- and that is what produced all nine metal.silica edges in the logic branch.",
+      "stale_gap_in_my_own_schema": "The recorded gap \"no relation for consumed as ambience or forming gas\" is STALE. Since Wave 0 retyped all three gases to `material`, `consumes` stores process -> material. Nine edges flagged as having nowhere to go do have somewhere to go.",
+      "facts_is_not_on_the_untrusted_list": "It should be. `chem.abs.grafting.initiator` has a `fact` row recording a loading figure as WITHDRAWN and unresolvable while its own description and note still state it.",
+      "untrusted_field_list_incomplete": "GOLDEN-IDEA.md 5 names `inputs` and the description/inputs contradiction but not `facts`, and not the case where a note DISOWNS the edge beneath it -- which reads as an authorisation and is not one."
+    },
+    "ERRATA_TO_CLAIMS_I_WROTE_INTO_AGENT_BRIEFS": [
+      "chem.petroleum: the 5 surviving edges are NOT refining operations. They are chem, chem.abs, chem.crude.assay, chem.crude.c64-fraction and chem.ethylene.feedstock.naphtha -- all mine, all wrong as stored. chem.refining has ZERO `from` edges. Net: no correct edges and no producer.",
+      "chem.petroleum: the magnet is 8 fragments wide, NOT local to petrochem. 70-petrochem.json contains 3 of the 52. passives-a/b/c supply 35 of 53.",
+      "chem.petroleum: do NOT delete the naphtha link. It is the schema's sanctioned `separated` shortcut; the defect is the MISSING ROUTE behind it.",
+      "metal.silica.petcoke is a genuinely distinct substance with a careful note, NOT a duplicate of metal.silica. One deletion target, not two.",
+      "metal.silica must not be deleted bare: metal.silica.polysilicon has no producer and the three edges carrying mgsi/HCl/petcoke point at metal.silica, so deletion removes the silicon branch's only upstream. Re-home in the same edit.",
+      "Phosphoric acid DOES exist: mb.logic.cmos.process.locos.phosphoric is a material, 85% H3PO4. Mis-scoped as a LOCOS bath, not absent. Magnesite, ferric oxide and ammonium sulphate genuinely have no node.",
+      "The \"not a separate component but the packaging shared across the capacitor families\" sentence is on `mb.passives.caps.wrap-and-marking`, NOT on `mb.passives.caps`. wrap-and-marking is typed `process` and is NOT in _index_parents, which is why it kept leaking. That is the real _index_parents fix and I had the two conflated.",
+      "The ferroalloys do NOT dead-end. metal.stainless.304 -> chromium.aod -> ferrochrome -> chromite -> chromite.mine reaches the mine. It is a missing-operation hole, so the fix is additive (three process nodes), not a re-wire. Ferromanganese's furnace already exists as a `tool`.",
+      "Zinc is NOT the clean one-producer metal. metal.zinc.ingot has TWO producers, both descriptions claiming the ingot -- a fifth instance of consecutive stages mis-encoded as parallel producers. What is exemplary is the zinc PROCESS CHAIN, not its produces edges.",
+      "\"Only nickel has a genuine two-route case\" is wrong: metal.tin.refining documents two (liquation vs electrolysis) in its own prose.",
+      "There is no `collector` node in the bipolar branch -- the collector IS the epilayer, which is why the wafer dead-ends. And .litho has six process children, not eight; the eight mask levels exist only in prose.",
+      "metal.silica: six edges land in the logic branch, nine do. litho.strip is 5 of 9 edges, not 4 of 8. Both of my counts were low in the same direction -- read from partial listings.",
+      "metal.cassiterite is duplicated far worse than twice: six cassiterite-family nodes under it plus chem.solder-chemicals.solder-alloy.tin-source.cassiterite, all live.",
+      "All 23 note nodes in 80-industry have ZERO outgoing edges. The 21 tree-wide note leaks are all elsewhere. My \"23 notes, the most in the tree, therefore risky\" framing located the risk in the wrong fragment.",
+      "facility.electricity is not \"two things at once\". The commodity is real, the type is right, and 177 edges legitimately consume it. The defect is narrower: three delivery-infrastructure children plus the hub rule."
+    ],
+    "defect_counts_by_branch_so_far": {
+      "metals/ferrous+61": "35 (+6 low priority)",
+      "metals/cu-zn-pb-ni": "56",
+      "metals/remaining (63,64)": "40 -- NOT broken, 63-metals-c is the best-modelled corner of metals",
+      "petrochem/feedstock": "46",
+      "petrochem/polymers": "25",
+      "logic/bipolar": "28",
+      "passives/capacitors": "42",
+      "passives/resistors+32+33": "41",
+      "peripherals/tv": "27 -- well-modelled and cheap to fix; every defect is the last hop from component to substance",
+      "industry/facilities": "36"
+    },
+    "OPEN_CONTRADICTIONS_NEEDING_AN_OWNER": [
+      "TANTALUM ON THE MAINBOARD. mb.passives.caps.tantalum's note says the 250407 board has NO tantalum; metal.tantalum's description says \"a handful of tantalum capacitors on the mainboard\". Resolution: the note wins, the subtree is ERA-scoped not mainboard-scoped, and the fix is two sentences in two files -- not 15 nodes.",
+      "metal.tantalum duplicates metal.tantalum.powder, and the capacitor subtree has ALREADY SPLIT across them: the part `from`s the powder while four of its own process steps `from` the node. BLOCKER.",
+      "metal.barium duplicates metal.barium.titanate while holding the barite chain under a name describing the titanate. BLOCKER.",
+      "VERTICAL INTEGRATION CANNOT BE DRAWN. 6 of the 8 companies in the corporate chain have no node, so the story `owned by` exists for is undrawable.",
+      "TANTALUM NAME PATTERN: not \"the name is wrong\" but name AND kind disagreeing with the description. metal.tin.ingot is named for two substances and is one; metal.cadmium-residue is typed material and describes a retort; metal.barium-carbonate.contamination is a process named for a specification; metal.soda-ash.ammonia is one tool for two machines. KIND IS THE STRONGER SIGNAL and GOLDEN-IDEA.md 5 does not use it."
+    ],
+    "minor_data_damage": [
+      "data/90-peripherals.json line ~2077 contains a literal `undefined` at the start of peripheral.tv.tuner.can.zinc's note.",
+      "facility.gases.note contains the only stray control character in all 2,448 nodes -- a JSON \\f escape turning \"from\" into a form feed plus \"rom\".",
+      "`ict from facility.test-equipment` is a CIRCULAR edge caused by the \"spring probe\" lookup row. Two sibling rows (argon, oxygen -> facility.gases) are the same bug and are NOT in the wave-2 suspect list, so the ingredient audit missed them."
+    ]
   }
 }
