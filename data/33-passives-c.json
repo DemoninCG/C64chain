@@ -295,10 +295,12 @@
           "category": "passives",
           "era": "1982-1984",
           "sources": [
-            "https://www.c64-wiki.com/wiki/Keyboard"
+            "https://www.c64-wiki.com/wiki/Keyboard",
+            "https://deskthority.net/viewtopic.php?t=8406",
+            "https://deskthority.net/wiki/Commodore_64"
           ],
           "confidence": "high",
-          "note": "Documented on the C64 wiki keyboard page. Key count cross-checked against the C64 Service Manual (\"KEYS 66 Keys total, 2 Cursor control keys, 4 Function keys\") and against c64.keyboard, whose facts give 66 total with 8x8 = 64 scanned and 2 off-matrix. SHIFT LOCK is a latching dome arrangement (the dome is deformed or a second contact is added) rather than a scanner-visible key.",
+          "note": "Documented on the C64 wiki keyboard page. Key count cross-checked against the C64 Service Manual (\"KEYS 66 Keys total, 2 Cursor control keys, 4 Function keys\") and against c64.keyboard, whose facts give 66 total with 8x8 = 64 scanned and 2 off-matrix. SHIFT LOCK is a discrete latching mechanical switch fitted into the keyboard PCB (Mitsumi-branded, plate-mounted, with a cruciform slider adapter for the keycap mount), neither the Mitsumi standard mechanical lock nor a membrane lock. A documented teardown with disassembly photographs establishes this; the latching-dome arrangement previously recorded here is withdrawn for the 1982 breadbin. The later C64C revision uses a Mitsumi standard mechanical latching switch, a different part.",
           "facts": [
             {
               "label": "SHIFT LOCK",
@@ -309,28 +311,8 @@
               "value": "wired to NMI, outside the matrix entirely"
             }
           ],
-          "inputs": [
-            "metal.copper"
-          ],
-          "children": [
-            {
-              "id": "c64.keyboard-switches.shift-lock.latching-dome",
-              "name": "Latching dome for SHIFT LOCK",
-              "description": "A dome that latches: pressing it collapses it and it stays collapsed, requiring a second, firmer press (or a press on a neighbouring key) to release. Mechanically it is a deformation of the rubber dome itself rather than a separate switch, which is why no space in the matrix is spent on it. The latch works because the rubber is shaped so that under a light press it collapses past its own elastic limit and stays collapsed, which makes it a mechanical latch rather than an electrical one - and is why the firmware has no idea a separate key exists.",
-              "kind": "part",
-              "category": "passives",
-              "era": "1982-1984",
-              "confidence": "medium",
-              "inputs": [],
-              "note": "Not established: the latching-dome mechanism itself. The service manual confirms that RESTORE and the off-matrix keys exist and that depressing RESTORE triggers U20 to generate a non-maskable interrupt, but nothing consulted describes how the SHIFT LOCK key latches, or that its matrix position is not scanned.",
-              "edges": [
-                {
-                  "to": "chem.rubber",
-                  "rel": "made of"
-                }
-              ]
-            }
-          ]
+          "inputs": [],
+          "children": []
         },
         {
           "id": "c64.keyboard-switches.ribbon",
