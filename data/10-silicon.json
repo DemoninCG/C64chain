@@ -2116,16 +2116,6 @@
           "to": "mb.logic.package.die.scribe",
           "rel": "step",
           "basis": "documented"
-        },
-        {
-          "to": "mb.logic.bipolar.process",
-          "rel": "step",
-          "basis": "documented"
-        },
-        {
-          "to": "mb.logic.cmos.process",
-          "rel": "step",
-          "basis": "documented"
         }
       ]
     },
@@ -2705,11 +2695,6 @@
       "confidence": "high",
       "edges": [
         {
-          "to": "si.emc",
-          "rel": "consumes",
-          "basis": "inferred"
-        },
-        {
           "to": "chem.epoxy.dgeba.epichlorohydrin",
           "rel": "consumes",
           "basis": "typical-1982"
@@ -2868,24 +2853,6 @@
       ],
       "note": "Transfer moulding with a pot and plunger forcing compound into a heated cavity is documented. Not established: the 150-180 C, 700-1000 psi, 1-3 minute cycle, the post-mould bake, the flash-trimming second operation, or the 850-950 C glass-frit hermetic alternative.",
       "edges": [
-        {
-          "to": "mb.cia",
-          "rel": "produces",
-          "role": "product",
-          "basis": "typical-1982"
-        },
-        {
-          "to": "mb.color-ram",
-          "rel": "produces",
-          "role": "product",
-          "basis": "typical-1982"
-        },
-        {
-          "to": "mb.ppi",
-          "rel": "produces",
-          "role": "product",
-          "basis": "typical-1982"
-        },
         {
           "to": "si.emc",
           "rel": "consumes",
@@ -3869,13 +3836,7 @@
             "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
           ],
           "confidence": "high",
-          "edges": [
-            {
-              "to": "metal.silica-sand",
-              "rel": "consumes",
-              "basis": "typical-1982"
-            }
-          ]
+          "edges": []
         },
         {
           "id": "mb.cpu.fe.deposition",
@@ -4270,12 +4231,6 @@
       "confidence": "low",
       "note": "Explicitly low confidence and deliberately vague. The 906114-01's internal process has never been documented; inferring it from the rest of the CSG part family is an assumption, not a fact. What is not in doubt is the programming mechanism, which is the point of this branch.",
       "edges": [
-        {
-          "to": "mb.pla",
-          "rel": "produces",
-          "role": "product",
-          "basis": "documented"
-        },
         {
           "to": "chem.fab-chemicals.dopants.arsine",
           "rel": "consumes",

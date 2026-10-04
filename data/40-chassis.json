@@ -513,12 +513,7 @@
               ]
             }
           ],
-          "edges": [
-            {
-              "to": "metal.zinc",
-              "rel": "made of"
-            }
-          ]
+          "edges": []
         },
         {
           "id": "c64.case.other-polymers",
@@ -588,10 +583,6 @@
         {
           "to": "c64.decor.prepress",
           "rel": "step"
-        },
-        {
-          "to": "c64.decor.metallised",
-          "rel": "made of"
         }
       ]
     },
@@ -1246,15 +1237,15 @@
               "note": "DIN connectors on this machine are established from the parts lists: CN4 6 Pin Din 903361-01, and on the later 250407-04 CN5 8 Pin Din 325573-01, against CN5 5 Pin Din 903362-01 on the earliest. Not established: that the shell is nickel-plated steel or brass, that the insert is phenolic or thermoplastic, or that the C64's monitor ecosystem was deliberately European. The DIN plug is a European standard (DIN 41512) and is one of the few connectors where the C64's whole monitor ecosystem was deliberately European.",
               "edges": [
                 {
-                  "to": "metal.steel",
-                  "rel": "made of"
-                },
-                {
-                  "to": "metal.zinc",
-                  "rel": "made of"
-                },
-                {
                   "to": "chem.thermosets.phenolic",
+                  "rel": "made of"
+                },
+                {
+                  "to": "metal.steel.sheet",
+                  "rel": "made of"
+                },
+                {
+                  "to": "metal.zinc.brass",
                   "rel": "made of"
                 }
               ]
@@ -2705,10 +2696,6 @@
         {
           "to": "c64.packaging.kraft-pulp",
           "rel": "made of"
-        },
-        {
-          "to": "c64.packaging.box-board",
-          "rel": "made of"
         }
       ]
     },
@@ -2977,10 +2964,6 @@
           "rel": "made of"
         },
         {
-          "to": "metal.bauxite",
-          "rel": "made of"
-        },
-        {
           "to": "metal.chromite",
           "rel": "made from"
         }
@@ -3161,13 +3144,13 @@
           "rel": "consumes"
         },
         {
-          "to": "c64.packaging.eps",
-          "rel": "produces",
-          "role": "product"
-        },
-        {
           "to": "facility.steam",
           "rel": "consumes"
+        },
+        {
+          "to": "c64.packaging.eps-beads",
+          "rel": "produces",
+          "role": "product"
         }
       ]
     },
@@ -3283,15 +3266,15 @@
       "note": "Not established: that Commodore printing plates were copper electrotypes, and the deposit thickness and bath conditions. Electrotyping is an old process but no Commodore record of it has been found.",
       "edges": [
         {
-          "to": "metal.copper",
-          "rel": "consumes"
-        },
-        {
           "to": "metal.sulphuric-acid",
           "rel": "consumes"
         },
         {
           "to": "facility.electricity",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.copper.cathode",
           "rel": "consumes"
         }
       ]

@@ -739,28 +739,7 @@
                 ],
                 "confidence": "medium",
                 "note": "The pressure figure needs care. A TV tube is evacuated to high vacuum, but the internal volume is large and the glass is thick enough that the tube is deliberately designed so that a manufacturing flaw (a large void or a heavy impurity in the glass) is a slow leak, not a bomb. Post-deflection the tube may be brought back to a small positive pressure by letting in a little inert gas; the net differential is around a fifth of an atmosphere, not one atmosphere. That is a large fraction of the energy a naive reader would assume, and it is the reason the safety story is not simply 'it is a vacuum bomb'.",
-                "children": [
-                  {
-                    "id": "peripheral.tv.crt.vacuum.rear-al",
-                    "name": "Aluminium coating on the funnel wall",
-                    "kind": "part",
-                    "category": "optics",
-                    "era": "1982",
-                    "description": "A separate aluminium mirror, vapour-deposited on the inside of the funnel behind the gun, intended to bounce stray light back towards the phosphor and raise light output. It is distinct from the phosphor back layer, which is where the black level comes from. Modern practice replaced it with a black internal coating on the neck to absorb stray light instead, and moved efficiency to the phosphor and to tinted faceplate glass.",
-                    "inputs": [
-                      "aluminium foil from bauxite"
-                    ],
-                    "confidence": "medium",
-                    "note": "Both the aluminium funnel coating and the phosphor aluminium layer are real and were often both present. An aluminium-backed faceplate is a reasonable description of the phosphor back layer, and the funnel coating is the separate, less discussed item. Both mirrors behind a tube come from the same roll of four-nines foil.",
-                    "children": [],
-                    "edges": [
-                      {
-                        "to": "metal.aluminum",
-                        "rel": "made of"
-                      }
-                    ]
-                  }
-                ],
+                "children": [],
                 "edges": [
                   {
                     "to": "peripheral.tv.crt.vacuum",
@@ -2032,10 +2011,6 @@
                 "note": "The F connector is documented as the common coaxial television aerial connector, normally used with RG-6/U or RG-59/U cable, and coaxial replaced twin-lead. That is the function and the standard. Not established: the 60% Cu / 40% Zn brass body (an F connector body is commonly nickel-plated brass, but the exact alloy is not fixed by the standard), the nickel or cadmium plate, the PTFE or polyethylene dielectric insert, the silver or nickel plated centre contact, the 75 ohm characteristic impedance as a specification of the connector rather than of the cable, and the Taiwan and United States works. Note that the centre contact and the shell are separate plated parts and need not use the same finish; this node gives both without saying which is which.",
                 "edges": [
                   {
-                    "to": "peripheral.tv.aerial.f-connector.brass",
-                    "rel": "contains"
-                  },
-                  {
                     "to": "metal.zinc.brass",
                     "rel": "made of"
                   }
@@ -2651,12 +2626,7 @@
                 "inputs": [
                   "peripheral.tv.chassis.pcb"
                 ],
-                "edges": [
-                  {
-                    "to": "peripheral.tv.chassis.pcb.plating",
-                    "rel": "step"
-                  }
-                ]
+                "edges": []
               },
               {
                 "id": "peripheral.cassette.deck.psu",
@@ -2746,10 +2716,6 @@
                 "note": "The case is moulded from the same ABS grade as a television cabinet, and it reaches the monomers through the styrene-butadiene-acrylonitrile petrochemical chain rather than through the cabinet. Not established: the two-shot clamshell construction, the about 400 mm by 90 mm dimensions, the 230-260 C ABS moulding, and the claim that the drive's ABS was the same grade as a television cabinet's.",
                 "edges": [
                   {
-                    "to": "c64.joystick.knob.abs",
-                    "rel": "made of"
-                  },
-                  {
                     "to": "chem.abs.grade",
                     "rel": "made of"
                   }
@@ -2793,9 +2759,7 @@
                 "category": "interconnect",
                 "era": "1982",
                 "description": "The 1541 connected to the C64 by a nine-pin high-density D-subminiature cable carrying the serial bus, which is how the drive knew there was a computer and the computer knew there was a drive.",
-                "children": [
-                  "peripheral.plug.serial-link"
-                ],
+                "children": [],
                 "confidence": "high",
                 "sources": [
                   "https://archive.org/details/The_Anatomy_of_the_1541_Disk_Drive",
@@ -4522,10 +4486,6 @@
       "note": "The process converts metallurgical-grade silicon of about 98% purity to trichlorosilane and then to silicon, removing transition metal and dopant impurities; polysilicon can be as much as 99.9999% pure and metallurgical grade is 95-99%. Not established: the 200-1000 ohm cm resistivity and low oxygen needed to hold 25 kV, the 9-11 N figure for power devices, and the Jamestown, Jersey and Freiburg attributions.",
       "edges": [
         {
-          "to": "peripheral.tv.crt.flyback.hv-rectifier.silicon.quartz",
-          "rel": "made of"
-        },
-        {
           "to": "metal.coke",
           "rel": "made from"
         },
@@ -5606,6 +5566,21 @@
       "confidence": "low",
       "note": "Ion-pump or penning-gauge helium leak testing at that sensitivity was standard practice; the exact acceptance spec varies by plant, which is why the confidence here is low. The node is the kiln: the leak test used to share the title with it, and two different objects do not belong in one name.",
       "children": []
+    },
+    "peripheral.tv.crt.vacuum.rear-al": {
+      "id": "peripheral.tv.crt.vacuum.rear-al",
+      "name": "Aluminium coating on the funnel wall",
+      "kind": "part",
+      "category": "optics",
+      "era": "1982",
+      "description": "A separate aluminium mirror, vapour-deposited on the inside of the funnel behind the gun, intended to bounce stray light back towards the phosphor and raise light output. It is distinct from the phosphor back layer, which is where the black level comes from. Modern practice replaced it with a black internal coating on the neck to absorb stray light instead, and moved efficiency to the phosphor and to tinted faceplate glass.",
+      "inputs": [
+        "aluminium foil from bauxite"
+      ],
+      "confidence": "medium",
+      "note": "Both the aluminium funnel coating and the phosphor aluminium layer are real and were often both present. An aluminium-backed faceplate is a reasonable description of the phosphor back layer, and the funnel coating is the separate, less discussed item. Both mirrors behind a tube come from the same roll of four-nines foil.",
+      "children": [],
+      "edges": []
     }
   }
 }

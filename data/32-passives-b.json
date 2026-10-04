@@ -340,10 +340,6 @@
               "rel": "contains"
             },
             {
-              "to": "metal.tin.ingot",
-              "rel": "made of"
-            },
-            {
               "to": "chem.thermosets.phenolic",
               "rel": "made of"
             }
@@ -594,12 +590,7 @@
               "note": "Not established: a plastic-shell socket with no metal shroud on the machine side versus the shroud on the cable plug giving shell ground and mechanical strength, with both stamped and plated the same way."
             }
           ],
-          "edges": [
-            {
-              "to": "metal.gold.ingot",
-              "rel": "made of"
-            }
-          ]
+          "edges": []
         },
         {
           "id": "c64.connector-jacks.power-inlet",
@@ -707,10 +698,6 @@
         }
       ],
       "edges": [
-        {
-          "to": "metal.gold.ingot",
-          "rel": "made of"
-        },
         {
           "to": "c64.connector-jacks.metalworking",
           "rel": "step"
@@ -1366,12 +1353,7 @@
       "confidence": "medium",
       "inputs": [],
       "note": "Not established: brine by chlor-alkali electrolysis and then ammonia plus carbon as the route to this plating cyanide, deliberate low free cyanide for preferential gold deposition, and a persistent effluent-control and safety burden on the cyanide gold shops through the late 1970s and 1980s.",
-      "edges": [
-        {
-          "to": "metal.salt-brine",
-          "rel": "made of"
-        }
-      ]
+      "edges": []
     },
     "c64.switches.power-slider.body.nylon.filler": {
       "id": "c64.switches.power-slider.body.nylon.filler",
@@ -2064,12 +2046,7 @@
         }
       ],
       "note": "Not established: dimethyl terephthalate plus 1,4-butanediol as the formulation of this moulding, DMT from paraxylene, and the 1980s butanediol routes stated here, maleic anhydride hydrogenation and the second route as written.",
-      "edges": [
-        {
-          "to": "c64.connector-jacks.moulding.pbt",
-          "rel": "consumes"
-        }
-      ]
+      "edges": []
     },
     "c64.connector-jacks.moulding.phenolic.resin-source": {
       "id": "c64.connector-jacks.moulding.phenolic.resin-source",
@@ -2105,10 +2082,6 @@
       "edges": [
         {
           "to": "chem.styrene.benzene",
-          "rel": "consumes"
-        },
-        {
-          "to": "c64.connector-jacks.moulding.phenolic",
           "rel": "consumes"
         }
       ]
@@ -2196,10 +2169,6 @@
       "inputs": [],
       "edges": [
         {
-          "to": "c64.connector-jacks.metalworking.brass-stock",
-          "rel": "consumes"
-        },
-        {
           "to": "facility.electricity",
           "rel": "consumes"
         },
@@ -2224,10 +2193,6 @@
       "edges": [
         {
           "to": "metal.sphalerite",
-          "rel": "consumes"
-        },
-        {
-          "to": "c64.connector-jacks.metalworking.brass-stock.brass-zinc",
           "rel": "consumes"
         },
         {

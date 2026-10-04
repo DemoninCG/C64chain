@@ -170,10 +170,6 @@
                   "rel": "contains"
                 },
                 {
-                  "to": "metal.gold.ingot",
-                  "rel": "made of"
-                },
-                {
                   "to": "c64.keyboard-switches.matrix.pcb.pad-plating",
                   "rel": "step"
                 },
@@ -533,10 +529,6 @@
                 {
                   "to": "mb.crystal.y1.case.argon-fill",
                   "rel": "contains"
-                },
-                {
-                  "to": "metal.tin.ingot",
-                  "rel": "made of"
                 }
               ]
             }
@@ -691,12 +683,7 @@
           ]
         }
       ],
-      "edges": [
-        {
-          "to": "metal.silver.ingot",
-          "rel": "made of"
-        }
-      ]
+      "edges": []
     },
     {
       "id": "c64.joystick",
@@ -783,7 +770,7 @@
                   "id": "c64.joystick.gate.spring.wire",
                   "name": "Centring spring wire",
                   "description": "Drawn music-wire or stainless spring wire, coiled and closed. Centring springs are the cheapest consumable in the whole joystick and the one that is always replaced rather than repaired.",
-                  "kind": "part",
+                  "kind": "material",
                   "category": "passives",
                   "era": "1982-1984",
                   "confidence": "medium",
@@ -1035,28 +1022,14 @@
                 {
                   "to": "c64.joystick.cable.plug.conductor",
                   "rel": "contains"
-                },
-                {
-                  "to": "metal.gold.ingot",
-                  "rel": "made of"
                 }
               ]
             }
           ],
-          "edges": [
-            {
-              "to": "metal.gold.ingot",
-              "rel": "made of"
-            }
-          ]
+          "edges": []
         }
       ],
-      "edges": [
-        {
-          "to": "metal.gold.ingot",
-          "rel": "made of"
-        }
-      ]
+      "edges": []
     }
   ],
   "shared": {
@@ -1708,10 +1681,6 @@
         {
           "to": "metal.chromium",
           "rel": "made of"
-        },
-        {
-          "to": "metal.chromite",
-          "rel": "made of"
         }
       ]
     },
@@ -2079,7 +2048,7 @@
       "note": "Not established: that tinning was applied so the crimp barrel grips cleanly, as opposed to solderability alone, and the crimp-barrel construction itself. The cassiterite feed is the generic tin chain, not a documented input to this cable.",
       "edges": [
         {
-          "to": "c64.joystick.cable.plug.conductor",
+          "to": "metal.tin.ingot",
           "rel": "consumes"
         }
       ]
@@ -2213,10 +2182,6 @@
       "inputs": [],
       "note": "Not established: that the HC-49/U can is deep-drawn from nickel-plated strip in a progressive tool and that the collar is rolled. Nothing in the sources consulted describes the mechanical sequence of can manufacture.",
       "edges": [
-        {
-          "to": "mb.crystal.y1.case.nickel-can",
-          "rel": "consumes"
-        },
         {
           "to": "metal.steel.sheet",
           "rel": "consumes",

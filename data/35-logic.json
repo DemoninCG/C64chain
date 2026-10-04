@@ -77,11 +77,6 @@
           ],
           "edges": [
             {
-              "to": "mb.logic.package.assembly.mould.compound.resin",
-              "rel": "made of",
-              "basis": "documented"
-            },
-            {
               "to": "metal.aluminum",
               "rel": "contains",
               "basis": "typical-1982"
@@ -131,11 +126,6 @@
           ],
           "edges": [
             {
-              "to": "mb.logic.package.assembly.mould.compound.resin",
-              "rel": "made of",
-              "basis": "documented"
-            },
-            {
               "to": "metal.aluminum",
               "rel": "contains",
               "basis": "typical-1982"
@@ -181,11 +171,6 @@
             "mb.logic.package"
           ],
           "edges": [
-            {
-              "to": "mb.logic.package.assembly.mould.compound.resin",
-              "rel": "made of",
-              "basis": "documented"
-            },
             {
               "to": "metal.aluminum",
               "rel": "contains",
@@ -233,11 +218,6 @@
           ],
           "edges": [
             {
-              "to": "mb.logic.package.assembly.mould.compound.resin",
-              "rel": "made of",
-              "basis": "documented"
-            },
-            {
               "to": "metal.aluminum",
               "rel": "contains",
               "basis": "typical-1982"
@@ -282,11 +262,6 @@
             "mb.logic.package"
           ],
           "edges": [
-            {
-              "to": "mb.logic.package.assembly.mould.compound.resin",
-              "rel": "made of",
-              "basis": "documented"
-            },
             {
               "to": "metal.aluminum",
               "rel": "contains",
@@ -333,11 +308,6 @@
           ],
           "edges": [
             {
-              "to": "mb.logic.package.assembly.mould.compound.resin",
-              "rel": "made of",
-              "basis": "documented"
-            },
-            {
               "to": "metal.aluminum",
               "rel": "contains",
               "basis": "typical-1982"
@@ -379,11 +349,6 @@
           ],
           "edges": [
             {
-              "to": "mb.logic.package.assembly.mould.compound.resin",
-              "rel": "made of",
-              "basis": "documented"
-            },
-            {
               "to": "metal.aluminum",
               "rel": "contains",
               "basis": "typical-1982"
@@ -424,11 +389,6 @@
             "mb.logic.package"
           ],
           "edges": [
-            {
-              "to": "mb.logic.package.assembly.mould.compound.resin",
-              "rel": "made of",
-              "basis": "documented"
-            },
             {
               "to": "metal.aluminum",
               "rel": "contains",
@@ -475,11 +435,6 @@
             "mb.logic.package"
           ],
           "edges": [
-            {
-              "to": "mb.logic.package.assembly.mould.compound.resin",
-              "rel": "made of",
-              "basis": "documented"
-            },
             {
               "to": "metal.aluminum",
               "rel": "contains",
@@ -551,11 +506,6 @@
               ],
               "inputs": [],
               "edges": [
-                {
-                  "to": "mb.logic.package.assembly.mould.compound.resin",
-                  "rel": "made of",
-                  "basis": "documented"
-                },
                 {
                   "to": "metal.aluminum",
                   "rel": "contains",
@@ -770,11 +720,6 @@
               ],
               "edges": [
                 {
-                  "to": "metal.nickel",
-                  "rel": "contains",
-                  "basis": "typical-1982"
-                },
-                {
                   "to": "metal.tin",
                   "rel": "contains",
                   "basis": "typical-1982"
@@ -878,13 +823,13 @@
               ],
               "edges": [
                 {
-                  "to": "metal.alumina",
-                  "rel": "made of",
+                  "to": "mb.logic.package.ceramic.seal",
+                  "rel": "step",
                   "basis": "typical-1982"
                 },
                 {
-                  "to": "mb.logic.package.ceramic.seal",
-                  "rel": "step",
+                  "to": "mb.logic.package.ceramic.body",
+                  "rel": "made of",
                   "basis": "typical-1982"
                 }
               ]
@@ -1759,13 +1704,7 @@
       "confidence": "high",
       "note": "Chromium is an ingredient of the mask, so metal.chromium hangs off `inputs` rather than as a child.",
       "inputs": [],
-      "edges": [
-        {
-          "to": "metal.chromium",
-          "rel": "made from",
-          "basis": "inferred"
-        }
-      ]
+      "edges": []
     },
     "mb.logic.package.ceramic.body": {
       "id": "mb.logic.package.ceramic.body",
@@ -1783,16 +1722,6 @@
       "edges": [
         {
           "to": "metal.alumina",
-          "rel": "made from",
-          "basis": "inferred"
-        },
-        {
-          "to": "metal.bauxite",
-          "rel": "made from",
-          "basis": "inferred"
-        },
-        {
-          "to": "metal.caustic-soda",
           "rel": "made from",
           "basis": "inferred"
         }
@@ -1832,9 +1761,7 @@
           "value": "~1-2 weeks"
         }
       ],
-      "inputs": [
-        "chem.photoresist"
-      ],
+      "inputs": [],
       "children": [
         {
           "id": "mb.logic.bipolar.litho.masks",
@@ -1890,9 +1817,7 @@
             "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
           ],
           "confidence": "high",
-          "inputs": [
-            "chem.photoresist"
-          ],
+          "inputs": [],
           "children": [
             {
               "id": "mb.logic.bipolar.litho.coat.spinner",
@@ -2092,9 +2017,7 @@
           ],
           "confidence": "high",
           "note": "The developer chemistry is named in `inputs` rather than inlined: chem.fab-chemicals.tmah publishes TMAH and its synthesis, and chem.photoresist.development publishes the 0.2-0.3 N spray-development process. A potassium-hydroxide developer, made by chlor-alkali electrolysis of brine alongside chlorine, was the older alkali and was still in use; the sub-branch that used to sit here (potash -> brine -> rock salt) duplicated metal.salt-brine and metal.chlor-alkali and has been removed.",
-          "inputs": [
-            "metal.chlor-alkali"
-          ],
+          "inputs": [],
           "edges": [
             {
               "to": "chem.fab-chemicals.tmah",
@@ -2161,15 +2084,8 @@
           "era": "1980s",
           "confidence": "medium",
           "note": "That the resist is removed after etch by dry stripping or plasma ashing or by a wet resist stripper is documented. Not established: chlorinated solvents as the standard route, the xylene-then-trichloroethylene sequence, the 87 C boiling point, the piranha wet strip, and the phasing out of trichloroethylene through the 1980s.",
-          "inputs": [
-            "chem.ethylene"
-          ],
+          "inputs": [],
           "edges": [
-            {
-              "to": "chem.ethylene.feedstock.naphtha",
-              "rel": "consumes",
-              "basis": "typical-1982"
-            },
             {
               "to": "chem.fab-chemicals.hydrogen-peroxide",
               "rel": "consumes",
@@ -2181,27 +2097,12 @@
               "basis": "typical-1982"
             },
             {
-              "to": "chem.petroleum",
-              "rel": "consumes",
-              "basis": "typical-1982"
-            },
-            {
               "to": "chem.solvents.perchloroethylene",
               "rel": "consumes",
               "basis": "typical-1982"
             },
             {
               "to": "chem.solvents.trichloroethylene",
-              "rel": "consumes",
-              "basis": "typical-1982"
-            },
-            {
-              "to": "chem.sulfur",
-              "rel": "consumes",
-              "basis": "typical-1982"
-            },
-            {
-              "to": "metal.hydrogen-sulfide",
               "rel": "consumes",
               "basis": "typical-1982"
             }
@@ -2428,10 +2329,6 @@
               "to": "mb.logic.bipolar.process.oxidation.steam",
               "rel": "consumes",
               "basis": "documented"
-            },
-            {
-              "to": "facility.water",
-              "rel": "consumes"
             }
           ]
         },
@@ -2662,11 +2559,6 @@
               "to": "mb.logic.bipolar.process.emitter.gold",
               "rel": "consumes",
               "basis": "documented"
-            },
-            {
-              "to": "metal.copper",
-              "rel": "consumes",
-              "basis": "typical-1982"
             },
             {
               "to": "metal.gold",
@@ -3702,17 +3594,6 @@
           ]
         },
         {
-          "id": "mb.logic.package.probe.card",
-          "name": "The probe card",
-          "description": "A ceramic or printed-circuit substrate carrying one cantilever needle per bonding pad, cantilevered down from an epoxy or quartz shell so the needles survive hundreds of thousands of touches on hard silicon. Building a card for a new part number took days and cost hundreds to thousands of dollars, which is why a device that sold for thirty cents could not afford a new probe card per variant.",
-          "kind": "part",
-          "category": "packaging",
-          "era": "1980s",
-          "confidence": "medium",
-          "inputs": [],
-          "note": "Not established: the ceramic or printed-circuit card substrate, the cantilever needle construction, the needle lifetime in touches, or the days and hundreds-to-thousands of dollars to build a card for a new part number. Wafer test before dicing is documented; the card is not."
-        },
-        {
           "id": "mb.logic.package.probe.tester",
           "name": "The logic tester",
           "description": "An automated test system running a stored functional pattern and a set of DC limit tests per device type: propagation delay, fan-out current, input current, output high and low voltage, and the truth table at the functional corners. A 74LS04 has a few hundred such tests. The tester was the expensive part of probe test and was amortised across every device type on the line.",
@@ -3983,11 +3864,6 @@
       "children": [],
       "edges": [
         {
-          "to": "chem.fab-chemicals.dopants.diborane",
-          "rel": "made of",
-          "basis": "typical-1982"
-        },
-        {
           "to": "mb.logic.bipolar.process.base.boron.borax",
           "rel": "made from",
           "basis": "inferred"
@@ -4026,18 +3902,7 @@
       "confidence": "high",
       "note": "Nickel and chromium are ingredients of the film, so they hang off `inputs` (metal.nickel, metal.chromium) rather than as children.",
       "inputs": [],
-      "edges": [
-        {
-          "to": "metal.chromium",
-          "rel": "made from",
-          "basis": "inferred"
-        },
-        {
-          "to": "metal.nickel",
-          "rel": "made from",
-          "basis": "inferred"
-        }
-      ]
+      "edges": []
     },
     "mb.logic.bipolar.process.oxidation.quartz": {
       "id": "mb.logic.bipolar.process.oxidation.quartz",
@@ -4075,11 +3940,6 @@
       "note": "Deionised steam, fed to the furnace inlet: the water must be essentially free of dissolved alkali metals, because sodium diffuses fast through hot oxide and shifts a transistor's threshold.",
       "inputs": [],
       "edges": [
-        {
-          "to": "facility.water",
-          "rel": "made from",
-          "basis": "inferred"
-        },
         {
           "to": "facility.water.ultrapure",
           "rel": "made from",
@@ -4152,13 +4012,7 @@
         }
       ],
       "inputs": [],
-      "edges": [
-        {
-          "to": "chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphate-rock",
-          "rel": "made of",
-          "basis": "typical-1982"
-        }
-      ]
+      "edges": []
     },
     "mb.logic.package.assembly.mould.compound": {
       "id": "mb.logic.package.assembly.mould.compound",
@@ -4205,15 +4059,6 @@
           "basis": "inferred"
         },
         {
-          "to": "metal.quartzite",
-          "rel": "made from",
-          "basis": "inferred"
-        },
-        {
-          "to": "si.emc.silica",
-          "rel": "made from"
-        },
-        {
           "to": "si.emc.silica",
           "rel": "made of"
         }
@@ -4249,11 +4094,6 @@
           "basis": "typical-1982"
         },
         {
-          "to": "metal.nickel",
-          "rel": "made from",
-          "basis": "inferred"
-        },
-        {
           "to": "metal.tin",
           "rel": "made from",
           "basis": "inferred"
@@ -4280,6 +4120,17 @@
       "era": "1970s",
       "confidence": "medium",
       "note": "Low confidence beyond the ownership fact carried from mb.logic.sourcing.makers.signetics."
+    },
+    "mb.logic.package.probe.card": {
+      "id": "mb.logic.package.probe.card",
+      "name": "The probe card",
+      "description": "A ceramic or printed-circuit substrate carrying one cantilever needle per bonding pad, cantilevered down from an epoxy or quartz shell so the needles survive hundreds of thousands of touches on hard silicon. Building a card for a new part number took days and cost hundreds to thousands of dollars, which is why a device that sold for thirty cents could not afford a new probe card per variant.",
+      "kind": "part",
+      "category": "packaging",
+      "era": "1980s",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: the ceramic or printed-circuit card substrate, the cantilever needle construction, the needle lifetime in touches, or the days and hundreds-to-thousands of dollars to build a card for a new part number. Wafer test before dicing is documented; the card is not."
     }
   }
 }

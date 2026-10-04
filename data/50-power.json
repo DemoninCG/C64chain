@@ -1203,15 +1203,16 @@
               ],
               "children": [],
               "inputs": [],
-              "note": "Not established: the UL 94 V-0 rating, the nylon 66 or phenolic case material, or the ~4 mm creepage between line and neutral terminals. Nylon 66 and glass-reinforced grades of it are documented as injection-moulded and as capable of being made fire retardant, but no source ties those facts to a mains switch actuator or gives the creepage figure."
+              "note": "Not established: the UL 94 V-0 rating, the nylon 66 or phenolic case material, or the ~4 mm creepage between line and neutral terminals. Nylon 66 and glass-reinforced grades of it are documented as injection-moulded and as capable of being made fire retardant, but no source ties those facts to a mains switch actuator or gives the creepage figure.",
+              "edges": [
+                {
+                  "to": "c64.mains.switch.actuator.filler",
+                  "rel": "contains"
+                }
+              ]
             }
           ],
-          "edges": [
-            {
-              "to": "c64.mains.switch.actuator.filler",
-              "rel": "contains"
-            }
-          ]
+          "edges": []
         },
         {
           "id": "c64.mains.fuses",
@@ -1769,9 +1770,7 @@
                   ],
                   "note": "This stage lives on the mainboard rather than inside the modulator, which is why the modulator's audio input could be a simple high-impedance network. The transistor itself is one of the C64's ordinary small-signal discretes (2N3904, Commodore stock 902658-01), from the same bins as the other board-level amplifiers, not one of the 2SC parts the modulator uses.",
                   "children": [],
-                  "inputs": [
-                    "mb.rf-modulator.video-chain.ssc-transistor"
-                  ]
+                  "inputs": []
                 }
               ]
             },
@@ -1891,9 +1890,7 @@
               ],
               "note": "No schematic for the PAL variant is available, so the topology here is inferred from the service manual's description of the PAL modules and from the general practice of UHF modulators of the period.",
               "children": [],
-              "inputs": [
-                "mb.rf-modulator.rf-output"
-              ]
+              "inputs": []
             },
             "metal.ferrite.bead"
           ]
@@ -2151,9 +2148,7 @@
               "sources": [
                 "http://www.zimmers.net/anonftp/pub/cbm/schematics/computers/c64/manual-html/Page_17.html"
               ],
-              "inputs": [
-                "mb.rf-modulator.video-chain"
-              ],
+              "inputs": [],
               "note": "Not established: that the 5-pin/8-pin split (composite on the mainboard versus luma-colour to the modulator) holds across all board revisions named, or that most modulators are not interchangeable for this reason; the board-number facts are as stated in the cited manual page."
             }
           ]
@@ -2420,10 +2415,6 @@
         {
           "to": "metal.aluminum.foil",
           "rel": "made of"
-        },
-        {
-          "to": "metal.aluminum.ingot",
-          "rel": "made from"
         }
       ]
     },
@@ -3920,9 +3911,7 @@
       ],
       "note": "The C64 Wiki notes that beside the RF jack you often see an H-L switch for channels 3 and 4 (NTSC only) or a control dial for adjusting the oscillator frequency - the two mechanisms correspond to the two markets.",
       "children": [],
-      "inputs": [
-        "mb.rf-modulator.rf-output"
-      ]
+      "inputs": []
     },
     "c64.mains.switch.contacts.copper-silver.silver-refining": {
       "id": "c64.mains.switch.contacts.copper-silver.silver-refining",
