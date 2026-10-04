@@ -23,6 +23,7 @@ let forceOpen = new Set();    // ancestors of the selected node, always expanded
 let catOff = new Set();
 let kindOff = new Set();
 let confOff = new Set();
+let scopeOff = new Set();     // chain/context/alternate toggles (Wave 5 scope policy; default all on)
 let dimUnrelated = false;
 let markShared = true;
 let vis = [];                 // visible instances, pre-order
@@ -76,7 +77,7 @@ for (const [id, n] of Object.entries(N)) {
 }
 
 for (const [id, n] of Object.entries(N)) {
-  haystack.set(id, `${n.name} ${n.id} ${n.description ?? ''} ${(n.inputs ?? []).join(' ')} ${n.kind} ${n.category}`.toLowerCase());
+  haystack.set(id, `${n.name} ${n.id} ${n.description ?? ''} ${(n.inputs ?? []).join(' ')} ${n.kind} ${n.category} ${n.scope ?? 'chain'}`.toLowerCase());
 }
 
 // NB: no rendering happens here. Everything below this point is declarations,
@@ -148,9 +149,41 @@ function buildConfChips() {
   };
 }
 
+function buildScopeChips() {
+  // Wave 5 scope policy (chain/context/alternate; catalogue blessed terminal for
+  // context/alternate; gate on load-bearing chain). Default all on (show all) so
+  // hiding a container never hides contents unexpectedly (README scaffolding note).
+  const by = {};
+  for (const n of Object.values(N)) by[n.scope ?? 'chain'] = (by[n.scope ?? 'chain'] ?? 0) + 1;
+  const keys = Object.keys(by).sort();
+  $('#scopeFilter').innerHTML = keys
+    .map((k) => `<span class="c" data-scope="${k}" title="toggle">${k} <b>${by[k]}</b></span>`)
+    .join('');
+  $('#scopeFilter').onclick = (e) => {
+    const c = e.target.closest('.c');
+    if (!c) return;
+    const k = c.dataset.scope;
+    scopeOff.has(k) ? scopeOff.delete(k) : scopeOff.add(k);
+    c.classList.toggle('off', scopeOff.has(k));
+    render();
+  };
+}
+
 /* -------------------------------------------------------------- filtering */
 
-const kidsOf = (n) => (n.children ?? []).map((c) => N[c]).filter(Boolean);
+// Wave 5: refinement only for the dendrogram (legacy children + typed
+// contains/made of, like build refinedKids). Dendrogram survives migration
+// (refinement edges ARE the tree); flow/context never expand (detail-panel
+// cross-links followed without expanding, otherwise +consumes explodes 27->53k
+// on hubs like gold 3014x; progressive one-subtree expansion required).
+const REFT = new Set(['contains', 'made of']);
+const kidsOf = (n) => {
+  const out = (n.children ?? []).map((c) => N[c]).filter(Boolean);
+  for (const e of n.edges ?? []) {
+    if (e && REFT.has(e.rel) && N[e.to] && !out.some((k) => k.id === e.to)) out.push(N[e.to]);
+  }
+  return out;
+};
 
 const ENTITY = new Set(['part', 'material']);
 const PROCESSISH = new Set(['process', 'tool', 'facility']);
@@ -162,6 +195,7 @@ const passes = (n) => {
   if (catOff.has(n.category)) return false;
   if (kindOff.has(n.kind)) return false;
   if (confOff.has(n.confidence ?? 'unspecified')) return false;
+  if (scopeOff.has(n.scope ?? 'chain')) return false;
   return true;
 };
 
@@ -172,10 +206,8 @@ function hasEntityBelow(id) {
   const n = N[id];
   if (!n) return false;
   let found = false;
-  for (const c of n.children ?? []) {
-    const cn = N[c];
-    if (!cn) continue;
-    if (ENTITY.has(cn.kind) || hasEntityBelow(c)) { found = true; break; }
+  for (const k of kidsOf(n)) {
+    if (ENTITY.has(k.kind) || hasEntityBelow(k.id)) { found = true; break; }
   }
   hasEntityMemo.set(id, found);
   return found;
@@ -550,6 +582,7 @@ function renderPanel(id) {
   const badges = [
     tag(n.kind ?? '?', colorOf(n.category), true),
     tag(n.category ?? '?'),
+    tag(`scope: ${n.scope ?? 'chain'}`),
     n.era ? tag(n.era) : '',
     n.confidence ? tag(`confidence: ${n.confidence}`, n.confidence === 'high' ? '#9ece6a' : n.confidence === 'medium' ? '#e0af68' : '#f7768e') : '',
     (parents[id]?.length ?? 0) > 1 ? tag(`used ${parents[id].length}×`, '#7dcfff') : '',
@@ -589,10 +622,38 @@ function renderPanel(id) {
 
   const kids = kidsOf(n);
   const kidHtml = kids.length
-    ? `<div class="kids"><h4>made from / contains — ${kids.length}</h4><ol>${kids
+    ? `<div class="kids"><h4>contains / made of — refinement, ${kids.length}</h4><ol>${kids
         .map((k) => `<li><a data-go="${k.id}"><i class="sw" style="background:${colorOf(k.category)}"></i>${esc(k.name)}<span class="c">${k.children?.length ?? 0}↓</span></a></li>`)
         .join('')}</ol></div>`
     : '<div class="kids"><h4>end of the line</h4><ol><li style="padding:4px 8px;color:#545d70">raw material</li></ol></div>';
+
+  // Wave 5 typed relations on dump-edges semantics (typed as stored, legacy by
+  // mechanical disposition). Refinement above (dendrogram, progressive one-subtree
+  // expansion, safe default); flow/context below as cross-links followed without
+  // expanding (reveal ancestors, never subtree-expand, otherwise hubs explode).
+  // made by derived from produces (viewer renders derived set as expandable
+  // "how this is made" list, so expand-6510 survives; storing both would duplicate).
+  const edgeLi = (to, extra = '') => N[to]
+    ? `<li><a data-go="${to}"><i class="sw" style="background:${colorOf(N[to].category)}"></i>${esc(N[to].name)}<span class="c">${esc(extra || (KIND_LABEL[N[to].kind] ?? N[to].kind))}</span></a></li>`
+    : '';
+  const grp = (title, items) => items.length
+    ? `<div class="kids"><h4>${title} — ${items.length}</h4><ol>${items.join('')}</ol></div>`
+    : '';
+  const byRel = (rel) => (n.edges ?? []).filter((e) => e && e.rel === rel && N[e.to]);
+  const flowHtml =
+    grp('made from — flow', byRel('made from').map((e) => edgeLi(e.to, 'made from'))) +
+    grp('step — flow (follows)', byRel('step').map((e) => edgeLi(e.to, 'step'))) +
+    grp('consumes — flow in', byRel('consumes').map((e) => edgeLi(e.to, 'consumes'))) +
+    grp('produces — flow out', byRel('produces').map((e) => edgeLi(e.to, `${e.role ?? 'product'}`))) +
+    grp('how this is made — made by (derived from produces)', (n.made_by ?? []).filter((p) => N[p]).map((p) => edgeLi(p, 'made by')));
+  const ctxHtml =
+    grp('uses — context (equipment)', byRel('uses').map((e) => edgeLi(e.to, 'uses'))) +
+    grp('at — context (where)', byRel('at').map((e) => edgeLi(e.to, 'at'))) +
+    grp('owned by — context (who)', byRel('owned by').map((e) => edgeLi(e.to, 'owned by'))) +
+    grp('about — context (note)', byRel('about').map((e) => edgeLi(e.to, 'about')));
+  const refineTypedHtml =
+    grp('contains — refinement', byRel('contains').map((e) => edgeLi(e.to, 'contains'))) +
+    grp('made of — refinement', byRel('made of').map((e) => edgeLi(e.to, 'made of')));
 
   p.innerHTML = `
     <div class="crumbs">${crumbs}</div>
@@ -601,6 +662,7 @@ function renderPanel(id) {
     <div class="desc">${esc(n.description ?? '')}</div>
     ${n.note ? `<div class="note">${esc(n.note)}</div>` : ''}
     ${facts}${inputs}${places}${sources}${fromLinks}
+    ${refineTypedHtml}${flowHtml}${ctxHtml}
     ${kidHtml}
     <div class="act">
       ${kids.length ? '<button data-act="expand">expand subtree</button>' : ''}
@@ -702,14 +764,16 @@ function applyTransform() {
 }
 
 function expandSubtree(id) {
+  // Wave 5 progressive one-subtree expansion, refinement only (never flow:
+  // +consumes explodes on hubs; flow links in detail panel reveal without expanding).
   const st = [id];
   let maxd = 0;
   while (st.length) {
     const cur = st.pop();
     collapsed.delete(cur);
-    for (const c of N[cur]?.children ?? []) st.push(c);
+    for (const k of kidsOf(N[cur] ?? {})) st.push(k.id);
   }
-  const d = (x) => { let r = 0; const s = [[x, 0]]; const seen = new Set(); while (s.length) { const [c, dd] = s.pop(); if (seen.has(c)) continue; seen.add(c); r = Math.max(r, dd); for (const k of N[c]?.children ?? []) s.push([k, dd + 1]); } return r; };
+  const d = (x) => { let r = 0; const s = [[x, 0]]; const seen = new Set(); while (s.length) { const [c, dd] = s.pop(); if (seen.has(c)) continue; seen.add(c); r = Math.max(r, dd); for (const k of kidsOf(N[c] ?? {})) s.push([k.id, dd + 1]); } return r; };
   maxd = d(id);
   depthLimit = Math.max(depthLimit, maxd + 1);
   const inst = vis.find((v) => v.id === id);
@@ -1040,6 +1104,7 @@ buildStats();
 buildLegend();
 buildKindChips();
 buildConfChips();
+buildScopeChips();
 wire();
 expandToDepth(depthLimit);
 renderPanel(null);
