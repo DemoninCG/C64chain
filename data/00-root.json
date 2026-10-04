@@ -12,15 +12,282 @@
     "c64.io-panel",
     "c64.mainboard",
     "c64.psu",
-    "c64.mains",
     "c64.cables",
-    "c64.packaging",
     "peripheral",
-    "c64.extras",
     "c64.joystick",
-    "c64.bottoms-out"
+    {
+      "id": "c64.packaging.retail-box",
+      "name": "Retail corrugated box",
+      "description": "A regular slotted container or a tuck-end box in single-wall corrugated board, printed on a sheet-fed or web offset press in up to four or six colours plus the rainbow gradient, then creased, cut, folded and glued. It is a commodity: the board is a mill product and the printing is a printshop product, not a Commodore product. The board gives the box its edge crush strength for the couple of Newtons of stacking force a pallet of them actually sees.",
+      "kind": "part",
+      "category": "packaging",
+      "era": "1982",
+      "facts": [
+        {
+          "label": "Board grade",
+          "value": "B-flute (about 2.5 mm) or C-flute (about 4 mm) single wall"
+        },
+        {
+          "label": "Printing",
+          "value": "flexo or offset litho, 2-6 colours"
+        },
+        {
+          "label": "Converting",
+          "value": "slotter-creater then folder-gluer; hundreds to thousands of boxes an hour"
+        },
+        {
+          "label": "Adhesive",
+          "value": "PVA or hot-melt, starch for heavy board"
+        }
+      ],
+      "inputs": [
+        "c64.packaging.parts-tray"
+      ],
+      "confidence": "medium",
+      "children": [
+        {
+          "id": "c64.packaging.parts-tray",
+          "name": "Moulded parts tray",
+          "description": "Inside the box, below or beside the machine, the power cord, the A/V lead and the paperwork were either tied together in the foam or held in a separate moulded tray. Where a tray was used it was expanded polystyrene, or on later runs a folded pulp tray.",
+          "kind": "part",
+          "category": "packaging",
+          "era": "1982",
+          "facts": [
+            {
+              "label": "Materials used",
+              "value": "expanded polystyrene block, or moulded pulp"
+            },
+            {
+              "label": "Contents",
+              "value": "mains cord, A/V lead, manual, warranty card"
+            }
+          ],
+          "inputs": [],
+          "confidence": "low",
+          "note": "The exact internal arrangement of the C64 box varied by region, production run and whether the machine was sold boxed or shipped in bulk to a distributor, and no particular arrangement has been verified for every region. A tray or folded pulp cradle for the loose items existed as a standard 1980s arrangement.",
+          "edges": [
+            {
+              "to": "c64.packaging.eps",
+              "rel": "made of"
+            },
+            {
+              "to": "c64.packaging.kraft-pulp",
+              "rel": "made of"
+            }
+          ]
+        }
+      ],
+      "note": "Not established: the flute grade, the colour count and the converting route for the C64 retail box. A printed corrugated retail box is a documented product class; this one is not specified anywhere.",
+      "edges": [
+        {
+          "to": "c64.packaging.box-printing",
+          "rel": "step"
+        }
+      ]
+    },
+    {
+      "id": "c64.packaging.foam-caps",
+      "name": "Moulded polystyrene end blocks",
+      "description": "Two white expanded-polystyrene blocks that cradle the ends of the machine so the case cannot be crushed in the box and cannot slide. They are moulded to the machine's outline in a steam-heated block mould, then cut down to size.",
+      "kind": "part",
+      "category": "packaging",
+      "era": "1982",
+      "facts": [
+        {
+          "label": "Material",
+          "value": "expanded polystyrene (EPS), bead foam"
+        },
+        {
+          "label": "Density",
+          "value": "about 15-30 kg/m3 for packaging foam"
+        },
+        {
+          "label": "Blowing agent",
+          "value": "chlorinated hydrocarbon (CFC-11 or dichloromethane), about 5-7% into the bead"
+        },
+        {
+          "label": "Moulding",
+          "value": "steam-heated block mould, 100-140 C, cut to size on a band saw or hot wire"
+        }
+      ],
+      "inputs": [],
+      "confidence": "medium",
+      "note": "EPS blocks were the standard protection for beige consumer electronics through the 1980s. Their disadvantage - they cannot be recycled with paper and they shatter into Styrofoam - is exactly why they vanished from Commodore's later packaging in favour of pulp and cardboard trays.",
+      "children": []
+    },
+    {
+      "id": "c64.packaging.polybag",
+      "name": "Polyethylene sleeve over the machine",
+      "description": "A plain polyethylene bag over the boxed machine, to stop the moulded case and the printed manual from rubbing and to keep dust out during transit. It is a low-cost LDPE sleeve, blown as a tube on the same film-blowing line used for all commodity packaging film.",
+      "kind": "part",
+      "category": "packaging",
+      "era": "1982",
+      "facts": [
+        {
+          "label": "Film",
+          "value": "LDPE, ~40-80 um"
+        },
+        {
+          "label": "Use",
+          "value": "dust and abrasion protection during distribution"
+        }
+      ],
+      "inputs": [],
+      "confidence": "medium",
+      "note": "Not established: that a 1982 C64 was shipped in a polyethylene sleeve, and the film gauge. The parts list records no bag.",
+      "children": []
+    },
+    {
+      "id": "c64.packaging.manual",
+      "name": "User's manual (fold-in-fold booklet)",
+      "description": "The Commodore 64 user's manual, part 320974 in the service-manual parts list, is a cheap but well-made fold-in-fold booklet: a single sheet of coated wood-pulp paper printed in colour on both sides, folded twice with a 16-page section glued into the middle crease. The result opens flat and costs almost nothing to assemble, and the construction is the same as a road atlas. A long sheet is printed with the page imposition for the 16-page booklet and the centre section is glued with PVA or hot-melt.",
+      "kind": "part",
+      "category": "packaging",
+      "era": "1982",
+      "facts": [
+        {
+          "label": "Stock",
+          "value": "coated wood-pulp paper, about 60-100 gsm, colour both sides"
+        },
+        {
+          "label": "Binding",
+          "value": "16-page fold-in-fold, glued on the centre spread"
+        },
+        {
+          "label": "Imposition",
+          "value": "16 pages on one sheet, folded twice"
+        }
+      ],
+      "inputs": [],
+      "confidence": "high",
+      "sources": [
+        "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
+      ],
+      "note": "The manual is established as a shipped accessory: the parts list carries Users Manual, Commodore part 320974. Not established: the fold-in-fold construction, the 16-page glued centre section, the 60-100 gsm coated stock, the CMYK plus spot printing and the 320974 attribution to the service-manual parts list beyond the part number itself.",
+      "children": []
+    },
+    {
+      "id": "c64.packaging.warranty-card",
+      "name": "Warranty and registration card",
+      "description": "A small printed card with the warranty terms and a serial-number registration slip. It is the same litho process as the manual on a heavier board stock, and it is the only part of the package with a legal function.",
+      "kind": "part",
+      "category": "packaging",
+      "era": "1982",
+      "facts": [
+        {
+          "label": "Stock",
+          "value": "250-350 gsm coated or uncoated board"
+        },
+        {
+          "label": "Print",
+          "value": "one or two colours offset"
+        }
+      ],
+      "inputs": [],
+      "confidence": "medium",
+      "note": "Not established: that a warranty and registration card was packed with a 1982 C64, and its board stock and print. The service manual parts list records only the users manual.",
+      "edges": [
+        {
+          "to": "c64.packaging.kraft-liner",
+          "rel": "made of"
+        },
+        {
+          "to": "c64.packaging.offset-litho",
+          "rel": "step"
+        }
+      ]
+    },
+    {
+      "id": "c64.packaging.master-carton",
+      "name": "Shipping master carton and skid",
+      "description": "Retail boxes were packed into corrugated master cartons, several to a carton, and banded on a timber skid for palletised shipping from the Hong Kong or Taiwan assembly plant to a regional warehouse. Skids - not euro-pallets - were the norm for export shipping of this period.",
+      "kind": "part",
+      "category": "packaging",
+      "era": "1982",
+      "facts": [
+        {
+          "label": "Master carton",
+          "value": "double-wall corrugated, usually printed stencilled with contents and count"
+        },
+        {
+          "label": "Skid",
+          "value": "sawn timber skid with a bearers, no deckboards"
+        },
+        {
+          "label": "Strapping",
+          "value": "steel or polypropylene band around the carton"
+        }
+      ],
+      "inputs": [
+        "c64.packaging.skids"
+      ],
+      "confidence": "medium",
+      "children": [
+        {
+          "id": "c64.packaging.skids",
+          "name": "Timber skid",
+          "description": "A wooden skid: three or more bearers with a top deck, or a bare skid with the cartons loaded straight onto it. Skids are made from rough-sawn softwood offcuts, which is why they are the cheapest way to make a heavy load forkable.",
+          "kind": "part",
+          "category": "packaging",
+          "era": "1982",
+          "inputs": [],
+          "confidence": "medium",
+          "children": [],
+          "note": "Not established: the skid construction on Commodore export shipments. Nothing in the parts list or the corporate record describes the export pack."
+        }
+      ],
+      "note": "Not established: the master carton size, the number of machines per carton, and that the load was skidded rather than palletised. The general period practice is described in the packaging literature, not in a Commodore record."
+    }
   ],
   "confidence": "medium",
-  "sources": ["https://en.wikipedia.org/wiki/Commodore_64"],
-  "note": "What is established: the machine's identity as a 1982 8-bit home computer with 64 KB of RAM, per the cited encyclopaedia article. What is not: the exact part count and industry tally, which are this tree's own inventory rather than a manufacturer's figure; assembly geography is detailed in the foundries branch."
+  "sources": [
+    "https://en.wikipedia.org/wiki/Commodore_64"
+  ],
+  "note": "What is established: the machine's identity as a 1982 8-bit home computer with 64 KB of RAM, per the cited encyclopaedia article. What is not: the exact part count and industry tally, which are this tree's own inventory rather than a manufacturer's figure; assembly geography is detailed in the foundries branch.",
+  "edges": [
+    {
+      "to": "c64.packaging.retail-box",
+      "rel": "contains"
+    },
+    {
+      "to": "c64.packaging.foam-caps",
+      "rel": "contains"
+    },
+    {
+      "to": "c64.packaging.polybag",
+      "rel": "contains"
+    },
+    {
+      "to": "c64.packaging.manual",
+      "rel": "contains"
+    },
+    {
+      "to": "c64.packaging.warranty-card",
+      "rel": "contains"
+    },
+    {
+      "to": "c64.packaging.master-carton",
+      "rel": "contains"
+    },
+    {
+      "to": "c64.packaging.packaging-line",
+      "rel": "step"
+    },
+    {
+      "to": "c64.packaging.box-board",
+      "rel": "made of"
+    },
+    {
+      "to": "c64.packaging.eps",
+      "rel": "contains"
+    },
+    {
+      "to": "c64.packaging.eps",
+      "rel": "made of"
+    },
+    {
+      "to": "c64.packaging.kraft-liner",
+      "rel": "made of"
+    }
+  ]
 }

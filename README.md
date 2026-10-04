@@ -23,7 +23,7 @@ No dependencies. Node 18+.
 | --- | --- |
 | `data/*.json` | the tree, one file per subsystem |
 | `docs/SCHEMA.md` | the node schema — read this before editing |
-| `docs/RELATIONS.md` | **in draft** — proposal to replace `children` / `from` with ten named relations |
+| `docs/RELATIONS.md` | **implemented Wave 4** - ten typed relations in `edges[]`; `children`/`inputs` keep mechanical edges only |
 | `docs/CHECKLIST.md` | the QA standard every fragment was held to |
 | `docs/HANDOFF.md` | current state, verification gate, remaining plan, known traps |
 | `docs/TODO.md` | known-wrong, known-missing and deliberately unresolved |
@@ -71,8 +71,7 @@ the peripherals a 1983 user needed: a television, a cassette drive, a joystick.
 
 ## Scale
 
-2,448 nodes, 15 levels deep, 1,299 end points, 16 category buckets, written
-across 13 fragments by parallel research passes. The longest single chain is
+2,434 nodes, 11 levels deep, 1,534 end points, 16 category buckets. Thirteen index/grouping nodes were dissolved in the Wave 4 migration (content survives under real parents or in the generated catalogue); edges are ten typed relations in `edges[]` (judgement 0, UNMAPPED 0, ASSERT-FAIL 0). The longest single chain is
 15 hops and runs:
 
 > mainboard → 74-series glue logic → 7406 hex inverter → how a 74LS chip is
@@ -114,18 +113,15 @@ isolate one supply chain.
 
 ## Two relations, not one
 
-> **A replacement is in draft.** `docs/RELATIONS.md` proposes ten named relations
-> in place of the two below, measured against the current tree. Nothing has been
-> changed yet; this section describes what the data does today.
+> **Implemented Wave 4.** Edges are ten typed relations (`contains`, `made of`, `made from`, `step`, `consumes`, `produces`, `uses`, `at`, `owned by`, `about`) stored in `edges[]`; `made by` derives from `produces`.
 
-`children` means **contains / breaks down into**. `from` means **is made of**.
-They are different and the tree keeps them apart.
+`children` now carries refinement only (mostly part-to-part `contains`); `from` is still derived from `inputs`, but every resolvable ingredient was migrated to a typed edge - what remains in `inputs` is unresolved prose, kept deliberately rather than invented.
 
 `from` is derived at build time from each node's recorded `inputs`, resolved
 three ways: the string is already a node id; it normalises to a node name; or it
 matches an entry in `data/_ingredients.json`, which is the hand-reviewed
 synonym table. The link rate is reported on every build and currently sits at
-**80.7%** — 2,348 of 2,910 recorded ingredients became real links. The rest
+**34.6%** - 292 of 844 remaining `inputs` strings resolve; the resolved ones were migrated to typed edges, the rest stay as prose. The rest
 stay as prose, because inventing a target would be worse than admitting the gap.
 
 This is what fixed the rainbow badge: it recorded `ABS bezel surface` as text
@@ -143,7 +139,7 @@ The header switches between two views of the same data:
 | view | what it shows |
 | --- | --- |
 | **Full** | everything: components, materials, processes, tools, facilities |
-| **Components & materials** | entities only, 1,274 of 2,448 nodes |
+| **Components & materials** | entities only, 1,277 of 2,434 nodes |
 
 In the entity view a process node is **routed through**: the entities beneath it
 are lifted to sit where it was, at the same depth, so the chain stays connected

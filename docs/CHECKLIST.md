@@ -19,14 +19,16 @@ it?", it is a note (rule 2).
 
 ---
 
-## 1. `children` versus `from`
+## 1. Relations are typed (`edges[]`)
 
-> **Superseded in draft by `docs/RELATIONS.md`.** That document proposes ten
-> named relations in place of these two, because §1a below only fixes the
-> *symptom* (cross-cutting services) while leaving the underlying problem: one
-> relation carrying five meanings, and ingredient edges split arbitrarily
-> between `children` and `from`. Until that proposal is accepted this section
-> still stands as the standard.
+> **Implemented Wave 4 (2026-10-04).** `docs/RELATIONS.md` replaced the two
+> relations below with ten named ones; the old `children`-vs-`from` wording is
+> kept for history. New and edited edges MUST use `edges[]` with a schema-legal
+> `rel` (`node scripts/relate.mjs plan` fails otherwise: UNMAPPED / ASSERT-FAIL
+> must stay 0). The kind-pair table in `data/_relation_schema.json` — not
+> judgement — decides which relation an edge takes; DELETE is always available
+> for wrong edges. Evidence order when reading prose: description > note >
+> from/inputs.
 
 The two relations are different and are routinely confused.
 

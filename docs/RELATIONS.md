@@ -4,8 +4,7 @@ A proposed replacement for `children` / `from`. Written 2026-10-04, revised the
 same day after independent review. Every number is measured on the built tree:
 2,448 nodes, 2,644 `children` edges, 2,339 `from` edges, 4,983 edges total.
 
-**Status: proposal. Nothing in `data/` has been changed** except one new inert
-file, `data/_relation_schema.json`, described in §10.
+**Status: IMPLEMENTED Wave 4 (2026-10-04).** Judgement 3,328→0, UNMAPPED 0, ASSERT-FAIL 0; 13 index nodes dissolved (bottoms-out, extras, catalogue kept as backlog view, metal, chem, industry, packaging, mains, decor, foundries, caps, logistics×2, rare-earths); 2 merges (quartz-crystal→y1, atmosphere→helium feed); ~2,230 typed edges stored. Remaining: 851 catalogue/backlog orphans (content pass), 9 content notes, schema-gap holes (tool-contains-material, process>part wafer steps). This document is now the record, not a proposal.
 
 **The schema lives in `data/_relation_schema.json`.** Every relation, legal
 kind-pair, direction and edge attribute is defined there, once. This document

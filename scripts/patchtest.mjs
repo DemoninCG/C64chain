@@ -38,12 +38,12 @@ let braceNode = null;
 for (const [id, n] of Object.entries(N)) {
   if (`${n.description ?? ''}${n.note ?? ''}`.includes('{')) { braceNode = id; break; }
 }
-const kids = N.chem?.children ?? [];
+const kids = N['chem.crude']?.children ?? [];
 // the leaf must come from the SAME fragment the test copies, or it is not there
 const leaf = Object.entries(N).find(([, n]) => n.file === '70-petrochem.json'
   && !(n.children ?? []).length && n.note)?.[0];
 console.log(`brace-bearing node : ${braceNode}`);
-console.log(`container to test  : chem (${kids.length} children)`);
+console.log(`container to test  : chem.crude (${kids.length} children)`);
 console.log(`leaf to test       : ${leaf}\n`);
 
 copy();
@@ -56,7 +56,7 @@ const check = (label, got, want) => {
 };
 
 // A. container node: get must return ITS note, not a descendant's
-check('container get returns its own note', JSON.parse(run('chem', 'get', 'note')), N.chem.note ?? null);
+check('container get returns its own note', JSON.parse(run('chem.crude', 'get', 'note')), N['chem.crude'].note ?? null);
 
 // B. container node: set must land on the container.
 //    `chem` already has a note, so this needs --force: patch.mjs now refuses to
@@ -64,25 +64,25 @@ check('container get returns its own note', JSON.parse(run('chem', 'get', 'note'
 copy();
 const kidWithNote = kids.find((c) => N[c]?.note);
 const kidBefore = N[kidWithNote].note;
-run('chem', 'set', 'note', 'SENTINEL-A', '--force');
-check('container set lands on the container', JSON.parse(run('chem', 'get', 'note')), 'SENTINEL-A');
+run('chem.crude', 'set', 'note', 'SENTINEL-A', '--force');
+check('container set lands on the container', JSON.parse(run('chem.crude', 'get', 'note')), 'SENTINEL-A');
 check('child note untouched by that set', JSON.parse(run(kidWithNote, 'get', 'note')), kidBefore);
 
 // B2. the overwrite guard. `set note` used to replace silently, which destroyed
 //     nine real notes during phase 4 -- the call reported success and the file
 //     still parsed, so nothing noticed. It must now refuse, and write nothing.
 copy();
-const noteBefore = JSON.parse(run('chem', 'get', 'note'));
-const refused = runFail('chem', 'set', 'note', 'SENTINEL-B');
+const noteBefore = JSON.parse(run('chem.crude', 'get', 'note'));
+const refused = runFail('chem.crude', 'set', 'note', 'SENTINEL-B');
 check('overwrite of a non-empty note is refused', refused !== null && /refusing to overwrite/.test(refused), true);
-check('refused overwrite wrote nothing', JSON.parse(run('chem', 'get', 'note')), noteBefore);
+check('refused overwrite wrote nothing', JSON.parse(run('chem.crude', 'get', 'note')), noteBefore);
 
 // and it must still be possible to set a key that does not exist yet
 copy();
-const emptyKey = ['era', 'category'].find((k) => !(k in N.chem)) ?? null;
+const emptyKey = ['era', 'category'].find((k) => !(k in N['chem.crude'])) ?? null;
 if (emptyKey) {
-  run('chem', 'set', emptyKey, '1982-test');
-  check(`absent key "${emptyKey}" still settable without --force`, JSON.parse(run('chem', 'get', emptyKey)), '1982-test');
+  run('chem.crude', 'set', emptyKey, '1982-test');
+  check(`absent key "${emptyKey}" still settable without --force`, JSON.parse(run('chem.crude', 'get', emptyKey)), '1982-test');
 } else {
   check('absent key still settable without --force', true, true);
 }

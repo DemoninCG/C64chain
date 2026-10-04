@@ -1,8 +1,11 @@
 # Tech Tree node schema
 
-> **A revision is in draft.** `docs/RELATIONS.md` proposes replacing the
-> `children` / `inputs` pair with ten typed relations, which would change the
-> fields below. Nothing has changed yet — read this as the current schema.
+> **Implemented Wave 4 (2026-10-04).** Edges are typed relations stored in
+> `edges[]` (single source of truth per fact, `data/_relation_schema.json`).
+> Legacy `children`/`inputs` remain valid only for mechanical (no-judgement)
+> edges and unresolved prose; every judgement edge from the migration lives in
+> `edges[]`. A node is fully migrated when it has no `children` and no
+> resolving `inputs`.
 
 Every node is a JSON object. Trees live in `data/*.json`, one file per subsystem,
 and are stitched together by `scripts/build.mjs`.
@@ -26,6 +29,9 @@ and are stitched together by `scripts/build.mjs`.
   //   material  a bulk substance stream (ore, resin, slurry, gas, slurry)
   //   facility  a plant / building / piece of capital equipment
   //   tool      capital equipment used by a process (factory, aligner, press)
+  //   org       a company or institution (who owns/operates — split from facility Wave 0)
+  //   site      a place that is not a production facility: bay, room, pipeline (split Wave 0)
+  //   note      commentary, not a thing (may only be the target of `about`)
   "kind": "material",
 
   // REQUIRED — subsystem bucket, drives colouring in the UI. This answers
@@ -52,7 +58,20 @@ and are stitched together by `scripts/build.mjs`.
   // referencing a node defined elsewhere in the tree ("ref" form).
   // Prefer inline nesting for clarity; use ids only to break cycles or when the
   // node is defined in another file.
+  // Legacy: since Wave 4 only mechanical edges live here (part>part contains,
+  // process>process step, hub utilities, at/about targets). Everything that
+  // needed judgement moved to `edges[]`.
   "children": [ ... ],
+
+  // OPTIONAL — typed edges. THE canonical stored form of every judgement
+  // edge. One entry per fact; the inverse is derived at build time, never
+  // stored twice (`made by` derives from `produces`).
+  //   rel:  contains | made of | made from | step | consumes | produces |
+  //          uses | at | owned by | about   (schema `stored` lists decide
+  //          which kind-pairs each accepts; nothing else is storable)
+  //   role (required on produces): product | co-product | waste | emission
+  //   basis (optional): documented | typical-1982 | inferred
+  "edges": [ { "to": "metal.tin.ingot", "rel": "made of" } ],
 
   // OPTIONAL — what it was made from / what it required, in one line.
   // Useful for the tooltip summary. Keep it terse.

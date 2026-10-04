@@ -55,642 +55,6 @@
       "confidence": "high",
       "children": [
         {
-          "id": "mb.pcb.laminate",
-          "name": "FR-4 copper-clad laminate panel, 1.6 mm",
-          "description": "The structural core of the board: woven E-glass cloth in a brominated epoxy matrix, faced with 35 um copper foil on both sides. A merchant laminate plant presses it as a panel roughly 1.2 x 2.4 m, which the printed-circuit-board house cuts into working blanks. The cloth is pulled through epoxy, squeezed between metering nips to a controlled resin content and dried to a partly cured, slightly tacky B-stage prepreg that can be stacked and stored; a stack of foil, prepreg, core and prepreg is then press-bonded in one cycle, which turns loose foil and cloth into a single homogeneous 1.6 mm sheet with copper bonded to both faces. Commodore pressed none of this itself: it bought copper-clad laminate from a merchant plant and did only the imaging, etch, drill and finish, at an outside house.",
-          "kind": "material",
-          "category": "board",
-          "era": "1980s",
-          "facts": [
-            {
-              "label": "Copper",
-              "value": "35 um (1 oz) per side"
-            },
-            {
-              "label": "Core",
-              "value": "approx. 1.5 mm woven E-glass in brominated epoxy"
-            },
-            {
-              "label": "Dielectric constant",
-              "value": "approx. 4.2-4.7 at 1 MHz"
-            },
-            {
-              "label": "Prepreg resin content",
-              "value": "approx. 45-60 % by weight of glass"
-            },
-            {
-              "label": "Gellation",
-              "value": "approx. 140-160 deg C"
-            },
-            {
-              "label": "UL flammability",
-              "value": "94-V-0"
-            }
-          ],
-          "inputs": [
-            "chem.glass-fiber",
-            "chem.epoxy.dgeba",
-            "chem.epoxy.brominated-epoxy",
-            "metal.copper.foil"
-          ],
-          "note": "The foil is bonded to the resin by a deliberate surface treatment, not by pressure alone. Electro-deposited foil carries a natural fine-pebble or nodular (peckled) surface that grips epoxy; rolled annealed foil is smooth and would delaminate along the copper interface without further roughening. That interface is what the laminate peel-strength test measures, and for a 1 oz consumer board in 1983 electro-deposited foil was the normal, cheaper choice - rolled foil was reserved for high-speed or high-temperature laminate. The glass, the resin and the foil are not repeated here: they are the shared nodes chem.glass-fiber, chem.epoxy.dgeba, chem.epoxy.brominated-epoxy and metal.copper.foil. The press that bonds them together is not inside the panel, so it hangs off mb.pcb as a separate machine, mb.pcb.laminate.press.",
-          "confidence": "medium"
-        },
-        {
-          "id": "mb.pcb.laminate.press",
-          "name": "Hot platen press and the lamination cycle",
-          "description": "The machine that turns loose foil and cloth into a sheet. A hydraulic press pack carries several heated platens so several laminate books can be pressed in one loading, and a stack of foil, prepreg, core and prepreg goes between them. Pressure squeezes out the excess resin and forces it into the weave; the heat completes the cure. The platens are cast and then surface-ground, because a laminate that is not flat is not 1.6 mm everywhere. This one machine is the reason a period FR-4 board has a flatness tolerance tighter than anything the component designer asked for.",
-          "kind": "tool",
-          "category": "board",
-          "era": "1980s",
-          "facts": [
-            {
-              "label": "Press temperature",
-              "value": "approx. 175 deg C"
-            },
-            {
-              "label": "Pressure",
-              "value": "approx. 1.4 MPa (200 psi)"
-            },
-            {
-              "label": "Cycle",
-              "value": "roughly an hour including cool-down"
-            },
-            {
-              "label": "Heat",
-              "value": "steam coils or embedded electric resistance elements in the platens"
-            }
-          ],
-          "inputs": [
-            "facility.electricity"
-          ],
-          "note": "Modern high-Tg FR-4 laminates press hotter (200-220 deg C) and harder. Period FR-4 at 175 deg C and 1.4 MPa is the classic cycle.",
-          "confidence": "medium",
-          "children": [
-            {
-              "id": "mb.pcb.laminate.press.platen",
-              "name": "Heated platens",
-              "description": "Cast iron platens, machined and surface-ground flat, heated by embedded steam coils or electric resistance elements. The cast iron is chosen for dimensional stability and thermal mass rather than for strength, and the grind is what guarantees that a stack of books comes out of the press uniformly 1.6 mm thick. Grey cast iron is iron ore reduced with coke in a blast furnace.",
-              "kind": "part",
-              "category": "board",
-              "era": "1980s",
-              "facts": [
-                {
-                  "label": "Body",
-                  "value": "grey cast iron, machined and surface-ground"
-                }
-              ],
-              "inputs": [
-                "metal.hematite",
-                "metal.coke"
-              ],
-              "confidence": "medium",
-              "note": "Not established: that the laminate supplier's press used grey cast iron platens rather than steel, whether heat came from steam coils or embedded electric elements on that press, or the flatness tolerance the surface grind held."
-            },
-            {
-              "id": "mb.pcb.laminate.press.hydraulic",
-              "name": "Hydraulic press pack",
-              "description": "The pressure side of the press: cylinders and platens arranged so that several laminate books are pressed in one loading. The circulating hydraulic oil is a petroleum-derived lubricating fluid, refined from crude alongside almost every other lubricant on the line.",
-              "kind": "part",
-              "category": "board",
-              "era": "1980s",
-              "inputs": [
-                "chem.refining.products.lubricants",
-                "facility.electricity"
-              ],
-              "confidence": "medium",
-              "note": "Pressing several laminate books in one loading with cylinders and platens is the ordinary hydraulic pack. Not established: the cylinder count, operating pressure, or petroleum source of the circulating oil on the laminate supplier press."
-            },
-            {
-              "id": "mb.pcb.laminate.press.release",
-              "name": "Release paper between books",
-              "description": "Bleached or unbleached kraft paper laid between each laminate book so resin does not bond one book to the next and the platen stays clean. The same sheet doubles as the cushion that distributes pressure evenly across the book.",
-              "kind": "material",
-              "category": "board",
-              "era": "1980s",
-              "inputs": [
-                "c64.packaging.kraft-liner"
-              ],
-              "note": "Kraft paper is lignin-rich cellulose pulp; the paper chain itself is owned by the packaging fragment.",
-              "confidence": "medium"
-            },
-            {
-              "id": "mb.pcb.laminate.press.heat",
-              "name": "Press heat source",
-              "description": "Steam coils or electric resistance elements in the platens. Gas- or oil-fired central steam was the norm in a laminate plant of this era, which is what makes the press the largest single fuel load on such a site.",
-              "kind": "facility",
-              "category": "energy",
-              "era": "1980s",
-              "inputs": [
-                "chem.natural-gas",
-                "facility.electricity"
-              ],
-              "confidence": "medium",
-              "note": "Heating platens with steam coils or embedded electric resistance elements is the ordinary press arrangement. Not established: whether the laminate supplier used gas- or oil-fired central steam or electric heat, or that the press was the largest fuel load on that site."
-            }
-          ]
-        },
-        {
-          "id": "mb.pcb.photoresist",
-          "name": "Dry-film photoresist, negative working",
-          "description": "A dry film about 25-40 um thick, on a polyester carrier, laminated onto the copper. Where the artwork film lets ultraviolet light through, the acrylate resist cross-links and hardens; the hardened areas stand up to the ferric chloride. Everything else dissolves away and the copper under it etches out. For a two-sided consumer board in 1983 dry film was already the default; modern shops more often print liquid resist, so the choice has flipped but the principle has not.",
-          "kind": "material",
-          "category": "plastics",
-          "era": "1980s",
-          "facts": [
-            {
-              "label": "Dry film thickness",
-              "value": "approx. 25-40 um"
-            },
-            {
-              "label": "Chemistry",
-              "value": "negative-working acrylate photopolymer on a polyester carrier"
-            },
-            {
-              "label": "Lamination temperature",
-              "value": "approx. 90-110 deg C"
-            }
-          ],
-          "inputs": [
-            "chem.photoresist"
-          ],
-          "note": "Period suppliers included Kodak and Dynachem. The resist chemistry itself is the shared node chem.photoresist; this node is the board-shop form factor of it.",
-          "children": [
-            {
-              "id": "mb.pcb.photoresist.carrier",
-              "name": "PET carrier film",
-              "description": "The polyester backing the resist is laminated from, peeled off after lamination and before exposure, leaving the resist on the copper. It is the same dimensionally stable polyester film as the artwork film stock, and it exists so the 25 um resist can be handled and rolled without touching.",
-              "kind": "material",
-              "category": "plastics",
-              "era": "1980s",
-              "inputs": [
-                "chem.polyester.pet"
-              ],
-              "confidence": "medium",
-              "note": "A thin dimensionally stable polyester film carrying the 25 um resist so it can be rolled and handled is ordinary dry-film construction. Not established: the carrier thickness or supplier for the film used on the 250407 board, or the peel timing."
-            },
-            {
-              "id": "mb.pcb.photoresist.laminate",
-              "name": "Film lamination of the resist",
-              "description": "The board is baked dry, the film is fed from a spool, heated, and pressed onto the copper by rubber-covered nip rollers. The rubber hardness matters: too hard and it embosses the fragile 35 um foil.",
-              "kind": "process",
-              "category": "board",
-              "era": "1980s",
-              "facts": [
-                {
-                  "label": "Control",
-                  "value": "nip rollers and a chill roll to set the film down"
-                }
-              ],
-              "inputs": [
-                "facility.electricity"
-              ],
-              "confidence": "medium",
-              "note": "Feeding dry film from a spool, heating it and pressing it onto baked-dry copper with nip rollers is ordinary lamination. Not established: the 90-110 deg C window on this line, the roller hardness, or the chill-roll setting used."
-            },
-            {
-              "id": "mb.pcb.photoresist.coat",
-              "name": "Surface clean and tack-free prep",
-              "description": "Before the resist goes on, the board is degreased and dried so the film lies flat. A tack-free prep was unusual on period boards; wet resist had an easier time of it, which is one reason modern processes moved.",
-              "kind": "process",
-              "category": "board",
-              "era": "1980s",
-              "inputs": [
-                "facility.electricity",
-                "facility.water"
-              ],
-              "note": "Wet resist offered the no-prep advantage; dry film offered the thickness control. Dry film won on thickness.",
-              "confidence": "medium"
-            },
-            "chem.photoresist"
-          ],
-          "confidence": "low"
-        },
-        {
-          "id": "mb.pcb.exposure",
-          "name": "UV exposure through the artwork film",
-          "description": "The artwork negative is laid against the resist and the board is flood-exposed in a vacuum-frame unit. In 1983 the lamp was a mercury-vapour or metal-halide source rich in the near ultraviolet where the acrylate resists are sensitive; fibre-optic exposure systems that pipe collimated light into a bed of glass rods were spreading through the later 1980s and gave far more even illumination.",
-          "kind": "process",
-          "category": "board",
-          "era": "1980s",
-          "facts": [
-            {
-              "label": "Exposure time",
-              "value": "seconds to tens of seconds, set by an integrating light meter"
-            },
-            {
-              "label": "Contact",
-              "value": "film pressed into the resist under vacuum to avoid any air gap"
-            }
-          ],
-          "inputs": [
-            "facility.electricity"
-          ],
-          "note": "An air gap between film and resist is the classic cause of a fuzzy, partly-etched trace edge on a two-sided board.",
-          "confidence": "medium",
-          "children": [
-            {
-              "id": "mb.pcb.exposure.vacframe",
-              "name": "Vacuum exposure frame",
-              "description": "A hinged platen with a rubber diaphragm. Film and resist are clamped and then evacuated so the film sits hard against the resist with no bubbles and no shadowing.",
-              "kind": "tool",
-              "category": "board",
-              "era": "1980s",
-              "inputs": [
-                "facility.electricity"
-              ],
-              "confidence": "medium",
-              "note": "Clamping film and resist under vacuum so the film sits hard with no bubbles or shadowing is ordinary contact exposure. Not established: the frame size, diaphragm material, or pump-down time for the 250407 exposures."
-            },
-            {
-              "id": "mb.pcb.exposure.lamp",
-              "name": "Mercury-vapour exposure lamp",
-              "description": "A quartz envelope filled with mercury vapour struck by an arc, rich in the near ultraviolet where the acrylate resists are sensitive. Needs a water-cooled jacket and a choke.",
-              "kind": "tool",
-              "category": "board",
-              "era": "1980s",
-              "inputs": [
-                "facility.electricity",
-                "facility.water"
-              ],
-              "confidence": "medium",
-              "note": "A mercury-vapour source rich in near ultraviolet where acrylate resists are sensitive is the ordinary exposure lamp. Not established: whether the 250407 exposure used mercury-vapour or metal-halide, its wattage, or the water-cooling and choke arrangement."
-            }
-          ]
-        },
-        {
-          "id": "mb.pcb.etch",
-          "name": "Ferric chloride etching",
-          "description": "The masked laminate goes into warm ferric chloride solution, which dissolves the unmasked copper and leaves traces, pads and ground pour standing. Copper removed along the way is recovered, and the etchant is periodically replenished or dumped. Because copper in solution poisons the bath, an etching line of this period was a chemical operation with a disposal problem attached, not just a tank.",
-          "kind": "process",
-          "category": "board",
-          "era": "1980s",
-          "facts": [
-            {
-              "label": "Etchant",
-              "value": "ferric chloride, commonly quoted at about 42 deg Baume, warmed to approx. 40-50 deg C"
-            },
-            {
-              "label": "Time for 35 um copper",
-              "value": "roughly 20-45 min"
-            },
-            {
-              "label": "Reaction",
-              "value": "2 FeCl3 + Cu -> 2 FeCl2 + CuCl2"
-            },
-            {
-              "label": "Chemistry limit",
-              "value": "copper in solution poisons the bath, so it is dumped and made fresh"
-            }
-          ],
-          "inputs": [
-            "chem.pcb-chemicals.etching.ferric-chloride",
-            "facility.water",
-            "facility.electricity"
-          ],
-          "note": "The general step is established: chemical etching divides the copper into separate conducting lines called tracks or circuit traces, pads for connections, vias to pass connections between layers of copper, and features such as solid conductive areas for electromagnetic shielding. The 2 FeCl3 + Cu -> 2 FeCl2 + CuCl2 stoichiometry follows from that and is not separately cited. Not established: that this line used ferric chloride rather than sodium persulphate or a cupric chloride bath, the 42 deg Baume figure, the 40-50 deg C, the 20-45 minute etch time for 35 um copper, and the practice of dumping and remaking the bath as copper accumulates. Period text consistently quotes 42 deg Baume ferric chloride around 45 deg C. Sodium persulfate was a real alternative for some shops. Modern practice is still ferric chloride, but with tighter control and a copper-recovery loop. The etchant itself, its Baume range and its regeneration are the shared node chem.pcb-chemicals.etching.ferric-chloride; this node is the board-shop step that uses it.",
-          "confidence": "medium",
-          "sources": [
-            "https://en.wikipedia.org/wiki/Printed_circuit_board"
-          ]
-        },
-        {
-          "id": "mb.pcb.strip",
-          "name": "Resist stripping and clean-up",
-          "description": "The cross-linked resist film is dissolved away in an aqueous caustic or ammoniated stripper, then the board is rinsed, given a mild acid clean to knock back any last residue, dried, and inspected.",
-          "kind": "process",
-          "category": "board",
-          "era": "1980s",
-          "facts": [
-            {
-              "label": "Stripper",
-              "value": "aqueous caustic soda or an ammoniated solvent"
-            },
-            {
-              "label": "Follow-up",
-              "value": "mild acid clean and deionised rinse"
-            }
-          ],
-          "inputs": [
-            "metal.caustic-soda",
-            "facility.water"
-          ],
-          "note": "Stripping and cleaning are where the etched board stops being a chemistry problem and starts being a mechanical one.",
-          "confidence": "medium"
-        },
-        {
-          "id": "mb.pcb.mill",
-          "name": "Routing and outline cutting",
-          "description": "In 1983 the board outline, the internal cut-outs and the expansion-port routing slot were milled mechanically on a CNC router with a carbide cutter. The slot is cut so that a thin projecting ear of laminate is left standing with copper on both faces: that ear is the board's edge-connector receptacle, and its copper is then selectively plated, so the slot geometry fixes the finger width and spacing that the case connector has to mate with. Laser routing existed but was not yet the commodity default for a board with no fine geometry.",
-          "kind": "process",
-          "category": "board",
-          "era": "1980s",
-          "inputs": [
-            "facility.electricity"
-          ],
-          "facts": [
-            {
-              "label": "Edge connector",
-              "value": "a female receptacle milled into the board, plated afterwards; the C64 mainboard has no board-edge fingers of its own"
-            }
-          ],
-          "note": "That last point is worth stating plainly, because it is a common misreading of a photograph of this board: on the C64 the mainboard carries the socket and the expansion adapter carries the gold fingers. Modern high-mix shops use CO2 or ultraviolet lasers for routing and depanelising because they need no tooling and leave no router burr; for this board either would have been far slower than milling.",
-          "confidence": "medium",
-          "children": [
-            {
-              "id": "mb.pcb.mill.cutter",
-              "name": "Carbide router cutter",
-              "description": "A tungsten-carbide end mill, often with a diamond-like coating, cutting laminate that is mostly glass fibre. Glass dust is abrasive, so tool life is short and the cutter is changed on a schedule.",
-              "kind": "tool",
-              "category": "board",
-              "era": "1980s",
-              "confidence": "medium",
-              "inputs": [
-                "metal.tungsten.carbide"
-              ],
-              "note": "A tungsten-carbide end mill cutting glass-filled laminate is ordinary routing practice, with short tool life from glass abrasion. Not established: the cutter diameter, coating, or change schedule for the 250407 outline and slot."
-            }
-          ]
-        },
-        {
-          "id": "mb.pcb.drill",
-          "name": "Drilling every component hole",
-          "description": "The board is drilled on a numerical-control drill for every component lead, jumper, jack and mounting hole. Because there are no vias, the drill programme is just a component position list; there is no barrel to plate afterwards and no second drill file to reconcile.",
-          "kind": "process",
-          "category": "board",
-          "era": "1980s",
-          "facts": [
-            {
-              "label": "Holes on this board",
-              "value": "of the order of 1200"
-            },
-            {
-              "label": "Dominant diameter",
-              "value": "approx. 1.1 mm for DIP and leaded parts"
-            },
-            {
-              "label": "Larger diameters",
-              "value": "approx. 1.6-4.3 mm for trimmer, fuse and mounting holes"
-            },
-            {
-              "label": "Fit",
-              "value": "hole set slightly oversize so the lead drops in freely for wave soldering"
-            }
-          ],
-          "note": "That a through-hole board has one drilled hole per component lead is established: originally, every electronic component had wire leads, and a PCB had holes drilled for each wire of each component, and the component leads were then inserted through the holes and soldered to the copper PCB traces. Not established: the order-of-1200 hole count, the 1.1 mm dominant diameter, the 1.6-4.3 mm larger diameters, or that the drill programme was a bare component position list with no second drill file to reconcile. 0.6 mm leads sat in roughly 0.8-1.0 mm holes. The oversize is deliberate: the wave has to fill the hole, and a tight hole makes an unfilled, dry joint.",
-          "confidence": "medium",
-          "sources": [
-            "https://en.wikipedia.org/wiki/Printed_circuit_board",
-            "https://github.com/bwack/C64-250407-Replica-KiCad"
-          ],
-          "children": [
-            {
-              "id": "mb.pcb.drill.ncd",
-              "name": "NC drill and tool change",
-              "description": "A tape-fed drill head steps through the tool table, swapping bits for the several diameters the board needs, over pinned or vacuum-held fixtures. A bit-management and drill-jig system holds sub-millimetre position accuracy; drill wander is what breaks a fine-pitch DIP row.",
-              "kind": "tool",
-              "category": "board",
-              "era": "1980s",
-              "inputs": [
-                "facility.electricity"
-              ],
-              "confidence": "medium",
-              "note": "Stepping a tape-fed head through a tool table over pinned or vacuum-held fixtures is ordinary numerical-control drilling. Not established: the drill make, tape format, or sub-millimetre positioning actually held on the 250407 order."
-            },
-            {
-              "id": "mb.pcb.drill.bit",
-              "name": "Carbide drill bit",
-              "description": "Tungsten-carbide or high-speed-steel bits, ground and resharpened. Laminated glass plus copper is abrasive, and the hole is the one feature that cannot be reworked once drilled wrong.",
-              "kind": "tool",
-              "category": "board",
-              "era": "1980s",
-              "confidence": "medium",
-              "inputs": [
-                "metal.tungsten.carbide"
-              ],
-              "note": "Tungsten-carbide bits are very hard but eventually wear out or break, and drilling is a considerable part of the cost of a through-hole board. Not established: the bit supplier, diameters stocked, or resharpening routine for the 250407 drill programme.",
-              "sources": [
-                "https://en.wikipedia.org/wiki/Printed_circuit_board"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "mb.pcb.vias",
-          "name": "Layer changes without vias",
-          "description": "The most distinctive fact about the C64 mainboard, and the reason its copper is shaped the way it is. There are no vias and no plated-through holes at all. A connection that has to move from the component side to the solder side goes through the hole of a component lead: every resistor, capacitor, diode and DIP pin doubles as a via. Where a layer change was needed with no component available, the board carried a short single-core tinned wire jumper, hand-fitted and hand-soldered after wave soldering. There are exactly two of those on the 250407, referenced E1 and E2 on the artwork.",
-          "kind": "process",
-          "category": "board",
-          "era": "1983",
-          "facts": [
-            {
-              "label": "Vias on board",
-              "value": "0"
-            },
-            {
-              "label": "Wire jumpers",
-              "value": "2 (E1 solid, E2 dashed on the artwork)"
-            },
-            {
-              "label": "What they connect",
-              "value": "a top-side signal to a bottom-side return"
-            },
-            {
-              "label": "Layers",
-              "value": "2 copper layers, no internal plane"
-            }
-          ],
-          "sources": [
-            "https://github.com/bwack/C64-250407-Replica-KiCad"
-          ],
-          "note": "The saving was real: skipping the barrel plating line removed a whole wet-chemical operation and let the board stay two-sided and cheap. The cost was longer traces and a harder time with high-speed return current, which is why the layout leans on wide pours instead of a plane. A modern board would put a via or a zero-ohm resistor in both places.",
-          "confidence": "high",
-          "children": [
-            {
-              "id": "mb.pcb.vias.plane",
-              "name": "Ground pour instead of a ground plane",
-              "description": "With no internal plane layer, the two signal layers have to carry return current on their own copper, so the layout used wide ground pours and heavy copper wherever return current had to flow. Modern boards solve the same electromagnetic problem with a dedicated plane, which is the main reason vias became universal. This is an aside on the layout rather than a separate operation.",
-              "kind": "note",
-              "category": "board",
-              "era": "1980s",
-              "confidence": "medium",
-              "note": "Using wide ground pours on the two signal layers where a modern board would use a dedicated plane is the documented layout strategy. Not established: the pour widths, clearances, or current paths on the 250407 artwork."
-            }
-          ]
-        },
-        {
-          "id": "mb.pcb.finish",
-          "name": "Surface finish: pads and edge contacts",
-          "description": "After etching the copper is protected, made solderable, and given a wear-resistant finish where it will be touched. On this board, because there are no plated barrels, the finish job is far simpler than on a modern via board: a solderable coating on the pads and a hard plating on the contact surfaces inside the three board-mounted sockets. Exposed copper that is neither coated nor plated gets an anti-tarnish treatment - a benzotriazole-type organic protectant that stops it darkening in storage and handling, which is cheap, invisible, and easy to skip until someone notices the boards going brown in the box.",
-          "kind": "process",
-          "category": "board",
-          "era": "1980s",
-          "confidence": "medium",
-          "children": [
-            {
-              "id": "mb.pcb.finish.hasl",
-              "name": "HASL solder level on the pads",
-              "description": "Exposed copper is coated in molten solder by carrying the board through a wave or a drag of 63/37 tin-lead and blowing or brushing off the excess, leaving a flat solderable layer that will not corrode. This is the period default for a two-sided consumer board with no vias, and it lines up with the solder the wave machine is already using.",
-              "kind": "process",
-              "category": "metals",
-              "era": "1980s",
-              "facts": [
-                {
-                  "label": "Alloy",
-                  "value": "63/37 tin-lead, matching the wave solder"
-                },
-                {
-                  "label": "Thickness",
-                  "value": "a few micrometres of tin-lead over copper"
-                },
-                {
-                  "label": "Bath temperature",
-                  "value": "hot enough to keep the alloy molten, several degrees above 183 deg C"
-                }
-              ],
-              "inputs": [
-                "metal.solder"
-              ],
-              "note": "Modern boards use ENIG, immersion tin or OSP instead; HASL went out of fashion because its coating is soft and its thermal expansion mismatch causes failures in thermal cycling. It was, however, ideal for a board that was going straight into a tin pot.",
-              "confidence": "medium"
-            },
-            {
-              "id": "mb.pcb.finish.selective",
-              "name": "Selective plating of the edge contacts",
-              "description": "Only the contact surfaces get a hard, wear-resistant metal. The board is either plated overall and the gold stripped back from everywhere except the contacts, or the contacts alone are exposed to the bath with the rest shielded by a fountain-plater weir or a plating rack. The usual route is a nickel underplate followed by electrolytic gold: gold dissolves in a cyanide complex with a fine gold anode and plates onto the rack-held board, which is still the standard because the bath is stable and fast and still needs the same destruction-and-recovery regime. Sometimes the whole board was immersion gold-plated instead, which is simpler and gives softer gold.",
-              "kind": "process",
-              "category": "metals",
-              "era": "1980s",
-              "facts": [
-                {
-                  "label": "Underplate",
-                  "value": "nickel, commonly electroless with a thin electrolytic strike"
-                },
-                {
-                  "label": "Gold thickness",
-                  "value": "hard gold, roughly 1-2.5 um for a card-edge finger"
-                },
-                {
-                  "label": "Gold bath",
-                  "value": "cyanide-based, gold cyanide or gold sulfite"
-                }
-              ],
-              "inputs": [
-                "metal.gold.ingot",
-                "metal.nickel.ingot"
-              ],
-              "note": "On the C64 mainboard specifically these contacts are inside the female expansion, user and cassette sockets, so the gold belongs to a purchased connector; the mating plug cards carry the fingers. The plating chemistry is the same either way.",
-              "confidence": "medium"
-            },
-            {
-              "id": "mb.pcb.finish.pth",
-              "name": "No plated-barrel line on this board",
-              "description": "A deliberate absence, recorded here so it does not read as an omission. The C64 mainboard skips the entire through-hole plating sequence a via board runs: hole desmear, electroless copper seed, electrolytic copper build, nickel, gold. None of that equipment ever saw this board, and any account that puts electroless copper into a C64 mainboard is describing a different machine.",
-              "kind": "note",
-              "category": "metals",
-              "era": "1980s",
-              "note": "Not established: that the board has no plated barrels. The replica layout has no vias, but a bill of materials cannot evidence the absence of a plating line.",
-              "confidence": "medium"
-            }
-          ],
-          "note": "Protecting etched copper with a solderable coating plus a hard plating on touched contacts is ordinary finish practice. Not established: which pads received solder-level coating versus selective plating on the 250407 board, or the anti-tarnish treatment for bare copper.",
-          "sources": [
-            "https://en.wikipedia.org/wiki/Solder_mask"
-          ]
-        },
-        {
-          "id": "mb.pcb.mask",
-          "name": "Epoxy solder mask on both sides",
-          "description": "Green epoxy ink is screen-printed over the whole board with apertures left over every pad and hole. It is the green the C64 has always been. Without it the board shorts from a fingerprint, a solder splash or a screw, and the white legend would disappear under bare copper. Period inks were solvent-based epoxies cured in infrared or hot-air ovens; modern liquid solder mask is still screen-printed and cured far more cleanly, and liquid solder mask plus ENIG is now the standard pairing.",
-          "kind": "process",
-          "category": "board",
-          "era": "1980s",
-          "facts": [
-            {
-              "label": "Ink",
-              "value": "epoxy, screen-printed through a fine mesh"
-            },
-            {
-              "label": "Cure",
-              "value": "UV or thermal, typically around 150 deg C for half an hour"
-            },
-            {
-              "label": "Dry thickness",
-              "value": "approx. 0.01-0.02 mm"
-            },
-            {
-              "label": "Aperture allowance",
-              "value": "a little larger than the pad, so pads do not look ringed"
-            }
-          ],
-          "inputs": [
-            "c64.decor.screen-print.mesh",
-            "facility.electricity"
-          ],
-          "note": "The screen mesh is the shared node written by the chassis fragment, because the same stainless wire mesh and photosensitive emulsion print the case legends and the board legend. The epoxy ink itself has no node of its own anywhere in this tree, which is a gap.",
-          "confidence": "medium"
-        },
-        {
-          "id": "mb.pcb.legend",
-          "name": "White silkscreen legend and compartment boxes",
-          "description": "Reference designators, block outlines and assembly notes are printed in white epoxy ink over the cured mask through a tensioned fine-mesh screen, then baked to cure the ink onto the mask. Commodore drew boxes around functional blocks, the so-called compartments, and used extra ink colours in bands and outlines to colour-code regions of the board and mark the television standard. Each extra colour is a separate screen pass with its own screen, squeegee and cure, which is a real cost and a real time step on the line.",
-          "kind": "process",
-          "category": "board",
-          "era": "1983",
-          "inputs": [
-            "c64.decor.screen-print.mesh",
-            "facility.electricity"
-          ],
-          "confidence": "medium",
-          "children": [
-            {
-              "id": "mb.pcb.legend.screen",
-              "name": "Screen printing and bake",
-              "description": "A fine-mesh screen coated with photosensitive emulsion is stretched and tensioned over the board, epoxy ink squeegeed through, and the board then baked to cure the ink onto the mask.",
-              "kind": "process",
-              "category": "board",
-              "era": "1980s",
-              "inputs": [
-                "c64.decor.screen-print.mesh",
-                "facility.electricity"
-              ],
-              "confidence": "medium",
-              "note": "Squeegeeing epoxy ink through a tensioned emulsion-coated mesh and baking it onto the mask is ordinary legend printing. Not established: the mesh count, emulsion type, or bake time and temperature for the 250407 legend."
-            },
-            {
-              "id": "mb.pcb.legend.colour",
-              "name": "Coloured silkscreen bands",
-              "description": "A separate pass in each extra colour, with its own screen, to draw the colour bands and outlines that mark functional regions and the PAL or NTSC variant. A modern cosmetic imitation of this is a coloured solder mask; in 1983 it was extra ink passes.",
-              "kind": "process",
-              "category": "board",
-              "era": "1980s",
-              "inputs": [
-                "c64.decor.screen-print.mesh",
-                "facility.electricity"
-              ],
-              "note": "The exact set of colours used on the 250407 has not been confirmed here.",
-              "confidence": "low"
-            }
-          ],
-          "note": "A board may be printed with a legend identifying components, test points, or identifying text, and silkscreen printing was the original method. Not established: the ink formulation, mesh, or bake used for the white 250407 legend, or the compartment-box and colour-band layout.",
-          "sources": [
-            "https://en.wikipedia.org/wiki/Printed_circuit_board"
-          ]
-        },
-        {
-          "id": "mb.pcb.inspection",
-          "name": "Electrical test of the bare board",
-          "description": "Before any component goes on, the blank is checked for shorts between nets and for opens in the artwork. In 1983 this was a continuity and insulation-resistance tester plus a careful visual check under a lamp and a loupe. Automated optical inspection existed by 1983 but was a line investment rather than an assumption on a commodity board.",
-          "kind": "process",
-          "category": "board",
-          "era": "1980s",
-          "inputs": [
-            "facility.electricity"
-          ],
-          "note": "Modern lines AOI every board automatically and add impedance and resistance checks as well.",
-          "confidence": "medium"
-        },
-        {
           "id": "mb.pcb.bareboard",
           "name": "Finished bare board, fab no. 250406",
           "description": "A drilled, etched, stripped, masked, legended and finished blank ready for component insertion. At 1983 commodity prices a two-layer 1.6 mm consumer board of this size cost on the order of one to two dollars.",
@@ -712,6 +76,60 @@
           ],
           "note": "The $1-2 figure is the era cost quoted for the C64 printed-circuit board.",
           "confidence": "medium"
+        }
+      ],
+      "edges": [
+        {
+          "to": "mb.pcb.laminate",
+          "rel": "made of"
+        },
+        {
+          "to": "mb.pcb.exposure",
+          "rel": "step"
+        },
+        {
+          "to": "mb.pcb.etch",
+          "rel": "step"
+        },
+        {
+          "to": "mb.pcb.strip",
+          "rel": "step"
+        },
+        {
+          "to": "mb.pcb.mill",
+          "rel": "step"
+        },
+        {
+          "to": "mb.pcb.drill",
+          "rel": "step"
+        },
+        {
+          "to": "mb.pcb.vias",
+          "rel": "step"
+        },
+        {
+          "to": "mb.pcb.finish",
+          "rel": "step"
+        },
+        {
+          "to": "mb.pcb.mask",
+          "rel": "step"
+        },
+        {
+          "to": "mb.pcb.legend",
+          "rel": "step"
+        },
+        {
+          "to": "mb.pcb.inspection",
+          "rel": "step"
+        },
+        {
+          "to": "mb.pcb.laminate.press",
+          "rel": "uses"
+        },
+        {
+          "to": "mb.photo",
+          "rel": "step"
         }
       ]
     },
@@ -749,10 +167,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Soldering"
       ],
-      "inputs": [
-        "metal.solder",
-        "chem.rosin"
-      ],
+      "inputs": [],
       "children": [
         {
           "id": "mb.solder.wave",
@@ -796,11 +211,7 @@
               "kind": "part",
               "category": "assembly",
               "era": "1980s",
-              "inputs": [
-                "metal.steel.sheet",
-                "metal.hematite",
-                "metal.coke"
-              ],
+              "inputs": [],
               "confidence": "medium",
               "note": "A welded mild-steel frame carrying pot, tunnel, conveyor, hood and flux plumbing is the ordinary machine body. Not established: the frame dimensions, weld method, or steel grade on the C64 wave machine."
             },
@@ -814,25 +225,17 @@
               "inputs": [
                 "facility.electricity"
               ],
-              "children": [
-                {
-                  "id": "mb.solder.wave.preheat.air",
-                  "name": "Recirculating hot-air preheat",
-                  "description": "Preheating is by moving air or radiant tubes, with the zone held below the solder melting point so nothing melts early. Too little preheat gives thermally shocked joints; too much dries the resin and lifts pads off the laminate. A board full of large electrolytics takes a long time to come through, and preheater capacity is usually what sets the conveyor speed for the whole line.",
-                  "kind": "process",
-                  "category": "assembly",
-                  "era": "1980s",
-                  "inputs": [
-                    "facility.electricity"
-                  ],
-                  "confidence": "medium",
-                  "note": "Moving-air or radiant-tube preheat held below the solder melting point is ordinary tunnel practice. Not established: which method the C64 tunnel used, its zone temperatures, or the conveyor-speed limit set by large electrolytics."
-                }
-              ],
+              "children": [],
               "confidence": "medium",
               "note": "Preheating helps to accelerate the soldering process and to prevent thermal shock, while driving off moisture that would otherwise spit solder from holes. Not established: the 120 deg C figure, tunnel length, or dwell time on the C64 line.",
               "sources": [
                 "https://en.wikipedia.org/wiki/Wave_soldering"
+              ],
+              "edges": [
+                {
+                  "to": "mb.solder.wave.preheat.air",
+                  "rel": "uses"
+                }
               ]
             },
             {
@@ -842,22 +245,17 @@
               "kind": "part",
               "category": "assembly",
               "era": "1980s",
-              "children": [
-                {
-                  "id": "mb.solder.wave.foam.stone",
-                  "name": "Sintered porous stone",
-                  "description": "A sintered polyethylene or polyurethane stone whose pore size is chosen to bubble air finely through the flux. It clogs with crystallised flux and has to be soaked out on a schedule.",
-                  "kind": "material",
-                  "category": "plastics",
-                  "era": "1980s",
-                  "confidence": "medium",
-                  "note": "A sintered porous stone bubbling air finely through flux is the ordinary foamer element. Not established: the stone polymer, pore size, or soak-out schedule on the C64 line."
-                }
-              ],
+              "children": [],
               "confidence": "medium",
               "note": "Flux in wave soldering cleans the parts to be soldered, principally oxide layers, and foaming lays a thin even film that spraying or brushing never matches. Not established: the flux formulation, foam height, or film thickness on the C64 line.",
               "sources": [
                 "https://en.wikipedia.org/wiki/Wave_soldering"
+              ],
+              "edges": [
+                {
+                  "to": "mb.solder.wave.foam.stone",
+                  "rel": "contains"
+                }
               ]
             },
             {
@@ -867,10 +265,7 @@
               "kind": "part",
               "category": "assembly",
               "era": "1980s",
-              "inputs": [
-                "metal.stainless.304",
-                "facility.electricity"
-              ],
+              "inputs": [],
               "confidence": "medium",
               "note": "A stainless or phenolic chain carrying boards by their edge in spaced fixtures is the ordinary wave-soldering transport. Not established: the chain pitch, fixture design, or edge-clearance practice on the C64 line."
             }
@@ -944,34 +339,6 @@
           ]
         },
         {
-          "id": "mb.solder.reliability",
-          "name": "Copper-tin intermetallic at the pad",
-          "description": "Solder does not merely sit on a pad, it reacts with it. Within seconds of contact, tin and copper fuse at the surface into Cu6Sn5, and a Cu3Sn layer follows as the joint ages. That intermetallic is the actual metallurgical bond holding the joint, and because its growth is limited by diffusion through itself, higher-temperature solders containing silver or gold exist purely to slow the reaction at the pad. Fully intermetallised joints are brittle, which is the origin of solder fatigue and the reason a leaded joint is forgiving in a way a lead-free one is not.",
-          "kind": "material",
-          "category": "metals",
-          "era": "1980s",
-          "facts": [
-            {
-              "label": "First phase",
-              "value": "Cu6Sn5 at the pad surface within seconds of contact"
-            },
-            {
-              "label": "Later phase",
-              "value": "Cu3Sn grows under the Cu6Sn5 as the joint ages"
-            },
-            {
-              "label": "Growth control",
-              "value": "diffusion-limited through the intermetallic itself"
-            },
-            {
-              "label": "Failure mode",
-              "value": "brittle, cracks under thermal cycling"
-            }
-          ],
-          "note": "Not established: the Cu6Sn5 then Cu3Sn sequence, the diffusion-limited growth argument and the brittleness claim, from any source read for this node. The intermetallic bond is a standard result in soldering metallurgy but the specific phase sequence here is not cited.",
-          "confidence": "medium"
-        },
-        {
           "id": "mb.solder.hand",
           "name": "Hand soldering on the line",
           "description": "Soldering iron, solder wire and pliers on a bench under a smoke extraction arm. Used for the connectors, the fuse clips, the wire jumpers, the big electrolytics and every joint the inspector rejected. A small minority of joints, but where the line rejects come from too. A small hand-held solder pot or a solder fountain was used for the fuse clips and heavy connector leads where a wave cannot reach.",
@@ -992,9 +359,7 @@
               "value": "oxygen-free copper, often plated so it does not dissolve away"
             }
           ],
-          "inputs": [
-            "facility.electricity"
-          ],
+          "inputs": [],
           "confidence": "medium",
           "children": [
             {
@@ -1005,8 +370,7 @@
               "category": "assembly",
               "era": "1980s",
               "inputs": [
-                "facility.electricity",
-                "metal.copper"
+                "facility.electricity"
               ],
               "confidence": "medium",
               "note": "A heater in a barrel with a replaceable tinned copper tip is the ordinary soldering iron. Not established: whether the C64 line used nichrome or cartridge heaters, tip plating, or the tinned-tip maintenance routine.",
@@ -1031,6 +395,12 @@
           "note": "Hand work with iron, wire and pliers under an extraction arm for connectors, fuse clips, jumpers and rejects is ordinary bench practice. Not established: the 25-60 W iron power, 315-380 deg C tip temperature, or copper-tip construction on the C64 line.",
           "sources": [
             "https://en.wikipedia.org/wiki/Soldering"
+          ],
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
           ]
         },
         {
@@ -1040,11 +410,29 @@
           "kind": "process",
           "category": "assembly",
           "era": "1980s",
-          "inputs": [
-            "facility.electricity"
-          ],
+          "inputs": [],
           "note": "Modern lead-free practice would drag a solder bead along the pins to wick off the excess and, failing that, use a solder pot. The prevalence of resoldered connector joints on forty-year-old C64 boards is decent evidence that these joints were marginal from the start.",
-          "confidence": "medium"
+          "confidence": "medium",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "to": "mb.solder.reliability",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.solder",
+          "rel": "consumes"
+        },
+        {
+          "to": "chem.rosin",
+          "rel": "consumes"
         }
       ]
     },
@@ -1096,9 +484,7 @@
               "value": "at the component maker or the insertion machine, not by hand on the line"
             }
           ],
-          "inputs": [
-            "facility.electricity"
-          ],
+          "inputs": [],
           "note": "Modern practice forms nothing and mounts surface-mount parts; lead-formed axial parts are essentially gone from new consumer hardware.",
           "confidence": "medium",
           "children": [
@@ -1137,9 +523,7 @@
                 }
               ],
               "inputs": [
-                "facility.electricity",
-                "metal.hematite",
-                "metal.coke"
+                "facility.electricity"
               ],
               "confidence": "medium",
               "children": [
@@ -1167,12 +551,16 @@
               "category": "assembly",
               "era": "1980s",
               "inputs": [
-                "metal.steel.sheet",
-                "metal.hematite",
                 "facility.electricity"
               ],
               "confidence": "medium",
               "note": "Holding the board in a jig with locating pins through insertion, wave and test is ordinary line practice. Not established: the jig material, pin layout, or whether the same jig family carried the 250407 board through all three stages."
+            }
+          ],
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
             }
           ]
         },
@@ -1218,20 +606,11 @@
           ],
           "note": "These are visible on the bottom of the finished board and are now a small collector's item in their own right. A modern board would put a via or a zero-ohm resistor there instead; none of those were on this board.",
           "confidence": "medium",
-          "children": [
+          "children": [],
+          "edges": [
             {
-              "id": "mb.assembly.jumpers.wire",
-              "name": "Tinned single-core jumper wire",
-              "description": "A short length of fine tinned copper wire, cut and formed to the two holes, fitted and soldered by hand. It is the mechanical ancestor of the jumper link on every later board.",
-              "kind": "material",
-              "category": "metals",
-              "era": "1980s",
-              "inputs": [
-                "metal.copper",
-                "metal.tin"
-              ],
-              "note": "Modern equivalents are 0-ohm resistors, jumper pins, or just a via.",
-              "confidence": "medium"
+              "to": "mb.assembly.jumpers.wire",
+              "rel": "consumes"
             }
           ]
         },
@@ -1297,14 +676,18 @@
           "kind": "process",
           "category": "assembly",
           "era": "1983",
-          "inputs": [
-            "facility.electricity"
-          ],
+          "inputs": [],
           "sources": [
             "https://spectrum.ieee.org/commodore-64"
           ],
           "note": "The engineering team's stated culture was that if a product worked it shipped, and that quality control was not coming close enough to where it should have been. That is visible in this subsystem as rework rather than scrap.",
-          "confidence": "medium"
+          "confidence": "medium",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         },
         {
           "id": "mb.assembly.volume",
@@ -1372,9 +755,7 @@
           "kind": "process",
           "category": "assembly",
           "era": "1980s",
-          "inputs": [
-            "facility.electricity"
-          ],
+          "inputs": [],
           "note": "A modern flying-probe or X-ray system would do this without a custom fixture; in 1983 the bed of nails was the economical choice at volume. The sprung probe pins themselves are the shared node facility.test-equipment.needle-probe.",
           "confidence": "medium",
           "children": [
@@ -1385,13 +766,17 @@
               "kind": "process",
               "category": "assembly",
               "era": "1980s",
-              "inputs": [
-                "facility.electricity"
-              ],
+              "inputs": [],
               "confidence": "medium",
               "note": "In-circuit testing checks for shorts, opens, resistance, capacitance and other basic quantities showing whether assembly was correctly fabricated. Not established: the thresholds, which nets were probed, or whether absolute values were measured on the 250407 fixture.",
               "sources": [
                 "https://en.wikipedia.org/wiki/In-circuit_testing"
+              ],
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
               ]
             },
             {
@@ -1401,11 +786,15 @@
               "kind": "process",
               "category": "assembly",
               "era": "1980s",
-              "inputs": [
-                "facility.electricity"
-              ],
+              "inputs": [],
               "confidence": "medium",
-              "note": "Checking that the right part is seated in the right place is a distinct and necessary test on a board with dozens of sockets and passive parts. Not established: whether the C64 line used push verifiers, visual checks, continuity checks, or a mix for this step."
+              "note": "Checking that the right part is seated in the right place is a distinct and necessary test on a board with dozens of sockets and passive parts. Not established: whether the C64 line used push verifiers, visual checks, continuity checks, or a mix for this step.",
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
+              ]
             },
             {
               "id": "mb.test.ict.tester",
@@ -1416,14 +805,19 @@
               "era": "1980s",
               "inputs": [
                 "facility.electricity",
-                "facility.test-equipment.needle-probe",
-                "metal.copper"
+                "facility.test-equipment.needle-probe"
               ],
               "confidence": "medium",
               "note": "A rack of switching electronics with a go or no-go readout is ordinary 1980s digital test equipment. Not established: the tester make or model, relay-matrix size, or display type used for the 250407 board.",
               "sources": [
                 "https://en.wikipedia.org/wiki/In-circuit_testing"
               ]
+            }
+          ],
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
             }
           ]
         },
@@ -1478,7 +872,6 @@
               "category": "assembly",
               "era": "1980s",
               "inputs": [
-                "metal.steel.sheet",
                 "facility.electricity"
               ],
               "confidence": "medium",
@@ -1490,9 +883,7 @@
                   "kind": "part",
                   "category": "power",
                   "era": "1980s",
-                  "inputs": [
-                    "facility.electricity"
-                  ],
+                  "inputs": [],
                   "confidence": "medium",
                   "note": "A regulated bench supply with a current limit is the ordinary instrument for powering a board under test. Not established: the make, voltage accuracy, or current-limit setting of the supply on the C64 test cradle."
                 }
@@ -1506,11 +897,15 @@
               "kind": "process",
               "category": "assembly",
               "era": "1980s",
-              "inputs": [
-                "facility.electricity"
-              ],
+              "inputs": [],
               "confidence": "medium",
-              "note": "Checking every key through the soldered ribbon is the ordinary way to cover the connector, ribbon, matrix and scan routine together. Not established: the key order tested, the failure criteria, or that the ribbon joint was the dominant failure found."
+              "note": "Checking every key through the soldered ribbon is the ordinary way to cover the connector, ribbon, matrix and scan routine together. Not established: the key order tested, the failure criteria, or that the ribbon joint was the dominant failure found.",
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
+              ]
             }
           ]
         },
@@ -1579,9 +974,7 @@
               "category": "assembly",
               "era": "1980s",
               "inputs": [
-                "facility.electricity",
-                "metal.nickel",
-                "metal.chromium"
+                "facility.electricity"
               ],
               "note": "Heat is the cheap accelerator of every silicon and soldering defect there is.",
               "confidence": "medium",
@@ -1593,9 +986,7 @@
                   "kind": "part",
                   "category": "assembly",
                   "era": "1980s",
-                  "inputs": [
-                    "metal.steel.sheet"
-                  ],
+                  "inputs": [],
                   "confidence": "medium",
                   "note": "A steel frame carrying powered machines at temperature is the ordinary burn-in rack. Not established: the rack dimensions, shelf count, ventilation arrangement, or whether the frame was structural steel or sheet metal on the C64 line."
                 }
@@ -1614,9 +1005,7 @@
           "kind": "process",
           "category": "packaging",
           "era": "1983",
-          "inputs": [
-            "facility.electricity"
-          ],
+          "inputs": [],
           "confidence": "medium",
           "children": [
             {
@@ -1626,14 +1015,24 @@
               "kind": "process",
               "category": "assembly",
               "era": "1980s",
-              "inputs": [
-                "facility.electricity"
-              ],
+              "inputs": [],
               "confidence": "medium",
-              "note": "Exercising control and serial ports with known-good peripherals or loopback plugs is ordinary final-test practice. Not established: that the C64 line used loopback plugs, which peripherals served as references, or where field failures of this era clustered."
+              "note": "Exercising control and serial ports with known-good peripherals or loopback plugs is ordinary final-test practice. Not established: that the C64 line used loopback plugs, which peripherals served as references, or where field failures of this era clustered.",
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
+              ]
             }
           ],
-          "note": "A last power-on pass over the cased machine before packing is ordinary factory practice. Not established: which ports or functions the C64 final pass covered, how long it ran, or what fraction of machines saw it."
+          "note": "A last power-on pass over the cased machine before packing is ordinary factory practice. Not established: which ports or functions the C64 final pass covered, how long it ran, or what fraction of machines saw it.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         }
       ]
     },
@@ -1671,9 +1070,7 @@
           "kind": "process",
           "category": "board",
           "era": "1983",
-          "inputs": [
-            "facility.electricity"
-          ],
+          "inputs": [],
           "confidence": "medium",
           "children": [
             {
@@ -1695,37 +1092,16 @@
                   "kind": "part",
                   "category": "optics",
                   "era": "1983",
-                  "inputs": [
-                    "facility.electricity"
-                  ],
+                  "inputs": [],
                   "confidence": "medium",
-                  "children": [
+                  "children": [],
+                  "note": "A high-resolution green or white phosphor CRT is the standard layout-inspection display. Not established: the size, resolution, or phosphor of the display that showed the 251137 layout, or its refresh and drive electronics.",
+                  "edges": [
                     {
-                      "id": "mb.photo.design.workstation.display.glass",
-                      "name": "CRT envelope glass",
-                      "description": "The bulb is soda-lime glass formed on a glass lathe from the same kind of batch as the reinforcing cloth: silica sand plus limestone plus alkali. A design workstation's screen is a small consumer item, but it is the terminal through which every copper trace of the board was examined.",
-                      "kind": "material",
-                      "category": "optics",
-                      "era": "1980s",
-                      "inputs": [
-                        "metal.silica-sand",
-                        "metal.limestone"
-                      ],
-                      "confidence": "medium",
-                      "note": "A CRT bulb in soda-lime glass from silica sand, limestone and alkali is standard glass practice. Not established: the supplier, bulb size, or forming method for the envelope of the layout station display."
+                      "to": "mb.photo.design.workstation.display.glass",
+                      "rel": "contains"
                     }
-                  ],
-                  "note": "A high-resolution green or white phosphor CRT is the standard layout-inspection display. Not established: the size, resolution, or phosphor of the display that showed the 251137 layout, or its refresh and drive electronics."
-                },
-                {
-                  "id": "mb.photo.design.workstation.storage",
-                  "name": "Plot-file storage media",
-                  "description": "Plot files and library data were written to nine-track tape, then to 8-inch floppy disks. The magnetic oxide on a thin polymer backing is the physical carrier the jobbing house receives. This is the handover point between design and fabrication.",
-                  "kind": "material",
-                  "category": "computing",
-                  "era": "1983",
-                  "confidence": "medium",
-                  "note": "Nine-track tape and 8-inch floppy disks with magnetic oxide on polymer backing are the standard carriers of the period. Not established: which medium carried the 251137 plot files, at what density, or where handover between design and fabrication occurred."
+                  ]
                 }
               ],
               "note": "A dedicated workstation with its own storage and high-resolution monochrome display plus plotter and digitizer is the standard early-1980s layout station. Not established: the vendor, processor, memory size, or desk peripherals of the station that held the 251137 database."
@@ -1741,7 +1117,13 @@
               "note": "Taping mylar over a plot, drawing changes and digitising them back is a documented revision loop. Not established: that any 250407 copper shape came from such an overlay, which nets were affected, or the digitizer type."
             }
           ],
-          "note": "Editing traces, pads and drill data on a vendor workstation and writing out plot files is standard early-1980s practice. Not established: which vendor system held the 251137 database, whether handover was nine-track tape or 8-inch floppy, or how media reached the jobbing house."
+          "note": "Editing traces, pads and drill data on a vendor workstation and writing out plot files is standard early-1980s practice. Not established: which vendor system held the 251137 database, whether handover was nine-track tape or 8-inch floppy, or how media reached the jobbing house.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         },
         {
           "id": "mb.photo.cam",
@@ -1750,9 +1132,7 @@
           "kind": "process",
           "category": "board",
           "era": "1983",
-          "inputs": [
-            "facility.electricity"
-          ],
+          "inputs": [],
           "note": "A later twist on the C64 itself: owners of later board revisions found the layouts so tight that home repair needed bodge wires across the copper. That is a board designed to the limit.",
           "confidence": "medium",
           "children": [
@@ -1768,6 +1148,12 @@
               ],
               "note": "On this board the drill programme is trivial to split out from the copper data, precisely because there are no vias: the drill file is only component holes, mounting holes and the connector slots. A via-heavy board of the same era is where plot data and drill data were most often confused, and the result was a hole in the wrong place.",
               "confidence": "high"
+            }
+          ],
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
             }
           ]
         },
@@ -1800,23 +1186,6 @@
               ]
             },
             {
-              "id": "mb.photo.plotter.film",
-              "name": "Artwork film stock",
-              "description": "A high-contrast, dimensionally stable photographic film that the plotter exposes and the shop develops into a finished mask. It must hold its geometry over a store door and be opaque where there is copper. The base is a dimensionally stable polyester, the same polymer family as the dry-film resist carrier used on the board itself.",
-              "kind": "material",
-              "category": "board",
-              "era": "1980s",
-              "inputs": [
-                "chem.photoresist",
-                "chem.polyester.pet"
-              ],
-              "confidence": "medium",
-              "note": "High-contrast dimensionally stable film on a polyester base is the standard artwork medium. Not established: the brand, thickness, or minimum density the 251137 film was ordered to, or its storage life.",
-              "sources": [
-                "https://en.wikipedia.org/wiki/Gerber_format"
-              ]
-            },
-            {
               "id": "mb.photo.plotter.pen",
               "name": "Pen plotter",
               "description": "A carriage carrying a light-sensitive pen draws the artwork directly on film or mylar. Simple and reliable, but slow, with real line-width variation, so it was being displaced by the electrostatic plotter through the early 1980s. Still used for check plots and for prototype single-layer boards well into the 1980s.",
@@ -1840,7 +1209,13 @@
               "note": "Laser writing of film or resist is the documented successor to corona-discharge plotting. Not established: when the fabricator adopted it, or that any 251137 layer was laser-plotted; the board itself predates the changeover."
             }
           ],
-          "note": "That plot files drive a photoplotter drawing copper artwork onto film is standard board-shop practice. Not established: where the 251137 plot was run, or that the plotter was the fabricator's most valuable single asset."
+          "note": "That plot files drive a photoplotter drawing copper artwork onto film is standard board-shop practice. Not established: where the 251137 plot was run, or that the plotter was the fabricator's most valuable single asset.",
+          "edges": [
+            {
+              "to": "mb.photo.plotter.film",
+              "rel": "consumes"
+            }
+          ]
         },
         {
           "id": "mb.photo.develop",
@@ -1849,37 +1224,28 @@
           "kind": "process",
           "category": "board",
           "era": "1980s",
-          "inputs": [
-            "facility.electricity",
-            "facility.water"
-          ],
+          "inputs": [],
           "confidence": "medium",
-          "children": [
+          "children": [],
+          "note": "Developing, fixing, washing and drying exposed film is ordinary silver-halide photographic processing. Not established: the tank sequence, chemistry strengths, or wash and dry times used for the 251137 artwork film.",
+          "edges": [
             {
-              "id": "mb.photo.develop.developer",
-              "name": "Photographic developer (hydroquinone)",
-              "description": "The film emulsion is silver halide; hydroquinone reduces the exposed grains to metallic silver, giving the opaque image that will block the resist. The reducing agent is itself an aromatic chemical made from benzene, so the mask chemistry is a petroleum chain like almost everything else in this branch.",
-              "kind": "material",
-              "category": "fluids",
-              "era": "1880s onward",
-              "inputs": [
-                "chem.styrene.benzene"
-              ],
-              "confidence": "medium",
-              "note": "That hydroquinone reduces exposed silver halide to metallic silver is standard photographic chemistry. Not established: that the jobbing house used a hydroquinone developer rather than another reducing agent for this film, its concentration, or the benzene feedstock for that batch."
+              "to": "mb.photo.develop.developer",
+              "rel": "consumes"
             },
             {
-              "id": "mb.photo.develop.fixer",
-              "name": "Fixer (ammonium thiosulfate)",
-              "description": "The unexposed silver halide is dissolved away and the image made light-stable, so the film can be handled, stored and re-exposed without latent-image changes.",
-              "kind": "material",
-              "category": "fluids",
-              "era": "1880s onward",
-              "note": "Thiosulfate chemistry is a sulfur chain, ultimately from sulfur or from sulphur dioxide off sulfide roasting, so it is a different mineral chain from the aromatic one.",
-              "confidence": "medium"
+              "to": "mb.photo.develop.fixer",
+              "rel": "consumes"
+            },
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            },
+            {
+              "to": "facility.water",
+              "rel": "consumes"
             }
-          ],
-          "note": "Developing, fixing, washing and drying exposed film is ordinary silver-halide photographic processing. Not established: the tank sequence, chemistry strengths, or wash and dry times used for the 251137 artwork film."
+          ]
         },
         {
           "id": "mb.photo.rephoto",
@@ -1907,9 +1273,7 @@
               "kind": "part",
               "category": "board",
               "era": "1980s",
-              "inputs": [
-                "mb.photo.plotter.film"
-              ],
+              "inputs": [],
               "confidence": "medium",
               "note": "Working from a single authoritative artwork film is ordinary phototooling practice. Not established: how the 251137 master was stored or handled, or the cost consequence of losing it."
             }
@@ -1923,11 +1287,15 @@
           "kind": "process",
           "category": "board",
           "era": "1980s",
-          "inputs": [
-            "facility.electricity"
-          ],
+          "inputs": [],
           "note": "Two-sided registration - landing the second side's artwork on the copper to within a fraction of a millimetre, using alignment pins and a register mark - is the hard part of a two-sided board. On this board it matters mainly for the mounting holes and the connector slots; on a via-heavy board it is what decides whether every barrel lands on its own pad. Having no vias makes it a far less critical operation than it would otherwise be, one of the quieter payoffs of the layer-change-by-component-lead strategy.",
-          "confidence": "medium"
+          "confidence": "medium",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         },
         {
           "id": "mb.photo.panel",
@@ -1936,11 +1304,15 @@
           "kind": "process",
           "category": "board",
           "era": "1980s",
-          "inputs": [
-            "facility.electricity"
-          ],
+          "inputs": [],
           "confidence": "medium",
-          "note": "Panelisation itself is ordinary board-shop practice, with several boards grouped on one panel for processing and separated afterwards. Not established: the panel size for the 250407 order, how many boards shared a panel, or that this panel used perforated mouse-bite tabs leaving a rough board edge."
+          "note": "Panelisation itself is ordinary board-shop practice, with several boards grouped on one panel for processing and separated afterwards. Not established: the panel size for the 250407 order, how many boards shared a panel, or that this panel used perforated mouse-bite tabs leaving a rough board edge.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         }
       ]
     }
@@ -1954,7 +1326,6 @@
       "category": "assembly",
       "era": "1980s",
       "inputs": [
-        "facility.nitrogen",
         "mb.solder.wave"
       ],
       "confidence": "medium",
@@ -1968,13 +1339,863 @@
       "category": "assembly",
       "era": "1980s",
       "inputs": [
-        "facility.electricity",
         "mb.solder.wave"
       ],
       "confidence": "medium",
       "note": "Allowing boards to cool at a reasonable rate in moving air is ordinary practice, since cooling too fast warps the board and compromises solder. Not established: the air temperature, dwell time, or fan arrangement in the cooling zone on the C64 line.",
       "sources": [
         "https://en.wikipedia.org/wiki/Wave_soldering"
+      ],
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.photo.design.workstation.display.glass": {
+      "id": "mb.photo.design.workstation.display.glass",
+      "name": "CRT envelope glass",
+      "description": "The bulb is soda-lime glass formed on a glass lathe from the same kind of batch as the reinforcing cloth: silica sand plus limestone plus alkali. A design workstation's screen is a small consumer item, but it is the terminal through which every copper trace of the board was examined.",
+      "kind": "material",
+      "category": "optics",
+      "era": "1980s",
+      "inputs": [],
+      "confidence": "medium",
+      "note": "A CRT bulb in soda-lime glass from silica sand, limestone and alkali is standard glass practice. Not established: the supplier, bulb size, or forming method for the envelope of the layout station display.",
+      "edges": [
+        {
+          "to": "metal.silica-sand",
+          "rel": "made of"
+        },
+        {
+          "to": "metal.limestone",
+          "rel": "made of"
+        }
+      ]
+    },
+    "mb.solder.wave.foam.stone": {
+      "id": "mb.solder.wave.foam.stone",
+      "name": "Sintered porous stone",
+      "description": "A sintered polyethylene or polyurethane stone whose pore size is chosen to bubble air finely through the flux. It clogs with crystallised flux and has to be soaked out on a schedule.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1980s",
+      "confidence": "medium",
+      "note": "A sintered porous stone bubbling air finely through flux is the ordinary foamer element. Not established: the stone polymer, pore size, or soak-out schedule on the C64 line."
+    },
+    "mb.pcb.laminate": {
+      "id": "mb.pcb.laminate",
+      "name": "FR-4 copper-clad laminate panel, 1.6 mm",
+      "description": "The structural core of the board: woven E-glass cloth in a brominated epoxy matrix, faced with 35 um copper foil on both sides. A merchant laminate plant presses it as a panel roughly 1.2 x 2.4 m, which the printed-circuit-board house cuts into working blanks. The cloth is pulled through epoxy, squeezed between metering nips to a controlled resin content and dried to a partly cured, slightly tacky B-stage prepreg that can be stacked and stored; a stack of foil, prepreg, core and prepreg is then press-bonded in one cycle, which turns loose foil and cloth into a single homogeneous 1.6 mm sheet with copper bonded to both faces. Commodore pressed none of this itself: it bought copper-clad laminate from a merchant plant and did only the imaging, etch, drill and finish, at an outside house.",
+      "kind": "material",
+      "category": "board",
+      "era": "1980s",
+      "facts": [
+        {
+          "label": "Copper",
+          "value": "35 um (1 oz) per side"
+        },
+        {
+          "label": "Core",
+          "value": "approx. 1.5 mm woven E-glass in brominated epoxy"
+        },
+        {
+          "label": "Dielectric constant",
+          "value": "approx. 4.2-4.7 at 1 MHz"
+        },
+        {
+          "label": "Prepreg resin content",
+          "value": "approx. 45-60 % by weight of glass"
+        },
+        {
+          "label": "Gellation",
+          "value": "approx. 140-160 deg C"
+        },
+        {
+          "label": "UL flammability",
+          "value": "94-V-0"
+        }
+      ],
+      "inputs": [],
+      "note": "The foil is bonded to the resin by a deliberate surface treatment, not by pressure alone. Electro-deposited foil carries a natural fine-pebble or nodular (peckled) surface that grips epoxy; rolled annealed foil is smooth and would delaminate along the copper interface without further roughening. That interface is what the laminate peel-strength test measures, and for a 1 oz consumer board in 1983 electro-deposited foil was the normal, cheaper choice - rolled foil was reserved for high-speed or high-temperature laminate. The glass, the resin and the foil are not repeated here: they are the shared nodes chem.glass-fiber, chem.epoxy.dgeba, chem.epoxy.brominated-epoxy and metal.copper.foil. The press that bonds them together is not inside the panel, so it hangs off mb.pcb as a separate machine, mb.pcb.laminate.press.",
+      "confidence": "medium",
+      "edges": [
+        {
+          "to": "chem.glass-fiber",
+          "rel": "made of"
+        },
+        {
+          "to": "metal.copper.foil",
+          "rel": "made of"
+        }
+      ]
+    },
+    "mb.pcb.photoresist": {
+      "id": "mb.pcb.photoresist",
+      "name": "Dry-film photoresist, negative working",
+      "description": "A dry film about 25-40 um thick, on a polyester carrier, laminated onto the copper. Where the artwork film lets ultraviolet light through, the acrylate resist cross-links and hardens; the hardened areas stand up to the ferric chloride. Everything else dissolves away and the copper under it etches out. For a two-sided consumer board in 1983 dry film was already the default; modern shops more often print liquid resist, so the choice has flipped but the principle has not.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1980s",
+      "facts": [
+        {
+          "label": "Dry film thickness",
+          "value": "approx. 25-40 um"
+        },
+        {
+          "label": "Chemistry",
+          "value": "negative-working acrylate photopolymer on a polyester carrier"
+        },
+        {
+          "label": "Lamination temperature",
+          "value": "approx. 90-110 deg C"
+        }
+      ],
+      "inputs": [],
+      "note": "Period suppliers included Kodak and Dynachem. The resist chemistry itself is the shared node chem.photoresist; this node is the board-shop form factor of it.",
+      "children": [],
+      "confidence": "low",
+      "edges": [
+        {
+          "to": "mb.pcb.photoresist.carrier",
+          "rel": "made of"
+        }
+      ]
+    },
+    "mb.photo.develop.developer": {
+      "id": "mb.photo.develop.developer",
+      "name": "Photographic developer (hydroquinone)",
+      "description": "The film emulsion is silver halide; hydroquinone reduces the exposed grains to metallic silver, giving the opaque image that will block the resist. The reducing agent is itself an aromatic chemical made from benzene, so the mask chemistry is a petroleum chain like almost everything else in this branch.",
+      "kind": "material",
+      "category": "fluids",
+      "era": "1880s onward",
+      "inputs": [],
+      "confidence": "medium",
+      "note": "That hydroquinone reduces exposed silver halide to metallic silver is standard photographic chemistry. Not established: that the jobbing house used a hydroquinone developer rather than another reducing agent for this film, its concentration, or the benzene feedstock for that batch.",
+      "edges": [
+        {
+          "to": "chem.styrene.benzene",
+          "rel": "made of"
+        }
+      ]
+    },
+    "mb.photo.develop.fixer": {
+      "id": "mb.photo.develop.fixer",
+      "name": "Fixer (ammonium thiosulfate)",
+      "description": "The unexposed silver halide is dissolved away and the image made light-stable, so the film can be handled, stored and re-exposed without latent-image changes.",
+      "kind": "material",
+      "category": "fluids",
+      "era": "1880s onward",
+      "note": "Thiosulfate chemistry is a sulfur chain, ultimately from sulfur or from sulphur dioxide off sulfide roasting, so it is a different mineral chain from the aromatic one.",
+      "confidence": "medium"
+    },
+    "mb.assembly.jumpers.wire": {
+      "id": "mb.assembly.jumpers.wire",
+      "name": "Tinned single-core jumper wire",
+      "description": "A short length of fine tinned copper wire, cut and formed to the two holes, fitted and soldered by hand. It is the mechanical ancestor of the jumper link on every later board.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1980s",
+      "inputs": [],
+      "note": "Modern equivalents are 0-ohm resistors, jumper pins, or just a via.",
+      "confidence": "medium"
+    },
+    "mb.solder.reliability": {
+      "id": "mb.solder.reliability",
+      "name": "Copper-tin intermetallic at the pad",
+      "description": "Solder does not merely sit on a pad, it reacts with it. Within seconds of contact, tin and copper fuse at the surface into Cu6Sn5, and a Cu3Sn layer follows as the joint ages. That intermetallic is the actual metallurgical bond holding the joint, and because its growth is limited by diffusion through itself, higher-temperature solders containing silver or gold exist purely to slow the reaction at the pad. Fully intermetallised joints are brittle, which is the origin of solder fatigue and the reason a leaded joint is forgiving in a way a lead-free one is not.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1980s",
+      "facts": [
+        {
+          "label": "First phase",
+          "value": "Cu6Sn5 at the pad surface within seconds of contact"
+        },
+        {
+          "label": "Later phase",
+          "value": "Cu3Sn grows under the Cu6Sn5 as the joint ages"
+        },
+        {
+          "label": "Growth control",
+          "value": "diffusion-limited through the intermetallic itself"
+        },
+        {
+          "label": "Failure mode",
+          "value": "brittle, cracks under thermal cycling"
+        }
+      ],
+      "note": "Not established: the Cu6Sn5 then Cu3Sn sequence, the diffusion-limited growth argument and the brittleness claim, from any source read for this node. The intermetallic bond is a standard result in soldering metallurgy but the specific phase sequence here is not cited.",
+      "confidence": "medium"
+    },
+    "mb.pcb.exposure": {
+      "id": "mb.pcb.exposure",
+      "name": "UV exposure through the artwork film",
+      "description": "The artwork negative is laid against the resist and the board is flood-exposed in a vacuum-frame unit. In 1983 the lamp was a mercury-vapour or metal-halide source rich in the near ultraviolet where the acrylate resists are sensitive; fibre-optic exposure systems that pipe collimated light into a bed of glass rods were spreading through the later 1980s and gave far more even illumination.",
+      "kind": "process",
+      "category": "board",
+      "era": "1980s",
+      "facts": [
+        {
+          "label": "Exposure time",
+          "value": "seconds to tens of seconds, set by an integrating light meter"
+        },
+        {
+          "label": "Contact",
+          "value": "film pressed into the resist under vacuum to avoid any air gap"
+        }
+      ],
+      "inputs": [],
+      "note": "An air gap between film and resist is the classic cause of a fuzzy, partly-etched trace edge on a two-sided board.",
+      "confidence": "medium",
+      "children": [
+        {
+          "id": "mb.pcb.exposure.vacframe",
+          "name": "Vacuum exposure frame",
+          "description": "A hinged platen with a rubber diaphragm. Film and resist are clamped and then evacuated so the film sits hard against the resist with no bubbles and no shadowing.",
+          "kind": "tool",
+          "category": "board",
+          "era": "1980s",
+          "inputs": [
+            "facility.electricity"
+          ],
+          "confidence": "medium",
+          "note": "Clamping film and resist under vacuum so the film sits hard with no bubbles or shadowing is ordinary contact exposure. Not established: the frame size, diaphragm material, or pump-down time for the 250407 exposures."
+        },
+        {
+          "id": "mb.pcb.exposure.lamp",
+          "name": "Mercury-vapour exposure lamp",
+          "description": "A quartz envelope filled with mercury vapour struck by an arc, rich in the near ultraviolet where the acrylate resists are sensitive. Needs a water-cooled jacket and a choke.",
+          "kind": "tool",
+          "category": "board",
+          "era": "1980s",
+          "inputs": [
+            "facility.electricity",
+            "facility.water"
+          ],
+          "confidence": "medium",
+          "note": "A mercury-vapour source rich in near ultraviolet where acrylate resists are sensitive is the ordinary exposure lamp. Not established: whether the 250407 exposure used mercury-vapour or metal-halide, its wattage, or the water-cooling and choke arrangement."
+        }
+      ],
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.pcb.etch": {
+      "id": "mb.pcb.etch",
+      "name": "Ferric chloride etching",
+      "description": "The masked laminate goes into warm ferric chloride solution, which dissolves the unmasked copper and leaves traces, pads and ground pour standing. Copper removed along the way is recovered, and the etchant is periodically replenished or dumped. Because copper in solution poisons the bath, an etching line of this period was a chemical operation with a disposal problem attached, not just a tank.",
+      "kind": "process",
+      "category": "board",
+      "era": "1980s",
+      "facts": [
+        {
+          "label": "Etchant",
+          "value": "ferric chloride, commonly quoted at about 42 deg Baume, warmed to approx. 40-50 deg C"
+        },
+        {
+          "label": "Time for 35 um copper",
+          "value": "roughly 20-45 min"
+        },
+        {
+          "label": "Reaction",
+          "value": "2 FeCl3 + Cu -> 2 FeCl2 + CuCl2"
+        },
+        {
+          "label": "Chemistry limit",
+          "value": "copper in solution poisons the bath, so it is dumped and made fresh"
+        }
+      ],
+      "inputs": [],
+      "note": "The general step is established: chemical etching divides the copper into separate conducting lines called tracks or circuit traces, pads for connections, vias to pass connections between layers of copper, and features such as solid conductive areas for electromagnetic shielding. The 2 FeCl3 + Cu -> 2 FeCl2 + CuCl2 stoichiometry follows from that and is not separately cited. Not established: that this line used ferric chloride rather than sodium persulphate or a cupric chloride bath, the 42 deg Baume figure, the 40-50 deg C, the 20-45 minute etch time for 35 um copper, and the practice of dumping and remaking the bath as copper accumulates. Period text consistently quotes 42 deg Baume ferric chloride around 45 deg C. Sodium persulfate was a real alternative for some shops. Modern practice is still ferric chloride, but with tighter control and a copper-recovery loop. The etchant itself, its Baume range and its regeneration are the shared node chem.pcb-chemicals.etching.ferric-chloride; this node is the board-shop step that uses it.",
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Printed_circuit_board"
+      ],
+      "edges": [
+        {
+          "to": "chem.pcb-chemicals.etching.ferric-chloride",
+          "rel": "consumes"
+        },
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        },
+        {
+          "to": "facility.water",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.pcb.strip": {
+      "id": "mb.pcb.strip",
+      "name": "Resist stripping and clean-up",
+      "description": "The cross-linked resist film is dissolved away in an aqueous caustic or ammoniated stripper, then the board is rinsed, given a mild acid clean to knock back any last residue, dried, and inspected.",
+      "kind": "process",
+      "category": "board",
+      "era": "1980s",
+      "facts": [
+        {
+          "label": "Stripper",
+          "value": "aqueous caustic soda or an ammoniated solvent"
+        },
+        {
+          "label": "Follow-up",
+          "value": "mild acid clean and deionised rinse"
+        }
+      ],
+      "inputs": [],
+      "note": "Stripping and cleaning are where the etched board stops being a chemistry problem and starts being a mechanical one.",
+      "confidence": "medium",
+      "edges": [
+        {
+          "to": "metal.caustic-soda",
+          "rel": "consumes"
+        },
+        {
+          "to": "facility.water",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.pcb.mill": {
+      "id": "mb.pcb.mill",
+      "name": "Routing and outline cutting",
+      "description": "In 1983 the board outline, the internal cut-outs and the expansion-port routing slot were milled mechanically on a CNC router with a carbide cutter. The slot is cut so that a thin projecting ear of laminate is left standing with copper on both faces: that ear is the board's edge-connector receptacle, and its copper is then selectively plated, so the slot geometry fixes the finger width and spacing that the case connector has to mate with. Laser routing existed but was not yet the commodity default for a board with no fine geometry.",
+      "kind": "process",
+      "category": "board",
+      "era": "1980s",
+      "inputs": [],
+      "facts": [
+        {
+          "label": "Edge connector",
+          "value": "a female receptacle milled into the board, plated afterwards; the C64 mainboard has no board-edge fingers of its own"
+        }
+      ],
+      "note": "That last point is worth stating plainly, because it is a common misreading of a photograph of this board: on the C64 the mainboard carries the socket and the expansion adapter carries the gold fingers. Modern high-mix shops use CO2 or ultraviolet lasers for routing and depanelising because they need no tooling and leave no router burr; for this board either would have been far slower than milling.",
+      "confidence": "medium",
+      "children": [
+        {
+          "id": "mb.pcb.mill.cutter",
+          "name": "Carbide router cutter",
+          "description": "A tungsten-carbide end mill, often with a diamond-like coating, cutting laminate that is mostly glass fibre. Glass dust is abrasive, so tool life is short and the cutter is changed on a schedule.",
+          "kind": "tool",
+          "category": "board",
+          "era": "1980s",
+          "confidence": "medium",
+          "inputs": [],
+          "note": "A tungsten-carbide end mill cutting glass-filled laminate is ordinary routing practice, with short tool life from glass abrasion. Not established: the cutter diameter, coating, or change schedule for the 250407 outline and slot."
+        }
+      ],
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.pcb.drill": {
+      "id": "mb.pcb.drill",
+      "name": "Drilling every component hole",
+      "description": "The board is drilled on a numerical-control drill for every component lead, jumper, jack and mounting hole. Because there are no vias, the drill programme is just a component position list; there is no barrel to plate afterwards and no second drill file to reconcile.",
+      "kind": "process",
+      "category": "board",
+      "era": "1980s",
+      "facts": [
+        {
+          "label": "Holes on this board",
+          "value": "of the order of 1200"
+        },
+        {
+          "label": "Dominant diameter",
+          "value": "approx. 1.1 mm for DIP and leaded parts"
+        },
+        {
+          "label": "Larger diameters",
+          "value": "approx. 1.6-4.3 mm for trimmer, fuse and mounting holes"
+        },
+        {
+          "label": "Fit",
+          "value": "hole set slightly oversize so the lead drops in freely for wave soldering"
+        }
+      ],
+      "note": "That a through-hole board has one drilled hole per component lead is established: originally, every electronic component had wire leads, and a PCB had holes drilled for each wire of each component, and the component leads were then inserted through the holes and soldered to the copper PCB traces. Not established: the order-of-1200 hole count, the 1.1 mm dominant diameter, the 1.6-4.3 mm larger diameters, or that the drill programme was a bare component position list with no second drill file to reconcile. 0.6 mm leads sat in roughly 0.8-1.0 mm holes. The oversize is deliberate: the wave has to fill the hole, and a tight hole makes an unfilled, dry joint.",
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Printed_circuit_board",
+        "https://github.com/bwack/C64-250407-Replica-KiCad"
+      ],
+      "children": [
+        {
+          "id": "mb.pcb.drill.ncd",
+          "name": "NC drill and tool change",
+          "description": "A tape-fed drill head steps through the tool table, swapping bits for the several diameters the board needs, over pinned or vacuum-held fixtures. A bit-management and drill-jig system holds sub-millimetre position accuracy; drill wander is what breaks a fine-pitch DIP row.",
+          "kind": "tool",
+          "category": "board",
+          "era": "1980s",
+          "inputs": [
+            "facility.electricity"
+          ],
+          "confidence": "medium",
+          "note": "Stepping a tape-fed head through a tool table over pinned or vacuum-held fixtures is ordinary numerical-control drilling. Not established: the drill make, tape format, or sub-millimetre positioning actually held on the 250407 order."
+        },
+        {
+          "id": "mb.pcb.drill.bit",
+          "name": "Carbide drill bit",
+          "description": "Tungsten-carbide or high-speed-steel bits, ground and resharpened. Laminated glass plus copper is abrasive, and the hole is the one feature that cannot be reworked once drilled wrong.",
+          "kind": "tool",
+          "category": "board",
+          "era": "1980s",
+          "confidence": "medium",
+          "inputs": [],
+          "note": "Tungsten-carbide bits are very hard but eventually wear out or break, and drilling is a considerable part of the cost of a through-hole board. Not established: the bit supplier, diameters stocked, or resharpening routine for the 250407 drill programme.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Printed_circuit_board"
+          ]
+        }
+      ]
+    },
+    "mb.pcb.vias": {
+      "id": "mb.pcb.vias",
+      "name": "Layer changes without vias",
+      "description": "The most distinctive fact about the C64 mainboard, and the reason its copper is shaped the way it is. There are no vias and no plated-through holes at all. A connection that has to move from the component side to the solder side goes through the hole of a component lead: every resistor, capacitor, diode and DIP pin doubles as a via. Where a layer change was needed with no component available, the board carried a short single-core tinned wire jumper, hand-fitted and hand-soldered after wave soldering. There are exactly two of those on the 250407, referenced E1 and E2 on the artwork.",
+      "kind": "process",
+      "category": "board",
+      "era": "1983",
+      "facts": [
+        {
+          "label": "Vias on board",
+          "value": "0"
+        },
+        {
+          "label": "Wire jumpers",
+          "value": "2 (E1 solid, E2 dashed on the artwork)"
+        },
+        {
+          "label": "What they connect",
+          "value": "a top-side signal to a bottom-side return"
+        },
+        {
+          "label": "Layers",
+          "value": "2 copper layers, no internal plane"
+        }
+      ],
+      "sources": [
+        "https://github.com/bwack/C64-250407-Replica-KiCad"
+      ],
+      "note": "The saving was real: skipping the barrel plating line removed a whole wet-chemical operation and let the board stay two-sided and cheap. The cost was longer traces and a harder time with high-speed return current, which is why the layout leans on wide pours instead of a plane. A modern board would put a via or a zero-ohm resistor in both places.",
+      "confidence": "high",
+      "children": [
+        {
+          "id": "mb.pcb.vias.plane",
+          "name": "Ground pour instead of a ground plane",
+          "description": "With no internal plane layer, the two signal layers have to carry return current on their own copper, so the layout used wide ground pours and heavy copper wherever return current had to flow. Modern boards solve the same electromagnetic problem with a dedicated plane, which is the main reason vias became universal. This is an aside on the layout rather than a separate operation.",
+          "kind": "note",
+          "category": "board",
+          "era": "1980s",
+          "confidence": "medium",
+          "note": "Using wide ground pours on the two signal layers where a modern board would use a dedicated plane is the documented layout strategy. Not established: the pour widths, clearances, or current paths on the 250407 artwork."
+        }
+      ]
+    },
+    "mb.pcb.finish": {
+      "id": "mb.pcb.finish",
+      "name": "Surface finish: pads and edge contacts",
+      "description": "After etching the copper is protected, made solderable, and given a wear-resistant finish where it will be touched. On this board, because there are no plated barrels, the finish job is far simpler than on a modern via board: a solderable coating on the pads and a hard plating on the contact surfaces inside the three board-mounted sockets. Exposed copper that is neither coated nor plated gets an anti-tarnish treatment - a benzotriazole-type organic protectant that stops it darkening in storage and handling, which is cheap, invisible, and easy to skip until someone notices the boards going brown in the box.",
+      "kind": "process",
+      "category": "board",
+      "era": "1980s",
+      "confidence": "medium",
+      "children": [
+        {
+          "id": "mb.pcb.finish.hasl",
+          "name": "HASL solder level on the pads",
+          "description": "Exposed copper is coated in molten solder by carrying the board through a wave or a drag of 63/37 tin-lead and blowing or brushing off the excess, leaving a flat solderable layer that will not corrode. This is the period default for a two-sided consumer board with no vias, and it lines up with the solder the wave machine is already using.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1980s",
+          "facts": [
+            {
+              "label": "Alloy",
+              "value": "63/37 tin-lead, matching the wave solder"
+            },
+            {
+              "label": "Thickness",
+              "value": "a few micrometres of tin-lead over copper"
+            },
+            {
+              "label": "Bath temperature",
+              "value": "hot enough to keep the alloy molten, several degrees above 183 deg C"
+            }
+          ],
+          "inputs": [],
+          "note": "Modern boards use ENIG, immersion tin or OSP instead; HASL went out of fashion because its coating is soft and its thermal expansion mismatch causes failures in thermal cycling. It was, however, ideal for a board that was going straight into a tin pot.",
+          "confidence": "medium",
+          "edges": [
+            {
+              "to": "metal.solder",
+              "rel": "consumes"
+            }
+          ]
+        },
+        {
+          "id": "mb.pcb.finish.selective",
+          "name": "Selective plating of the edge contacts",
+          "description": "Only the contact surfaces get a hard, wear-resistant metal. The board is either plated overall and the gold stripped back from everywhere except the contacts, or the contacts alone are exposed to the bath with the rest shielded by a fountain-plater weir or a plating rack. The usual route is a nickel underplate followed by electrolytic gold: gold dissolves in a cyanide complex with a fine gold anode and plates onto the rack-held board, which is still the standard because the bath is stable and fast and still needs the same destruction-and-recovery regime. Sometimes the whole board was immersion gold-plated instead, which is simpler and gives softer gold.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1980s",
+          "facts": [
+            {
+              "label": "Underplate",
+              "value": "nickel, commonly electroless with a thin electrolytic strike"
+            },
+            {
+              "label": "Gold thickness",
+              "value": "hard gold, roughly 1-2.5 um for a card-edge finger"
+            },
+            {
+              "label": "Gold bath",
+              "value": "cyanide-based, gold cyanide or gold sulfite"
+            }
+          ],
+          "inputs": [],
+          "note": "On the C64 mainboard specifically these contacts are inside the female expansion, user and cassette sockets, so the gold belongs to a purchased connector; the mating plug cards carry the fingers. The plating chemistry is the same either way.",
+          "confidence": "medium",
+          "edges": [
+            {
+              "to": "metal.gold.ingot",
+              "rel": "consumes"
+            },
+            {
+              "to": "metal.nickel.ingot",
+              "rel": "consumes"
+            }
+          ]
+        },
+        {
+          "id": "mb.pcb.finish.pth",
+          "name": "No plated-barrel line on this board",
+          "description": "A deliberate absence, recorded here so it does not read as an omission. The C64 mainboard skips the entire through-hole plating sequence a via board runs: hole desmear, electroless copper seed, electrolytic copper build, nickel, gold. None of that equipment ever saw this board, and any account that puts electroless copper into a C64 mainboard is describing a different machine.",
+          "kind": "note",
+          "category": "metals",
+          "era": "1980s",
+          "note": "Not established: that the board has no plated barrels. The replica layout has no vias, but a bill of materials cannot evidence the absence of a plating line.",
+          "confidence": "medium"
+        }
+      ],
+      "note": "Protecting etched copper with a solderable coating plus a hard plating on touched contacts is ordinary finish practice. Not established: which pads received solder-level coating versus selective plating on the 250407 board, or the anti-tarnish treatment for bare copper.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Solder_mask"
+      ]
+    },
+    "mb.pcb.mask": {
+      "id": "mb.pcb.mask",
+      "name": "Epoxy solder mask on both sides",
+      "description": "Green epoxy ink is screen-printed over the whole board with apertures left over every pad and hole. It is the green the C64 has always been. Without it the board shorts from a fingerprint, a solder splash or a screw, and the white legend would disappear under bare copper. Period inks were solvent-based epoxies cured in infrared or hot-air ovens; modern liquid solder mask is still screen-printed and cured far more cleanly, and liquid solder mask plus ENIG is now the standard pairing.",
+      "kind": "process",
+      "category": "board",
+      "era": "1980s",
+      "facts": [
+        {
+          "label": "Ink",
+          "value": "epoxy, screen-printed through a fine mesh"
+        },
+        {
+          "label": "Cure",
+          "value": "UV or thermal, typically around 150 deg C for half an hour"
+        },
+        {
+          "label": "Dry thickness",
+          "value": "approx. 0.01-0.02 mm"
+        },
+        {
+          "label": "Aperture allowance",
+          "value": "a little larger than the pad, so pads do not look ringed"
+        }
+      ],
+      "inputs": [],
+      "note": "The screen mesh is the shared node written by the chassis fragment, because the same stainless wire mesh and photosensitive emulsion print the case legends and the board legend. The epoxy ink itself has no node of its own anywhere in this tree, which is a gap.",
+      "confidence": "medium",
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.pcb.legend": {
+      "id": "mb.pcb.legend",
+      "name": "White silkscreen legend and compartment boxes",
+      "description": "Reference designators, block outlines and assembly notes are printed in white epoxy ink over the cured mask through a tensioned fine-mesh screen, then baked to cure the ink onto the mask. Commodore drew boxes around functional blocks, the so-called compartments, and used extra ink colours in bands and outlines to colour-code regions of the board and mark the television standard. Each extra colour is a separate screen pass with its own screen, squeegee and cure, which is a real cost and a real time step on the line.",
+      "kind": "process",
+      "category": "board",
+      "era": "1983",
+      "inputs": [],
+      "confidence": "medium",
+      "children": [
+        {
+          "id": "mb.pcb.legend.screen",
+          "name": "Screen printing and bake",
+          "description": "A fine-mesh screen coated with photosensitive emulsion is stretched and tensioned over the board, epoxy ink squeegeed through, and the board then baked to cure the ink onto the mask.",
+          "kind": "process",
+          "category": "board",
+          "era": "1980s",
+          "inputs": [],
+          "confidence": "medium",
+          "note": "Squeegeeing epoxy ink through a tensioned emulsion-coated mesh and baking it onto the mask is ordinary legend printing. Not established: the mesh count, emulsion type, or bake time and temperature for the 250407 legend.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
+        },
+        {
+          "id": "mb.pcb.legend.colour",
+          "name": "Coloured silkscreen bands",
+          "description": "A separate pass in each extra colour, with its own screen, to draw the colour bands and outlines that mark functional regions and the PAL or NTSC variant. A modern cosmetic imitation of this is a coloured solder mask; in 1983 it was extra ink passes.",
+          "kind": "process",
+          "category": "board",
+          "era": "1980s",
+          "inputs": [],
+          "note": "The exact set of colours used on the 250407 has not been confirmed here.",
+          "confidence": "low",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
+        }
+      ],
+      "note": "A board may be printed with a legend identifying components, test points, or identifying text, and silkscreen printing was the original method. Not established: the ink formulation, mesh, or bake used for the white 250407 legend, or the compartment-box and colour-band layout.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Printed_circuit_board"
+      ],
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.pcb.inspection": {
+      "id": "mb.pcb.inspection",
+      "name": "Electrical test of the bare board",
+      "description": "Before any component goes on, the blank is checked for shorts between nets and for opens in the artwork. In 1983 this was a continuity and insulation-resistance tester plus a careful visual check under a lamp and a loupe. Automated optical inspection existed by 1983 but was a line investment rather than an assumption on a commodity board.",
+      "kind": "process",
+      "category": "board",
+      "era": "1980s",
+      "inputs": [],
+      "note": "Modern lines AOI every board automatically and add impedance and resistance checks as well.",
+      "confidence": "medium",
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.photo.plotter.film": {
+      "id": "mb.photo.plotter.film",
+      "name": "Artwork film stock",
+      "description": "A high-contrast, dimensionally stable photographic film that the plotter exposes and the shop develops into a finished mask. It must hold its geometry over a store door and be opaque where there is copper. The base is a dimensionally stable polyester, the same polymer family as the dry-film resist carrier used on the board itself.",
+      "kind": "material",
+      "category": "board",
+      "era": "1980s",
+      "inputs": [],
+      "confidence": "medium",
+      "note": "High-contrast dimensionally stable film on a polyester base is the standard artwork medium. Not established: the brand, thickness, or minimum density the 251137 film was ordered to, or its storage life.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gerber_format"
+      ]
+    },
+    "mb.photo.design.workstation.storage": {
+      "id": "mb.photo.design.workstation.storage",
+      "name": "Plot-file storage media",
+      "description": "Plot files and library data were written to nine-track tape, then to 8-inch floppy disks. The magnetic oxide on a thin polymer backing is the physical carrier the jobbing house receives. This is the handover point between design and fabrication.",
+      "kind": "material",
+      "category": "computing",
+      "era": "1983",
+      "confidence": "medium",
+      "note": "Nine-track tape and 8-inch floppy disks with magnetic oxide on polymer backing are the standard carriers of the period. Not established: which medium carried the 251137 plot files, at what density, or where handover between design and fabrication occurred."
+    },
+    "mb.pcb.laminate.press.release": {
+      "id": "mb.pcb.laminate.press.release",
+      "name": "Release paper between books",
+      "description": "Bleached or unbleached kraft paper laid between each laminate book so resin does not bond one book to the next and the platen stays clean. The same sheet doubles as the cushion that distributes pressure evenly across the book.",
+      "kind": "material",
+      "category": "board",
+      "era": "1980s",
+      "inputs": [],
+      "note": "Kraft paper is lignin-rich cellulose pulp; the paper chain itself is owned by the packaging fragment.",
+      "confidence": "medium",
+      "edges": [
+        {
+          "to": "c64.packaging.kraft-liner",
+          "rel": "made of"
+        }
+      ]
+    },
+    "mb.pcb.photoresist.carrier": {
+      "id": "mb.pcb.photoresist.carrier",
+      "name": "PET carrier film",
+      "description": "The polyester backing the resist is laminated from, peeled off after lamination and before exposure, leaving the resist on the copper. It is the same dimensionally stable polyester film as the artwork film stock, and it exists so the 25 um resist can be handled and rolled without touching.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1980s",
+      "inputs": [],
+      "confidence": "medium",
+      "note": "A thin dimensionally stable polyester film carrying the 25 um resist so it can be rolled and handled is ordinary dry-film construction. Not established: the carrier thickness or supplier for the film used on the 250407 board, or the peel timing."
+    },
+    "mb.pcb.photoresist.laminate": {
+      "id": "mb.pcb.photoresist.laminate",
+      "name": "Film lamination of the resist",
+      "description": "The board is baked dry, the film is fed from a spool, heated, and pressed onto the copper by rubber-covered nip rollers. The rubber hardness matters: too hard and it embosses the fragile 35 um foil.",
+      "kind": "process",
+      "category": "board",
+      "era": "1980s",
+      "facts": [
+        {
+          "label": "Control",
+          "value": "nip rollers and a chill roll to set the film down"
+        }
+      ],
+      "inputs": [],
+      "confidence": "medium",
+      "note": "Feeding dry film from a spool, heating it and pressing it onto baked-dry copper with nip rollers is ordinary lamination. Not established: the 90-110 deg C window on this line, the roller hardness, or the chill-roll setting used.",
+      "edges": [
+        {
+          "to": "mb.pcb.photoresist",
+          "rel": "consumes"
+        },
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.pcb.photoresist.coat": {
+      "id": "mb.pcb.photoresist.coat",
+      "name": "Surface clean and tack-free prep",
+      "description": "Before the resist goes on, the board is degreased and dried so the film lies flat. A tack-free prep was unusual on period boards; wet resist had an easier time of it, which is one reason modern processes moved.",
+      "kind": "process",
+      "category": "board",
+      "era": "1980s",
+      "inputs": [],
+      "note": "Wet resist offered the no-prep advantage; dry film offered the thickness control. Dry film won on thickness.",
+      "confidence": "medium",
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        },
+        {
+          "to": "facility.water",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.solder.wave.preheat.air": {
+      "id": "mb.solder.wave.preheat.air",
+      "name": "Recirculating hot-air preheat",
+      "description": "Preheating is by moving air or radiant tubes, with the zone held below the solder melting point so nothing melts early. Too little preheat gives thermally shocked joints; too much dries the resin and lifts pads off the laminate. A board full of large electrolytics takes a long time to come through, and preheater capacity is usually what sets the conveyor speed for the whole line.",
+      "kind": "process",
+      "category": "assembly",
+      "era": "1980s",
+      "inputs": [],
+      "confidence": "medium",
+      "note": "Moving-air or radiant-tube preheat held below the solder melting point is ordinary tunnel practice. Not established: which method the C64 tunnel used, its zone temperatures, or the conveyor-speed limit set by large electrolytics.",
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.pcb.laminate.press": {
+      "id": "mb.pcb.laminate.press",
+      "name": "Hot platen press and the lamination cycle",
+      "description": "The machine that turns loose foil and cloth into a sheet. A hydraulic press pack carries several heated platens so several laminate books can be pressed in one loading, and a stack of foil, prepreg, core and prepreg goes between them. Pressure squeezes out the excess resin and forces it into the weave; the heat completes the cure. The platens are cast and then surface-ground, because a laminate that is not flat is not 1.6 mm everywhere. This one machine is the reason a period FR-4 board has a flatness tolerance tighter than anything the component designer asked for.",
+      "kind": "tool",
+      "category": "board",
+      "era": "1980s",
+      "facts": [
+        {
+          "label": "Press temperature",
+          "value": "approx. 175 deg C"
+        },
+        {
+          "label": "Pressure",
+          "value": "approx. 1.4 MPa (200 psi)"
+        },
+        {
+          "label": "Cycle",
+          "value": "roughly an hour including cool-down"
+        },
+        {
+          "label": "Heat",
+          "value": "steam coils or embedded electric resistance elements in the platens"
+        }
+      ],
+      "inputs": [
+        "facility.electricity"
+      ],
+      "note": "Modern high-Tg FR-4 laminates press hotter (200-220 deg C) and harder. Period FR-4 at 175 deg C and 1.4 MPa is the classic cycle.",
+      "confidence": "medium",
+      "children": [
+        {
+          "id": "mb.pcb.laminate.press.platen",
+          "name": "Heated platens",
+          "description": "Cast iron platens, machined and surface-ground flat, heated by embedded steam coils or electric resistance elements. The cast iron is chosen for dimensional stability and thermal mass rather than for strength, and the grind is what guarantees that a stack of books comes out of the press uniformly 1.6 mm thick. Grey cast iron is iron ore reduced with coke in a blast furnace.",
+          "kind": "part",
+          "category": "board",
+          "era": "1980s",
+          "facts": [
+            {
+              "label": "Body",
+              "value": "grey cast iron, machined and surface-ground"
+            }
+          ],
+          "inputs": [],
+          "confidence": "medium",
+          "note": "Not established: that the laminate supplier's press used grey cast iron platens rather than steel, whether heat came from steam coils or embedded electric elements on that press, or the flatness tolerance the surface grind held."
+        },
+        {
+          "id": "mb.pcb.laminate.press.hydraulic",
+          "name": "Hydraulic press pack",
+          "description": "The pressure side of the press: cylinders and platens arranged so that several laminate books are pressed in one loading. The circulating hydraulic oil is a petroleum-derived lubricating fluid, refined from crude alongside almost every other lubricant on the line.",
+          "kind": "part",
+          "category": "board",
+          "era": "1980s",
+          "inputs": [],
+          "confidence": "medium",
+          "note": "Pressing several laminate books in one loading with cylinders and platens is the ordinary hydraulic pack. Not established: the cylinder count, operating pressure, or petroleum source of the circulating oil on the laminate supplier press."
+        },
+        {
+          "id": "mb.pcb.laminate.press.heat",
+          "name": "Press heat source",
+          "description": "Steam coils or electric resistance elements in the platens. Gas- or oil-fired central steam was the norm in a laminate plant of this era, which is what makes the press the largest single fuel load on such a site.",
+          "kind": "facility",
+          "category": "energy",
+          "era": "1980s",
+          "inputs": [
+            "facility.electricity"
+          ],
+          "confidence": "medium",
+          "note": "Heating platens with steam coils or embedded electric resistance elements is the ordinary press arrangement. Not established: whether the laminate supplier used gas- or oil-fired central steam or electric heat, or that the press was the largest fuel load on that site."
+        }
+      ],
+      "edges": [
+        {
+          "to": "mb.pcb.laminate.press.release",
+          "rel": "consumes"
+        }
       ]
     }
   }

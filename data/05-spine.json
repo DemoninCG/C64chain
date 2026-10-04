@@ -10,15 +10,38 @@
       "era": "1982-1984",
       "confidence": "high",
       "facts": [
-        { "label": "Board", "value": "ASSY 250407, PCB 326498-01, material no. 250406, artwork 251137, schematic 251138" },
-        { "label": "Layers / vias", "value": "2 layers, 0 plated-through holes, 0 vias" },
-        { "label": "Jumper wires", "value": "2 (E1, E2) across pads where a later revision has a via" },
-        { "label": "Main RAM", "value": "8 x 4164, 64 Kbit each = 64 KB" },
-        { "label": "Colour RAM", "value": "2114L, 1K x 4 static, at U6" },
-        { "label": "Mask ROM", "value": "20 KB total: 8 KB BASIC + 8 KB KERNAL + 4 KB character generator" },
-        { "label": "Clock", "value": "1.023 MHz NTSC / 0.985 MHz PAL" }
+        {
+          "label": "Board",
+          "value": "ASSY 250407, PCB 326498-01, material no. 250406, artwork 251137, schematic 251138"
+        },
+        {
+          "label": "Layers / vias",
+          "value": "2 layers, 0 plated-through holes, 0 vias"
+        },
+        {
+          "label": "Jumper wires",
+          "value": "2 (E1, E2) across pads where a later revision has a via"
+        },
+        {
+          "label": "Main RAM",
+          "value": "8 x 4164, 64 Kbit each = 64 KB"
+        },
+        {
+          "label": "Colour RAM",
+          "value": "2114L, 1K x 4 static, at U6"
+        },
+        {
+          "label": "Mask ROM",
+          "value": "20 KB total: 8 KB BASIC + 8 KB KERNAL + 4 KB character generator"
+        },
+        {
+          "label": "Clock",
+          "value": "1.023 MHz NTSC / 0.985 MHz PAL"
+        }
       ],
-      "sources": ["https://en.wikipedia.org/wiki/Commodore_64"],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Commodore_64"
+      ],
       "note": "The 250407 is the long 'breadbin' layout and the U-numbers quoted throughout this tree are its canonical set; they do not line up with the 250425, 250466 or short boards. The via count is the one a validated copy of the 250407 artwork settles: zero, which is why the zero-via claim is stated in the description rather than left as a footnote. This node no longer lists c64.connector-jacks or c64.mains among its children: the plugs belong to the panel they are soldered into, which c64.io-panel carries, and the line cord, plug, switch and fuse live in the external power supply, which is a separate assembly reached from the top of the tree.",
       "children": [
         "mb.pcb",
@@ -35,11 +58,21 @@
         "mb.logic",
         "mb.rf-modulator",
         "mb.passives",
-        "mb.crystal",
-        "mb.solder",
-        "mb.assembly",
-        "mb.test",
-        "mb.photo"
+        "mb.crystal"
+      ],
+      "edges": [
+        {
+          "to": "mb.solder",
+          "rel": "step"
+        },
+        {
+          "to": "mb.assembly",
+          "rel": "step"
+        },
+        {
+          "to": "mb.test",
+          "rel": "step"
+        }
       ]
     },
     {
@@ -51,14 +84,38 @@
       "era": "1982-1984",
       "confidence": "high",
       "facts": [
-        { "label": "Video / audio", "value": "8-pin round DIN, 262-degree horseshoe: composite out, separate Y and C out, audio in and out" },
-        { "label": "Serial bus", "value": "6-pin round DIN, Commodore's serial variant of the IEEE-488 handshake, 300 baud" },
-        { "label": "Datasette", "value": "2 x 6 card edge: read, write, sense, motor, +5 V and ground" },
-        { "label": "User port", "value": "24-pin card edge: 17 TTL signals plus 7 ground and voltage pins, one of them 9 V AC" },
-        { "label": "Expansion", "value": "44-pin dual-row card edge carrying the CPU address and data buses" },
-        { "label": "Control ports", "value": "2 x DE-9 subminiature D, Atari-compatible" },
-        { "label": "Power input", "value": "7-pin round DIN: 5 V DC and 9 V AC from the external supply" },
-        { "label": "RF modulator", "value": "integral on the breadbin; RCA antenna output, channel set on the board by a trimmer" }
+        {
+          "label": "Video / audio",
+          "value": "8-pin round DIN, 262-degree horseshoe: composite out, separate Y and C out, audio in and out"
+        },
+        {
+          "label": "Serial bus",
+          "value": "6-pin round DIN, Commodore's serial variant of the IEEE-488 handshake, 300 baud"
+        },
+        {
+          "label": "Datasette",
+          "value": "2 x 6 card edge: read, write, sense, motor, +5 V and ground"
+        },
+        {
+          "label": "User port",
+          "value": "24-pin card edge: 17 TTL signals plus 7 ground and voltage pins, one of them 9 V AC"
+        },
+        {
+          "label": "Expansion",
+          "value": "44-pin dual-row card edge carrying the CPU address and data buses"
+        },
+        {
+          "label": "Control ports",
+          "value": "2 x DE-9 subminiature D, Atari-compatible"
+        },
+        {
+          "label": "Power input",
+          "value": "7-pin round DIN: 5 V DC and 9 V AC from the external supply"
+        },
+        {
+          "label": "RF modulator",
+          "value": "integral on the breadbin; RCA antenna output, channel set on the board by a trimmer"
+        }
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Commodore_64",
@@ -72,27 +129,6 @@
         "c64.connector-jacks",
         "c64.switches"
       ]
-    },
-    {
-      "id": "c64.bottoms-out",
-      "name": "Where every branch terminates",
-      "description": "Everything above ends in one of three trunks: refined metals, petrochemicals, and the plants and utilities that supply both. Most component subtrees carry their own shorter copy of the relevant chain - a capacitor really does carry its own aluminium, and an ABS case really does carry its own acrylonitrile - so these are the canonical, deepest versions of the same chains, kept together so that one can be read end to end.",
-      "kind": "note",
-      "category": "industry",
-      "confidence": "low",
-      "note": "An index of where the supply chains bottom out, not a plant: nothing is made, mined or operated here. It is the only route from the root to the metal, chemical and industrial branches, and the unlinked catalogue is parked here, so any canonical subtree that no branch links stays reachable rather than being dropped. Not established: that every branch terminates in one of three trunks - several subtrees bottom out at process equipment or at plant utilities rather than at a refined metal or a petrochemical, so the three-trunk claim is a simplification of the tree's own shape and is not a documented supply-chain fact.",
-      "children": ["metal", "chem", "industry"]
-    },
-    {
-      "id": "c64.extras",
-      "name": "Finishing and bundled extras",
-      "description": "Three branches that hang off the machine rather than being part of it: how legends and colours were printed onto moulded plastic, how one keyboard key becomes a bit in the matrix, and the joystick that shipped in the box in some markets. None of them is needed to trace the machine's own supply line - they are the finishing and the bundled accessories, gathered here so they are not mistaken for part of the board.",
-      "kind": "note",
-      "category": "computing",
-      "era": "1983",
-      "confidence": "low",
-      "note": "A grouping rather than a plant. Its three children are real things: decoration is a set of processes, the keyboard switches are parts, the joystick is a part. Two of the three are not interconnect goods, so the branch sits with the machine rather than with the interconnects it happens to be stored beside. Not established: which joystick shipped in the box in which market - Commodore's own documentation does not state a standard bundled joystick, so the three-child grouping is a convenience rather than a documented shipping configuration.",
-      "children": ["c64.decor", "c64.keyboard-switches", "c64.joystick"]
     }
   ]
 }

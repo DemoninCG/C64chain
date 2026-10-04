@@ -86,8 +86,29 @@ const HUB_RULES = Object.fromEntries(
  *  FIRST, because a question is a deliberate override of the mechanical
  *  default; then relations, in schema order. */
 function classify(e) {
+  // Wave 4.2: the generated catalogue is a backlog container, not a migration
+  // subject — its legacy edges dissolve with it member by member as re-homes
+  // land, and it has no data home to store typed edges. Not judgement.
+  if (e.parent === 'unlinked.catalogue') {
+    return { disposition: 'INDEX', why: 'generated backlog container (Wave 4.3); dissolves as members re-home' };
+  }
   if (K(e.parent) === 'note') {
     return { disposition: 'NO-HOME', why: 'edges do not leave a note; the node is mis-typed or is an index (RELATIONS.md §5)' };
+  }
+  // Wave 4.5: typed edges are trusted stored facts, not classifications.
+  // They are still validated: relation must store this kind-pair (else the
+  // migration wrote an unstoreable answer) and narrow-kind assertions apply.
+  if (e.typedRel) {
+    const [a, b] = e.pair.split('>');
+    const r = RELATIONS[e.typedRel];
+    const storable = r && !r.derived_from && (r.stored ?? []).some((p) => p === `${a}->${b}` || p === `*->${b}`);
+    if (!storable) {
+      return { disposition: 'ASSERT-FAIL', why: `typed edge stores ${e.typedRel} on ${a} -> ${b}, which no relation permits (answer_must_be_storable)` };
+    }
+    if (e.typedRel === 'produces' && !e.role) {
+      return { disposition: 'ASSERT-FAIL', why: `typed produces edge ${e.parent} -> ${e.child} carries no role (role_required)` };
+    }
+    return { disposition: e.typedRel, why: 'typed edge, stored (Wave 4 migration)' };
   }
   const fixKey = `${e.parent}>${e.child}`;
   if (DELETE_SET.has(fixKey)) return { disposition: 'DELETE', why: FIX_WHY.get(fixKey) ?? 'RELATIONS.md §7' };
@@ -154,6 +175,15 @@ function allEdges() {
         if (!N[t]) continue;
         out.push({ parent: id, child: t, was: rel, pair: `${K(id)}>${K(t)}` });
       }
+    }
+  }
+  // Wave 4.5: typed edges are first-class. was records the stored relation so
+  // the plan shows migration progress (typed vs legacy) and the audit can
+  // validate producers/roles.
+  for (const id of ids) {
+    for (const e of N[id].edges ?? []) {
+      if (!e || !N[e.to]) continue;
+      out.push({ parent: id, child: e.to, was: `typed:${e.rel}`, pair: `${K(id)}>${K(e.to)}`, typedRel: e.rel, role: e.role, basis: e.basis });
     }
   }
   return out;
@@ -332,6 +362,18 @@ function cmdWork() {
   }
 }
 
+function cmdDumpMechanical() {
+  // Wave 4 migration input: every non-JUDGE legacy edge with its mechanical
+  // disposition, so the migration script types them without re-deriving logic.
+  // INDEX-owned and NO-HOME rows are included with their dispositions; the
+  // migration script routes them to central dissolution instead.
+  for (const e of ALL) {
+    if (e.disposition === 'JUDGE' || e.disposition === 'UNMAPPED' || e.disposition === 'ASSERT-FAIL') continue;
+    if (String(e.was).startsWith('typed:')) continue;
+    console.log(`${e.parent}\t${e.child}\t${e.was}\t${e.disposition}${e.to ? `\t${e.to}` : ''}`);
+  }
+}
+
 function cmdGold() {
   const n = Number(flag('n', 80));
   const out = [];
@@ -385,11 +427,11 @@ function cmdAudit() {
     }
   }
   /* The note-dissolution backlog is reported with its count rather than as a bare
-   * FAIL, because 17 notes with outgoing edges is a KNOWN, SCHEDULED piece of
-   * work (RELATIONS.md section 9, wave 4.2) and not a surprise. Phase 0: was 21;
-   * the build.mjs kind:note from-guard closed 4 from-leaks, leaving 15 children-
-   * holders + 2 dual-relation notes. Still fails so it cannot be forgotten. */
-  const NOTE_BACKLOG_KNOWN = 17;
+   * FAIL. Wave 4.2 dissolved the index notes and shells; the 9 remaining notes
+   * with outgoing edges are content (makers lists, routing points, measurement
+   * asides - see docs/TODO.md section 10), each needing an individual re-home,
+   * not a container to dissolve. Still fails so they cannot be forgotten. */
+  const NOTE_BACKLOG_KNOWN = 9;
   let noteOut = 0;
   for (const id of ids) {
     if (K(id) !== 'note') continue;
@@ -404,15 +446,25 @@ function cmdAudit() {
   if (utilLeft.length) warns.push(`${utilLeft.length} utility deliveries still typed facility: ${utilLeft.join(', ')}`);
   else warns.push(`OK: all ${UTIL.length} utility deliveries retyped to material`);
 
-  // connectivity: directed walk, refinement down and flow both ways (RELATIONS.md section 8)
-  const CARRIES = new Set(SCHEMA.connectivity.carries);
+  // connectivity: RELATIONS.md section 8, directed upstream walk.
+  // Root goes DOWN through refinement (contains, made of, legacy children).
+  // Flow is walked holder -> target for consumes, uses, step and made from,
+  // but produces is walked BACKWARD (product -> producing process) via the
+  // derived made_by set: a process that runs is reached through its product.
+  // Context (at, owned by, about) never carries. made_by is derived, not stored.
+  const CARRIES_OUT = new Set(['contains', 'made of', 'made from', 'step', 'consumes', 'uses']);
   const DROPS = new Set(['c64.bottoms-out', 'c64.extras', 'unlinked.catalogue']);
   const seenNodes = new Set(['c64']); const walkStack = ['c64'];
+  const reach = (t) => { if (N[t] && !DROPS.has(t) && !seenNodes.has(t)) { seenNodes.add(t); walkStack.push(t); } };
   while (walkStack.length) {
     const x = walkStack.pop();
-    for (const c of N[x].children ?? []) if (N[c] && !DROPS.has(c) && !seenNodes.has(c)) { seenNodes.add(c); walkStack.push(c); }
+    for (const c of N[x].children ?? []) reach(c);
     if (K(x) === 'note') continue;
-    for (const f of N[x].from ?? []) if (N[f] && !seenNodes.has(f)) { seenNodes.add(f); walkStack.push(f); }
+    for (const f of N[x].from ?? []) reach(f);
+    for (const e of N[x].edges ?? []) {
+      if (e && CARRIES_OUT.has(e.rel)) reach(e.to);
+    }
+    for (const p of N[x].made_by ?? []) reach(p);
   }
   const orphans = ids.filter((i) => !seenNodes.has(i));
   if (orphans.length) warns.push(`${orphans.length} nodes unreachable from the root with the three index containers dropped (wave 4.3 reconnects them)`);
@@ -503,6 +555,7 @@ async function cmdEmitFixes() {
 const COMMANDS = {
   plan: cmdPlan, procedure: cmdProcedure, work: cmdWork, gold: cmdGold,
   'verify-inputs': cmdVerifyInputs, audit: cmdAudit, 'emit-fixes': cmdEmitFixes,
+  'dump-mechanical': cmdDumpMechanical,
 };
 const fn = COMMANDS[cmd];
 if (!fn) { console.error(`unknown command: ${cmd}\n  ${Object.keys(COMMANDS).join(' | ')}`); process.exit(1); }

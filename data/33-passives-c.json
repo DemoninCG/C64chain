@@ -43,14 +43,7 @@
           "value": "~40-70 g typical"
         }
       ],
-      "inputs": [
-        "chem.abs",
-        "chem.rubber",
-        "chem.epoxy",
-        "chem.glass-fiber",
-        "metal.copper.foil",
-        "chem.polyester"
-      ],
+      "inputs": [],
       "children": [
         {
           "id": "c64.keyboard-switches.matrix",
@@ -101,94 +94,28 @@
                   "value": "standoffs and screws into the case, not clips"
                 }
               ],
-              "inputs": [
-                "chem.glass-fiber",
-                "chem.epoxy",
-                "metal.copper.foil",
-                "metal.gold.ingot"
-              ],
-              "children": [
+              "inputs": [],
+              "children": [],
+              "edges": [
                 {
-                  "id": "c64.keyboard-switches.matrix.pcb.copper-foil",
-                  "name": "Electrodeposited copper foil",
-                  "description": "The matrix traces are copper, deposited on the laminate by an electroplating line using acid copper sulphate solution and an insoluble anode. The same copper foil process as the mainboard, at a much thinner gauge.",
-                  "kind": "material",
-                  "category": "board",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "facts": [
-                    {
-                      "label": "Foil thickness",
-                      "value": "~35 um (1 oz)"
-                    }
-                  ],
-                  "inputs": [
-                    "metal.copper.foil",
-                    "facility.electricity"
-                  ],
-                  "note": "Not established: acid copper sulphate electrodeposition on an insoluble anode for this board, and the 35 um (1 oz) foil thickness. Foil gauge is a boardhouse specification, not something a reference document states."
+                  "to": "c64.keyboard-switches.matrix.pcb.copper-foil",
+                  "rel": "contains"
                 },
                 {
-                  "id": "c64.keyboard-switches.matrix.pcb.pad-plating",
-                  "name": "Plating of the key pads",
-                  "description": "The exposed pads are plated - gold over nickel on later keyboards - so the carbon contact of the rubber dome has a low-resistance, non-oxidising surface to bridge onto. Where the plating is absent or has worn through, the bare copper oxidises and the key needs cleaning.",
-                  "kind": "process",
-                  "category": "board",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "inputs": [
-                    "metal.gold",
-                    "metal.nickel"
-                  ],
-                  "children": [
-                    {
-                      "id": "c64.keyboard-switches.matrix.pcb.pad-plating.gold",
-                      "name": "Gold flash on the key pads",
-                      "description": "A thin gold flash over nickel on the key pads. Gold does not oxidise, so the dome keeps making contact for decades; where the flash is thin or gone, the key stops working until cleaned.",
-                      "kind": "material",
-                      "category": "board",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "metal.gold.ingot"
-                      ],
-                      "note": "Not established: the flash thickness, the nickel underlayer on these pads, and the decades-long contact life versus stop-working-until-cleaned failure mode."
-                    }
-                  ],
-                  "note": "Not established: gold over nickel as the stack on later keyboards, the carbon-contact dome mating surface, and the bare-copper oxidation and cleaning failure mode for these pads."
-                }
-              ]
-            },
-            {
-              "id": "c64.keyboard-switches.matrix.pcb-glass-epoxy",
-              "name": "Glass-epoxy laminate (FR-4)",
-              "description": "Woven glass-fibre cloth impregnated with epoxy and pressed into a sheet. The standard printed-circuit laminate since the 1960s, replacing the older phenolic paper board. The keyboard board is a trivial two-layer FR-4 part, but it goes through the same copper foil lamination and hole-drilling lines as a mainboard.",
-              "kind": "material",
-              "category": "board",
-              "era": "1960s-1982",
-              "confidence": "medium",
-              "note": "FR-4 as the standard printed-circuit laminate is uncontroversial. Not established: that the keyboard board is specifically two-layer FR-4, and that it went through the same copper-foil lamination and drilling lines as the mainboard. The keyboard is normally a separate assembly on its own line.",
-              "inputs": [
-                "chem.glass-fiber",
-                "chem.epoxy",
-                "chem.petroleum"
-              ],
-              "children": [
+                  "to": "metal.gold.ingot",
+                  "rel": "made of"
+                },
                 {
-                  "id": "c64.keyboard-switches.pcb-resin",
-                  "name": "Epoxy resin of the laminate",
-                  "description": "The epoxy that binds the glass cloth is derived from bisphenol A and epichlorohydrin, both of which are petrochemical. A two-layer keyboard PCB is thus a woven silica sheet glued with a fossil-derived resin and clad in copper.",
-                  "kind": "material",
-                  "category": "board",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "inputs": [
-                    "chem.epoxy",
-                    "chem.petroleum"
-                  ],
-                  "note": "Not established: that this laminate's epoxy is derived from bisphenol A and epichlorohydrin. That is the standard chemistry for the epoxy family, but no document consulted ties a particular 1982 keyboard PCB to it."
+                  "to": "c64.keyboard-switches.matrix.pcb.pad-plating",
+                  "rel": "step"
                 }
               ]
+            }
+          ],
+          "edges": [
+            {
+              "to": "c64.keyboard-switches.matrix.pcb-glass-epoxy",
+              "rel": "contains"
             }
           ]
         },
@@ -217,134 +144,12 @@
               "value": "~millions of actuations, but the conductive face tarnishes with skin oil and dust"
             }
           ],
-          "inputs": [
-            "chem.rubber",
-            "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black"
-          ],
-          "children": [
+          "inputs": [],
+          "children": [],
+          "edges": [
             {
-              "id": "c64.keyboard-switches.domes.composition",
-              "name": "Carbon-filled elastomer compound",
-              "description": "Carbon black is compounded into the elastomer at a few tens of per cent by weight. The particles form a percolation network so the dome conducts along its own bulk, and the higher the loading the lower the resistance - but too much loading makes the dome brittle. This is the same black powder that goes into resistor films and pot tracks.",
-              "kind": "material",
-              "category": "plastics",
-              "era": "1982-1984",
-              "confidence": "medium",
-              "note": "Not established: the 20-60 phr carbon black loading and the contact resistance of tens to hundreds of ohms. Both are quantitative figures for a specific conductive-elastomer compound, and neither appears in any document consulted. The percolation mechanism is plausible but unsourced here.",
-              "facts": [
-                {
-                  "label": "Loading",
-                  "value": "roughly 20-60 phr carbon black"
-                },
-                {
-                  "label": "Contact resistance",
-                  "value": "typically tens to hundreds of ohms - enough to trip a CMOS input, far too much for a logic 'low'"
-                }
-              ],
-              "inputs": [
-                "chem.rubber"
-              ],
-              "children": [
-                {
-                  "id": "c64.keyboard-switches.domes.composition.elastomer",
-                  "name": "Silicone or neoprene elastomer",
-                  "description": "The dome body. Silicone (polydimethylsiloxane) was favoured for its high compression set and wide temperature range; neoprene (polychloroprene) for oil and abrasion resistance. Both are thermoset elastomers, vulcanised in the mould rather than injection-moulded as thermoplastics, which is why they are compression-moulded sheet.",
-                  "kind": "material",
-                  "category": "plastics",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "note": "Which elastomer the C64's dome sheet used is not established; both were standard.",
-                  "inputs": [
-                    "chem.rubber",
-                    "chem.petroleum"
-                  ],
-                  "children": [
-                    {
-                      "id": "c64.keyboard-switches.domes.composition.elastomer.silicone",
-                      "name": "Silicone dome compound",
-                      "description": "Silicone rubber is built on a silicon-oxygen backbone and is filled with reinforcing silica. It stays elastic over a wide temperature range and does not take up much oil, which is why a silicone dome does not swell and seize.",
-                      "kind": "material",
-                      "category": "plastics",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "chem.silicone"
-                      ],
-                      "note": "Not established: silica-filled grade, wide-temperature-range elasticity, and low oil uptake as the reason these domes do not swell and seize. Whether the C64 domes were silicone rather than another elastomer is also not established.",
-                      "sources": [
-                        "https://en.wikipedia.org/wiki/Silicone_rubber"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "id": "c64.keyboard-switches.domes.composition.carbon-black",
-                  "name": "Carbon black filler (petroleum-derived)",
-                  "description": "The same furnace-black feedstock used in the resistors, compounded into the elastomer. The dome's conductivity and its wear rate are both set by the grade and loading of this powder. A high-structure furnace black gives a stronger percolation network at lower loading, so a dome can be made conductive with less filler and stay soft; the grade choice is the difference between a responsive key and a stiff one.",
-                  "kind": "material",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "note": "Not established: that a high-structure furnace black gives a stronger percolation network at lower loading, and that this is what distinguishes a responsive key from a stiff one. No carbon-black grade comparison is available in the sources consulted.",
-                  "inputs": [
-                    "chem.petroleum"
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "c64.keyboard-switches.domes.moulding",
-              "name": "Compression moulding of the dome sheet",
-              "description": "The domes are moulded as a continuous sheet on a heated platen press: uncured compound is placed in a multi-cavity tool, pressed, cured, and the sheet released as one piece with every key's dome attached. Domes therefore arrive as a single printed-circuit-sized rubber sheet that has to be aligned to the pads by hand.",
-              "kind": "process",
-              "category": "plastics",
-              "era": "1982-1984",
-              "confidence": "medium",
-              "note": "Compression-moulded dome sheets were standard; whether the C64's came as a sheet or pre-applied to a carrier film is not established.",
-              "facts": [
-                {
-                  "label": "Cure",
-                  "value": "~150-180 C, minutes, for silicone; ~100-140 C for neoprene"
-                },
-                {
-                  "label": "Sheet",
-                  "value": "one sheet per keyboard, 61-63 domes"
-                }
-              ],
-              "inputs": [
-                "chem.rubber",
-                "chem.petroleum",
-                "facility.electricity"
-              ],
-              "children": [
-                {
-                  "id": "c64.keyboard-switches.domes.moulding.platen-press",
-                  "name": "Heated platen press",
-                  "description": "A hydraulic flat-bed press with heated platens holds a multi-cavity dome tool against the compound long enough to cure the elastomer. Small presses of this type did the whole dome sheet for a keyboard in one shot.",
-                  "kind": "tool",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "inputs": [
-                    "facility.electricity"
-                  ],
-                  "note": "Not established: hydraulic flat-bed type with heated platens, and that small presses of this type cured the whole C64 dome sheet in one shot."
-                },
-                {
-                  "id": "c64.keyboard-switches.domes.moulding.tool",
-                  "name": "Steel dome tool",
-                  "description": "A machined or spark-eroded steel tool with one hemispherical cavity per key. It has to be replaced as the dome geometry is re-specified, and its surface finish is what the dome's mating face is polished against.",
-                  "kind": "tool",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "inputs": [
-                    "metal.die-steel"
-                  ],
-                  "children": [],
-                  "note": "Not established: machined versus spark-eroded construction, one hemispherical cavity per key, and the claims about replacement on re-specification and polish transfer to the dome mating face."
-                }
-              ]
+              "to": "c64.keyboard-switches.domes.composition",
+              "rel": "made of"
             }
           ]
         },
@@ -377,185 +182,8 @@
               "value": "~2 mm before the dome closes"
             }
           ],
-          "inputs": [
-            "chem.abs"
-          ],
+          "inputs": [],
           "children": [
-            {
-              "id": "c64.keyboard-switches.keycap.abs",
-              "name": "ABS copolymer (three monomers)",
-              "description": "Acrylonitrile-butadiene-styrene: a styrene-acrylonitrile matrix rubberised with polybutadiene. It is tough, dimensionally stable, chemically scratch-resistant and - crucially for legends - it takes paint and plating well. Almost every C64 keycap is ABS or ABS/PC.",
-              "kind": "material",
-              "category": "plastics",
-              "era": "1982-1984",
-              "sources": [
-                "https://en.wikipedia.org/wiki/Acrylonitrile_butadiene_styrene"
-              ],
-              "confidence": "high",
-              "facts": [
-                {
-                  "label": "Components",
-                  "value": "acrylonitrile + butadiene + styrene"
-                },
-                {
-                  "label": "Why ABS",
-                  "value": "impact strength plus the ability to hold a printed legend"
-                }
-              ],
-              "inputs": [
-                "chem.abs"
-              ],
-              "children": [
-                {
-                  "id": "c64.keyboard-switches.keycap.abs.butadiene",
-                  "name": "Polybutadiene rubber phase",
-                  "description": "The elastic phase that makes ABS impact-resistant, made by polymerising butadiene derived from refinery butadiene, which itself comes from steam cracking propylene. This is the hydrocarbon tree: propylene to butadiene to the rubber in the keycap's grip surface.",
-                  "kind": "material",
-                  "category": "plastics",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "note": "Not established: that a polybutadiene phase is what makes these keycaps impact-resistant, and the propylene-to-butadiene cracker route. The butadiene polymer chain belongs to the chemicals file; this node asserts its presence in the keycap without evidence.",
-                  "inputs": [
-                    "chem.butadiene",
-                    "chem.petroleum"
-                  ]
-                },
-                {
-                  "id": "c64.keyboard-switches.keycap.abs.acrylonitrile",
-                  "name": "Sohlo ammoxidation of propylene",
-                  "description": "The acrylonitrile monomer is made by the Sohlo process: propylene, ammonia and oxygen are passed over a bismuth-antimony or bismuth-molybdenum catalyst to give acrylonitrile selectively. Propylene itself comes from steam cracking of naphtha, so the keycap of a C64 is roughly one and a half hydrocarbon molecules away from crude oil.",
-                  "kind": "process",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "sources": [
-                    "https://en.wikipedia.org/wiki/Acrylonitrile"
-                  ],
-                  "confidence": "high",
-                  "facts": [
-                    {
-                      "label": "Process",
-                      "value": "Sohlo ammoxidation, ~425-500 C, fixed bed"
-                    },
-                    {
-                      "label": "Yield",
-                      "value": "~70-80 % selectivity on propylene"
-                    }
-                  ],
-                  "inputs": [
-                    "chem.acrylonitrile",
-                    "chem.propylene"
-                  ],
-                  "children": [
-                    {
-                      "id": "c64.keyboard-switches.keycap.abs.acrylonitrile.bismuth-catalyst",
-                      "name": "Bismuth-antimony catalyst",
-                      "description": "The ammoxidation catalyst is a bismuth molybdate or bismuth-antimony promoted silica. Bismuth came from bismuthinite, a comparatively rare ore worked chiefly in Bolivia and China, and it was a real bottleneck for acrylonitrile capacity in the 1980s.",
-                      "kind": "material",
-                      "category": "metals",
-                      "era": "ancient",
-                      "sources": [
-                        "https://en.wikipedia.org/wiki/Bismuth"
-                      ],
-                      "confidence": "medium",
-                      "note": "Bismuth supply was genuinely tight in the early 1980s and the ammoxidation catalyst industry was a significant consumer; the size of that demand is not quantified.",
-                      "facts": [
-                        {
-                          "label": "Ore",
-                          "value": "bismuthinite, Bi2S3"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "c64.keyboard-switches.keycap.double-shot",
-              "name": "Double-shot moulding of the top legends",
-              "kind": "process",
-              "category": "plastics",
-              "era": "1982",
-              "confidence": "high",
-              "description": "The legends on the TOP of the keycap - letters, numbers and symbols - are moulded into the plastic, not printed on it. The cap is injection-moulded twice in one tool cycle: first in the dark brown-grey base colour, then a second shot of a contrasting lighter colour is injected into a slightly larger cavity, covering everything except the legend characters, which are left as uncoated islands of the first shot. Nothing is printed on the top face, so the legend cannot wear off - which is why a forty-year-old cap still reads cleanly, and why the mould line and the islands are visible when a cap is pulled off its stem. This covers the cap top only: the graphics characters on the front wall are a different process (c64.keyboard.keycaps.legend), and the two are told apart at a glance by whether the character wears.",
-              "facts": [
-                {
-                  "label": "Applies to",
-                  "value": "the cap top only - letters, numbers and symbols"
-                },
-                {
-                  "label": "Shots",
-                  "value": "two injection mouldings, co-moulded in the same tool cycle"
-                },
-                {
-                  "label": "Legend",
-                  "value": "island of the base-colour shot, not a printed decal"
-                },
-                {
-                  "label": "Wear",
-                  "value": "none - a moulded legend outlives the printed front characters"
-                },
-                {
-                  "label": "Exception",
-                  "value": "the spacebar is reported not to be double-shot; all other caps are"
-                }
-              ],
-              "inputs": [
-                "chem.abs",
-                "facility.electricity"
-              ],
-              "sources": [
-                "https://wiki.themk.org/index.php/Commodore_64",
-                "https://deskthority.net/viewtopic.php?t=8102"
-              ],
-              "note": "The top face of the cap is double-shot, white legends on a very dark brown; the PETSCII legends on the front face are printed separately. Keyboard Wiki (themk.org): The alphanumeric keys are double-shot white on a very dark brown. Deskthority thread 8102: With the exception of the spacebar, they are all double shot injection molded keycaps. Neither the Commodore C64/C64C Service Manual nor The Anatomy of the Commodore 64 discusses keycap printing. The 1988 C64C is different: the same Keyboard Wiki page records All legends ... pad-printed on top of the keys for that machine.",
-              "children": [
-                {
-                  "id": "c64.keyboard-switches.keycap.double-shot.legend-colour",
-                  "name": "Second-shot colour",
-                  "kind": "material",
-                  "category": "passives",
-                  "confidence": "medium",
-                  "description": "The outer shot is pigmented with an organic or inorganic colourant at high loading. The light legends on the dark brown-grey caps - and, on some sets, the orange or grey function-key caps - are all achievable with pigmented ABS; the moulding must be run at high enough pressure that the two shots fuse rather than delaminate.",
-                  "inputs": [
-                    "chem.abs"
-                  ],
-                  "sources": [
-                    "https://wiki.themk.org/index.php/Commodore_64",
-                    "https://deskthority.net/viewtopic.php?t=8102"
-                  ],
-                  "children": [
-                    {
-                      "id": "c64.keyboard-switches.keycap.double-shot.legend-colour.pigment",
-                      "name": "Colourant in the second shot",
-                      "kind": "material",
-                      "category": "passives",
-                      "confidence": "medium",
-                      "description": "The second-shot colour is a pigment dispersed in the ABS matrix at high loading. Organic pigments give brighter colours and cost more; inorganic iron oxides give the earthier browns, reds and blacks. The moulder buys a masterbatch rather than raw pigment, so the colour arrives as a compounded material.",
-                      "inputs": [
-                        "chem.petroleum"
-                      ],
-                      "note": "Not established: high-loading dispersion in the ABS matrix, the organic-bright-versus-inorganic-earthy split for C64 caps, and masterbatch purchase rather than raw pigment by the moulder."
-                    },
-                    {
-                      "id": "c64.keyboard-switches.keycap.double-shot.legend-colour.pigment.iron-oxide",
-                      "name": "Iron oxide pigments",
-                      "kind": "material",
-                      "category": "metals",
-                      "confidence": "medium",
-                      "description": "Synthetic iron oxides, made by oxidising iron scrap or precipitating from an iron solution, were the standard browns, reds and blacks of the period and are still used. They begin at iron ore and end up in the keycap, which makes the keycap a surprisingly direct consumer of the iron chain.",
-                      "inputs": [
-                        "metal.iron"
-                      ],
-                      "note": "Not established: scrap oxidation versus solution precipitation as the route for the pigment actually used, and that the brown-grey C64 caps used iron oxides rather than carbon black or organic pigments.",
-                      "sources": [
-                        "https://en.wikipedia.org/wiki/Iron_oxide"
-                      ]
-                    }
-                  ],
-                  "note": "Not established: high-loading colourant in the outer shot, the orange-or-grey function-key cap claim for C64 sets, and the high-pressure fusion rather than delamination requirement."
-                }
-              ]
-            },
             {
               "id": "c64.keyboard-switches.keycap.spring",
               "name": "Coil return spring",
@@ -565,58 +193,24 @@
               "era": "1982-1984",
               "confidence": "medium",
               "note": "Music wire (high-carbon steel) or stainless; the spring wire is wound on a small coil-winder in the millions.",
-              "inputs": [
-                "metal.iron"
-              ],
-              "children": [
+              "inputs": [],
+              "children": [],
+              "edges": [
                 {
-                  "id": "c64.keyboard-switches.keycap.spring.music-wire",
-                  "name": "Music wire (patented steel)",
-                  "description": "A high-carbon steel wire, patented and drawn to a fine diameter, with a very high tensile strength - which is what lets a millimetre-thick coil inside a keycap return thousands of times without taking a set.",
-                  "kind": "material",
-                  "category": "metals",
-                  "era": "ancient",
-                  "confidence": "medium",
-                  "facts": [
-                    {
-                      "label": "Carbon",
-                      "value": "~0.6-0.9 % (music wire)"
-                    }
-                  ],
-                  "inputs": [
-                    "metal.iron"
-                  ],
-                  "note": "Not established: patenting and drawing as the wire route, the 0.6-0.9 percent carbon figure, and the thousands-of-returns-without-taking-a-set endurance for this keycap spring specifically.",
-                  "sources": [
-                    "https://en.wikipedia.org/wiki/Music_wire"
-                  ]
+                  "to": "c64.keyboard-switches.keycap.spring.music-wire",
+                  "rel": "contains"
                 },
                 {
-                  "id": "c64.keyboard-switches.keycap.spring.coil-winder",
-                  "name": "Spring coiling machine",
-                  "description": "A cam-controlled coiler winds a coil spring from wire, sets its free length and closes the ends, tens of thousands per hour. Every keycap plunger spring on the keyboard was made on a machine of this type.",
-                  "kind": "tool",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "children": [
-                    {
-                      "id": "c64.keyboard-switches.keycap.spring.coil-winder.steel",
-                      "name": "Tool steel cam and dies",
-                      "description": "The coiler tool is hardened tool steel, and the coiler is a Camweld or similar automatic machine. Ferrous tooling, so iron ore again.",
-                      "kind": "tool",
-                      "category": "metals",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "metal.die-steel"
-                      ],
-                      "note": "Not established: hardened tool steel as the cam-and-die material and the Camweld-or-similar automatic machine identification for the keycap spring coiler."
-                    }
-                  ],
-                  "note": "Not established: that the keycap plunger springs were made on cam-controlled coil-winders at tens of thousands per hour. This is a general statement about spring manufacturing, not about this keyboard."
+                  "to": "c64.keyboard-switches.keycap.spring.coil-winder",
+                  "rel": "uses"
                 }
               ]
+            }
+          ],
+          "edges": [
+            {
+              "to": "c64.keyboard-switches.keycap.abs",
+              "rel": "contains"
             }
           ]
         },
@@ -654,10 +248,14 @@
               "category": "passives",
               "era": "1982-1984",
               "confidence": "medium",
-              "inputs": [
-                "chem.rubber"
-              ],
-              "note": "Not established: the latching-dome mechanism itself. The service manual confirms that RESTORE and the off-matrix keys exist and that depressing RESTORE triggers U20 to generate a non-maskable interrupt, but nothing consulted describes how the SHIFT LOCK key latches, or that its matrix position is not scanned."
+              "inputs": [],
+              "note": "Not established: the latching-dome mechanism itself. The service manual confirms that RESTORE and the off-matrix keys exist and that depressing RESTORE triggers U20 to generate a non-maskable interrupt, but nothing consulted describes how the SHIFT LOCK key latches, or that its matrix position is not scanned.",
+              "edges": [
+                {
+                  "to": "chem.rubber",
+                  "rel": "made of"
+                }
+              ]
             }
           ]
         },
@@ -683,65 +281,12 @@
               "value": "conductor fatigue fracture at the header - the single most common C64 keyboard fault"
             }
           ],
-          "inputs": [
-            "chem.polyester",
-            "metal.copper"
-          ],
-          "children": [
+          "inputs": [],
+          "children": [],
+          "edges": [
             {
-              "id": "c64.keyboard-switches.ribbon.film",
-              "name": "PET/PVC flat flexible cable",
-              "description": "Parallel copper conductors laminated between polyester film layers with a PVC jacket. The jacket and the film are all hydrocarbon polymers, so this cable is chemically the same family as the switch housings and the case.",
-              "kind": "material",
-              "category": "plastics",
-              "era": "1982-1984",
-              "confidence": "medium",
-              "note": "The mainboard end is a 20-pin 2.54 mm locking header per the primary parts list. Not established: parallel copper conductors laminated between polyester film with a PVC jacket, the 0.5-1.27 mm conductor pitch, and the insulation-displacement crimp. The 1992 manual does not describe the cable.",
-              "facts": [
-                {
-                  "label": "Pitch",
-                  "value": "0.5-1.27 mm"
-                },
-                {
-                  "label": "Jacket",
-                  "value": "PVC or flat polyester (PET)"
-                }
-              ],
-              "inputs": [
-                "chem.pvc",
-                "chem.petroleum"
-              ],
-              "children": [
-                {
-                  "id": "c64.keyboard-switches.ribbon.film.pvc",
-                  "name": "PVC jacket",
-                  "description": "The ribbon's outer jacket is extruded PVC, the cheapest flexible insulation available. Vinyl chloride is made by oxychlorinating ethylene with chlorine, and the chlorine comes from salt - rock salt mined or solution-mined - while the ethylene comes from a steam cracker. So the ribbon cable ends at both rock salt and crude oil.",
-                  "kind": "material",
-                  "category": "plastics",
-                  "era": "1982-1984",
-                  "sources": [
-                    "https://en.wikipedia.org/wiki/Chloride_process"
-                  ],
-                  "confidence": "high",
-                  "note": "Vinyl chloride comes from oxychlorinating ethylene with chlorine, and the chlorine comes from brine electrolysis, so the ribbon jacket touches both an oil field and a salt field. The vinyl chloride monomer node is chem.pvc.vcm.",
-                  "facts": [
-                    {
-                      "label": "Vinyl chloride route",
-                      "value": "ethylene + chlorine -> EDC -> VCM, oxychlorination"
-                    },
-                    {
-                      "label": "Chlorine",
-                      "value": "from rock salt / brine electrolysis"
-                    }
-                  ],
-                  "inputs": [
-                    "chem.pvc",
-                    "chem.pvc.vcm",
-                    "chem.ethylene",
-                    "chem.petroleum"
-                  ]
-                }
-              ]
+              "to": "c64.keyboard-switches.ribbon.film",
+              "rel": "contains"
             }
           ]
         }
@@ -800,12 +345,7 @@
           "value": "MC4044 phase/frequency detector (Motorola CMOS, 14-pin DIP)"
         }
       ],
-      "inputs": [
-        "metal.quartz",
-        "metal.nickel",
-        "metal.silver.ingot",
-        "facility.argon"
-      ],
+      "inputs": [],
       "children": [
         {
           "id": "mb.crystal.y1",
@@ -838,423 +378,8 @@
               "value": "argon or krypton at a few kPa"
             }
           ],
-          "inputs": [
-            "metal.quartz",
-            "metal.silver.ingot",
-            "metal.nickel",
-            "facility.argon"
-          ],
+          "inputs": [],
           "children": [
-            {
-              "id": "mb.crystal.y1.natural-quartz",
-              "name": "Natural rock crystal",
-              "description": "Gem-quality clear quartz for crystal units came historically from the rock-crystal veins of Minas Gerais in Brazil, prized for natural faces that need no lapping and for the very low defect density that makes a low-phase-noise oscillator possible. By the early 1980s this was being displaced by hydrothermal synthetic quartz, which is chemically identical and far more uniform.",
-              "kind": "material",
-              "category": "silicon",
-              "era": "1982-1984",
-              "confidence": "medium",
-              "children": [],
-              "note": "Not established: Minas Gerais rock-crystal veins as the provenance of Y1-era feed, the natural-faces and very-low-defect-density claims, and the early-1980s displacement timing by hydrothermal synthetic quartz for this supply."
-            },
-            {
-              "id": "mb.crystal.y1.natural-quartz.synthetic",
-              "name": "Hydrothermal synthetic quartz",
-              "description": "Because natural quartz is limited and variable, industry moved to growing it: an autoclave is charged with silica (often crushed natural quartz) in a hot sodium-hydroxide solution and heated at around 400 C and 150 MPa. Quartz grows on seed crystals hung in the solution, growing the rough in days rather than geological time. This is the source of nearly all quartz crystal blanks made from about the mid-1970s onward.",
-              "kind": "process",
-              "category": "silicon",
-              "era": "1982-1984",
-              "sources": [
-                "https://en.wikipedia.org/wiki/Synthetic_quartz"
-              ],
-              "confidence": "high",
-              "note": "This node was moved up out of natural-quartz, where it sat as if natural and synthetic quartz were parent and child; its id retains the old path because ids are stable. By the early 1980s this route, not mined rock crystal, supplied nearly every blank in the industry.",
-              "facts": [
-                {
-                  "label": "Growth temperature",
-                  "value": "~400 C"
-                },
-                {
-                  "label": "Growth pressure",
-                  "value": "~150 MPa"
-                },
-                {
-                  "label": "Growth time",
-                  "value": "days to a few weeks"
-                }
-              ],
-              "inputs": [
-                "metal.silica-sand",
-                "metal.caustic-soda"
-              ],
-              "children": [
-                {
-                  "id": "mb.crystal.y1.natural-quartz.synthetic.autoclave",
-                  "name": "Steel autoclave with seed crystals",
-                  "description": "A filled, sealed pressure vessel - usually Hastelloy or 17-4PH steel liner - held at high temperature and pressure so an alkaline solution dissolves silica from the feed and re-deposits it on thin zoned seed plates hung in the vessel. Temperature gradients create the supersaturation that drives growth, and the growth zones themselves are what later become the tuned crystal resonators.",
-                  "kind": "tool",
-                  "category": "silicon",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "sources": [
-                    "https://en.wikipedia.org/wiki/Quartz"
-                  ],
-                  "note": "Hydrothermal growth in an autoclave is documented, and that by the 1950s it produced synthetic quartz on an industrial scale so that today virtually all quartz crystal used in electronics is synthetic. Not established: the ~400 C and ~150 MPa conditions, the Hastelloy or 17-4PH liner, the NaOH or KOH solvent, the zoned seed plates, and the Rouquay-type process name.",
-                  "facts": [
-                    {
-                      "label": "Conditions",
-                      "value": "~400 C, ~150 MPa"
-                    },
-                    {
-                      "label": "Solution",
-                      "value": "NaOH or KOH in water"
-                    },
-                    {
-                      "label": "Rouquay-type process",
-                      "value": "industrial standard from the mid-1970s"
-                    }
-                  ],
-                  "inputs": [
-                    "metal.caustic-soda",
-                    "metal.silica-sand",
-                    "facility.electricity"
-                  ],
-                  "children": [
-                    {
-                      "id": "mb.crystal.y1.natural-quartz.synthetic.autoclave.caustic",
-                      "name": "Alkali solvent",
-                      "description": "The growth solution is hot concentrated sodium or potassium hydroxide, which dissolves silica at the elevated temperature while quartz re-deposits on the seeds. The alkali is made by chlor-alkali electrolysis of brine, so the crystal ultimately touches rock salt as well as quartz sand.",
-                      "kind": "material",
-                      "category": "fluids",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "metal.caustic-soda",
-                        "metal.salt-brine"
-                      ],
-                      "note": "Not established: hot concentrated sodium or potassium hydroxide as the growth solvent, and that the caustic is made by chlor-alkali electrolysis so the crystal chain reaches rock salt. Hydrothermal growth in an autoclave is documented; the alkali solvent and its chlorine link are not, in the sources consulted."
-                    }
-                  ]
-                },
-                {
-                  "id": "mb.crystal.y1.natural-quartz.synthetic.silica-feed",
-                  "name": "Quartz sand / crushed quartz feed",
-                  "description": "The silica feedstock for the autoclave is cleaned quartz sand or lumps of milky quartz. Natural quartz sand is a common beach and dune sand: essentially SiO2, left behind as quartz survives weathering while everything else dissolves and washes away.",
-                  "kind": "material",
-                  "category": "silicon",
-                  "era": "ancient",
-                  "confidence": "medium",
-                  "inputs": [
-                    "metal.silica-sand",
-                    "metal.quartz"
-                  ],
-                  "note": "Not established: cleaned quartz sand versus lumps of milky quartz as the autoclave feed for the Y1 synthetic quartz, and the beach-and-dune weathering provenance account for this feed.",
-                  "sources": [
-                    "https://en.wikipedia.org/wiki/Quartz"
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "mb.crystal.y1.blank-preparation",
-              "name": "Sawing, lapping and X-ray orienting the blank",
-              "description": "Rough crystal is sawn into blanks, then the cut face is lapped to about 0.15 mm and X-ray diffracted to find its crystallographic orientation. Orientation is everything: only an AT-cut at the right angle gives the flat temperature curve a frequency-stable oscillator needs.",
-              "kind": "process",
-              "category": "silicon",
-              "era": "1982-1984",
-              "sources": [
-                "https://www.citeseerx.ist.psu.edu/viewdoc/summary/10.1.1.347.9347"
-              ],
-              "confidence": "high",
-              "facts": [
-                {
-                  "label": "Lapped thickness",
-                  "value": "~0.15 mm"
-                },
-                {
-                  "label": "Orientation",
-                  "value": "X-ray diffractometer; AT-cut ~35 deg to the X axis for 1980s units"
-                }
-              ],
-              "inputs": [
-                "metal.quartz",
-                "facility.electricity"
-              ],
-              "children": [
-                {
-                  "id": "mb.crystal.y1.blank-preparation.xray-orienting",
-                  "name": "X-ray orientation and AT-cut angle selection",
-                  "description": "A synthetic rough is indexed by X-ray diffraction so its Z axis and X axis are known, then sawn at a chosen angle to the X axis (the 'AT-cut'). The mid-1980s standard for general-purpose oscillators was about 35 degrees; this angle is chosen because it lands the resonance on a flat, temperature-insensitive point in the quartz stiffness-temperature curve.",
-                  "kind": "tool",
-                  "category": "silicon",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "facts": [
-                    {
-                      "label": "Instrument",
-                      "value": "four-circle X-ray diffractometer with a goniometer"
-                    },
-                    {
-                      "label": "AT-cut angle",
-                      "value": "~35 degrees"
-                    },
-                    {
-                      "label": "Why",
-                      "value": "flattens the frequency-temperature curve"
-                    }
-                  ],
-                  "inputs": [
-                    "facility.electricity"
-                  ],
-                  "note": "Quartz is documented as trigonal alpha-quartz in space group P3221 with a fixed cell, so crystallographic orientation by X-ray is meaningful. Not established: the four-circle diffractometer, the ~35 degree AT-cut as the mid-1980s general-purpose standard, and the claim that this angle flattens the frequency-temperature curve. The 573 C alpha-beta transition is documented but is not the frequency-temperature flatness argument."
-                },
-                {
-                  "id": "mb.crystal.y1.blank-preparation.lapping",
-                  "name": "Lapping and double-lap polishing",
-                  "description": "The cut blank is lapped on rotating cast-iron plates with progressively finer abrasives (aluminium oxide, then colloidal silica) down to about 0.15 mm, then double-lapped against a second plate to remove bow and damage left by the saw. Crystal blanks for a 1982 oscillator were lapped on plates run by lapidary and lapping shops, not in the same plant that makes the finished crystal.",
-                  "kind": "process",
-                  "category": "silicon",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "facts": [
-                    {
-                      "label": "Final thickness",
-                      "value": "~0.15 mm before final grinding"
-                    },
-                    {
-                      "label": "Abrasives",
-                      "value": "Al2O3 down to colloidal silica"
-                    }
-                  ],
-                  "inputs": [
-                    "metal.alumina",
-                    "metal.silica-sand",
-                    "facility.electricity",
-                    "facility.water"
-                  ],
-                  "children": [
-                    {
-                      "id": "mb.crystal.y1.blank-preparation.lapping.colloidal-silica",
-                      "name": "Final lapping abrasive",
-                      "description": "The last lapping stage uses a colloidal silica slurry, which polishes rather than cuts. Colloidal silica is precipitated from a dilute sodium silicate solution, itself made from silica sand and sodium carbonate.",
-                      "kind": "material",
-                      "category": "passives",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "metal.silica-sand"
-                      ],
-                      "note": "Not established: colloidal silica slurry as the final lapping stage for Y1 blanks, and precipitation from dilute sodium silicate made from silica sand and sodium carbonate as the route for this slurry."
-                    }
-                  ],
-                  "note": "Not established: the double-lap sequence, aluminium oxide down to colloidal silica, the 0.15 mm final thickness, and that blanks were lapped by outside lapidary shops. The tree's own source for the parent node is a lapping reference, not a crystal-process source; no document consulted here supports these figures."
-                }
-              ]
-            },
-            {
-              "id": "mb.crystal.y1.grinding",
-              "name": "Grinding the lens shape",
-              "description": "The face is bevelled and the outline ground so the finished blank is a lens or plano-convex dome rather than a flat slab. The convexity is deliberate: it makes the crystal's resonant frequency less sensitive to surface damage and to where the mounting points press on it.",
-              "kind": "process",
-              "category": "silicon",
-              "era": "1982-1984",
-              "confidence": "medium",
-              "facts": [
-                {
-                  "label": "Final plate thickness",
-                  "value": "~0.07 mm at the centre, bevelled to ~0.1 mm at the edge"
-                },
-                {
-                  "label": "Why bevelled",
-                  "value": "so the supports never touch the vibrating centre"
-                }
-              ],
-              "inputs": [
-                "facility.electricity"
-              ],
-              "children": [
-                {
-                  "id": "mb.crystal.y1.grinding.diamond-wheel",
-                  "name": "Diamond grinding wheel",
-                  "description": "A resin-bonded diamond wheel, used wet, that bevels the plate edge and cuts the lens curvature. In 1982 diamond abrasive was largely synthetic, made from graphite under a shock wave; natural diamond was reserved for dressing the wheels.",
-                  "kind": "tool",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "inputs": [
-                    "si.wafer.diamond"
-                  ],
-                  "note": "Not established: resin bonding and wet use of this wheel, and the largely-synthetic shock-wave-graphite versus natural-diamond-for-dressing split in 1982."
-                }
-              ],
-              "note": "Not established: a lens or plano-convex dome form for the Y1 blank, the 0.07 mm centre and 0.1 mm edge thickness figures, and the reduced sensitivity to surface damage and mounting-point pressure."
-            },
-            {
-              "id": "mb.crystal.y1.supports",
-              "name": "Mounting and soldering of the crystal",
-              "description": "The four HC-49 leads are formed to a right angle and soldered onto the board in a wave-solder pass. The crystal's case sits at the board's natural mechanical frequency well below the circuit's operating frequency, which is deliberate: an HC-49 body has several overtone resonances that would otherwise produce spurious oscillator modes.",
-              "kind": "process",
-              "category": "assembly",
-              "era": "1982-1984",
-              "confidence": "medium",
-              "inputs": [
-                "metal.tin"
-              ],
-              "note": "Not established: right-angle forming of the four HC-49 leads, wave-solder mounting of Y1, and the board-frequency versus overtone-resonance spurious-mode rationale."
-            },
-            {
-              "id": "mb.crystal.y1.electrodes",
-              "name": "Metal electrodes on the blank faces",
-              "description": "Chromium is evaporated or sputtered onto both faces as an adhesion layer, then gold or silver is deposited over it as the conductive electrode, through a shadow mask that defines the electrode area. Chromium-gold is the classic 1980s crystal electrode stack: Cr to bond, Au to conduct.",
-              "kind": "process",
-              "category": "passives",
-              "era": "1982-1984",
-              "confidence": "medium",
-              "note": "Some 1980s HC-49/U crystals used nickel electrodes over chromium for economy; gold-over-chromium was the higher-reliability standard.",
-              "facts": [
-                {
-                  "label": "Adhesion layer",
-                  "value": "Cr or Ti, ~50-100 nm"
-                },
-                {
-                  "label": "Conductive layer",
-                  "value": "Au (~200-400 nm) or Ag"
-                },
-                {
-                  "label": "Pattern",
-                  "value": "shadow-mask defined, 6-14 mm2 for a 1982 HC-49"
-                }
-              ],
-              "inputs": [
-                "metal.gold.ingot",
-                "metal.silver.ingot",
-                "metal.chromium"
-              ],
-              "children": [
-                {
-                  "id": "mb.crystal.y1.electrodes.chromium",
-                  "name": "Chromium adhesion layer",
-                  "description": "Chromium is evaporated as the adhesion layer because bare quartz will not hold gold by van der Waals forces alone. Chromium wets both the quartz surface and the gold film, and it is itself a hard, chemically inert metal.",
-                  "kind": "material",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "facts": [
-                    {
-                      "label": "Thickness",
-                      "value": "~50-100 nm"
-                    }
-                  ],
-                  "inputs": [
-                    "metal.chromium",
-                    "metal.chromite"
-                  ],
-                  "note": "Not established: chromium as the adhesion layer, the 50-100 nm thickness, and the van der Waals argument. Chromium-on-gold adhesion layers are real practice, but no document consulted states this for crystal electrodes."
-                },
-                {
-                  "id": "mb.crystal.y1.electrodes.gold-film",
-                  "name": "Gold electrode film",
-                  "description": "Gold evaporated through a shadow mask to give the electrode its final geometry and conductivity. The mask pattern fixes the electrode area, which together with the plate thickness is what sets the crystal capacitance.",
-                  "kind": "process",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "facts": [
-                    {
-                      "label": "Thickness",
-                      "value": "~200-400 nm"
-                    }
-                  ],
-                  "inputs": [
-                    "metal.gold",
-                    "facility.electricity"
-                  ],
-                  "children": [
-                    {
-                      "id": "mb.crystal.y1.electrodes.gold-film.mask",
-                      "name": "Evaporation shadow mask",
-                      "description": "A thin metal mask placed above the rotating blank during evaporation so the electrode pattern is defined. The mask is made from a drawn stainless or nickel strip, chemically etched to the electrode shape.",
-                      "kind": "tool",
-                      "category": "passives",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "metal.nickel",
-                        "metal.stainless.304"
-                      ],
-                      "note": "Not established: evaporation above a rotating blank, drawn stainless versus nickel strip as the mask stock, and chemical etching to the electrode shape for the Y1 electrodes."
-                    }
-                  ],
-                  "note": "Not established: shadow-mask evaporation, the 200-400 nm gold thickness, and that mask area together with plate thickness sets the crystal capacitance. No source consulted describes crystal electrode metallisation."
-                }
-              ]
-            },
-            {
-              "id": "mb.crystal.y1.cutting",
-              "name": "Cutting the plate and vacuum baking",
-              "description": "The plated blank is cut with a diamond wheel into individual resonator plates, then the plates are vacuum-baked at around 400 C to drive off adsorbed moisture and contaminants. That vacuum bake is what removes the piezoelectric pyroelectric drift and the 'dope' effect - the stress-induced frequency shift as a crystal heats - and it is why a crystal that has been opened is never a good crystal.",
-              "kind": "process",
-              "category": "silicon",
-              "era": "1982-1984",
-              "confidence": "medium",
-              "facts": [
-                {
-                  "label": "Bake",
-                  "value": "~350-400 C under vacuum for 1-2 h"
-                },
-                {
-                  "label": "Consequence",
-                  "value": "good level frequency stability over temperature"
-                }
-              ],
-              "inputs": [
-                "facility.electricity"
-              ],
-              "children": [
-                {
-                  "id": "mb.crystal.y1.cutting.dicing-saw",
-                  "name": "Diamond dicing saw",
-                  "description": "A thin resin-bonded diamond wheel, ~0.03-0.05 mm thick, cutting the plated blank into resonators. The wheel has to be extremely thin and extremely flat to avoid chipping a 0.07 mm plate.",
-                  "kind": "tool",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "inputs": [
-                    "facility.electricity"
-                  ],
-                  "note": "Not established: the 0.03-0.05 mm resin-bonded diamond wheel thickness. Nothing consulted documents dicing saws for resonator plates."
-                },
-                {
-                  "id": "mb.crystal.y1.cutting.cleanroom",
-                  "name": "Cleaning between steps",
-                  "description": "Every step from lapping onward is done washed and clean: a fingerprint on a 0.07 mm plate changes the frequency. Crystal preparation is one of the few wet, cold, dirty-looking processes in electronics.",
-                  "kind": "facility",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "inputs": [
-                    "facility.water"
-                  ],
-                  "children": [
-                    {
-                      "id": "mb.crystal.y1.cutting.cleanroom.deionised-water",
-                      "name": "Deionised rinse water",
-                      "description": "Every crystal process rinse uses deionised water, because a single dissolved ion on a resonating plate changes the frequency measurably. City water is nowhere good enough.",
-                      "kind": "material",
-                      "category": "passives",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "facility.water",
-                        "facility.steam.ion-resin"
-                      ],
-                      "note": "Not established: the specific claim that a single dissolved ion on a resonating plate changes the frequency measurably. Deionised rinse water as the standard is uncontroversial; the quantitative sensitivity assertion is not documented in any source consulted."
-                    }
-                  ],
-                  "note": "Not established: that cleaning from lapping onward is done washed and clean, and that a fingerprint on a 0.07 mm plate shifts the frequency. Sensible contamination control, but unsourced."
-                }
-              ],
-              "note": "Not established: the 350-400 C vacuum bake for 1-2 hours and its claimed removal of pyroelectric drift and the dope effect. No document consulted describes the post-cut bake or its mechanism. The one nearby documented quartz fact is the alpha-beta transformation at 573 C, well above this bake."
-            },
             {
               "id": "mb.crystal.y1.case",
               "name": "HC-49/U case: crimp, weld and argon fill",
@@ -1284,94 +409,8 @@
                   "value": "spring wire mounts holding the plate at the stress-minimising points"
                 }
               ],
-              "inputs": [
-                "metal.nickel",
-                "facility.argon",
-                "metal.tin.ingot"
-              ],
+              "inputs": [],
               "children": [
-                {
-                  "id": "mb.crystal.y1.case.nickel-can",
-                  "name": "Nickel can stock",
-                  "description": "HC-49/U cans were drawn from nickel or nickel-plated strip steel, or from brass with a nickel finish. Nickel is used because it matches the thermal expansion of the quartz and the electrode leads closely enough that the mounting stress does not drift the frequency.",
-                  "kind": "material",
-                  "category": "metals",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "note": "HC-49/U cans were drawn from nickel or nickel-plated strip steel, or from brass with a nickel finish. Nickel matches the thermal expansion of the quartz and the electrode leads closely enough that the mounting stress does not drift the frequency.",
-                  "inputs": [
-                    "metal.nickel",
-                    "metal.steel.sheet"
-                  ],
-                  "children": [
-                    {
-                      "id": "mb.crystal.y1.case.nickel-can.stock",
-                      "name": "Drawn can stock",
-                      "description": "The HC-49/U can is deep-drawn from thin nickel-plated strip in a progressive tool, then the crimped collar is rolled and the lid welded on. Both operations happen before the plate goes in - the can is made empty and loaded later.",
-                      "kind": "process",
-                      "category": "passives",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "metal.nickel"
-                      ],
-                      "note": "Not established: that the HC-49/U can is deep-drawn from nickel-plated strip in a progressive tool and that the collar is rolled. Nothing in the sources consulted describes the mechanical sequence of can manufacture."
-                    },
-                    {
-                      "id": "mb.crystal.y1.case.nickel-can.weld",
-                      "name": "Welded lid and crimped collar",
-                      "description": "The lid is spot-welded or resistance-welded to the collar in an atmosphere of dry hydrogen or forming gas, which keeps the internal oxide clean and lets the fill gas stay inert. Hermeticity is what makes a forty-year-old crystal hold its frequency.",
-                      "kind": "process",
-                      "category": "passives",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "facility.electricity"
-                      ],
-                      "children": [
-                        {
-                          "id": "mb.crystal.y1.case.nickel-can.weld.gas",
-                          "name": "Forming gas for welding",
-                          "description": "A mixture of hydrogen and nitrogen used as a cover during the lid weld. Hydrogen also diffuses any internal oxide onto the getters, which is why a well-made can can have a getter mirror at the bottom after opening.",
-                          "kind": "material",
-                          "category": "passives",
-                          "era": "1982-1984",
-                          "confidence": "medium",
-                          "inputs": [
-                            "facility.nitrogen",
-                            "facility.argon"
-                          ],
-                          "note": "Not established: hydrogen-nitrogen cover during this lid weld, hydrogen diffusion of internal oxide onto getters, and any getter mirror observed on opening this can."
-                        }
-                      ],
-                      "note": "Not established: spot or resistance welding of the lid in dry hydrogen or forming gas. This is the standard HC-49 hermetic-seal practice, but no source consulted describes it for this crystal, and the manual's circuit theory says nothing about the can."
-                    }
-                  ]
-                },
-                {
-                  "id": "mb.crystal.y1.case.argon-fill",
-                  "name": "Argon or krypton fill gas",
-                  "description": "The can is filled with a chemically inert gas before welding. Argon is preferred because it does not react with the electrode and cannot outgas; krypton was used where a slightly more hermetic atmosphere was wanted. The gas also damps acoustic vibration in the plate.",
-                  "kind": "material",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "facts": [
-                    {
-                      "label": "Pressure",
-                      "value": "a few kPa"
-                    },
-                    {
-                      "label": "Alternatives",
-                      "value": "vacuum-filled (hybrid) cans became common later"
-                    }
-                  ],
-                  "inputs": [
-                    "chem.fab-chemicals.process-gases.nitrogen.cryogenic-air",
-                    "facility.argon"
-                  ],
-                  "note": "Not established: argon or krypton fill gas, the few kPa pressure, the claim that argon cannot outgas, the acoustic damping role, and the later switch to vacuum-filled hybrid cans. No document consulted describes crystal can filling."
-                },
                 {
                   "id": "mb.crystal.y1.case.support-wire",
                   "name": "Spring-wire supports",
@@ -1393,30 +432,54 @@
                       "value": "gold or nickel wire, spot-welded to the electrodes"
                     }
                   ],
-                  "inputs": [
-                    "metal.gold.ingot",
-                    "metal.nickel"
-                  ],
-                  "children": [
+                  "inputs": [],
+                  "children": [],
+                  "note": "The piezoelectric argument is documented: quartz develops an electric potential on mechanical stress, and the resonant frequency of a quartz crystal oscillator is changed by mechanically loading it. Not established: spot-welded gold or nickel wire supports at the nodal points of the resonating mode, which is the standard crystal-package construction but appears in no source consulted.",
+                  "edges": [
                     {
-                      "id": "mb.crystal.y1.case.support-wire.wire",
-                      "name": "Gold or nickel support wire",
-                      "description": "Fine wire, 0.1-0.2 mm, spot-welded to the plate electrodes. Gold is preferred where maximum Q is needed; nickel is the cost-driven choice for the volume 1982 HC-49.",
-                      "kind": "material",
-                      "category": "passives",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "metal.gold.ingot",
-                        "metal.nickel"
-                      ],
-                      "note": "Not established: the 0.1-0.2 mm diameter, spot-welding to the plate electrodes, and the gold-for-maximum-Q versus nickel-as-cost-choice rule with which metal Y1 actually used."
+                      "to": "mb.crystal.y1.case.support-wire.wire",
+                      "rel": "contains"
                     }
-                  ],
-                  "note": "The piezoelectric argument is documented: quartz develops an electric potential on mechanical stress, and the resonant frequency of a quartz crystal oscillator is changed by mechanically loading it. Not established: spot-welded gold or nickel wire supports at the nodal points of the resonating mode, which is the standard crystal-package construction but appears in no source consulted."
+                  ]
                 }
               ],
-              "note": "Not established: argon versus krypton fill at a few kPa for the Y1 unit itself, nickel-plated steel versus brass as the can stock, and the crimped-collar-plus-welded-lid seal giving humidity-stable drift."
+              "note": "Not established: argon versus krypton fill at a few kPa for the Y1 unit itself, nickel-plated steel versus brass as the can stock, and the crimped-collar-plus-welded-lid seal giving humidity-stable drift.",
+              "edges": [
+                {
+                  "to": "mb.crystal.y1.case.nickel-can",
+                  "rel": "contains"
+                },
+                {
+                  "to": "mb.crystal.y1.case.argon-fill",
+                  "rel": "contains"
+                },
+                {
+                  "to": "metal.tin.ingot",
+                  "rel": "made of"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "to": "mb.crystal.y1.natural-quartz",
+              "rel": "contains"
+            },
+            {
+              "to": "metal.silver.ingot",
+              "rel": "made of"
+            },
+            {
+              "to": "metal.quartz",
+              "rel": "made of"
+            },
+            {
+              "to": "mb.crystal.y1.grinding",
+              "rel": "step"
+            },
+            {
+              "to": "mb.crystal.y1.electrodes",
+              "rel": "step"
             }
           ]
         },
@@ -1447,9 +510,7 @@
               "value": "MC4044 drives the 74LS629's VCO control pin, locking the dot clock to 4x the colour clock"
             }
           ],
-          "inputs": [
-            "metal.quartz"
-          ],
+          "inputs": [],
           "children": [
             {
               "id": "mb.crystal.oscillator.pierce",
@@ -1473,9 +534,7 @@
                   "value": "tens of microwatts (mA-scale drive in the 74LS629)"
                 }
               ],
-              "inputs": [
-                "facility.electricity"
-              ]
+              "inputs": []
             },
             {
               "id": "mb.crystal.oscillator.pll",
@@ -1548,6 +607,12 @@
             }
           ]
         }
+      ],
+      "edges": [
+        {
+          "to": "metal.silver.ingot",
+          "rel": "made of"
+        }
       ]
     },
     {
@@ -1582,13 +647,7 @@
           "value": "coiled, terminating in a DE-9 male plug"
         }
       ],
-      "inputs": [
-        "chem.abs",
-        "metal.steel.sheet",
-        "metal.copper",
-        "metal.gold.ingot",
-        "chem.pvc"
-      ],
+      "inputs": [],
       "children": [
         {
           "id": "c64.joystick.gate",
@@ -1615,10 +674,7 @@
               "value": "four coil or torsion springs on the gate ribs"
             }
           ],
-          "inputs": [
-            "chem.abs",
-            "chem.polyamide.nylon-66"
-          ],
+          "inputs": [],
           "children": [
             {
               "id": "c64.joystick.gate.spring",
@@ -1638,9 +694,7 @@
                   "value": "the limiting part; springs lose tension and occasionally snap"
                 }
               ],
-              "inputs": [
-                "metal.iron"
-              ],
+              "inputs": [],
               "children": [
                 {
                   "id": "c64.joystick.gate.spring.wire",
@@ -1650,9 +704,7 @@
                   "category": "passives",
                   "era": "1982-1984",
                   "confidence": "medium",
-                  "inputs": [
-                    "metal.iron"
-                  ],
+                  "inputs": [],
                   "note": "Not established: music-wire or stainless spring wire as the material, and that these springs are always replaced rather than repaired."
                 },
                 {
@@ -1677,10 +729,7 @@
               "era": "1982-1984",
               "confidence": "medium",
               "note": "Friction pads are standard in this class of joystick; pad dimensions for the C64's unit are not established.",
-              "inputs": [
-                "chem.polyamide.nylon-66",
-                "chem.rubber"
-              ],
+              "inputs": [],
               "children": [
                 {
                   "id": "c64.joystick.gate.friction.nylon-bushing",
@@ -1690,28 +739,19 @@
                   "category": "plastics",
                   "era": "1982-1984",
                   "confidence": "medium",
-                  "inputs": [
-                    "chem.polyamide.nylon-66"
-                  ],
-                  "children": [
+                  "inputs": [],
+                  "children": [],
+                  "note": "Not established: a moulded nylon bushing in an ABS chassis as the construction, the self-lubricating rationale, and the claim that a metal bushing would seize on the shaft.",
+                  "edges": [
                     {
-                      "id": "c64.joystick.gate.friction.nylon-bushing.resin",
-                      "name": "Lubricated nylon 6,6 bushing resin",
-                      "description": "A lubricated or unfilled nylon grade, chosen for low friction against steel. The base polymer is nylon 6,6 from hexamethylenediamine and adipic acid; caprolactam is the route to nylon 6, a different grade. The joystick contains nylon in this bushing, in its microswitch cases and in its gate.",
-                      "kind": "material",
-                      "category": "plastics",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "chem.polyamide.nylon-66"
-                      ],
-                      "note": "Not established: lubricated versus unfilled nylon grade selection for low friction against steel, and which of the bushing, microswitch cases and gate actually used this grade. The nylon 6,6 chemistry is general and not tied to the joystick supplier.",
-                      "sources": [
-                        "https://en.wikipedia.org/wiki/Nylon_66"
-                      ]
+                      "to": "c64.joystick.gate.friction.nylon-bushing.resin",
+                      "rel": "made of"
+                    },
+                    {
+                      "to": "chem.polyamide.nylon-66",
+                      "rel": "made of"
                     }
-                  ],
-                  "note": "Not established: a moulded nylon bushing in an ABS chassis as the construction, the self-lubricating rationale, and the claim that a metal bushing would seize on the shaft."
+                  ]
                 },
                 {
                   "id": "c64.joystick.gate.friction.felt-pad",
@@ -1721,21 +761,32 @@
                   "category": "passives",
                   "era": "1982-1984",
                   "confidence": "medium",
-                  "children": [
+                  "children": [],
+                  "note": "Not established: felt versus fibre as the pad material, the almost-no-oil and dry-run-cleanly claims, and the black-dust gumming mechanism when the stick is never cleaned.",
+                  "edges": [
                     {
-                      "id": "c64.joystick.gate.friction.felt-pad.wool",
-                      "name": "Wool felt",
-                      "description": "Pressed wool felt sets the lateral friction of the gate. Unlike an oiled pad it needs no lubricant, which matters because an oiled pad in a 1982 joystick attracts dust and eventually gums.",
-                      "kind": "material",
-                      "category": "passives",
-                      "era": "ancient",
-                      "confidence": "medium",
-                      "note": "Not established: wool as the felt fibre rather than a synthetic, and the claim that an oiled pad in a 1982 joystick attracts dust and eventually gums while this pad needs no lubricant."
+                      "to": "c64.joystick.gate.friction.felt-pad.wool",
+                      "rel": "contains"
                     }
-                  ],
-                  "note": "Not established: felt versus fibre as the pad material, the almost-no-oil and dry-run-cleanly claims, and the black-dust gumming mechanism when the stick is never cleaned."
+                  ]
+                }
+              ],
+              "edges": [
+                {
+                  "to": "chem.polyamide.nylon-66",
+                  "rel": "made of"
+                },
+                {
+                  "to": "chem.rubber",
+                  "rel": "made of"
                 }
               ]
+            }
+          ],
+          "edges": [
+            {
+              "to": "chem.polyamide.nylon-66",
+              "rel": "made of"
             }
           ]
         },
@@ -1764,12 +815,7 @@
               "value": "moulded thermoset or thermoplastic body, sealed or dust-covered"
             }
           ],
-          "inputs": [
-            "metal.copper",
-            "metal.gold.ingot",
-            "chem.thermosets.phenolic",
-            "chem.polyamide.nylon-66"
-          ],
+          "inputs": [],
           "children": [
             {
               "id": "c64.joystick.microswitches.leaves",
@@ -1790,72 +836,23 @@
                   "value": "~50-150 g on the plunger"
                 }
               ],
-              "children": [
+              "children": [],
+              "edges": [
                 {
-                  "id": "c64.joystick.microswitches.leaves.gold-plating",
-                  "name": "Gold plating of the microswitch leaf",
-                  "description": "The contact is gold-plated over nickel so its resistance stays at the millivolt level through millions of cycles. Gold leaf contacts in this class of switch were a real reliability advantage over the silver and nickel contacts used in cheaper equivalents.",
-                  "kind": "process",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "inputs": [
-                    "metal.gold.ingot",
-                    "metal.copper",
-                    "metal.tin.ingot"
-                  ],
-                  "note": "Not established: that these particular switch contacts were gold-plated over nickel. Gold plating is a real low-level-contact practice, but no document consulted identifies the plating in a 1982 joystick's microswitches."
+                  "to": "c64.joystick.microswitches.leaves.gold-plating",
+                  "rel": "step"
                 }
               ]
+            }
+          ],
+          "edges": [
+            {
+              "to": "c64.joystick.microswitches.plastic-case",
+              "rel": "contains"
             },
             {
-              "id": "c64.joystick.microswitches.plastic-case",
-              "name": "Switch case polymer",
-              "description": "A small moulded case in a filled thermoset or a glass-filled nylon, chosen so the case survives being dropped off a desk with the stick still in hand - which, for a joystick sold with a computer, was a frequent event.",
-              "kind": "material",
-              "category": "plastics",
-              "era": "1982-1984",
-              "confidence": "medium",
-              "inputs": [
-                "chem.polyamide.nylon-66",
-                "chem.thermosets.phenolic"
-              ],
-              "children": [
-                {
-                  "id": "c64.joystick.microswitches.plastic-case.nylon",
-                  "name": "Glass-filled nylon case",
-                  "description": "A glass-filled nylon case gives a microswitch enough stiffness to keep its contact force with a thin wall, and enough toughness to survive being dropped. It is the standard material for that class of switch through the 1980s.",
-                  "kind": "material",
-                  "category": "plastics",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "sources": [
-                    "https://en.wikipedia.org/wiki/Nylon"
-                  ],
-                  "inputs": [
-                    "chem.polyamide.nylon-66",
-                    "chem.glass-fiber"
-                  ],
-                  "children": [],
-                  "note": "Glass-filled nylon is documented as increasing structural and impact strength and rigidity, with thermoplastic glass-filled composites quoted at 25-30 % glass fibre. Not established: glass-filled nylon as the standard microswitch case material through the 1980s, and that this is the case material in a 1982 joystick."
-                },
-                {
-                  "id": "c64.joystick.microswitches.plastic-case.solder-lugs",
-                  "name": "Through-hole mounting and solder lugs",
-                  "description": "The switches are pushed into holes in the joystick's printed board and their pins soldered from underneath. Positioning them on that board is what sets how far the gate has to travel before a direction registers - the mechanical timing of the whole joystick.",
-                  "kind": "process",
-                  "category": "assembly",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "inputs": [
-                    "metal.copper.foil",
-                    "chem.glass-fiber",
-                    "chem.epoxy"
-                  ],
-                  "note": "Not established: that the microswitches were mounted in holes in a small printed board with through-hole pins soldered from underneath, and that board layout set the gate travel. On many 1980s joysticks the four microswitches were wired directly to the DE-9 with no local board at all."
-                }
-              ],
-              "note": "Not established: filled thermoset versus glass-filled nylon as the case material, and the drop-off-a-desk survival rationale for the choice."
+              "to": "metal.gold.ingot",
+              "rel": "made of"
             }
           ]
         },
@@ -1877,50 +874,15 @@
               "value": "moulded ball or ball-and-paddle, ~20 mm diameter"
             }
           ],
-          "inputs": [
-            "metal.steel.sheet"
-          ],
-          "children": [
+          "inputs": [],
+          "children": [],
+          "note": "Not established: which steel, the cold-drawn square section, and the 6 mm by 35 mm dimensions. The corrosion-at-the-bushing failure mode is well attested across the vintage joystick genre but is not a sourced measurement. The blast-furnace burden belongs to the metals file.",
+          "edges": [
             {
-              "id": "c64.joystick.shaft.steel",
-              "name": "Cold-drawn steel bar",
-              "description": "Mild or low-alloy steel, cold-drawn to a square section and cut to length. The gate's press fit is what locates the shaft; the steel is unplated except where it passes through the chassis, where corrosion is a genuine failure mode on a machine stored in a damp shed. The steel begins as sintered hematite-magnetite pellets and lump ore charged with coke and limestone, and the bulk of world steel in 1982 was made that way, so rust and pitting on a forty-year-old joystick shaft is this ore still trying to get out.",
-              "kind": "material",
-              "category": "metals",
-              "era": "1982-1984",
-              "confidence": "low",
-              "note": "The frozen-shaft failure is well documented across the vintage joystick genre; the steel chain itself belongs to the metals file.",
-              "facts": [
-                {
-                  "label": "Section",
-                  "value": "~6 mm square, ~35 mm long"
-                },
-                {
-                  "label": "Corrosion",
-                  "value": "the shaft seizes in place in the bushing, freezing the stick"
-                },
-                {
-                  "label": "Ores",
-                  "value": "hematite Fe2O3 and magnetite Fe3O4"
-                },
-                {
-                  "label": "Route",
-                  "value": "blast furnace -> basic oxygen furnace -> continuous cast bar"
-                },
-                {
-                  "label": "Burden",
-                  "value": "sinter or pellet ore, coke and limestone"
-                }
-              ],
-              "inputs": [
-                "metal.steel.sheet",
-                "metal.iron",
-                "metal.coke",
-                "metal.iron.burden"
-              ]
+              "to": "c64.joystick.shaft.steel",
+              "rel": "contains"
             }
-          ],
-          "note": "Not established: which steel, the cold-drawn square section, and the 6 mm by 35 mm dimensions. The corrosion-at-the-bushing failure mode is well attested across the vintage joystick genre but is not a sourced measurement. The blast-furnace burden belongs to the metals file."
+          ]
         },
         {
           "id": "c64.joystick.knob",
@@ -1941,138 +903,16 @@
               "value": "injection moulded, ~10^4-10^5 shots per tool"
             }
           ],
-          "inputs": [
-            "chem.abs"
-          ],
-          "children": [
+          "inputs": [],
+          "children": [],
+          "edges": [
             {
-              "id": "c64.joystick.knob.abs",
-              "name": "ABS (acrylonitrile-butadiene-styrene)",
-              "description": "The workhorse thermoplastic of consumer electronics housings in 1982: injection mouldable to a hard gloss surface, tough enough for a hand-held knob, and cheap. The same material as the keycaps, and largely the same hydrocarbon feedstock.",
-              "kind": "material",
-              "category": "plastics",
-              "era": "1982-1984",
-              "sources": [
-                "https://en.wikipedia.org/wiki/Acrylonitrile_butadiene_styrene"
-              ],
-              "confidence": "high",
-              "note": "The three monomers are traced once, under the keycap ABS; this knob is the same copolymer.",
-              "facts": [
-                {
-                  "label": "Melt flow",
-                  "value": "chosen grade ~5-15 g/10 min for housings"
-                },
-                {
-                  "label": "Mould temperature",
-                  "value": "~230-260 C melt, 40-80 C tool"
-                }
-              ],
-              "inputs": [
-                "chem.abs"
-              ],
-              "children": [
-                {
-                  "id": "c64.joystick.knob.abs.filler",
-                  "name": "Pigments and fillers in the ABS knob",
-                  "description": "The knob is black because of a pigment - usually a carbon black or an iron oxide - dispersed in the ABS before moulding, and it is stiffened with glass or mineral filler. Where a lighter colour was wanted the whitener was rutile titanium dioxide from ilmenite, which is the same titanium chain as the barium titanate capacitor powder.",
-                  "kind": "material",
-                  "category": "plastics",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "note": "The colourant is dispersed into the polymer in a compounding extruder before the moulding, not added at the press, so a black joystick knob contains a few per cent of carbon black and an antioxidant package. Titanium dioxide for a lighter colour comes from ilmenite sand, the same titanium chain as the barium titanate capacitor powder.",
-                  "facts": [
-                    {
-                      "label": "Black pigment",
-                      "value": "carbon black or iron oxide"
-                    },
-                    {
-                      "label": "White pigment",
-                      "value": "titanium dioxide from ilmenite"
-                    }
-                  ],
-                  "inputs": [
-                    "metal.ilmenite-sand",
-                    "chem.glass-fiber"
-                  ],
-                  "children": [
-                    {
-                      "id": "c64.joystick.knob.abs.filler.pigment-dispersion",
-                      "name": "Pigment dispersion in the ABS",
-                      "description": "The colourant is dispersed into the polymer in a compounding extruder before the moulding, not added at the press. A black joystick knob therefore contains a few per cent of carbon black and an antioxidant package.",
-                      "kind": "process",
-                      "category": "plastics",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "chem.abs",
-                        "facility.electricity"
-                      ],
-                      "children": [
-                        {
-                          "id": "c64.joystick.knob.abs.filler.pigment-dispersion.tio2",
-                          "name": "Titanium dioxide whitener",
-                          "description": "Where a lighter colour was used, the whitener was rutile TiO2 from ilmenite - the same titanium chain as the barium titanate powder.",
-                          "kind": "material",
-                          "category": "metals",
-                          "era": "1982-1984",
-                          "confidence": "medium",
-                          "inputs": [
-                            "metal.ilmenite-sand"
-                          ],
-                          "note": "Not established: rutile as the TiO2 form, ilmenite as its feed, and the shared chain with the barium titanate powder. Whether any knob in scope actually used a light colour is also not established.",
-                          "sources": [
-                            "https://en.wikipedia.org/wiki/Titanium_dioxide"
-                          ]
-                        }
-                      ],
-                      "note": "Not established: dispersion in a compounding extruder before moulding rather than addition at the press, the few-per-cent carbon black loading for a black knob, and the antioxidant package."
-                    }
-                  ]
-                },
-                {
-                  "id": "c64.joystick.knob.abs.moulding",
-                  "name": "Injection moulding of the knob",
-                  "description": "The knob is a two-shot or single-shot ABS moulding, often with a moulded-in texture or a soft overmould. It has to be comfortable and it has to stay on the shaft for decades.",
-                  "kind": "process",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "inputs": [
-                    "facility.electricity"
-                  ],
-                  "children": [
-                    {
-                      "id": "c64.joystick.knob.abs.moulding.tool",
-                      "name": "Knob mould tool",
-                      "description": "A hardened steel cavity tool, polished so the knob has a gloss finish. Thousands of knobs per tool life; the polish is the difference between a shiny knob and a matt one.",
-                      "kind": "tool",
-                      "category": "passives",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "metal.die-steel"
-                      ],
-                      "note": "Not established: hardened steel as the cavity-tool material, the polished-cavity-to-gloss-finish causal link, and the thousands-of-knobs-per-tool-life figure."
-                    }
-                  ],
-                  "note": "Not established: whether the knob was two-shot or single-shot moulded, and whether it carried a moulded-in texture or soft overmould. Most 1980s joystick knobs were single-shot ABS; no document consulted describes it."
-                },
-                {
-                  "id": "c64.joystick.knob.abs.fire-button",
-                  "name": "Fire button on shaft and knob",
-                  "description": "On 3-button sticks a fire switch is moulded into the shaft itself and a third button into the knob top, actuated by a rod inside the shaft. Each is a miniature microswitch of the same family as the direction switches.",
-                  "kind": "part",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "inputs": [
-                    "metal.copper",
-                    "metal.gold.ingot",
-                    "chem.polyamide.nylon-66"
-                  ],
-                  "note": "Not established: the three-button arrangement with a switch moulded into the shaft and a third button in the knob top actuated by an internal rod, or that each was a miniature microswitch of the same family as the direction switches. No joystick model is named."
-                }
-              ]
+              "to": "c64.joystick.knob.abs",
+              "rel": "contains"
+            },
+            {
+              "to": "c64.joystick.knob.abs.fire-button",
+              "rel": "contains"
             }
           ]
         },
@@ -2095,12 +935,7 @@
               "value": "DE-9 male, gold-flashed brass contacts"
             }
           ],
-          "inputs": [
-            "chem.pvc",
-            "metal.copper",
-            "metal.gold.ingot",
-            "chem.abs"
-          ],
+          "inputs": [],
           "children": [
             {
               "id": "c64.joystick.cable.plug",
@@ -2111,58 +946,32 @@
               "era": "1982-1984",
               "confidence": "medium",
               "note": "Not established: which metal and plating a 1982 joystick's DE-9 plug used. The D-shell polarisation is inherent to the DE-9 form factor, but nothing consulted states the pin alloy or plating for an aftermarket joystick.",
-              "inputs": [
-                "metal.copper",
-                "metal.gold.ingot",
-                "chem.abs"
-              ],
-              "children": [
+              "inputs": [],
+              "children": [],
+              "edges": [
                 {
-                  "id": "c64.joystick.cable.plug.cable-assembly",
-                  "name": "Cable assembly and strain relief",
-                  "description": "The conductors are crimped into the DE-9 pins and the cable is clamped by a moulded strain relief at the shell, so bending the cable does not work the pin out of the crimp. Strain relief is the single cheapest thing that decides whether a peripheral cable survives five years of use.",
-                  "kind": "process",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "inputs": [
-                    "metal.copper",
-                    "chem.abs"
-                  ],
-                  "note": "Not established: the crimped strain-relief construction and the claim that strain relief decides cable life. Plausible connector practice, but no document consulted describes a joystick cable assembly."
+                  "to": "c64.joystick.cable.plug.conductor",
+                  "rel": "contains"
                 },
                 {
-                  "id": "c64.joystick.cable.plug.conductor",
-                  "name": "Stranded conductor",
-                  "description": "Fine-stranded copper, tinned, for flexibility. Seven or nine of them, depending on the joystick model - the C64 reads five signals plus the common and the fire button.",
-                  "kind": "material",
-                  "category": "passives",
-                  "era": "1982-1984",
-                  "confidence": "medium",
-                  "inputs": [
-                    "metal.copper",
-                    "metal.tin.ingot"
-                  ],
-                  "children": [
-                    {
-                      "id": "c64.joystick.cable.plug.conductor.tinning",
-                      "name": "Tinning of the conductor",
-                      "description": "The stranded conductor is tinned so the crimp barrel grips cleanly and the joint is solderable. Tin from cassiterite, in a peripheral cable a few centimetres from the machine.",
-                      "kind": "process",
-                      "category": "metals",
-                      "era": "ancient",
-                      "confidence": "medium",
-                      "inputs": [
-                        "metal.tin"
-                      ],
-                      "note": "Not established: that tinning was applied so the crimp barrel grips cleanly, as opposed to solderability alone, and the crimp-barrel construction itself. The cassiterite feed is the generic tin chain, not a documented input to this cable."
-                    }
-                  ],
-                  "note": "Not established: the seven-or-nine conductor count by joystick model, and that the conductors were tinned copper rather than bare copper. The five-signals-plus-common-and-fire accounting is not tied to a specific stick in any source in this file."
+                  "to": "metal.gold.ingot",
+                  "rel": "made of"
                 }
               ]
             }
+          ],
+          "edges": [
+            {
+              "to": "metal.gold.ingot",
+              "rel": "made of"
+            }
           ]
+        }
+      ],
+      "edges": [
+        {
+          "to": "metal.gold.ingot",
+          "rel": "made of"
         }
       ]
     }
@@ -2177,28 +986,1533 @@
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [
-        "facility.electricity",
         "c64.keyboard-switches.domes.moulding.tool"
       ],
-      "children": [
+      "children": [],
+      "note": "Spark erosion as a process is real, but not established: that it was used to cut one-micron hemispherical cavities in hardened tool steel for these dome tools, the micrometre gap, the microsecond pulse, and the copper electrode. Graphite is the electrode material actually cited elsewhere in the tree for dome tooling.",
+      "edges": [
         {
-          "id": "c64.keyboard-switches.domes.moulding.tool.spark-erosion.graphite-electrode",
-          "name": "Graphite tool electrode",
-          "description": "Graphite is the standard spark-erosion electrode: it is conductive, machinable to a fine tip, and wears slowly by re-graphitising. Machined graphite is made from petroleum coke calcined at ~3000 C.",
-          "kind": "material",
-          "category": "passives",
-          "era": "ancient",
-          "sources": [
-            "https://en.wikipedia.org/wiki/Graphite"
-          ],
-          "confidence": "medium",
-          "inputs": [
-            "chem.petroleum"
-          ],
-          "note": "Not established: that spark erosion was actually used for this dome tool rather than machining, the slow wear by re-graphitising, and petroleum coke calcined at about 3000 C as the feed for this electrode stock."
+          "to": "c64.keyboard-switches.domes.moulding.tool.spark-erosion.graphite-electrode",
+          "rel": "consumes"
+        },
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "c64.joystick.cable.plug.conductor": {
+      "id": "c64.joystick.cable.plug.conductor",
+      "name": "Stranded conductor",
+      "description": "Fine-stranded copper, tinned, for flexibility. Seven or nine of them, depending on the joystick model - the C64 reads five signals plus the common and the fire button.",
+      "kind": "material",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "children": [],
+      "note": "Not established: the seven-or-nine conductor count by joystick model, and that the conductors were tinned copper rather than bare copper. The five-signals-plus-common-and-fire accounting is not tied to a specific stick in any source in this file."
+    },
+    "c64.joystick.knob.abs": {
+      "id": "c64.joystick.knob.abs",
+      "name": "ABS (acrylonitrile-butadiene-styrene)",
+      "description": "The workhorse thermoplastic of consumer electronics housings in 1982: injection mouldable to a hard gloss surface, tough enough for a hand-held knob, and cheap. The same material as the keycaps, and largely the same hydrocarbon feedstock.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1982-1984",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Acrylonitrile_butadiene_styrene"
+      ],
+      "confidence": "high",
+      "note": "The three monomers are traced once, under the keycap ABS; this knob is the same copolymer.",
+      "facts": [
+        {
+          "label": "Melt flow",
+          "value": "chosen grade ~5-15 g/10 min for housings"
+        },
+        {
+          "label": "Mould temperature",
+          "value": "~230-260 C melt, 40-80 C tool"
         }
       ],
-      "note": "Spark erosion as a process is real, but not established: that it was used to cut one-micron hemispherical cavities in hardened tool steel for these dome tools, the micrometre gap, the microsecond pulse, and the copper electrode. Graphite is the electrode material actually cited elsewhere in the tree for dome tooling."
+      "inputs": [],
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.joystick.knob.abs.filler",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.joystick.shaft.steel": {
+      "id": "c64.joystick.shaft.steel",
+      "name": "Cold-drawn steel bar",
+      "description": "Mild or low-alloy steel, cold-drawn to a square section and cut to length. The gate's press fit is what locates the shaft; the steel is unplated except where it passes through the chassis, where corrosion is a genuine failure mode on a machine stored in a damp shed. The steel begins as sintered hematite-magnetite pellets and lump ore charged with coke and limestone, and the bulk of world steel in 1982 was made that way, so rust and pitting on a forty-year-old joystick shaft is this ore still trying to get out.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982-1984",
+      "confidence": "low",
+      "note": "The frozen-shaft failure is well documented across the vintage joystick genre; the steel chain itself belongs to the metals file.",
+      "facts": [
+        {
+          "label": "Section",
+          "value": "~6 mm square, ~35 mm long"
+        },
+        {
+          "label": "Corrosion",
+          "value": "the shaft seizes in place in the bushing, freezing the stick"
+        },
+        {
+          "label": "Ores",
+          "value": "hematite Fe2O3 and magnetite Fe3O4"
+        },
+        {
+          "label": "Route",
+          "value": "blast furnace -> basic oxygen furnace -> continuous cast bar"
+        },
+        {
+          "label": "Burden",
+          "value": "sinter or pellet ore, coke and limestone"
+        }
+      ],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.steel.sheet",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.joystick.microswitches.plastic-case": {
+      "id": "c64.joystick.microswitches.plastic-case",
+      "name": "Switch case polymer",
+      "description": "A small moulded case in a filled thermoset or a glass-filled nylon, chosen so the case survives being dropped off a desk with the stick still in hand - which, for a joystick sold with a computer, was a frequent event.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "children": [],
+      "note": "Not established: filled thermoset versus glass-filled nylon as the case material, and the drop-off-a-desk survival rationale for the choice.",
+      "edges": [
+        {
+          "to": "c64.joystick.microswitches.plastic-case.nylon",
+          "rel": "made of"
+        },
+        {
+          "to": "chem.thermosets.phenolic",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.joystick.gate.friction.felt-pad.wool": {
+      "id": "c64.joystick.gate.friction.felt-pad.wool",
+      "name": "Wool felt",
+      "description": "Pressed wool felt sets the lateral friction of the gate. Unlike an oiled pad it needs no lubricant, which matters because an oiled pad in a 1982 joystick attracts dust and eventually gums.",
+      "kind": "material",
+      "category": "passives",
+      "era": "ancient",
+      "confidence": "medium",
+      "note": "Not established: wool as the felt fibre rather than a synthetic, and the claim that an oiled pad in a 1982 joystick attracts dust and eventually gums while this pad needs no lubricant."
+    },
+    "c64.joystick.gate.friction.nylon-bushing.resin": {
+      "id": "c64.joystick.gate.friction.nylon-bushing.resin",
+      "name": "Lubricated nylon 6,6 bushing resin",
+      "description": "A lubricated or unfilled nylon grade, chosen for low friction against steel. The base polymer is nylon 6,6 from hexamethylenediamine and adipic acid; caprolactam is the route to nylon 6, a different grade. The joystick contains nylon in this bushing, in its microswitch cases and in its gate.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: lubricated versus unfilled nylon grade selection for low friction against steel, and which of the bushing, microswitch cases and gate actually used this grade. The nylon 6,6 chemistry is general and not tied to the joystick supplier.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Nylon_66"
+      ]
+    },
+    "c64.keyboard-switches.ribbon.film": {
+      "id": "c64.keyboard-switches.ribbon.film",
+      "name": "PET/PVC flat flexible cable",
+      "description": "Parallel copper conductors laminated between polyester film layers with a PVC jacket. The jacket and the film are all hydrocarbon polymers, so this cable is chemically the same family as the switch housings and the case.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "note": "The mainboard end is a 20-pin 2.54 mm locking header per the primary parts list. Not established: parallel copper conductors laminated between polyester film with a PVC jacket, the 0.5-1.27 mm conductor pitch, and the insulation-displacement crimp. The 1992 manual does not describe the cable.",
+      "facts": [
+        {
+          "label": "Pitch",
+          "value": "0.5-1.27 mm"
+        },
+        {
+          "label": "Jacket",
+          "value": "PVC or flat polyester (PET)"
+        }
+      ],
+      "inputs": [],
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.keyboard-switches.ribbon.film.pvc",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.keyboard-switches.keycap.abs": {
+      "id": "c64.keyboard-switches.keycap.abs",
+      "name": "ABS copolymer (three monomers)",
+      "description": "Acrylonitrile-butadiene-styrene: a styrene-acrylonitrile matrix rubberised with polybutadiene. It is tough, dimensionally stable, chemically scratch-resistant and - crucially for legends - it takes paint and plating well. Almost every C64 keycap is ABS or ABS/PC.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1982-1984",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Acrylonitrile_butadiene_styrene"
+      ],
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Components",
+          "value": "acrylonitrile + butadiene + styrene"
+        },
+        {
+          "label": "Why ABS",
+          "value": "impact strength plus the ability to hold a printed legend"
+        }
+      ],
+      "inputs": [],
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.keyboard-switches.keycap.abs.butadiene",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.keyboard-switches.keycap.spring.music-wire": {
+      "id": "c64.keyboard-switches.keycap.spring.music-wire",
+      "name": "Music wire (patented steel)",
+      "description": "A high-carbon steel wire, patented and drawn to a fine diameter, with a very high tensile strength - which is what lets a millimetre-thick coil inside a keycap return thousands of times without taking a set.",
+      "kind": "material",
+      "category": "metals",
+      "era": "ancient",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Carbon",
+          "value": "~0.6-0.9 % (music wire)"
+        }
+      ],
+      "inputs": [],
+      "note": "Not established: patenting and drawing as the wire route, the 0.6-0.9 percent carbon figure, and the thousands-of-returns-without-taking-a-set endurance for this keycap spring specifically.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Music_wire"
+      ]
+    },
+    "c64.keyboard-switches.domes.composition": {
+      "id": "c64.keyboard-switches.domes.composition",
+      "name": "Carbon-filled elastomer compound",
+      "description": "Carbon black is compounded into the elastomer at a few tens of per cent by weight. The particles form a percolation network so the dome conducts along its own bulk, and the higher the loading the lower the resistance - but too much loading makes the dome brittle. This is the same black powder that goes into resistor films and pot tracks.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "note": "Not established: the 20-60 phr carbon black loading and the contact resistance of tens to hundreds of ohms. Both are quantitative figures for a specific conductive-elastomer compound, and neither appears in any document consulted. The percolation mechanism is plausible but unsourced here.",
+      "facts": [
+        {
+          "label": "Loading",
+          "value": "roughly 20-60 phr carbon black"
+        },
+        {
+          "label": "Contact resistance",
+          "value": "typically tens to hundreds of ohms - enough to trip a CMOS input, far too much for a logic 'low'"
+        }
+      ],
+      "inputs": [],
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.keyboard-switches.domes.composition.elastomer",
+          "rel": "made of"
+        },
+        {
+          "to": "c64.keyboard-switches.domes.composition.carbon-black",
+          "rel": "made of"
+        },
+        {
+          "to": "chem.rubber",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.keyboard-switches.matrix.pcb-glass-epoxy": {
+      "id": "c64.keyboard-switches.matrix.pcb-glass-epoxy",
+      "name": "Glass-epoxy laminate (FR-4)",
+      "description": "Woven glass-fibre cloth impregnated with epoxy and pressed into a sheet. The standard printed-circuit laminate since the 1960s, replacing the older phenolic paper board. The keyboard board is a trivial two-layer FR-4 part, but it goes through the same copper foil lamination and hole-drilling lines as a mainboard.",
+      "kind": "material",
+      "category": "board",
+      "era": "1960s-1982",
+      "confidence": "medium",
+      "note": "FR-4 as the standard printed-circuit laminate is uncontroversial. Not established: that the keyboard board is specifically two-layer FR-4, and that it went through the same copper-foil lamination and drilling lines as the mainboard. The keyboard is normally a separate assembly on its own line.",
+      "inputs": [],
+      "children": [],
+      "edges": [
+        {
+          "to": "chem.glass-fiber",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.keyboard-switches.matrix.pcb.copper-foil": {
+      "id": "c64.keyboard-switches.matrix.pcb.copper-foil",
+      "name": "Electrodeposited copper foil",
+      "description": "The matrix traces are copper, deposited on the laminate by an electroplating line using acid copper sulphate solution and an insoluble anode. The same copper foil process as the mainboard, at a much thinner gauge.",
+      "kind": "material",
+      "category": "board",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Foil thickness",
+          "value": "~35 um (1 oz)"
+        }
+      ],
+      "inputs": [],
+      "note": "Not established: acid copper sulphate electrodeposition on an insoluble anode for this board, and the 35 um (1 oz) foil thickness. Foil gauge is a boardhouse specification, not something a reference document states.",
+      "edges": [
+        {
+          "to": "metal.copper.foil",
+          "rel": "made of"
+        }
+      ]
+    },
+    "mb.crystal.y1.natural-quartz": {
+      "id": "mb.crystal.y1.natural-quartz",
+      "name": "Natural rock crystal",
+      "description": "Gem-quality clear quartz for crystal units came historically from the rock-crystal veins of Minas Gerais in Brazil, prized for natural faces that need no lapping and for the very low defect density that makes a low-phase-noise oscillator possible. By the early 1980s this was being displaced by hydrothermal synthetic quartz, which is chemically identical and far more uniform.",
+      "kind": "material",
+      "category": "silicon",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "children": [],
+      "note": "Not established: Minas Gerais rock-crystal veins as the provenance of Y1-era feed, the natural-faces and very-low-defect-density claims, and the early-1980s displacement timing by hydrothermal synthetic quartz for this supply."
+    },
+    "mb.crystal.y1.case.nickel-can": {
+      "id": "mb.crystal.y1.case.nickel-can",
+      "name": "Nickel can stock",
+      "description": "HC-49/U cans were drawn from nickel or nickel-plated strip steel, or from brass with a nickel finish. Nickel is used because it matches the thermal expansion of the quartz and the electrode leads closely enough that the mounting stress does not drift the frequency.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "note": "HC-49/U cans were drawn from nickel or nickel-plated strip steel, or from brass with a nickel finish. Nickel matches the thermal expansion of the quartz and the electrode leads closely enough that the mounting stress does not drift the frequency.",
+      "inputs": [],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.steel.sheet",
+          "rel": "made of"
+        }
+      ]
+    },
+    "mb.crystal.y1.case.argon-fill": {
+      "id": "mb.crystal.y1.case.argon-fill",
+      "name": "Argon or krypton fill gas",
+      "description": "The can is filled with a chemically inert gas before welding. Argon is preferred because it does not react with the electrode and cannot outgas; krypton was used where a slightly more hermetic atmosphere was wanted. The gas also damps acoustic vibration in the plate.",
+      "kind": "material",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Pressure",
+          "value": "a few kPa"
+        },
+        {
+          "label": "Alternatives",
+          "value": "vacuum-filled (hybrid) cans became common later"
+        }
+      ],
+      "inputs": [],
+      "note": "Not established: argon or krypton fill gas, the few kPa pressure, the claim that argon cannot outgas, the acoustic damping role, and the later switch to vacuum-filled hybrid cans. No document consulted describes crystal can filling."
+    },
+    "mb.crystal.y1.case.support-wire.wire": {
+      "id": "mb.crystal.y1.case.support-wire.wire",
+      "name": "Gold or nickel support wire",
+      "description": "Fine wire, 0.1-0.2 mm, spot-welded to the plate electrodes. Gold is preferred where maximum Q is needed; nickel is the cost-driven choice for the volume 1982 HC-49.",
+      "kind": "material",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: the 0.1-0.2 mm diameter, spot-welding to the plate electrodes, and the gold-for-maximum-Q versus nickel-as-cost-choice rule with which metal Y1 actually used.",
+      "edges": [
+        {
+          "to": "metal.gold.ingot",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.joystick.knob.abs.filler": {
+      "id": "c64.joystick.knob.abs.filler",
+      "name": "Pigments and fillers in the ABS knob",
+      "description": "The knob is black because of a pigment - usually a carbon black or an iron oxide - dispersed in the ABS before moulding, and it is stiffened with glass or mineral filler. Where a lighter colour was wanted the whitener was rutile titanium dioxide from ilmenite, which is the same titanium chain as the barium titanate capacitor powder.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "note": "The colourant is dispersed into the polymer in a compounding extruder before the moulding, not added at the press, so a black joystick knob contains a few per cent of carbon black and an antioxidant package. Titanium dioxide for a lighter colour comes from ilmenite sand, the same titanium chain as the barium titanate capacitor powder.",
+      "facts": [
+        {
+          "label": "Black pigment",
+          "value": "carbon black or iron oxide"
+        },
+        {
+          "label": "White pigment",
+          "value": "titanium dioxide from ilmenite"
+        }
+      ],
+      "inputs": [],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.ilmenite-sand",
+          "rel": "made from"
+        },
+        {
+          "to": "chem.glass-fiber",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.joystick.microswitches.plastic-case.nylon": {
+      "id": "c64.joystick.microswitches.plastic-case.nylon",
+      "name": "Glass-filled nylon case",
+      "description": "A glass-filled nylon case gives a microswitch enough stiffness to keep its contact force with a thin wall, and enough toughness to survive being dropped. It is the standard material for that class of switch through the 1980s.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Nylon"
+      ],
+      "inputs": [],
+      "children": [],
+      "note": "Glass-filled nylon is documented as increasing structural and impact strength and rigidity, with thermoplastic glass-filled composites quoted at 25-30 % glass fibre. Not established: glass-filled nylon as the standard microswitch case material through the 1980s, and that this is the case material in a 1982 joystick.",
+      "edges": [
+        {
+          "to": "chem.glass-fiber",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.keyboard-switches.ribbon.film.pvc": {
+      "id": "c64.keyboard-switches.ribbon.film.pvc",
+      "name": "PVC jacket",
+      "description": "The ribbon's outer jacket is extruded PVC, the cheapest flexible insulation available. Vinyl chloride is made by oxychlorinating ethylene with chlorine, and the chlorine comes from salt - rock salt mined or solution-mined - while the ethylene comes from a steam cracker. So the ribbon cable ends at both rock salt and crude oil.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1982-1984",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chloride_process"
+      ],
+      "confidence": "high",
+      "note": "Vinyl chloride comes from oxychlorinating ethylene with chlorine, and the chlorine comes from brine electrolysis, so the ribbon jacket touches both an oil field and a salt field. The vinyl chloride monomer node is chem.pvc.vcm.",
+      "facts": [
+        {
+          "label": "Vinyl chloride route",
+          "value": "ethylene + chlorine -> EDC -> VCM, oxychlorination"
+        },
+        {
+          "label": "Chlorine",
+          "value": "from rock salt / brine electrolysis"
+        }
+      ],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "chem.pvc.vcm",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.keyboard-switches.keycap.double-shot.legend-colour.pigment": {
+      "id": "c64.keyboard-switches.keycap.double-shot.legend-colour.pigment",
+      "name": "Colourant in the second shot",
+      "kind": "material",
+      "category": "passives",
+      "confidence": "medium",
+      "description": "The second-shot colour is a pigment dispersed in the ABS matrix at high loading. Organic pigments give brighter colours and cost more; inorganic iron oxides give the earthier browns, reds and blacks. The moulder buys a masterbatch rather than raw pigment, so the colour arrives as a compounded material.",
+      "inputs": [],
+      "note": "Not established: high-loading dispersion in the ABS matrix, the organic-bright-versus-inorganic-earthy split for C64 caps, and masterbatch purchase rather than raw pigment by the moulder."
+    },
+    "c64.keyboard-switches.keycap.double-shot.legend-colour.pigment.iron-oxide": {
+      "id": "c64.keyboard-switches.keycap.double-shot.legend-colour.pigment.iron-oxide",
+      "name": "Iron oxide pigments",
+      "kind": "material",
+      "category": "metals",
+      "confidence": "medium",
+      "description": "Synthetic iron oxides, made by oxidising iron scrap or precipitating from an iron solution, were the standard browns, reds and blacks of the period and are still used. They begin at iron ore and end up in the keycap, which makes the keycap a surprisingly direct consumer of the iron chain.",
+      "inputs": [],
+      "note": "Not established: scrap oxidation versus solution precipitation as the route for the pigment actually used, and that the brown-grey C64 caps used iron oxides rather than carbon black or organic pigments.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Iron_oxide"
+      ]
+    },
+    "c64.keyboard-switches.keycap.abs.butadiene": {
+      "id": "c64.keyboard-switches.keycap.abs.butadiene",
+      "name": "Polybutadiene rubber phase",
+      "description": "The elastic phase that makes ABS impact-resistant, made by polymerising butadiene derived from refinery butadiene, which itself comes from steam cracking propylene. This is the hydrocarbon tree: propylene to butadiene to the rubber in the keycap's grip surface.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "note": "Not established: that a polybutadiene phase is what makes these keycaps impact-resistant, and the propylene-to-butadiene cracker route. The butadiene polymer chain belongs to the chemicals file; this node asserts its presence in the keycap without evidence.",
+      "inputs": []
+    },
+    "c64.keyboard-switches.domes.composition.elastomer": {
+      "id": "c64.keyboard-switches.domes.composition.elastomer",
+      "name": "Silicone or neoprene elastomer",
+      "description": "The dome body. Silicone (polydimethylsiloxane) was favoured for its high compression set and wide temperature range; neoprene (polychloroprene) for oil and abrasion resistance. Both are thermoset elastomers, vulcanised in the mould rather than injection-moulded as thermoplastics, which is why they are compression-moulded sheet.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "note": "Which elastomer the C64's dome sheet used is not established; both were standard.",
+      "inputs": [],
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.keyboard-switches.domes.composition.elastomer.silicone",
+          "rel": "made of"
+        },
+        {
+          "to": "chem.rubber",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.keyboard-switches.domes.composition.carbon-black": {
+      "id": "c64.keyboard-switches.domes.composition.carbon-black",
+      "name": "Carbon black filler (petroleum-derived)",
+      "description": "The same furnace-black feedstock used in the resistors, compounded into the elastomer. The dome's conductivity and its wear rate are both set by the grade and loading of this powder. A high-structure furnace black gives a stronger percolation network at lower loading, so a dome can be made conductive with less filler and stay soft; the grade choice is the difference between a responsive key and a stiff one.",
+      "kind": "material",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "note": "Not established: that a high-structure furnace black gives a stronger percolation network at lower loading, and that this is what distinguishes a responsive key from a stiff one. No carbon-black grade comparison is available in the sources consulted.",
+      "inputs": []
+    },
+    "c64.keyboard-switches.domes.composition.elastomer.silicone": {
+      "id": "c64.keyboard-switches.domes.composition.elastomer.silicone",
+      "name": "Silicone dome compound",
+      "description": "Silicone rubber is built on a silicon-oxygen backbone and is filled with reinforcing silica. It stays elastic over a wide temperature range and does not take up much oil, which is why a silicone dome does not swell and seize.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: silica-filled grade, wide-temperature-range elasticity, and low oil uptake as the reason these domes do not swell and seize. Whether the C64 domes were silicone rather than another elastomer is also not established.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Silicone_rubber"
+      ]
+    },
+    "c64.keyboard-switches.pcb-resin": {
+      "id": "c64.keyboard-switches.pcb-resin",
+      "name": "Epoxy resin of the laminate",
+      "description": "The epoxy that binds the glass cloth is derived from bisphenol A and epichlorohydrin, both of which are petrochemical. A two-layer keyboard PCB is thus a woven silica sheet glued with a fossil-derived resin and clad in copper.",
+      "kind": "material",
+      "category": "board",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: that this laminate's epoxy is derived from bisphenol A and epichlorohydrin. That is the standard chemistry for the epoxy family, but no document consulted ties a particular 1982 keyboard PCB to it."
+    },
+    "c64.joystick.knob.abs.filler.pigment-dispersion.tio2": {
+      "id": "c64.joystick.knob.abs.filler.pigment-dispersion.tio2",
+      "name": "Titanium dioxide whitener",
+      "description": "Where a lighter colour was used, the whitener was rutile TiO2 from ilmenite - the same titanium chain as the barium titanate powder.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: rutile as the TiO2 form, ilmenite as its feed, and the shared chain with the barium titanate powder. Whether any knob in scope actually used a light colour is also not established.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Titanium_dioxide"
+      ],
+      "edges": [
+        {
+          "to": "metal.ilmenite-sand",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.keyboard-switches.keycap.double-shot.legend-colour": {
+      "id": "c64.keyboard-switches.keycap.double-shot.legend-colour",
+      "name": "Second-shot colour",
+      "kind": "material",
+      "category": "passives",
+      "confidence": "medium",
+      "description": "The outer shot is pigmented with an organic or inorganic colourant at high loading. The light legends on the dark brown-grey caps - and, on some sets, the orange or grey function-key caps - are all achievable with pigmented ABS; the moulding must be run at high enough pressure that the two shots fuse rather than delaminate.",
+      "inputs": [],
+      "sources": [
+        "https://wiki.themk.org/index.php/Commodore_64",
+        "https://deskthority.net/viewtopic.php?t=8102"
+      ],
+      "children": [],
+      "note": "Not established: high-loading colourant in the outer shot, the orange-or-grey function-key cap claim for C64 sets, and the high-pressure fusion rather than delamination requirement.",
+      "edges": [
+        {
+          "to": "c64.keyboard-switches.keycap.double-shot.legend-colour.pigment",
+          "rel": "made of"
+        },
+        {
+          "to": "c64.keyboard-switches.keycap.double-shot.legend-colour.pigment.iron-oxide",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.keyboard-switches.keycap.abs.acrylonitrile.bismuth-catalyst": {
+      "id": "c64.keyboard-switches.keycap.abs.acrylonitrile.bismuth-catalyst",
+      "name": "Bismuth-antimony catalyst",
+      "description": "The ammoxidation catalyst is a bismuth molybdate or bismuth-antimony promoted silica. Bismuth came from bismuthinite, a comparatively rare ore worked chiefly in Bolivia and China, and it was a real bottleneck for acrylonitrile capacity in the 1980s.",
+      "kind": "material",
+      "category": "metals",
+      "era": "ancient",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bismuth"
+      ],
+      "confidence": "medium",
+      "note": "Bismuth supply was genuinely tight in the early 1980s and the ammoxidation catalyst industry was a significant consumer; the size of that demand is not quantified.",
+      "facts": [
+        {
+          "label": "Ore",
+          "value": "bismuthinite, Bi2S3"
+        }
+      ]
+    },
+    "c64.keyboard-switches.domes.moulding.tool.spark-erosion.graphite-electrode": {
+      "id": "c64.keyboard-switches.domes.moulding.tool.spark-erosion.graphite-electrode",
+      "name": "Graphite tool electrode",
+      "description": "Graphite is the standard spark-erosion electrode: it is conductive, machinable to a fine tip, and wears slowly by re-graphitising. Machined graphite is made from petroleum coke calcined at ~3000 C.",
+      "kind": "material",
+      "category": "passives",
+      "era": "ancient",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Graphite"
+      ],
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: that spark erosion was actually used for this dome tool rather than machining, the slow wear by re-graphitising, and petroleum coke calcined at about 3000 C as the feed for this electrode stock."
+    },
+    "c64.keyboard-switches.matrix.pcb.pad-plating.gold": {
+      "id": "c64.keyboard-switches.matrix.pcb.pad-plating.gold",
+      "name": "Gold flash on the key pads",
+      "description": "A thin gold flash over nickel on the key pads. Gold does not oxidise, so the dome keeps making contact for decades; where the flash is thin or gone, the key stops working until cleaned.",
+      "kind": "material",
+      "category": "board",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: the flash thickness, the nickel underlayer on these pads, and the decades-long contact life versus stop-working-until-cleaned failure mode.",
+      "edges": [
+        {
+          "to": "metal.gold.ingot",
+          "rel": "made of"
+        }
+      ]
+    },
+    "mb.crystal.y1.case.nickel-can.weld.gas": {
+      "id": "mb.crystal.y1.case.nickel-can.weld.gas",
+      "name": "Forming gas for welding",
+      "description": "A mixture of hydrogen and nitrogen used as a cover during the lid weld. Hydrogen also diffuses any internal oxide onto the getters, which is why a well-made can can have a getter mirror at the bottom after opening.",
+      "kind": "material",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: hydrogen-nitrogen cover during this lid weld, hydrogen diffusion of internal oxide onto getters, and any getter mirror observed on opening this can."
+    },
+    "mb.crystal.y1.electrodes.chromium": {
+      "id": "mb.crystal.y1.electrodes.chromium",
+      "name": "Chromium adhesion layer",
+      "description": "Chromium is evaporated as the adhesion layer because bare quartz will not hold gold by van der Waals forces alone. Chromium wets both the quartz surface and the gold film, and it is itself a hard, chemically inert metal.",
+      "kind": "material",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Thickness",
+          "value": "~50-100 nm"
+        }
+      ],
+      "inputs": [],
+      "note": "Not established: chromium as the adhesion layer, the 50-100 nm thickness, and the van der Waals argument. Chromium-on-gold adhesion layers are real practice, but no document consulted states this for crystal electrodes.",
+      "edges": [
+        {
+          "to": "metal.chromium",
+          "rel": "made of"
+        },
+        {
+          "to": "metal.chromite",
+          "rel": "made of"
+        }
+      ]
+    },
+    "mb.crystal.y1.blank-preparation.lapping.colloidal-silica": {
+      "id": "mb.crystal.y1.blank-preparation.lapping.colloidal-silica",
+      "name": "Final lapping abrasive",
+      "description": "The last lapping stage uses a colloidal silica slurry, which polishes rather than cuts. Colloidal silica is precipitated from a dilute sodium silicate solution, itself made from silica sand and sodium carbonate.",
+      "kind": "material",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: colloidal silica slurry as the final lapping stage for Y1 blanks, and precipitation from dilute sodium silicate made from silica sand and sodium carbonate as the route for this slurry.",
+      "edges": [
+        {
+          "to": "metal.silica-sand",
+          "rel": "made from"
+        }
+      ]
+    },
+    "mb.crystal.y1.natural-quartz.synthetic.silica-feed": {
+      "id": "mb.crystal.y1.natural-quartz.synthetic.silica-feed",
+      "name": "Quartz sand / crushed quartz feed",
+      "description": "The silica feedstock for the autoclave is cleaned quartz sand or lumps of milky quartz. Natural quartz sand is a common beach and dune sand: essentially SiO2, left behind as quartz survives weathering while everything else dissolves and washes away.",
+      "kind": "material",
+      "category": "silicon",
+      "era": "ancient",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: cleaned quartz sand versus lumps of milky quartz as the autoclave feed for the Y1 synthetic quartz, and the beach-and-dune weathering provenance account for this feed.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Quartz"
+      ],
+      "edges": [
+        {
+          "to": "metal.silica-sand",
+          "rel": "made of"
+        },
+        {
+          "to": "metal.quartz",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.joystick.cable.plug.cable-assembly": {
+      "id": "c64.joystick.cable.plug.cable-assembly",
+      "name": "Cable assembly and strain relief",
+      "description": "The conductors are crimped into the DE-9 pins and the cable is clamped by a moulded strain relief at the shell, so bending the cable does not work the pin out of the crimp. Strain relief is the single cheapest thing that decides whether a peripheral cable survives five years of use.",
+      "kind": "process",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [
+        "chem.abs"
+      ],
+      "note": "Not established: the crimped strain-relief construction and the claim that strain relief decides cable life. Plausible connector practice, but no document consulted describes a joystick cable assembly."
+    },
+    "c64.joystick.microswitches.leaves.gold-plating": {
+      "id": "c64.joystick.microswitches.leaves.gold-plating",
+      "name": "Gold plating of the microswitch leaf",
+      "description": "The contact is gold-plated over nickel so its resistance stays at the millivolt level through millions of cycles. Gold leaf contacts in this class of switch were a real reliability advantage over the silver and nickel contacts used in cheaper equivalents.",
+      "kind": "process",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: that these particular switch contacts were gold-plated over nickel. Gold plating is a real low-level-contact practice, but no document consulted identifies the plating in a 1982 joystick's microswitches.",
+      "edges": [
+        {
+          "to": "metal.gold.ingot",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.tin.ingot",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "c64.keyboard-switches.keycap.double-shot": {
+      "id": "c64.keyboard-switches.keycap.double-shot",
+      "name": "Double-shot moulding of the top legends",
+      "kind": "process",
+      "category": "plastics",
+      "era": "1982",
+      "confidence": "high",
+      "description": "The legends on the TOP of the keycap - letters, numbers and symbols - are moulded into the plastic, not printed on it. The cap is injection-moulded twice in one tool cycle: first in the dark brown-grey base colour, then a second shot of a contrasting lighter colour is injected into a slightly larger cavity, covering everything except the legend characters, which are left as uncoated islands of the first shot. Nothing is printed on the top face, so the legend cannot wear off - which is why a forty-year-old cap still reads cleanly, and why the mould line and the islands are visible when a cap is pulled off its stem. This covers the cap top only: the graphics characters on the front wall are a different process (c64.keyboard.keycaps.legend), and the two are told apart at a glance by whether the character wears.",
+      "facts": [
+        {
+          "label": "Applies to",
+          "value": "the cap top only - letters, numbers and symbols"
+        },
+        {
+          "label": "Shots",
+          "value": "two injection mouldings, co-moulded in the same tool cycle"
+        },
+        {
+          "label": "Legend",
+          "value": "island of the base-colour shot, not a printed decal"
+        },
+        {
+          "label": "Wear",
+          "value": "none - a moulded legend outlives the printed front characters"
+        },
+        {
+          "label": "Exception",
+          "value": "the spacebar is reported not to be double-shot; all other caps are"
+        }
+      ],
+      "inputs": [
+        "chem.abs"
+      ],
+      "sources": [
+        "https://wiki.themk.org/index.php/Commodore_64",
+        "https://deskthority.net/viewtopic.php?t=8102"
+      ],
+      "note": "The top face of the cap is double-shot, white legends on a very dark brown; the PETSCII legends on the front face are printed separately. Keyboard Wiki (themk.org): The alphanumeric keys are double-shot white on a very dark brown. Deskthority thread 8102: With the exception of the spacebar, they are all double shot injection molded keycaps. Neither the Commodore C64/C64C Service Manual nor The Anatomy of the Commodore 64 discusses keycap printing. The 1988 C64C is different: the same Keyboard Wiki page records All legends ... pad-printed on top of the keys for that machine.",
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.keyboard-switches.keycap.double-shot.legend-colour",
+          "rel": "consumes"
+        },
+        {
+          "to": "c64.keyboard-switches.keycap",
+          "rel": "produces",
+          "role": "product"
+        },
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "c64.keyboard-switches.domes.moulding": {
+      "id": "c64.keyboard-switches.domes.moulding",
+      "name": "Compression moulding of the dome sheet",
+      "description": "The domes are moulded as a continuous sheet on a heated platen press: uncured compound is placed in a multi-cavity tool, pressed, cured, and the sheet released as one piece with every key's dome attached. Domes therefore arrive as a single printed-circuit-sized rubber sheet that has to be aligned to the pads by hand.",
+      "kind": "process",
+      "category": "plastics",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "note": "Compression-moulded dome sheets were standard; whether the C64's came as a sheet or pre-applied to a carrier film is not established.",
+      "facts": [
+        {
+          "label": "Cure",
+          "value": "~150-180 C, minutes, for silicone; ~100-140 C for neoprene"
+        },
+        {
+          "label": "Sheet",
+          "value": "one sheet per keyboard, 61-63 domes"
+        }
+      ],
+      "inputs": [],
+      "children": [
+        {
+          "id": "c64.keyboard-switches.domes.moulding.platen-press",
+          "name": "Heated platen press",
+          "description": "A hydraulic flat-bed press with heated platens holds a multi-cavity dome tool against the compound long enough to cure the elastomer. Small presses of this type did the whole dome sheet for a keyboard in one shot.",
+          "kind": "tool",
+          "category": "passives",
+          "era": "1982-1984",
+          "confidence": "medium",
+          "inputs": [
+            "facility.electricity"
+          ],
+          "note": "Not established: hydraulic flat-bed type with heated platens, and that small presses of this type cured the whole C64 dome sheet in one shot."
+        },
+        {
+          "id": "c64.keyboard-switches.domes.moulding.tool",
+          "name": "Steel dome tool",
+          "description": "A machined or spark-eroded steel tool with one hemispherical cavity per key. It has to be replaced as the dome geometry is re-specified, and its surface finish is what the dome's mating face is polished against.",
+          "kind": "tool",
+          "category": "passives",
+          "era": "1982-1984",
+          "confidence": "medium",
+          "inputs": [],
+          "children": [],
+          "note": "Not established: machined versus spark-eroded construction, one hemispherical cavity per key, and the claims about replacement on re-specification and polish transfer to the dome mating face."
+        }
+      ],
+      "edges": [
+        {
+          "to": "chem.rubber",
+          "rel": "consumes"
+        },
+        {
+          "to": "c64.keyboard-switches.domes",
+          "rel": "produces",
+          "role": "product"
+        },
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "c64.keyboard-switches.matrix.pcb.pad-plating": {
+      "id": "c64.keyboard-switches.matrix.pcb.pad-plating",
+      "name": "Plating of the key pads",
+      "description": "The exposed pads are plated - gold over nickel on later keyboards - so the carbon contact of the rubber dome has a low-resistance, non-oxidising surface to bridge onto. Where the plating is absent or has worn through, the bare copper oxidises and the key needs cleaning.",
+      "kind": "process",
+      "category": "board",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "children": [],
+      "note": "Not established: gold over nickel as the stack on later keyboards, the carbon-contact dome mating surface, and the bare-copper oxidation and cleaning failure mode for these pads.",
+      "edges": [
+        {
+          "to": "c64.keyboard-switches.matrix.pcb.pad-plating.gold",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.crystal.y1.grinding": {
+      "id": "mb.crystal.y1.grinding",
+      "name": "Grinding the lens shape",
+      "description": "The face is bevelled and the outline ground so the finished blank is a lens or plano-convex dome rather than a flat slab. The convexity is deliberate: it makes the crystal's resonant frequency less sensitive to surface damage and to where the mounting points press on it.",
+      "kind": "process",
+      "category": "silicon",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Final plate thickness",
+          "value": "~0.07 mm at the centre, bevelled to ~0.1 mm at the edge"
+        },
+        {
+          "label": "Why bevelled",
+          "value": "so the supports never touch the vibrating centre"
+        }
+      ],
+      "inputs": [],
+      "children": [
+        {
+          "id": "mb.crystal.y1.grinding.diamond-wheel",
+          "name": "Diamond grinding wheel",
+          "description": "A resin-bonded diamond wheel, used wet, that bevels the plate edge and cuts the lens curvature. In 1982 diamond abrasive was largely synthetic, made from graphite under a shock wave; natural diamond was reserved for dressing the wheels.",
+          "kind": "tool",
+          "category": "passives",
+          "era": "1982-1984",
+          "confidence": "medium",
+          "inputs": [],
+          "note": "Not established: resin bonding and wet use of this wheel, and the largely-synthetic shock-wave-graphite versus natural-diamond-for-dressing split in 1982."
+        }
+      ],
+      "note": "Not established: a lens or plano-convex dome form for the Y1 blank, the 0.07 mm centre and 0.1 mm edge thickness figures, and the reduced sensitivity to surface damage and mounting-point pressure.",
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.crystal.y1.supports": {
+      "id": "mb.crystal.y1.supports",
+      "name": "Mounting and soldering of the crystal",
+      "description": "The four HC-49 leads are formed to a right angle and soldered onto the board in a wave-solder pass. The crystal's case sits at the board's natural mechanical frequency well below the circuit's operating frequency, which is deliberate: an HC-49 body has several overtone resonances that would otherwise produce spurious oscillator modes.",
+      "kind": "process",
+      "category": "assembly",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: right-angle forming of the four HC-49 leads, wave-solder mounting of Y1, and the board-frequency versus overtone-resonance spurious-mode rationale.",
+      "edges": [
+        {
+          "to": "mb.crystal.y1",
+          "rel": "produces",
+          "role": "product"
+        }
+      ]
+    },
+    "mb.crystal.y1.electrodes": {
+      "id": "mb.crystal.y1.electrodes",
+      "name": "Metal electrodes on the blank faces",
+      "description": "Chromium is evaporated or sputtered onto both faces as an adhesion layer, then gold or silver is deposited over it as the conductive electrode, through a shadow mask that defines the electrode area. Chromium-gold is the classic 1980s crystal electrode stack: Cr to bond, Au to conduct.",
+      "kind": "process",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "note": "Some 1980s HC-49/U crystals used nickel electrodes over chromium for economy; gold-over-chromium was the higher-reliability standard.",
+      "facts": [
+        {
+          "label": "Adhesion layer",
+          "value": "Cr or Ti, ~50-100 nm"
+        },
+        {
+          "label": "Conductive layer",
+          "value": "Au (~200-400 nm) or Ag"
+        },
+        {
+          "label": "Pattern",
+          "value": "shadow-mask defined, 6-14 mm2 for a 1982 HC-49"
+        }
+      ],
+      "inputs": [],
+      "children": [
+        {
+          "id": "mb.crystal.y1.electrodes.gold-film",
+          "name": "Gold electrode film",
+          "description": "Gold evaporated through a shadow mask to give the electrode its final geometry and conductivity. The mask pattern fixes the electrode area, which together with the plate thickness is what sets the crystal capacitance.",
+          "kind": "process",
+          "category": "passives",
+          "era": "1982-1984",
+          "confidence": "medium",
+          "facts": [
+            {
+              "label": "Thickness",
+              "value": "~200-400 nm"
+            }
+          ],
+          "inputs": [],
+          "children": [
+            {
+              "id": "mb.crystal.y1.electrodes.gold-film.mask",
+              "name": "Evaporation shadow mask",
+              "description": "A thin metal mask placed above the rotating blank during evaporation so the electrode pattern is defined. The mask is made from a drawn stainless or nickel strip, chemically etched to the electrode shape.",
+              "kind": "tool",
+              "category": "passives",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "inputs": [],
+              "note": "Not established: evaporation above a rotating blank, drawn stainless versus nickel strip as the mask stock, and chemical etching to the electrode shape for the Y1 electrodes."
+            }
+          ],
+          "note": "Not established: shadow-mask evaporation, the 200-400 nm gold thickness, and that mask area together with plate thickness sets the crystal capacitance. No source consulted describes crystal electrode metallisation.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "to": "mb.crystal.y1.electrodes.chromium",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.gold.ingot",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.silver.ingot",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.chromium",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "c64.joystick.cable.plug.conductor.tinning": {
+      "id": "c64.joystick.cable.plug.conductor.tinning",
+      "name": "Tinning of the conductor",
+      "description": "The stranded conductor is tinned so the crimp barrel grips cleanly and the joint is solderable. Tin from cassiterite, in a peripheral cable a few centimetres from the machine.",
+      "kind": "process",
+      "category": "metals",
+      "era": "ancient",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: that tinning was applied so the crimp barrel grips cleanly, as opposed to solderability alone, and the crimp-barrel construction itself. The cassiterite feed is the generic tin chain, not a documented input to this cable.",
+      "edges": [
+        {
+          "to": "c64.joystick.cable.plug.conductor",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "c64.joystick.knob.abs.moulding": {
+      "id": "c64.joystick.knob.abs.moulding",
+      "name": "Injection moulding of the knob",
+      "description": "The knob is a two-shot or single-shot ABS moulding, often with a moulded-in texture or a soft overmould. It has to be comfortable and it has to stay on the shaft for decades.",
+      "kind": "process",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "children": [
+        {
+          "id": "c64.joystick.knob.abs.moulding.tool",
+          "name": "Knob mould tool",
+          "description": "A hardened steel cavity tool, polished so the knob has a gloss finish. Thousands of knobs per tool life; the polish is the difference between a shiny knob and a matt one.",
+          "kind": "tool",
+          "category": "passives",
+          "era": "1982-1984",
+          "confidence": "medium",
+          "inputs": [],
+          "note": "Not established: hardened steel as the cavity-tool material, the polished-cavity-to-gloss-finish causal link, and the thousands-of-knobs-per-tool-life figure."
+        }
+      ],
+      "note": "Not established: whether the knob was two-shot or single-shot moulded, and whether it carried a moulded-in texture or soft overmould. Most 1980s joystick knobs were single-shot ABS; no document consulted describes it.",
+      "edges": [
+        {
+          "to": "c64.joystick.knob.abs",
+          "rel": "consumes"
+        },
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "c64.joystick.knob.abs.filler.pigment-dispersion": {
+      "id": "c64.joystick.knob.abs.filler.pigment-dispersion",
+      "name": "Pigment dispersion in the ABS",
+      "description": "The colourant is dispersed into the polymer in a compounding extruder before the moulding, not added at the press. A black joystick knob therefore contains a few per cent of carbon black and an antioxidant package.",
+      "kind": "process",
+      "category": "plastics",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [
+        "chem.abs"
+      ],
+      "children": [],
+      "note": "Not established: dispersion in a compounding extruder before moulding rather than addition at the press, the few-per-cent carbon black loading for a black knob, and the antioxidant package.",
+      "edges": [
+        {
+          "to": "c64.joystick.knob.abs.filler.pigment-dispersion.tio2",
+          "rel": "consumes"
+        },
+        {
+          "to": "c64.joystick.knob.abs.filler",
+          "rel": "consumes"
+        },
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "c64.joystick.microswitches.plastic-case.solder-lugs": {
+      "id": "c64.joystick.microswitches.plastic-case.solder-lugs",
+      "name": "Through-hole mounting and solder lugs",
+      "description": "The switches are pushed into holes in the joystick's printed board and their pins soldered from underneath. Positioning them on that board is what sets how far the gate has to travel before a direction registers - the mechanical timing of the whole joystick.",
+      "kind": "process",
+      "category": "assembly",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [
+        "chem.epoxy"
+      ],
+      "note": "Not established: that the microswitches were mounted in holes in a small printed board with through-hole pins soldered from underneath, and that board layout set the gate travel. On many 1980s joysticks the four microswitches were wired directly to the DE-9 with no local board at all.",
+      "edges": [
+        {
+          "to": "chem.glass-fiber",
+          "rel": "consumes"
+        },
+        {
+          "to": "c64.joystick.microswitches.plastic-case",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "c64.keyboard-switches.keycap.abs.acrylonitrile": {
+      "id": "c64.keyboard-switches.keycap.abs.acrylonitrile",
+      "name": "Sohlo ammoxidation of propylene",
+      "description": "The acrylonitrile monomer is made by the Sohlo process: propylene, ammonia and oxygen are passed over a bismuth-antimony or bismuth-molybdenum catalyst to give acrylonitrile selectively. Propylene itself comes from steam cracking of naphtha, so the keycap of a C64 is roughly one and a half hydrocarbon molecules away from crude oil.",
+      "kind": "process",
+      "category": "passives",
+      "era": "1982-1984",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Acrylonitrile"
+      ],
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Process",
+          "value": "Sohlo ammoxidation, ~425-500 C, fixed bed"
+        },
+        {
+          "label": "Yield",
+          "value": "~70-80 % selectivity on propylene"
+        }
+      ],
+      "inputs": [
+        "chem.acrylonitrile",
+        "chem.propylene"
+      ],
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.keyboard-switches.keycap.abs.acrylonitrile.bismuth-catalyst",
+          "rel": "consumes"
+        },
+        {
+          "to": "c64.keyboard-switches.keycap.abs",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.crystal.y1.case.nickel-can.stock": {
+      "id": "mb.crystal.y1.case.nickel-can.stock",
+      "name": "Drawn can stock",
+      "description": "The HC-49/U can is deep-drawn from thin nickel-plated strip in a progressive tool, then the crimped collar is rolled and the lid welded on. Both operations happen before the plate goes in - the can is made empty and loaded later.",
+      "kind": "process",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: that the HC-49/U can is deep-drawn from nickel-plated strip in a progressive tool and that the collar is rolled. Nothing in the sources consulted describes the mechanical sequence of can manufacture.",
+      "edges": [
+        {
+          "to": "mb.crystal.y1.case.nickel-can",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.crystal.y1.case.nickel-can.weld": {
+      "id": "mb.crystal.y1.case.nickel-can.weld",
+      "name": "Welded lid and crimped collar",
+      "description": "The lid is spot-welded or resistance-welded to the collar in an atmosphere of dry hydrogen or forming gas, which keeps the internal oxide clean and lets the fill gas stay inert. Hermeticity is what makes a forty-year-old crystal hold its frequency.",
+      "kind": "process",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "children": [],
+      "note": "Not established: spot or resistance welding of the lid in dry hydrogen or forming gas. This is the standard HC-49 hermetic-seal practice, but no source consulted describes it for this crystal, and the manual's circuit theory says nothing about the can.",
+      "edges": [
+        {
+          "to": "mb.crystal.y1.case.nickel-can.weld.gas",
+          "rel": "consumes"
+        },
+        {
+          "to": "mb.crystal.y1.case.nickel-can",
+          "rel": "consumes"
+        },
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.crystal.y1.natural-quartz.synthetic.autoclave.caustic": {
+      "id": "mb.crystal.y1.natural-quartz.synthetic.autoclave.caustic",
+      "name": "Alkali solvent",
+      "description": "The growth solution is hot concentrated sodium or potassium hydroxide, which dissolves silica at the elevated temperature while quartz re-deposits on the seeds. The alkali is made by chlor-alkali electrolysis of brine, so the crystal ultimately touches rock salt as well as quartz sand.",
+      "kind": "material",
+      "category": "fluids",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: hot concentrated sodium or potassium hydroxide as the growth solvent, and that the caustic is made by chlor-alkali electrolysis so the crystal chain reaches rock salt. Hydrothermal growth in an autoclave is documented; the alkali solvent and its chlorine link are not, in the sources consulted.",
+      "edges": [
+        {
+          "to": "metal.caustic-soda",
+          "rel": "made of"
+        },
+        {
+          "to": "metal.salt-brine",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.keyboard-switches.keycap.spring.coil-winder": {
+      "id": "c64.keyboard-switches.keycap.spring.coil-winder",
+      "name": "Spring coiling machine",
+      "description": "A cam-controlled coiler winds a coil spring from wire, sets its free length and closes the ends, tens of thousands per hour. Every keycap plunger spring on the keyboard was made on a machine of this type.",
+      "kind": "tool",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "children": [
+        {
+          "id": "c64.keyboard-switches.keycap.spring.coil-winder.steel",
+          "name": "Tool steel cam and dies",
+          "description": "The coiler tool is hardened tool steel, and the coiler is a Camweld or similar automatic machine. Ferrous tooling, so iron ore again.",
+          "kind": "tool",
+          "category": "metals",
+          "era": "1982-1984",
+          "confidence": "medium",
+          "inputs": [],
+          "note": "Not established: hardened tool steel as the cam-and-die material and the Camweld-or-similar automatic machine identification for the keycap spring coiler."
+        }
+      ],
+      "note": "Not established: that the keycap plunger springs were made on cam-controlled coil-winders at tens of thousands per hour. This is a general statement about spring manufacturing, not about this keyboard."
+    },
+    "mb.crystal.y1.cutting.cleanroom.deionised-water": {
+      "id": "mb.crystal.y1.cutting.cleanroom.deionised-water",
+      "name": "Deionised rinse water",
+      "description": "Every crystal process rinse uses deionised water, because a single dissolved ion on a resonating plate changes the frequency measurably. City water is nowhere good enough.",
+      "kind": "material",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: the specific claim that a single dissolved ion on a resonating plate changes the frequency measurably. Deionised rinse water as the standard is uncontroversial; the quantitative sensitivity assertion is not documented in any source consulted."
+    },
+    "c64.joystick.knob.abs.fire-button": {
+      "id": "c64.joystick.knob.abs.fire-button",
+      "name": "Fire button on shaft and knob",
+      "description": "On 3-button sticks a fire switch is moulded into the shaft itself and a third button into the knob top, actuated by a rod inside the shaft. Each is a miniature microswitch of the same family as the direction switches.",
+      "kind": "part",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [],
+      "note": "Not established: the three-button arrangement with a switch moulded into the shaft and a third button in the knob top actuated by an internal rod, or that each was a miniature microswitch of the same family as the direction switches. No joystick model is named.",
+      "edges": [
+        {
+          "to": "chem.polyamide.nylon-66",
+          "rel": "made of"
+        }
+      ]
+    },
+    "mb.crystal.y1.natural-quartz.synthetic": {
+      "id": "mb.crystal.y1.natural-quartz.synthetic",
+      "name": "Hydrothermal synthetic quartz",
+      "description": "Because natural quartz is limited and variable, industry moved to growing it: an autoclave is charged with silica (often crushed natural quartz) in a hot sodium-hydroxide solution and heated at around 400 C and 150 MPa. Quartz grows on seed crystals hung in the solution, growing the rough in days rather than geological time. This is the source of nearly all quartz crystal blanks made from about the mid-1970s onward.",
+      "kind": "process",
+      "category": "silicon",
+      "era": "1982-1984",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Synthetic_quartz"
+      ],
+      "confidence": "high",
+      "note": "This node was moved up out of natural-quartz, where it sat as if natural and synthetic quartz were parent and child; its id retains the old path because ids are stable. By the early 1980s this route, not mined rock crystal, supplied nearly every blank in the industry.",
+      "facts": [
+        {
+          "label": "Growth temperature",
+          "value": "~400 C"
+        },
+        {
+          "label": "Growth pressure",
+          "value": "~150 MPa"
+        },
+        {
+          "label": "Growth time",
+          "value": "days to a few weeks"
+        }
+      ],
+      "inputs": [],
+      "children": [
+        {
+          "id": "mb.crystal.y1.natural-quartz.synthetic.autoclave",
+          "name": "Steel autoclave with seed crystals",
+          "description": "A filled, sealed pressure vessel - usually Hastelloy or 17-4PH steel liner - held at high temperature and pressure so an alkaline solution dissolves silica from the feed and re-deposits it on thin zoned seed plates hung in the vessel. Temperature gradients create the supersaturation that drives growth, and the growth zones themselves are what later become the tuned crystal resonators.",
+          "kind": "tool",
+          "category": "silicon",
+          "era": "1982-1984",
+          "confidence": "medium",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Quartz"
+          ],
+          "note": "Hydrothermal growth in an autoclave is documented, and that by the 1950s it produced synthetic quartz on an industrial scale so that today virtually all quartz crystal used in electronics is synthetic. Not established: the ~400 C and ~150 MPa conditions, the Hastelloy or 17-4PH liner, the NaOH or KOH solvent, the zoned seed plates, and the Rouquay-type process name.",
+          "facts": [
+            {
+              "label": "Conditions",
+              "value": "~400 C, ~150 MPa"
+            },
+            {
+              "label": "Solution",
+              "value": "NaOH or KOH in water"
+            },
+            {
+              "label": "Rouquay-type process",
+              "value": "industrial standard from the mid-1970s"
+            }
+          ],
+          "inputs": [
+            "facility.electricity"
+          ],
+          "children": [],
+          "edges": [
+            {
+              "to": "mb.crystal.y1.natural-quartz.synthetic.autoclave.caustic",
+              "rel": "consumes"
+            },
+            {
+              "to": "metal.caustic-soda",
+              "rel": "consumes"
+            },
+            {
+              "to": "metal.silica-sand",
+              "rel": "consumes"
+            }
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "to": "mb.crystal.y1.natural-quartz.synthetic.silica-feed",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.silica-sand",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.caustic-soda",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.crystal.y1.blank-preparation": {
+      "id": "mb.crystal.y1.blank-preparation",
+      "name": "Sawing, lapping and X-ray orienting the blank",
+      "description": "Rough crystal is sawn into blanks, then the cut face is lapped to about 0.15 mm and X-ray diffracted to find its crystallographic orientation. Orientation is everything: only an AT-cut at the right angle gives the flat temperature curve a frequency-stable oscillator needs.",
+      "kind": "process",
+      "category": "silicon",
+      "era": "1982-1984",
+      "sources": [
+        "https://www.citeseerx.ist.psu.edu/viewdoc/summary/10.1.1.347.9347"
+      ],
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Lapped thickness",
+          "value": "~0.15 mm"
+        },
+        {
+          "label": "Orientation",
+          "value": "X-ray diffractometer; AT-cut ~35 deg to the X axis for 1980s units"
+        }
+      ],
+      "inputs": [],
+      "children": [
+        {
+          "id": "mb.crystal.y1.blank-preparation.xray-orienting",
+          "name": "X-ray orientation and AT-cut angle selection",
+          "description": "A synthetic rough is indexed by X-ray diffraction so its Z axis and X axis are known, then sawn at a chosen angle to the X axis (the 'AT-cut'). The mid-1980s standard for general-purpose oscillators was about 35 degrees; this angle is chosen because it lands the resonance on a flat, temperature-insensitive point in the quartz stiffness-temperature curve.",
+          "kind": "tool",
+          "category": "silicon",
+          "era": "1982-1984",
+          "confidence": "medium",
+          "facts": [
+            {
+              "label": "Instrument",
+              "value": "four-circle X-ray diffractometer with a goniometer"
+            },
+            {
+              "label": "AT-cut angle",
+              "value": "~35 degrees"
+            },
+            {
+              "label": "Why",
+              "value": "flattens the frequency-temperature curve"
+            }
+          ],
+          "inputs": [
+            "facility.electricity"
+          ],
+          "note": "Quartz is documented as trigonal alpha-quartz in space group P3221 with a fixed cell, so crystallographic orientation by X-ray is meaningful. Not established: the four-circle diffractometer, the ~35 degree AT-cut as the mid-1980s general-purpose standard, and the claim that this angle flattens the frequency-temperature curve. The 573 C alpha-beta transition is documented but is not the frequency-temperature flatness argument."
+        },
+        {
+          "id": "mb.crystal.y1.blank-preparation.lapping",
+          "name": "Lapping and double-lap polishing",
+          "description": "The cut blank is lapped on rotating cast-iron plates with progressively finer abrasives (aluminium oxide, then colloidal silica) down to about 0.15 mm, then double-lapped against a second plate to remove bow and damage left by the saw. Crystal blanks for a 1982 oscillator were lapped on plates run by lapidary and lapping shops, not in the same plant that makes the finished crystal.",
+          "kind": "process",
+          "category": "silicon",
+          "era": "1982-1984",
+          "confidence": "medium",
+          "facts": [
+            {
+              "label": "Final thickness",
+              "value": "~0.15 mm before final grinding"
+            },
+            {
+              "label": "Abrasives",
+              "value": "Al2O3 down to colloidal silica"
+            }
+          ],
+          "inputs": [],
+          "children": [],
+          "note": "Not established: the double-lap sequence, aluminium oxide down to colloidal silica, the 0.15 mm final thickness, and that blanks were lapped by outside lapidary shops. The tree's own source for the parent node is a lapping reference, not a crystal-process source; no document consulted here supports these figures.",
+          "edges": [
+            {
+              "to": "mb.crystal.y1.blank-preparation.lapping.colloidal-silica",
+              "rel": "consumes"
+            },
+            {
+              "to": "metal.alumina",
+              "rel": "consumes"
+            },
+            {
+              "to": "metal.silica-sand",
+              "rel": "consumes"
+            },
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            },
+            {
+              "to": "facility.water",
+              "rel": "consumes"
+            }
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "to": "metal.quartz",
+          "rel": "consumes"
+        },
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "mb.crystal.y1.cutting": {
+      "id": "mb.crystal.y1.cutting",
+      "name": "Cutting the plate and vacuum baking",
+      "description": "The plated blank is cut with a diamond wheel into individual resonator plates, then the plates are vacuum-baked at around 400 C to drive off adsorbed moisture and contaminants. That vacuum bake is what removes the piezoelectric pyroelectric drift and the 'dope' effect - the stress-induced frequency shift as a crystal heats - and it is why a crystal that has been opened is never a good crystal.",
+      "kind": "process",
+      "category": "silicon",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Bake",
+          "value": "~350-400 C under vacuum for 1-2 h"
+        },
+        {
+          "label": "Consequence",
+          "value": "good level frequency stability over temperature"
+        }
+      ],
+      "inputs": [],
+      "children": [
+        {
+          "id": "mb.crystal.y1.cutting.dicing-saw",
+          "name": "Diamond dicing saw",
+          "description": "A thin resin-bonded diamond wheel, ~0.03-0.05 mm thick, cutting the plated blank into resonators. The wheel has to be extremely thin and extremely flat to avoid chipping a 0.07 mm plate.",
+          "kind": "tool",
+          "category": "passives",
+          "era": "1982-1984",
+          "confidence": "medium",
+          "inputs": [
+            "facility.electricity"
+          ],
+          "note": "Not established: the 0.03-0.05 mm resin-bonded diamond wheel thickness. Nothing consulted documents dicing saws for resonator plates."
+        },
+        {
+          "id": "mb.crystal.y1.cutting.cleanroom",
+          "name": "Cleaning between steps",
+          "description": "Every step from lapping onward is done washed and clean: a fingerprint on a 0.07 mm plate changes the frequency. Crystal preparation is one of the few wet, cold, dirty-looking processes in electronics.",
+          "kind": "facility",
+          "category": "passives",
+          "era": "1982-1984",
+          "confidence": "medium",
+          "inputs": [
+            "facility.water"
+          ],
+          "children": [],
+          "note": "Not established: that cleaning from lapping onward is done washed and clean, and that a fingerprint on a 0.07 mm plate shifts the frequency. Sensible contamination control, but unsourced."
+        }
+      ],
+      "note": "Not established: the 350-400 C vacuum bake for 1-2 hours and its claimed removal of pyroelectric drift and the dope effect. No document consulted describes the post-cut bake or its mechanism. The one nearby documented quartz fact is the alpha-beta transformation at 573 C, well above this bake.",
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
     }
   }
 }

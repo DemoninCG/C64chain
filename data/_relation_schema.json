@@ -64,19 +64,21 @@
         "part->material",
         "part->tool",
         "tool->part",
-        "tool->tool"
+        "tool->tool",
+        "site->part"
       ],
       "upstream": "downward",
       "arrow": "outward from the object",
       "test": "Could you point at it inside the other thing?",
-      "note": "A machine contains its machines: Steam turbine -> Surface condenser, Generator, GSU. All 30 of today's tool->tool edges are this and were being mis-filed as site structure.",
+      "note": "A machine contains its machines: Steam turbine -> Surface condenser, Generator, GSU. All 30 of today's tool->tool edges are this and were being mis-filed as site structure. site->part ADDED Wave 4.5: a fixture OF a site (access floor panel) is contained by it; the site->part judgement offers contains and nothing else stores it.",
       "count": 503
     },
     "made of": {
       "family": "refinement",
       "stored": [
         "part->material",
-        "material->material"
+        "material->material",
+        "site->material"
       ],
       "upstream": "downward",
       "arrow": "outward from the object",
@@ -147,12 +149,13 @@
       "stored": [
         "process->material",
         "tool->material",
-        "facility->material"
+        "facility->material",
+        "site->material"
       ],
       "upstream": "toward the mine",
       "arrow": "into the process",
       "test": "Does it go in? Reagents, feedstock, consumables, and utilities.",
-      "note": "Target is always a material. Utilities are materials, so `process -> Electricity at the factory wall` is `consumes`, and every facility target becomes unambiguously `at`. facility->material is the plant's own feedstock.",
+      "note": "Target is always a material. Utilities are materials, so `process -> Electricity at the factory wall` is `consumes`, and every facility target becomes unambiguously `at`. facility->material is the plant's own feedstock. site->material ADDED Wave 4.5: a site draws in feedstock like a facility (intake draws river water); judgement site->material offers it and nothing else stores the pair.",
       "count": 1009,
       "count_note": "628 of the 922 process->material edges came from the `inputs` field, which means they were recorded as inputs and are therefore `consumes` mechanically. See RELATIONS.md §8."
     },
@@ -162,7 +165,8 @@
         "process->material",
         "process->part",
         "facility->material",
-        "facility->part"
+        "facility->part",
+        "site->material"
       ],
       "upstream": "away from the mine",
       "arrow": "out of the process",
@@ -788,5 +792,30 @@
     ],
     "MORE_DRIFT_EVIDENCE_FOR_THE_NOTE_RULE": "Six nodes in this branch have `facts` that their own `note` retracts, and four nodes make prose claims of crude-oil provenance with no corresponding edge. This is the third independent confirmation that `note` and `facts` are newer than the edge arrays, and it means `facts` belongs on the untrusted list alongside `inputs`.",
     "HOLES_AT_SCALE_IN_PERIPHERALS": "28 of 44 material and part nodes in this branch have no upstream edge, and there are ZERO producers tree-wide for the cassette materials. The capstan is named in its parent's own name and has no node. The peripherals branches are the least complete part of the tree, not the most broken -- a distinction worth keeping, because \"least complete\" and \"most broken\" call for different fixes."
+  },
+  "wave4_migration": {
+    "status": "COMPLETE 2026-10-04",
+    "typed_edges": "~2,230 stored in edges[]; judgement 3328->0, UNMAPPED 0, ASSERT-FAIL 0",
+    "dissolved": [
+      "c64.bottoms-out",
+      "c64.extras",
+      "c64.decor",
+      "metal",
+      "chem",
+      "industry",
+      "c64.packaging",
+      "c64.mains",
+      "facility.foundries",
+      "mb.passives.caps",
+      "logistics.shipping",
+      "logistics.people",
+      "metal.rare-earths"
+    ],
+    "merges": [
+      "metal.silica.quartz-crystal into mb.crystal.y1",
+      "si.cz.atmosphere folded into cz helium feed"
+    ],
+    "kept_as_backlog_view": "unlinked.catalogue (generated; ~230 detached content nodes)",
+    "open": "orphan backlog ~851 (content pass), 9 content notes, TODO section 10 holes/gaps/duplicates"
   }
 }

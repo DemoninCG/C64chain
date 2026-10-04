@@ -10,10 +10,7 @@
       "category": "metals",
       "era": "1982",
       "confidence": "high",
-      "inputs": [
-        "metal.barite",
-        "metal.titanium-dioxide"
-      ],
+      "inputs": [],
       "facts": [
         {
           "label": "Dielectric constant",
@@ -36,286 +33,20 @@
         "https://en.wikipedia.org/wiki/Barium",
         "https://en.wikipedia.org/wiki/Barium_titanate"
       ],
-      "children": [
+      "children": [],
+      "edges": [
         {
-          "id": "metal.barite",
-          "name": "Barite (BaSO4) ore, 90-98%",
-          "description": "Barite is a very heavy, very white, chemically inert mineral - specific gravity 4.5 - which occurs as veins, as replacement bodies in limestone, and as a residual clay. It has two completely separate markets. The drilling-mud market is by far the biggest and takes barite that has simply been crushed and graded to 200 mesh, because all it needs is density and a low quartz content. The chemical-grade market, which is where the barium titanate comes from, needs the barite to be low in iron and low in silica, because those impurities end up in the ceramic. In 1982 the chemical-grade barite was a small, carefully selected part of the output, and China and Morocco were the dominant suppliers.",
-          "kind": "material",
-          "category": "metals",
-          "era": "1982",
-          "confidence": "high",
-          "places": [
-            "Guizhou, China",
-            "Casablanca, Morocco",
-            "Sinaloa, Mexico"
-          ],
-          "facts": [
-            {
-              "label": "Assay",
-              "value": "90-98% BaSO4 for drilling grade; chemical grade requires Fe2O3 <0.5% and SiO2 <1-2%"
-            },
-            {
-              "label": "Ba content",
-              "value": "58.8% by mass"
-            },
-            {
-              "label": "Mining",
-              "value": "underground or surface; sometimes a byproduct of lead-zinc and of fluorspar"
-            }
-          ],
-          "sources": [
-            "https://en.wikipedia.org/wiki/Barite"
-          ],
-          "children": [
-            {
-              "id": "metal.barite.mine",
-              "name": "Barite vein and replacement mine",
-              "description": "Barite is mined as a primary vein mineral - a gangue mineral of many lead-zinc hydrothermal deposits - or as a replacement of limestone. The processing is simple: crush, wash off the clay, and either float or just size and sell. A barite plant of the 1980s was a jaw crusher, a log washer and a deslimer, and the quality specification was almost entirely about the Fe2O3. The chemical-grade plants did a rougher job: a flotation and an acid leach to take the iron down.",
-              "kind": "facility",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "medium",
-              "facts": [
-                {
-                  "label": "Processing",
-                  "value": "crush to 25 mm, log wash, deslime, size to 200 mesh for drilling grade"
-                },
-                {
-                  "label": "Chemical grade",
-                  "value": "flotation plus an acid leach to bring Fe2O3 below 0.5%"
-                }
-              ],
-              "note": "Medium confidence on the chemical-grade processing route; it varies a lot by deposit.",
-              "children": [
-                {
-                  "id": "metal.barite.rock",
-                  "name": "Barite vein in limestone or as a hydrothermal gangue",
-                  "description": "The leaf: white bladed or massive barite filling a fracture, or replacing a fossiliferous limestone bed. The barite has essentially no use as a rock - it is only ever interesting where it happens to be 90% or better and low in iron.",
-                  "kind": "material",
-                  "category": "metals",
-                  "confidence": "high",
-                  "facts": [
-                    {
-                      "label": "Setting",
-                      "value": "hydrothermal vein or replacement body in carbonate rock"
-                    }
-                  ],
-                  "sources": [
-                    "https://en.wikipedia.org/wiki/Baryte"
-                  ]
-                },
-                {
-                  "id": "metal.barite.mud-system",
-                  "name": "Barite, bentonite and lime: the drilling mud system",
-                  "description": "A drilling mud is not one material; it is a designed composite. The barite is the weight - it is the only cheap, abundant mineral dense enough to hold back formation pressure at a density of 1.5-2.0. The bentonite is the viscosity and the filtration control, and it works because its sodium montmorillonite swells in water to several times its dry volume. The lime and the lime-soil inhibitors control the calcium contamination that comes up with the cement and that would flocculate the bentonite. So the barite branch of this tree converges with the bentonite branch of the steel branch, and both converge on the drilling of the oil and gas wells that produce the crude oil the plastics agent starts from.",
-                  "kind": "material",
-                  "category": "metals",
-                  "era": "1982",
-                  "confidence": "medium",
-                  "inputs": [
-                    "metal.barite",
-                    "metal.bentonite",
-                    "metal.lime"
-                  ],
-                  "facts": [
-                    {
-                      "label": "Weight",
-                      "value": "barite takes the mud to 1.5-2.0 specific gravity"
-                    },
-                    {
-                      "label": "Viscosity",
-                      "value": "bentonite, swollen to several times its dry volume"
-                    },
-                    {
-                      "label": "Calcium control",
-                      "value": "lime and inhibitors, because calcium flocculates the clay"
-                    }
-                  ],
-                  "note": "Medium confidence; the mud chemistry is standard drilling engineering.",
-                  "children": [
-                    "metal.bentonite",
-                    "metal.lime"
-                  ]
-                }
-              ],
-              "inputs": [
-                "metal.barite.rock"
-              ]
-            },
-            {
-              "id": "metal.barite.drilling-mud",
-              "name": "Drilling grade barite and its mud",
-              "description": "The larger half of the barite market, and the reason a chemical-grade barite supplier has to be selective. Drilling mud needs a barite that is dense, grindable to a very fine size, low in soluble salts and above all low in cadmium and other toxic heavy metals, because the drill cuttings go into a mud pit and the barite is not recovered. In 1982 the drilling grade specification was a gravity of at least 4.2 and a particle distribution such that 90% passed 45 um. A 1982 rig's mud for a deep well used 100-300 tonnes of barite per kilometre.",
-              "kind": "material",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "medium",
-              "facts": [
-                {
-                  "label": "Specification",
-                  "value": "specific gravity above 4.2, 90% below 45 um, low soluble salts"
-                },
-                {
-                  "label": "Consumption",
-                  "value": "100-300 t of barite per km of hole in a deep well"
-                }
-              ],
-              "note": "Medium confidence; the mud consumption figure is representative rather than a specific well.",
-              "sources": [
-                "https://en.wikipedia.org/wiki/Barite"
-              ]
-            }
-          ]
+          "to": "metal.barite",
+          "rel": "made from"
         },
         {
-          "id": "metal.barite.reduction",
-          "name": "Barite to barium sulphide, then barium carbonate",
-          "description": "The chemical reduction of barite. Barite plus coke at 900-1100 C in a rotary kiln gives barium sulphide: BaSO4 + 4C -> BaS + 4CO. That reaction needs about 1100 C to proceed at a useful rate, and the kiln is a long steel tube, 2-3 m diameter and 30-50 m long, rotating at 0.5-1 rpm, heated by a gas or oil burner at one end. The barium sulphide is leached out of the cooled cake with water, giving a solution of BaS, and that solution is carbonated with carbon dioxide - from a coke oven, from the sinter plant, from anywhere - and barium carbonate precipitates: BaS + CO2 + H2O -> BaCO3 + H2S. So the barium carbonate is made from a sulphate ore, a coke-oven gas and a stream of hydrogen sulphide, and the H2S is either burned to sulphur or sent to a Claus plant.",
-          "kind": "process",
-          "category": "metals",
-          "era": "1982",
-          "confidence": "high",
-          "inputs": [
-            "metal.barite",
-            "coke",
-            "carbon-dioxide"
-          ],
-          "facts": [
-            {
-              "label": "Reduction",
-              "value": "BaSO4 + 4C -> BaS + 4CO at 900-1100 C"
-            },
-            {
-              "label": "Kiln",
-              "value": "rotary, 2-3 m diameter, 30-50 m long, 0.5-1 rpm"
-            },
-            {
-              "label": "Leach",
-              "value": "the cake is leached with water, hot, and the BaS solution is clarified"
-            },
-            {
-              "label": "Carbonation",
-              "value": "BaS + CO2 + H2O -> BaCO3 + H2S, at room temperature"
-            },
-            {
-              "label": "Yield",
-              "value": "~90% on the reduction, 95%+ on the carbonation"
-            },
-            {
-              "label": "Barium carbonate purity",
-              "value": "99.0-99.5% for ceramic grade; iron is the impurity to watch"
-            }
-          ],
-          "sources": [
-            "https://en.wikipedia.org/wiki/Barium"
-          ],
-          "children": [
-            {
-              "id": "metal.barium-carbonate",
-              "name": "Ceramic-grade barium carbonate",
-              "description": "A fine white powder, 99%+ BaCO3, and the actual commodity that the barium titanate maker buys. Its iron and sulphur contents are the specification that matters, and both come back from the reduction step. It is also used directly - in the glass frit of the ferrite coat, in the barium ferrite magnet, in the dielectric of the lower-value ceramic capacitor grades, and in the ferrite itself.",
-              "kind": "material",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "high",
-              "facts": [
-                {
-                  "label": "Purity",
-                  "value": "99.0-99.5% BaCO3 for ceramic grade"
-                },
-                {
-                  "label": "Uses",
-                  "value": "BaTiO3, glass frit, ferrite, barium ferrite magnets"
-                }
-              ],
-              "sources": [
-                "https://en.wikipedia.org/wiki/Barium_carbonate"
-              ],
-              "children": [
-                {
-                  "id": "metal.barium-carbonate.calcination",
-                  "name": "Calcine the carbonate to a reactive powder",
-                  "description": "The barium carbonate that comes out of the carbonation tank is 99.0-99.5% pure but coarse and dense, and barium titanate needs a reactive powder. So the carbonate is calcined at 1000-1200 C to break it down to the oxide and then re-carbonated lightly, or it is ground extremely fine. Either way it is a chemical-material step rather than a smelting one, and it is where a lot of the ceramic-grade versus technical-grade distinction is made.",
-                  "kind": "process",
-                  "category": "metals",
-                  "era": "1982",
-                  "confidence": "medium",
-                  "facts": [
-                    {
-                      "label": "Temperature",
-                      "value": "1000-1200 C"
-                    },
-                    {
-                      "label": "Purpose",
-                      "value": "to raise the reactivity of the carbonate for the solid-state reaction with TiO2"
-                    }
-                  ],
-                  "note": "Medium confidence; the calcination step is standard but the specific practice varies.",
-                  "children": [
-                    {
-                      "id": "metal.barium-carbonate.contamination",
-                      "name": "Iron and sulphur in the ceramic grade",
-                      "description": "The ceramic-grade barium carbonate specification is essentially a statement about two impurities. Iron, carried through from the barite and from the flue of the reduction kiln, if it survives into barium titanate, acts as an acceptor and shifts the Curie point and the dielectric constant and hurts the loss - so iron has to be below a few hundred ppm. Sulphur, carried from the reduction and not removed by the carbonation, sits at the grain boundary of the fired ceramic and hurts the breakdown voltage. Both of them are the same answer as in the ferrite branch: wash, precipitate, and calcine in a controlled atmosphere. It is a recurring theme in ceramics that the last hundred ppm is the whole specification.",
-                      "kind": "process",
-                      "category": "metals",
-                      "era": "1982",
-                      "confidence": "medium",
-                      "facts": [
-                        {
-                          "label": "Iron",
-                          "value": "below a few hundred ppm; an acceptor dopant that degrades the dielectric"
-                        },
-                        {
-                          "label": "Sulphur",
-                          "value": "must be removed by the carbonation and the calcine; it degrades the breakdown voltage"
-                        }
-                      ],
-                      "note": "Medium confidence; the impurity mechanisms in barium titanate ceramics are standard in the ceramics literature.",
-                      "inputs": [
-                        "metal.barium-carbonate"
-                      ]
-                    }
-                  ],
-                  "inputs": [
-                    "metal.barium-carbonate"
-                  ]
-                }
-              ],
-              "inputs": [
-                "metal.barite.reduction"
-              ]
-            },
-            {
-              "id": "metal.hydrogen-sulfide",
-              "name": "Hydrogen sulphide from the carbonation",
-              "description": "The barium carbonate process makes hydrogen sulphide as a by-product, roughly 0.2 t of H2S per tonne of barium carbonate, and H2S is an acutely toxic gas that a 1982 barium plant either burned in a flare or sent to a Claus plant for elemental sulphur. It is also, if you are unlucky, a gas that kills by olfactory paralysis: at high concentration you cannot smell it, which is why a barium works had an H2S alarm on the roof and why the workers carried a supplied-air respirator. It is the least well-known hazard in this tree and a real one.",
-              "kind": "material",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "medium",
-              "facts": [
-                {
-                  "label": "Yield",
-                  "value": "roughly 0.15-0.3 t of H2S per tonne of BaCO3"
-                },
-                {
-                  "label": "Control",
-                  "value": "flared or sent to a Claus plant, with continuous monitoring"
-                },
-                {
-                  "label": "Hazard",
-                  "value": "H2S paralyzes the sense of smell at high concentration"
-                }
-              ],
-              "note": "Medium confidence on the H2S yield; the hazard mechanism is textbook.",
-              "sources": [
-                "https://en.wikipedia.org/wiki/Hydrogen_sulfide"
-              ]
-            }
-          ]
+          "to": "metal.barium.titanate",
+          "rel": "made of"
         },
-        "metal.barium.titanate"
+        {
+          "to": "metal.titanium-dioxide",
+          "rel": "made from"
+        }
       ]
     },
     {
@@ -326,12 +57,7 @@
       "category": "metals",
       "era": "1982",
       "confidence": "high",
-      "inputs": [
-        "metal.alumina",
-        "metal.cryolite",
-        "metal.silica.petcoke",
-        "facility.electricity"
-      ],
+      "inputs": [],
       "facts": [
         {
           "label": "Typical chain",
@@ -354,12 +80,24 @@
         "https://en.wikipedia.org/wiki/Bayer_process",
         "https://en.wikipedia.org/wiki/Hall%E2%80%93H%C3%A9roult_process"
       ],
-      "children": [
-        "metal.alumina",
-        "metal.aluminum.ingot",
-        "metal.aluminum.foil",
-        "metal.aluminum.sheet",
-        "metal.aluminum.extrusion"
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.alumina",
+          "rel": "made from"
+        },
+        {
+          "to": "metal.aluminum.ingot",
+          "rel": "made of"
+        },
+        {
+          "to": "metal.aluminum.foil",
+          "rel": "made of"
+        },
+        {
+          "to": "metal.aluminum.sheet",
+          "rel": "made of"
+        }
       ]
     },
     {
@@ -375,151 +113,15 @@
         "https://en.wikipedia.org/wiki/Bayer_process",
         "https://en.wikipedia.org/wiki/Soda_ash"
       ],
-      "children": [
-        "metal.caustic-soda",
+      "children": [],
+      "edges": [
         {
-          "id": "metal.soda-ash",
-          "name": "Soda ash (Na2CO3)",
-          "description": "Sodium carbonate, the second half of the sodium story. It goes into glass (a huge 1980s user, though the glass agent owns that branch), into detergents, and into the Bayer plant as the carbonate that lime converts back into caustic. The Solvay process, still the dominant route in 1982, makes it from salt, limestone and coke in a solution-and-precipitation tower - no molten salt, no electrolysis.",
-          "kind": "material",
-          "category": "metals",
-          "era": "1982",
-          "confidence": "high",
-          "inputs": [
-            "metal.salt-brine",
-            "metal.limestone",
-            "metal.coke"
-          ],
-          "facts": [
-            {
-              "label": "Solvay tower",
-              "value": "~10 m diameter, 20-30 m tall, cooled to about -10 C at the top"
-            },
-            {
-              "label": "Reaction",
-              "value": "NaCl + NH3 + CO2 + H2O -> NaHCO3 + NH4Cl, then 2 NaHCO3 -> Na2CO3 + CO2 + H2O"
-            },
-            {
-              "label": "Net",
-              "value": "2 NaCl + CaCO3 -> Na2CO3 + CaCl2"
-            },
-            {
-              "label": "Waste",
-              "value": "order 1 t of CaCl2 brine per t of soda ash"
-            }
-          ],
-          "sources": [
-            "https://en.wikipedia.org/wiki/Solvay_process"
-          ],
-          "children": [
-            {
-              "id": "metal.soda-ash.ammonia",
-              "name": "Carbonation tower and the rotary calciner",
-              "description": "A 20-30 m steel tower with a conical bottom, fed at the top with ammoniated brine and in the side with CO2 from the lime kilns. Sodium bicarbonate precipitates as a fine white slurry in the upper third and settles into the cone; the temperature is held near 40 C because below that the ammonium chloride in the liquor crystallises out and fouls the tower. Bicarbonate is then calcined at 200-250 C in a rotary kiln to soda ash.",
-              "kind": "tool",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "medium",
-              "facts": [
-                {
-                  "label": "Tower temperature",
-                  "value": "near 40 C at the precipitation zone"
-                },
-                {
-                  "label": "Bicarbonate calcination",
-                  "value": "200-250 C"
-                },
-                {
-                  "label": "NH3 loss",
-                  "value": "order 0.1-0.3 t ammonia per t of soda ash, mostly vented"
-                }
-              ],
-              "note": "Tower internals varied; the conical settler is universal.",
-              "children": []
-            },
-            {
-              "id": "metal.soda-ash.ammonia-source",
-              "name": "Make ammonia from coke in the gasworks",
-              "description": "In 1982 most ammonia in the soda industry still came from the gasworks: coke plus steam and iron passed over a hot carbonaceous catalyst, then cracked to nitrogen and hydrogen. Natural gas-based steam reforming had largely displaced this in North America and Western Europe, but coke-based ammonia remained standard in India, China and much of Eastern Europe - which is where much of the world's soda ash, and hence much of its glass, was made.",
-              "kind": "process",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "medium",
-              "inputs": [
-                "metal.coke",
-                "metal.coke.gas"
-              ],
-              "facts": [
-                {
-                  "label": "Water-gas shift temperature",
-                  "value": "~1000 C"
-                },
-                {
-                  "label": "Catalyst",
-                  "value": "iron promoted with K2O, or activated coke"
-                }
-              ],
-              "sources": [
-                "https://en.wikipedia.org/wiki/Solvay_process"
-              ],
-              "note": "Not established: that coke-oven gasworks were still the ammonia source for soda ash in 1982, the regional claim (India, China, Eastern Europe), or the ~1000 C and iron/K2O-catalyst figures. The Solvay chemistry recovers almost all its ammonia, so only the makeup supply is at stake."
-            },
-            {
-              "id": "metal.soda-ash.lime-kiln",
-              "name": "The lime kilns that feed the Solvay tower",
-              "description": "The Solvay process needs carbon dioxide and it gets it by burning limestone in a shaft kiln beside the tower, in the same way a sugar mill burns bagasse. The kiln gas, after the dust is knocked out and the gas is cooled and scrubbed, is about 40-45% carbon dioxide on a dry basis - lower than the 98% a dedicated CO2 plant would produce, but it came free with the lime the process also needed. The Solvay works was therefore a self-contained chemical plant that took limestone and salt and made soda ash, calcium chloride and CO2 in one site.",
-              "kind": "process",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "medium",
-              "inputs": [
-                "metal.limestone",
-                "metal.coke"
-              ],
-              "facts": [
-                {
-                  "label": "Kiln",
-                  "value": "shaft kiln, 1000-1100 C, beside the tower"
-                },
-                {
-                  "label": "CO2 concentration",
-                  "value": "40-45% dry after dust removal"
-                },
-                {
-                  "label": "By-product",
-                  "value": "the lime itself, sold to steel and to agriculture"
-                }
-              ],
-              "children": [
-                "metal.limestone"
-              ],
-              "note": "The Solvay reference gives the limestone calcination as 950-1100 C, not 1000-1100 C, and says nothing about a shaft-kill gas of 40-45% carbon dioxide. Not established: the dry CO2 concentration of the kiln gas."
-            },
-            {
-              "id": "metal.soda-ash.salt-recovery",
-              "name": "Causticise the spent brine to recover the salt",
-              "description": "The Solvay process does not consume the salt: the ammonium chloride in the spent brine is causticised with lime back to ammonia and sodium chloride, and the brine is re-saturated. The plant therefore closes its salt loop, and its only real consumption is limestone and energy and the ammonia. That closure is the whole reason Solvay was so cheap for a century and why it was so hard to displace until the chlor-alkali-soda ash route had caught up.",
-              "kind": "process",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "medium",
-              "facts": [
-                {
-                  "label": "Causticisation",
-                  "value": "2NH4Cl + Ca(OH)2 -> 2NH3 + CaCl2 + 2H2O"
-                },
-                {
-                  "label": "Re-saturation",
-                  "value": "brine is re-saturated with mined salt and returned"
-                }
-              ],
-              "note": "Medium confidence on the salt consumption figure; the chemistry is standard.",
-              "inputs": [
-                "metal.lime",
-                "metal.caustic-soda"
-              ]
-            }
-          ]
+          "to": "metal.caustic-soda",
+          "rel": "made of"
+        },
+        {
+          "to": "metal.soda-ash",
+          "rel": "made of"
         }
       ]
     },
@@ -531,12 +133,7 @@
       "category": "metals",
       "era": "1982",
       "confidence": "high",
-      "inputs": [
-        "metal.columbite",
-        "metal.hydrofluoric-acid",
-        "metal.potassium",
-        "metal.aluminum.ingot"
-      ],
+      "inputs": [],
       "facts": [
         {
           "label": "Metal purity",
@@ -559,349 +156,23 @@
         "https://archive.epa.gov/epawaste/nonhaz/industrial/special/web/pdf/id4-tant.pdf",
         "https://en.wikipedia.org/wiki/Tantalum"
       ],
-      "children": [
+      "children": [],
+      "edges": [
         {
-          "id": "metal.columbite",
-          "name": "Columbite-tantalite concentrate",
-          "description": "A hard, black, sub-conchoidal mineral - (Fe,Mn)(Nb,Ta)2O6 - that in practice is never a pure species but a solid solution, and that is the whole problem of the tantalum industry: tantalum and niobium are chemically almost identical and always occur together, with the tantalum content ranging from a few percent to more than 50% of the total. The separation is the entire industry. The main 1982 sources were the Greenbushes and Wodgina pegmatites in Western Australia, the Cat Creek and Oarkopper operations in Brazil, and the columbite-tantalite concentrates from the Congo, Nigeria and Zimbabwe. Tantalum-bearing tin slags from Malaysia and Brazil were a secondary source.",
-          "kind": "material",
-          "category": "metals",
-          "era": "1982",
-          "confidence": "high",
-          "places": [
-            "Greenbushes, Western Australia",
-            "Minas Gerais, Brazil",
-            "Kivu, Zaire"
-          ],
-          "facts": [
-            {
-              "label": "Concentrate",
-              "value": "20-60% Ta2O5 in the tantalum-rich fraction; lower for ordinary columbite"
-            },
-            {
-              "label": "Host",
-              "value": "granitic pegmatite; the Greenbushes pegmatite is a lithium-tantalum-columbite body"
-            },
-            {
-              "label": "Setting",
-              "value": "the ore is chemically a refractory oxide locked in a silicate rock"
-            }
-          ],
-          "sources": [
-            "https://en.wikipedia.org/wiki/Columbite"
-          ],
-          "children": [
-            {
-              "id": "metal.columbite.mine",
-              "name": "Pegmatite open pit with sluicing",
-              "description": "The tantalum ore is in a pegmatite dyke, a very coarse-grained granite intrusion, and the extraction in the small operations is almost artisanal: the dyke is blasted, the rock is crushed and hand-sorted, and the heavy tantalum minerals are concentrated on a sluice or a jig. The Greenbushes operation, at the time one of the largest, mined a 3 km pegmatite by open pit with a 200,000 t/year plant. So the tantalum in a 1982 C64's capacitors very plausibly came out of an Australian open cut in a pegmatite, hand-sorted and sluiced.",
-              "kind": "facility",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "medium",
-              "places": [
-                "Greenbushes, Western Australia"
-              ],
-              "facts": [
-                {
-                  "label": "Method",
-                  "value": "open pit, drill and blast, coarse crushing, hand sorting, gravity concentration, or a dense-medium plant"
-                },
-                {
-                  "label": "Concentration",
-                  "value": "coltan at 20-30% Ta2O5 from a 0.05-0.1% Ta2O5 pegmatite"
-                },
-                {
-                  "label": "Predecessor technology",
-                  "value": "cassiterite and wolframite were the original 1940s products of these same operations"
-                }
-              ],
-              "note": "Greenbushes was already a tin mine before it was a tantalum mine and then a lithium mine - a genuinely rare example of one pit changing commodities. Medium confidence on the production figures for 1982.",
-              "sources": [
-                "https://en.wikipedia.org/wiki/Greenbushes_mine"
-              ],
-              "children": [
-                {
-                  "id": "metal.columbite.pegmatite",
-                  "name": "Granitic pegmatite dyke",
-                  "description": "The leaf: a coarse-grained, quartz-feldspar-mica rock so coarse that individual crystals are centimetres across, with the tantalum-bearing minerals in small pockets of rare-metal enrichment. Pegmatites are the last-crystallising fraction of a granite magma, so they are the natural home of every incompatible element - lithium, tantalum, niobium, beryllium, rare earths. There is no more apt end point for the tantalum chain than a dyke of crystals bigger than your fist.",
-                  "kind": "material",
-                  "category": "metals",
-                  "confidence": "high",
-                  "facts": [
-                    {
-                      "label": "Rock",
-                      "value": "granitic pegmatite: quartz, albite, potassium feldspar, mica, with coltan pockets"
-                    },
-                    {
-                      "label": "Grain size",
-                      "value": "commonly 1-100 mm crystals"
-                    }
-                  ],
-                  "sources": [
-                    "https://en.wikipedia.org/wiki/Pegmatite",
-                    "https://en.wikipedia.org/wiki/Columbite"
-                  ],
-                  "children": [
-                    {
-                      "id": "metal.pegmatite-crystals",
-                      "name": "The crystals and the rare-metal pockets",
-                      "description": "The leaf of the tantalum branch. A pegmatite is the last thing a granite magma crystallises, and because it is water-rich and volatile-rich it can hold elements that have no business being in a granite at all - lithium, tantalum, niobium, beryllium, tin, the rare earths - at hundreds of times their normal concentration. Those elements concentrate in the last pockets to crystallise, and a pocket 30 cm across can hold a few kilos of coltan worth more than the whole pegmatite around it. So the tantalum in a 1982 capacitor came out of small pockets in a last-stage granite pocket, hand-sorted out of a rock whose crystals are bigger than your fist, in a pegmatite that is less than 0.1% tantalum.",
-                      "kind": "material",
-                      "category": "metals",
-                      "era": "1982",
-                      "confidence": "high",
-                      "facts": [
-                        {
-                          "label": "Enrichment",
-                          "value": "volatile elements concentrate in the final crystallising pockets, at 100-1000x background"
-                        },
-                        {
-                          "label": "Pocket size",
-                          "value": "cm to tens of cm, holding grams to kilograms of coltan"
-                        },
-                        {
-                          "label": "Host",
-                          "value": "a granitic pegmatite dyke"
-                        }
-                      ],
-                      "sources": [
-                        "https://en.wikipedia.org/wiki/Pegmatite"
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "metal.columbite.concentrator",
-              "name": "Coltan concentrator: gravity, magnet and electrostatic",
-              "description": "The coltan upgrade in a small operation is a classic three-stage gravity and magnetic plant: a shaking table or a jig throws away the quartz and mica, a magnetic separator takes off the magnetite and ilmenite, and a second gravity stage with a dense-medium separator makes a 20-30% Ta2O5 concentrate from a 0.05-0.1% pegmatite. Electrostatic separation takes out the zircon. The mass yield is under 1%, so the concentrator's job is mostly to throw away 99.5% of the rock, which is why a coltan operation is a small, cheap, labour-intensive plant sitting next to the pit rather than a large mill.",
-              "kind": "process",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "medium",
-              "facts": [
-                {
-                  "label": "Stages",
-                  "value": "jig or shaking table, magnetic separator, dense medium, electrostatic"
-                },
-                {
-                  "label": "Feed",
-                  "value": "0.05-0.1% Ta2O5 pegmatite"
-                },
-                {
-                  "label": "Concentrate",
-                  "value": "20-30% Ta2O5, at 60-80% recovery"
-                }
-              ],
-              "note": "Recovery figures for artisanal coltan operations vary enormously; medium confidence.",
-              "children": [
-                {
-                  "id": "metal.columbite.tailings",
-                  "name": "Coltan tailings",
-                  "description": "A coltan concentrator throws away over 99% of the mass it treats, and in the artisanal operations of the 1970s and 1980s that was put into the creek bed without any attempt at settling, and the creek carried it away. The ecological consequence of that was small compared to what followed - the coltan rush of 2000-2008 - but the mining itself was the problem and the tantalum industry spent most of the 1980s designing a better process and a better tailings facility precisely because it was planning for exactly the kind of scrutiny it eventually got. A node whose importance is only visible in hindsight.",
-                  "kind": "material",
-                  "category": "metals",
-                  "era": "1982",
-                  "confidence": "low",
-                  "facts": [
-                    {
-                      "label": "Waste",
-                      "value": "over 99% of the feed mass, as a fine quartz-mica-feldspar slurry"
-                    }
-                  ],
-                  "note": "Low confidence; the 1980s artisanal tailings practice is poorly documented; this is reasoned from the mass balance rather than from a source."
-                }
-              ],
-              "inputs": [
-                "metal.columbite"
-              ]
-            }
-          ]
+          "to": "metal.columbite",
+          "rel": "made from"
         },
         {
-          "id": "metal.tantalum.hf-digest",
-          "name": "Hydrofluoric acid digestion at 100-200 C",
-          "description": "The concentrate is digested in a mixture of hydrofluoric acid, nitric acid and hydrochloric acid at 100-200 C in a Teflon-lined or Monel vessel with a condenser to keep the HF in the loop. Ta2O5 and Nb2O5 both dissolve as pentafluorides, while iron, tin, thorium and most of the rare earths stay as insoluble fluorides or oxides and are filtered off. Thorium in particular is a problem: it is a radioactive alpha emitter that comes with the coltan and has to be separated and disposed of carefully. The mixed HF/HNO3/HCl digestion was the industry standard for decades; the Bayer process digest, using anhydrous HF with calcium fluoride at 150-200 C, arrived later.",
-          "kind": "process",
-          "category": "metals",
-          "era": "1982",
-          "confidence": "high",
-          "inputs": [
-            "metal.columbite",
-            "hydrofluoric-acid",
-            "nitric-acid"
-          ],
-          "facts": [
-            {
-              "label": "Medium",
-              "value": "HF/HNO3/HCl, or HF with CaF2 (the Bayer process digest)"
-            },
-            {
-              "label": "Temperature",
-              "value": "100-200 C"
-            },
-            {
-              "label": "Vessel",
-              "value": "Monel or Teflon-lined, with a reflux condenser - HF attacks glass"
-            },
-            {
-              "label": "Refractory waste",
-              "value": "5-15% of the mass leaves as insoluble fluoride sludge; the hardest waste stream in the industry"
-            }
-          ],
-          "sources": [
-            "https://archive.epa.gov/epawaste/nonhaz/industrial/special/web/pdf/id4-tant.pdf"
-          ],
-          "note": "The Bayer-process alternative digest came into commercial use in the 1980s and 1990s; the acid digestion below is the 1982 norm.",
-          "children": [
-            "metal.hydrofluoric-acid",
-            {
-              "id": "metal.tantalum.thorium",
-              "name": "Thorium in the coltan: a radioactive by-product",
-              "description": "Columbite-tantalite carries thorium and uranium in solid solution, typically 0.01-0.5% Th as ThO2, and because thorium's chemistry is so close to the rare earths it follows them through the whole fluoride circuit and reports with the rare-earth product. It is an alpha emitter, so the refinery's thorium residue is a radioactive waste that has to be stored, and in 1982 the disposal arrangements in most producing countries were informal. The leaf is a radioactive waste site, which is a legitimate if slightly grim terminus for a branch of the metals tree.",
-              "kind": "material",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "medium",
-              "facts": [
-                {
-                  "label": "Thorium content",
-                  "value": "0.01-0.5% Th as ThO2 in coltan concentrate"
-                },
-                {
-                  "label": "Chemistry",
-                  "value": "follows the rare earths through the fluoride circuit"
-                },
-                {
-                  "label": "1982 handling",
-                  "value": "thorium nitrate sold as a 'fertile material' for a thorium fuel cycle that never arrived; the rest was stored"
-                }
-              ],
-              "note": "The thorium content of coltan is well documented; medium confidence on the 1982 commercial handling arrangements.",
-              "sources": [
-                "https://en.wikipedia.org/wiki/Thorium"
-              ],
-              "children": [
-                "metal.rare-earths.monazite",
-                "metal.monazite.beach"
-              ]
-            },
-            {
-              "id": "metal.tantalum.digest-vessel",
-              "name": "The fluoride digestion vessel",
-              "description": "The digestor is the most aggressively corrosive piece of equipment in the metals tree. Anhydrous hydrofluoric acid at 100-200 C attacks glass, attacks most metals, and attacks concrete; so the vessel is Monel, nickel, or Teflon-lined, with the condenser and the piping also in Monel, and there is a continuous fluoride leak problem because HF is off-gassing from a boiling slurry. The industry answer through the 1980s was the Monel plant, with a steam stripping system to recover the HF and a caustic scrubber on the vent, and it was the single largest reason the industry needed a process chemist rather than a metallurgist.",
-              "kind": "tool",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "medium",
-              "inputs": [
-                "metal.nickel-monel"
-              ],
-              "facts": [
-                {
-                  "label": "Material",
-                  "value": "Monel, nickel, or PTFE-lined steel"
-                },
-                {
-                  "label": "Why",
-                  "value": "anhydrous HF at 100-200 C attacks glass, most metals and concrete"
-                },
-                {
-                  "label": "Fluoride recovery",
-                  "value": "steam stripping of the offgas, then a caustic scrubber"
-                }
-              ],
-              "note": "Medium confidence; the materials of construction for HF service are well established in chemical engineering handbooks.",
-              "children": [
-                {
-                  "id": "metal.nickel-monel",
-                  "name": "Monel: nickel with copper",
-                  "description": "The alloy that made the fluorine chemistry of the 1980s possible: 60-70% nickel with 30% copper, and sometimes molybdenum, made in the same vacuum-melted, cast-and-rolled route as any nickel alloy. Monel resists hydrofluoric acid better than almost anything because the nickel fluoride film that forms is protective while aluminium fluoride and steel fluoride are not. So the tantalum in a 1982 capacitor was separated in a vessel made of a nickel alloy that came out of the nickel branch of this same file, and the aluminium capacitor in the power supply is made with an acid that would destroy it.",
-                  "kind": "material",
-                  "category": "metals",
-                  "era": "1982",
-                  "confidence": "medium",
-                  "inputs": [
-                    "metal.nickel.ingot",
-                    "metal.copper.cathode"
-                  ],
-                  "facts": [
-                    {
-                      "label": "Composition",
-                      "value": "60-70% Ni, 25-35% Cu, sometimes 1-5% Mo"
-                    },
-                    {
-                      "label": "Why it survives HF",
-                      "value": "the nickel fluoride film is protective; aluminium and iron fluorides are not"
-                    }
-                  ],
-                  "note": "Medium confidence; Monel's composition is well documented and the mechanism is the standard explanation."
-                }
-              ]
-            }
-          ]
+          "to": "metal.hydrofluoric-acid",
+          "rel": "made from"
         },
         {
-          "id": "metal.tantalum.separation",
-          "name": "Separation of tantalum from niobium: K2TaF7",
-          "description": "From the fluoride solution the tantalum is selectively precipitated as potassium heptafluorotantalate, K2TaF7, by adding potassium chloride and hydrofluoric acid at 70-90 C - and this is the step that separates it from niobium, because K2TaF7 is far less soluble than K2NbF7. The K2TaF7 crystals are filtered, washed and dried. Then the metal is won from it in one of two ways. The potassium reduction: K2TaF7 is reduced with liquid potassium metal, or with sodium, at 700-800 C, giving a coarse tantalum powder. The aluminium reduction: K2TaF7 is reduced with aluminium in an induction furnace, and the charge is self-separating by particle size - the tantalum comes out as the finer powder and the aluminium-fluoride slag on top. The capacitor industry wanted the sodium-reduction powder specifically, because it could be made much finer.",
-          "kind": "process",
-          "category": "metals",
-          "era": "1982",
-          "confidence": "high",
-          "inputs": [
-            "metal.columbite",
-            "metal.hydrofluoric-acid",
-            "metal.potassium",
-            "metal.aluminum.ingot"
-          ],
-          "facts": [
-            {
-              "label": "Precipitation",
-              "value": "K2TaF7 from the fluoride solution by KCl at 70-90 C; niobium stays in solution"
-            },
-            {
-              "label": "Potassium/sodium reduction",
-              "value": "K2TaF7 + 7Na -> Ta + 7NaF at 700-800 C; the standard capacitor-grade route"
-            },
-            {
-              "label": "Aluminium reduction",
-              "value": "K2TaF7 + 5Al -> Ta + 5AlF3, at 700-900 C in an induction furnace"
-            },
-            {
-              "label": "Product form",
-              "value": "tantalum powder; capacitor grade needs a controlled particle size and a high surface area"
-            }
-          ],
-          "sources": [
-            "https://www.unige.ch/TCEs/download_file/view/21/257",
-            "https://en.wikipedia.org/wiki/Tantalum"
-          ],
-          "note": "The sodium reduction of K2TaF7 at 700-800 C is the standard capacitor-grade route and is still the industrial norm; the aluminium reduction is for bulk metal.",
-          "children": [
-            "metal.tantalum.powder",
-            {
-              "id": "metal.tantalum.kcl-cycle",
-              "name": "Recycling the potassium and fluorine",
-              "description": "The potassium in K2TaF7 and the fluorine in it both come back. The mother liquor from the precipitation is evaporated and the potassium is recycled, and the fluoride is recovered from the aluminium fluoride slag in the metal reduction by hydrolysing it to fluoride and re-fluorinating. A modern tantalum plant's fluorine and potassium consumption is a small fraction of its theoretical requirement because of this loop, and the 1980s plants were learning it. It is a small detail that says something about how tight the tantalum business economics were - and the answer is that they were tight enough to make the 1982-83 supply crisis severe.",
-              "kind": "process",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "low",
-              "inputs": [
-                "metal.sylvinite"
-              ],
-              "facts": [
-                {
-                  "label": "Streams",
-                  "value": "KCl from the mother liquor; fluoride from the AlF3 slag"
-                }
-              ],
-              "note": "Low confidence on the 1982s recovery efficiencies; the flowsheet is standard but the plant data is proprietary."
-            }
-          ]
+          "to": "metal.potassium",
+          "rel": "made from"
+        },
+        {
+          "to": "metal.aluminum.ingot",
+          "rel": "made from"
         }
       ]
     },
@@ -913,9 +184,7 @@
       "category": "metals",
       "era": "1982",
       "confidence": "high",
-      "inputs": [
-        "metal.manganese.ore"
-      ],
+      "inputs": [],
       "facts": [
         {
           "label": "Refined form",
@@ -929,36 +198,15 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Manganese"
       ],
-      "children": [
-        "metal.manganese.ore",
-        "metal.ferromanganese",
+      "children": [],
+      "edges": [
         {
-          "id": "metal.manganese.ladle-charging",
-          "name": "Charge the ferromanganese into the steel ladle",
-          "description": "A ladle of steel is a bad place to drop a lump of ferromanganese, because the lump floats, the reaction is violent and the steel is left with unreacted alloy inclusions. So the FeMn is added in sized lumps and, increasingly in the 1980s, in cored wire - a steel tube filled with powdered ferromanganese and flux, fed into the ladle on a lance and dissolved by the passage of the steel through it. Cored-wire charging was a genuine 1980s development in secondary metallurgy and it improved the yield of the manganese, because it puts the metal into the steel rather than onto it.",
-          "kind": "process",
-          "category": "metals",
-          "era": "1982",
-          "confidence": "medium",
-          "facts": [
-            {
-              "label": "Method",
-              "value": "sized lumps, or cored wire on a ladle lance"
-            },
-            {
-              "label": "Why",
-              "value": "a lump floats and reacts only at the surface; cored wire dissolves below the surface and gives a higher yield"
-            },
-            {
-              "label": "Typical addition",
-              "value": "order 1 kg of FeMn per tonne of steel"
-            }
-          ],
-          "note": "Medium confidence; cored-wire charging of ferroalloys is well documented in secondary-metallurgy practice.",
-          "inputs": [
-            "metal.ferromanganese",
-            "metal.steel.ladle"
-          ]
+          "to": "metal.manganese.ore",
+          "rel": "made from"
+        },
+        {
+          "to": "metal.ferromanganese",
+          "rel": "made of"
         }
       ]
     },
@@ -970,10 +218,7 @@
       "category": "metals",
       "era": "1982",
       "confidence": "high",
-      "inputs": [
-        "metal.hematite",
-        "metal.magnetite"
-      ],
+      "inputs": [],
       "facts": [
         {
           "label": "Grade",
@@ -991,10 +236,954 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Iron_ore"
       ],
-      "children": [
-        "metal.hematite",
-        "metal.magnetite"
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.hematite",
+          "rel": "made of"
+        },
+        {
+          "to": "metal.magnetite",
+          "rel": "made of"
+        }
       ]
     }
-  ]
+  ],
+  "shared": {
+    "metal.soda-ash": {
+      "id": "metal.soda-ash",
+      "name": "Soda ash (Na2CO3)",
+      "description": "Sodium carbonate, the second half of the sodium story. It goes into glass (a huge 1980s user, though the glass agent owns that branch), into detergents, and into the Bayer plant as the carbonate that lime converts back into caustic. The Solvay process, still the dominant route in 1982, makes it from salt, limestone and coke in a solution-and-precipitation tower - no molten salt, no electrolysis.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "inputs": [],
+      "facts": [
+        {
+          "label": "Solvay tower",
+          "value": "~10 m diameter, 20-30 m tall, cooled to about -10 C at the top"
+        },
+        {
+          "label": "Reaction",
+          "value": "NaCl + NH3 + CO2 + H2O -> NaHCO3 + NH4Cl, then 2 NaHCO3 -> Na2CO3 + CO2 + H2O"
+        },
+        {
+          "label": "Net",
+          "value": "2 NaCl + CaCO3 -> Na2CO3 + CaCl2"
+        },
+        {
+          "label": "Waste",
+          "value": "order 1 t of CaCl2 brine per t of soda ash"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Solvay_process"
+      ],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.salt-brine",
+          "rel": "made from"
+        },
+        {
+          "to": "metal.limestone",
+          "rel": "made from"
+        },
+        {
+          "to": "metal.coke",
+          "rel": "made from"
+        }
+      ]
+    },
+    "metal.barite.drilling-mud": {
+      "id": "metal.barite.drilling-mud",
+      "name": "Drilling grade barite and its mud",
+      "description": "The larger half of the barite market, and the reason a chemical-grade barite supplier has to be selective. Drilling mud needs a barite that is dense, grindable to a very fine size, low in soluble salts and above all low in cadmium and other toxic heavy metals, because the drill cuttings go into a mud pit and the barite is not recovered. In 1982 the drilling grade specification was a gravity of at least 4.2 and a particle distribution such that 90% passed 45 um. A 1982 rig's mud for a deep well used 100-300 tonnes of barite per kilometre.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Specification",
+          "value": "specific gravity above 4.2, 90% below 45 um, low soluble salts"
+        },
+        {
+          "label": "Consumption",
+          "value": "100-300 t of barite per km of hole in a deep well"
+        }
+      ],
+      "note": "Medium confidence; the mud consumption figure is representative rather than a specific well.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Barite"
+      ]
+    },
+    "metal.barite": {
+      "id": "metal.barite",
+      "name": "Barite (BaSO4) ore, 90-98%",
+      "description": "Barite is a very heavy, very white, chemically inert mineral - specific gravity 4.5 - which occurs as veins, as replacement bodies in limestone, and as a residual clay. It has two completely separate markets. The drilling-mud market is by far the biggest and takes barite that has simply been crushed and graded to 200 mesh, because all it needs is density and a low quartz content. The chemical-grade market, which is where the barium titanate comes from, needs the barite to be low in iron and low in silica, because those impurities end up in the ceramic. In 1982 the chemical-grade barite was a small, carefully selected part of the output, and China and Morocco were the dominant suppliers.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "places": [
+        "Guizhou, China",
+        "Casablanca, Morocco",
+        "Sinaloa, Mexico"
+      ],
+      "facts": [
+        {
+          "label": "Assay",
+          "value": "90-98% BaSO4 for drilling grade; chemical grade requires Fe2O3 <0.5% and SiO2 <1-2%"
+        },
+        {
+          "label": "Ba content",
+          "value": "58.8% by mass"
+        },
+        {
+          "label": "Mining",
+          "value": "underground or surface; sometimes a byproduct of lead-zinc and of fluorspar"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Barite"
+      ],
+      "children": [
+        {
+          "id": "metal.barite.mine",
+          "name": "Barite vein and replacement mine",
+          "description": "Barite is mined as a primary vein mineral - a gangue mineral of many lead-zinc hydrothermal deposits - or as a replacement of limestone. The processing is simple: crush, wash off the clay, and either float or just size and sell. A barite plant of the 1980s was a jaw crusher, a log washer and a deslimer, and the quality specification was almost entirely about the Fe2O3. The chemical-grade plants did a rougher job: a flotation and an acid leach to take the iron down.",
+          "kind": "facility",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "medium",
+          "facts": [
+            {
+              "label": "Processing",
+              "value": "crush to 25 mm, log wash, deslime, size to 200 mesh for drilling grade"
+            },
+            {
+              "label": "Chemical grade",
+              "value": "flotation plus an acid leach to bring Fe2O3 below 0.5%"
+            }
+          ],
+          "note": "Medium confidence on the chemical-grade processing route; it varies a lot by deposit.",
+          "children": [],
+          "inputs": [],
+          "edges": [
+            {
+              "to": "metal.barite.rock",
+              "rel": "produces",
+              "role": "product"
+            }
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "to": "metal.barite.drilling-mud",
+          "rel": "made of"
+        }
+      ]
+    },
+    "metal.columbite": {
+      "id": "metal.columbite",
+      "name": "Columbite-tantalite concentrate",
+      "description": "A hard, black, sub-conchoidal mineral - (Fe,Mn)(Nb,Ta)2O6 - that in practice is never a pure species but a solid solution, and that is the whole problem of the tantalum industry: tantalum and niobium are chemically almost identical and always occur together, with the tantalum content ranging from a few percent to more than 50% of the total. The separation is the entire industry. The main 1982 sources were the Greenbushes and Wodgina pegmatites in Western Australia, the Cat Creek and Oarkopper operations in Brazil, and the columbite-tantalite concentrates from the Congo, Nigeria and Zimbabwe. Tantalum-bearing tin slags from Malaysia and Brazil were a secondary source.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "places": [
+        "Greenbushes, Western Australia",
+        "Minas Gerais, Brazil",
+        "Kivu, Zaire"
+      ],
+      "facts": [
+        {
+          "label": "Concentrate",
+          "value": "20-60% Ta2O5 in the tantalum-rich fraction; lower for ordinary columbite"
+        },
+        {
+          "label": "Host",
+          "value": "granitic pegmatite; the Greenbushes pegmatite is a lithium-tantalum-columbite body"
+        },
+        {
+          "label": "Setting",
+          "value": "the ore is chemically a refractory oxide locked in a silicate rock"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Columbite"
+      ],
+      "children": [
+        {
+          "id": "metal.columbite.mine",
+          "name": "Pegmatite open pit with sluicing",
+          "description": "The tantalum ore is in a pegmatite dyke, a very coarse-grained granite intrusion, and the extraction in the small operations is almost artisanal: the dyke is blasted, the rock is crushed and hand-sorted, and the heavy tantalum minerals are concentrated on a sluice or a jig. The Greenbushes operation, at the time one of the largest, mined a 3 km pegmatite by open pit with a 200,000 t/year plant. So the tantalum in a 1982 C64's capacitors very plausibly came out of an Australian open cut in a pegmatite, hand-sorted and sluiced.",
+          "kind": "facility",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "medium",
+          "places": [
+            "Greenbushes, Western Australia"
+          ],
+          "facts": [
+            {
+              "label": "Method",
+              "value": "open pit, drill and blast, coarse crushing, hand sorting, gravity concentration, or a dense-medium plant"
+            },
+            {
+              "label": "Concentration",
+              "value": "coltan at 20-30% Ta2O5 from a 0.05-0.1% Ta2O5 pegmatite"
+            },
+            {
+              "label": "Predecessor technology",
+              "value": "cassiterite and wolframite were the original 1940s products of these same operations"
+            }
+          ],
+          "note": "Greenbushes was already a tin mine before it was a tantalum mine and then a lithium mine - a genuinely rare example of one pit changing commodities. Medium confidence on the production figures for 1982.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Greenbushes_mine"
+          ],
+          "children": [],
+          "edges": [
+            {
+              "to": "metal.columbite.pegmatite",
+              "rel": "produces",
+              "role": "product"
+            }
+          ]
+        }
+      ]
+    },
+    "metal.pegmatite-crystals": {
+      "id": "metal.pegmatite-crystals",
+      "name": "The crystals and the rare-metal pockets",
+      "description": "The leaf of the tantalum branch. A pegmatite is the last thing a granite magma crystallises, and because it is water-rich and volatile-rich it can hold elements that have no business being in a granite at all - lithium, tantalum, niobium, beryllium, tin, the rare earths - at hundreds of times their normal concentration. Those elements concentrate in the last pockets to crystallise, and a pocket 30 cm across can hold a few kilos of coltan worth more than the whole pegmatite around it. So the tantalum in a 1982 capacitor came out of small pockets in a last-stage granite pocket, hand-sorted out of a rock whose crystals are bigger than your fist, in a pegmatite that is less than 0.1% tantalum.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Enrichment",
+          "value": "volatile elements concentrate in the final crystallising pockets, at 100-1000x background"
+        },
+        {
+          "label": "Pocket size",
+          "value": "cm to tens of cm, holding grams to kilograms of coltan"
+        },
+        {
+          "label": "Host",
+          "value": "a granitic pegmatite dyke"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pegmatite"
+      ]
+    },
+    "metal.barium-carbonate": {
+      "id": "metal.barium-carbonate",
+      "name": "Ceramic-grade barium carbonate",
+      "description": "A fine white powder, 99%+ BaCO3, and the actual commodity that the barium titanate maker buys. Its iron and sulphur contents are the specification that matters, and both come back from the reduction step. It is also used directly - in the glass frit of the ferrite coat, in the barium ferrite magnet, in the dielectric of the lower-value ceramic capacitor grades, and in the ferrite itself.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Purity",
+          "value": "99.0-99.5% BaCO3 for ceramic grade"
+        },
+        {
+          "label": "Uses",
+          "value": "BaTiO3, glass frit, ferrite, barium ferrite magnets"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Barium_carbonate"
+      ],
+      "children": [],
+      "inputs": []
+    },
+    "metal.hydrogen-sulfide": {
+      "id": "metal.hydrogen-sulfide",
+      "name": "Hydrogen sulphide from the carbonation",
+      "description": "The barium carbonate process makes hydrogen sulphide as a by-product, roughly 0.2 t of H2S per tonne of barium carbonate, and H2S is an acutely toxic gas that a 1982 barium plant either burned in a flare or sent to a Claus plant for elemental sulphur. It is also, if you are unlucky, a gas that kills by olfactory paralysis: at high concentration you cannot smell it, which is why a barium works had an H2S alarm on the roof and why the workers carried a supplied-air respirator. It is the least well-known hazard in this tree and a real one.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Yield",
+          "value": "roughly 0.15-0.3 t of H2S per tonne of BaCO3"
+        },
+        {
+          "label": "Control",
+          "value": "flared or sent to a Claus plant, with continuous monitoring"
+        },
+        {
+          "label": "Hazard",
+          "value": "H2S paralyzes the sense of smell at high concentration"
+        }
+      ],
+      "note": "Medium confidence on the H2S yield; the hazard mechanism is textbook.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Hydrogen_sulfide"
+      ]
+    },
+    "metal.columbite.tailings": {
+      "id": "metal.columbite.tailings",
+      "name": "Coltan tailings",
+      "description": "A coltan concentrator throws away over 99% of the mass it treats, and in the artisanal operations of the 1970s and 1980s that was put into the creek bed without any attempt at settling, and the creek carried it away. The ecological consequence of that was small compared to what followed - the coltan rush of 2000-2008 - but the mining itself was the problem and the tantalum industry spent most of the 1980s designing a better process and a better tailings facility precisely because it was planning for exactly the kind of scrutiny it eventually got. A node whose importance is only visible in hindsight.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "low",
+      "facts": [
+        {
+          "label": "Waste",
+          "value": "over 99% of the feed mass, as a fine quartz-mica-feldspar slurry"
+        }
+      ],
+      "note": "Low confidence; the 1980s artisanal tailings practice is poorly documented; this is reasoned from the mass balance rather than from a source."
+    },
+    "metal.tantalum.thorium": {
+      "id": "metal.tantalum.thorium",
+      "name": "Thorium in the coltan: a radioactive by-product",
+      "description": "Columbite-tantalite carries thorium and uranium in solid solution, typically 0.01-0.5% Th as ThO2, and because thorium's chemistry is so close to the rare earths it follows them through the whole fluoride circuit and reports with the rare-earth product. It is an alpha emitter, so the refinery's thorium residue is a radioactive waste that has to be stored, and in 1982 the disposal arrangements in most producing countries were informal. The leaf is a radioactive waste site, which is a legitimate if slightly grim terminus for a branch of the metals tree.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Thorium content",
+          "value": "0.01-0.5% Th as ThO2 in coltan concentrate"
+        },
+        {
+          "label": "Chemistry",
+          "value": "follows the rare earths through the fluoride circuit"
+        },
+        {
+          "label": "1982 handling",
+          "value": "thorium nitrate sold as a 'fertile material' for a thorium fuel cycle that never arrived; the rest was stored"
+        }
+      ],
+      "note": "The thorium content of coltan is well documented; medium confidence on the 1982 commercial handling arrangements.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Thorium"
+      ],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.rare-earths.monazite",
+          "rel": "made from"
+        },
+        {
+          "to": "metal.monazite.beach",
+          "rel": "made from"
+        }
+      ]
+    },
+    "metal.soda-ash.ammonia-source": {
+      "id": "metal.soda-ash.ammonia-source",
+      "name": "Make ammonia from coke in the gasworks",
+      "description": "In 1982 most ammonia in the soda industry still came from the gasworks: coke plus steam and iron passed over a hot carbonaceous catalyst, then cracked to nitrogen and hydrogen. Natural gas-based steam reforming had largely displaced this in North America and Western Europe, but coke-based ammonia remained standard in India, China and much of Eastern Europe - which is where much of the world's soda ash, and hence much of its glass, was made.",
+      "kind": "process",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "inputs": [],
+      "facts": [
+        {
+          "label": "Water-gas shift temperature",
+          "value": "~1000 C"
+        },
+        {
+          "label": "Catalyst",
+          "value": "iron promoted with K2O, or activated coke"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Solvay_process"
+      ],
+      "note": "Not established: that coke-oven gasworks were still the ammonia source for soda ash in 1982, the regional claim (India, China, Eastern Europe), or the ~1000 C and iron/K2O-catalyst figures. The Solvay chemistry recovers almost all its ammonia, so only the makeup supply is at stake.",
+      "edges": [
+        {
+          "to": "metal.coke",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.coke.gas",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "metal.soda-ash.lime-kiln": {
+      "id": "metal.soda-ash.lime-kiln",
+      "name": "The lime kilns that feed the Solvay tower",
+      "description": "The Solvay process needs carbon dioxide and it gets it by burning limestone in a shaft kiln beside the tower, in the same way a sugar mill burns bagasse. The kiln gas, after the dust is knocked out and the gas is cooled and scrubbed, is about 40-45% carbon dioxide on a dry basis - lower than the 98% a dedicated CO2 plant would produce, but it came free with the lime the process also needed. The Solvay works was therefore a self-contained chemical plant that took limestone and salt and made soda ash, calcium chloride and CO2 in one site.",
+      "kind": "process",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "inputs": [],
+      "facts": [
+        {
+          "label": "Kiln",
+          "value": "shaft kiln, 1000-1100 C, beside the tower"
+        },
+        {
+          "label": "CO2 concentration",
+          "value": "40-45% dry after dust removal"
+        },
+        {
+          "label": "By-product",
+          "value": "the lime itself, sold to steel and to agriculture"
+        }
+      ],
+      "children": [],
+      "note": "The Solvay reference gives the limestone calcination as 950-1100 C, not 1000-1100 C, and says nothing about a shaft-kill gas of 40-45% carbon dioxide. Not established: the dry CO2 concentration of the kiln gas.",
+      "edges": [
+        {
+          "to": "metal.limestone",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.coke",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "metal.soda-ash.salt-recovery": {
+      "id": "metal.soda-ash.salt-recovery",
+      "name": "Causticise the spent brine to recover the salt",
+      "description": "The Solvay process does not consume the salt: the ammonium chloride in the spent brine is causticised with lime back to ammonia and sodium chloride, and the brine is re-saturated. The plant therefore closes its salt loop, and its only real consumption is limestone and energy and the ammonia. That closure is the whole reason Solvay was so cheap for a century and why it was so hard to displace until the chlor-alkali-soda ash route had caught up.",
+      "kind": "process",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Causticisation",
+          "value": "2NH4Cl + Ca(OH)2 -> 2NH3 + CaCl2 + 2H2O"
+        },
+        {
+          "label": "Re-saturation",
+          "value": "brine is re-saturated with mined salt and returned"
+        }
+      ],
+      "note": "Medium confidence on the salt consumption figure; the chemistry is standard.",
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.lime",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.caustic-soda",
+          "rel": "produces",
+          "role": "co-product"
+        }
+      ]
+    },
+    "metal.barium-carbonate.calcination": {
+      "id": "metal.barium-carbonate.calcination",
+      "name": "Calcine the carbonate to a reactive powder",
+      "description": "The barium carbonate that comes out of the carbonation tank is 99.0-99.5% pure but coarse and dense, and barium titanate needs a reactive powder. So the carbonate is calcined at 1000-1200 C to break it down to the oxide and then re-carbonated lightly, or it is ground extremely fine. Either way it is a chemical-material step rather than a smelting one, and it is where a lot of the ceramic-grade versus technical-grade distinction is made.",
+      "kind": "process",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Temperature",
+          "value": "1000-1200 C"
+        },
+        {
+          "label": "Purpose",
+          "value": "to raise the reactivity of the carbonate for the solid-state reaction with TiO2"
+        }
+      ],
+      "note": "Medium confidence; the calcination step is standard but the specific practice varies.",
+      "children": [
+        {
+          "id": "metal.barium-carbonate.contamination",
+          "name": "Iron and sulphur in the ceramic grade",
+          "description": "The ceramic-grade barium carbonate specification is essentially a statement about two impurities. Iron, carried through from the barite and from the flue of the reduction kiln, if it survives into barium titanate, acts as an acceptor and shifts the Curie point and the dielectric constant and hurts the loss - so iron has to be below a few hundred ppm. Sulphur, carried from the reduction and not removed by the carbonation, sits at the grain boundary of the fired ceramic and hurts the breakdown voltage. Both of them are the same answer as in the ferrite branch: wash, precipitate, and calcine in a controlled atmosphere. It is a recurring theme in ceramics that the last hundred ppm is the whole specification.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "medium",
+          "facts": [
+            {
+              "label": "Iron",
+              "value": "below a few hundred ppm; an acceptor dopant that degrades the dielectric"
+            },
+            {
+              "label": "Sulphur",
+              "value": "must be removed by the carbonation and the calcine; it degrades the breakdown voltage"
+            }
+          ],
+          "note": "Medium confidence; the impurity mechanisms in barium titanate ceramics are standard in the ceramics literature.",
+          "inputs": [],
+          "edges": [
+            {
+              "to": "metal.barium-carbonate",
+              "rel": "consumes"
+            }
+          ]
+        }
+      ],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.barium-carbonate",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "metal.barite.reduction": {
+      "id": "metal.barite.reduction",
+      "name": "Barite to barium sulphide, then barium carbonate",
+      "description": "The chemical reduction of barite. Barite plus coke at 900-1100 C in a rotary kiln gives barium sulphide: BaSO4 + 4C -> BaS + 4CO. That reaction needs about 1100 C to proceed at a useful rate, and the kiln is a long steel tube, 2-3 m diameter and 30-50 m long, rotating at 0.5-1 rpm, heated by a gas or oil burner at one end. The barium sulphide is leached out of the cooled cake with water, giving a solution of BaS, and that solution is carbonated with carbon dioxide - from a coke oven, from the sinter plant, from anywhere - and barium carbonate precipitates: BaS + CO2 + H2O -> BaCO3 + H2S. So the barium carbonate is made from a sulphate ore, a coke-oven gas and a stream of hydrogen sulphide, and the H2S is either burned to sulphur or sent to a Claus plant.",
+      "kind": "process",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "inputs": [],
+      "facts": [
+        {
+          "label": "Reduction",
+          "value": "BaSO4 + 4C -> BaS + 4CO at 900-1100 C"
+        },
+        {
+          "label": "Kiln",
+          "value": "rotary, 2-3 m diameter, 30-50 m long, 0.5-1 rpm"
+        },
+        {
+          "label": "Leach",
+          "value": "the cake is leached with water, hot, and the BaS solution is clarified"
+        },
+        {
+          "label": "Carbonation",
+          "value": "BaS + CO2 + H2O -> BaCO3 + H2S, at room temperature"
+        },
+        {
+          "label": "Yield",
+          "value": "~90% on the reduction, 95%+ on the carbonation"
+        },
+        {
+          "label": "Barium carbonate purity",
+          "value": "99.0-99.5% for ceramic grade; iron is the impurity to watch"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Barium"
+      ],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.barium-carbonate",
+          "rel": "produces",
+          "role": "product"
+        },
+        {
+          "to": "metal.hydrogen-sulfide",
+          "rel": "produces",
+          "role": "waste"
+        },
+        {
+          "to": "metal.barite",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.coke",
+          "rel": "consumes"
+        },
+        {
+          "to": "facility.gases.carbon-dioxide",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "metal.tantalum.hf-digest": {
+      "id": "metal.tantalum.hf-digest",
+      "name": "Hydrofluoric acid digestion at 100-200 C",
+      "description": "The concentrate is digested in a mixture of hydrofluoric acid, nitric acid and hydrochloric acid at 100-200 C in a Teflon-lined or Monel vessel with a condenser to keep the HF in the loop. Ta2O5 and Nb2O5 both dissolve as pentafluorides, while iron, tin, thorium and most of the rare earths stay as insoluble fluorides or oxides and are filtered off. Thorium in particular is a problem: it is a radioactive alpha emitter that comes with the coltan and has to be separated and disposed of carefully. The mixed HF/HNO3/HCl digestion was the industry standard for decades; the Bayer process digest, using anhydrous HF with calcium fluoride at 150-200 C, arrived later.",
+      "kind": "process",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "inputs": [
+        "nitric-acid"
+      ],
+      "facts": [
+        {
+          "label": "Medium",
+          "value": "HF/HNO3/HCl, or HF with CaF2 (the Bayer process digest)"
+        },
+        {
+          "label": "Temperature",
+          "value": "100-200 C"
+        },
+        {
+          "label": "Vessel",
+          "value": "Monel or Teflon-lined, with a reflux condenser - HF attacks glass"
+        },
+        {
+          "label": "Refractory waste",
+          "value": "5-15% of the mass leaves as insoluble fluoride sludge; the hardest waste stream in the industry"
+        }
+      ],
+      "sources": [
+        "https://archive.epa.gov/epawaste/nonhaz/industrial/special/web/pdf/id4-tant.pdf"
+      ],
+      "note": "The Bayer-process alternative digest came into commercial use in the 1980s and 1990s; the acid digestion below is the 1982 norm.",
+      "children": [
+        {
+          "id": "metal.tantalum.digest-vessel",
+          "name": "The fluoride digestion vessel",
+          "description": "The digestor is the most aggressively corrosive piece of equipment in the metals tree. Anhydrous hydrofluoric acid at 100-200 C attacks glass, attacks most metals, and attacks concrete; so the vessel is Monel, nickel, or Teflon-lined, with the condenser and the piping also in Monel, and there is a continuous fluoride leak problem because HF is off-gassing from a boiling slurry. The industry answer through the 1980s was the Monel plant, with a steam stripping system to recover the HF and a caustic scrubber on the vent, and it was the single largest reason the industry needed a process chemist rather than a metallurgist.",
+          "kind": "tool",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "medium",
+          "inputs": [],
+          "facts": [
+            {
+              "label": "Material",
+              "value": "Monel, nickel, or PTFE-lined steel"
+            },
+            {
+              "label": "Why",
+              "value": "anhydrous HF at 100-200 C attacks glass, most metals and concrete"
+            },
+            {
+              "label": "Fluoride recovery",
+              "value": "steam stripping of the offgas, then a caustic scrubber"
+            }
+          ],
+          "note": "Medium confidence; the materials of construction for HF service are well established in chemical engineering handbooks.",
+          "children": []
+        }
+      ],
+      "edges": [
+        {
+          "to": "metal.hydrofluoric-acid",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.tantalum.thorium",
+          "rel": "produces",
+          "role": "waste"
+        },
+        {
+          "to": "metal.columbite",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "metal.tantalum.separation": {
+      "id": "metal.tantalum.separation",
+      "name": "Separation of tantalum from niobium: K2TaF7",
+      "description": "From the fluoride solution the tantalum is selectively precipitated as potassium heptafluorotantalate, K2TaF7, by adding potassium chloride and hydrofluoric acid at 70-90 C - and this is the step that separates it from niobium, because K2TaF7 is far less soluble than K2NbF7. The K2TaF7 crystals are filtered, washed and dried. Then the metal is won from it in one of two ways. The potassium reduction: K2TaF7 is reduced with liquid potassium metal, or with sodium, at 700-800 C, giving a coarse tantalum powder. The aluminium reduction: K2TaF7 is reduced with aluminium in an induction furnace, and the charge is self-separating by particle size - the tantalum comes out as the finer powder and the aluminium-fluoride slag on top. The capacitor industry wanted the sodium-reduction powder specifically, because it could be made much finer.",
+      "kind": "process",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "inputs": [],
+      "facts": [
+        {
+          "label": "Precipitation",
+          "value": "K2TaF7 from the fluoride solution by KCl at 70-90 C; niobium stays in solution"
+        },
+        {
+          "label": "Potassium/sodium reduction",
+          "value": "K2TaF7 + 7Na -> Ta + 7NaF at 700-800 C; the standard capacitor-grade route"
+        },
+        {
+          "label": "Aluminium reduction",
+          "value": "K2TaF7 + 5Al -> Ta + 5AlF3, at 700-900 C in an induction furnace"
+        },
+        {
+          "label": "Product form",
+          "value": "tantalum powder; capacitor grade needs a controlled particle size and a high surface area"
+        }
+      ],
+      "sources": [
+        "https://www.unige.ch/TCEs/download_file/view/21/257",
+        "https://en.wikipedia.org/wiki/Tantalum"
+      ],
+      "note": "The sodium reduction of K2TaF7 at 700-800 C is the standard capacitor-grade route and is still the industrial norm; the aluminium reduction is for bulk metal.",
+      "children": [
+        {
+          "id": "metal.tantalum.kcl-cycle",
+          "name": "Recycling the potassium and fluorine",
+          "description": "The potassium in K2TaF7 and the fluorine in it both come back. The mother liquor from the precipitation is evaporated and the potassium is recycled, and the fluoride is recovered from the aluminium fluoride slag in the metal reduction by hydrolysing it to fluoride and re-fluorinating. A modern tantalum plant's fluorine and potassium consumption is a small fraction of its theoretical requirement because of this loop, and the 1980s plants were learning it. It is a small detail that says something about how tight the tantalum business economics were - and the answer is that they were tight enough to make the 1982-83 supply crisis severe.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "low",
+          "inputs": [],
+          "facts": [
+            {
+              "label": "Streams",
+              "value": "KCl from the mother liquor; fluoride from the AlF3 slag"
+            }
+          ],
+          "note": "Low confidence on the 1982s recovery efficiencies; the flowsheet is standard but the plant data is proprietary.",
+          "edges": [
+            {
+              "to": "metal.sylvinite",
+              "rel": "consumes"
+            }
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "to": "metal.tantalum.powder",
+          "rel": "produces",
+          "role": "product"
+        },
+        {
+          "to": "metal.columbite",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.hydrofluoric-acid",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.potassium",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.aluminum.ingot",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "metal.columbite.concentrator": {
+      "id": "metal.columbite.concentrator",
+      "name": "Coltan concentrator: gravity, magnet and electrostatic",
+      "description": "The coltan upgrade in a small operation is a classic three-stage gravity and magnetic plant: a shaking table or a jig throws away the quartz and mica, a magnetic separator takes off the magnetite and ilmenite, and a second gravity stage with a dense-medium separator makes a 20-30% Ta2O5 concentrate from a 0.05-0.1% pegmatite. Electrostatic separation takes out the zircon. The mass yield is under 1%, so the concentrator's job is mostly to throw away 99.5% of the rock, which is why a coltan operation is a small, cheap, labour-intensive plant sitting next to the pit rather than a large mill.",
+      "kind": "process",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Stages",
+          "value": "jig or shaking table, magnetic separator, dense medium, electrostatic"
+        },
+        {
+          "label": "Feed",
+          "value": "0.05-0.1% Ta2O5 pegmatite"
+        },
+        {
+          "label": "Concentrate",
+          "value": "20-30% Ta2O5, at 60-80% recovery"
+        }
+      ],
+      "note": "Recovery figures for artisanal coltan operations vary enormously; medium confidence.",
+      "children": [],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.columbite.tailings",
+          "rel": "produces",
+          "role": "waste"
+        },
+        {
+          "to": "metal.columbite",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "metal.manganese.ladle-charging": {
+      "id": "metal.manganese.ladle-charging",
+      "name": "Charge the ferromanganese into the steel ladle",
+      "description": "A ladle of steel is a bad place to drop a lump of ferromanganese, because the lump floats, the reaction is violent and the steel is left with unreacted alloy inclusions. So the FeMn is added in sized lumps and, increasingly in the 1980s, in cored wire - a steel tube filled with powdered ferromanganese and flux, fed into the ladle on a lance and dissolved by the passage of the steel through it. Cored-wire charging was a genuine 1980s development in secondary metallurgy and it improved the yield of the manganese, because it puts the metal into the steel rather than onto it.",
+      "kind": "process",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Method",
+          "value": "sized lumps, or cored wire on a ladle lance"
+        },
+        {
+          "label": "Why",
+          "value": "a lump floats and reacts only at the surface; cored wire dissolves below the surface and gives a higher yield"
+        },
+        {
+          "label": "Typical addition",
+          "value": "order 1 kg of FeMn per tonne of steel"
+        }
+      ],
+      "note": "Medium confidence; cored-wire charging of ferroalloys is well documented in secondary-metallurgy practice.",
+      "inputs": [
+        "metal.steel.ladle"
+      ],
+      "edges": [
+        {
+          "to": "metal.ferromanganese",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.manganese",
+          "rel": "consumes"
+        }
+      ]
+    },
+    "metal.barite.rock": {
+      "id": "metal.barite.rock",
+      "name": "Barite vein in limestone or as a hydrothermal gangue",
+      "description": "The leaf: white bladed or massive barite filling a fracture, or replacing a fossiliferous limestone bed. The barite has essentially no use as a rock - it is only ever interesting where it happens to be 90% or better and low in iron.",
+      "kind": "material",
+      "category": "metals",
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Setting",
+          "value": "hydrothermal vein or replacement body in carbonate rock"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Baryte"
+      ]
+    },
+    "metal.barite.mud-system": {
+      "id": "metal.barite.mud-system",
+      "name": "Barite, bentonite and lime: the drilling mud system",
+      "description": "A drilling mud is not one material; it is a designed composite. The barite is the weight - it is the only cheap, abundant mineral dense enough to hold back formation pressure at a density of 1.5-2.0. The bentonite is the viscosity and the filtration control, and it works because its sodium montmorillonite swells in water to several times its dry volume. The lime and the lime-soil inhibitors control the calcium contamination that comes up with the cement and that would flocculate the bentonite. So the barite branch of this tree converges with the bentonite branch of the steel branch, and both converge on the drilling of the oil and gas wells that produce the crude oil the plastics agent starts from.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "inputs": [],
+      "facts": [
+        {
+          "label": "Weight",
+          "value": "barite takes the mud to 1.5-2.0 specific gravity"
+        },
+        {
+          "label": "Viscosity",
+          "value": "bentonite, swollen to several times its dry volume"
+        },
+        {
+          "label": "Calcium control",
+          "value": "lime and inhibitors, because calcium flocculates the clay"
+        }
+      ],
+      "note": "Medium confidence; the mud chemistry is standard drilling engineering.",
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.bentonite",
+          "rel": "made of"
+        },
+        {
+          "to": "metal.lime",
+          "rel": "made of"
+        },
+        {
+          "to": "metal.barite",
+          "rel": "made of"
+        }
+      ]
+    },
+    "metal.columbite.pegmatite": {
+      "id": "metal.columbite.pegmatite",
+      "name": "Granitic pegmatite dyke",
+      "description": "The leaf: a coarse-grained, quartz-feldspar-mica rock so coarse that individual crystals are centimetres across, with the tantalum-bearing minerals in small pockets of rare-metal enrichment. Pegmatites are the last-crystallising fraction of a granite magma, so they are the natural home of every incompatible element - lithium, tantalum, niobium, beryllium, rare earths. There is no more apt end point for the tantalum chain than a dyke of crystals bigger than your fist.",
+      "kind": "material",
+      "category": "metals",
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Rock",
+          "value": "granitic pegmatite: quartz, albite, potassium feldspar, mica, with coltan pockets"
+        },
+        {
+          "label": "Grain size",
+          "value": "commonly 1-100 mm crystals"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pegmatite",
+        "https://en.wikipedia.org/wiki/Columbite"
+      ],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.pegmatite-crystals",
+          "rel": "made of"
+        }
+      ]
+    },
+    "metal.nickel-monel": {
+      "id": "metal.nickel-monel",
+      "name": "Monel: nickel with copper",
+      "description": "The alloy that made the fluorine chemistry of the 1980s possible: 60-70% nickel with 30% copper, and sometimes molybdenum, made in the same vacuum-melted, cast-and-rolled route as any nickel alloy. Monel resists hydrofluoric acid better than almost anything because the nickel fluoride film that forms is protective while aluminium fluoride and steel fluoride are not. So the tantalum in a 1982 capacitor was separated in a vessel made of a nickel alloy that came out of the nickel branch of this same file, and the aluminium capacitor in the power supply is made with an acid that would destroy it.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "inputs": [],
+      "facts": [
+        {
+          "label": "Composition",
+          "value": "60-70% Ni, 25-35% Cu, sometimes 1-5% Mo"
+        },
+        {
+          "label": "Why it survives HF",
+          "value": "the nickel fluoride film is protective; aluminium and iron fluorides are not"
+        }
+      ],
+      "note": "Medium confidence; Monel's composition is well documented and the mechanism is the standard explanation.",
+      "edges": [
+        {
+          "to": "metal.nickel.ingot",
+          "rel": "made of"
+        },
+        {
+          "to": "metal.copper.cathode",
+          "rel": "made of"
+        }
+      ]
+    },
+    "metal.soda-ash.ammonia": {
+      "id": "metal.soda-ash.ammonia",
+      "name": "Carbonation tower and the rotary calciner",
+      "description": "A 20-30 m steel tower with a conical bottom, fed at the top with ammoniated brine and in the side with CO2 from the lime kilns. Sodium bicarbonate precipitates as a fine white slurry in the upper third and settles into the cone; the temperature is held near 40 C because below that the ammonium chloride in the liquor crystallises out and fouls the tower. Bicarbonate is then calcined at 200-250 C in a rotary kiln to soda ash.",
+      "kind": "tool",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Tower temperature",
+          "value": "near 40 C at the precipitation zone"
+        },
+        {
+          "label": "Bicarbonate calcination",
+          "value": "200-250 C"
+        },
+        {
+          "label": "NH3 loss",
+          "value": "order 0.1-0.3 t ammonia per t of soda ash, mostly vented"
+        }
+      ],
+      "note": "Tower internals varied; the conical settler is universal.",
+      "children": []
+    }
+  }
 }

@@ -501,6 +501,33 @@ for (const cyc of cycles) {
 
 /* -------------------------------------------------- unreached from c64 */
 
+/* Carrying relations admit a node into the supply walk (schema connectivity).
+ * Refinement is followed holder -> target; flow is followed both ways here:
+ * for adoption purposes any flow link to a reached node keeps content visible.
+ * Context (at, owned by, about) never carries. `made by` is derived, not stored. */
+const CARRYING = new Set(['contains', 'made of', 'made from', 'step', 'consumes', 'produces', 'uses']);
+function typedLinks(id) {
+  const out = [];
+  for (const e of defs.get(id)?.edges ?? []) {
+    if (e && typeof e.to === 'string' && CARRYING.has(e.rel) && defs.has(e.to)) out.push(e.to);
+  }
+  return out;
+}
+/* Reverse index over typed carrying links, built once (reachable() walks it
+ * per node; recomputing per call would be quadratic). */
+const typedRev = new Map();
+for (const [oid, n] of defs) {
+  for (const e of n.edges ?? []) {
+    if (e && typeof e.to === 'string' && CARRYING.has(e.rel) && defs.has(e.to)) {
+      if (!typedRev.has(e.to)) typedRev.set(e.to, []);
+      typedRev.get(e.to).push(oid);
+    }
+  }
+}
+function typedLinkSources(id) {
+  return typedRev.get(id) ?? [];
+}
+
 function reachable(start) {
   const seen = new Set();
   const stack = [start];
@@ -514,6 +541,9 @@ function reachable(start) {
     // via inputs (chem.glass-fiber 18 inbound, chem.silane 14) is linked, not
     // unlinked. Walking children only mis-catalogued both.
     for (const f of defs.get(id)?.from ?? []) if (defs.has(f)) stack.push(f);
+    // Wave 4.5: typed links carry the same way during migration.
+    for (const t of typedLinks(id)) stack.push(t);
+    for (const s of typedLinkSources(id)) stack.push(s);
   }
   return seen;
 }
@@ -562,7 +592,8 @@ if (adopted?.length) {
     children: adopted,
   };
   defs.set(node.id, node);
-  
+  // Wave 4.2: bottoms-out is dissolved with the other index nodes; adopted
+  // nodes hang under the root once it is gone.
   const host = defs.has('c64.bottoms-out') ? defs.get('c64.bottoms-out') : defs.get(rootId);
   host.children = [...(host.children ?? []), node.id];
   seen = reachable(rootId);
@@ -578,6 +609,19 @@ for (const id of orphans) warn(`"${id}" (${defs.get(id).__file ?? 'generated'}) 
 
 /* ------------------------------------------------------------- stats */
 
+/* Refinement links read as hierarchy: legacy children plus typed contains /
+ * made of targets. Used for depth, graphviz, mermaid and the outline so the
+ * dendrogram survives the migration (refinement edges ARE the tree). Declared
+ * before first use (depth below). */
+const REFINEMENT = new Set(['contains', 'made of']);
+function refinedKids(id) {
+  const out = [...childIds(id)];
+  for (const e of defs.get(id)?.edges ?? []) {
+    if (e && REFINEMENT.has(e.rel) && defs.has(e.to) && !out.includes(e.to)) out.push(e.to);
+  }
+  return out;
+}
+
 // memoized longest-path depth. Safe now that cycles have been broken, and
 // necessary because shared subtrees (copper, ABS, aluminium) are reached many
 // times over -- naive recursion would be exponential.
@@ -587,7 +631,7 @@ function depth(id) {
   const cached = depthOf.get(id);
   if (cached !== undefined) return cached;
   let best = 0;
-  for (const c of childIds(id)) best = Math.max(best, depth(c) + 1);
+  for (const c of refinedKids(id)) best = Math.max(best, depth(c) + 1);
   depthOf.set(id, best);
   if (best > maxDepth) maxDepth = best;
   return best;
@@ -602,7 +646,7 @@ const deepestPath = [];
   for (;;) {
     let next = null;
     let deepest = -1;
-    for (const c of childIds(cur)) {
+    for (const c of refinedKids(cur)) {
       if (depth(c) > deepest) { deepest = depth(c); next = c; }
     }
     if (!next) break;
@@ -615,7 +659,7 @@ const depthOfNode = (id) => depth(id);
 const byKind = {};
 const byCategory = {};
 const byEra = {};
-const leafCount = [...seen].filter((id) => childIds(id).length === 0).length;
+const leafCount = [...seen].filter((id) => refinedKids(id).length === 0).length;
 const descChars = [...seen].reduce((n, id) => n + (defs.get(id).description?.length ?? 0), 0);
 for (const id of seen) {
   const n = defs.get(id);
@@ -636,6 +680,7 @@ function strip(node) {
     if (Array.isArray(node[k]) && node[k].length) o[k] = node[k];
   }
   if (Array.isArray(node.from) && node.from.length) o.from = node.from;
+  if (madeBy.has(node.id)) o.made_by = madeBy.get(node.id);
   /* Typed edges. `children` and `from` are the two UNTYPED relations this
    * migration is replacing, and while it runs a node may carry either or both.
    * A node is migrated when it has no `children` and no `from`.
@@ -662,8 +707,10 @@ function strip(node) {
         if (!STORED_RELATIONS.has(e.rel)) {
           err(`${eid}: edge to ${e.to} uses relation "${e.rel}", which is not one of the ${STORED_RELATIONS.size} stored relations`);
         }
+        if (!defs.has(e.to)) err(`${eid}: typed edge to unknown id "${e.to}"`);
         const out = { to: e.to, rel: e.rel };
-        if (e.step !== undefined) out.step = e.step;
+        if (e.role !== undefined) out.role = e.role;
+        if (e.basis !== undefined) out.basis = e.basis;
         return out;
       });
     }
@@ -672,6 +719,18 @@ function strip(node) {
   return o;
 }
 
+/* `made by` is DERIVED from `produces`, never stored (schema §3.4). Any node
+ * with a produces edge pointing at it lists its producers here for the
+ * viewer's expandable "how this is made" list. */
+const madeBy = new Map();
+for (const [oid, n] of defs) {
+  for (const e of n.edges ?? []) {
+    if (e && e.rel === 'produces' && typeof e.to === 'string' && defs.has(e.to)) {
+      if (!madeBy.has(e.to)) madeBy.set(e.to, []);
+      madeBy.get(e.to).push(oid);
+    }
+  }
+}
 const flat = {};
 for (const id of seen) flat[id] = strip(defs.get(id));
 
@@ -713,7 +772,7 @@ const dot = [
     const fill = CAT_COLOR[n.category] ?? '#565f89';
     return `  "${id}" [label="${esc(n.name)}" fillcolor="${fill}22" color="${fill}" tooltip="${esc((n.description ?? '').slice(0, 300))}"];`;
   }),
-  ...[...seen].flatMap((id) => childIds(id).map((c) => `  "${id}" -> "${c}";`)),
+  ...[...seen].flatMap((id) => refinedKids(id).map((c) => `  "${id}" -> "${c}";`)),
   '}',
 ];
 await writeFile(path.join(PUBLIC, 'tree.dot'), dot.join('\n'));
@@ -722,7 +781,7 @@ await writeFile(path.join(PUBLIC, 'tree.dot'), dot.join('\n'));
 const mmd = ['mindmap', '  root((C64))'];
 (function mm(id, d) {
   if (d > 3) return;
-  for (const c of childIds(id)) {
+  for (const c of refinedKids(id)) {
     const n = defs.get(c);
     mmd.push(`${'  '.repeat(d + 1)}${n.name.replace(/[()\[\]{}]/g, '')}`);
     mm(c, d + 1);
@@ -750,7 +809,7 @@ const md = [
     const conf = n.confidence && n.confidence !== 'high' ? ` _(${n.confidence})_` : '';
     md.push(`${'#'.repeat(Math.min(6, d + 1))} ${n.name} \`${id}\`${conf}`);
     if (n.description) md.push('', n.description.replace(/\n/g, ' '), '');
-    for (const c of childIds(id)) outline(c, d + 1);
+    for (const c of refinedKids(id)) outline(c, d + 1);
   })(rootId, 0);
 }
 await writeFile(path.join(DOCS, 'TREE.md'), md.join('\n'));

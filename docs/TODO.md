@@ -11,6 +11,38 @@ checks it agrees — not when this file is edited.
 `docs/HANDOFF.md` first.** This file is the research backlog; that one is how to
 work on it.
 
+## 10. Wave 4 content backlog (2026-10-04, from the relation migration)
+
+Edges are typed now (judgement 0, UNMAPPED 0, ASSERT-FAIL 0); what remains is
+*content*, recorded here so no wrong edge is forced to cover a missing node:
+
+- **Missing substance nodes** (REFILE verdicts with nowhere to land; edges
+  deleted, holes logged): PET film, polystyrene material, MLCC green sheet,
+  resistor foil alloy (check NiCr nodes first), PVC resin family (~11:
+  PVC/PE/PC/silicone/POM resins), Bayer liquor (gallium leaves upstream of
+  alumina precipitation), Na2Cr2O7, Al(OH)3, ZnCl2, Co-Ni catalyst, BeCu,
+  generic nickel ore, generic paper, TiCl4, 2-ethylhexanol.
+- **Schema gaps** (no stored relation; edges deleted, not bent): tool
+  *contains* material (diamond-impregnated blades: saw, dice-tool,
+  grinding-wheel); process>part wafer steps (LOCOS contact etch);
+  part-kind feedstock (solder wire, CZ seed); geology-contains
+  (oil column holds crude).
+- **Duplicate-substance merges** (BLOCKERs, own pass): metal.tantalum vs
+  powder (capacitor subtree already split across both); metal.barium vs
+  barium.titanate (barite chain under a titanate name); quartz-crystal
+  DONE (merged into mb.crystal.y1); chem.abs.c64-case vs c64.case;
+  chem.silicone.polymer.key-domes vs 40-chassis node; 6-node cassiterite
+  family + solder-alloy tin-source.
+- **Orphan backlog**: ~851 nodes unreachable under the directed walk;
+  ~230 sit visible in unlinked.catalogue. Re-home cascade roots first
+  (branch heads detached by dissolution: chem/petrochem routes,
+  metal families); the rest is furniture, alternatives (open-hearth,
+  valley-fill, sherritt-gordon), notes and orgs that are correctly
+  unlinked. Re-measure after every content pass.
+- **Ownership chain**: org.philips created + Signetics owned-by wired;
+  6 of 8 corporate-chain companies still lack nodes (vertical integration
+  story undrawable until added); makers.japan is a list, not an org.
+
 ---
 
 ## 0. Prose scrub — DONE 2026-10-03
