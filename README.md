@@ -23,6 +23,7 @@ No dependencies. Node 18+.
 | --- | --- |
 | `data/*.json` | the tree, one file per subsystem |
 | `docs/SCHEMA.md` | the node schema — read this before editing |
+| `docs/RELATIONS.md` | **in draft** — proposal to replace `children` / `from` with ten named relations |
 | `docs/CHECKLIST.md` | the QA standard every fragment was held to |
 | `docs/HANDOFF.md` | current state, verification gate, remaining plan, known traps |
 | `docs/TODO.md` | known-wrong, known-missing and deliberately unresolved |
@@ -112,6 +113,10 @@ ancestor nor a descendant of the current selection, which is the fastest way to
 isolate one supply chain.
 
 ## Two relations, not one
+
+> **A replacement is in draft.** `docs/RELATIONS.md` proposes ten named relations
+> in place of the two below, measured against the current tree. Nothing has been
+> changed yet; this section describes what the data does today.
 
 `children` means **contains / breaks down into**. `from` means **is made of**.
 They are different and the tree keeps them apart.

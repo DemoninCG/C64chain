@@ -19,7 +19,13 @@ const DATA = path.resolve(process.env.DATA_DIR ?? path.join(ROOT, 'data'));
 const PUBLIC = path.resolve(process.env.PUBLIC_DIR ?? path.join(ROOT, 'public'));
 const DOCS = path.resolve(process.env.DOCS_DIR ?? path.join(ROOT, 'docs'));
 
-const VALID_KINDS = new Set(['part', 'process', 'material', 'facility', 'tool', 'note']);
+/* `org` and `site` were added 2026-10-04 to split the overloaded `facility`.
+ * `org` is a company (it owns things); `site` is a place that produces nothing
+ * (a cleanroom bay, a pipeline, a landfill); `facility` keeps actual production
+ * - plants, quarries, mines, works. The point is that `owned by` and `at` stop
+ * being one relation, which they were whenever a subsidiary and a cleanroom bay
+ * were both "facility". See docs/RELATIONS.md 3.3. */
+const VALID_KINDS = new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']);
 const ENTITY_LIKE = new Set(['part', 'material']);
 // Categories answer "what industry made this", not "where does it sit in the
 // machine". The machine-position distinction is structural and lives in the

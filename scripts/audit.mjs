@@ -20,8 +20,12 @@ const argv = process.argv.slice(2);
 const fileArg = argv.includes('--file') ? argv[argv.indexOf('--file') + 1] : null;
 
 const ENTITY = new Set(['part', 'material']);
-const PROCESSISH = new Set(['process', 'tool', 'facility', 'note']);
-const VALID_KIND = new Set(['part', 'process', 'material', 'facility', 'tool', 'note']);
+const PROCESSISH = new Set(['process', 'tool', 'facility', 'note', 'org', 'site']);
+// `org` and `site` split the overloaded `facility` on 2026-10-04 (RELATIONS.md
+// 3.3): an org is a company, a site is a place that produces nothing, and
+// `facility` keeps actual production. The split exists so `owned by` and `at`
+// stop being the same relation.
+const VALID_KIND = new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']);
 const VALID_CAT = new Set(['silicon', 'passives', 'board', 'plastics', 'metals', 'magnetics',
   'interconnect', 'power', 'assembly', 'optics', 'fluids', 'energy', 'packaging',
   'logistics', 'computing', 'industry']);
@@ -40,11 +44,11 @@ const VALID_CAT = new Set(['silicon', 'passives', 'board', 'plastics', 'metals',
  * contain a `material`, because assembly consumes materials rather than making
  * them. Everything added below is justified by a node that actually exists. */
 const CAT_OK = {
-  energy: new Set(['facility', 'process']),
+  energy: new Set(['facility', 'process', 'org', 'site']),
   computing: new Set(['part', 'material', 'note']),
-  logistics: new Set(['process', 'facility', 'note']),
+  logistics: new Set(['process', 'facility', 'note', 'org', 'site']),
   packaging: new Set(['part', 'material', 'process', 'tool', 'note']),
-  assembly: new Set(['process', 'part', 'tool', 'facility', 'note']),
+  assembly: new Set(['process', 'part', 'tool', 'facility', 'note', 'org', 'site']),
   /* Extended 2026-10-03 (TODO §1b): every set below is exactly the kinds
    * observed in that category across the 2,454-node tree, plus `note` (legal
    * anywhere). The suspicious small-count cells were read by hand first:
@@ -54,16 +58,16 @@ const CAT_OK = {
    * magnetics are all legitimate. So the extension turns up no WARNs by
    * construction — its value is as a tripwire: any kind/category pair never
    * before observed now fires, instead of sitting in the 94% nobody checks. */
-  board: new Set(['material', 'process', 'facility', 'note', 'part', 'tool']),
-  fluids: new Set(['material', 'process', 'facility', 'tool', 'part', 'note']),
-  industry: new Set(['note', 'material', 'tool', 'part', 'facility', 'process']),
+  board: new Set(['material', 'process', 'facility', 'note', 'part', 'tool', 'org', 'site']),
+  fluids: new Set(['material', 'process', 'facility', 'tool', 'part', 'note', 'org', 'site']),
+  industry: new Set(['note', 'material', 'tool', 'part', 'facility', 'process', 'org', 'site']),
   interconnect: new Set(['process', 'note', 'material', 'part', 'tool']),
   magnetics: new Set(['material', 'facility', 'tool', 'process', 'part', 'note']),
-  metals: new Set(['material', 'process', 'facility', 'tool', 'part', 'note']),
+  metals: new Set(['material', 'process', 'facility', 'tool', 'part', 'note', 'org', 'site']),
   optics: new Set(['material', 'part', 'process', 'tool', 'note']),
-  passives: new Set(['material', 'process', 'part', 'tool', 'note', 'facility']),
-  plastics: new Set(['facility', 'material', 'process', 'tool', 'note', 'part']),
-  power: new Set(['facility', 'tool', 'part', 'material', 'note', 'process']),
+  passives: new Set(['material', 'process', 'part', 'tool', 'note', 'facility', 'org', 'site']),
+  plastics: new Set(['facility', 'material', 'process', 'tool', 'note', 'part', 'org', 'site']),
+  power: new Set(['facility', 'tool', 'part', 'material', 'note', 'process', 'org', 'site']),
   silicon: new Set(['facility', 'part', 'process', 'note', 'material', 'tool']),
 };
 

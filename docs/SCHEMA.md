@@ -1,5 +1,9 @@
 # Tech Tree node schema
 
+> **A revision is in draft.** `docs/RELATIONS.md` proposes replacing the
+> `children` / `inputs` pair with ten typed relations, which would change the
+> fields below. Nothing has changed yet — read this as the current schema.
+
 Every node is a JSON object. Trees live in `data/*.json`, one file per subsystem,
 and are stitched together by `scripts/build.mjs`.
 

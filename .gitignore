@@ -14,5 +14,17 @@ Thumbs.db
 node_modules/
 npm-debug.log*
 
+# Build artifacts. All five are written by scripts/build.mjs, which the README
+# already tells you to run (`npm run build`, or `npm start`, which builds then
+# serves). Committing them meant every data edit carried ~5 MB of regenerated
+# output into the diff, and history had already grown several near-identical
+# 3 MB copies of tree.json. Untracked 2026-10-04; still present in history
+# before that commit.
+public/tree.json
+public/tree.meta.json
+public/tree.dot
+public/tree.mmd
+docs/TREE.md
+
 # Local scratch
 *.log

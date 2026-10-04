@@ -1,0 +1,2023 @@
+{
+  "$comment": "Split out of 30-passives.json on 2026-10-04 (RELATIONS.md section 9, wave 0.7). Balance: 47 judgement edges. Roots are referenced by id from the spine and from 35-logic.json.",
+  "subsystem": "passives",
+  "roots": [
+    {
+      "id": "c64.connector-jacks",
+      "name": "Front and rear I/O connectors",
+      "description": "Every plug-in interface on a C64: the 24-pin user port, the 2x6 cassette port, the 44-pin cartridge socket, the 8-pin DIN video/audio and 6-pin DIN serial connectors, the two DE-9 control ports, the 7-pin PSU inlet and the keyboard ribbon header. They share one manufacturing sequence: stamped-and-formed brass contacts, nickel underplate, gold flash, and an injection-moulded thermoplastic or glass-filled phenolic insulator.",
+      "kind": "part",
+      "category": "interconnect",
+      "era": "1982-1984",
+      "sources": [
+        "https://www.c64-wiki.com/wiki/Motherboard",
+        "https://allpinouts.org/pinouts/connectors/power_supply/commodore-c64-power-supply",
+        "https://www.c64-wiki.com/wiki/Cassette_Port",
+        "https://www.devili.iki.fi/Computers/Commodore/C64/Service_Manual/Page_06.html"
+      ],
+      "confidence": "high",
+      "note": "The breadbin C64 has no RCA jacks. Composite video, luma, chroma, audio and the RF modulator output all leave through a single round 8-pin DIN connector on the rear panel, and an earlier 1982 revision used a 5-pin one; RCA sockets appear on the C64C and on Commodore's own 1701 and 1702 monitors. The datasette port is not a DIN socket either - it is a 2x6 card-edge socket on the motherboard, and the round DIN plug lives on the datasette cable. The PSU inlet is 7-pin.",
+      "facts": [
+        {
+          "label": "User port",
+          "value": "24-pin card edge, 3.96 mm pitch, gold over nickel"
+        },
+        {
+          "label": "Cassette port",
+          "value": "2 x 6 card edge, 3.96 mm pitch"
+        },
+        {
+          "label": "Expansion port",
+          "value": "44-pin dual female card edge, 2.54 mm"
+        },
+        {
+          "label": "Video/audio",
+          "value": "8-pin round DIN, 180 degree, nickel-plated shell"
+        },
+        {
+          "label": "Serial bus",
+          "value": "6-pin round DIN, 180 degree"
+        },
+        {
+          "label": "Control ports",
+          "value": "2 x DE-9 subminiature D, plastic shell, gold-flashed"
+        },
+        {
+          "label": "Power inlet",
+          "value": "7-pin round DIN (DIN 45329 / IEC 10 style)"
+        },
+        {
+          "label": "Keyboard",
+          "value": "soldered board header at the front-left edge carrying a flat ribbon"
+        }
+      ],
+      "inputs": [
+        "metal.copper",
+        "metal.nickel",
+        "metal.gold.ingot",
+        "chem.thermosets.phenolic",
+        "chem.polyester"
+      ],
+      "children": [
+        {
+          "id": "c64.connector-jacks.metalworking",
+          "name": "Shared contact manufacturing: stamping, forming, plating",
+          "description": "Almost every connector here is made the same way at the front end: a brass or phosphor-bronze strip is blanked, pierced, bent and formed in a multi-slide tool, then plated in a nickel bath and given a thin gold flash on the contact areas.",
+          "kind": "process",
+          "category": "interconnect",
+          "era": "1982-1984",
+          "confidence": "medium",
+          "inputs": [
+            "metal.copper",
+            "metal.nickel",
+            "metal.gold.ingot"
+          ],
+          "children": [
+            {
+              "id": "c64.connector-jacks.metalworking.four-slide-die",
+              "name": "Four-slide die forming (blank, pierce, form, cut)",
+              "description": "Contacts are made on a multi-slide machine: a brass or copper-alloy strip is fed as a continuous coil, and each station in the slide performs one operation - piercing the terminal slot, forming the spring barrel, bending the solder tail, then cutting off the finished contact. Hundreds of thousands of identical contacts per hour, which is why connectors are cheap.",
+              "kind": "tool",
+              "category": "interconnect",
+              "era": "1982-1984",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Stamping"
+              ],
+              "confidence": "high",
+              "note": "High-speed stamping of this sort is how a DE-9's dimpled gold-flashed contact costs fractions of a cent.",
+              "facts": [
+                {
+                  "label": "Strip",
+                  "value": "~0.3-0.5 mm thick brass or phosphor bronze"
+                },
+                {
+                  "label": "Stations",
+                  "value": "typically 4-6 slides per contact"
+                },
+                {
+                  "label": "Rate",
+                  "value": "10^5 - 10^6 contacts/hour"
+                }
+              ],
+              "children": [
+                {
+                  "id": "c64.connector-jacks.metalworking.four-slide-die.tool-steel",
+                  "name": "Tool steel of the stamping die",
+                  "description": "The progressive die is made from hardened tool steel - P20 for the body, D2 or H13 for the cutting edges - with the contact geometry machined and ground. A stamping die outlasts tens of millions of strokes, which is why the contact is a commodity.",
+                  "kind": "material",
+                  "category": "metals",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "facts": [
+                    {
+                      "label": "Hardness",
+                      "value": "~55-62 HRC on cutting edges"
+                    }
+                  ],
+                  "inputs": [
+                    "metal.die-steel",
+                    "metal.iron"
+                  ],
+                  "note": "Not established: P20 for the body with D2 or H13 cutting edges, the 55-62 HRC figure, and tens of millions of strokes as the reason the contact is a commodity. No source consulted establishes tool-steel."
+                },
+                {
+                  "id": "c64.connector-jacks.metalworking.four-slide-die.coil-stock",
+                  "name": "Coiled contact strip",
+                  "description": "The blank comes off the coil as a continuous ribbon of brass strip, the cheapest way to feed a high-speed press. The whole 44-position cartridge socket's 88 contacts are stamped from one coil.",
+                  "kind": "material",
+                  "category": "metals",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.copper",
+                    "metal.tin.ingot",
+                    "metal.zinc.ingot"
+                  ],
+                  "note": "Stamped progressive-die production from coil is documented as the reason connector contacts are a commodity. Not established: that the 44-position cartridge socket's contacts are 88 pieces from one coil, and the brass-strip specification."
+                }
+              ]
+            },
+            {
+              "id": "c64.connector-jacks.metalworking.brass-stock",
+              "name": "Brass strip (Cu-Zn)",
+              "description": "Cartridge brass, usually 70/30 copper-zinc, drawn into strip. Brass is used because it is easy to form, springs usefully, and takes nickel plating well; a strip's mechanical properties are set by the zinc content and by work hardening from the drawing die.",
+              "kind": "material",
+              "category": "metals",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "note": "Not established: 70/30 cartridge brass for this strip, the zinc-content and work-hardening argument, and full-hard strip for spring terminals. The general point that brass is formable, springs usefully and plates well is standard; the specific alloy and its temper for these contacts are not documented in any source consulted.",
+              "facts": [
+                {
+                  "label": "Composition",
+                  "value": "70 % Cu / 30 % Zn (cartridge brass)"
+                },
+                {
+                  "label": "Hard-rolled",
+                  "value": "full hard strip for spring terminals"
+                }
+              ],
+              "inputs": [
+                "metal.copper.cathode",
+                "metal.zinc.ingot"
+              ],
+              "children": [
+                {
+                  "id": "c64.connector-jacks.metalworking.brass-stock.brass-zinc",
+                  "name": "Zinc of the brass",
+                  "description": "Zinc is recovered from sphalerite ore, roasted to the oxide and either smelted to crude zinc or leached and electrowon; it is the element that makes copper springy and hard-working.",
+                  "kind": "material",
+                  "category": "metals",
+                  "era": "ancient",
+                  "confidence": "medium",
+                  "note": "The zinc chain belongs to the metals file; referenced here only.",
+                  "inputs": [
+                    "metal.sphalerite",
+                    "metal.zinc.ingot"
+                  ],
+                  "children": [
+                    {
+                      "id": "c64.connector-jacks.metalworking.brass-stock.brass-zinc.roasting",
+                      "name": "Roasting and calcination",
+                      "description": "The concentrate is fluid-bed roasted, oxidising ZnS to ZnO with SO2 recovered as sulphuric acid. The oxide is then either smelted with coke to crude zinc or leached and electrowon.",
+                      "kind": "process",
+                      "category": "metals",
+                      "era": "1982-1984",
+                      "sources": [
+                        "https://en.wikipedia.org/wiki/Zinc#Metal_extraction"
+                      ],
+                      "confidence": "high",
+                      "inputs": [
+                        "metal.sphalerite",
+                        "facility.electricity"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "c64.connector-jacks.metalworking.brass-stock.brass-copper.electrorefining",
+                  "name": "Copper electrorefining",
+                  "description": "Blister copper from the smelter is refined electrolytically to 99.99 % cathode, which is then cast to wire rod and rolled into foil. Electrorefining is what makes the uniform, sulphur-free copper that both brass contact strip and solderable connector plating require.",
+                  "kind": "process",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "sources": [
+                    "https://en.wikipedia.org/wiki/Copper_smelting"
+                  ],
+                  "confidence": "high",
+                  "facts": [
+                    {
+                      "label": "Cathode purity",
+                      "value": "99.99 % (4N)"
+                    },
+                    {
+                      "label": "By-product",
+                      "value": "anode slime, the main source of silver, selenium and tellurium"
+                    }
+                  ],
+                  "inputs": [
+                    "metal.copper",
+                    "facility.electricity",
+                    "facility.water"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "c64.connector-jacks.metalworking.plating",
+              "name": "Nickel underplate then gold flash",
+              "description": "Two plating baths in sequence. First a nickel underplate (electroless nickel-phosphorus on some parts, barrel or rack electrolytic nickel on others) is laid down; this is the barrier layer that stops the base copper or brass diffusing into the gold, and nickel is also what the solder actually wets. Then a thin gold flash - typically 0.05-0.5 um over nickel - goes on the mating contact areas only, masked by selective plating or by tabbing the contact.",
+              "kind": "process",
+              "category": "interconnect",
+              "era": "1982-1984",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Electroplating"
+              ],
+              "confidence": "high",
+              "note": "Commodore specified gold-flashed contacts on the user port and cartridge socket, and the DE-9 control ports and the DIN connectors were gold-flashed too, though the DIN shells were nickel-plated steel rather than gold. The flash itself was applied by immersion displacement from a cyanide bath - a few tenths of a micron, no external current - while electroless nickel was one of the two underplate processes and the other was electrolytic nickel. Both existed in 1982.",
+              "facts": [
+                {
+                  "label": "Nickel",
+                  "value": "~2-5 um; electroless Ni-P ~2-5 um with ~0.3-5 % phosphorus"
+                },
+                {
+                  "label": "Gold flash",
+                  "value": "~0.03-0.5 um (30-500 microinch)"
+                },
+                {
+                  "label": "Why gold",
+                  "value": "gold does not oxidise, so the contact resistance stays low forever"
+                },
+                {
+                  "label": "Why nickel under it",
+                  "value": "nickel is a diffusion barrier; gold on bare copper/alloy would diffuse and flake"
+                }
+              ],
+              "inputs": [
+                "metal.nickel",
+                "metal.gold.ingot",
+                "facility.electricity",
+                "facility.water"
+              ],
+              "children": [
+                {
+                  "id": "c64.connector-jacks.metalworking.plating.electroless-nickel",
+                  "name": "Electroless nickel-phosphorus deposition",
+                  "description": "A hypophosphite bath plates nickel onto the parts without an external current, by catalytic reduction on the brass surface. Because the deposit is amorphous nickel containing a few per cent of phosphorus, it is harder and more corrosion-resistant than pure electrolytic nickel and it does not need to be masked. It became the standard underplate for the whole connector industry by the mid-1980s.",
+                  "kind": "process",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "facts": [
+                    {
+                      "label": "Bath",
+                      "value": "nickel sulphate + sodium hypophosphite"
+                    },
+                    {
+                      "label": "Phosphorus content",
+                      "value": "~0.3-5 %"
+                    },
+                    {
+                      "label": "Era note",
+                      "value": "electrolytic nickel was still the volume process in 1982; electroless took over later in the decade"
+                    }
+                  ],
+                  "inputs": [
+                    "metal.nickel"
+                  ],
+                  "children": [
+                    {
+                      "id": "c64.connector-jacks.metalworking.plating.electroless-nickel.phosphorus",
+                      "name": "Phosphorus from phosphate rock",
+                      "description": "The hypophosphite reducing agent is made from white phosphorus, which was still produced in the 1980s by the electric-furnace reduction of phosphate rock - a route that consumed very large tonnages of low-grade apatite for a few tens of kilograms of elemental phosphorus.",
+                      "kind": "process",
+                      "category": "passives",
+                      "era": "1982-1984",
+                      "sources": [
+                        "https://en.wikipedia.org/wiki/Phosphorus"
+                      ],
+                      "confidence": "medium",
+                      "note": "Electrothermal phosphorus production was still standard in 1982; the modern blast-furnace acid-route came in later.",
+                      "facts": [
+                        {
+                          "label": "Route",
+                          "value": "phosphate rock -> electric furnace -> P4 -> hypophosphite"
+                        },
+                        {
+                          "label": "Rock",
+                          "value": "apatite, Ca5(PO4)3F, from sedimentary deposits"
+                        }
+                      ],
+                      "inputs": [
+                        "metal.phosphate-ore"
+                      ]
+                    }
+                  ],
+                  "note": "Not established: the nickel sulphate plus sodium hypophosphite bath, the 0.3-5 % phosphorus, the hardness and corrosion-resistance claims, and the dating of electroless nickel as standard underplate by the mid-1980s. No source consulted establishes electroless plating."
+                }
+              ],
+              "note2": "The 'immersion gold / electroless nickel' in the brief is right in kind. Immersion gold (a displacement process, a few tenths of a micron, no current) was used for the flash; electroless nickel was one of the two underplate processes, the other being electrolytic nickel. Both existed in 1982."
+            },
+            {
+              "id": "c64.connector-jacks.metalworking.gold",
+              "name": "Refined gold for contact plating",
+              "description": "Gold is deposited from a cyanide or sulphite bath, by immersion displacement onto the nickel or by electroplating with a gold strike. It is the one precious metal on an entire C64's connector set, applied as a sub-micron skin over several square centimetres - a deliberate economics of just enough gold to make the contact.",
+              "kind": "material",
+              "category": "metals",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "note": "Not established: the cyanide or sulphite bath chemistry, the gold strike, the 0.03-0.5 um flash thickness, and the account of gold as the only precious metal on the connector set. No source consulted establishes gold plating; the cyanide-effluent claim belongs to the plating file.",
+              "facts": [
+                {
+                  "label": "Thickness used",
+                  "value": "0.03-0.5 um (a fraction of a microinch-to-half-microinch flash)"
+                },
+                {
+                  "label": "Baths",
+                  "value": "gold cyanide, gold sulphite, or immersion displacement"
+                }
+              ],
+              "inputs": [
+                "metal.gold.ingot",
+                "metal.gold.ore"
+              ],
+              "children": [
+                {
+                  "id": "c64.connector-jacks.metalworking.gold.cyanide-bath",
+                  "name": "Gold cyanide plating bath",
+                  "description": "Gold is plated from an alkaline cyanide bath with a gold anode that dissolves to replenish the bath. The bath is deliberately kept extremely low in free cyanide and gold so that the gold itself is plated preferentially rather than the underlying base metal.",
+                  "kind": "process",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "facts": [
+                    {
+                      "label": "Bath",
+                      "value": "gold cyanide, a few g/L"
+                    }
+                  ],
+                  "inputs": [
+                    "metal.salt-brine",
+                    "metal.gold.ingot"
+                  ],
+                  "children": [
+                    {
+                      "id": "c64.connector-jacks.metalworking.gold.cyanide-bath.cyanide",
+                      "name": "Sodium cyanide",
+                      "description": "The plating chemistry itself: gold is plated from an alkaline cyanide bath held deliberately low in free cyanide, so that the gold deposits preferentially rather than the base metal underneath. The cyanide is made from brine by chlor-alkali electrolysis and then from ammonia and carbon, and it is why the cyanide gold shops of the period carried a persistent effluent-control and safety burden through the late 1970s and 1980s.",
+                      "kind": "material",
+                      "category": "fluids",
+                      "era": "1982-1984",
+                      "confidence": "medium",
+                      "inputs": [
+                        "metal.salt-brine",
+                        "chem.petroleum"
+                      ],
+                      "note": "Not established: brine by chlor-alkali electrolysis and then ammonia plus carbon as the route to this plating cyanide, deliberate low free cyanide for preferential gold deposition, and a persistent effluent-control and safety burden on the cyanide gold shops through the late 1970s and 1980s."
+                    }
+                  ],
+                  "note": "Not established: a dissolving gold anode replenishing the bath, a few g-L gold cyanide concentration, and deliberately extremely low free cyanide and gold so gold plates preferentially over the base metal in these baths."
+                },
+                {
+                  "id": "c64.connector-jacks.metalworking.gold.immersion",
+                  "name": "Immersion gold flash",
+                  "description": "A displacement process: the nickel surface is briefly attacked by a cyanide solution and gold plates itself out by substitution, in a few tenths of a micron, with no current. It is fast, cheap and exactly the right thickness for a connector flash.",
+                  "kind": "process",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "facts": [
+                    {
+                      "label": "Thickness",
+                      "value": "~0.1-0.5 um"
+                    }
+                  ],
+                  "inputs": [
+                    "metal.gold"
+                  ],
+                  "note": "Not established: the cyanide displacement process with no external current, and the 0.1-0.5 um thickness. Immersion gold flash is standard connector practice, but no document consulted describes it for these contacts."
+                },
+                {
+                  "id": "c64.connector-jacks.metalworking.gold.dore",
+                  "name": "Doré bullion as the metal feed",
+                  "description": "Most industrial gold plating in 1982 was fed from dore bullion - a semi-pure gold-silver alloy - refined to the fine gold the plating shops bought. The dore itself was mostly refinery production from anode slimes and mined doré bullion, so the plating gold is not a separate supply chain from jewellery gold.",
+                  "kind": "material",
+                  "category": "metals",
+                  "era": "ancient",
+                  "sources": [
+                    "https://en.wikipedia.org/wiki/Dor%C3%A9"
+                  ],
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.gold.ingot",
+                    "metal.silver.ingot"
+                  ],
+                  "note": "Not established: dore bullion refined to fine gold as the feed to the plating shops serving these connectors in 1982, mostly from anode slimes and mined dore, and a supply chain shared with jewellery gold rather than separate."
+                }
+              ]
+            }
+          ],
+          "note": "Not established: brass versus phosphor-bronze strip blanked, pierced, bent and formed in a multi-slide tool at the front end, then nickel-bath plated with a thin gold flash on the contact areas for these connectors."
+        },
+        {
+          "id": "c64.connector-jacks.moulding",
+          "name": "Connector housing: injection-moulded thermoplastic or phenolic",
+          "description": "The insulator every connector sits in. Card-edge and card-guide style connectors used black glass-filled polyester or phenolic because it machines cleanly, has almost no moulding flow and stands soldering temperatures; D-sub and DIN shells used glass-filled nylon or PBT. All were injection-moulded in multi-cavity tools.",
+          "kind": "part",
+          "category": "plastics",
+          "era": "1982-1984",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Phenolic_resin"
+          ],
+          "confidence": "high",
+          "note": "The 24-pin user-port replacement connectors on sale today are specified as PBT UL94 V-0 insulator with gold-over-nickel contacts, which is a reasonable period-accurate call as a substitute for whatever Commodore's original supplier used.",
+          "facts": [
+            {
+              "label": "Phenolic",
+              "value": "black glass-filled polyester (e.g. glass-fibre reinforced phenolic), UL94 V-0"
+            },
+            {
+              "label": "Thermoplastics",
+              "value": "PBT UL94 V-0, PA66 + 30-50 % glass, or LCP"
+            },
+            {
+              "label": "Tooling",
+              "value": "multi-cavity steel tools, 10^4-10^6 shots"
+            }
+          ],
+          "inputs": [
+            "chem.thermosets.phenolic",
+            "chem.polyester",
+            "chem.polyamide.nylon-66",
+            "chem.glass-fiber"
+          ],
+          "children": [
+            {
+              "id": "c64.connector-jacks.moulding.phenolic",
+              "name": "Glass-filled phenolic (thermoset)",
+              "description": "Phenol-formaldehyde resin reinforced with chopped glass fibre and moulded under heat and pressure. Extremely dimensionally stable, heat resistant and flame retardant, which is why black glass-filled phenolic is the classic black body of terminal blocks, card-edge sockets and relay bases. The disadvantage is that it cannot be melted and reformed, so every detail - including the card guide slot - has to be in the tool.",
+              "kind": "material",
+              "category": "plastics",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "note": "Not established: that this housing is glass-filled phenol-formaldehyde rather than PBT or nylon, the 20-30 % by weight chopped E-glass figure, the UL94 V-0 rating, and the dimensional-stability and flame-retardancy claims. Black glass-filled phenolic is a plausible period material for a card-edge socket, but no source consulted identifies this housing's material.",
+              "facts": [
+                {
+                  "label": "Filler",
+                  "value": "chopped E-glass fibre, ~20-30 % by weight"
+                },
+                {
+                  "label": "UL rating",
+                  "value": "UL94 V-0"
+                }
+              ],
+              "inputs": [
+                "chem.thermosets.phenolic",
+                "chem.glass-fiber"
+              ],
+              "children": [
+                {
+                  "id": "c64.connector-jacks.moulding.phenolic.compression-press",
+                  "name": "Phenolic compression press",
+                  "description": "A heated platen press with matched metal dies, pressing the thermoset compound to shape and curing it in the same operation. Compression rather than injection is what makes phenolic bodies cheap: the flow is short and the die is simple.",
+                  "kind": "tool",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "facility.electricity"
+                  ],
+                  "note": "Not established: that phenolic bodies were compression rather than injection moulded for this connector, and the short-flow cheap-die argument. No source consulted establishes thermoset processing."
+                },
+                {
+                  "id": "c64.connector-jacks.moulding.phenolic.resin-source",
+                  "name": "Phenol and formaldehyde",
+                  "description": "Phenol comes from cumene or chlorobenzene, both benzene derivatives; formaldehyde from methanol oxidation. So a black phenolic connector body is, like everything else on this board, two or three steps downstream of a steam cracker.",
+                  "kind": "process",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "chem.styrene.benzene",
+                    "chem.petroleum"
+                  ],
+                  "children": [
+                    {
+                      "id": "c64.connector-jacks.moulding.phenolic.resin-source.phenol",
+                      "name": "Phenol from cumene",
+                      "description": "Phenol was made almost entirely by the cumene process: cumene oxidised to cumene hydroperoxide, then acid-split to phenol and acetone. Both products of that split fed the phenolic and the epoxy chains.",
+                      "kind": "process",
+                      "category": "passives",
+                      "era": "1982-1984",
+                      "confidence": "medium",
+                      "inputs": [
+                        "chem.styrene.benzene",
+                        "chem.propylene"
+                      ],
+                      "note": "Not established: that phenol was made almost entirely by the cumene process in this period, and the cumene hydroperoxide acid-split sequence as described. No source consulted establishes cumene or phenol process."
+                    }
+                  ],
+                  "note": "Not established: phenol from cumene or chlorobenzene and formaldehyde from methanol oxidation as the feed for this part. The cumene route to phenol is real; no source consulted ties it to this housing."
+                }
+              ]
+            },
+            {
+              "id": "c64.connector-jacks.moulding.pbt",
+              "name": "PBT thermoplastic housing",
+              "description": "Polybutylene terephthalate is moulded at normal injection temperatures, so a connector body can carry snap-fit features, pivot pins and cable strain-relief arms that a thermoset cannot. Glass-filled PBT was the standard D-sub and DIN shell material of the era, chosen for stiffness and low creep.",
+              "kind": "material",
+              "category": "plastics",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "note": "PBT was the dominant D-sub shell material through the 1980s; LCP (liquid crystal polymer) took over on premium parts later in the decade.",
+              "facts": [
+                {
+                  "label": "Filler",
+                  "value": "20-30 % chopped glass"
+                },
+                {
+                  "label": "Mould temperature",
+                  "value": "~80-120 C tool, 240-260 C melt"
+                }
+              ],
+              "inputs": [
+                "chem.polyester",
+                "chem.glass-fiber"
+              ],
+              "children": [
+                {
+                  "id": "c64.connector-jacks.moulding.pbt.dmt",
+                  "name": "Dimethyl terephthalate and butanediol",
+                  "description": "PBT is a condensation polymer of DMT and 1,4-butanediol. DMT comes from paraxylene; butanediol came in the 1980s largely from maleic anhydride hydrogenation (a coal/route) or from butanediol dehydrogenation. Both are petrochemical or coal-chemical intermediates.",
+                  "kind": "process",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "chem.polyester",
+                    "chem.petroleum"
+                  ],
+                  "children": [
+                    {
+                      "id": "c64.connector-jacks.moulding.pbt.dmt.px",
+                      "name": "Paraxylene and DMT",
+                      "description": "Paraxylene is oxidised to terephthalic acid, esterified with methanol to DMT, then condensed with butanediol. Methanol was itself a cheap synthesis-gas product of that period, so DMT carries coal and gas chemistry as well as oil.",
+                      "kind": "process",
+                      "category": "passives",
+                      "era": "1982-1984",
+                      "confidence": "medium",
+                      "inputs": [
+                        "chem.petroleum"
+                      ],
+                      "note": "Not established: the paraxylene-to-terephthalic-acid-to-DMT route with butanediol, and the synthesis-gas origin of the methanol. No source consulted establishes polyester or DMT."
+                    }
+                  ],
+                  "note": "Not established: dimethyl terephthalate plus 1,4-butanediol as the formulation of this moulding, DMT from paraxylene, and the 1980s butanediol routes stated here, maleic anhydride hydrogenation and the second route as written."
+                },
+                {
+                  "id": "c64.connector-jacks.moulding.pbt.uv-stabiliser",
+                  "name": "UV stabiliser and glass filler",
+                  "description": "PBT needs an ultraviolet absorber because it yellows and embrittles in light, plus a glass filler for stiffness. The absorber is a benzotriazole, and both additives are minor mass but were cost-relevant in a moulded part sold in tens of millions.",
+                  "kind": "material",
+                  "category": "plastics",
+                  "era": "1982-1984",
+                  "confidence": "low",
+                  "inputs": [
+                    "chem.polyester"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "c64.connector-jacks.moulding.injection-press",
+              "name": "Injection moulding press and tool",
+              "description": "A multi-cavity tool clamped between the platens of a screw injection moulder. The housing is a commodity: the same part is made in hundreds of thousands for the entire electronics industry, which is why connector housings cost less than the contacts inside them.",
+              "kind": "tool",
+              "category": "plastics",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "note": "Engineering-grade thermoplastics are documented as processed by extrusion, casting and injection moulding. Not established: the multi-cavity tool, P20 or H13 steel at 48-52 HRC, a tool life of 10^5-10^6 shots, and the commodity-cost argument.",
+              "facts": [
+                {
+                  "label": "Tool steel",
+                  "value": "P20 or H13, hardened to ~48-52 HRC"
+                },
+                {
+                  "label": "Tool life",
+                  "value": "10^5-10^6 shots"
+                }
+              ],
+              "inputs": [
+                "facility.electricity"
+              ],
+              "children": [
+                {
+                  "id": "c64.connector-jacks.moulding.injection-press.screw",
+                  "name": "Injection screw and barrel",
+                  "description": "A nitrided steel screw and barrel, heated to 230-280 C, plastifying the polymer and injecting it into the tool. The screw is itself a wear part made from tool steel, so the moulding industry is a steady consumer of alloy steel.",
+                  "kind": "tool",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.die-steel"
+                  ],
+                  "note": "Not established: a nitrided steel screw and barrel at 230-280 C for this moulding. Processing temperatures of that order are general injection-moulding practice, but no source consulted ties them to this tool."
+                },
+                {
+                  "id": "c64.connector-jacks.moulding.injection-press.tool-steel",
+                  "name": "Mould tool steel",
+                  "description": "P20 stainless tool steel was the industry standard cavity steel in 1982, hardened to ~48-52 HRC and polished to a fine finish. A connector housing's surface is entirely a function of the cavity polish.",
+                  "kind": "material",
+                  "category": "metals",
+                  "era": "ancient",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.die-steel"
+                  ],
+                  "note": "Not established: P20 stainless as the standard cavity steel in 1982, the 48-52 HRC figure, or that the housing's surface finish is entirely a function of cavity polish."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "c64.connector-jacks.user-port",
+          "name": "User port, 24-pin card edge",
+          "description": "The C64's expansion bus. A 24-position double-row card-edge socket, 3.96 mm pitch, carrying the address, data and control lines plus regulated and unregulated power out to user-port peripherals. Spare parts for this connector are specified as gold-over-nickel contacts in a PBT UL94 V-0 insulator, which is a fair description of the period part.",
+          "kind": "part",
+          "category": "interconnect",
+          "era": "1982-1984",
+          "sources": [
+            "https://www.c64-wiki.com/wiki/Userport"
+          ],
+          "confidence": "high",
+          "facts": [
+            {
+              "label": "Positions",
+              "value": "24 (2 x 12)"
+            },
+            {
+              "label": "Pitch",
+              "value": "3.96 mm"
+            },
+            {
+              "label": "Contacts",
+              "value": "gold over nickel, in PBT UL94 V-0"
+            },
+            {
+              "label": "Carries",
+              "value": "12 data/address lines, /RESET, /CASS lines, +5 V, 9 V AC, GND"
+            }
+          ],
+          "inputs": [
+            "metal.copper",
+            "metal.nickel",
+            "metal.gold.ingot",
+            "chem.polyester"
+          ],
+          "children": [
+            {
+              "id": "c64.connector-jacks.user-port.contacts",
+              "name": "Gold-over-nickel card-edge contacts",
+              "description": "Each contact is a formed spring leaf whose nose protrudes from the insulator and sweeps the mating card's copper edge as it slides in. The wiping action means the gold never has to be thick to stay clean, and the nickel beneath carries the solder joint to the board.",
+              "kind": "part",
+              "category": "interconnect",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "facts": [
+                {
+                  "label": "Contact force",
+                  "value": "~50-200 g per contact"
+                },
+                {
+                  "label": "Plating",
+                  "value": "gold flash over nickel underplate"
+                }
+              ],
+              "children": [
+                {
+                  "id": "c64.connector-jacks.user-port.contacts.leaf-alloy",
+                  "name": "Spring leaf alloy",
+                  "description": "The leaf has to both wipe the mating edge and hold a contact force, so it is a hard-worked copper alloy - phosphor bronze or a brass-tempered strip. It is the same material family as the switch contacts and the cartridge socket.",
+                  "kind": "material",
+                  "category": "metals",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.copper",
+                    "metal.tin.ingot"
+                  ],
+                  "note": "A springy phosphor bronze wiper/contact alloy is documented for potentiometer contacts. Not established: phosphor bronze or brass-tempered strip for this card-edge socket leaf, and the claim that it is the same material family as the switch and cartridge contacts."
+                },
+                {
+                  "id": "c64.connector-jacks.user-port.contacts.solder-tail",
+                  "name": "Solder tail and wave-solder attachment",
+                  "description": "The tail is formed flat and pierced so it takes a fillet in the wave-solder bath, giving a mechanically strong joint that also resists the repeated flexing of a plugged-in peripheral cable.",
+                  "kind": "process",
+                  "category": "assembly",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.tin"
+                  ],
+                  "note": "Not established: the flat pierced solder tail and the wave-solder fillet, and that it resists cable flexing. No document consulted describes the user port contact termination."
+                }
+              ],
+              "note": "The user port is documented as parallel port B of the second CIA made available on the user port, with SP1/SP2 serial ports and CNT1/CNT2 clocks. Not established: gold flash over nickel on formed spring leaves, the 50-200 g contact force, and the wiping argument."
+            },
+            {
+              "id": "c64.connector-jacks.user-port.pinout",
+              "name": "User-port pin functions",
+              "description": "Pins 1-12 carry +5 V out, ground, /RESET, /PPASS (the CPU-select line), the cassette sense/write/read lines and the cassette motor line, plus 9 V AC; pins 13-24 carry the user port's serial bus lines (/EOT, /SERCLK, /ATN IN, /ATN OUT) and the speaker and cassette-slot lines. The C64 6510's on-chip I/O port is wired straight into this connector, which is why a printer interface or a modem could hang directly off it.",
+              "kind": "note",
+              "category": "interconnect",
+              "era": "1982-1984",
+              "sources": [
+                "https://www.c64-wiki.com/wiki/Userport"
+              ],
+              "confidence": "medium",
+              "note": "The broad grouping of signals is well documented, but individual pin numbers are not consistent between the breadbin and the C64C documentation, so they should be treated as unverified."
+            }
+          ]
+        },
+        {
+          "id": "c64.connector-jacks.cassette-port",
+          "name": "Cassette (datasette) port, 2 x 6 card edge",
+          "description": "The port that reads and writes Commodore DATAsette tapes. It is a 12-position card-edge socket - six contacts on each face, 3.96 mm pitch - that mates with a 6-pin connector on the datasette lead. Carrying analogue audio, motor control and a sense line, it is a reminder that in 1982 'I/O' still meant tape.",
+          "kind": "part",
+          "category": "interconnect",
+          "era": "1982-1984",
+          "sources": [
+            "https://www.c64-wiki.com/wiki/Cassette_Port",
+            "https://allpinouts.org/pinouts/connectors/data_storage/commodore-vic20-c64-cassette-6-pin"
+          ],
+          "confidence": "high",
+          "facts": [
+            {
+              "label": "Positions",
+              "value": "12 (2 x 6), 3.96 mm pitch"
+            },
+            {
+              "label": "Signals",
+              "value": "ground, 5 V, motor control, serial read, serial write, sense"
+            },
+            {
+              "label": "Mating",
+              "value": "6-pin connector on the DATAsette cable"
+            }
+          ],
+          "inputs": [
+            "metal.copper",
+            "metal.nickel",
+            "chem.thermosets.phenolic"
+          ],
+          "children": [
+            {
+              "id": "c64.connector-jacks.cassette-port.pull-up",
+              "name": "Cassette read pull-up resistor",
+              "description": "One leg of the datasette sense line is held high by a single 3k3 1/4 W resistor on the mainboard - the same value and the same carbon-film part as the rest of the discrete resistors. It is a tiny detail that shows the whole board's design logic: discrete resistors where few are needed, a printed array where many identical ones are.",
+              "kind": "part",
+              "category": "passives",
+              "era": "1982-1984",
+              "sources": [
+                "https://allpinouts.org/pinouts/connectors/data_storage/commodore-vic20-c64-cassette-6-pin"
+              ],
+              "confidence": "high",
+              "note": "The pull-up is documented as a discrete 3.3 kOhm resistor rather than as part of RP3/RP4; its reference designator on a 250407 board is not confirmed.",
+              "inputs": [
+                "mb.passives.resistors.discrete-axial.carbon-film"
+              ],
+              "children": [
+                {
+                  "id": "c64.connector-jacks.cassette-port.pull-up.signal",
+                  "name": "Why the port exists at all",
+                  "description": "The port carries analogue audio plus three DC control lines. The C64 read FSK-encoded data by timing transitions on the read line and generating the tones on the write line - the whole tape interface is three transistors, a resistor and two electrolytics, which is why it is so sensitive to capacitor leakage.",
+                  "kind": "note",
+                  "category": "interconnect",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "silicon"
+                  ],
+                  "note": "The circuit is documented: U7's P3 pin 26 outputs write data to CN3, P4 senses the play switch, P5 drives the cassette motor through Q1 and Q3, and read data enters CN3 to the CIA's FLAG input. The parts list gives CN3 as a 6-pin connector. Not established: that the whole tape interface is three transistors, a resistor and two electrolytics, and that this is why it is sensitive to capacitor leakage."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "c64.connector-jacks.expansion-port",
+          "name": "Cartridge / expansion port, 44-pin dual card edge",
+          "description": "The slot along the bottom of the case into which cartridges plug. A 44-position dual female card-edge socket in a black glass-filled polyester body, with phosphor-bronze contacts gold-flashed over nickel. It is the single most-scrutinised connector on the machine: its contacts carry the entire address and data bus and have to survive thousands of cartridge insertions.",
+          "kind": "part",
+          "category": "interconnect",
+          "era": "1982-1984",
+          "sources": [
+            "https://www.c64-wiki.com/wiki/Expansion_port"
+          ],
+          "confidence": "high",
+          "facts": [
+            {
+              "label": "Positions",
+              "value": "44, dual row, 2.54 mm pitch"
+            },
+            {
+              "label": "Body",
+              "value": "black glass-filled polyester (phenolic), UL94 V-0"
+            },
+            {
+              "label": "Contacts",
+              "value": "phosphor bronze, gold-flashed over nickel"
+            },
+            {
+              "label": "Gender",
+              "value": "female socket; the cartridge has the male edge"
+            }
+          ],
+          "inputs": [
+            "metal.copper",
+            "metal.tin.ingot",
+            "metal.nickel",
+            "metal.gold.ingot",
+            "chem.thermosets.phenolic"
+          ],
+          "children": [
+            {
+              "id": "c64.connector-jacks.expansion-port.card-guide",
+              "name": "Moulded card guide and polarising key",
+              "description": "The socket body doubles as the mechanical guide: a moulded channel sets the card's insertion depth, and an asymmetric keyway stops a cartridge being inserted the wrong way round. Because the body is a thermoset, the guide is machined or moulded in one piece and cannot flex.",
+              "kind": "part",
+              "category": "interconnect",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "note": "The C64 cartridge connector's guide and keyway are visible in photographs of the underside of the board; the keyway dimensions have not been measured.",
+              "children": [
+                {
+                  "id": "c64.connector-jacks.expansion-port.card-guide.machining",
+                  "name": "Machined guide features",
+                  "description": "Because the socket body is a thermoset, the card channel, the stop face and the polarising key cannot be melted into place - they have to be present in the compression tool or machined afterwards. Both were normal for this part in 1982.",
+                  "kind": "process",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "chem.glass-fiber",
+                    "chem.thermosets.phenolic"
+                  ],
+                  "note": "Not established: a thermoset socket body whose card channel, stop face and polarising key were present in the compression tool or machined afterwards, with both routes normal for this part in 1982."
+                }
+              ]
+            },
+            {
+              "id": "c64.connector-jacks.expansion-port.contact-wear",
+              "name": "Contact wear and the 'dead cartridge' problem",
+              "description": "A card-edge socket is a wear item: each insertion plucks the leaf contacts and sweeps the mating gold edge. Dust, oxide from the cartridge's board and accumulated plasticiser eventually make one or two contacts intermittent, which is the classic 'dead cartridge' symptom. Contact cleaning and, on a well-used machine, contact replacement were the routine repair.",
+              "kind": "note",
+              "category": "interconnect",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "children": [
+                {
+                  "id": "c64.connector-jacks.expansion-port.contact-wear.cleaning",
+                  "name": "Contact cleaning regime",
+                  "description": "The routine service answer to a marginal cartridge socket: an alcohol swab on the contacts, a foam rod through the slots, and a bend of the leaf if it has lost tension. It is one of the few repairs on a 1982 machine that needs no parts.",
+                  "kind": "process",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "chem.petroleum"
+                  ],
+                  "note": "Not established: alcohol swab on the contacts with a foam rod through the slots plus re-tensioning the leaf by bending, as the routine no-parts service answer to a marginal cartridge socket."
+                }
+              ],
+              "note": "Not established: the dead-cartridge symptom sequence and the routine-repair claim. Wear of card-edge sockets is general connector practice; no source consulted quantifies it for this connector."
+            },
+            {
+              "id": "c64.connector-jacks.expansion-port.spec",
+              "name": "Commodore expansion port specification",
+              "description": "The 44-pin socket's pin assignment, pitch and card thickness were Commodore's own definition rather than a JEDEC standard, which is why cartridges for the C64, C128 and VIC-20 are interchangeable and C64C cartridges are not.",
+              "kind": "note",
+              "category": "interconnect",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "note": "Not established: that the 44-pin assignment, pitch and card thickness were Commodore's own definition rather than a JEDEC standard, or the stated interchangeability across C64, C128 and VIC-20 cartridges."
+            },
+            {
+              "id": "c64.connector-jacks.expansion-port.contacts-alloy",
+              "name": "Card-edge contact alloy (phosphor bronze)",
+              "description": "Phosphor bronze was the standard card-edge contact alloy for this connector, gold-flashed over nickel. It is springy, fatigue-resistant and takes a good plating - the combination a card-edge socket needs, because it is wiped hard on every insertion.",
+              "kind": "material",
+              "category": "passives",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "inputs": [
+                "metal.copper",
+                "metal.tin.ingot"
+              ],
+              "children": [
+                {
+                  "id": "c64.connector-jacks.expansion-port.contacts-alloy.plating-bath",
+                  "name": "Selective gold plating of the contact area",
+                  "description": "The contact is selectively plated by tabbing: the terminal is masked or wired as a cathode so only the mating area is gold-flashed.",
+                  "kind": "process",
+                  "category": "interconnect",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.gold.ingot",
+                    "facility.electricity"
+                  ],
+                  "note": "Not established: selective tabbing plating in which the terminal is masked or wired as a cathode so only the mating area of these contacts is gold-flashed."
+                }
+              ],
+              "note": "The 44-pin card-edge form factor is documented twice - 'CARTRIDGE / EXPANSION (44-PIN FEMALE) CN6' in the circuit theory and '44 Pin Card Edge' in the parts list. Not established: phosphor bronze as the contact alloy, the gold flash over nickel, or the fatigue and wiping argument."
+            }
+          ]
+        },
+        {
+          "id": "c64.connector-jacks.av-din",
+          "name": "Video/audio connector, 8-pin round DIN",
+          "description": "One round DIN on the rear panel carrying composite video, separate luma and chroma (for a Commodore 1701 monitor's RGB-with-separate-luma input), mono audio, and the RF modulator's composite and audio out. Very early 1982 boards used a 5-pin version instead, with luma and chroma combined.",
+          "kind": "part",
+          "category": "interconnect",
+          "era": "1982-1984",
+          "sources": [
+            "https://www.devili.iki.fi/Computers/Commodore/C64/Service_Manual/Page_06.html",
+            "https://en.wikipedia.org/wiki/DIN_connector"
+          ],
+          "confidence": "high",
+          "facts": [
+            {
+              "label": "Pins",
+              "value": "8 (5 on the earliest 250407 revision, part 326106)"
+            },
+            {
+              "label": "Shell",
+              "value": "180 degree style, nickel-plated steel"
+            },
+            {
+              "label": "Centre pin",
+              "value": "sprung, split-tulip contact"
+            },
+            {
+              "label": "Mounting",
+              "value": "screwed to the case and soldered to the board"
+            }
+          ],
+          "inputs": [
+            "metal.nickel",
+            "metal.gold.ingot",
+            "metal.copper"
+          ],
+          "children": [
+            {
+              "id": "c64.connector-jacks.av-din.tulip-pin",
+              "name": "Sprung split-tulip centre pin",
+              "description": "The centre contact is a thin slotted pin that is sprung into a slight taper, so it plugs into a matching conical socket and self-aligns. The slot lets it flex elastically and also means a slightly undersized mating hole still makes contact at two lines rather than at a point - which is why DIN connectors are famously forgiving.",
+              "kind": "part",
+              "category": "interconnect",
+              "era": "1982-1984",
+              "sources": [
+                "https://en.wikipedia.org/wiki/DIN_connector"
+              ],
+              "confidence": "high",
+              "facts": [
+                {
+                  "label": "Contact",
+                  "value": "gold or nickel, slotted, ~1.0-1.2 mm"
+                },
+                {
+                  "label": "Engagement force",
+                  "value": "low, thanks to the tapered split"
+                }
+              ],
+              "children": [
+                {
+                  "id": "c64.connector-jacks.av-din.tulip-pin.mating-socket",
+                  "name": "Conical mating socket",
+                  "description": "The socket the tulip pin plugs into has a matching taper, usually machined or stamped with a broach, so the two surfaces self-align on insertion. The taper is the reason a DIN plug feels forgiving and a plain pin-and-socket does not.",
+                  "kind": "part",
+                  "category": "interconnect",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.copper"
+                  ],
+                  "children": [
+                    {
+                      "id": "c64.connector-jacks.av-din.tulip-pin.mating-socket.broach",
+                      "name": "Broached taper",
+                      "description": "The mating socket's cone is broached rather than turned, so the surface finish is controlled by a single multi-form tool. The broach was hardened steel, so this was another tool-steel consumer.",
+                      "kind": "tool",
+                      "category": "passives",
+                      "era": "1982-1984",
+                      "confidence": "medium",
+                      "inputs": [
+                        "metal.die-steel"
+                      ],
+                      "note": "Not established: broaching rather than turning of the socket cone, surface finish controlled by a single multi-form tool, and a hardened steel broach as another tool-steel consumer."
+                    }
+                  ],
+                  "note": "Not established: a matching taper machined versus stamped with a broach giving self-alignment on insertion, and the taper as the reason a DIN plug feels forgiving."
+                },
+                {
+                  "id": "c64.connector-jacks.av-din.tulip-pin.contact-plating",
+                  "name": "Contact plating of the DIN pin",
+                  "description": "The centre pin is nickel-plated with a gold or silver flash; the signal level here (composite video and line-level audio) is high enough that nickel alone would work, but gold was used for consistency with the other connectors. It is the same nickel-then-gold sequence as every other contact on the machine, on a tin or nickel base.",
+                  "kind": "process",
+                  "category": "interconnect",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.gold.ingot",
+                    "metal.nickel",
+                    "facility.electricity"
+                  ],
+                  "note": "Not established: nickel plate with a gold versus silver flash on the centre pin, the claim that nickel alone would serve for composite video and line-level audio with gold used for consistency, and a tin versus nickel base under the same nickel-then-gold sequence."
+                }
+              ]
+            },
+            {
+              "id": "c64.connector-jacks.av-din.shell",
+              "name": "Nickel-plated steel shell and shield can",
+              "description": "The outer barrel is a drawn steel shell, nickel-plated for corrosion resistance and solderability, and crimped around the insulator. On a metal-panel or rear-case mounting it doubles as the shell ground. Nickel plate on steel is the standard 1982 finish for a mains-adjacent chassis connector. The knurled ring on a DIN plug is what a user grips to unscrew it, and on a socket the threaded barrel screws into the panel; the knurl is rolled into the shell in the same draw, because knurling a plated can afterwards would cut through the nickel.",
+              "kind": "part",
+              "category": "interconnect",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "inputs": [
+                "metal.nickel"
+              ],
+              "children": [
+                {
+                  "id": "c64.connector-jacks.av-din.shell.steel-strip",
+                  "name": "Drawn steel shell stock",
+                  "description": "The barrel is deep-drawn from nickel-plated steel strip - a two-and-a-half type can be drawn in a few progressive strokes. The nickel plate carries the shell ground and resists the corrosion a rear-panel connector sees.",
+                  "kind": "process",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.steel.sheet",
+                    "metal.nickel"
+                  ],
+                  "note": "Not established: deep drawing from nickel-plated steel strip in a few progressive strokes, and the shell-ground function. No document consulted describes the DIN shell's manufacture."
+                }
+              ],
+              "note": "The service manual's parts list confirms an '8 Pin Din' video/audio connector. Not established: a drawn nickel-plated steel shell, the knurl being rolled in the same draw, the reasoning about plating after knurling, and that nickel plate on steel was the 1982 standard finish for this chassis connector."
+            }
+          ]
+        },
+        {
+          "id": "c64.connector-jacks.serial-din",
+          "name": "Serial bus connector, 6-pin round DIN",
+          "description": "The IEC serial bus that daisy-chained the 1541 disk drive, printers and the rest of Commodore's peripheral family. Same body and same stamping technology as the video connector, smaller pin count, and the same sprung centre pin.",
+          "kind": "part",
+          "category": "interconnect",
+          "era": "1982-1984",
+          "sources": [
+            "https://en.wikipedia.org/wiki/DIN_connector"
+          ],
+          "confidence": "high",
+          "facts": [
+            {
+              "label": "Pins",
+              "value": "6"
+            },
+            {
+              "label": "Shell",
+              "value": "180 degree, nickel-plated steel"
+            },
+            {
+              "label": "Carries",
+              "value": "serial data in/out, clock in/out, atn in/out, ground, +5 V"
+            }
+          ],
+          "inputs": [
+            "metal.nickel",
+            "metal.gold.ingot",
+            "chem.thermosets.phenolic"
+          ],
+          "children": [
+            {
+              "id": "c64.connector-jacks.serial-din.protocol",
+              "name": "IEEE-488-style handshake on 6 wires",
+              "description": "Commodore's bus ran clock and data in both directions with attention lines and handshaking on every transfer - an IEEE-488 descendant. That is why a C64 could sit between two 1541 drives and still address the right one: the addressing is on the bus, not in the drive.",
+              "kind": "note",
+              "category": "interconnect",
+              "era": "1982-1984",
+              "sources": [
+                "https://en.wikipedia.org/wiki/List_of_IEC_standards"
+              ],
+              "confidence": "medium",
+              "note": "Commodore's serial bus is an IEEE-488-influenced protocol but not literally IEEE-488; the source reference is indicative. The bus pin count and function split are well documented."
+            }
+          ]
+        },
+        {
+          "id": "c64.connector-jacks.control-ports",
+          "name": "Control ports, 2 x DE-9 subminiature D",
+          "description": "The two nine-pin D-sub sockets on the rear panel for joystick or paddle controllers, a light pen or a mouse. Each is a DE-9 female in a plastic D-shaped shell with gold-flashed brass contacts dimpled for reliable mating - the connector everyone remembers from Atari, Commodore and Amiga alike.",
+          "kind": "part",
+          "category": "interconnect",
+          "era": "1982-1984",
+          "sources": [
+            "https://en.wikipedia.org/wiki/D-sub_connector"
+          ],
+          "confidence": "high",
+          "facts": [
+            {
+              "label": "Type",
+              "value": "DE-9, female, right angle, plastic shell"
+            },
+            {
+              "label": "Contacts",
+              "value": "stamped brass, gold-flashed over nickel, dimpled"
+            },
+            {
+              "label": "Pitch",
+              "value": "2.77 mm"
+            },
+            {
+              "label": "Shell",
+              "value": "glass-filled nylon or PBT with a nickel-plated metal shroud on some types"
+            }
+          ],
+          "inputs": [
+            "metal.copper",
+            "metal.nickel",
+            "metal.gold.ingot",
+            "chem.polyamide.nylon-66"
+          ],
+          "children": [
+            {
+              "id": "c64.connector-jacks.control-ports.dimple",
+              "name": "Dimpled socket contact",
+              "description": "Each female contact carries a dimple on its mating face. Dimpling pushes the two contact surfaces into a defined line contact rather than a random point contact, which lowers the contact resistance and stops the surfaces rolling on each other. The plug's outer shell also contacts the socket shroud, so the plug's ground comes from its metal shell rather than from its pins.",
+              "kind": "part",
+              "category": "interconnect",
+              "era": "1982-1984",
+              "sources": [
+                "https://en.wikipedia.org/wiki/D-sub_connector"
+              ],
+              "confidence": "high",
+              "facts": [
+                {
+                  "label": "Contact plating",
+                  "value": "30 microinch gold over nickel, standard for the era"
+                }
+              ]
+            },
+            {
+              "id": "c64.connector-jacks.control-ports.d-sub-standard",
+              "name": "D-subminiature (MIL-DTL-24308) standard",
+              "description": "The D-sub was standardised for military/aerospace use in the 1950s and became universal electronics furniture. Its 2.77 mm pitch, D-shaped polarised shell and 2.5 mm panel-mount screw pattern are defined by the standard; the C64's control ports are ordinary commercial DE-9 sockets.",
+              "kind": "note",
+              "category": "interconnect",
+              "era": "1950s",
+              "confidence": "medium",
+              "note": "The service manual's parts list confirms the control ports as 'Plug Assy, 9 Pin MINID' / 'Plug Assy, 9 Pin Rt. Angle', i.e. ordinary 9-pin D-sub hardware. Not established: MIL-DTL-24308 as the governing standard, the 1950s military/aerospace origin, the 2.77 mm pitch and 2.5 mm panel screw pattern figures as stated, and that DE-9 sockets are 'commercial' rather than the MIL-qualified variant."
+            },
+            {
+              "id": "c64.connector-jacks.control-ports.insulator",
+              "name": "DE-9 insulator",
+              "description": "A black glass-filled thermoplastic insulator carrying the nine contacts, keyed to the metal shell. It has to hold position to a few hundredths of a millimetre because the contacts must all engage simultaneously in a stiff nine-pin plug.",
+              "kind": "part",
+              "category": "interconnect",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "inputs": [
+                "chem.polyamide.nylon-66",
+                "chem.glass-fiber"
+              ],
+              "children": [
+                {
+                  "id": "c64.connector-jacks.control-ports.insulator.nylon",
+                  "name": "Glass-filled nylon insulator",
+                  "description": "Glass-filled PA66 holds nine contact positions to a few hundredths of a millimetre over a plastic D-shell, and takes the insertion force of a stiff nine-pin plug without cracking. The base polymer is nylon 6,6 from hexamethylenediamine and adipic acid; caprolactam is the route to nylon 6, a different grade.",
+                  "kind": "material",
+                  "category": "interconnect",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "sources": [
+                    "https://en.wikipedia.org/wiki/Nylon"
+                  ],
+                  "inputs": [
+                    "chem.polyamide.nylon-66",
+                    "chem.glass-fiber"
+                  ],
+                  "note": "The polymer distinction is documented: nylon-6,6 from a diamine and a dicarboxylic acid, caprolactam for nylon 6, and glass-filled variants for stiffness and impact strength. Not established: that this particular insulator is glass-filled PA66, that it holds nine contact positions to a few hundredths of a millimetre, and that PA66 rather than a filled polyester or PBT was used. Note that polyamide is hygroscopic and moisture changes its electrical resistance."
+                }
+              ],
+              "note": "Not established: black glass-filled thermoplastic keyed to the metal shell, holding position to a few hundredths of a millimetre so all nine contacts engage simultaneously."
+            },
+            {
+              "id": "c64.connector-jacks.control-ports.shroud",
+              "name": "Metal shell shroud and strain relief",
+              "description": "On the machine side the socket is a plastic-shell type with no metal shroud; the shroud is on the cable plug, where it is what provides the plug's shell ground and its mechanical strength. Both were stamped and plated the same way.",
+              "kind": "part",
+              "category": "interconnect",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "inputs": [
+                "metal.copper",
+                "metal.nickel"
+              ],
+              "note": "Not established: a plastic-shell socket with no metal shroud on the machine side versus the shroud on the cable plug giving shell ground and mechanical strength, with both stamped and plated the same way."
+            }
+          ]
+        },
+        {
+          "id": "c64.connector-jacks.power-inlet",
+          "name": "Power inlet, 7-pin round DIN",
+          "description": "The rear-panel socket the external PSU brick plugs into. A 7-pin round connector in a large 'type C' shell, following the DIN 45329 / IEC 10 form: pins 1 and 5 carry the regulated +5 V DC and pins 6 and 7 the 9 V AC from the transformer, with the switched side feeding the board through L5, C97, C100 and SW1.",
+          "kind": "part",
+          "category": "interconnect",
+          "era": "1982-1984",
+          "sources": [
+            "https://allpinouts.org/pinouts/connectors/power_supply/commodore-c64-power-supply",
+            "https://www.devili.iki.fi/Computers/Commodore/C64/Service_Manual/Page_06.html"
+          ],
+          "confidence": "high",
+          "note": "Sources agree on 7 pins; some 1982 supplies shipped a lead with only four populated contacts, which is a different and well-documented issue - the pin 5 damage fault.",
+          "facts": [
+            {
+              "label": "Pins",
+              "value": "7"
+            },
+            {
+              "label": "Standard",
+              "value": "DIN 45329 / IEC 10 style, large type C shell"
+            },
+            {
+              "label": "Pin 1 and 5",
+              "value": "+5 V DC from the regulator, filtered by L5, C97 and C100"
+            },
+            {
+              "label": "Pin 6 and 7",
+              "value": "9 V AC unregulated"
+            }
+          ],
+          "inputs": [
+            "metal.nickel",
+            "metal.gold.ingot",
+            "chem.thermosets.phenolic"
+          ],
+          "children": [
+            {
+              "id": "c64.connector-jacks.power-inlet.friction-lock",
+              "name": "Friction-lock and pull-proof contacts",
+              "description": "A mains-adjacent DC supply connector needs its contacts to survive being tugged by the cable. The mating pins are a friction type with a deliberately stiff crimp barrel so a pull is taken by the metal, not the solder fillet; some Commodore supplies additionally used a friction-lock retention ring on the plug body.",
+              "kind": "part",
+              "category": "interconnect",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "note": "Friction lock on this connector means the pull-proof crimp on the mating pins; no C64-specific retention-ring part number is established.",
+              "children": [
+                {
+                  "id": "c64.connector-jacks.power-inlet.friction-lock.crimp",
+                  "name": "Crimp barrel construction",
+                  "description": "The pin is a hollow brass tube with an interference crimp onto the conductor rather than a solder joint. That is the actual meaning of a friction-lock contact: the metal grips the metal, so a tug on the cable is carried by a mechanical interference fit and not by the solder fillet.",
+                  "kind": "process",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.copper",
+                    "metal.zinc.ingot"
+                  ],
+                  "note": "Not established: that this contact is a hollow brass tube with an interference crimp rather than a solder joint. No document consulted describes the C64 power-inlet contact construction; the parts list gives only '7 PIN MALE DIN'."
+                },
+                {
+                  "id": "c64.connector-jacks.power-inlet.pin-5-fault",
+                  "name": "The pin 5 damage fault",
+                  "description": "One of the best-known Commodore power faults: a partially populated or incorrectly wired supply lead damages the 5 V pin in the machine's socket, so the machine will not power up even with a known-good supply. It is a wear-and-misalignment problem on a friction contact carrying a DC load that the connector was not designed to be unplugged under.",
+                  "kind": "note",
+                  "category": "power",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "note": "Widely reported in Commodore service literature; no primary factory bulletin on it has been located."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "c64.connector-jacks.keyboard-header",
+          "name": "Keyboard ribbon header",
+          "description": "A soldered pin header at the front-left edge of the mainboard carrying the keyboard's flat ribbon cable. The keyboard's matrix lines and the shift-lock return run out of the machine this way; it is the one connector on the board that is not an industry-standard part but a plain 2.54 mm row of pins.",
+          "kind": "part",
+          "category": "interconnect",
+          "era": "1982-1984",
+          "sources": [
+            "https://www.lemon64.com/forum/viewtopic.php?t=80055"
+          ],
+          "confidence": "low",
+          "note": "The exact position count of the C64 keyboard header is not established from a primary source. C64 repair references consistently describe a 2.54 mm-pitch male header along the front-left board edge, and replacement parts are sold as 2.54 mm rows of varying length. The matrix needs at most 8 column lines plus 8 row lines plus shift-lock and the 6510 I/O port lines, so a 2 x 12 (24-way) header is plausible but unverified.",
+          "facts": [
+            {
+              "label": "Pitch",
+              "value": "2.54 mm"
+            },
+            {
+              "label": "Type",
+              "value": "soldered straight male header on the PCB"
+            }
+          ],
+          "inputs": [
+            "metal.copper",
+            "metal.tin.ingot"
+          ],
+          "children": [
+            {
+              "id": "c64.connector-jacks.keyboard-header.solder-joint",
+              "name": "Wave-soldered pin header",
+              "description": "The header's pins were pushed into the board and wave-soldered in one pass with the rest of the components, in 63/37 lead-tin solder. That is why the pin material is brass with a tin plate rather than nickel: it wets tin-lead, and it does not need the corrosion resistance a gold-plated control-port contact does.",
+              "kind": "process",
+              "category": "assembly",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "note": "The solder alloy is metal.solder, the wave machine is mb.solder.wave and the flux chemistry is chem.solder-chemicals.rosin-flux; each is a single node shared with the rest of the board rather than a copy living here. Rosin itself is the sticky resin of conifers, metal.pine-resin. Commodore did not use lead-free solder on the breadbin mainboard - the lead-free transition in consumer electronics began in the 1990s. Rosin flux dissolved in alcohol is what let 63/37 solder wet a slightly oxidised lead and a slightly oxidised pad. The ionic residue it leaves behind is why the board is washed after the wave, because that residue is what makes a board drift or corrode. Rosin is the sticky resin of conifers, and metal.pine-resin is where the tree is grown.",
+              "facts": [
+                {
+                  "label": "Solder",
+                  "value": "63/37 lead-tin, melting point ~183 C"
+                }
+              ],
+              "inputs": [
+                "mb.solder.wave",
+                "metal.solder",
+                "chem.solder-chemicals.rosin-flux",
+                "chem.rosin",
+                "metal.pine-resin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c64.switches",
+      "name": "Switches and slide potentiometers",
+      "description": "Three human-operated controls on a C64: the mains-free power slider SW1 on the right-hand case panel, and the two slide potentiometers for volume/tone and brightness on the top surface. The power switch gates the incoming 5 V rail; the two potentiometers are wired directly into the SID audio output and the VIC-II's analogue video level.",
+      "kind": "part",
+      "category": "passives",
+      "era": "1982-1984",
+      "sources": [
+        "https://www.devili.iki.fi/Computers/Commodore/C64/Service_Manual/Page_06.html",
+        "https://www.c64-wiki.com/wiki/Motherboard"
+      ],
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "SW1 position",
+          "value": "right-hand case panel, between the control ports and the power socket"
+        },
+        {
+          "label": "Type",
+          "value": "single-pole slide switch, SPST, mains-rated style body"
+        },
+        {
+          "label": "Potentiometers",
+          "value": "2 x miniature slide potentiometer, ~10 kOhm linear"
+        },
+        {
+          "label": "Slider location",
+          "value": "top surface of the case, right-hand end"
+        }
+      ],
+      "inputs": [
+        "chem.polyamide.nylon-66",
+        "chem.thermosets.phenolic",
+        "metal.copper",
+        "metal.silver.ingot",
+        "metal.alumina"
+      ],
+      "children": [
+        {
+          "id": "c64.switches.power-slider",
+          "name": "SW1 power slider switch",
+          "description": "A single-pole, double-throw or single-throw slide switch on the mainboard, actuated by a moulded slider that protrudes through a rectangular cut-out in the right-hand side of the case. Its only job in the C64 is to interrupt the incoming +5 V rail - everything else on the board runs off the switch's output side.",
+          "kind": "part",
+          "category": "passives",
+          "era": "1982-1984",
+          "confidence": "medium",
+          "sources": [
+            "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
+          ],
+          "facts": [
+            {
+              "label": "Poles",
+              "value": "1 pole"
+            },
+            {
+              "label": "Rating",
+              "value": "~6 A at 250 VAC resistive, far beyond the C64's ~1 A load"
+            },
+            {
+              "label": "Actuation",
+              "value": "positive detent at both ends"
+            }
+          ],
+          "inputs": [
+            "chem.polyamide.nylon-66",
+            "chem.thermosets.phenolic",
+            "metal.copper",
+            "metal.silver.ingot"
+          ],
+          "children": [
+            {
+              "id": "c64.switches.power-slider.body",
+              "name": "Moulded switch body (melamine / phenolic / nylon)",
+              "description": "The insulator the whole mechanism lives in. Small slide switches of this generation used a filled thermoset (melamine-formaldehyde or glass-filled phenolic) or a glass-filled nylon; both mould well in simple two-plate tools and stand a soldering iron's heat. Melamine was the industry default because its arc resistance in a mains-adjacent switch is better than polystyrene's. The switch body was riveted or snapped into the mainboard and located by a moulded boss in the case; the boss and its snap feature are part of the case tooling, not the switch tooling.",
+              "kind": "part",
+              "category": "plastics",
+              "era": "1982-1984",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Melamine_formaldehyde"
+              ],
+              "confidence": "high",
+              "note": "The C64 switch handles only 5 V DC from the external brick, not mains, so its insulation requirement was modest - but the part was bought from a mains-switch catalogue and over-specified.",
+              "facts": [
+                {
+                  "label": "Materials used",
+                  "value": "melamine-formaldehyde, glass-filled phenolic, PA66, PBT"
+                },
+                {
+                  "label": "Tool",
+                  "value": "two-plate injection mould, ~10,000 shots/tool life"
+                }
+              ],
+              "inputs": [
+                "chem.polyamide.nylon-66",
+                "chem.thermosets.phenolic",
+                "metal.copper"
+              ],
+              "children": [
+                {
+                  "id": "c64.switches.power-slider.body.melamine",
+                  "name": "Melamine-formaldehyde thermoset",
+                  "description": "A thermoset built from melamine and formaldehyde, filled with cellulose or glass fibre, and compression-moulded hot. It is rigid, arc-resistant, dimensionally stable and cheap - the standard insulator for mains switches and domestic electrical accessories of the period.",
+                  "kind": "material",
+                  "category": "plastics",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "facts": [
+                    {
+                      "label": "Fillers",
+                      "value": "cellulose, glass fibre, mineral"
+                    },
+                    {
+                      "label": "Moulding",
+                      "value": "compression moulded at ~150-180 C, ~10-30 MPa"
+                    }
+                  ],
+                  "inputs": [
+                    "chem.petroleum",
+                    "facility.electricity"
+                  ],
+                  "children": [
+                    {
+                      "id": "c64.switches.power-slider.body.melamine.melamine-resin",
+                      "name": "Melamine resin from urea and formaldehyde",
+                      "description": "Melamine is made by condensing urea with formaldehyde. Urea comes from ammonia and carbon dioxide, both cheap industrial gases; formaldehyde comes from oxidising methanol, which comes from the catalytic conversion of synthesis gas. Both halves were pure petrochemical by 1982.",
+                      "kind": "material",
+                      "category": "plastics",
+                      "era": "1982-1984",
+                      "confidence": "medium",
+                      "facts": [
+                        {
+                          "label": "Melamine route",
+                          "value": "urea + formaldehyde, ~150-200 C, pressure"
+                        },
+                        {
+                          "label": "Formaldehyde route",
+                          "value": "methanol from CO/H2, silver-catalysed oxidation to formaldehyde"
+                        }
+                      ],
+                      "inputs": [
+                        "chem.petroleum",
+                        "facility.electricity"
+                      ],
+                      "note": "Not established: the urea-plus-formaldehyde route, the 150-200 C pressure condensation, and the methanol-from-synthesis-gas then silver-catalysed oxidation route to formaldehyde. No source consulted establishes melamine or formaldehyde."
+                    }
+                  ],
+                  "note": "Not established: that this switch body is melamine-formaldehyde, the cellulose or glass fibre fillers, compression moulding at 150-180 C and 10-30 MPa, and the arc-resistant property claim. Melamine-formaldehyde as an insulator for mains switches is plausible and the tree cites it elsewhere, but no source was consulted for this body."
+                },
+                {
+                  "id": "c64.switches.power-slider.body.nylon",
+                  "name": "Glass-filled nylon (PA66-GF)",
+                  "description": "A tough, self-lubricating engineering thermoplastic used where a moving slider needs low friction and good wear resistance against the moulded track. Injection-moulded into the actuator and often into the switch's own guide body.",
+                  "kind": "material",
+                  "category": "plastics",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "note": "Which of these the C64's switch actually used is not documented in any available source; the materials above are the standard options for a 1982 miniature slide switch.",
+                  "facts": [
+                    {
+                      "label": "Glass content",
+                      "value": "30 % for the actuator grade"
+                    },
+                    {
+                      "label": "Why",
+                      "value": "self-lubricating against the moulded case"
+                    }
+                  ],
+                  "inputs": [
+                    "chem.polyamide.nylon-66",
+                    "chem.glass-fiber"
+                  ],
+                  "children": [
+                    {
+                      "id": "c64.switches.power-slider.body.nylon.filler",
+                      "name": "Glass filler in the nylon",
+                      "description": "30 % chopped glass fibre in the PA66, for stiffness at a thin wall and for dimensional stability against the moulded detent. The same filler as in the connector housings.",
+                      "kind": "material",
+                      "category": "passives",
+                      "era": "1982-1984",
+                      "confidence": "medium",
+                      "inputs": [
+                        "chem.glass-fiber"
+                      ],
+                      "note": "Glass-filled thermoplastic composites are documented at 25-30 % glass fibre, with glass filling increasing structural strength and rigidity. Not established: 30 % chopped glass in PA66 for this switch body, that this body is nylon rather than a thermoset or PBT, and that the filler matches the one in the connector housings."
+                    }
+                  ]
+                },
+                {
+                  "id": "c64.switches.power-slider.body.terminal",
+                  "name": "Solder terminals and anchor",
+                  "description": "The pins of the switch are brass, either solid or a brass tube over a steel mandrel with a solder tail. Brass is used because it wets tin-lead solder reliably and does not need nickel underplate for a low-voltage contact.",
+                  "kind": "part",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.copper"
+                  ],
+                  "children": [
+                    {
+                      "id": "c64.switches.power-slider.body.terminal.brass-stock",
+                      "name": "Brass terminal stock",
+                      "description": "Solid brass wire or a brass tube over a steel mandrel, cut and headed. Brass is chosen because it is springy enough to survive the assembly line and soft enough to take a solder joint.",
+                      "kind": "material",
+                      "category": "metals",
+                      "era": "1982-1984",
+                      "confidence": "medium",
+                      "inputs": [
+                        "metal.copper",
+                        "metal.zinc.ingot"
+                      ],
+                      "note": "Not established: this terminal's brass wire or brass-over-mandrel stock, the springy-and-solderable property argument, and the heading operation."
+                    }
+                  ],
+                  "note": "Not established: brass pins solid or brass tube over a steel mandrel, and the claim that brass needs no nickel underplate at low voltage. No document consulted describes the switch's terminal construction."
+                }
+              ]
+            },
+            {
+              "id": "c64.switches.power-slider.mechanism",
+              "name": "Slide mechanism, actuator and detent",
+              "description": "The actuator is a moulded slider with ribs that engage moulded detent ramps in the body, so it clicks into a definite position at each end rather than resting ambiguously. A moulded spring or a bent leaf spring inside supplies the return force and the over-centre snap that gives the switch its tactile 'click'.",
+              "kind": "process",
+              "category": "passives",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "note": "The detent geometry (moulded ramp plus leaf spring) is standard 1980s miniature-switch practice; No teardown-level measurement of the specific C64 switch is available.",
+              "facts": [
+                {
+                  "label": "Force",
+                  "value": "~1-3 N at the detent"
+                },
+                {
+                  "label": "Mechanical life",
+                  "value": "10,000 cycles typical rating"
+                }
+              ],
+              "inputs": [
+                "chem.polyamide.nylon-66",
+                "metal.steel.sheet"
+              ],
+              "children": [
+                {
+                  "id": "c64.switches.power-slider.mechanism.leaf-spring",
+                  "name": "Return leaf spring",
+                  "description": "A bent spring steel leaf that provides the over-centre force and the return to OFF. It is the part that fatigues: after enough actuations it loses tension and the switch no longer snaps crisply.",
+                  "kind": "part",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.steel.sheet"
+                  ],
+                  "children": [
+                    {
+                      "id": "c64.switches.power-slider.mechanism.leaf-spring.steel",
+                      "name": "Spring steel strip",
+                      "description": "A high-carbon strip steel, hardened and tempered, cut and blanked. Blade and coil spring steel of this quality came from the same integrated steel plants as the razor blades and the automotive leaf springs.",
+                      "kind": "material",
+                      "category": "passives",
+                      "era": "ancient",
+                      "confidence": "medium",
+                      "note": "Not established: high-carbon hardened-and-tempered strip steel for this switch, and the shared origin with razor blades and automotive leaf springs."
+                    }
+                  ],
+                  "note": "Not established: a bent spring steel leaf giving the over-centre force and return to OFF, and fatigue with loss of tension and crisp snap after enough actuations."
+                },
+                {
+                  "id": "c64.switches.power-slider.mechanism.detent-ramp",
+                  "name": "Moulded detent ramp",
+                  "description": "A stepped ramp moulded into the nylon body or actuator over which the slider rides, giving a definite position at each end. Moulding the detent rather than machining it is what keeps the part cheap at the volumes a consumer switch sold in.",
+                  "kind": "part",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "chem.polyamide.nylon-66"
+                  ],
+                  "note": "Not established: a stepped ramp moulded into the nylon body or actuator giving a definite position at each end, and moulding rather than machining as what kept the part cheap at consumer volumes."
+                }
+              ]
+            },
+            {
+              "id": "c64.switches.power-slider.contacts",
+              "name": "Leaf contacts and contact plating",
+              "description": "A pair of formed leaf springs - phosphor bronze or stainless - carry the current; one is fixed and one moves with the slider, wiping against its mate over a small spring pressure so the electrical contact area is always fresh. The wipe is the whole reason slide switches do not corrode: an oxide film is continuously displaced.",
+              "kind": "process",
+              "category": "passives",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "note": "Wiping contacts are documented for potentiometers and rheostats. Not established: phosphor bronze or stainless leaves on this switch, silver or gold plating on a 5 V power contact, and the 50-200 g per-contact pressure.",
+              "facts": [
+                {
+                  "label": "Leaf alloy",
+                  "value": "phosphor bronze (Cu-Sn-P) or stainless"
+                },
+                {
+                  "label": "Contact plating",
+                  "value": "silver, silver-nickel, or a gold flash for low-level signals"
+                },
+                {
+                  "label": "Contact pressure",
+                  "value": "tens to hundreds of grams per contact"
+                }
+              ],
+              "inputs": [
+                "metal.copper",
+                "metal.tin.ingot",
+                "metal.silver.ingot",
+                "metal.gold.ingot"
+              ],
+              "children": [
+                {
+                  "id": "c64.switches.power-slider.contacts.phosphor-bronze",
+                  "name": "Phosphor bronze leaf stock",
+                  "description": "A copper-tin alloy with a few tenths of a per cent of phosphorus, valued for springiness, fatigue resistance and a low and stable contact resistance. Drawn strip, blanked, pierced and formed in a progressive die; the standard contact alloy of the whole electronics industry.",
+                  "kind": "material",
+                  "category": "metals",
+                  "era": "1982-1984",
+                  "sources": [
+                    "https://en.wikipedia.org/wiki/Phosphor_bronze"
+                  ],
+                  "confidence": "high",
+                  "note": "The copper and the tin of this alloy are metal.copper and metal.tin.ingot. It is the same alloy as the cartridge-socket contacts, documented on that connector.",
+                  "facts": [
+                    {
+                      "label": "Typical composition",
+                      "value": "Cu 92-94 %, Sn 4-8 %, P 0.1-0.5 %"
+                    },
+                    {
+                      "label": "Strip thickness",
+                      "value": "~0.1-0.3 mm for switch leaves"
+                    }
+                  ],
+                  "inputs": [
+                    "metal.copper",
+                    "metal.tin.ingot"
+                  ]
+                }
+              ]
+            }
+          ],
+          "note": "The function is confirmed on the 250407 board: the external supply's regulated 5 VDC is applied to pins 5 and 1 of CN7, is filtered by L5, C97 and C100, and is then controlled by on/off switch S1, so the switch's only job is to interrupt the +5 V rail. Not established: the 6 A at 250 VAC resistive rating, the assertion that it is single-pole, and the positive detent at both ends."
+        },
+        {
+          "id": "c64.switches.level-sliders",
+          "name": "Volume and brightness slide potentiometers",
+          "description": "Two miniature slide potentiometers on the mainboard whose sliders protrude through the top of the case. One sets the audio level at the SID output; the other sets the analogue video brightness level. Both use a printed resistive track and a spring-loaded wiper.",
+          "kind": "part",
+          "category": "passives",
+          "era": "1982-1984",
+          "confidence": "medium",
+          "note": "The exact resistance and taper of the two C64 slide pots are not established from a primary source. Contemporary photographs and the schematic suggest a linear-law miniature slide pot in the 1 kOhm-100 kOhm range; treat the value as uncertain.",
+          "facts": [
+            {
+              "label": "Count",
+              "value": "2"
+            },
+            {
+              "label": "Law",
+              "value": "linear"
+            },
+            {
+              "label": "Construction",
+              "value": "printed carbon track on a ceramic or phenolic substrate"
+            }
+          ],
+          "inputs": [
+            "chem.thermosets.phenolic",
+            "metal.silver.ingot",
+            "chem.abs"
+          ],
+          "children": [
+            {
+              "id": "c64.switches.level-sliders.track",
+              "name": "Printed carbon track on a ceramic substrate",
+              "description": "The resistive element is a track of carbon ink printed onto a flat ceramic or phenolic substrate, with metal end lands at each end. Printing is what makes a slide pot cheap: the geometry of the track, its length and its taper, sets both the total resistance and the law.",
+              "kind": "part",
+              "category": "passives",
+              "era": "1982-1984",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Potentiometer"
+              ],
+              "confidence": "high",
+              "note": "A printed carbon track and a printed cermet track are the same manufacturing route as the thick-film resistor networks on the same board; only the geometry differs. For low-level audio pots in 1982, carbon ink on ceramic was still the norm and cermet was the higher-quality option.",
+              "facts": [
+                {
+                  "label": "Ink",
+                  "value": "carbon/graphite in an organic binder, or a cermet (RuO2 + glass) paste"
+                },
+                {
+                  "label": "Print",
+                  "value": "screen-printed through a mesh, cured in a tunnel oven"
+                },
+                {
+                  "label": "Substrate",
+                  "value": "flat alumina ceramic or glass-filled phenolic"
+                }
+              ],
+              "inputs": [
+                "metal.silver.ingot",
+                "chem.glass-fiber",
+                "facility.electricity"
+              ],
+              "children": [
+                {
+                  "id": "c64.switches.level-sliders.track.carbon-ink",
+                  "name": "Printed carbon ink",
+                  "description": "Carbon black ground into a binder to a printable ink, screen-printed along the substrate and cured in a tunnel oven. The track length sets the nominal resistance and its taper sets the law; the two C64 sliders are linear, so the printed geometry is constant width.",
+                  "kind": "material",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "high",
+                  "sources": [
+                    "https://en.wikipedia.org/wiki/Potentiometer"
+                  ],
+                  "note": "The carbon-black furnace is mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black, linked here by id.",
+                  "facts": [
+                    {
+                      "label": "Ink",
+                      "value": "carbon black in an organic binder, screen-printed and cured"
+                    }
+                  ],
+                  "inputs": [
+                    "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black"
+                  ]
+                },
+                {
+                  "id": "c64.switches.level-sliders.track.curvature",
+                  "name": "Fired substrate and end lands",
+                  "description": "The carbon track is printed between two metallic end lands, usually fired silver, one at each end of the travel. The wiper bridges them; the centre terminal taps the wiper. All three terminals are solder pins on the pot's tail.",
+                  "kind": "process",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "facts": [
+                    {
+                      "label": "Substrate",
+                      "value": "flat ceramic or glass-filled phenolic"
+                    }
+                  ],
+                  "inputs": [
+                    "metal.silver.ingot"
+                  ],
+                  "children": [
+                    {
+                      "id": "c64.switches.level-sliders.track.curvature.substrate-firing",
+                      "name": "Firing of the printed substrate",
+                      "description": "The carbon or cermet track is fired into the ceramic substrate in a tunnel oven at several hundred degrees, fusing the binder and the glass frit so the track cannot be scratched off by the wiper.",
+                      "kind": "process",
+                      "category": "passives",
+                      "era": "1982-1984",
+                      "confidence": "medium",
+                      "inputs": [
+                        "facility.electricity"
+                      ],
+                      "note": "Not established: firing the printed carbon track into the ceramic substrate in a tunnel oven at several hundred degrees to fuse the binder and glass frit. No document consulted describes how a printed potentiometer track is cured."
+                    }
+                  ],
+                  "note": "Not established: a carbon track printed between two fired-silver end lands with the wiper bridging them and the centre terminal tapping the wiper, on a flat ceramic versus glass-filled phenolic substrate with solder-pin tails."
+                }
+              ]
+            },
+            {
+              "id": "c64.switches.level-sliders.wiper",
+              "name": "Spring-loaded wiper",
+              "description": "A small sprung metal clip or blade, usually a copper-nickel-plated spring steel or nickel strip, presses onto the carbon track and taps the voltage off at whatever point along it the slider has dragged it to. It must carry current through a sliding contact, so its plating and its spring force are the two design limits.",
+              "kind": "part",
+              "category": "passives",
+              "era": "1982-1984",
+              "confidence": "high",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Potentiometer"
+              ],
+              "note": "A worn carbon track is the classic reason a 1980s volume pot develops noise or drops to one end of its travel; contact cleaner and a rebuild pen were the standard fixes.",
+              "facts": [
+                {
+                  "label": "Material",
+                  "value": "Ni-plated spring steel, or phosphor bronze"
+                },
+                {
+                  "label": "Wear",
+                  "value": "the carbon track is deliberately sacrificial - it wears before the wiper"
+                }
+              ],
+              "inputs": [
+                "metal.nickel",
+                "metal.steel.sheet"
+              ],
+              "children": [
+                {
+                  "id": "c64.switches.level-sliders.wiper.nickel-strip",
+                  "name": "Plated spring-steel strip",
+                  "description": "The wiper is stamped from spring strip and plated in a nickel or precious-metal bath so that it both springs correctly and carries current across a sliding contact without galling the carbon track.",
+                  "kind": "process",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.nickel"
+                  ],
+                  "children": [
+                    {
+                      "id": "c64.switches.level-sliders.wiper.nickel-strip.nickel",
+                      "name": "Nickel plating bath",
+                      "description": "The same nickel chemistry as the resistor lead plating and the connector underplate: a sulfamate or pyrophosphate bath, or electroless nickel-phosphorus where the deposit had to be hard.",
+                      "kind": "process",
+                      "category": "passives",
+                      "era": "1982-1984",
+                      "sources": [
+                        "https://en.wikipedia.org/wiki/Electroplating"
+                      ],
+                      "confidence": "high",
+                      "inputs": [
+                        "facility.electricity"
+                      ]
+                    }
+                  ],
+                  "note": "A springy wiper contact on a potentiometer element is documented, described as phosphor bronze. Not established: stamping from spring strip and plating in a nickel or precious-metal bath for this wiper, or the anti-galling argument against the carbon track."
+                },
+                {
+                  "id": "c64.switches.level-sliders.wiper.precontact",
+                  "name": "Pre-contact break and noise",
+                  "description": "A resistive track and a sliding contact inherently generate noise, and a cheap carbon track generates a lot. C64 volume pots are a well-known source of a faint hiss or crackle in the audio output - a real consequence of the printed-carbon technology, not a fault.",
+                  "kind": "note",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "high",
+                  "sources": [
+                    "https://en.wikipedia.org/wiki/Potentiometer"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "c64.switches.level-sliders.housing",
+              "name": "Moulded housing and slider knob",
+              "description": "A small injection-moulded thermoplastic body with the moulded detent rails for the slider, and a moulded knob with the finger rib that protrudes through the case cut-out. The same polymer families as the switch body: nylon, ABS or a filled phenoxy.",
+              "kind": "part",
+              "category": "plastics",
+              "era": "1982-1984",
+              "confidence": "medium",
+              "note": "ABS is one canonical node, chem.abs, shared with the keycaps and the joystick knob; it is linked here by id.",
+              "facts": [
+                {
+                  "label": "Typical polymers",
+                  "value": "ABS, PA66, PBT, filled phenoxy"
+                }
+              ],
+              "inputs": [
+                "chem.abs",
+                "chem.polyester"
+              ],
+              "children": [
+                {
+                  "id": "c64.switches.level-sliders.housing.injection",
+                  "name": "Injection moulding of the pot body",
+                  "description": "The body is injection moulded with the three terminal slots, the detent rails and the wiper guide all in one shot, in a multi-cavity tool shared with the rest of the world's miniature slide pot production.",
+                  "kind": "process",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "facility.electricity"
+                  ],
+                  "children": [
+                    {
+                      "id": "c64.switches.level-sliders.housing.injection.polymer",
+                      "name": "Moulded housing polymer (ABS or PBT)",
+                      "description": "Either the same ABS as the keycaps or a glass-filled PBT. Both are chosen for stiffness at a thin wall - a pot body has to hold a wiper alignment over millimetres of travel without creeping.",
+                      "kind": "material",
+                      "category": "plastics",
+                      "era": "1982-1984",
+                      "confidence": "medium",
+                      "inputs": [
+                        "chem.abs",
+                        "chem.petroleum"
+                      ],
+                      "note": "Not established: the same ABS as the keycaps versus glass-filled PBT as the housing polymer, chosen for thin-wall stiffness holding wiper alignment over millimetres of travel without creep."
+                    }
+                  ],
+                  "note": "That a potentiometer comprises a resistive element, a wiper, end terminals, a mechanism and a housing is documented. Not established: one-shot injection moulding of the terminal slots, detent rails and wiper guide, or that the tool was shared with world miniature slide-pot production."
+                },
+                {
+                  "id": "c64.switches.level-sliders.housing.knob",
+                  "name": "Moulded slider knob",
+                  "description": "A small moulded knob with a moulded-in guide rib that engages the body's rails, protruding through the case cut-out. The knob and the body were often moulded in the same tool family so the fit is guaranteed.",
+                  "kind": "part",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "chem.abs"
+                  ],
+                  "note": "Not established: a moulded-in guide rib engaging the body rails with the knob protruding through the case cut-out, and knob and body moulded in the same tool family to guarantee the fit."
+                }
+              ]
+            },
+            {
+              "id": "c64.switches.level-sliders.section",
+              "name": "Single and ganged (twin) sections",
+              "description": "A potentiometer is made in two or three mechanically independent sections that share a common wiper shaft, so one slider knob moves the end terminal, the wiper and the middle terminal together. A 'ganged' pair means two complete potentiometers on one shaft; the C64's two sliders are physically separate parts rather than a ganged pair, since they control completely unrelated signals in different parts of the machine.",
+              "kind": "process",
+              "category": "passives",
+              "era": "1982-1984",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Potentiometer"
+              ],
+              "confidence": "high",
+              "note": "The C64 does not use a ganged pair: its two sliders are physically separate parts driving unrelated signals. Ganging was standard on stereo audio controls of the period, not on a home computer.",
+              "inputs": [
+                "metal.steel.sheet",
+                "chem.polyamide.nylon-66"
+              ],
+              "children": [
+                {
+                  "id": "c64.switches.level-sliders.section.shaft",
+                  "name": "Common wiper shaft",
+                  "description": "A drawn steel shaft pressed through the moulded wiper carriers, so all the potentiometer sections move together. Drawing the shaft from steel rather than moulding it in plastic is what keeps the alignment over millions of slider cycles.",
+                  "kind": "part",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.steel.sheet"
+                  ],
+                  "note": "Not established: drawn steel shaft pressed through the moulded wiper carriers joining all sections, and alignment held over millions of slider cycles by using drawn steel rather than moulded plastic."
+                },
+                {
+                  "id": "c64.switches.level-sliders.section.bushing",
+                  "name": "Self-lubricating bushing",
+                  "description": "A moulded nylon or PTFE-impregnated bushing in the chassis that the shaft runs in. Dry, it is what makes a slider pot feel smooth rather than gritty.",
+                  "kind": "part",
+                  "category": "passives",
+                  "era": "1982-1984",
+                  "confidence": "medium",
+                  "inputs": [
+                    "chem.polyamide.nylon-66"
+                  ],
+                  "children": [
+                    {
+                      "id": "c64.switches.level-sliders.section.bushing.ptfe",
+                      "name": "PTFE-impregnated bushing",
+                      "description": "A nylon or bronze-impregnated bushing with a PTFE (Teflon) lubricant. PTFE is made by polymerising tetrafluoroethylene, whose monomer is made from fluorspar via hydrofluoric acid and chloroform.",
+                      "kind": "material",
+                      "category": "plastics",
+                      "era": "1982-1984",
+                      "confidence": "medium",
+                      "note": "PTFE is polymerised from tetrafluoroethylene, whose monomer is made from fluorspar via hydrofluoric acid and chloroform. Fluorspar is metal.fluorspar.",
+                      "inputs": [
+                        "metal.fluorspar"
+                      ]
+                    }
+                  ],
+                  "note": "Not established: moulded nylon versus PTFE-impregnated bushing in this chassis, and dry running as what makes the slider feel smooth rather than gritty. Which equipment's sliders this describes is also not established."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

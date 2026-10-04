@@ -21,6 +21,13 @@ it?", it is a note (rule 2).
 
 ## 1. `children` versus `from`
 
+> **Superseded in draft by `docs/RELATIONS.md`.** That document proposes ten
+> named relations in place of these two, because §1a below only fixes the
+> *symptom* (cross-cutting services) while leaving the underlying problem: one
+> relation carrying five meanings, and ingredient edges split arbitrarily
+> between `children` and `from`. Until that proposal is accepted this section
+> still stands as the standard.
+
 The two relations are different and are routinely confused.
 
 | relation | means | example |

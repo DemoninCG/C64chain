@@ -1,0 +1,2457 @@
+{
+  "$comment": "Split out of 60-metals.json on 2026-10-04 (RELATIONS.md section 9, wave 0.7) so one agent can own one file. Balance: 108 judgement edges across 6 subtrees. The `metal` root in 60-metals.json references these by id.",
+  "subsystem": "metals",
+  "roots": [
+    {
+      "id": "metal.steel",
+      "name": "Steel: sheet, stainless, tin plate, tool steel",
+      "description": "Steel is the machine's frame, its shields, its fasteners and its tooling, and in mass it dominates everything else in the C64. The route is: iron ore plus coke plus limestone into a blast furnace for hot metal; hot metal plus oxygen plus scrap into a steelmaking vessel; steel through a continuous caster into a slab; slab through a hot mill and a cold mill into sheet. Then three specialties matter for this tree: grain-oriented electrical steel for the power supply transformer, stainless for the jack and the shields, and hardened tool steel for the injection moulding dies and the extrusion dies.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "inputs": [
+        "metal.iron.hot-metal",
+        "metal.coke",
+        "metal.limestone",
+        "facility.gases.oxygen"
+      ],
+      "facts": [
+        {
+          "label": "1982 routes",
+          "value": "BOF was ~70% of world steel; open hearth was in steep decline, in the US open hearth output fell from ~50% in 1970 to near zero by the mid-1980s"
+        },
+        {
+          "label": "Crude steel 1982",
+          "value": "roughly 650-700 Mt worldwide"
+        },
+        {
+          "label": "Yield",
+          "value": "order 1.4-1.6 t of hot metal and 0.2-0.4 t of scrap per tonne of steel"
+        },
+        {
+          "label": "Scrap",
+          "value": "~30% of US steelmaking was electric arc furnace scrap-based by 1982; world-wide about 20%"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Steelmaking",
+        "https://en.wikipedia.org/wiki/Blast_furnace"
+      ],
+      "children": [
+        {
+          "id": "metal.iron.hot-metal",
+          "name": "Blast furnace hot metal (4.3% C)",
+          "description": "A 25-30 m tall, 8-11 m wide stack, charged at the top with sinter, pellets, lump ore, coke and limestone, and blown at the bottom through 3-4 tuyeres with 1000-1300 C blast at a pressure of 2-4 bar. The iron oxide is reduced in stages on the way down - hematite to magnetite at 400-600 C, magnetite to wüstite at 700-900 C, wüstite to iron below 1000 C - and the carbon goes out as CO. The iron arrives at the hearth as a liquid at about 1450-1550 C, containing 3.5-4.5% carbon, 0.3-1% silicon, 0.1-0.2% manganese, 0.05-0.1% phosphorus and about 0.5% sulphur, and it is tapped every 4-6 hours. The slag floats on top and is tapped separately. A 1982 furnace made 5,000-15,000 t of hot metal a day on 3,000-4,500 m3 of volume and consumed about 400,000 m3 of blast a minute.",
+          "kind": "material",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "inputs": [
+            "metal.iron.burden",
+            "metal.coke",
+            "metal.limestone"
+          ],
+          "facts": [
+            {
+              "label": "Hot metal temperature",
+              "value": "1450-1550 C at the tap"
+            },
+            {
+              "label": "Hot metal analysis",
+              "value": "C 3.5-4.5%, Si 0.3-1.0%, Mn 0.1-0.2%, P 0.05-0.1%, S ~0.05-0.1%"
+            },
+            {
+              "label": "Slag",
+              "value": "CaO-SiO2-Al2O3, 30-35% by mass, tapped at ~1500 C"
+            },
+            {
+              "label": "Gas",
+              "value": "top gas ~20-25% CO, 20-25% CO2, 15-20% H2, 20-30% N2, at 200-400 C, ~6 MJ/Nm3"
+            },
+            {
+              "label": "Output",
+              "value": "5,000-15,000 t/day of hot metal"
+            },
+            {
+              "label": "Blast",
+              "value": "1000-1300 C, 2-4 bar, ~4000-6000 Nm3/min"
+            },
+            {
+              "label": "Coke rate",
+              "value": "0.3-0.5 t of coke per tonne of hot metal"
+            },
+            {
+              "label": "Tuyere zone",
+              "value": "the only place a furnace can fail catastrophically; a tuyere burn-through means 500 t of hot metal on the floor"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Blast_furnace"
+          ],
+          "note": "The blast furnace has changed very little in the last fifty years: the great technical changes were the pellet plant and the oxygen enrichment of the blast, both of which were complete before 1982.",
+          "children": [
+            "metal.iron.burden",
+            {
+              "id": "metal.iron.burden-shaft",
+              "name": "The furnace stack, throat and bustle pipe",
+              "description": "The 20-30 m stack is lined with 1,000-2,000 mm of refractory and carries the burden down through a rotating throat seal into a stock column. The burden rests on a 'ledge' in the wall where the gas changes from upward to horizontal flow - the place every blast furnace operator watches, because if the burden descends too fast the gas gets through and the furnace races. At the bottom, the bustle pipe wraps the furnace and delivers the blast through the tuyeres, with the hot blast stoves - Cowper stoves, 8-12 per furnace, each 8-12 m tall - heating the air to 1000-1300 C on the gas from the previous cycle. A 1982 furnace is a machine about 25 m tall and 9 m wide with a 3,500 m3 working volume, and it holds about 100 tonnes of burden in flight at any moment.",
+              "kind": "site",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "high",
+              "facts": [
+                {
+                  "label": "Height",
+                  "value": "25-30 m to the top of the stack"
+                },
+                {
+                  "label": "Working volume",
+                  "value": "2,500-4,500 m3"
+                },
+                {
+                  "label": "Hot blast stoves",
+                  "value": "8-12 Cowper stoves per furnace, 1000-1300 C"
+                },
+                {
+                  "label": "Refractory",
+                  "value": "carbon-impregnated brick in the hearth and bosh; the hearth stave cooling is the critical maintenance"
+                }
+              ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Blast_furnace"
+              ],
+              "children": [
+                {
+                  "id": "metal.iron.copper-cooler",
+                  "name": "Copper stave hearth cooling",
+                  "description": "The stave coolers that protect the hearth from 1500 C molten iron are made of copper or copper alloy with a water passage cast into them, because copper conducts heat far better than cast iron. They are a copper industry product, and they are one of the more elegant cross-links in this tree: the blast furnace cannot survive without a copper casting technology. On a modern furnace the stave is cast as a composite with a cast-iron backing and a copper water-cooled front, and about 400-900 staves are fitted.",
+                  "kind": "part",
+                  "category": "metals",
+                  "era": "1982",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.copper.cathode"
+                  ],
+                  "facts": [
+                    {
+                      "label": "Material",
+                      "value": "copper or copper-iron composite with an internal cooling waterway"
+                    },
+                    {
+                      "label": "Count",
+                      "value": "400-900 staves per furnace"
+                    },
+                    {
+                      "label": "Service life",
+                      "value": "years to decades; they fail by fatigue at the waterway"
+                    }
+                  ],
+                  "note": "Not established: the 400-900 staves per furnace, the cast-iron-backed composite construction, and failure by fatigue at the waterway. The blast furnace reference confirms water-cooled copper jackets are used in lead blast furnace walls, which is a different vessel from an iron furnace hearth."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "metal.steel.bof",
+          "name": "Basic oxygen furnace steelmaking",
+          "description": "Hot metal is charged into a 40-60 t vessel - a pear-shaped converter with a refractory lining - together with about 20-30% scrap, and then a lance lowered into the bath on a boom blows 99.5% oxygen at 40,000-80,000 Nm3/h for 15-25 minutes. Three things happen at once: the carbon burns, the silicon and phosphorus oxidise, and the carbon monoxide boils the bath. The phosphorus removal is the reason the process is called basic: the lining is doloma, calcined dolomite, and the phosphorus ends up as calcium phosphate in the slag, which is why BOF slag is a genuine phosphorus fertiliser. The chemistry is violent and self-accelerating - the bath heats itself to about 1600 C from the oxidation reactions alone, so no fuel is added at all.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "inputs": [
+            "metal.iron.hot-metal",
+            "scrap-steel",
+            "oxygen",
+            "lime",
+            "doloma"
+          ],
+          "facts": [
+            {
+              "label": "Vessel",
+              "value": "40-60 t (up to 250 t by the late 1980s)"
+            },
+            {
+              "label": "Oxygen",
+              "value": "40,000-80,000 Nm3/h through a submerged lance, 15-25 min"
+            },
+            {
+              "label": "Temperature",
+              "value": "1580-1650 C; self-heating, no fuel"
+            },
+            {
+              "label": "Scrap",
+              "value": "15-30% of the charge"
+            },
+            {
+              "label": "Lime",
+              "value": "50-90 kg per tonne of steel, for the slag basicity"
+            },
+            {
+              "label": "Carbon",
+              "value": "hot metal at 4.3% down to 0.05-0.1% or lower"
+            },
+            {
+              "label": "Slag",
+              "value": "CaO-FeO-SiO2, basicity 2.5-3.5, 100-150 kg per tonne of steel"
+            },
+            {
+              "label": "Yield",
+              "value": "80-90% on a good heat"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Basic_oxygen_furnace"
+          ],
+          "note": "In 1982 the BOF was around 70% of world steel. The open hearth, which needed fuel and hours and gave worse chemistry, was disappearing: US open hearth steelmaking had essentially ended by the mid-1980s. The open hearth was still significant in India, Japan and parts of Europe.",
+          "children": []
+        },
+        {
+          "id": "metal.steel.open-hearth",
+          "name": "Open hearth furnace steelmaking, in decline",
+          "description": "A 200-500 t rectangular basin of refractory with a hearth at 1300-1400 C, in which pig iron and scrap were melted while fuel gas or oil was burned above them and air was blown across the surface. It was dominant in 1920-1960 and it took 6-10 hours for a heat, produced a lot of nitrogen (so it could not easily make low-carbon steel) and consumed a lot of fuel. In 1982 it was a historical footnote in most of the world, still running in India, in Japan at a few works, and in a handful of Eastern European plants. It is included because it is the process the industry left, and because the heat-transfer engineering of the open hearth was the same furnace that the BOF was designed to eliminate.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "facts": [
+            {
+              "label": "Capacity",
+              "value": "200-500 t per furnace"
+            },
+            {
+              "label": "Heat time",
+              "value": "6-10 hours per heat"
+            },
+            {
+              "label": "Fuel",
+              "value": "coke oven gas, producer gas or fuel oil"
+            },
+            {
+              "label": "By 1982",
+              "value": "gone from North America and Europe, still present in India, Japan and Eastern Europe"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Open_hearth_furnace"
+          ],
+          "inputs": [
+            "metal.iron.hot-metal"
+          ]
+        },
+        {
+          "id": "metal.steel.eaf",
+          "name": "Electric arc furnace on scrap",
+          "description": "The other route, and the one that was growing fastest in the 1980s. Three carbon electrodes are lowered into a 30-100 t shell furnace and an arc struck, melting scrap with 600-1,500 A at 30-50 V - a physically brutal heat transfer that lets a small furnace melt steel quickly. In 1982 the units were mostly the smaller, older 'three-phase' EAFs of 30-50 t; the 100 t+ DC furnace that transformed the industry came at the end of the decade. The EAF makes about 20% of US steel and rather less of world steel, and it is the route that makes the recycling loop of car scrap back into new sheet possible.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "inputs": [
+            "metal.steel.sheet",
+            "metal.carbon-electrode",
+            "metal.lime"
+          ],
+          "facts": [
+            {
+              "label": "Capacity",
+              "value": "30-100 t; most 1982 units were 30-50 t three-phase"
+            },
+            {
+              "label": "Arc",
+              "value": "600-1,500 A per electrode at 30-50 V, ~30-60 MW"
+            },
+            {
+              "label": "Charge",
+              "value": "~90% scrap, 10% direct reduced iron or pig iron"
+            },
+            {
+              "label": "Oxidation",
+              "value": "oxygen lances added later in the heat to burn off C, P and S"
+            },
+            {
+              "label": "US share 1982",
+              "value": "roughly 20-25% of US raw steel"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Electric_arc_furnace"
+          ],
+          "children": [
+            {
+              "id": "metal.carbon-electrode",
+              "name": "Carbon electrodes from needle coke and pitch",
+              "description": "The EAF, the submerged arc furnaces of the ferroalloy industries, the aluminium pot anodes and the large carbon blocks of the blast furnace all consume the same two materials: calcined petroleum coke or needle coke, and coal-tar pitch as a binder. An electrode is milled green - coke, pitch and sometimes a sulphur or metal additive - extruded, and baked at 800-1200 C in a graphitising furnace to above 2500 C. The 1980s problem was exactly the nickel crisis showing up here: the EAF plants had no electrodes of their own in Japan, and when the 1979-80 nickel spike also hit electrode prices, Japanese steelmakers found that making steel required nickel, in the electrodes. UHP electrodes and the shift to larger electrode sizes was the industry response.",
+              "kind": "material",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "high",
+              "inputs": [
+                "metal.coke",
+                "metal.soft-pitch"
+              ],
+              "facts": [
+                {
+                  "label": "Diameter",
+                  "value": "75-700 mm; 1982 EAF electrodes mostly 175-350 mm"
+                },
+                {
+                  "label": "Consumption",
+                  "value": "1.5-2.5 kg of electrodes per tonne of EAF steel"
+                },
+                {
+                  "label": "Baking",
+                  "value": "800-1200 C for carbon electrodes; 2500-3000 C for graphite"
+                },
+                {
+                  "label": "Binder",
+                  "value": "20-30% coal-tar pitch"
+                }
+              ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Graphite"
+              ],
+              "note": "The electrode/nickel cross-dependency of the early 1980s is well documented in the steel industry literature; medium-high confidence."
+            }
+          ]
+        },
+        {
+          "id": "metal.steel.vessel-choice",
+          "name": "Choosing the steelmaking vessel in 1982",
+          "description": "Three vessels made the world's steel in 1982 and only one of them was winning. A short parent node so the basic oxygen furnace, the dying open hearth and the scrap-based electric arc furnace sit side by side instead of inside one another.",
+          "kind": "note",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "low",
+          "children": [
+            {
+              "id": "metal.steel.ladle",
+              "name": "Ladle treatment, degassing and the steel's last chemistry",
+              "description": "In 1982 the most important development in steelmaking was not the furnace but the ladle. A 1980s steel ladle is a 100-200 t vessel on a rotating turret, and it is where three things happen in sequence. Secondary metallurgy: argon is stirred in to homogenise the temperature and composition and to flush hydrogen and nitrogen. Desulphurisation: calcium or a calcium-bearing reagent is added and stirred, taking the sulphur out as calcium sulphide in a basic slag. Deoxidation and inclusion control: aluminium is added as the last deoxidiser, and in a bottom-pour ladle the whole ladle is streamed through a nozzle to collect the inclusions in the nozzle. This is the technology that made clean, low-inclusion, low-carbon steel a reproducible product, and it is why modern sheet steel for tinplate and for deep drawing exists at all.",
+              "kind": "process",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "inputs": [
+                "metal.steel.bof",
+                "metal.aluminum.ingot",
+                "chem.fab-chemicals.process-gases.argon",
+                "metal.ferrosilicon"
+              ],
+              "facts": [
+                {
+                  "label": "Ladle",
+                  "value": "100-200 t on a rotating turret"
+                },
+                {
+                  "label": "Stirring",
+                  "value": "argon at 0.1-0.5 Nm3/min/t"
+                },
+                {
+                  "label": "Deoxidation",
+                  "value": "0.5-2 kg of aluminium per tonne"
+                },
+                {
+                  "label": "Desulphurisation",
+                  "value": "CaO-Flux or Ca-Si, to below 0.005% S in a few minutes"
+                },
+                {
+                  "label": "Carbon",
+                  "value": "0.03-0.08% for deep drawing and for tinplate base"
+                }
+              ],
+              "note": "Secondary metallurgy was genuinely new in the 1980s. The mechanisms are well established; the exact reagent dosages at any specific plant are not. Medium confidence.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Steelmaking"
+              ]
+            }
+          ],
+          "note": "Not established: that three vessels made the world's steel in 1982 and that only one was winning. The steelmaking reference says basic oxygen and the electric arc furnace are now the two major commercial processes and that oxygen steelmaking has become more popular over time, but gives no 1982 shares and does not date the end of the open hearth."
+        },
+        {
+          "id": "metal.steel.caster",
+          "name": "Continuous-cast the steel slab",
+          "description": "Steel is not poured into moulds one heat at a time; it is cast continuously. Liquid steel at 1600 C is fed from a tundish through a nozzle into a water-cooled copper mould 1-2.5 m long, where the shell freezes in seconds. The strand then passes through a series of spray headers that remove the rest of the heat, and finally through a torch-cut or a flying shear, and is coiled. The whole point is yield: continuous casting replaced ingot casting in the 1980s across the industry, and a modern continuous caster turns out better than 95% of its steel while ingot casting threw away the 10-20% of each ingot that was the crop - the ends, the segregation, and the shrinkage void. The C64's steel exists because of this machine.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "facts": [
+            {
+              "label": "Mould",
+              "value": "1-2.5 m long, copper or copper alloy, water-cooled, 900-1350 mm wide for slab"
+            },
+            {
+              "label": "Secondary cooling",
+              "value": "mist spray along the roller table, taking the strand from about 1000 C to 300-400 C"
+            },
+            {
+              "label": "Cutting",
+              "value": "torch cut or flying shear, into 10-30 t slabs"
+            },
+            {
+              "label": "Yield",
+              "value": ">95% versus 80-90% for ingot casting"
+            },
+            {
+              "label": "Adoption",
+              "value": "essentially universal in the developed world by the mid-1980s"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Continuous_casting"
+          ],
+          "note": "The adoption of continuous casting between 1970 and 1985 is one of the genuine revolutions in steelmaking and it is the direct reason tinplate could be made from 0.15-0.25 mm base steel at all.",
+          "children": [
+            {
+              "id": "metal.steel.mould-wall",
+              "name": "The copper mould wall of the continuous caster",
+              "description": "The copper alloy plate - phosphor bronze in most designs - that does the single hardest job in the whole of steelmaking, withdrawing heat from 1600 C steel at a rate that makes a millimetre of metal freeze in a second, and doing it hundreds of thousands of times. The plates are thin, 5-30 mm, and are cooled internally by high-pressure water, and they are plated and re-ground as they wear. Their thermal-fatigue cracking is the plant's central maintenance problem, and every crack means a slab defect that a tinplate maker will find on the inspection line.",
+              "kind": "part",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "inputs": [
+                "metal.copper.cathode"
+              ],
+              "facts": [
+                {
+                  "label": "Material",
+                  "value": "phosphor bronze or copper-zirconium, 5-30 mm"
+                },
+                {
+                  "label": "Cooling",
+                  "value": "high-pressure water at 30-50 bar inside the plate"
+                },
+                {
+                  "label": "Failure mode",
+                  "value": "thermal-fatigue cracks, marked with dye and then re-machined"
+                }
+              ],
+              "note": "Mould plate alloy and thickness vary; medium confidence on the specific figures."
+            }
+          ],
+          "inputs": [
+            "metal.steel.bof",
+            "metal.steel.eaf"
+          ]
+        },
+        {
+          "id": "metal.steel.sheet",
+          "name": "Hot and cold rolled sheet steel",
+          "description": "The slab goes to a reversing hot rolling mill at 1150-1250 C - first through a roughing stand, then a rail mill or a continuous mill - and comes out as strip 2-12 mm wide. Then the cold mill, a Sendimir or a multi-high cluster mill with a Sendzimir Z-High line upgrade, takes it to 0.2-0.5 mm, with the rolling oil and the annealing line in between. Annealing in a hydrogen or hydrogen-nitrogen atmosphere gives the recrystallised, equiaxed grain structure that makes a stamping possible. Cold-rolled sheet at 0.3-1 mm is the C64's case panel, the shield cans, the brackets and the heat-spreader, and the tinplate branch below is the same mill with a different end.",
+          "kind": "material",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "inputs": [
+            "metal.steel.caster",
+            "metal.rolling-oil",
+            "metal.die-steel"
+          ],
+          "facts": [
+            {
+              "label": "Hot rolling",
+              "value": "1150-1250 C, scale is descaled with a high-pressure water jet"
+            },
+            {
+              "label": "Cold rolling",
+              "value": "to 0.2-0.5 mm, with an anneal between passes"
+            },
+            {
+              "label": "Tensile of cold-rolled low carbon steel",
+              "value": "250-400 MPa"
+            },
+            {
+              "label": "Surface finish",
+              "value": "a bright rolled finish; oiled or pickled"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Cold_rolling"
+          ],
+          "children": [
+            {
+              "id": "metal.rolling-oil",
+              "name": "Steel rolling oil: emulsion and hydraulic oil",
+              "description": "Hot rolling of steel uses water emulsion; cold rolling uses a neat oil or a water-in-oil emulsion, chemically similar to the aluminium rolling lubricant but with a much higher base oil viscosity and a lot of boundary additives. So the C64's steel mill and its aluminium mill are the same kind of lubricant plant, and both are quietly downstream of crude oil.",
+              "kind": "material",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "inputs": [
+                "chem.petroleum"
+              ],
+              "facts": [
+                {
+                  "label": "Hot rolling",
+                  "value": "water emulsion, 0.5-5% oil"
+                },
+                {
+                  "label": "Cold rolling",
+                  "value": "neat mineral oil or water-in-oil emulsion, 1-10% emulsion concentration"
+                }
+              ],
+              "note": "Rolling oil formulations are proprietary; medium confidence on the ranges.",
+              "children": []
+            },
+            {
+              "id": "metal.steel.heat-treatment",
+              "name": "Anneal and temper the sheet to its specification",
+              "description": "Cold-rolled low-carbon steel is hard and full of internal stress, so it is annealed in a continuous line - a few seconds to a few minutes at 700-850 C in a hydrogen-nitrogen atmosphere - to recrystallise it into soft equiaxed grain, and then, if it is going to be drawn rather than stamped, given a temper mill pass to raise the yield point by 50-150 MPa. The temper mill is a roll that puts in a deliberate rolling reduction that the temper roll locks in as a dislocation structure the anneal will not remove. The 1982 temper mill was a three-high Sendimir with a work-roll diameter of about 300 mm, and it is the reason a can and a deep-drawing panel are different products from the same mill.",
+              "kind": "process",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "inputs": [
+                "metal.steel.sheet"
+              ],
+              "facts": [
+                {
+                  "label": "Annealing",
+                  "value": "700-850 C in hydrogen-nitrogen, seconds to minutes"
+                },
+                {
+                  "label": "Temper mill",
+                  "value": "a deliberate 0.1-1.5% reduction, raising the yield point by 50-150 MPa"
+                },
+                {
+                  "label": "Work roll",
+                  "value": "hardened tool steel, about 300 mm, in a three-high Sendimir"
+                }
+              ],
+              "note": "Medium confidence; the temper-mill principle is standard, the specific 1982 mill geometry varies."
+            },
+            {
+              "id": "metal.steel.surface",
+              "name": "Pickle, oil and specify the surface",
+              "description": "Cold-rolled sheet is covered in mill scale and must be pickled in hydrochloric or sulfuric acid to remove it, or the next operation cannot stick to it. Then it is oiled or lacquered so it does not rust in storage. On the 1980s tinplate line the acid was hydrochloric, which put a genuinely dangerous hydrogen into the atmosphere, and the 1982 line ran its pickling tanks under a hood with an acid fume scrubber using sodium carbonate - which is another place the sodium chain of this file enters. The surface specification is a contract: roughness, cleanliness, and oil film weight in grams per square metre.",
+              "kind": "process",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "inputs": [
+                "metal.steel.sheet",
+                "metal.hydrochloric-acid",
+                "metal.soda-ash"
+              ],
+              "facts": [
+                {
+                  "label": "Pickle",
+                  "value": "hydrochloric or sulfuric acid, 70-90 C"
+                },
+                {
+                  "label": "Scrub",
+                  "value": "the acid fume is neutralised with sodium carbonate"
+                },
+                {
+                  "label": "Oil film",
+                  "value": "specified in g/m2; on tinplate, 0.05-0.15"
+                }
+              ],
+              "note": "Medium confidence on the oil film weights; they are line-specific."
+            }
+          ]
+        },
+        {
+          "id": "metal.tinplate",
+          "name": "Tinplate: the tin-coated steel sheet",
+          "description": "Tinplate is 0.15-0.3 mm of low-carbon steel with 1.1-11.2 g/m2 of tin on both sides, made on a continuous electrolytic line at 4-8 m/s. The strip is degreased and pickled in hydrochloric or sulfuric acid, rinsed, then tinned in a stannous sulphate bath with a fluoroborate additive, rinsed, and either given a food-can passivation in chromic acid or - in the electronics and tinplate trade - an electrolytic passivation in a chromate or tin-oxide bath. A C64 uses a few square metres of tinplate a year at most, in switch bodies and shields, but tinplate is worth a node because it is the one place where tin and steel and electrochemistry all meet, and because the chromate passivation is the same chemistry as the zinc chromate passivation in the plating branch.",
+          "kind": "material",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "inputs": [
+            "metal.steel.sheet",
+            "metal.tin.plating"
+          ],
+          "facts": [
+            {
+              "label": "Base steel",
+              "value": "0.15-0.3 mm, low carbon, low phosphorus"
+            },
+            {
+              "label": "Tin coating",
+              "value": "1.1-11.2 g/m2 (2.8-28.2 g per 100 cm2); the food can standard is 5.6-11.2"
+            },
+            {
+              "label": "Line speed",
+              "value": "4-8 m/s"
+            },
+            {
+              "label": "Tin consumption",
+              "value": "a 1 t tin can does about 250,000-400,000 400 g cans - which is why food can dominated the tin market"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tinplate"
+          ],
+          "children": [
+            {
+              "id": "metal.tinplate.tin-pots",
+              "name": "The tinning line: greening, tinning, soaking",
+              "description": "The line has four electrolytic tanks in series - a 'greening' or pretreat tank to strip the last oxide, two or more tinning tanks with soluble tin anodes, and a 'soaking' tank to heal any bare spots. The strip runs through as a ribbon, and the tin is applied at a controlled thickness by the current and by how long the strip spends in the stannate bath. The mechanical complexity is in the handling: a 0.2 mm ribbon travelling at 6 m/s has to be threaded, cleaned and welded end to end several times a shift.",
+              "kind": "process",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "inputs": [
+                "metal.tin.ingot",
+                "metal.hydrochloric-acid"
+              ],
+              "facts": [
+                {
+                  "label": "Bath",
+                  "value": "SnSO4 with tin sulfate or fluoroboric acid additive; soluble tin anodes"
+                },
+                {
+                  "label": "Current density",
+                  "value": "10-40 A/dm2"
+                },
+                {
+                  "label": "Speed",
+                  "value": "4-8 m/s"
+                }
+              ],
+              "note": "Electrolytic tinning line parameters are well documented; medium confidence on the exact ranges."
+            }
+          ]
+        },
+        "metal.electrical-steel",
+        "metal.stainless.304",
+        "metal.die-steel"
+      ]
+    },
+    {
+      "id": "metal.solder",
+      "name": "63/37 Sn-Pb solder: wire, bar, paste",
+      "description": "The alloy that makes electronics manufacturable. 63% tin, 37% lead is a true eutectic, so it melts and freezes at one temperature, 183 C, with no mushy interval - which means a joint goes from solid to liquid in milliseconds and the reflow time window can be measured in seconds. That property is why a decade of copper thicknesses and lead-free anxiety has not displaced it from the bench. A C64 has roughly 3,500 through-hole joints; at about 30 mg of solder per joint that is around 100 g of alloy per machine, in wire fed from spools and in a few kilos of bar in the wave-solder tank.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "inputs": [
+        "metal.tin.ingot",
+        "metal.lead.ingot",
+        "chem.rosin",
+        "metal.solder.antimony"
+      ],
+      "facts": [
+        {
+          "label": "Composition",
+          "value": "63% Sn, 37% Pb by weight"
+        },
+        {
+          "label": "Liquidus and solidus",
+          "value": "183 C exactly - a eutectic"
+        },
+        {
+          "label": "Tensile strength",
+          "value": "30-45 kg/mm2 annealed"
+        },
+        {
+          "label": "Forms",
+          "value": "solid-core wire 0.3-1.0 mm, cast bar, and paste"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Solder",
+        "https://arraysolders.com/wp-content/uploads/2023/06/TDS-63sn37pb.pdf"
+      ],
+      "children": [
+        {
+          "id": "metal.solder.alloy-making",
+          "name": "Casting the 63/37 bar",
+          "description": "The alloy is made in a handful of ways, all of them embarrassingly simple. The best is the cored wire method: rods of high-purity tin are cast inside a steel tube pre-filled with molten lead at exactly 37%, so the tube's own wall meters the lead; the tube and the core are then rolled and drawn out to wire in one operation, and the core forms down the middle as the flux. This is how most electronics solder wire is still made. The alternative, and what the solder manufacturer would do for its own bar stock, is simply to melt the two ingots together in a grease pot with a little antimony or phosphorus and pour into ingot moulds.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "inputs": [
+            "metal.tin.ingot",
+            "metal.lead.ingot"
+          ],
+          "facts": [
+            {
+              "label": "Composition control",
+              "value": "to +/-0.5%; the liquidus is steep enough that 2% off composition moves the melting point by 10-20 C"
+            },
+            {
+              "label": "Antimony",
+              "value": "0.1-0.5% Sb added to raise fluidity and prevent the solder sticking to the pot"
+            },
+            {
+              "label": "Oxide control",
+              "value": "a covering flux of resin or glycerine prevents tin oxide dross"
+            },
+            {
+              "label": "Forms",
+              "value": "1-10 kg bars, and 'sticks' or 'pigs'"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Solder"
+          ],
+          "children": [
+            {
+              "id": "metal.solder.antimony",
+              "name": "Antimony addition to stiffen the alloy",
+              "description": "Pure Sn-Pb solder creeps. A 1982 instrument or a through-hole joint under a hot component would push itself out of the joint over a few years, and the classic failure was a capacitor that walked out of its pads. Two tenths of a percent of antimony, as an Sb-Sn hardener or as a lead-antimony master alloy, makes the alloy's creep resistance about an order of magnitude better with only a small rise in melting point. So the solder in the C64 very probably contained 0.1-0.5% antimony, and none of it is on the bill of materials.",
+              "kind": "material",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "facts": [
+                {
+                  "label": "Level",
+                  "value": "0.1-0.5% Sb for general electronics work"
+                },
+                {
+                  "label": "Effect",
+                  "value": "much better creep resistance; melting point up a few degrees"
+                },
+                {
+                  "label": "Cost",
+                  "value": "below the fluid point, so 60/40 and 63/37 differed more by creep than by melt"
+                }
+              ],
+              "note": "Antimony level is a supplier specification, not something visible on a C64; 0.1-0.5% is the normal commercial range for electronics-grade Sn-Pb.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Solder"
+              ]
+            },
+            {
+              "id": "metal.solder.cored-wire",
+              "name": "The cored-wire manufacturing method",
+              "description": "The standard way to make electronics solder wire, and the reason the alloy composition is so consistent. A steel tube with a wall thickness calculated for 37% lead by volume is filled with molten high-purity tin - actually with the exact alloy, but the wall does the metering - and the tube is cold-drawn and then drawn to wire in the same multiwire machine the copper industry uses. The core forms down the middle as the tube collapses. The result is a wire in which the flux core is in the middle of the metal rather than smeared along it, which is what stops the flux from being wiped off during handling. The alternative - extruding a bar of flux and then jacketing it in molten alloy - gives a worse wire and was being displaced by the cored method through the 1980s.",
+              "kind": "process",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "inputs": [
+                "metal.tin.ingot",
+                "metal.lead.ingot",
+                "metal.rosin.activator"
+              ],
+              "facts": [
+                {
+                  "label": "Metering",
+                  "value": "a steel tube wall of controlled thickness meters the lead, or the melt ratio is set in the fill"
+                },
+                {
+                  "label": "Drawing",
+                  "value": "multiwire drawing, as for copper"
+                },
+                {
+                  "label": "Flux fraction",
+                  "value": "10-25% of the diameter by volume"
+                }
+              ],
+              "note": "Medium confidence; the cored-wire method is well established in the solder industry literature.",
+              "children": [
+                {
+                  "id": "metal.solder.flux-core-fill",
+                  "name": "Fill the flux core with activated rosin",
+                  "description": "The flux core is a paste, not a powder: rosin dissolved in a solvent - turpentine, or in the 1980s increasingly a mild-rosin paste - with the zinc chloride activator, made viscous enough to hold a column. It is injected into the tube with a hydraulic filler in a batch, and the tube's ends are crimped and drawn closed. The viscosity and the shrinkage matter, because the core has to survive being drawn to 0.5 mm without either splitting out of the wire or shrinking away from the axis. So the flux chemistry in a C64's solder wire is a colloid and a rheology problem as much as it is a chemical one.",
+                  "kind": "process",
+                  "category": "metals",
+                  "era": "1982",
+                  "confidence": "low",
+                  "inputs": [
+                    "chem.rosin",
+                    "metal.rosin.activator"
+                  ],
+                  "facts": [
+                    {
+                      "label": "Vehicle",
+                      "value": "rosin dissolved in a terpene solvent, or a mild rosin paste"
+                    },
+                    {
+                      "label": "Filler",
+                      "value": "hydraulic injection, batch, into a drawn steel tube"
+                    }
+                  ],
+                  "note": "Low confidence; the cored-wire fill process is proprietary; this is the general shape of it, not a specific machine."
+                }
+              ]
+            }
+          ]
+        },
+        "metal.solder.wire",
+        {
+          "id": "metal.solder.wave-solder",
+          "name": "Wave soldering with the alloy pot",
+          "description": "The board assembly method for a 1982 C64. The bottom of the board is swept across a standing wave of molten 63/37 at 250-280 C, the excess drains through a hot-air knife, and the whole board lives in a hood full of the vapour of flux decomposition products. A few kilograms of solder in the pot are held at a temperature just above the 183 C liquidus, and the pot is kept clean with a rotating skimmer. Wave soldering is why solder consumption in electronics manufacturing was measured in kilograms per day per line rather than grams per board, and why the flux vapour was a genuine occupational exposure that the electronics industry was only beginning to quantify in the late 1980s.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "inputs": [
+            "metal.solder.wire",
+            "metal.solder.pot"
+          ],
+          "facts": [
+            {
+              "label": "Pot temperature",
+              "value": "250-280 C"
+            },
+            {
+              "label": "Wave height",
+              "value": "3-8 mm"
+            },
+            {
+              "label": "Flux",
+              "value": "pre-fluxed board via a foam or spray fluxer, then preheated at 100-150 C"
+            },
+            {
+              "label": "Dwell",
+              "value": "2-5 s in the wave"
+            },
+            {
+              "label": "Cycle time",
+              "value": "3-8 s per board; a 1982 line ran a few hundred boards an hour"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Soldering"
+          ],
+          "note": "The 1982 wave-solder process for a large through-hole board is well documented; wave time and pot temperature ranges are typical rather than from a specific manual.",
+          "children": [
+            {
+              "id": "metal.solder.joint-microscopy",
+              "name": "Intermetallics and lead leaching in the solder joint",
+              "description": "A good 1982 through-hole joint is a shallow concave meniscus filling the pad hole about 70-90%, with a fillet at the lead. The metallurgical reason it works is the intermetallic: copper and tin react to form Cu6Sn5 and Cu3Sn, and the joint is a composite of unreacted solder and intermetallic compound. On the PCB side the pad is tin-plated and forms a Cu-Sn intermetallic too. What nobody in 1982 was measuring was how much lead leached out of a solder joint into the copper land when the joint was at 200 C for an hour - and it is a lot, which is the mechanism behind the later 'solder fatigue' literature.",
+              "kind": "process",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "inputs": [
+                "metal.copper.cathode",
+                "metal.tin.plating"
+              ],
+              "facts": [
+                {
+                  "label": "Intermetallics",
+                  "value": "Cu6Sn5 and Cu3Sn form at the interface"
+                },
+                {
+                  "label": "Phases",
+                  "value": "Sn-rich matrix plus brittle intermetallic skeleton"
+                }
+              ],
+              "note": "The microstructural description is standard; the specific metallurgy of a Commodore board in 1982 would need the actual board. Medium confidence.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Soldering"
+              ]
+            },
+            {
+              "id": "metal.solder.wave-solder.knife",
+              "name": "The hot-air knife and the solder wave",
+              "description": "A pump throws molten solder up a nozzle to form a standing wave 3-8 mm high, and the board is dragged across it on a conveyor with fingers. As the board leaves, a 'hot-air knife' - a duct blowing 200-300 C air across the solder line - blows the excess solder off the pads and off the solder side of the board, and what runs off goes back into the pot through a trough. The whole operation is a temperature profile in space: preheat, flux activation, wave, drain, and the knife. Getting the four temperatures right - preheat, pot, board and cleaning - is the entire craft.",
+              "kind": "tool",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "inputs": [
+                "metal.solder.pot"
+              ],
+              "facts": [
+                {
+                  "label": "Preheat",
+                  "value": "100-150 C"
+                },
+                {
+                  "label": "Pot",
+                  "value": "250-280 C"
+                },
+                {
+                  "label": "Hot-air knife",
+                  "value": "200-300 C, high-velocity air"
+                },
+                {
+                  "label": "Conveyor",
+                  "value": "1.5-3 m/min for a large through-hole board"
+                }
+              ],
+              "note": "The temperature windows are standard; medium confidence on the conveyor speed range.",
+              "children": [
+                {
+                  "id": "metal.solder.preheater",
+                  "name": "Preheater, fluxer and the thermal profile",
+                  "description": "Before the wave, the board goes through a preheater - infrared lamps, a hot plate or hot air - to 100-150 C, and through a fluxer that lays a foam or sprayed layer of flux on the solder side. The reason for preheating is thermal expansion: a FR-4 board with a big hole pattern expands by a different amount in different directions, and if the solder side heats faster than the component side the board warps and the joints crack. A C64's mainboard is a large single-sided board with a lot of heat-generating parts on one side, so warp was a real yield problem. The preheater is the cheapest fix and it is a temperature-control problem.",
+                  "kind": "process",
+                  "category": "metals",
+                  "era": "1982",
+                  "confidence": "medium",
+                  "facts": [
+                    {
+                      "label": "Preheat",
+                      "value": "100-150 C for 1-2 min"
+                    },
+                    {
+                      "label": "Fluxer",
+                      "value": "foam or spray, 10-30 g of flux per board"
+                    },
+                    {
+                      "label": "Why",
+                      "value": "to control the through-thickness thermal gradient and stop the board warping"
+                    }
+                  ],
+                  "note": "Medium confidence; the temperatures are standard, the warp mechanism is well established.",
+                  "children": [
+                    {
+                      "id": "metal.solder.board-warp",
+                      "name": "Board warp, thermal stress and the epoxy",
+                      "description": "Why preheat exists at all. A single-sided 1.6 mm FR-4 board with a large hole pattern expands and contracts with a coefficient of about 14-18 x 10^-6 per K, and it is not isotropic - the copper layer and the epoxy cloth have different coefficients, and the weave gives the board different stiffness in the warp and weft directions. Warm the solder side faster than the component side and the board bows; cycle it and the board stays bowed; and on a double-sided board it can delaminate the copper from the epoxy. So the preheater is really an epoxy-handling device, and the epoxy is the resin agent's problem while the solder pot is the metals one, and they meet at the warp.",
+                      "kind": "process",
+                      "category": "metals",
+                      "era": "1982",
+                      "confidence": "medium",
+                      "facts": [
+                        {
+                          "label": "CTE of FR-4",
+                          "value": "14-18 x 10^-6 per K in-plane; anisotropic between warp and weft"
+                        },
+                        {
+                          "label": "Copper",
+                          "value": "17 x 10^-6 per K; epoxy cloth 50-70 x 10^-6"
+                        },
+                        {
+                          "label": "Effect",
+                          "value": "bow if the solder side heats faster; delamination if the gradient is severe"
+                        }
+                      ],
+                      "note": "Medium confidence on the coefficient ranges; the mechanism is textbook.",
+                      "inputs": [
+                        "metal.solder.preheater"
+                      ]
+                    }
+                  ],
+                  "inputs": [
+                    "facility.electricity",
+                    "metal.solder.wave-solder"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "metal.solder.paste",
+          "name": "Solder paste: powder in flux",
+          "description": "Solder paste is a mixture of atomised alloy powder at 60-90% by weight in a flux vehicle, and in 1982 it was the technology for surface-mount parts, which Commodore did not really use on the mainboard but which every other electronics maker in the world was. The powder particle size is controlled by the printing stencil: a 0.5 mm gap needs 20-45 um powder so the powder does not bridge the gap with two particles. Alloy powder is not made by atomising finished solder; it is made by atomising the melt and then the 63/37 particles are aged so they develop an oxide shell of a controlled thickness, so that paste sits on a pad for minutes without the paste shrinking or the surface going dull.",
+          "kind": "material",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "medium",
+          "inputs": [
+            "metal.tin.atomisation",
+            "chem.rosin"
+          ],
+          "facts": [
+            {
+              "label": "Powder fraction",
+              "value": "60-90% by weight"
+            },
+            {
+              "label": "Particle size",
+              "value": "type 2 (25-45 um) to type 4 (15-25 um) in 1982 practice"
+            },
+            {
+              "label": "Paste consistency",
+              "value": "classified by viscosity, e.g. solder paste Type 1 through 6"
+            }
+          ],
+          "note": "Paste is mostly a surface-mount story rather than a through-hole story; included because it is the other half of the solder industry in 1982 and because Commodore's own subsidiaries used it.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Solder_paste"
+          ]
+        },
+        {
+          "id": "metal.solder.lead-hazard",
+          "name": "The leaded-solder problem in the 1980s",
+          "description": "Lead in solder was the first workplace poison to arrive with electronics. It was already deeply regulated for the smelter workers - the whole lead industry is under air-monitoring and blood-lead surveillance - and by the early 1980s occupational-health attention had turned to the solder bench: solder fume is an aerosol of lead oxide particles, and the flux fumes carry it. The US OSHA lead standard covered soldering. The C64 is the emblem of this because it was sold by the million with a leaded-solder supply chain: the solder manufacturer, the wave-solder pot, the washing machines that washed the flux off, the drain water, and finally the landfill. Every one of those is a different regulatory jurisdiction and none of them was solved in 1982.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "inputs": [
+            "metal.lead.ingot"
+          ],
+          "facts": [
+            {
+              "label": "Fume mechanism",
+              "value": "PbO aerosol from the reaction of lead oxide in the flux with rosin acids"
+            },
+            {
+              "label": "Exposure limit",
+              "value": "an airborne lead limit existed in the US under the OSHA lead standard from the 1970s"
+            },
+            {
+              "label": "Later developments",
+              "value": "lead-free solder (Sn-Ag-Cu SAC305, Sn-Ag-Bi) only took commercial share after about 2000-2010, driven by RoHS"
+            }
+          ],
+          "note": "Lead-free alternatives existed as patents and laboratory melts in the 1980s-90s; nothing displaced 63/37 in commercial manufacture until the 2000s. High confidence.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Lead_poisoning",
+            "https://en.wikipedia.org/wiki/Lead-free_solder"
+          ],
+          "children": [
+            {
+              "id": "metal.solder.silver-solder-paste",
+              "name": "Silver-bearing solder and silver paste",
+              "description": "A distinct and important thing in the 1980s electronics industry, which is easy to confuse with the lead-tin eutectic: high-temperature silver solder - 62Ag/38Cu, 50Ag/50Cd, 70Ag/30Sn - melts at 600-750 C and is brazed, not soldered. Silver-tin solder melts at 217-220 C and is used where lead-free behaviour is wanted. Silver brazing is how the heat sinks and the chassis joints were made. And separately there is the silver-filled epoxy and silver-filled ink of the electronics industry: real silver powder at 60-80% by weight in an epoxy or an organic vehicle, screen-printed or stencil-printed and fired, used for die attach and for the conductive ink of the keyboard membrane. That is a genuine and separate use of silver in a C64, and it is a chemistry, not a metallurgy.",
+              "kind": "material",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "inputs": [
+                "metal.silver.ingot"
+              ],
+              "facts": [
+                {
+                  "label": "Ag-Sn solder",
+                  "value": "95.5Sn/4.5Ag or 96.5Sn/3.5Ag, melts 217-221 C"
+                },
+                {
+                  "label": "Silver brazing",
+                  "value": "Ag-Cu or Ag-Cd, 600-750 C, with a flux"
+                },
+                {
+                  "label": "Silver epoxy",
+                  "value": "60-80% Ag powder in epoxy, cured at 150-250 C"
+                },
+                {
+                  "label": "Silver ink",
+                  "value": "a fine silver flake powder in an organic vehicle, screen-printed onto the flexible membrane"
+                }
+              ],
+              "note": "The keyboard membrane of a 1982 C64 is a triple-layer flex circuit with printed conductive ink - whether that ink was silver-filled or carbon/graphite is the keyboard agent's call. Silver-filled epoxy die attach was a specialised 1980s technology used mostly in power devices and in some hybrid ICs.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Silver_brazing",
+                "https://en.wikipedia.org/wiki/Solder#Silver_solder"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "metal.solder.pot",
+          "name": "The wave-solder pot and its dross",
+          "description": "A 5-20 kg pot of 63/37 at 250-280 C with a pump and a wave-forming nozzle, plus a rotating skimmer and an oil skimmer. The surface of a working solder pot accumulates a metre of black oxide dross - tin oxide, lead oxide and flux residue - and it has to be skimmed off every shift and every night, and it is a genuine metallurgical waste stream: the dross contains most of the lead and a lot of the tin, and in 1982 the recovery options were poor. A dross reclaimer sold a few percent of the metal back and the rest went out as lead-containing waste. This is the point at which the solder chain and the lead chain close on each other.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "medium",
+          "inputs": [
+            "metal.solder.alloy-making"
+          ],
+          "facts": [
+            {
+              "label": "Pot size",
+              "value": "5-20 kg of alloy on a small line, 200 kg on a large one"
+            },
+            {
+              "label": "Dross rate",
+              "value": "order 0.2-1% of the solder used per shift, plus a oxide skim"
+            },
+            {
+              "label": "Dross composition",
+              "value": "mostly SnO2 and PbO with entrained flux; the lead is the problem"
+            }
+          ],
+          "note": "Dross recovery in 1982 was poor and the residue was a recognised waste problem; medium confidence on the rates.",
+          "children": [
+            {
+              "id": "metal.solder.dross-oxide",
+              "name": "The dross oxide film on the solder pot",
+              "description": "At 250-280 C the surface of molten Sn-Pb oxidises continuously - tin oxide forms preferentially because it has the lower oxidation potential - so the pot grows a skin of SnO2 with lead oxide and flux in it. The skimmer takes it off, but the formation is unavoidable, which is why wave-solder lines had a person whose whole job was pot maintenance and why the flux was designed to keep the oxide mobile and floatable rather than letting it crust over.",
+              "kind": "process",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "facts": [
+                {
+                  "label": "Oxide",
+                  "value": "SnO2 with PbO, on the pot surface at 250-280 C"
+                },
+                {
+                  "label": "Control",
+                  "value": "a cover flux, a rotating skimmer, and frequent skimming"
+                }
+              ],
+              "note": "Standard soldering practice; medium confidence on the quantitative rates.",
+              "inputs": [
+                "metal.solder.pot"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "metal.solder.cleaning",
+          "name": "Cleaning the flux residue off the board",
+          "description": "A rosin-fluxed board is covered in a sticky, slightly acidic film of flux decomposition products that will corrode the copper and will not accept a conformal coating. In 1982 it was removed in an aqueous machine - a conveyor with spray bars and drying ovens - often followed by a trichloroethane or perchloroethylene vapour degreaser. The cleaning water left the factory through the drain with the lead in it, which is the other half of the 1982 leaded-solder problem and the reason the electronics industry spent the late 1980s arguing about what to do about it.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "medium",
+          "inputs": [
+            "chem.rosin"
+          ],
+          "facts": [
+            {
+              "label": "Method",
+              "value": "aqueous wash with detergents, then trichloroethane or perchloroethylene vapour degrease"
+            },
+            {
+              "label": "Water",
+              "value": "50-200 litres per board on a heavy-duty line"
+            },
+            {
+              "label": "Waste",
+              "value": "the wash water carried lead and tin; the varnish and resin types were the difficult ones"
+            }
+          ],
+          "note": "The water consumption and the solvent choice are representative; medium confidence.",
+          "children": [
+            {
+              "id": "metal.solder.waste-water",
+              "name": "The solder wash-water waste stream",
+              "description": "A C64 assembly line's cleaning water carried dissolved lead, tin, flux residues and a lot of suspended solids. In 1982 the standard practice was dilute and discharge: a settling tank and a pH adjustment, then to the drain. The lead was almost all in the sludge, so the sludge went to a hazardous-waste landfill and the liquid went out. This is the last place the C64's lead leaves the factory, and it is the reason leaded solder became a regulatory object rather than merely an occupational one.",
+              "kind": "material",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "children": [
+                {
+                  "id": "metal.solder.waste-leachate",
+                  "name": "Lead in landfill leachate",
+                  "description": "Landfill leachate is where the lead problem stops being a factory problem. Dross and baghouse dust that could not be recycled went to a hazardous-waste landfill, and a landfill that takes metal-bearing waste generates leachate in which lead concentrations are routinely orders of magnitude above the drinking-water limit, so the liner, the leachate collection sump and the treatment plant are the last line of defence. By the early 1980s this was the reason several countries began classifying lead-bearing wastes separately from general industrial waste.",
+                  "kind": "material",
+                  "category": "metals",
+                  "era": "1982",
+                  "confidence": "low",
+                  "facts": [
+                    {
+                      "label": "Speciation",
+                      "value": "lead as sulphate and as carbonate in an anoxic sludge"
+                    },
+                    {
+                      "label": "1980s control",
+                      "value": "landfill-liner standards existed but were young and widely bypassed"
+                    }
+                  ],
+                  "note": "Low confidence on any specific site's performance; the general chemistry is well established and the 1980s regulatory position is the point being made.",
+                  "children": [],
+                  "inputs": [
+                    "facility.hazardous-waste.landfill"
+                  ]
+                }
+              ],
+              "facts": [
+                {
+                  "label": "Volume",
+                  "value": "a hand-soldering station used a few litres an hour of water for flux-residue rinsing and tip cleaning"
+                }
+              ],
+              "note": "Not established: the few-litres-an-hour volume, the settling-tank and pH-adjustment treatment, or the sludge-to-landfill split for any specific 1982 assembly line."
+            }
+          ]
+        },
+        {
+          "id": "metal.solder.waste",
+          "name": "The solder factory's own waste streams",
+          "description": "A solder pot, a dross heap, a flux residue stream, a wash-water drain and a baghouse for the flux fumes. The dross goes to a reclaimer or to a hazardous-waste disposal contract; the baghouse dust is lead oxide and rosin and is genuinely hazardous; and the wash water goes to the drain with the lead in it. In 1982 this was the least regulated part of the whole electronics industry, and it is the reason the United States' lead exposure limits for electronics workers - which were set at a time when electronics was not a regulated industry - exist at all. The waste stream is a leaf of this tree and a genuinely uncomfortable one.",
+          "kind": "material",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "medium",
+          "children": [
+            {
+              "id": "metal.solder.waste-baghouse",
+              "name": "The flux fume baghouse and its dust",
+              "description": "The wave-solder hood has an extraction duct and a baghouse, because the fume is an aerosol of lead oxide and of rosin-acid degradation products. The dust is 30-60% lead oxide and it is collected as a hazardous waste. A big 1982 line threw away tens of kilograms a week. The control measure was local exhaust ventilation with a capture hood about 100 mm from the wave, and the compliance measure was an area respirator, which was why electronics assembly was one of the more heavily respirated occupations of the period.",
+              "kind": "material",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "facts": [
+                {
+                  "label": "Dust",
+                  "value": "30-60% lead oxide with rosin-acid residues"
+                },
+                {
+                  "label": "Capture",
+                  "value": "local exhaust at about 100 mm from the wave, plus a baghouse"
+                }
+              ],
+              "note": "Medium confidence on the dust composition; the lead oxide figure is representative."
+            }
+          ],
+          "facts": [
+            {
+              "label": "Fractions",
+              "value": "flux-cork dross, baghouse dust off the flux fume, wash-water and spent degreasing solvent"
+            }
+          ],
+          "note": "Not established: the 1982 disposal claims (dross to reclaimer or hazardous-waste contract, wash water to drain) and the regulatory history of United States lead exposure limits for electronics workers; practice varied by plant and contractor."
+        }
+      ]
+    },
+    {
+      "id": "metal.silver",
+      "name": "Silver: contacts, solder paste, brazing",
+      "description": "Silver is the most electrically conductive of any element, and it is used in a C64 where the contact has to carry current at low force: the contacts of the rocker switches and of many of the keyboard switches, the silver-bearing solder and brazing alloys for the heat sinks and chassis joints, the silver-filled epoxy and silver ink of the keyboard membrane, and the silver that comes out of the lead and copper refineries as a by-product. Most of the world's silver is mined as a by-product - of lead, of copper, of zinc - and only about a fifth comes from a primary silver mine.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "inputs": [
+        "metal.silver.ore",
+        "metal.lead.bullion",
+        "metal.anode-slime"
+      ],
+      "facts": [
+        {
+          "label": "Refined grade",
+          "value": "99.9% (2N) minimum; 99.99% (4N) for contacts"
+        },
+        {
+          "label": "Ore",
+          "value": "native silver, argentite Ag2S, at 100-2000 g/t; the great districts were Freiberg, Potosi, Guanajuato, Cobalt, Broken Hill"
+        },
+        {
+          "label": "Supply",
+          "value": "~75% of silver production is a by-product of lead, zinc and copper refining"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Silver",
+        "https://en.wikipedia.org/wiki/Silver_mining"
+      ],
+      "children": [
+        {
+          "id": "metal.silver.ore",
+          "name": "Silver ore and the by-product sources",
+          "description": "Silver behaves chemically like lead, so it substitutes for it in galena, and the world's most productive silver mines are really lead mines. The primary ores are native silver, argentite Ag2S, pyrargyrite Ag3SbS3 and stephanite Ag5SbS4 - the last two are why silver is also a lead-bysulphide metallurgy problem. The Cordillera Real of Potosi in Bolivia and Zacatecas in Mexico were the great producers, and Cobalt in Ontario is the historical outlier where silver was the target. Silver at 500-1000 g/t is a very good ore and at 5-50 g/t it is a credit.",
+          "kind": "material",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "places": [
+            "Potosi, Bolivia",
+            "Zacatecas, Mexico",
+            "Cobalt, Ontario"
+          ],
+          "facts": [
+            {
+              "label": "Assay",
+              "value": "100-2000 g/t Ag in primary veins; 20-200 g/t as a lead-zinc credit"
+            },
+            {
+              "label": "Minerals",
+              "value": "native Ag, argentite Ag2S, pyrargyrite Ag3SbS3, stephanite, and solid solution in galena"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Silver_mining"
+          ],
+          "children": [
+            {
+              "id": "metal.silver.mine-mexican",
+              "name": "The Zacatecas-Potosi silver vein mines",
+              "description": "Mines like the Fresnillo, the Zacatecas and the San Luis Potosi: an underground operation on steeply dipping epithermal quartz veins carrying native silver, argentite and the antimony sulphides, worked in the Spanish colonial era by water-driven mills, mercury amalgamation and patio amalgamation, and by 1982 by mechanised narrow-vein mining and flotation. The Fresnillo mine is a silver mine that also happens to be the world's largest producer of antimony, which is a neat illustration of the interpenetration of these branches.",
+              "kind": "facility",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "places": [
+                "Fresnillo, Zacatecas"
+              ],
+              "facts": [
+                {
+                  "label": "Method",
+                  "value": "underground narrow-vein, sublevel or conventional stoping; flotation of the antimony sulphides"
+                },
+                {
+                  "label": "Dating",
+                  "value": "Zacatecas was producing silver from 1548"
+                }
+              ],
+              "note": "Amalgamation was still in use for small operations in the 1980s; the mid-1980s saw a strong shift to cyanide. Medium confidence.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Francisco_de_Ibarra"
+              ]
+            },
+            {
+              "id": "metal.silver.amalgamation",
+              "name": "Mercury amalgamation of small silver operations",
+              "description": "Before cyanide, silver was recovered by amalgamating the crushed ore with mercury: 4Au + 8Hg -> 4AuHg4 and 4Ag + 4Hg -> 4Ag2Hg, then squeezing the amalgam in a heated press and retorting the sponge at 500-700 C to drive the mercury off and recover the metal. The process left 10-100 grams of mercury per tonne of ore behind in the tailings, and it is one of the largest anthropogenic mercury dispersals in history. In 1982 it was in decline in the large mines and still widespread in artisanal operations; in the small artisanal miners' union of Guanajuato it outlived the century.",
+              "kind": "process",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "high",
+              "inputs": [
+                "metal.mercury-source"
+              ],
+              "facts": [
+                {
+                  "label": "Reaction",
+                  "value": "Ag + Hg -> amalgam; retort at 500-700 C recovers the metal"
+                },
+                {
+                  "label": "Consumption",
+                  "value": "10-500 g of Hg per tonne of ore, most of it lost"
+                },
+                {
+                  "label": "1982 status",
+                  "value": "declining in industry, persisting in artisanal mining"
+                }
+              ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Pan_amalgamation"
+              ],
+              "children": [
+                {
+                  "id": "metal.mercury-source",
+                  "name": "Mercury: cinnabar from Idrija and Almaden",
+                  "description": "Amalgamation consumes mercury and does not give it back, so a silver mine that amalgamated needed a mercury supply. Cinnabar, HgS, the vermilion pigment mineral, came from Idrija in Slovenia - the largest mercury mine in the world for 500 years - and from Almaden in Spain, and from the New Idria and New Almaden mines in California. The leaf is a mercury deposit, which is itself a strange one: cinnabar forms in shallow hydrothermal systems, and the Spanish and Yugoslav mines are in exactly the kind of fractured carbonate and volcanic rocks that the precious-metal branches of this file have already been through.",
+                  "kind": "material",
+                  "category": "metals",
+                  "era": "1982",
+                  "confidence": "medium",
+                  "places": [
+                    "Idrija, Slovenia",
+                    "Almaden, Ciudad Real"
+                  ],
+                  "facts": [
+                    {
+                      "label": "Mineral",
+                      "value": "cinnabar HgS, scarlet, with metacinnabar (black cubic)"
+                    },
+                    {
+                      "label": "Setting",
+                      "value": "epithermal and structurally controlled, in carbonate and volcanic host rocks"
+                    },
+                    {
+                      "label": "1982 supply note",
+                      "value": "Idrija was still producing; the Idrija mercury plant closed in 1995"
+                    }
+                  ],
+                  "note": "The Idrija and Almaden mercury mines are well documented; medium confidence on the 1982 production split.",
+                  "sources": [
+                    "https://en.wikipedia.org/wiki/Mercury_(element)"
+                  ],
+                  "children": [
+                    {
+                      "id": "metal.cinnabar.bed",
+                      "name": "The cinnabar vein",
+                      "description": "The leaf: a scarlet vein of cinnabar in brecciated limestone, sometimes 10 m wide, worked by open pit and by fire-setting underground since Roman times. It is the only mercury ore that has ever mattered commercially, and it is a beautiful and rather grim example of a metal that exists in one mineral, in one setting, in a few places on Earth.",
+                      "kind": "material",
+                      "category": "metals",
+                      "confidence": "high",
+                      "facts": [
+                        {
+                          "label": "Host",
+                          "value": "brecciated and faulted carbonate rock, with clay and chalcedony"
+                        }
+                      ],
+                      "sources": [
+                        "https://en.wikipedia.org/wiki/Cinnabar",
+                        "https://en.wikipedia.org/wiki/Mercury_(element)"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "metal.silver.mill",
+              "name": "Silver mill: crushing, grinding and flotation",
+              "description": "Ore at 300-1500 g/t is crushed to 10-25 mm, ground in a ball mill to 50-100 um, and floated with a xanthate or a thio compound collector at pH 8-10. Silver sulphides float with the lead and zinc sulphides they are intergrown with, so the circuit produces a bulk concentrate that the smelter treats as a lead concentrate. The recovery is 60-85% and the tailings are the reason the Zacatecas and Guanajuato districts look the way they do - a very large volume of finely ground rock in long, engineered tailings impoundments.",
+              "kind": "process",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "inputs": [
+                "metal.silver.ore",
+                "metal.xanthate"
+              ],
+              "facts": [
+                {
+                  "label": "Grind",
+                  "value": "50-100 um"
+                },
+                {
+                  "label": "Concentrate",
+                  "value": "2000-8000 g/t Ag, with 20-40% Pb"
+                },
+                {
+                  "label": "Recovery",
+                  "value": "60-85%"
+                }
+              ],
+              "note": "Silver flotation is not well served by generic numbers because the mineralogy is so varied; medium confidence.",
+              "children": [
+                {
+                  "id": "metal.silver.concentrate-shipping",
+                  "name": "Why silver concentrate goes to a lead smelter",
+                  "description": "A silver concentrate is not a product anybody wants to buy; it is a concentrate to ship to a lead smelter 500 km away, because the only economical way to separate silver from lead is the Parkes process, and that needs a lead smelter. So the silver chain leaves the mine, joins the lead chain inside a smelter that may be in a different country, and comes back out at 99.9%. This is the practical meaning of silver being a by-product metal, and it is why the silver price has so little to do with the silver mines.",
+                  "kind": "note",
+                  "category": "metals",
+                  "era": "1982",
+                  "confidence": "high",
+                  "sources": [
+                    "https://en.wikipedia.org/wiki/Silver_mining",
+                    "https://en.wikipedia.org/wiki/Lead_smelting"
+                  ],
+                  "children": [
+                    "metal.lead.blast-furnace"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "metal.silver.refining",
+          "name": "Refine the silver to 99.9-99.99%",
+          "description": "Most silver never gets a refinery of its own. It is separated inside the lead smelter and refinery, or the copper anode slime, and refined there. The copper route: the slime is dissolved in nitric acid or in an aqua-regia type circuit, silver precipitates as silver chloride which is then reduced with copper and melted, and gold is recovered separately. The lead route: the Parkes process and the cupellation furnace described in the lead branch deliver silver at 96-99%, and it is electrorefined in a small silver tankhouse with a silver anode and a silver cathode in a nitric acid or a copper nitrate electrolyte at 2-4 V. In 1982 perhaps 60% of the world's refined silver was made at a handful of silver refineries and the rest was by-product metal refined alongside lead and copper.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "facts": [
+            {
+              "label": "Electrolyte",
+              "value": "nitric acid with a little silver nitrate, or copper nitrate"
+            },
+            {
+              "label": "Cell voltage",
+              "value": "2-4 V"
+            },
+            {
+              "label": "Product",
+              "value": "99.9% cathode; 99.99% by re-electrorefining"
+            },
+            {
+              "label": "Energy",
+              "value": "order 300-600 kWh per tonne of silver"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Silver"
+          ],
+          "children": [
+            "metal.silver.ingot",
+            {
+              "id": "metal.silver.electrorefining",
+              "name": "Electrolyse the silver and the dore loop",
+              "description": "The silver from the Parkes cupellation or from the anode slime is cast as anodes and dissolved in a nitric acid electrolyte with a little silver nitrate, at 2-4 V with a pure silver cathode. The electrolyte's job is to hold the silver as the nitrate while the gold and the base metals either stay in the anode mud or fall out as slime. A small refinery might have 20-40 cells and make 5-20 t a month. The silver cathode is then melted and cast, and the whole cycle - cupell, electrorefine, cast, cupell again - can run three times to get five nines.",
+              "kind": "process",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "facts": [
+                {
+                  "label": "Cells",
+                  "value": "20-40 per small refinery"
+                },
+                {
+                  "label": "Passes",
+                  "value": "2-3 electrorefining passes for 99.99%"
+                },
+                {
+                  "label": "Energy",
+                  "value": "300-600 kWh per tonne of silver"
+                }
+              ],
+              "note": "Medium confidence on the cell counts and the energy figure; the process itself is standard.",
+              "children": [
+                {
+                  "id": "metal.silver.contact-powder",
+                  "name": "Silver contact powder: Ag-SnO2 and Ag-graphite",
+                  "description": "A switch contact is not silver metal. It is a powder metallurgy composite: 80-95% silver powder mixed with 5-15% of a refractory oxide - tin oxide, cadmium oxide or graphite - pressed at 200-400 MPa and sintered at 700-950 C. The oxide breaks up the silver grain boundaries and suppresses the metal transfer that otherwise builds up on a small, low-force contact, at the price of some conductivity. Silver-graphite is the same idea for sliding contacts, and silver-graphite in a rotary encoder or a potentiometer is the single most common use of silver powder in electronics.",
+                  "kind": "material",
+                  "category": "metals",
+                  "era": "1982",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.silver.ingot"
+                  ],
+                  "facts": [
+                    {
+                      "label": "Composition",
+                      "value": "80-95% Ag, 5-15% SnO2 or CdO or graphite"
+                    },
+                    {
+                      "label": "Sintering",
+                      "value": "700-950 C in a hydrogen atmosphere"
+                    },
+                    {
+                      "label": "1982 competition",
+                      "value": "Ag-SnO2 and the gold-plated contact were already displacing Ag-CdO on cost and toxicity grounds"
+                    }
+                  ],
+                  "note": "The cadmium oxide contact alloy was being phased out on toxicity grounds through the 1980s; medium confidence on the timing of that shift.",
+                  "sources": [
+                    "https://en.wikipedia.org/wiki/Silver"
+                  ]
+                },
+                {
+                  "id": "metal.silver.borax-flux",
+                  "name": "Fire assay with borax and litharge",
+                  "description": "A refinery that also assays needs a cupellation furnace and a borax flux, because silver is assayed by cupellation: the sample is mixed with borax and litharge, cupelled, and the silver bead that is left is weighed. So the assay and the refining process are the same process, which is why a small refinery has a cupel furnace whether or not it refines. It is also why the assayer's skill and the refiner's skill are the same skill, and why the price of silver has always been set by a weighing scale on a furnace roof.",
+                  "kind": "process",
+                  "category": "metals",
+                  "era": "1982",
+                  "confidence": "medium",
+                  "facts": [
+                    {
+                      "label": "Assay",
+                      "value": "cupellation with a borax-litharge flux, weighing the silver bead"
+                    },
+                    {
+                      "label": "Fusion assay",
+                      "value": "the alternative, for ores where the silver reports to the lead button"
+                    }
+                  ],
+                  "note": "Medium confidence; cupellation as an assay method is well documented.",
+                  "inputs": [
+                    "metal.silver.electrorefining"
+                  ]
+                }
+              ],
+              "inputs": [
+                "metal.silver.refining"
+              ]
+            }
+          ],
+          "inputs": [
+            "metal.lead.blast-furnace",
+            "metal.anode-slime"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "metal.lead",
+      "name": "Lead: the base metal of 63/37 solder",
+      "description": "Lead is the soft, low-melting, cheap half of the solder alloy, and it is the reason soldering works at all: pure tin wets copper badly and has no strength, and pure lead does not wet anything. Lead also has its own huge pre-electronics industrial life - storage batteries, cable sheath, pigment - and its 1982 smelting industry is the oldest continuous industrial process in the book. The C64 carries a couple of hundred grams of it, which is why the machine is the emblem of leaded-solder legislation.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "inputs": [
+        "metal.galena",
+        "metal.coke",
+        "metal.limestone"
+      ],
+      "facts": [
+        {
+          "label": "Refined grade",
+          "value": "99.99% (4N); 'corroding lead' at 99.99% was the standard for 1980s solder manufacture"
+        },
+        {
+          "label": "Ore",
+          "value": "galena PbS at 2-15% Pb"
+        },
+        {
+          "label": "Chain",
+          "value": "~100 t of 5% Pb ore -> ~15 t of 60% Pb concentrate -> ~5 t of crude lead -> ~4.7 t of refined lead"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Lead_smelting",
+        "https://en.wikipedia.org/wiki/Galena"
+      ],
+      "children": [
+        "metal.galena",
+        {
+          "id": "metal.lead.sintering",
+          "name": "Roasting/sintering of galena to PbO",
+          "description": "The concentrate is roasted in a sinter plant: a travelling grate on which a 1-2 m bed of concentrate is ignited and slowly drawn through with the gas being pulled after the fire. The sulphide oxidises to lead(II) oxide: 2PbS + 3O2 -> 2PbO + 2SO2. The point of sintering rather than fluidised-bed roasting is that the heat can be high and localised enough to sinter the fine particles into a coherent porous cake, which is exactly what the blast furnace needs to breathe. The sinter is 50-60% Pb and the SO2 - at 10-14% - goes to the acid plant, the same one the copper smelter uses.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "inputs": [
+            "metal.galena",
+            "metal.soda-ash",
+            "metal.limestone",
+            "metal.coke"
+          ],
+          "facts": [
+            {
+              "label": "Sinter machine",
+              "value": "Dwight-Lloyd travelling grate, ~60-90 m2 of grate area, 1-2 m bed"
+            },
+            {
+              "label": "Bed temperature",
+              "value": "1100-1250 C in the burn-down zone"
+            },
+            {
+              "label": "Sinter",
+              "value": "50-60% Pb, 8-15% SiO2, self-fluxing with 15-25% CaO"
+            },
+            {
+              "label": "SO2",
+              "value": "10-14% to the acid plant"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Lead_smelting"
+          ],
+          "note": "The sinter plant is where lead's energy cost sits; it is a genuinely old process and the dominant sinter machine type in 1982 was the Dwight-Lloyd.",
+          "children": [
+            {
+              "id": "metal.lead.sinter-plant",
+              "name": "Dwight-Lloyd sinter strand",
+              "description": "A continuous chain of cast-iron pallets on an endless track about 1.2-1.5 m wide, with the ignition hood at the discharge end. Feed is a mix of concentrate, sinter returns, flux and coke spread to exactly 1-2 m - there is nothing clever about it and it works. The strand advances 1-2 m/min, the fire burns through the bed in about 20 minutes, and the hot sinter is broken off by a set of crusher jaws at the end and tipped into the blast furnace. One machine makes 200-400 t of sinter an hour and runs continuously for years.",
+              "kind": "tool",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "high",
+              "facts": [
+                {
+                  "label": "Grate width",
+                  "value": "1.2-1.5 m for a single-width strand; multi-width for large smelters"
+                },
+                {
+                  "label": "Output",
+                  "value": "order 200-400 t of sinter per hour per strand"
+                },
+                {
+                  "label": "Feed moisture",
+                  "value": "8-12% - the bed has to hold together"
+                }
+              ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Sintering"
+              ]
+            },
+            {
+              "id": "metal.lead.self-fluxing",
+              "name": "Self-fluxing sinter mix",
+              "description": "Sinter is not simply roasted concentrate. The mix is designed so the sintered cake is its own flux: the silica that comes with the concentrate is balanced with limestone so the blast furnace slag has a basicity near 1.5-2.0. Anything between about 1.0 and 2.0 works; outside that range the slag either freezes in the furnace or dissolves too much lead. The smelter's metallurgist is balancing silica, iron, calcium and lead every shift.",
+              "kind": "process",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "inputs": [
+                "metal.limestone"
+              ],
+              "facts": [
+                {
+                  "label": "Slag basicity",
+                  "value": "CaO/SiO2 of 1.5-2.0 in the blast furnace"
+                },
+                {
+                  "label": "Limestone in the mix",
+                  "value": "15-25% of the mix"
+                }
+              ],
+              "note": "Slag basicity range varies with the ore; medium confidence."
+            }
+          ]
+        },
+        {
+          "id": "metal.lead.blast-furnace",
+          "name": "Lead blast furnace reduction to crude lead",
+          "description": "A lead blast furnace looks like an iron blast furnace but is only 4-7 m tall, because lead reduces so easily. Self-fluxing sinter, coke and limestone are charged at the top; a blast of 200-350 C air is blown in at the hearth; the PbO is reduced to lead by CO at 1000-1100 C and the metal runs out. The sinter, coke and limestone charge comes down a shaft that is deliberately kept chilled so the metallic lead freezes before it goes further down - if it melted it would run into the tuyeres. Two outputs: crude lead bullion at 950-1050 C at the bottom, and a slag carrying off the iron and silica.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "inputs": [
+            "metal.lead.sintering",
+            "metal.coke",
+            "metal.limestone"
+          ],
+          "facts": [
+            {
+              "label": "Furnace height",
+              "value": "4.7-7.5 m (much shorter than an iron furnace)"
+            },
+            {
+              "label": "Blast",
+              "value": "200-350 C, wet or filtered"
+            },
+            {
+              "label": "Reduction",
+              "value": "PbO + C -> Pb + CO, at 1000-1100 C"
+            },
+            {
+              "label": "Chilling",
+              "value": "the shaft is cooled by sprays so the lead freezes as a sponge above the tuyeres"
+            },
+            {
+              "label": "Slag",
+              "value": "CaO-FeO-SiO2, 15-20% of the sinter charge, sometimes tapped separately"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Lead_smelting"
+          ],
+          "children": [
+            {
+              "id": "metal.lead.bullion",
+              "name": "Crude lead bullion with silver and gold",
+              "description": "Tapped at 950-1050 C, the bullion is about 95-98% lead with 1-3% silver, a little gold, and copper, arsenic, antimony and bismuth. Silver at 1-3% is not a trace - it is often the difference between a viable mine and a marginal one, and the Parkes process that recovers it is the reason lead smelters have a refinery at all. By 1982 crude lead was increasingly sold as a low-grade bullion to the refinery and the smelter/ refinery was one continuous plant.",
+              "kind": "material",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "facts": [
+                {
+                  "label": "Assay",
+                  "value": "95-98% Pb, 1-3% Ag, 10-100 g/t Au"
+                },
+                {
+                  "label": "Wealth in the bullion",
+                  "value": "order 250-800 g/t Ag equivalent"
+                }
+              ],
+              "children": [
+                {
+                  "id": "metal.lead.parkes",
+                  "name": "Parkes process: zinc drossing and desilverisation",
+                  "description": "The genius step, invented in 1850 and still standard in 1982. The molten bullion is stirred with a few tenths of a percent of zinc, which has a much stronger chemical affinity for silver than lead does, so a zinc-silver intermetallic (AgZn2, Ag2Zn5) migrates to the zinc 'dross' floating on top. The dross is skimmed, and the now-silver-poor lead is treated again with fresh zinc until it is down to 10-30 g/t silver. The dross is then distilled in a retort: zinc boils at 907 C and is condensed, and the silver and gold stay behind, to be cupelled. The zinc is a sacrificial reagent and goes back into the alloy.",
+                  "kind": "process",
+                  "category": "metals",
+                  "era": "1982",
+                  "confidence": "high",
+                  "inputs": [
+                    "metal.lead.bullion",
+                    "metal.zinc.ingot",
+                    "metal.coke"
+                  ],
+                  "facts": [
+                    {
+                      "label": "Zinc addition",
+                      "value": "0.2-0.8% of the bullion mass"
+                    },
+                    {
+                      "label": "Cycles",
+                      "value": "3-5 drossing and skimming stages"
+                    },
+                    {
+                      "label": "Desilverised lead",
+                      "value": "10-30 g/t Ag (the 'corroding' grade)"
+                    },
+                    {
+                      "label": "Retort distillation",
+                      "value": "zinc distilled off at 800-950 C and condensed"
+                    },
+                    {
+                      "label": "Second reagent",
+                      "value": "the Parkes process is sometimes followed by the Harris 'throat' blow, which adds 0.1% Na and 0.06% Mg for copper and for the last of the silver"
+                    }
+                  ],
+                  "sources": [
+                    "https://en.wikipedia.org/wiki/Lead_smelting",
+                    "https://en.wikipedia.org/wiki/Parkes_process"
+                  ],
+                  "note": "The Parkes process is essentially unchanged since 1850 and is still in use today; that is unusual enough to be worth stating.",
+                  "children": [
+                    {
+                      "id": "metal.lead.betts",
+                      "name": "Betts process: electrolytic refining",
+                      "description": "The rival to the Parkes process, and the answer for the last fraction of a gram of bismuth. Anodes of impure lead are dissolved in a caustic soda solution containing sodium plumbite (Na2PbO3), and pure lead plates onto the cathode. The chemistry is unusual - the anode dissolves as plumbite and the deposit forms by the reaction of plumbite with metal, which is why the bath has to be kept in a narrow alkaline window. Cost is high, energy is high, so it was used only as a finishing step on top of the Parkes route, and in the 1980s it was being displaced by the Betterton-Krastchkow continuous drossing tower.",
+                      "kind": "process",
+                      "category": "metals",
+                      "era": "1982",
+                      "confidence": "medium",
+                      "inputs": [
+                        "metal.lead.bullion",
+                        "metal.caustic-soda"
+                      ],
+                      "facts": [
+                        {
+                          "label": "Bath",
+                          "value": "Na2PbO3 in caustic soda at 35-45 C"
+                        },
+                        {
+                          "label": "Refined lead",
+                          "value": "99.99%"
+                        },
+                        {
+                          "label": "1982s position",
+                          "value": "falling out of favour in favour of continuous drossing towers"
+                        }
+                      ],
+                      "note": "The decline of the Betts process in the 1980s is well documented; medium confidence on the specific replacement technologies used by any given smelter.",
+                      "sources": [
+                        "https://en.wikipedia.org/wiki/Betts_process"
+                      ]
+                    },
+                    {
+                      "id": "metal.lead.vacuum-degassing",
+                      "name": "Vacuum-degass and dross the lead bullion",
+                      "description": "The modern version of both processes in one machine: a 6-10 m tall cylindrical steel vacuum vessel with an internal fractionating column. Molten lead is sprayed into the vacuum; the volatiles - hydrogen, oxygen, zinc, and the remaining silver on its way out - distil out and are fractionated, so the silver comes off as a separate metal rather than as a dross. It replaces two steps with one, cuts the labour, and gives 99.99% lead with under 5 g/t silver. It was the technology that spread through the lead industry in the 1980s, and it is a good marker for what was changing in smelting and what was not.",
+                      "kind": "process",
+                      "category": "metals",
+                      "era": "1982",
+                      "confidence": "medium",
+                      "facts": [
+                        {
+                          "label": "Vacuum",
+                          "value": "0.1-1 mbar"
+                        },
+                        {
+                          "label": "Temperature",
+                          "value": "lead at 700-850 C in a tall vessel"
+                        },
+                        {
+                          "label": "Output",
+                          "value": "99.99% Pb, <5 g/t Ag"
+                        }
+                      ],
+                      "note": "The drossing tower was a genuine 1980s innovation in lead refining; medium confidence on the precise vacuum figures.",
+                      "sources": [
+                        "https://en.wikipedia.org/wiki/Lead_smelting"
+                      ],
+                      "inputs": [
+                        "metal.lead.bullion"
+                      ]
+                    }
+                  ]
+                },
+                "metal.lead.cupellation-lead",
+                {
+                  "id": "metal.lead.dross-smelting",
+                  "name": "Retorting the Parkes dross to recover the zinc",
+                  "description": "After the silver has been skimmed off as dross, the dross itself has to be processed, and it is done in a cast-iron retort: the dross is mixed with charcoal and a little limestone, charged into a retort at 800-950 C, and the zinc distils out - it boils at 907 C - into a condenser where it is collected as a crude zinc metal. The silver and gold stay in the retort. A dross retort holds 100-500 kg and takes 8-20 hours, and a refinery had six to a dozen of them. The recovered zinc is dirty and goes back into the next drossing cycle, which is why the Parkes process consumes no net zinc even though it uses some every time round.",
+                  "kind": "process",
+                  "category": "metals",
+                  "era": "1982",
+                  "confidence": "medium",
+                  "inputs": [
+                    "metal.lead.parkes",
+                    "metal.zinc.ingot",
+                    "metal.coke"
+                  ],
+                  "facts": [
+                    {
+                      "label": "Temperature",
+                      "value": "800-950 C, above the 907 C boiling point of zinc inside the retort"
+                    },
+                    {
+                      "label": "Charge",
+                      "value": "100-500 kg of dross with charcoal and limestone"
+                    },
+                    {
+                      "label": "Cycle",
+                      "value": "8-20 h per retort"
+                    },
+                    {
+                      "label": "Zinc balance",
+                      "value": "the recovered zinc is returned to the drossing cycle, so net zinc consumption is small"
+                    }
+                  ],
+                  "note": "Medium confidence; the retort practice is well described in the historical and metallurgical literature.",
+                  "children": [
+                    {
+                      "id": "metal.lead.dross-retort",
+                      "name": "The dross retort and its condenser",
+                      "description": "A cast-iron or steel tube, 1.5-3 m long, charged at one end and heated in a coke-fired setting, with a condenser of iron pipes at the cool end into which the zinc vapour condenses and runs out as a crude metal. The retort has to be skimmed of oxide and it is a batch process, so a refinery ran a bank of them in shifts. It is an object that is essentially unchanged since the 1850s, which makes it one of the oldest continuous processes in this file.",
+                      "kind": "tool",
+                      "category": "metals",
+                      "era": "1982",
+                      "confidence": "medium",
+                      "facts": [
+                        {
+                          "label": "Retort",
+                          "value": "1.5-3 m long cast iron, fired in a coke setting"
+                        },
+                        {
+                          "label": "Condenser",
+                          "value": "iron pipe condenser, crude zinc metal collecting in a pot"
+                        }
+                      ],
+                      "note": "Medium confidence; the retort geometry is standard historical practice."
+                    }
+                  ]
+                },
+                {
+                  "id": "metal.lead.copper-drossing",
+                  "name": "Hot-dross the copper out of the lead bullion",
+                  "description": "Before the Parkes zinc drossing, the bullion is hot-drossed for copper. The blast-furnace bullion comes out at 950-1050 C holding copper, which is insoluble in lead at that temperature and forms a separate copper matte that floats on top; the refinery skims it off, cools it, and recovers the copper and its precious metals by further processing. It is the same physical principle as the zinc drossing - a metal that mixes preferentially with another - and it is done first because the copper dross would otherwise interfere with the silver dross.",
+                  "kind": "process",
+                  "category": "metals",
+                  "era": "1982",
+                  "confidence": "medium",
+                  "facts": [
+                    {
+                      "label": "Order",
+                      "value": "hot copper drossing at 950-1050 C, then the Parkes zinc drossing at 400-500 C"
+                    },
+                    {
+                      "label": "Bullion copper",
+                      "value": "0.2-1.5%, dropping to 0.02-0.06% after hot drossing"
+                    }
+                  ],
+                  "note": "Medium confidence; the sequence is standard and the copper figures are typical.",
+                  "sources": [
+                    "https://en.wikipedia.org/wiki/Lead_smelting"
+                  ],
+                  "inputs": [
+                    "metal.lead.bullion"
+                  ]
+                }
+              ],
+              "note": "Documented: the blast furnace yields lead bullion that goes to drossing, the crude bullion contains significant copper, and the Parkes process separates silver or gold from lead. Not established: the 95-98% Pb / 1-3% Ag / 10-100 g/t Au assay, the 250-800 g/t silver equivalent, and the 950-1050 C tap temperature."
+            },
+            "metal.lead.ingot"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "metal.potassium",
+      "name": "Potassium chloride (KCl) for tantalum reduction",
+      "description": "Not a C64 component - potassium never appears in the machine - but it is a mandatory reagent in the tantalum branch, because the metal is won as a fluoride salt and reduced with metal, not from an oxide. Potassium also divides tantalum from niobium in the fluoride chemistry. It is included so the tantalum branch reaches a real, mined leaf instead of stopping at an implied reagent.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "inputs": [
+        "metal.sylvinite"
+      ],
+      "facts": [
+        {
+          "label": "Consumers",
+          "value": "potash fertiliser dominated; tantalum metallurgy a small but non-negotiable share"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Potassium",
+        "https://en.wikipedia.org/wiki/Potash"
+      ],
+      "children": [
+        {
+          "id": "metal.sylvinite",
+          "name": "Sylvinite (KCl + NaCl)",
+          "description": "The ore of the Devonian Prairie Evaporite in Saskatchewan, mined underground at 800-1100 m by potash shafts where the ground is artificially frozen so the salt stays put, or by solution mining in Ontario. Run of mine is about 8-14% K2O; it is beneficiated by flotation or hot leaching and sold as muriate of potash.",
+          "kind": "material",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "places": [
+            "Saskatoon, Saskatchewan",
+            "Thames, Ontario",
+            "Dead Sea, Israel"
+          ],
+          "facts": [
+            {
+              "label": "Assay",
+              "value": "8-14% K2O; sylvinite typically 15-25% KCl"
+            },
+            {
+              "label": "Method",
+              "value": "shaft mining with freeze-assisted ground support, or solution mining"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Sylvinite"
+          ],
+          "children": [
+            {
+              "id": "metal.potash.evaporite",
+              "name": "Potash evaporite bed",
+              "description": "The leaf: a buried evaporite sea - sylvinite interbedded with halite, carnallite and mudstone, formed by the same evaporation of a restricted sea that made the salt used in chlor-alkali. The Colville and Hatchet lakes area of Saskatchewan sits over one of the largest.",
+              "kind": "material",
+              "category": "metals",
+              "confidence": "high",
+              "facts": [
+                {
+                  "label": "Depth",
+                  "value": "750-1200 m in the Saskatchewan basin"
+                }
+              ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Potash",
+                "https://en.wikipedia.org/wiki/Sylvinite",
+                "https://en.wikipedia.org/wiki/Potassium"
+              ]
+            },
+            {
+              "id": "metal.sylvinite.freezing",
+              "name": "Freeze the ground around the potash shaft",
+              "description": "The Saskatchewan potash ore is 800-1100 m down in a bed that is 30-40 C and gassy, and it is a weak, water-bearing shale-like rock that would flow into the shaft. The solution since 1967 has been to freeze it: brine is circul through freeze pipes in the shaft and the decline for two to three years before sinking, turning the ground into a self-supporting frozen plug of ice and salt. It works, and it is one of the more unusual pieces of mining engineering anywhere - and it is the reason the Saskatchewan potash industry looks the way it does.",
+              "kind": "process",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "high",
+              "places": [
+                "Saskatoon, Saskatchewan"
+              ],
+              "facts": [
+                {
+                  "label": "Freezing time",
+                  "value": "2-3 years before sinking"
+                },
+                {
+                  "label": "Freezing temperature",
+                  "value": "about -10 C"
+                },
+                {
+                  "label": "Rock temperature in the seam",
+                  "value": "30-40 C, which is what makes freezing necessary"
+                }
+              ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Potash"
+              ],
+              "inputs": [
+                "facility.water",
+                "metal.sylvinite"
+              ]
+            },
+            {
+              "id": "metal.sylvinite.beneficiation",
+              "name": "Potash flotation and hot leaching",
+              "description": "Run-of-mine sylvinite is about 12% K2O with a lot of NaCl and clay. Beneficiation is by flotation of the sylvinite in a saturated KCl-brine solution (because sylvinite is barely soluble while halite is much more so, so the brine selectively wets the sylvinite), or by hot leaching at 85-100 C which dissolves the potassium chloride and leaves the salt. For the tantalum industry the relevant product is not potash at all - it is the KCl that goes into the K2TaF7 precipitation.",
+              "kind": "process",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "facts": [
+                {
+                  "label": "Flotation",
+                  "value": "in a saturated KCl or NaCl brine, with amines or fatty-acid collectors"
+                },
+                {
+                  "label": "Hot leach",
+                  "value": "85-100 C, dissolves KCl and leaves halite"
+                },
+                {
+                  "label": "Product",
+                  "value": "60-95% KCl, sold as muriate of potash"
+                }
+              ],
+              "note": "Both routes are standard; medium confidence on the exact 1982 split between them in Saskatchewan (hot leaching is more common in the USSR and Canada east of Saskatchewan).",
+              "children": [
+                {
+                  "id": "metal.potash-product",
+                  "name": "Muriate of potash and its tailings",
+                  "description": "The product is 60-95% KCl, bagged or bulk, and the waste is a slurry of NaCl and clay that goes into a tailings pond impoundment. Two points of interest for this tree: the potassium chloride that ends up in a potassium fluoride bath for the tantalum reduction is bought from this industry, and the tailings pond is a genuinely large hole in the ground - the Belle Plaine potash mine near Esterhazy had a tailings pile that became, by the 1980s, a place people went to watch birds. So a fertilizer industry byproduct is where the tantalum industry gets its potassium.",
+                  "kind": "material",
+                  "category": "metals",
+                  "era": "1982",
+                  "confidence": "medium",
+                  "places": [
+                    "Esterhazy, Saskatchewan"
+                  ],
+                  "facts": [
+                    {
+                      "label": "Product",
+                      "value": "60-95% KCl"
+                    },
+                    {
+                      "label": "Tailings",
+                      "value": "NaCl and clay slurry, pumped to a lined impoundment"
+                    }
+                  ],
+                  "note": "Medium confidence on the specific Belle Plaine details; the waste-impoundment issue is well documented.",
+                  "children": [
+                    {
+                      "id": "metal.potash.stockyard",
+                      "name": "Move the potash out by unit train to the port",
+                      "description": "Saskatchewan potash moved to world markets by unit train - a dedicated train of a hundred or more hopper wagons - to Vancouver, Prince Albert or Minneapolis, and then by ship from Vancouver or by barge and lake freighter to Chicago. So the potassium in a 1982 tantalum capacitor travelled down a potash shaft, through a washer and a flotation plant, into a bulk railcar, onto a ship, and into a plastics extruder. It is the most ordinary logistics chain in the tree and it is the shortest path from a geological process to a metal part.",
+                      "kind": "process",
+                      "category": "metals",
+                      "era": "1982",
+                      "confidence": "medium",
+                      "facts": [
+                        {
+                          "label": "Transport",
+                          "value": "unit trains of hopper wagons to Vancouver or Prince Albert, then ship or lake freighter"
+                        }
+                      ],
+                      "note": "Medium confidence on the specific rail and port routes; the Saskatchewan potash logistics are well documented.",
+                      "inputs": [
+                        "metal.potash-product"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "inputs": [
+                "metal.sylvinite",
+                "metal.salt-brine"
+              ]
+            },
+            {
+              "id": "metal.sylvinite.solution-mining",
+              "name": "Solution mining of potash",
+              "description": "Where the potash seam is deeply buried and thin - as at Thames, Ontario - the shaft is not worth sinking. Instead two horizontal wells are drilled into the seam, one to inject hot water and one to draw the resulting brine, and the potash is recovered from the brine by evaporation. Two wells can produce a million tonnes a year. It is a solution-mining technique borrowed from the salt industry and it works because sylvinite dissolves in hot water while the clay it sits in does not.",
+              "kind": "process",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "medium",
+              "places": [
+                "Thames, Ontario"
+              ],
+              "facts": [
+                {
+                  "label": "Method",
+                  "value": "two horizontal wells, hot water injection and brine recovery"
+                },
+                {
+                  "label": "Output",
+                  "value": "order 1 Mt/year from a single pair of wells"
+                },
+                {
+                  "label": "Suitable where",
+                  "value": "deep, thin, uniform seams with impermeable roof"
+                }
+              ],
+              "note": "Medium confidence; the Thames operation is well documented.",
+              "children": [
+                {
+                  "id": "metal.solution-mining.well",
+                  "name": "The injection and recovery well pair",
+                  "description": "Solution mining is two wells and a plant. A cemented well is drilled horizontally into the potash seam and a casing is set with a perforated liner; hot water at 80-90 C is injected at a pressure of a few hundred psi, the seam is about 1-3 m thick and dissolves over a 30-200 m horizontal section, and a second well 500 m away draws the brine back. The well field is fracked between the wells to connect the fracture, and the plant evaporates the brine in a multiple-effect evaporator. It is a genuine engineering oddity - a mine with no mine - and it works because potash dissolves in hot brine and clay does not.",
+                  "kind": "tool",
+                  "category": "metals",
+                  "era": "1982",
+                  "confidence": "medium",
+                  "facts": [
+                    {
+                      "label": "Injection",
+                      "value": "hot water at 80-90 C, a few hundred psi, along a 30-200 m horizontal well"
+                    },
+                    {
+                      "label": "Recovery",
+                      "value": "a second well about 500 m away"
+                    },
+                    {
+                      "label": "Extraction",
+                      "value": "multiple-effect evaporation of the brine"
+                    }
+                  ],
+                  "note": "Medium confidence; solution mining of potash at Thames and Belle Plaine is well described in the mining literature."
+                }
+              ],
+              "inputs": [
+                "metal.sylvinite",
+                "facility.water"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "metal.potassium.flux",
+          "name": "Potassium chloride as the tantalum flux",
+          "description": "The only reason potassium is in this tree. Potassium chloride is added to the tantalum fluoride solution to precipitate K2TaF7, and potassium fluoride is used as a flux in some silicon and aluminium processes. Both are bought from the potash industry as a commodity, in tonnes. So a handful of grams of tantalum in a C64's capacitors required a few grams of potassium chloride, which required a shaft in Saskatchewan or a pond on the Dead Sea, which required a bed of evaporite. It is the shortest branch in this file and the funniest, because it starts with an ocean drying up.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "medium",
+          "inputs": [
+            "metal.sylvinite"
+          ],
+          "facts": [
+            {
+              "label": "Use",
+              "value": "precipitating K2TaF7 from the fluoride solution"
+            },
+            {
+              "label": "Supply",
+              "value": "the potash industry, as a 60-95% KCl commodity"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Potassium_chloride"
+          ],
+          "note": "Not established: potassium chloride as the precipitant for K2TaF7 in the 1982 tantalum route, potassium fluoride as a flux in silicon and aluminium processes, or the few-grams quantities. The commodity-potash supply via shaft mining is as sourced; the Dead Sea pond source is not."
+        }
+      ]
+    },
+    {
+      "id": "metal.tungsten",
+      "name": "Tungsten: filaments, carbide and alloying element",
+      "description": "Very little tungsten is inside a 1982 C64, and almost all of what there is sits in capital equipment and consumables rather than in the machine: the heater filament in a television's electron gun, the cemented-carbide cutters that drill the mainboard and route the glass-epoxy laminate, the carbide dies that draw the power-supply transformer's magnet wire, the tungsten-rhenium needles of a wafer probe card, and a percent or two of it in the simple tooling and stamping steels. What it is: the highest-melting-point of all metals at 3422 C, boiling at 5930 C, density 19.25 g/cm3 - a metal that is essentially never found as native metal, because wolframite and scheelite carry it at 0.3-2.5% WO3 and it has to be chemically opened before it can be reduced. It is not in the case mould: SKD61 and H13 are chromium-molybdenum-vanadium steels with no tungsten in them at all, and the alloying element in that family is molybdenum.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Melting point",
+          "value": "3422 C - the highest of any metal; boils at 5930 C"
+        },
+        {
+          "label": "Density",
+          "value": "19.25 g/cm3, about 1.7 times lead"
+        },
+        {
+          "label": "Ore grade",
+          "value": "0.3-2.5 wt% WO3 in the run-of-mine ore; about 60% WO3 in a concentrate"
+        },
+        {
+          "label": "End-use split",
+          "value": "cemented carbide 60-70%, steels and other alloys 20-30%, the rest in compounds"
+        },
+        {
+          "label": "Abundance",
+          "value": "about 1.5 ppm of the earth's crust, the 58th most abundant element"
+        },
+        {
+          "label": "Not in the case mould",
+          "value": "SKD61 / H13 is 5Cr-5Mo-1V-0.4C with no tungsten; the W-bearing steels are the W1/SKS3 tooling class and the high-speed steels, up to 18% W"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tungsten",
+        "https://www.plansee.com/en/materials/tungsten/origin-and-procurement.html"
+      ],
+      "children": [
+        {
+          "id": "metal.tungsten.ore",
+          "name": "Wolframite and scheelite ore",
+          "description": "The two ores are chemically different and are opened differently, which is why the mine and the mill are designed separately. Wolframite, (Fe,Mn)WO4, a solid solution of ferberite FeWO4 and huebnerite MnWO4, is a dense black mineral of specific gravity 7.1-7.9 that sits in the quartz veins of a granite cupola with cassiterite, topaz and native bismuth; being that heavy and weakly magnetic it concentrates on a shaking table and on a magnetic separator. Scheelite, CaWO4, is the calcium equivalent - too light and too non-magnetic for gravity, so it is froth-floated, and it is the ore of the Climax and Pine Creek skarns in Colorado and Montana and of the Felbertauern in Austria. Neither commonly exceeds about 1.5% WO3, so a tungsten mine is a large mill for a small product and it is usually a by-product operation. Molybdenum and tungsten share the greisen hydrothermal environment, so scheelite and molybdenite MoS2 are sometimes intergrown in one vein.",
+          "kind": "material",
+          "category": "metals",
+          "era": "ancient",
+          "confidence": "high",
+          "facts": [
+            {
+              "label": "Wolframite",
+              "value": "(Fe,Mn)WO4: ferberite FeWO4 solid solution with huebnerite MnWO4; specific gravity 7.1-7.9, weakly magnetic"
+            },
+            {
+              "label": "Scheelite",
+              "value": "CaWO4; floated rather than gravity-concentrated"
+            },
+            {
+              "label": "Typical host rock",
+              "value": "quartz vein in a granite cupola, with cassiterite, topaz and wolframite"
+            },
+            {
+              "label": "Companion metal",
+              "value": "scheelite CaWO4 and molybdenite MoS2 intergrown in the same greisen vein"
+            }
+          ],
+          "places": [
+            "Cornwall and the Dartmoor alluvials",
+            "Panasqueira, Portugal",
+            "Felbertauern, Austria",
+            "Climax and Pine Creek, Colorado",
+            "Sangdong, South Korea"
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tungsten"
+          ],
+          "children": [
+            {
+              "id": "metal.tungsten.ore.mine",
+              "name": "Tungsten mine and concentrator",
+              "description": "Wolframite is dense and refractory, so the ore is mined, crushed and gravity-concentrated or floated to a 60-70% WO3 concentrate, which is roughly a hundredfold upgrade on a 0.6% head grade. Because the ore is so often a by-product of a tin or molybdenum mine rather than the main product of its own, tungsten supply followed the fortunes of tin mining for most of the twentieth century, and the price spiked hard whenever the tin market wobbled. The supply map changed abruptly around 1980: China had been a minor producer whose entire output went to its own steel industry, and from 1980 its production rose sharply on an export surge, while South Korea's Sangdong was the other new large source. Korea and China were becoming the dominant suppliers just as the electronics industry started buying filament wire.",
+              "kind": "facility",
+              "category": "logistics",
+              "era": "ancient",
+              "confidence": "medium",
+              "inputs": [
+                "wolframite-bearing vein ore",
+                "greasy and xanthate collectors for flotation"
+              ],
+              "facts": [
+                {
+                  "label": "Concentrate",
+                  "value": "60-70% WO3, roughly a 100x upgrade"
+                },
+                {
+                  "label": "Mining",
+                  "value": "underground stoping and hand sorting, plus alluvial alluvial placers on the Malay Archipelago tin belt"
+                },
+                {
+                  "label": "Supply shift",
+                  "value": "China's output rose sharply from 1980 on an export surge, alongside South Korea"
+                }
+              ],
+              "note": "The pre-1980 supply geography and the general by-product character of tungsten mining are well established; the exact 1982 split between China, Korea, Zaire, Bolivia and Austria is not asserted here.",
+              "places": [
+                "Cornwall and the Dartmoor alluvials",
+                "Kitzingen, Germany",
+                "Pan Pacific"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "metal.tungsten.apt",
+          "name": "Ammonium paratungstate (APT)",
+          "description": "The intermediate every other tungsten product starts from. The concentrate is digested with sodium hydroxide or with soda ash at about 900-1000 C, which brings the tungsten into solution as sodium tungstate while the calcium, iron and fluorine stay behind as insoluble residues that are filtered off; ammonium chloride then precipitates ammonium paratungstate. APT is a stable, dry, freely soluble white solid, and that is the whole point of it: it can be shipped a long way without absorbing moisture or picking up anything from a wooden crate, so APT rather than concentrate is what crosses an ocean. Calcining it at 500-600 C drives off the ammonia and leaves yellow tungsten trioxide, the one stable oxide and the universal feedstock for the metal.",
+          "kind": "material",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "inputs": [
+            "metal.tungsten.ore",
+            "metal.caustic-soda",
+            "metal.soda-ash"
+          ],
+          "facts": [
+            {
+              "label": "Formula",
+              "value": "(NH4)10H2W12O42, the standard traded intermediate"
+            },
+            {
+              "label": "Decomposition",
+              "value": "about 900-1000 C with NaOH or Na2CO3 to a sodium tungstate solution"
+            },
+            {
+              "label": "Precipitation",
+              "value": "APT crystallised out with NH4Cl from the tungstate liquor"
+            },
+            {
+              "label": "Calcination",
+              "value": "500-600 C to yellow WO3"
+            }
+          ],
+          "note": "Soda ash is the alternative to caustic soda; the two routes were both in commercial use in 1982 and the choice is largely a question of what the works already had.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tungsten",
+            "https://www.plansee.com/en/materials/tungsten/origin-and-procurement.html"
+          ],
+          "children": []
+        },
+        {
+          "id": "metal.tungsten.reduction",
+          "name": "Reduce the trioxide to tungsten powder",
+          "description": "WO3 + 3 H2 gives W + 3 H2O. Hydrogen is the reducing agent because carbon would give tungsten carbide, which is a different and also valuable product rather than the metal anyone wants here; the reaction is carried out on a boat of fine powder in a hydrogen tube furnace at 500-1000 C. What comes out is not yet a usable metal: it is a porous mass of interlocking crystallites a few microns across that can be crushed but not drawn. Tungsten is brittle at room temperature - its ductile-to-brittle transition sits near 200 C - so no amount of powder metallurgy alone gives a workable solid, and the grain boundary chemistry of the powder has to be fixed before the metal can be made at all.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "inputs": [
+            "facility.gases.hydrogen"
+          ],
+          "facts": [
+            {
+              "label": "Reaction",
+              "value": "WO3 + 3 H2 -> W + 3 H2O, 500-1000 C"
+            },
+            {
+              "label": "Why hydrogen",
+              "value": "carbon reduction makes WC rather than W"
+            },
+            {
+              "label": "Product form",
+              "value": "a porous sintered mass of micronscale crystallites, not a workable metal"
+            }
+          ],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tungsten",
+            "https://www.plansee.com/en/materials/tungsten/origin-and-procurement.html"
+          ],
+          "children": [
+            {
+              "id": "metal.tungsten.powder",
+              "name": "Doped tungsten powder",
+              "description": "Undoped tungsten powder has almost no grain boundary strength, and a filament drawn from it sags as it heats and burns out where the sag is greatest. The fix, worked out in the 1920s and universal by 1982, is to add a few tenths of a percent of potassium as potassium hydroxide or potassium carbonate, with a little alumina alongside, during the reduction itself: the potassium ends up as finely dispersed potassium bubbles along the grain boundaries, and it is those bubbles that pin the boundaries so the wire can be drawn to 0.04 mm without slumping. Alumina refines the grain as well. The doped compact is pressed and sintered, then hot-worked, and the final filament metal is 99.9-99.95% pure with the potassium content controlled to control the grain.",
+              "kind": "material",
+              "category": "metals",
+              "era": "1982",
+              "confidence": "high",
+              "inputs": [
+                "metal.tungsten.reduction"
+              ],
+              "facts": [
+                {
+                  "label": "Doping",
+                  "value": "0.1-1 wt% potassium as KOH or K2CO3, plus 0.1-0.5% Al2O3"
+                },
+                {
+                  "label": "Mechanism",
+                  "value": "dispersed potassium bubbles pin the grain boundaries - non-sag tungsten"
+                },
+                {
+                  "label": "Filament purity",
+                  "value": "99.9-99.95%, with potassium controlled to control the grain size"
+                }
+              ],
+              "sources": [
+                "https://en.wikipedia.org/wiki/Tungsten"
+              ],
+              "children": [
+                {
+                  "id": "metal.tungsten.wire",
+                  "name": "Drawn tungsten wire",
+                  "description": "The compact is swaged, then rolled, then drawn through carbide or diamond dies in a long series of steps, with a hydrogen anneal between them, because tungsten will not work cold: the ductile-to-brittle transition is close to room temperature and cold tungsten cracks rather than draws. A domestic television's heater ends up as wire 0.04-0.08 mm in diameter and 60-150 mm long, folded into a flat zig-zag under the cathode cup and run off 6.3 V; at that diameter a 30 cm length weighs about a hundredth of a gram and is the largest single reason a colour tube of that generation failed. The same carbide that draws this wire draws the enamelled magnet wire on the power-supply transformer, and the same wire stock makes the probe-card needles that touch every bond pad on a 6510 die.",
+                  "kind": "material",
+                  "category": "metals",
+                  "era": "1982",
+                  "confidence": "medium",
+                  "facts": [
+                    {
+                      "label": "Filament",
+                      "value": "0.04-0.08 mm diameter, 60-150 mm long, 6.3 V heater"
+                    },
+                    {
+                      "label": "Working",
+                      "value": "swaged, rolled and drawn with a hydrogen anneal between every reduction step"
+                    },
+                    {
+                      "label": "Why anneal",
+                      "value": "the ductile-to-brittle transition sits near room temperature"
+                    }
+                  ],
+                  "places": [
+                    "Kitzingen, Germany"
+                  ],
+                  "from": [
+                    "metal.tungsten.powder"
+                  ],
+                  "children": [],
+                  "note": "Not established: the 0.04-0.08 mm filament diameter, the 60-150 mm length, the 6.3 V heater, the 0.01 g mass for 30 cm, and a ductile-to-brittle transition near room temperature. The tungsten reference states only that tungsten can be worked by forging, drawing, rolling or extruding, and that polycrystalline tungsten is intrinsically brittle."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "metal.tungsten.carbide",
+          "name": "Tungsten carbide and the WC-Co cemented carbide",
+          "description": "Tungsten carbide, WC, is made by heating tungsten powder with carbon above 2000 C, and pressed and sintered on its own it is brittle and useless. What the industry actually buys is the composite: 6-12% finely divided cobalt powder mixed with WC grains of 0.5-30 microns, pressed and vacuum-sintered at 1400-1600 C, then ground and lapped to shape. The molten cobalt wets the carbide grains and holds them in a continuous binder, which is why the two metals are inseparable inside one object - a rock bit cone is a tungsten product and a cobalt product at once. By the 1980s cemented carbide was the largest single use of tungsten, ahead of filament, and oil-well drill cones were among its largest markets, so the bit on the rig producing the crude is a tungsten product just as much as the end mill cutting a C64 mainboard is.",
+          "kind": "material",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "high",
+          "inputs": [
+            "metal.tungsten.powder",
+            "metal.cobalt"
+          ],
+          "facts": [
+            {
+              "label": "Composition",
+              "value": "6-12% cobalt binder, 900-1600 HV"
+            },
+            {
+              "label": "Making",
+              "value": "WC from tungsten powder and carbon above 2000 C; pressed and vacuum-sintered at 1400-1600 C"
+            },
+            {
+              "label": "Grain size",
+              "value": "0.5-30 microns of WC in the sintered body"
+            },
+            {
+              "label": "Share of tungsten use",
+              "value": "cemented carbide takes 60-70% of world tungsten consumption"
+            }
+          ],
+          "note": "Drilling and metalworking tooling together took the majority of cemented carbide; rock bits were the single largest application in the 1980s.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Tungsten"
+          ],
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -17,6 +17,9 @@ secondary.
 | --- | --- |
 | `docs/SCHEMA.md` | the node schema — read before editing any data |
 | `docs/CHECKLIST.md` | the QA standard. **7a** is the prose rule added in the prose-scrub session |
+| `docs/RELATIONS.md` | **proposed** replacement for `children` / `from`, awaiting sign-off. The schema itself is `data/_relation_schema.json`; nothing is implemented yet |
+| `docs/RELATION-PROCEDURE.md` | **generated** — do not hand-edit. `node scripts/relate.mjs procedure` |
+| `docs/assessment.md` | the independent review of that proposal, and what was accepted or rejected |
 | `docs/TODO.md` | research gaps and coverage holes, with evidence. **§2, §3, §4 are now done** |
 | this file | state, verification, remaining plan, and the traps |
 
