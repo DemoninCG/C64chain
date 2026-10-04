@@ -544,3 +544,40 @@ Wikipedia source that could actually be verified.
   `estimate.mjs` were not re-checked for it and each carries its own copy of some
   part of the logic. Phase 3 only ever compared the two it knew about, so there
   may be a third disagreement somewhere in that list.
+
+## 11. Orphan triage (2026-10-04, measured on the migrated tree)
+
+851 of 2,434 nodes are unreachable under the directed section-8 walk
+(`relate.mjs audit` WARN; build's own walk shows 0 unreachable because it
+also follows reverse flow links - different question). Breakdown by category:
+metals 227, industry 186, plastics 126, fluids 108, silicon 56, passives 52,
+board 24, packaging 26, power/energy 16, rest scattered. By kind: 285 process,
+353 material, 96 tool, 34 part, 38 facility/org/site, 35 note, 13 org.
+Inbound profile: ~205 with no inbound at all (roots), ~332 fed only by other
+unreached nodes (cascades), ~273 visible only via the generated catalogue,
+~41 fed from reached nodes through non-carrying relations.
+
+Classes and expected disposition (full analysis in docs/HANDOFF-WAVE5.md):
+
+- **Upstream extraction worlds (~350).** Crude exploration/drilling,
+  mining/milling chains, forestry-paper, gas pipelines. Internally linked,
+  dangling at roots. SHOULD connect: anchor at refinery/cracker/mine
+  interface (distillation consumes petroleum first).
+- **Alternative/obsolete routes (~40).** Open-hearth, valley fill,
+  Sherritt-Gordon, heap leach, nodules. Correctly unlinked; mark era/basis
+  so nobody "fixes" them in.
+- **Plant furniture (~150).** Busbar, cylinders, filters, boats, traps,
+  turbines, switchgear. Correctly unlinked; `at` links optional (no
+  connectivity effect).
+- **Branch-head routes (~60).** chem.pcb/fab/solder heads, dopants,
+  etch-gases. Blocked on section-10 substance nodes; do not bend edges.
+- **Notes/orgs (~48).** Unlinked by design, except the 9 note-leak FAILs.
+- **Detached real content (~40).** CZ/crucible/seed (missing ingot node),
+  tantalum loop (correctly peripheral - no tantalum on 250407),
+  solder-wire/seed (no legal relation - part feedstock), hybrid parts
+  (deliberately catalogued), encoder-ic (variant), barium (BLOCKER).
+
+Policy proposal (undecided, needs owner): mark scope explicitly
+(chain vs context vs alternate), bless catalogue as terminal state for
+context, and gate CI on load-bearing orphans (parts + consumed materials)
+instead of the raw count.
