@@ -2218,63 +2218,7 @@
         }
       ]
     },
-    "metal.silica.quartz-crystal.synthetic": {
-      "id": "metal.silica.quartz-crystal.synthetic",
-      "name": "Grow the clock crystal hydrothermally",
-      "description": "A seed of vein quartz hangs in aqueous sodium hydroxide in a steel autoclave at 380-450 C and 100-200 bar, and quartz grows on the seed at 1-3 mm a day until a synthetic boule of a few kilograms is complete. The advantage over mined Brazilian rock is that the growth conditions are repeatable, so the Q and the defect density of every boule match. By 1982 synthetic quartz had displaced natural rock for essentially all consumer resonator production, because natural material had to be hand-selected for Q and the supply of good vein quartz was small and variable.",
-      "kind": "process",
-      "category": "metals",
-      "era": "1982",
-      "confidence": "medium",
-      "inputs": [],
-      "places": [
-        "Minas Gerais, Brazil"
-      ],
-      "facts": [
-        {
-          "label": "Temperature",
-          "value": "380-450 C"
-        },
-        {
-          "label": "Pressure",
-          "value": "100-200 bar"
-        },
-        {
-          "label": "Growth rate",
-          "value": "1-3 mm/day"
-        }
-      ],
-      "note": "The vein quartz is the charge in the autoclave, so the edge is really an ingredient. It is a child edge because that is how this file records what a charge is made of, and because it keeps the published metal.quartz node inside the branch instead of stranded in unlinked.catalogue.",
-      "children": [],
-      "edges": [
-        {
-          "to": "mb.crystal.y1",
-          "rel": "produces",
-          "role": "product",
-          "basis": "documented"
-        },
-        {
-          "to": "metal.caustic-soda",
-          "rel": "consumes",
-          "basis": "typical-1982"
-        },
-        {
-          "to": "metal.quartz",
-          "rel": "consumes",
-          "basis": "documented"
-        },
-        {
-          "to": "facility.water",
-          "rel": "consumes"
-        },
-        {
-          "to": "mb.crystal.y1",
-          "rel": "produces",
-          "role": "product",
-          "basis": "documented"
-        }
-      ]
-    },
+    
     "metal.copper.intrusion": {
       "id": "metal.copper.intrusion",
       "name": "Tertiary porphyry intrusion",

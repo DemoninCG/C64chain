@@ -95,7 +95,75 @@
                 }
               ],
               "inputs": [],
-              "children": [],
+              "children": [
+                {
+                  "id": "c64.keyboard.pcb.matrix",
+                  "name": "How the 8 x 8 matrix and the two odd keys work",
+                  "description": "The CIA drives one of eight rows low and reads the eight columns; a pressed key connects one row to one column, and sixty-four positions are scanned. RESTORE is wired straight to the NMI line, bypassing the matrix entirely, which is why RESTORE works even while the CPU is jammed. SHIFT LOCK is a mechanically latching switch wired to the same two lines as the left SHIFT, so the firmware sees a shift and never sees a separate key.",
+                  "kind": "note",
+                  "category": "board",
+                  "era": "1982",
+                  "facts": [
+                    {
+                      "label": "Scanned keys",
+                      "value": "64"
+                    },
+                    {
+                      "label": "RESTORE",
+                      "value": "dedicated line to NMI, not scanned"
+                    },
+                    {
+                      "label": "SHIFT LOCK",
+                      "value": "latching; shares the left-shift matrix lines"
+                    },
+                    {
+                      "label": "Reader",
+                      "value": "CIA 6526 #1, ports $DC00 / $DC01"
+                    }
+                  ],
+                  "inputs": [
+                    "PCB traces",
+                    "rubber domes"
+                  ],
+                  "confidence": "high",
+                  "sources": [
+                    "https://www.c64-wiki.com/wiki/Keyboard",
+                    "http://sta.c64.org/cbm64kbdlay.html"
+                  ],
+                  "note": "SHIFT LOCK being on the same lines as left SHIFT is why holding shift lock in software is impossible and why BASIC reports a shift rather than a distinct key. An explanation of the wiring rather than a part, so it is a note."
+                },
+                {
+                  "id": "c64.keyboard.pcb.contacts",
+                  "name": "Contact pads (gold or carbon)",
+                  "description": "Each key position terminates in two pads on the rigid board. The carbon-loaded rubber dome that bridges them is the moving conductor: pressed, it closes the circuit between the pads; released, the pads are open. On gold-plated keyboards the pads are gold over nickel; on cheaper sets they are a carbon or graphite coating on the copper, which is the version that needs cleaning.",
+                  "kind": "part",
+                  "category": "board",
+                  "era": "1982",
+                  "inputs": [
+                    "graphite"
+                  ],
+                  "confidence": "medium",
+                  "sources": [
+                    "https://breadbox64.com/early-c64-keyboard",
+                    "https://www.classynemesis.com/blog/repair-c64-keyboard"
+                  ],
+                  "note": "The carbon-loaded rubber dome as the moving conductor is established by the repair literature, which lists sanding down the keypad conductive rubber and painting graphite powder onto it among the standard remedies, and measures the resistance of the rubber pads as a diagnostic. The early keyboard's activation pads are described as not protected from oxidation as the later keyboards are. Not established: that later pads are gold over nickel, that cheaper sets use a graphite coating on the copper, and that there is no silver-ink conductor anywhere in this keyboard.",
+                  "edges": [
+                    {
+                      "to": "metal.gold.ingot",
+                      "rel": "made of"
+                    },
+                    {
+                      "to": "metal.nickel.ingot",
+                      "rel": "made of"
+                    },
+                    {
+                      "to": "metal.copper.cathode",
+                      "rel": "made of"
+                    }
+                  ]
+                }
+              ],
               "edges": [
                 {
                   "to": "c64.keyboard-switches.matrix.pcb.copper-foil",
@@ -108,6 +176,10 @@
                 {
                   "to": "c64.keyboard-switches.matrix.pcb.pad-plating",
                   "rel": "step"
+                },
+                {
+                  "to": "metal.copper.foil",
+                  "rel": "contains"
                 }
               ]
             }
@@ -214,7 +286,7 @@
           ],
           "edges": [
             {
-              "to": "c64.keyboard-switches.keycap.abs",
+              "to": "chem.abs.grade",
               "rel": "contains"
             }
           ]
@@ -291,6 +363,10 @@
           "edges": [
             {
               "to": "c64.keyboard-switches.ribbon.film",
+              "rel": "contains"
+            },
+            {
+              "to": "c64.keyboard.cable.conductor",
               "rel": "contains"
             }
           ]
@@ -467,17 +543,14 @@
           ],
           "edges": [
             {
-              "to": "mb.crystal.y1.natural-quartz",
+              "to": "metal.quartz",
               "rel": "contains"
             },
             {
               "to": "metal.silver.ingot",
               "rel": "made of"
             },
-            {
-              "to": "metal.quartz",
-              "rel": "made of"
-            },
+            
             {
               "to": "mb.crystal.y1.grinding",
               "rel": "step"
@@ -485,6 +558,11 @@
             {
               "to": "mb.crystal.y1.electrodes",
               "rel": "step"
+            },
+            {
+              "to": "mb.crystal.y1.supports",
+              "rel": "step",
+              "basis": "typical-1982"
             }
           ]
         },
@@ -1162,36 +1240,7 @@
         }
       ]
     },
-    "c64.keyboard-switches.keycap.abs": {
-      "id": "c64.keyboard-switches.keycap.abs",
-      "name": "ABS copolymer (three monomers)",
-      "description": "Acrylonitrile-butadiene-styrene: a styrene-acrylonitrile matrix rubberised with polybutadiene. It is tough, dimensionally stable, chemically scratch-resistant and - crucially for legends - it takes paint and plating well. Almost every C64 keycap is ABS or ABS/PC.",
-      "kind": "material",
-      "category": "plastics",
-      "era": "1982-1984",
-      "sources": [
-        "https://en.wikipedia.org/wiki/Acrylonitrile_butadiene_styrene"
-      ],
-      "confidence": "high",
-      "facts": [
-        {
-          "label": "Components",
-          "value": "acrylonitrile + butadiene + styrene"
-        },
-        {
-          "label": "Why ABS",
-          "value": "impact strength plus the ability to hold a printed legend"
-        }
-      ],
-      "inputs": [],
-      "children": [],
-      "edges": [
-        {
-          "to": "c64.keyboard-switches.keycap.abs.butadiene",
-          "rel": "made of"
-        }
-      ]
-    },
+    
     "c64.keyboard-switches.keycap.spring.music-wire": {
       "id": "c64.keyboard-switches.keycap.spring.music-wire",
       "name": "Music wire (patented steel)",
@@ -1289,17 +1338,7 @@
         }
       ]
     },
-    "mb.crystal.y1.natural-quartz": {
-      "id": "mb.crystal.y1.natural-quartz",
-      "name": "Natural rock crystal",
-      "description": "Gem-quality clear quartz for crystal units came historically from the rock-crystal veins of Minas Gerais in Brazil, prized for natural faces that need no lapping and for the very low defect density that makes a low-phase-noise oscillator possible. By the early 1980s this was being displaced by hydrothermal synthetic quartz, which is chemically identical and far more uniform.",
-      "kind": "material",
-      "category": "silicon",
-      "era": "1982-1984",
-      "confidence": "medium",
-      "children": [],
-      "note": "Not established: Minas Gerais rock-crystal veins as the provenance of Y1-era feed, the natural-faces and very-low-defect-density claims, and the early-1980s displacement timing by hydrothermal synthetic quartz for this supply."
-    },
+    
     "mb.crystal.y1.case.nickel-can": {
       "id": "mb.crystal.y1.case.nickel-can",
       "name": "Nickel can stock",
@@ -1944,11 +1983,7 @@
       "inputs": [],
       "note": "Not established: right-angle forming of the four HC-49 leads, wave-solder mounting of Y1, and the board-frequency versus overtone-resonance spurious-mode rationale.",
       "edges": [
-        {
-          "to": "mb.crystal.y1",
-          "rel": "produces",
-          "role": "product"
-        }
+        
       ]
     },
     "mb.crystal.y1.electrodes": {
@@ -2164,10 +2199,6 @@
         {
           "to": "c64.keyboard-switches.keycap.abs.acrylonitrile.bismuth-catalyst",
           "rel": "consumes"
-        },
-        {
-          "to": "c64.keyboard-switches.keycap.abs",
-          "rel": "consumes"
         }
       ]
     },
@@ -2185,6 +2216,11 @@
         {
           "to": "mb.crystal.y1.case.nickel-can",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.steel.sheet",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -2372,6 +2408,21 @@
         {
           "to": "metal.caustic-soda",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.quartz",
+          "rel": "consumes",
+          "basis": "documented"
+        },
+        {
+          "to": "facility.water",
+          "rel": "consumes"
+        },
+        {
+          "to": "mb.crystal.y1",
+          "rel": "produces",
+          "role": "product",
+          "basis": "documented"
         }
       ]
     },

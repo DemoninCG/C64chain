@@ -729,7 +729,7 @@
           ],
           "edges": [
             {
-              "to": "c64.keyboard.keycaps.abs",
+              "to": "chem.abs.grade",
               "rel": "made of"
             },
             {
@@ -880,118 +880,7 @@
             }
           ]
         },
-        {
-          "id": "c64.keyboard.pcb",
-          "name": "Keyboard PCB (matrix and contacts)",
-          "description": "A single-sided printed circuit board carrying the eight row and eight column traces of the matrix, drilled and plated through in the usual way, with one pair of plated pads terminating each key position. It plugs into a 20-pin header on the mainboard at CN1 and carries no logic of its own: it is a switch matrix and nothing more. It is a rigid glass-epoxy laminate board, not a printed flexible membrane.",
-          "kind": "part",
-          "category": "board",
-          "era": "1982",
-          "facts": [
-            {
-              "label": "Sides",
-              "value": "single-sided, rigid glass-epoxy, not a flexible membrane"
-            },
-            {
-              "label": "Matrix",
-              "value": "8 rows x 8 columns"
-            },
-            {
-              "label": "Contacts",
-              "value": "gold-plated or carbon-plated pads; the dome bridges them"
-            },
-            {
-              "label": "Logic on board",
-              "value": "none; the matrix is scanned by CIA 1"
-            }
-          ],
-          "inputs": [
-            "FR4 laminate",
-            "gold-plated contact pads"
-          ],
-          "confidence": "medium",
-          "sources": [
-            "https://c64os.com/post/howthekeyboardworks",
-            "https://breadbox64.com/early-c64-keyboard",
-            "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
-          ],
-          "note": "That the board carries no logic and is a bare switch matrix is established: looking at the keyboard's PCB it is pretty clear that it has no electronics intelligence of any kind. It is merely a collection of switches, and the rest of the keys are arranged into an 8 by 8 matrix. The service manual agrees that both parallel ports of the CIA are used to decode the keyswitches, with PA0-PA7 as outputs and PB0-PB7 as inputs. Not established: that the board is single-sided, that the pads are gold-plated or carbon-plated rather than bare copper, and that the scan is performed by CIA 1 specifically. On the pad finish, the early keyboard's activation pads are described as not protected from oxidation as the later keyboards are.",
-          "children": [
-            {
-              "id": "c64.keyboard.pcb.matrix",
-              "name": "How the 8 x 8 matrix and the two odd keys work",
-              "description": "The CIA drives one of eight rows low and reads the eight columns; a pressed key connects one row to one column, and sixty-four positions are scanned. RESTORE is wired straight to the NMI line, bypassing the matrix entirely, which is why RESTORE works even while the CPU is jammed. SHIFT LOCK is a mechanically latching switch wired to the same two lines as the left SHIFT, so the firmware sees a shift and never sees a separate key.",
-              "kind": "note",
-              "category": "board",
-              "era": "1982",
-              "facts": [
-                {
-                  "label": "Scanned keys",
-                  "value": "64"
-                },
-                {
-                  "label": "RESTORE",
-                  "value": "dedicated line to NMI, not scanned"
-                },
-                {
-                  "label": "SHIFT LOCK",
-                  "value": "latching; shares the left-shift matrix lines"
-                },
-                {
-                  "label": "Reader",
-                  "value": "CIA 6526 #1, ports $DC00 / $DC01"
-                }
-              ],
-              "inputs": [
-                "PCB traces",
-                "rubber domes"
-              ],
-              "confidence": "high",
-              "sources": [
-                "https://www.c64-wiki.com/wiki/Keyboard",
-                "http://sta.c64.org/cbm64kbdlay.html"
-              ],
-              "note": "SHIFT LOCK being on the same lines as left SHIFT is why holding shift lock in software is impossible and why BASIC reports a shift rather than a distinct key. An explanation of the wiring rather than a part, so it is a note."
-            },
-            {
-              "id": "c64.keyboard.pcb.contacts",
-              "name": "Contact pads (gold or carbon)",
-              "description": "Each key position terminates in two pads on the rigid board. The carbon-loaded rubber dome that bridges them is the moving conductor: pressed, it closes the circuit between the pads; released, the pads are open. On gold-plated keyboards the pads are gold over nickel; on cheaper sets they are a carbon or graphite coating on the copper, which is the version that needs cleaning.",
-              "kind": "part",
-              "category": "board",
-              "era": "1982",
-              "inputs": [
-                "graphite"
-              ],
-              "confidence": "medium",
-              "sources": [
-                "https://breadbox64.com/early-c64-keyboard",
-                "https://www.classynemesis.com/blog/repair-c64-keyboard"
-              ],
-              "note": "The carbon-loaded rubber dome as the moving conductor is established by the repair literature, which lists sanding down the keypad conductive rubber and painting graphite powder onto it among the standard remedies, and measures the resistance of the rubber pads as a diagnostic. The early keyboard's activation pads are described as not protected from oxidation as the later keyboards are. Not established: that later pads are gold over nickel, that cheaper sets use a graphite coating on the copper, and that there is no silver-ink conductor anywhere in this keyboard.",
-              "edges": [
-                {
-                  "to": "metal.gold.ingot",
-                  "rel": "made of"
-                },
-                {
-                  "to": "metal.nickel.ingot",
-                  "rel": "made of"
-                },
-                {
-                  "to": "metal.copper.cathode",
-                  "rel": "made of"
-                }
-              ]
-            }
-          ],
-          "edges": [
-            {
-              "to": "metal.copper.foil",
-              "rel": "contains"
-            }
-          ]
-        },
+        
         {
           "id": "c64.keyboard.backplate",
           "name": "Steel backplate",
@@ -1098,38 +987,7 @@
             }
           ]
         },
-        {
-          "id": "c64.keyboard.cable",
-          "name": "Keyboard ribbon cable and connector",
-          "description": "A short flat ribbon or discrete-lead cable from the keyboard to the 20-pin header (CN1) on the front-left edge of the mainboard, terminating in a moulded connector housing. It carries the eight matrix rows, the eight columns, the RESTORE line and a ground return - eighteen wires in all.",
-          "kind": "part",
-          "category": "interconnect",
-          "era": "1982",
-          "facts": [
-            {
-              "label": "Conductors",
-              "value": "18 wires (8 row, 8 column, RESTORE, ground)"
-            },
-            {
-              "label": "Connector",
-              "value": "20-pin header on the mainboard (CN1), part 903331-20; one position an orientation spacer and the +5V position unused"
-            }
-          ],
-          "inputs": [
-            "copper conductors",
-            "PVC or polyester insulation",
-            "connector housing"
-          ],
-          "confidence": "low",
-          "note": "In conflict with the primary source. The 1992 service manual parts list for PCB assembly 250407-04 gives CN1 as Header Assy, 20 Pin, part 903331-20, and the same 20-pin header appears in the 250425-01, 250466-01 and 250469-01 lists; the C64C list gives it as Header w/LKG Sil 2.54 CTR 20 Pin, 903364-02, substituting Header 20 Pin 903331-20. A walk of the 1982 schematic finds the keyboard connector labelled pins 1 through 20, of which one is an orientation spacer and one, the +5V line, is not connected, leaving eighteen wires: eight COL, eight ROW, RESTORE and GND. The twenty-four conductor count and the 24-pin header in the description and the facts are therefore wrong, and the arithmetic does not work either, since eight rows, eight columns, RESTORE and two power rails is nineteen. Whether the lead is ribbon or discrete is a per-run detail not established either.",
-          "children": [],
-          "edges": [
-            {
-              "to": "c64.keyboard.cable.conductor",
-              "rel": "contains"
-            }
-          ]
-        },
+        
         "c64.keyboard-switches"
       ],
       "edges": [
@@ -2808,31 +2666,7 @@
       "confidence": "medium",
       "note": "Which polymer each production run used is not something the sources pin down; POM and filled nylon were both routine. Acetal has a very low coefficient of friction and never develops the grease-seeking behaviour that nylon can."
     },
-    "c64.keyboard.keycaps.abs": {
-      "id": "c64.keyboard.keycaps.abs",
-      "name": "ABS grade for keycaps",
-      "description": "A housing-grade ABS, low rubber content so the moulded texture stays crisp and the cap does not feel gummy. Keycap ABS is usually a slightly higher-gloss, higher-flow grade than the case resin because the caps are thin and have to fill a short, tight flow path.",
-      "kind": "material",
-      "category": "plastics",
-      "era": "1982",
-      "facts": [
-        {
-          "label": "Gloss units (60 deg)",
-          "value": "~85-100 GU for a glossy cap"
-        },
-        {
-          "label": "Wall thickness",
-          "value": "~1.5-2 mm, thinnest in the legend area"
-        }
-      ],
-      "inputs": [
-        "ABS pellet",
-        "colour masterbatch"
-      ],
-      "confidence": "medium",
-      "note": "Not established: the ABS grade, the gloss and the wall thickness on Commodore keycaps. The full ABS chain is documented once under c64.case.abs-resin; the keycap grade is not.",
-      "children": []
-    },
+    
     "c64.case.shield.foil": {
       "id": "c64.case.shield.foil",
       "name": "Aluminium foil",
@@ -3647,7 +3481,7 @@
       "note": "The front legends are printed and the cap tops are not: this node covers the front wall only. The 1982 breadbin keycap is double-shot moulded on top (see c64.keyboard-switches.keycap.double-shot) and printed on the front. Evidence: Keyboard Wiki (themk.org) - \"The front-printed \"PETSCII\" legends are likely pad-printed\"; Deskthority 8102 - \"The front legends are printed. If you look closely you should see the difference between double shot on the top and printed on the front of the caps.\" Confidence is held at medium for a specific reason: that the front legends are PRINTED is well attested by two independent collector sources, but the sources do not agree on the method - the Keyboard Wiki hedges with \"likely\" while Deskthority only says \"printed\". The ink and pad-printing detail retained here follows the pad-printing reading and should be treated as the weaker half of this node.",
       "edges": [
         {
-          "to": "c64.keyboard.keycaps.abs",
+          "to": "chem.abs.grade",
           "rel": "consumes"
         }
       ]

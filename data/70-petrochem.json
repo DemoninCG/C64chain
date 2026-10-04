@@ -1964,7 +1964,14 @@
             }
           ],
           "confidence": "low",
-          "note": "Established: The dry blend is melted in a twin-screw extruder at 230-260 C, the volatile xylene and the residual styrene are pulled out under vacuum, and the melt is cut into pellets as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+          "note": "Established: The dry blend is melted in a twin-screw extruder at 230-260 C, the volatile xylene and the residual styrene are pulled out under vacuum, and the melt is cut into pellets as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+          "edges": [
+            {
+              "to": "chem.abs.grade",
+              "rel": "produces",
+              "role": "product"
+            }
+          ]
         },
         {
           "id": "chem.abs.drying",
@@ -2434,7 +2441,7 @@
           "rel": "consumes"
         },
         {
-          "to": "c64.keyboard-switches.keycap.abs",
+          "to": "chem.abs.grade",
           "rel": "produces",
           "role": "product"
         }
@@ -3992,7 +3999,13 @@
         "Hong Kong"
       ],
       "confidence": "medium",
-      "note": "The specific commercial grade used for the C64 case is not documented in the sources used here; the description above is the class of material its mechanical and cosmetic requirements imply."
+      "note": "The specific commercial grade used for the C64 case is not documented in the sources used here; the description above is the class of material its mechanical and cosmetic requirements imply.",
+      "edges": [
+        {
+          "to": "c64.keyboard-switches.keycap.abs.butadiene",
+          "rel": "made of"
+        }
+      ]
     },
     "chem.thermosets.phenolic": {
       "id": "chem.thermosets.phenolic",
