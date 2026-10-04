@@ -15,14 +15,14 @@ defects it named, is in each agent's own file:
 
 ## 1. What was run
 
-15 of 22 examinations complete; 7 in flight.
+18 of 22 examinations complete; 4 in flight.
 
 One read-only agent per branch or branch family. No agent edited any file in
 `data/`, `docs/` or `scripts/`. Agents read `docs/GOLDEN-IDEA.md`,
 `docs/REPORT-TEMPLATE.md` and `data/_relation_schema.json`, and were given a
 shared brief at `w3-brief.md`.
 
-Nodes read across all completed examinations: **2,332**
+Nodes read across all completed examinations: **2,540**
 (tree total 2,448). Nodes are re-read across agents where an agent followed an
 edge out of its scope, so this is a work figure, not a coverage percentage.
 
@@ -46,10 +46,10 @@ edge out of its scope, so this is a work figure, not a coverage percentage.
 | industry-facilities | 80-industry: all facility.* + industry | 246 | 662 | 11 | 11 | 1 | 11 | 3 | 37 | 3 BLOCKER, 9 STRUCTURAL, 24 LOCAL |
 | industry-logistics | 80-industry: all logistics.* + industry | 22 | 34 | 13 | 5 | 4 | 6 | 6 | 34 | not stated as a total |
 | power-psu | 50-power: c64.psu + c64.mains | 107 | 200 tree edges | 6 | 5 | 5 | 8 | 6 | 30 | 8 BLOCKER or STRUCTURAL |
-| power-rf-modulator | 50-power: mb.rf-modulator and beneath | — | — | — | — | — | — | — | pending | PENDING |
-| silicon-chips | 10-silicon: the chip nodes | — | — | — | — | — | — | — | pending | PENDING |
+| power-rf-modulator | 50-power: mb.rf-modulator and beneath | 41 | 76 (41 children + 35 from) | 7 | 2 | 3 | 3 | 4 | 19 | 14 high, 5 medium |
+| silicon-chips | 10-silicon: the chip nodes + si.wafer | 137 | 421 inside scope (373 stored, 48 leaving) + ~100 inbound on shared targets | 10 | 5 | 6 | 8 | 9 | 38 | not stated as a total |
 | silicon-fab | 10-silicon: all si.* + mb.cpu.front-end | — | — | — | — | — | — | — | pending | PENDING |
-| logic-cmos-sourcing | 35-logic: mb.logic, mb.logic.cmos, mb.logic.sourcing | — | — | — | — | — | — | — | pending | PENDING |
+| logic-cmos-sourcing | 35-logic: mb.logic, mb.logic.cmos, mb.logic.sourcing | 30 | 106 touching (104 outbound, 2 inbound) + ~140 in cross-checks | 6 | 3 | 6 | 9 | 4 | 28 | not stated as a total; row 3 dual-classified |
 | board | 20-board in full | — | — | — | — | — | — | — | pending | PENDING |
 | spine-root | 05-spine + 00-root + unlinked.catalogue | — | — | — | — | — | — | — | pending | PENDING |
 
@@ -70,18 +70,21 @@ Verdicts in each agent's own words:
 - **industry-facilities** — "structurally broken, but not messy"
 - **industry-logistics** — "structurally broken, but not because of the content; the graph is empty"
 - **power-psu** — "the prose is the best in the tree and the graph is still broken"
+- **power-rf-modulator** — "structurally broken, and the worst part of it is one node"
+- **silicon-chips** — "structurally broken in one load-bearing place, otherwise a well-written file with a broken edge layer"
+- **logic-cmos-sourcing** — "the prose is the best in the tree; the structure is hollow"
 
 ## 3. Class totals across completed reports
 
 Arithmetic on the counts each agent reported, not an independent judgement.
 
-- BREAK: 187
-- SHAPE: 114
-- HOLE: 96
-- GHOST: 77
-- DRIFT: 71
+- BREAK: 210
+- SHAPE: 134
+- HOLE: 111
+- DRIFT: 88
+- GHOST: 87
 
-Total reported defects: **545**
+Total reported defects: **630**
 
 Note that several agents state some rows carry two classes, so the per-report
 totals in §2 do not always sum cleanly to a single count of distinct defects.
@@ -103,6 +106,16 @@ These are recorded because each was acted on or nearly acted on.
 - The "no relation for ambience" gap is stale; `no_wafer_material_node` names the wrong fix; the substrate finding was one-directional.
 - `from` is derived at build time, so no fragment contains a `from` key. My brief said the tree stores `children` and `from`, which is true of `public/tree.json` and false of `data/*.json`.
 - `docs/GOLDEN-IDEA.md` shipped with `step` backwards relative to the schema, and listed ten of eleven relations. Both fixed; `scripts/check-golden.mjs` now compares the two.
+- **"51 of 51 metal.silica inbound edges are wrong" is too strong.** logic-cmos-sourcing accounts for 8 of the 51, all its own; 4 of those are part-level `part→material`, where the schema's `made from` guard explicitly sanctions the direct-feedstock shortcut. The blanket rejection will delete four defensible edges. This figure was in five agent briefs.
+- **"No node exists for the semiconductor layers" is wrong for field oxide.** `metal.silica.field-oxide` exists in `62-metals-b`, correctly typed, with one wrong inbound edge and zero consumers. The absence is in the edges, not the nodes, which flips the fix from authoring new nodes to re-homing one that already exists.
+- **The LOCOS hydrogen drift does not reproduce** where I placed it, and the real drift is worse. Acting on my version would have had someone adding hydrogen to a node.
+- **"metal.silica spans 3 fragments" is 2.** The apparent third is `mb.rf-modulator`, declared in `05-spine.json`; any tool grouping by declaring file over-counts every spine root. **"51 of 51 wrong" is 50 of 51**, per a second agent.
+- **Nothing in the tree has a typed `edges` array** — 0 of 2,448 nodes. So "zero `step` edges in a subtree" is a property of the untyped data tree-wide, not a defect of any branch. Recorded findings of that shape need re-reading.
+- **A note can argue FOR its wrong edge.** `mb.logic.package.assembly.mould.compound`'s note argues for the very edge beneath it, so notes cannot be scanned for hedging — they must be read against edges.
+- **The stage tie-break added in round 4 has no anchor.** Not one of the ten chip descriptions names a manufacturing stage; they are datasheets. Applied literally, 9 of 10 chips would get `produces` on a test node.
+- **`metal.silica.polysilicon`'s producer status is disputed** between two agents — one says it has none, the other names `metal.silica.czochralski`. Recorded, unresolved.
+- **`mb.cpu.fe.nplus` consuming silane is not a defect**; the fix is the target, not the substance.
+- **The scope list I generated appears to be assembled from `05-spine.json` rather than the fragment files** — `mb.photo` is in `20-board.json`. Affects what each agent was asked to cover.
 
 ## 5. Unresolved disagreements between agents, and between agents and briefs
 
@@ -256,6 +269,74 @@ Recorded as pairs. **None is adjudicated here.**
 - **A:** industry-logistics agent: facility.foundries and facility.foundries.subcontract-network are lists of places, and mb.logic.sourcing.makers.japan is a list of orgs
 - **B:** industry-facilities agent: 4 of 13 orgs are not organisations
 
+### 38. "no node exists for the semiconductor layers"
+- **A:** logic-bipolar agent (recorded by me and propagated into the silicon-fab and logic-cmos briefs): no node for field oxide, epilayer, diffusion products or films — the absence produced nine metal.silica edges
+- **B:** logic-cmos-sourcing agent: WRONG for field oxide. metal.silica.field-oxide EXISTS in 62-metals-b, correctly typed material, and its own description names the gate oxide and field oxide of a 1982 die. It has one inbound edge, itself wrong, and zero consumers. THE ABSENCE IS IN THE EDGES, NOT THE NODES — which flips the fix from author-new-nodes to re-home-one-that-exists. The agent notes the sibling layer claims should be re-checked the same way.
+
+### 39. the LOCOS hydrogen drift
+- **A:** industry-logistics agent, relayed by me in the logic-cmos brief: mb.logic.cmos.process.locos description says steam while its inputs carry hydrogen
+- **B:** logic-cmos-sourcing agent: DOES NOT REPRODUCE. Both data/35-logic.json and tree.json give mb.logic.cmos.process.locos.inputs = ["metal.silica", "chem.silane"]. The node carrying facility.gases.hydrogen is mb.cpu.fe.locos in 10-silicon. The drift is real but different and worse: the description says steam and the inputs name neither steam, oxygen nor water — they name two substances belonging to two OTHER steps. Acting on "steam vs hydrogen" would have had someone ADDING hydrogen to a LOCOS node.
+
+### 40. "metal.silica: 51 of 51 inbound edges are wrong"
+- **A:** my recorded figure, stated in GOLDEN-IDEA-adjacent notes, in w3-brief.md and in five agent briefs
+- **B:** logic-cmos-sourcing agent: TOO STRONG. The agent accounts for 8 of the 51, all its own; 4 of them are part-level part->material where the schema made-from guard explicitly sanctions the direct-feedstock shortcut. The blanket rejection WILL DELETE FOUR DEFENSIBLE EDGES.
+
+### 41. phosphoric acid scope
+- **A:** passives-capacitors agent: exists as mb.logic.cmos.process.locos.phosphoric, a material, mis-scoped as a LOCOS bath
+- **B:** logic-cmos-sourcing agent: exists TWICE, in two fragments, under two kinds — material here, process in 70-petrochem — so "mis-scoped, not absent" is incomplete in a way that matters
+
+### 42. how the Wave 0 org/site split was applied
+- **A:** my recorded finding: the split was applied and simply left work to do
+- **B:** logic-cmos-sourcing + industry-logistics agents: applied BY NAME PATTERN, NOT BY TEST. facility.foundries — an index the schema itself lists in _index_parents — was promoted to org, taking three role-names ("psu-maker", "subcontract-network") to legal entities with it.
+
+### 43. metal.silica — how many of the 51 are wrong
+- **A:** my recorded figure: 51 of 51, tree-wide
+- **B:** TWO agents now say the figure is too high. logic-cmos-sourcing: 4 of the 8 it accounted for are defensible part->material direct-feedstock shortcuts sanctioned by the made-from guard. power-rf-modulator: ssc-transistor > metal.silica is a legitimate `made from`, and 50 of 51 is the right number.
+
+### 44. metal.silica — how many fragments its edges come from
+- **A:** my recorded figure: 3 fragments
+- **B:** power-rf-modulator: 2 — 35-logic (34) and 50-power (16). The apparent third is mb.rf-modulator, which is DECLARED in 05-spine.json, so any tool that groups by declaring file over-counts every spine root.
+
+### 45. "zero step edges in the capacitor subtree" as a branch defect
+- **A:** passives-capacitors agent, recorded by me as a finding about that branch
+- **B:** power-rf-modulator agent: NOTHING in the tree has a typed edges array — 0 of 2,448 nodes — so "zero step edges" is a tree-wide property of the untyped data, not a defect of that branch. The agent says it nearly filed it as a branch defect and rewrote the finding. w3-node.mjs prints a "TYPED edges" header unconditionally, which invites the mistake.
+
+### 46. whether notes can be grepped for disagreement with edges
+- **A:** my recorded rule: notes beat edges; grep for hedging
+- **B:** power-rf-modulator agent: a SIXTH note pattern, and the one to add to the hunt list — mb.logic.package.assembly.mould.compound note ARGUES FOR its wrong edge ("the filler hangs off inputs ... rather than as a child"), so grepping for hedging words misses it. Notes must be read against edges, not scanned.
+
+### 47. why metal.silica edges exist at all in the rf-modulator branch
+- **A:** brief to the agent: absence of layer nodes
+- **B:** power-rf-modulator agent: the root cause is a single node — mb.rf-modulator.video-chain.ssc-transistor.packaging is typed `process` where 10-silicon already has the same operation as a `part` (mb.discretes.bjt-package). Being a process, it cannot be a substance, so four sibling parts declare themselves made of it and it absorbs a metal.silica edge it cannot use.
+
+### 48. metal.silica.polysilicon — does it have a producer?
+- **A:** metals-ferrous agent, recorded by me and propagated into four briefs: it has NO producer, so a bare deletion of metal.silica removes the silicon branch only upstream
+- **B:** silicon-chips agent: it DOES — metal.silica.czochralski produces it. The "no producer" claim is stale. UNRESOLVED between the two agents.
+
+### 49. mb.cpu.fe.nplus consuming silane
+- **A:** petrochem-chemicals agent, recorded by me as a defect: claims a phosphorus diffusion consumes silane
+- **B:** silicon-chips agent: NOT a defect. The node describes a PSG pre-diffusion, deposited from silane AND phosphine together. Fix the TARGET, not the substance.
+
+### 50. dopant citations pointing at an index vs the leaf
+- **A:** petrochem-chemicals agent: six nodes cite the phosphine leaf while nine cite an index instead
+- **B:** silicon-chips agent: does not hold. chem.fab-chemicals.dopants has ONE inbound edge tree-wide, its own parent. All 12 dopant citations in this branch cite the leaf.
+
+### 51. the size of the missing-layer / illegal-target problem
+- **A:** logic-bipolar agent, recorded by me: the wafer gap is 7 illegal mb.*.process > si.wafer edges
+- **B:** silicon-chips agent: NOT one gap and it under-sizes it by half. In 129 nodes there are 19 process->part edges across FOUR targets — three nodes cite si.mask.plate and ten cite si.probe-card / same-fragment parts, on top of the 6 si.wafer edges.
+
+### 52. the stage tie-break added to the schema in round 4
+- **A:** round 4 agent B, adopted by me: if the parent has other modelled stages, `produces` goes to the LAST one named in the parent own description; earlier stages are `step`
+- **B:** silicon-chips agent: THE TIE-BREAK HAS NO ANCHOR. Not one of the ten chip descriptions names a manufacturing stage — they are datasheets. All ten chips answer "no, I did not exist" 5-9 times (73 part->process edges) and none has a producer anywhere in the tree (each has exactly one inbound edge, from c64.mainboard). Applied literally to the modelled order, 9 of 10 chips would get `produces` on a TEST node (mb.ram.sort, mb.roms.verify, mb.vic.test) and mb.cpu on si.burnin. The back-end is also attached inconsistently: mb.cpu alone carries si.burnin and mb.discretes carries no packaging chain, so "the last stage" is not the same physical operation on two chips.
+
+### 53. the scope list agents were given
+- **A:** w3-manifest.json, which I generated and put in the brief
+- **B:** silicon-chips agent: mb.photo is in 20-board.json, not 10-silicon.json, so the scope list looks assembled from 05-spine.json rather than from the fragment files
+
+### 54. metal.silica-sand
+- **A:** my heavy-hub list, implying blanket suspicion
+- **B:** silicon-chips agent: it genuinely does reach this file, and 4 of its 5 uses here are CORRECT — do not blanket-retarget it
+
 ## 6. Contradictions in the source data, reported by agents
 
 Each is a statement that two parts of the tree disagree. Ownership unassigned.
@@ -303,6 +384,11 @@ Each is a statement that two parts of the tree disagree. Ownership unassigned.
 | phosphine / arsine | unresolved, 13x / 8x | resolved, 21 / 12 |
 | magnet nodes needing a detector | 3 known | 7+ reported, incl. `metal.chromite`, `metal.silica-sand`, `metal.stainless.304`, `metal.iron`, `chem.styrene.benzene` |
 | parts/materials with no making operation | 27% of sampled parents | 57 of 72 in one branch; 28 of 44 in another |
+| `metal.silica` inbound edges that are wrong | 51 of 51, tree-wide | 8 of 51 accounted for by one agent; 4 of those 8 are defensible `part→material` direct-feedstock shortcuts |
+| `mb.logic.cmos.process.locos` inputs | hydrogen, per a sibling's finding | `["metal.silica", "chem.silane"]` in both `data/35-logic.json` and `tree.json` |
+| unresolved `inputs` in 80-industry | 133 | 193 of 213 (91%) |
+| corporate entities lacking an `org` node | 6 of 8 | 7 of 9 |
+| `org` nodes that are not organisations | 4 of 13 | only 2 of 19 are real bodies |
 
 ## 8. Files
 
