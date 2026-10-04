@@ -92,6 +92,27 @@ and are stitched together by `scripts/build.mjs`.
   // OPTIONAL — how sure are we. "high" | "medium" | "low"
   "confidence": "high",
 
+  // OPTIONAL — scope for orphan triage (HANDOFF-WAVE5 section 4, TODO section 11).
+  //   chain     everything needed to build a 250407 C64 in 1982 down to ore/crude/gas/sand
+  //             (default when missing; must be reachable under the directed walk;
+  //             upstream extraction, refining/cracking, fab/board/assembly, utilities
+  //             consumed by chain processes, equipment used by chain processes via uses).
+  //   context   plant furniture, logistics paperwork, cleanroom fixtures, power/steam
+  //             equipment inside plants via at, waste disposal outputs (correctly
+  //             unlinked, terminal, catalogue blessed, does not gate).
+  //   alternate obsolete/alternate routes, variants, correctly peripheral (open-hearth,
+  //             valley fill, heap leach, nodules, encoder variant: correctly unlinked,
+  //             terminal, marked era/basis so nobody fixes them in, does not gate).
+  // Central policy lives in data/_scope.json (explicit roots, subtree inheritance via
+  // children unless overridden; reached nodes are always chain; notes/orgs default
+  // context by kind since they never carry). Product vision guides calls: the viewer
+  // must show complete chain from C64 to raw materials; context/alternate are dimmed
+  // or hidden, never required for completeness. Load-bearing gate (relate audit FAIL)
+  // is chain parts + chain consumed materials; chain total is WARN (backlog to cascade),
+  // context/alternate terminal is INFO (blessed, no action).
+  // Prefer central _scope.json over per-node scope (keeps fragments clean, reviewable).
+  "scope": "chain",
+
   // OPTIONAL — a caveat or nuance a careful reader would want
   "note": "Commodore used no leaded solder on the mainboard leads; ..."
 }

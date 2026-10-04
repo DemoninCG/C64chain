@@ -127,8 +127,8 @@ one-subtree expansion is required, not optional.
 
 ## 6. Concrete next actions
 
-- [ ] Petroleum trunk pass (section 4.1) + rebuild + orphan recount.
-- [ ] Scope markers + catalogue-blessing + load-bearing orphan gate.
+- [x] Petroleum trunk pass (section 4.1) + rebuild + orphan recount. DONE 2026-10-04 (`cd8be3d`): distillation produces naphtha, separation produces petroleum, drop spurious crude consumes; orphans 851->835; all gates green except scheduled 9 notes FAIL.
+- [x] Scope markers + catalogue-blessing + load-bearing orphan gate. DONE 2026-10-04 (policy DECIDED per product vision): `data/_scope.json` (explicit orphan roots, inheritance via scope-links, notes/orgs default context, reached always chain), `docs/SCHEMA.md` scope, `scripts/build.mjs` merge + byScope, `scripts/relate.mjs audit` gate (FAIL 93 chain load-bearing = parts 16 + consumed 77; WARN 700 chain backlog; INFO 111 context + 24 alternate blessed + 835 raw informational). Gates green except 2 FAIL (9 notes scheduled + 93 load-bearing backlog).
 - [ ] TODO-10 substance nodes, then re-home their waiting edges.
 - [ ] Duplicate-merge pass via `_proposals`.
 - [ ] Schema-gap ruling (extend or permanent catalogue).

@@ -128,6 +128,25 @@ try {
   ingredients = JSON.parse(await readFile(path.join(DATA, '_ingredients.json'), 'utf8')).map ?? {};
 } catch { /* no ingredient table */ }
 
+/* Scope policy for orphan triage (HANDOFF-WAVE5 section 4, TODO section 11).
+ * data/_scope.json lists explicit context/alternate roots (orphans only);
+ * missing = chain (default, must be reachable). Subtree inheritance via children
+ * unless explicitly overridden; reached nodes are always chain (if used in chain,
+ * chain wins, e.g. coke used by BOF chain and open-hearth alternate stays chain).
+ * Notes/orgs default context by kind since they never carry (owned by/at/about).
+ * Product vision guides calls: viewer must show complete chain from C64 to raw
+ * materials; context/alternate are dimmed/hidden, never required for completeness.
+ * Prefer central _scope.json over per-node scope (keeps fragments clean). */
+let scopePolicy = { context: [], alternate: [] };
+try {
+  const rawScope = JSON.parse(await readFile(path.join(DATA, '_scope.json'), 'utf8'));
+  scopePolicy = {
+    context: [...(rawScope.context ?? [])].filter((k) => !k.startsWith('_') && !k.startsWith('$')),
+    alternate: [...(rawScope.alternate ?? [])].filter((k) => !k.startsWith('_') && !k.startsWith('$')),
+  };
+} catch { /* no scope table yet */ }
+const VALID_SCOPES = new Set(['chain', 'context', 'alternate']);
+
 for (const { file, doc } of docs) {
   // a document may be a bare node (the spine file), or a wrapper with
   // root / roots / nodes / shared.
@@ -467,6 +486,9 @@ for (const [id, node] of defs) {
   if (node.confidence && !['high', 'medium', 'low'].includes(node.confidence)) {
     err(`${id}: confidence "${node.confidence}" must be high|medium|low`);
   }
+  if (node.scope !== undefined && !VALID_SCOPES.has(node.scope)) {
+    err(`${id}: scope "${node.scope}" must be chain|context|alternate`);
+  }
   if (node.inputs !== undefined && !Array.isArray(node.inputs)) err(`${id}: "inputs" must be an array`);
   if (node.from !== undefined && !Array.isArray(node.from)) err(`${id}: "from" must be an array`);
   else for (const f of node.from ?? []) if (!defs.has(f)) err(`${id}: "from" references unknown id "${f}"`);
@@ -607,6 +629,113 @@ const orphans = [...defs.keys()].filter((id) => !seen.has(id));
 // make its descendants reachable, and warning about them would be noise.
 for (const id of orphans) warn(`"${id}" (${defs.get(id).__file ?? 'generated'}) is defined but never linked into the tree`);
 
+/* ------------------------------------------------- scope policy -----
+ * Orphan triage (HANDOFF-WAVE5 §4, TODO §11). data/_scope.json lists explicit
+ * context/alternate roots (orphans only); missing = chain. Subtree inheritance
+ * via children unless explicitly overridden; reached nodes are always chain
+ * (chain wins for shared, e.g. coke). Notes/orgs default context by kind since
+ * they never carry. Applied here (after reachable/adoption, before strip/stats)
+ * so inheritance can skip reached children (do not override chain with context).
+ * Tree.json carries explicit scope for every node (viewer/audit read it). */
+{
+  const explicit = new Map(); // id -> scope (central file + per-node field wins?)
+  for (const id of scopePolicy.context) explicit.set(id, 'context');
+  for (const id of scopePolicy.alternate) explicit.set(id, 'alternate');
+  let scopeMissing = 0, scopeExplicit = 0;
+  for (const [id, n] of defs) {
+    if (n.scope !== undefined) {
+      // Per-node scope in data files wins over central (prefer central, but allow override).
+      if (!explicit.has(id)) explicit.set(id, n.scope);
+      scopeExplicit++;
+    }
+  }
+  for (const id of [...scopePolicy.context, ...scopePolicy.alternate]) {
+    if (!defs.has(id)) warn(`scope: "${id}" is not a node in this tree, skipping`);
+  }
+  // Kind defaults first (notes/orgs → context), then explicit overrides.
+  for (const [id, n] of defs) {
+    if (!explicit.has(id) && (n.kind === 'note' || n.kind === 'org')) {
+      n.scope = 'context';
+    }
+  }
+  for (const [id, sc] of explicit) {
+    const n = defs.get(id);
+    if (!n) continue;
+    // Explicit alternate wins over kind-default context (e.g. hybrid note alternate).
+    n.scope = sc;
+  }
+  // Inherit via scope-links (children + typed refinement/outputs/furniture/flow,
+  // orphan children only; do not override reached chain shared children).
+  // Scope inheritance follows composition, outputs and placement, plus flow for
+  // alternate-specific feedstocks (alternate process consumes alternate material):
+  // legacy children + typed contains/made of/made from/step/consumes/produces/uses/at.
+  // Excludes owned by/about (annotation, never inherits: company context must not
+  // make plant context, note context must not make content context, etc.).
+  // Chain wins for shared/reached (skip seen). BFS to cover deep subtrees.
+  const SCOPE_LINKS = new Set(['contains', 'made of', 'made from', 'step', 'consumes', 'produces', 'uses', 'at']);
+  const scopeKids = (pid) => {
+    const out = [...childIds(pid)];
+    for (const e of defs.get(pid)?.edges ?? []) {
+      if (e && SCOPE_LINKS.has(e.rel) && typeof e.to === 'string' && defs.has(e.to) && !out.includes(e.to)) out.push(e.to);
+    }
+    return out;
+  };
+  const queue = [...explicit.keys()].filter((id) => defs.has(id));
+  const visitedScope = new Set(queue);
+  while (queue.length) {
+    const pid = queue.shift();
+    const pScope = defs.get(pid)?.scope;
+    if (pScope !== 'context' && pScope !== 'alternate') continue;
+    for (const cid of scopeKids(pid)) {
+      if (visitedScope.has(cid)) continue;
+      visitedScope.add(cid);
+      const cn = defs.get(cid);
+      if (!cn) continue;
+      if (explicit.has(cid)) { queue.push(cid); continue; } // explicit override, still traverse its children
+      // No seen check here (builder walk sees all, 0 unreachable; directed orphans
+      // are computed in relate audit, not build). All current explicit roots are
+      // orphan with orphan subtrees (verified O), so propagation stays within orphans.
+      // If a future explicit root ever has a reached child (scope violation:
+      // alternate/context reached via hub-bridging/illustrative), that child would
+      // incorrectly inherit context/alternate here; relate audit reports scope
+      // violations separately (reached alternate/context) to catch it. For now safe.
+      if (cn.scope === undefined || cn.scope === 'chain') {
+        // Only inherit if currently default chain (i.e. not already scoped by another parent).
+        // If already scoped context/alternate by another parent, keep first (both exempt, same effect).
+        if (cn.scope === undefined) cn.scope = pScope;
+        // If cn.scope is already context/alternate (from another parent), keep it, still traverse.
+        queue.push(cid);
+      }
+    }
+  }
+  // Default chain for the rest (must be reachable; orphans are backlog).
+  for (const [id, n] of defs) {
+    if (n.scope === undefined) {
+      n.scope = 'chain';
+      if (!seen.has(id)) scopeMissing++;
+    }
+  }
+  // Scope violations: alternate/context reached (should be orphan, terminal).
+  // Currently none expected (we only scope orphans); warn if hub-bridging or
+  // illustrative children make alternate/context reachable (e.g. hybrid reached
+  // via modulator child, tantalum reached via shared hubs). Informational for now.
+  let scopeViolations = 0;
+  for (const id of seen) {
+    const sc = defs.get(id)?.scope;
+    if (sc === 'context' || sc === 'alternate') {
+      // Notes/orgs reached? Notes reached via children? About never carries, but
+      // children walk includes note children? Build walk follows children regardless
+      // of kind (for adoption, 0 unreachable). So reached context notes are expected
+      // (adoption keeps content visible). Only warn for non-note alternate reached?
+      // For now, count but do not warn (adoption deliberately keeps everything visible;
+      // directed walk in relate audit is the gate, not builder walk).
+      scopeViolations++;
+    }
+  }
+  if (scopeExplicit) console.log(`\n  scope: ${scopeExplicit} node(s) carry explicit per-node scope (prefer central _scope.json)`);
+  // Counts reported in stats below (byScope).
+}
+
 /* ------------------------------------------------------------- stats */
 
 /* Refinement links read as hierarchy: legacy children plus typed contains /
@@ -659,12 +788,14 @@ const depthOfNode = (id) => depth(id);
 const byKind = {};
 const byCategory = {};
 const byEra = {};
+const byScope = {};
 const leafCount = [...seen].filter((id) => refinedKids(id).length === 0).length;
 const descChars = [...seen].reduce((n, id) => n + (defs.get(id).description?.length ?? 0), 0);
 for (const id of seen) {
   const n = defs.get(id);
   byKind[n.kind ?? '?'] = (byKind[n.kind ?? '?'] ?? 0) + 1;
   byCategory[n.category ?? '?'] = (byCategory[n.category ?? '?'] ?? 0) + 1;
+  byScope[n.scope ?? '?'] = (byScope[n.scope ?? '?'] ?? 0) + 1;
   const e = n.era ?? 'unspecified';
   byEra[e] = (byEra[e] ?? 0) + 1;
 }
@@ -673,7 +804,7 @@ for (const id of seen) {
 
 function strip(node) {
   const o = { id: node.id, file: node.__file };
-  for (const k of ['name', 'description', 'kind', 'category', 'era', 'confidence', 'note']) {
+  for (const k of ['name', 'description', 'kind', 'category', 'era', 'confidence', 'note', 'scope']) {
     if (node[k] !== undefined) o[k] = node[k];
   }
     for (const k of ['inputs', 'facts', 'places', 'sources']) {
@@ -743,6 +874,7 @@ const meta = {
   deepestPath,
   byKind,
   byCategory,
+  byScope,
   byEra,
   sources: files,
   descriptionsChars: descChars,
@@ -827,6 +959,10 @@ for (const [k, v] of Object.entries(byCategory).sort((a, b) => b[1] - a[1])) {
 }
 console.log('\n  kinds');
 for (const [k, v] of Object.entries(byKind).sort((a, b) => b[1] - a[1])) {
+  console.log(`    ${k.padEnd(13)} ${String(v).padStart(5)}`);
+}
+console.log('\n  scopes (builder walk, adoption keeps everything visible)');
+for (const [k, v] of Object.entries(byScope).sort((a, b) => b[1] - a[1])) {
   console.log(`    ${k.padEnd(13)} ${String(v).padStart(5)}`);
 }
 

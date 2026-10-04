@@ -479,7 +479,45 @@ function cmdAudit() {
     for (const p of N[x].made_by ?? []) reach(p);
   }
   const orphans = ids.filter((i) => !seenNodes.has(i));
-  if (orphans.length) warns.push(`${orphans.length} nodes unreachable from the root with the three index containers dropped (wave 4.3 reconnects them)`);
+  // Orphan triage with scope policy (HANDOFF-WAVE5 §4, TODO §11, data/_scope.json).
+  // Product vision guides calls: viewer must show complete chain from C64 to raw
+  // materials; context/alternate are dimmed/hidden, never required for completeness.
+  //   chain     must be reachable (default); orphans are backlog (SHOULD connect
+  //             upstream worlds, branch-heads blocked on TODO-10, detached content).
+  //   context   plant furniture, logistics paperwork, cleanroom fixtures, power/steam
+  //             equipment via at, waste outputs (correctly unlinked, terminal,
+  //             catalogue blessed, does not gate). Notes/orgs default context by kind.
+  //   alternate obsolete/alternate routes, variants, correctly peripheral (correctly
+  //             unlinked, terminal, marked era/basis, does not gate).
+  // Catalogue is blessed as terminal for context/alternate (they stay visible via
+  // catalogue in viewer, no re-homing required). Chain orphans under catalogue still
+  // need re-homing (backlog). Load-bearing gate (FAIL, CI-blocking, like notes FAIL):
+  // chain parts (BOM must be complete) + chain consumed materials (feedstocks must
+  // have source chains). Chain total is WARN (backlog to cascade, will reduce as
+  // anchors land). Context/alternate terminal is INFO (blessed, no action). Raw total
+  // kept for triage (was the old gate, now informational).
+  const S = (id) => N[id]?.scope ?? 'chain';
+  const chainOrph = orphans.filter((i) => S(i) === 'chain');
+  const ctxOrph = orphans.filter((i) => S(i) === 'context');
+  const altOrph = orphans.filter((i) => S(i) === 'alternate');
+  const consumedSet = new Set();
+  for (const oid of ids) {
+    for (const e of N[oid].edges ?? []) {
+      if (e && e.rel === 'consumes' && N[e.to]) consumedSet.add(e.to);
+    }
+  }
+  const chainParts = chainOrph.filter((i) => K(i) === 'part');
+  const chainConsumed = chainOrph.filter((i) => K(i) === 'material' && consumedSet.has(i));
+  // Union (disjoint by kind: part vs material, so sum, but compute set for safety).
+  const loadBearing = [...new Set([...chainParts, ...chainConsumed])];
+  if (loadBearing.length) {
+    fails.push(`${loadBearing.length} chain load-bearing orphans (parts ${chainParts.length} + consumed materials ${chainConsumed.length}); BOM + feedstocks must be complete for viewer (scope policy data/_scope.json)`
+      + `   [e.g. ${loadBearing.slice(0, 6).join(', ')}${loadBearing.length > 6 ? ', ...' : ''}]`);
+  }
+  if (chainOrph.length) warns.push(`${chainOrph.length} chain orphans (backlog to cascade: upstream worlds, branch-heads, detached; will reduce as anchors land; load-bearing ${loadBearing.length} FAIL above)`);
+  if (ctxOrph.length) warns.push(`${ctxOrph.length} context terminal (blessed, no action: furniture, logistics, cleanroom, waste, notes/orgs)`);
+  if (altOrph.length) warns.push(`${altOrph.length} alternate terminal (blessed, no action: obsolete routes, variants, correctly peripheral; marked era/basis)`);
+  if (orphans.length) warns.push(`${orphans.length} total unreachable (was the old gate, now informational; chain ${chainOrph.length} + context ${ctxOrph.length} + alternate ${altOrph.length})`);
 
   console.log(`\n  build: ${meta.generated}`);
   console.log(`  ${fails.length} FAIL  ${warns.length} WARN\n`);
