@@ -355,7 +355,7 @@ function cmdGold() {
 }
 
 function cmdVerifyInputs() {
-  const rows = ALL.filter((e) => e.pair === 'process->material' && e.was === 'from');
+  const rows = ALL.filter((e) => e.pair === 'process>material' && e.was === 'from');
   const flags = [];
   for (const r of rows) {
     const cn = nameOf(r.child);
