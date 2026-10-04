@@ -278,7 +278,13 @@ function edgesFor(file) {
 function cmdWork() {
   const file = flag('file');
   if (!file || file === true) { console.error('need --file 20-board.json'); process.exit(1); }
-  const mine = edgesFor(file);
+  const only = flag('only', 'judge');
+  const want = (disp) => (only === 'all' ? true
+    : only === 'judge' ? (disp === 'JUDGE' || disp === 'NO-HOME' || disp === 'REVIEW')
+      : disp === only.toUpperCase());
+  const all = edgesFor(file);
+  const mine = all.filter((e) => want(e.disposition));
+  const skipped = all.length - mine.length;
   const byKind = new Map();
   for (const r of mine) {
     const k = r.disposition === 'JUDGE' ? `JUDGE ${r.q}` : r.disposition;
@@ -287,7 +293,8 @@ function cmdWork() {
   }
   console.log(`# work list — ${file}`);
   console.log(`# generated ${meta.generated} by scripts/relate.mjs. Do not hand-edit.`);
-  console.log(`# ${mine.length} edges touch this fragment (as source or target).`);
+  console.log(`# ${all.length} edges touch this fragment; ${mine.length} need a decision`
+    + (skipped ? `; ${skipped} are mechanical and applied by script, not by you.` : '.'));
   console.log(`# 'out' = this fragment owns the edge (stored on the parent). 'in' = the other end does.\n`);
   for (const [k, list] of [...byKind].sort((a, b) => b[1].length - a[1].length)) {
     console.log(`## ${k} — ${list.length}`);
