@@ -42,7 +42,7 @@
         "https://www.lemon64.com/forum/viewtopic.php?t=74842"
       ],
       "confidence": "high",
-      "note": "Part-number correction: the external supply is ASSY 120407; 250407 is the C64 *motherboard* (the version in this tree's spine file). Regulator silicon changed three times in three years: a discrete 2N3055/2N3792 pass transistor in the earliest 'repairable' silver-label boxes, a plain 7805-class three-pin regulator in the potted 1983-84 units, and a Sanken SI-3052P in the later 902503-02. Diodes are 400GI or 1N5400, not 1N4001, in most builds.",
+      "note": "Part-number correction: the external supply is ASSY 120407; 250407 is the C64 *motherboard* (the version in this tree's spine file). Regulator silicon changed three times in three years: a discrete 2N3055/2N3792 pass transistor in the earliest 'repairable' silver-label boxes, a plain 7805-class three-pin regulator in the potted 1983-84 units, and a Sanken SI-3052P in the later 902503-02. Diodes are 400GI or 1N5400, not 1N4001, in most builds. No common-mode choke and no zinc-oxide varistor belong here: two fully inventoried depotted 251053-02 builds (3-83 and 13-83) list every component (diodes, regulator, two resistors, tantalums, fuse, transformer) with neither part present, so the previous contains edges were removed rather than left as speculation.",
       "children": [
         {
           "id": "c64.psu.transformer",
@@ -1245,7 +1245,7 @@
             "https://hobbytronics.home.blog/2019/02/11/commodore-64-new-powersupply/",
             "https://mygeekyhobby.com/2018/10/30/commodore-c64-power-supply-902503-02-part-1/"
           ],
-          "note": "The 3 A fuse in the 9 V AC conductor exists so a short on the output cable cannot damage the transformer before the brick is ever plugged into a C64; the 5 A slow fuse in the rectifier conductor is sized for the charging surge of the 4700 uF reservoir capacitor.",
+          "note": "The 3 A fuse in the 9 V AC conductor exists so a short on the output cable cannot damage the transformer before the brick is ever plugged into a C64; the 5 A slow fuse in the rectifier conductor is sized for the charging surge of the 4700 uF reservoir capacitor. Build variation, documented: the 3-83 teardown shows a 5 A 250 V fuse in-line with the 9 V AC output (glass body, visible poking out of the epoxy) and no 2.2 uF tantalum (holes present but unpopulated), while the 13-83 has the tantalum; the 3 A versus 5 A 9 V-conductor ratings differ by build and source and are not reconciled.",
           "children": [
             {
               "id": "c64.mains.fuses.glass-cartridge",
@@ -1449,14 +1449,6 @@
         {
           "to": "c64.mains.approvals",
           "rel": "step"
-        },
-        {
-          "to": "metal.ferrite.choke",
-          "rel": "contains"
-        },
-        {
-          "to": "metal.zinc-oxide-varistor",
-          "rel": "contains"
         }
       ]
     },
@@ -3086,7 +3078,7 @@
         "https://wej.k.vu/broken_stuff/c64_power_supply_repair/"
       ],
       "confidence": "high",
-      "note": "The epoxy is also an insulator thermally as well as electrically: it fills the natural convection paths around the heatsink and the transformer, so internal temperatures run 20-40 C above what the same parts see in an open case.",
+      "note": "The epoxy is also an insulator thermally as well as electrically: it fills the natural convection paths around the heatsink and the transformer, so internal temperatures run 20-40 C above what the same parts see in an open case. Potting is a 1983-and-later build feature (both documented depotted units are 1983); the 1982 silver-label supply is reported as a vented repairable type with no epoxy pour, an adequate heatsink and a fused 5 V rail, but that rests on a single forum recollection and the changeover date is not established, so it is recorded here rather than modelled as a variant.",
       "children": [],
       "inputs": [
         "chem.epoxy"
