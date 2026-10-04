@@ -579,5 +579,41 @@
     ],
     "ordering_rule": "Deleting a wrong edge without adding the right one leaves a hole. sphalerite -> zinc electroplating is wrong, but the tree does NOT draw metal.zinc as an input to that finishing step either, so removing the edge orphans the chain. Fix additions and deletions together, per node.",
     "brief_defect_found": "Both slice 2 and slice 3 independently reported that the `note` field settles ingredients MORE reliably than `description`, and my brief only pointed them at `description`. Wave 3 briefs must read both."
+  },
+  "wave2": {
+    "status": "COMPLETE. Six slice agents reviewed the 642 inputs-derived process->material edges; a seventh agent reviewed the 68 remaining inbound edges to the two magnets. 710 edges reviewed in total. Nothing has been applied to the tree.",
+    "verdict": "552 kept as `consumes`, 158 rejected (22.3%). Rejection confidence: 80 high, 77 medium, 1 low. Precision by slice: 92%, 80%, 81%, 92%, 88%, 79% -- the metals fragments are well curated, the logic and passives fragments are not.",
+    "THE_STRUCTURAL_FINDING": "41% of the rejections -- 65 of 158 -- were not judgement calls at all. They were edges that were never `consumes`-capable in the first place, because `consumes` is stored process/tool/facility -> material and their parents were a `material` (38), a `part` (25), a `note` (1) or unlocatable (1). A material row with an `inputs` array gets those inputs stamped onto it regardless of whether an operation is involved. The other 93 rejections ARE real judgement calls on schema-legal parents, and each needs an individual disposition.",
+    "why_the_magnets_looked_like_magnets": "This answers the question six agents each answered from a biased slice. `metal.silica`: 51 of 51 rejected, across both waves, zero survivors. `chem.petroleum`: 47 of 52 rejected, 5 kept -- and all 5 survivors are a `process` or a `tool`, i.e. exactly the schema-legal shapes. Zero materials and zero parts survived on either magnet. The pattern is not chemistry. An edge is wrong on these two nodes because nothing about the parent says an operation happened.",
+    "per_slice_precision": {
+      "1 metals + passives-b + metals-d": "92% (13 of 158 wrong)",
+      "2 logic + petrochem + industry": "80% (25 of 122 wrong) -- mb.logic.bipolar.litho.strip is the worst single parent, 4 of its 8 edges point at petrochemical feedstocks that have no role in a resist strip",
+      "3 silicon + power + peripherals": "81% (21 of 113)",
+      "4 metals-b + metals-c + board": "92% (7 of 92) -- cleanest slice; no magnet rows at all",
+      "5 metals-a + chassis + chem-gaps": "88% (10 of 84)",
+      "6 passives-a + passives-c": "79% (15 of 73) -- 7 chem.petroleum rows, all 7 wrong"
+    },
+    "the_errors_are_authored_not_matched": "Slice 1 traced provenance: 153 of 158 edges came from an author typing an EXACT node id. Bare-noun strings resolved by name are only 11% of the population. `mb.rf-modulator.hybrid-module.assembly` has inputs [\"metal.silica\"] -- an exact id, simply wrong. Decision D was right, and for a stronger reason than first stated: the provenance is not weak evidence about a good field, it is good evidence about a wrong field. No string-form test can detect these.",
+    "the_name_test_is_not_a_safety_filter": "For the lookup table: the 63 rows that failed the \"string is in the name\" test are the VISIBLE half. 17 of the 26 process-target rows are among the 90 that PASSED it. Passing bought nothing. Disposition: retarget the 20 verified, delete the 4 NOT AN INGREDIENT, treat the remaining 131 as UNAUDITED rather than correct.",
+    "ordering_rule_for_applying": "A rejection is not automatically a deletion. 25 of the 68 magnet parents had the magnet as their SOLE input and 18 of those are genuine holes -- `metal.steel.eaf` would have no metal charge at all, `metal.solder.cleaning` would be left with only the residue it removes, and the petrochemical trunk loses its last crude link because `chem.refining.atmospheric-distillation` has inputs: []. Apply additions and deletions together, per node, or the tree gets worse in a new place.",
+    "brief_defects_found": "FOUR agents independently reported that `note` settles ingredients more reliably than `description`, and my brief only pointed them at `description`. Where a note flagged tension, the note won every time. PowerShell eats `$` in inline `node -e` scripts and produces dozens of phantom parse errors; put validation in a .js file. And every parent in the round-4 calibration sample was a single-chain family, so round-4 agreement is optimistic for the 149-edge multi-stage residue.",
+    "schema_gaps_confirmed": [
+      "no wafer material node -- si.wafer is kind part, so wafer-level process steps are correct in substance and have nowhere legal to point",
+      "no home for durable tooling -- `uses` targets tools only, so metal.aluminum.extrusion -> metal.die-steel (a die is capital equipment, not consumed) has no relation at all",
+      "no relation for \"consumed as ambience or forming gas\" -- bipolar.process.sinter -> facility.nitrogen, and forming gases generally",
+      "about 20% of all `inputs` entries resolve to nothing and produce NO edge; the substance is absent from the tree and nothing reports it. Worst: phosphine 13x, arsine 8x, both ALREADY recorded in TODO.md section 8 as an unfixed normalisation bug"
+    ],
+    "content_bugs_found": [
+      "metal.hall-heroult.dross has inputs [\"metal.alumina\",\"metal.carbon.anode\"] -- both are the POT's feed. Dross is a waste stream with no node at all.",
+      "metal.salt-brine landed on a gold cyanide bath where a sodium-cyanide node already exists as a child of that very node.",
+      "chem.styrene.benzene is NAMED \"Benzene\". Polymerisation of styrene points at it.",
+      "mb.passives.caps.mlcc.print-electrodes -> metal.nickel, but the node's own description and note say the 1982 paste was palladium-silver; nickel is dated to 1993. There is a metal.palladium node.",
+      "metal.alumina is \"smelter-grade alumina, 99.5% Al2O3\" and is used as a feed for ceramic tube extrusion, which needs calcined refractory alumina.",
+      "metal.cyanide-precursor has the name \"Ammonia (NH3)\" -- id and name disagree.",
+      "metal.silica.polysilicon and metal.silica.petcoke both duplicate metal.silica itself, and the Czochralski step should consume the former.",
+      "chem.pvc is a process node with no resin child at all, yet the lookup table maps \"pvc insulation\" onto it.",
+      "five separate paper nodes exist with nothing above them; no ferric-oxide or magnesite node exists at all, though two magnet edges need them."
+    ],
+    "known_content_gap": "27% of sampled parents in rounds 3 and 4 end with no producer. The tree under-models the operation that brings many parts into being. This is not a relation problem and Wave 2 confirms it is not an ingredient problem either."
   }
 }
