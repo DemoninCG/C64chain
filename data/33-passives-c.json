@@ -297,10 +297,11 @@
           "sources": [
             "https://www.c64-wiki.com/wiki/Keyboard",
             "https://deskthority.net/viewtopic.php?t=8406",
-            "https://deskthority.net/wiki/Commodore_64"
+            "https://deskthority.net/wiki/Commodore_64",
+            "https://c64os.com/post/howthekeyboardworks"
           ],
           "confidence": "high",
-          "note": "Documented on the C64 wiki keyboard page. Key count cross-checked against the C64 Service Manual (\"KEYS 66 Keys total, 2 Cursor control keys, 4 Function keys\") and against c64.keyboard, whose facts give 66 total with 8x8 = 64 scanned and 2 off-matrix. SHIFT LOCK is a discrete latching mechanical switch fitted into the keyboard PCB (Mitsumi-branded, plate-mounted, with a cruciform slider adapter for the keycap mount), neither the Mitsumi standard mechanical lock nor a membrane lock. A documented teardown with disassembly photographs establishes this; the latching-dome arrangement previously recorded here is withdrawn for the 1982 breadbin. The later C64C revision uses a Mitsumi standard mechanical latching switch, a different part.",
+          "note": "Documented on the C64 wiki keyboard page. Key count cross-checked against the C64 Service Manual (\"KEYS 66 Keys total, 2 Cursor control keys, 4 Function keys\") and against c64.keyboard, whose facts give 66 total with 8x8 = 64 scanned and 2 off-matrix. SHIFT LOCK is a discrete latching mechanical switch fitted into the keyboard PCB (Mitsumi-branded, plate-mounted, with a cruciform slider adapter for the keycap mount), neither the Mitsumi standard mechanical lock nor a membrane lock. A documented teardown with disassembly photographs establishes this; the latching-dome arrangement previously recorded here is withdrawn for the 1982 breadbin. The later C64C revision uses a Mitsumi standard mechanical latching switch, a different part. Continuity tracing of a keyboard PCB corroborates the wiring: SHIFT LOCK shares exactly the Left Shift row/column lines (indistinguishable to the firmware), RESTORE sits on its own GND plus NMI pair, and the matrix carries the remaining 64 keys.",
           "facts": [
             {
               "label": "SHIFT LOCK",
@@ -323,9 +324,10 @@
           "era": "1982-1984",
           "confidence": "medium",
           "sources": [
-            "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
+            "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore",
+            "https://c64os.com/post/howthekeyboardworks"
           ],
-          "note": "The mainboard end is confirmed: the 250407 parts list has CN1 as 'Header w/LKG Sil 2.54 CTR 20 Pin', a 20-pin locking silicon header on a 2.54 mm pitch, which is what the ribbon plugs into. Not established: the 0.5-1.27 mm conductor pitch, the PVC jacket, the insulation-displacement crimp at the keyboard end, and the fatigue-fracture-at-the-header failure mode - none of that appears in the primary documentation.",
+          "note": "The mainboard end is confirmed: the 250407 parts list has CN1 as 'Header w/LKG Sil 2.54 CTR 20 Pin', a 20-pin locking silicon header on a 2.54 mm pitch, which is what the ribbon plugs into. Independently corroborated by continuity tracing of a keyboard PCB: 18 connected wires (solder points labelled 0-8 and A-I), pin 2 an orientation spacer, +5V unconnected, RESTORE on its own GND plus NMI pair. Not established: the 0.5-1.27 mm conductor pitch, the PVC jacket, the insulation-displacement crimp at the keyboard end, and the fatigue-fracture-at-the-header failure mode - none of that appears in the primary documentation.",
           "facts": [
             {
               "label": "Construction",
@@ -1191,7 +1193,7 @@
       "category": "plastics",
       "era": "1982-1984",
       "confidence": "medium",
-      "note": "The mainboard end is a 20-pin 2.54 mm locking header per the primary parts list. Not established: parallel copper conductors laminated between polyester film with a PVC jacket, the 0.5-1.27 mm conductor pitch, and the insulation-displacement crimp. The 1992 manual does not describe the cable.",
+      "note": "The mainboard end is a 20-pin 2.54 mm locking header per the primary parts list. Continuity tracing corroborates 18 connected wires with pin 2 an orientation spacer and +5V unconnected. Not established: parallel copper conductors laminated between polyester film with a PVC jacket, the 0.5-1.27 mm conductor pitch, and the insulation-displacement crimp. The 1992 manual does not describe the cable.",
       "facts": [
         {
           "label": "Pitch",
