@@ -385,6 +385,11 @@
                     {
                       "to": "mb.passives.resistors.discrete-axial.metal-foil.case-tension",
                       "rel": "uses"
+                    },
+                    {
+                      "to": "mb.passives.resistors.discrete-axial.metal-foil.foil-roll.foil-metal",
+                      "rel": "contains",
+                      "basis": "typical-1982"
                     }
                   ]
                 }
@@ -676,6 +681,11 @@
             {
               "to": "mb.passives.caps.mlcc.terminations",
               "rel": "step"
+            },
+            {
+              "to": "mb.passives.caps.mlcc.green-sheet",
+              "rel": "contains",
+              "basis": "documented"
             }
           ]
         },
@@ -1283,6 +1293,13 @@
       "note": "Not established: heat-cured grade, and staying soft and chemically inert against the acid electrolyte for decades in these bungs.",
       "sources": [
         "https://en.wikipedia.org/wiki/Silicone_rubber"
+      ],
+      "edges": [
+        {
+          "to": "chem.silicone.compound",
+          "rel": "made from",
+          "basis": "typical-1982"
+        }
       ]
     },
     "mb.passives.caps.mlcc.powder": {
@@ -1345,6 +1362,45 @@
       "inputs": [],
       "children": [],
       "note": "Not established: the glass frit fraction of about 5 % by weight of the ceramic body, and the specific 1982 binder systems. What is documented is that the casting suspension is the powder with a suitable binder."
+    },
+    "mb.passives.caps.mlcc.green-sheet": {
+      "id": "mb.passives.caps.mlcc.green-sheet",
+      "name": "Unfired MLCC green sheet (cast dielectric tape)",
+      "description": "The tape-casting slurry doctor-bladed onto a moving polyester carrier and dried to a flexible unfired tape: BaTiO3 powder with glass frit in an organic binder. This sheet, printed with electrode paste and stacked, becomes the dielectric layers of the fired capacitor.",
+      "kind": "material",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tape_casting",
+        "https://en.wikipedia.org/wiki/Ceramic_capacitor"
+      ],
+      "facts": [
+        {
+          "label": "What it is",
+          "value": "cast slurry dried to a flexible unfired tape (green layer)"
+        },
+        {
+          "label": "Slurry system",
+          "value": "ceramic powder + solvent + dispersant + binder + plasticizer"
+        },
+        {
+          "label": "Process origin",
+          "value": "first described 1947 for mass-producing capacitors"
+        },
+        {
+          "label": "Capability",
+          "value": "films as thin as 5 um producible by tape casting"
+        }
+      ],
+      "note": "Established: the slurry composition, the cast slurry being called a green layer or green sheet (not a colour), drying to a strippable green tape, and the 1947 capacitor origin with 5 um capability. Not established: the 1982 sheet thickness for these parts (see the tape-cast note). Distinct from the slurry (flowable slip carrying solvent) and from the fired ceramic (dense dielectric): the solvent leaves on drying and the binder on firing, so merging would lose that sequence. REFILE exception (a): this sheet BECOMES the part's dielectric layers; the binder burnout and sintering that convert the unfired tape into dense BaTiO3 are modelled only at stack level (stack-laminate, belt-kiln), so the sheet-to-dielectric finishing step is unmodelled.",
+      "edges": [
+        {
+          "to": "mb.passives.caps.mlcc.slurry",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "mb.passives.resistors.trimmers.cermet-element.wiper": {
       "id": "mb.passives.resistors.trimmers.cermet-element.wiper",
@@ -2044,6 +2100,55 @@
         {
           "to": "metal.nickel",
           "rel": "made of"
+        },
+        {
+          "to": "mb.passives.resistors.discrete-axial.metal-foil.foil-alloy",
+          "rel": "made of",
+          "basis": "typical-1982"
+        }
+      ]
+    },
+    "mb.passives.resistors.discrete-axial.metal-foil.foil-alloy": {
+      "id": "mb.passives.resistors.discrete-axial.metal-foil.foil-alloy",
+      "name": "NiCr foil resistance alloy (wrought strip stock)",
+      "description": "Wrought nickel-chromium resistance alloy, melt-cast and rolled to strip for etching into precision foil resistors: typically 80 Ni / 20 Cr, resistivity around 1.1 uohm-m, with a protective chromium-oxide skin. It is bulk strip stock, not evaporated film: its low temperature coefficient and creep strength survive rolling and etching into the resistive element.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Nichrome",
+        "https://en.wikipedia.org/wiki/Resistor"
+      ],
+      "facts": [
+        {
+          "label": "Standard grades",
+          "value": "80Ni/20Cr (A grade); also 70/30, 60Ni/16Cr, 35Ni/20Cr"
+        },
+        {
+          "label": "Resistivity",
+          "value": "~1.0-1.5 uohm-m (about 66x copper)"
+        },
+        {
+          "label": "Melting point",
+          "value": "~1400 C"
+        },
+        {
+          "label": "Protection",
+          "value": "thermodynamically stable chromium-oxide skin in air"
+        }
+      ],
+      "note": "Established: the NiCr family, the standard compositions, resistivity, melting point and oxide skin. Not established: the exact 1982 precision-foil grade (trade-name Evanohm-type compositions have no verifiable source here) and foil-specific TCR figures. NiCr check: the existing metal-film.nichrome is an evaporated/sputtered thin-film feedstock and wirewound.alloy is drawn wire; both are different manufacturing forms from wrought foil strip, so merging would lose the form and route facts and no merge is proposed. REFILE exception (a): the etched foil becomes the part's resistive element; transfer-and-bond of the etched foil onto its substrate is unmodelled.",
+      "edges": [
+        {
+          "to": "metal.nickel",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "metal.chromium",
+          "rel": "made of",
+          "basis": "documented"
         }
       ]
     },
@@ -2132,6 +2237,14 @@
               "rel": "consumes"
             }
           ]
+        }
+      ],
+      "edges": [
+        {
+          "to": "chem.polyester.pet.film",
+          "rel": "produces",
+          "role": "product",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -2789,6 +2902,12 @@
         {
           "to": "mb.passives.caps.mlcc.slurry",
           "rel": "consumes"
+        },
+        {
+          "to": "mb.passives.caps.mlcc.green-sheet",
+          "rel": "produces",
+          "role": "product",
+          "basis": "documented"
         }
       ]
     },
@@ -3055,6 +3174,11 @@
         {
           "to": "metal.nickel",
           "rel": "consumes"
+        },
+        {
+          "to": "mb.passives.resistors.discrete-axial.metal-foil.foil-alloy",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -3813,7 +3937,14 @@
           "era": "1982-1984",
           "confidence": "medium",
           "inputs": [],
-          "note": "Not established: a printed sleeve carrying value, rating and maker on the 250407 film capacitors, and PVC as the sleeve polymer."
+          "note": "Not established: a printed sleeve carrying value, rating and maker on the 250407 film capacitors, and PVC as the sleeve polymer.",
+          "edges": [
+            {
+              "to": "chem.pvc.resin",
+              "rel": "made of",
+              "basis": "inferred"
+            }
+          ]
         }
       ],
       "edges": [
@@ -3938,6 +4069,11 @@
         {
           "to": "metal.silver.ingot",
           "rel": "consumes"
+        },
+        {
+          "to": "mb.passives.caps.mlcc.green-sheet",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },

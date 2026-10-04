@@ -3891,6 +3891,175 @@
         }
       ]
     },
+    "facility.foundries.holding-bv": {
+      "id": "facility.foundries.holding-bv",
+      "name": "Commodore Holding B.V., Netherlands",
+      "description": "The top holding company of the Commodore group. From the US Tax Court record: Commodore Holding B.V. (Netherlands) at the top, above Commodore International Ltd (Bahamas) and the operating corporations. A holding entity, not a factory: it owned, it did not manufacture.",
+      "kind": "org",
+      "category": "industry",
+      "era": "1983",
+      "places": [
+        "Netherlands"
+      ],
+      "facts": [
+        {
+          "label": "Role",
+          "value": "top holding company"
+        }
+      ],
+      "sources": [
+        "https://www.taxnotes.com/research/federal/court-documents/court-petitions-and-briefs/irs-reallocates-116-million-in-video-game-computer-income-to/15xlq",
+        "https://en.wikipedia.org/wiki/Commodore_International"
+      ],
+      "confidence": "high",
+      "note": "Stipulated facts from the US Tax Court record via the corporate-structure node, not published Commodore accounts; hierarchy per listed order (top, then International, then operating corporations)."
+    },
+    "facility.foundries.international-ltd": {
+      "id": "facility.foundries.international-ltd",
+      "name": "Commodore International Ltd, Bahamas",
+      "description": "The Bahamian parent of the Commodore group, successor to Commodore Business Machines (Canada) Ltd (dissolved 1976). Financial headquarters in the Bahamas; operational base in West Chester, Pennsylvania (retaining the Commodore Business Machines Inc name for R&D). Owner of Commodore Electronics Ltd.",
+      "kind": "org",
+      "category": "industry",
+      "era": "1983",
+      "places": [
+        "Nassau, Bahamas"
+      ],
+      "facts": [
+        {
+          "label": "Role",
+          "value": "Bahamian parent, successor to CBM Canada 1976"
+        }
+      ],
+      "sources": [
+        "https://www.taxnotes.com/research/federal/court-documents/court-petitions-and-briefs/irs-reallocates-116-million-in-video-game-computer-income-to/15xlq",
+        "https://en.wikipedia.org/wiki/Commodore_International"
+      ],
+      "confidence": "high",
+      "note": "Stipulated Tax Court facts; successor/siting per Wikipedia Commodore International (1976 reorganisation, Bahamas financial HQ, West Chester operational base).",
+      "edges": [
+        {
+          "to": "facility.foundries.holding-bv",
+          "rel": "owned by"
+        }
+      ]
+    },
+    "facility.foundries.electronics-ltd": {
+      "id": "facility.foundries.electronics-ltd",
+      "name": "Commodore Electronics Ltd, Bahamas (principal operating)",
+      "description": "The principal operating corporation of the Commodore group (CEL, Bahamas). Owner of the operating subsidiaries: US sales (CBM West Chester), Japan, Hong Kong, West Germany and the DISC sales arm.",
+      "kind": "org",
+      "category": "industry",
+      "era": "1983",
+      "places": [
+        "Nassau, Bahamas"
+      ],
+      "facts": [
+        {
+          "label": "Role",
+          "value": "principal operating corporation"
+        }
+      ],
+      "sources": [
+        "https://www.taxnotes.com/research/federal/court-documents/court-petitions-and-briefs/irs-reallocates-116-million-in-video-game-computer-income-to/15xlq",
+        "https://en.wikipedia.org/wiki/Commodore_International"
+      ],
+      "confidence": "high",
+      "note": "Stipulated Tax Court facts; operating subsidiaries owned by the principal operating corporation per listed order (sales, Japan, Hong Kong, Germany, DISC).",
+      "edges": [
+        {
+          "to": "facility.foundries.international-ltd",
+          "rel": "owned by"
+        }
+      ]
+    },
+    "facility.foundries.business-machines-inc": {
+      "id": "facility.foundries.business-machines-inc",
+      "name": "Commodore Business Machines Inc, West Chester PA",
+      "description": "The US sales subsidiary and the site of the semiconductor division (CBM, West Chester PA). Owner of MOS Technology (bought November 1976 for a 9.4% CBM stake, merged 1 January 1981; chips stamped MOS until 1989). Operational headquarters where R&D occurred, retaining the Commodore Business Machines Inc name.",
+      "kind": "org",
+      "category": "industry",
+      "era": "1983",
+      "places": [
+        "West Chester, Pennsylvania"
+      ],
+      "facts": [
+        {
+          "label": "Role",
+          "value": "US sales subsidiary; semiconductor division site"
+        },
+        {
+          "label": "MOS acquisition",
+          "value": "bought November 1976; merged 1 January 1981"
+        }
+      ],
+      "sources": [
+        "https://www.taxnotes.com/research/federal/court-documents/court-petitions-and-briefs/irs-reallocates-116-million-in-video-game-computer-income-to/15xlq",
+        "https://en.wikipedia.org/wiki/Commodore_International"
+      ],
+      "confidence": "high",
+      "note": "Stipulated Tax Court facts; MOS dates per MOS node and corporate-structure facts (agreed buy November 1976, merged January 1981).",
+      "edges": [
+        {
+          "to": "facility.foundries.electronics-ltd",
+          "rel": "owned by"
+        }
+      ]
+    },
+    "facility.foundries.japan-ltd": {
+      "id": "facility.foundries.japan-ltd",
+      "name": "Commodore Japan Ltd",
+      "description": "The Japanese subsidiary (CJL). Owner of Kentron Co. (subsidiary October 1982 to June 1986, acquired to fix the C64 and begin mass production January 1983).",
+      "kind": "org",
+      "category": "industry",
+      "era": "1983",
+      "places": [
+        "Japan"
+      ],
+      "facts": [
+        {
+          "label": "Role",
+          "value": "Japanese subsidiary; Kentron parent Oct 1982-Jun 1986"
+        }
+      ],
+      "sources": [
+        "https://www.taxnotes.com/research/federal/court-documents/court-petitions-and-briefs/irs-reallocates-116-million-in-video-game-computer-income-to/15xlq",
+        "https://en.wikipedia.org/wiki/Commodore_International"
+      ],
+      "confidence": "high",
+      "note": "Stipulated Tax Court facts; Kentron subsidiary dates per Kentron node (Tax Court stipulated, not published accounts).",
+      "edges": [
+        {
+          "to": "facility.foundries.electronics-ltd",
+          "rel": "owned by"
+        }
+      ]
+    },
+    "facility.foundries.international-sales-inc": {
+      "id": "facility.foundries.international-sales-inc",
+      "name": "CBM International Sales Inc (DISC)",
+      "description": "The Domestic International Sales Corporation arm (DISC) for export sales. A sales entity, not a factory.",
+      "kind": "org",
+      "category": "industry",
+      "era": "1983",
+      "facts": [
+        {
+          "label": "Role",
+          "value": "DISC export sales arm"
+        }
+      ],
+      "sources": [
+        "https://www.taxnotes.com/research/federal/court-documents/court-petitions-and-briefs/irs-reallocates-116-million-in-video-game-computer-income-to/15xlq",
+        "https://en.wikipedia.org/wiki/Commodore_International"
+      ],
+      "confidence": "high",
+      "note": "Stipulated Tax Court facts; DISC role per corporate-structure description.",
+      "edges": [
+        {
+          "to": "facility.foundries.electronics-ltd",
+          "rel": "owned by"
+        }
+      ]
+    },
     "facility.foundries.mos": {
       "id": "facility.foundries.mos",
       "name": "MOS Technology / Commodore Semiconductor Group fab, Norristown PA",
@@ -3922,6 +4091,12 @@
       ],
       "confidence": "high",
       "note": "Sources variously call the location Norristown, Valley Forge or Lower Providence; the EPA documents put the plant at 950 Rittenhouse Road in Lower Providence Township, Norristown PA, in the former Valley Forge Corporate Center.",
+      "edges": [
+        {
+          "to": "facility.foundries.business-machines-inc",
+          "rel": "owned by"
+        }
+      ],
       "children": [
         {
           "id": "facility.foundries.mos.captive-prototyping",
@@ -4112,7 +4287,13 @@
         "https://commodore.international/2021/12/05/early-commodore-64-production-and-production-engineering/"
       ],
       "confidence": "high",
-      "note": "The acquisition dates and the January 1983 production start are stipulated facts from the US Tax Court record, not published Commodore accounts."
+      "note": "The acquisition dates and the January 1983 production start are stipulated facts from the US Tax Court record, not published Commodore accounts.",
+      "edges": [
+        {
+          "to": "facility.foundries.japan-ltd",
+          "rel": "owned by"
+        }
+      ]
     },
     "facility.foundries.japan-vendors": {
       "id": "facility.foundries.japan-vendors",
@@ -5445,6 +5626,11 @@
                 {
                   "to": "metal.tungsten.wire",
                   "rel": "contains"
+                },
+                {
+                  "to": "metal.beryllium-copper",
+                  "rel": "contains",
+                  "basis": "inferred"
                 }
               ]
             }

@@ -180,6 +180,11 @@
           "to": "metal.nickel.sulphide-concentrate",
           "rel": "made from",
           "basis": "typical-1982"
+        },
+        {
+          "to": "metal.nickel.ore",
+          "rel": "made from",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -1896,6 +1901,11 @@
               "to": "metal.nickel.nickel-oxide",
               "rel": "consumes",
               "basis": "typical-1982"
+            },
+            {
+              "to": "metal.nickel.cobalt-catalyst",
+              "rel": "consumes",
+              "basis": "typical-1982"
             }
           ]
         }
@@ -2712,6 +2722,107 @@
         }
       ],
       "note": "The later hydrometallurgical routes (Murrin Murrin, using a sulphate/chloride pressure leach) came after 1982; medium confidence.",
+      "inputs": []
+    },
+    "metal.nickel.cobalt-catalyst": {
+      "id": "metal.nickel.cobalt-catalyst",
+      "name": "Cobalt-nickel hydrogenation and reduction catalyst (Raney-type)",
+      "description": "A skeletal nickel-cobalt catalyst for hydrogenation and for seeding hydrogen reduction, made by alkali-leaching aluminium from a nickel-aluminium alloy carrying cobalt. Raney nickel itself is nickel from Ni-Al digested with concentrated sodium hydroxide at 70-100 C to a porous sponge of about 100 m2 per gram of nickel surface; cobalt enters as promoter or as co-metal, giving the cobalt-nickel and Raney cobalt variants. In 1982 Grace sold Raney nickel, cobalt and chromium grades for nitro-to-amine, carbonyl-to-alcohol, nitrile-to-amine and olefin/acetylene saturation, and Sherritt-type ammonia-pressure circuits seeded their hydrogen-reduction autoclaves with a cobalt-nickel or iron slurry. The catalyst ships as water-wet slurry, pyrophoric when dry, and is not consumed in the hydrogenation itself.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Alloy",
+          "value": "Ni-Al with Co promoter, or Co-Al with Ni; Raney cobalt is the cobalt analogue"
+        },
+        {
+          "label": "Activation",
+          "value": "leached with concentrated NaOH at 70-100 C; Al out as aluminate, Ni-Co sponge remains"
+        },
+        {
+          "label": "Surface",
+          "value": "about 100 m2 per gram of nickel for commercial Raney nickel"
+        },
+        {
+          "label": "Form",
+          "value": "water-wet slurry as sold; dry activated powder is pyrophoric"
+        }
+      ],
+      "note": "Established: Raney nickel from Ni-Al leached with NaOH, third-metal promoters, cobalt variants, hydrogenation of benzene to cyclohexane and of nitro/nitrile/olefin groups, Grace Ni/Co/Cr hydrogenation grades, and Sherritt hydrogen under pressure precipitating nickel from ammoniacal solutions. Not established: the exact Co:Ni ratio in any 1982 Sherritt seeding slurry, which refinery bought which grade, or consumption per tonne of nickel. Distinct from the Co-Mo hydrotreating catalyst (sulphur removal, Co2O3 plus MoO3 on alumina) and from the Ni reforming catalyst (Ni on alumina for steam reforming); checked, not duplicates.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Raney_nickel",
+        "https://en.wikipedia.org/wiki/Hydrogenation",
+        "https://en.wikipedia.org/wiki/Nickel",
+        "https://en.wikipedia.org/wiki/Cobalt",
+        "https://grace.com/industries/chemical-processing/hydrogenation-catalysts/",
+        "https://www.acs.org/education/whatischemistry/landmarks/raney-nickel.html",
+        "https://magazine.cim.org/en/mining-the-archives/pressure-point-en/"
+      ],
+      "inputs": [],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.cobalt.oxide",
+          "rel": "made of",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "metal.nickel.ingot",
+          "rel": "made of",
+          "basis": "typical-1982"
+        }
+      ]
+    },
+    "metal.nickel.ore": {
+      "id": "metal.nickel.ore",
+      "name": "Nickel ore, run-of-mine (laterite and sulphide)",
+      "description": "Run-of-mine nickel ore at 1-3% Ni, the feed that washing, screening and flotation upgrade to concentrates. Oxide ground is limonite at 0.8-1.5% Ni in goethite and saprolite/silicate at 1.5-3% Ni with green garnierite in serpentinised peridotite; sulphide ground is pentlandite (Fe,Ni)9S8 with pyrrhotite and chalcopyrite at 1-3% Ni in Sudbury-type impact melt and layered intrusions. Ores above about 1.3% Ni are mined, crushed and screened, typically doubling the nickel content before leach or smelt, with sulphide concentrates at 10-20% Ni. In 1982 laterite from Moa, Surigao, New Caledonia and Queensland fed ferronickel and ammonia-leach routes while Sudbury, Thompson and Norilsk sulphide fed matte-converting and Mond-carbonyl refining.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "places": [
+        "Moa, Cuba",
+        "Surigao, Philippines",
+        "Noumea, New Caledonia",
+        "Sudbury, Ontario"
+      ],
+      "facts": [
+        {
+          "label": "Run-of-mine grade",
+          "value": "1-3% Ni; mined when above about 1.3% Ni"
+        },
+        {
+          "label": "Limonite",
+          "value": "0.8-1.5% Ni in goethite (oxide/limonite type)"
+        },
+        {
+          "label": "Saprolite/silicate",
+          "value": "1.5-3% Ni with garnierite; garnierite pockets run 20-40% Ni"
+        },
+        {
+          "label": "Sulphide",
+          "value": "1-3% Ni as pentlandite (Fe,Ni)9S8; concentrates at 10-20% Ni"
+        },
+        {
+          "label": "Deposit size",
+          "value": "typically 20 million tonnes and up at about 1% Ni"
+        }
+      ],
+      "note": "Established: laterite vs sulphide split, limonite/saprolite grades, garnierite as Ni-Mg silicate in serpentinised peridotite, pentlandite as the dominant sulphide ore, Sudbury impact-melt setting, and the 1.3% mining cut-off with crushing/screening upgrading. Not established: the exact 1982 tonnage split between laterite and sulphide routes, or which mine fed which C64 part. Generic run-of-mine parent noting both types; the specific laterite, sulphide-concentrate, limonite-garnierite and impact-melt nodes remain, not duplicated.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Nickel",
+        "https://en.wikipedia.org/wiki/Laterite",
+        "https://en.wikipedia.org/wiki/Pentlandite",
+        "https://en.wikipedia.org/wiki/Sudbury_Basin",
+        "https://en.wikipedia.org/wiki/Garnierite",
+        "https://en.wikipedia.org/wiki/Limonite",
+        "https://en.wikipedia.org/wiki/Nickel_extraction",
+        "https://en.wikipedia.org/wiki/Lateritic_nickel_ore_deposits"
+      ],
+      "children": [],
       "inputs": []
     }
   }

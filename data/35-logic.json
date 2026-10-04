@@ -1401,14 +1401,25 @@
                   ]
                 },
                 {
-                  "id": "mb.logic.sourcing.makers.japan",
-                  "name": "Hitachi, Toshiba and the Japanese suppliers",
-                  "description": "By the mid-1980s Japanese and then Korean vendors had taken a large share of world logic volume, and they were undercutting American silicon hard. C64 boards are also found with Hitachi-branded parts. Commodore bought early and often, and the rising Japanese share was one reason the C64's own bill of materials got cheaper every year of its life.",
+                  "id": "mb.logic.sourcing.makers.hitachi",
+                  "name": "Hitachi",
+                  "description": "Japanese logic vendor. C64 boards are found with Hitachi-branded parts. Commodore bought early and often, and the rising Japanese share was one reason the C64's bill of materials got cheaper every year.",
                   "kind": "org",
                   "category": "industry",
                   "era": "1980s",
                   "confidence": "low",
-                  "note": "Low confidence on specific Japanese parts appearing on 1983 C64 boards. The general Japanese penetration of merchant logic through the decade is well documented; a specific Hitachi-branded 74LS in a 250407 is an unverified field report.",
+                  "note": "Low confidence on specific Hitachi parts appearing on 1983 C64 boards. A Hitachi-branded 74LS in a 250407 is an unverified field report; Japanese penetration of merchant logic through the decade is well documented.",
+                  "inputs": []
+                },
+                {
+                  "id": "mb.logic.sourcing.makers.toshiba",
+                  "name": "Toshiba",
+                  "description": "Japanese logic and semiconductor vendor, among the Japanese suppliers that took a large share of world logic volume through the 1980s, undercutting American silicon. No Toshiba-branded logic part on a 250407 is specifically verified here; included as the second named Japanese supplier alongside Hitachi.",
+                  "kind": "org",
+                  "category": "industry",
+                  "era": "1980s",
+                  "confidence": "low",
+                  "note": "Low confidence; no specific Toshiba-branded 74LS in a 250407 verified. General Japanese penetration well documented; split from makers.japan list so each supplier is its own org rather than a bundled list.",
                   "inputs": []
                 }
               ]

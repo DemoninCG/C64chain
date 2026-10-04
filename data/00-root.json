@@ -164,7 +164,14 @@
         "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
       ],
       "note": "The manual is established as a shipped accessory: the parts list carries Users Manual, Commodore part 320974. Not established: the fold-in-fold construction, the 16-page glued centre section, the 60-100 gsm coated stock, the CMYK plus spot printing and the 320974 attribution to the service-manual parts list beyond the part number itself.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.packaging.paper",
+          "rel": "contains",
+          "basis": "inferred"
+        }
+      ]
     },
     {
       "id": "c64.packaging.warranty-card",
@@ -188,12 +195,13 @@
       "note": "Not established: that a warranty and registration card was packed with a 1982 C64, and its board stock and print. The service manual parts list records only the users manual.",
       "edges": [
         {
-          "to": "c64.packaging.kraft-liner",
-          "rel": "made of"
-        },
-        {
           "to": "c64.packaging.offset-litho",
           "rel": "step"
+        },
+        {
+          "to": "c64.packaging.paper",
+          "rel": "made of",
+          "basis": "inferred"
         }
       ]
     },

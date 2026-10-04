@@ -1020,7 +1020,15 @@
             }
           ],
           "confidence": "high",
-          "note": "Established: polyethylene is the most commonly produced plastic for packaging film containers and cable sheathing. Not established: the stated tonnages dates temperatures pressures yields and 1980s operating details as given."
+          "note": "Established: polyethylene is the most commonly produced plastic for packaging film containers and cable sheathing. Not established: the stated tonnages dates temperatures pressures yields and 1980s operating details as given.",
+          "edges": [
+            {
+              "to": "chem.polyethylene.resin",
+              "rel": "produces",
+              "role": "product",
+              "basis": "documented"
+            }
+          ]
         }
       ],
       "confidence": "low",
@@ -1709,6 +1717,12 @@
                 {
                   "to": "chem.styrene.polymerisation.bulk-gpps.suspending-agent",
                   "rel": "consumes"
+                },
+                {
+                  "to": "chem.polystyrene.resin",
+                  "rel": "produces",
+                  "role": "product",
+                  "basis": "documented"
                 }
               ]
             }
@@ -2074,7 +2088,15 @@
                 }
               ],
               "confidence": "high",
-              "note": "Established: polyvinyl chloride is a major vinyl polymer for rigid pipe profiles and flexible cable jacket and insulation. Not established: the stated tonnages dates temperatures pressures yields and 1980s operating details as given."
+              "note": "Established: polyvinyl chloride is a major vinyl polymer for rigid pipe profiles and flexible cable jacket and insulation. Not established: the stated tonnages dates temperatures pressures yields and 1980s operating details as given.",
+              "edges": [
+                {
+                  "to": "chem.pvc.resin",
+                  "rel": "produces",
+                  "role": "product",
+                  "basis": "documented"
+                }
+              ]
             },
             {
               "id": "chem.epoxy",
@@ -2179,7 +2201,15 @@
                 }
               ],
               "confidence": "high",
-              "note": "Established: bisphenol A polycarbonate is a strong tough transparent engineering thermoplastic containing carbonate groups. Not established: the stated tonnages dates temperatures pressures yields and 1980s operating details as given."
+              "note": "Established: bisphenol A polycarbonate is a strong tough transparent engineering thermoplastic containing carbonate groups. Not established: the stated tonnages dates temperatures pressures yields and 1980s operating details as given.",
+              "edges": [
+                {
+                  "to": "chem.polycarbonate.resin",
+                  "rel": "produces",
+                  "role": "product",
+                  "basis": "documented"
+                }
+              ]
             },
             {
               "id": "chem.polyamide",
@@ -2339,7 +2369,15 @@
                     }
                   ],
                   "confidence": "low",
-                  "note": "Established: The chlorosilane is hydrolyzed to a silanol and condensed with a silanol-terminated chain stopper, giving a silicone oil (low viscosity) or, with reinforcing silica and peroxide cu as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+                  "note": "Established: The chlorosilane is hydrolyzed to a silanol and condensed with a silanol-terminated chain stopper, giving a silicone oil (low viscosity) or, with reinforcing silica and peroxide cu as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+                  "edges": [
+                    {
+                      "to": "chem.silicone.compound",
+                      "rel": "produces",
+                      "role": "product",
+                      "basis": "documented"
+                    }
+                  ]
                 }
               ],
               "confidence": "low",
@@ -2392,7 +2430,15 @@
                 }
               ],
               "note": "Acetal chemistry is standard; the exact comonomer loadings vary by grade. Established: POM acetal homo and copolymer from formaldehyde with chain transfer or comonomer. Not established: the stated Delrin versus Celcon specifics and loading details as given.",
-              "confidence": "low"
+              "confidence": "low",
+              "edges": [
+                {
+                  "to": "chem.pom.resin",
+                  "rel": "produces",
+                  "role": "product",
+                  "basis": "documented"
+                }
+              ]
             },
             {
               "id": "chem.thermosets",
@@ -5385,7 +5431,13 @@
       "category": "plastics",
       "era": "1950s",
       "confidence": "medium",
-      "note": "DEHP production volumes in the early 1980s are order-of-magnitude estimates."
+      "note": "DEHP production volumes in the early 1980s are order-of-magnitude estimates.",
+      "edges": [
+        {
+          "to": "chem.pvc.plasticiser.ethylhexanol",
+          "rel": "made from"
+        }
+      ]
     },
     "chem.pvc.stabilisation.lead-stabiliser": {
       "id": "chem.pvc.stabilisation.lead-stabiliser",
@@ -8278,6 +8330,305 @@
       ],
       "note": "Category industry throughout the exploration, drilling, completion, stimulation, separation and assay branches: upstream oil and gas is an extraction industry, and the category table reserves energy for power generation and the grid. The bulk process fluids inside it (muds, cement slurry, acid, fracturing fluid) stay fluids, and the crude itself is fluids. Established: Crude oil finding it drilling it lifting it as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s specifics as given.",
       "confidence": "low"
+    },
+    "chem.pvc.resin": {
+      "id": "chem.pvc.resin",
+      "name": "PVC resin (suspension homopolymer powder)",
+      "description": "Unplasticised polyvinyl chloride as it leaves the polymeriser: a white powder of (C2H3Cl)n chains, about 57 percent chlorine by mass, made by suspension polymerisation of vinyl chloride monomer. About 80 percent of world production uses suspension polymerisation, giving particles of 100 to 180 um, with emulsion and bulk making up the rest. The powder cannot be processed above about 140 C without stabilisation, so it is always compounded with heat stabilisers before extrusion or calendering.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1930s",
+      "facts": [
+        {
+          "label": "Repeat unit",
+          "value": "(C2H3Cl)n"
+        },
+        {
+          "label": "Chlorine content",
+          "value": "about 57 percent of mass is chlorine"
+        },
+        {
+          "label": "Suspension share and particle size",
+          "value": "about 80 percent suspension polymerisation, 100-180 um particles"
+        },
+        {
+          "label": "Density",
+          "value": "1.4 g/cm3"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Polyvinyl_chloride"
+      ],
+      "confidence": "high",
+      "note": "Established: PVC is the (C2H3Cl)n vinyl polymer at about 57 percent chlorine, white powder from suspension polymerisation at about 80 percent share and 100-180 um, density 1.4 g/cm3. Not established: K-values, 1983 tonnages, and the exact suspension temperatures pressures conversions and stabiliser packages as 1982 practice.",
+      "edges": [
+        {
+          "to": "chem.pvc.vcm",
+          "rel": "made from"
+        }
+      ]
+    },
+    "chem.polyethylene.resin": {
+      "id": "chem.polyethylene.resin",
+      "name": "Polyethylene resin (LDPE and HDPE pellets)",
+      "description": "Ethylene polymerised into pellets: the most commonly produced plastic, over 100 million tonnes of resins a year as of 2017, split between branched low-density grades from high-pressure free-radical polymerisation and linear high-density grades from low-pressure coordination catalysis. The C64 uses are the cable dielectric and insulation, where branched LDPE suits the coaxial geometry. Linear low density copolymers with butene or octene were the fastest-growing family in the early 1980s.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1930s",
+      "facts": [
+        {
+          "label": "Scale (modern reference)",
+          "value": "over 100 million tonnes of polyethylene resins a year as of 2017"
+        },
+        {
+          "label": "Grades",
+          "value": "branched LDPE versus linear HDPE; LLDPE copolymers with butene or octene"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Polyethylene",
+        "https://en.wikipedia.org/wiki/Low-density_polyethylene"
+      ],
+      "confidence": "high",
+      "note": "Established: polyethylene is the most commonly produced plastic from ethylene monomer, in branched low-density and linear high-density forms with LLDPE copolymers. Not established: 1983 tonnages, the grade split, densities, and the high-pressure and coordination-catalysis temperatures pressures and catalysts as 1982 practice.",
+      "edges": []
+    },
+    "chem.polycarbonate.resin": {
+      "id": "chem.polycarbonate.resin",
+      "name": "Polycarbonate resin (bisphenol A pellets)",
+      "description": "Bisphenol A polycarbonate pellets: a transparent tough engineering thermoplastic containing carbonate groups, made by the interfacial phosgene route from bisphenol A and phosgene. Products made from polycarbonate can contain the precursor monomer bisphenol A. In 1980s electronics it went into connector housings, terminal blocks and relay covers; the C64 case itself was ABS, not polycarbonate.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1950s",
+      "facts": [
+        {
+          "label": "Monomer residue",
+          "value": "products can contain bisphenol A precursor monomer"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Polycarbonate"
+      ],
+      "confidence": "high",
+      "note": "Established: bisphenol A polycarbonate is a strong tough transparent engineering thermoplastic with carbonate groups, made by the interfacial phosgene route, with bisphenol A residue. Not established: 1983 tonnages, interfacial and melt-polycondensation temperatures pressures and purities, and the bisphenol A feedstock route as 1982 practice. The bisphenol A half of the feed has no canonical material node; the phosgene half is chem.polycarbonate.phosgene.",
+      "edges": [
+        {
+          "to": "chem.polycarbonate.phosgene",
+          "rel": "made from"
+        }
+      ]
+    },
+    "chem.silicone.compound": {
+      "id": "chem.silicone.compound",
+      "name": "Silicone rubber compound (filled PDMS)",
+      "description": "Polydimethylsiloxane compounded with reinforcing silica filler: an elastomer with a silicon-oxygen backbone, stable from about minus 55 to 300 C, supplied as one- or two-part polymer plus filler. Fillers improve properties and reduce cost; peroxide or moisture cure crosslinks the compound into key domes, gaskets and coatings. Conductive key domes add carbon black or metal-coated microspheres so the rubber itself conducts.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1940s",
+      "facts": [
+        {
+          "label": "Service temperature",
+          "value": "about minus 55 to 300 C"
+        },
+        {
+          "label": "Filler",
+          "value": "reinforcing silica; conductive grades add carbon black or metal-coated microspheres"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Silicone_rubber"
+      ],
+      "confidence": "medium",
+      "note": "Established: silicone rubber is a PDMS elastomer with a silicon-oxygen backbone, stable from about minus 55 to 300 C, in filled one- and two-part formulations. Not established: filler loadings, cure temperatures and times, 1983 tonnages, and the exact conductive dome formulation as 1982 practice. The chlorosilane feed has no canonical material node; the Rochow route is chem.silicone.rochow.",
+      "edges": []
+    },
+    "chem.pom.resin": {
+      "id": "chem.pom.resin",
+      "name": "POM resin (acetal pellets)",
+      "description": "Polyoxymethylene pellets, also called acetal, polyacetal or polyformaldehyde: an engineering thermoplastic for precision parts requiring high stiffness, low friction and dimensional stability. Sold as homopolymer and copolymer under trade names including Delrin, Celcon, Hostaform, Ultraform and Duracon, with slightly different formulas by producer. In a 1983 machine it was the gears, cams, hinges and switch-mechanism parts moulded to tight tolerance.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1950s",
+      "facts": [
+        {
+          "label": "Trade names",
+          "value": "Delrin (homopolymer); Celcon, Hostaform, Ultraform, Duracon (copolymers)"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Polyoxymethylene"
+      ],
+      "confidence": "medium",
+      "note": "Established: POM is the acetal and polyacetal engineering thermoplastic for stiff low-friction precision parts, in homopolymer and copolymer grades under the stated trade names. Not established: comonomer loadings, polymerisation temperatures pressures and catalysts, 1983 tonnages, and the moulding tolerances as 1982 practice. The formaldehyde feed has no canonical material node; the methanol oxidation is chem.pom.formaldehyde.",
+      "edges": []
+    },
+    "chem.polyester.pet.film": {
+      "id": "chem.polyester.pet.film",
+      "name": "PET film (biaxially oriented polyester film)",
+      "description": "Stretched polyethylene terephthalate film sold as Mylar, Melinex, Lumirror and Hostaphan: biaxially oriented so the polymer chains lie parallel to the film plane, giving high tensile strength, chemical and dimensional stability, transparency and electrical insulation. When metallised it gains gas and moisture barrier properties and reflectivity; the metallised film wound on a core is the dielectric and electrode of film capacitors. It was the first biaxially oriented polymer made at mass commercial scale.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1950s",
+      "facts": [
+        {
+          "label": "Trade names",
+          "value": "Mylar, Melinex, Lumirror, Hostaphan"
+        },
+        {
+          "label": "Orientation",
+          "value": "biaxially oriented, chains parallel to the film plane"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mylar",
+        "https://en.wikipedia.org/wiki/Polyethylene_terephthalate"
+      ],
+      "confidence": "high",
+      "note": "Established: biaxially oriented PET film under the stated trade names, with high tensile strength, chemical and dimensional stability, transparency and electrical insulation, and metallised barrier properties. Not established: 1982 film thicknesses, metallisation thicknesses, roll widths, 1983 tonnages, and the casting and stretching temperatures as 1982 practice. PET resin pellets have no canonical material node; the polymerisation is chem.polyester.pet.",
+      "edges": []
+    },
+    "chem.polystyrene.resin": {
+      "id": "chem.polystyrene.resin",
+      "name": "Polystyrene resin (general purpose GPPS pellets)",
+      "description": "General purpose polystyrene pellets: a clear hard and brittle thermoplastic polymerised from styrene monomer, a cheap resin with poor oxygen and moisture barrier. Production is several million tonnes a year. In film capacitors it is the stretched dielectric of polystyrene film types, valued for capacitance stability and low dissipation; in packaging it is the foam beads and carton inserts.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1930s",
+      "facts": [
+        {
+          "label": "GPPS character",
+          "value": "clear, hard and brittle"
+        },
+        {
+          "label": "Scale",
+          "value": "several million tonnes a year"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Polystyrene"
+      ],
+      "confidence": "high",
+      "note": "Established: polystyrene is the styrene polymer, with general purpose grade clear hard and brittle, at several million tonnes a year. Not established: 1983 tonnages, bulk and suspension temperatures pressures conversions and initiator loadings, and residual monomer levels as 1982 practice. The styrene monomer feed has no canonical material node; ethylbenzene and dehydrogenation are under chem.styrene.",
+      "edges": []
+    },
+    "chem.polyester.pbt.resin": {
+      "id": "chem.polyester.pbt.resin",
+      "name": "PBT resin (glass-filled polybutylene terephthalate pellets)",
+      "description": "Polybutylene terephthalate compounded with chopped glass: a semi-crystalline thermoplastic polyester used as an insulator in the electrical and electronics industries. It resists solvents, shrinks very little during forming, is mechanically strong and heat-resistant to about 150 C, and can be flame-retarded to noncombustible. Glass-filled PBT was the standard D-sub and DIN connector shell material of the era.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1970s",
+      "facts": [
+        {
+          "label": "Heat resistance",
+          "value": "to about 150 C"
+        },
+        {
+          "label": "Origin",
+          "value": "developed by Imperial Chemical Industries (ICI)"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Polybutylene_terephthalate"
+      ],
+      "confidence": "medium",
+      "note": "Established: PBT is the semi-crystalline thermoplastic polyester insulator for electrical and electronics use, solvent-resistant with low forming shrinkage, to about 150 C, flame-retardable, developed by ICI. Not established: glass loadings, mould temperatures, UL ratings, 1983 tonnages, and the DMT versus terephthalic acid feed split as 1982 practice. Dimethyl terephthalate has no canonical material node; the acid half is chem.polyester.pet.terephthalic-acid.",
+      "edges": [
+        {
+          "to": "chem.polyester.pet.terephthalic-acid",
+          "rel": "made from"
+        },
+        {
+          "to": "chem.polyester.pbt.butanediol",
+          "rel": "made from"
+        }
+      ]
+    },
+    "chem.pvc.plasticiser.ethylhexanol": {
+      "id": "chem.pvc.plasticiser.ethylhexanol",
+      "name": "2-Ethylhexanol (plasticiser alcohol)",
+      "description": "A branched eight-carbon chiral alcohol, C8H18O: a colourless liquid poorly soluble in water but soluble in most organic solvents, produced at over two billion kilograms a year for solvents, flavours, fragrances and especially as a precursor for plasticisers. Esterified with phthalic anhydride it gives di(2-ethylhexyl) phthalate, the standard flexible-PVC plasticiser. The suppleness of a PVC cable jacket traces to this alcohol through that ester.",
+      "kind": "material",
+      "category": "fluids",
+      "era": "1930s",
+      "facts": [
+        {
+          "label": "Formula",
+          "value": "C8H18O, branched eight-carbon chiral alcohol"
+        },
+        {
+          "label": "Scale (modern reference)",
+          "value": "over 2,000,000,000 kg a year"
+        },
+        {
+          "label": "DEHP link",
+          "value": "DEHP is the diester of phthalic acid and 2-ethylhexanol"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/2-Ethylhexanol",
+        "https://en.wikipedia.org/wiki/Bis(2-ethylhexyl)_phthalate"
+      ],
+      "confidence": "medium",
+      "note": "Established: 2-ethylhexanol is the branched C8 chiral alcohol, colourless and poorly water-soluble, made at large scale as a plasticiser precursor, and DEHP is its diester with phthalic acid. Not established: 1983 production volumes, oxo-route temperatures pressures and catalysts, and purities as 1982 practice. Category fluids as an alcohol solvent and precursor, like isopropanol, rather than plastics.",
+      "edges": []
+    },
+    "chem.pvc.compound.flexible": {
+      "id": "chem.pvc.compound.flexible",
+      "name": "Flexible PVC compound (cable jacket pellets)",
+      "description": "PVC resin compounded with plasticiser, heat stabiliser and lubricant into pellets for extrusion: the flexible grade of cable jackets and insulation, distinct from rigid unplasticised PVC. Flexible PVC spans from semi-rigid at about 25 percent plasticiser to extremely flexible past 80 percent, with wire and cable insulation in the flexible range near one-third plasticiser. The compound, not the raw resin powder, is what a cable extrusion line consumes.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1930s",
+      "facts": [
+        {
+          "label": "Plasticiser range (modern reference table)",
+          "value": "semi-rigid 25 percent, flexible 33 percent, very flexible 44 percent, extremely flexible to 86 percent"
+        },
+        {
+          "label": "Cable grade",
+          "value": "wire and cable insulation in the flexible range"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Polyvinyl_chloride"
+      ],
+      "confidence": "low",
+      "note": "Established: PVC compound is resin plus plasticiser, stabiliser, lubricant and pigment, with flexible grades spanning to over 80 percent plasticiser and cable insulation in the flexible range. Not established: the 1982 cable-jacket plasticiser loading, which this tree carries as 30-60 parts per hundred in chem.pvc.plasticiser and as 5-15 percent by weight in c64.cables.rf-cable.plasticiser, both unverified here; nor the stabiliser package and extrusion temperatures as 1982 practice.",
+      "edges": [
+        {
+          "to": "chem.pvc.resin",
+          "rel": "made of"
+        },
+        {
+          "to": "chem.pvc.plasticiser",
+          "rel": "made of"
+        }
+      ]
+    },
+    "chem.polyester.pbt.butanediol": {
+      "id": "chem.polyester.pbt.butanediol",
+      "name": "1,4-Butanediol (PBT diol monomer)",
+      "description": "Butane-1,4-diol, HOCH2CH2CH2CH2OH: a colourless viscous primary alcohol first synthesised in 1890, condensed with dimethyl terephthalate or terephthalic acid to give polybutylene terephthalate. It is the diol half of the PBT repeat unit, with the acid half coming from paraxylene oxidation. Like ethylene glycol for PET, it is a polymer feedstock rather than a solvent.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1970s",
+      "facts": [
+        {
+          "label": "Formula",
+          "value": "HOCH2CH2CH2CH2OH"
+        },
+        {
+          "label": "First synthesis",
+          "value": "1890"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/1,4-Butanediol"
+      ],
+      "confidence": "medium",
+      "note": "Established: 1,4-butanediol is the colourless viscous primary alcohol HOCH2CH2CH2CH2OH, the diol monomer for PBT with dimethyl terephthalate or terephthalic acid. Not established: the 1980s industrial route, temperatures pressures and catalysts, purities, and tonnages as 1982 practice. Category plastics as a polyester diol feedstock, like ethylene glycol, rather than fluids. Era 1970s for the PBT engineering use; first synthesis 1890.",
+      "edges": []
     }
   }
 }

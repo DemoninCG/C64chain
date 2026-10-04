@@ -2602,6 +2602,50 @@
           "basis": "documented"
         }
       ]
+    },
+    "metal.zinc.chloride": {
+      "id": "metal.zinc.chloride",
+      "name": "Zinc chloride (ZnCl2): flux activator and galvanising flux",
+      "description": "Zinc chloride is the inorganic salt ZnCl2, a white hygroscopic and strongly deliquescent crystalline solid supplied anhydrous or as hydrates. It is made by reacting zinc metal - or zinc oxide, carbonate or sulphide - with hydrochloric acid, in industry Zn + 2 HCl -> ZnCl2 + H2, with the hydrate grade set by evaporation. Its job in this tree is flux chemistry: it dissolves passivating metal oxides and exposes clean metal, which is why it is the halide activator in activated rosin flux for solder wire and - with ammonium chloride as the double salts - the flux in hot-dip galvanising and the acid-chloride zinc plating bath.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Formula",
+          "value": "ZnCl2, 136.28 g/mol"
+        },
+        {
+          "label": "Properties",
+          "value": "white deliquescent crystals; mp 290 C, bp 732 C; 432 g per 100 g water at 25 C"
+        },
+        {
+          "label": "Preparation",
+          "value": "Zn + 2 HCl -> ZnCl2 + H2; aqueous grades also from ZnO, ZnCO3 or ZnS in HCl"
+        },
+        {
+          "label": "Flux action",
+          "value": "dissolves metal oxides exposing clean metal; ammonium-chloride double salts decompose on heating liberating HCl"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Zinc_chloride",
+        "https://en.wikipedia.org/wiki/Flux_(metallurgy)"
+      ],
+      "note": "Established: ZnCl2 formula and deliquescent crystalline character, the Zn + 2 HCl preparation and the ZnO/carbonate/sulphide + HCl aqueous route, the oxide-dissolving flux action, the ammonium-chloride double salts decomposing to HCl, and the hot-dip galvanising and soldering-flux uses. Not established: which 1982 works made electronic-grade versus galvanising-grade salt, the exact hydrate grade each consumer bought, and the activated-flux doping level in 1982 electronics practice.",
+      "edges": [
+        {
+          "to": "metal.zinc.ingot",
+          "rel": "made from",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "metal.hydrochloric-acid",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     }
   }
 }

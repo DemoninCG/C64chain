@@ -2039,6 +2039,94 @@
       "note": "That kraft pulp is produced by the kraft process and that the process yields stronger pulp than sulfite or mechanical pulping is established. In part in conflict: the source says kraft pulping removes most of the lignin present originally in the wood, whereas the description here says the brown colour is retained kraft lignin. Not established: the sodium hydroxide and sodium sulfide charges, the 160-180 C cook, the one to three hour duration and the 45-50% yield.",
       "children": []
     },
+    "c64.packaging.paper": {
+      "id": "c64.packaging.paper",
+      "name": "Uncoated printing and packaging paper",
+      "description": "A Fourdrinier sheet of matted cellulose fibre, formed from a dilute kraft-pulp slurry that is drained on a moving wire, pressed between rolls and steam-dried to about 6 percent moisture. It is the common base behind the manual pages, the warranty card and the packaging inserts: coating, sizing or a heavier board grade all start from this sheet.",
+      "kind": "material",
+      "category": "packaging",
+      "era": "1982",
+      "facts": [
+        {
+          "label": "Furnish",
+          "value": "bleached or unbleached kraft pulp, with mechanical or recycled fibre where the grade allows"
+        },
+        {
+          "label": "Printing grades",
+          "value": "about 60-120 gsm; card above about 160 gsm"
+        },
+        {
+          "label": "Drying",
+          "value": "steam-heated cans above 93 C, sheet to about 6 percent moisture"
+        }
+      ],
+      "inputs": [],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Paper",
+        "https://en.wikipedia.org/wiki/Paper_machine"
+      ],
+      "note": "Established: that paper is a thin sheet of matted cellulose fibre formed from a pulp slurry drained and dried into sheets; that kraft pulp makes linerboard and printing and writing papers; steam-can drying to about 6 percent moisture; clay, calcium carbonate and titanium dioxide as opacity fillers and kaolin as the coating clay. Made of rather than made from its pulp because the sheet is the same cellulose fibres in a different shape (slurry versus web), with only water removed and no chemical transformation; this follows the foil, sheet and wire precedent in the metals branches. Not established: the furnish blend, the grammage and the bleaching route of the stocks Commodore bought, or which mill made them. Recycled OCC fibre is deliberately not linked here: it feeds the corrugated medium, not printing grades.",
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.packaging.kraft-pulp",
+          "rel": "made of"
+        }
+      ]
+    },
+    "c64.packaging.papermaking": {
+      "id": "c64.packaging.papermaking",
+      "name": "Make paper on a Fourdrinier machine",
+      "description": "Refined kraft pulp is blended, diluted and jetted from a headbox at under 0.4 percent consistency onto a moving wire, where vacuum drains it to about 25 percent solids at the couch. Press rolls with felts take the web above 40 percent solids, steam-heated cans dry it to about 6 percent moisture, and the reel winds it for slitting into sheets or rolls.",
+      "kind": "process",
+      "category": "packaging",
+      "era": "1982",
+      "facts": [
+        {
+          "label": "Headbox consistency",
+          "value": "typically under 0.4 percent"
+        },
+        {
+          "label": "Couch solids",
+          "value": "about 25 percent"
+        },
+        {
+          "label": "Press solids",
+          "value": "above 40 percent"
+        },
+        {
+          "label": "Dryers",
+          "value": "steam-heated cans above 93 C, in runs of forty or more"
+        }
+      ],
+      "inputs": [],
+      "confidence": "medium",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Paper_machine"
+      ],
+      "note": "Established: the forming, press and dryer sections and the headbox, couch, press and reel moisture figures. Not established: the wire width, the machine speed and whether the supplying mill ran an integrated pulp line; tissue and multi-ply board variants are not this grade.",
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.packaging.kraft-pulp",
+          "rel": "consumes"
+        },
+        {
+          "to": "facility.water",
+          "rel": "consumes"
+        },
+        {
+          "to": "facility.steam",
+          "rel": "consumes"
+        },
+        {
+          "to": "c64.packaging.paper",
+          "rel": "produces",
+          "role": "product"
+        }
+      ]
+    },
     "c64.packaging.eps-beads": {
       "id": "c64.packaging.eps-beads",
       "name": "EPS beads (expanded in a bead expander)",
@@ -2326,7 +2414,14 @@
         "https://en.wikipedia.org/wiki/Low-density_polyethylene"
       ],
       "note": "That LDPE is the branched low-density form of polyethylene is established: the article heads its structure section with the branched structure of LDPE, and identifies branching as one of the features that distinguishes polyethylene grades. Not established: that the branching is what allows a 75 ohm coaxial geometry with a reasonable centre conductor, the 2.2-2.35 dielectric constant and the 0.91-0.93 g/cm3 density.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "chem.polyethylene.resin",
+          "rel": "made of",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "c64.case.tooling.synthetic-alumina": {
       "id": "c64.case.tooling.synthetic-alumina",
@@ -2626,6 +2721,11 @@
         {
           "to": "c64.cables.rf-cable.plasticiser",
           "rel": "made of"
+        },
+        {
+          "to": "chem.pvc.compound.flexible",
+          "rel": "made of",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -3137,6 +3237,11 @@
         {
           "to": "facility.water",
           "rel": "consumes"
+        },
+        {
+          "to": "c64.packaging.kraft-pulp",
+          "rel": "produces",
+          "role": "product"
         }
       ]
     },
@@ -3408,6 +3513,10 @@
       "edges": [
         {
           "to": "c64.packaging.litho-ink",
+          "rel": "consumes"
+        },
+        {
+          "to": "c64.packaging.paper",
           "rel": "consumes"
         }
       ]

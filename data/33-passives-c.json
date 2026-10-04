@@ -1513,6 +1513,13 @@
       "note": "Not established: silica-filled grade, wide-temperature-range elasticity, and low oil uptake as the reason these domes do not swell and seize. Whether the C64 domes were silicone rather than another elastomer is also not established.",
       "sources": [
         "https://en.wikipedia.org/wiki/Silicone_rubber"
+      ],
+      "edges": [
+        {
+          "to": "chem.silicone.compound",
+          "rel": "made of",
+          "basis": "inferred"
+        }
       ]
     },
     "c64.keyboard-switches.pcb-resin": {
@@ -1542,7 +1549,12 @@
       "edges": [
         {
           "to": "metal.ilmenite-sand",
-          "rel": "made of"
+          "rel": "made from"
+        },
+        {
+          "to": "metal.titanium-tetrachloride",
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },

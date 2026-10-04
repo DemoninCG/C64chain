@@ -37,6 +37,11 @@
         {
           "to": "metal.hydrochloric-acid",
           "rel": "made from"
+        },
+        {
+          "to": "metal.zinc.chloride",
+          "rel": "made of",
+          "basis": "documented"
         }
       ]
     },
@@ -745,6 +750,84 @@
         "https://en.wikipedia.org/wiki/Red_mud"
       ]
     },
+    "metal.bayer-liquor": {
+      "id": "metal.bayer-liquor",
+      "name": "Bayer liquor (pregnant sodium aluminate solution)",
+      "description": "The hot, caustic, green-black liquid at the heart of the Bayer process: bauxite digested in sodium hydroxide at 150-200 C goes into solution as sodium aluminate, NaAlO2 (hydrated: NaAl(OH)4), while the iron, titanium and most silica stay behind as red mud and are filtered off. Cooling the clarified liquor and seeding it with gibbsite crystals precipitates aluminium hydroxide, and the spent liquor is recycled to digestion. Recycling is what makes the liquor more than a solvent: gallium and vanadium build up in it to the point where they can be extracted profitably, which is why the Bayer process is the main source of gallium even though the yield is low.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Chemistry",
+          "value": "Al2O3.2H2O + 2NaOH -> 2NaAlO2 + 3H2O; aluminium carried as Al(OH)4-"
+        },
+        {
+          "label": "Digestion",
+          "value": "150-200 C in NaOH pressure vessels; gibbsitic ore digests low, diasporic ore needs 240-280 C"
+        },
+        {
+          "label": "Precipitation",
+          "value": "seeded with gibbsite crystals on cooling: 2H2O + NaAlO2 -> Al(OH)3 + NaOH; takes days unseeded"
+        },
+        {
+          "label": "Gallium",
+          "value": "builds up in recycled liquor with vanadium and is extracted upstream of precipitation; the rest reports to alumina and red mud"
+        }
+      ],
+      "note": "Documented: the digestion and precipitation reactions, the seeding practice, and the gallium/vanadium accumulation in recycled liquor. Not established: liquor concentrations and residence times for any specific 1982 refinery. Gallium metal itself is unmodelled in this tree (no gallium node); the extraction route is recorded here so the branch is not lost.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bayer_process",
+        "https://en.wikipedia.org/wiki/Sodium_aluminate"
+      ],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.bauxite",
+          "rel": "made from"
+        },
+        {
+          "to": "metal.caustic-soda",
+          "rel": "made from"
+        }
+      ]
+    },
+    "metal.aluminium-hydroxide": {
+      "id": "metal.aluminium-hydroxide",
+      "name": "Aluminium hydroxide (gibbsite precipitate)",
+      "description": "The white crystalline precipitate seeded out of cooled Bayer liquor: Al(OH)3, mineralogically gibbsite with rarer bayerite, doyleite and nordstrandite polymorphs. It is the fork in the aluminium road: some 90% of it is calcined at about 1200 C to smelter-grade alumina, and the rest is sold as-is - as a flame-retardant filler in rubber and plastics, and as the feed for water-treatment chemicals such as aluminium sulfate and polyaluminium chloride. Like the alumina it becomes, it is amphoteric, dissolving in both acid and caustic.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Formula",
+          "value": "Al(OH)3; gibbsite is the Bayer precipitate polymorph"
+        },
+        {
+          "label": "Calcination",
+          "value": "2Al(OH)3 -> Al2O3 + 3H2O at about 1200 C in rotary kilns or flash calciners; some 90% of gibbsite goes this way"
+        },
+        {
+          "label": "Other uses",
+          "value": "flame-retardant filler in rubber and plastics; feed for aluminium sulfate, PAC and sodium aluminate water-treatment chemicals"
+        }
+      ],
+      "note": "Documented: the polymorphs, the amphoteric chemistry, the calcination reaction and temperature, the 90% split to alumina, and the filler and water-chemical uses. Not established: which 1982 refineries sold hydrate versus calcining everything on site.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Aluminium_hydroxide",
+        "https://en.wikipedia.org/wiki/Bayer_process"
+      ],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.bayer-liquor",
+          "rel": "made from"
+        }
+      ]
+    },
     "metal.alumina": {
       "id": "metal.alumina",
       "name": "Smelter-grade alumina, 99.5% Al2O3",
@@ -781,6 +864,10 @@
         },
         {
           "to": "metal.caustic-soda",
+          "rel": "made from"
+        },
+        {
+          "to": "metal.aluminium-hydroxide",
           "rel": "made from"
         },
         {
@@ -1516,6 +1603,57 @@
         }
       ]
     },
+    "metal.sodium-dichromate": {
+      "id": "metal.sodium-dichromate",
+      "name": "Sodium dichromate (Na2Cr2O7)",
+      "description": "The bright-orange salt through which virtually all chromium ore passes: chromite is roasted with soda ash at order 1000 C in air to water-soluble sodium chromate, leached in hot water, and acidified with sulfuric acid (or carbon dioxide) to the dichromate, which is crystallised as the dihydrate. Virtually every chromium compound and material starts here - the chromic acid of the hard-chrome plating bath, the dichromate of the chromate conversion coating, leather tanning, pigments. Like all hexavalent chromium compounds it is carcinogenic, which is why the refineries that make it work under stringent effluent rules.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Formula",
+          "value": "Na2Cr2O7, handled as the dihydrate Na2Cr2O7.2H2O; molar mass 262 g/mol anhydrous"
+        },
+        {
+          "label": "Roast",
+          "value": "2Cr2O3 + 4Na2CO3 + 3O2 -> 4Na2CrO4 + 4CO2 at order 1000 C in air"
+        },
+        {
+          "label": "Acidification",
+          "value": "2Na2CrO4 + H2SO4 -> Na2Cr2O7 + Na2SO4 + H2O; crystallised at 30-35 C"
+        },
+        {
+          "label": "Solubility",
+          "value": "73 g/100 mL at 25 C, about twenty times the potassium salt - the reason industry prefers it"
+        },
+        {
+          "label": "Hazard",
+          "value": "hexavalent chromium: carcinogenic and corrosive; refinery effluent reduced back to Cr(III) before discharge"
+        }
+      ],
+      "note": "Documented: the roast and acidification reactions, the dihydrate handling, the solubility, and the central-intermediate role. Roast temperature varies with ore and furnace practice; the sibling electrolytic-chromium node in this file records 500-700 C for its soda-ash roast, a lower-temperature variant of the same chemistry. Not established: annual tonnages for any single 1982 refinery.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sodium_dichromate",
+        "https://en.wikipedia.org/wiki/Chromium#Production"
+      ],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.chromite",
+          "rel": "made from"
+        },
+        {
+          "to": "metal.soda-ash",
+          "rel": "made from"
+        },
+        {
+          "to": "metal.sulphuric-acid",
+          "rel": "made from"
+        }
+      ]
+    },
     "metal.chromate-passivation": {
       "id": "metal.chromate-passivation",
       "name": "Chromate conversion coating",
@@ -1550,6 +1688,10 @@
       ],
       "note": "This node is the third of chromium's three markets - ferrochrome into stainless steel, electrolytic metal into the plating bath, and chromate conversion on the plated surface - so it is deliberately given two parents, the chromium branch and metal.zinc.electroplate.",
       "edges": [
+        {
+          "to": "metal.sodium-dichromate",
+          "rel": "consumes"
+        },
         {
           "to": "metal.sulphuric-acid",
           "rel": "consumes"
@@ -3757,6 +3899,54 @@
         }
       ]
     },
+    "metal.beryllium-copper": {
+      "id": "metal.beryllium-copper",
+      "name": "Beryllium copper (BeCu spring alloy)",
+      "description": "A copper alloy with 0.5-3% beryllium - spring copper, copper beryllium, beryllium bronze - that combines copper's conductivity with a steel-like spring temper. The high-strength grade, about 2% Be (C17200: 1.8-2.0% Be), is solution-annealed, formed, then precipitation (age) hardened, which is what makes it hold contact force in a miniature spring, relay blade or test probe without relaxing. In the hardened condition it keeps about 22% IACS conductivity. Beryllium comes from beryl and bertrandite ores via a beryllium-copper master alloy, a feed this tree does not model. Beryllium dust is toxic, so the alloy's machining and grinding carry exposure controls the phosphor-bronze shop next door does not need.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Composition",
+          "value": "Cu with 0.5-3% Be; high-strength grade C17200 at 1.8-2.0% Be"
+        },
+        {
+          "label": "Hardening",
+          "value": "solution anneal, form, then precipitation heat-treat (TH/TF tempers); mill-hardened strip also supplied"
+        },
+        {
+          "label": "Conductivity",
+          "value": "about 22% IACS in the hardened condition"
+        },
+        {
+          "label": "Uses",
+          "value": "spring contacts, relay blades, fuse clips, test probes, non-sparking tools"
+        },
+        {
+          "label": "Beryllium feed",
+          "value": "beryl and bertrandite ores via Be-Cu master alloy (unmodelled)"
+        },
+        {
+          "label": "Hazard",
+          "value": "beryllium is toxic; machining dust controlled"
+        }
+      ],
+      "note": "Documented: the composition range, the C17200 chemistry and tempers, the spring-copper naming, the strength-plus-conductivity combination, and the toxicity. Not established: beryllium copper in any specific C64 connector - the card-edge alloys in this tree are specified as phosphor bronze, so no contact node is re-pointed here; the alloy is published as the canonical spring-contact material the test-probe branch names.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Beryllium_copper",
+        "https://en.wikipedia.org/wiki/Beryllium",
+        "https://alloys.copper.org/alloy/C17200"
+      ],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.copper.cathode",
+          "rel": "made of"
+        }
+      ]
+    },
     "metal.zinc.brass": {
       "id": "metal.zinc.brass",
       "name": "Brass (Cu-Zn)",
@@ -3958,6 +4148,54 @@
         "https://en.wikipedia.org/wiki/Ilmenite"
       ]
     },
+    "metal.titanium-tetrachloride": {
+      "id": "metal.titanium-tetrachloride",
+      "name": "Titanium tetrachloride (TiCl4)",
+      "description": "A volatile, fuming liquid and the hinge of the chloride process: ilmenite or rutile is chlorinated with coke and chlorine at 900-1000 C to crude TiCl4, which distils cleanly away from the iron and other impurities, and the purified tetrachloride is then burnt in oxygen at 1200-1400 C to pigment-grade titanium dioxide with the chlorine recycled. The same purified TiCl4 feeds the Kroll reduction to titanium metal, a branch this tree does not follow. In humid air it hydrolyses to a dense white cloud of TiO2 and HCl, once used for smoke screens.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Chlorination",
+          "value": "ore + coke + Cl2 at 900-1000 C -> TiCl4; purified by distillation"
+        },
+        {
+          "label": "Oxidation",
+          "value": "TiCl4 + O2 -> TiO2 + 2Cl2 at 1200-1400 C; chlorine recycled to chlorination"
+        },
+        {
+          "label": "Hydrolysis",
+          "value": "fumes in humid air to a TiO2 + HCl white cloud"
+        },
+        {
+          "label": "Second outlet",
+          "value": "Kroll feed for titanium metal (unmodelled in this tree)"
+        }
+      ],
+      "note": "Documented: the intermediate role, the chlorination/oxidation pair and their temperatures, the distillation purification, and the hydrolysis. The temperatures match the titanium-dioxide node in this file. Not established: the 1982 split between chloride- and sulfate-process pigment reaching any specific C64 plastic part.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Titanium_tetrachloride",
+        "https://en.wikipedia.org/wiki/Chloride_process",
+        "https://en.wikipedia.org/wiki/Ilmenite"
+      ],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.ilmenite-sand",
+          "rel": "made from"
+        },
+        {
+          "to": "metal.chlorine",
+          "rel": "made from"
+        },
+        {
+          "to": "metal.coke",
+          "rel": "made from"
+        }
+      ]
+    },
     "metal.titanium-dioxide": {
       "id": "metal.titanium-dioxide",
       "name": "Titanium dioxide from rutile sand",
@@ -3997,6 +4235,10 @@
       "edges": [
         {
           "to": "metal.ilmenite-sand",
+          "rel": "made from"
+        },
+        {
+          "to": "metal.titanium-tetrachloride",
           "rel": "made from"
         }
       ]
@@ -4140,6 +4382,13 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Garnierite",
         "https://en.wikipedia.org/wiki/Limonite"
+      ],
+      "edges": [
+        {
+          "to": "metal.nickel.ore",
+          "rel": "made from",
+          "basis": "documented"
+        }
       ]
     },
     "metal.dms.fe-silicon": {
@@ -5797,6 +6046,11 @@
         {
           "to": "metal.hydrochloric-acid",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.zinc.chloride",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -5913,6 +6167,11 @@
         {
           "to": "metal.zinc.ingot",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.zinc.chloride",
+          "rel": "consumes",
+          "basis": "inferred"
         }
       ]
     },
@@ -7364,6 +7623,11 @@
         {
           "to": "metal.nickel.laterite-mine",
           "rel": "at"
+        },
+        {
+          "to": "metal.nickel.ore",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },

@@ -632,12 +632,41 @@ for (const id of orphans) warn(`"${id}" (${defs.get(id).__file ?? 'generated'}) 
 /* ------------------------------------------------- scope policy -----
  * Orphan triage (HANDOFF-WAVE5 §4, TODO §11). data/_scope.json lists explicit
  * context/alternate roots (orphans only); missing = chain. Subtree inheritance
- * via children unless explicitly overridden; reached nodes are always chain
- * (chain wins for shared, e.g. coke). Notes/orgs default context by kind since
- * they never carry. Applied here (after reachable/adoption, before strip/stats)
- * so inheritance can skip reached children (do not override chain with context).
+ * via scope-links unless explicitly overridden; directed-reached nodes are always
+ * chain (chain wins for shared, e.g. coke). Notes/orgs default context by kind
+ * since they never carry. Applied here (after reachable/adoption, before
+ * strip/stats) with directed walk for orphan check (builder walk sees all).
  * Tree.json carries explicit scope for every node (viewer/audit read it). */
 {
+  // Directed walk for scope propagation orphan check (duplicates relate audit
+  // section-8: refinement down via children, flow holder->target for consumes/
+  // uses/step/made-from, produces backward via made_by, context never carries,
+  // catalogue dropped, note skips non-children). Builder walk (both ways) sees
+  // all (0 unreachable) and cannot distinguish orphans, so directedSeen here.
+  const dirMadeBy = new Map();
+  for (const [oid, n] of defs) {
+    for (const e of n.edges ?? []) {
+      if (e && e.rel === 'produces' && typeof e.to === 'string' && defs.has(e.to)) {
+        if (!dirMadeBy.has(e.to)) dirMadeBy.set(e.to, []);
+        dirMadeBy.get(e.to).push(oid);
+      }
+    }
+  }
+  const DIR_CARRIES = new Set(['contains', 'made of', 'made from', 'step', 'consumes', 'uses']);
+  const DIR_DROPS = new Set(['c64.bottoms-out', 'c64.extras', 'unlinked.catalogue']);
+  const directedSeen = new Set(['c64']);
+  const dirStack = ['c64'];
+  const dirReach = (t) => { if (defs.has(t) && !DIR_DROPS.has(t) && !directedSeen.has(t)) { directedSeen.add(t); dirStack.push(t); } };
+  while (dirStack.length) {
+    const x = dirStack.pop();
+    for (const c of defs.get(x)?.children ?? []) dirReach(c);
+    if (defs.get(x)?.kind === 'note') continue;
+    for (const f of defs.get(x)?.from ?? []) if (defs.has(f)) dirReach(f);
+    for (const e of defs.get(x)?.edges ?? []) {
+      if (e && DIR_CARRIES.has(e.rel)) dirReach(e.to);
+    }
+    for (const p of dirMadeBy.get(x) ?? []) dirReach(p);
+  }
   const explicit = new Map(); // id -> scope (central file + per-node field wins?)
   for (const id of scopePolicy.context) explicit.set(id, 'context');
   for (const id of scopePolicy.alternate) explicit.set(id, 'alternate');
@@ -665,13 +694,19 @@ for (const id of orphans) warn(`"${id}" (${defs.get(id).__file ?? 'generated'}) 
     n.scope = sc;
   }
   // Inherit via scope-links (children + typed refinement/outputs/furniture/flow,
-  // orphan children only; do not override reached chain shared children).
+  // directed-orphan children only; do not override directed-reached chain shared).
   // Scope inheritance follows composition, outputs and placement, plus flow for
   // alternate-specific feedstocks (alternate process consumes alternate material):
   // legacy children + typed contains/made of/made from/step/consumes/produces/uses/at.
   // Excludes owned by/about (annotation, never inherits: company context must not
   // make plant context, note context must not make content context, etc.).
-  // Chain wins for shared/reached (skip seen). BFS to cover deep subtrees.
+  // Chain wins for shared/directed-reached (skip directedSeen, e.g. coke used by
+  // BOF chain and open-hearth alternate stays chain). BFS to cover deep subtrees.
+  // Directed walk duplicates relate audit (section-8: refinement down, consumes/
+  // uses/step/made-from outward, produces backward via made_by; context never
+  // carries; catalogue dropped; note skips non-children). Builder walk (both ways,
+  // 0 unreachable) cannot distinguish orphans, so directedSeen is computed here
+  // for scope propagation only (orphan children only).
   const SCOPE_LINKS = new Set(['contains', 'made of', 'made from', 'step', 'consumes', 'produces', 'uses', 'at']);
   const scopeKids = (pid) => {
     const out = [...childIds(pid)];
@@ -692,13 +727,7 @@ for (const id of orphans) warn(`"${id}" (${defs.get(id).__file ?? 'generated'}) 
       const cn = defs.get(cid);
       if (!cn) continue;
       if (explicit.has(cid)) { queue.push(cid); continue; } // explicit override, still traverse its children
-      // No seen check here (builder walk sees all, 0 unreachable; directed orphans
-      // are computed in relate audit, not build). All current explicit roots are
-      // orphan with orphan subtrees (verified O), so propagation stays within orphans.
-      // If a future explicit root ever has a reached child (scope violation:
-      // alternate/context reached via hub-bridging/illustrative), that child would
-      // incorrectly inherit context/alternate here; relate audit reports scope
-      // violations separately (reached alternate/context) to catch it. For now safe.
+      if (directedSeen.has(cid)) continue; // directed-reached implies chain, do not override (chain wins for shared, e.g. coke)
       if (cn.scope === undefined || cn.scope === 'chain') {
         // Only inherit if currently default chain (i.e. not already scoped by another parent).
         // If already scoped context/alternate by another parent, keep first (both exempt, same effect).

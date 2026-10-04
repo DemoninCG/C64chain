@@ -394,7 +394,7 @@
     "org->material": {
       "edges": 6,
       "decide": "DELETE",
-      "test": "An org does not consume a substance; its plants do. All 6 are sourcing-vendor orgs (makers.japan/signetics/motorola/national/fairchild/ti) with from->electricity. DELETE; the fab's power is recorded on the plant via consumes, not on the vendor list. PHASE 0 (hub gating exposed these; no relation stores org->material).",
+      "test": "An org does not consume a substance; its plants do. All 6 were sourcing-vendor orgs (makers.japan/signetics/motorola/national/fairchild/ti) with from->electricity. DELETE; the fab's power is recorded on the plant via consumes, not on the vendor list. PHASE 0 (hub gating exposed these; no relation stores org->material). makers.japan list split 2026-10-05 into makers.hitachi + makers.toshiba (both inputs [], no from); vendor orgs unchanged.",
       "note": "Added Phase 0 to close UNMAPPED after hub_rules gating. No stored relation accepts org->material, so DELETE is the only storable answer."
     },
     "site->material": {
