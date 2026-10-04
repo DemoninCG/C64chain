@@ -362,6 +362,18 @@ function cmdWork() {
   }
 }
 
+function cmdDumpEdges() {
+  // Wave 5 viewer work: every live edge with its TRUE relation (typed as
+  // stored, legacy by mechanical disposition), so expansion controls can be
+  // built on relations rather than storage fields.
+  for (const e of ALL) {
+    if (e.disposition === 'JUDGE' || e.disposition === 'UNMAPPED' || e.disposition === 'ASSERT-FAIL'
+      || e.disposition === 'NO-HOME' || e.disposition === 'INDEX' || e.disposition === 'DELETE'
+      || e.disposition === 'REVERSE' || e.disposition === 'REVIEW') continue;
+    console.log(`${e.parent}\t${e.child}\t${e.disposition}\t${e.was}`);
+  }
+}
+
 function cmdDumpMechanical() {
   // Wave 4 migration input: every non-JUDGE legacy edge with its mechanical
   // disposition, so the migration script types them without re-deriving logic.
@@ -555,7 +567,7 @@ async function cmdEmitFixes() {
 const COMMANDS = {
   plan: cmdPlan, procedure: cmdProcedure, work: cmdWork, gold: cmdGold,
   'verify-inputs': cmdVerifyInputs, audit: cmdAudit, 'emit-fixes': cmdEmitFixes,
-  'dump-mechanical': cmdDumpMechanical,
+  'dump-mechanical': cmdDumpMechanical, 'dump-edges': cmdDumpEdges,
 };
 const fn = COMMANDS[cmd];
 if (!fn) { console.error(`unknown command: ${cmd}\n  ${Object.keys(COMMANDS).join(' | ')}`); process.exit(1); }
