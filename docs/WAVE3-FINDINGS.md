@@ -15,14 +15,14 @@ defects it named, is in each agent's own file:
 
 ## 1. What was run
 
-20 of 22 examinations complete; 2 in flight.
+21 of 22 examinations complete; 1 in flight.
 
 One read-only agent per branch or branch family. No agent edited any file in
 `data/`, `docs/` or `scripts/`. Agents read `docs/GOLDEN-IDEA.md`,
 `docs/REPORT-TEMPLATE.md` and `data/_relation_schema.json`, and were given a
 shared brief at `w3-brief.md`.
 
-Nodes read across all completed examinations: **2,634**
+Nodes read across all completed examinations: **2,739**
 (tree total 2,448). Nodes are re-read across agents where an agent followed an
 edge out of its scope, so this is a work figure, not a coverage percentage.
 
@@ -50,7 +50,7 @@ edge out of its scope, so this is a work figure, not a coverage percentage.
 | silicon-chips | 10-silicon: the chip nodes + si.wafer | 137 | 421 inside scope (373 stored, 48 leaving) + ~100 inbound on shared targets | 10 | 5 | 6 | 8 | 9 | 38 | not stated as a total |
 | silicon-fab | 10-silicon: all si.* + mb.cpu.front-end + mb.cpu.fe.* | 52 | 294 (117 leaving, 177 arriving) | 5 | 3 | 5 | 7 | 1 | 21 | 13 high, 6 medium, 1 low |
 | logic-cmos-sourcing | 35-logic: mb.logic, mb.logic.cmos, mb.logic.sourcing | 30 | 106 touching (104 outbound, 2 inbound) + ~140 in cross-checks | 6 | 3 | 6 | 9 | 4 | 28 | not stated as a total; row 3 dual-classified |
-| board | 20-board in full | — | — | — | — | — | — | — | pending | PENDING |
+| board | 20-board in full | 105 | 205 (101 children, 104 inputs) | 8 | 4 | 3 | 5 | 2 | 22 | 22 defects plus 2 minor folded into prose |
 | spine-root | 05-spine + 00-root + unlinked.catalogue | — | — | — | — | — | — | — | pending | PENDING |
 
 Verdicts in each agent's own words:
@@ -75,18 +75,19 @@ Verdicts in each agent's own words:
 - **silicon-chips** — "structurally broken in one load-bearing place, otherwise a well-written file with a broken edge layer"
 - **silicon-fab** — "structurally broken in one half, well modelled in the other"
 - **logic-cmos-sourcing** — "the prose is the best in the tree; the structure is hollow"
+- **board** — "locally sound, structurally broken at exactly one joint"
 
 ## 3. Class totals across completed reports
 
 Arithmetic on the counts each agent reported, not an independent judgement.
 
-- BREAK: 223
-- SHAPE: 146
-- HOLE: 125
-- GHOST: 97
-- DRIFT: 94
+- BREAK: 231
+- SHAPE: 151
+- HOLE: 128
+- GHOST: 101
+- DRIFT: 96
 
-Total reported defects: **685**
+Total reported defects: **707**
 
 Note that several agents state some rows carry two classes, so the per-report
 totals in §2 do not always sum cleanly to a single count of distinct defects.
@@ -143,6 +144,25 @@ work.
 from `inputs` (1,293 of 1,414 exact match tree-wide), and only 11 of 115 notes
 carry an `inputs` array. Skipping `kind: note` in `build.mjs` closes 6 of the
 21 with one line, which makes the remaining 15 rather than 21.
+
+**The stage tie-break added in round 4 fails in two independent ways.** Two
+agents, on different branches:
+
+- No anchor: the ten chip descriptions are datasheets naming no manufacturing stage.
+- Wrong anchor: `mb.pcb.bareboard`'s description is an **unordered enumeration**
+  ("drilled, etched, stripped, masked, legended and finished"), which the rule
+  reads last-noun-first and answers `mb.pcb.finish`.
+
+And a case the tie-break does not contemplate at all: **all ten of `mb.pbc`'s
+operations refine the board and none brings it into being — the board is
+bought.** So `mb.pcb` correctly gets **no** `produces`, which
+`never_default_to_produces` currently treats as something to work around rather
+than report.
+
+**No relation carries order.** `data/20-board.json`'s `$comment` promises "the
+operations applied **in order**", and none of the eleven relations records order.
+The fabrication sequence survives only as JSON array order the viewer never
+sees.
 
 ## 5. Unresolved disagreements between agents, and between agents and briefs
 
@@ -407,6 +427,38 @@ Recorded as pairs. **None is adjudicated here.**
 ### 65. the keyboard
 - **A:** one branch
 - **B:** chassis-keyboard agent: modelled TWICE. c64.keyboard.* is a bill of materials; c64.keyboard-switches.* in 33-passives-c carries the actual manufacturing. The two copies contradict each other on the legend route, the shift-lock mechanism and the key count, and 15 of 45 substance edges point at process nodes.
+
+### 66. the stage tie-break — second independent failure mode
+- **A:** silicon-chips agent: no anchor, because the ten chip descriptions are datasheets naming no manufacturing stage
+- **B:** board agent: a DIFFERENT failure — the tie-break breaks on any description that lists stages as an UNORDERED ENUMERATION. mb.pcb.bareboard description is "drilled, etched, stripped, masked, legended and finished", which the rule reads last-noun-first and answers mb.pcb.finish, which is wrong. Without a guard clause the migration will confidently assign a wrong producer on every such node.
+
+### 67. should mb.pcb carry a produces?
+- **A:** round 4 calibration: every part answers the tie-break and exactly one stage gets produces
+- **B:** board agent: NONE of mb.pcb ten operations brings the board into being — THE BOARD IS BOUGHT. So mb.pcb correctly gets no produces at all, and never_default_to_produces should be REPORTED rather than worked around. bareboard is the node that should have carried it.
+
+### 68. mb.pcb.bareboard vs mb.pcb
+- **A:** not previously recorded
+- **B:** board agent: the same object recorded twice
+
+### 69. equipment typed facility rather than tool
+- **A:** wave 1 fixed mb.solder.wave.preheat, an oven typed part
+- **B:** board agent: mb.test.burnin.oven is still typed facility, named "Burn-in oven or rack", duplicating its own child rack. Same defect as the wave-1 preheat fix, one class over.
+
+### 70. mb.pcb.laminate.press
+- **A:** the schema part->tool kind-bug list
+- **B:** board agent: it is on that list, but the edge reaching it is material->tool. Retyping it moves the edge into the material->process question, whose right answer is produces (reversed) onto mb.pcb.laminate -- which is the branch real HOLE. The documented fix is right and lands somewhere nobody planned.
+
+### 71. mb.passives.caps kind
+- **A:** recorded as a grouping node
+- **B:** board agent: it is typed PART, which is why _index_parents is load-bearing rather than decorative
+
+### 72. metal.silica inbound from outside power and logic
+- **A:** my recorded figure: 3 fragments
+- **B:** board agent: 52 inbound (51 non-parent), 0 from 20-board. Third agent to report zero from a non-power, non-logic fragment.
+
+### 73. does any relation record ORDER?
+- **A:** not previously asked
+- **B:** board agent: data/20-board.json $comment promises "the operations applied in order" and NO relation in the eleven carries order. The order survives only as JSON array order the viewer never sees. The fabrication sequence is the most valuable fact this fragment holds and it is currently unrecorded. Suggests a `sequence` edge attribute.
 
 ## 6. Contradictions in the source data, reported by agents
 
