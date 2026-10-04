@@ -165,6 +165,21 @@
       "from": "metal.benzene",
       "to": "chem.styrene.benzene.coal-tar",
       "why": "same substance from the same route: crude benzol stripped from coke-oven gas. The wash-oil/steam-strip sentence has been folded into the survivor. Verdict 2026-10-03 (TODO carried-over item): not a co-product distinction, a duplicate."
+    },
+    {
+      "from": "chem.solder-chemicals.solder-alloy.tin-source.cassiterite",
+      "to": "metal.cassiterite",
+      "why": "Cassiterite (SnO2), the tin ore and smelter feed. Same substance at the same level: the chem copy ('Tin oxide, 78.8% tin by mass, the principal tin ore. Recovered from placer deposits by panning and gravity concentration and from hard-rock veins by flotation, then smelted or reduced to tin') is the same SnO2 feed as metal.cassiterite ('Cassiterite concentrate (SnO2)'). The 78.8% is pure-mineral stoichiometry, not a distinct product grade, so this is NOT an ore-vs-concentrate level distinction. Keep-rule 1: metal.cassiterite wins (679-char description, 3 facts, confidence high, four-continent places) over 0 facts and confidence medium. Keep-rule 2: metal.cassiterite is a shared published node in 60-metals; the chem copy is catalogue-only with zero in-tree references. Facts union: loser has no facts; its Llallagu/Cornwall/Kinta Valley places are already covered by the survivor's text (Bolivian shields, Cornwall, Malaysia/Indonesia); its dangling prose input 'cassiterite ore' resolves conceptually to the survivor itself via _ingredients 'tin ore' and dies with the loser. The loser's C64-scale solder-joint sentence belongs as a note on chem.solder-chemicals.solder-alloy (a 70-file edit, flagged for that owner, not moved here). No references to re-point (orphan; catalogue entry regenerates at build); no children to adopt."
+    },
+    {
+      "from": "metal.barium",
+      "to": "metal.barium.titanate",
+      "why": "Barium titanate (BaTiO3). Same substance at the same level: metal.barium is named 'Barium titanate: the ceramic capacitor dielectric' ('The disk and multilayer ceramic capacitors on a 1982 C64 mainboard are barium titanate - BaTiO3 - and barium titanate is an industrial material made from barite... The chain is barite to barium sulphide to barium carbonate to barium titanate') while metal.barium.titanate is 'Barium titanate powder (BaTiO3)' ('The solid-state reaction of barium carbonate with titanium dioxide: BaCO3 + TiO2 -> BaTiO3 + CO2... calcination at 1100-1350 C... ball-milled to sub-micron'). The 64 copy is a whole-chain summary wearing a substance name (its four facts span ore assay, China market share, carbonate uses and dielectric constant); it is not a distinct sintered-body level. Keep-rule 1: the powder wins (801-char description, 5 facts, confidence high) over 531 chars and 4 facts. Keep-rule 2: metal.barium.titanate is a shared published node in 60-metals and already wired (edges to metal.titanium-dioxide and metal.barium-carbonate; target of metal.barium-titanate-capacitor's made-of edge); metal.barium is not shared and is catalogue-only. Side benefit: the id 'metal.barium' falsely suggests elemental barium metal (real Ba metal lives at peripheral.tv.crt.vacuum.barium, the getter foil); deleting it removes the collision. Facts union: keep the loser's 'Dielectric constant' fact on the survivor; the loser's 'Barite' and 'China's share' facts already live on metal.barite (drop); the loser's 'Also used for' already lives on metal.barium-carbonate (drop). _ingredients 'barium titanate' already resolves to the survivor, so no alias moves. No references to re-point (orphan); no children to adopt."
+    },
+    {
+      "from": "chem.crude.rig.drilling-mud.barite",
+      "to": "metal.barite.drilling-mud",
+      "why": "API-grade barite weighting agent. Same substance at the same level: the chem copy ('Barite (barium sulphate) weighting agent... API-grade barite at 4.28 g/cm3 added to a base mud of about 1.03-1.2... nearly insoluble in water') is the same dense graded barite as metal.barite.drilling-mud ('Drilling grade barite and its mud... gravity of at least 4.2... 90% passed 45 um... 100-300 tonnes of barite per kilometre'). Keep-rule 1: the 64 copy wins (longer description, 2 facts, confidence medium) over 1 fact and confidence low. Keep-rule 3: metal.barite.drilling-mud is the general id; chem.crude.rig.drilling-mud.barite is contextual to the rig branch. (Both are shared entries, so rule 2 ties.) Facts union: fold the loser's 'Density' fact (4.20-4.30 g/cm3; mud density 2.1-2.3 at 1700 m) into the survivor alongside its specification fact; fold the 'nearly insoluble in water' sentence into the survivor's description; drop the loser's 'same mineral appears as filler via metal.barium-carbonate' aside (a cross-branch remark, not a barite fact). The loser's prose input 'baryte ore' is dangling (no _ingredients mapping) and dies with the loser; conceptually it is metal.barite. No references to re-point (orphan, catalogue-only); no children to adopt."
     }
   ],
   "advisory_no_action_needed": [
@@ -194,6 +209,40 @@
         "metal.quartz"
       ],
       "note": "Four quartz nodes. They are genuinely different things - metal.quartz is crystal-grade vein quartz for resonators, si.polysilicon.quartz is lump quartz for the furnace, si.polysilicon.quartz-leach is the semiconductor-grade purification step - so they should be siblings under one quartz parent, not merged. If the maintainer wants that parent it is metal.quartzite."
+    },
+    {
+      "ids": [
+        "metal.cassiterite",
+        "metal.cassiterite.gravel",
+        "metal.cassiterite.alluvial",
+        "metal.cassiterite.lode",
+        "metal.cassiterite.greisen",
+        "metal.cassiterite.topaz",
+        "metal.tin.ingot"
+      ],
+      "note": "Cassiterite verdict 2026-10-05: distinct levels, NO merges among these (nickel precedent: generic ore vs laterite vs limonite vs concentrate stayed separate). metal.cassiterite is the beneficiated concentrate (40-80% Sn, smelter feed); metal.cassiterite.gravel is run-of-mine placer alluvium (grams per tonne); metal.cassiterite.alluvial is a PROCESS (dredging/panning recovery), not a substance; metal.cassiterite.lode is a FACILITY (the mine); metal.cassiterite.greisen is in-situ hard-rock ore; metal.cassiterite.topaz is a DIFFERENT mineral (Al2SiO4F2, gangue/alteration host, not cassiterite) - merging it would be factually wrong; metal.tin.ingot is refined metal (99.9%). Only the out-of-fragment chem copy is merged (see merges). Two in-fragment defects flagged for the owner, not fixed here: metal.cassiterite.gravel's description discusses Bolivian hard-rock lodes inside a placer node, and metal.cassiterite.lode (a facility) is nested as a child of metal.cassiterite.gravel (a material)."
+    },
+    {
+      "ids": [
+        "chem.solder-chemicals.solder-alloy.tin-source"
+      ],
+      "note": "Tin-source verdict 2026-10-05: 'Where the tin came from' (0 facts, confidence low, orphan) is a sourcing sentence about the solder, not a substance, so it is NOT merged into metal.cassiterite - that would be altitude bending. Recommended for the petrochem owner: fold its deposit/demand sentences into chem.solder-chemicals.solder-alloy's description or demote to a note."
+    },
+    {
+      "ids": [
+        "metal.barite",
+        "metal.barite.mine",
+        "metal.barite.rock",
+        "metal.barite.reduction",
+        "metal.barium-carbonate",
+        "metal.barium-carbonate.calcination",
+        "metal.barium-carbonate.contamination",
+        "metal.barite.mud-system",
+        "metal.barium.titanate",
+        "metal.barium-titanate-capacitor",
+        "peripheral.tv.crt.vacuum.barium"
+      ],
+      "note": "Barite verdict 2026-10-05: distinct levels, NO merges among these. metal.barite is the ore commodity (90-98% BaSO4, both markets); metal.barite.mine is a FACILITY; metal.barite.rock is the in-situ occurrence (vein/replacement leaf); metal.barite.reduction is a PROCESS (BaSO4 + 4C -> BaS); metal.barium-carbonate is a DIFFERENT substance (BaCO3, the traded commodity); calcination/contamination are process/quality steps; metal.barite.mud-system is a designed composite (barite + bentonite + lime), not barite itself; metal.barium.titanate is BaTiO3 powder; metal.barium-titanate-capacitor is a PART; peripheral.tv.crt.vacuum.barium is elemental barium metal (getter foil) - the only real Ba metal in the tree. Only metal.barium (chain summary, see merges) and the chem rig weighting-agent copy (see merges) were duplicates."
     }
   ],
   "renames": [

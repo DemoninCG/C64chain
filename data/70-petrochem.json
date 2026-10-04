@@ -1995,29 +1995,7 @@
           "confidence": "medium",
           "note": "The 200 ppm specification is a common engineering target; typical material arrives at 0.05-0.15%. The desiccant is recorded as a \"from\" ingredient: a drying step is made of its molecular sieve bed, it does not contain it. Not established: the 80-90 C for 2-4 h drying cycle, the under 0.02% moisture target, and the 3A molecular sieve bed as 1980s ABS practice. The 0.3-0.4 wt% equilibrium moisture figure and the silver-streak, void and lost-impact-strength failure mode are plausible but undocumented here."
         },
-        {
-          "id": "chem.abs.c64-case",
-          "name": "The Commodore 64 case, in ABS",
-          "description": "About 350-400 g of ABS: a two-shot moulding, the beige or brown textured skin over the structural frame, with the moulding texture itself - a fine leather grain applied by the tool's EDM process - as the only decoration. Behind the front bezel there is a metal RF shield and a plastic shield can, and the vents are moulded through the wall. Everything visible on the outside of a C64, apart from the keycaps and the badge, is this one polymer.",
-          "kind": "part",
-          "category": "plastics",
-          "era": "1982",
-          "facts": [
-            {
-              "label": "Approximate ABS mass",
-              "value": "~0.35-0.4 kg"
-            },
-            {
-              "label": "Moulding",
-              "value": "two-shot / multi-cavity injection moulding with EDM texture"
-            }
-          ],
-          "places": [
-            "Taipeh, Taiwan"
-          ],
-          "confidence": "medium",
-          "note": "The C64 case material is described as ABS in the plastics trade of the period; the precise grade is not on the record."
-        },
+        
         {
           "id": "chem.abs.other-polymers",
           "name": "Other polymers in and around a C64",
@@ -2345,27 +2323,6 @@
                       "era": "1970s",
                       "confidence": "medium",
                       "note": "Whether a given board was conformal-coated is a plant practice, not a material fact; most consumer boards of this era were not. Conformal coating is a practice described in commentary, not a substance or an operation."
-                    },
-                    {
-                      "id": "chem.silicone.polymer.key-domes",
-                      "name": "Conductive elastomer key domes",
-                      "description": "A switch contact made of a silicone or neoprene elastomer filled with carbon black - or with metal-plated hollow glass spheres - so that the rubber itself conducts. When the dome is pressed it shorts to a printed conductor beneath; the dome's force curve (about 0.5-2 N operating, 8-12 mm travel) is the feel of the keyboard. The conductive filler is a petroleum carbon black or a silvered microsphere, and the elastomer is usually a peroxide-cured silicone or a neoprene, chosen for its fatigue life in millions of actuations.",
-                      "kind": "part",
-                      "category": "plastics",
-                      "era": "1970s",
-                      "children": [],
-                      "facts": [
-                        {
-                          "label": "Operating force",
-                          "value": "~0.5-2 N"
-                        },
-                        {
-                          "label": "Travel",
-                          "value": "~0.5-2 mm"
-                        }
-                      ],
-                      "confidence": "medium",
-                      "note": "The C64 keyboard used elastomer-dome membrane technology; the exact elastomer and filler for a given revision are not documented here."
                     }
                   ],
                   "confidence": "low",
@@ -4487,7 +4444,7 @@
           "rel": "made of"
         },
         {
-          "to": "chem.crude.rig.drilling-mud.barite",
+          "to": "metal.barite.drilling-mud",
           "rel": "made of"
         },
         {
@@ -5875,25 +5832,7 @@
         }
       ]
     },
-    "chem.crude.rig.drilling-mud.barite": {
-      "id": "chem.crude.rig.drilling-mud.barite",
-      "name": "Barite (barium sulphate) weighting agent",
-      "description": "Almost all the weight in a mud: API-grade barite at 4.28 g/cm3 (42.8 ppg) added to a base mud of about 1.03-1.2. Barite is also the standard drilling weighting because it is nearly insoluble in water. The same mineral appears as filler in the plastics and cable branches of this file, via metal.barium-carbonate.",
-      "kind": "material",
-      "category": "fluids",
-      "era": "1980s",
-      "inputs": [
-        "baryte ore"
-      ],
-      "facts": [
-        {
-          "label": "Density",
-          "value": "4.20-4.30 g/cm3; mud density at 1,700 m can reach 2.1-2.3 g/cm3"
-        }
-      ],
-      "confidence": "low",
-      "note": "Established: Almost all the weight in a mud: API-grade barite at 4.28 g/cm3 (42.8 ppg) added to a base mud of about 1.03-1.2 as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
-    },
+    
     "chem.crude.rig.drilling-mud.chromate-lime-mud": {
       "id": "chem.crude.rig.drilling-mud.chromate-lime-mud",
       "name": "Chrome/lime mud (invert emulsion)",
@@ -6079,27 +6018,7 @@
       "confidence": "low",
       "note": "Established: The tin in a 60/40 solder was smelted from cassiterite, the tin ore, and cassiterite is one of the rarer tin deposits in the world: Bolivias placer and vein cassiterite, the Corni as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
     },
-    "chem.solder-chemicals.solder-alloy.tin-source.cassiterite": {
-      "id": "chem.solder-chemicals.solder-alloy.tin-source.cassiterite",
-      "name": "Cassiterite (SnO2)",
-      "description": "Tin oxide, 78.8% tin by mass, the principal tin ore. Recovered from placer deposits by panning and gravity concentration and from hard-rock veins by flotation, then smelted or reduced to tin. The C64-scale observation is the interesting one: a single soldered joint holds a few milligrams of tin, and there are a hundred and fifty million of them, so the tin industry exists in part because of solder joints.",
-      "kind": "material",
-      "category": "interconnect",
-      "era": "ancient",
-      "inputs": [
-        "cassiterite ore"
-      ],
-      "places": [
-        "Llallagu, Bolivia",
-        "Cornwall",
-        "Kinta Valley, Perak"
-      ],
-      "confidence": "medium",
-      "sources": [
-        "https://en.wikipedia.org/wiki/Cassiterite"
-      ],
-      "note": "Not established: the 78.8% tin by mass figure, the panning and flotation recovery route, and the Llallagu, Cornwall and Kinta Valley attributions as 1983 supply sources."
-    },
+    
     "chem.solder-chemicals.rosin-flux.activator": {
       "id": "chem.solder-chemicals.rosin-flux.activator",
       "name": "Flux activator",

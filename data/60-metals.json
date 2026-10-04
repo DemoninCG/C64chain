@@ -2584,42 +2584,6 @@
       "note": "The exact contact alloy in Commodore's keyboard switches is not something I can confirm; Ag-SnO2 and Ag-CdO were both standard contact materials in the 1980s. Medium confidence.",
       "inputs": []
     },
-    "metal.tantalum.powder": {
-      "id": "metal.tantalum.powder",
-      "name": "Tantalum powder",
-      "description": "The anode of a tantalum capacitor is a pressed and sintered tantalum pellet of porous sintered tantalum powder, sintered at 1200-1400 C under vacuum, then anodised - electrolytically grown Ta2O5 - to a formation voltage of about 2-4 times the working voltage. The dielectric is the anodised oxide itself, which is why a tantalum capacitor is a bipolar electrolytic part with no liquid. The powder must be pure and must be milled and classified so the particle size is right for the pellet's porosity: a sintered pellet has to have a tortuous pore path, or it will short.",
-      "kind": "material",
-      "category": "metals",
-      "era": "1982",
-      "confidence": "high",
-      "inputs": [],
-      "facts": [
-        {
-          "label": "Pellet",
-          "value": "pressed and vacuum-sintered at 1200-1400 C, porosity ~30-50%"
-        },
-        {
-          "label": "Anodisation",
-          "value": "Ta2O5 grown electrolytically to 2-4x the working voltage, in phosphoric or nitric acid"
-        },
-        {
-          "label": "Particle size",
-          "value": "classified to about 1-8 um for the pellet"
-        },
-        {
-          "label": "Counter-electrode",
-          "value": "MnO2 from manganese nitrate, or a solid silver electrolyte (a later 1980s development)"
-        },
-        {
-          "label": "In 1982",
-          "value": "tantalum bead and molded chip packages were on the mainboard; wet slug parts were being displaced by these"
-        }
-      ],
-      "sources": [
-        "https://en.wikipedia.org/wiki/Tantalum_capacitor"
-      ],
-      "note": "The silver-electrode variant (that is, a silver counter-electrode) only became commercial around the turn of the 1990s; in 1982 nearly all molded tantalum capacitors used a manganese dioxide or silver-paste counter-electrode, so this node is a convergence of the tantalum and manganese branches."
-    },
     "metal.iron.burden": {
       "id": "metal.iron.burden",
       "name": "Blast furnace burden: sinter, pellets, lump ore, coke and flux",
@@ -3033,6 +2997,10 @@
         {
           "label": "Reducing atmosphere",
           "value": "must be avoided: Ti4+ reduced to Ti3+ turns the material semiconducting and lossy"
+        },
+        {
+          "label": "Dielectric constant",
+          "value": "~1500-6000 (sintered BaTiO3)"
         }
       ],
       "sources": [

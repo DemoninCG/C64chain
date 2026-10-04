@@ -866,7 +866,7 @@
           ],
           "edges": [
             {
-              "to": "metal.tantalum.powder",
+              "to": "metal.tantalum",
               "rel": "made of"
             },
             {
@@ -1115,7 +1115,7 @@
           "rel": "made of"
         },
         {
-          "to": "metal.tantalum.powder",
+          "to": "metal.tantalum",
           "rel": "made of"
         },
         {
@@ -1908,19 +1908,7 @@
         }
       ]
     },
-    "mb.passives.caps.tantalum.ore-to-powder.columbite-ore": {
-      "id": "mb.passives.caps.tantalum.ore-to-powder.columbite-ore",
-      "name": "Columbite-tantalite ore",
-      "description": "Columbite-tantalite is a solid solution of columbite and tantalite, mined both as placer gravels and as lode pegmatites. Concentrating it needs gravity, magnetic and electrostatic separation followed by an acid-leach circuit, because only a few per cent of the rock is Ta2O5; the concentrate may reach 10-30 % Ta2O5. Because the ore is bulk low-grade rock, mining and concentration - not the chemistry - is where most of the cost of a tantalum capacitor lives. Tantalum-bearing minerals are dense and so concentrate naturally in stream and beach placers below any pegmatite outcrop, and much of the 1980s supply was won by artisanal and semi-industrial alluvial mining in the Kivu highlands, which is exactly why ore supply could be disrupted by regional politics rather than by a mine closure. Historically the ore came from the Congo and from Rwanda-Burundi, which is precisely why Western capacitor supply chains were politically and economically exposed in this period.",
-      "kind": "material",
-      "category": "metals",
-      "era": "ancient",
-      "sources": [
-        "https://en.wikipedia.org/wiki/Coltan"
-      ],
-      "confidence": "high",
-      "note": "The DRC ore became a headline conflict-mineral story only from the late 1990s; in 1983-84 the problem was ordinary market tightness and price escalation."
-    },
+    
     "mb.passives.caps.tantalum.packaging.seal.bisphenol-a": {
       "id": "mb.passives.caps.tantalum.packaging.seal.bisphenol-a",
       "name": "Epoxy resin and bisphenol A",
@@ -2386,7 +2374,7 @@
           "note": "Not established: the metal, dielectric, counter-electrode and conductive-path-to-case layer order for these parts, and enclosure in an epoxy dip.",
           "edges": [
             {
-              "to": "metal.tantalum.powder",
+              "to": "metal.tantalum",
               "rel": "made of"
             }
           ]
@@ -2485,42 +2473,7 @@
         }
       ]
     },
-    "mb.passives.caps.tantalum.ore-to-powder": {
-      "id": "mb.passives.caps.tantalum.ore-to-powder",
-      "name": "Columbite ore to capacitor-grade powder",
-      "description": "Columbite-tantalite ore is digested in hydrofluoric acid in an autoclave at 100-200 C to dissolve the tantalum as a fluorotantalate, the solution is treated with potassium chloride or potassium hydroxide to precipitate K2Ta2O7, and that intermediate is converted to a metallic or oxide powder by sodium reduction, by an aluminium or copper chloride reduction, or by a KCl/KF salt melt. Each step loses yield, which is why an ore shortage shows up in capacitor prices months after the mining news.",
-      "kind": "process",
-      "category": "metals",
-      "era": "1982-1984",
-      "confidence": "medium",
-      "note": "This is the standard industrial route, deliberately compressed: several genuinely distinct flows are described as one node rather than over-claiming which variant a given capacitor maker used.",
-      "facts": [
-        {
-          "label": "Digestion",
-          "value": "HF in an autoclave at ~100-200 C"
-        },
-        {
-          "label": "Precipitation",
-          "value": "K2Ta2O7 from KCl/KOH"
-        },
-        {
-          "label": "Reduction routes",
-          "value": "Na reduction, Al or Cu reduction, or KCl/KF salt melt"
-        }
-      ],
-      "inputs": [],
-      "children": [],
-      "edges": [
-        {
-          "to": "mb.passives.caps.tantalum.ore-to-powder.columbite-ore",
-          "rel": "consumes"
-        },
-        {
-          "to": "metal.tantalum",
-          "rel": "consumes"
-        }
-      ]
-    },
+    
     "mb.passives.caps.tantalum.anode.press": {
       "id": "mb.passives.caps.tantalum.anode.press",
       "name": "Anode pressing and sintering",

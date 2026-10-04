@@ -3,53 +3,6 @@
   "subsystem": "metals",
   "roots": [
     {
-      "id": "metal.barium",
-      "name": "Barium titanate: the ceramic capacitor dielectric",
-      "description": "The disk and multilayer ceramic capacitors on a 1982 C64 mainboard are barium titanate - BaTiO3 - and barium titanate is an industrial material made from barite, the same heavy white mineral that makes the drilling mud. The chain is barite to barium sulphide to barium carbonate to barium titanate, and then a 1000-1400 C calcination and a ceramic pressing. It is the most complete oxide-mineral chain in this file: a sulphate ore, a carbothermal reduction, a carbonate, a perovskite, and a dielectric constant of several thousand.",
-      "kind": "material",
-      "category": "metals",
-      "era": "1982",
-      "confidence": "high",
-      "inputs": [],
-      "facts": [
-        {
-          "label": "Dielectric constant",
-          "value": "~1000-5000 for X7R barium titanate; ~10,000 for the pure material near its Curie point"
-        },
-        {
-          "label": "Barite",
-          "value": "BaSO4, 90-98% in commercial grades; 53% Ba"
-        },
-        {
-          "label": "China's share",
-          "value": "China supplied the majority of world barite in 1982"
-        },
-        {
-          "label": "Also used for",
-          "value": "the glass frit of the ferrite coating, the ferrite body itself, and the barium ferrite magnet"
-        }
-      ],
-      "sources": [
-        "https://en.wikipedia.org/wiki/Barium",
-        "https://en.wikipedia.org/wiki/Barium_titanate"
-      ],
-      "children": [],
-      "edges": [
-        {
-          "to": "metal.barite",
-          "rel": "made from"
-        },
-        {
-          "to": "metal.barium.titanate",
-          "rel": "made of"
-        },
-        {
-          "to": "metal.titanium-dioxide",
-          "rel": "made from"
-        }
-      ]
-    },
-    {
       "id": "metal.aluminum",
       "name": "Primary aluminium: ingot, foil, sheet, extrusion",
       "description": "Where the C64's aluminium comes from. Bauxite is dug, digested in caustic soda to alumina, and electrolysed in molten cryolite to 99.7% metal - about 13,000-17,000 kWh per tonne, the largest single industrial electricity draw anywhere in this tree. The ingot is then DC-cast to a rolling ingot and rolled down to 6-25 um foil for the electrolytic capacitors in the power supply, to sheet for the case and shield cans, and extruded for the heat sinks. Note that the capacitor foil and the plain foil are different jobs for the same rolling mill.",
@@ -128,7 +81,7 @@
     {
       "id": "metal.tantalum",
       "name": "Tantalum powder for electrolytic capacitors",
-      "description": "A 1982 C64 has a handful of tantalum capacitors on the mainboard, in the analogue filter section, and tantalum beads in small packages. Each one is a sintered porous tantalum anode with a tantalum oxide dielectric and a solid manganese dioxide or a liquid electrolyte. The tantalum metal is won from columbite-tantalite, a refractory oxide ore, through a hydrofluoric-acid digestion that is one of the most corrosive industrial processes in existence. In 1982-83 there was a real tantalum supply crisis - the Congo and Brazil supply, the Botswana and Zimbabwe expansions, the US stockpile, and a price that doubled - and it is the one place in this tree where a commodity shock from a mining country touched a home computer.",
+      "description": "A 1982 C64 has a no tantalum capacitors on the 250407 mainboard (alu+ceramics per repaired passives note), in the analogue filter section, and tantalum beads in small packages. Each one is a sintered porous tantalum anode with a tantalum oxide dielectric and a solid manganese dioxide or a liquid electrolyte. The tantalum metal is won from columbite-tantalite, a refractory oxide ore, through a hydrofluoric-acid digestion that is one of the most corrosive industrial processes in existence. In 1982-83 there was a real tantalum supply crisis - the Congo and Brazil supply, the Botswana and Zimbabwe expansions, the US stockpile, and a price that doubled - and it is the one place in this tree where a commodity shock from a mining country touched a home computer.",
       "kind": "material",
       "category": "metals",
       "era": "1982",
@@ -150,6 +103,22 @@
         {
           "label": "Capacitor grade",
           "value": "capacitor-grade powder, 99.9%+ Ta, particle size controlled by milling and by sodium reduction"
+        },
+        {
+          "label": "Pellet",
+          "value": "1200-1400 C, 30-50% porosity"
+        },
+        {
+          "label": "Anodisation",
+          "value": "2-4x formation voltage"
+        },
+        {
+          "label": "Counter-electrode",
+          "value": "MnO2 / conductive polymer"
+        },
+        {
+          "label": "In-1982",
+          "value": "capacitor-grade powder route"
         }
       ],
       "sources": [
@@ -174,7 +143,8 @@
           "to": "metal.aluminum.ingot",
           "rel": "made from"
         }
-      ]
+      ],
+      "note": "Merged powder noted particle size 1-8 um vs anode 2-10 um (anode range kept); bipolar vs polarised (polarised kept); silver-electrode timing noted. Surviving handful-of-tantalum-caps corrected: 250407 uses alu+ceramics, NOT tantalum (repaired passives note kept)."
     },
     {
       "id": "metal.manganese",
@@ -312,9 +282,13 @@
         {
           "label": "Consumption",
           "value": "100-300 t of barite per km of hole in a deep well"
+        },
+        {
+          "label": "Density",
+          "value": "4.28 g/cm3 API-grade"
         }
       ],
-      "note": "Medium confidence; the mud consumption figure is representative rather than a specific well.",
+      "note": "Medium confidence; the mud consumption figure is representative rather than a specific well. Merged rig barite noted nearly insoluble in water.",
       "sources": [
         "https://en.wikipedia.org/wiki/Barite"
       ]
@@ -456,7 +430,8 @@
             }
           ]
         }
-      ]
+      ],
+      "note": "Merged columbite-ore noted placers/alluvial, Kivu/Rwanda-Burundi sources, cost-in-mining, coltan source and DRC timing; survivor grades kept."
     },
     "metal.pegmatite-crystals": {
       "id": "metal.pegmatite-crystals",
@@ -919,7 +894,7 @@
         "https://www.unige.ch/TCEs/download_file/view/21/257",
         "https://en.wikipedia.org/wiki/Tantalum"
       ],
-      "note": "The sodium reduction of K2TaF7 at 700-800 C is the standard capacitor-grade route and is still the industrial norm; the aluminium reduction is for bulk metal.",
+      "note": "The sodium reduction of K2TaF7 at 700-800 C is the standard capacitor-grade route and is still the industrial norm; the aluminium reduction is for bulk metal. Merged ore-to-powder noted Cu-reduction and salt-melt variants; K2TaF7 at 70-90 C kept (loser K2Ta2O7 claim not adopted). Loser pass-commentary dropped per CHECKLIST 7a.",
       "children": [
         {
           "id": "metal.tantalum.kcl-cycle",
@@ -947,7 +922,7 @@
       ],
       "edges": [
         {
-          "to": "metal.tantalum.powder",
+          "to": "metal.tantalum",
           "rel": "produces",
           "role": "product"
         },
