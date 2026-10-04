@@ -3700,6 +3700,10 @@
         {
           "to": "facility.electricity",
           "rel": "consumes"
+        },
+        {
+          "to": "mb.logic.package.probe.card",
+          "rel": "uses"
         }
       ]
     },
@@ -4219,7 +4223,7 @@
       "id": "mb.logic.package.probe.card",
       "name": "The probe card",
       "description": "A ceramic or printed-circuit substrate carrying one cantilever needle per bonding pad, cantilevered down from an epoxy or quartz shell so the needles survive hundreds of thousands of touches on hard silicon. Building a card for a new part number took days and cost hundreds to thousands of dollars, which is why a device that sold for thirty cents could not afford a new probe card per variant.",
-      "kind": "part",
+      "kind": "tool",
       "category": "packaging",
       "era": "1980s",
       "confidence": "medium",
