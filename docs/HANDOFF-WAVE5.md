@@ -133,3 +133,7 @@ one-subtree expansion is required, not optional.
 - [x] Duplicate-merge pass via `_proposals`. DONE 2026-10-05 (`838092a`, 8 merges, no BLOCKERs, facts unions, tantalum ingredients fix).
 - [x] Schema-gap ruling (extend once or permanent catalogue). DONE 2026-10-05 (`5b3f58e`, EXTEND ONCE tool->material contains + diamond chain; rest via content/reversals, no permanent catalogue for chain).
 - [x] Ownership chain DONE 2026-10-05 (`d566967`, 6 orgs + MOS/Kentron + makers split; 8/8 exist, drawable) + viewer Wave 5 on `dump-edges` DONE 2026-10-05 (`2e4b03a`, typed relations, progressive refinement expansion, scope + made_by; verified live no errors, 708 rows).
+
+## 7. Branch audit pass (2026-10-05)
+
+8 read-only DFS agents (case/packaging, IO/keyboard/joystick/crystal, silicon, logic/crystal, board/passives, power/RF, peripherals, upstream trunks), central Step 1 reconcile -> Step 1.5 orphan triage -> Step 2 serial implement. 269 queued ops in 5 batches + 5 owner rulings, 6 commits (`d39abb2`, `d9ce535`, `ec3cc28`, `bf76e2c`, `d17ec34`, `8908794`). Gates green except the 2 known FAILs (9 scheduled notes + 49 LB backlog: parts 3 + consumed 46). B2 went red once on a retype that broke a legal `step` edge; fixed by holding out 2 ops, then 2 more held out at apply time plus 1 kind correction (`si.ingot` part->material). Full account in TODO §12 and the session-temp reports.
