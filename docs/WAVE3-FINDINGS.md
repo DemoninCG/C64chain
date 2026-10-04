@@ -15,14 +15,14 @@ defects it named, is in each agent's own file:
 
 ## 1. What was run
 
-14 of 22 examinations complete; 8 in flight.
+15 of 22 examinations complete; 7 in flight.
 
 One read-only agent per branch or branch family. No agent edited any file in
 `data/`, `docs/` or `scripts/`. Agents read `docs/GOLDEN-IDEA.md`,
 `docs/REPORT-TEMPLATE.md` and `data/_relation_schema.json`, and were given a
 shared brief at `w3-brief.md`.
 
-Nodes read across all completed examinations: **2,310**
+Nodes read across all completed examinations: **2,332**
 (tree total 2,448). Nodes are re-read across agents where an agent followed an
 edge out of its scope, so this is a work figure, not a coverage percentage.
 
@@ -44,7 +44,7 @@ edge out of its scope, so this is a work figure, not a coverage percentage.
 | chassis-case | 40-chassis: c64.case, c64.decor, c64.packaging | 110 | 285 | 11 | 3 | 6 | 7 | 5 | 32 | 24 high, 7 medium, none low |
 | chassis-keyboard | 40-chassis: c64.keyboard, c64.cables, remainder | — | — | — | — | — | — | — | pending | PENDING |
 | industry-facilities | 80-industry: all facility.* + industry | 246 | 662 | 11 | 11 | 1 | 11 | 3 | 37 | 3 BLOCKER, 9 STRUCTURAL, 24 LOCAL |
-| industry-logistics | 80-industry: all logistics.* + industry | — | — | — | — | — | — | — | pending | PENDING |
+| industry-logistics | 80-industry: all logistics.* + industry | 22 | 34 | 13 | 5 | 4 | 6 | 6 | 34 | not stated as a total |
 | power-psu | 50-power: c64.psu + c64.mains | 107 | 200 tree edges | 6 | 5 | 5 | 8 | 6 | 30 | 8 BLOCKER or STRUCTURAL |
 | power-rf-modulator | 50-power: mb.rf-modulator and beneath | — | — | — | — | — | — | — | pending | PENDING |
 | silicon-chips | 10-silicon: the chip nodes | — | — | — | — | — | — | — | pending | PENDING |
@@ -68,19 +68,20 @@ Verdicts in each agent's own words:
 - **peripherals-cassette** — "structurally broken in one direction only"
 - **chassis-case** — "structurally broken at the seams, sound in the middle"
 - **industry-facilities** — "structurally broken, but not messy"
+- **industry-logistics** — "structurally broken, but not because of the content; the graph is empty"
 - **power-psu** — "the prose is the best in the tree and the graph is still broken"
 
 ## 3. Class totals across completed reports
 
 Arithmetic on the counts each agent reported, not an independent judgement.
 
-- BREAK: 174
-- SHAPE: 108
-- HOLE: 92
-- GHOST: 72
-- DRIFT: 65
+- BREAK: 187
+- SHAPE: 114
+- HOLE: 96
+- GHOST: 77
+- DRIFT: 71
 
-Total reported defects: **511**
+Total reported defects: **545**
 
 Note that several agents state some rows carry two classes, so the per-report
 totals in §2 do not always sum cleanly to a single count of distinct defects.
@@ -235,6 +236,26 @@ Recorded as pairs. **None is adjudicated here.**
 - **A:** petrochem-polymers agent: chem.pvc.vcm.acetylene-route and chem.natural-gas.uses.acetylene.to-vinyl-chloride are the same operation written twice with identical numbers
 - **B:** —
 
+### 33. unresolved `inputs` in 80-industry
+- **A:** my recorded figure: 133
+- **B:** industry-logistics agent: 193 of 213, i.e. 91% — the worst fragment in the tree, behind 90-peripherals at 86% and well above the 29.6% average
+
+### 34. _index_parents vs the Wave 0 retypes
+- **A:** schema: _index_parents lists facility.foundries, so agents are forbidden from deciding it
+- **B:** industry-logistics agent: these are in DIRECT CONFLICT and the schema does not say so — Wave 0 assigned facility.foundries a kind, which is exactly the forbidden decision. An agent following the schema literally will never touch the node whose promotion created the trap.
+
+### 35. 80-industry unresolved-input rate
+- **A:** my brief to the industry agent: "133 inputs entries that resolve to nothing"
+- **B:** the agent measured 193 of 213 and did not reconcile the two figures
+
+### 36. facility.electricity / hub_rules correctness
+- **A:** industry-facilities agent: hub_rules writes 49 unstoreable consumes
+- **B:** power-psu agent: correct for all 4 in my branch
+
+### 37. only 2 of 19 org nodes are real bodies
+- **A:** industry-logistics agent: facility.foundries and facility.foundries.subcontract-network are lists of places, and mb.logic.sourcing.makers.japan is a list of orgs
+- **B:** industry-facilities agent: 4 of 13 orgs are not organisations
+
 ## 6. Contradictions in the source data, reported by agents
 
 Each is a statement that two parts of the tree disagree. Ownership unassigned.
@@ -260,6 +281,9 @@ Each is a statement that two parts of the tree disagree. Ownership unassigned.
 - **`ict from facility.test-equipment`** is circular, caused by the "spring probe" lookup row. Two sibling rows (`argon`, `oxygen` → `facility.gases`) are the same bug and are not in the wave-2 suspect list.
 - **`_relation_schema.json` and `tree.json` disagree on `chem.propylene.polymerisation`'s kind.**
 - **Two notes disown the edges beneath them.** `peripheral.tv.tuner.can.zinc`'s note explicitly disowns the `from > metal.sphalerite` edge it ships with; same in `zinc-plating`. `...sintering-aid.magnesite`'s note says "silica contaminates cryptocrystalline magnesite as opal or chert; it is not a feed".
+- **`industry`'s eleven child edges have no legal relation that carries connectivity**, and all 21 `logistics.*` nodes have zero connectivity-carrying inbound edges. Reported as the whole 267-node fragment being one relabelling run away from vanishing.
+- **`industry > facility.foundries` has no non-destructive label.** It is `facility -> org`, whose only legal relation is `owned by`, which has `upstream: none` and does not carry connectivity.
+- **A person fits none of the eight kinds.** Eleven named people exist only as prose. A crew is org-shaped and is wrongly typed `note`; because invariant 4 forbids outgoing edges from notes, `owned by` is unusable from that branch even though it is the right relation.
 - **Six nodes in one branch have `facts` their own `note` retracts.**
 - **`c64.mains.switch.actuator`'s `note` sits at 6-space indent among 14-space siblings** (line 3616 of `50-power.json`).
 - **A literal `undefined` at the start of `peripheral.tv.tuner.can.zinc`'s note** in `data/90-peripherals.json`.
@@ -304,3 +328,5 @@ Nothing in `data/` has been changed by any Wave 3 agent. The gates as last run:
 
 - `material→tool`, `material→facility`, `process→note` and `note→note` have no declared judgement question and occur 13 times in one branch, so `unmapped 0` cannot be verified tree-wide.
 - `hub_rules` assigns `consumes` by target, overriding the kind-pair table, which is the only place the schema can assign an answer `answer_must_be_storable` will then fail; industry-facilities counted 49 such edges.
+- `facility -> org`, `facility -> part` and `facility -> process` have judgement questions but appear in no relation's `stored` list, and `facility -> material` resolves to `consumes`/`produces` with no caveat. Per industry-logistics, the next mechanical pass will silently store "Foundries, factories, utilities and logistics **consumes** Industrial steam plant".
+- `_index_parents` and the Wave 0 retypes are in direct conflict and the schema does not say so: `_index_parents` forbids agents deciding `facility.foundries`, while Wave 0 assigned it a kind. An agent following the schema literally will never touch the node whose promotion created the trap.
