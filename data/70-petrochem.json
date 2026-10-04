@@ -291,6 +291,11 @@
             {
               "to": "chem.petroleum",
               "rel": "consumes"
+            },
+            {
+              "to": "chem.ethylene.feedstock.naphtha",
+              "rel": "produces",
+              "role": "product"
             }
           ]
         },
@@ -8201,7 +8206,14 @@
             }
           ],
           "confidence": "low",
-          "note": "Established: The wellstream arrives at 15-100 bar and 60-100 C as an oil/gas/water froth as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+          "note": "Established: The wellstream arrives at 15-100 bar and 60-100 C as an oil/gas/water froth as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+          "edges": [
+            {
+              "to": "chem.petroleum",
+              "rel": "produces",
+              "role": "product"
+            }
+          ]
         },
         {
           "id": "chem.crude.assay",
@@ -8265,14 +8277,7 @@
         }
       ],
       "note": "Category industry throughout the exploration, drilling, completion, stimulation, separation and assay branches: upstream oil and gas is an extraction industry, and the category table reserves energy for power generation and the grid. The bulk process fluids inside it (muds, cement slurry, acid, fracturing fluid) stay fluids, and the crude itself is fluids. Established: Crude oil finding it drilling it lifting it as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s specifics as given.",
-      "confidence": "low",
-      "edges": [
-        {
-          "to": "si.polysilicon.coke.crude",
-          "rel": "consumes",
-          "basis": "inferred"
-        }
-      ]
+      "confidence": "low"
     }
   }
 }
