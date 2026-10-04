@@ -546,5 +546,38 @@
   },
   "out_of_scope": {
     "supplier_and_transport_flow": "Which company shipped which part from where to whom. Expressible only indirectly today. Named here so that agents do not bend `at` to carry it."
+  },
+  "wave2_ingredient_audit": {
+    "summary": "63 suspect rows audited by hand. RIGHT 28, WRONG TARGET 20, NOT AN INGREDIENT 4, UNSURE 11. Only 44% of the rows that failed the name test are actually right.",
+    "all_20_replacements_verified": "Every proposed replacement id already exists in the tree and is a material (49 is a part). No cycles or self-loops introduced. Highest value: si.emc is a material node titled \"Silica-filled epoxy moulding compound\" with si.emc.silica as a child, and THREE rows were pointing at the generic epoxy PROCESS while the exact answer sat in 10-silicon.json. facility.water's own description instructs consumers to point at facility.water.ultrapure.",
+    "self_loop_found": "\"pine stumps\" -> chem.rosin, and chem.rosin's own inputs array contains \"pine stumps\", so the row resolved to itself.",
+    "MY_FRAMING_WAS_WRONG": "I wrote that nine rows point at a process, three at a facility, one at a tool, and that \"those cannot be ingredients of anything under the new relation set\". Only ONE of the four NOT AN INGREDIENT verdicts points at a process. Of the nine process-target rows, eight are perfectly good ingredient STRINGS with a process as the TARGET -- wrong target, not a non-ingredient. I also cited `boric acid -> chem.glass-fiber.borax.acid` as an example of a CORRECT name match; that node is a process (\"Boric acid from colemanite\"), so my own worked example was invalid.",
+    "the_real_pattern": "Table-wide there are 26 process-target rows and 20 of them sit in 70-petrochem.json -- and they are ONE bug, not twenty. That file's branch-head nodes are production ROUTES, not substances: chem.ethylene = \"Ethylene: steam cracking...\", chem.styrene = \"Styrene: benzene plus ethylene...\", chem.abs = \"ABS resin plant...\", chem.crude = \"Crude oil: finding it, drilling it...\". The table maps a material name onto the plant that makes it. Affected: methanol, ethylene, propylene, butadiene, styrene, acrylonitrile, abs resin, pvc, polyester, polyethylene, polycarbonate, silicone, photoresist, crude oil, epoxy.",
+    "the_name_test_is_not_a_safety_filter": "The 63 rows that failed \"the string is in the name\" test are the VISIBLE half. 17 of the 26 process-target rows are among the 90 that PASSED it (crude oil, methanol, ethylene, styrene, PVC, polyester, photoresist). Passing the name test bought nothing.",
+    "two_more_defects": "Two rows point at ids that do not exist (nylon, nylon 6 6) -- dangling references in a table nothing validates. And 28 target ids are shared by more than one string, up to six for metal.rare-earths.bastnasite, so the table is a many-to-one funnel: a fix that helps one row usually breaks a synonym for another. Retargeting `soda silica` and `silica filler` off metal.silica-sand was only safe because their siblings (`silica sand`, `quartz sand`) are separate rows pointing at the same node.",
+    "the_blocking_problem_is_the_tree": "Eight UNSURE rows are not unreadable nodes -- they are substances the tree has no node for: Na2Cr2O7, Al(OH)3, ZnCl2, a Co-Ni catalyst, BeCu, a generic nickel ore, a generic `paper`, PVC resin, TiCl4, 2-ethylhexanol. Three are gaps the tree contradicts itself on: chem.pvc is a process with no resin child at all, five separate paper nodes exist with nothing above them, and nickel has both a laterite and a Sudbury sulphide branch.",
+    "recommended_disposition": "Retarget the 20 verified rows. Delete the 4 NOT AN INGREDIENT rows. Treat the remaining 131 rows as UNAUDITED rather than correct. The name test is not evidence of safety and must not be used as one."
+  },
+  "wave2_process_edges": {
+    "verdict_rate": "Slices 1-3: 92%, 80%, 81% precision on the inputs-derived process->material edges. 59 rejections out of 393 edges reviewed.",
+    "the_errors_are_authored_not_matched": "Slice 1 traced provenance: 153 of 158 edges came from an author typing an EXACT node id. Bare-noun strings that the matcher resolved by name are only 11% of the population. So these are author judgement errors, not string-match noise. Decision D -- do not trust the provenance -- was right, and for a stronger reason than first stated: the provenance is not weak evidence about a good field, it is good evidence about a wrong field.",
+    "precision_varies_by_fragment": "metals is well curated (7 errors in 96 edges); the logic fragment is where the damage is. data/32-passives-b.json (connector-jacks) is the least reliable subtree in the tree -- 4 wrong in 42, including two cases of a completely unrelated substance.",
+    "systemic_magnets": {
+      "metal_silica": "51 inbound edges tree-wide. It is the 9N crystal-pull charge. Slices 2 and 3 independently found EVERY one of its edges in their slices wrong for fab and packaging steps -- the author assigned it to anything whose text mentioned silica or silicon. Needs a central decision, not 51 agent decisions.",
+      "chem_petroleum": "A dead-end leaf with ZERO children, used as a universal petrochemical stamp. Every petroleum edge is a two-or-three-step-downstream shortcut that should attach to the cracker or read as `made from`, not `consumes`.",
+      "product_index_nodes": "metal.copper, metal.nickel, metal.tin, metal.gold are self-referential product indexes, already flagged in kinds.content_defects_found. Edges resolving through them will not survive a strict audit."
+    },
+    "schema_gaps_found": {
+      "no_wafer_material_node": "si.wafer is kind part, so \"the wafer being processed\" is not a legal `consumes` target. Wafer-level process steps are correct in substance and have nowhere to point. Needs a wafer material node.",
+      "no_home_for_durable_tooling": "`uses` targets tools only, so metal.aluminum.extrusion -> metal.die-steel (a die is capital equipment, not consumed) has no legal relation. Three edges.",
+      "inputs_dead_ends": "About 20% of all `inputs` entries resolve to nothing and produce NO edge; the substance is absent from the tree and nothing reports it. Worst: phosphine 13x, arsine 8x -- both ALREADY recorded in TODO.md section 8 as the worst cases of a normalisation bug that was never fixed. Concentrated in 90-peripherals (220), 40-chassis (160), 80-industry (133)."
+    },
+    "content_bugs": [
+      "metal.hall-heroult.dross has inputs [\"metal.alumina\",\"metal.carbon.anode\"] -- both are the POT's feed. Dross is a waste stream with no node at all.",
+      "metal.salt-brine landed on a gold cyanide bath where a sodium-cyanide node already exists as a child of that very node.",
+      "metal.hydride-placeholder: c64.connector-jacks.metalworking.gold.cyanide-bath -> metal.salt-brine."
+    ],
+    "ordering_rule": "Deleting a wrong edge without adding the right one leaves a hole. sphalerite -> zinc electroplating is wrong, but the tree does NOT draw metal.zinc as an input to that finishing step either, so removing the edge orphans the chain. Fix additions and deletions together, per node.",
+    "brief_defect_found": "Both slice 2 and slice 3 independently reported that the `note` field settles ingredients MORE reliably than `description`, and my brief only pointed them at `description`. Wave 3 briefs must read both."
   }
 }
