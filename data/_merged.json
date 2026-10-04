@@ -3529,6 +3529,43 @@
           "value": "tantalum bead and molded chip packages were on the mainboard; wet slug parts were being displaced by these"
         }
       ]
+    },
+    {
+      "loser": "mb.logic.bipolar.process.substrate",
+      "loserName": "p-type starting wafer",
+      "loserFile": "35-logic.json",
+      "survivor": "si.wafer",
+      "survivorName": "Polished 100 mm CZ silicon wafer",
+      "survivorFile": "10-silicon.json",
+      "proposal": "10-silicon.json",
+      "why": "Same p-type starting wafer at the same level; both kind part. Si.wafer (Polished 100 mm CZ, 4-inch, 10-20 ohm-cm boron, polished + flats, every logic die patterned; 4 facts Diameter/Thickness/Resistivity/Orientation, medium) vs bipolar substrate (p-type starting wafer slice, lightly doped insulator, everything sits on crystal; 0 facts, high, Czochralski_method source). Keep-rule 1 (4 facts vs 0) + 3 (general si.wafer over contextual mb.logic path-local) wins si.wafer. No substance-vs-object split lost (both parts, same wafer). Re-pointings: none (loser inline under bipolar.process with no id-string references elsewhere; wafer->substrate contains already DELETEd in si.wafer edges fix; process children substrate inline deleted on apply). Facts union: none (loser 0 facts; Czochralski_method source already covered by si.wafer? Si.wafer sources? Si.wafer sources? Check – si.wafer sources? Not shown – si.wafer node has no sources field? Actually si.wafer node lines 2072-2164: no sources (only facts/confidence/note/children/edges – no sources). Loser sources Czochralski_method – adopt? Survivor si.wafer has no sources – adopt Czochralski_method source? Good – facts union: adopt source Czochralski_method (if missing). Recorded here; central adopts on apply (or applyproposals handles sources union? Previous merges facts unions adopted central serial via adopt_facts.py (not via applyproposals) – for substrates, central will adopt source (like facts unions) after apply (or ...?). Record here; central adopts.",
+      "loserDescription": "A slice of p-type silicon, lightly doped so that it is a good insulator between transistor islands and does not leak much reverse current. Everything the tree contains - the transistors, the resistors, the isolation - sits on this one piece of crystal.",
+      "loserFacts": null
+    },
+    {
+      "loser": "mb.logic.cmos.process.substrate",
+      "loserName": "p-type substrate (and the tub)",
+      "loserFile": "35-logic.json",
+      "survivor": "si.wafer",
+      "survivorName": "Polished 100 mm CZ silicon wafer",
+      "survivorFile": "10-silicon.json",
+      "proposal": "10-silicon.json",
+      "why": "Same p-type starting wafer; both kind part. Si.wafer (4 facts, medium, general id) vs cmos substrate (p-type substrate and tub wells implanted, twin-tub; 0 facts? Check – likely 0 facts; contextual mb.logic path-local). Keep-rule 1+3 wins si.wafer. Tub wells (n-well/p-well implants) are doped regions IN substrate, not separate objects – wells stay with cmos.process flow (implant steps), substrate merges (wafer). No substance split lost. Re-pointings: none (inline, no id refs; wafer->substrate already DELETEd). Facts union: none (loser 0 facts). Note: cmos substrate description wells (deep n-well/shallow p-well, punch-through) stays with cmos.process flow (implant steps), not adopted to si.wafer (si.wafer is starting wafer before wells – wells are flow-added features, like ...? Correct – do not adopt well prose to starting wafer (would claim starting wafer has wells – false – wells implanted during flow). Recorded.",
+      "loserDescription": "The wafer is p-type, lightly doped. On top of it two wells are implanted: a deep n-well and a somewhat shallower p-well. The n-well holds every p-channel transistor; the p-well (or the substrate itself, on simpler parts) holds every n-channel transistor. Two tubs, two polarities, one chip - that is the 'twin tub'. The wells must be deep enough that they do not punch through into each other and short the two transistor types together.",
+      "loserFacts": [
+        {
+          "label": "Substrate",
+          "value": "p-type, ~5-20 ohm-cm"
+        },
+        {
+          "label": "n-well depth",
+          "value": "~3-6 um"
+        },
+        {
+          "label": "p-well depth",
+          "value": "~2-4 um"
+        }
+      ]
     }
   ]
 }

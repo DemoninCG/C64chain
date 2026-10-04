@@ -2251,21 +2251,7 @@
       ],
       "inputs": [],
       "children": [
-        {
-          "id": "mb.logic.bipolar.process.substrate",
-          "name": "p-type starting wafer",
-          "description": "A slice of p-type silicon, lightly doped so that it is a good insulator between transistor islands and does not leak much reverse current. Everything the tree contains - the transistors, the resistors, the isolation - sits on this one piece of crystal.",
-          "kind": "part",
-          "category": "silicon",
-          "era": "1980s",
-          "sources": [
-            "https://en.wikipedia.org/wiki/Czochralski_method"
-          ],
-          "confidence": "high",
-          "inputs": [],
-          "children": [],
-          "edges": []
-        },
+        
         {
           "id": "mb.logic.bipolar.process.epi",
           "name": "Epitaxial growth of the collector",
@@ -3025,35 +3011,7 @@
         "https://florisera.com/cmos-process-steps-3um-to-1-25um"
       ],
       "children": [
-        {
-          "id": "mb.logic.cmos.process.substrate",
-          "name": "p-type substrate (and the tub)",
-          "description": "The wafer is p-type, lightly doped. On top of it two wells are implanted: a deep n-well and a somewhat shallower p-well. The n-well holds every p-channel transistor; the p-well (or the substrate itself, on simpler parts) holds every n-channel transistor. Two tubs, two polarities, one chip - that is the 'twin tub'. The wells must be deep enough that they do not punch through into each other and short the two transistor types together.",
-          "kind": "part",
-          "category": "silicon",
-          "era": "1980s",
-          "sources": [
-            "https://en.wikipedia.org/wiki/CMOS"
-          ],
-          "confidence": "high",
-          "facts": [
-            {
-              "label": "Substrate",
-              "value": "p-type, ~5-20 ohm-cm"
-            },
-            {
-              "label": "n-well depth",
-              "value": "~3-6 um"
-            },
-            {
-              "label": "p-well depth",
-              "value": "~2-4 um"
-            }
-          ],
-          "inputs": [],
-          "children": [],
-          "edges": []
-        },
+        
         {
           "id": "mb.logic.cmos.process.wells",
           "name": "n-well and p-well implants",
@@ -3869,10 +3827,8 @@
         "https://en.wikipedia.org/wiki/Die_singulation"
       ],
       "confidence": "high",
-      "note": "The diamond itself - natural or, by 1983, mostly synthetic from graphite in a belt press - is not inlined here; si.wafer.diamond in the silicon fragment publishes it, and `inputs` resolves to it.",
-      "inputs": [
-        "si.wafer.diamond"
-      ],
+      "note": "The diamond itself - natural or, by 1983, mostly synthetic grit from graphite in a belt press (si.wafer.diamond.grit, contained in scriber/saw blades) - is used via tools, not taken in as a process feedstock; scribe uses diamond tools.",
+      "inputs": [],
       "facts": [
         {
           "label": "Scribe lane width",
@@ -3893,6 +3849,14 @@
           "rel": "produces",
           "role": "product",
           "basis": "typical-1982"
+        },
+        {
+          "to": "mb.cpu.dice-tool",
+          "rel": "uses"
+        },
+        {
+          "to": "mb.crystal.y1.cutting.dicing-saw",
+          "rel": "uses"
         }
       ]
     },
