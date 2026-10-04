@@ -195,12 +195,53 @@ if (mode !== 'set') {
  * before the value is assembled, or `set note "x" --force` stores the literal
  * string "x --force". */
 const FORCE = process.argv.includes('--force');
-const value = rest.filter((a) => a !== '--force').join(' ');
+let value = rest.filter((a) => a !== '--force').join(' ');
+
+/* `@path` reads the value from a file, trimmed. This exists because a shell eats
+ * the double quotes inside a JSON literal: `set edges '[{"to":"x"}]'` arrives
+ * with the quotes stripped, which used to be written as the string
+ * `[{to:x}]`. That is a shell problem, not a patch problem, and it hits every
+ * agent that tries to add a typed edge. Passing the file sidesteps the shell
+ * entirely. */
+if (value.startsWith('@')) {
+  const p = value.slice(1);
+  try {
+    value = readFileSync(p, 'utf8').trim();
+  } catch (e) {
+    console.error(`patch: cannot read value from "${p}": ${e.message}`);
+    process.exit(2);
+  }
+}
 if (value === undefined) {
   console.error('patch: no value given — nothing written');
   process.exit(2);
 }
-const encoded = JSON.stringify(value);
+let encoded = JSON.stringify(value);
+
+/* A value that is valid JSON is stored AS THAT JSON, not as a string of it.
+ * Fifth bug in this tool, and it matters more than the other four combined,
+ * because it is what makes write-permission safe. `set edges
+ * '[{"to":"x","rel":"consumes"}]'` used to write the eight-character type
+ * `string` holding `[{"to":"x",...}]`. The file still parsed, patch reported
+ * success, and build silently ignored the key -- so an agent could add a typed
+ * edge, be told it worked, and leave no trace in public/tree.json. Silent drops
+ * are the failure mode most damaging to a delegated pass, because the agent
+ * cannot detect them and neither can the gate.
+ *
+ * Only object and array literals are unwrapped. A bare number or `true` stays a
+ * string, because `set era 1982` should not become a number and `set note true`
+ * should stay prose. To write those as JSON, pass them already quoted. */
+const trimmed = value.trim();
+if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
+  try {
+    const parsed = JSON.parse(trimmed);
+    if (parsed && typeof parsed === 'object') encoded = JSON.stringify(parsed, null, 2);
+  } catch {
+    console.error(`patch: value starts with "${trimmed[0]}" but is not valid JSON. Nothing written.`);
+    console.error(`       If you meant the literal text, quote it: set key '"${value}"'`);
+    process.exit(2);
+  }
+}
 
 /* If the key is present but its value is not a plain string, replacing it with
    one is a type change, not an edit. Appending a second `"key":` line instead

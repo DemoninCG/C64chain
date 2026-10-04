@@ -26,6 +26,14 @@ const DOCS = path.resolve(process.env.DOCS_DIR ?? path.join(ROOT, 'docs'));
  * being one relation, which they were whenever a subsidiary and a cleanroom bay
  * were both "facility". See docs/RELATIONS.md 3.3. */
 const VALID_KINDS = new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']);
+
+/* The ten relations that are STORED on an edge. Mirrors the `stored` flag on
+ * each entry in data/_relation_schema.json `relations`. `made by` is derived
+ * from `produces` and must never appear here. */
+const STORED_RELATIONS = new Set([
+  'contains', 'made of', 'made from', 'step', 'consumes',
+  'produces', 'uses', 'at', 'owned by', 'about',
+]);
 const ENTITY_LIKE = new Set(['part', 'material']);
 // Categories answer "what industry made this", not "where does it sit in the
 // machine". The machine-position distinction is structural and lives in the
@@ -619,6 +627,38 @@ function strip(node) {
     if (Array.isArray(node[k]) && node[k].length) o[k] = node[k];
   }
   if (Array.isArray(node.from) && node.from.length) o.from = node.from;
+  /* Typed edges. `children` and `from` are the two UNTYPED relations this
+   * migration is replacing, and while it runs a node may carry either or both.
+   * A node is migrated when it has no `children` and no `from`.
+   *
+   * This is what makes an agent's write permission mean anything: an untyped
+   * array cannot record that an edge is `consumes` rather than `made of`, so a
+   * broadly-permitted agent editing only `children`/`from` has no way to state
+   * its decision. Once edges are typed, every rule in the schema becomes an
+   * exact assertion on data instead of an inference through a classifier.
+   *
+   * STORED_RELATIONS duplicates data/_relation_schema.json `relations`, filtered
+   * to the stored ones. `made by` is deliberately absent: it is DERIVED from
+   * `produces` and is never stored, so naming it here is an error, not a
+   * no-op. build.mjs does not read the schema, so this list must be kept in step
+   * with it by hand -- `relate.mjs audit` fails if the two disagree. */
+  if (node.edges !== undefined && node.edges !== null) {
+    const eid = node.id;
+    if (!Array.isArray(node.edges)) {
+      err(`${eid}: "edges" must be an array, got ${typeof node.edges} (${JSON.stringify(node.edges).slice(0, 60)})`);
+    } else if (node.edges.length) {
+      o.edges = node.edges.map((e) => {
+        if (!e || typeof e.to !== 'string') err(`${eid}: an edges entry has no "to" string`);
+        if (typeof e.rel !== 'string') err(`${eid}: edge to ${e?.to} has no "rel" string`);
+        if (!STORED_RELATIONS.has(e.rel)) {
+          err(`${eid}: edge to ${e.to} uses relation "${e.rel}", which is not one of the ${STORED_RELATIONS.size} stored relations`);
+        }
+        const out = { to: e.to, rel: e.rel };
+        if (e.step !== undefined) out.step = e.step;
+        return out;
+      });
+    }
+  }
   o.children = node.children ?? [];
   return o;
 }
