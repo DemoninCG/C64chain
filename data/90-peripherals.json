@@ -387,6 +387,10 @@
                       {
                         "to": "metal.strontium-carbonate",
                         "rel": "made of"
+                      },
+                      {
+                        "to": "peripheral.tv.crt.gun.cathode.nio-cr",
+                        "rel": "contains"
                       }
                     ]
                   },
@@ -751,6 +755,12 @@
             "sources": [
               "https://en.wikipedia.org/wiki/Cathode-ray_tube",
               "https://en.wikipedia.org/wiki/Vacuum_fluorescent_display"
+            ],
+            "edges": [
+              {
+                "to": "peripheral.tv.crt.vacuum.rear-al",
+                "rel": "contains"
+              }
             ]
           },
           {
@@ -2542,6 +2552,23 @@
                     "confidence": "medium",
                     "note": "A worm gear is naturally self-locking, which is what stopped a 1541's capstan spinning backwards when the C64 was switched off.",
                     "children": []
+                  },
+                  {
+                    "id": "peripheral.cassette.deck.transport.capstan",
+                    "name": "Capstan, hardened steel pin",
+                    "description": "Hardened steel pin, 2.0-2.5 mm diameter, ground finish; the tape wraps it against the pinch roller and its surface speed (4.76 cm/s) defines tape speed. Takes the wear; self-locking worm drive prevents back-driving when unpowered.",
+                    "kind": "part",
+                    "category": "metals",
+                    "era": "1982",
+                    "confidence": "medium",
+                    "inputs": [],
+                    "children": []
+                  }
+                ],
+                "edges": [
+                  {
+                    "to": "peripheral.cassette.deck.transport.capstan",
+                    "rel": "contains"
                   }
                 ]
               },
@@ -2747,7 +2774,7 @@
                 "note": "Efficient diode emission from GaAs was patented in 1962 and commercial LEDs only became practical once they cost under five cents in the 1970s. Not established: GaAs or GaP die with a GaAsP window for red, the 1.7-2.2 V forward drop, the 2-10 mA running current, and the 2.5 mm epoxy lens with a reflector cup.",
                 "edges": [
                   {
-                    "to": "peripheral.cassette.deck.led.gallium",
+                    "to": "mb.discretes.led.gallium",
                     "rel": "contains"
                   }
                 ]
@@ -3364,40 +3391,6 @@
         }
       ]
     },
-    "peripheral.tv.crt.flyback.hv-rectifier.silicon.quartz": {
-      "id": "peripheral.tv.crt.flyback.hv-rectifier.silicon.quartz",
-      "name": "Quartz lump for silicon reduction",
-      "kind": "material",
-      "category": "silicon",
-      "era": "ancient",
-      "description": "Metal-grade quartz, not glass sand. The furnace needs the silicon dioxide to be chemically clean enough that the reduction goes to 98-99% silicon in one pass. Quarried rock is crushed and purified by acid leaching to quartz, then reduced with coke in a submerged arc furnace where the arc itself is the furnace's only heat source.",
-      "facts": [
-        {
-          "label": "Reaction",
-          "value": "SiO2 + 2C -> Si + 2CO at 1800-2000 degrees C"
-        },
-        {
-          "label": "Metallurgical Si",
-          "value": "98-99% Si, 2000-3500 ppm C and P"
-        },
-        {
-          "label": "Purification",
-          "value": "99.99%+ semiconductor grade via trichlorosilane and the Siemens process"
-        }
-      ],
-      "places": [
-        "Spruce Pine, North Carolina",
-        "Mönchengladbach, Germany",
-        "Ishikiri, Japan"
-      ],
-      "confidence": "medium",
-      "note": "Metal-grade quartz lump, not glass sand; it is reduced with coke in a submerged arc furnace, where the arc itself is the only heat source. Silicon of 96-99% purity is made by carbothermically reducing quartzite or sand with highly pure coke in an electric arc furnace, with an excess of SiO2 to prevent silicon carbide. Not established: 1800-2000 C, the 2000-3500 ppm carbon and phosphorus figure, the acid leaching of quarried rock to metal-grade quartz, and the Spruce Pine, Mönchengladbach and Ishikiri attributions.",
-      "children": [],
-      "sources": [
-        "https://en.wikipedia.org/wiki/Silicon",
-        "https://en.wikipedia.org/wiki/Quartz"
-      ]
-    },
     "peripheral.tv.crt.yoke.geometry.magnets.alnico": {
       "id": "peripheral.tv.crt.yoke.geometry.magnets.alnico",
       "name": "Alnico correction magnet",
@@ -3511,7 +3504,13 @@
       ],
       "confidence": "medium",
       "note": "Silver for phosphors was one of the smaller industrial users, but the same tonne went into contacts and brazing alloys.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.silver.ingot",
+          "rel": "made from"
+        }
+      ]
     },
     "peripheral.tv.crt.phosphor.zns.gold": {
       "id": "peripheral.tv.crt.phosphor.zns.gold",
@@ -3682,31 +3681,6 @@
         }
       ]
     },
-    "peripheral.tv.aerial.f-connector.brass": {
-      "id": "peripheral.tv.aerial.f-connector.brass",
-      "name": "Brass from copper and zinc",
-      "kind": "material",
-      "category": "metals",
-      "era": "1982",
-      "sources": [
-        "https://en.wikipedia.org/wiki/Brass"
-      ],
-      "description": "Brass is melted from cathode copper and zinc ingot, roughly 60/40 for free-cutting brass, and cast or extruded into fittings. The zinc came from sphalerite and the copper from chalcopyrite, both already in this branch.",
-      "inputs": [],
-      "facts": [
-        {
-          "label": "Composition",
-          "value": "60% Cu, 40% Zn for a free-cutting brass; cartridge brass is 70/30"
-        },
-        {
-          "label": "Zinc source",
-          "value": "the same sphalerite concentrate and electrolysis as the CRT phosphor zinc sulphide"
-        }
-      ],
-      "confidence": "medium",
-      "children": [],
-      "note": "Brass is documented as an alloy of copper and zinc in proportions that can be varied, with copper typically having the larger proportion, generally two thirds copper and one third zinc. So the 70/30 cartridge brass named in the facts is exactly the general case, and the 60/40 free-cutting figure is the far end of the same variation rather than a contradiction. Not established: that a free-cutting 60/40 brass was the alloy in an F connector body, the casting or extrusion route into fittings, and the attribution of the zinc to the same sphalerite concentrate and electrowinning route as the phosphor zinc sulphide. That last statement is a statement about the metal rather than about this node; both drew on zinc metal from the same kind of plant, but no document ties this connector to that plant."
-    },
     "peripheral.cassette.tape.oxide": {
       "id": "peripheral.cassette.tape.oxide",
       "name": "Acicular iron oxide pigment",
@@ -3860,40 +3834,6 @@
       "confidence": "medium",
       "children": [],
       "note": "ABS is documented: a thermoplastic terpolymer of styrene, acrylonitrile and butadiene in common use since the 1950s, amorphous with no definitive melting point because of varying chain lengths and degrees of cross-linking, with a glass transition temperature of approximately 105 C, and usable between about -20 and 80 C for the majority of applications. That last range is the useful part here, because a cassette shell works near room temperature and has no thermal duty. Not established: that the shell was ABS rather than clear or smoke general-purpose polystyrene, the 1-2 mm wall, the 200-240 C injection moulding temperature, and the Japan, Europe and United States attributions. The claim that a shell needed to hold a dimension, and therefore that the stiffer of the two polymers was the one chosen, is an engineering argument; a shell could equally be a thin polystyrene moulding with ribs."
-    },
-    "peripheral.cassette.deck.led.gallium": {
-      "id": "peripheral.cassette.deck.led.gallium",
-      "name": "Gallium arsenide from gallium in the Bayer liquor",
-      "kind": "material",
-      "category": "silicon",
-      "era": "1982",
-      "description": "A red or amber LED of the period was gallium phosphide or gallium arsenide phosphide on a gallium arsenide substrate. Gallium is not mined on its own: it is recovered as a minor by-product from the Bayer liquor when bauxite is digested in caustic soda, because gallium is amphoteric and dissolves with the alumina. By 1982 gallium was becoming strategically important precisely because of this concentration in the aluminium industry.",
-      "inputs": [
-        "Bayer liquor from bauxite digestion",
-        "high-purity alumina float-zone refining"
-      ],
-      "facts": [
-        {
-          "label": "Content",
-          "value": "about 50-100 ppm of gallium in bauxite"
-        },
-        {
-          "label": "Refining",
-          "value": "99.99-99.9999% by ion exchange and zone refining"
-        },
-        {
-          "label": "LED",
-          "value": "GaAs or GaAsP die in an epoxy lens, bandgap giving about 650-700 nm"
-        }
-      ],
-      "places": [
-        "Bauxite, Western Australia",
-        "Epinal, France",
-        "Lauterbourg, Germany"
-      ],
-      "confidence": "medium",
-      "note": "Gallium became a controlled export commodity in the 2010s because the LED and power-device industries depended on this by-product stream. The connection to a television is the 2 mA indicator lamp on the front of a 1541, which is a very small consumption but the same chain. Gallium is recovered from the Bayer liquor during the digestion of bauxite, so metal.alumina, the smelter-grade alumina whose production is that digestion, is the ingredient here rather than the four-nines foil of the phosphor back layer.",
-      "children": []
     },
     "peripheral.tv.chassis.pcb.glass": {
       "id": "peripheral.tv.chassis.pcb.glass",
@@ -4215,7 +4155,13 @@
       ],
       "confidence": "medium",
       "children": [],
-      "note": "Silver is documented as having the highest electrical conductivity of any element, and gold is documented as dissolving in alkaline solutions of cyanide, which is used in both mining and electroplating - so cyanide plating is an established route for both metals. Not established: that mains switch and rotary tuner contacts were silver-plated rather than silver-clad or merely plated with a cheaper metal, the 2.5-25 micron thickness, and the claim that a 1982 tuner was good for 10,000-20,000 insertions. Plating thickness in the few microns is ordinary for a precious-metal contact, but the figure is a specification range rather than an observation. The silver in this branch comes from the anode slimes of copper refining, which is the same source documented for the phosphor silver and for the fuse wire."
+      "note": "Silver is documented as having the highest electrical conductivity of any element, and gold is documented as dissolving in alkaline solutions of cyanide, which is used in both mining and electroplating - so cyanide plating is an established route for both metals. Not established: that mains switch and rotary tuner contacts were silver-plated rather than silver-clad or merely plated with a cheaper metal, the 2.5-25 micron thickness, and the claim that a 1982 tuner was good for 10,000-20,000 insertions. Plating thickness in the few microns is ordinary for a precious-metal contact, but the figure is a specification range rather than an observation. The silver in this branch comes from the anode slimes of copper refining, which is the same source documented for the phosphor silver and for the fuse wire.",
+      "edges": [
+        {
+          "to": "metal.silver.ingot",
+          "rel": "made from"
+        }
+      ]
     },
     "peripheral.tv.speaker.cone": {
       "id": "peripheral.tv.speaker.cone",
@@ -4397,7 +4343,13 @@
       ],
       "confidence": "medium",
       "children": [],
-      "note": "The flyback transformer is documented: also called a line output transformer, it was designed to generate high-voltage sawtooth signals at a relatively high frequency, and it is used extensively in switched-mode power supplies for both low and over-10 kV outputs. That establishes the device and its function. Not established: MnZn ferrite as the 1982 core material rather than a powdered iron or a ferrite of another grade, the 40-60 mm core size, the 0.1-0.5 mm gap and its paper or epoxy construction, the 40-100 turn primary and the 10,000-25,000 turn high-voltage winding, the epoxy potting, and the Japan, Taiwan and Germany works. Ferrite and powdered iron cores are both documented materials today; which one a particular 1982 set used is a service-manual detail that was not consulted."
+      "note": "The flyback transformer is documented: also called a line output transformer, it was designed to generate high-voltage sawtooth signals at a relatively high frequency, and it is used extensively in switched-mode power supplies for both low and over-10 kV outputs. That establishes the device and its function. Not established: MnZn ferrite as the 1982 core material rather than a powdered iron or a ferrite of another grade, the 40-60 mm core size, the 0.1-0.5 mm gap and its paper or epoxy construction, the 40-100 turn primary and the 10,000-25,000 turn high-voltage winding, the epoxy potting, and the Japan, Taiwan and Germany works. Ferrite and powdered iron cores are both documented materials today; which one a particular 1982 set used is a service-manual detail that was not consulted.",
+      "edges": [
+        {
+          "to": "metal.ferrite.mnzn",
+          "rel": "made from"
+        }
+      ]
     },
     "peripheral.tv.crt.flyback.anode-lead.seal": {
       "id": "peripheral.tv.crt.flyback.anode-lead.seal",
@@ -4492,6 +4444,10 @@
         {
           "to": "facility.gases.hydrogen",
           "rel": "made from"
+        },
+        {
+          "to": "metal.quartzite",
+          "rel": "made from"
         }
       ]
     },
@@ -4530,7 +4486,13 @@
       ],
       "confidence": "medium",
       "children": [],
-      "note": "Ferrite is documented as an iron-oxide magnetic ceramic that is not electrically conductive, which is exactly why it suppresses eddy currents in a core, and soft ferites are documented as the material for efficient cores in transformers, inductors and antennas. A ferrite yoke is therefore a coherent choice. Not established: that a 1982 set used MnZn rather than MnNi or a bonded powdered iron, the 0.3-0.4 T saturation flux, the 100-200 MPa pressing load and the 1100-1250 C firing, the 0.6-0.8 T saturation claimed for powdered iron, the Ferralium-type alloy designation, and the Japan, Netherlands and United States works. The nickel oxide listed as an input does not belong to an MnZn ferrite; nickel oxide is an input to MnNi and to nickel-zinc ferrites."
+      "note": "Ferrite is documented as an iron-oxide magnetic ceramic that is not electrically conductive, which is exactly why it suppresses eddy currents in a core, and soft ferites are documented as the material for efficient cores in transformers, inductors and antennas. A ferrite yoke is therefore a coherent choice. Not established: that a 1982 set used MnZn rather than MnNi or a bonded powdered iron, the 0.3-0.4 T saturation flux, the 100-200 MPa pressing load and the 1100-1250 C firing, the 0.6-0.8 T saturation claimed for powdered iron, the Ferralium-type alloy designation, and the Japan, Netherlands and United States works. The nickel oxide listed as an input does not belong to an MnZn ferrite; nickel oxide is an input to MnNi and to nickel-zinc ferrites.",
+      "edges": [
+        {
+          "to": "metal.ferrite.mnzn",
+          "rel": "made from"
+        }
+      ]
     },
     "peripheral.tv.crt.yoke.geometry.magnets": {
       "id": "peripheral.tv.crt.yoke.geometry.magnets",
@@ -4989,6 +4951,10 @@
         {
           "to": "chem.solder-chemicals.rosin-flux",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.solder",
+          "rel": "consumes"
         }
       ]
     },
@@ -5081,6 +5047,10 @@
         {
           "to": "c64.case.tooling.p20",
           "rel": "consumes"
+        },
+        {
+          "to": "c64.case.tooling",
+          "rel": "uses"
         }
       ]
     },
@@ -5399,7 +5369,13 @@
       ],
       "confidence": "medium",
       "note": "It sits near the ferrite and the barite because the element is the same, but the getter is a barium-titanium-palladium foil, not a ferrite.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.barite",
+          "rel": "made from"
+        }
+      ]
     },
     "peripheral.tv.crt.mask.steel.bf": {
       "id": "peripheral.tv.crt.mask.steel.bf",
@@ -5446,6 +5422,11 @@
         {
           "to": "metal.limestone",
           "rel": "consumes"
+        },
+        {
+          "to": "peripheral.tv.crt.mask.steel",
+          "rel": "produces",
+          "role": "product"
         }
       ]
     },
@@ -5580,7 +5561,12 @@
       "confidence": "medium",
       "note": "Both the aluminium funnel coating and the phosphor aluminium layer are real and were often both present. An aluminium-backed faceplate is a reasonable description of the phosphor back layer, and the funnel coating is the separate, less discussed item. Both mirrors behind a tube come from the same roll of four-nines foil.",
       "children": [],
-      "edges": []
+      "edges": [
+        {
+          "to": "metal.aluminum.foil",
+          "rel": "made of"
+        }
+      ]
     }
   }
 }

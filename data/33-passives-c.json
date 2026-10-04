@@ -555,6 +555,16 @@
               "to": "mb.crystal.y1.supports",
               "rel": "step",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.crystal.y1.blank-preparation",
+              "rel": "step",
+              "basis": "documented"
+            },
+            {
+              "to": "mb.crystal.y1.cutting",
+              "rel": "step",
+              "basis": "documented"
             }
           ]
         },
@@ -1183,6 +1193,12 @@
       "note": "Not established: lubricated versus unfilled nylon grade selection for low friction against steel, and which of the bushing, microswitch cases and gate actually used this grade. The nylon 6,6 chemistry is general and not tied to the joystick supplier.",
       "sources": [
         "https://en.wikipedia.org/wiki/Nylon_66"
+      ],
+      "edges": [
+        {
+          "to": "chem.polyamide.nylon-66",
+          "rel": "made of"
+        }
       ]
     },
     "c64.keyboard-switches.ribbon.film": {
@@ -1892,6 +1908,10 @@
         {
           "to": "c64.keyboard-switches.matrix.pcb.pad-plating.gold",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.nickel.ingot",
+          "rel": "consumes"
         }
       ]
     },
@@ -2186,6 +2206,11 @@
           "to": "metal.steel.sheet",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "mb.crystal.y1.case.nickel-can",
+          "rel": "produces",
+          "role": "product"
         }
       ]
     },

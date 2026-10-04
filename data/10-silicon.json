@@ -2154,6 +2154,11 @@
           "rel": "produces",
           "role": "product",
           "basis": "documented"
+        },
+        {
+          "to": "si.ingot",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -2515,12 +2520,12 @@
           "basis": "typical-1982"
         },
         {
-          "to": "chem.silane",
+          "to": "metal.aluminum.ingot",
           "rel": "consumes",
           "basis": "typical-1982"
         },
         {
-          "to": "metal.aluminum.ingot",
+          "to": "chem.silane.monosilane",
           "rel": "consumes",
           "basis": "typical-1982"
         }
@@ -3331,7 +3336,7 @@
         "Corrosive extraction plants in Europe"
       ],
       "confidence": "medium",
-      "note": "Gallium is almost entirely a byproduct of bauxite refining (and of zinc), not a primary ore - this is the same trace metal that makes gallium nitride LEDs possible today.",
+      "note": "Gallium is almost entirely a byproduct of bauxite refining (and of zinc), not a primary ore - this is the same trace metal that makes gallium nitride LEDs possible today. Merged 1982 indicator-LED detail from the peripheral branch: red or amber LEDs of the period were gallium phosphide or gallium arsenide phosphide on a gallium arsenide substrate (GaAs or GaAsP die in an epoxy lens, bandgap about 650-700 nm).",
       "edges": [
         {
           "to": "metal.bauxite",
@@ -3552,12 +3557,12 @@
               "basis": "typical-1982"
             },
             {
-              "to": "chem.silane",
+              "to": "facility.gases.oxygen",
               "rel": "consumes",
               "basis": "typical-1982"
             },
             {
-              "to": "facility.gases.oxygen",
+              "to": "chem.silane.monosilane",
               "rel": "consumes",
               "basis": "typical-1982"
             }
@@ -3644,7 +3649,7 @@
               "basis": "typical-1982"
             },
             {
-              "to": "chem.silane",
+              "to": "chem.silane.monosilane",
               "rel": "consumes",
               "basis": "typical-1982"
             }
@@ -3786,12 +3791,12 @@
           "note": "Whether the 6510 die carried nitride passivation or only PSG is not publicly documented; nitride passivation at a small internal fab in 1982 is plausible but not certain.",
           "edges": [
             {
-              "to": "chem.silane",
+              "to": "facility.nitrogen",
               "rel": "consumes",
               "basis": "typical-1982"
             },
             {
-              "to": "facility.nitrogen",
+              "to": "chem.silane.monosilane",
               "rel": "consumes",
               "basis": "typical-1982"
             }
@@ -4242,12 +4247,12 @@
           "basis": "typical-1982"
         },
         {
-          "to": "chem.silane",
+          "to": "metal.aluminum.ingot",
           "rel": "consumes",
           "basis": "typical-1982"
         },
         {
-          "to": "metal.aluminum.ingot",
+          "to": "chem.silane.monosilane",
           "rel": "consumes",
           "basis": "typical-1982"
         }
@@ -4362,12 +4367,12 @@
           "basis": "typical-1982"
         },
         {
-          "to": "chem.silane",
+          "to": "metal.aluminum.ingot",
           "rel": "consumes",
           "basis": "typical-1982"
         },
         {
-          "to": "metal.aluminum.ingot",
+          "to": "chem.silane.monosilane",
           "rel": "consumes",
           "basis": "typical-1982"
         }
@@ -4498,7 +4503,7 @@
           "basis": "typical-1982"
         },
         {
-          "to": "chem.silane",
+          "to": "chem.silane.monosilane",
           "rel": "consumes",
           "basis": "typical-1982"
         }
@@ -4534,12 +4539,12 @@
           "basis": "typical-1982"
         },
         {
-          "to": "chem.silane",
+          "to": "metal.aluminum.ingot",
           "rel": "consumes",
           "basis": "typical-1982"
         },
         {
-          "to": "metal.aluminum.ingot",
+          "to": "chem.silane.monosilane",
           "rel": "consumes",
           "basis": "typical-1982"
         }
@@ -4655,11 +4660,6 @@
           "basis": "typical-1982"
         },
         {
-          "to": "chem.silane",
-          "rel": "consumes",
-          "basis": "typical-1982"
-        },
-        {
           "to": "mb.sid.poly-res",
           "rel": "produces",
           "role": "product",
@@ -4667,6 +4667,11 @@
         },
         {
           "to": "metal.aluminum.ingot",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "chem.silane.monosilane",
           "rel": "consumes",
           "basis": "typical-1982"
         }
@@ -4737,12 +4742,12 @@
           "basis": "typical-1982"
         },
         {
-          "to": "chem.silane",
+          "to": "metal.aluminum.ingot",
           "rel": "consumes",
           "basis": "typical-1982"
         },
         {
-          "to": "metal.aluminum.ingot",
+          "to": "chem.silane.monosilane",
           "rel": "consumes",
           "basis": "typical-1982"
         }
@@ -4836,6 +4841,16 @@
           "rel": "made from"
         }
       ]
+    },
+    "si.ingot": {
+      "id": "si.ingot",
+      "name": "100mm CZ monocrystalline silicon ingot",
+      "description": "The 100mm Czochralski monocrystalline boule the wafers are sliced from: boron-doped p-type, 75-150mm diameter per the CZ node, sawn/lapped/polished into si.wafer. Missing link between metal.silica.czochralski (produces nothing) and si.wafer.slicing (consumes nothing).",
+      "kind": "material",
+      "category": "silicon",
+      "era": "1982",
+      "confidence": "high",
+      "inputs": []
     }
   }
 }

@@ -130,6 +130,16 @@
         {
           "to": "mb.photo",
           "rel": "step"
+        },
+        {
+          "to": "mb.pcb.laminate.press-cycle",
+          "rel": "step",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "mb.pcb.photoresist.laminate",
+          "rel": "step",
+          "basis": "documented"
         }
       ]
     },
@@ -429,6 +439,12 @@
         {
           "to": "chem.rosin",
           "rel": "consumes"
+        },
+        {
+          "to": "mb.solder.reliability",
+          "rel": "produces",
+          "role": "product",
+          "basis": "inferred"
         }
       ]
     },
@@ -1424,6 +1440,11 @@
         {
           "to": "metal.copper.foil",
           "rel": "made of"
+        },
+        {
+          "to": "chem.epoxy.brominated-epoxy",
+          "rel": "made of",
+          "basis": "documented"
         }
       ]
     },
@@ -1495,7 +1516,14 @@
       "era": "1980s",
       "inputs": [],
       "note": "Modern equivalents are 0-ohm resistors, jumper pins, or just a via.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "edges": [
+        {
+          "to": "metal.copper.cathode",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "mb.solder.reliability": {
       "id": "mb.solder.reliability",
@@ -2073,6 +2101,11 @@
         {
           "to": "facility.electricity",
           "rel": "consumes"
+        },
+        {
+          "to": "mb.pcb.photoresist.coat",
+          "rel": "step",
+          "basis": "documented"
         }
       ]
     },
@@ -2191,6 +2224,27 @@
         {
           "to": "mb.pcb.laminate.press.release",
           "rel": "consumes"
+        }
+      ]
+    },
+    "mb.pcb.laminate.press-cycle": {
+      "id": "mb.pcb.laminate.press-cycle",
+      "name": "Laminate pressing cycle",
+      "description": "One pressing of the laminate book: a stack of foil, prepreg, core and prepreg cured between the heated platens at the period FR-4 cycle (175 deg C and 1.4 MPa), squeezing the excess resin into the weave and completing the cure.",
+      "kind": "process",
+      "category": "board",
+      "era": "1980s",
+      "confidence": "low",
+      "inputs": [],
+      "edges": [
+        {
+          "to": "mb.pcb.laminate",
+          "rel": "produces",
+          "role": "product"
+        },
+        {
+          "to": "mb.pcb.laminate.press",
+          "rel": "uses"
         }
       ]
     }

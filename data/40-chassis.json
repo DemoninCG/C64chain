@@ -447,6 +447,10 @@
             {
               "to": "c64.case.shield.spacer",
               "rel": "contains"
+            },
+            {
+              "to": "c64.case.shield.foil",
+              "rel": "contains"
             }
           ]
         },
@@ -1122,6 +1126,10 @@
                 {
                   "to": "c64.cables.rf-cable.polymer-extrusion",
                   "rel": "uses"
+                },
+                {
+                  "to": "c64.cables.rf-cable.braid",
+                  "rel": "contains"
                 }
               ]
             },
@@ -1261,7 +1269,13 @@
                 "tinned copper"
               ],
               "confidence": "medium",
-              "note": "Not established: the conductor gauge, strand count, and jacket compound of the 1982 AV cable; the stranded tinned-copper and PVC construction is as described but no source here gives dimensions."
+              "note": "Not established: the conductor gauge, strand count, and jacket compound of the 1982 AV cable; the stranded tinned-copper and PVC construction is as described but no source here gives dimensions.",
+              "edges": [
+                {
+                  "to": "metal.copper.cathode",
+                  "rel": "made of"
+                }
+              ]
             }
           ],
           "note": "The monitor lead was often bundled with the monitor rather than sold with the computer, which is why many C64 owners improvised with a phono lead for composite only."
@@ -1635,7 +1649,13 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Phthalic_anhydride"
       ],
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.case.abs-resin.o-xylene",
+          "rel": "made from"
+        }
+      ]
     },
     "c64.case.abs-resin.o-xylene": {
       "id": "c64.case.abs-resin.o-xylene",
@@ -2004,7 +2024,13 @@
       "inputs": [],
       "confidence": "low",
       "note": "Not established, and in conflict: that the blowing agent in 1982 EPS was CFC-11 or dichloromethane. Expanded polystyrene beads made with a pentane blowing agent were patented in 1949, so the chlorinated agent was not the only route and may not have been the one used here. Bead sizes and the steam conditions are also unverified.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "chem.polystyrene.resin",
+          "rel": "made of"
+        }
+      ]
     },
     "c64.packaging.chlorinated-blowing-agent": {
       "id": "c64.packaging.chlorinated-blowing-agent",
@@ -2432,7 +2458,17 @@
         "https://en.wikipedia.org/wiki/Corrugated_box"
       ],
       "children": [],
-      "note": "Reusing office paper makes poor medium; box fibre is preferred because the flute is only as strong as the paper in it."
+      "note": "Reusing office paper makes poor medium; box fibre is preferred because the flute is only as strong as the paper in it.",
+      "edges": [
+        {
+          "to": "c64.packaging.corrugated-medium",
+          "rel": "made of"
+        },
+        {
+          "to": "c64.packaging.kraft-liner",
+          "rel": "made of"
+        }
+      ]
     },
     "c64.packaging.strapping": {
       "id": "c64.packaging.strapping",
@@ -2840,7 +2876,17 @@
       "inputs": [],
       "confidence": "medium",
       "children": [],
-      "note": "Not established: the solvent system, the resin and the viscosity of Commodore pad-printing ink, and whether the volume route in 1982 was solvent or UV. The general pad-printing mechanism is documented."
+      "note": "Not established: the solvent system, the resin and the viscosity of Commodore pad-printing ink, and whether the volume route in 1982 was solvent or UV. The general pad-printing mechanism is documented.",
+      "edges": [
+        {
+          "to": "c64.decor.pad-print.ink-pigment",
+          "rel": "made of"
+        },
+        {
+          "to": "c64.decor.pad-print.ink-resin",
+          "rel": "made of"
+        }
+      ]
     },
     "c64.packaging.litho-plate": {
       "id": "c64.packaging.litho-plate",
@@ -3276,6 +3322,11 @@
         {
           "to": "metal.copper.cathode",
           "rel": "consumes"
+        },
+        {
+          "to": "c64.decor.pad-print.cliche",
+          "rel": "produces",
+          "role": "product"
         }
       ]
     },
@@ -3306,6 +3357,10 @@
           "to": "c64.packaging.polybag",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "chem.polyethylene.resin",
+          "rel": "consumes"
         }
       ]
     },

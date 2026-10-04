@@ -176,6 +176,11 @@
                     {
                       "to": "mb.passives.resistors.discrete-axial.carbon-film.colour-code",
                       "rel": "step"
+                    },
+                    {
+                      "to": "mb.passives.resistors.discrete-axial.carbon-film.film-deposit",
+                      "rel": "step",
+                      "basis": "documented"
                     }
                   ]
                 },
@@ -682,6 +687,11 @@
               "to": "mb.passives.caps.mlcc.green-sheet",
               "rel": "contains",
               "basis": "documented"
+            },
+            {
+              "to": "mb.passives.caps.mlcc.print-electrodes",
+              "rel": "step",
+              "basis": "documented"
             }
           ]
         },
@@ -917,6 +927,11 @@
             {
               "to": "metal.silver.ingot",
               "rel": "made of"
+            },
+            {
+              "to": "mb.passives.caps.ceramic-disc.press-sinter",
+              "rel": "step",
+              "basis": "documented"
             }
           ]
         },
@@ -992,6 +1007,11 @@
             {
               "to": "metal.aluminum.ingot",
               "rel": "made of"
+            },
+            {
+              "to": "mb.passives.caps.mica.metallisation",
+              "rel": "step",
+              "basis": "documented"
             }
           ]
         },
@@ -2144,7 +2164,14 @@
         }
       ],
       "inputs": [],
-      "note": "The 0.6 mm tinned lead is documented, though the source states it for low-power wirewound resistors rather than carbon film: wire leads in low power wirewound resistors are usually between 0.6 and 0.8 mm in diameter and tinned for ease of soldering. Not established: the 230-250 C tin pot temperature, and the specific claim about oxidation between barrel plating and the board."
+      "note": "The 0.6 mm tinned lead is documented, though the source states it for low-power wirewound resistors rather than carbon film: wire leads in low power wirewound resistors are usually between 0.6 and 0.8 mm in diameter and tinned for ease of soldering. Not established: the 230-250 C tin pot temperature, and the specific claim about oxidation between barrel plating and the board.",
+      "edges": [
+        {
+          "to": "metal.copper.cathode",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "mb.passives.caps.film.polyester-metallisation": {
       "id": "mb.passives.caps.film.polyester-metallisation",
@@ -3313,7 +3340,14 @@
             "facility.electricity"
           ],
           "children": [],
-          "note": "Abrasive trimming is documented, as is cutting a helix in the film to create the resistive path. Not established: the thin abrasive wheel running at tens of thousands of revolutions per minute, or that each pass lengthens the path slightly."
+          "note": "Abrasive trimming is documented, as is cutting a helix in the film to create the resistive path. Not established: the thin abrasive wheel running at tens of thousands of revolutions per minute, or that each pass lengthens the path slightly.",
+          "edges": [
+            {
+              "to": "mb.passives.resistors.discrete-axial.carbon-film.trim.wheel.abrasive",
+              "rel": "contains",
+              "basis": "documented"
+            }
+          ]
         }
       ]
     },

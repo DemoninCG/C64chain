@@ -78,6 +78,10 @@
         {
           "to": "c64.packaging.box-printing",
           "rel": "step"
+        },
+        {
+          "to": "c64.packaging.box-board",
+          "rel": "made of"
         }
       ]
     },
@@ -109,7 +113,13 @@
       "inputs": [],
       "confidence": "medium",
       "note": "EPS blocks were the standard protection for beige consumer electronics through the 1980s. Their disadvantage - they cannot be recycled with paper and they shatter into Styrofoam - is exactly why they vanished from Commodore's later packaging in favour of pulp and cardboard trays.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.packaging.eps",
+          "rel": "made of"
+        }
+      ]
     },
     {
       "id": "c64.packaging.polybag",
@@ -237,10 +247,26 @@
           "inputs": [],
           "confidence": "medium",
           "children": [],
-          "note": "Not established: the skid construction on Commodore export shipments. Nothing in the parts list or the corporate record describes the export pack."
+          "note": "Not established: the skid construction on Commodore export shipments. Nothing in the parts list or the corporate record describes the export pack.",
+          "edges": [
+            {
+              "to": "c64.packaging.timber",
+              "rel": "made of"
+            }
+          ]
         }
       ],
-      "note": "Not established: the master carton size, the number of machines per carton, and that the load was skidded rather than palletised. The general period practice is described in the packaging literature, not in a Commodore record."
+      "note": "Not established: the master carton size, the number of machines per carton, and that the load was skidded rather than palletised. The general period practice is described in the packaging literature, not in a Commodore record.",
+      "edges": [
+        {
+          "to": "c64.packaging.carton-board",
+          "rel": "made of"
+        },
+        {
+          "to": "c64.packaging.retail-box",
+          "rel": "contains"
+        }
+      ]
     }
   ],
   "confidence": "medium",
@@ -278,20 +304,8 @@
       "rel": "step"
     },
     {
-      "to": "c64.packaging.box-board",
-      "rel": "made of"
-    },
-    {
       "to": "c64.packaging.eps",
       "rel": "contains"
-    },
-    {
-      "to": "c64.packaging.eps",
-      "rel": "made of"
-    },
-    {
-      "to": "c64.packaging.kraft-liner",
-      "rel": "made of"
     }
   ]
 }

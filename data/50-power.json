@@ -718,6 +718,10 @@
                         {
                           "to": "metal.nickel",
                           "rel": "made of"
+                        },
+                        {
+                          "to": "metal.manganese",
+                          "rel": "made of"
                         }
                       ]
                     }
@@ -3575,6 +3579,10 @@
           "to": "c64.psu.transformer.winding.bobbin",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "chem.polyamide.nylon-6",
+          "rel": "step"
         }
       ]
     },
@@ -3882,6 +3890,17 @@
       "children": [],
       "inputs": [
         "chem.epoxy"
+      ],
+      "edges": [
+        {
+          "to": "mb.rf-modulator.video-chain.ssc-transistor",
+          "rel": "produces",
+          "role": "product"
+        },
+        {
+          "to": "si.emc",
+          "rel": "consumes"
+        }
       ]
     },
     "mb.rf-modulator.rf-oscillator.channel-selection": {

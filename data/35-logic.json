@@ -85,6 +85,11 @@
               "to": "metal.gold",
               "rel": "contains",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.logic.package.assembly.mould.compound",
+              "rel": "made of",
+              "basis": "documented"
             }
           ]
         },
@@ -134,6 +139,11 @@
               "to": "metal.gold",
               "rel": "contains",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.logic.package.assembly.mould.compound",
+              "rel": "made of",
+              "basis": "documented"
             }
           ]
         },
@@ -180,6 +190,11 @@
               "to": "metal.gold",
               "rel": "contains",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.logic.package.assembly.mould.compound",
+              "rel": "made of",
+              "basis": "documented"
             }
           ]
         },
@@ -226,6 +241,11 @@
               "to": "metal.gold",
               "rel": "contains",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.logic.package.assembly.mould.compound",
+              "rel": "made of",
+              "basis": "documented"
             }
           ]
         },
@@ -271,6 +291,11 @@
               "to": "metal.gold",
               "rel": "contains",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.logic.package.assembly.mould.compound",
+              "rel": "made of",
+              "basis": "documented"
             }
           ]
         },
@@ -316,6 +341,11 @@
               "to": "metal.gold",
               "rel": "contains",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.logic.package.assembly.mould.compound",
+              "rel": "made of",
+              "basis": "documented"
             }
           ]
         },
@@ -357,6 +387,11 @@
               "to": "metal.gold",
               "rel": "contains",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.logic.package.assembly.mould.compound",
+              "rel": "made of",
+              "basis": "documented"
             }
           ]
         },
@@ -398,6 +433,11 @@
               "to": "metal.gold",
               "rel": "contains",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.logic.package.assembly.mould.compound",
+              "rel": "made of",
+              "basis": "documented"
             }
           ]
         },
@@ -444,6 +484,11 @@
               "to": "metal.gold",
               "rel": "contains",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.logic.package.assembly.mould.compound",
+              "rel": "made of",
+              "basis": "documented"
             }
           ]
         },
@@ -525,6 +570,11 @@
                   "to": "metal.silica",
                   "rel": "made from",
                   "basis": "typical-1982"
+                },
+                {
+                  "to": "mb.logic.package.assembly.mould.compound",
+                  "rel": "made of",
+                  "basis": "documented"
                 }
               ]
             }
@@ -727,6 +777,11 @@
                 {
                   "to": "mb.logic.package.leadframe.plating",
                   "rel": "step",
+                  "basis": "typical-1982"
+                },
+                {
+                  "to": "metal.nickel",
+                  "rel": "made of",
                   "basis": "typical-1982"
                 }
               ]
@@ -1704,7 +1759,13 @@
       "confidence": "high",
       "note": "Chromium is an ingredient of the mask, so metal.chromium hangs off `inputs` rather than as a child.",
       "inputs": [],
-      "edges": []
+      "edges": [
+        {
+          "to": "metal.chromium",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
     },
     "mb.logic.package.ceramic.body": {
       "id": "mb.logic.package.ceramic.body",
@@ -1803,6 +1864,16 @@
               "to": "mb.logic.bipolar.litho.masks.writer",
               "rel": "uses",
               "basis": "documented"
+            },
+            {
+              "to": "mb.logic.bipolar.litho.masks.blank",
+              "rel": "made of",
+              "basis": "typical-1982"
+            },
+            {
+              "to": "mb.logic.bipolar.litho.masks.chrome",
+              "rel": "made of",
+              "basis": "typical-1982"
             }
           ]
         },
@@ -2218,8 +2289,9 @@
                   "basis": "typical-1982"
                 },
                 {
-                  "to": "chem.silane",
-                  "rel": "consumes"
+                  "to": "chem.silane.monosilane",
+                  "rel": "consumes",
+                  "basis": "typical-1982"
                 }
               ]
             }
@@ -3000,11 +3072,6 @@
           "children": [],
           "edges": [
             {
-              "to": "chem.silane",
-              "rel": "consumes",
-              "basis": "typical-1982"
-            },
-            {
               "to": "mb.logic.cmos.process.locos.nitride",
               "rel": "consumes",
               "basis": "documented"
@@ -3022,6 +3089,11 @@
               "to": "metal.silica.field-oxide",
               "rel": "produces",
               "role": "product"
+            },
+            {
+              "to": "chem.silane.monosilane",
+              "rel": "consumes",
+              "basis": "typical-1982"
             }
           ]
         },
@@ -3867,6 +3939,11 @@
           "to": "mb.logic.bipolar.process.base.boron.borax",
           "rel": "made from",
           "basis": "inferred"
+        },
+        {
+          "to": "chem.fab-chemicals.dopants.diborane",
+          "rel": "made from",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -3902,7 +3979,18 @@
       "confidence": "high",
       "note": "Nickel and chromium are ingredients of the film, so they hang off `inputs` (metal.nickel, metal.chromium) rather than as children.",
       "inputs": [],
-      "edges": []
+      "edges": [
+        {
+          "to": "metal.chromium",
+          "rel": "made of",
+          "basis": "inferred"
+        },
+        {
+          "to": "metal.nickel",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
     },
     "mb.logic.bipolar.process.oxidation.quartz": {
       "id": "mb.logic.bipolar.process.oxidation.quartz",
@@ -4012,7 +4100,13 @@
         }
       ],
       "inputs": [],
-      "edges": []
+      "edges": [
+        {
+          "to": "chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphate-rock",
+          "rel": "made from",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "mb.logic.package.assembly.mould.compound": {
       "id": "mb.logic.package.assembly.mould.compound",

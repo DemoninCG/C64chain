@@ -1158,7 +1158,17 @@
       "confidence": "medium",
       "inputs": [],
       "children": [],
-      "note": "The 44-pin card-edge form factor is documented twice - 'CARTRIDGE / EXPANSION (44-PIN FEMALE) CN6' in the circuit theory and '44 Pin Card Edge' in the parts list. Not established: phosphor bronze as the contact alloy, the gold flash over nickel, or the fatigue and wiping argument."
+      "note": "The 44-pin card-edge form factor is documented twice - 'CARTRIDGE / EXPANSION (44-PIN FEMALE) CN6' in the circuit theory and '44 Pin Card Edge' in the parts list. Not established: phosphor bronze as the contact alloy, the gold flash over nickel, or the fatigue and wiping argument.",
+      "edges": [
+        {
+          "to": "metal.copper.cathode",
+          "rel": "made from"
+        },
+        {
+          "to": "metal.tin.ingot",
+          "rel": "made from"
+        }
+      ]
     },
     "c64.connector-jacks.user-port.contacts.leaf-alloy": {
       "id": "c64.connector-jacks.user-port.contacts.leaf-alloy",
@@ -1307,6 +1317,10 @@
         },
         {
           "to": "metal.copper.cathode",
+          "rel": "made of"
+        },
+        {
+          "to": "metal.zinc.brass",
           "rel": "made of"
         }
       ]
@@ -2250,7 +2264,13 @@
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
-      "note": "Stamped progressive-die production from coil is documented as the reason connector contacts are a commodity. Not established: that the 44-position cartridge socket's contacts are 88 pieces from one coil, and the brass-strip specification."
+      "note": "Stamped progressive-die production from coil is documented as the reason connector contacts are a commodity. Not established: that the 44-position cartridge socket's contacts are 88 pieces from one coil, and the brass-strip specification.",
+      "edges": [
+        {
+          "to": "c64.connector-jacks.metalworking.brass-stock",
+          "rel": "made of"
+        }
+      ]
     },
     "c64.connector-jacks.av-din.tulip-pin.mating-socket.broach": {
       "id": "c64.connector-jacks.av-din.tulip-pin.mating-socket.broach",
