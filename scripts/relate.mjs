@@ -413,13 +413,14 @@ async function cmdEmitFixes() {
   /* Edges a pattern cannot decide, decided by reading the prose. Kept here
    * rather than in a regex so the reason survives with the decision. */
   const HAND = new Map(Object.entries({
-    'metal.copper>metal.copper.wire': { action: 'reassign', to_relation: 'made of', why: 'copper drawn and enamelled into wire: the same substance in a different shape' },
+    'metal.copper>metal.copper.wire': { action: 'delete', why: 'HAND 2026-10-04: metal.copper is a PRODUCT INDEX ("Copper: track, winding wire, foil, contacts"), so `made of metal.copper -> metal.copper.wire` is circular. This edge was briefly the worked example for "same substance, different shape" in RELATIONS.md 3.1, which contradicted 7.3 of the same document; calibration agent B caught it. The index reading wins, because reading "made of the copper index" as "made of copper" is exactly the conflation 7.3 describes.' },
     'metal.copper.cathode>metal.copper.wire': { action: 'reassign', to_relation: 'made of', why: 'HAND: the cathode is 99.99% copper and the wire is copper. Skips the drawing stage, which is a `step`, not a `made from`' },
     'metal.solder>metal.solder.wire': { action: 'reassign', to_relation: 'made of', why: 'HAND: worked example in RELATIONS.md 3.1. A solder-wire spec sheet reads Sn63/Pb37 core, rosin core' },
     'chem.abs>chem.abs.c64-case': { action: 'reassign', to_relation: 'made of', why: 'HAND: the C64 case IS ABS. Spec sheet: acrylonitrile-butadiene-styrene, black' },
     'chem.abs>chem.abs.knob': { action: 'reassign', to_relation: 'made of', why: 'HAND: the fire button is injection-moulded ABS' },
     'c64.joystick.knob.abs>c64.joystick.knob.abs.fire-button': { action: 'reassign', to_relation: 'made of', why: 'HAND: the fire button and the third knob button are moulded from this ABS. Spec sheet: acrylonitrile-butadiene-styrene, black' },
     'facility.compressed-air.scrubber-packing>chem.propylene.polymerisation': { action: 'delete', why: 'HAND: the packing media is already a child node ("PVC / PP packing media"). The target is also a kind bug -- `Polypropylene` is typed process and is a substance' },
+    'facility.electricity>facility.electricity.distribution-busbar': { action: 'delete', why: 'HAND 2026-10-04, found by calibration agent A: electricity is not MADE OF busbar trunking, it is DELIVERED THROUGH it. The relation set has no "delivered through", and forcing one would be exactly the conflation this migration exists to remove. The busbar already appears on the utility node as an `at` edge, which is where delivery infrastructure belongs.' },
   }));
 
   // ---- material -> part (18). None reverse. Three outcomes: delete (wrong or

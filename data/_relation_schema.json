@@ -1,29 +1,42 @@
 {
   "$comment": "Relation schema. The single source of truth for which relation may connect which pair of node kinds. docs/RELATIONS.md is generated from this file's intent and must not disagree with it; scripts/audit.mjs should validate against this table, not against a list inside the audit. Status: PROPOSAL, not yet enforced.",
   "$principle": "A node's `kind` decides which relations may leave it. This is the standard the two-relation scheme never had: `children` currently means contains, breaks-down-into, is-made-by, belongs-to-the-same-organisation-as, and is-a-note-about.",
-
   "directions": {
     "$comment": "Three different directions, previously conflated into one sentence in RELATIONS.md §3. Confusing them is how the viewer ended up drawing a supply chain as a nested tree.",
     "storage": "Which node holds the edge in the data file. Always the container or the consumer.",
     "upstream": "The direction a reader walks to get back toward the mine. This is what reachability is defined on (RELATIONS.md §8).",
     "arrow": "What the viewer draws. Refinement edges point outward from the object; flow edges point along the direction of physical movement."
   },
-
   "connectivity": {
     "$comment": "Which relations admit a node into the graph (RELATIONS.md §8). Separate from `family`, which is about how the edge is DRAWN. A relation can be drawn as a cross-link and still count for membership.",
-    "carries": ["contains", "made of", "made from", "step", "consumes", "produces", "uses"],
-    "does_not_carry": ["at", "owned by", "about"],
+    "carries": [
+      "contains",
+      "made of",
+      "made from",
+      "step",
+      "consumes",
+      "produces",
+      "uses"
+    ],
+    "does_not_carry": [
+      "at",
+      "owned by",
+      "about"
+    ],
     "uses_note": "DECIDED 2026-10-04: `uses` DOES carry connectivity, downward from a reached process. A stamping press had to be built, so admitting it is correct. Measured cost: zero. The 195 tool nodes it admits are already reachable by the generic downward walk on today's edges, because process->tool is currently a `children` edge. The decision only starts to bite once `uses` is separated from `contains` -- at which point it admits those 195 nodes for the right reason rather than by accident. Revisitable."
   },
-
   "narrow_kinds": {
     "$comment": "Relations where the target kind is deliberately restricted. Kept explicit because the first draft allowed `consumes -> part` by accident. NOTE: these are ASSERTIONS checked after classification, never a router -- an early version of relate.mjs used them to route edges and mis-bucketed all 126 `*->part` edges as judgements.",
-    "consumes_target": ["material"],
+    "consumes_target": [
+      "material"
+    ],
     "consumes_part": "NOT ALLOWED. DECIDED 2026-10-04: a process does not take in discrete objects. It melts, dissolves and reacts substances; the objects in its shop are its equipment (`uses`) or its products (`produces`). Zero edges in the current tree need this, so removing it costs nothing and removes an ambiguity an agent would otherwise have to resolve. CONSEQUENCE: `process->part`, `tool->part` and `facility->part` are all MECHANICAL, not judgements.",
-    "produces_target": ["material", "part"],
+    "produces_target": [
+      "material",
+      "part"
+    ],
     "produces_part": "ALLOWED. DECIDED 2026-10-04: moulding yields the case, wave soldering yields the soldered board, die attach yields the bonded die. 89 edges."
   },
-
   "kinds": {
     "$comment": "Proposed additions to SCHEMA.md's kind list. `org` and `site` split the overloaded `facility`; utilities become `material`.",
     "added": {
@@ -36,7 +49,6 @@
       "facility -> site": "the rooms, bays, networks and stacks: cleanroom bays, litho area, ring main, LNG terminal, pipeline",
       "facility -> material": "5 utility deliveries still typed facility: facility.electricity (177 in-edges), facility.water (47), facility.steam (6), facility.gases (4), facility.compressed-air (2). facility.nitrogen AND facility.helium are ALREADY kind material, so the tree is currently inconsistent with itself here -- two utilities were typed one way and five the other. Verified: these five are every facility that is the target of a `from` edge."
     },
-
     "content_defects_found": {
       "$comment": "Not kind errors -- these are wrong nodes or wrong edges, found while checking the retyping table.",
       "product_index_typed_as_material": "metal.copper is named 'Copper: track, winding wire, foil, contacts' and is the target of 52 from-edges. It is a PRODUCT INDEX, not a substance: `made of metal.copper -> metal.copper.wire` is circular. Probably wants splitting into a substance node plus a grouping node. That is a content change, own pass.",
@@ -44,11 +56,16 @@
       "ingredient_rows_naming_products": "63 of 155 curated rows in _ingredients.json give a string absent from the target's name. Nine point at a process, three at a facility, one at a tool -- none of which any table permits as a `made of` target. Review all 63 before the mechanical pass leans on this table."
     }
   },
-
   "relations": {
     "contains": {
       "family": "refinement",
-      "stored": ["part->part", "part->material", "part->tool", "tool->part", "tool->tool"],
+      "stored": [
+        "part->part",
+        "part->material",
+        "part->tool",
+        "tool->part",
+        "tool->tool"
+      ],
       "upstream": "downward",
       "arrow": "outward from the object",
       "test": "Could you point at it inside the other thing?",
@@ -57,23 +74,30 @@
     },
     "made of": {
       "family": "refinement",
-      "stored": ["part->material", "material->material"],
+      "stored": [
+        "part->material",
+        "material->material"
+      ],
       "upstream": "downward",
       "arrow": "outward from the object",
       "test": "Would a spec sheet for the parent list the target as a component? The target keeps its own chemical identity: a mixture, alloy, blend or formulation. Equivalently: is the parent the SAME substance as the target in a different shape?",
       "count_ambiguous": 560,
       "count_ambiguous_with": "made from",
+      "note": "CALIBRATION WARNING (agent B). This relation's stored list permits `part->material`, but the `part->material` judgement question offers only `contains | made of`. The mechanical pass and the judgement pass could therefore produce DIFFERENT relations for the same kind-pair. Fixed by _judgement_overrides_mechanical below.",
       "examples": [
         "metal.solder -> refined tin, refined lead -- a solder spec lists Sn 63 / Pb 37",
         "metal.solder -> antimony addition -- still antimony in the alloy",
         "chem.solder-chemicals.rosin-flux -> pine rosin -- a flux spec lists rosin, activator, solvent",
-        "metal.copper -> metal.copper.wire -- the wire IS copper, drawn and enamelled. Same substance, different shape.",
+        "metal.copper -> metal.copper.wire -- WITHDRAWN 2026-10-04, see _metal_copper_contradiction",
         "metal.ferrite -> metal.ferrite.bead -- the bead's spec is NiZn or MnZn ferrite"
       ]
     },
     "made from": {
       "family": "flow",
-      "stored": ["material->material", "part->material"],
+      "stored": [
+        "material->material",
+        "part->material"
+      ],
       "upstream": "toward the mine",
       "arrow": "from the mine toward the object",
       "test": "The input is transformed: reacted, reduced, melted into a network, alloyed, or separated. The target does NOT appear on the parent's spec sheet.",
@@ -105,7 +129,9 @@
     },
     "step": {
       "family": "flow",
-      "stored": ["process->process"],
+      "stored": [
+        "process->process"
+      ],
       "upstream": "toward the mine",
       "arrow": "along the recipe",
       "test": "Is this the preceding stage of the same recipe?",
@@ -115,7 +141,11 @@
     },
     "consumes": {
       "family": "flow",
-      "stored": ["process->material", "tool->material", "facility->material"],
+      "stored": [
+        "process->material",
+        "tool->material",
+        "facility->material"
+      ],
       "upstream": "toward the mine",
       "arrow": "into the process",
       "test": "Does it go in? Reagents, feedstock, consumables, and utilities.",
@@ -125,18 +155,34 @@
     },
     "produces": {
       "family": "flow",
-      "stored": ["process->material", "process->part", "facility->material", "facility->part"],
+      "stored": [
+        "process->material",
+        "process->part",
+        "facility->material",
+        "facility->part"
+      ],
       "upstream": "away from the mine",
       "arrow": "out of the process",
       "test": "Does it come out?",
-      "role_enum": ["product", "co-product", "waste", "emission"],
+      "role_enum": [
+        "product",
+        "co-product",
+        "waste",
+        "emission"
+      ],
       "role_required": true,
       "note": "`role` is required so that `Acid neutralisation with lime -> heavy-metal hydroxide sludge` does not read as a product. The canonical stored form of a making relationship; `made by` is derived from it.",
       "count": 89
     },
     "uses": {
       "family": "context",
-      "stored": ["process->tool", "tool->tool", "part->tool", "material->tool", "tool->process"],
+      "stored": [
+        "process->tool",
+        "tool->tool",
+        "part->tool",
+        "material->tool",
+        "tool->process"
+      ],
       "upstream": "toward the mine",
       "arrow": "into the process",
       "test": "Is this capital equipment the operation needs? Also the one place a part or material may be the source: read it as 'making me involves this equipment', for the case where a machine is named with no process node in between.",
@@ -145,7 +191,14 @@
     },
     "at": {
       "family": "context",
-      "stored": ["*->facility", "*->site", "site->tool", "facility->tool", "org->facility", "org->site"],
+      "stored": [
+        "*->facility",
+        "*->site",
+        "site->tool",
+        "facility->tool",
+        "org->facility",
+        "org->site"
+      ],
       "upstream": "downward",
       "arrow": "outward",
       "test": "Where does this happen, physically?",
@@ -153,7 +206,10 @@
     },
     "owned by": {
       "family": "context",
-      "stored": ["*->org", "org->org"],
+      "stored": [
+        "*->org",
+        "org->org"
+      ],
       "upstream": "none",
       "arrow": "none -- not part of the supply walk",
       "test": "Who owned or operated this?",
@@ -161,7 +217,9 @@
     },
     "about": {
       "family": "context",
-      "stored": ["*->note"],
+      "stored": [
+        "*->note"
+      ],
       "upstream": "none",
       "arrow": "none",
       "test": "Is this a note rather than a thing?",
@@ -169,85 +227,123 @@
       "count": 127
     }
   },
-
   "hub_rules": {
-    "$comment": "Relations fixed BY TARGET NODE, overriding the kind-pair table. These are the high-fan-in nodes whose relation is not in doubt, so no agent should spend a decision on them. relate.mjs checks these BEFORE the judgement questions. Measured 2026-10-04: 241 edges point at these five.",
-
-    "facility.electricity": { "relation": "consumes", "why": "you consume electricity. Nothing else is possible." },
-    "facility.water": { "relation": "consumes", "why": "ditto" },
-    "facility.steam": { "relation": "consumes", "why": "ditto" },
-    "facility.gases": { "relation": "consumes", "why": "ditto" },
-    "facility.compressed-air": { "relation": "consumes", "why": "ditto" },
-
+    "$comment": "Relations fixed BY TARGET NODE, overriding the kind-pair table. These are the high-fan-in nodes whose relation is not in doubt, so no agent should spend a decision on them. relate.mjs checks these BEFORE the judgement questions. 8 utility deliveries: measured 241 edges point at the first five, plus the three water variants found during Wave 1 calibration.",
+    "facility.electricity": {
+      "relation": "consumes",
+      "why": "you consume electricity. Nothing else is possible."
+    },
+    "facility.water": {
+      "relation": "consumes",
+      "why": "ditto"
+    },
+    "facility.steam": {
+      "relation": "consumes",
+      "why": "ditto"
+    },
+    "facility.gases": {
+      "relation": "consumes",
+      "why": "ditto"
+    },
+    "facility.compressed-air": {
+      "relation": "consumes",
+      "why": "ditto"
+    },
     "_fanin": "Electricity 177, water 47, steam 6, gases 4, compressed air 2. By source kind: process 118, tool 59, material 26, facility 17, part 12, org 6, site 2, note 1. The 118 process edges and 59 tool edges are what this rule rescues from the judgement pass.",
-    "_note": "The concrete form of 'hubs have a central owner' (RELATIONS.md section 9, wave 3). The hub NODES are central; the edges INTO them are mechanical."
+    "_note": "The concrete form of 'hubs have a central owner' (RELATIONS.md section 9, wave 3). The hub NODES are central; the edges INTO them are mechanical.",
+    "facility.water.industrial": {
+      "relation": "consumes",
+      "why": "ordinary industrial water is drawn in"
+    },
+    "facility.water.ultrapure": {
+      "relation": "consumes",
+      "why": "ultrapure water is drawn in"
+    },
+    "facility.water.di-loop": {
+      "relation": "consumes",
+      "why": "the distribution loop delivers water that is drawn in"
+    }
   },
-
   "judgement_questions": {
     "$comment": "Every kind-pair that needs a human decision, and the test that settles it. Kept HERE rather than in relate.mjs so the audit and the work lists read the same list. relate.mjs refuses to classify an edge that is in none of these and no relation's `stored` list -- that is what UNMAPPED means, and getting it to zero is the test that the schema is complete.",
-
+    "_delete_is_always_available": "ADDED 2026-10-04 after Wave 1 calibration. BOTH agents independently reported that a test which cannot say 'this edge is wrong' forces known-bad edges into a residue bucket and produces a confident false label. Agent A: a test that cannot say this edge is wrong will generate confident false labels on exactly this class -- and named three it had to dump into 'made from'. So DELETE is a legal answer on every question below. An edge can be wrong without its kind-pair being unusual, and 441 of the 908 material->material edges cannot be confirmed from the parent's own description at all, so the parent text is not a reliable oracle either.",
+    "_index_parents_are_not_yours": "ADDED 2026-10-04. 80 edges leave an index or grouping node (c64.bottoms-out, unlinked.catalogue, industry, c64.extras, metal, logistics.*, facility.foundries). Both agents hit these and had no valid answer, because no relation means anything from a node that exists only to hold others. DO NOT decide these: report them and move on. Wave 4.2/4.3 dissolves the index nodes and gives those edges real parents. See _index_parents below.",
+    "_index_parents": [
+      "c64.bottoms-out",
+      "c64.extras",
+      "unlinked.catalogue",
+      "industry",
+      "metal",
+      "facility.foundries",
+      "logistics.people",
+      "logistics.shipping",
+      "chem",
+      "metal.rare-earths"
+    ],
     "material->material": {
       "edges": 898,
-      "decide": "made of | made from",
+      "decide": "made of | made from | DELETE",
       "test": "Would a spec sheet for the parent list the target as a component? Yes, or the parent is the SAME substance in a different shape -> `made of`. Reacted, reduced, alloyed, melted into a network or separated -> `made from`.",
       "note": "The largest and hardest. Ten worked borderline cases in RELATIONS.md 3.1, plus 5 + 9 in the `made of` / `made from` examples above. This is the pair the calibration gate measures."
     },
     "process->material": {
       "edges": 922,
-      "decide": "consumes | produces",
+      "decide": "consumes | produces | DELETE",
       "test": "Does it go in or come out? A named feedstock, reagent, catalyst, utility or consumable goes IN. The product, co-product, sludge or off-gas comes OUT. Read the verb in the process's `description` when unsure.",
       "provenance_shortcut": "628 of the 922 came from the `inputs` prose field and are therefore `consumes`. NOT TRUSTED -- see verification_required. All 628 get an agent verdict first."
     },
     "part->material": {
       "edges": 560,
-      "decide": "contains | made of",
+      "decide": "contains | made of | DELETE",
       "test": "Could you point at it? A discrete slug, pellet, casing, wire or layer physically IN the part -> `contains`. A resin, solder, adhesive or plating dispersed through or coated onto it -> `made of`."
     },
     "tool->material": {
       "edges": 87,
-      "decide": "uses | contains",
+      "decide": "uses | contains | DELETE",
       "test": "Is it a consumable the machine eats (drill bits, coolant, grinding wheel), or a permanent fitting of the machine (a motor, a guard, a cabinet)? Consumable -> `uses` reversed. Fitting -> `contains`."
     },
     "facility->material": {
       "edges": 64,
-      "decide": "produces | at",
+      "decide": "produces | at | DELETE",
       "test": "Is it the plant's product (a gas supply plant produces nitrogen; a refinery produces fuel oil)? -> `produces`, reversed. Or is it a fixture of the plant (piping, a lining, a cable)? -> `at`, reversed."
     },
     "part->process": {
-      "edges": 301,
-      "decide": "produces (reversed) | step | about",
-      "test": "Is this the operation that YIELDS me (-> `produces`, stored on the process) or one INTERMEDIATE stage of my own recipe (-> `step`, between processes)? A part has one producing step and several intermediate ones. `E-glass fibre` has six process children: one of them produces the fibre and five are upstream of it.",
-      "note": "NEW, found by relate.mjs on its first run. This is the largest single bucket and the first draft of the proposal had no rule for it at all -- `made by` was assumed set-valued and duplicative of `step`, which is exactly the redundancy RELATIONS.md 3.4 forbids. The distinction is what makes `step` necessary."
+      "edges": 300,
+      "decide": "produces (reversed) | step | REFILE as part>material | about | DELETE",
+      "test": "Ask in this order. (1) Is this operation making something that goes INTO me rather than making me? A dielectric-grading step makes a powder that goes into the capacitor; vacuum metallisation makes the film that IS the dielectric; magnet-wire enamelling makes the winding, not the laminations. -> `REFILE as part>material` and record it: the edge is a composition fact wearing a process disguise. (2) Is this the LAST modelled operation before I exist as a discrete object? -> `produces`, stored on the process. (3) Otherwise -> `step`. (4) Is it commentary about how I am made rather than a step at all? -> `about`.",
+      "note": "REWRITTEN after Wave 1 calibration. Agent A: 'the last modelled step yields the part rule is doing real work here and is not written down'. Agent B independently found clause (1), which no version of this document had. 27 parents carry three or more process steps, so the ordering rule governs 300 edges and cannot stay implicit.",
+      "calibration": "3/5 before the rewrite"
     },
     "material->process": {
-      "edges": 296,
-      "decide": "produces (reversed) | step",
-      "test": "Same as part->process. One producing step, several intermediate ones.",
-      "note": "NEW, same run as part->process."
+      "edges": 301,
+      "decide": "step | produces (reversed) | REVERSE to consumes | DELETE",
+      "test": "THREE questions, in this order. (1) Does the operation TAKE THE MATERIAL IN? A solar salt pond consumes brine and yields halite; a die-caster consumes the ingot. Then the edge is stored backwards and the answer is `REVERSE to consumes`. (2) Is this the operation that YIELDS me, as the last modelled stage before I exist as a discrete stream? -> `produces`, stored on the process. (3) Otherwise it is an intermediate stage of my own making -> `step`.",
+      "note": "REWRITTEN after Wave 1 calibration. Agreement here was 2/5, and ALL THREE disagreements were the same thing: both agents independently wrote 'the process consumes this material and the edge is stored backwards', and neither had an answer for it. 40% on 301 edges is unusable, so 'does it take the material in' is now the FIRST question asked rather than an afterthought.",
+      "calibration": "2/5 before the rewrite"
     },
     "facility->part": {
       "edges": 14,
-      "decide": "at (reversed) | produces (reversed)",
+      "decide": "at (reversed) | produces (reversed) | DELETE",
       "test": "Is it a fixture of the place (an access floor panel in a cleanroom)? -> `at`, reversed. Or does the operation MAKE it (a logistics office produces a bill of lading)? -> `produces`, reversed.",
       "note": "NEW, same run."
     },
     "facility->tool": {
       "edges": 32,
-      "decide": "at (reversed)",
+      "decide": "at (reversed) | DELETE",
       "test": "Equipment standing inside a plant. Always `at`, reversed.",
       "note": "NEW, same run. Mechanical once recognised."
     },
     "part->tool": {
       "edges": 16,
-      "decide": "uses | kind bug (retype tool->process)",
+      "decide": "uses | kind bug (retype tool->process) | DELETE",
       "test": "Is the target a machine or an operation? `Injection moulding press and tool`, `Firing in a continuous belt kiln`, `Hot platen press and the lamination cycle` are OPERATIONS wearing `kind: tool` -- retype, then `made by`. `Case tooling: H13 family mould`, `The mask writer`, `Vacuum deposition bell` are genuine EQUIPMENT -> `uses`.",
       "note": "NEW, same run. Half of these are kind bugs."
     },
     "material->tool": {
-      "edges": 11,
-      "decide": "uses | kind bug (retype tool->process)",
-      "test": "Same shape as part->tool. `Soda ash -> Carbonation tower` -- the tower is a plant, not a machine; retype to `process` and it becomes `made by`.",
-      "note": "NEW, same run. Mostly kind bugs."
+      "edges": 19,
+      "decide": "uses | at | kind bug (retype tool->process) | DELETE",
+      "test": "Same shape as part->tool, plus one clause agent A found: is the machine the utility plant's OWN FIXTURE? `Industrial steam plant -> Industrial turbo-alternator` is a generator belonging to the steam plant, not a tool the steam is made with -> `at`. This whole class is a consequence of the Wave 0 utility retypes, so it will grow if more are retyped.",
+      "note": "NEW after the facility->site retype."
     },
     "tool->process": {
       "edges": 20,
@@ -257,19 +353,19 @@
     },
     "facility->process": {
       "edges": 35,
-      "decide": "at (reversed)",
+      "decide": "at (reversed) | DELETE",
       "test": "An operation carried out inside a plant. Always `at`, reversed -- unless the plant IS the operation, in which case the node should be `process`, not `facility`.",
       "note": "NEW, same run."
     },
     "site>material": {
       "edges": 8,
-      "decide": "consumes | produces | made of",
+      "decide": "consumes | produces | made of | DELETE",
       "test": "Does the site DRAW IT IN (a metallisation bay draws argon and power; an intake draws river water) -> `consumes` reversed. Does it MAKE IT (a producer site makes trichloroethene) -> `produces` reversed. Is the site itself BUILT OF it (a cryogenic storage tank is built of stainless and aluminium) -> `made of` reversed.",
       "note": "NEW, after the facility->site retype."
     },
     "site>part": {
       "edges": 2,
-      "decide": "contains | at",
+      "decide": "contains | at | DELETE",
       "test": "Is the part a fixture OF the site (an access floor panel under a raised floor)? -> `contains` reversed, if the site can meaningfully contain things. Or is it merely co-located? -> `at`.",
       "note": "NEW. Only 2 edges, and the distinction is thin at this size."
     },
@@ -280,7 +376,6 @@
       "note": "Most of these are already decided in data/_relation_fixes.json. This question exists for the residue plus anything the retypes moved."
     }
   },
-
   "reversals": {
     "$comment": "Edges stored in the wrong direction. Deliberately NOT part of the mechanical kind-pair pass: each class needs a human decision, which is what docs/assessment.md §1 caught and what the first draft of RELATIONS.md got wrong.",
     "tool->process": {
@@ -299,16 +394,53 @@
       "detail": "NONE of these reverse mechanically. 7 already have the opposite edge stored as `from`, so reversing would make a third copy. Of the rest, `High-purity silicon feedstock -> quartz clock crystal` is simply wrong (silicon and quartz are unrelated), `Oxygen supply -> Acetylene cylinder` is wrong (a cylinder is steel), `Copper -> Blister copper anode` duplicates `cathode -> anode`, and four separate wire nodes all point at `Enamelled magnet wire` -- the signature of a name-index accident on the word 'wire'."
     }
   },
-
+  "calibration_findings": {
+    "$comment": "What Wave 1 measured, and what was changed as a result. Kept so a later session does not re-derive it or undo it.",
+    "result": "76 edges, two agents blind. Overall agreement 88.2%. GATE 1 PASSED: material->material 15/16 = 93.8%, threshold 85%.",
+    "passed": {
+      "process->material": "18/18 (100%) on 1054 edges",
+      "material->material": "15/16 (94%) on 934 edges",
+      "part->material": "9/10 (90%) on 575 edges"
+    },
+    "failed_and_rewritten": {
+      "material->process": "2/5 (40%) on 301 edges. ALL THREE disagreements were one thing: the process consumes the material and the edge is stored backwards. Neither agent had an answer for it. REWRITTEN: 'does the operation take the material in' is now the FIRST question, with `REVERSE to consumes` as an answer.",
+      "part->process": "3/5 (60%) on 300 edges. Agent A: the 'last modelled step yields the part' rule was doing real work and was not written down. Agent B found a missing clause: is the process making something that goes INTO the part? REWRITTEN with a four-step ordered test including `REFILE as part>material`."
+    },
+    "changes_made": [
+      "DELETE is now a legal answer on EVERY judgement question. Both agents demanded it independently.",
+      "`material->process` gained `REVERSE to consumes`.",
+      "`part->process` gained `REFILE as part>material` and a written ordering rule.",
+      "`material->tool` gained `at` for the plant's own fixture.",
+      "Index/grouping node parents are declared NOT the agent's to decide. 80 edges; report only.",
+      "_judgement_overrides_mechanical: the judgement question is authoritative wherever one exists.",
+      "The `metal.copper -> metal.copper.wire` worked example is WITHDRAWN as circular; the edge becomes DELETE.",
+      "3 more utility deliveries retyped facility -> material (facility.water.industrial, .ultrapure, .di-loop), found by chasing agent B's argon report."
+    ],
+    "measurements_worth_keeping": {
+      "441 of 908": "material->material edges cannot be confirmed from the parent's own description, including legitimate ones like E-glass fibre -> Borax. The parent text is NOT a reliable oracle; agents must read both ends.",
+      "80 edges": "leave an index or grouping node. Centrally handled in Wave 4.",
+      "300 edges / 27 parents": "part->process parents with three or more process steps, which is why the ordering rule had to be written.",
+      "19 edges": "material->tool, a direct consequence of the Wave 0 utility retypes."
+    }
+  },
   "edge_attributes": {
     "$comment": "Cheap to add during the relabel and expensive to add later, because they have to be attached to edges that have already been rewritten.",
     "basis": {
-      "enum": ["documented", "typical-1982", "inferred"],
+      "enum": [
+        "documented",
+        "typical-1982",
+        "inferred"
+      ],
       "required": false,
       "note": "This is a historical reconstruction. Some edges are documented for 1982, others inferred from generic industrial practice, and the viewer should be able to say which."
     },
     "role": {
-      "enum": ["product", "co-product", "waste", "emission"],
+      "enum": [
+        "product",
+        "co-product",
+        "waste",
+        "emission"
+      ],
       "required_on": "produces",
       "note": "Distinguishes the wanted output from a by-product or a pollutant."
     },
@@ -317,7 +449,6 @@
       "note": "Optional, per edge rather than per node."
     }
   },
-
   "audit_rules": {
     "$comment": "Checks for scripts/audit.mjs, all driven from this file so the prose cannot drift from the gate. All are tree-wide, so per HANDOFF §6 they must be run centrally after any fan-out, not only per fragment. Severity is stated explicitly; nothing is an implicit FAIL.",
     "kind_pair_not_in_schema": "FAIL. (source kind, target kind) is not in the relation's `stored` list.",
@@ -330,7 +461,6 @@
     "utility_typed_as_facility": "WARN until the 6 retypes land.",
     "ingredient_string_names_a_product_not_a_substance": "WARN. Measured: 63 of 155 curated rows in _ingredients.json give a string absent from the target node's name -- `\"iron ore\"` -> Hematite, `\"copper ore\"` -> the Copper product index, `\"sodium dichromate\"` -> a process. Nine rows point at a process, three at a facility. See RELATIONS.md 7.3."
   },
-
   "open_questions": {
     "$comment": "All four of RELATIONS.md §11 are now DECIDED. Kept as a record so the reasoning is not lost, and so a later session can see what was settled and on what grounds.",
     "produces_target_may_be_part": "DECIDED: `produces -> part` allowed (moulding yields the case). `consumes -> part` NOT allowed and now explicitly so in `narrow_kinds` -- a process takes in substances, not discrete objects, and no edge in the tree needs it.",
@@ -338,7 +468,6 @@
     "made_from_allowed_at_all": "DECIDED: KEEP, as a deliberate redundancy and as a visual convenience. The parallel-route audit drops from FAIL to WARN-with-agreement-check.",
     "inputs_provenance_trust": "DECIDED: DO NOT TRUST. All 628 process->material edges derived from `inputs` get verified by parallel agents before they are written. See RELATIONS.md §9 wave 2."
   },
-
   "verification_required": {
     "$comment": "Edges that must be checked by a human or an agent before being written. Recorded so no wave skips them.",
     "inputs_derived_consumes": {
@@ -352,7 +481,6 @@
       "gate": "agreement >= 85% before any fan-out"
     }
   },
-
   "out_of_scope": {
     "supplier_and_transport_flow": "Which company shipped which part from where to whom. Expressible only indirectly today. Named here so that agents do not bend `at` to carry it."
   }
