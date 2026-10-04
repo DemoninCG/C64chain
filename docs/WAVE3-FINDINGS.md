@@ -15,14 +15,14 @@ defects it named, is in each agent's own file:
 
 ## 1. What was run
 
-19 of 22 examinations complete; 3 in flight.
+20 of 22 examinations complete; 2 in flight.
 
 One read-only agent per branch or branch family. No agent edited any file in
 `data/`, `docs/` or `scripts/`. Agents read `docs/GOLDEN-IDEA.md`,
 `docs/REPORT-TEMPLATE.md` and `data/_relation_schema.json`, and were given a
 shared brief at `w3-brief.md`.
 
-Nodes read across all completed examinations: **2,592**
+Nodes read across all completed examinations: **2,634**
 (tree total 2,448). Nodes are re-read across agents where an agent followed an
 edge out of its scope, so this is a work figure, not a coverage percentage.
 
@@ -42,7 +42,7 @@ edge out of its scope, so this is a work figure, not a coverage percentage.
 | peripherals-tv | 90-peripherals: peripheral.tv and beneath | 118 | 197 | 9 | 2 | 9 | 5 | 2 | 27 | 17 high, 9 medium, 1 low |
 | peripherals-cassette | 90-peripherals: everything outside peripheral.tv | 49 | 80 | 9 | 1 | 4 | 6 | 4 | 24 | not stated as a total |
 | chassis-case | 40-chassis: c64.case, c64.decor, c64.packaging | 110 | 285 | 11 | 3 | 6 | 7 | 5 | 32 | 24 high, 7 medium, none low |
-| chassis-keyboard | 40-chassis: c64.keyboard, c64.cables, remainder | — | — | — | — | — | — | — | pending | PENDING |
+| chassis-keyboard | 40-chassis: c64.keyboard, c64.cables, remainder | 42 | 132 touching (85 out, 47 in) + ~150 on the 60 nodes reached | 8 | 7 | 9 | 5 | 5 | 34 | not stated as a total; several rows dual-class in substance |
 | industry-facilities | 80-industry: all facility.* + industry | 246 | 662 | 11 | 11 | 1 | 11 | 3 | 37 | 3 BLOCKER, 9 STRUCTURAL, 24 LOCAL |
 | industry-logistics | 80-industry: all logistics.* + industry | 22 | 34 | 13 | 5 | 4 | 6 | 6 | 34 | not stated as a total |
 | power-psu | 50-power: c64.psu + c64.mains | 107 | 200 tree edges | 6 | 5 | 5 | 8 | 6 | 30 | 8 BLOCKER or STRUCTURAL |
@@ -67,6 +67,7 @@ Verdicts in each agent's own words:
 - **peripherals-tv** — "well-modelled and cheap to fix; every defect is the last hop from component to substance"
 - **peripherals-cassette** — "structurally broken in one direction only"
 - **chassis-case** — "structurally broken at the seams, sound in the middle"
+- **chassis-keyboard** — "structurally broken but shallowly so — almost nothing here is mis-chemistry"
 - **industry-facilities** — "structurally broken, but not messy"
 - **industry-logistics** — "structurally broken, but not because of the content; the graph is empty"
 - **power-psu** — "the prose is the best in the tree and the graph is still broken"
@@ -79,13 +80,13 @@ Verdicts in each agent's own words:
 
 Arithmetic on the counts each agent reported, not an independent judgement.
 
-- BREAK: 215
-- SHAPE: 141
-- HOLE: 116
-- GHOST: 90
-- DRIFT: 89
+- BREAK: 223
+- SHAPE: 146
+- HOLE: 125
+- GHOST: 97
+- DRIFT: 94
 
-Total reported defects: **651**
+Total reported defects: **685**
 
 Note that several agents state some rows carry two classes, so the per-report
 totals in §2 do not always sum cleanly to a single count of distinct defects.
@@ -118,6 +119,30 @@ These are recorded because each was acted on or nearly acted on.
 - **`mb.cpu.fe.nplus` consuming silane is not a defect**; the fix is the target, not the substance.
 - **The scope list I generated appears to be assembled from `05-spine.json` rather than the fragment files** — `mb.photo` is in `20-board.json`. Affects what each agent was asked to cover.
 - **A taxonomy gap with no home in the five classes: a chain whose edges are each individually legal but which as a whole runs backwards.** The entire silicon feedstock route is encoded as `children` running backwards — `metal.silica > polysilicon > tcs > {distillation, chlorination}`, and `tcs > mgsi`. Each edge is legal; the chain is inverted. Read as `contains`, `si.wafer > metal.silica.polysilicon` walks the reader *into a plasma reactor* instead of toward a mine.
+
+### Two rules that were recorded as general and are not
+
+**The note-authoritative rule needs a qualifier, and plan step 2 rests on it.**
+Two agents established that `note` beats `from`/`inputs`. A third found the rule
+is false for prose: `c64.keyboard.cable`'s note warns against a "24-conductor
+count and 24-pin header" that no longer exists, because the *text* was repaired
+and the note was left behind. The ordering is therefore
+
+> **description > note > from/inputs**
+
+not `note > description > from/inputs`. Applying "note wins" unconditionally
+would reinstate a count that was already fixed.
+
+**The product-index list needs an exception clause.**
+`metal.copper.foil` is a product index that reaches ~10 fragments and is
+*deliberate and disclosed* — it says so and has `.ra` and `.ed-drum` children.
+A cleanup following the list as written deletes a node that is doing correct
+work.
+
+**Six of the 21 note leaks are one build-script condition.** `from` is derived
+from `inputs` (1,293 of 1,414 exact match tree-wide), and only 11 of 115 notes
+carry an `inputs` array. Skipping `kind: note` in `build.mjs` closes 6 of the
+21 with one line, which makes the remaining 15 rather than 21.
 
 ## 5. Unresolved disagreements between agents, and between agents and briefs
 
@@ -362,6 +387,26 @@ Recorded as pairs. **None is adjudicated here.**
 ### 60. the three epoxy lookup-table rows
 - **A:** my brief, and petrochem-chemicals before it: retarget these rows
 - **B:** silicon-fab agent: all three are DEAD — "epoxy moulding compound", "moulding compound" and "epoxy resin" each fire on ZERO inputs tree-wide. The live row is the bare string "epoxy" -> chem.epoxy, a process, 42 hits, which no retarget can fix. This is the sixth confirmation that a row must be checked for firing before a retarget is recommended.
+
+### 61. "the note is newer than the edge arrays" — the rule step 2 of the plan rests on
+- **A:** logic-bipolar (5 of 5) and peripherals-tv (two notes that disown their edges), recorded by me as the single most actionable finding and authorised as plan step 2: make `note` authoritative over `from`/`inputs`
+- **B:** chassis-keyboard agent: FALSE FOR PROSE. c64.keyboard.cable note warns against a "24-conductor count and 24-pin header" that no longer exists — the TEXT was repaired and the NOTE was left behind. The rule needs a qualifier: the note is newer than `from`/`inputs`, but OLDER than an already-repaired description. So the ordering is description > note > from/inputs, not note > description > from/inputs.
+
+### 62. the 21 note-with-outgoing-edge nodes
+- **A:** my recorded figure and the gate caveat: 21, all to be dissolved by hand in wave 4
+- **B:** chassis-keyboard agent: `from` on a note is 6 nodes, not 21, because `from` is derived from `inputs` (1,293 of 1,414 exact match tree-wide) and only 11 of 115 notes carry an `inputs` array at all. Skipping `kind: note` in build.mjs closes 6 of the 21 with one line.
+
+### 63. c64.keyboard-switches.shift-lock.contact-wear
+- **A:** my brief to this agent: it has both a children and a from edge, and is one of the two 21 note leaks
+- **B:** chassis-keyboard agent: IT DOES NOT EXIST — I invented it. The only contact-wear is c64.connector-jacks.expansion-port.contact-wear, and it has children only. The real two notes carrying both relations are c64.keyboard-switches.shift-lock and c64.decor.
+
+### 64. the product-index cleanup list
+- **A:** my recorded list of 15 product indexes to dissolve, used as plan step 5
+- **B:** chassis-keyboard agent: the list NEEDS AN EXCEPTION CLAUSE. metal.copper.foil is a product index ("35 um PCB and 6-18 um capacitor foil") that reaches ~10 fragments and is DELIBERATE AND DISCLOSED — it says so and has .ra and .ed-drum children. A central cleanup following the list as written will delete a node that is doing correct work.
+
+### 65. the keyboard
+- **A:** one branch
+- **B:** chassis-keyboard agent: modelled TWICE. c64.keyboard.* is a bill of materials; c64.keyboard-switches.* in 33-passives-c carries the actual manufacturing. The two copies contradict each other on the legend route, the shift-lock mechanism and the key count, and 15 of 45 substance edges point at process nodes.
 
 ## 6. Contradictions in the source data, reported by agents
 
