@@ -130,14 +130,17 @@
     "step": {
       "family": "flow",
       "stored": [
-        "process->process"
+        "process->process",
+        "part->process",
+        "material->process"
       ],
       "upstream": "toward the mine",
       "arrow": "along the recipe",
       "test": "Is this the preceding stage of the same recipe?",
       "representation": "follows",
-      "note": "Stored as unordered `follows` edges; order is derived by topological sort. Recipes are DAGs -- glass batches and heat treatment have parallel prep steps -- so a single integer index would force a fake linearisation. See RELATIONS.md §9.5.",
-      "count": 404
+      "note": "Stored three ways, all meaning \"an operation in whose making I take part\". process->process is the recipe chain. part->process and material->process point from the thing being made at an operation in its manufacture, and are what lets a viewer expand a part and see its manufacturing flow. The round-2 removal from material->process was made when `step` had no legal storage there at all; it was restored after round 3 established that storage, and material->process keeps DELETE for the redundant-intermediate case because that reading scored 95%. ASYMMETRY FLAGGED: the two pairs now treat an intermediate stage differently. Not measured either way since the change.",
+      "count": 404,
+      "count_note": "404 process->process, plus part->process and material->process once those are classified."
     },
     "consumes": {
       "family": "flow",
@@ -309,11 +312,11 @@
     },
     "part->process": {
       "edges": 300,
-      "decide": "produces (reversed) | step | REFILE as part>material | about | DELETE",
-      "test": "Ask in this order. (1) Is the operation's OUTPUT a COMPONENT that goes into me -- a distinct object that ends up inside me? A dielectric-grading step makes a powder that goes into the capacitor; vacuum metallisation makes the film that IS the dielectric. Then REFILE as part>material and record it. BUT an operation whose output IS me, with a coating or a layer on it, is NOT a component: plating a PCB, plating screws, chroming an aerial, HASL on a board, enamelling a wire. Those are (3), never this. (2) Is the operation's output a MATERIALLY DIFFERENT precursor that becomes me? That is the one operation that gets `produces` -- exactly one per node. (3) Otherwise `step`: an intermediate stage, or a FINISHING operation whose output is the same object I already am. The board exists before the HASL dip. The screws exist before the zinc. (4) Commentary rather than a step -> `about`. (5) The edge is wrong -> `DELETE`.",
-      "note": "REWRITTEN TWICE. Round 1 scored 3/5. Round 2 scored 12/20, and SIX of the nine disagreements were the same plating pattern, which is what forced this version. Both agents independently gave the clause-1 discriminator: A wrote 'a coating or forming step whose output is me, finished, is not a component'; B wrote 'the operation's output is a component of me, rather than an operation whose output IS me with a coating on it'. The second clause is new and settles the residual: B's answer on all six plating rows was `produces`, justified as 'only modelled operation, therefore last' -- which is the trap both agents named independently: 'last MODELLED operation' degenerates to 'only modelled operation' and promotes finishing steps to producers. Finishing is `step`.",
-      "never_default_to_produces": "If no operation qualifies under clause 2, do NOT promote the last one. Report that nothing produces this node. 11 of 20 sampled parents had exactly one process child, and 4 of them (quartz growth, gap-scraping, film metallisation, wafer sort) are finishing or partial operations whose real producer is unmodelled. That is a content gap worth surfacing, not a relation to invent.",
-      "calibration": "3/5 round 1, 12/20 round 2"
+      "decide": "produces (reversed) | step | REFILE as part>material | DELETE",
+      "test": "Three real questions, then delete. (1) Is the operation's output a DISTINCT COMPONENT that ends up inside me -- a separate object? A grading step makes a powder that goes into the capacitor; a metallising run makes the film that IS the dielectric. -> `REFILE as part>material`, and record it. NOT this when the operation changes a FEATURE of me rather than adding a separate object: plating, chroming, HASL, enamelling, potting, blackening, etching, printing, forming. A layer on me is not a component of me. (2) DID I EXIST AS MYSELF BEFORE THIS OPERATION? No -- the operation brings me into being, and its output is me as finally sold -> `produces`, stored on the process. Exactly one per node. Yes -- it refines, finishes, coats, trims, grades or tests me -> `step`. The board exists before the HASL dip. The mask exists before photoetching. The transistor exists before die-attach. (3) Is the operation's output a LARGER OBJECT THAT MERELY CONTAINS ME -- a cable assembly containing the plug, a PSU containing a bolting regulator, pack-out closing a box of already-finished parts? -> `DELETE`. The containment is recorded on the larger node, so this edge is a duplicate of it. (4) Otherwise `DELETE`, including any child that is commentary rather than an operation: report it, because `about` only accepts a `note` target and kind changes are central.",
+      "never_default_to_produces": "If nothing qualifies under clause 2's first limb, do NOT promote the last one. Report that nothing produces this node. Measured worse than first recorded: 8 of 27 sampled parents ended with no producer (round 2 recorded 4 of 20). That is a content gap worth surfacing, not a relation to invent.",
+      "note": "ROUND 3: known-hard rows 8/9 = 89%, so the finishing clause works. FRESH rows 13/18 = 72%, and all six disagreements trace to three causes, two of them structural: (a) THREE of six were the assembly hole -- an operation whose output is a LARGER object containing the parent, which no clause covered; now clause 3. Both agents named it independently, and agent A said it 'arguably wants a contains-reversed relation, which the answer list does not offer'. (b) ONE was a kind bug: c64.mains.switch.contacts.copper-silver is named 'Copper and silver ores' and typed `part`. (c) TWO were clause 2 contradicting ITSELF: as written ('the operation's OUTPUT is a materially different precursor that becomes me') the output is the precursor, which selects an EARLY operation, while its own gloss ('the one operation that gets produces') requires the output to be me, which selects the LAST. Opposite answers wherever the output is an intermediate. Clause 2 is now keyed on 'did I exist as myself before this operation', which has no such ambiguity. Only one disagreement (process-node granularity: a node bundling a winding vs one bundling the whole capacitor) looks irreducible.",
+      "calibration": "3/5 round 1, 12/20 round 2, 21/27 round 3 (fresh 13/18)"
     },
     "material->process": {
       "edges": 301,
@@ -430,6 +433,24 @@
       "the_trap_both_agents_named": "\"Last MODELLED operation\" degenerates to \"only modelled operation\". Agent A: 11 of 20 parents had exactly one process child. Agent B used \"only modelled op, therefore last\" to justify `produces` on all six plating rows. Hence never_default_to_produces: if nothing qualifies, report it rather than promoting the last one.",
       "residual_uncertainty": "`step` was 35% of all answers across both rounds. It is the catch-all, and the catch-all is where a test's real uncertainty lives. Watch it in Wave 3.",
       "untested": "`about` was offered on part->process and used 0/20 times in either round. It is still unverified."
+    },
+    "round3": {
+      "known_hard": "8/9 = 89%. The finishing clause works. Both agents resolved seven plating rows by matching the carve-out, which is the clause doing its job rather than the agent reasoning.",
+      "fresh": "13/18 = 72%. FAIL at the 85% bar.",
+      "causes": {
+        "assembly_hole": "THREE of six disagreements. An operation whose output is a LARGER object containing the parent: cable assembly containing the plug, PSU containing a bolting regulator, pack-out closing a box of already-finished parts. No clause covered it. Now clause 3, answered DELETE, because the containment is already recorded on the larger node. Both agents named it independently.",
+        "clause_2_self_contradiction": "TWO of six. As written it selected an EARLY operation (output is the precursor); its own gloss selected the LAST (output is me). Re-keyed on \"did I exist as myself before this operation\", which is unambiguous.",
+        "kind_bug": "ONE. c64.mains.switch.contacts.copper-silver is named \"Copper and silver ores\" and typed `part`. Refining consumes ores.",
+        "irreducible": "ONE. Process-node granularity: a node bundling only the winding and a node bundling the whole capacitor get different answers from identical physics. The discriminator is how the author drew the node, not what happens in the factory."
+      },
+      "content_gaps": "8 of 27 sampled parents end with no producer, worse than the 4 of 20 recorded after round 2. The tree under-models the operation that brings many parts into being.",
+      "index_parents_leaked": "Agent A: c64.packaging and c64.mains are both index nodes and both appeared in the 300-edge part->process set, which contradicts the rule that index parents are centrally handled. The set needs filtering by _index_parents.",
+      "audit_rules_added": [
+        "produces_must_be_unique",
+        "every_entity_should_have_a_producer",
+        "answer_must_be_storable"
+      ],
+      "pattern_across_three_rounds": "Every round's deepest finding was STRUCTURAL, not editorial: four missing questions in round 1, a storage bug in round 2, two more storage bugs plus a self-contradictory clause in round 3. Agreement percentages hid all of them. 60% reads like unclear wording; it was twice an answer with nowhere to go."
     }
   },
   "edge_attributes": {
@@ -470,7 +491,8 @@
     "utility_typed_as_facility": "WARN until the 6 retypes land.",
     "ingredient_string_names_a_product_not_a_substance": "WARN. Measured: 63 of 155 curated rows in _ingredients.json give a string absent from the target node's name -- `\"iron ore\"` -> Hematite, `\"copper ore\"` -> the Copper product index, `\"sodium dichromate\"` -> a process. Nine rows point at a process, three at a facility. See RELATIONS.md 7.3.",
     "produces_must_be_unique": "FAIL. Two operations both claiming `produces` for the same node means the tie-break was not applied. Agent B justified six plating edges as \"only modelled operation, therefore last\" -- exactly the failure this rule exists to catch.",
-    "every_entity_should_have_a_producer": "WARN. A part or material with process steps but no operation qualifying under part->process clause 2 means its real producer is unmodelled. 4 of 20 sampled parents were in this state. A content gap to surface, not a relation to invent -- see judgement_questions.part->process.never_default_to_produces."
+    "every_entity_should_have_a_producer": "WARN. A part or material with process steps but no operation qualifying under part->process clause 2 means its real producer is unmodelled. 4 of 20 sampled parents were in this state. A content gap to surface, not a relation to invent -- see judgement_questions.part->process.never_default_to_produces.",
+    "answer_must_be_storable": "FAIL. An edge assigned an answer whose relation cannot store that kind-pair is not a classification, it is a shrug. This is the check that would have caught `step` and `about` on part->process in round 3, and `step` on material->process in round 2. Mechanically checkable: every answer in a judgement question's `decide` list must name a relation whose `stored` list accepts the kind-pair. Run it in `relate.mjs plan`."
   },
   "open_questions": {
     "$comment": "All four of RELATIONS.md §11 are now DECIDED. Kept as a record so the reasoning is not lost, and so a later session can see what was settled and on what grounds.",
