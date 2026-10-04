@@ -61,48 +61,79 @@ Notes may only be the target of `about`. **An edge leaving a note is a defect** 
 Ten are stored. `made by` is **derived** from `produces` and is never stored —
 storing it would create two sources of truth for one fact.
 
-### Refinement family — finer ↔ coarser
+> **Correction, 2026-10-04.** This section previously listed only ten relations:
+> `made from` was missing entirely, despite being stored on 898 edges and being
+> load-bearing for the distinction below. It also gave `step` the opposite
+> direction to `_relation_schema.json`, which decided three edges in one branch
+> examination before an agent caught it. Both fixed. An agent found this by
+> reading this file against the schema — which is exactly what it is for.
 
-| relation | direction | test |
-|---|---|---|
-| `contains` | part → part, or node → member | is the target a distinct object that ends up inside me? |
-| `made of` | part → material | is the target a substance, in the shape I'd cut it from? |
-| `made by` | *derived* | the operation whose output I am |
+### The three directions
 
-**The distinction that keeps being got wrong.** `made of` and `made from` are
-different questions:
+These were conflated into one sentence in `RELATIONS.md` §3, and confusing them
+is how the viewer ended up drawing a supply chain as a nested tree.
+
+| | meaning |
+|---|---|
+| **storage** | which node holds the edge. Always the container or the consumer. |
+| **upstream** | the direction a reader walks to get back toward the mine. Reachability is defined on this. |
+| **arrow** | what the viewer draws. Refinement points outward from the object; flow points along physical movement. |
+
+### Refinement family — finer ↔ coarser, arrow points outward
+
+| relation | stored on | upstream | test |
+|---|---|---|---|
+| `contains` | `part→part`, `part→material`, `part→tool`, `tool→part`, `tool→tool` | downward | could you point at it inside the other thing? |
+| `made of` | `part→material`, `material→material` | downward | would a spec sheet for the parent list the target as a component? The target keeps its own chemical identity — a mixture, alloy, blend or formulation. |
+| `made from` | `material→material`, `part→material` | **toward the mine** | the input is transformed: reacted, reduced, melted into a network, alloyed or separated. **The target does NOT appear on the parent's spec sheet.** |
+| `made by` | *derived* from `produces* | — | the operation whose output I am |
+
+**The distinction that keeps being got wrong**, and it is the single most
+load-bearing pair in the taxonomy:
 
 > **`made of`** — *would a spec sheet list this as a component of me?*
 > **`made from`** — *is it the same substance in a different shape?*
 
-A copper wire is `made of` copper. A copper cathode is `made from` copper —
-skips the drawing stage, which is a `step`. Both edges are wanted; that is
-deliberate redundancy for visual convenience, not an accident.
+A copper wire is `made of` copper — copper is on the spec sheet. A copper
+cathode is `made from` copper — it skips the drawing stage, which is a `step`,
+and copper does not appear on the wire's spec sheet as "cathode". Both edges are
+wanted; that is deliberate redundancy for visual convenience, not an accident.
+
+Note the upstream direction differs between the two, which is the point: `made
+of` walks down into the object, `made from` walks back toward the mine.
 
 ### Flow family — the operations, and what they take and yield
 
-| relation | direction | test |
-|---|---|---|
-| `step` | process → the thing operated on | did I exist as myself before this? |
-| `consumes` | process/tool/facility → material | does it go in? |
-| `produces` | process → material or part | am I its output? |
+| relation | stored on | upstream | test |
+|---|---|---|---|
+| `step` | `part→process`, `process→process`, `material→process` | toward the mine | is this the preceding stage of the same recipe? |
+| `consumes` | `process→material`, `tool→material`, `facility→material` | toward the mine | does it go in? reagents, feedstock, consumables, utilities |
+| `produces` | `process→material`, `process→part` | away from the mine | am I its output? |
 
-`consumes` takes a **substance** only. `process → part` is mechanically `uses`
-or `produces`, never `consumes` — a process melts and reacts substances; the
-objects in its shop are its equipment or its products. This was decided
-explicitly and zero edges need the alternative.
+**`step` is stored on the thing being operated on, pointing at the process** —
+`part → process`, not `process → part`. The earlier version of this document had
+it backwards. If a node is operated on, the edge lives on that node.
 
-`produces` is **exactly one per node.** A node with six producers means the
-modelling is wrong, not that the node is well-supplied.
+`consumes` takes a **substance** only. `process → part` has no legal relation at
+all, which three separate branch examinations reported independently: a process
+melts and reacts substances; the objects in its shop are its equipment
+(`uses`) or its products (`produces`). This is a known open gap, not a settled
+question.
+
+`produces` is **at most one per node.** A node with two producers means the
+modelling is wrong. Note that only **nickel** has a genuine two-route case in
+the tree; gold, lead, silver and zinc have *consecutive stages* mis-encoded as
+parallel producers. Zinc's *process chain* is the template, not its `produces`
+edges.
 
 ### Context family — where things happen, and who owns them
 
-| relation | direction | carries connectivity? |
+| relation | stored on | carries connectivity? |
 |---|---|---|
-| `uses` | process → tool | **yes**, downward |
-| `at` | node → facility or site | no |
-| `owned by` | node → org | no |
-| `about` | note is the *target* only | no |
+| `uses` | `process→tool` | **yes**, downward |
+| `at` | `node→facility` or `site` | no |
+| `owned by` | `node→org` | no |
+| `about` | a `note` is the **target** only | no |
 
 `uses` carries connectivity because a stamping press had to be built. Measured
 cost: zero — the 195 tool nodes it admits are already reachable.
@@ -145,6 +176,21 @@ and the structure has not.
   operation sitting below the thing it operates on.
 - A node whose **name lies** — the id or the display name contradicts the
   description. (`chem.styrene.benzene` is named "Benzene".)
+
+### CHAIN — right substance, wrong end of its own chain
+
+Added after a branch examination found the alumina case that none of the other
+classes fit. **The substance is right, the grade is right, and the edge is
+attached to the wrong step** — specifically, the consumer sits *upstream* of the
+node it consumes.
+
+> Gallium is recovered from Bayer liquor, which is upstream of the alumina
+> precipitation. So the node that consumes the alumina sits *before* the alumina
+> exists. No retarget and no grade split fixes this. The edge has to move to the
+> step where the substance actually exists.
+
+This is distinct from "wrong substance" and from "wrong grade", and both of
+which I misdiagnosed it as, twice, in two separate agent briefs.
 
 ### GHOST — a node that should not exist, or exists for the wrong reason
 
