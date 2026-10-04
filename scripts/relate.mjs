@@ -76,8 +76,10 @@ const FIX_WHY = new Map([...FIXES.delete ?? [], ...FIXES.reassign ?? []].map((d)
 const HUB_RULES = Object.fromEntries(
   /* `$comment` and `_fanin` are documentation keys, not node ids. Filtering only
    * on `_` let `$comment` through, which made the count read 6 instead of 5 and
-   * would have made every audit run check a non-existent node. */
-  Object.entries(SCHEMA.hub_rules ?? {}).filter(([k]) => !k.startsWith('_') && !k.startsWith('$')),
+   * would have made every audit run check a non-existent node. Phase 0: also
+   * exclude schema meta keys (applies_to_sources, scope notes); only node ids
+   * (containing a dot) are hub targets. */
+  Object.entries(SCHEMA.hub_rules ?? {}).filter(([k]) => !k.startsWith('_') && !k.startsWith('$') && k.includes('.')),
 );
 
 /** kind-pair -> { disposition, detail }. Judgement questions are consulted
@@ -101,7 +103,16 @@ function classify(e) {
   if (K(e.child) === 'note') return { disposition: 'about', why: RELATIONS.about.test };
 
   const hub = HUB_RULES[e.child];
-  if (hub) return { disposition: hub.relation, why: `hub rule: ${hub.why}` };
+  if (hub && hub.relation) {
+    // Phase 0 (Wave 3 §5-8/31/36): hub_rules fires only for storable sources.
+    // consumes stores process/tool/facility->material only; other sources fall
+    // through to judgement/mechanical so answer_must_be_storable never fails.
+    // Also never fires on a `children` containment edge (delivery infrastructure).
+    const allowed = SCHEMA.hub_rules?.applies_to_sources ?? ["process", "tool", "facility"];
+    const srcKind = K(e.parent);
+    if (allowed.includes(srcKind) && e.was !== "children") return { disposition: hub.relation, why: `hub rule: ${hub.why}` };
+    // else fall through to judgement below
+  }
 
   const j = JUDGEMENTS[e.pair];
   if (j) return { disposition: 'JUDGE', q: e.pair, rel: j.decide.split('|').map((s) => s.trim()), why: j.test, note: j.note };
@@ -374,11 +385,11 @@ function cmdAudit() {
     }
   }
   /* The note-dissolution backlog is reported with its count rather than as a bare
-   * FAIL, because 21 notes with outgoing edges is a KNOWN, SCHEDULED piece of
-   * work (RELATIONS.md section 9, wave 4.2) and not a surprise. It still fails,
-   * so it cannot be forgotten -- but the count makes a change in it visible
-   * between runs, which a bare FAIL did not. */
-  const NOTE_BACKLOG_KNOWN = 21;
+   * FAIL, because 17 notes with outgoing edges is a KNOWN, SCHEDULED piece of
+   * work (RELATIONS.md section 9, wave 4.2) and not a surprise. Phase 0: was 21;
+   * the build.mjs kind:note from-guard closed 4 from-leaks, leaving 15 children-
+   * holders + 2 dual-relation notes. Still fails so it cannot be forgotten. */
+  const NOTE_BACKLOG_KNOWN = 17;
   let noteOut = 0;
   for (const id of ids) {
     if (K(id) !== 'note') continue;

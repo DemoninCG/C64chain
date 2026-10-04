@@ -91,8 +91,8 @@ is how the viewer ended up drawing a supply chain as a nested tree.
 **The distinction that keeps being got wrong**, and it is the single most
 load-bearing pair in the taxonomy:
 
-> **`made of`** — *would a spec sheet list this as a component of me?*
-> **`made from`** — *is it the same substance in a different shape?*
+> **`made of`** — *would a spec sheet list this as a component of me, or is the parent the SAME substance as the target in a different shape?* (mixture, alloy, blend, formulation; identity kept)
+> **`made from`** — *was the input transformed (reacted, reduced, melted into a network, alloyed, separated) so the target does NOT appear on my spec sheet?*
 
 A copper wire is `made of` copper — copper is on the spec sheet. A copper
 cathode is `made from` copper — it skips the drawing stage, which is a `step`,
