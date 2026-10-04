@@ -22,12 +22,7 @@ Edges are typed now (judgement 0, UNMAPPED 0, ASSERT-FAIL 0); what remains is
   grinding-wheel); process>part wafer steps (LOCOS contact etch);
   part-kind feedstock (solder wire, CZ seed); geology-contains
   (oil column holds crude).
-- **Duplicate-substance merges** (BLOCKERs, own pass): metal.tantalum vs
-  powder (capacitor subtree already split across both); metal.barium vs
-  barium.titanate (barite chain under a titanate name); quartz-crystal
-  DONE (merged into mb.crystal.y1); chem.abs.c64-case vs c64.case;
-  chem.silicone.polymer.key-domes vs 40-chassis node; 6-node cassiterite
-  family + solder-alloy tin-source.
+- **Duplicate-substance merges** DONE 2026-10-05 (8 via `_proposals` arbitration, one pass, `838092a`): tantalum.powder->tantalum + columbite-ore->columbite + ore-to-powder->separation (64-metals-d new proposals; Pellet/Anodisation/Counter-electrode/In-1982 + silver timing adopted; particle/bipolar/handful conflicts->note/corrected (NOT tantalum per repaired passives); anode/wire/dielectric/packaging/supply-crisis/thorium/tailings/concentrator/mine/pegmatite/MnCl2 untouched (passives owner); no scope change (correctly peripheral era-real, survivors chain)); barium->titanate + rig.barite->drilling-mud + tin-source.cassiterite->cassiterite (60-metals appended; dielectric kept, ore/market/use already live, density+insolubility union; distinct levels no-merge: gravel/alluvial process/lode facility/greisen/topaz gangue/tin ingot, tin-source sentence flagged for petrochem owner; no BLOCKERs); ABS-case->case + key-domes->domes (40-chassis appended; ABS mass + two-shot as note (conflict two mouldings); Travel + force note (keep survivor), 8-12mm dropped). Facts unions central serial (mover post-condition, defs-survive, conflicts->note, 7a dropped, handful corrected; 0 duplicate keys, non-ASCII 0). Tantalum _ingredients retarget (powder deleted). Load-bearing 92->91, chain 700->695, total 837->832. Nodes 2464->2456 (-8). Next: schema-gap ruling (solder-wire/seed 2 chain FAIL parts to force).
 - **Orphan backlog**: ~851 nodes unreachable under the directed walk;
   ~230 sit visible in unlinked.catalogue. Re-home cascade roots first
   (branch heads detached by dissolution: chem/petrochem routes,

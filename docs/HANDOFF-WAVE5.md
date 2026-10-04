@@ -130,6 +130,6 @@ one-subtree expansion is required, not optional.
 - [x] Petroleum trunk pass (section 4.1) + rebuild + orphan recount. DONE 2026-10-04 (`cd8be3d`): distillation produces naphtha, separation produces petroleum, drop spurious crude consumes; orphans 851->835; all gates green except scheduled 9 notes FAIL.
 - [x] Scope markers + catalogue-blessing + load-bearing orphan gate. DONE 2026-10-04 (policy DECIDED per product vision): `data/_scope.json` (explicit orphan roots, inheritance via scope-links, notes/orgs default context, reached always chain), `docs/SCHEMA.md` scope, `scripts/build.mjs` merge + byScope, `scripts/relate.mjs audit` gate (FAIL 93 chain load-bearing = parts 16 + consumed 77; WARN 700 chain backlog; INFO 111 context + 24 alternate blessed + 835 raw informational). Gates green except 2 FAIL (9 notes scheduled + 93 load-bearing backlog).
 - [x] TODO-10 substance nodes, then re-home their waiting edges. DONE 2026-10-05 (`d566967`, 23 nodes + 26 re-homes + 9 _ingredients).
-- [ ] Duplicate-merge pass via `_proposals`.
+- [x] Duplicate-merge pass via `_proposals`. DONE 2026-10-05 (`838092a`, 8 merges, no BLOCKERs, facts unions, tantalum ingredients fix).
 - [ ] Schema-gap ruling (extend or permanent catalogue).
 - [x] Ownership chain DONE 2026-10-05 (`d566967`, 6 orgs + MOS/Kentron + makers split; 8/8 exist, drawable) + viewer (Wave 5) on `dump-edges` REMAINING (separate, independent).
