@@ -1916,7 +1916,13 @@
           "era": "1982-1984",
           "confidence": "medium",
           "inputs": [],
-          "note": "Not established: resin bonding and wet use of this wheel, and the largely-synthetic shock-wave-graphite versus natural-diamond-for-dressing split in 1982."
+          "note": "Not established: resin bonding and wet use of this wheel, and the largely-synthetic shock-wave-graphite versus natural-diamond-for-dressing split in 1982.",
+          "edges": [
+            {
+              "to": "si.wafer.diamond.grit",
+              "rel": "contains"
+            }
+          ]
         }
       ],
       "note": "Not established: a lens or plano-convex dome form for the Y1 blank, the 0.07 mm centre and 0.1 mm edge thickness figures, and the reduced sensitivity to surface damage and mounting-point pressure.",
@@ -2506,7 +2512,13 @@
           "inputs": [
             "facility.electricity"
           ],
-          "note": "Not established: the 0.03-0.05 mm resin-bonded diamond wheel thickness. Nothing consulted documents dicing saws for resonator plates."
+          "note": "Not established: the 0.03-0.05 mm resin-bonded diamond wheel thickness. Nothing consulted documents dicing saws for resonator plates.",
+          "edges": [
+            {
+              "to": "si.wafer.diamond.grit",
+              "rel": "contains"
+            }
+          ]
         },
         {
           "id": "mb.crystal.y1.cutting.cleanroom",

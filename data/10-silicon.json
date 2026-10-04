@@ -2219,7 +2219,13 @@
       ],
       "confidence": "medium",
       "children": [],
-      "note": "Not established: the blade diameter, rotational speed, kerf and grit-size figures, or the date on which resin-bonded blades displaced metal-bonded ones. Diamond-wire sawing is the documented modern method; the OD- and ID-saw numbers given here are not in any source available. Kerf and the 0.7 mm as-sawn thickness remain uncertain."
+      "note": "Not established: the blade diameter, rotational speed, kerf and grit-size figures, or the date on which resin-bonded blades displaced metal-bonded ones. Diamond-wire sawing is the documented modern method; the OD- and ID-saw numbers given here are not in any source available. Kerf and the 0.7 mm as-sawn thickness remain uncertain.",
+      "edges": [
+        {
+          "to": "si.wafer.diamond.grit",
+          "rel": "contains"
+        }
+      ]
     },
     "si.wafer.diamond": {
       "id": "si.wafer.diamond",
@@ -2255,6 +2261,11 @@
           "to": "metal.graphite.electrode",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "si.wafer.diamond.grit",
+          "rel": "produces",
+          "role": "product"
         }
       ]
     },
@@ -3531,7 +3542,13 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Die_singulation"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "edges": [
+            {
+              "to": "si.wafer.diamond.grit",
+              "rel": "contains"
+            }
+          ]
         }
       ]
     },
@@ -4865,6 +4882,36 @@
           "to": "chem.silane",
           "rel": "made from",
           "basis": "inferred"
+        }
+      ]
+    },
+    "si.wafer.diamond.grit": {
+      "id": "si.wafer.diamond.grit",
+      "name": "Industrial diamond grit (saw-grade)",
+      "description": "Synthetic saw-grade diamond grit for wafering saws, dice tools and grinding wheels. Graphite pressed and sintered with Fe/Co/Ni catalyst at 5-6 GPa and 1300-1600 C in a belt press; the largest early stones were 0.15 mm across, too small for jewelry but usable in industrial abrasives. Grit is pointable inside finished blades (impregnated, not eaten like coolant), so tools contain it.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1950s-1982",
+      "facts": [
+        {
+          "label": "Synthesis",
+          "value": "5-6 GPa, 1300-1600 C, Fe/Co/Ni catalyst (belt press)"
+        },
+        {
+          "label": "Early stone size",
+          "value": "0.15 mm across (abrasive grade, not gem)"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Synthetic_diamond",
+        "https://en.wikipedia.org/wiki/Diamond"
+      ],
+      "confidence": "medium",
+      "note": "Established: synthetic saw-grade grit belt process + abrasive use (same passage as si.wafer.diamond process note). Not established: which maker supplied wafer-slicing blades in 1982.",
+      "edges": [
+        {
+          "to": "metal.graphite.electrode",
+          "rel": "made from"
         }
       ]
     }

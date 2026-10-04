@@ -65,12 +65,13 @@
         "part->tool",
         "tool->part",
         "tool->tool",
+        "tool->material",
         "site->part"
       ],
       "upstream": "downward",
       "arrow": "outward from the object",
       "test": "Could you point at it inside the other thing?",
-      "note": "A machine contains its machines: Steam turbine -> Surface condenser, Generator, GSU. All 30 of today's tool->tool edges are this and were being mis-filed as site structure. site->part ADDED Wave 4.5: a fixture OF a site (access floor panel) is contained by it; the site->part judgement offers contains and nothing else stores it.",
+      "note": "A machine contains its machines: Steam turbine -> Surface condenser, Generator, GSU. All 30 of today's tool->tool edges are this and were being mis-filed as site structure. site->part ADDED Wave 4.5: a fixture OF a site (access floor panel) is contained by it; the site->part judgement offers contains and nothing else stores it. tool->material ADDED Wave 5 (schema-gap ruling): an impregnated/filled tool contains its permanent material (diamond grit in saw/dice/grinding-wheel; pointable grit IN blade, not consumable eaten like drill bits/coolant; fitting already recorded elsewhere still DELETEs).",
       "count": 503
     },
     "made of": {
@@ -317,9 +318,9 @@
     },
     "tool->material": {
       "edges": 87,
-      "decide": "consumes | DELETE",
-      "test": "Does the operation TAKE the material in as a consumable the machine eats (drill bits, coolant, grinding wheel, silane charge)? -> `consumes`. Or is the target a permanent fitting of the machine (a motor, a guard, a cabinet) or a mis-typed process? -> DELETE and report (fitting is already recorded on the larger node; a process target is a kind bug). DECIDED Phase 0: `uses`/`contains` are NOT offered here because neither stores tool->material, so every non-DELETE answer failed answer_must_be_storable.",
-      "note": "REWRITTEN Phase 0 per Wave 3 §5-28. Old answers `uses | contains` had no legal storage for this pair; only `consumes` (tool->material is in consumes.stored) is storable."
+      "decide": "contains | consumes | DELETE",
+      "test": "Could you point at it inside the tool (permanent impregnated/filling: diamond grit IN saw/dice/grinding-wheel)? -> `contains` (ADDED Wave 5 schema-gap ruling; tool->material now storable). Does the operation TAKE the material in as a consumable the machine eats (drill bits, coolant, grinding wheel, silane charge)? -> `consumes`. Or is the target a permanent fitting of the machine (a motor, a guard, a cabinet) or a mis-typed process? -> DELETE and report (fitting is already recorded on the larger node; a process target is a kind bug). DECIDED Phase 0: `uses` is NOT offered here because it has no legal storage for this pair.",
+      "note": "REWRITTEN Phase 0 per Wave 3 §5-28 (old `uses | contains` had no storage; only `consumes` storable). EXTENDED Wave 5 (schema-gap ruling): `contains` added with tool->material storage for impregnated/filled tools (diamond blades contain grit, pointable; consumable-eaten still `consumes`; fittings still DELETE)."
     },
     "facility->material": {
       "edges": 64,
