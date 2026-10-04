@@ -570,7 +570,7 @@
     "schema_gaps_found": {
       "no_wafer_material_node": "si.wafer is kind part, so \"the wafer being processed\" is not a legal `consumes` target. Wafer-level process steps are correct in substance and have nowhere to point. Needs a wafer material node.",
       "no_home_for_durable_tooling": "`uses` targets tools only, so metal.aluminum.extrusion -> metal.die-steel (a die is capital equipment, not consumed) has no legal relation. Three edges.",
-      "inputs_dead_ends": "About 20% of all `inputs` entries resolve to nothing and produce NO edge; the substance is absent from the tree and nothing reports it. Worst: phosphine 13x, arsine 8x -- both ALREADY recorded in TODO.md section 8 as the worst cases of a normalisation bug that was never fixed. Concentrated in 90-peripherals (220), 40-chassis (160), 80-industry (133)."
+      "inputs_dead_ends": "About 20% of all `inputs` entries resolve to nothing and produce NO edge; the substance is absent from the tree and nothing reports it. Worst: phosphine 13x, arsine 8x -- both ALREADY recorded in TODO.md section 8 as the worst cases of a normalisation bug that was never fixed. Concentrated in 90-peripherals (220), 40-chassis (160), 80-industry (133). CORRECTED: see wave2.schema_gaps_confirmed -- the phosphine/arsine examples were pre-fix and both resolve."
     },
     "content_bugs": [
       "metal.hall-heroult.dross has inputs [\"metal.alumina\",\"metal.carbon.anode\"] -- both are the POT's feed. Dross is a waste stream with no node at all.",
@@ -601,7 +601,7 @@
       "no wafer material node -- si.wafer is kind part, so wafer-level process steps are correct in substance and have nowhere legal to point",
       "no home for durable tooling -- `uses` targets tools only, so metal.aluminum.extrusion -> metal.die-steel (a die is capital equipment, not consumed) has no relation at all",
       "no relation for \"consumed as ambience or forming gas\" -- bipolar.process.sinter -> facility.nitrogen, and forming gases generally",
-      "about 20% of all `inputs` entries resolve to nothing and produce NO edge; the substance is absent from the tree and nothing reports it. Worst: phosphine 13x, arsine 8x, both ALREADY recorded in TODO.md section 8 as an unfixed normalisation bug"
+      "CORRECTED 2026-10-04. I recorded this as an unfixed normalisation bug. It is FIXED: scripts/build.mjs:376 implements the fix and TODO.md section 8 documents it. Phosphine resolves with 21 inbound edges (1 children + 20 from) and arsine with 12 (1 + 11); diborane has 4. The 13x and 8x figures are PRE-FIX and I carried them into four agent briefs. The real defect is different and smaller: mb.cpu.fe.nplus claims a phosphorus diffusion consumes silane, and six nodes cite the phosphine leaf while nine cite an index node instead. Create nothing -- doing so would duplicate a working node."
     ],
     "content_bugs_found": [
       "metal.hall-heroult.dross has inputs [\"metal.alumina\",\"metal.carbon.anode\"] -- both are the POT's feed. Dross is a waste stream with no node at all.",
@@ -702,6 +702,51 @@
       "data/90-peripherals.json line ~2077 contains a literal `undefined` at the start of peripheral.tv.tuner.can.zinc's note.",
       "facility.gases.note contains the only stray control character in all 2,448 nodes -- a JSON \\f escape turning \"from\" into a form feed plus \"rom\".",
       "`ict from facility.test-equipment` is a CIRCULAR edge caused by the \"spring probe\" lookup row. Two sibling rows (argon, oxygen -> facility.gases) are the same bug and are NOT in the wave-2 suspect list, so the ingredient audit missed them."
-    ]
+    ],
+    "BRIEF_DEFECTS_I_OWN": [
+      "THE BIG ONE: I told every agent that \"the tree stores only `children` and `from`\". That is true of public/tree.json and FALSE of data/*.json -- `from` is DERIVED AT BUILD TIME, so no fragment contains a `from` key at all. An agent reading 40-chassis.json in the source file the brief points it at sees 181 resolved substance edges missing. My wording invited exactly the wrong reading.",
+      "My node-count table in the manifest counted NODES per fragment and EDGE SLOTS separately without saying so, and an agent read the two as comparable.",
+      "GOLDEN-IDEA.md 5 lists \"equipment typed part\" but not the converse, and does not say that `kind` is the STRONGER signal when a name and a description disagree. One agent found the real pattern is name AND kind both disagreeing with the description, and that is more detectable than the name case alone.",
+      "The severity bands have no row for \"the node is a plant\", which is one edit with family-wide blast radius.",
+      "`facts` is not on the untrusted-field list and should be: chem.abs.grafting.initiator records a loading figure as WITHDRAWN in a fact while its description and note still state it.",
+      "GOLDEN-IDEA.md does not cover the case where a note DISOWNS the edge beneath it, which reads as an authorisation and is not one. Two such notes exist and both were initially read as permissions.",
+      "I told agents \"notes are usually more reliable than descriptions\". Too weak, and the refinement matters: note COVERAGE runs OPPOSITE to precision in the passives fragments, so the lesson is \"write the note that contradicts your own edge\", not \"write a note\"."
+    ],
+    "SCHEMA_GAPS_NOW_CONFIRMED_BY_TWO_OR_MORE_AGENTS": {
+      "process -> part has no judgement question and no legal relation": "Reported independently by the capacitors agent (alu.winding > anode-foil/cathode-foil), the resistors agent (11 process -> process `from` edges plus process -> part), and the chassis agent (10 such edges in its scope). This is the single most-repeated gap in the whole examination and it is MINE to fix -- I declared in narrow_kinds that process->part becomes mechanical `uses` or `produces`, and in practice the edges have nowhere to go.",
+      "material -> material has no answer for \"the parent is a class, the target is one alternative\"": "6 nodes in the chassis scope, 2 with disjoint feedstocks. Compounds with no relation for \"one of these alternatives\".",
+      "no question or audit rule for the same parent>child pair recorded in BOTH children and from": "144 tree-wide, 8 in industry alone, 55 pairs in chassis alone. Fourth appearance of the pattern \"a question that cannot say this edge is wrong\".",
+      "no node for semiconductor layers": "field oxide, epilayer, diffusion products, films. This -- not the missing wafer MATERIAL node -- is what produced all nine metal.silica edges in the logic branch. A wafer material node would be a second si.wafer, and one already exists as a bad duplicate.",
+      "no slot for a layout feature": "A guard ring is a shape drawn in a mask. That is a wrong ontology, not wrong granularity, and GOLDEN-IDEA.md 5 assumes everything is granularity-wrong."
+    },
+    "NEW_FINDINGS_FROM_LATE_REPORTS": {
+      "chem.abs.grade": "A bare leaf with 10 inbound edges tree-wide, 8 of them from chassis, and NO children, NO from and NO inputs. It is the tree's most-used dead end and it is the answer to \"what is the case made of\". Invisible to anyone reading 70-petrochem. Nobody had found it in four waves.",
+      "chem.abs.c64-case duplicates c64.case": "No edges, partly contradictory description.",
+      "from is derived, so the substance layer is invisible in the source files": "The 181 resolved substance edges in 40-chassis exist only in tree.json. Any audit that reads data/*.json sees a tree with no substance layer at all.",
+      "_relation_schema.json and tree.json disagree on chem.propylene.polymerisation kind": "Schema/tree drift, and one recommended fix depends on which is right.",
+      "c64.decor is typed note with 7 outgoing edges": "A decoration branch typed as commentary. Only `about` may point at a note.",
+      "c64.case contains the mould and the press that make it": "Containment running backwards, on the best-written branch in the tree.",
+      "process -> part edges have spread into 40-chassis": "11 of them, and in 7 a correct material node already exists one hop below the target. The kind error found in 70-petrochem in wave 2 is no longer confined to it.",
+      "metal.die-steel and chem.rubber are product-index instances not on any list": "\"Tool steel: SKD61 / H13 / D2, the moulds and the dies\" and \"Elastomers: natural rubber, neoprene, EPDM\".",
+      "the deinking claim needed correcting": "The string \"surfactant\" DOES resolve via _ingredients.json, so it is a wrong edge rather than a lost substance, and the target's description shows the three-branch union was deliberate. That makes it SHAPE (split a node), not BREAK.",
+      "c64.packaging still missing from _index_parents": "Round 3 noted it should be added. Still not added."
+    },
+    "ROUTE_HEAD_DETECTOR": {
+      "status": "Built and sanity-checked. READ-ONLY, in the temp dir. Three iterations, and the iterations are the interesting part.",
+      "v1_failed": "Fired on 659 of 2,448 nodes. Its structural signals were worthless: \"kind is process and the name lacks a verb\" hits almost every process, and \"no material child\" hits any process whose children are processes, which is normal. Top of the list was si.litho, metal.steel.caster, metal.tin.plating -- all perfectly good nodes.",
+      "v2_failed": "Gated on inbound traffic and MISSED 7 of the 14 instances agents had already found by hand. Traffic conflates \"important\" with \"wrong\": metal.sodium has 2 inbound and should still die, while si.litho has 10 and is legitimate.",
+      "v3": "93 distinct nodes across three classes, and it FINDS 17 of the 20 hand-reported instances. The 3 misses are instructive: chem.photoresist (\"Photoresist chemistry\" -- no colon), metal.sodium (2 inbound), and chem.polyamide (not in the tree; my own prompt invented it).",
+      "the_one_thing_that_works": "Colon items that match the node's own children mean a family/index node. Same punctuation as a stage description and the opposite meaning: \"Copper: track, winding wire, foil, contacts\" is an index, while \"Photolithography: coat, bake, expose, develop\" is a process describing its own stages. Only the children table tells them apart. But requiring that match EXCLUDES metal.copper, whose list is applications rather than members -- so it is recorded as a flavour label, not used as a filter.",
+      "honest_limitation": "Class 2 contains false positives by construction -- si.litho is in it and is a legitimate stage grouping. And facility.foundries, an org that is really a list of places, is lexically invisible (\"The Commodore supply-chain geography\": no colon, no list) so it is SEEDED from a report rather than detected. Stated rather than hidden. The output is an inventory with reasons for a central decision, not a verdict.",
+      "blocked_on": "37 of the 93 flagged nodes live in a file an agent is examining right now (22 in 70-petrochem, 9 in 90-peripherals, 4 in 40-chassis, 2 in 50-power). Detecting is done; acting is held until those reports land.",
+      "metal_silica_location_correction": "I told agents that \"several\" metal.silica edges land on electronics-chemical nodes, and that petrochem therefore blocks the silicon cleanup. An agent checked: NONE of the 51 land in 70-petrochem, 55-chem-gaps, or 10-silicon. There is no petrochemical edge to re-home, and petrochem does not block that work."
+    },
+    "SCHEMA_GAPS_BLOCKING_THE_GATE": {
+      "unmapped_cannot_reach_zero": "Four kind-pairs occur 13 times in the electronics-chemicals branch with NO judgement question declared: material->tool, material->facility, process->note, note->note. So `relate.mjs plan` cannot report unmapped 0 for that branch, and the gate I have been asserting (unmapped 0) is not currently a real constraint on the whole tree.",
+      "note_backlog_cannot_converge": "The 21 notes with outgoing edges will not converge until the schema says ONCE whether a child of a note is DELETE or about. Every agent meets this and each invents an answer.",
+      "ingredient_rows_may_not_fire": "Five of the six _ingredients.json strings I named are DEAD ROWS -- no node carries them in inputs -- so retargeting them changes nothing. I should have had agents check whether a row fires BEFORE recommending a retarget; four no-op edits were otherwise requested. There are 26 process-target rows, not the 22 I wrote.",
+      "chem_gaps_comment_is_stale": "55-chem-gaps.json own $comment says glass fibre is reachable only via unlinked.catalogue and points at an mb.pcb.laminate.cloth.fibre.* duplicate. Neither is true: glass fibre has 18 other inbound edges and that subtree does not exist."
+    },
+    "PHOSPHINE_WARNING": "DO NOT create a phosphine or arsine node. Both resolve. An agent that had trusted my brief instead of checking would have created duplicates of working nodes -- which is exactly the failure mode this whole pass exists to prevent, and it was introduced by me."
   }
 }
