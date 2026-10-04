@@ -974,6 +974,10 @@
           "to": "metal.limestone",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "metal.copper.smelting",
+          "rel": "step"
         }
       ]
     },
@@ -1092,6 +1096,10 @@
           "rel": "produces",
           "role": "co-product",
           "basis": "documented"
+        },
+        {
+          "to": "metal.copper.concentrate-handling",
+          "rel": "step"
         }
       ]
     },
@@ -1283,6 +1291,15 @@
           "to": "metal.xanthate",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "metal.copper.concentrate",
+          "rel": "produces",
+          "role": "product"
+        },
+        {
+          "to": "metal.copper.grinding",
+          "rel": "step"
         }
       ]
     },

@@ -3018,49 +3018,6 @@
         }
       ]
     },
-    "metal.barium-titanate-capacitor": {
-      "id": "metal.barium-titanate-capacitor",
-      "name": "The ceramic capacitor and its dielectric classes",
-      "description": "The finished use. A 1982 C64 mainboard carries perhaps 30-60 ceramic capacitors, mostly small discs and a few multilayer blocks. The disc is a pressed or cast barium titanate body, sintered at 1250-1350 C, silver-coated on both faces and fired to make the electrodes, and dipped in an epoxy or phenolic encapsulant. The multilayer capacitor stacks hundreds of microns-thick dielectric layers with internal nickel or palladium electrodes, screen-printed and co-fired - a technology that was genuinely new in 1982 and was the reason a 10 nF 50 V part started to fit in a 1.6 mm-tall package. The dielectric classes are named by their temperature coefficient: X7R and Z5U for the general-purpose 1980s parts, Y5V for the high-capacitance low-stability ones.",
-      "kind": "part",
-      "category": "metals",
-      "era": "1982",
-      "confidence": "medium",
-      "inputs": [],
-      "facts": [
-        {
-          "label": "Classes in 1982",
-          "value": "X7R (+/-15%, -55 to +125 C), Z5U (+/-20% or +80/-20%, +22 to +85 C), Y5V (+/-20% or +80/-20%)"
-        },
-        {
-          "label": "Disc sintering",
-          "value": "1250-1350 C"
-        },
-        {
-          "label": "Multilayer",
-          "value": "1-10 um dielectric layers, Ni or Pd internal electrodes, co-fired at 1200-1350 C in a reducing atmosphere, then re-oxidised"
-        },
-        {
-          "label": "Electrode",
-          "value": "silver for discs (fired at 700-900 C); base-metal nickel for multilayer"
-        }
-      ],
-      "note": "The class nomenclature and the sintering temperatures are standard; the count of ceramic capacitors on a C64 mainboard is an estimate and belongs to the passives agent.",
-      "sources": [
-        "https://en.wikipedia.org/wiki/Ceramic_capacitor"
-      ],
-      "children": [],
-      "edges": [
-        {
-          "to": "metal.silver.ingot",
-          "rel": "made of"
-        },
-        {
-          "to": "metal.barium.titanate",
-          "rel": "made of"
-        }
-      ]
-    },
     "metal.ferrite.bead": {
       "id": "metal.ferrite.bead",
       "name": "Ferrite bead: a small cylinder of NiZn or MnZn",
@@ -3765,7 +3722,13 @@
           "value": "electro-deposited foil had taken most of the PCB market; rolled foil kept the high end and the cathode business"
         }
       ],
-      "note": "Copper foil mills are Sendimir-type 20-high machines, the same family as the aluminium foil mill; medium confidence on which mill type made which foil in 1982."
+      "note": "Copper foil mills are Sendimir-type 20-high machines, the same family as the aluminium foil mill; medium confidence on which mill type made which foil in 1982.",
+      "edges": [
+        {
+          "to": "metal.copper.cathode",
+          "rel": "made from"
+        }
+      ]
     },
     "metal.palladium": {
       "id": "metal.palladium",
@@ -4893,6 +4856,16 @@
               "rel": "consumes"
             }
           ]
+        },
+        {
+          "id": "chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali.membrane-cell",
+          "name": "Membrane cell",
+          "description": "The cell type that replaced the mercury cell through the 1980s: a perfluorosulfonate membrane separating the anode and cathode, giving chlorine at 99.5%+ without the mercury the older cell had to manage. The conversion of the world's chlor-alkali from mercury to membrane was one of the largest and fastest industrial changeovers of the decade, and it was driven by mercury emissions - the same environmental logic that removed mercury from the PVC acetylene process.",
+          "kind": "tool",
+          "category": "fluids",
+          "era": "1980s",
+          "confidence": "medium",
+          "note": "The membrane cell commercialised from the late 1970s and displaced mercury cells through the 1980s-90s; the timetable varied by region."
         }
       ],
       "edges": [
@@ -4922,6 +4895,10 @@
         },
         {
           "to": "facility.electricity",
+          "rel": "consumes"
+        },
+        {
+          "to": "chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali.brine",
           "rel": "consumes"
         }
       ]
@@ -7712,6 +7689,11 @@
         {
           "to": "metal.sphalerite.mine",
           "rel": "at"
+        },
+        {
+          "to": "metal.sphalerite",
+          "rel": "produces",
+          "role": "product"
         }
       ]
     },

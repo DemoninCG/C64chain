@@ -1616,25 +1616,6 @@
         }
       ]
     },
-    "c64.keyboard-switches.keycap.abs.acrylonitrile.bismuth-catalyst": {
-      "id": "c64.keyboard-switches.keycap.abs.acrylonitrile.bismuth-catalyst",
-      "name": "Bismuth-antimony catalyst",
-      "description": "The ammoxidation catalyst is a bismuth molybdate or bismuth-antimony promoted silica. Bismuth came from bismuthinite, a comparatively rare ore worked chiefly in Bolivia and China, and it was a real bottleneck for acrylonitrile capacity in the 1980s.",
-      "kind": "material",
-      "category": "metals",
-      "era": "ancient",
-      "sources": [
-        "https://en.wikipedia.org/wiki/Bismuth"
-      ],
-      "confidence": "medium",
-      "note": "Bismuth supply was genuinely tight in the early 1980s and the ammoxidation catalyst industry was a significant consumer; the size of that demand is not quantified.",
-      "facts": [
-        {
-          "label": "Ore",
-          "value": "bismuthinite, Bi2S3"
-        }
-      ]
-    },
     "c64.keyboard-switches.domes.moulding.tool.spark-erosion.graphite-electrode": {
       "id": "c64.keyboard-switches.domes.moulding.tool.spark-erosion.graphite-electrode",
       "name": "Graphite tool electrode",
@@ -2154,39 +2135,6 @@
         },
         {
           "to": "c64.joystick.microswitches.plastic-case",
-          "rel": "consumes"
-        }
-      ]
-    },
-    "c64.keyboard-switches.keycap.abs.acrylonitrile": {
-      "id": "c64.keyboard-switches.keycap.abs.acrylonitrile",
-      "name": "Sohlo ammoxidation of propylene",
-      "description": "The acrylonitrile monomer is made by the Sohlo process: propylene, ammonia and oxygen are passed over a bismuth-antimony or bismuth-molybdenum catalyst to give acrylonitrile selectively. Propylene itself comes from steam cracking of naphtha, so the keycap of a C64 is roughly one and a half hydrocarbon molecules away from crude oil.",
-      "kind": "process",
-      "category": "passives",
-      "era": "1982-1984",
-      "sources": [
-        "https://en.wikipedia.org/wiki/Acrylonitrile"
-      ],
-      "confidence": "high",
-      "facts": [
-        {
-          "label": "Process",
-          "value": "Sohlo ammoxidation, ~425-500 C, fixed bed"
-        },
-        {
-          "label": "Yield",
-          "value": "~70-80 % selectivity on propylene"
-        }
-      ],
-      "inputs": [
-        "chem.acrylonitrile",
-        "chem.propylene"
-      ],
-      "children": [],
-      "edges": [
-        {
-          "to": "c64.keyboard-switches.keycap.abs.acrylonitrile.bismuth-catalyst",
           "rel": "consumes"
         }
       ]

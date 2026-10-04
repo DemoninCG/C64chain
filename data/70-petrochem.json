@@ -738,7 +738,13 @@
             }
           ],
           "confidence": "high",
-          "note": "Established: steam cracking thermally cracks naphtha LPG ethane propane or butane with steam in furnaces to make ethylene and propylene. Not established: the stated tonnages dates temperatures pressures yields and 1980s operating details as given."
+          "note": "Established: steam cracking thermally cracks naphtha LPG ethane propane or butane with steam in furnaces to make ethylene and propylene. Not established: the stated tonnages dates temperatures pressures yields and 1980s operating details as given.",
+          "edges": [
+            {
+              "to": "chem.ethylene.feedstock.ethane",
+              "rel": "consumes"
+            }
+          ]
         },
         {
           "id": "chem.ethylene.quench",
@@ -1066,6 +1072,10 @@
             {
               "to": "chem.propylene.sources.cracker-c3",
               "rel": "consumes"
+            },
+            {
+              "to": "chem.propylene.sources.cracker-c3.c3-recovery",
+              "rel": "step"
             }
           ]
         },
@@ -1319,13 +1329,22 @@
           "confidence": "low",
           "edges": [
             {
+              "to": "chem.acrylonitrile.sovere.byproducts",
+              "rel": "produces",
+              "role": "co-product"
+            },
+            {
               "to": "chem.acrylonitrile.sovere.catalyst",
               "rel": "consumes"
             },
             {
-              "to": "chem.acrylonitrile.sovere.byproducts",
+              "to": "chem.acrylonitrile.monomer",
               "rel": "produces",
-              "role": "co-product"
+              "role": "product"
+            },
+            {
+              "to": "chem.natural-gas.uses.fertiliser-ammonia",
+              "rel": "consumes"
             }
           ]
         },
@@ -1364,6 +1383,16 @@
               "role": "product"
             }
           ]
+        },
+        {
+          "id": "chem.acrylonitrile.monomer",
+          "name": "Acrylonitrile monomer",
+          "description": "Acrylonitrile monomer (C3H3N) as made by propylene ammoxidation: the vinyl-nitrile feedstock for SAN/ABS grafting, acrylic fibre and nitrile rubber.",
+          "kind": "material",
+          "category": "plastics",
+          "era": "1960s",
+          "confidence": "high",
+          "inputs": []
         }
       ],
       "confidence": "high",
@@ -1453,7 +1482,17 @@
             }
           ],
           "confidence": "low",
-          "note": "Established: Two industrial routes and a third that was still just about alive in 1983: extractive distillation of the steam crackers C4 stream, dehydrogenation of n-butane, and thermal dimeri as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+          "note": "Established: Two industrial routes and a third that was still just about alive in 1983: extractive distillation of the steam crackers C4 stream, dehydrogenation of n-butane, and thermal dimeri as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+          "edges": [
+            {
+              "to": "chem.butadiene.sources.cracker-c4",
+              "rel": "consumes"
+            },
+            {
+              "to": "chem.butadiene.sources.cracker-c4.c4-recovery",
+              "rel": "step"
+            }
+          ]
         },
         {
           "id": "chem.butadiene.polymerisation",
@@ -1641,6 +1680,11 @@
             {
               "to": "chem.styrene.dehydrogenation.iron-catalyst",
               "rel": "consumes"
+            },
+            {
+              "to": "facility.steam.styrene",
+              "rel": "produces",
+              "role": "product"
             }
           ]
         },
@@ -1742,7 +1786,13 @@
             }
           ],
           "note": "SAN capacity in the early 1980s is an order-of-magnitude estimate. Established: Styrene free radical polymerisation via resonance stabilised benzyl radical. Not established: the stated capacity and ionic route specifics as given.",
-          "confidence": "low"
+          "confidence": "low",
+          "edges": [
+            {
+              "to": "facility.steam.styrene",
+              "rel": "consumes"
+            }
+          ]
         }
       ],
       "confidence": "high",
@@ -1836,6 +1886,14 @@
             },
             {
               "to": "chem.abs.grafting.chain-transfer-agent",
+              "rel": "consumes"
+            },
+            {
+              "to": "chem.acrylonitrile.monomer",
+              "rel": "consumes"
+            },
+            {
+              "to": "facility.steam.styrene",
               "rel": "consumes"
             }
           ]
@@ -2038,6 +2096,10 @@
                     {
                       "to": "chem.pvc.vcm.acetylene-route.mercury",
                       "rel": "consumes"
+                    },
+                    {
+                      "to": "chem.natural-gas.uses.acetylene",
+                      "rel": "step"
                     }
                   ]
                 },
@@ -2990,7 +3052,7 @@
       "note": "No-clean fluxes arrived commercially in the mid-1980s; the halide-free specification is measured against a standard ion chromatography test, and the figure quoted for it is halide not detected - under 0.001% by that test. Established: Solder flux and rosin branch with wave soldering practice. Not established: the stated arrival dates and test thresholds as given.",
       "confidence": "low"
     },
-    "chem.chlorine": "[EXTERNAL - expected from the chlorine/metal file, not defined here] Chlorine from brine electrolysis. The brine-electrolysis node is in this file at chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali.",
+    "chem.chlorine": "[EXTERNAL - expected from the chlorine/metal file, not defined here] Chlorine from brine electrolysis. The brine-electrolysis node is metal.chlor-alkali.",
     "chem.glass-fiber": "[EXTERNAL - minerals/fibres file] E-glass for FR-4; referenced in chem.pcb-chemicals.laminate.",
     "chem.silica-fiber": "[EXTERNAL - minerals/fibres file] Fused silica and quartz fibre; the sand-derived silica chain of this file starts at chem.acrylonitrile.sovere.catalyst.catalyst-manufacture.silica-support.soda-silica.",
     "chem.barium-carbonate": "[EXTERNAL - minerals file] Barium carbonate / barite filler; barite as a drilling weighting agent is under chem.crude.rig.drilling-mud.barite.",
@@ -3356,7 +3418,13 @@
       "category": "plastics",
       "era": "1940s",
       "confidence": "medium",
-      "note": "Not established: the isomer-ratio range and treat-rate figures quoted, the stated production route, and the end-use and water-plant resin claims."
+      "note": "Not established: the isomer-ratio range and treat-rate figures quoted, the stated production route, and the end-use and water-plant resin claims.",
+      "edges": [
+        {
+          "to": "chem.styrene.benzene",
+          "rel": "made from"
+        }
+      ]
     },
     "chem.styrene.polymerisation.bulk-gpps.benzoyl-peroxide": {
       "id": "chem.styrene.polymerisation.bulk-gpps.benzoyl-peroxide",
@@ -6287,7 +6355,14 @@
             }
           ],
           "confidence": "low",
-          "note": "Established: The JT-expander process that became the industry standard for large gas plants in the 1980s: the gas is chilled by expansion through a turbine to -30 to -80 C and the resulting col as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+          "note": "Established: The JT-expander process that became the industry standard for large gas plants in the 1980s: the gas is chilled by expansion through a turbine to -30 to -80 C and the resulting col as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+          "edges": [
+            {
+              "to": "chem.natural-gas.composition.ethane-propane",
+              "rel": "produces",
+              "role": "product"
+            }
+          ]
         },
         {
           "id": "chem.natural-gas.processing.liquefaction",
@@ -6377,6 +6452,10 @@
         {
           "to": "chem.natural-gas",
           "rel": "consumes"
+        },
+        {
+          "to": "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling",
+          "rel": "step"
         }
       ]
     },
@@ -6473,6 +6552,11 @@
             {
               "to": "chem.natural-gas.uses.acetylene.to-vinyl-chloride.mercury-catalyst",
               "rel": "consumes"
+            },
+            {
+              "to": "chem.pvc.vcm",
+              "rel": "produces",
+              "role": "product"
             }
           ]
         }
@@ -6508,6 +6592,11 @@
             {
               "to": "chem.natural-gas.uses.hydrogen.to-ammonia.catalyst",
               "rel": "consumes"
+            },
+            {
+              "to": "chem.natural-gas.uses.fertiliser-ammonia",
+              "rel": "produces",
+              "role": "product"
             }
           ]
         }
@@ -6564,7 +6653,7 @@
       "category": "board",
       "era": "1970s",
       "inputs": [
-        "chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali"
+        "metal.chlor-alkali"
       ],
       "note": "The alkaline etch was spreading through the 1980s; the exact adoption date in a given plant is not documented here. Established: Ferric chloride regeneration by chlorination oxidation. Not established: the stated temperatures and adoption dates as given.",
       "confidence": "low",
@@ -6687,35 +6776,7 @@
           "note": "Not established: the caustic-strength range quoted, the list of acidic oxygenates removed, and the claim about incineration as the usual 1980s disposal route for spent phenolic caustic.",
           "edges": [
             {
-              "to": "metal.sodium",
-              "rel": "consumes"
-            }
-          ]
-        },
-        {
-          "id": "chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali",
-          "name": "Chlor-alkali (brine electrolysis)",
-          "description": "Salt water electrolyzed in a membrane or mercury cell at 60-90 C and 3-4 V DC to give chlorine, sodium hydroxide and hydrogen. It is the source of every chlorine molecule in this file - the PVC monomer, the epichlorohydrin, the chlorinated solvents, the hypochlorous acid of the propylene chlorohydrin, the phosgene of the polycarbonate, and the trichlorosilane precursor chain of the silicones - and the source of the caustic and the acid that made the phenol-formaldehyde and the ester plasticisers. It is the largest single tonnage of chemistry that a 1983 computer sits on top of, indirectly.",
-          "kind": "process",
-          "category": "fluids",
-          "era": "1890s",
-          "children": [
-            {
-              "id": "chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali.membrane-cell",
-              "name": "Membrane cell",
-              "description": "The cell type that replaced the mercury cell through the 1980s: a perfluorosulfonate membrane separating the anode and cathode, giving chlorine at 99.5%+ without the mercury the older cell had to manage. The conversion of the world's chlor-alkali from mercury to membrane was one of the largest and fastest industrial changeovers of the decade, and it was driven by mercury emissions - the same environmental logic that removed mercury from the PVC acetylene process.",
-              "kind": "tool",
-              "category": "fluids",
-              "era": "1980s",
-              "confidence": "medium",
-              "note": "The membrane cell commercialised from the late 1970s and displaced mercury cells through the 1980s-90s; the timetable varied by region."
-            }
-          ],
-          "confidence": "low",
-          "note": "Established: Salt water electrolyzed in a membrane or mercury cell at 60-90 C and 3-4 V DC to give chlorine, sodium hydroxide and hydrogen as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
-          "edges": [
-            {
-              "to": "chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali.brine",
+              "to": "metal.caustic-soda",
               "rel": "consumes"
             }
           ]
@@ -7167,7 +7228,7 @@
           "category": "fluids",
           "era": "1930s",
           "inputs": [
-            "chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali"
+            "metal.chlor-alkali"
           ],
           "note": "The chlor-alkali chain is under chem.propylene.sources.cracker-c3.c3-recovery.caustic-wash.chlor-alkali. Established: Methane chlorination as free radical chain to chloromethanes. Not established: the stated temperature ranges and distillation specifics as given.",
           "confidence": "low",
@@ -7554,6 +7615,11 @@
         {
           "to": "chem.natural-gas.sources.non-associated-gas",
           "rel": "at"
+        },
+        {
+          "to": "chem.natural-gas",
+          "rel": "produces",
+          "role": "product"
         }
       ]
     },
@@ -7600,6 +7666,10 @@
         {
           "to": "chem.crude.rig",
           "rel": "at"
+        },
+        {
+          "to": "chem.crude.exploration",
+          "rel": "step"
         }
       ]
     },
@@ -7636,6 +7706,10 @@
         {
           "to": "chem.crude.rig",
           "rel": "at"
+        },
+        {
+          "to": "chem.crude.rig.rotary-drilling",
+          "rel": "step"
         }
       ]
     },
@@ -8051,7 +8125,13 @@
             }
           ],
           "confidence": "medium",
-          "note": "Established: Turning a drilled hole into a producing well: set production casing, cement to the pay, run and perforate the tubing, pack the annulus, and install a tree as standard practice. Not established: the era specific prevalence supplier choices and detailed operating splits as given."
+          "note": "Established: Turning a drilled hole into a producing well: set production casing, cement to the pay, run and perforate the tubing, pack the annulus, and install a tree as standard practice. Not established: the era specific prevalence supplier choices and detailed operating splits as given.",
+          "edges": [
+            {
+              "to": "chem.crude.rig.casing-cement",
+              "rel": "step"
+            }
+          ]
         },
         {
           "id": "chem.crude.stimulation",
@@ -8196,6 +8276,14 @@
               "to": "chem.petroleum",
               "rel": "produces",
               "role": "product"
+            },
+            {
+              "to": "chem.crude.stimulation",
+              "rel": "step"
+            },
+            {
+              "to": "chem.crude.well-completion",
+              "rel": "step"
             }
           ]
         },

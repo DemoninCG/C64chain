@@ -597,25 +597,6 @@
         }
       ]
     },
-    "facility.steam.divinylbenzene": {
-      "id": "facility.steam.divinylbenzene",
-      "name": "Divinylbenzene crosslinker",
-      "description": "A small fraction of a C10H10 comonomer added to the styrene so the bead does not dissolve in the caustic used for regeneration. This crosslinking is what makes the resin insoluble and gives it its capacity.",
-      "kind": "material",
-      "category": "plastics",
-      "era": "1983",
-      "inputs": [],
-      "confidence": "high",
-      "sources": [
-        "https://en.wikipedia.org/wiki/Divinylbenzene"
-      ],
-      "edges": [
-        {
-          "to": "chem.styrene.benzene",
-          "rel": "made from"
-        }
-      ]
-    },
     "facility.steam.asbestos": {
       "id": "facility.steam.asbestos",
       "name": "Asbestos (chrysotile) mineral",
@@ -1067,10 +1048,6 @@
       "edges": [
         {
           "to": "facility.steam.styrene",
-          "rel": "made from"
-        },
-        {
-          "to": "facility.steam.divinylbenzene",
           "rel": "made from"
         },
         {
@@ -2100,6 +2077,10 @@
         {
           "to": "metal.hydrochloric-acid",
           "rel": "consumes"
+        },
+        {
+          "to": "facility.steam.ion-resin",
+          "rel": "consumes"
         }
       ]
     },
@@ -2120,7 +2101,22 @@
         }
       ],
       "confidence": "medium",
-      "note": "Not established: the few tens of parts per billion NaCl equivalent outturn and the 10-18 Mohm-cm resistivity figure. The ion-exchange resin article documents resin types and regeneration but not the mixed-bed polish performance of a semiconductor water plant."
+      "note": "Not established: the few tens of parts per billion NaCl equivalent outturn and the 10-18 Mohm-cm resistivity figure. The ion-exchange resin article documents resin types and regeneration but not the mixed-bed polish performance of a semiconductor water plant.",
+      "edges": [
+        {
+          "to": "facility.steam.ion-resin",
+          "rel": "consumes"
+        },
+        {
+          "to": "facility.water.ion-exchange",
+          "rel": "step"
+        },
+        {
+          "to": "facility.water.ultrapure",
+          "rel": "produces",
+          "role": "product"
+        }
+      ]
     },
     "facility.water.ro": {
       "id": "facility.water.ro",
