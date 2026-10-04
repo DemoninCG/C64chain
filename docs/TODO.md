@@ -16,12 +16,7 @@ work on it.
 Edges are typed now (judgement 0, UNMAPPED 0, ASSERT-FAIL 0); what remains is
 *content*, recorded here so no wrong edge is forced to cover a missing node:
 
-- **Missing substance nodes** (REFILE verdicts with nowhere to land; edges
-  deleted, holes logged): PET film, polystyrene material, MLCC green sheet,
-  resistor foil alloy (check NiCr nodes first), PVC resin family (~11:
-  PVC/PE/PC/silicone/POM resins), Bayer liquor (gallium leaves upstream of
-  alumina precipitation), Na2Cr2O7, Al(OH)3, ZnCl2, Co-Ni catalyst, BeCu,
-  generic nickel ore, generic paper, TiCl4, 2-ethylhexanol.
+- **Missing substance nodes** DONE 2026-10-05 (23 canonicals + 26 re-homes + 9 _ingredients remaps, `d566967`): PET film, PS resin, MLCC green sheet (REFILE a, finishing unmodelled), NiCr foil alloy (thin-film/wirewound distinct, no merge), PVC/PE/PC/silicone/POM resins + PBT/butanediol/ethylhexanol/flexible compound, Bayer liquor (Ga upstream unmodelled) + Al(OH)3, Na2Cr2O7, TiCl4 (Kroll unmodelled) + BeCu (Be feed unmodelled, C17200 verified), Co-Ni catalyst + generic nickel ore (distinct levels, no merges), ZnCl2 (NH4Cl missing, left for chlor-alkali owner), generic paper + papermaking (digestion produces pulp, manual consumes paper; warranty-card kraft-liner DELETE + paper (atomic, brown liner wrong); _ingredients paper retarget). Holes NOT landed (no bend, recorded in agent reports): phthalic-anhydride producer, cable plasticiser specificity, extrusion tool feeds, PP film, PS film, path-local PET pellets/produces-uniqueness, DMT route, monomer intermediates (ethylene/styrene/formaldehyde/chlorosilane/BPA/maleic), deinked pulp, sawmill/chips producer, bleached-pulp split, 50-power made-from divergence, NH4Cl, ZnCl2 synthesis process, dry-cell use, gallium metal, Be feed, Ti metal, laterite-vs-generic (no legal rel), sulphide-concentrate producer exists (left alone), Co:Ni ratio/mine-to-part unestablished, stack-laminate printed sheets, dicing laminated bar, foil-roll self-loop. Load-bearing 93->92, chain 712->700, total 849->837. Next: duplicate merges (tantalum/barium/cassiterite/ABS-case/silicone-domes still BLOCKERs, chain FAIL to force).
 - **Schema gaps** (no stored relation; edges deleted, not bent): tool
   *contains* material (diamond-impregnated blades: saw, dice-tool,
   grinding-wheel); process>part wafer steps (LOCOS contact etch);
@@ -39,9 +34,7 @@ Edges are typed now (judgement 0, UNMAPPED 0, ASSERT-FAIL 0); what remains is
   metal families); the rest is furniture, alternatives (open-hearth,
   valley-fill, sherritt-gordon), notes and orgs that are correctly
   unlinked. Re-measure after every content pass.
-- **Ownership chain**: org.philips created + Signetics owned-by wired;
-  6 of 8 corporate-chain companies still lack nodes (vertical integration
-  story undrawable until added); makers.japan is a list, not an org.
+- **Ownership chain** DONE 2026-10-05 (`d566967`): 6 corporate orgs added (holding-bv, international-ltd, electronics-ltd, business-machines-inc, japan-ltd, international-sales-inc; org/industry/1983/high with TaxNotes + Commodore_International actually read) with owned-by chain + MOS->CBM + Kentron->CJL (prose evidence; Hong-kong/Braunschweig/Corby/Santa-clara left unwired, no prose evidence, no invention); makers.japan list split atomically to makers.hitachi + makers.toshiba (org/low with notes, no sources, preserving unverified-field-report caveats); schema org->material comment updated. 8/8 corporate parents exist now (was 6 missing); vertical integration drawable (MOS->CBM central story + Signetics->Philips + Kentron->CJL + parent chain).
 
 ---
 
