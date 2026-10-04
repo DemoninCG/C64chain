@@ -1,5 +1,42 @@
 # Wave 3 — branch examinations, compiled
 
+## 0. Handoff
+
+**State.** All 22 examinations are complete. Nothing in `data/` was changed by any
+Wave 3 agent. `docs/WAVE3-FINDINGS.md` (this file) is the compilation; each
+agent's own narrative is in `C:\Users\corba\AppData\Local\Temp\opencode\report-*.md`
+and is the place to look for the individual defects, since this file records
+counts, claims and disagreements rather than the defects themselves.
+
+**Read these four before acting, because each is a plan input that changed:**
+
+1. The note-authoritative rule that plan step 2 rests on is **qualified**: the
+   ordering is `description > note > from/inputs`, not `note > description`.
+   One agent found a note warning against a count that had already been repaired.
+2. `metal.silica` is **50 of 51 wrong, not 51 of 51**, per two agents. The
+   blanket rejection will delete four defensible edges.
+3. The product-index list needs an **exception clause**: `metal.copper.foil` is a
+   deliberate, disclosed index and a cleanup following the list as written
+   deletes a node that is working.
+4. The round-4 stage tie-break has **two independent failure modes** and a case
+   it does not contemplate (a part that is bought and correctly has no producer).
+
+**Deliberately not done, and why:**
+
+- No fixes were applied. Wave 3 was scoped as examination, and the reports are
+  the input to deciding what gets fixed in what order.
+- No cross-agent synthesis. Where agents disagree, §5 records both statements.
+  §3's totals are arithmetic on their own counts.
+- The last report (`spine-root`) reported a typo "calibrated-with-caveties" in
+  `data/_relation_schema.json`. **It is not there** — the schema reads
+  "calibrated-with-caveats" at lines 332 and 482. The misspelling appears only in
+  this file, because the claim is recorded verbatim as the agent made it. Do not
+  spend time on it.
+
+**Gates as last run**, with the caveats agents attached to two of them in §9.
+
+---
+
 Objective compilation. Every figure and every assertion below was stated by the
 named agent. No figure is aggregated across agents except the class totals in
 §3, which are arithmetic on their own reported counts. **Nothing here is
@@ -15,14 +52,14 @@ defects it named, is in each agent's own file:
 
 ## 1. What was run
 
-21 of 22 examinations complete; 1 in flight.
+22 of 22 examinations complete; 0 in flight.
 
 One read-only agent per branch or branch family. No agent edited any file in
 `data/`, `docs/` or `scripts/`. Agents read `docs/GOLDEN-IDEA.md`,
 `docs/REPORT-TEMPLATE.md` and `data/_relation_schema.json`, and were given a
 shared brief at `w3-brief.md`.
 
-Nodes read across all completed examinations: **2,739**
+Nodes read across all completed examinations: **2,745**
 (tree total 2,448). Nodes are re-read across agents where an agent followed an
 edge out of its scope, so this is a work figure, not a coverage percentage.
 
@@ -51,7 +88,7 @@ edge out of its scope, so this is a work figure, not a coverage percentage.
 | silicon-fab | 10-silicon: all si.* + mb.cpu.front-end + mb.cpu.fe.* | 52 | 294 (117 leaving, 177 arriving) | 5 | 3 | 5 | 7 | 1 | 21 | 13 high, 6 medium, 1 low |
 | logic-cmos-sourcing | 35-logic: mb.logic, mb.logic.cmos, mb.logic.sourcing | 30 | 106 touching (104 outbound, 2 inbound) + ~140 in cross-checks | 6 | 3 | 6 | 9 | 4 | 28 | not stated as a total; row 3 dual-classified |
 | board | 20-board in full | 105 | 205 (101 children, 104 inputs) | 8 | 4 | 3 | 5 | 2 | 22 | 22 defects plus 2 minor folded into prose |
-| spine-root | 05-spine + 00-root + unlinked.catalogue | — | — | — | — | — | — | — | pending | PENDING |
+| spine-root | 05-spine + 00-root + unlinked.catalogue | 6 | 54 (28 leaving 05-spine, 4 entering, 12 leaving 00-root, 10 catalogue children) | 3 | 4 | 2 | 1 | 1 | 11 | 11 defects, 4 BLOCKER |
 
 Verdicts in each agent's own words:
 
@@ -76,18 +113,19 @@ Verdicts in each agent's own words:
 - **silicon-fab** — "structurally broken in one half, well modelled in the other"
 - **logic-cmos-sourcing** — "the prose is the best in the tree; the structure is hollow"
 - **board** — "locally sound, structurally broken at exactly one joint"
+- **spine-root** — "loud but not broken; the two part spine nodes are the best-modelled structural nodes in the tree"
 
 ## 3. Class totals across completed reports
 
 Arithmetic on the counts each agent reported, not an independent judgement.
 
-- BREAK: 231
-- SHAPE: 151
-- HOLE: 128
-- GHOST: 101
-- DRIFT: 96
+- BREAK: 234
+- SHAPE: 152
+- HOLE: 130
+- GHOST: 105
+- DRIFT: 97
 
-Total reported defects: **707**
+Total reported defects: **718**
 
 Note that several agents state some rows carry two classes, so the per-report
 totals in §2 do not always sum cleanly to a single count of distinct defects.
@@ -459,6 +497,34 @@ Recorded as pairs. **None is adjudicated here.**
 ### 73. does any relation record ORDER?
 - **A:** not previously asked
 - **B:** board agent: data/20-board.json $comment promises "the operations applied in order" and NO relation in the eleven carries order. The order survives only as JSON array order the viewer never sees. The fabrication sequence is the most valuable fact this fragment holds and it is currently unrecorded. Suggests a `sequence` edge attribute.
+
+### 74. where to hunt duplicate nodes
+- **A:** my lead to two agents: hunt chem.abs.c64-case and similar duplicates in unlinked.catalogue, since that container collects unwritten reusable subtrees
+- **B:** spine-root agent: THE LEAD IS WRONG. chem.abs.c64-case is not in unlinked.catalogue and CANNOT be -- the catalogue only takes nodes unreachable by children, and a duplicate is by definition reachable. It also has one inbound edge, not "no edges". THE CONTAINER TO HUNT DUPLICATES IN IS THE REACHABLE TREE. The agent also checked all 10 catalogue nodes for name and description collisions against the tree and found none.
+
+### 75. unlinked.catalogue contents
+- **A:** not previously examined
+- **B:** spine-root agent: 10 nodes, 8 of which sit under si.cz / si.polysilicon -- a namespace deleted by _merged.json when it was merged into metal.silica.czochralski / metal.silica.polysilicon. Six have zero inbound edges and two are a closed island. This is the metal.silica cleanup missing upstream.
+
+### 76. unlinked.catalogue generated note
+- **A:** the note build.mjs generates: "Nothing in the tree points here; the connection exists only in prose"
+- **B:** spine-root agent: FALSE IN THE SAME FILE, 5 LINES ABOVE THE CODE THAT POINTS AT IT. build.mjs reachable() walks children ONLY, so chem.glass-fiber (18 inbound, 5 fragments) and chem.silane (14 inbound, 2 fragments) sit in the catalogue claiming nothing links to them. Both will exit the catalogue silently once `made from` carries connectivity.
+
+### 77. is the root a grouping node?
+- **A:** GOLDEN-IDEA.md 5: a node existing only to group other nodes is a defect
+- **B:** spine-root agent: the root is a REAL OBJECT, not a grouping node. But 2 of its 12 children are note indexes, and c64.joystick is a child of both the root and c64.extras -- the only multi-parent edge in either file.
+
+### 78. note-index outgoing edges on the spine
+- **A:** recorded as 21 tree-wide, expected to be dissolved by hand
+- **B:** spine-root agent: 7 of the 28 outgoing 05-spine edges leave a note, which invariant 4 forbids and for which NO JUDGEMENT QUESTION EXISTS AT ALL
+
+### 79. spine edge legality
+- **A:** not previously asked
+- **B:** spine-root agent: 17 of 28 respect the relation set (17 part->part contains, plus 4 part->process step that the schema CAN store but has no oracle for); 11 do not
+
+### 80. a typo in data/_relation_schema.json
+- **A:** the string "calibrated-with-caveties"
+- **B:** spine-root agent: should be "caveats". Quoted verbatim in two agent briefs because I copied it.
 
 ## 6. Contradictions in the source data, reported by agents
 
