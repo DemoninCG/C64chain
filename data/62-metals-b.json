@@ -735,35 +735,6 @@
           ]
         },
         {
-          "id": "metal.copper.anode",
-          "name": "Blister copper anode, 99.9%+",
-          "description": "Blister is poured into a horizontal straight-mould casting machine - a ladle of molten copper that pours into a row of cast-iron moulds on a moving chain, giving a rectangular anode of 200-500 kg, roughly 700-1000 mm long, 400-800 mm wide and 30-50 mm thick, with a hanging loop cast on top. In 1982 the standard anode assay was 99.5-99.9% copper, and the gold and silver in it - typically 5-30 g/t gold equivalent - is why anodes are not made to 99.99%: that would be throwing away money.",
-          "kind": "part",
-          "category": "metals",
-          "era": "1982",
-          "confidence": "high",
-          "facts": [
-            {
-              "label": "Assay",
-              "value": "99.5-99.9% Cu, 5-30 g/t Ag, 2-20 g/t Au"
-            },
-            {
-              "label": "Mass",
-              "value": "200-500 kg per anode, 25-50 mm thick"
-            },
-            {
-              "label": "Casting method",
-              "value": "horizontal straight-mould casting machine with a water-cooled chain"
-            }
-          ],
-          "sources": [
-            "https://en.wikipedia.org/wiki/Copper_refining"
-          ],
-          "inputs": [
-            "metal.copper.converting"
-          ]
-        },
-        {
           "id": "metal.copper.tankhouse",
           "name": "Electrolytic refining of copper to 99.99%",
           "description": "The refinery's tankhouse is a building a couple of hundred metres long containing rows of concrete or rubber-lined steel cells. Each cell holds a 150-250 g/L copper, 200-250 g/L free sulfuric acid solution at 55-65 C, with one or two anodes and one cathode per cell. Current at 20,000-40,000 A per cell is passed through; copper dissolves off the anode and plates onto the cathode at 98-99% efficiency, and gold, silver, selenium, tellurium and the platinum group fall out as a sludge on the bottom of the cell - the anode slime - which is worth more per tonne than the copper. A refinery producing 100,000 t a year has 300-500 cells and about 100,000 MWh of DC power.",
@@ -842,7 +813,6 @@
             }
           ]
         },
-        "metal.copper.wire",
         "metal.copper.foil"
       ]
     },
@@ -975,76 +945,6 @@
               "note": "Documented: the silicon dioxide is grown on the wafer rather than deposited - it was first grown accidentally at Bell Labs in 1955 - and oxide layer formation is by thermal oxidation or, for the field regions, by local oxidation of silicon (LOCOS). Not established: the 1000-1150 C steam or dry-oxygen furnace, the hour-and-a-half cycle, the roughly 1000-1500 angstrom gate oxide of a 1982 NMOS process, and the 0.1% of wafer thickness consumed."
             }
           ]
-        },
-        {
-          "id": "metal.silica.quartz-crystal",
-          "name": "14.31818 MHz quartz clock crystal (Y1)",
-          "description": "The C64's timing reference is a 14.31818 MHz quartz crystal, designated Y1 and listed in the service-manual parts lists as part 900558-01 and as 251467-01, both described as 'Crystal 14.31818 MHz'. It feeds the 74LS629 voltage-controlled oscillator, whose output on pin 10 is itself a 14.31818 MHz colour clock, while the dot clock comes out at 8.1818 MHz; the divider and flip-flop chain beyond it produces the 2 MHz and 1 MHz lines and the 6510 runs at about 1.02 MHz. There is no 2.048 MHz crystal in this machine. Quartz is the only material with a usable temperature-stable mechanical resonance that cheap. The C64B changed the arrangement rather than the outcome: its manual section describes a 16 MHz fundamental feeding a clock-generator IC that still delivers the same 8.1818 MHz dot and 14.31818 MHz colour clocks.",
-          "kind": "part",
-          "category": "metals",
-          "era": "1982",
-          "confidence": "medium",
-          "inputs": [
-            "metal.silica.quartz-crystal.synthetic"
-          ],
-          "sources": [
-            "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
-          ],
-          "facts": [
-            {
-              "label": "Frequency",
-              "value": "14.31818 MHz. The colour clock output is also 14.31818 MHz and the dot clock is 8.1818 MHz; 2 MHz and 1 MHz are divided down from the same source."
-            },
-            {
-              "label": "Service-manual part numbers",
-              "value": "900558-01 and 251467-01, both 'Crystal 14.31818 MHz'"
-            },
-            {
-              "label": "Cut",
-              "value": "AT-cut is the general choice for clock crystals, but no cut angle is documented for this part"
-            },
-            {
-              "label": "Tolerance",
-              "value": "not established for this part"
-            }
-          ],
-          "children": [
-            {
-              "id": "metal.silica.quartz-crystal.synthetic",
-              "name": "Grow the clock crystal hydrothermally",
-              "description": "A seed of vein quartz hangs in aqueous sodium hydroxide in a steel autoclave at 380-450 C and 100-200 bar, and quartz grows on the seed at 1-3 mm a day until a synthetic boule of a few kilograms is complete. The advantage over mined Brazilian rock is that the growth conditions are repeatable, so the Q and the defect density of every boule match. By 1982 synthetic quartz had displaced natural rock for essentially all consumer resonator production, because natural material had to be hand-selected for Q and the supply of good vein quartz was small and variable.",
-              "kind": "process",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "medium",
-              "inputs": [
-                "metal.caustic-soda",
-                "facility.water"
-              ],
-              "places": [
-                "Minas Gerais, Brazil"
-              ],
-              "facts": [
-                {
-                  "label": "Temperature",
-                  "value": "380-450 C"
-                },
-                {
-                  "label": "Pressure",
-                  "value": "100-200 bar"
-                },
-                {
-                  "label": "Growth rate",
-                  "value": "1-3 mm/day"
-                }
-              ],
-              "note": "The vein quartz is the charge in the autoclave, so the edge is really an ingredient. It is a child edge because that is how this file records what a charge is made of, and because it keeps the published metal.quartz node inside the branch instead of stranded in unlinked.catalogue.",
-              "children": [
-                "metal.quartz"
-              ]
-            }
-          ],
-          "note": "Corrected. This node previously named a 2.048 MHz crystal, which the 1992 C64/C64C service manual contradicts: it gives crystal Y1 as 14.31818 MHz on both documented board variants, with a divider producing the 2 MHz line and a flip-flop the 1 MHz line that clocks the 6510 at about 1.02 MHz, so there is no 2.048 MHz crystal in the machine. Still not established: the plate size, the cut angle, the 10-50 ppm tolerance, and the hydrothermal growth conditions of about 400 C and 1.5 kbar in sodium hydroxide. What is documented in general is that industrial quartz crystal is grown hydrothermally in an autoclave."
         }
       ]
     },
@@ -2198,5 +2098,106 @@
         }
       ]
     }
-  ]
+  ],
+  "shared": {
+    "metal.copper.anode": {
+      "id": "metal.copper.anode",
+      "name": "Blister copper anode, 99.9%+",
+      "description": "Blister is poured into a horizontal straight-mould casting machine - a ladle of molten copper that pours into a row of cast-iron moulds on a moving chain, giving a rectangular anode of 200-500 kg, roughly 700-1000 mm long, 400-800 mm wide and 30-50 mm thick, with a hanging loop cast on top. In 1982 the standard anode assay was 99.5-99.9% copper, and the gold and silver in it - typically 5-30 g/t gold equivalent - is why anodes are not made to 99.99%: that would be throwing away money.",
+      "kind": "part",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Assay",
+          "value": "99.5-99.9% Cu, 5-30 g/t Ag, 2-20 g/t Au"
+        },
+        {
+          "label": "Mass",
+          "value": "200-500 kg per anode, 25-50 mm thick"
+        },
+        {
+          "label": "Casting method",
+          "value": "horizontal straight-mould casting machine with a water-cooled chain"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Copper_refining"
+      ],
+      "inputs": [
+        "metal.copper.converting"
+      ]
+    },
+    "metal.silica.quartz-crystal": {
+      "id": "metal.silica.quartz-crystal",
+      "name": "14.31818 MHz quartz clock crystal (Y1)",
+      "description": "The C64's timing reference is a 14.31818 MHz quartz crystal, designated Y1 and listed in the service-manual parts lists as part 900558-01 and as 251467-01, both described as 'Crystal 14.31818 MHz'. It feeds the 74LS629 voltage-controlled oscillator, whose output on pin 10 is itself a 14.31818 MHz colour clock, while the dot clock comes out at 8.1818 MHz; the divider and flip-flop chain beyond it produces the 2 MHz and 1 MHz lines and the 6510 runs at about 1.02 MHz. There is no 2.048 MHz crystal in this machine. Quartz is the only material with a usable temperature-stable mechanical resonance that cheap. The C64B changed the arrangement rather than the outcome: its manual section describes a 16 MHz fundamental feeding a clock-generator IC that still delivers the same 8.1818 MHz dot and 14.31818 MHz colour clocks.",
+      "kind": "part",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "inputs": [
+        "metal.silica.quartz-crystal.synthetic"
+      ],
+      "sources": [
+        "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
+      ],
+      "facts": [
+        {
+          "label": "Frequency",
+          "value": "14.31818 MHz. The colour clock output is also 14.31818 MHz and the dot clock is 8.1818 MHz; 2 MHz and 1 MHz are divided down from the same source."
+        },
+        {
+          "label": "Service-manual part numbers",
+          "value": "900558-01 and 251467-01, both 'Crystal 14.31818 MHz'"
+        },
+        {
+          "label": "Cut",
+          "value": "AT-cut is the general choice for clock crystals, but no cut angle is documented for this part"
+        },
+        {
+          "label": "Tolerance",
+          "value": "not established for this part"
+        }
+      ],
+      "children": [
+        {
+          "id": "metal.silica.quartz-crystal.synthetic",
+          "name": "Grow the clock crystal hydrothermally",
+          "description": "A seed of vein quartz hangs in aqueous sodium hydroxide in a steel autoclave at 380-450 C and 100-200 bar, and quartz grows on the seed at 1-3 mm a day until a synthetic boule of a few kilograms is complete. The advantage over mined Brazilian rock is that the growth conditions are repeatable, so the Q and the defect density of every boule match. By 1982 synthetic quartz had displaced natural rock for essentially all consumer resonator production, because natural material had to be hand-selected for Q and the supply of good vein quartz was small and variable.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "medium",
+          "inputs": [
+            "metal.caustic-soda",
+            "facility.water"
+          ],
+          "places": [
+            "Minas Gerais, Brazil"
+          ],
+          "facts": [
+            {
+              "label": "Temperature",
+              "value": "380-450 C"
+            },
+            {
+              "label": "Pressure",
+              "value": "100-200 bar"
+            },
+            {
+              "label": "Growth rate",
+              "value": "1-3 mm/day"
+            }
+          ],
+          "note": "The vein quartz is the charge in the autoclave, so the edge is really an ingredient. It is a child edge because that is how this file records what a charge is made of, and because it keeps the published metal.quartz node inside the branch instead of stranded in unlinked.catalogue.",
+          "children": [
+            "metal.quartz"
+          ]
+        }
+      ],
+      "note": "Corrected. This node previously named a 2.048 MHz crystal, which the 1992 C64/C64C service manual contradicts: it gives crystal Y1 as 14.31818 MHz on both documented board variants, with a divider producing the 2 MHz line and a flip-flop the 1 MHz line that clocks the 6510 at about 1.02 MHz, so there is no 2.048 MHz crystal in the machine. Still not established: the plate size, the cut angle, the 10-50 ppm tolerance, and the hydrothermal growth conditions of about 400 C and 1.5 kbar in sodium hydroxide. What is documented in general is that industrial quartz crystal is grown hydrothermally in an autoclave."
+    }
+  }
 }

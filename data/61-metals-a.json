@@ -854,9 +854,7 @@
               "category": "metals",
               "era": "1982",
               "confidence": "medium",
-              "inputs": [
-                "metal.solder.pot"
-              ],
+              "inputs": [],
               "facts": [
                 {
                   "label": "Preheat",
@@ -876,65 +874,7 @@
                 }
               ],
               "note": "The temperature windows are standard; medium confidence on the conveyor speed range.",
-              "children": [
-                {
-                  "id": "metal.solder.preheater",
-                  "name": "Preheater, fluxer and the thermal profile",
-                  "description": "Before the wave, the board goes through a preheater - infrared lamps, a hot plate or hot air - to 100-150 C, and through a fluxer that lays a foam or sprayed layer of flux on the solder side. The reason for preheating is thermal expansion: a FR-4 board with a big hole pattern expands by a different amount in different directions, and if the solder side heats faster than the component side the board warps and the joints crack. A C64's mainboard is a large single-sided board with a lot of heat-generating parts on one side, so warp was a real yield problem. The preheater is the cheapest fix and it is a temperature-control problem.",
-                  "kind": "process",
-                  "category": "metals",
-                  "era": "1982",
-                  "confidence": "medium",
-                  "facts": [
-                    {
-                      "label": "Preheat",
-                      "value": "100-150 C for 1-2 min"
-                    },
-                    {
-                      "label": "Fluxer",
-                      "value": "foam or spray, 10-30 g of flux per board"
-                    },
-                    {
-                      "label": "Why",
-                      "value": "to control the through-thickness thermal gradient and stop the board warping"
-                    }
-                  ],
-                  "note": "Medium confidence; the temperatures are standard, the warp mechanism is well established.",
-                  "children": [
-                    {
-                      "id": "metal.solder.board-warp",
-                      "name": "Board warp, thermal stress and the epoxy",
-                      "description": "Why preheat exists at all. A single-sided 1.6 mm FR-4 board with a large hole pattern expands and contracts with a coefficient of about 14-18 x 10^-6 per K, and it is not isotropic - the copper layer and the epoxy cloth have different coefficients, and the weave gives the board different stiffness in the warp and weft directions. Warm the solder side faster than the component side and the board bows; cycle it and the board stays bowed; and on a double-sided board it can delaminate the copper from the epoxy. So the preheater is really an epoxy-handling device, and the epoxy is the resin agent's problem while the solder pot is the metals one, and they meet at the warp.",
-                      "kind": "process",
-                      "category": "metals",
-                      "era": "1982",
-                      "confidence": "medium",
-                      "facts": [
-                        {
-                          "label": "CTE of FR-4",
-                          "value": "14-18 x 10^-6 per K in-plane; anisotropic between warp and weft"
-                        },
-                        {
-                          "label": "Copper",
-                          "value": "17 x 10^-6 per K; epoxy cloth 50-70 x 10^-6"
-                        },
-                        {
-                          "label": "Effect",
-                          "value": "bow if the solder side heats faster; delamination if the gradient is severe"
-                        }
-                      ],
-                      "note": "Medium confidence on the coefficient ranges; the mechanism is textbook.",
-                      "inputs": [
-                        "metal.solder.preheater"
-                      ]
-                    }
-                  ],
-                  "inputs": [
-                    "facility.electricity",
-                    "metal.solder.wave-solder"
-                  ]
-                }
-              ]
+              "children": []
             }
           ]
         },
@@ -1046,7 +986,8 @@
           "era": "1982",
           "confidence": "medium",
           "inputs": [
-            "metal.solder.alloy-making"
+            "metal.solder.alloy-making",
+            "metal.solder.wave-solder.knife"
           ],
           "facts": [
             {
@@ -2453,5 +2394,65 @@
         }
       ]
     }
-  ]
+  ],
+  "shared": {
+    "metal.solder.preheater": {
+      "id": "metal.solder.preheater",
+      "name": "Preheater, fluxer and the thermal profile",
+      "description": "Before the wave, the board goes through a preheater - infrared lamps, a hot plate or hot air - to 100-150 C, and through a fluxer that lays a foam or sprayed layer of flux on the solder side. The reason for preheating is thermal expansion: a FR-4 board with a big hole pattern expands by a different amount in different directions, and if the solder side heats faster than the component side the board warps and the joints crack. A C64's mainboard is a large single-sided board with a lot of heat-generating parts on one side, so warp was a real yield problem. The preheater is the cheapest fix and it is a temperature-control problem.",
+      "kind": "process",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Preheat",
+          "value": "100-150 C for 1-2 min"
+        },
+        {
+          "label": "Fluxer",
+          "value": "foam or spray, 10-30 g of flux per board"
+        },
+        {
+          "label": "Why",
+          "value": "to control the through-thickness thermal gradient and stop the board warping"
+        }
+      ],
+      "note": "Medium confidence; the temperatures are standard, the warp mechanism is well established.",
+      "children": [
+        {
+          "id": "metal.solder.board-warp",
+          "name": "Board warp, thermal stress and the epoxy",
+          "description": "Why preheat exists at all. A single-sided 1.6 mm FR-4 board with a large hole pattern expands and contracts with a coefficient of about 14-18 x 10^-6 per K, and it is not isotropic - the copper layer and the epoxy cloth have different coefficients, and the weave gives the board different stiffness in the warp and weft directions. Warm the solder side faster than the component side and the board bows; cycle it and the board stays bowed; and on a double-sided board it can delaminate the copper from the epoxy. So the preheater is really an epoxy-handling device, and the epoxy is the resin agent's problem while the solder pot is the metals one, and they meet at the warp.",
+          "kind": "process",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "medium",
+          "facts": [
+            {
+              "label": "CTE of FR-4",
+              "value": "14-18 x 10^-6 per K in-plane; anisotropic between warp and weft"
+            },
+            {
+              "label": "Copper",
+              "value": "17 x 10^-6 per K; epoxy cloth 50-70 x 10^-6"
+            },
+            {
+              "label": "Effect",
+              "value": "bow if the solder side heats faster; delamination if the gradient is severe"
+            }
+          ],
+          "note": "Medium confidence on the coefficient ranges; the mechanism is textbook.",
+          "inputs": [
+            "metal.solder.preheater"
+          ]
+        }
+      ],
+      "inputs": [
+        "facility.electricity",
+        "metal.solder.wave-solder",
+        "metal.solder.wave-solder.knife"
+      ]
+    }
+  }
 }

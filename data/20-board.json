@@ -350,7 +350,9 @@
           ],
           "note": "The general step is established: chemical etching divides the copper into separate conducting lines called tracks or circuit traces, pads for connections, vias to pass connections between layers of copper, and features such as solid conductive areas for electromagnetic shielding. The 2 FeCl3 + Cu -> 2 FeCl2 + CuCl2 stoichiometry follows from that and is not separately cited. Not established: that this line used ferric chloride rather than sodium persulphate or a cupric chloride bath, the 42 deg Baume figure, the 40-50 deg C, the 20-45 minute etch time for 35 um copper, and the practice of dumping and remaking the bath as copper accumulates. Period text consistently quotes 42 deg Baume ferric chloride around 45 deg C. Sodium persulfate was a real alternative for some shops. Modern practice is still ferric chloride, but with tighter control and a copper-recovery loop. The etchant itself, its Baume range and its regeneration are the shared node chem.pcb-chemicals.etching.ferric-chloride; this node is the board-shop step that uses it.",
           "confidence": "medium",
-          "sources": ["https://en.wikipedia.org/wiki/Printed_circuit_board"]
+          "sources": [
+            "https://en.wikipedia.org/wiki/Printed_circuit_board"
+          ]
         },
         {
           "id": "mb.pcb.strip",
@@ -437,7 +439,10 @@
           ],
           "note": "That a through-hole board has one drilled hole per component lead is established: originally, every electronic component had wire leads, and a PCB had holes drilled for each wire of each component, and the component leads were then inserted through the holes and soldered to the copper PCB traces. Not established: the order-of-1200 hole count, the 1.1 mm dominant diameter, the 1.6-4.3 mm larger diameters, or that the drill programme was a bare component position list with no second drill file to reconcile. 0.6 mm leads sat in roughly 0.8-1.0 mm holes. The oversize is deliberate: the wave has to fill the hole, and a tight hole makes an unfilled, dry joint.",
           "confidence": "medium",
-          "sources": ["https://en.wikipedia.org/wiki/Printed_circuit_board", "https://github.com/bwack/C64-250407-Replica-KiCad"],
+          "sources": [
+            "https://en.wikipedia.org/wiki/Printed_circuit_board",
+            "https://github.com/bwack/C64-250407-Replica-KiCad"
+          ],
           "children": [
             {
               "id": "mb.pcb.drill.ncd",
@@ -464,7 +469,9 @@
                 "metal.tungsten.carbide"
               ],
               "note": "Tungsten-carbide bits are very hard but eventually wear out or break, and drilling is a considerable part of the cost of a through-hole board. Not established: the bit supplier, diameters stocked, or resharpening routine for the 250407 drill programme.",
-              "sources": ["https://en.wikipedia.org/wiki/Printed_circuit_board"]
+              "sources": [
+                "https://en.wikipedia.org/wiki/Printed_circuit_board"
+              ]
             }
           ]
         },
@@ -587,7 +594,9 @@
             }
           ],
           "note": "Protecting etched copper with a solderable coating plus a hard plating on touched contacts is ordinary finish practice. Not established: which pads received solder-level coating versus selective plating on the 250407 board, or the anti-tarnish treatment for bare copper.",
-              "sources": ["https://en.wikipedia.org/wiki/Solder_mask"]
+          "sources": [
+            "https://en.wikipedia.org/wiki/Solder_mask"
+          ]
         },
         {
           "id": "mb.pcb.mask",
@@ -664,7 +673,9 @@
             }
           ],
           "note": "A board may be printed with a legend identifying components, test points, or identifying text, and silkscreen printing was the original method. Not established: the ink formulation, mesh, or bake used for the white 250407 legend, or the compartment-box and colour-band layout.",
-              "sources": ["https://en.wikipedia.org/wiki/Printed_circuit_board"]
+          "sources": [
+            "https://en.wikipedia.org/wiki/Printed_circuit_board"
+          ]
         },
         {
           "id": "mb.pcb.inspection",
@@ -735,7 +746,9 @@
       ],
       "note": "The alloy and the wave are established. On the alloy: in electronics assembly, the eutectic alloy with 63% tin and 37% lead (or 60/40, which is almost identical in melting point) has been the alloy of choice; 63/37 melts at 183 deg C and is the only mixture that melts at a point instead of over a range, while 60/40 melts between 183 and 190 deg C; and because a eutectic has the same liquidus and solidus temperature there is no plastic phase, which allows quicker setup as the solder cools, whereas a non-eutectic must remain still through the plastic phase and may crack. On the process: soldering could be done automatically by passing the board over a ripple, or wave, of molten solder in a wave-soldering machine. Not established: that about 600 joints on this board went through the wave in one pass, the 245-255 deg C pot temperature, the 1.5-2.5 m/min wave speed, and the split between waved and hand-soldered joints. The eutectic was the right choice, and the reason is worth stating: at 63/37 the alloy melts and solidifies at one temperature instead of a mushy range, so a joint leaves the wave already set. 60/40, common for hand work, freezes over a range and gives duller, greyer joints. The alloy chain from cassiterite and galena through the ingot to the wire is owned by metal.solder and metal.tin / metal.lead, and the flux by chem.rosin; neither is repeated here. The flux was specified halide-free rather than no-clean: low-solids no-clean fluxes existed but were not the default here, and the goal was a non-ionic flux rather than a skipped cleaning step.",
       "confidence": "medium",
-      "sources": ["https://en.wikipedia.org/wiki/Soldering"],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Soldering"
+      ],
       "inputs": [
         "metal.solder",
         "chem.rosin"
@@ -791,7 +804,6 @@
               "confidence": "medium",
               "note": "A welded mild-steel frame carrying pot, tunnel, conveyor, hood and flux plumbing is the ordinary machine body. Not established: the frame dimensions, weld method, or steel grade on the C64 wave machine."
             },
-            
             {
               "id": "mb.solder.wave.preheat",
               "name": "Preheat tunnel",
@@ -819,7 +831,9 @@
               ],
               "confidence": "medium",
               "note": "Preheating helps to accelerate the soldering process and to prevent thermal shock, while driving off moisture that would otherwise spit solder from holes. Not established: the 120 deg C figure, tunnel length, or dwell time on the C64 line.",
-              "sources": ["https://en.wikipedia.org/wiki/Wave_soldering"]
+              "sources": [
+                "https://en.wikipedia.org/wiki/Wave_soldering"
+              ]
             },
             {
               "id": "mb.solder.wave.foam",
@@ -842,7 +856,9 @@
               ],
               "confidence": "medium",
               "note": "Flux in wave soldering cleans the parts to be soldered, principally oxide layers, and foaming lays a thin even film that spraying or brushing never matches. Not established: the flux formulation, foam height, or film thickness on the C64 line.",
-              "sources": ["https://en.wikipedia.org/wiki/Wave_soldering"]
+              "sources": [
+                "https://en.wikipedia.org/wiki/Wave_soldering"
+              ]
             },
             {
               "id": "mb.solder.wave.conveyor",
@@ -857,33 +873,6 @@
               ],
               "confidence": "medium",
               "note": "A stainless or phenolic chain carrying boards by their edge in spaced fixtures is the ordinary wave-soldering transport. Not established: the chain pitch, fixture design, or edge-clearance practice on the C64 line."
-            },
-            {
-              "id": "mb.solder.wave.nitrogen",
-              "name": "Nitrogen blanket over the pot",
-              "description": "Many machines piped nitrogen over the solder surface to keep the oxide skin thin and stop dross forming. It also stops the skin from insulating the pot from the wave, which makes the wave itself erratic. Cheaper machines ran open to air and simply lived with the dross.",
-              "kind": "process",
-              "category": "assembly",
-              "era": "1980s",
-              "inputs": [
-                "facility.nitrogen"
-              ],
-              "confidence": "medium",
-              "note": "Piping nitrogen over the pot to thin the oxide skin and cut dross is an available option, with cheaper machines running open to air. Not established: whether the C64 line used a nitrogen blanket, at what flow, or the dross rate without it."
-            },
-            {
-              "id": "mb.solder.wave.cooling",
-              "name": "Cooling zone",
-              "description": "After the wave, boards sit in moving hot air before leaving the machine. Hot air rather than cold, because chilling a freshly soldered joint around a large thermal-mass lead is how you get a cracked solder fillet.",
-              "kind": "process",
-              "category": "assembly",
-              "era": "1980s",
-              "inputs": [
-                "facility.electricity"
-              ],
-              "confidence": "medium",
-              "note": "Allowing boards to cool at a reasonable rate in moving air is ordinary practice, since cooling too fast warps the board and compromises solder. Not established: the air temperature, dwell time, or fan arrangement in the cooling zone on the C64 line.",
-              "sources": ["https://en.wikipedia.org/wiki/Wave_soldering"]
             }
           ]
         },
@@ -950,7 +939,9 @@
             }
           ],
           "note": "Setting pot temperature, conveyor speed, preheat, preheat time and flux concentration together is the ordinary wave-soldering setup. Not established: the 245-255 deg C pot, 110-150 deg C preheat, 1.5-2.5 m per min speed, or 2-4 s contact time on the C64 line.",
-              "sources": ["https://en.wikipedia.org/wiki/Wave_soldering"]
+          "sources": [
+            "https://en.wikipedia.org/wiki/Wave_soldering"
+          ]
         },
         {
           "id": "mb.solder.reliability",
@@ -1019,7 +1010,9 @@
               ],
               "confidence": "medium",
               "note": "A heater in a barrel with a replaceable tinned copper tip is the ordinary soldering iron. Not established: whether the C64 line used nichrome or cartridge heaters, tip plating, or the tinned-tip maintenance routine.",
-              "sources": ["https://en.wikipedia.org/wiki/Soldering"]
+              "sources": [
+                "https://en.wikipedia.org/wiki/Soldering"
+              ]
             },
             {
               "id": "mb.solder.hand.extraction",
@@ -1036,7 +1029,9 @@
             }
           ],
           "note": "Hand work with iron, wire and pliers under an extraction arm for connectors, fuse clips, jumpers and rejects is ordinary bench practice. Not established: the 25-60 W iron power, 315-380 deg C tip temperature, or copper-tip construction on the C64 line.",
-              "sources": ["https://en.wikipedia.org/wiki/Soldering"]
+          "sources": [
+            "https://en.wikipedia.org/wiki/Soldering"
+          ]
         },
         {
           "id": "mb.solder.selective",
@@ -1249,9 +1244,11 @@
           "era": "1983",
           "note": "Modern boards are dominated by reflow. This one is not. The absence is evidenced by the 250407 bill of materials: across 107 line items and 252 components, every footprint is a through-hole type - DIP, radial, axial, DIP socket, pin header, D-sub, solder jumper - and not one line is a chip resistor or chip capacitor package. That a switch to surface mount began in the 1980s is also established: since the 1980s, surface mount parts have increasingly replaced through-hole components, which dates this board to the end of the era rather than after it.",
           "confidence": "high",
-          "sources": ["https://github.com/bwack/C64-250407-Replica-KiCad/blob/main/250407_bom.csv", "https://en.wikipedia.org/wiki/Printed_circuit_board"]
+          "sources": [
+            "https://github.com/bwack/C64-250407-Replica-KiCad/blob/main/250407_bom.csv",
+            "https://en.wikipedia.org/wiki/Printed_circuit_board"
+          ]
         },
-        
         {
           "id": "mb.assembly.conformal",
           "name": "No conformal coating on this board",
@@ -1393,7 +1390,9 @@
               ],
               "confidence": "medium",
               "note": "In-circuit testing checks for shorts, opens, resistance, capacitance and other basic quantities showing whether assembly was correctly fabricated. Not established: the thresholds, which nets were probed, or whether absolute values were measured on the 250407 fixture.",
-              "sources": ["https://en.wikipedia.org/wiki/In-circuit_testing"]
+              "sources": [
+                "https://en.wikipedia.org/wiki/In-circuit_testing"
+              ]
             },
             {
               "id": "mb.test.ict.presence",
@@ -1422,7 +1421,9 @@
               ],
               "confidence": "medium",
               "note": "A rack of switching electronics with a go or no-go readout is ordinary 1980s digital test equipment. Not established: the tester make or model, relay-matrix size, or display type used for the 250407 board.",
-              "sources": ["https://en.wikipedia.org/wiki/In-circuit_testing"]
+              "sources": [
+                "https://en.wikipedia.org/wiki/In-circuit_testing"
+              ]
             }
           ]
         },
@@ -1467,8 +1468,8 @@
                 }
               ],
               "confidence": "medium",
-      "note": "Not established: the cartridge part number, the ROM contents and the identity of the diagnostic ROM. The C64 dead-test screen is associated with the service manual, but the per-page mirror at devili.iki.fi carries circuit-theory pages only and does not reproduce it."
-    },
+              "note": "Not established: the cartridge part number, the ROM contents and the identity of the diagnostic ROM. The C64 dead-test screen is associated with the service manual, but the per-page mirror at devili.iki.fi carries circuit-theory pages only and does not reproduce it."
+            },
             {
               "id": "mb.test.functional.cradle",
               "name": "Test cradle",
@@ -1602,7 +1603,9 @@
             }
           ],
           "note": "Burn-in is the process by which components of a system are exercised before being placed in service, frequently at elevated temperature. Not established: the duration, temperature, or voltage of the C64 burn-in, or that unattended diagnostic ROM running was the method used.",
-              "sources": ["https://en.wikipedia.org/wiki/Burn-in"]
+          "sources": [
+            "https://en.wikipedia.org/wiki/Burn-in"
+          ]
         },
         {
           "id": "mb.test.final",
@@ -1792,7 +1795,9 @@
               ],
               "confidence": "medium",
               "note": "That vector photoplotters driven by Gerber format data were the dominant plotting technology for PCB artwork of this period is established: Standard Gerber was a numerical control format designed by Gerber Systems Corp to drive their vector photo plotters for the PCB industry in the 1960s and 1970s. Not established: that the exposure was a corona discharge from a stepped wire or shaped electrode, that flatbed machines laid a film flat and so became the standard for two-sided work, the hundreds of beds claim elsewhere in this branch, and that this machine was a Gerber-branded electrostatic plotter. Modern boards use direct imaging, for which Gerber is also the standard image input format, so the format outlived the machine.",
-              "sources": ["https://en.wikipedia.org/wiki/Gerber_format"]
+              "sources": [
+                "https://en.wikipedia.org/wiki/Gerber_format"
+              ]
             },
             {
               "id": "mb.photo.plotter.film",
@@ -1807,7 +1812,9 @@
               ],
               "confidence": "medium",
               "note": "High-contrast dimensionally stable film on a polyester base is the standard artwork medium. Not established: the brand, thickness, or minimum density the 251137 film was ordered to, or its storage life.",
-              "sources": ["https://en.wikipedia.org/wiki/Gerber_format"]
+              "sources": [
+                "https://en.wikipedia.org/wiki/Gerber_format"
+              ]
             },
             {
               "id": "mb.photo.plotter.pen",
@@ -1907,8 +1914,8 @@
               "note": "Working from a single authoritative artwork film is ordinary phototooling practice. Not established: how the 251137 master was stored or handled, or the cost consequence of losing it."
             }
           ],
-      "note": "Not established: the rephotography step, the test coupon, and the practice of measuring the narrowest trace under a measuring microscope before committing a panel. Board-house procedure of the period is described in trade literature, which is not cited here."
-    },
+          "note": "Not established: the rephotography step, the test coupon, and the practice of measuring the narrowest trace under a measuring microscope before committing a panel. Board-house procedure of the period is described in trade literature, which is not cited here."
+        },
         {
           "id": "mb.photo.mask",
           "name": "Printing the artwork onto the resist",
@@ -1937,5 +1944,38 @@
         }
       ]
     }
-  ]
+  ],
+  "shared": {
+    "mb.solder.wave.nitrogen": {
+      "id": "mb.solder.wave.nitrogen",
+      "name": "Nitrogen blanket over the pot",
+      "description": "Many machines piped nitrogen over the solder surface to keep the oxide skin thin and stop dross forming. It also stops the skin from insulating the pot from the wave, which makes the wave itself erratic. Cheaper machines ran open to air and simply lived with the dross.",
+      "kind": "process",
+      "category": "assembly",
+      "era": "1980s",
+      "inputs": [
+        "facility.nitrogen",
+        "mb.solder.wave"
+      ],
+      "confidence": "medium",
+      "note": "Piping nitrogen over the pot to thin the oxide skin and cut dross is an available option, with cheaper machines running open to air. Not established: whether the C64 line used a nitrogen blanket, at what flow, or the dross rate without it."
+    },
+    "mb.solder.wave.cooling": {
+      "id": "mb.solder.wave.cooling",
+      "name": "Cooling zone",
+      "description": "After the wave, boards sit in moving hot air before leaving the machine. Hot air rather than cold, because chilling a freshly soldered joint around a large thermal-mass lead is how you get a cracked solder fillet.",
+      "kind": "process",
+      "category": "assembly",
+      "era": "1980s",
+      "inputs": [
+        "facility.electricity",
+        "mb.solder.wave"
+      ],
+      "confidence": "medium",
+      "note": "Allowing boards to cool at a reasonable rate in moving air is ordinary practice, since cooling too fast warps the board and compromises solder. Not established: the air temperature, dwell time, or fan arrangement in the cooling zone on the C64 line.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Wave_soldering"
+      ]
+    }
+  }
 }

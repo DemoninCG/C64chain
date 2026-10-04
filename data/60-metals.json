@@ -2187,7 +2187,8 @@
             }
           ],
           "inputs": [
-            "metal.aluminum.homogenising"
+            "metal.aluminum.homogenising",
+            "metal.aluminum.cold-rolling"
           ],
           "note": "Documented in general terms only: hot rolling is done above the recrystallization temperature and starts from ingots, slabs, blooms and billets, with the finishing temperature set above the recrystallization point. Not established for aluminium: the 300-400 C and 450-550 C preheat ranges, the 2-6 mm exit thickness, the 30% per-pass reduction limit and the hot descaler roll practice. The rolling reference is the general Rolling (metalworking) article and carries no aluminium-specific figures."
         },
@@ -2200,7 +2201,6 @@
           "era": "1982",
           "confidence": "high",
           "inputs": [
-            "metal.aluminum.hot-rolling",
             "metal.die-steel",
             "metal.aluminum.rolling-oil"
           ],
@@ -2373,7 +2373,8 @@
           "inputs": [
             "metal.aluminum.ingot",
             "metal.manganese",
-            "magnesium-silicon"
+            "magnesium-silicon",
+            "metal.aluminum.soak-furnace"
           ],
           "facts": [
             {
@@ -2471,9 +2472,7 @@
               "category": "metals",
               "era": "1982",
               "confidence": "medium",
-              "inputs": [
-                "metal.aluminum.blending"
-              ],
+              "inputs": [],
               "facts": [
                 {
                   "label": "Soak",
@@ -2527,7 +2526,6 @@
       "era": "1982",
       "confidence": "high",
       "inputs": [
-        "metal.copper.anode",
         "metal.sulphuric-acid"
       ],
       "facts": [
@@ -3529,66 +3527,6 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Brass"
           ]
-        },
-        {
-          "id": "metal.zinc-oxide-varistor",
-          "name": "Zinc oxide varistor: the mains spike clamp",
-          "description": "The C64's power supply faces the mains directly. A zinc oxide varistor disc - ZnO powder pressed and sintered between two fired electrodes - sits across the input, and its resistance is astronomically high until the mains edge is exceeded, at which point it conducts and clamps the surge. ZnO is essentially a doped semiconductor ceramic: zinc oxide powder mixed with a few mol percent of the oxides of bismuth, cobalt, nickel, manganese and antimony, calcined, granulated with a binder, dry-pressed at 100-200 MPa, fired at 1100-1300 C, and cooled under a reducing atmosphere so the grain boundaries become the non-stoichiometry that gives the voltage knee. So the surge protection on the input filter is a zinc metallurgy product - and, incidentally, the same powder metallurgy as the ferrites.",
-          "kind": "part",
-          "category": "metals",
-          "era": "1982",
-          "confidence": "high",
-          "inputs": [
-            "metal.zinc.ingot",
-            "metal.ferrite.manufacture"
-          ],
-          "facts": [
-            {
-              "label": "Composition",
-              "value": "ZnO with 0.5-2 mol% each of Bi2O3, CoO, MnO and other dopants"
-            },
-            {
-              "label": "Clamp voltage",
-              "value": "~240 V for a mains disc, ~700 V for a DC-side disc"
-            },
-            {
-              "label": "Energy handling",
-              "value": "10 J to over 1 kJ per disc, set by diameter"
-            },
-            {
-              "label": "Firing",
-              "value": "1100-1300 C, then a controlled-atmosphere cool"
-            }
-          ],
-          "sources": [
-            "https://en.wikipedia.org/wiki/Varistor"
-          ],
-          "children": [
-            {
-              "id": "metal.zinc-oxide-powder",
-              "name": "Zinc oxide powder",
-              "description": "Zinc oxide for ceramics was, in 1982, made by burning high-purity zinc in air, by calcining high-purity zinc carbonate, or - for the highest grades - by the vapour-phase oxidation of high-purity zinc metal, which gives spherical sub-micron particles with a very tight size distribution. A varistor powder needs high-purity ZnO because any foreign phase at the grain boundary changes the voltage knee. So the varistor in the C64's power supply starts with 99.99% zinc.",
-              "kind": "material",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "medium",
-              "facts": [
-                {
-                  "label": "Route",
-                  "value": "combustion or calcination; vapour-phase oxidation for the best powder"
-                },
-                {
-                  "label": "Particle size",
-                  "value": "sub-micron for the vapour route"
-                },
-                {
-                  "label": "Reaction",
-                  "value": "2Zn + O2 -> 2ZnO at 400-600 C"
-                }
-              ],
-              "note": "The exact powder route for a given varistor is proprietary; medium confidence. The atmospheric oxidation of zinc metal is the bottom of this branch and is a certainty."
-            }
-          ]
         }
       ]
     },
@@ -3684,38 +3622,7 @@
             }
           ],
           "note": "Medium confidence; the cell layout is standard but varies between plants.",
-          "children": [
-            {
-              "id": "metal.zinc.stripping",
-              "name": "Strip the cathodes and melt the SHG ingot",
-              "description": "At the end of the cycle each cathode is lifted out, tipped against a steel plate that shears the zinc slab off, and the slabs are charged to a 100-500 kg induction furnace. The furnace has to be held at 450-470 C and under a cover flux because zinc oxidises readily and every gram of oxide is a loss. Two refinements came in during the 1980s: induction furnaces with better stirring and better control, and the move to a single large furnace rather than a fleet of small ones, which cut the oxide loss and the labour.",
-              "kind": "process",
-              "category": "metals",
-              "era": "1982",
-              "confidence": "medium",
-              "facts": [
-                {
-                  "label": "Melting",
-                  "value": "450-470 C in an induction furnace under a cover flux"
-                },
-                {
-                  "label": "Slab",
-                  "value": "5-25 kg per cathode"
-                },
-                {
-                  "label": "Loss",
-                  "value": "1-3% of the metal is lost as oxide and dross"
-                }
-              ],
-              "note": "The oxide loss figure is a rule of thumb; medium confidence.",
-              "inputs": [
-                "metal.zinc.electrowinning-cell"
-              ],
-              "children": [
-                "metal.zinc.ingot"
-              ]
-            }
-          ]
+          "children": []
         }
       ]
     },
@@ -6553,87 +6460,6 @@
       ],
       "children": [
         {
-          "id": "metal.ferrite.e-core",
-          "name": "E/EI/EE core geometry and the transformer",
-          "description": "The shape is dictated by the winding, and the 1982 supply for small switchers was a pair of E cores with a centre leg and a window, assembled 'E-E' or interleaved 'EI' so that the joint is staggered and the effective air gap is halved. The window has to fit the magnetising inductance and the wire; the cross-section is set by the core loss target. The same ferrite pressing produces E, EI, EE, U, toroid, drum and bobbin cores, and the shapes are made by different tools in the same press. The C64's transformer is one of the smallest: perhaps 25 mm across, 30-40 turns of 0.3 mm magnet wire on a bobbin, and a gap cut into the centre leg with a scraper to set the inductance.",
-          "kind": "part",
-          "category": "magnetics",
-          "era": "1982",
-          "confidence": "medium",
-          "inputs": [
-            "metal.ferrite.mnzn",
-            "metal.copper.wire"
-          ],
-          "facts": [
-            {
-              "label": "Typical core",
-              "value": "E or EE, about 20-30 mm across the window"
-            },
-            {
-              "label": "Gap",
-              "value": "0.2-1.0 mm cut in one leg with a carbide scraper to set the inductance"
-            },
-            {
-              "label": "Frequency",
-              "value": "15-65 kHz for a C64-class switcher"
-            }
-          ],
-          "note": "The exact core size and gap in the Commodore PSU transformer need the part itself; medium confidence on the range.",
-          "children": [
-            {
-              "id": "metal.ferrite.gap-scrape",
-              "name": "Cutting the air gap in the centre leg",
-              "description": "An ungapped ferrite E core has a very high inductance and would not regulate a switch-mode supply; the switcher's magnetising current would be wrong and the whole design fails. So the gap is made deliberately, and on a 1982 E core it was cut with a carbide-tipped scraper - literally a hand blade run along the face of the centre leg - to 0.2-1.0 mm. Cutting rather than inserting a gap material keeps the inductance high and spreads the gap's fringing over an area, and it does it with a machine a ferrite buyer can operate. The tolerance of that hand cut is what sets the inductance tolerance, and the whole thing is one of the more beautiful pieces of 1980s manufacturing: a blade and a number.",
-              "kind": "process",
-              "category": "magnetics",
-              "era": "1982",
-              "confidence": "medium",
-              "facts": [
-                {
-                  "label": "Gap",
-                  "value": "0.2-1.0 mm, cut with a carbide scraper"
-                },
-                {
-                  "label": "Why cut",
-                  "value": "spreads the fringing flux over an area and keeps the inductance high"
-                },
-                {
-                  "label": "Control",
-                  "value": "the gap sets the inductance, so the transformer builder measured it and often adjusted it per core"
-                }
-              ],
-              "note": "Medium confidence; the scraper-gap technique is very widely documented for small E and EE cores of that era.",
-              "inputs": [
-                "metal.ferrite.mnzn"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "metal.ferrite.choke",
-          "name": "Filter chokes and the common-mode choke",
-          "description": "The bulk filter chokes in a 1982 linear-supply C64 are 470 uH to a few millihenry with a current rating of 1-3 A, wound on an EE or a bobbin core of the same MnZn material. The switch-mode version instead has a common-mode choke: two windings on a single core, arranged so the two currents are equal and opposite, so the flux cancels and the choke does not need to store any energy - its only job is to present a high impedance to the common-mode noise on the mains lead. Both are the same pressed ceramic with a different winding.",
-          "kind": "part",
-          "category": "magnetics",
-          "era": "1982",
-          "confidence": "medium",
-          "inputs": [
-            "metal.ferrite.mnzn",
-            "metal.copper.wire"
-          ],
-          "facts": [
-            {
-              "label": "Linear filter choke",
-              "value": "0.5-10 mH, 1-3 A, MnZn EE core"
-            },
-            {
-              "label": "Common mode choke",
-              "value": "2-20 mH, bifilar or two-hole core, high common-mode impedance at 0.1-10 MHz"
-            }
-          ],
-          "note": "The C64 power supply of 1982 is a linear supply with a big transformer and 5 V regulator; the common-mode choke and the switcher belong to the later C64 power supplies and to the monitor. Medium confidence on which is which without the specific PSU. The magnetics agent owns the topology."
-        },
-        {
           "id": "metal.ferrite.dopants",
           "name": "Dopants: calcium, silicon, cobalt and the grain boundaries",
           "description": "The last half percent of the ferrite recipe does most of the work. A small calcium and silicon addition forms a grain-boundary phase that makes the grain boundaries insulating and therefore suppresses eddy-current loss. Cobalt raises the anisotropy and the permeability at low field, which matters for a filter inductor. Lithium prevents wall-jumping in a high-coercivity ferrite. These additions are 0.1-2% each and they are why a power ferrite's chemistry is a trade secret and why the same nominal composition from two suppliers will not behave the same way.",
@@ -6702,60 +6528,6 @@
         "https://en.wikipedia.org/wiki/Ferrite_(magnet)"
       ],
       "children": [
-        {
-          "id": "metal.ferrite.bead",
-          "name": "Ferrite bead: a small cylinder of NiZn or MnZn",
-          "description": "A bead is just a pressed and fired ferrite with a hole through it, made on a bead press with a die that forms the cylinder in a few milliseconds. A 1982 board might carry a dozen: one on each supply line to the analogue section, one on the video line, one or two on the mains lead of the supply. The bead impedance is a rising curve with frequency, set entirely by the ferrite's complex permeability, and the bead's job is to convert a common-mode current into a small radiated field and a small conducted noise instead of a large one. The bead and the RF transformer are the same pressed powder.",
-          "kind": "part",
-          "category": "magnetics",
-          "era": "1982",
-          "confidence": "high",
-          "inputs": [
-            "metal.ferrite.nizn"
-          ],
-          "facts": [
-            {
-              "label": "Size",
-              "value": "2-10 mm diameter, 2-6 mm long, bore 0.5-2 mm"
-            },
-            {
-              "label": "Impedance",
-              "value": "50-1000 ohm at 100 MHz for a 6 mm bead"
-            },
-            {
-              "label": "Rating",
-              "value": "0.1-2 A DC, with the bead heating in free air"
-            }
-          ],
-          "sources": [
-            "https://en.wikipedia.org/wiki/Ferrite_bead"
-          ],
-          "note": "The exact bead count and sizes on the C64 mainboard are the magnetics/interconnect agent's call; the material route here is certain."
-        },
-        {
-          "id": "metal.ferrite.modulator",
-          "name": "The RF modulator coil",
-          "description": "The C64's TV modulator, which puts the composite video onto the RF of channel 3 or 4 so a television could display the machine, contains a small ferrite-loaded coil - a few turns of enamelled copper wire on a ferrite core or threaded through a ferrite bead. This is the one place in the machine where nickel-zinc ferrite is genuinely a radio-frequency component rather than a filter. The modulator itself and the television are the optics/television agents' business; the core is this branch's.",
-          "kind": "part",
-          "category": "magnetics",
-          "era": "1982",
-          "confidence": "medium",
-          "inputs": [
-            "metal.ferrite.nizn",
-            "metal.copper.wire"
-          ],
-          "facts": [
-            {
-              "label": "Frequency",
-              "value": "channel 3 at 61.25 MHz or channel 4 at 67.25 MHz in the PAL/NTSC modulator"
-            },
-            {
-              "label": "Core",
-              "value": "a small NiZn bead or rod, 5-15 mm"
-            }
-          ],
-          "note": "Medium confidence: the modulator coil construction in the Commodore 250407 would need the actual part."
-        },
         {
           "id": "metal.ferrite.nizn.doping",
           "name": "NiZn dopants: copper, cobalt and calcium",
@@ -6915,104 +6687,329 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    "metal.barium-titanate-capacitor": {
+      "id": "metal.barium-titanate-capacitor",
+      "name": "The ceramic capacitor and its dielectric classes",
+      "description": "The finished use. A 1982 C64 mainboard carries perhaps 30-60 ceramic capacitors, mostly small discs and a few multilayer blocks. The disc is a pressed or cast barium titanate body, sintered at 1250-1350 C, silver-coated on both faces and fired to make the electrodes, and dipped in an epoxy or phenolic encapsulant. The multilayer capacitor stacks hundreds of microns-thick dielectric layers with internal nickel or palladium electrodes, screen-printed and co-fired - a technology that was genuinely new in 1982 and was the reason a 10 nF 50 V part started to fit in a 1.6 mm-tall package. The dielectric classes are named by their temperature coefficient: X7R and Z5U for the general-purpose 1980s parts, Y5V for the high-capacitance low-stability ones.",
+      "kind": "part",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "inputs": [
+        "metal.barium.titanate",
+        "metal.silver.ingot"
+      ],
+      "facts": [
+        {
+          "label": "Classes in 1982",
+          "value": "X7R (+/-15%, -55 to +125 C), Z5U (+/-20% or +80/-20%, +22 to +85 C), Y5V (+/-20% or +80/-20%)"
         },
         {
-          "id": "metal.barium-titanate-capacitor",
-          "name": "The ceramic capacitor and its dielectric classes",
-          "description": "The finished use. A 1982 C64 mainboard carries perhaps 30-60 ceramic capacitors, mostly small discs and a few multilayer blocks. The disc is a pressed or cast barium titanate body, sintered at 1250-1350 C, silver-coated on both faces and fired to make the electrodes, and dipped in an epoxy or phenolic encapsulant. The multilayer capacitor stacks hundreds of microns-thick dielectric layers with internal nickel or palladium electrodes, screen-printed and co-fired - a technology that was genuinely new in 1982 and was the reason a 10 nF 50 V part started to fit in a 1.6 mm-tall package. The dielectric classes are named by their temperature coefficient: X7R and Z5U for the general-purpose 1980s parts, Y5V for the high-capacitance low-stability ones.",
-          "kind": "part",
+          "label": "Disc sintering",
+          "value": "1250-1350 C"
+        },
+        {
+          "label": "Multilayer",
+          "value": "1-10 um dielectric layers, Ni or Pd internal electrodes, co-fired at 1200-1350 C in a reducing atmosphere, then re-oxidised"
+        },
+        {
+          "label": "Electrode",
+          "value": "silver for discs (fired at 700-900 C); base-metal nickel for multilayer"
+        }
+      ],
+      "note": "The class nomenclature and the sintering temperatures are standard; the count of ceramic capacitors on a C64 mainboard is an estimate and belongs to the passives agent.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ceramic_capacitor"
+      ],
+      "children": [
+        {
+          "id": "metal.dielectric-grading",
+          "name": "Grade the barium titanate powder into a dielectric class",
+          "description": "The same powder cannot make a Y5V capacitor and an X7R one. Y5V is made from a fine, uniform, high-surface-area powder near the Curie point, where the dielectric constant is enormous and wildly temperature-dependent - a huge capacitance that changes by a factor of five over the working range. X7R is made from a coarser powder with barium zirconate or barium strontium titanate added, which flattens the temperature curve at the cost of the peak. So the capacitor 'class' is really a powder specification, and the class marking on the part is a statement about the ball mill that ground it.",
+          "kind": "process",
           "category": "metals",
           "era": "1982",
           "confidence": "medium",
           "inputs": [
-            "metal.barium.titanate",
-            "metal.silver.ingot"
+            "barium-zirconate",
+            "barium-strontium-titanate"
           ],
           "facts": [
             {
-              "label": "Classes in 1982",
-              "value": "X7R (+/-15%, -55 to +125 C), Z5U (+/-20% or +80/-20%, +22 to +85 C), Y5V (+/-20% or +80/-20%)"
+              "label": "Y5V",
+              "value": "fine powder near the Curie point, K of several thousand, very high temperature coefficient"
             },
             {
-              "label": "Disc sintering",
-              "value": "1250-1350 C"
+              "label": "X7R",
+              "value": "coarser powder with solid solution, K of 1000-4000, +/-15% over -55 to +125 C"
             },
             {
-              "label": "Multilayer",
-              "value": "1-10 um dielectric layers, Ni or Pd internal electrodes, co-fired at 1200-1350 C in a reducing atmosphere, then re-oxidised"
-            },
-            {
-              "label": "Electrode",
-              "value": "silver for discs (fired at 700-900 C); base-metal nickel for multilayer"
+              "label": "Additives",
+              "value": "Ba(Zr,Ti)O3, Ba(Sr,Ti)O3, and rare-earth dopants for the high-capacitance grades"
             }
           ],
-          "note": "The class nomenclature and the sintering temperatures are standard; the count of ceramic capacitors on a C64 mainboard is an estimate and belongs to the passives agent.",
-          "sources": [
-            "https://en.wikipedia.org/wiki/Ceramic_capacitor"
-          ],
+          "note": "Medium confidence; the class-to-chemistry mapping is standard and the recipes are proprietary.",
           "children": [
             {
-              "id": "metal.dielectric-grading",
-              "name": "Grade the barium titanate powder into a dielectric class",
-              "description": "The same powder cannot make a Y5V capacitor and an X7R one. Y5V is made from a fine, uniform, high-surface-area powder near the Curie point, where the dielectric constant is enormous and wildly temperature-dependent - a huge capacitance that changes by a factor of five over the working range. X7R is made from a coarser powder with barium zirconate or barium strontium titanate added, which flattens the temperature curve at the cost of the peak. So the capacitor 'class' is really a powder specification, and the class marking on the part is a statement about the ball mill that ground it.",
+              "id": "metal.dielectric-grading.mlc",
+              "name": "Co-fire the internal electrodes in a low-oxygen atmosphere",
+              "description": "A multilayer capacitor's internal electrode is nickel or palladium, printed as a paste and co-fired with the ceramic. That will not work in air - the ceramic would reduce and become a lossy semiconductor - so the whole stack is fired in a low-oxygen atmosphere at 1200-1350 C in hydrogen or in a nitrogen-hydrogen mix, and then re-oxidised afterwards so the barium titanate goes back to being an insulator. The oxygen partial pressure is controlled to a few millibars. It is the most metallurgically demanding step in the whole electronics supply chain that nobody ever sees, and it is a barium carbonate problem.",
               "kind": "process",
               "category": "metals",
               "era": "1982",
               "confidence": "medium",
-              "inputs": [
-                "barium-zirconate",
-                "barium-strontium-titanate"
-              ],
               "facts": [
                 {
-                  "label": "Y5V",
-                  "value": "fine powder near the Curie point, K of several thousand, very high temperature coefficient"
+                  "label": "Electrode",
+                  "value": "nickel or palladium paste, screen-printed"
                 },
                 {
-                  "label": "X7R",
-                  "value": "coarser powder with solid solution, K of 1000-4000, +/-15% over -55 to +125 C"
+                  "label": "Atmosphere",
+                  "value": "low pO2, a few millibars, in H2 or N2/H2"
                 },
                 {
-                  "label": "Additives",
-                  "value": "Ba(Zr,Ti)O3, Ba(Sr,Ti)O3, and rare-earth dopants for the high-capacitance grades"
+                  "label": "Reoxidation",
+                  "value": "a separate anneal afterwards to restore the insulator"
                 }
               ],
-              "note": "Medium confidence; the class-to-chemistry mapping is standard and the recipes are proprietary.",
-              "children": [
-                {
-                  "id": "metal.dielectric-grading.mlc",
-                  "name": "Co-fire the internal electrodes in a low-oxygen atmosphere",
-                  "description": "A multilayer capacitor's internal electrode is nickel or palladium, printed as a paste and co-fired with the ceramic. That will not work in air - the ceramic would reduce and become a lossy semiconductor - so the whole stack is fired in a low-oxygen atmosphere at 1200-1350 C in hydrogen or in a nitrogen-hydrogen mix, and then re-oxidised afterwards so the barium titanate goes back to being an insulator. The oxygen partial pressure is controlled to a few millibars. It is the most metallurgically demanding step in the whole electronics supply chain that nobody ever sees, and it is a barium carbonate problem.",
-                  "kind": "process",
-                  "category": "metals",
-                  "era": "1982",
-                  "confidence": "medium",
-                  "facts": [
-                    {
-                      "label": "Electrode",
-                      "value": "nickel or palladium paste, screen-printed"
-                    },
-                    {
-                      "label": "Atmosphere",
-                      "value": "low pO2, a few millibars, in H2 or N2/H2"
-                    },
-                    {
-                      "label": "Reoxidation",
-                      "value": "a separate anneal afterwards to restore the insulator"
-                    }
-                  ],
-                  "note": "Medium confidence; the co-firing atmosphere is standard practice but the exact pO2 is proprietary.",
-                  "sources": [
-                    "https://en.wikipedia.org/wiki/Multilayer_ceramic_capacitor"
-                  ],
-                  "inputs": [
-                    "metal.dielectric-grading"
-                  ]
-                }
+              "note": "Medium confidence; the co-firing atmosphere is standard practice but the exact pO2 is proprietary.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Multilayer_ceramic_capacitor"
+              ],
+              "inputs": [
+                "metal.dielectric-grading"
               ]
             }
           ]
         }
+      ]
+    },
+    "metal.ferrite.bead": {
+      "id": "metal.ferrite.bead",
+      "name": "Ferrite bead: a small cylinder of NiZn or MnZn",
+      "description": "A bead is just a pressed and fired ferrite with a hole through it, made on a bead press with a die that forms the cylinder in a few milliseconds. A 1982 board might carry a dozen: one on each supply line to the analogue section, one on the video line, one or two on the mains lead of the supply. The bead impedance is a rising curve with frequency, set entirely by the ferrite's complex permeability, and the bead's job is to convert a common-mode current into a small radiated field and a small conducted noise instead of a large one. The bead and the RF transformer are the same pressed powder.",
+      "kind": "part",
+      "category": "magnetics",
+      "era": "1982",
+      "confidence": "high",
+      "inputs": [
+        "metal.ferrite.nizn"
+      ],
+      "facts": [
+        {
+          "label": "Size",
+          "value": "2-10 mm diameter, 2-6 mm long, bore 0.5-2 mm"
+        },
+        {
+          "label": "Impedance",
+          "value": "50-1000 ohm at 100 MHz for a 6 mm bead"
+        },
+        {
+          "label": "Rating",
+          "value": "0.1-2 A DC, with the bead heating in free air"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ferrite_bead"
+      ],
+      "note": "The exact bead count and sizes on the C64 mainboard are the magnetics/interconnect agent's call; the material route here is certain."
+    },
+    "metal.ferrite.modulator": {
+      "id": "metal.ferrite.modulator",
+      "name": "The RF modulator coil",
+      "description": "The C64's TV modulator, which puts the composite video onto the RF of channel 3 or 4 so a television could display the machine, contains a small ferrite-loaded coil - a few turns of enamelled copper wire on a ferrite core or threaded through a ferrite bead. This is the one place in the machine where nickel-zinc ferrite is genuinely a radio-frequency component rather than a filter. The modulator itself and the television are the optics/television agents' business; the core is this branch's.",
+      "kind": "part",
+      "category": "magnetics",
+      "era": "1982",
+      "confidence": "medium",
+      "inputs": [
+        "metal.ferrite.nizn",
+        "metal.copper.wire"
+      ],
+      "facts": [
+        {
+          "label": "Frequency",
+          "value": "channel 3 at 61.25 MHz or channel 4 at 67.25 MHz in the PAL/NTSC modulator"
+        },
+        {
+          "label": "Core",
+          "value": "a small NiZn bead or rod, 5-15 mm"
+        }
+      ],
+      "note": "Medium confidence: the modulator coil construction in the Commodore 250407 would need the actual part."
+    },
+    "metal.ferrite.e-core": {
+      "id": "metal.ferrite.e-core",
+      "name": "E/EI/EE core geometry and the transformer",
+      "description": "The shape is dictated by the winding, and the 1982 supply for small switchers was a pair of E cores with a centre leg and a window, assembled 'E-E' or interleaved 'EI' so that the joint is staggered and the effective air gap is halved. The window has to fit the magnetising inductance and the wire; the cross-section is set by the core loss target. The same ferrite pressing produces E, EI, EE, U, toroid, drum and bobbin cores, and the shapes are made by different tools in the same press. The C64's transformer is one of the smallest: perhaps 25 mm across, 30-40 turns of 0.3 mm magnet wire on a bobbin, and a gap cut into the centre leg with a scraper to set the inductance.",
+      "kind": "part",
+      "category": "magnetics",
+      "era": "1982",
+      "confidence": "medium",
+      "inputs": [
+        "metal.ferrite.mnzn",
+        "metal.copper.wire"
+      ],
+      "facts": [
+        {
+          "label": "Typical core",
+          "value": "E or EE, about 20-30 mm across the window"
+        },
+        {
+          "label": "Gap",
+          "value": "0.2-1.0 mm cut in one leg with a carbide scraper to set the inductance"
+        },
+        {
+          "label": "Frequency",
+          "value": "15-65 kHz for a C64-class switcher"
+        }
+      ],
+      "note": "The exact core size and gap in the Commodore PSU transformer need the part itself; medium confidence on the range.",
+      "children": [
+        {
+          "id": "metal.ferrite.gap-scrape",
+          "name": "Cutting the air gap in the centre leg",
+          "description": "An ungapped ferrite E core has a very high inductance and would not regulate a switch-mode supply; the switcher's magnetising current would be wrong and the whole design fails. So the gap is made deliberately, and on a 1982 E core it was cut with a carbide-tipped scraper - literally a hand blade run along the face of the centre leg - to 0.2-1.0 mm. Cutting rather than inserting a gap material keeps the inductance high and spreads the gap's fringing over an area, and it does it with a machine a ferrite buyer can operate. The tolerance of that hand cut is what sets the inductance tolerance, and the whole thing is one of the more beautiful pieces of 1980s manufacturing: a blade and a number.",
+          "kind": "process",
+          "category": "magnetics",
+          "era": "1982",
+          "confidence": "medium",
+          "facts": [
+            {
+              "label": "Gap",
+              "value": "0.2-1.0 mm, cut with a carbide scraper"
+            },
+            {
+              "label": "Why cut",
+              "value": "spreads the fringing flux over an area and keeps the inductance high"
+            },
+            {
+              "label": "Control",
+              "value": "the gap sets the inductance, so the transformer builder measured it and often adjusted it per core"
+            }
+          ],
+          "note": "Medium confidence; the scraper-gap technique is very widely documented for small E and EE cores of that era.",
+          "inputs": [
+            "metal.ferrite.mnzn"
+          ]
+        }
+      ]
+    },
+    "metal.ferrite.choke": {
+      "id": "metal.ferrite.choke",
+      "name": "Filter chokes and the common-mode choke",
+      "description": "The bulk filter chokes in a 1982 linear-supply C64 are 470 uH to a few millihenry with a current rating of 1-3 A, wound on an EE or a bobbin core of the same MnZn material. The switch-mode version instead has a common-mode choke: two windings on a single core, arranged so the two currents are equal and opposite, so the flux cancels and the choke does not need to store any energy - its only job is to present a high impedance to the common-mode noise on the mains lead. Both are the same pressed ceramic with a different winding.",
+      "kind": "part",
+      "category": "magnetics",
+      "era": "1982",
+      "confidence": "medium",
+      "inputs": [
+        "metal.ferrite.mnzn",
+        "metal.copper.wire"
+      ],
+      "facts": [
+        {
+          "label": "Linear filter choke",
+          "value": "0.5-10 mH, 1-3 A, MnZn EE core"
+        },
+        {
+          "label": "Common mode choke",
+          "value": "2-20 mH, bifilar or two-hole core, high common-mode impedance at 0.1-10 MHz"
+        }
+      ],
+      "note": "The C64 power supply of 1982 is a linear supply with a big transformer and 5 V regulator; the common-mode choke and the switcher belong to the later C64 power supplies and to the monitor. Medium confidence on which is which without the specific PSU. The magnetics agent owns the topology."
+    },
+    "metal.zinc-oxide-varistor": {
+      "id": "metal.zinc-oxide-varistor",
+      "name": "Zinc oxide varistor: the mains spike clamp",
+      "description": "The C64's power supply faces the mains directly. A zinc oxide varistor disc - ZnO powder pressed and sintered between two fired electrodes - sits across the input, and its resistance is astronomically high until the mains edge is exceeded, at which point it conducts and clamps the surge. ZnO is essentially a doped semiconductor ceramic: zinc oxide powder mixed with a few mol percent of the oxides of bismuth, cobalt, nickel, manganese and antimony, calcined, granulated with a binder, dry-pressed at 100-200 MPa, fired at 1100-1300 C, and cooled under a reducing atmosphere so the grain boundaries become the non-stoichiometry that gives the voltage knee. So the surge protection on the input filter is a zinc metallurgy product - and, incidentally, the same powder metallurgy as the ferrites.",
+      "kind": "part",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "inputs": [
+        "metal.zinc.ingot",
+        "metal.ferrite.manufacture"
+      ],
+      "facts": [
+        {
+          "label": "Composition",
+          "value": "ZnO with 0.5-2 mol% each of Bi2O3, CoO, MnO and other dopants"
+        },
+        {
+          "label": "Clamp voltage",
+          "value": "~240 V for a mains disc, ~700 V for a DC-side disc"
+        },
+        {
+          "label": "Energy handling",
+          "value": "10 J to over 1 kJ per disc, set by diameter"
+        },
+        {
+          "label": "Firing",
+          "value": "1100-1300 C, then a controlled-atmosphere cool"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Varistor"
+      ],
+      "children": [
+        {
+          "id": "metal.zinc-oxide-powder",
+          "name": "Zinc oxide powder",
+          "description": "Zinc oxide for ceramics was, in 1982, made by burning high-purity zinc in air, by calcining high-purity zinc carbonate, or - for the highest grades - by the vapour-phase oxidation of high-purity zinc metal, which gives spherical sub-micron particles with a very tight size distribution. A varistor powder needs high-purity ZnO because any foreign phase at the grain boundary changes the voltage knee. So the varistor in the C64's power supply starts with 99.99% zinc.",
+          "kind": "material",
+          "category": "metals",
+          "era": "1982",
+          "confidence": "medium",
+          "facts": [
+            {
+              "label": "Route",
+              "value": "combustion or calcination; vapour-phase oxidation for the best powder"
+            },
+            {
+              "label": "Particle size",
+              "value": "sub-micron for the vapour route"
+            },
+            {
+              "label": "Reaction",
+              "value": "2Zn + O2 -> 2ZnO at 400-600 C"
+            }
+          ],
+          "note": "The exact powder route for a given varistor is proprietary; medium confidence. The atmospheric oxidation of zinc metal is the bottom of this branch and is a certainty."
+        }
+      ]
+    },
+    "metal.zinc.stripping": {
+      "id": "metal.zinc.stripping",
+      "name": "Strip the cathodes and melt the SHG ingot",
+      "description": "At the end of the cycle each cathode is lifted out, tipped against a steel plate that shears the zinc slab off, and the slabs are charged to a 100-500 kg induction furnace. The furnace has to be held at 450-470 C and under a cover flux because zinc oxidises readily and every gram of oxide is a loss. Two refinements came in during the 1980s: induction furnaces with better stirring and better control, and the move to a single large furnace rather than a fleet of small ones, which cut the oxide loss and the labour.",
+      "kind": "process",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "facts": [
+        {
+          "label": "Melting",
+          "value": "450-470 C in an induction furnace under a cover flux"
+        },
+        {
+          "label": "Slab",
+          "value": "5-25 kg per cathode"
+        },
+        {
+          "label": "Loss",
+          "value": "1-3% of the metal is lost as oxide and dross"
+        }
+      ],
+      "note": "The oxide loss figure is a rule of thumb; medium confidence.",
+      "inputs": [
+        "metal.zinc.electrowinning-cell"
+      ],
+      "children": [
+        "metal.zinc.ingot"
       ]
     }
   }

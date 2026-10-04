@@ -341,39 +341,7 @@
                   "inputs": [
                     "metal.die-steel"
                   ],
-                  "children": [
-                    {
-                      "id": "c64.keyboard-switches.domes.moulding.tool.spark-erosion",
-                      "name": "Spark-erosion machining of the dome cavity",
-                      "description": "A fine copper electrode is brought within micrometres of the workpiece in a dielectric bath and pulses of a few microseconds melt a microscopic crater per pulse. Spark erosion is how a one-micron hemispherical cavity gets cut in hardened tool steel without any mechanical stress on the surface.",
-                      "kind": "process",
-                      "category": "passives",
-                      "era": "1982-1984",
-                      "confidence": "medium",
-                      "inputs": [
-                        "facility.electricity"
-                      ],
-                      "children": [
-                        {
-                          "id": "c64.keyboard-switches.domes.moulding.tool.spark-erosion.graphite-electrode",
-                          "name": "Graphite tool electrode",
-                          "description": "Graphite is the standard spark-erosion electrode: it is conductive, machinable to a fine tip, and wears slowly by re-graphitising. Machined graphite is made from petroleum coke calcined at ~3000 C.",
-                          "kind": "material",
-                          "category": "passives",
-                          "era": "ancient",
-                          "sources": [
-                            "https://en.wikipedia.org/wiki/Graphite"
-                          ],
-                          "confidence": "medium",
-                          "inputs": [
-                            "chem.petroleum"
-                          ],
-                          "note": "Not established: that spark erosion was actually used for this dome tool rather than machining, the slow wear by re-graphitising, and petroleum coke calcined at about 3000 C as the feed for this electrode stock."
-                        }
-                      ],
-                      "note": "Spark erosion as a process is real, but not established: that it was used to cut one-micron hemispherical cavities in hardened tool steel for these dome tools, the micrometre gap, the microsecond pulse, and the copper electrode. Graphite is the electrode material actually cited elsewhere in the tree for dome tooling."
-                    }
-                  ],
+                  "children": [],
                   "note": "Not established: machined versus spark-eroded construction, one hemispherical cavity per key, and the claims about replacement on re-specification and polish transfer to the dome mating face."
                 }
               ]
@@ -741,8 +709,7 @@
               ],
               "inputs": [
                 "chem.pvc",
-                "chem.petroleum",
-                "metal.copper.wire"
+                "chem.petroleum"
               ],
               "children": [
                 {
@@ -2199,5 +2166,39 @@
         }
       ]
     }
-  ]
+  ],
+  "shared": {
+    "c64.keyboard-switches.domes.moulding.tool.spark-erosion": {
+      "id": "c64.keyboard-switches.domes.moulding.tool.spark-erosion",
+      "name": "Spark-erosion machining of the dome cavity",
+      "description": "A fine copper electrode is brought within micrometres of the workpiece in a dielectric bath and pulses of a few microseconds melt a microscopic crater per pulse. Spark erosion is how a one-micron hemispherical cavity gets cut in hardened tool steel without any mechanical stress on the surface.",
+      "kind": "process",
+      "category": "passives",
+      "era": "1982-1984",
+      "confidence": "medium",
+      "inputs": [
+        "facility.electricity",
+        "c64.keyboard-switches.domes.moulding.tool"
+      ],
+      "children": [
+        {
+          "id": "c64.keyboard-switches.domes.moulding.tool.spark-erosion.graphite-electrode",
+          "name": "Graphite tool electrode",
+          "description": "Graphite is the standard spark-erosion electrode: it is conductive, machinable to a fine tip, and wears slowly by re-graphitising. Machined graphite is made from petroleum coke calcined at ~3000 C.",
+          "kind": "material",
+          "category": "passives",
+          "era": "ancient",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Graphite"
+          ],
+          "confidence": "medium",
+          "inputs": [
+            "chem.petroleum"
+          ],
+          "note": "Not established: that spark erosion was actually used for this dome tool rather than machining, the slow wear by re-graphitising, and petroleum coke calcined at about 3000 C as the feed for this electrode stock."
+        }
+      ],
+      "note": "Spark erosion as a process is real, but not established: that it was used to cut one-micron hemispherical cavities in hardened tool steel for these dome tools, the micrometre gap, the microsecond pulse, and the copper electrode. Graphite is the electrode material actually cited elsewhere in the tree for dome tooling."
+    }
+  }
 }
