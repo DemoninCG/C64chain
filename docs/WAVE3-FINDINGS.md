@@ -15,14 +15,14 @@ defects it named, is in each agent's own file:
 
 ## 1. What was run
 
-18 of 22 examinations complete; 4 in flight.
+19 of 22 examinations complete; 3 in flight.
 
 One read-only agent per branch or branch family. No agent edited any file in
 `data/`, `docs/` or `scripts/`. Agents read `docs/GOLDEN-IDEA.md`,
 `docs/REPORT-TEMPLATE.md` and `data/_relation_schema.json`, and were given a
 shared brief at `w3-brief.md`.
 
-Nodes read across all completed examinations: **2,540**
+Nodes read across all completed examinations: **2,592**
 (tree total 2,448). Nodes are re-read across agents where an agent followed an
 edge out of its scope, so this is a work figure, not a coverage percentage.
 
@@ -48,7 +48,7 @@ edge out of its scope, so this is a work figure, not a coverage percentage.
 | power-psu | 50-power: c64.psu + c64.mains | 107 | 200 tree edges | 6 | 5 | 5 | 8 | 6 | 30 | 8 BLOCKER or STRUCTURAL |
 | power-rf-modulator | 50-power: mb.rf-modulator and beneath | 41 | 76 (41 children + 35 from) | 7 | 2 | 3 | 3 | 4 | 19 | 14 high, 5 medium |
 | silicon-chips | 10-silicon: the chip nodes + si.wafer | 137 | 421 inside scope (373 stored, 48 leaving) + ~100 inbound on shared targets | 10 | 5 | 6 | 8 | 9 | 38 | not stated as a total |
-| silicon-fab | 10-silicon: all si.* + mb.cpu.front-end | — | — | — | — | — | — | — | pending | PENDING |
+| silicon-fab | 10-silicon: all si.* + mb.cpu.front-end + mb.cpu.fe.* | 52 | 294 (117 leaving, 177 arriving) | 5 | 3 | 5 | 7 | 1 | 21 | 13 high, 6 medium, 1 low |
 | logic-cmos-sourcing | 35-logic: mb.logic, mb.logic.cmos, mb.logic.sourcing | 30 | 106 touching (104 outbound, 2 inbound) + ~140 in cross-checks | 6 | 3 | 6 | 9 | 4 | 28 | not stated as a total; row 3 dual-classified |
 | board | 20-board in full | — | — | — | — | — | — | — | pending | PENDING |
 | spine-root | 05-spine + 00-root + unlinked.catalogue | — | — | — | — | — | — | — | pending | PENDING |
@@ -72,19 +72,20 @@ Verdicts in each agent's own words:
 - **power-psu** — "the prose is the best in the tree and the graph is still broken"
 - **power-rf-modulator** — "structurally broken, and the worst part of it is one node"
 - **silicon-chips** — "structurally broken in one load-bearing place, otherwise a well-written file with a broken edge layer"
+- **silicon-fab** — "structurally broken in one half, well modelled in the other"
 - **logic-cmos-sourcing** — "the prose is the best in the tree; the structure is hollow"
 
 ## 3. Class totals across completed reports
 
 Arithmetic on the counts each agent reported, not an independent judgement.
 
-- BREAK: 210
-- SHAPE: 134
-- HOLE: 111
-- DRIFT: 88
-- GHOST: 87
+- BREAK: 215
+- SHAPE: 141
+- HOLE: 116
+- GHOST: 90
+- DRIFT: 89
 
-Total reported defects: **630**
+Total reported defects: **651**
 
 Note that several agents state some rows carry two classes, so the per-report
 totals in §2 do not always sum cleanly to a single count of distinct defects.
@@ -116,6 +117,7 @@ These are recorded because each was acted on or nearly acted on.
 - **`metal.silica.polysilicon`'s producer status is disputed** between two agents — one says it has none, the other names `metal.silica.czochralski`. Recorded, unresolved.
 - **`mb.cpu.fe.nplus` consuming silane is not a defect**; the fix is the target, not the substance.
 - **The scope list I generated appears to be assembled from `05-spine.json` rather than the fragment files** — `mb.photo` is in `20-board.json`. Affects what each agent was asked to cover.
+- **A taxonomy gap with no home in the five classes: a chain whose edges are each individually legal but which as a whole runs backwards.** The entire silicon feedstock route is encoded as `children` running backwards — `metal.silica > polysilicon > tcs > {distillation, chlorination}`, and `tcs > mgsi`. Each edge is legal; the chain is inverted. Read as `contains`, `si.wafer > metal.silica.polysilicon` walks the reader *into a plasma reactor* instead of toward a mine.
 
 ## 5. Unresolved disagreements between agents, and between agents and briefs
 
@@ -336,6 +338,30 @@ Recorded as pairs. **None is adjudicated here.**
 ### 54. metal.silica-sand
 - **A:** my heavy-hub list, implying blanket suspicion
 - **B:** silicon-chips agent: it genuinely does reach this file, and 4 of its 5 uses here are CORRECT — do not blanket-retarget it
+
+### 55. does metal.silica reach 10-silicon?
+- **A:** my recorded finding: its 51 edges span 3 fragments, and logic-bipolar said 9 of them land there
+- **B:** silicon-fab agent: ZERO edges in 10-silicon; all 52 inbound are in 50-power, 35-logic and 60-metals. Two agents now say zero and I have no record of a count from 10-silicon at all.
+
+### 56. is mb.logic.bipolar.process.substrate a duplicate of si.wafer?
+- **A:** logic-bipolar agent: YES — a bad duplicate, and the reason a wafer MATERIAL node would compound the problem
+- **B:** silicon-fab agent: NO — it and mb.logic.cmos.process.substrate are CHILDREN of si.wafer, not duplicates; the CMOS one adds the n-well and p-well tubs. It also disagrees with the sibling inversion on its own terms: si.wafer > mb.pla.process as `step` is legal but false, since a wafer does not take part in being made by the PLA diffusion, and it would make one wafer the recorded parent of nine mutually exclusive flows. Budget for one consequence: slicing and finish would both become `produces si.wafer` and must be merged.
+
+### 57. is there a node for field oxide?
+- **A:** logic-cmos-sourcing agent: metal.silica.field-oxide EXISTS in 62-metals-b, correctly typed, with one wrong inbound edge and zero consumers — the absence is in the edges, not the nodes
+- **B:** silicon-fab agent: no node exists for field oxide. The list it gives as missing: field oxide, gate oxide, screen oxide, the n+ or arsenic diffusion, the poly gate oxide, the poly gate FILM, the aluminium interconnect film, PSG, PECVD nitride, the bond pad, the epilayer. DIRECT CONFLICT with the agent above.
+
+### 58. facility.cleanroom.silica
+- **A:** logic-bipolar agent: zero edges, and its description names both the quartz tube and the mask blank, so it is the ready replacement
+- **B:** silicon-fab agent: NOT zero-edge — it has one, from facility.cleanroom.hepa-glass-fibre, and that edge is false
+
+### 59. the magnet in the silicon fab branch
+- **A:** brief to the agent: metal.silica, and nine edges in the sibling branch to re-home
+- **B:** silicon-fab agent: the premise is off — nothing here reaches for metal.silica. What the steps DO reach for is chem.photoresist, a PROCESS: 28 inbound, 16 authored in this file, the largest magnet here, with no photoresist substance node anywhere
+
+### 60. the three epoxy lookup-table rows
+- **A:** my brief, and petrochem-chemicals before it: retarget these rows
+- **B:** silicon-fab agent: all three are DEAD — "epoxy moulding compound", "moulding compound" and "epoxy resin" each fire on ZERO inputs tree-wide. The live row is the bare string "epoxy" -> chem.epoxy, a process, 42 hits, which no retarget can fix. This is the sixth confirmation that a row must be checked for firing before a retarget is recommended.
 
 ## 6. Contradictions in the source data, reported by agents
 
