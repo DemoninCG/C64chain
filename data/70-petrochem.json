@@ -2,6 +2,30 @@
   "$comment": "Subsystem file: petrochemical / polymer chains. Branch roots chem.crude, chem.natural-gas, chem.refining, chem.ethylene, chem.propylene, chem.acrylonitrile, chem.butadiene, chem.styrene, chem.abs, chem.solvents, chem.fab-chemicals, chem.pcb-chemicals, chem.solder-chemicals. Cross-branch links use the id-ref form of 'children'.",
   "subsystem": "petrochem",
   "shared": {
+    "chem.ethylene.monomer": {
+      "id": "chem.ethylene.monomer",
+      "name": "Ethylene monomer",
+      "description": "Ethene (C2H4), the simplest alkene: a colourless flammable gas made by steam cracking ethane, naphtha or gas oil at 750-950 C, then quenched, compressed, dried and purified to polymer grade. The highest-volume organic chemical in the world; the C64's polyethylene, PVC, polystyrene and PET chains all begin here.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1950s",
+      "facts": [
+        {
+          "label": "Formula",
+          "value": "C2H4, molar mass 28.05 g/mol"
+        },
+        {
+          "label": "Polymer grade",
+          "value": "dry, under 1 ppmv water and oxygen"
+        }
+      ],
+      "inputs": [],
+      "note": "Not established: 1983 tonnages and the feedstock split for the ethylene actually polymerised into the C64's plastics.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ethylene"
+      ],
+      "confidence": "medium"
+    },
     "chem.petroleum": {
       "id": "chem.petroleum",
       "name": "Petroleum: light sour crude oil",
@@ -817,7 +841,15 @@
             }
           ],
           "note": "Drying and oxygen/CO2 removal are part of this step; the four numbers that define the grade are its facts. Established: Ethylene purification to protect polymerisation catalysts from water oxygen and carbon dioxide. Not established: the stated sieve drier specifics and grade numbers as given.",
-          "confidence": "low"
+          "confidence": "low",
+          "edges": [
+            {
+              "to": "chem.ethylene.monomer",
+              "rel": "produces",
+              "role": "product",
+              "basis": "documented"
+            }
+          ]
         },
         {
           "id": "chem.ethylene.ethylene-oxide",
@@ -1028,6 +1060,11 @@
           "confidence": "high",
           "note": "Established: polyethylene is the most commonly produced plastic for packaging film containers and cable sheathing. Not established: the stated tonnages dates temperatures pressures yields and 1980s operating details as given.",
           "edges": [
+            {
+              "to": "chem.ethylene.monomer",
+              "rel": "consumes",
+              "basis": "documented"
+            },
             {
               "to": "chem.polyethylene.resin",
               "rel": "produces",
