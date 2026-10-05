@@ -4086,7 +4086,7 @@
       "note": "The specific commercial grade used for the C64 case is not documented in the sources used here; the description above is the class of material its mechanical and cosmetic requirements imply.",
       "edges": [
         {
-          "to": "c64.keyboard-switches.keycap.abs.butadiene",
+          "to": "chem.abs.grafting.rubber-phase",
           "rel": "made of"
         }
       ]
@@ -5816,7 +5816,14 @@
       "era": "1960s",
       "inputs": [],
       "note": "Upstream: chem.butadiene and chem.butadiene.polymerisation.lithium-catalyst. Established: Butadiene monomer as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s specifics as given.",
-      "confidence": "low"
+      "confidence": "low",
+      "edges": [
+        {
+          "to": "chem.butadiene.sources.cracker-c4",
+          "rel": "made from",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "chem.ethylene.polyethylene.additives.bht": {
       "id": "chem.ethylene.polyethylene.additives.bht",
