@@ -197,29 +197,39 @@ spark leaves a recast layer removed by final grind or polish (EDM Zap). A
 smooth hemispherical cavity is ball-millable, so machining is the ordinary
 route — a prior, not evidence. A compression-mould tooling guide (Echo,
 fetched) describes ordering metal blocks and CNC-machining the cavities, in
-aluminium or steel, with no EDM stage. The question stays unsettled for this
-tool; FAIL stands. Also stood down: `data/_relation_fixes.json` records a
+aluminium or steel, with no EDM stage. Patent avenue exhausted 2026-10-08:
+dome-switch patents (TI 4354068, Singer 3767022, Friden 3465099, CRC 3965399,
+Topre 4584444) cover device geometry, never mould-cavity fabrication; no
+Mitsumi dome-sheet mould patent surfaced, and patents as a literature
+structurally never record shop practice. Enthusiast research (Telcontar
+rubber-domes history to 2026, Deskthority) is silent on method. Teardown
+tool-mark analysis would need the actual tool; supplier testimony is
+unavailable.
+
+RULING 2026-10-08 (closed-unresolved): the sparked-vs-machined question is
+CLOSED — not standing, closed. Six avenues exhausted (supplier records,
+patents, enthusiast research, trade literature, physical teardown,
+testimony); the only remaining source would be Mitsumi tooling documentation
+surfacing. The FAIL stands permanently as a documented exception, not as
+backlog: do not re-open, do not link, do not delete the branch to clear it.
+Reopen conditions: Mitsumi tooling docs, or tool-mark analysis of a period
+dome tool, establishing the cavity method. Also stood down: `data/_relation_fixes.json` records a
 tool→spark-erosion reversal to `uses`; it must NOT be applied, since it would
 assert the unsettled process. The false-precision "one-micron cavity" wording
 is corrected to small cavities on both nodes.
 
-## 3. Tooling pass (scoped 2026-10-07; step 1 done, rest not started)
+## 3. Tooling pass (closed 2026-10-08 except the batch-2 orphan queue)
 
-Step 1 (sparked-vs-machined) is researched as far as public sources go: still
-unsettled, FAIL stands — see §2. Branch survey: case tooling is established
-(H13, documented EDM texture, ore-level electrode chains); IC mould
-press/tool, leadframe stamp, connector injection-press/tool-steel,
-transformer wire-drawing, lamination punch die, RF braid, die-steel, ferrite
-pressing, caster mould-wall, extrusion press/die, PCB laminate press and the
-keycap/knob tools are mainstream reached practice (audit-only). The dome
-spark-erosion pair is the only speculative tooling branch.
-
-Remaining steps: (1) orphan-filtered audit over the tooling ids to confirm
-nothing else is speculative; (2) archive or supplier evidence for the dome
-tool (Mitsumi tooling docs, teardown tool-mark analysis); (3) only if a
-graphite electrode is supported, research the needle-coke/calcination
-feedstock — never before the process and electrode decisions are settled, and
-never the recorded `uses` reversal until (2) settles.
+The dome question is closed-unresolved (ruling in §2); the branch survey
+found the dome pair to be the only speculative tooling branch — case tooling
+is established (H13, documented EDM texture, ore-level electrode chains) and
+every other branch (IC mould press/tool, leadframe stamp, connector
+injection-press/tool-steel, transformer wire-drawing, lamination punch die,
+RF braid, die-steel, ferrite pressing, caster mould-wall, extrusion
+press/die, PCB laminate press, keycap/knob tools) is mainstream reached
+practice. No tooling pass beyond the orphan-queue work in §0 remains. (Step
+(1) is satisfied by the survey above; steps (2)–(3) are superseded by the
+§2 ruling: the evidence search they called for has been run to exhaustion.)
 
 ## 4. Leaf-pass modeling gaps (done 2026-10-06; see log above)
 

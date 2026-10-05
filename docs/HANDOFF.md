@@ -56,9 +56,10 @@ downstream work, and it is cheaper to find out on 20 edges than on 600.
    as far as public sources go (prior: machining; unsettled for this tool).
    Remaining: tooling-filtered audit, archive/supplier evidence for the dome
    tool, and only then electrode feedstock.
-2. **Continue anchoring the chain-orphan backlog** (TODO §1, 284 left),
-   prioritizing the batch-2 queue in TODO §0. Keep the last LB orphan open
-   unless its tooling evidence is settled.
+2. **Continue anchoring the chain-orphan backlog** (TODO §1, 284 left;
+   batch-2 queue in TODO §0). The tooling pass is closed (TODO §3):
+   the dome pair is the only speculative tooling branch and its question
+   is ruled closed-unresolved, so orphan work needs no tooling gate.
 3. **Push the commits to `origin/main`.**
 4. **Reading pass over "not established" figures** if any of the ~1,860
    agent-recorded unsourced numbers are wanted sourced.
@@ -71,8 +72,11 @@ decision (recorded as already-implemented).
 
 Do not "fix" these without a decision.
 
-- **The 1 LB FAIL** (graphite electrode; TODO §2) and the 2 earlier deliberate
-  NO-ANCHOR decisions remain unforced. Do not invent links to clear them.
+- **The 1 LB FAIL** (graphite electrode; TODO §2) stands permanently as a
+  documented exception by the 2026-10-08 closed-unresolved ruling — not as
+  backlog. Do not invent links to clear it, do not re-open the question, do
+  not delete the branch to clear it. Reopen conditions are in TODO §2.
+  The 2 earlier deliberate NO-ANCHOR decisions likewise remain unforced.
 - **9 audit NOTEs** — documented terminal processes plus coverage reports.
 - **1 declined merge** — o-xylene stays an isomer, not a blended stream.
 - **JUDGEMENT-listed `in this tree` prose** — orienting prose, not editorialising.
