@@ -8,11 +8,11 @@ longboard breadbin), traced from the machine through early-1980s
 manufacturing to ore, crude oil and quartz sand. The data is the point; the
 viewer is secondary.
 
-## 1. Current state (2026-10-07)
+## 1. Current state (2026-10-08)
 
 | | |
 | --- | --- |
-| nodes | 2,449 (1,479 leaves, 0 unreachable-builder, depth 10) |
+| nodes | 2,420 (1,469 leaves, 0 unreachable-builder, depth 10) |
 | build | exit 0, 0 warnings |
 | selftest | 41/41 |
 | patchtest | all pass |
@@ -20,9 +20,9 @@ viewer is secondary.
 | checktables | 0 missing targets |
 | ingredients | 0 mappings to a missing node; `--strict` 0 rows |
 | metalang | REWRITE 0; 4 pre-existing DELETE hits, none ours |
-| relate plan | mechanical 4,407, judgement 0, UNMAPPED 0, ASSERT-FAIL 0 |
-| relate audit | **1 FAIL / 5 WARN**: 1 chain load-bearing orphan (graphite electrode, documented in TODO §2); notes clean; chain 284 / context+alternate blessed |
-| git | stack of session commits, none pushed to `origin/main` |
+| relate plan | mechanical 4,345, judgement 0, UNMAPPED 0, ASSERT-FAIL 0 |
+| relate audit | **1 FAIL / 5 WARN**: 1 chain load-bearing orphan (graphite electrode, closed-unresolved ruling in TODO §2); notes clean; chain 284 / context+alternate blessed |
+| git | stack of session commits, pushed to `origin/main` |
 
 ## 2. The verification gate
 

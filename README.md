@@ -212,6 +212,8 @@ this size will always contain its own share of confident mistakes.
 | the modulator sits at 55.25 or 62.25 MHz | neither is a valid channel. NTSC channel 3 has its picture carrier at 61.25 MHz, and the UK PAL C64 shipped on UHF channel 36 at 591.25 MHz. |
 | the C64C is a digital video encoder | on a different branch entirely; the breadbin's modulator is analogue all the way down. |
 | VIC-II designed in six months | nine months, January to November 1981, with two draftsmen and a CAD operator. "Five weeks" is the *system* design on paper, which is a different job. |
+| a 6522 VIA at U15 (or a 6532 PPI) on the mainboard | **neither exists on a 250407.** U15 is a 74LS139 TTL address decoder per the 326498 parts list; the user port and the cassette port are CIA-driven. The 6522s in this tree belong to the 1541 drive, where they are real. |
+| volume/tone and brightness slide pots on the C64 top, bezel thumbscrews to contrast pots | **no such controls exist on a breadbin.** One power rocker; audio and video levels are fixed on the board. The slider/pot cluster described television practice transplanted onto the computer. |
 
 ## Layout of the data files
 
@@ -219,7 +221,7 @@ this size will always contain its own share of confident mistakes.
 | --- | --- |
 | `00-root.json` | the spine; the bare root node |
 | `05-spine.json` | grouping nodes and navigation entries |
-| `10-silicon.json` | CPU, DRAM, ROMs, VIC-II, SID, CIAs, PPI, colour RAM, PLA, discretes |
+| `10-silicon.json` | CPU, DRAM, ROMs, VIC-II, SID, CIAs, colour RAM, PLA, discretes |
 | `20-board.json` | laminate, imaging, etch, plating, photo tooling, solder, assembly, test |
 | `30-passives.json` | capacitors, resistors, switches, connectors, keyboard switches |
 | `35-logic.json` | the 74-series glue and the CMOS parts |

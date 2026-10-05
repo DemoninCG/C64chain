@@ -118,6 +118,22 @@ stays readable.
   already matches `build.mjs` exactly; `audit`/`estimate`/`analyse`/`probe`
   norms are purpose-built (dup detection), not resolution copies;
   `spotcheck`/`project` carry no copies. TODO list was stale on those two.
+- **Top-level UX review (2026-10-08).** Shallow pass over root children and
+  their connections, asking what a user would say the shipped machine has.
+  Two phantom programs removed with the gate green throughout: a 6522 VIA at
+  U15 (plus mask, userport, test nodes; U15 is a 74LS139 per the 326498 parts
+  list, and the tree's own notes already said so — spine description said
+  6532, node said 6522, neither exists) and a volume/brightness slider +
+  bezel-thumbscrew cluster transplanted from television practice (power
+  rocker kept). Also removed: the redundant `peripheral.plug` connector
+  duplicate (9-pin serial, 34-conductor user port, cassette-powers-1541
+  errors; io-panel carries the correct set), the redundant root→EPS edge,
+  and 11 orphaned phantom-branch leaves. Renamed `peripheral` (connectors
+  moved out long ago), rescoped `c64.switches` to the power switch, fixed
+  keycap-legend prose to double-shot tops. Recorded both phantoms in the
+  README correction table. Opened, not executed: `c64.keyboard.switches`
+  vs `c64.keyboard-switches` look like complementary-view duplicates
+  (mechanism vs matrix) needing a merge decision.
 - **Build-artifact decision (2026-10-07).** Settled as already-implemented:
   `.gitignore` (with rationale comment) untracked the five build outputs on
   2026-10-04; they are present in history before that commit and regenerated

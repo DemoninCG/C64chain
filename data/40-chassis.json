@@ -93,7 +93,7 @@
       "id": "c64.case",
       "name": "Breadbin case: two-piece ABS shell",
       "simple_name": "Breadbin case",
-      "description": "The C64 'breadbin' housing is a rear shell and a front bezel, both injection-moulded general-purpose ABS in a warm beige-brown. The rear shell carries the ventilation ribs, moulded screw bosses, connector cut-outs and the rubber feet; the bezel carries the keyboard window with its square key openings, the two knurled thumbscrews, the rainbow badge and the fine 'leather' grain. A foil-on-board RFI shield sits inside over the motherboard.",
+      "description": "The C64 'breadbin' housing is a rear shell and a front bezel, both injection-moulded general-purpose ABS in a warm beige-brown. The rear shell carries the ventilation ribs, moulded screw bosses, connector cut-outs and the rubber feet; the bezel carries the keyboard window with its square key openings, the rainbow badge and the fine 'leather' grain. A foil-on-board RFI shield sits inside over the motherboard.",
       "kind": "part",
       "category": "plastics",
       "era": "1982-1993",
@@ -251,7 +251,7 @@
           "id": "c64.case.bezel",
           "name": "Front bezel (top half)",
           "simple_name": "Front bezel",
-          "description": "The dished front panel with the keyboard window. It is the visible part of the machine, so it carries the fine leather-grain texture, the rainbow badge recess, the two knurled thumbscrews and the moulded-in 'COMMODORE' lettering on the lower lip.",
+          "description": "The dished front panel with the keyboard window. It is the visible part of the machine, so it carries the fine leather-grain texture, the rainbow badge recess and the moulded-in 'COMMODORE' lettering on the lower lip.",
           "kind": "part",
           "category": "plastics",
           "era": "1982-1993",
@@ -293,26 +293,6 @@
               "inputs": [],
               "confidence": "medium",
               "note": "Whether the bezel was a single moulding with the key openings, or a bezel with a separate keyboard frame, varies between breadbin tooling generations. Photographs of ASSY 250407 show one piece. The webs between the openings are the highest-risk area of the tool for short shots and flash, because the melt has to snake between sixty-six holes of only about 10 mm across.",
-              "edges": [
-                {
-                  "to": "chem.abs.grade",
-                  "rel": "made of"
-                }
-              ]
-            },
-            {
-              "id": "c64.case.bezel.thumbscrews",
-              "name": "Knurled thumbscrews for contrast/brightness",
-              "simple_name": "Knurled thumbscrews",
-              "description": "Two moulded plastic thumbscrews on the bezel that carry small metal shafts to the contrast and brightness potentiometers on the board. The caps are ABS, the shafts are plated steel, and the knurl is moulded rather than cut.",
-              "kind": "part",
-              "category": "plastics",
-              "era": "1982",
-              "inputs": [
-                "plated steel shaft"
-              ],
-              "confidence": "medium",
-              "note": "On some breadbin boards the potentiometers were adjusted by reaching into the case with a screwdriver and the two bezel thumbscrews only appear on later board revisions; check the specific assembly.",
               "edges": [
                 {
                   "to": "chem.abs.grade",
@@ -582,7 +562,7 @@
       "id": "c64.keyboard",
       "name": "Keyboard module: 66 keycaps on hybrid switches",
       "simple_name": "Keyboard module 66",
-      "description": "The C64's keyboard is a separate wired module that drops into the bezel: a steel backplate, a single-sided printed circuit board carrying the matrix, sixty-six individually moulded ABS keycaps, and beneath each cap a rubber-dome switch - a moulded plunger riding on a return spring and pressing a carbon-loaded rubber dome that bridges two plated pads on the board. The board is rigid: there is no printed flexible membrane and no silver-ink conductor anywhere in the C64 keyboard, and the only conductive element in the switch is the carbon-filled rubber itself. The legends are printed onto the cap tops with a two-colour pad printer.",
+      "description": "The C64's keyboard is a separate wired module that drops into the bezel: a steel backplate, a single-sided printed circuit board carrying the matrix, sixty-six individually moulded ABS keycaps, and beneath each cap a rubber-dome switch - a moulded plunger riding on a return spring and pressing a carbon-loaded rubber dome that bridges two plated pads on the board. The board is rigid: there is no printed flexible membrane and no silver-ink conductor anywhere in the C64 keyboard, and the only conductive element in the switch is the carbon-filled rubber itself. The cap-top legends are double-shot moulded; the front PETSCII legends are printed onto the cap faces with a two-colour pad printer.",
       "kind": "part",
       "category": "plastics",
       "era": "1982-1993",

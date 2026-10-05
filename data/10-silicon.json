@@ -1103,124 +1103,6 @@
       ]
     },
     {
-      "id": "mb.ppi",
-      "name": "6522 PPI/VIA, 40-pin DIP",
-      "simple_name": "6522 PPI/VIA, 40-pin DIP",
-      "description": "The 6522 Versatile Interface Adapter at U15 on the C64 mainboard: two 8-bit parallel ports (the user port at $D420 and the cassette port at $D800), two 1-bit handshake lines, an 8-bit shift register for the cassette serial interface, two 16-bit timers with pulse output, four interrupt inputs and an I/O port with three latched control bits. It is the same 40-pin DIP silicon-gate NMOS part as the CIAs, from the same mask-family era and almost certainly the same process.",
-      "kind": "part",
-      "category": "silicon",
-      "era": "1982-1984",
-      "facts": [
-        {
-          "label": "Part",
-          "value": "6522 (6520 is the older, incompatible PIA)"
-        },
-        {
-          "label": "Package",
-          "value": "40-pin DIP, 0.6 inch pitch"
-        },
-        {
-          "label": "Process",
-          "value": "NMOS silicon gate, double poly, single aluminium"
-        },
-        {
-          "label": "Registers",
-          "value": "16, at $D800-$D80F"
-        }
-      ],
-      "places": [
-        "Norristown, PA"
-      ],
-      "sources": [
-        "https://en.wikipedia.org/wiki/MOS_Technology",
-        "https://en.wikipedia.org/wiki/6522"
-      ],
-      "confidence": "high",
-      "note": "MOS listed the 6522 as 'VIA' (Versatile Interface Adapter); 'PPI' is Fairchild's name for the same architectural family (the 6820/6821) and is what Commodore's own documentation often called it.",
-      "children": [
-        "si.wafer",
-        {
-          "id": "mb.ppi.userport",
-          "name": "Parallel ports and handshake lines",
-          "simple_name": "Parallel ports, handshake lines",
-          "description": "The 6522's parallel ports are the C64's only general-purpose parallel I/O, and they appear on the 12-way cartridge edge as the user port for printers, samplers and third-party cartridges, and on the mainboard as the cassette port. The user port carries one 8-bit port, not two: on the cartridge edge it presents PB0-PB7 together with PA2 alone. CIA 2 sits at $DD00, and the lines are open collector with internal pull-ups rather than quasi-bidirectional TTL, so driving them from two cards at once was a hardware error rather than a negotiated one.",
-          "kind": "part",
-          "category": "silicon",
-          "era": "1982",
-          "facts": [
-            {
-              "label": "Ports",
-              "value": "user port: 1 x 8-bit (PB0-PB7 plus PA2); lines open collector with internal pull-ups"
-            },
-            {
-              "label": "Register",
-              "value": "CIA 1 at $DC00, CIA 2 at $DD00; $D800 is colour RAM"
-            }
-          ],
-          "confidence": "low",
-          "note": "Three claims here are wrong. The user port is an 8-bit port, not two: on the 12-way cartridge edge it carries PB0-PB7 on pins C,D,E,F,H,J,K,L plus PA2 on pin M, so PA is only partly present. CIA 2 is at $DD00-$DD0F, not $D800-D80F; $D800 is the colour RAM. And the CIA lines are described as open collector with internal pull-ups, not quasi-bidirectional TTL. Which 6522 pins carry the quasi-bidirectional ports is a datasheet question this node does not answer."
-        },
-        {
-          "id": "mb.ppi.mask",
-          "name": "6522 photomask set",
-          "simple_name": "6522 photomask set",
-          "description": "Nine or ten levels - n+ field, LOCOS active area, contact, polysilicon, self-aligned diffusion, metal, passivation pad and alignment - printed 1:1 in AZ-1350 on a contact or Perkin-Elmer Micralign proximity aligner from chrome-on-glass plates with grid-broken alignment. As with the CIAs, the process is the CSG standard flow; only the layout differs.",
-          "kind": "part",
-          "category": "silicon",
-          "era": "1982",
-          "facts": [
-            {
-              "label": "Mask levels",
-              "value": "9-10"
-            },
-            {
-              "label": "Reticle",
-              "value": "1:1 chrome on glass"
-            }
-          ],
-          "confidence": "medium",
-          "children": [
-            "si.mask.plate"
-          ],
-          "note": "Established: that nothing in the 1992 service manual documents a VIA on the breadbin mainboard. Its 326498 parts list names no 6522 at all: U15 is listed as 74LS139 901521-18, a TTL address decoder. The 6522 is a 40-pin NMOS part of the same family as the 6526, which is why the CSG standard flow is assumed for it here, but that is an inference from the part family rather than a documented fact. Not established: the nine-or-ten mask level count; the level list; the 1:1 AZ-1350 print on a contact or Perkin-Elmer Micralign proximity aligner; the chrome-on-glass plate; and the grid-broken alignment."
-        },
-        "si.package.40",
-        "si.leadframe"
-      ],
-      "edges": [
-        {
-          "to": "si.emc",
-          "rel": "made of",
-          "basis": "documented"
-        },
-        {
-          "to": "mb.ppi.test",
-          "rel": "step",
-          "basis": "typical-1982"
-        },
-        {
-          "to": "si.attach",
-          "rel": "step",
-          "basis": "typical-1982"
-        },
-        {
-          "to": "si.bond",
-          "rel": "step",
-          "basis": "typical-1982"
-        },
-        {
-          "to": "si.front-end",
-          "rel": "step",
-          "basis": "typical-1982"
-        },
-        {
-          "to": "si.litho",
-          "rel": "step",
-          "basis": "typical-1982"
-        }
-      ]
-    },
-    {
       "id": "mb.discretes",
       "name": "Discrete semiconductors on the board",
       "simple_name": "Discrete semiconductors",
@@ -3083,12 +2965,6 @@
           "basis": "typical-1982"
         },
         {
-          "to": "mb.ppi",
-          "rel": "produces",
-          "role": "product",
-          "basis": "typical-1982"
-        },
-        {
           "to": "mb.ram",
           "rel": "produces",
           "role": "product",
@@ -4512,29 +4388,6 @@
           "basis": "inferred"
         }
       ]
-    },
-    "mb.ppi.test": {
-      "id": "mb.ppi.test",
-      "name": "Wafer probe and final test of the 6522",
-      "simple_name": "Probe and final test, 6522",
-      "description": "Probe with a 40-needle card: both 16-bit timers clocked against a reference, the shift register stepped, both ports and the handshake lines cycled, and the interrupt inputs verified. Assembled parts repeat the program in a socket on the automatic tester, then go into the C64's machined-pin socket.",
-      "kind": "process",
-      "category": "silicon",
-      "era": "1982",
-      "inputs": [
-        "facility.test-equipment.functional"
-      ],
-      "facts": [
-        {
-          "label": "Probe card",
-          "value": "40 needles"
-        }
-      ],
-      "confidence": "medium",
-      "children": [
-        "si.probe-card"
-      ],
-      "note": "Established: that nothing in the 1992 service manual documents a VIA on the breadbin mainboard. Its 326498 parts list names no 6522 at all: U15 is listed as 74LS139 901521-18, a TTL address decoder, so the fault-table entries that read Check U1, U15, U7 are checking that decoder and not a VIA. That die are probed on the wafer before dicing, with binning, by automatic test equipment is documented period practice. Not established: the 40-needle card; the timer, shift-register, port and interrupt test steps; that assembled parts were retested in a socket on an automatic tester; and that they were then inserted into the machined-pin socket on the board."
     },
     "mb.ram.process": {
       "id": "mb.ram.process",
