@@ -1,7 +1,7 @@
 # Edge decision procedure — GENERATED. Do not hand-edit.
 
 Generated from `data/_relation_schema.json` by `node scripts/relate.mjs procedure`.
-Regenerate it rather than correcting it. Build: 2026-10-04T11:35:47.422Z
+Regenerate it rather than correcting it. Build: 2026-10-05T11:40:39.667Z
 
 ## Order of tests — follow in this order, first match wins.
 
@@ -73,7 +73,7 @@ table lookup. Counts are current against the build above.
 
 > undefined
 
-### 5. `material → material` — 635 edges
+### 5. `material → material` — 689 edges
 
 **Decide:** made of | made from | DELETE
 
@@ -86,7 +86,7 @@ calibration gate measures, and the one most likely to be decided wrong.
 
 **Note.** The largest and hardest. Ten worked borderline cases in RELATIONS.md 3.1, plus 5 + 9 in the `made of` / `made from` examples above. This is the pair the calibration gate measures.
 
-### 6. `process → material` — 980 edges
+### 6. `process → material` — 1013 edges
 
 **Decide:** consumes | produces | DELETE
 
@@ -94,35 +94,35 @@ calibration gate measures, and the one most likely to be decided wrong.
 
 **Provenance.** 628 of the 922 came from the `inputs` prose field and are therefore `consumes`. NOT TRUSTED -- see verification_required. All 628 get an agent verdict first.
 
-### 7. `part → material` — 368 edges
+### 7. `part → material` — 365 edges
 
 **Decide:** contains | made of | DELETE
 
 > Could you point at it? A discrete slug, pellet, casing, wire or layer physically IN the part -> `contains`. A resin, solder, adhesive or plating dispersed through or coated onto it -> `made of`.
 
-### 8. `tool → material` — 86 edges
+### 8. `tool → material` — 137 edges
 
 **Decide:** contains | consumes | DELETE
 
 > Could you point at it inside the tool (permanent impregnated/filling: diamond grit IN saw/dice/grinding-wheel)? -> `contains` (ADDED Wave 5 schema-gap ruling; tool->material now storable). Does the operation TAKE the material in as a consumable the machine eats (drill bits, coolant, grinding wheel, silane charge)? -> `consumes`. Or is the target a permanent fitting of the machine (a motor, a guard, a cabinet) or a mis-typed process? -> DELETE and report (fitting is already recorded on the larger node; a process target is a kind bug). DECIDED Phase 0: `uses` is NOT offered here because it has no legal storage for this pair.
 
-**Note.** REWRITTEN Phase 0 per Wave 3 §5-28 (old `uses | contains` had no storage; only `consumes` storable). EXTENDED Wave 5 (schema-gap ruling): `contains` added with tool->material storage for impregnated/filled tools (diamond blades contain grit, pointable; consumable-eaten still `consumes`; fittings still DELETE).
+**Note.** REWRITTEN Phase 0 per Wave 3 Sec. 5-28 (old `uses | contains` had no storage; only `consumes` storable). EXTENDED Wave 5 (schema-gap ruling): `contains` added with tool->material storage for impregnated/filled tools (diamond blades contain grit, pointable; consumable-eaten still `consumes`; fittings still DELETE).
 
-### 9. `facility → material` — 197 edges
+### 9. `facility → material` — 166 edges
 
 **Decide:** produces | at | DELETE
 
 > Is it the plant's product (a gas supply plant produces nitrogen; a refinery produces fuel oil)? -> `produces`, reversed. Or is it a fixture of the plant (piping, a lining, a cable)? -> `at`, reversed.
 
-### 10. `part → process` — 155 edges
+### 10. `part → process` — 167 edges
 
 **Decide:** produces (reversed) | step | REFILE as part>material | kind bug (retype part->tool, then uses reversed) | DELETE
 
-> Three real questions, then delete. (1) Is the operation's output a DISTINCT COMPONENT that ends up inside me -- a separate object? A grading step whose output is a powder that goes into the capacitor; a metallising run whose output is a film that goes into me. -> `REFILE as part>material`, and record it. NOT this when the operation changes a FEATURE of me rather than adding a separate object: plating, chroming, HASL, enamelling, potting, blackening, etching, printing, PRESS FORMING. A layer on me is not a component of me. TWO EXCEPTIONS, both added in round 4: (a) if the output BECOMES the part's load-bearing element rather than an insert inside it -- a grown blank, a green sheet, an etched foil roll, a formed casing -- answer `REFILE` and record that the finishing step is unmodelled; (b) a SHARED material node (metal.solder, metal.copper) is never a component of me: if the material is the tree's canonical node for a substance rather than a part-specific one, it is not an insert. (2) DID I EXIST AS MYSELF BEFORE THIS OPERATION? No -- the operation brings me into being, and its output is me as finally sold -> `produces`, stored on the process. Exactly one per node. Yes -- it refines, finishes, coats, trims, grades or tests me -> `step`. The board exists before the HASL dip. The mask exists before photoetching. The transistor exists before die-attach. TIE-BREAK, and it is not optional: if I have other modelled stages, `produces` goes to the LAST one named in my own description, and every earlier stage is `step`. My own description decides what `me` means. Without this, a parent with six modelled stages answers 'no, I did not exist' six times and trips `produces_must_be_unique`. (3) Is the operation's output a LARGER OBJECT THAT MERELY CONTAINS ME -- a cable assembly containing the plug, a PSU containing a bolting regulator, pack-out closing a box of already-finished parts? -> `DELETE`. The containment is recorded on the larger node, so this edge is a duplicate of it. (4) Otherwise `DELETE`, including any child that is commentary rather than an operation: report it, because `about` only accepts a `note` target and kind changes are central. GUARDS (Phase 0, Wave 3 §5-52/66/67): (a) ENUMERATION GUARD -- if my own description lists stages as an unordered enumeration with no ordering signal (no then/before/after/followed-by), the clause-2 tie-break DOES NOT APPLY; report no qualifier rather than promoting the last noun (mb.pcb.bareboard drilled/etched/stripped/masked/legended/finished -> finish is wrong). (b) BOUGHT CASE -- if I was bought as a finished input (mb.pcb: outside PCB house; 10 ops refine, none brings into being), correct answer is NO produces at all; report per never_default_to_produces. (c) ANCHOR REQUIRED -- tie-break needs a stage named in MY description; datasheet parents (mb.cpu/vic/sid/ram/roms) name none, so literal application to test nodes (ram.sort, roms.verify, vic.test, cpu>burnin) is forbidden.
+> Three real questions, then delete. (1) Is the operation's output a DISTINCT COMPONENT that ends up inside me -- a separate object? A grading step whose output is a powder that goes into the capacitor; a metallising run whose output is a film that goes into me. -> `REFILE as part>material`, and record it. NOT this when the operation changes a FEATURE of me rather than adding a separate object: plating, chroming, HASL, enamelling, potting, blackening, etching, printing, PRESS FORMING. A layer on me is not a component of me. TWO EXCEPTIONS, both added in round 4: (a) if the output BECOMES the part's load-bearing element rather than an insert inside it -- a grown blank, a green sheet, an etched foil roll, a formed casing -- answer `REFILE` and record that the finishing step is unmodelled; (b) a SHARED material node (metal.solder, metal.copper) is never a component of me: if the material is the tree's canonical node for a substance rather than a part-specific one, it is not an insert. (2) DID I EXIST AS MYSELF BEFORE THIS OPERATION? No -- the operation brings me into being, and its output is me as finally sold -> `produces`, stored on the process. Exactly one per node. Yes -- it refines, finishes, coats, trims, grades or tests me -> `step`. The board exists before the HASL dip. The mask exists before photoetching. The transistor exists before die-attach. TIE-BREAK, and it is not optional: if I have other modelled stages, `produces` goes to the LAST one named in my own description, and every earlier stage is `step`. My own description decides what `me` means. Without this, a parent with six modelled stages answers 'no, I did not exist' six times and trips `produces_must_be_unique`. (3) Is the operation's output a LARGER OBJECT THAT MERELY CONTAINS ME -- a cable assembly containing the plug, a PSU containing a bolting regulator, pack-out closing a box of already-finished parts? -> `DELETE`. The containment is recorded on the larger node, so this edge is a duplicate of it. (4) Otherwise `DELETE`, including any child that is commentary rather than an operation: report it, because `about` only accepts a `note` target and kind changes are central. GUARDS (Phase 0, Wave 3 Sec. 5-52/66/67): (a) ENUMERATION GUARD -- if my own description lists stages as an unordered enumeration with no ordering signal (no then/before/after/followed-by), the clause-2 tie-break DOES NOT APPLY; report no qualifier rather than promoting the last noun (mb.pcb.bareboard drilled/etched/stripped/masked/legended/finished -> finish is wrong). (b) BOUGHT CASE -- if I was bought as a finished input (mb.pcb: outside PCB house; 10 ops refine, none brings into being), correct answer is NO produces at all; report per never_default_to_produces. (c) ANCHOR REQUIRED -- tie-break needs a stage named in MY description; datasheet parents (mb.cpu/vic/sid/ram/roms) name none, so literal application to test nodes (ram.sort, roms.verify, vic.test, cpu>burnin) is forbidden.
 
 **Note.** ROUND 3: known-hard rows 8/9 = 89%, so the finishing clause works. FRESH rows 13/18 = 72%, and all six disagreements trace to three causes, two of them structural: (a) THREE of six were the assembly hole -- an operation whose output is a LARGER object containing the parent, which no clause covered; now clause 3. Both agents named it independently, and agent A said it 'arguably wants a contains-reversed relation, which the answer list does not offer'. (b) ONE was a kind bug: c64.mains.switch.contacts.copper-silver is named 'Copper and silver ores' and typed `part`. (c) TWO were clause 2 contradicting ITSELF: as written ('the operation's OUTPUT is a materially different precursor that becomes me') the output is the precursor, which selects an EARLY operation, while its own gloss ('the one operation that gets produces') requires the output to be me, which selects the LAST. Opposite answers wherever the output is an intermediate. Clause 2 is now keyed on 'did I exist as myself before this operation', which has no such ambiguity. Only one disagreement (process-node granularity: a node bundling a winding vs one bundling the whole capacitor) looks irreducible.
 
-### 11. `material → process` — 0 edges
+### 11. `material → process` — 14 edges
 
 **Decide:** REVERSE to consumes | produces (reversed) | DELETE
 
@@ -130,7 +130,7 @@ calibration gate measures, and the one most likely to be decided wrong.
 
 **Note.** ROUND 2: agreement rose 40% -> 95% (19/20), so the `REVERSE to consumes` clause is doing its job. `step` was REMOVED from this list: agent B pointed out that `step` is stored only as process->process, so a material->process edge answered `step` had no legal storage direction at all. That was my error, not a judgement problem -- intermediate stages are `DELETE` here because the step chain already carries them.
 
-### 12. `facility → part` — 7 edges
+### 12. `facility → part` — 5 edges
 
 **Decide:** at (reversed) | produces (reversed) | DELETE
 
@@ -138,7 +138,7 @@ calibration gate measures, and the one most likely to be decided wrong.
 
 **Note.** NEW, same run.
 
-### 13. `facility → tool` — 39 edges
+### 13. `facility → tool` — 36 edges
 
 **Decide:** at (reversed) | DELETE
 
@@ -154,7 +154,7 @@ calibration gate measures, and the one most likely to be decided wrong.
 
 **Note.** NEW, same run. Half of these are kind bugs.
 
-### 15. `material → tool` — 16 edges
+### 15. `material → tool` — 17 edges
 
 **Decide:** uses | kind bug (retype tool->process) | DELETE
 
@@ -170,7 +170,7 @@ calibration gate measures, and the one most likely to be decided wrong.
 
 **Note.** NEW, same run. Split is in `reversals`.
 
-### 17. `facility → process` — 54 edges
+### 17. `facility → process` — 44 edges
 
 **Decide:** at (reversed) | DELETE
 

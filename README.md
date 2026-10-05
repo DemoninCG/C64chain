@@ -71,7 +71,7 @@ the peripherals a 1983 user needed: a television, a cassette drive, a joystick.
 
 ## Scale
 
-2,434 nodes, 11 levels deep, 1,534 end points, 16 category buckets. Thirteen index/grouping nodes were dissolved in the Wave 4 migration (content survives under real parents or in the generated catalogue); edges are ten typed relations in `edges[]` (judgement 0, UNMAPPED 0, ASSERT-FAIL 0). The longest single chain is
+2,446 nodes, 10 levels deep, 1,499 end points, 16 category buckets. Thirteen index/grouping nodes were dissolved in the Wave 4 migration (content survives under real parents or in the generated catalogue); edges are ten typed relations in `edges[]` (judgement 0, UNMAPPED 0, ASSERT-FAIL 0). The longest single chain is
 15 hops and runs:
 
 > mainboard → 74-series glue logic → 7406 hex inverter → how a 74LS chip is
@@ -121,7 +121,7 @@ isolate one supply chain.
 three ways: the string is already a node id; it normalises to a node name; or it
 matches an entry in `data/_ingredients.json`, which is the hand-reviewed
 synonym table. The link rate is reported on every build and currently sits at
-**34.6%** - 292 of 844 remaining `inputs` strings resolve; the resolved ones were migrated to typed edges, the rest stay as prose. The rest
+**34.2%** - 281 of 821 remaining `inputs` strings resolve; the resolved ones were migrated to typed edges, the rest stay as prose. The rest
 stay as prose, because inventing a target would be worse than admitting the gap.
 
 This is what fixed the rainbow badge: it recorded `ABS bezel surface` as text
@@ -139,7 +139,7 @@ The header switches between two views of the same data:
 | view | what it shows |
 | --- | --- |
 | **Full** | everything: components, materials, processes, tools, facilities |
-| **Components & materials** | entities only, 1,277 of 2,434 nodes |
+| **Components & materials** | entities only, 1,280 of 2,446 nodes |
 
 In the entity view a process node is **routed through**: the entities beneath it
 are lifted to sit where it was, at the same depth, so the chain stays connected
@@ -154,7 +154,7 @@ of them exist; the toggle is under *Projection* in the left rail.
 
 Both `unlinked.catalogue` and the three spine branches are **not** flagged as
 commentary even though they are scaffolding, because hiding a container hides
-its contents: the catalogue is the sole parent of ~377 published material nodes.
+its contents: the catalogue is the sole parent of ~241 published material nodes.
 
 Exports are in `public/`: `tree.json` (flat node map, for your own tooling),
 `tree.dot` (Graphviz — this is the one to render as a poster), `tree.mmd`

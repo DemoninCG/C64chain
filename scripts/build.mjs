@@ -128,7 +128,7 @@ try {
   ingredients = JSON.parse(await readFile(path.join(DATA, '_ingredients.json'), 'utf8')).map ?? {};
 } catch { /* no ingredient table */ }
 
-/* Scope policy for orphan triage (HANDOFF-WAVE5 section 4, TODO section 11).
+/* Scope policy for orphan triage (TODO section 1, HANDOFF section 3).
  * data/_scope.json lists explicit context/alternate roots (orphans only);
  * missing = chain (default, must be reachable). Subtree inheritance via children
  * unless explicitly overridden; reached nodes are always chain (if used in chain,
@@ -635,7 +635,7 @@ const orphans = [...defs.keys()].filter((id) => !seen.has(id));
 for (const id of orphans) warn(`"${id}" (${defs.get(id).__file ?? 'generated'}) is defined but never linked into the tree`);
 
 /* ------------------------------------------------- scope policy -----
- * Orphan triage (HANDOFF-WAVE5 §4, TODO §11). data/_scope.json lists explicit
+ * Orphan triage (TODO §1, HANDOFF §3). data/_scope.json lists explicit
  * context/alternate roots (orphans only); missing = chain. Subtree inheritance
  * via scope-links unless explicitly overridden; directed-reached nodes are always
  * chain (chain wins for shared, e.g. coke). Notes/orgs default context by kind

@@ -104,7 +104,7 @@ and are stitched together by `scripts/build.mjs`.
   // OPTIONAL — how sure are we. "high" | "medium" | "low"
   "confidence": "high",
 
-  // OPTIONAL — scope for orphan triage (HANDOFF-WAVE5 section 4, TODO section 11).
+  // OPTIONAL — scope for orphan triage (TODO section 1, HANDOFF section 3).
   //   chain     everything needed to build a 250407 C64 in 1982 down to ore/crude/gas/sand
   //             (default when missing; must be reachable under the directed walk;
   //             upstream extraction, refining/cracking, fab/board/assembly, utilities

@@ -479,7 +479,7 @@ function cmdAudit() {
     for (const p of N[x].made_by ?? []) reach(p);
   }
   const orphans = ids.filter((i) => !seenNodes.has(i));
-  // Orphan triage with scope policy (HANDOFF-WAVE5 §4, TODO §11, data/_scope.json).
+  // Orphan triage with scope policy (TODO §1, HANDOFF §3, data/_scope.json).
   // Product vision guides calls: viewer must show complete chain from C64 to raw
   // materials; context/alternate are dimmed/hidden, never required for completeness.
   //   chain     must be reachable (default); orphans are backlog (SHOULD connect
