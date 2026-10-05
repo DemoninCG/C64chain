@@ -4,8 +4,8 @@
   "note": "No structural proposals remain. This fragment now audits with zero FAILs and its own share of the duplicate-name warnings resolved; the only things left are cross-fragment merges, which are listed below, and a note about the fixes table. The two shared commodities (chem.natural-gas, chem.petroleum) keep one children edge each, from the `chem` branch root, which scripts/audit.mjs now recognises as a legitimate owner (UTIL_OWNERS); every ingredient reference to them, from all fragments, is a 'from' edge. Fourteen duplicate-name pairs remain, and in each case the petrochemical node is the canonical, richer one, so the merge is always 'fold the sibling into mine' - except where a published `shared` entry in another fragment is the canonical node, which is called out.",
 
   "merges": [
-    { "from": "peripheral.tv.cabinet.abs.acrylonitrile", "to": "chem.abs.san-matrix.acrylonitrile-raw",
-      "why": "same substance, and 90-peripherals has the shorter copy. Re-point its ABS case onto the petrochemical acrylonitrile node." },
+    { "from": "peripheral.tv.cabinet.abs.acrylonitrile", "to": "chem.acrylonitrile.monomer",
+      "why": "same substance, and 90-peripherals has the shorter copy. Re-point its ABS case onto the petrochemical acrylonitrile node. Redirected: former target chem.abs.san-matrix.acrylonitrile-raw merged into chem.acrylonitrile.monomer (duplicate)." },
     { "from": "chem.fab-chemicals.process-gases.nitrogen.cryogenic-air.atmospheric-air", "to": "facility.nitrogen.atmospheric-air",
       "why": "the 80-industry fragment publishes facility.nitrogen.atmospheric-air as the cross-reference target for 'the air-fractionation leaf', and this pass deliberately kept that id (see the shared gloss in 70-petrochem.json). Atmospheric air is one substance and it belongs to the air-separation branch, not under the fab's nitrogen." },
     { "from": "chem.refining.claus.catalyst.alumina-catalyst.bayer-process", "to": "metal.bayer",

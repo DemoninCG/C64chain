@@ -3566,6 +3566,30 @@
           "value": "~2-4 um"
         }
       ]
+    },
+    {
+      "loser": "chem.abs.san-matrix.acrylonitrile-raw",
+      "loserName": "Acrylonitrile monomer",
+      "loserFile": "70-petrochem.json",
+      "survivor": "chem.acrylonitrile.monomer",
+      "survivorName": "Acrylonitrile monomer",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "direct (same file; r4 duplicate-name WARN)",
+      "why": "Same substance at the same level (both kind material): 99.5%+ acrylonitrile monomer from SOVERE ammoxidation. Keep-rule 1: survivor carries the product definition (C3H3N, ammoxidation route, SAN/ABS uses) at high confidence; loser is the contextual SAN-matrix copy at low with no facts. Keep-rule 3: general id over contextual. Re-pointings (1): chem.abs.san-matrix made-of acrylonitrile-raw -> chem.acrylonitrile.monomer. Content union: handling sentences (closed system, outside storage, skin lethality as established; 99.5%/45ppm/tanker as unestablished) folded into survivor note; three open proposals retargeted to the survivor. Facts union: none (loser 0 facts). Recorded.",
+      "loserDescription": "99.5%+ acrylonitrile with less than 45 ppm of the stabiliser, from a SOVERE ammoxidation plant. Because acrylonitrile is acutely lethal through the skin, it arrived in the ABS plant in tankers and was handled in a closed system with an outside storage tank; the 1980s industry norm was glove boxes and an emergency shower at every sampling point.",
+      "loserFacts": []
+    },
+    {
+      "loser": "c64.case.other-polymers.polyester-film",
+      "loserName": "Polyester / PET film (insulation, overlay)",
+      "loserFile": "40-chassis.json",
+      "survivor": "chem.polyester.pet.film",
+      "survivorName": "PET film (biaxially oriented polyester film)",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "40-chassis.json",
+      "why": "Duplicates: biaxially oriented PET film at the same level (both kind material). The survivor is the canonical published node (confidence high vs medium, sourced Mylar/PET, made-of resin edge); the loser is the path-local copy that survived the dissolution of its routing-note parent c64.case.other-polymers and now sits in the 40-chassis shared map. Keep-rule 2 and 3: canonical over path-local, general id over contextual. No re-pointings: the loser has no inbound references (its former c64.case children link was deleted as wrong - film is not case material). Content union: fold the loser C64-use sentences (thin insulation, keycap-legend overlay, PSU amber capacitor sleeve) into the survivor note; adopt the loser terephthalic-acid input lineage (consistent with the survivor resin edge).",
+      "loserDescription": "Polyester film is used as thin insulation, as overlay film on some keycap legends, and as the amber capacitor sleeve material in the power supply. It comes from terephthalic acid and ethylene glycol, both of which come out of the aromatics and olefin chains already used elsewhere in the machine.",
+      "loserFacts": null
     }
   ]
 }

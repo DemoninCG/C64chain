@@ -1544,6 +1544,10 @@
           "category": "plastics",
           "era": "1960s",
           "confidence": "high",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Acrylonitrile"
+          ],
+          "note": "Established: high-purity monomer handled in a closed system with outside storage, because acrylonitrile is acutely lethal through intact skin. Not established: 99.5% purity, sub-45 ppm stabiliser, and tanker delivery as 1982 specifics.",
           "inputs": []
         }
       ],
@@ -4309,7 +4313,7 @@
       "confidence": "low",
       "edges": [
         {
-          "to": "chem.abs.san-matrix.acrylonitrile-raw",
+          "to": "chem.acrylonitrile.monomer",
           "rel": "made of"
         }
       ]
@@ -6206,17 +6210,6 @@
       ],
       "confidence": "low",
       "note": "Established: The desiccant in the dryer is a synthetic zeolite with a 3 angstrom pore opening, which admits the water molecule (kinetic diameter about 2.65 angstrom) and excludes anything bigge as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
-    },
-    "chem.abs.san-matrix.acrylonitrile-raw": {
-      "id": "chem.abs.san-matrix.acrylonitrile-raw",
-      "name": "Acrylonitrile monomer",
-      "simple_name": "Acrylonitrile monomer",
-      "description": "99.5%+ acrylonitrile with less than 45 ppm of the stabiliser, from a SOVERE ammoxidation plant. Because acrylonitrile is acutely lethal through the skin, it arrived in the ABS plant in tankers and was handled in a closed system with an outside storage tank; the 1980s industry norm was glove boxes and an emergency shower at every sampling point.",
-      "kind": "material",
-      "category": "plastics",
-      "era": "1960s",
-      "note": "Upstream: chem.acrylonitrile.sovere and chem.acrylonitrile.sovere. Established: Acrylonitrile monomer purity and closed system handling due to skin toxicity. Not established: the stated 99.5 percent purity 45 ppm stabiliser and tanker delivery specifics as given.",
-      "confidence": "low"
     },
     "chem.acrylonitrile.sovere.catalyst.bismuth-molybdate": {
       "id": "chem.acrylonitrile.sovere.catalyst.bismuth-molybdate",
@@ -9138,7 +9131,10 @@
         "https://en.wikipedia.org/wiki/Polyethylene_terephthalate"
       ],
       "confidence": "high",
-      "note": "Established: biaxially oriented PET film under the stated trade names, with high tensile strength, chemical and dimensional stability, transparency and electrical insulation, and metallised barrier properties. Not established: 1982 film thicknesses, metallisation thicknesses, roll widths, 1983 tonnages, and the casting and stretching temperatures as 1982 practice. PET resin pellets have no canonical material node; the polymerisation is chem.polyester.pet.",
+      "note": "Established: biaxially oriented PET film under the stated trade names, with high tensile strength, chemical and dimensional stability, transparency and electrical insulation, and metallised barrier properties. Not established: 1982 film thicknesses, metallisation thicknesses, roll widths, 1983 tonnages, and the casting and stretching temperatures as 1982 practice. PET resin pellets have no canonical material node; the polymerisation is chem.polyester.pet. In the C64 it appears as thin insulation, keycap-legend overlay film, and the amber capacitor sleeve in the power supply.",
+      "inputs": [
+        "terephthalic acid"
+      ],
       "edges": [
         {
           "to": "chem.polyester.pet.resin",
