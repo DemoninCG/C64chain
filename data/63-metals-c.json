@@ -398,11 +398,6 @@
           "to": "metal.gold.wits-mine",
           "rel": "at",
           "basis": "documented"
-        },
-        {
-          "to": "metal.gold.uraninite",
-          "rel": "made from",
-          "basis": "inferred"
         }
       ]
     },
@@ -542,6 +537,13 @@
             "https://en.wikipedia.org/wiki/Longwall_mining"
           ],
           "children": []
+        }
+      ],
+      "edges": [
+        {
+          "to": "metal.coking-coal.seam",
+          "rel": "made from",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -966,7 +968,14 @@
           "note": "Documented: gold mining in the buried parts of the Witwatersrand Supergroup is carried out at depths of 4 km below the surface. Not established: the 1000-6000 m depth range as a mine-by-mine figure, the 40-50 C rock temperature at 3000 m, the 3 C per 100 m gradient, the 20,000-40,000 t broken per shift, the longwall stoping with hydraulic sand fill, and the 60-70% recovery from a 10-40 g/t ore."
         }
       ],
-      "inputs": []
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.gold.reef",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "metal.gold.uraninite": {
       "id": "metal.gold.uraninite",

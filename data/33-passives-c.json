@@ -1053,7 +1053,13 @@
               ]
             }
           ],
-          "edges": []
+          "edges": [
+            {
+              "to": "c64.joystick.cable.plug.cable-assembly",
+              "rel": "step",
+              "basis": "inferred"
+            }
+          ]
         }
       ],
       "edges": []
@@ -1941,11 +1947,12 @@
           "confidence": "medium",
           "sources": [
             "https://telcontar.net/KBK/Mitsumi/",
-            "https://www.wsmtechnology.com/feeds/blog/mold-die-machining"
+            "https://www.wsmtechnology.com/feeds/blog/mold-die-machining",
+            "https://www.echosupply.com/blog/basics-of-rubber-compression-molding-tools/"
           ],
           "inputs": [],
           "children": [],
-          "note": "Not established: machined versus spark-eroded construction, one hemispherical cavity per key, and the claims about replacement on re-specification and polish transfer to the dome mating face. Mitsumi produced most of Commodore's keyboards, so the dome sheets came through a Japanese keyboard supply chain, but no tooling record for these tools was located. Ordinary mould practice mills the bulk of a cavity and reserves sinker EDM for deep ribs, sharp internal corners and texture no cutter can reach; a smooth hemispherical cavity is ball-millable, so machining is the ordinary route and spark erosion would need a further reason. That prior does not establish this tool either way."
+          "note": "Not established: machined versus spark-eroded construction, one hemispherical cavity per key, and the claims about replacement on re-specification and polish transfer to the dome mating face. Mitsumi produced most of Commodore's keyboards, so the dome sheets came through a Japanese keyboard supply chain, but no tooling record for these tools was located. Ordinary mould practice mills the bulk of a cavity and reserves sinker EDM for deep ribs, sharp internal corners and texture no cutter can reach; a smooth hemispherical cavity is ball-millable, so machining is the ordinary route and spark erosion would need a further reason. Compression-mould tooling guides describe the process as ordering metal blocks and CNC-machining the cavities, in aluminium or steel, with no EDM stage. That prior does not establish this tool either way."
         }
       ],
       "edges": [

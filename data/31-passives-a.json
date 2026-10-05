@@ -1014,7 +1014,14 @@
                 }
               ],
               "inputs": [],
-              "children": []
+              "children": [],
+              "edges": [
+                {
+                  "to": "mb.passives.caps.film.polystyrene.metallisation",
+                  "rel": "step",
+                  "basis": "inferred"
+                }
+              ]
             }
           ],
           "note": "Construction and era are documented: metallised aluminium or zinc deposited directly on the plastic film or a separate metal foil; paper and metallised paper almost completely replaced by PET film for low-power DC applications from around 1980; polystyrene used where its near-zero temperature coefficient suits tuned circuits. The board value is now confirmed from the primary parts lists - C20 and C21 are 'Film .22 /tF, 100V, 20%', and the 250425-01 list gives 'Film Rdl .22/iF 100V 20%'. Not established: that the film is polyester (the parts lists say only 'Film'), and the 63 VAC working class."
@@ -1286,6 +1293,11 @@
         {
           "to": "mb.passives.caps.alu-electrolytic.electrolyte.boric-acid",
           "rel": "made of"
+        },
+        {
+          "to": "mb.passives.caps.alu-electrolytic.electrolyte.glycol-ethers",
+          "rel": "step",
+          "basis": "inferred"
         }
       ]
     },
@@ -3004,6 +3016,11 @@
           "rel": "produces",
           "role": "product",
           "basis": "documented"
+        },
+        {
+          "to": "metal.dielectric-grading",
+          "rel": "step",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -3058,7 +3075,14 @@
           ]
         }
       ],
-      "note": "Not established: the 10-60 active layer count for a 1982 0.1 uF 50 V part, the lamination pressure in tens of MPa, and the 200-400 C debind ramp. What is documented is that the printed sheets are stacked in the required number of layers, solidified by pressure, and that the binder is burnt out of the stack after cutting."
+      "note": "Not established: the 10-60 active layer count for a 1982 0.1 uF 50 V part, the lamination pressure in tens of MPa, and the 200-400 C debind ramp. What is documented is that the printed sheets are stacked in the required number of layers, solidified by pressure, and that the binder is burnt out of the stack after cutting.",
+      "edges": [
+        {
+          "to": "mb.passives.caps.mlcc.dicing",
+          "rel": "step",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "mb.passives.caps.mlcc.terminations": {
       "id": "mb.passives.caps.mlcc.terminations",

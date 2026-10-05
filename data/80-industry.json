@@ -325,6 +325,21 @@
               "to": "facility.coal",
               "rel": "consumes",
               "basis": "documented"
+            },
+            {
+              "to": "facility.coal.seam",
+              "rel": "consumes",
+              "basis": "documented"
+            },
+            {
+              "to": "facility.coal.room-pillar-seam",
+              "rel": "consumes",
+              "basis": "inferred"
+            },
+            {
+              "to": "facility.power.coking-coal-seam",
+              "rel": "consumes",
+              "basis": "inferred"
             }
           ]
         }
@@ -535,7 +550,19 @@
         "https://www.c64-wiki.com/wiki/motherboard"
       ],
       "confidence": "high",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "facility.water.pvdf",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "facility.power.river",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "facility.water.industrial": {
       "id": "facility.water.industrial",
@@ -1712,6 +1739,11 @@
         {
           "to": "facility.power.uranium-ore",
           "rel": "made from"
+        },
+        {
+          "to": "metal.gold.uraninite",
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },
@@ -2302,6 +2334,11 @@
           "to": "facility.water.ultrapure",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "facility.water.ro",
+          "rel": "step",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -2505,6 +2542,16 @@
           "to": "facility.coal",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "facility.steam.anthracite",
+          "rel": "consumes",
+          "basis": "inferred"
+        },
+        {
+          "to": "facility.steam.briquette",
+          "rel": "consumes",
+          "basis": "inferred"
         }
       ]
     },
@@ -3122,6 +3169,21 @@
           "rel": "produces",
           "role": "product",
           "basis": "inferred"
+        },
+        {
+          "to": "facility.coal.longwall",
+          "rel": "step",
+          "basis": "inferred"
+        },
+        {
+          "to": "facility.coal.opencut",
+          "rel": "step",
+          "basis": "documented"
+        },
+        {
+          "to": "facility.coal.room-pillar",
+          "rel": "step",
+          "basis": "documented"
         }
       ]
     },
@@ -4831,7 +4893,14 @@
                   ],
                   "confidence": "medium",
                   "children": [],
-                  "note": "Established by the cited article: a penstock is an enclosed pipe delivering water to hydro turbines. Not established: the 3-6 m diameter steel-or-concrete conduit, the several-hundred-metre length, the 50-300 m head, or the 1960-1990 currency for the stations feeding this supply."
+                  "note": "Established by the cited article: a penstock is an enclosed pipe delivering water to hydro turbines. Not established: the 3-6 m diameter steel-or-concrete conduit, the several-hundred-metre length, the 50-300 m head, or the 1960-1990 currency for the stations feeding this supply.",
+                  "edges": [
+                    {
+                      "to": "facility.power.cement-portland",
+                      "rel": "consumes",
+                      "basis": "typical-1982"
+                    }
+                  ]
                 },
                 {
                   "id": "facility.power.hydro-plant.tailrace",
@@ -4883,6 +4952,11 @@
                 {
                   "to": "facility.power.oil-plant.boiler",
                   "rel": "at"
+                },
+                {
+                  "to": "chem.refining.products.fuel-oil",
+                  "rel": "consumes",
+                  "basis": "documented"
                 }
               ]
             },
@@ -5163,6 +5237,13 @@
                     }
                   ]
                 }
+              ],
+              "edges": [
+                {
+                  "to": "facility.electricity.insulating-oil",
+                  "rel": "consumes",
+                  "basis": "documented"
+                }
               ]
             },
             {
@@ -5370,7 +5451,14 @@
             }
           ],
           "confidence": "low",
-          "note": "The node describes a generic intake choice (surface water for cooling, well water for the ultrapure plant) on the rationale that groundwater is geologically filtered and low in organics. No intake design, capacity, or water-quality figure is established here; the node makes no cited quantitative claim."
+          "note": "The node describes a generic intake choice (surface water for cooling, well water for the ultrapure plant) on the rationale that groundwater is geologically filtered and low in organics. No intake design, capacity, or water-quality figure is established here; the node makes no cited quantitative claim.",
+          "edges": [
+            {
+              "to": "facility.water.river-intake",
+              "rel": "consumes",
+              "basis": "typical-1982"
+            }
+          ]
         },
         {
           "id": "facility.water.pretreatment",

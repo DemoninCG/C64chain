@@ -94,27 +94,57 @@ stays readable.
   (`si.mould.press` consumes electricity with basis inferred; diode packaging
   step to `chem.epoxy` with basis documented) with the legacy `inputs` entries
   removed, so no double-storage.
+- **Proposals arbitration (2026-10-07).** 266 stale merges voided
+  (from-nodes merged away in prior passes; o-xylene stays declined with the
+  record in `_merged.json`; rosin/ferric rows void); wafer aliases removed (no
+  references firing). Three renames applied centrally:
+  `metal.cyanide-precursor` → `metal.ammonia`, `metal.silica` →
+  `metal.silicon` (id/name agreement; children keep old-prefix ids),
+  `solder-alloy` → `solder-alloy-60-40` (zero inbound refs). `proposals.mjs`
+  dry-run now 0/0; verdict-group records preserved.
+- **Orphan campaign, batch 1 (2026-10-07).** Chain 422 → 284: 27 rescopes
+  (21 context waste/furniture/logistics, 6 alternate obsolete/variant), ~70
+  anchors (gas-plant step, resin step, hub utilities, recipe steps,
+  ore-from-rock made-froms), one duplicate merge (chem FR-4 → board FR-4),
+  one backwards-edge deletion (reef made-from uraninite). 4 read-only
+  triage agents banked ~260 verdicts; every applied edge mechanically
+  verified (endpoints exist, kind-pair storable, holder reached or legal
+  produces-case, no duplicate) plus prose reads at both ends for grades,
+  routes and backwards edges. Rejected centrally: inverted produces-cases,
+  backwards made-froms (coking-coal, solder-waste), duplicate-rescue of
+  already-reached holders, and DELETEs contradicting prior arbitration.
+- **Scripts normalisation (2026-10-07).** The suspected third disagreement
+  was real and is fixed: `ambig.mjs` missed the paren-strip. `ingredients.mjs`
+  already matches `build.mjs` exactly; `audit`/`estimate`/`analyse`/`probe`
+  norms are purpose-built (dup detection), not resolution copies;
+  `spotcheck`/`project` carry no copies. TODO list was stale on those two.
+- **Build-artifact decision (2026-10-07).** Settled as already-implemented:
+  `.gitignore` (with rationale comment) untracked the five build outputs on
+  2026-10-04; they are present in history before that commit and regenerated
+  by `npm run build`. Nothing to do.
 
 ## 0. Still open, non-blocking
 
 - Push the commits to `origin/main`.
-- Decide whether the large build artifacts (`public/tree.*`, `docs/TREE.md`)
-  stay committed or move to a release artifact.
-- **`scripts/ingredients.mjs` and `scripts/build.mjs` now agree on normalisation,**
-  but `scripts/ambig.mjs`, `analyse.mjs`, `spotcheck.mjs`, `project.mjs` and
-  `estimate.mjs` were not re-checked for it and each carries its own copy of some
-  part of the logic. There may be a third disagreement in that list.
-- Open `_proposals` entries still awaiting arbitration (o-xylene stays
-  declined; rosin target gone — void; nylon/tin/silver rows need owner review).
+- Orphan queue for batch 2: catalogue N–Z leftovers (~25, triage B diverged
+  onto small-comps instead), untriaged metals clusters (lime ×6, tin slag /
+  atomisation, extrusion, converting, cobalt leach, tantalum tail, barite
+  mud-system), connector plating baths, `chem.crude` vs `chem.petroleum`
+  umbrella check, `chem.styrene` umbrella merge + `benzene` rename (same
+  class as the silicon/ammonia renames), ~150 KEEP-banked verdicts
+  (merge-flags: acrylonitrile, styrene, refining, solvents, pcb-etching,
+  copper-foil, acetone, feedwater-treatment), and all DELETE verdicts
+  (each needs ref-count plus prose preservation first).
 
-## 1. Orphan triage (measured 2026-10-04, re-measured 2026-10-06)
+## 1. Orphan triage (measured 2026-10-04, re-measured 2026-10-07)
 
-423 chain-scope nodes remain unreachable under the directed section-8 walk
-(`relate.mjs audit` WARN); 577 nodes are unreachable in total when the 127
-context and 27 alternate terminals are included. The build's own walk shows 0
+284 chain-scope nodes remain unreachable under the directed section-8 walk
+(`relate.mjs audit` WARN); 470 nodes are unreachable in total when the 151
+context and 35 alternate terminals are included. The build's own walk shows 0
 unreachable because it also follows reverse flow links — a different question.
 The chain backlog is down from 851 via the petroleum trunk, scoping, substance
-nodes, branch audit and the leaf fan-out.
+nodes, branch audit, the leaf fan-out, and the 2026-10-07 campaign
+(422 → 284).
 
 The remaining cases fall into these overlapping classes; the older per-class
 estimates are omitted because they were not re-counted after the later passes.
@@ -165,8 +195,10 @@ the bulk of cavity work while sinker EDM takes over for deep ribs, sharp
 internal corners and texture no cutter can reach (WSM mold guide); every EDM
 spark leaves a recast layer removed by final grind or polish (EDM Zap). A
 smooth hemispherical cavity is ball-millable, so machining is the ordinary
-route — a prior, not evidence. The question stays unsettled for this tool;
-FAIL stands. Also stood down: `data/_relation_fixes.json` records a
+route — a prior, not evidence. A compression-mould tooling guide (Echo,
+fetched) describes ordering metal blocks and CNC-machining the cavities, in
+aluminium or steel, with no EDM stage. The question stays unsettled for this
+tool; FAIL stands. Also stood down: `data/_relation_fixes.json` records a
 tool→spark-erosion reversal to `uses`; it must NOT be applied, since it would
 assert the unsettled process. The false-precision "one-micron cavity" wording
 is corrected to small cavities on both nodes.

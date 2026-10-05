@@ -3614,6 +3614,18 @@
       "why": "Confused pointer node: named as the zinc of the brass but described zinc-metal production; the brass-stock parent already carries the correct made-of edges to copper cathode and canonical zinc.brass. Same-file removal, no re-pointings needed. Recorded.",
       "loserDescription": "Zinc is recovered from sphalerite ore, roasted to the oxide and either smelted to crude zinc or leached and electrowon; it is the element that makes copper springy and hard-working.",
       "loserFacts": []
+    },
+    {
+      "loser": "chem.pcb-chemicals.laminate",
+      "loserName": "Epoxy-glass laminate (FR-4)",
+      "loserFile": "70-petrochem.json",
+      "survivor": "mb.pcb.laminate",
+      "survivorName": "FR-4 copper-clad laminate panel, 1.6 mm",
+      "survivorFile": "20-board.json",
+      "proposal": "direct (orphan-triage duplicate)",
+      "why": "Same substance at the same level: generic FR-4 panel vs the C64 board-shop panel. Survivor is reached, C64-specific and richer (8 facts, merchant-panel route); loser had zero inbound references and no children, so nothing to re-point or adopt. The loser's brominated-epoxy edge already exists on the survivor; the branched-epoxy edge was adopted onto the survivor in the same pass.",
+      "loserDescription": "Woven glass cloth impregnated with a brominated epoxy resin at 50-60% resin content, then pressed at 170-180 C and 0.3-1.5 MPa in a multi-daylight press.",
+      "loserFacts": ["Press: 170-180 C, 0.3-1.5 MPa", "Board thickness: 1.6 mm (nominal)", "Resin content: 50-60 wt%"]
     }
   ]
 }

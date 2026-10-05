@@ -294,7 +294,8 @@
               "confidence": "medium",
               "note": "A stainless or phenolic chain carrying boards by their edge in spaced fixtures is the ordinary wave-soldering transport. Not established: the chain pitch, fixture design, or edge-clearance practice on the C64 line."
             }
-          ]
+          ],
+          "edges": []
         },
         {
           "id": "mb.solder.profile",
@@ -859,6 +860,13 @@
           "note": "The 1982-83 units were built at Kentron in Ina, Japan under Commodore Japan Limited, and the boards were made in Hong Kong. Whether Commodore ever had its own in-house printed-circuit-board etching line is not established; the engineering account says the boards were made in Hong Kong, which implies an outside fabricator rather than a Commodore plant.",
           "confidence": "low"
         }
+      ],
+      "edges": [
+        {
+          "to": "chem.solder-chemicals",
+          "rel": "step",
+          "basis": "typical-1982"
+        }
       ]
     },
     {
@@ -1280,7 +1288,14 @@
                   ]
                 }
               ],
-              "note": "A dedicated workstation with its own storage and high-resolution monochrome display plus plotter and digitizer is the standard early-1980s layout station. Not established: the vendor, processor, memory size, or desk peripherals of the station that held the 251137 database."
+              "note": "A dedicated workstation with its own storage and high-resolution monochrome display plus plotter and digitizer is the standard early-1980s layout station. Not established: the vendor, processor, memory size, or desk peripherals of the station that held the 251137 database.",
+              "edges": [
+                {
+                  "to": "mb.photo.design.workstation.storage",
+                  "rel": "consumes",
+                  "basis": "typical-1982"
+                }
+              ]
             },
             {
               "id": "mb.photo.design.backannotation",
@@ -1653,6 +1668,21 @@
           "to": "chem.epoxy.brominated-epoxy",
           "rel": "made of",
           "basis": "documented"
+        },
+        {
+          "to": "chem.epoxy.branched-epoxy",
+          "rel": "made of",
+          "basis": "inferred"
+        },
+        {
+          "to": "chem.epoxy.hardeners.dds",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.epoxy.hardeners.ddd",
+          "rel": "made of",
+          "basis": "inferred"
         }
       ]
     },

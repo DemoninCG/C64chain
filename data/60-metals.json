@@ -703,6 +703,13 @@
           ],
           "children": []
         }
+      ],
+      "edges": [
+        {
+          "to": "peripheral.tv.crt.phosphor.zns.so2",
+          "rel": "step",
+          "basis": "documented"
+        }
       ]
     },
     "metal.phosphate-ore": {
@@ -2030,6 +2037,11 @@
         {
           "to": "metal.hematite",
           "rel": "made from"
+        },
+        {
+          "to": "metal.manganese.furnace-lining",
+          "rel": "uses",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -2536,6 +2548,13 @@
             }
           ]
         }
+      ],
+      "edges": [
+        {
+          "to": "metal.sphalerite.host",
+          "rel": "made from",
+          "basis": "inferred"
+        }
       ]
     },
     "metal.nickel.laterite": {
@@ -2601,6 +2620,13 @@
             "https://en.wikipedia.org/wiki/Bucket_wheel_excavator"
           ],
           "children": []
+        }
+      ],
+      "edges": [
+        {
+          "to": "metal.nickel.peridotite",
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },
@@ -2913,6 +2939,23 @@
               "rel": "at"
             }
           ]
+        }
+      ],
+      "edges": [
+        {
+          "to": "metal.banded-iron-formation",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "metal.bif-banding",
+          "rel": "made from",
+          "basis": "inferred"
+        },
+        {
+          "to": "metal.hematite.stockyard",
+          "rel": "uses",
+          "basis": "documented"
         }
       ]
     },
@@ -3558,6 +3601,11 @@
           "to": "metal.bauxite.creek-wash",
           "rel": "step",
           "basis": "typical-1982"
+        },
+        {
+          "to": "metal.laterite-terrace",
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },

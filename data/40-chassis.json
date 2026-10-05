@@ -358,6 +358,11 @@
                 {
                   "to": "c64.decor.metallised.flake",
                   "rel": "made of"
+                },
+                {
+                  "to": "c64.decor.metallised",
+                  "rel": "made of",
+                  "basis": "documented"
                 }
               ]
             }
@@ -2604,6 +2609,16 @@
         {
           "to": "c64.packaging.kraft-liner",
           "rel": "made of"
+        },
+        {
+          "to": "c64.packaging.corn-starch",
+          "rel": "made from",
+          "basis": "inferred"
+        },
+        {
+          "to": "c64.packaging.starch-adhesive",
+          "rel": "made of",
+          "basis": "documented"
         }
       ]
     },
@@ -2758,6 +2773,11 @@
           "to": "chem.pvc.compound.flexible",
           "rel": "made of",
           "basis": "typical-1982"
+        },
+        {
+          "to": "chem.pvc.stabilisation.lead-stabiliser",
+          "rel": "made of",
+          "basis": "documented"
         }
       ]
     },
@@ -3048,6 +3068,11 @@
         {
           "to": "c64.decor.pad-print.ink-resin",
           "rel": "made of"
+        },
+        {
+          "to": "chem.solvents.other-oxygenated",
+          "rel": "made of",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -3100,6 +3125,11 @@
         {
           "to": "c64.packaging.soy-oil",
           "rel": "made of"
+        },
+        {
+          "to": "c64.packaging.ink-pigment",
+          "rel": "made of",
+          "basis": "documented"
         }
       ]
     },
@@ -3676,6 +3706,11 @@
           "to": "c64.packaging.litho-ink",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "c64.packaging.litho-plate",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -3729,6 +3764,11 @@
           "to": "c64.decor.pad-print.ink",
           "rel": "consumes",
           "basis": "inferred"
+        },
+        {
+          "to": "c64.decor.pad-print.pad",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -4088,6 +4128,11 @@
           "to": "c64.case.tooling.brass-electrode",
           "rel": "consumes",
           "basis": "inferred"
+        },
+        {
+          "to": "c64.case.tooling.lapping-compound",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -4299,7 +4344,29 @@
           ]
         }
       ],
-      "note": "Retained because Commodore did screen-print product panels and cartridge labels, but nothing on the breadbin case or keycaps went through a screen."
+      "note": "Retained because Commodore did screen-print product panels and cartridge labels, but nothing on the breadbin case or keycaps went through a screen.",
+      "edges": [
+        {
+          "to": "c64.decor.screen-print.ink",
+          "rel": "consumes",
+          "basis": "inferred"
+        },
+        {
+          "to": "c64.decor.screen-print.mesh",
+          "rel": "consumes",
+          "basis": "documented"
+        },
+        {
+          "to": "c64.decor.screen-print.emulsion",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "chem.solvents.aromatic-hydrocarbon.white-spirit",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "c64.decor.prepress": {
       "id": "c64.decor.prepress",
@@ -4328,7 +4395,19 @@
       ],
       "confidence": "medium",
       "note": "Not established: which of the two plate routes Commodore used, and how the rainbow separations were made. The camera-to-film-to-plate sequence is a printing-industry convention rather than a documented Commodore practice.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.decor.prepress.film",
+          "rel": "consumes",
+          "basis": "documented"
+        },
+        {
+          "to": "c64.decor.prepress.film-base",
+          "rel": "consumes",
+          "basis": "inferred"
+        }
+      ]
     },
     "c64.decor.metallised": {
       "id": "c64.decor.metallised",

@@ -4042,7 +4042,34 @@
           "category": "silicon",
           "era": "1970s-1982",
           "confidence": "medium",
-          "note": "Established: wet-chemical patterning of oxide and aluminium with HF and hot phosphoric acid, and the buffered HF/NH4F oxide etch, are documented period practice for a 1982 silicon-gate NMOS line. Not established: whether Norristown owned a plasma etcher at all in 1982, whether the CF4 or CF4+O2 chemistry was used here or only for poly, the barrel-versus-downstream configuration, and the Plasma Technologies PT or ASM machines, whose names are illustrative of the period rather than a documented inventory. Also not established: the quartz or PVDF tank material."
+          "note": "Established: wet-chemical patterning of oxide and aluminium with HF and hot phosphoric acid, and the buffered HF/NH4F oxide etch, are documented period practice for a 1982 silicon-gate NMOS line. Not established: whether Norristown owned a plasma etcher at all in 1982, whether the CF4 or CF4+O2 chemistry was used here or only for poly, the barrel-versus-downstream configuration, and the Plasma Technologies PT or ASM machines, whose names are illustrative of the period rather than a documented inventory. Also not established: the quartz or PVDF tank material.",
+          "edges": [
+            {
+              "to": "chem.fab-chemicals.etch-gases",
+              "rel": "consumes",
+              "basis": "documented"
+            },
+            {
+              "to": "chem.fab-chemicals.etch-gases.cf4",
+              "rel": "consumes",
+              "basis": "documented"
+            },
+            {
+              "to": "chem.fab-chemicals.etch-gases.cl2",
+              "rel": "consumes",
+              "basis": "typical-1982"
+            },
+            {
+              "to": "chem.fab-chemicals.hydrochloric-acid",
+              "rel": "consumes",
+              "basis": "inferred"
+            },
+            {
+              "to": "chem.fab-chemicals.etch-gases.barrel-etcher",
+              "rel": "contains",
+              "basis": "documented"
+            }
+          ]
         },
         {
           "id": "mb.cpu.fe.implanter",

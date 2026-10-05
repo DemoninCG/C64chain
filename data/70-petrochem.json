@@ -875,6 +875,11 @@
             {
               "to": "chem.ethylene.feedstock.ethane",
               "rel": "consumes"
+            },
+            {
+              "to": "chem.ethylene.feedstock",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -1563,6 +1568,11 @@
             {
               "to": "chem.propylene.sources",
               "rel": "consumes",
+              "basis": "documented"
+            },
+            {
+              "to": "chem.acrylonitrile.sovere.reactor.heat-removal",
+              "rel": "step",
               "basis": "documented"
             }
           ]
@@ -2450,6 +2460,16 @@
                   "rel": "produces",
                   "role": "product",
                   "basis": "documented"
+                },
+                {
+                  "to": "chem.pvc.polymerisation.initiator",
+                  "rel": "consumes",
+                  "basis": "typical-1982"
+                },
+                {
+                  "to": "chem.pvc.polymerisation.suspending-agent",
+                  "rel": "consumes",
+                  "basis": "typical-1982"
                 }
               ]
             },
@@ -2572,6 +2592,11 @@
                   "to": "chem.polycarbonate.resin",
                   "rel": "produces",
                   "role": "product",
+                  "basis": "documented"
+                },
+                {
+                  "to": "chem.polycarbonate.phosgene",
+                  "rel": "consumes",
                   "basis": "documented"
                 }
               ]
@@ -2884,7 +2909,19 @@
       "era": "ancient",
       "children": [],
       "confidence": "low",
-      "note": "Established: Three rubbers for three different jobs in and around a 1983 machine: natural rubber for the feet and plinths and the moulded grips, neoprene for gaskets and the flexible cable jack as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: Three rubbers for three different jobs in and around a 1983 machine: natural rubber for the feet and plinths and the moulded grips, neoprene for gaskets and the flexible cable jack as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "edges": [
+        {
+          "to": "chem.rubber.epdm",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.rubber.natural",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.silicone": "Polydimethylsiloxane from the Rochow direct process, conformal coatings, and conductive elastomer key domes.",
     "chem.pom": "Acetal (POM) from formaldehyde via the Formox partial oxidation.",
@@ -2970,6 +3007,12 @@
             {
               "to": "chem.propylene.sources.cracker-c3",
               "rel": "consumes"
+            },
+            {
+              "to": "chem.isopropanol",
+              "rel": "produces",
+              "role": "product",
+              "basis": "documented"
             }
           ]
         },
@@ -5103,6 +5146,11 @@
         {
           "to": "chem.crude.rig.drilling-mud.chelant-biocide",
           "rel": "made of"
+        },
+        {
+          "to": "chem.crude.rig.drilling-mud.bentonite.montmorillonite.soda-ash",
+          "rel": "step",
+          "basis": "inferred"
         }
       ]
     },
@@ -5150,6 +5198,11 @@
         {
           "to": "chem.solder-chemicals.rosin-flux.activator",
           "rel": "made of"
+        },
+        {
+          "to": "chem.solder-chemicals.rosin-flux.rosin-flux-base",
+          "rel": "made of",
+          "basis": "documented"
         }
       ]
     },
@@ -5191,42 +5244,6 @@
           "to": "metal.lead.ingot",
           "rel": "made of",
           "basis": "documented"
-        }
-      ]
-    },
-    "chem.pcb-chemicals.laminate": {
-      "id": "chem.pcb-chemicals.laminate",
-      "name": "Epoxy-glass laminate (FR-4)",
-      "simple_name": "FR-4 laminate",
-      "description": "Woven glass cloth impregnated with a brominated epoxy resin at 50-60% resin content, then pressed at 170-180 C and 0.3-1.5 MPa in a multi-daylight press. The cloth comes from the mineral chain (chem.glass-fiber); the resin is chem.epoxy; the hardener in a high-temperature board is the DDS of the epoxy branch. In 1983 FR-4 was the default board material and a typical single-layer C64 board was 1.6 mm of it.",
-      "kind": "material",
-      "category": "board",
-      "era": "1970s",
-      "children": [],
-      "facts": [
-        {
-          "label": "Press",
-          "value": "170-180 C, 0.3-1.5 MPa"
-        },
-        {
-          "label": "Board thickness",
-          "value": "1.6 mm (nominal)"
-        },
-        {
-          "label": "Resin content",
-          "value": "50-60 wt%"
-        }
-      ],
-      "confidence": "medium",
-      "note": "Not established: the 170-180 C and 0.3-1.5 MPa press cycle, the 50-60 wt% resin content, the brominated epoxy content and the 1.6 mm nominal thickness for a 1982 FR-4 board.",
-      "edges": [
-        {
-          "to": "chem.epoxy.branched-epoxy",
-          "rel": "made of"
-        },
-        {
-          "to": "chem.epoxy.brominated-epoxy",
-          "rel": "made of"
         }
       ]
     },
@@ -6022,7 +6039,14 @@
       "category": "fluids",
       "era": "ancient",
       "confidence": "low",
-      "note": "Established: The C2 and C3 that make natural gas liquids, recovered as LPG at 1.5-8 bar in the field and as a debottlenecking liquid at the gas plant, then split for heating or fed to a cracker as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: The C2 and C3 that make natural gas liquids, recovered as LPG at 1.5-8 bar in the field and as a debottlenecking liquid at the gas plant, then split for heating or fed to a cracker as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "edges": [
+        {
+          "to": "chem.natural-gas.processing",
+          "rel": "step",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.natural-gas.composition.nitrogen": {
       "id": "chem.natural-gas.composition.nitrogen",
@@ -8071,7 +8095,20 @@
         }
       ],
       "note": "Phosphine preparation routes include the hypophosphorous acid route and the phosphorus pentasulphide/caustic route; the latter is the common industrial one. Established: Phosphorus from arc furnace phosphate rock coke and silica with white phosphorus intermediate. Not established: the stated furnace temperatures and burning specifics as given.",
-      "confidence": "low"
+      "confidence": "low",
+      "edges": [
+        {
+          "to": "chem.fab-chemicals.dopants.phosphine",
+          "rel": "produces",
+          "role": "product",
+          "basis": "inferred"
+        },
+        {
+          "to": "chem.fab-chemicals.dopants.phosphine.phosphorus-source.electric-furnace",
+          "rel": "uses",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "chem.fab-chemicals.etch-gases.cf4.fluorine-from-fluorspar": {
       "id": "chem.fab-chemicals.etch-gases.cf4.fluorine-from-fluorspar",
@@ -9492,7 +9529,13 @@
       ],
       "confidence": "high",
       "note": "Established: polyethylene is the most commonly produced plastic from ethylene monomer, in branched low-density and linear high-density forms with LLDPE copolymers. Not established: 1983 tonnages, the grade split, densities, and the high-pressure and coordination-catalysis temperatures pressures and catalysts as 1982 practice.",
-      "edges": []
+      "edges": [
+        {
+          "to": "chem.ethylene.polyethylene.additives",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
     },
     "chem.polycarbonate.resin": {
       "id": "chem.polycarbonate.resin",
@@ -9624,7 +9667,13 @@
       ],
       "confidence": "high",
       "note": "Established: polystyrene is the styrene polymer, with general purpose grade clear hard and brittle, at several million tonnes a year. Not established: 1983 tonnages, bulk and suspension temperatures pressures conversions and initiator loadings, and residual monomer levels as 1982 practice. The styrene monomer feed has no canonical material node; ethylbenzene and dehydrogenation are under chem.styrene.",
-      "edges": []
+      "edges": [
+        {
+          "to": "mb.passives.caps.film.polystyrene.styrene-polymerisation",
+          "rel": "step",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.polyester.pbt.resin": {
       "id": "chem.polyester.pbt.resin",
@@ -9721,6 +9770,16 @@
         {
           "to": "chem.pvc.plasticiser",
           "rel": "made of"
+        },
+        {
+          "to": "chem.pvc.stabilisation",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.pvc.stabilisation.ca-zn",
+          "rel": "made of",
+          "basis": "typical-1982"
         }
       ]
     },
