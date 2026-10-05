@@ -157,16 +157,37 @@ documented reasons, not one:
    the consumed electrode. Whether this process was used on these tools remains
    unestablished.
 
-## 3. Planned: broad tooling pass (not started)
+Research 2026-10-07 (tooling-pass step 1): Mitsumi produced most of
+Commodore's keyboards (telcontar.net/KBK/Mitsumi, fetched), localising the
+dome sheets to a Japanese keyboard supply chain — but no tooling record for
+these tools was found. Generic mould practice, both fetched: milling removes
+the bulk of cavity work while sinker EDM takes over for deep ribs, sharp
+internal corners and texture no cutter can reach (WSM mold guide); every EDM
+spark leaves a recast layer removed by final grind or polish (EDM Zap). A
+smooth hemispherical cavity is ball-millable, so machining is the ordinary
+route — a prior, not evidence. The question stays unsettled for this tool;
+FAIL stands. Also stood down: `data/_relation_fixes.json` records a
+tool→spark-erosion reversal to `uses`; it must NOT be applied, since it would
+assert the unsettled process. The false-precision "one-micron cavity" wording
+is corrected to small cavities on both nodes.
 
-Bundle the orphan above into a pass over the tooling branches (case tooling,
-dome tooling, mould/die/EDM, presses, braiders and wire-drawing), rather than
-spending archive work on one leaf of a speculative branch. Start by establishing
-whether the dome cavities were spark-eroded or mechanically machined. If EDM is
-supported, resolve the electrode material from tooling evidence; only if a
-graphite electrode is supported should the pass add and research the appropriate
-needle-coke/calcination feedstock. Do not model that feed before the process and
-electrode decisions are settled.
+## 3. Tooling pass (scoped 2026-10-07; step 1 done, rest not started)
+
+Step 1 (sparked-vs-machined) is researched as far as public sources go: still
+unsettled, FAIL stands — see §2. Branch survey: case tooling is established
+(H13, documented EDM texture, ore-level electrode chains); IC mould
+press/tool, leadframe stamp, connector injection-press/tool-steel,
+transformer wire-drawing, lamination punch die, RF braid, die-steel, ferrite
+pressing, caster mould-wall, extrusion press/die, PCB laminate press and the
+keycap/knob tools are mainstream reached practice (audit-only). The dome
+spark-erosion pair is the only speculative tooling branch.
+
+Remaining steps: (1) orphan-filtered audit over the tooling ids to confirm
+nothing else is speculative; (2) archive or supplier evidence for the dome
+tool (Mitsumi tooling docs, teardown tool-mark analysis); (3) only if a
+graphite electrode is supported, research the needle-coke/calcination
+feedstock — never before the process and electrode decisions are settled, and
+never the recorded `uses` reversal until (2) settles.
 
 ## 4. Leaf-pass modeling gaps (done 2026-10-06; see log above)
 

@@ -1064,16 +1064,20 @@
       "id": "c64.keyboard-switches.domes.moulding.tool.spark-erosion",
       "name": "Spark-erosion machining of the dome cavity",
       "simple_name": "Spark-erosion machining",
-      "description": "A fine electrode is brought within micrometres of the workpiece in a dielectric bath and pulses of a few microseconds melt a microscopic crater per pulse. Spark erosion is how a one-micron hemispherical cavity gets cut in hardened tool steel without any mechanical stress on the surface.",
+      "description": "A fine electrode is brought within micrometres of the workpiece in a dielectric bath and pulses of a few microseconds melt a microscopic crater per pulse. In hardened tool steel, spark erosion cuts small cavities without any mechanical stress on the surface, at the cost of a recast layer that a final grind or polish removes.",
       "kind": "process",
       "category": "passives",
       "era": "1982-1984",
       "confidence": "medium",
+      "sources": [
+        "https://edmzap.com/post/electrical-discharge-machining-process-limits-and-tradeoffs",
+        "https://www.wsmtechnology.com/feeds/blog/mold-die-machining"
+      ],
       "inputs": [
         "c64.keyboard-switches.domes.moulding.tool"
       ],
       "children": [],
-      "note": "Spark erosion as a process is real, but not established: that it was used to cut one-micron hemispherical cavities in hardened tool steel for these dome tools, the micrometre gap, the microsecond pulse, and the copper electrode. Graphite is the electrode material actually cited elsewhere in the tree for dome tooling.",
+      "note": "Spark erosion as a process is real, but not established: that it was used to cut small hemispherical cavities in hardened tool steel for these dome tools, the micrometre gap, the microsecond pulse, and the copper electrode. Graphite is the electrode material actually cited elsewhere in the tree for dome tooling. Ordinary mould practice mills the bulk of a cavity and reserves sinker EDM for deep ribs, sharp internal corners and texture no cutter can reach.",
       "edges": [
         {
           "to": "c64.keyboard-switches.domes.moulding.tool.spark-erosion.graphite-electrode",
@@ -1935,9 +1939,13 @@
           "category": "passives",
           "era": "1982-1984",
           "confidence": "medium",
+          "sources": [
+            "https://telcontar.net/KBK/Mitsumi/",
+            "https://www.wsmtechnology.com/feeds/blog/mold-die-machining"
+          ],
           "inputs": [],
           "children": [],
-          "note": "Not established: machined versus spark-eroded construction, one hemispherical cavity per key, and the claims about replacement on re-specification and polish transfer to the dome mating face."
+          "note": "Not established: machined versus spark-eroded construction, one hemispherical cavity per key, and the claims about replacement on re-specification and polish transfer to the dome mating face. Mitsumi produced most of Commodore's keyboards, so the dome sheets came through a Japanese keyboard supply chain, but no tooling record for these tools was located. Ordinary mould practice mills the bulk of a cavity and reserves sinker EDM for deep ribs, sharp internal corners and texture no cutter can reach; a smooth hemispherical cavity is ball-millable, so machining is the ordinary route and spark erosion would need a further reason. That prior does not establish this tool either way."
         }
       ],
       "edges": [
