@@ -1,0 +1,46 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #706DEB;
+  overflow: hidden;
+}
+
+#stage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #706DEB;
+}
+
+#c64 {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  background: #2E2C9B;
+  box-shadow: 0 0 0 4px #00000055;
+}
+
+#crash {
+  position: absolute;
+  max-width: 600px;
+  padding: 16px;
+  background: #000;
+  color: #EDF171;
+  font: 13px/1.5 monospace;
+  white-space: pre-wrap;
+  border: 2px solid #EDF171;
+}
+
+#fallback {
+  position: absolute;
+  right: 8px;
+  bottom: 6px;
+  font: 11px monospace;
+  color: #2E2C9B;
+  background: #B2B2B2;
+  padding: 2px 6px;
+}
+
+#fallback a { color: #2E2C9B; }

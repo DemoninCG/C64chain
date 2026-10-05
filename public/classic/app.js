@@ -61,7 +61,7 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&l
 
 /* ------------------------------------------------------------------ boot */
 
-const res = await fetch('tree.json');
+const res = await fetch('/tree.json');
 if (!res.ok) {
   document.body.innerHTML = '<p style="padding:40px;font:14px system-ui">tree.json not found — run <code>npm run build</code> first.</p>';
   throw new Error('no tree');

@@ -35,7 +35,8 @@ const server = createServer(async (req, res) => {
     const url = new URL(req.url, 'http://x');
     let rel = decodeURIComponent(url.pathname);
     const classic = process.argv.includes('--classic');
-    if (rel === '/') rel = classic ? '/index.html' : '/c64/index.html';
+    if (rel === '/') rel = classic ? '/classic/index.html' : '/c64/index.html';
+    if (rel.endsWith('/')) rel += 'index.html';
     const file = path.join(PUBLIC, path.normalize(rel).replace(/^([/\\])+/, ''));
     if (!file.startsWith(PUBLIC)) { res.writeHead(403).end('nope'); return; }
     const s = await stat(file);
@@ -80,7 +81,7 @@ server.on('listening', () => {
   if (port !== PREFERRED) console.log(`  (port ${PREFERRED} was unavailable)`);
   const classic = process.argv.includes('--classic');
   const main = classic ? '' : 'c64/';
-  console.log(`\n  tech tree (c64 text mode)  ->  http://localhost:${port}/${main}\n  classic viewer           ->  http://localhost:${port}/index.html\n  serving    ${PUBLIC}\n  Ctrl-C to stop\n`);
+  console.log(`\n  tech tree (c64 text mode)  ->  http://localhost:${port}/${main}\n  classic viewer           ->  http://localhost:${port}/classic/\n  serving    ${PUBLIC}\n  Ctrl-C to stop\n`);
 });
 
 server.listen(PREFERRED);
