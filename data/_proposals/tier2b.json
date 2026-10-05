@@ -1,32 +1,6 @@
 {
   "$comment": "Tier 2b cross-fragment proposals: low-melting sealing-glass consolidation (a), per-site verdicts on the seven Phase-3 leftover ingredient strings (b), and duplicate-substance verdicts (c). All `to` ids exist in the built tree, so every merge below is actionable; input_fixes apply AFTER the merges. Extension keys (input_fixes, ingredient_rows, gap_nodes) follow the 50-power.json precedent (retype/duplicates): they are instructions for owners/maintainer, ignored by applyproposals.mjs.",
-  "merges": [
-    {
-      "from": "mb.passives.caps.mlcc.slurry.glass-frit",
-      "to": "peripheral.tv.crt.panel.frit",
-      "why": "Same substance family: low-melting borosilicate fusing glass, batched from silica, boric oxide, lead oxide and alkali, applied as a paste and fired. The loser (a few per cent of glass wetting barium titanate grains to close porosity and seal the internal electrode) is the generic MLCC account; the survivor is the richer account (six facts: ~24 wt% PbO, 430-460 C seal, 600-700 C devitrification, 60-100 mesh print). Fold the BaTiO3-wetting and insulation-resistance sentences into the survivor before deleting."
-    },
-    {
-      "from": "mb.passives.resistors.discrete-axial.wirewound.enamel.glass",
-      "to": "peripheral.tv.crt.panel.frit",
-      "why": "Vitreous enamel is the same lead-borosilicate glass family, applied as a slurry and baked as a coating rather than as a seal band. Only the material copy merges; the coating operation stays behind in the parent process node mb.passives.resistors.discrete-axial.wirewound.enamel, whose glass input re-points at the survivor. The survivor's batch route (silica, boric oxide, lead oxide, alkali) covers it."
-    },
-    {
-      "from": "peripheral.tv.crt.panel.funnel-glass.borax",
-      "to": "chem.glass-fiber.borax.acid",
-      "why": "Same substance by the same route: boric acid from colemanite digested with sulphuric acid, calcium out as gypsum. The survivor carries the reaction, the sub-100 C drying limit and the 0.7-0.9 t yield with two sources at high confidence; the loser is a childless medium-confidence leaf. Union the loser's places (Boron/Kramer district, Bigadi Turkey) and its colemanite-diggings depth into the survivor. Kind friction is real and recorded: the survivor is typed process (it describes the digestion) while the loser is typed material (the acid); retype the survivor to material or keep the digestion as a child process. The parent funnel-glass batch already takes boric acid as an input, which resolves to the survivor through the ingredients table, so no edge dangles."
-    },
-    {
-      "from": "c64.switches.power-slider.body.nylon.nylon-6-6",
-      "to": "chem.polyamide.nylon-66",
-      "why": "Same polymer by the same route: nylon 6,6 from hexamethylenediamine and adipic acid, which the loser already takes as an input. The survivor is the published polymer node (salt formation, polymerisation conditions, butadiene-hydrocyanation feedstock route, Nylon 66 source). The loser is a path-local resin copy. Fold the loser's correction note (caprolactam makes nylon 6, not 6,6) into the survivor before deleting. This supersedes the 40-chassis proposal that made the loser the survivor for c64.case.other-polymers.nylon (a node no longer in the tree; that entry is stale): redirect it here too. Move the ingredients row 'nylon 6 6' with it."
-    },
-    {
-      "from": "c64.joystick.microswitches.plastic-case.nylon.nylon-6-6",
-      "to": "chem.polyamide.nylon-66",
-      "why": "Same polymer by the same route; second path-local copy with identical inputs (chem.polyamide.nylon-66, chem.petroleum). Fold the C64-use sentence (switch housings, joystick bushings, microswitch cases) and the chemistry note into the survivor before deleting. Move the ingredients row 'nylon' with it. Same pattern as the already-proposed peripheral.tv.crt.yoke.winding.bobbin.nylon merge into this survivor."
-    }
-  ],
+  "merges": [],
   "ingredient_rows": [],
   "input_fixes": [
     {
@@ -213,5 +187,6 @@
       "why": "Three use-sites need oxidant air (o-xylene oxidation, sphalerite roast, iron-oxide precipitation) and the only air node is the baffled ASU intake, which is the wrong substance. No spec offered beyond the name: it needs an owner who will say what it is (blower, header, oil-free compression) rather than a second atmosphere node."
     }
   ],
-  "note": "Verdicts in brief. (a) Sealing glass consolidates 2-for-1 into peripheral.tv.crt.panel.frit with the ceramic-seal operation kept and re-pointed, not deleted: its ramp/soak/cool profile is a real operation, and deleting it would lose the only account of lid sealing. No new canonical node is created because the richest existing node already names the substance (lead borosilicate sealing frit) and carries the seal profile as facts; generalise its description, do not rename the id. (b) Zero ingredient-table rows are proposed, deliberately: every one of the seven strings splits across substances (glass 5 frit / 2 enamel; quartz porcelain-filler vs resonator quartz vs wafer boat; silica glass-batch sand vs varistor glass phase; air three oxidant uses with no node; nitric four bulk uses with no node; graphite lining vs electrode feed vs pad coating; iron oxide pigment vs two ferrite feeds), so any single mapping would be wrong-but-resolving for at least one site. Per-site fixes above instead. (c) Boric acid merges (same substance, same colemanite route; commodity chemical, application is not identity); nylon 6,6 merges twice into the published polymer (path-local resin copies; fold C64-use sentences first); coke does NOT merge (manufactured metallurgical coke from coking coal vs mined anthracite burned directly: different substances by different routes, the o-xylene precedent). Stale entries found while verifying: c64.case.other-polymers.nylon (40-chassis proposal from) is not in the tree; mb.logic.bipolar.wafer.quartz.coke and si.polysilicon.coke (35-logic/10-silicon proposal endpoints) are not in the tree — all three proposals are void. Sequencing: apply merges, move the 'nylon' and 'nylon 6 6' ingredients rows to chem.polyamide.nylon-66, create the bulk nitric node, then apply input_fixes."
+  "note": "Verdicts in brief. (a) Sealing glass consolidates 2-for-1 into peripheral.tv.crt.panel.frit with the ceramic-seal operation kept and re-pointed, not deleted: its ramp/soak/cool profile is a real operation, and deleting it would lose the only account of lid sealing. No new canonical node is created because the richest existing node already names the substance (lead borosilicate sealing frit) and carries the seal profile as facts; generalise its description, do not rename the id. (b) Zero ingredient-table rows are proposed, deliberately: every one of the seven strings splits across substances (glass 5 frit / 2 enamel; quartz porcelain-filler vs resonator quartz vs wafer boat; silica glass-batch sand vs varistor glass phase; air three oxidant uses with no node; nitric four bulk uses with no node; graphite lining vs electrode feed vs pad coating; iron oxide pigment vs two ferrite feeds), so any single mapping would be wrong-but-resolving for at least one site. Per-site fixes above instead. (c) Boric acid merges (same substance, same colemanite route; commodity chemical, application is not identity); nylon 6,6 merges twice into the published polymer (path-local resin copies; fold C64-use sentences first); coke does NOT merge (manufactured metallurgical coke from coking coal vs mined anthracite burned directly: different substances by different routes, the o-xylene precedent). Stale entries found while verifying: c64.case.other-polymers.nylon (40-chassis proposal from) is not in the tree; mb.logic.bipolar.wafer.quartz.coke and si.polysilicon.coke (35-logic/10-silicon proposal endpoints) are not in the tree — all three proposals are void. Sequencing: apply merges, move the 'nylon' and 'nylon 6 6' ingredients rows to chem.polyamide.nylon-66, create the bulk nitric node, then apply input_fixes.",
+  "renames": []
 }

@@ -70,7 +70,7 @@
       ]
     },
     {
-      "id": "metal.silica",
+      "id": "metal.silicon",
       "name": "High-purity silicon feedstock (9N polysilicon)",
       "simple_name": "Silicon feedstock 9N",
       "description": "The refined element every chip in the machine is cut from. A 1982 Commodore 64 mainboard carried a handful of silicon dies and one quartz crystal, both traceable to this chain: quartzite or silica reduced to 96-99% metallurgical silicon, chlorinated to trichlorosilane, distilled to 9-nines, deposited as polysilicon, then pulled as a single Czochralski crystal. Two corrections to what this node previously said. The board's crystal Y1 is 14.31818 MHz, not 2 MHz; the 2 MHz line is a divided output of the clock circuitry, not a separate crystal, and the 6510 runs at about 1.02 MHz. And the 6510 is an HMOS part - silicon gate, depletion load - so its 1982 die does use a polysilicon gate, not aluminium gate metal; the polysilicon branch below is the route the machine's own chips were made by, not merely the wider industry's.",
@@ -160,7 +160,7 @@
       "children": [],
       "edges": [
         {
-          "to": "metal.cyanide-precursor",
+          "to": "metal.ammonia",
           "rel": "made from",
           "basis": "inferred"
         },
@@ -1462,7 +1462,7 @@
       "children": [],
       "edges": [
         {
-          "to": "metal.cyanide-precursor",
+          "to": "metal.ammonia",
           "rel": "consumes",
           "basis": "typical-1982"
         },
@@ -2012,7 +2012,7 @@
           "basis": "typical-1982"
         },
         {
-          "to": "metal.cyanide-precursor",
+          "to": "metal.ammonia",
           "rel": "consumes",
           "basis": "typical-1982"
         },
@@ -2067,7 +2067,7 @@
       "children": [],
       "edges": [
         {
-          "to": "metal.silica",
+          "to": "metal.silicon",
           "rel": "consumes",
           "basis": "documented"
         },

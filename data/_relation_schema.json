@@ -636,8 +636,8 @@
       "chem.styrene.benzene is NAMED \"Benzene\". Polymerisation of styrene points at it.",
       "mb.passives.caps.mlcc.print-electrodes -> metal.nickel, but the node's own description and note say the 1982 paste was palladium-silver; nickel is dated to 1993. There is a metal.palladium node.",
       "metal.alumina is \"smelter-grade alumina, 99.5% Al2O3\" and is used as a feed for ceramic tube extrusion, which needs calcined refractory alumina.",
-      "metal.cyanide-precursor has the name \"Ammonia (NH3)\" -- id and name disagree.",
-      "metal.silica.polysilicon and metal.silica.petcoke both duplicate metal.silica itself, and the Czochralski step should consume the former.",
+      "CORRECTED 2026-10-07: renamed to metal.ammonia; id and name now agree.",
+      "metal.silica.polysilicon and metal.silica.petcoke both duplicate metal.silicon itself (renamed from metal.silica 2026-10-07 for id/name agreement; children keep old-prefix ids), and the Czochralski step should consume the former.",
       "chem.pvc is a process node with no resin child at all, yet the lookup table maps \"pvc insulation\" onto it.",
       "five separate paper nodes exist with nothing above them; no ferric-oxide or magnesite node exists at all, though two magnet edges need them."
     ],

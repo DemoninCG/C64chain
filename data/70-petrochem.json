@@ -5153,8 +5153,8 @@
         }
       ]
     },
-    "chem.solder-chemicals.solder-alloy": {
-      "id": "chem.solder-chemicals.solder-alloy",
+    "chem.solder-chemicals.solder-alloy-60-40": {
+      "id": "chem.solder-chemicals.solder-alloy-60-40",
       "name": "60/40 tin-lead solder",
       "simple_name": "60/40 tin-lead solder",
       "description": "A tin-lead solder melting in the high 180s C, which is why a wave-solder bath sat at 250-260 C and a hand iron at 300-350 C: 70-80 C of superheat above the melting point, which keeps the bath molten at the top and fluxes the joint as it passes through. In 1983 about 60-70% of the world's solder was 60/40 tin-lead for electronics; the alloy is cheap, it has a low melting point, and its oxide comes off in a flux. The 40% lead was the subject of the entire lead-free soldering programme of the 1980s and 1990s, and the lead itself came out of a flotation concentrator, not out of a refinery.",
@@ -5420,7 +5420,7 @@
       ],
       "edges": [
         {
-          "to": "metal.cyanide-precursor",
+          "to": "metal.ammonia",
           "rel": "made from",
           "basis": "documented"
         },
@@ -8124,7 +8124,7 @@
       ],
       "edges": [
         {
-          "to": "metal.cyanide-precursor",
+          "to": "metal.ammonia",
           "rel": "consumes"
         },
         {

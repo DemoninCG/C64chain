@@ -1,186 +1,39 @@
 {
   "$comment": "Cross-fragment proposals from the QA pass over data/35-logic.json (mb.logic, the merchant 74-series glue logic). Nothing here has been applied: the fragment now references the canonical nodes by id and no longer inlines its own copies. What remains is (a) merges into nodes this agent does not own, (b) id renames, and (c) the factual drift found between the inlined copies and the published ones, which the maintainer may want to fold in. Every merge below was already applied on the 35-logic side - the copy is gone and the reference is in place - so applying these is about tidying the other fragment, not about unblocking the build.",
-
-  "merges": [
-    {
-      "from": "mb.logic.bipolar.wafer",
-      "to": "si.wafer",
-      "why": "The whole point of this pass. This node used to inline the entire silicon-from-quartz chain as 30 of its own nodes - quartzite, coke, the submerged-arc furnace, metallurgical silicon, the Siemens reactor, polysilicon, hydrochloric acid, brine, rock salt, the hydrogen-from-natural-gas reformer and the gas field, the Czochralski puller, crucible, seed, saw, lap, polish, wafer sizes and die-per-wafer. All of it now hangs off si.wafer by id. Note that si.wafer is written as a 100 mm wafer; a merchant bipolar logic line of 1983 also ran 75 mm entry lines, so if si.wafer is to be the canonical wafer for the whole tree its note should say so - it currently mentions 75 mm only in passing, in the context of discretes. The 75 mm fact is carried in 35-logic.json on mb.logic.bipolar.wafer for now."
-    },
-    {
-      "from": "mb.logic.bipolar.wafer.quartz.quartzite",
-      "to": "metal.quartzite",
-      "why": "Deleted locally; metal.quartzite already names Spruce Pine, Norway and Brazil as the sources and states the 97-99% SiO2 assay, which is the better fact set. The metallurgical silicon step below it is published at si.polysilicon.msi with its quartz, coke, calciner and crude-residue children."
-    },
-    {
-      "from": "mb.logic.bipolar.wafer.quartz.coke",
-      "to": "si.polysilicon.coke",
-      "why": "Deleted locally; si.polysilicon.coke and its calciner and crude children cover the same route."
-    },
-    {
-      "from": "mb.logic.bipolar.wafer.quartz.furnace",
-      "to": "si.polysilicon.saf",
-      "why": "Deleted locally; the submerged-arc furnace is published on both sides."
-    },
-    {
-      "from": "mb.logic.bipolar.wafer.polysilicon",
-      "to": "si.polysilicon",
-      "why": "Deleted locally; si.polysilicon carries the Siemens reaction equations and the reactor tool. See the drift note below on the purity figure, which the two copies disagree about."
-    },
-    {
-      "from": "mb.logic.bipolar.wafer.polysilicon.reactor",
-      "to": "si.polysilicon.reactor",
-      "why": "Deleted locally."
-    },
-    {
-      "from": "mb.logic.bipolar.wafer.polysilicon.hydrochloric",
-      "to": "si.polysilicon.hcl",
-      "why": "Deleted locally; si.polysilicon.hcl already resolves to metal.salt-brine, metal.chlorine and metal.hydrogen, which is where the inlined brine -> rock salt chain now lives."
-    },
-    {
-      "from": "mb.logic.bipolar.wafer.polysilicon.hydrochloric.chlorine.brine.salt",
-      "to": "si.polysilicon.salt",
-      "why": "Deleted locally. Three separate copies of 'Rock salt (halite)' existed in this fragment alone (here, under the epoxy resin, and under the photoresist developer); metal.salt-brine is the canonical one."
-    },
-    {
-      "from": "mb.logic.bipolar.wafer.polysilicon.hydrogen.smr.catalyst",
-      "to": "chem.natural-gas.uses.hydrogen.nickel-catalyst",
-      "why": "Deleted locally. Three nodes in the tree were named 'Nickel reforming catalyst' - this one, chem.natural-gas.uses.hydrogen.nickel-catalyst and facility.gases.nickel-catalyst. The 70-petrochem one is the most specific and is what other fragments' 'nickel reforming catalyst' ingredient strings now resolve to."
-    },
-    {
-      "from": "mb.logic.bipolar.wafer.polysilicon.hydrogen.smr.methane.naturalgas.form.field",
-      "to": "chem.natural-gas.sources.associated-gas",
-      "why": "Deleted locally. The gas field, the reservoir, the drilling and the treatment plant are all published under chem.natural-gas.sources; this fragment had inlined a private five-node version of the same story and reached the gas field through a 'How natural gas formed' note-framed node, which is exactly the pattern rule 2 warns about."
-    },
-    {
-      "from": "mb.logic.bipolar.wafer.cz",
-      "to": "si.cz",
-      "why": "Deleted locally. Note that si.cz is not currently listed among si.wafer's children, so after this pass the Czochralski growth step is reachable from the machine but not from the wafer - worth re-attaching there."
-    },
-    {
-      "from": "mb.logic.bipolar.wafer.cz.crucible",
-      "to": "si.cz.crucible",
-      "why": "Deleted locally."
-    },
-    {
-      "from": "mb.logic.bipolar.wafer.saw",
-      "to": "si.wafer.slicing",
-      "why": "Deleted locally."
-    },
-    {
-      "from": "mb.logic.bipolar.wafer.lap",
-      "to": "si.wafer.finish",
-      "why": "Deleted locally; lapping, chemical polish and edge rounding are one published step there."
-    },
-    {
-      "from": "mb.logic.bipolar.process.epi.phosphine",
-      "to": "chem.fab-chemicals.dopants.phosphine",
-      "why": "Deleted locally. IMPORTANT: about twenty nodes in 10-silicon.json and 60-metals.json were resolving a 'phosphine' ingredient string to THIS id by name, because it happened to be defined first in file order. With the copy gone those edges now fall through to chem.fab-chemicals.dopants.phosphine, which is the correct target and is the more detailed node - but the tree's ingredient-link count will show the change, so it is worth a look."
-    },
-    {
-      "from": "mb.logic.bipolar.process.epi.arsine",
-      "to": "chem.fab-chemicals.dopants.arsine",
-      "why": "Deleted locally, same by-name re-pointing effect as the phosphine node. The arsenic-from-copper-concentrate provenance that the deleted child carried has been folded into mb.logic.bipolar.process.emitter's note, because chem.fab-chemicals.dopants.arsine does not mention where the arsenic comes from."
-    },
-    {
-      "from": "mb.logic.bipolar.process.base.boron.diborane",
-      "to": "chem.fab-chemicals.dopants.diborane",
-      "why": "Deleted locally; the canonical node covers BF3 as well as diborane."
-    },
-    {
-      "from": "mb.logic.bipolar.litho.coat.negative",
-      "to": "chem.photoresist.negative",
-      "why": "Deleted locally. chem.photoresist.negative is now kind `note` in this tree; if it is to remain the canonical home for image-reversal chemistry it may want to become a real node again, but the fragment no longer depends on that."
-    },
-    {
-      "from": "mb.logic.bipolar.litho.develop.az",
-      "to": "chem.fab-chemicals.tmah",
-      "why": "Deleted locally, with its potash -> brine -> rock salt chain. chem.fab-chemicals.tmah is the canonical developer alkali; 40-chassis.json has a second 'Potassium hydroxide (caustic potash)' at c64.case.abs-resin.potassium-hydroxide, which is a third copy and a candidate for the same treatment."
-    },
-    {
-      "from": "mb.logic.bipolar.litho.etch.fluorite",
-      "to": "metal.fluorspar",
-      "why": "Deleted locally, with its limestone by-product child. Note that the tree currently holds at least fourteen path-local fluorspar nodes (mb.discretes.fluorspar, mb.pla.fluorspar, mb.ppi.fluorspar, mb.cia.fluorspar, mb.sid.fluorspar, mb.vic.fluorspar, mb.roms.fluorspar, mb.color-ram.fluorspar, mb.ram.fluorspar, si.polysilicon.fluorspar, chem.fab-chemicals.hydrofluoric-acid.fluorspar, facility.compressed-air.fluorspar, and others). That is a bigger merge than this agent's scope, but it is the single largest remaining duplication pattern in the tree and metal.fluorspar is the obvious survivor."
-    },
-    {
-      "from": "mb.logic.bipolar.litho.strip.tce",
-      "to": "chem.solvents.trichloroethylene",
-      "why": "Deleted locally, with its ethylene -> naphtha -> crude chain. The deleted copy also mis-stated the molecule as being in the '1,1,1-trichloroethane family'; trichloroethylene is 1,1,2-trichloroethene, CHCl=CCl2, and the canonical node gets it right. The inlined node was the only place in the tree that got it wrong."
-    },
-    {
-      "from": "mb.logic.bipolar.litho.strip.piranha",
-      "to": "chem.fab-chemicals.sulfuric-acid",
-      "why": "Deleted locally, with its sulphuric acid -> sulphur -> hydrogen sulphide chain. chem.sulfur and metal.hydrogen-sulfide carry the ends of that chain."
-    },
-    {
-      "from": "mb.logic.bipolar.cleanroom.gas",
-      "to": "chem.fab-chemicals.process-gases",
-      "why": "Deleted locally; the two nodes were both named 'Bulk process gases'. The canonical one also lists helium, which the local copy omitted."
-    },
-    {
-      "from": "mb.logic.cmos.process.locos.nitride.ammonia",
-      "to": "chem.fab-chemicals.ammonium-hydroxide",
-      "why": "Deleted locally, with its nitrogen-from-air and hydrogen-from-the-reformer children. About fifteen nodes in 30-passives, 40-chassis, 60-metals, 80-industry and 90-peripherals were resolving an 'ammonia' ingredient string to this id by name; they now fall through to chem.fab-chemicals.ammonium-hydroxide. The roughly twelve of them that resolved to this node's child 'Air' have no name-index fallback - see the alias proposal."
-    },
-    {
-      "from": "mb.logic.cmos.process.poly.silane-source",
-      "to": "chem.silane.monosilane",
-      "why": "Deleted locally; chem.silane.monosilane is the canonical monosilane node."
-    },
-    {
-      "from": "mb.logic.package.leadframe.plating.tin.cassiterite",
-      "to": "metal.cassiterite",
-      "why": "Deleted locally; metal.cassiterite has the better concentrate assay and the smelting geography."
-    },
-    {
-      "from": "mb.logic.package.ceramic.body.bauxite",
-      "to": "metal.bauxite",
-      "why": "Deleted locally. The local copy's list of 1980s sources included 'bauxite residue from Sines (Portugal)', which is a mud residue rather than a bauxite mine; metal.bauxite should be the only place that list lives."
-    },
-    {
-      "from": "mb.logic.package.leadframe.iron.ore",
-      "to": "metal.iron",
-      "why": "Deleted locally, with its hematite and magnetite children. The node was also named 'Iron ore for the frame alloy', which rule 4 forbids: a name relative to its parent. metal.hematite and metal.magnetite are the canonical ores."
-    },
-    {
-      "from": "mb.logic.package.assembly.mould.compound.resin.epichlorohydrin",
-      "to": "chem.epoxy.dgeba.epichlorohydrin",
-      "why": "Deleted locally, with its propylene -> naphtha -> crude and chlorine -> brine -> rock salt chains (seven nodes). Four 'Epichlorohydrin' nodes existed in the tree; 70-petrochem's is the deepest."
-    },
-    {
-      "from": "mb.logic.package.assembly.mould.compound.pigment.soot",
-      "to": "chem.petroleum",
-      "why": "Not really a merge - this was a one-sentence leaf that also broke rule 7 by describing a sibling ('the resistor branch of this tree'). It has been folded into the parent pigment node's note."
-    },
-    {
-      "from": "mb.logic.economics.bill",
-      "to": "mb.logic.economics",
-      "why": "Internal to this fragment, so already applied: the bill of materials, the labour estimate and the price comparison were three commentary subtrees (ten nodes) and are now one note with the numbers in facts. Recorded here because the ten deleted ids were the only place in the tree where a 74LS's mass and price were broken out, and because several nodes outside this fragment were resolving 'silicon' and 'aluminium' ingredient strings to two of those deleted ids - see the alias proposal."
-    }
-  ],
-
-  "renames": [
-    {
-      "id": "mb.cpu.wafer",
-      "to": "si.wafer",
-      "why": "ALREADY APPLIED by the 10-silicon.json agent during this pass; recorded because 35-logic now depends on the new id. Flagging the consequence: si.wafer is a 100 mm wafer, but a merchant bipolar logic line of 1983 also ran 75 mm entry lines, so if si.wafer is meant to be the canonical wafer for the whole tree its note should say so (it currently mentions 75 mm only in passing, in the context of discretes). No rename is being requested here."
-    },
-    {
-      "id": "metal.silica",
-      "to": "metal.silicon",
-      "why": "OPTIONAL, not required. metal.silica is named 'High-purity silicon feedstock (9N polysilicon)' and is used as the canonical 'silicon' ingredient by roughly thirty nodes, but it also carries a child called metal.silica.quartz-crystal, '2.048 MHz quartz clock crystal', which is a mechanical resonator and not silicon at all - a quartz crystal is grown hydrothermally from silica, but it is not a branch of the silicon feedstock chain. Two unrelated things are currently in one node. Splitting the clock crystal out, or renaming the parent, would remove a genuine mis-parenting."
-    }
-  ],
-
+  "merges": [],
+  "renames": [],
   "aliases": [
-    { "from": "silicon", "to": "metal.silica", "why": "Roughly six nodes across 10-silicon and 30-passives have inputs: ['silicon']. Until this pass those resolved by name to mb.logic.economics.bill.silicon, a note about 3 mg of die silicon, which is not what any of them meant. With that node gone the string resolves to nothing. metal.silica is the right target." },
-    { "from": "aluminium", "to": "metal.aluminum", "why": "About twelve nodes across 10-silicon, 40-chassis and 50-power have inputs: ['aluminium'] (British spelling). These were resolving to mb.logic.economics.bill.aluminium, a note about on-die metal; they now resolve to nothing. metal.aluminum is the right target, and the alias also removes the aluminium/aluminum split that has been quietly producing two different destinations for one substance." },
-    { "from": "air", "to": "facility.nitrogen.atmospheric-air", "why": "About twelve nodes across 30-passives, 40-chassis, 60-metals and 90-peripherals have inputs: ['air']. These were resolving by name to mb.logic.cmos.process.locos.nitride.ammonia.nitrogen.air, a three-line stub; with it gone the string resolves to nothing. facility.nitrogen.atmospheric-air is what most of them mean. The ones that mean process air rather than nitrogen are a judgement call the maintainer may want to make per node." },
-    { "from": "Industrial diamond", "to": "si.wafer.diamond", "why": "mb.cpu.wafer.blade and mb.cpu.dice-tool in 10-silicon.json have inputs: ['industrial diamond'], which resolved by name to mb.logic.bipolar.wafer.saw.diamond. That node is deleted, so those two edges are now prose. The string should resolve to si.wafer.diamond." },
-    { "from": "Elemental sulphur (recovered)", "to": "chem.sulfur", "why": "facility.water.sulphuric-acid in 80-industry.json had an input string matching the deleted mb.logic.bipolar.litho.strip.piranha.sulphuric.sulphur. chem.sulfur is the canonical sulphur." },
-    { "from": "Phosphate rock (apatite)", "to": "chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphate-rock", "why": "Two nodes in 40-chassis and 80-industry had input strings matching the deleted mb.logic.bipolar.process.epi.phosphine.phosphorus.phosphate. The canonical phosphate rock node is the phosphorus-source one; metal.phosphate-ore is a near-duplicate of it and is itself a merge candidate." }
+    {
+      "from": "silicon",
+      "to": "metal.silica",
+      "why": "Roughly six nodes across 10-silicon and 30-passives have inputs: ['silicon']. Until this pass those resolved by name to mb.logic.economics.bill.silicon, a note about 3 mg of die silicon, which is not what any of them meant. With that node gone the string resolves to nothing. metal.silica is the right target."
+    },
+    {
+      "from": "aluminium",
+      "to": "metal.aluminum",
+      "why": "About twelve nodes across 10-silicon, 40-chassis and 50-power have inputs: ['aluminium'] (British spelling). These were resolving to mb.logic.economics.bill.aluminium, a note about on-die metal; they now resolve to nothing. metal.aluminum is the right target, and the alias also removes the aluminium/aluminum split that has been quietly producing two different destinations for one substance."
+    },
+    {
+      "from": "air",
+      "to": "facility.nitrogen.atmospheric-air",
+      "why": "About twelve nodes across 30-passives, 40-chassis, 60-metals and 90-peripherals have inputs: ['air']. These were resolving by name to mb.logic.cmos.process.locos.nitride.ammonia.nitrogen.air, a three-line stub; with it gone the string resolves to nothing. facility.nitrogen.atmospheric-air is what most of them mean. The ones that mean process air rather than nitrogen are a judgement call the maintainer may want to make per node."
+    },
+    {
+      "from": "Industrial diamond",
+      "to": "si.wafer.diamond",
+      "why": "mb.cpu.wafer.blade and mb.cpu.dice-tool in 10-silicon.json have inputs: ['industrial diamond'], which resolved by name to mb.logic.bipolar.wafer.saw.diamond. That node is deleted, so those two edges are now prose. The string should resolve to si.wafer.diamond."
+    },
+    {
+      "from": "Elemental sulphur (recovered)",
+      "to": "chem.sulfur",
+      "why": "facility.water.sulphuric-acid in 80-industry.json had an input string matching the deleted mb.logic.bipolar.litho.strip.piranha.sulphuric.sulphur. chem.sulfur is the canonical sulphur."
+    },
+    {
+      "from": "Phosphate rock (apatite)",
+      "to": "chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphate-rock",
+      "why": "Two nodes in 40-chassis and 80-industry had input strings matching the deleted mb.logic.bipolar.process.epi.phosphine.phosphorus.phosphate. The canonical phosphate rock node is the phosphorus-source one; metal.phosphate-ore is a near-duplicate of it and is itself a merge candidate."
+    }
   ],
-
   "drift": [
     {
       "topic": "Polysilicon purity in 1983",
@@ -208,6 +61,5 @@
       "finding": "The deleted 35-logic copy carried a fact reading 'Dopant: arsenic (p-type) or phosphorus (n-type)'. Arsenic is a donor, so that is backwards: p-type is boron or gallium, n-type is phosphorus or arsenic. si.cz is correctly titled 'Czochralski growth of the boron-doped ingot'. The error is gone with the node; recording it because it is the kind of thing that gets copy-pasted."
     }
   ],
-
   "note": "Fragment summary: 228 nodes before this pass, 129 after. 100 nodes were deleted, 1 added (mb.logic.sourcing.makers.signetics, split out of a node that had absorbed two companies into one). Forty of those deletions were inlined duplicates of nodes published in 10-silicon.json, 60-metals.json and 70-petrochem.json; ten were the economics bill/labour/price subtree, folded into one note; eight were bare processes with no children and no ingredients; one was a duplicated photomask bay; the rest were folded into their parents' descriptions, facts or notes. Mechanical audit for this fragment: 4 FAIL and 146 WARN before, 0 FAIL and 7 WARN after - build.mjs, audit.mjs --file 35-logic.json and selftest.mjs all exit 0. The 7 remaining WARNs are all r3 category objections that I accepted deliberately and documented in the nodes' own notes: five `tool` under `packaging` (a progressive die set, a transfer press, a wire bonder, a probe station and a logic tester are capital equipment and there is no machine-tool category), and two `note` under `packaging` and `logistics`. The other 33 WARNs the file-scoped audit prints are r4 duplicate-name rows in which no id from this fragment appears; they belong to 10-silicon, 20-board, 30-passives, 40-chassis, 60-metals, 70-petrochem, 80-industry and 90-peripherals. This fragment's own eleven `children` edges onto facility.water and facility.electricity have all been moved to `from` per rule 1a, and it now contributes no r1a edge at all. Two things a maintainer should know before applying the proposals above: several of the deleted nodes were acting as unintended name hubs for other fragments' ingredient strings - about twenty nodes resolved 'phosphine' to mb.logic.bipolar.process.epi.phosphine, about fifteen resolved 'ammonia' to the CMOS nitride node, and about six and twelve resolved 'silicon' and 'aluminium' to the two deleted economics bill nodes - and those edges now fall through to the canonical nodes, which is the right outcome but will move the tree's ingredient-link statistics."
 }

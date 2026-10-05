@@ -1,71 +1,7 @@
 {
   "_comment": "Written by the QA pass over data/50-power.json (c64.psu, mb.rf-modulator, c64.mains). Everything here is a change I am not allowed to apply myself: the target node lives in a fragment I do not own, or under c64.bottoms-out. `retype` and `duplicates` are extensions of the schema in README.md for the two cases a from/to merge cannot express; `note` explains anything a reviewer needs to know.",
-
-  "merges": [
-    {
-      "from": "c64.mains.line-cord",
-      "to": "c64.cables.power-cord",
-      "why": "The same object, described twice. 40-chassis says 'A detachable mains lead for the external power supply: two or three PVC-insulated copper conductors in a moulded outer jacket, with a moulded mains plug at one end and a moulded figure-8 or IEC connector at the other'; 50-power's c64.mains.line-cord is the same lead, with its PVC sheath, stranded conductors and strain-relief clamp. Both are rooted in the tree, so a reader can follow the brick's mains lead into either branch. 50-power already holds the deeper of the two (the PVC compound and the chlor-alkali chain behind the vinyl chloride), so the union of facts should be merged into the 40-chassis node before c64.mains.line-cord is dropped."
-    },
-    {
-      "from": "c64.mains.plug",
-      "to": "c64.cables.power-cord.mains-plug",
-      "why": "Same plug. I have already renamed mine to 'Moulded wall plug' so the two names no longer collide, which is a stopgap, not a fix: it is the NEMA 1-15P / CEE 7/16 end of the same cord. Merge with the cord above; the nickel-plated-brass contacts node travels with it."
-    },
-    {
-      "from": "c64.mains.line-cord.stranded-copper",
-      "to": "c64.cables.power-cord.conductors",
-      "why": "Same conductors. Note that the target is currently kind 'process' for a substance; see the retype entry below. 50-power's version has the strand figures (0.15-0.20 mm, about 30 strands for 1.0 mm2) which are worth keeping."
-    },
-    {
-      "from": "c64.mains.line-cord.pvc-sheath.vinyl-chloride",
-      "to": "chem.pvc.vcm",
-      "why": "Vinyl chloride monomer, same substance, same level. 70-petrochem publishes the canonical material node (with the -13.4 C boiling point, the angiosarcoma hazard and the 1983 capacity figure) and 40-chassis has a third copy at c64.case.other-polymers.vinyl-chloride. Mine is the only one carrying the oxychlorination and chlor-alkali chain down to halite, so move that subtree under chem.pvc.vcm before deleting this id."
-    },
-    {
-      "from": "mb.rf-modulator.rf-oscillator.tank-transformer",
-      "to": "metal.ferrite.modulator",
-      "why": "The RF modulator's ferrite-loaded coil exists in both fragments. metal.ferrite.modulator is the canonical published node and the rule is to link to it rather than keep a path-local copy; the 50-power version carries the schematic detail worth moving across first - a tapped coil or miniature two-winding transformer on a 2-3 mm former, 1-2 uH class at 60 MHz, 0.15-0.25 mm enamelled copper, 3-8 turns, and the note that the PAL UHF version scales the inductance down about tenfold. I have pointed the coil's material edge at metal.ferrite.nizn rather than at metal.ferrite, which keeps the branch to six nodes instead of twenty-nine."
-    },
-    {
-      "from": "mb.rf-modulator.rf-output.supply-bead",
-      "to": "metal.ferrite.bead",
-      "why": "Already applied inside my own fragment: I deleted the local bead node and metal.ferrite.bead is now a child of mb.rf-modulator.rf-output, with the 50-500 ohm at 100 MHz figure kept as a fact there. Recorded here because the maintainer may prefer the canonical node's prose to carry it."
-    },
-    {
-      "from": "c64.psu.aux-caps.tantalum",
-      "to": "mb.passives.caps.tantalum",
-      "why": "A sintered tantalum bead capacitor, described in both fragments. mb.passives.caps.tantalum is the richer node (13 nodes: anode pressing and sintering, the anodic Ta2O5 dielectric, the MnO2 solid electrolyte, packaging, the columbite ore-to-powder route and the early-1980s supply squeeze), so it should survive. The 0.22 uF 35 V epoxy-dipped bead used in the brick, and the note that a tantalum fails short, belong on c64.psu.aux-caps, where they already are."
-    },
-    {
-      "from": "mb.discretes.power-bjt",
-      "to": "c64.psu.regulator.variant-discrete.pass-npn",
-      "why": "Both name the 2N3055 / 2N3792 series-pass transistor of the brick's discrete regulator. 10-silicon's node is a bare leaf; 50-power's carries the triple-diffusion structure, the TO-3 package mass, the hermetic sealing and the emitter wire bonds, so it is the survivor under CHECKLIST 4.1. Re-point anything that references mb.discretes.power-bjt. Medium confidence on the 120407 discrete schematic either way - the note on the node says the part numbers are unconfirmed for this assembly."
-    },
-    {
-      "from": "c64.psu.transformer.core.lamination.goes",
-      "to": "metal.electrical-steel",
-      "why": "Priority-4 overlap, already de-duplicated on my side: the Hi-B chain is gone from 50-power and c64.psu.transformer.core.lamination now carries metal.electrical-steel as a child, with the 0.35 mm gauge, the 2.0-3.5 wt% silicon, the coercivity, the saturation induction and the electricalsteelworld source kept as its own facts. Nothing needs applying centrally unless the maintainer wants the caveat text moved onto the metal node as well: oriented sheet was too expensive for a 40 VA brick in 1982, so the grade for this particular transformer is unverified."
-    },
-    {
-      "from": "c64.psu.transformer.core.ferrite-alternative.powder",
-      "to": "metal.ferrite.mnzn",
-      "why": "Priority-4 overlap, already de-duplicated on my side. The MnO blend, the manganese and zinc raw materials and the dry-press/sinter route were local copies of metal.ferrite.mnzn and metal.ferrite.manufacture; what is left in 50-power is the part (a moulded E-core alternative for later Commodore bricks) with its resistivity and saturation figures and the blend percentages as facts."
-    },
-    {
-      "from": "c64.mains.line-capacitor.rifa",
-      "to": "c64.mains.line-capacitor.metallised-film",
-      "why": "Already applied: a RIFA part is a metallised polypropylene X2 capacitor, so the node duplicated its own parent. Its history - dominant European supplier of X-rated film in the 1980s, parts now treated as a fire hazard and replaced on sight - is preserved in the parent's note."
-    },
-    {
-      "from": "mb.rf-modulator.rf-oscillator.channel-trimmer.multilayer-ceramic",
-      "to": "mb.passives.caps.trim",
-      "why": "Already applied, and this is a correction rather than a merge: a 1982 channel trimmer brought out to terminal 10 is a screw-adjusted ceramic plate or disc part (or a stacked mica one), not a multilayer ceramic block with sputtered internal electrodes - and the 251025 drawing shows screw trimmers. The local subtree also duplicated metal.barium with a second barite-to-ilmenite chain. It is gone; the part survives as a leaf under mb.rf-modulator.rf-oscillator with metal.barium as a `from` edge. Worth a look at mb.passives.caps.trim: it has no screw-trimmer or mica-trimmer member, which is why I did not simply file the part under it."
-    }
-  ],
-
+  "merges": [],
   "renames": [],
-
   "retype": [
     {
       "id": "c64.cables.power-cord.conductors",
@@ -78,6 +14,5 @@
       "why": "Already correct in the tree; listed only so the maintainer can see the merge above is consistent. No change needed - ignore if the file already says part."
     }
   ],
-
   "note": "Three judgement calls in 50-power.json that the maintainer may want to overrule.\n\n1. The bulk-capacitor construction chain was kept local. c64.psu.bulk-cap still owns its own anode-foil, electrolyte, separator and winding nodes instead of adopting mb.passives.caps.alu-electrolytic. The two are not the same account: mine is the 1980-82 ammonium-pentaborate and kraft-paper construction of the brick's 4700 uF 16 V part, the other is the general mainboard account with glycol-ether electrolytes, a wound mandrel and an ageing step. They will read as two facts about aluminium electrolytics, which is what CHECKLIST 4 warns about, but they genuinely disagree and picking a winner would lose the brick's numbers. If the maintainer prefers one construction, mb.passives.caps.alu-electrolytic is the richer node and the brick-specific facts should move onto c64.psu.bulk-cap first - that is what I did with everything else.\n\n2. The hybrid module subtree was kept, reframed rather than deleted. mb.rf-modulator.hybrid-module is now kind 'note', named 'Illustrative hybrid module construction, not the Commodore build', confidence low, and its description opens by stating that both Commodore drawings (251025 and 251696) show a discrete through-hole board. A note with children routes through the components-only view, so the comparison survives without pretending to be a C64 part.\n\n3. c64.psu.power-led was kept at confidence low. It is the one node in the fragment that may not be in the machine at all: the note says the 3-83 and 13-83 case markings list only 'power supply' with no indicator and that the teardown descriptions do not mention one. The brief's instruction to keep low-confidence nodes was read as covering this, but it is a part, not a statement about the industry, so the maintainer may prefer to cut it."
 }
