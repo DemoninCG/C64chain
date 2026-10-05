@@ -1401,7 +1401,14 @@
             "switch"
           ],
           "confidence": "medium",
-          "note": "The service-manual parts list gives this number; its exact internals are not documented in the sources available here, so the internal switch and connectors are described generically rather than specifically."
+          "note": "The service-manual parts list gives this number; its exact internals are not documented in the sources available here, so the internal switch and connectors are described generically rather than specifically.",
+          "edges": [
+            {
+              "to": "c64.cables.rf-cable.coax",
+              "rel": "contains",
+              "basis": "inferred"
+            }
+          ]
         }
       ]
     }
@@ -1677,7 +1684,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/o-Xylene"
       ],
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "chem.ethylene.feedstock.naphtha",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "c64.decor.prepress.film-base": {
       "id": "c64.decor.prepress.film-base",
@@ -1889,7 +1903,15 @@
         "catalyst"
       ],
       "confidence": "medium",
-      "note": "Not established: the pad compound, the tin-catalysed room-temperature cure and the 24 hour figure. Pad printing is documented to use a silicone pad; the casting chemistry is not."
+      "note": "Not established: the pad compound, the tin-catalysed room-temperature cure and the 24 hour figure. Pad printing is documented to use a silicone pad; the casting chemistry is not.",
+      "children": [],
+      "edges": [
+        {
+          "to": "chem.silicone.compound",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
     },
     "c64.packaging.kraft-pulp": {
       "id": "c64.packaging.kraft-pulp",
@@ -2100,7 +2122,14 @@
         "https://en.wikipedia.org/wiki/Kraft_paper"
       ],
       "note": "In part in conflict. That unbleached kraft is the strong, cheap liner grade is established, and so is the reason it is strong: kraft pulping removes most of the lignin present originally in the wood, and the low lignin matters because the hydrophobic nature of lignin interferes with the hydrogen bonds between cellulose fibres. That is the opposite of the explanation given here, which is that the brown colour comes from the kraft cook keeping the lignin. The brown colour of kraft paper is established as the colour of the unbleached grade itself, kraft paper also being known as brown paper; the mechanism by which it is brown is not settled by the source.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.packaging.kraft-pulp",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "c64.packaging.corrugated-medium": {
       "id": "c64.packaging.corrugated-medium",
@@ -2241,7 +2270,15 @@
         "phthalocyanine blue"
       ],
       "confidence": "medium",
-      "note": "Not established: the pigment set in 1982 Commodore packaging inks. The named pigments are all documented materials; their use on these boxes is not."
+      "note": "Not established: the pigment set in 1982 Commodore packaging inks. The named pigments are all documented materials; their use on these boxes is not.",
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.titanium-dioxide",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "c64.cables.rf-cable.plasticiser": {
       "id": "c64.cables.rf-cable.plasticiser",

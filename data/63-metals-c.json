@@ -1338,7 +1338,14 @@
                   "value": "100-400 um"
                 }
               ],
-              "note": "Medium confidence; granulation practice is proprietary and varies between manufacturers."
+              "note": "Medium confidence; granulation practice is proprietary and varies between manufacturers.",
+              "edges": [
+                {
+                  "to": "metal.ferrite.mixing",
+                  "rel": "step",
+                  "basis": "inferred"
+                }
+              ]
             }
           ],
           "inputs": [],
@@ -1381,6 +1388,13 @@
           ],
           "inputs": [
             "metal.ferrite.mixing"
+          ],
+          "edges": [
+            {
+              "to": "metal.ferrite.mixing",
+              "rel": "step",
+              "basis": "documented"
+            }
           ]
         },
         {
@@ -1470,6 +1484,13 @@
           "note": "Medium confidence on the cost trade-off; it depends entirely on the part size and the volume.",
           "inputs": [
             "metal.ferrite.sintering"
+          ],
+          "edges": [
+            {
+              "to": "metal.ferrite.sintering",
+              "rel": "step",
+              "basis": "documented"
+            }
           ]
         },
         {
@@ -2015,6 +2036,13 @@
           "note": "The jarosite versus goethite split is a real and well-documented 1980s process choice; medium confidence on the specific temperature windows.",
           "inputs": [
             "metal.zinc.leach-purify"
+          ],
+          "edges": [
+            {
+              "to": "metal.zinc.leach-purify",
+              "rel": "step",
+              "basis": "documented"
+            }
           ]
         }
       ],

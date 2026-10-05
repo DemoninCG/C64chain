@@ -5721,7 +5721,15 @@
           "value": "a cast copper bar, and the contact point where the anode is electrically connected"
         }
       ],
-      "note": "Medium confidence on the stub and scrap rate; it varies by tankhouse practice."
+      "note": "Medium confidence on the stub and scrap rate; it varies by tankhouse practice.",
+      "edges": [
+        {
+          "to": "metal.copper.anode",
+          "rel": "produces",
+          "role": "product",
+          "basis": "documented"
+        }
+      ]
     },
     "metal.copper.foil.ed-drum": {
       "id": "metal.copper.foil.ed-drum",
@@ -5976,6 +5984,13 @@
           "note": "Recovery efficiency varies with dross age; medium confidence.",
           "inputs": [
             "metal.zinc.galvanising"
+          ],
+          "edges": [
+            {
+              "to": "metal.zinc.galvanising",
+              "rel": "step",
+              "basis": "documented"
+            }
           ]
         }
       ],
@@ -6531,6 +6546,13 @@
           "note": "The fraction and its fate vary strongly between plants and years; high confidence in the chemistry, medium on the 1982 commercial split.",
           "inputs": [
             "metal.silica.tcs.fluid-bed-chlorination"
+          ],
+          "edges": [
+            {
+              "to": "metal.silica.tcs.fluid-bed-chlorination",
+              "rel": "step",
+              "basis": "documented"
+            }
           ]
         }
       ],
@@ -6778,6 +6800,13 @@
           "note": "The filtration step is a genuine 1980s development; medium confidence on the specific purity targets.",
           "inputs": [
             "metal.steel.ladle"
+          ],
+          "edges": [
+            {
+              "to": "metal.steel.ladle",
+              "rel": "step",
+              "basis": "documented"
+            }
           ]
         }
       ],
@@ -6940,6 +6969,13 @@
           "note": "Typical range; specific alloy timetables vary by producer.",
           "inputs": [
             "metal.aluminum.dc-casting"
+          ],
+          "edges": [
+            {
+              "to": "metal.aluminum.dc-casting",
+              "rel": "step",
+              "basis": "documented"
+            }
           ]
         }
       ],
@@ -7149,6 +7185,13 @@
       "children": [],
       "inputs": [
         "metal.copper.ingot-casting"
+      ],
+      "edges": [
+        {
+          "to": "metal.copper.ingot-casting",
+          "rel": "step",
+          "basis": "documented"
+        }
       ]
     },
     "metal.copper.multiwire-drawing": {
@@ -8074,6 +8117,13 @@
           ],
           "inputs": [
             "metal.dielectric-grading"
+          ],
+          "edges": [
+            {
+              "to": "metal.dielectric-grading",
+              "rel": "step",
+              "basis": "documented"
+            }
           ]
         }
       ]

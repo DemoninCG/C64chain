@@ -284,7 +284,14 @@
           ],
           "confidence": "medium",
           "children": [],
-          "note": "Not established: that 1980s plants were dense-medium washers plus hydrocyclones, and the 8-12% product moisture figure and 2-inch x 0 top size. The encyclopaedia has no article on coal preparation (the title does not exist), and no coal preparation manual was located."
+          "note": "Not established: that 1980s plants were dense-medium washers plus hydrocyclones, and the 8-12% product moisture figure and 2-inch x 0 top size. The encyclopaedia has no article on coal preparation (the title does not exist), and no coal preparation manual was located.",
+          "edges": [
+            {
+              "to": "facility.coal",
+              "rel": "consumes",
+              "basis": "documented"
+            }
+          ]
         }
       ],
       "confidence": "medium",
@@ -1732,6 +1739,13 @@
       "confidence": "high",
       "sources": [
         "https://en.wikipedia.org/wiki/Structured_packing"
+      ],
+      "edges": [
+        {
+          "to": "chem.pvc.vcm",
+          "rel": "made from",
+          "basis": "documented"
+        }
       ]
     },
     "facility.power.coal-plant.turbine-steel": {
@@ -2039,7 +2053,14 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Helium"
           ],
-          "note": "Not established: the 4.2 K figure, the 0.5-1% per day evaporation rate and the truck top-up practice. The helium article confirms that most helium is liquefied by a cryogenic process and that the safety issues resemble liquid nitrogen; the numbers are not in it."
+          "note": "Not established: the 4.2 K figure, the 0.5-1% per day evaporation rate and the truck top-up practice. The helium article confirms that most helium is liquefied by a cryogenic process and that the safety issues resemble liquid nitrogen; the numbers are not in it.",
+          "edges": [
+            {
+              "to": "facility.helium",
+              "rel": "consumes",
+              "basis": "documented"
+            }
+          ]
         }
       ],
       "note": "Not established: the -190 C cold box temperature, the 77 K char-bed temperature, the catalytic dehydrogenation and cryogenic adsorption steps, and the 6N (99.9999%) grade. The helium article confirms that the crude gas is purified by successive cooling and that activated charcoal is the final step giving 99.995% Grade-A helium.",
@@ -2168,7 +2189,14 @@
             "mercury"
           ],
           "confidence": "medium",
-          "note": "Not established: the 254 nm emission figure and the low-pressure mercury quartz-envelope construction. The germicidal UV article covers lamp dose and EPA dosage guidance but gives the emission wavelength only in an unsourced table template."
+          "note": "Not established: the 254 nm emission figure and the low-pressure mercury quartz-envelope construction. The germicidal UV article covers lamp dose and EPA dosage guidance but gives the emission wavelength only in an unsourced table template.",
+          "edges": [
+            {
+              "to": "metal.mercury-source",
+              "rel": "made of",
+              "basis": "documented"
+            }
+          ]
         }
       ]
     },

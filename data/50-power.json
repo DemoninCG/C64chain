@@ -3095,6 +3095,13 @@
       "children": [],
       "inputs": [
         "chem.epoxy"
+      ],
+      "edges": [
+        {
+          "to": "chem.epoxy",
+          "rel": "step",
+          "basis": "documented"
+        }
       ]
     },
     "c64.psu.assembly": {
@@ -4587,6 +4594,13 @@
               "children": [],
               "inputs": [
                 "c64.mains.approvals.safety-file"
+              ],
+              "edges": [
+                {
+                  "to": "c64.mains.approvals.safety-file",
+                  "rel": "step",
+                  "basis": "inferred"
+                }
               ]
             }
           ],

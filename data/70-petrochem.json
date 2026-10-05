@@ -2495,7 +2495,14 @@
                     }
                   ],
                   "confidence": "low",
-                  "note": "Established: Methanol plus a controlled amount of oxygen over silver at 600-700 C, giving 25-35% formaldehyde in air (the Formox process), then concentrated to 60-70% as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+                  "note": "Established: Methanol plus a controlled amount of oxygen over silver at 600-700 C, giving 25-35% formaldehyde in air (the Formox process), then concentrated to 60-70% as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+                  "edges": [
+                    {
+                      "to": "c64.case.other-polymers.methanol",
+                      "rel": "step",
+                      "basis": "documented"
+                    }
+                  ]
                 },
                 {
                   "id": "chem.pom.uses",
@@ -3461,7 +3468,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Sodium%20chloride"
       ],
-      "note": "Chlor-alkali electrolysis is conducted in a mercury, diaphragm or membrane cell, so the fouling this node describes is real. Not established: the saturated brine feed, the calcium and magnesium removal specification, and the Stassfurt, Salina and Hockley attributions."
+      "note": "Chlor-alkali electrolysis is conducted in a mercury, diaphragm or membrane cell, so the fouling this node describes is real. Not established: the saturated brine feed, the calcium and magnesium removal specification, and the Stassfurt, Salina and Hockley attributions.",
+      "edges": [
+        {
+          "to": "metal.salt-brine",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.styrene.divinylbenzene": {
       "id": "chem.styrene.divinylbenzene",
@@ -4507,7 +4521,14 @@
         "high-purity silica sand"
       ],
       "confidence": "medium",
-      "note": "Sand proppant is the same silica route as the glass fibre and fused silica branches."
+      "note": "Sand proppant is the same silica route as the glass fibre and fused silica branches.",
+      "edges": [
+        {
+          "to": "metal.silica-sand",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.crude.stimulation.hydraulic-fracturing.proppant.sand-processing.sand-mine": {
       "id": "chem.crude.stimulation.hydraulic-fracturing.proppant.sand-processing.sand-mine",
@@ -5484,6 +5505,13 @@
       "note": "The iron ore chain itself belongs to the metals subsystem; this node marks where it enters the ammonia catalyst. The industrial ammonia synthesis catalyst is obtained from finely ground iron powder, itself obtained by reduction of high-purity magnetite. Not established: the 0.3-0.4 tonnes of iron per tonne of ammonia, the catalyst replacement interval, and that this is where the iron ore chain enters.",
       "sources": [
         "https://en.wikipedia.org/wiki/Magnetite"
+      ],
+      "edges": [
+        {
+          "to": "metal.hematite",
+          "rel": "made from",
+          "basis": "documented"
+        }
       ]
     },
     "chem.crude.rig.drilling-mud.bentonite.montmorillonite": {
@@ -6457,7 +6485,14 @@
                 }
               ],
               "confidence": "medium",
-              "note": "Kept as a node because its three numbers (the -162 C liquefaction temperature, the 1:600 volume reduction and the 7-8% specific power) are the cycle, not a detail of it. The refrigerant hydrocarbons are recorded as ingredients."
+              "note": "Kept as a node because its three numbers (the -162 C liquefaction temperature, the 1:600 volume reduction and the 7-8% specific power) are the cycle, not a detail of it. The refrigerant hydrocarbons are recorded as ingredients.",
+              "edges": [
+                {
+                  "to": "chem.ethylene.monomer",
+                  "rel": "consumes",
+                  "basis": "documented"
+                }
+              ]
             },
             {
               "id": "chem.natural-gas.processing.liquefaction.terminal",

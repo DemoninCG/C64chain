@@ -2111,7 +2111,14 @@
                 ],
                 "confidence": "medium",
                 "note": "An IEC-ish inlet belongs to the C64's own power supply unit, not to the television. What belongs to the television is the hard-wired cord and the moulded plug, which are covered here.",
-                "children": []
+                "children": [],
+                "edges": [
+                  {
+                    "to": "c64.cables.power-cord.conductors",
+                    "rel": "contains",
+                    "basis": "documented"
+                  }
+                ]
               },
               {
                 "id": "peripheral.tv.mains.filter",
@@ -2546,7 +2553,14 @@
                     ],
                     "confidence": "medium",
                     "note": "A worm gear is naturally self-locking, which is what stopped a 1541's capstan spinning backwards when the C64 was switched off.",
-                    "children": []
+                    "children": [],
+                    "edges": [
+                      {
+                        "to": "metal.zinc.brass",
+                        "rel": "contains",
+                        "basis": "documented"
+                      }
+                    ]
                   },
                   {
                     "id": "peripheral.cassette.deck.transport.capstan",
@@ -2705,7 +2719,14 @@
                     ],
                     "confidence": "medium",
                     "children": [],
-                    "note": "An aluminium electrolytic is documented as two aluminium foils separated by a paper spacer saturated with liquid or gel electrolyte, with the anode etched and formed, with commercial parts from 0.1 uF to 2.7 F at 4 V to 630 V - so a few hundred microfarad at a low voltage is comfortably inside the range and the reservoir at the other end of the same branch is a real comparator. Not established: that the drive regulated with a small linear regulator or a discrete zener-transistor as described, the 10-470 microfarad values, the tens of millivolts of ripple at the logic rail, and the Hong Kong and Taiwan works. The etched-foil construction is the technology; which capacitor values a given drive populated is a schematic detail. Two regulators in series would be a design smell, and whether this was one device or two is exactly what is not established here."
+                    "note": "An aluminium electrolytic is documented as two aluminium foils separated by a paper spacer saturated with liquid or gel electrolyte, with the anode etched and formed, with commercial parts from 0.1 uF to 2.7 F at 4 V to 630 V - so a few hundred microfarad at a low voltage is comfortably inside the range and the reservoir at the other end of the same branch is a real comparator. Not established: that the drive regulated with a small linear regulator or a discrete zener-transistor as described, the 10-470 microfarad values, the tens of millivolts of ripple at the logic rail, and the Hong Kong and Taiwan works. The etched-foil construction is the technology; which capacitor values a given drive populated is a schematic detail. Two regulators in series would be a design smell, and whether this was one device or two is exactly what is not established here.",
+                    "edges": [
+                      {
+                        "to": "metal.aluminum.anode-foil",
+                        "rel": "contains",
+                        "basis": "documented"
+                      }
+                    ]
                   }
                 ]
               },
@@ -3531,7 +3552,14 @@
       ],
       "confidence": "medium",
       "note": "A television green phosphor contains a genuinely tiny amount of gold. Several tens of thousands of colour tubes a year is a real, if small, consumer of the metal.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.gold.ingot",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "peripheral.tv.crt.phosphor.zns.copper": {
       "id": "peripheral.tv.crt.phosphor.zns.copper",
@@ -3770,7 +3798,19 @@
       ],
       "confidence": "medium",
       "note": "Toluene and xylene are aromatics from the same naphtha cracking that feeds styrene. The binder chemistry for magnetic tape was for decades one of the most closely guarded industrial secrets; the general class (cellulose lacquer, then acrylic, then polyurethane) is reliable, the specific recipes are not.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "peripheral.cassette.tape.oxide",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.solvents.aromatic-hydrocarbon",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "peripheral.cassette.tape.pad.materials": {
       "id": "peripheral.cassette.tape.pad.materials",
@@ -4015,7 +4055,14 @@
       ],
       "confidence": "medium",
       "children": [],
-      "note": "Gold is documented as dense, soft, malleable and ductile, resistant to most acids and to reaction with most chemicals, and its malleability, ductility and corrosion resistance together with electrical conductivity have led to its continued use in corrosion-resistant electrical connectors in all types of computerized devices. That backs the bonding-wire role. Not established: the 0.7-1.5 mil (18-38 micron) wire diameter and the 1-2 mil tinned copper alternative, ball bonding against wedge bonding as the technique of the period, and the quantity of gold in a 40-pin package - a few milligrams is a plausible order of magnitude for a bond-wire package, but no teardown was done. Gold from the anode slimes of copper refining is a real and very large share of supply; it is the same silver and gold that lead smelting recovers from bullion dross, so the metal arrives here by two quite separate routes."
+      "note": "Gold is documented as dense, soft, malleable and ductile, resistant to most acids and to reaction with most chemicals, and its malleability, ductility and corrosion resistance together with electrical conductivity have led to its continued use in corrosion-resistant electrical connectors in all types of computerized devices. That backs the bonding-wire role. Not established: the 0.7-1.5 mil (18-38 micron) wire diameter and the 1-2 mil tinned copper alternative, ball bonding against wedge bonding as the technique of the period, and the quantity of gold in a 40-pin package - a few milligrams is a plausible order of magnitude for a bond-wire package, but no teardown was done. Gold from the anode slimes of copper refining is a real and very large share of supply; it is the same silver and gold that lead smelting recovers from bullion dross, so the metal arrives here by two quite separate routes.",
+      "edges": [
+        {
+          "to": "metal.gold.ingot",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "peripheral.cassette.deck.logic.silicon.mould-compound": {
       "id": "peripheral.cassette.deck.logic.silicon.mould-compound",
@@ -4044,7 +4091,14 @@
       ],
       "confidence": "medium",
       "note": "The filler is deliberately angular and fused rather than spherical: the sharp interlocking particles give a high mechanical strength and a low water uptake, which is what kept moisture out of the die.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "mb.logic.package.assembly.mould.compound.resin",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "peripheral.tv.mains.fuse.material": {
       "id": "peripheral.tv.mains.fuse.material",
@@ -4213,7 +4267,14 @@
       ],
       "confidence": "medium",
       "note": "The barium here is the same element as in the CRT getter (barite for barium metal). Different ore routes, same element. Strontium ferrite was taking over by the late 1980s because strontium carbonate is cheaper than barium.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.barium-carbonate",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "peripheral.tv.chassis.video.ic.die": {
       "id": "peripheral.tv.chassis.video.ic.die",
@@ -4990,7 +5051,14 @@
       ],
       "confidence": "medium",
       "children": [],
-      "note": "Chrome plating is documented: it is a technique of electroplating a thin layer of chromium onto a metal object, the chromium layer can be decorative, provide corrosion resistance, facilitate cleaning, and increase surface hardness, and a less expensive substitute such as nickel may be used for aesthetic purposes. Not established: the 0.25-1 micron hard chrome thickness over a nickel underlayer, the several decorative layers, and that the plating was what let the rod be extended and retracted thousands of times without wearing through - hard chrome is hard but thin, so the endurance argument is plausible rather than demonstrated. The Japan and Taiwan attributions are not established either. The chromium here came from chromite, the same ore that made the chromium dioxide in a Type II cassette tape, which is a real convergence: one ore, two unrelated end uses."
+      "note": "Chrome plating is documented: it is a technique of electroplating a thin layer of chromium onto a metal object, the chromium layer can be decorative, provide corrosion resistance, facilitate cleaning, and increase surface hardness, and a less expensive substitute such as nickel may be used for aesthetic purposes. Not established: the 0.25-1 micron hard chrome thickness over a nickel underlayer, the several decorative layers, and that the plating was what let the rod be extended and retracted thousands of times without wearing through - hard chrome is hard but thin, so the endurance argument is plausible rather than demonstrated. The Japan and Taiwan attributions are not established either. The chromium here came from chromite, the same ore that made the chromium dioxide in a Type II cassette tape, which is a real convergence: one ore, two unrelated end uses.",
+      "edges": [
+        {
+          "to": "c64.case.tooling.chromium-acid",
+          "rel": "consumes",
+          "basis": "inferred"
+        }
+      ]
     },
     "peripheral.tv.cabinet.moulding": {
       "id": "peripheral.tv.cabinet.moulding",

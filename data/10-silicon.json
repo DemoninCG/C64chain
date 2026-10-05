@@ -3001,7 +3001,14 @@
         "facility.test-equipment.burn-in"
       ],
       "confidence": "medium",
-      "note": "Burn-in of consumer-grade MOS parts in 1982 was common but not universal; C64-era Commodore parts often skipped a formal burn-in step."
+      "note": "Burn-in of consumer-grade MOS parts in 1982 was common but not universal; C64-era Commodore parts often skipped a formal burn-in step.",
+      "edges": [
+        {
+          "to": "facility.test-equipment.burn-in",
+          "rel": "uses",
+          "basis": "documented"
+        }
+      ]
     },
     "si.package.ceramic": {
       "id": "si.package.ceramic",
@@ -4120,7 +4127,14 @@
         }
       ],
       "confidence": "medium",
-      "note": "That wafer-level binning by automatic test equipment is standard practice is documented. Not established: the 3- or 10-needle card, the hFE and VCEO grade bands, the 100-300 hFE spread at a stated bias, or that gain binning rather than lot screening was what the C64 assembly received."
+      "note": "That wafer-level binning by automatic test equipment is standard practice is documented. Not established: the 3- or 10-needle card, the hFE and VCEO grade bands, the 100-300 hFE spread at a stated bias, or that gain binning rather than lot screening was what the C64 assembly received.",
+      "edges": [
+        {
+          "to": "facility.test-equipment.functional",
+          "rel": "uses",
+          "basis": "inferred"
+        }
+      ]
     },
     "mb.discretes.led.epi": {
       "id": "mb.discretes.led.epi",
@@ -4284,7 +4298,14 @@
         }
       ],
       "confidence": "medium",
-      "note": "Not established: the probe-card pin count, the vector count, the 3-6 week cycle, or that exhaustive truth-table testing was standard practice for mask-programmed PLDs. The device has 16 inputs and 8 outputs, so an exhaustive test is arithmetically small, but no source describes the test regime."
+      "note": "Not established: the probe-card pin count, the vector count, the 3-6 week cycle, or that exhaustive truth-table testing was standard practice for mask-programmed PLDs. The device has 16 inputs and 8 outputs, so an exhaustive test is arithmetically small, but no source describes the test regime.",
+      "edges": [
+        {
+          "to": "facility.test-equipment.functional",
+          "rel": "uses",
+          "basis": "inferred"
+        }
+      ]
     },
     "mb.ppi.test": {
       "id": "mb.ppi.test",
