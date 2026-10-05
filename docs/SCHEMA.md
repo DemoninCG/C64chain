@@ -104,6 +104,18 @@ and are stitched together by `scripts/build.mjs`.
   // OPTIONAL — how sure are we. "high" | "medium" | "low"
   "confidence": "high",
 
+  // OPTIONAL — supply provenance from the 2026-10-06 leaf-chain review.
+  //   raw         a credible natural/extractive endpoint: mine, well, dune,
+  //               forest, farm. No earlier supply node is needed in scope.
+  //   complete    manufactured, and the typed upstream path is modeled
+  //               (follow made_by / consumes / made from to its source).
+  //   incomplete  manufactured or unclear, but the path is missing or hedged:
+  //               precursor nodes absent, or the note disowns the specifics.
+  // Absent on unreviewed nodes and on commentary/context/alternate nodes, where
+  // a supply claim would be meaningless. Re-review promotes incomplete rows;
+  // never force an edge to earn complete.
+  "provenance": "raw",
+
   // OPTIONAL — scope for orphan triage (TODO section 1, HANDOFF section 3).
   //   chain     everything needed to build a 250407 C64 in 1982 down to ore/crude/gas/sand
   //             (default when missing; must be reachable under the directed walk;

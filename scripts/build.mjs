@@ -838,7 +838,7 @@ for (const id of seen) {
 
 function strip(node) {
   const o = { id: node.id, file: node.__file };
-  for (const k of ['name', 'simple_name', 'description', 'kind', 'category', 'era', 'confidence', 'note', 'scope']) {
+  for (const k of ['name', 'simple_name', 'description', 'kind', 'category', 'era', 'confidence', 'note', 'scope', 'provenance']) {
     if (node[k] !== undefined) o[k] = node[k];
   }
     for (const k of ['inputs', 'facts', 'places', 'sources']) {

@@ -608,6 +608,7 @@
                 "https://en.wikipedia.org/wiki/Pierce_oscillator"
               ],
               "confidence": "high",
+              "provenance": "incomplete",
               "note": "The discrete load caps are ceramic (see mb.passives.caps.trim and the C0G timing caps); a Pierce oscillator's frequency is very sensitive to stray capacitance, which is why the C64 needed an adjustable trim.",
               "facts": [
                 {
@@ -791,6 +792,7 @@
                   "category": "passives",
                   "era": "1982-1984",
                   "confidence": "medium",
+                  "provenance": "incomplete",
                   "inputs": [],
                   "note": "Not established: music-wire or stainless spring wire as the material, and that these springs are always replaced rather than repaired."
                 },
@@ -918,6 +920,7 @@
               "category": "interconnect",
               "era": "1982-1984",
               "confidence": "medium",
+              "provenance": "complete",
               "note": "The sprung-leaf mechanism and the gold-over-nickel contact plating are standard practice for this switch class. Not established: the 0.1-0.5 um gold thickness and the 50-150 g operating force, neither of which appears in any document consulted for this machine.",
               "facts": [
                 {
@@ -1075,6 +1078,7 @@
       "category": "passives",
       "era": "1982-1984",
       "confidence": "medium",
+      "provenance": "incomplete",
       "sources": [
         "https://edmzap.com/post/electrical-discharge-machining-process-limits-and-tradeoffs",
         "https://www.wsmtechnology.com/feeds/blog/mold-die-machining"
@@ -1219,6 +1223,7 @@
       "category": "passives",
       "era": "ancient",
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Not established: wool as the felt fibre rather than a synthetic, and the claim that an oiled pad in a 1982 joystick attracts dust and eventually gums while this pad needs no lubricant."
     },
     "c64.joystick.gate.friction.nylon-bushing.resin": {
@@ -1281,6 +1286,7 @@
       "category": "metals",
       "era": "ancient",
       "confidence": "medium",
+      "provenance": "complete",
       "facts": [
         {
           "label": "Carbon",
@@ -1545,6 +1551,7 @@
       "kind": "material",
       "category": "passives",
       "confidence": "medium",
+      "provenance": "incomplete",
       "description": "The second-shot colour is a pigment dispersed in the ABS matrix at high loading. Organic pigments give brighter colours and cost more; inorganic iron oxides give the earthier browns, reds and blacks. The moulder buys a masterbatch rather than raw pigment, so the colour arrives as a compounded material.",
       "inputs": [],
       "note": "Not established: high-loading dispersion in the ABS matrix, the organic-bright-versus-inorganic-earthy split for C64 caps, and masterbatch purchase rather than raw pigment by the moulder."
@@ -1556,6 +1563,7 @@
       "kind": "material",
       "category": "metals",
       "confidence": "medium",
+      "provenance": "incomplete",
       "description": "Synthetic iron oxides, made by oxidising iron scrap or precipitating from an iron solution, were the standard browns, reds and blacks of the period and are still used. They begin at iron ore and end up in the keycap, which makes the keycap a surprisingly direct consumer of the iron chain.",
       "inputs": [],
       "note": "Not established: scrap oxidation versus solution precipitation as the route for the pigment actually used, and that the brown-grey C64 caps used iron oxides rather than carbon black or organic pigments.",
@@ -1618,6 +1626,7 @@
       "category": "board",
       "era": "1982-1984",
       "confidence": "medium",
+      "provenance": "incomplete",
       "inputs": [],
       "note": "Not established: that this laminate's epoxy is derived from bisphenol A and epichlorohydrin. That is the standard chemistry for the epoxy family, but no document consulted ties a particular 1982 keyboard PCB to it."
     },
@@ -1685,6 +1694,7 @@
         "https://en.wikipedia.org/wiki/Graphite"
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "inputs": [],
       "note": "Not established: that spark erosion was actually used for this dome tool rather than machining, the slow wear by re-graphitising, and petroleum coke calcined at about 3000 C as the feed for this electrode stock."
     },
@@ -1763,6 +1773,7 @@
       "category": "passives",
       "era": "1982-1984",
       "confidence": "medium",
+      "provenance": "incomplete",
       "inputs": [],
       "note": "Not established: colloidal silica slurry as the final lapping stage for Y1 blanks, and precipitation from dilute sodium silicate made from silica sand and sodium carbonate as the route for this slurry.",
       "edges": [
@@ -1806,6 +1817,7 @@
       "category": "passives",
       "era": "1982-1984",
       "confidence": "medium",
+      "provenance": "incomplete",
       "inputs": [
         "chem.abs"
       ],
@@ -1820,6 +1832,7 @@
       "category": "passives",
       "era": "1982-1984",
       "confidence": "medium",
+      "provenance": "incomplete",
       "inputs": [],
       "note": "Not established: that these particular switch contacts were gold-plated over nickel. Gold plating is a real low-level-contact practice, but no document consulted identifies the plating in a 1982 joystick's microswitches.",
       "edges": [
@@ -1846,6 +1859,7 @@
       "category": "plastics",
       "era": "1982",
       "confidence": "high",
+      "provenance": "complete",
       "description": "The legends on the TOP of the keycap - letters, numbers and symbols - are moulded into the plastic, not printed on it. The cap is injection-moulded twice in one tool cycle: first in the dark brown-grey base colour, then a second shot of a contrasting lighter colour is injected into a slightly larger cavity, covering everything except the legend characters, which are left as uncoated islands of the first shot. Nothing is printed on the top face, so the legend cannot wear off - which is why a forty-year-old cap still reads cleanly, and why the mould line and the islands are visible when a cap is pulled off its stem. This covers the cap top only: the graphics characters on the front wall are a different process (c64.keyboard.keycaps.legend), and the two are told apart at a glance by whether the character wears.",
       "facts": [
         {
@@ -1925,6 +1939,7 @@
           "category": "passives",
           "era": "1982-1984",
           "confidence": "medium",
+          "provenance": "complete",
           "inputs": [
             "facility.electricity"
           ],
@@ -1980,6 +1995,7 @@
       "category": "board",
       "era": "1982-1984",
       "confidence": "medium",
+      "provenance": "incomplete",
       "inputs": [],
       "children": [],
       "note": "Not established: gold over nickel as the stack on later keyboards, the carbon-contact dome mating surface, and the bare-copper oxidation and cleaning failure mode for these pads.",
@@ -2051,6 +2067,7 @@
       "category": "assembly",
       "era": "1982-1984",
       "confidence": "medium",
+      "provenance": "incomplete",
       "inputs": [],
       "note": "Not established: right-angle forming of the four HC-49 leads, wave-solder mounting of Y1, and the board-frequency versus overtone-resonance spurious-mode rationale.",
       "edges": [
@@ -2150,6 +2167,7 @@
       "category": "metals",
       "era": "ancient",
       "confidence": "medium",
+      "provenance": "complete",
       "inputs": [],
       "note": "Not established: that tinning was applied so the crimp barrel grips cleanly, as opposed to solderability alone, and the crimp-barrel construction itself. The cassiterite feed is the generic tin chain, not a documented input to this cable.",
       "edges": [
@@ -2204,6 +2222,7 @@
       "category": "plastics",
       "era": "1982-1984",
       "confidence": "medium",
+      "provenance": "incomplete",
       "inputs": [
         "chem.abs"
       ],
@@ -2233,6 +2252,7 @@
       "category": "assembly",
       "era": "1982-1984",
       "confidence": "medium",
+      "provenance": "incomplete",
       "inputs": [
         "chem.epoxy"
       ],
@@ -2257,6 +2277,7 @@
       "category": "passives",
       "era": "1982-1984",
       "confidence": "medium",
+      "provenance": "incomplete",
       "inputs": [],
       "note": "Not established: that the HC-49/U can is deep-drawn from nickel-plated strip in a progressive tool and that the collar is rolled. Nothing in the sources consulted describes the mechanical sequence of can manufacture.",
       "edges": [
@@ -2286,6 +2307,7 @@
       "category": "passives",
       "era": "1982-1984",
       "confidence": "medium",
+      "provenance": "incomplete",
       "inputs": [],
       "children": [],
       "note": "Not established: spot or resistance welding of the lid in dry hydrogen or forming gas. This is the standard HC-49 hermetic-seal practice, but no source consulted describes it for this crystal, and the manual's circuit theory says nothing about the can.",
@@ -2360,6 +2382,7 @@
       "category": "passives",
       "era": "1982-1984",
       "confidence": "medium",
+      "provenance": "incomplete",
       "inputs": [],
       "note": "Not established: the specific claim that a single dissolved ion on a resonating plate changes the frequency measurably. Deionised rinse water as the standard is uncontroversial; the quantitative sensitivity assertion is not documented in any source consulted."
     },
@@ -2419,6 +2442,7 @@
           "category": "silicon",
           "era": "1982-1984",
           "confidence": "medium",
+          "provenance": "complete",
           "sources": [
             "https://en.wikipedia.org/wiki/Quartz"
           ],
@@ -2520,6 +2544,7 @@
           "category": "silicon",
           "era": "1982-1984",
           "confidence": "medium",
+          "provenance": "complete",
           "facts": [
             {
               "label": "Instrument",
@@ -2554,6 +2579,7 @@
           "category": "silicon",
           "era": "1982-1984",
           "confidence": "medium",
+          "provenance": "incomplete",
           "facts": [
             {
               "label": "Final thickness",
@@ -2652,6 +2678,7 @@
           "category": "passives",
           "era": "1982-1984",
           "confidence": "medium",
+          "provenance": "incomplete",
           "inputs": [
             "facility.water"
           ],

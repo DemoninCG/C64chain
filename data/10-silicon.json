@@ -177,7 +177,8 @@
               "sources": [
                 "https://en.wikipedia.org/wiki/Cleanroom"
               ],
-              "confidence": "high"
+              "confidence": "high",
+              "provenance": "incomplete"
             },
             {
               "id": "mb.cpu.fab.maskshop",
@@ -188,6 +189,7 @@
               "category": "silicon",
               "era": "1982",
               "confidence": "low",
+              "provenance": "incomplete",
               "note": "Flagged low confidence deliberately: the existence, location and equipment of any Commodore mask shop in 1982 is not established."
             },
             {
@@ -209,6 +211,7 @@
                 }
               ],
               "confidence": "medium",
+              "provenance": "incomplete",
               "note": "Established: that Commodore was the first-party source of the four large custom chips on the 326498 mainboard - the 1992 service manual lists U7 6510 /t Processor C 906107-01, U1,U2 6526 CIA C 906108-01, U18 6581 SID C 906112-01 and U19 6567 VIC II C 906109-04 as Commodore-stocked part numbers, and U3/U4/U5 as 901226-01, 901227-03 and 901225-01. Not established: that die sort, sawing, bonding, moulding, trim-and-form and final test ran in the same building as the wafer fab at 950 Rittenhouse Road; the roughly 40 percent bonding-room relative humidity and its moisture-sensitivity rationale; the 50-100 ton clamp; and the multi-cavity transfer-press configuration. No public source describes the Norristown back-end line."
             }
           ]
@@ -350,6 +353,7 @@
             "https://www.scienceDirect.com/topics/computer-science/storage-capacitor"
           ],
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "The brief said '3-transistor/1-capacitor cell' - that is the 1Kbit-era cell (e.g. the 1101/2102). The 4164 is definitively 1T1C; every 4164 datasheet of the period says 'single transistor dynamic storage cells'. Folded bit lines belong to the 256K/1M generation, though a few 4164 designs did use them; treat folded bit lines here as unverified.",
           "children": []
         },
@@ -376,6 +380,7 @@
             }
           ],
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "Not established: that the 4164 generates a -5 V substrate bias on chip, the -8/-12 part suffixes, the bit-line bootstrap to +7-8 V, or the boosted word line. No datasheet is cited. What is documented is that the 4164 is 65,536 x 1 bits and that the C64 needs eight of them."
         },
         {
@@ -725,6 +730,7 @@
             "https://www.c64-wiki.com/wiki/A/V_Jack"
           ],
           "confidence": "medium",
+          "provenance": "complete",
           "note": "Established: pin 15 carries sync plus luminance and pin 14 carries chroma; composite is mixed downstream in the modulator (8-pin boards) or on the board (5-pin boards); the palette is a fixed on-chip 16 with resistor values shared between opposite hues to save die area; U26 is a 74LS373 on every board revision read and no 74LS175 or discrete palette ladder appears in any of them. Not established: the exact on-die resistor implementation and values, the die area, and the exact changeover date from the 64-clock ceramic part to the 65-clock plastic part.",
           "edges": [
             {
@@ -1292,6 +1298,7 @@
                 "USSR"
               ],
               "confidence": "medium",
+              "provenance": "incomplete",
               "note": "GaAs substrate supply was treated as a strategic material in the 1980s; Japan, the USSR and the UK were the main sources.",
               "edges": [
                 {
@@ -1518,6 +1525,7 @@
                 }
               ],
               "confidence": "low",
+              "provenance": "incomplete",
               "note": "Both were standard period practice and the two are visually distinguishable on a die. The specific load device on a 2114L from 1982 is not documented in any available source. Lithium-doped polysilicon was used in some early NMOS logic, but no evidence was found that it was used here.",
               "edges": [
                 {
@@ -1551,6 +1559,7 @@
                 }
               ],
               "confidence": "medium",
+              "provenance": "incomplete",
               "note": "A 32 x 32 organisation with two decoders is the natural way to build 1024 x 4 and is what other period 1K x 4 SRAMs used; No published die shot of the 2114 has been seen to confirm the split."
             }
           ]
@@ -1904,6 +1913,7 @@
       "era": "1890s-",
       "inputs": [],
       "confidence": "low",
+      "provenance": "complete",
       "children": [],
       "note": "The hydrochloric-acid route is documented: metallurgical-grade silicon is hydrochlorinated to trichlorosilane with hydrogen as a co-product. But the trichlorosilane is then reduced by its own decomposition on hot silicon filaments, not by hydrogen from a chlor-alkali cell, so the claim that cell hydrogen does the reduction is not supported. The cell voltage is also unestablished.",
       "edges": [
@@ -1942,6 +1952,7 @@
       "category": "metals",
       "era": "1930s-",
       "confidence": "medium",
+      "provenance": "incomplete",
       "children": [],
       "note": "Not established: the coking-heater temperature, the drum residence time, the calcining-kiln temperature or the sulphur content for any specific producer. Delayed coking and rotary-kiln calcination are standard, but each supplier blends several carbon sources to hit a target ash and sulphur figure that is not published.",
       "edges": [
@@ -1978,6 +1989,7 @@
         "Garyville, Louisiana"
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Not established: that any particular silicon supplier fed its furnaces with vacuum-residue coke rather than coal-tar pitch, anthracite or low-ash coal, nor the vacuum-tower pressure, the coking-heater temperature or the vanadium figure. Traces of vanadium and nickel in metallurgical silicon, and hence in its carbon reductant, are real, but the level a silicon plant had to tolerate is not a published number."
     },
     "si.polysilicon.coke.anthracite": {
@@ -1998,6 +2010,7 @@
         "https://en.wikipedia.org/wiki/Zinc_oxide"
       ],
       "confidence": "medium",
+      "provenance": "raw",
       "note": "Established: anthracite as a hard, high-carbon, low-impurity coal used in metallurgy. \"It has the highest carbon content, the fewest impurities, and the highest energy density of all types of coal and is the highest ranking of coals.\" and \"The carbon content of anthracite is between 86% and 97%.\" and \"Anthracite is categorized into several grades. Standard grade anthracite is used predominantly in power generation, and high grade (HG) and ultra high grade (UHG) are used predominantly in the metallurgy sector.\" That it served as a carbothermal reductant in a furnace charge is documented for the zinc industry, not for silicon: \"The zinc precursors are reduced (carbothermal reduction) by heating with a source of carbon such as anthracite to produce zinc vapor, which is then oxidized as in the indirect process.\" The 86-97% fixed-carbon range is consistent with a less pure reductant than needle coke, which supports the low-carbon end of the comparison above, but the ash and iron figures are not stated in any source available. Not established: that any specific submerged arc furnace charged anthracite for silicon metal, and in what proportion to petroleum coke; that anthracite was used as a carbon source rather than as fuel; and that Schuylkill County, Glamorgan or Shanxi supplied silicon-grade anthracite. Documented only as coal fields: \"The Coal Region of Northeastern Pennsylvania in the United States has the largest known deposits of anthracite coal in the world\"."
     },
     "si.cz.crucible-sand": {
@@ -2014,6 +2027,7 @@
         "Westlake, USA"
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Not established: how a particular puller supplier made its crucible blank - the acid leach for aluminium and iron, the flame or arc melting around a rotating graphite mandrel, the roughly 2000 C melt and the 800-1000 C burn-off. Standard CZ practice is a high-purity quartz crucible, but the blank-manufacturing route is a supplier trade secret and is not described in any source available here.",
       "edges": [
         {
@@ -2080,6 +2094,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "complete",
       "note": "Two parts of the machine wanted something slightly different. DRAM wafers were commonly grown to a heavier oxygen content, because a high bulk oxygen-precipitate density lengthens the trapped-charge lifetime and so helps refresh margin on the 4164. Discrete lines of the era were happy with 10-40 ohm-cm and many of them ran 75 mm wafers, because they did not need fine geometry at all.",
       "children": [],
       "edges": [
@@ -2206,6 +2221,7 @@
         "Sumitomo Electric, Japan"
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Established: that synthetic diamond was the commercially available source of saw-grade grit well before 1982, and that its first commercial synthesis was a belt process. \"Hall achieved the first commercially successful synthesis of diamond on December 16, 1954, and this was announced on February 15, 1955. His breakthrough came when he used a press with a hardened steel toroidal \"belt\" strained to its elastic limit wrapped around the sample, producing pressures above 10 GPa (1,500,000 psi) and temperatures above 2,000 degC (3,630 degF). The press used a pyrophyllite container in which graphite was dissolved within molten nickel, cobalt or iron. Those metals acted as a \"solvent-catalyst\", which both dissolved carbon and accelerated its conversion into diamond.\" The abrasive-versus-gem split is documented in the same passage: \"The largest diamond he produced was 0.15 mm (0.0059 in) across; it was too small and visually imperfect for jewelry, but usable in industrial abrasives.\" Contradicted by that source: the 5-6 GPa and 1300-1600 C conditions given above sit below the pressures and temperatures recorded for the belt process that made this material commercially available, and the solvent-catalyst metals are specifically nickel, cobalt and iron rather than a generic diamond-metal catalyst. Not established: which maker supplied saw blades to a wafer-slicing shop in 1982; the Kimberley and Botswana kimberlite origins as sources of natural industrial diamond, for which the documented fact is only that natural diamonds are carried to the surface in igneous rocks known as kimberlites; and the Element Six and Sumitomo attributions. That diamond serves cutting and polishing is documented: \"Diamond has the highest hardness and thermal conductivity of any natural material, properties that are used in major industrial applications such as cutting and polishing tools.\"",
       "edges": [
         {
@@ -2247,6 +2263,7 @@
         "https://en.wikipedia.org/wiki/Wafer_(electronics)"
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "note": "Difference from today: a modern wafer goes through CMP in a rotary single-wafer polisher with a soft pad and slurry. Chemical-mechanical polishing did not reach volume production until the late 1980s, so this step was purely chemical in 1982.",
       "edges": [
         {
@@ -2298,6 +2315,7 @@
         "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
       ],
       "confidence": "high",
+      "provenance": "complete",
       "note": "Difference from today: 1980s practice leaned on wet chemistry and megasonic tanks rather than on cassette single-wafer cleaning, and hydrogen peroxide was routinely kept hot enough to be a genuine hazard.",
       "edges": [
         {
@@ -2415,6 +2433,7 @@
         "https://en.wikipedia.org/wiki/Aligner_(semiconductor)"
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "note": "Named machines are illustrative of the period rather than a documented inventory of the Norristown line. Reduction steppers (GCA, Canon, Magnifire, later ASML) were arriving in 1982-83 and were the next generation, not this one."
     },
     "si.mask.plate": {
@@ -2444,6 +2463,7 @@
         "https://en.wikipedia.org/wiki/Photomask"
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "children": [],
       "edges": [
         {
@@ -2503,6 +2523,7 @@
         "https://en.wikipedia.org/wiki/Photolithography"
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "note": "Difference from today: no refractory barrier metal, no tungsten plug, no CMP-defined metal lines and a single aluminium layer. A static RAM such as the 2114L could run a coarser and older process than the 6510 - there is no tight-pitch sense-amplifier chain to shrink - which is why nothing published states a line width for it.",
       "edges": [
         {
@@ -2594,6 +2615,7 @@
         "specialty alloy strip mills, US and Japan"
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Melted in a vacuum induction furnace, cast, hot-rolled, then cold-rolled and annealed. In 1982 the nickel in it came overwhelmingly from sulphide concentrates - Sudbury in Ontario, the Norilsk-Talnakh massif and the Philippines - won either by the Mond carbonyl loop or by high-pressure acid leach of laterite, then electrolytically refined. The low-carbon steel half came from hematite ore, coke and limestone.",
       "edges": [
         {
@@ -2623,6 +2645,7 @@
       "era": "1970s-1982",
       "inputs": [],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Not established: the nickel strike, the gold plating of the bonding tab, or the tin and tin-lead plate over nickel for plastic packages. The lead-frame article documents the base alloy (copper, copper alloy or iron-nickel such as alloy 42) and stamping or etching, but not the plating sequence or its thicknesses.",
       "edges": [
         {
@@ -2699,6 +2722,7 @@
         "https://en.wikipedia.org/wiki/Epoxy"
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "edges": [
         {
           "to": "chem.epoxy.dgeba.epichlorohydrin",
@@ -2742,6 +2766,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Not established: that silica is 60-75 percent by weight of a 1982 moulding compound, the 0.5-3 um mean particle size, or the shrinkage and expansion-control rationale. The filler fraction is a supplier formulation figure and is not in any source available.",
       "edges": [
         {
@@ -2781,6 +2806,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "That the die is eutectic bonded to the frame is documented for high-power parts. Not established: the 361 C eutectic temperature, the 3.4 percent silicon content, the 400-450 C tool temperature, the silver-filled organic and conductive-epoxy alternatives, and the incoming-inspection magnification.",
       "edges": [
         {
@@ -2818,6 +2844,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "complete",
       "note": "Gold is a documented bond-wire material and wire diameters start below 10 um, which brackets 25 um. Not established: the wire count and length on a 6510, the palladium alloy content, the 0.3-1 m of gold per die, and the gold consumed per year at C64 volumes.",
       "edges": [
         {
@@ -2896,6 +2923,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "The pot, plunger and heated cavity of a transfer press are documented. Not established: the 50-100 ton clamping force, the 150-180 C mould temperature, the 700-1000 psi pressure or the 1-3 minute dwell for this era.",
       "edges": [
         {
@@ -2939,6 +2967,7 @@
         "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "edges": [
         {
           "to": "mb.cia",
@@ -3007,6 +3036,7 @@
         "facility.test-equipment.burn-in"
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Burn-in of consumer-grade MOS parts in 1982 was common but not universal; C64-era Commodore parts often skipped a formal burn-in step.",
       "edges": [
         {
@@ -3358,6 +3388,7 @@
         "Corrosive extraction plants in Europe"
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Gallium is almost entirely a byproduct of bauxite refining (and of zinc), not a primary ore - this is the same trace metal that makes gallium nitride LEDs possible today. Merged 1982 indicator-LED detail from the peripheral branch: red or amber LEDs of the period were gallium phosphide or gallium arsenide phosphide on a gallium arsenide substrate (GaAs or GaAsP die in an epoxy lens, bandgap about 650-700 nm).",
       "edges": [
         {
@@ -3398,6 +3429,7 @@
         "https://en.wikipedia.org/wiki/Varistor"
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Established: the carbothermal route to zinc oxide. \"The direct or American process starts with diverse contaminated zinc composites, such as zinc ores or smelter by-products. The zinc precursors are reduced (carbothermal reduction) by heating with a source of carbon such as anthracite to produce zinc vapor, which is then oxidized as in the indirect process. Because of the lower purity of the source material, the final product is also of lower quality in the direct process as compared to the indirect one.\" The reduction temperature is documented too: \"ZnO decomposes into zinc vapor and oxygen at around 1975 degC with a standard oxygen pressure. In a carbothermic reaction, heating with carbon converts the oxide into zinc vapor at a much lower temperature (around 950 degC).\" That 950 C figure is inside the 900-1100 C range given above; the fluidised-bed roast at 900-1000 C and the shaft or electrothermic furnace are not the documented route, since the documented sequence is reduction to vapour followed by air oxidation. The oxidising step is documented as well: \"metallic zinc is melted in a graphite crucible and vaporized at temperatures above 907 degC (typically around 1000 degC). Zinc vapor reacts with the oxygen in the air to give ZnO\". Not established: the 900-1000 C fluidised-bed roast; the shaft or electrothermic furnace reduction as described; the burn-back as a separate manufacturing step rather than part of vapour oxidation; and the 50-60% zinc content of run-of-mine sphalerite - the ore is documented as \"(Zn, Fe)S\", the most important ore of zinc, with iron substituting for zinc, which \"can reach up to 40%\", so the concentrate grade varies and no fixed percentage applies. Also not established: the Sullivan, Broken Hill and M IDA place names as the sources of a varistor-grade powder, and what makes an electronic-grade ZnO suitable for a varistor. The varistor behaviour itself is documented: the grains sit \"in a matrix of other metal oxides, such as small amounts of bismuth, cobalt, manganese oxides\", and each grain boundary \"forms a diode junction\".",
       "edges": [
         {
@@ -3583,6 +3615,7 @@
             }
           ],
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "Some 1982 fabs used an arsenic implant instead of phosphorus diffusion; Norristown is documented only as an NMOS shop, not at this level of detail.",
           "edges": [
             {
@@ -3629,6 +3662,7 @@
             "https://en.wikipedia.org/wiki/Planar_process"
           ],
           "confidence": "high",
+          "provenance": "incomplete",
           "note": "LOCOS was still the isolation scheme in 1982; trench isolation was a few years away.",
           "edges": [
             {
@@ -3682,6 +3716,7 @@
             "https://en.wikipedia.org/wiki/Epitaxy"
           ],
           "confidence": "high",
+          "provenance": "complete",
           "note": "Dichlorosilane was cheaper per deposited atom than silane and preferred for thick films, but carried chlorine that required a careful post-deposition clean.",
           "edges": [
             {
@@ -3723,6 +3758,7 @@
             "https://en.wikipedia.org/wiki/Thermal_oxidation"
           ],
           "confidence": "high",
+          "provenance": "complete",
           "edges": [
             {
               "to": "facility.gases.oxygen",
@@ -3759,6 +3795,7 @@
             "https://en.wikipedia.org/wiki/Photolithography"
           ],
           "confidence": "high",
+          "provenance": "complete",
           "edges": [
             {
               "to": "chem.fab-chemicals.dopants.arsine",
@@ -3799,6 +3836,7 @@
             "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
           ],
           "confidence": "high",
+          "provenance": "incomplete",
           "note": "Difference from today: no refractory barrier, no tungsten plug, no CMP-defined metal lines, and a single aluminium layer - the die simply had no room for more.",
           "edges": [
             {
@@ -3833,6 +3871,7 @@
             }
           ],
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "Whether the 6510 die carried nitride passivation or only PSG is not publicly documented; nitride passivation at a small internal fab in 1982 is plausible but not certain.",
           "edges": [
             {
@@ -3859,6 +3898,7 @@
             "chem.photoresist"
           ],
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "The contact and proximity print modes, the roughly 5 um proximity gap and the alkaline tetramethylammonium hydroxide developer are documented. Not established: the AZ-1350 resist and its thickness, the 90-100 C bake, the Coburn 2400 and Perkin-Elmer Micralign MA-2 model numbers, and when 10x reduction steppers became available.",
           "edges": [
             {
@@ -3888,6 +3928,7 @@
             "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
           ],
           "confidence": "high",
+          "provenance": "complete",
           "edges": [
             {
               "to": "facility.electricity",
@@ -3918,6 +3959,7 @@
           "category": "silicon",
           "era": "1970s-1982",
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "Established: wet-chemical patterning of oxide and aluminium with HF and hot phosphoric acid, and the buffered HF/NH4F oxide etch, are documented period practice for a 1982 silicon-gate NMOS line. Not established: whether Norristown owned a plasma etcher at all in 1982, whether the CF4 or CF4+O2 chemistry was used here or only for poly, the barrel-versus-downstream configuration, and the Plasma Technologies PT or ASM machines, whose names are illustrative of the period rather than a documented inventory. Also not established: the quartz or PVDF tank material.",
           "edges": [
             {
@@ -3956,6 +3998,7 @@
           "category": "silicon",
           "era": "1970s-1982",
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "If Norristown did not own an implanter, this step was done as an outside foundry service - plausible for a small internal fab, but undocumented."
         }
       ]
@@ -4018,6 +4061,7 @@
           "category": "silicon",
           "era": "1970s-1982",
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "Whether Norristown used an in-house plotter, a purchased mask from an outside mask shop, or a mix is not documented in public sources."
         },
         {
@@ -4089,6 +4133,7 @@
         "https://en.wikipedia.org/wiki/Planar_process"
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "note": "Motorola registered the 2N3904/2N3906 in the mid-1960s as a pair, which is why almost every 1982 household electronics catalog lists them as Motorola parts even when another firm made them.",
       "edges": [
         {
@@ -4145,6 +4190,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Not established: the reactor geometry (radiant-heated vertical, graphite susceptor in a quartz bell jar), the inductive coupling, the 1150-1250 C setpoint or the 1-3 um epitaxial thickness. Epitaxial growth of a doped layer on a crystalline seed is documented in general; the reactor description is not.",
       "edges": [
         {
@@ -4181,7 +4227,8 @@
         "https://en.wikipedia.org/wiki/Planar_process",
         "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "provenance": "incomplete"
     },
     "mb.discretes.test": {
       "id": "mb.discretes.test",
@@ -4205,6 +4252,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "That wafer-level binning by automatic test equipment is standard practice is documented. Not established: the 3- or 10-needle card, the hFE and VCEO grade bands, the 100-300 hFE spread at a stated bias, or that gain binning rather than lot screening was what the C64 assembly received.",
       "edges": [
         {
@@ -4248,6 +4296,7 @@
         "Taiwan"
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Liquid-phase epitaxy is the documented route for the bright GaAsP/GaP junction of this period, and the double heterostructure came from it. Not established: the 850-900 C melt temperature, the boron-doped Ga/GaP/P charge, the alternating-supersaturation sweep, or the zinc and sulphur dopants as such. Gallium phosphide is documented as dissociating above about 900 C and being grown from a 1500 C melt, which does not match the temperature given here.",
       "edges": [
         {
@@ -4334,6 +4383,7 @@
         }
       ],
       "confidence": "low",
+      "provenance": "incomplete",
       "note": "Explicitly low confidence and deliberately vague. The 906114-01's internal process has never been documented; inferring it from the rest of the CSG part family is an assumption, not a fact. What is not in doubt is the programming mechanism, which is the point of this branch.",
       "edges": [
         {
@@ -4380,6 +4430,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Not established: the probe-card pin count, the vector count, the 3-6 week cycle, or that exhaustive truth-table testing was standard practice for mask-programmed PLDs. The device has 16 inputs and 8 outputs, so an exhaustive test is arithmetically small, but no source describes the test regime.",
       "edges": [
         {
@@ -4439,6 +4490,7 @@
             "https://en.wikipedia.org/wiki/Stepper"
           ],
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "Some 64K DRAMs were still made on 1:1 proximity aligners in 1981-82; by 1984 5x steppers were standard across the industry."
         }
       ],
@@ -4581,6 +4633,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Polysilicon is documented as the gate material deposited by LPCVD and doped in the same step with phosphine. Not established: that the storage node is a second conformal polysilicon plate, the 800-850 C deposition, the 3000-5000 A thickness, or the 1983-84 arrival of tungsten and titanium silicides. The second-layer polysilicon plate is not described in the sources available.",
       "edges": [
         {
@@ -4624,6 +4677,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Not established: the mask level count for a mask ROM (eight plus one programming level), the claim that the constraint was mask cost rather than yield, or that the ROM die is small enough to yield well. A mask-programmed ROM is one extra mask level above the same NMOS front end, but no source gives the level count for these parts.",
       "edges": [
         {
@@ -4686,6 +4740,7 @@
             }
           ],
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "Established: only the identity of the parts. The 1992 service manual 326498 parts list gives U3 as 2364 Basic ROM C 901226-01 and U4 as 2364 Kernal ROM C 901227-03. Not established: the precharge-and-develop read scheme; the four-transistor-plus-load differential sense amplifier; the 10-15 percent of die area figure; and the few-millivolt differential signal. No source describes the internal circuit of either Commodore mask ROM, and no die photograph or decapping of a 901226-01 or 901227-03 has been used. A precharged bit line read by a differential sense amplifier is standard period NMOS mask-ROM practice, but which sense-amplifier topology these two parts used is not established, nor is the claim that the sense amplifiers were the largest block on the die."
         }
       ]
@@ -4748,6 +4803,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "The poly-resistor DAC and the tub isolation are standard period NMOS-analogue practice (Hitachi, Toshiba, Signetics used exactly this) but the internal details of the Norristown 6580/6581 are not public.",
       "children": [],
       "edges": [
@@ -4833,6 +4889,7 @@
         "https://en.wikipedia.org/wiki/Photolithography"
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Exact die size and mask count for the 8562 are not published; 50-60 mm2 is an estimate from the pin count and function. Not established: the exact analogue output transistor structure and the on-die resistor values.",
       "edges": [
         {
@@ -4913,6 +4970,7 @@
         "https://en.wikipedia.org/wiki/Polycrystalline_silicon"
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "note": "Silicon-barrier anodes, nitride barriers and copper lines did not exist; a 1982 IC resistor could drift several hundred ppm per year with humidity.",
       "edges": [
         {
@@ -4950,6 +5008,7 @@
         "https://en.wikipedia.org/wiki/Diamond"
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Established: synthetic saw-grade grit belt process + abrasive use (same passage as si.wafer.diamond process note). Not established: which maker supplied wafer-slicing blades in 1982.",
       "edges": [
         {
@@ -4967,6 +5026,7 @@
       "category": "silicon",
       "era": "1982",
       "confidence": "high",
+      "provenance": "complete",
       "inputs": []
     }
   }

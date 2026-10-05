@@ -969,6 +969,7 @@
               "category": "industry",
               "era": "1980s",
               "confidence": "high",
+              "provenance": "complete",
               "sources": [
                 "https://en.wikipedia.org/wiki/Cleanroom"
               ],
@@ -1040,6 +1041,7 @@
                     "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
                   ],
                   "confidence": "high",
+                  "provenance": "complete",
                   "inputs": [],
                   "edges": [
                     {
@@ -1063,6 +1065,7 @@
                   "category": "industry",
                   "era": "1980s",
                   "confidence": "medium",
+                  "provenance": "incomplete",
                   "inputs": [],
                   "note": "Not established: that sputterers, evaporators, a sinter furnace and ion implanters shared one vacuum tool room with argon flowing, or any of the equipment inventory. Sputtering and evaporation are documented as techniques; the bay is a layout assumption.",
                   "edges": [
@@ -1087,6 +1090,7 @@
                   "category": "industry",
                   "era": "1980s",
                   "confidence": "medium",
+                  "provenance": "complete",
                   "note": "The scale figures are order-of-magnitude for a large logic fab, not verified for a specific plant. Water intensity for semiconductors is high relative to most manufacturing; this is well documented generally. Water and power are named in `inputs`, so they render as `from` edges: following this node's materials should not drag a water treatment plant into a logic supply line.",
                   "inputs": [
                     "facility.water",
@@ -1503,6 +1507,7 @@
         "https://en.wikipedia.org/wiki/Cleanroom"
       ],
       "confidence": "high",
+      "provenance": "complete",
       "facts": [
         {
           "label": "Filtration",
@@ -1535,6 +1540,7 @@
         "https://en.wikipedia.org/wiki/Cleanroom"
       ],
       "confidence": "high",
+      "provenance": "complete",
       "note": "Capital equipment, consumed slowly rather than used up in a single run. The nitrogen blow-off and the water flowing through the sinks are utilities supplied to the tool, not components of it.",
       "inputs": [
         "facility.water"
@@ -1556,6 +1562,7 @@
       "category": "silicon",
       "era": "1980s",
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Solid-source BN and doped-oxide diffusion was the classic boron diffusion technique before diborane became routine. Renamed from 'Borax / boron oxide source' because borax (Na2B4O7) is not what went in the boat. The gas source is no longer inlined here: chem.fab-chemicals.dopants.diborane publishes diborane and boron trifluoride, which is more detailed than the one-sentence node that used to sit here.",
       "inputs": []
     },
@@ -1568,6 +1575,7 @@
       "category": "plastics",
       "era": "1980s",
       "confidence": "medium",
+      "provenance": "complete",
       "note": "The pigment is a trivial mass fraction of the whole computer but it is the same furnace black that goes into carbon-film resistors and into the photoconductor of a laser printer drum. Its feedstock is heavy petroleum residuum or natural gas fed to an air-cooled sooting furnace, the soot scraped off water-cooled rotors and pelletised.",
       "inputs": [],
       "edges": [
@@ -1591,6 +1599,7 @@
         "https://en.wikipedia.org/wiki/Epoxy"
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "note": "Bisphenol A epoxy (the older, less package-friendly EPON-type system) was still used on some parts; cresol novolac had largely displaced it in logic packaging. The epichlorohydrin -> propylene -> cracker -> chlorine -> brine chain used to be inlined beneath this node as seven nodes of its own; it is not inlined here. chem.epoxy.dgeba.epichlorohydrin publishes the molecule, chem.propylene.sources.cracker-c3 the C3 stream, metal.chlorine and metal.chlor-alkali the chlorine, metal.salt-brine the brine and metal.caustic-soda the caustic. The chain is named by id in `inputs` so there is one copy of it in the tree.",
       "facts": [
         {
@@ -1657,6 +1666,7 @@
         "https://en.wikipedia.org/wiki/Photomask"
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "note": "Silica is an ingredient of the blank, so metal.silica and metal.quartzite hang off `inputs` rather than as a child.",
       "inputs": [],
       "edges": [
@@ -1775,6 +1785,7 @@
               "category": "silicon",
               "era": "1980s",
               "confidence": "medium",
+              "provenance": "incomplete",
               "note": "The distinction: contact/proximity printing needs a full-size mask; a 1:1 projection stepper also prints 1:1 but optically; only a reduction stepper (2x-10x) needs a smaller reticle. Bipolar logic in 1983 was 1:1 by either contact or 1:1 projection. Bipolar logic generally did not use reduction steppers at this node.",
               "facts": [
                 {
@@ -1842,6 +1853,7 @@
               "category": "silicon",
               "era": "1980s",
               "confidence": "high",
+              "provenance": "complete",
               "sources": [
                 "https://en.wikipedia.org/wiki/Photoresist"
               ],
@@ -1902,6 +1914,7 @@
               "category": "silicon",
               "era": "1980s",
               "confidence": "medium",
+              "provenance": "incomplete",
               "inputs": [
                 "facility.electricity"
               ],
@@ -1966,6 +1979,7 @@
                 "https://en.wikipedia.org/wiki/Photolithography"
               ],
               "confidence": "high",
+              "provenance": "complete",
               "facts": [
                 {
                   "label": "Cycle time",
@@ -1999,6 +2013,7 @@
               "category": "silicon",
               "era": "1980s",
               "confidence": "high",
+              "provenance": "complete",
               "sources": [
                 "https://www.sciencehistory.org/stories/magazine/patterning-the-world-the-rise-of-chemically-amplified-photoresists"
               ],
@@ -2024,6 +2039,7 @@
                 "https://en.wikipedia.org/wiki/Photolithography"
               ],
               "confidence": "high",
+              "provenance": "complete",
               "facts": [
                 {
                   "label": "Power",
@@ -2068,6 +2084,7 @@
             "https://en.wikipedia.org/wiki/Photoresist"
           ],
           "confidence": "high",
+          "provenance": "incomplete",
           "note": "The developer chemistry is named in `inputs` rather than inlined: chem.fab-chemicals.tmah publishes TMAH and its synthesis, and chem.photoresist.development publishes the 0.2-0.3 N spray-development process. A potassium-hydroxide developer, made by chlor-alkali electrolysis of brine alongside chlorine, was the older alkali and was still in use; the sub-branch that used to sit here (potash -> brine -> rock salt) duplicated metal.salt-brine and metal.chlor-alkali and has been removed.",
           "inputs": [],
           "edges": [
@@ -2096,6 +2113,7 @@
           "category": "silicon",
           "era": "1980s",
           "confidence": "high",
+          "provenance": "incomplete",
           "note": "Plasma (reactive ion) etching of silicon dioxide was introduced in the early-to-mid 1980s and became standard later in the decade; a 1983 bipolar logic line used wet HF and BOE for its diffusion and contact windows. Hydrofluoric acid, the buffered-etch process and the fluorspar it is made from are named in `inputs` (chem.fab-chemicals.hydrofluoric-acid and its buffered-hf and fluorspar children); the fluorspar-to-HF chain, including the Derbyshire, Ilkley, Mexican, South African and Chinese fluorspar fields and the limestone by-product, used to be inlined beneath this node and is published at metal.fluorspar.",
           "sources": [
             "https://en.wikipedia.org/wiki/Hydrofluoric_acid"
@@ -2137,6 +2155,7 @@
           "category": "silicon",
           "era": "1980s",
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "That the resist is removed after etch by dry stripping or plasma ashing or by a wet resist stripper is documented. Not established: chlorinated solvents as the standard route, the xylene-then-trichloroethylene sequence, the 87 C boiling point, the piranha wet strip, and the phasing out of trichloroethylene through the 1980s.",
           "inputs": [],
           "edges": [
@@ -2250,6 +2269,7 @@
               "category": "silicon",
               "era": "1980s",
               "confidence": "medium",
+              "provenance": "incomplete",
               "facts": [
                 {
                   "label": "Heating",
@@ -2360,6 +2380,7 @@
                 "https://en.wikipedia.org/wiki/Thermal_oxidation"
               ],
               "confidence": "high",
+              "provenance": "complete",
               "facts": [
                 {
                   "label": "Temperature",
@@ -2439,6 +2460,7 @@
                 "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
               ],
               "confidence": "high",
+              "provenance": "incomplete",
               "facts": [
                 {
                   "label": "Temperature",
@@ -2566,6 +2588,7 @@
             "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
           ],
           "confidence": "high",
+          "provenance": "incomplete",
           "facts": [
             {
               "label": "Dopant",
@@ -2608,6 +2631,7 @@
           "category": "silicon",
           "era": "1980s",
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "The gold-doped (Au-doped) polysilicon emitter was a real and important technique of this era, used to raise gain and suppress the emitter-base reverse conductance ('knee'). It was implemented by co-depositing a tiny amount of gold in the emitter polysilicon or dopant glass, then driving it in with the arsenic or phosphorus. Confidence medium: the technique is well documented, but it is not confirmed that a specific 74LS vendor's 1983 process used it; it was common in high-performance bipolar rather than mandatory in low-cost logic. A self-aligned polysilicon emitter - deposit a thin arsenic-doped polysilicon film, pattern it to define the emitter, then push, so the arsenic is confined by the polysilicon walls and the emitter comes out shallower and more uniform - was the other refinement of the era, widespread in analog through the 1980s and 1990s and doubtful on a commodity 74LS. The arsine itself is an ingredient and is named in `inputs`, not inlined as a child; its provenance is worth recording: arsenic occurs as arsenide in copper and lead concentrates, roasting drives it off as arsenic trioxide fume, and the trioxide is reduced and hydrogenated to arsine. Arsenic-bearing copper concentrates were a notorious long-time smelting hazard, which is why arsenic control in copper works is a regulated topic today.",
           "sources": [
             "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
@@ -2655,6 +2679,7 @@
           "category": "silicon",
           "era": "1964-1980s",
           "confidence": "high",
+          "provenance": "complete",
           "note": "The Schottky barrier itself is formed simply by touching aluminium to the lightly doped n-type collector (aluminium-silicon is 0.75 eV work-function difference against n-Si) - no extra mask beyond the one that defines the collector contact, because the Schottky diode and the ohmic collector contact are made in the same window. So the LS family costs the same number of mask levels as plain TTL. First commercial Schottky TTL was TI's 74S series, 1964.",
           "sources": [
             "https://en.wikipedia.org/wiki/Schottky_diode"
@@ -2725,6 +2750,7 @@
               "category": "silicon",
               "era": "1980s",
               "confidence": "high",
+              "provenance": "complete",
               "sources": [
                 "https://en.wikipedia.org/wiki/Sputter_deposition"
               ],
@@ -2785,6 +2811,7 @@
             "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
           ],
           "confidence": "high",
+          "provenance": "incomplete",
           "facts": [
             {
               "label": "Etch",
@@ -2821,6 +2848,7 @@
           "category": "silicon",
           "era": "1980s",
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "That physical vapour deposition was the primary deposition technique until chemical vapour deposition took over in the 1980s is documented. Not established: the 1-1.5 um film thickness, the single-level, no-via constraint, or the comparison that bipolar needed two or three metal layers once it shrank.",
           "facts": [
             {
@@ -2864,6 +2892,7 @@
           "category": "silicon",
           "era": "1980s",
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "Aluminium sintering / hydrogen alloying at 400-450 C was standard in the era. Confidence medium on the exact temperature window; the purpose and the technique are not in doubt. The forming gas is an ingredient: nitrogen and hydrogen are named in `inputs`, not hung off as children, because a gas supply line is not part of a wafer.",
           "facts": [
             {
@@ -2906,6 +2935,7 @@
             "https://en.wikipedia.org/wiki/Silicon_dioxide"
           ],
           "confidence": "high",
+          "provenance": "incomplete",
           "facts": [
             {
               "label": "Films",
@@ -2963,6 +2993,7 @@
       "category": "silicon",
       "era": "1980s",
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "The positive-resist chemistry - a novolac resin with a photosensitive protecting group, exposure breaking the group off so the exposed resin becomes soluble in alkaline developer, the pattern on the wafer taking the same polarity as the pattern on the mask - is not inlined here; chem.photoresist publishes it and is named in `inputs`. Positive resists went from invention in the 1940s to default in the late 1970s, had won MOS by 1983, and were displacing negative resist on bipolar; within a decade negative resist was gone from production lines entirely.",
       "sources": [
         "https://www.shmj.or.jp/english/pdf/em/exhibi2437E.pdf"
@@ -3049,6 +3080,7 @@
               "category": "silicon",
               "era": "1980s",
               "confidence": "medium",
+              "provenance": "complete",
               "note": "Implanters were standard in CMOS lines by the early 1980s; diffusion was still the workhorse in bipolar logic, which is one of the more interesting differences between the two processes. The dopant gases are the same three the bipolar line uses - phosphine for the n-well, diborane for the p-well, sometimes arsine - and they are ingredients named in `inputs`, published once at chem.fab-chemicals.dopants. Electricity is a cross-cutting service and is a `from` edge, not a component.",
               "inputs": [
                 "facility.electricity"
@@ -3088,6 +3120,7 @@
           "category": "silicon",
           "era": "1980s",
           "confidence": "high",
+          "provenance": "incomplete",
           "sources": [
             "https://florisera.com/cmos-process-steps-3um-to-1-25um"
           ],
@@ -3165,6 +3198,7 @@
             "https://en.wikipedia.org/wiki/Silicon_dioxide"
           ],
           "confidence": "high",
+          "provenance": "incomplete",
           "facts": [
             {
               "label": "Thickness",
@@ -3211,6 +3245,7 @@
           "category": "silicon",
           "era": "1980s",
           "confidence": "high",
+          "provenance": "incomplete",
           "note": "The silane feed is SiH4, decomposing on a hot surface at 700-850 C to lay down pure polycrystalline silicon - cleaner and more controllable than trichlorosilane because it carries no chlorine and no corrosive by-products. Trichlorosilane still dominated for boule-grade silicon. A 4000-series part might also deposit a few resistors from this same film: polysilicon resistors cost nothing extra because they are made at the same time as the gate, from the same film, at no extra mask. That the 4066 specifically uses on-chip polysilicon resistors is plausible from its trim and bias requirements but is not verified against a cross-section, and some 4000-series parts use no resistors at all.",
           "sources": [
             "https://en.wikipedia.org/wiki/MOSIS",
@@ -3296,6 +3331,7 @@
               "category": "silicon",
               "era": "1980s",
               "confidence": "medium",
+              "provenance": "complete",
               "note": "The activation anneal was around 800-900 C for an hour, or a rapid thermal anneal of a few seconds at 1000 C plus. Medium confidence on the exact numbers.",
               "inputs": [],
               "edges": [
@@ -3356,6 +3392,7 @@
           "category": "silicon",
           "era": "1980s",
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "The relative immunity of CMOS to mobile charge is standard device physics; the specific passivation stack comparison is a reasonable generalisation rather than a cited measurement.",
           "inputs": [],
           "edges": [
@@ -3423,6 +3460,7 @@
             "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
           ],
           "confidence": "high",
+          "provenance": "incomplete",
           "note": "Organic die attach became common in the late 1980s-90s for cost reasons. In 1983 Au-Si eutectic brazing was still the standard on logic and memory.",
           "facts": [
             {
@@ -3494,6 +3532,7 @@
                 "https://en.wikipedia.org/wiki/Wire_bonding"
               ],
               "confidence": "high",
+              "provenance": "complete",
               "facts": [
                 {
                   "label": "Cycle rate",
@@ -3588,6 +3627,7 @@
                 "https://en.wikipedia.org/wiki/Transfer_molding"
               ],
               "confidence": "high",
+              "provenance": "complete",
               "note": "Capital equipment, so a tool rather than a part.",
               "facts": [
                 {
@@ -3621,6 +3661,7 @@
                 "https://en.wikipedia.org/wiki/Transfer_molding"
               ],
               "confidence": "high",
+              "provenance": "incomplete",
               "note": "A consumable tool, not a machine: it is bought, used up over its shot life and thrown away, so `part` rather than `tool`. Its earlier `inputs: [metal.silica]` was wrong - nothing in a hardened steel mould is silica - and has been removed.",
               "facts": [
                 {
@@ -3699,6 +3740,7 @@
         "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "note": "Commodore bought these chips from several vendors and did not re-mark them, which is why an original C64 board may carry parts branded TI, Fairchild, National, Motorola, Hitachi, Toshiba or a Commodore house number, all mixed together. Laser marking - a Q-switched Nd:YAG or CO2 laser ablating characters into the epoxy surface, or a carbon laser removing the top layer to expose an underlying white layer - was indelible and fast but in 1983 was still a premium option used mostly for military marking, adopted more widely through the mid-to-late 1980s.",
       "facts": [
         {
@@ -3755,6 +3797,7 @@
           "category": "packaging",
           "era": "1980s",
           "confidence": "medium",
+          "provenance": "complete",
           "note": "Not established: the cast stage, the vacuum or hot chuck on an x-y-z stage, the 25-wafer cassette, the 1-4 die per second probing speed or the 20-80 g per needle contact force. No prober specification is in any source available.",
           "facts": [
             {
@@ -3792,6 +3835,7 @@
             "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
           ],
           "confidence": "high",
+          "provenance": "complete",
           "note": "Automatic test equipment: capital equipment shared across every device type on the line, so a tool rather than a part or a consumable.",
           "facts": [
             {
@@ -3864,6 +3908,7 @@
         "https://en.wikipedia.org/wiki/Silicon_dioxide"
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "note": "Early 1980s nitride deposition was increasingly low-pressure or plasma-enhanced CVD from silane and ammonia; furnaces using TEOS plus ammonia still ran in parallel.",
       "facts": [
         {
@@ -3956,6 +4001,7 @@
       "category": "packaging",
       "era": "1980s",
       "confidence": "high",
+      "provenance": "complete",
       "note": "Matte tin plating on lead frames later became a reliability problem - tin whiskers - and the industry spent two decades fixing it. Copper-clad (C4) frames that carry a thicker, more solderable surface metal appeared in the late 1980s and 1990s, which is why the C64's successors used them and the C64 did not.",
       "sources": [
         "https://en.wikipedia.org/wiki/Lead_frame",
@@ -4054,6 +4100,7 @@
       "category": "silicon",
       "era": "1980s",
       "confidence": "medium",
+      "provenance": "complete",
       "note": "For 3-5 um logic geometries, a photographic mask stepper was adequate and much faster than electron-beam writing; beam writing was reserved for the DRAM and custom-chip masks.",
       "inputs": [
         "facility.electricity"
@@ -4077,6 +4124,7 @@
         "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "inputs": [],
       "children": [],
       "edges": [
@@ -4101,6 +4149,7 @@
       "category": "silicon",
       "era": "1980s",
       "confidence": "medium",
+      "provenance": "complete",
       "note": "Gold as a recombination centre in silicon is well established physics; its use in Au-doped emitters is a documented period technique. Exact concentration is on the order of a fraction of a percent in the emitter. metal.gold is an ingredient, so it hangs off `inputs`.",
       "inputs": [],
       "edges": [
@@ -4152,6 +4201,7 @@
         "https://en.wikipedia.org/wiki/RCA_clean"
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "inputs": [],
       "edges": [
         {
@@ -4174,6 +4224,7 @@
         "https://en.wikipedia.org/wiki/RCA_clean"
       ],
       "confidence": "high",
+      "provenance": "complete",
       "note": "Deionised steam, fed to the furnace inlet: the water must be essentially free of dissolved alkali metals, because sodium diffuses fast through hot oxide and shifts a transistor's threshold.",
       "inputs": [],
       "edges": [
@@ -4193,6 +4244,7 @@
       "category": "silicon",
       "era": "1980s",
       "confidence": "high",
+      "provenance": "incomplete",
       "note": "The ammonia sub-branch that used to sit here - ammonia, the nitrogen from the air, the hydrogen from the reformer - duplicated chem.fab-chemicals.ammonium-hydroxide, facility.nitrogen.atmospheric-air and chem.natural-gas.uses.hydrogen, and has been removed. Monosilane and ammonium hydroxide are ingredients, so they hang off `inputs`.",
       "sources": [
         "https://en.wikipedia.org/wiki/Haber-Bosch_process"
@@ -4239,6 +4291,7 @@
       "category": "fluids",
       "era": "1980s",
       "confidence": "medium",
+      "provenance": "complete",
       "note": "The chemistry is high confidence; the specific tank temperature (~150-180 C) is a standard process figure but is not verified against a 1983 datasheet.",
       "facts": [
         {
@@ -4322,6 +4375,7 @@
         "https://en.wikipedia.org/wiki/Tin"
       ],
       "confidence": "high",
+      "provenance": "complete",
       "note": "The name is kept as-is because two nodes in the silicon fragment resolve their 'tin plating bath' ingredient to this id by name; renaming it would silently break those edges and the repoint is proposed rather than applied. The deeper tin chemistry - cassiterite, the Southeast Asian belt and the 1985-86 International Tin Council price collapse - is not inlined here: metal.cassiterite and metal.tin publish it. The general plating process for steel and copper alloys is metal.tin.plating.",
       "inputs": [],
       "facts": [
@@ -4356,6 +4410,7 @@
       "category": "packaging",
       "era": "1980s",
       "confidence": "medium",
+      "provenance": "incomplete",
       "inputs": [],
       "note": "That the legend is printed in ink or by laser and carries a four-digit year-and-week date code is documented. Not established: a phenolic or epoxy ink with a pigment, baking or UV curing, or that ink marking is why a 1982 part is still readable and a modern ball-grid array is not."
     },
@@ -4379,6 +4434,7 @@
       "category": "packaging",
       "era": "1980s",
       "confidence": "medium",
+      "provenance": "incomplete",
       "inputs": [],
       "note": "Not established: the ceramic or printed-circuit card substrate, the cantilever needle construction, the needle lifetime in touches, or the days and hundreds-to-thousands of dollars to build a card for a new part number. Wafer test before dicing is documented; the card is not."
     },

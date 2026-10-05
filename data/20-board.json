@@ -77,7 +77,8 @@
             "https://spectrum.ieee.org/commodore-64"
           ],
           "note": "The $1-2 figure is the era cost quoted for the C64 printed-circuit board.",
-          "confidence": "medium"
+          "confidence": "medium",
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -228,6 +229,7 @@
               "era": "1980s",
               "inputs": [],
               "confidence": "medium",
+              "provenance": "incomplete",
               "note": "A welded mild-steel frame carrying pot, tunnel, conveyor, hood and flux plumbing is the ordinary machine body. Not established: the frame dimensions, weld method, or steel grade on the C64 wave machine.",
               "edges": [
                 {
@@ -250,6 +252,7 @@
               ],
               "children": [],
               "confidence": "medium",
+              "provenance": "complete",
               "note": "Preheating helps to accelerate the soldering process and to prevent thermal shock, while driving off moisture that would otherwise spit solder from holes. Not established: the 120 deg C figure, tunnel length, or dwell time on the C64 line.",
               "sources": [
                 "https://en.wikipedia.org/wiki/Wave_soldering"
@@ -292,6 +295,7 @@
               "era": "1980s",
               "inputs": [],
               "confidence": "medium",
+              "provenance": "incomplete",
               "note": "A stainless or phenolic chain carrying boards by their edge in spaced fixtures is the ordinary wave-soldering transport. Not established: the chain pitch, fixture design, or edge-clearance practice on the C64 line."
             }
           ],
@@ -467,6 +471,7 @@
                 "facility.electricity"
               ],
               "confidence": "medium",
+              "provenance": "complete",
               "note": "An arm or hood drawing off flux smoke is the ordinary solder-bench fitting, since the smoke is resin vapour. Not established: the hood type, airflow, or filter arrangement over the C64 hand-soldering benches.",
               "edges": [
                 {
@@ -498,6 +503,7 @@
           "inputs": [],
           "note": "Modern lead-free practice would drag a solder bead along the pins to wick off the excess and, failing that, use a solder pot. The prevalence of resoldered connector joints on forty-year-old C64 boards is decent evidence that these joints were marginal from the start.",
           "confidence": "medium",
+          "provenance": "incomplete",
           "edges": [
             {
               "to": "facility.electricity",
@@ -646,6 +652,7 @@
                   ],
                   "note": "Failure of vibratory feeding, not of the machine itself, was the usual reason a line stopped on a board full of axial parts.",
                   "confidence": "medium",
+                  "provenance": "complete",
                   "edges": [
                     {
                       "to": "facility.electricity",
@@ -728,6 +735,7 @@
           ],
           "note": "These are visible on the bottom of the finished board and are now a small collector's item in their own right. A modern board would put a via or a zero-ohm resistor there instead; none of those were on this board.",
           "confidence": "medium",
+          "provenance": "complete",
           "children": [],
           "edges": [
             {
@@ -790,7 +798,8 @@
                 "https://spectrum.ieee.org/commodore-64"
               ],
               "note": "The design history explicitly describes this tab being welded to the shield lid so the enclosure became a heat sink.",
-              "confidence": "high"
+              "confidence": "high",
+              "provenance": "incomplete"
             }
           ],
           "note": "Bonding the shield to ground with a soldered tab and a plated hole plus screw is the ordinary way to make the enclosure part of the return. Not established: the tab dimensions, pad size, or screw type used on the 250407 board, or how often owner disturbance caused faults."
@@ -809,6 +818,7 @@
           ],
           "note": "The engineering team's stated culture was that if a product worked it shipped, and that quality control was not coming close enough to where it should have been. That is visible in this subsystem as rework rather than scrap.",
           "confidence": "medium",
+          "provenance": "incomplete",
           "edges": [
             {
               "to": "facility.electricity",
@@ -958,6 +968,7 @@
                 "facility.test-equipment.needle-probe"
               ],
               "confidence": "medium",
+              "provenance": "complete",
               "note": "A rack of switching electronics with a go or no-go readout is ordinary 1980s digital test equipment. Not established: the tester make or model, relay-matrix size, or display type used for the 250407 board.",
               "sources": [
                 "https://en.wikipedia.org/wiki/In-circuit_testing"
@@ -1020,6 +1031,7 @@
                 }
               ],
               "confidence": "medium",
+              "provenance": "incomplete",
               "note": "Not established: the cartridge part number, the ROM contents and the identity of the diagnostic ROM. The C64 dead-test screen is associated with the service manual, but the per-page mirror at devili.iki.fi carries circuit-theory pages only and does not reproduce it."
             },
             {
@@ -1045,6 +1057,7 @@
                   "era": "1980s",
                   "inputs": [],
                   "confidence": "medium",
+                  "provenance": "incomplete",
                   "note": "A regulated bench supply with a current limit is the ordinary instrument for powering a board under test. Not established: the make, voltage accuracy, or current-limit setting of the supply on the C64 test cradle."
                 }
               ],
@@ -1106,6 +1119,7 @@
                 "facility.electricity"
               ],
               "confidence": "medium",
+              "provenance": "complete",
               "note": "Feeding composite video to a small monitor or colour television and judging the picture by eye is ordinary functional-test practice. Not established: the make, size, or monochrome-versus-colour mix of the monitors on the C64 line.",
               "edges": [
                 {
@@ -1160,6 +1174,7 @@
                   "era": "1980s",
                   "inputs": [],
                   "confidence": "medium",
+                  "provenance": "incomplete",
                   "note": "A steel frame carrying powered machines at temperature is the ordinary burn-in rack. Not established: the rack dimensions, shelf count, ventilation arrangement, or whether the frame was structural steel or sheet metal on the C64 line."
                 }
               ]
@@ -1376,6 +1391,7 @@
                 "facility.electricity"
               ],
               "confidence": "medium",
+              "provenance": "complete",
               "note": "That vector photoplotters driven by Gerber format data were the dominant plotting technology for PCB artwork of this period is established: Standard Gerber was a numerical control format designed by Gerber Systems Corp to drive their vector photo plotters for the PCB industry in the 1960s and 1970s. Not established: that the exposure was a corona discharge from a stepped wire or shaped electrode, that flatbed machines laid a film flat and so became the standard for two-sided work, the hundreds of beds claim elsewhere in this branch, and that this machine was a Gerber-branded electrostatic plotter. Modern boards use direct imaging, for which Gerber is also the standard image input format, so the format outlived the machine.",
               "sources": [
                 "https://en.wikipedia.org/wiki/Gerber_format"
@@ -1437,6 +1453,7 @@
           "era": "1980s",
           "inputs": [],
           "confidence": "medium",
+          "provenance": "complete",
           "children": [],
           "note": "Developing, fixing, washing and drying exposed film is ordinary silver-halide photographic processing. Not established: the tank sequence, chemistry strengths, or wash and dry times used for the 251137 artwork film.",
           "edges": [
@@ -1488,6 +1505,7 @@
               "era": "1980s",
               "inputs": [],
               "confidence": "medium",
+              "provenance": "incomplete",
               "note": "Working from a single authoritative artwork film is ordinary phototooling practice. Not established: how the 251137 master was stored or handled, or the cost consequence of losing it."
             }
           ],
@@ -1504,6 +1522,7 @@
           "inputs": [],
           "note": "Two-sided registration - landing the second side's artwork on the copper to within a fraction of a millimetre, using alignment pins and a register mark - is the hard part of a two-sided board. On this board it matters mainly for the mounting holes and the connector slots; on a via-heavy board it is what decides whether every barrel lands on its own pad. Having no vias makes it a far less critical operation than it would otherwise be, one of the quieter payoffs of the layer-change-by-component-lead strategy.",
           "confidence": "medium",
+          "provenance": "incomplete",
           "edges": [
             {
               "to": "facility.electricity",
@@ -1531,6 +1550,7 @@
           "era": "1980s",
           "inputs": [],
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "Panelisation itself is ordinary board-shop practice, with several boards grouped on one panel for processing and separated afterwards. Not established: the panel size for the 250407 order, how many boards shared a panel, or that this panel used perforated mouse-bite tabs leaving a rough board edge.",
           "edges": [
             {
@@ -1616,6 +1636,7 @@
       "category": "plastics",
       "era": "1980s",
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "A sintered porous stone bubbling air finely through flux is the ordinary foamer element. Not established: the stone polymer, pore size, or soak-out schedule on the C64 line."
     },
     "mb.pcb.laminate": {
@@ -1746,7 +1767,8 @@
       "category": "fluids",
       "era": "1880s onward",
       "note": "Thiosulfate chemistry is a sulfur chain, ultimately from sulfur or from sulphur dioxide off sulfide roasting, so it is a different mineral chain from the aromatic one.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "provenance": "incomplete"
     },
     "mb.assembly.jumpers.wire": {
       "id": "mb.assembly.jumpers.wire",
@@ -1794,7 +1816,8 @@
         }
       ],
       "note": "Not established: the Cu6Sn5 then Cu3Sn sequence, the diffusion-limited growth argument and the brittleness claim, from any source read for this node. The intermetallic bond is a standard result in soldering metallurgy but the specific phase sequence here is not cited.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "provenance": "complete"
     },
     "mb.pcb.exposure": {
       "id": "mb.pcb.exposure",
@@ -1830,6 +1853,7 @@
             "facility.electricity"
           ],
           "confidence": "medium",
+          "provenance": "complete",
           "note": "Clamping film and resist under vacuum so the film sits hard with no bubbles or shadowing is ordinary contact exposure. Not established: the frame size, diaphragm material, or pump-down time for the 250407 exposures.",
           "edges": [
             {
@@ -1851,6 +1875,7 @@
             "facility.water"
           ],
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "A mercury-vapour source rich in near ultraviolet where acrylate resists are sensitive is the ordinary exposure lamp. Not established: whether the 250407 exposure used mercury-vapour or metal-halide, its wattage, or the water-cooling and choke arrangement.",
           "edges": [
             {
@@ -1900,6 +1925,7 @@
       "inputs": [],
       "note": "The general step is established: chemical etching divides the copper into separate conducting lines called tracks or circuit traces, pads for connections, vias to pass connections between layers of copper, and features such as solid conductive areas for electromagnetic shielding. The 2 FeCl3 + Cu -> 2 FeCl2 + CuCl2 stoichiometry follows from that and is not separately cited. Not established: that this line used ferric chloride rather than sodium persulphate or a cupric chloride bath, the 42 deg Baume figure, the 40-50 deg C, the 20-45 minute etch time for 35 um copper, and the practice of dumping and remaking the bath as copper accumulates. Period text consistently quotes 42 deg Baume ferric chloride around 45 deg C. Sodium persulfate was a real alternative for some shops. Modern practice is still ferric chloride, but with tighter control and a copper-recovery loop. The etchant itself, its Baume range and its regeneration are the shared node chem.pcb-chemicals.etching.ferric-chloride; this node is the board-shop step that uses it.",
       "confidence": "medium",
+      "provenance": "incomplete",
       "sources": [
         "https://en.wikipedia.org/wiki/Printed_circuit_board"
       ],
@@ -1939,6 +1965,7 @@
       "inputs": [],
       "note": "Stripping and cleaning are where the etched board stops being a chemistry problem and starts being a mechanical one.",
       "confidence": "medium",
+      "provenance": "complete",
       "edges": [
         {
           "to": "metal.caustic-soda",
@@ -1977,6 +2004,7 @@
           "category": "board",
           "era": "1980s",
           "confidence": "medium",
+          "provenance": "incomplete",
           "inputs": [],
           "note": "A tungsten-carbide end mill cutting glass-filled laminate is ordinary routing practice, with short tool life from glass abrasion. Not established: the cutter diameter, coating, or change schedule for the 250407 outline and slot.",
           "edges": [
@@ -2040,6 +2068,7 @@
             "facility.electricity"
           ],
           "confidence": "medium",
+          "provenance": "complete",
           "note": "Stepping a tape-fed head through a tool table over pinned or vacuum-held fixtures is ordinary numerical-control drilling. Not established: the drill make, tape format, or sub-millimetre positioning actually held on the 250407 order.",
           "edges": [
             {
@@ -2057,6 +2086,7 @@
           "category": "board",
           "era": "1980s",
           "confidence": "medium",
+          "provenance": "incomplete",
           "inputs": [],
           "note": "Tungsten-carbide bits are very hard but eventually wear out or break, and drilling is a considerable part of the cost of a through-hole board. Not established: the bit supplier, diameters stocked, or resharpening routine for the 250407 drill programme.",
           "sources": [
@@ -2145,6 +2175,7 @@
           "inputs": [],
           "note": "Modern boards use ENIG, immersion tin or OSP instead; HASL went out of fashion because its coating is soft and its thermal expansion mismatch causes failures in thermal cycling. It was, however, ideal for a board that was going straight into a tin pot.",
           "confidence": "medium",
+          "provenance": "complete",
           "edges": [
             {
               "to": "metal.solder",
@@ -2177,6 +2208,7 @@
           "inputs": [],
           "note": "On the C64 mainboard specifically these contacts are inside the female expansion, user and cassette sockets, so the gold belongs to a purchased connector; the mating plug cards carry the fingers. The plating chemistry is the same either way.",
           "confidence": "medium",
+          "provenance": "complete",
           "edges": [
             {
               "to": "metal.gold.ingot",
@@ -2234,6 +2266,7 @@
       "inputs": [],
       "note": "The screen mesh is the shared node written by the chassis fragment, because the same stainless wire mesh and photosensitive emulsion print the case legends and the board legend. The epoxy ink itself has no node of its own anywhere in this tree, which is a gap.",
       "confidence": "medium",
+      "provenance": "incomplete",
       "edges": [
         {
           "to": "facility.electricity",
@@ -2262,6 +2295,7 @@
           "era": "1980s",
           "inputs": [],
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "Squeegeeing epoxy ink through a tensioned emulsion-coated mesh and baking it onto the mask is ordinary legend printing. Not established: the mesh count, emulsion type, or bake time and temperature for the 250407 legend.",
           "edges": [
             {
@@ -2281,6 +2315,7 @@
           "inputs": [],
           "note": "The exact set of colours used on the 250407 has not been confirmed here.",
           "confidence": "low",
+          "provenance": "incomplete",
           "edges": [
             {
               "to": "facility.electricity",
@@ -2328,6 +2363,7 @@
       "era": "1980s",
       "inputs": [],
       "confidence": "medium",
+      "provenance": "complete",
       "note": "High-contrast dimensionally stable film on a polyester base is the standard artwork medium. Not established: the brand, thickness, or minimum density the 251137 film was ordered to, or its storage life.",
       "sources": [
         "https://en.wikipedia.org/wiki/Gerber_format"
@@ -2342,6 +2378,7 @@
       "category": "computing",
       "era": "1983",
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Nine-track tape and 8-inch floppy disks with magnetic oxide on polymer backing are the standard carriers of the period. Not established: which medium carried the 251137 plot files, at what density, or where handover between design and fabrication occurred."
     },
     "mb.pcb.laminate.press.release": {
@@ -2372,6 +2409,7 @@
       "era": "1980s",
       "inputs": [],
       "confidence": "medium",
+      "provenance": "complete",
       "note": "A thin dimensionally stable polyester film carrying the 25 um resist so it can be rolled and handled is ordinary dry-film construction. Not established: the carrier thickness or supplier for the film used on the 250407 board, or the peel timing."
     },
     "mb.pcb.photoresist.laminate": {
@@ -2390,6 +2428,7 @@
       ],
       "inputs": [],
       "confidence": "medium",
+      "provenance": "complete",
       "note": "Feeding dry film from a spool, heating it and pressing it onto baked-dry copper with nip rollers is ordinary lamination. Not established: the 90-110 deg C window on this line, the roller hardness, or the chill-roll setting used.",
       "edges": [
         {
@@ -2423,6 +2462,7 @@
       "inputs": [],
       "note": "Wet resist offered the no-prep advantage; dry film offered the thickness control. Dry film won on thickness.",
       "confidence": "medium",
+      "provenance": "incomplete",
       "edges": [
         {
           "to": "facility.electricity",
@@ -2444,6 +2484,7 @@
       "era": "1980s",
       "inputs": [],
       "confidence": "medium",
+      "provenance": "complete",
       "note": "Moving-air or radiant-tube preheat held below the solder melting point is ordinary tunnel practice. Not established: which method the C64 tunnel used, its zone temperatures, or the conveyor-speed limit set by large electrolytics.",
       "edges": [
         {
@@ -2500,6 +2541,7 @@
           ],
           "inputs": [],
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "Not established: that the laminate supplier's press used grey cast iron platens rather than steel, whether heat came from steam coils or embedded electric elements on that press, or the flatness tolerance the surface grind held."
         },
         {
@@ -2512,6 +2554,7 @@
           "era": "1980s",
           "inputs": [],
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "Pressing several laminate books in one loading with cylinders and platens is the ordinary hydraulic pack. Not established: the cylinder count, operating pressure, or petroleum source of the circulating oil on the laminate supplier press."
         },
         {
@@ -2526,6 +2569,7 @@
             "facility.electricity"
           ],
           "confidence": "medium",
+          "provenance": "incomplete",
           "note": "Heating platens with steam coils or embedded electric resistance elements is the ordinary press arrangement. Not established: whether the laminate supplier used gas- or oil-fired central steam or electric heat, or that the press was the largest fuel load on that site.",
           "edges": [
             {
@@ -2551,6 +2595,7 @@
       "category": "board",
       "era": "1980s",
       "confidence": "low",
+      "provenance": "incomplete",
       "inputs": [],
       "edges": [
         {

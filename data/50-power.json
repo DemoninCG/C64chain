@@ -263,6 +263,7 @@
                     }
                   ],
                   "confidence": "high",
+                  "provenance": "complete",
                   "sources": [
                     "https://milesplatts.co.uk/markets/transformer-bobbins"
                   ],
@@ -442,6 +443,7 @@
                     }
                   ],
                   "confidence": "high",
+                  "provenance": "complete",
                   "children": [],
                   "inputs": [],
                   "edges": [
@@ -530,7 +532,8 @@
               "sources": [
                 "https://forum.vcfed.org/index.php?threads/salvaging-the-commodore-64-brick-of-death-epoxied-power-supply-and-rebuilding-it-many-pictures.1241364/"
               ],
-              "confidence": "high"
+              "confidence": "high",
+              "provenance": "incomplete"
             },
             {
               "id": "c64.psu.regulator.variant-si3052p",
@@ -651,6 +654,7 @@
                     }
                   ],
                   "confidence": "high",
+                  "provenance": "complete",
                   "note": "Modern practice for a 1.5 A rail is an 8-20 A TO-220 or a DPAK/LDO with an active current limit; the 2N3055 in a TO-3 is expensive and a thermal mismatch, but it was the safest thing an engineer could buy off the shelf in 1982.",
                   "children": [],
                   "edges": [
@@ -683,6 +687,7 @@
                     }
                   ],
                   "confidence": "medium",
+                  "provenance": "incomplete",
                   "note": "The C64 mainboard itself uses 2N3904 and 2N4401 in TO-92 packages for its audio and cassette motor drives (Q1-Q8 in the 326298 parts list), so the same parts bins would have supplied the brick."
                 },
                 {
@@ -704,6 +709,7 @@
                     }
                   ],
                   "confidence": "medium",
+                  "provenance": "incomplete",
                   "note": "Modern practice is a bandgap reference inside the regulator IC, giving +/-0.5% over temperature; the zener plus Vbe-multiplier arrangement of 1982 gave +/-3-5% and drifted with case temperature.",
                   "children": [],
                   "inputs": []
@@ -814,6 +820,7 @@
                         }
                       ],
                       "confidence": "high",
+                      "provenance": "incomplete",
                       "inputs": []
                     }
                   ]
@@ -1627,6 +1634,7 @@
               "category": "silicon",
               "era": "1982",
               "confidence": "medium",
+              "provenance": "complete",
               "name": "2SC1694 small-signal NPN",
               "simple_name": "2SC1694 small-signal NPN",
               "description": "A TO-92 epoxy-potted silicon NPN with a 100-150 V collector rating, used as a common-emitter amplifier with a collector resistor and an unbypassed emitter resistor. The 2SC-prefix parts were the standard Japanese equivalents of the 2N series, and Commodore specified them as 'or equivalent'.",
@@ -1656,6 +1664,7 @@
               "category": "silicon",
               "era": "1982",
               "confidence": "medium",
+              "provenance": "incomplete",
               "name": "1SS119 / MA151K clip diodes",
               "simple_name": "1SS119 / MA151K clip diodes",
               "description": "Small-signal switching diodes, typically 50 mA class in a DO-35 glass can, wired back to back across the sync input. They conduct only on the tips of the sync pulses and the colour burst, which clips the signal to the amplitude a television's AGC expects and stops the modulator over-modulating.",
@@ -1720,6 +1729,7 @@
               "category": "silicon",
               "era": "1982",
               "confidence": "medium",
+              "provenance": "incomplete",
               "name": "2SC1730 / 2SC2778 VHF transistor",
               "simple_name": "2SC1730/2SC2778 VHF transistor",
               "description": "A VHF small-signal NPN in TO-92, chosen because its unity-gain bandwidth is several times the 60 MHz operating frequency so the oscillator starts easily and stays linear, and because its output capacitance is low enough not to detune the tank.",
@@ -1743,6 +1753,7 @@
               "category": "passives",
               "era": "1982",
               "confidence": "medium",
+              "provenance": "incomplete",
               "name": "Channel trimmer capacitor",
               "simple_name": "Channel trimmer capacitor",
               "description": "The channel tuning element brought out to terminal 10 of the module: a small screw-adjusted trimmer in the 1-10 pF range, most often a ceramic plate or disc trimmer with a barium titanate or glass-ceramic dielectric, sometimes a stacked mica trimmer. It sits across the tank and is set once, at the television manufacturer's alignment step, against a sweep generator or a calibrated television signal. It is not one of the multilayer ceramic blocks that appeared later in the decade: a screw-accessible trimmer is what an alignment engineer needs, and a 1-10 pF part with internal electrodes would have been the wrong part for the job.",
@@ -1766,6 +1777,7 @@
               "category": "silicon",
               "era": "1982",
               "confidence": "low",
+              "provenance": "incomplete",
               "name": "MA57 tuning varactor diode",
               "simple_name": "MA57 tuning varactor diode",
               "description": "On the earlier 251696 drawing the tuning is done by D3, an MA57: a junction varactor whose capacitance falls as the reverse bias rises. Lifting the tuning out of the tank into a varactor keeps the temperature coefficient and the stray capacitance low. Later drawings use a mechanical trimmer in the same position.",
@@ -1853,6 +1865,7 @@
                   "category": "power",
                   "era": "1982",
                   "confidence": "medium",
+                  "provenance": "incomplete",
                   "name": "SID audio amplifier transistor",
                   "simple_name": "SID audio amplifier transistor",
                   "description": "On the C64 mainboard the SID's pin 27 output is amplified by Q2 before it reaches CN5 pin 3 and the modulator; the modulator's audio input then loads that amplifier. The stage is a common-emitter NPN with a bias divider and an emitter resistor, running from the CAN +5 V rail.",
@@ -1874,6 +1887,7 @@
               "category": "power",
               "era": "1982",
               "confidence": "medium",
+              "provenance": "incomplete",
               "name": "Intercarrier selector terminal",
               "simple_name": "Intercarrier selector terminal",
               "description": "A single link or jumper on terminal 8 that reconfigures the intercarrier oscillator between 4.5 and 5.5 MHz. It is the PAL/NTSC configuration link for the whole module, and it is why one board could serve both markets with a single part change.",
@@ -1973,6 +1987,7 @@
               "category": "power",
               "era": "1983",
               "confidence": "medium",
+              "provenance": "incomplete",
               "name": "PAL UHF output stage",
               "simple_name": "PAL UHF output stage",
               "description": "At 591 MHz a single transistor oscillator cannot drive a 75 ohm television input through a long lead, so the PAL modulators add a small tuned output stage and, in the later units, an output amplifier with its own bias network. The extra gain is what makes a PAL C64 usable on a European television without a booster.",
@@ -2028,6 +2043,7 @@
               "category": "silicon",
               "era": "1982",
               "confidence": "medium",
+              "provenance": "incomplete",
               "name": "8.2 V Zener diode",
               "simple_name": "8.2 V Zener diode",
               "description": "A heavily doped PN junction reverse-biased into breakdown. The doping is so heavy that the depletion layer is only a few microns wide, which gives the device a very low capacitance and a fast, hard breakdown - ideal for a shunt regulator and for clamping.",
@@ -2407,6 +2423,7 @@
       "category": "power",
       "era": "1980s",
       "confidence": "high",
+      "provenance": "complete",
       "name": "Soda-lime tube glass",
       "simple_name": "Soda-lime tube glass",
       "description": "The fuse tube is a drawn borosilicate or soda-lime glass tube, chosen because it is dimensionally stable, easy to seal and does not outgas. Glass tubing is made by melting the batch and drawing the softened gather between rollers, so the wall thickness and diameter stay within a few microns along the length.",
@@ -2464,6 +2481,7 @@
       "category": "metals",
       "era": "ancient",
       "confidence": "high",
+      "provenance": "raw",
       "name": "Copper and silver ores",
       "simple_name": "Copper and silver ores",
       "description": "The moving and fixed blades are brass or phosphor bronze (copper with tin), and the contact faces are silver. Copper comes from sulphide concentrate and silver from argentiferous lead ores or from cyanide leaching of low-grade residues.",
@@ -2576,6 +2594,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Partly contradicted. The documented low-voltage electrolyte systems are glycol/borax - \"Electrolytes based on ethylene glycol and boric acid\" - plus almost-anhydrous organic solvents (DMF, DMA, gamma-butyrolactone) and water-rich low-ESR systems; ammonium pentaborate as \"the classic low-voltage recipe\" is not among them, and the pH 4.5-7.0 range and the I = kCV leakage relation are not stated. What is documented is that the electrolyte supplies oxygen for self-healing, that service life is limited by electrolyte loss, and that organic-solvent systems give low leakage and long life."
     },
     "c64.psu.bulk-cap.separator": {
@@ -2729,6 +2748,7 @@
       "category": "metals",
       "era": "ancient",
       "confidence": "high",
+      "provenance": "incomplete",
       "name": "Bismuth and its ore",
       "simple_name": "Bismuth and its ore",
       "description": "Bismuth is recovered commercially as a by-product of lead and copper refining, from anode slimes and from the residues of the Wohlwill process, and as a minor component of some tin and tungsten ores. Native bismuth and bismuthinite occur too, but refinery by-product is the industrial source.",
@@ -2774,6 +2794,7 @@
           "category": "energy",
           "era": "1980s",
           "confidence": "medium",
+          "provenance": "incomplete",
           "name": "Regenerative furnace and cowper",
           "simple_name": "Regenerative furnace/cowper",
           "description": "A glass furnace cannot simply burn gas, because glassmelting needs far more heat than combustion can deliver at that temperature. The answer is regeneration: a Cowper regenerator beside the furnace stores the heat of the exhaust in a refractory mass, then blows the air through it on the next firing. The two 1980s designs were the regenerative box furnace and the unit-regenerator furnace.",
@@ -2820,6 +2841,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "children": [],
       "inputs": [],
       "note": "Not established: the 12-25 um microporous isotactic polypropylene separator, the 35-45% porosity, and the stretch or solvent-extraction routes. The available source on aluminium electrolytics describes a paper spacer and does not mention a polypropylene separator; the claim that it replaced paper in service is likewise undocumented."
@@ -2833,6 +2855,7 @@
       "category": "passives",
       "era": "1980s",
       "confidence": "medium",
+      "provenance": "complete",
       "children": [],
       "facts": [
         {
@@ -2874,6 +2897,7 @@
       "category": "packaging",
       "era": "1980s",
       "confidence": "high",
+      "provenance": "complete",
       "children": [],
       "edges": [
         {
@@ -2941,6 +2965,7 @@
         }
       ],
       "confidence": "high",
+      "provenance": "complete",
       "children": [],
       "edges": [
         {
@@ -2973,6 +2998,7 @@
         }
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "children": [],
       "inputs": []
     },
@@ -3013,6 +3039,7 @@
       "category": "packaging",
       "era": "ancient",
       "confidence": "medium",
+      "provenance": "incomplete",
       "facts": [
         {
           "label": "Fibre length",
@@ -3064,6 +3091,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "note": "Not established: that an alkaline potassium permanganate bath at ~2-6% plus NaOH was used to etch capacitor foil, that the loose MnO2 sludge is brushed off or nitric-acid dipped, and that the chlorate route was being phased out through the 1980s. Potassium permanganate is documented as a strong oxidising agent and sodium chlorate's main commercial use as chlorine dioxide feed, but neither article mentions aluminium foil etching for capacitors.",
       "children": [],
       "inputs": []
@@ -3091,6 +3119,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "children": [],
       "inputs": [],
       "note": "Not established: 60-70 wt% solids in styrene, the 150 C / 6-10 h cure, the minutes-long gel time at 150 C, and the styrene-from-benzene-and-ethylene route. Vacuum impregnation of a completed winding with an insulating varnish is documented; the unsaturated-polyester-in-styrene formulation, its solids figure and its cure schedule are not."
@@ -3122,6 +3151,7 @@
         }
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "children": [],
       "note": "A coal-tar/cresol route to trimellitic anhydride existed and was used into the 1990s; the pseudocumene oxidation route became dominant in the 1980s, which is what makes this enamel a petroleum-aromatics product rather than a coal-tar one. The diamine half of the polyamide is ethylenediamine or a similar short-chain diamine, and it is the imide ring plus that diamine that lifts the insulation class to H.",
       "inputs": []
@@ -3161,6 +3191,7 @@
           "category": "passives",
           "era": "1980s",
           "confidence": "medium",
+          "provenance": "incomplete",
           "name": "Cast film production",
           "simple_name": "Cast film production",
           "description": "Polypropylene is extruded through a flat die onto a chilled cast roll, then stretched and heat-set so it is strong in both directions, then slit into webs 20-60 um wide. A plain film is wound on the same type of machine as the metallised film, so the two steps are usually separate plants.",
@@ -3247,6 +3278,7 @@
         "https://wej.k.vu/broken_stuff/c64_power_supply_repair/"
       ],
       "confidence": "high",
+      "provenance": "complete",
       "note": "The epoxy is also an insulator thermally as well as electrically: it fills the natural convection paths around the heatsink and the transformer, so internal temperatures run 20-40 C above what the same parts see in an open case. Potting is a 1983-and-later build feature (both documented depotted units are 1983); the 1982 silver-label supply is reported as a vented repairable type with no epoxy pour, an adequate heatsink and a fused 5 V rail, but that rests on a single forum recollection and the changeover date is not established, so it is recorded here rather than modelled as a variant.",
       "children": [],
       "inputs": [
@@ -3319,6 +3351,7 @@
             }
           ],
           "confidence": "high",
+          "provenance": "complete",
           "children": [],
           "inputs": [],
           "edges": [
@@ -3412,6 +3445,7 @@
         }
       ],
       "confidence": "high",
+      "provenance": "complete",
       "note": "Modern high-CV parts use a laser-drilled solid can as the cathode, eliminating the cathode foil and reducing ESR and inductance further.",
       "inputs": [],
       "edges": [
@@ -3453,6 +3487,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "complete",
       "inputs": [],
       "note": "Not established: the >= 1.5 t inside bend radius, the 1.5-diameter minimum distance from bend to tapped hole, and the M3/M4 roll-tapped thread. No encyclopaedic source covers press-brake bend-radius or thread-forming-tap practice; the general statements about aluminium's low modulus are common engineering knowledge but are not cited here.",
       "edges": [
@@ -3524,6 +3559,7 @@
         }
       ],
       "confidence": "high",
+      "provenance": "incomplete",
       "inputs": []
     },
     "c64.psu.regulator.variant-discrete.pass-npn.die-attach": {
@@ -3553,6 +3589,7 @@
         }
       ],
       "confidence": "high",
+      "provenance": "complete",
       "children": [],
       "inputs": [],
       "edges": [
@@ -3588,6 +3625,7 @@
         }
       ],
       "confidence": "high",
+      "provenance": "complete",
       "children": [],
       "inputs": [],
       "edges": [
@@ -3625,6 +3663,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "children": [],
       "inputs": [],
       "note": "Not established: silver-glass die attach at 430 C, the 80Au/20Sn reflow, the 50-150 um aluminium wedge bond, and epoxy or glass-preform encapsulation at 150-175 C for an axial rectifier. Wire bonding and epoxy as technologies are documented, but the specific attach, wire and moulding conditions for an axial diode have no source here.",
@@ -3684,6 +3723,7 @@
             }
           ],
           "confidence": "medium",
+          "provenance": "complete",
           "note": "Crimping a soldered conductor into a screw terminal is explicitly discouraged by the repair community because the soft solder creeps and the joint goes high-resistance.",
           "children": [],
           "inputs": [],
@@ -3730,6 +3770,7 @@
         }
       ],
       "confidence": "high",
+      "provenance": "complete",
       "children": [],
       "edges": [
         {
@@ -3761,6 +3802,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "complete",
       "inputs": [
         "chem.polyamide.nylon-6"
       ],
@@ -3807,6 +3849,7 @@
         }
       ],
       "confidence": "high",
+      "provenance": "complete",
       "children": [],
       "inputs": [],
       "edges": [
@@ -3846,6 +3889,7 @@
         }
       ],
       "confidence": "high",
+      "provenance": "complete",
       "children": [],
       "edges": [
         {
@@ -3922,6 +3966,7 @@
               "category": "magnetics",
               "era": "1982",
               "confidence": "medium",
+              "provenance": "complete",
               "inputs": [],
               "note": "Not established: the tungsten-chromium or high-chromium grade, the 25-40 mm stroke, or the millions-of-hits die life for the 1982 lamination punch; no toolroom record backs this die.",
               "edges": [
@@ -4004,6 +4049,7 @@
       "category": "assembly",
       "era": "1982",
       "confidence": "medium",
+      "provenance": "complete",
       "name": "Modulator manufacture, alignment and test",
       "simple_name": "Modulator manufacture and test",
       "description": "A 1980s RF module was assembled by hand through a small number of components, soldered, then aligned: the channel trimmer is set against a television signal generator or a spectrum analyser, the intercarrier selector link is fitted for the market, the level network is checked on a video monitor, and the unit is burn-in tested with a television running.",
@@ -4070,6 +4116,7 @@
       "category": "silicon",
       "era": "1980s",
       "confidence": "high",
+      "provenance": "complete",
       "name": "Wafer processing and TO-92 moulding",
       "simple_name": "Wafer processing TO-92",
       "description": "The die is a small epitaxial NPN on a 100 mm P-type <111> wafer, sawn with a diamond blade, die-attached with a silver-glass preform, wire-bonded with 50 um aluminium and transfer-moulded in an epoxy-filled TO-92 tool at 150-175 C.",
@@ -4172,6 +4219,7 @@
           "category": "metals",
           "era": "ancient",
           "confidence": "high",
+          "provenance": "complete",
           "name": "Cupellation",
           "simple_name": "Cupellation",
           "description": "An ancient refining step that survives into the 1980s for precious metals: the metal is melted with a lead oxide flux and blown with air, which oxidises the lead and the base metals to litharge that floats off, while the silver and gold stay as metal. Agricola described it in the 16th century and it is still the standard way to remove base metal from silver dross.",
@@ -4215,6 +4263,7 @@
       "category": "packaging",
       "era": "1980s",
       "confidence": "high",
+      "provenance": "incomplete",
       "facts": [
         {
           "label": "Stretch ratios",
@@ -4266,6 +4315,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "complete",
       "children": [],
       "inputs": [],
       "note": "Not established: sodium chlorate with hydrochloric acid or potassium permanganate as the etchant, the 70-80 C tank temperature, the 10-60 min dwell, and the runaway-into-pore-structure mechanism. What is documented is generic: the anode is \"etched (roughened) in an electrochemical process to increase the effective electrode surface\". The specific etch chemistry and its process conditions have no source here.",
@@ -4308,6 +4358,7 @@
         }
       ],
       "confidence": "medium",
+      "provenance": "incomplete",
       "inputs": [],
       "note": "Mechanism documented, figures conflict. Documented: dielectric thickness is proportional to forming voltage, and \"due to standardized safety margins the actual forming voltage of electrolytic capacitors is higher than the rated voltage of the component\"; amorphous oxide has \"a dielectric ratio of ~ 1.4 nm/V\". That gives roughly 14 nm at a 10 V rating, not the 2-5 nm claimed here at 16 V. Not established: the 1.1-1.3x ramp, the 1-4 h ramp time, the 80-95 C formation temperature and the ~8-10 dielectric constant.",
       "edges": [
@@ -4622,6 +4673,7 @@
       "category": "metals",
       "era": "1980s",
       "confidence": "high",
+      "provenance": "incomplete",
       "name": "Refractory lining and checker plates",
       "simple_name": "Refractory lining/checkers",
       "description": "The furnace and regenerator are lined with refractory brick, and the regenerator's internal mass is a stack of checker plates of silica or chrome-magnesite. Refractory brick is made by pressing or hand-moulding a graded mineral aggregate with a clay binder and firing it in a tunnel or car kiln; the grading, not the chemistry, is what gives a lining its thermal-shock resistance.",
@@ -4776,6 +4828,7 @@
               "category": "assembly",
               "era": "1980s",
               "confidence": "medium",
+              "provenance": "complete",
               "name": "Lot sampling and the critical-component control plan",
               "simple_name": "Lot sampling control plan",
               "description": "Listing does not mean every unit is tested at every test. Instead the manufacturer submits a control plan: the dielectric withstand and earth continuity are 100% tests because they are the safety-critical ones, while the routine functional and leakage-current checks are sampled at an agreed quality level - typically one in three to one in thirty, with any failure escalating the lot to 100%. Critical components (the transformer, the switch, the fuse, the line capacitor, the cord set) come only from named manufacturers and are subject to incoming inspection.",

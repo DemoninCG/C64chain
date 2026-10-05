@@ -110,6 +110,9 @@ for (const id of utilIds) {
 /* -- R2 kind vocabulary and note classification ---------------------------- */
 for (const n of all) {
   if (!VALID_KIND.has(n.kind)) add('2', 'FAIL', `${n.id}: kind "${n.kind}" not in vocabulary`);
+  if (n.provenance !== undefined && !['raw', 'complete', 'incomplete'].includes(n.provenance)) {
+    add('2', 'FAIL', `${n.id}: provenance "${n.provenance}" not in vocabulary (raw|complete|incomplete)`, [n.id]);
+  }
   if (/^(why|where|how|what|when|who|which)\b/i.test(n.name) && (n.children ?? []).length === 0 && n.kind !== 'note') {
     add('2', 'WARN', `${n.id}: question-framed leaf is kind "${n.kind}" — note?`, [n.id]);
   }

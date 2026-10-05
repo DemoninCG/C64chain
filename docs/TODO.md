@@ -253,3 +253,37 @@ All four items closed with the gate green: slab/rolling route, fastener
 de-assertion, 37 held-out composition edges, 2 legacy retypes. The 4 `other`
 ledger rows in the scale15 `held-out.json` were already in the data and were
 left untouched.
+
+## 5. Leaf-review remainder triage (2026-10-08; parallel packages)
+
+The 2026-10-06 leaf review covered 1,499 leaves; the `provenance` flag now
+records the outcome on every surviving reviewed leaf (raw 90 / complete ~420 /
+incomplete ~600; 11 reviewed nodes were deleted since, 3 rename-survivors
+flagged per original verdict). What remains clusters into disjoint packages
+suitable for parallel read-only verdicts + central implementation (the
+leaf-pass procedure: no stubs without a live source, mechanical verification,
+serial apply):
+
+- **P1 silicon fab chemistry (~25 rows).** Photoresist formulations (7 rows,
+  one shared DNQ/novolac node likely covers most), mask blanks, etch feeds
+  (BCl3, NH4F, TMAH path), dopant synthesis chains, diced-die link,
+  probers/testers. Candidates mostly 10-silicon/35-logic; new nodes land in
+  chem + silicon files — one owner per file at apply time.
+- **P2 board/assembly materials (~10 rows).** Prepreg, legend/mask inks,
+  braid-wire path, bareboard output link. Smallest package; good first slice.
+- **P3 petrochem monomers (~10 rows).** Adipic acid/HMDA, chloroprene,
+  benzotriazole + glass-filler grade, formaldehyde-as-material, syngas,
+  TDI. Mostly 70-petrochem.
+- **P4 metals refining (~10 rows).** Blister-copper melt, nickel refining,
+  PGM refining, refractories, rolling-oil tallow rendering.
+- **P5 power/discrete dies (~6 rows).** 7805 + small-signal NPN dies and
+  packaging, wafer substrate. Die-level nodes need grade care (no generic
+  silicon for a doped die).
+- **P6 evidence-unlock subset (87 rows).** GAP_EVIDENCE rows whose unresolved
+  text names the exact missing decision (alloy grade, mesh material, salt
+  conditions). Pure source research, splittable by file, no node creation;
+  each resolved row either becomes a GAP_EDGE proposal or a documented keep.
+- **Done, do not redo.** Slab/rolling (§4), fastener de-assertion (§4),
+  held-out composition edges (§4 + orphan campaign), keyboard-screw spec
+  (de-asserted, §0 log), solder-alloy tin/lead (live on the renamed
+  `solder-alloy-60-40`), tungsten powder/wire inversion (leaf pass).
