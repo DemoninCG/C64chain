@@ -59,6 +59,13 @@ stays readable.
   load-bearing orphans 46 → 1, judgement queue 3 → 0.
 - **Duplicate merges, residue (2026-10-06).** Acrylonitrile monomer,
   PET film, carbon black via `_proposals` + `applyproposals`.
+- **Leaf-chain review (2026-10-06).** All 1,499 builder leaves reviewed in 15
+  read-only batches (full coverage verified, 1,499/1,499 unique); 170 proposals
+  arbitrated centrally: 131 applied (127 + 4 follow-ups unblocked by the first
+  wave), 2 legacy-retypes and 37 non-rescuing composition edges held out (ledger
+  in the scale15 temp dir). Tungsten powder/wire inversion corrected
+  (`powder made of wire` deleted, `wire made of powder` kept). Chain orphans
+  435 → 423; LB FAIL unchanged (graphite electrode stands).
 - Reviewed-and-kept: 6 restored nodes, kraft/EPS/pentane history, the
   `$qaPass` block in `50-power.json`, `estimate.mjs` NaN fix, `metal.benzene`
   merge, README figure refresh. Boron thresholds reconciled (no issue).
@@ -89,8 +96,8 @@ stays readable.
 
 ## 1. Orphan triage (measured 2026-10-04, re-measured 2026-10-06)
 
-435 chain-scope nodes remain unreachable under the directed section-8 walk
-(`relate.mjs audit` WARN); 589 nodes are unreachable in total when the 127
+423 chain-scope nodes remain unreachable under the directed section-8 walk
+(`relate.mjs audit` WARN); 577 nodes are unreachable in total when the 127
 context and 27 alternate terminals are included. The build's own walk shows 0
 unreachable because it also follows reverse flow links — a different question.
 The chain backlog is down from 851 via the petroleum trunk, scoping, substance
@@ -147,3 +154,21 @@ supported, resolve the electrode material from tooling evidence; only if a
 graphite electrode is supported should the pass add and research the appropriate
 needle-coke/calcination feedstock. Do not model that feed before the process and
 electrode decisions are settled.
+
+## 4. Scoped next: leaf-pass modeling gaps (not started)
+
+From the 2026-10-06 leaf review, in order:
+
+1. **Slab/rolling route for sheet steel.** `metal.steel.sheet` (GAP_NEW_NODE):
+   add a slab intermediate and hot/cold-rolling production path; do not link
+   sheet directly to generic steel (form mismatch, skips stated stages).
+2. **Fastener specification.** `c64.keyboard.body.screws` (GAP_EVIDENCE):
+   count, thread, steel form and finish all unestablished; the
+   `c64.case.fasteners` context does not settle this leaf's spec. Do not map
+   screws to sheet steel or assert zinc-nickel.
+3. **Held-out composition edges.** 37 non-rescuing proposals (e.g. 60/40
+   solder made of tin/lead ingots) are factually sound but connect no
+   reachability; apply as content only with upstream-anchor work, not as a
+   connectivity fix.
+4. **Legacy retypes.** 2 held-out proposals where the holder already references
+   the target via `children`/`from`; needs per-row retype review.

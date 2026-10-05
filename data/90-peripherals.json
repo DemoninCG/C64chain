@@ -5156,6 +5156,16 @@
         {
           "to": "peripheral.cassette.tape.coating.backing",
           "rel": "consumes"
+        },
+        {
+          "to": "peripheral.cassette.tape.dispersion",
+          "rel": "consumes",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.polyester.pet.film",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -5725,6 +5735,11 @@
           "to": "peripheral.tv.crt.mask.steel",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "metal.iron",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },

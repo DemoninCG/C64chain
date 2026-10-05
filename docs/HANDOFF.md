@@ -12,7 +12,7 @@ viewer is secondary.
 
 | | |
 | --- | --- |
-| nodes | 2,446 (1,499 leaves, 0 unreachable-builder, depth 10) |
+| nodes | 2,446 (1,487 leaves, 0 unreachable-builder, depth 10) |
 | build | exit 0, 0 warnings |
 | selftest | 41/41 |
 | patchtest | all pass |
@@ -20,8 +20,8 @@ viewer is secondary.
 | checktables | 0 missing targets |
 | ingredients | 0 mappings to a missing node; `--strict` 0 rows |
 | metalang | REWRITE 0; 4 pre-existing DELETE hits, none ours |
-| relate plan | mechanical 4,249, judgement 0, UNMAPPED 0, ASSERT-FAIL 0 |
-| relate audit | **1 FAIL / 5 WARN**: 1 chain load-bearing orphan (graphite electrode, documented in TODO §2); notes clean; chain 435 / context+alternate blessed |
+| relate plan | mechanical 4,369, judgement 0, UNMAPPED 0, ASSERT-FAIL 0 |
+| relate audit | **1 FAIL / 5 WARN**: 1 chain load-bearing orphan (graphite electrode, documented in TODO §2); notes clean; chain 423 / context+alternate blessed |
 | git | stack of session commits, none pushed to `origin/main` |
 
 ## 2. The verification gate

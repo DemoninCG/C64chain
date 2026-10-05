@@ -107,7 +107,7 @@ export function renderElements(grid, cursor) {
     const cx = ox + (e.g - 1) * cw;
     const cy = cellY(e.p);
     grid.text(cx, cy, U(String(e.z).padStart(3) + ' '), fg, bg, cw);
-    grid.text(cx, cy + 1, U(e.s.length > 1 ? e.s + '  ' : ' ' + e.s + ' '), fg, bg, cw);
+    grid.text(cx, cy + 1, U(e.s.length > 1 ? e.s + '  ' : ' ' + e.s + '  '), fg, bg, cw);
   }
   grid.text(2, cellY(8), U('LA'), C.GREY, UI.BG, 2);
   grid.text(2, cellY(9), U('AC'), C.GREY, UI.BG, 2);

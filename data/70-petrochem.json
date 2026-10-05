@@ -316,7 +316,14 @@
                   "category": "industry",
                   "era": "1930s",
                   "confidence": "medium",
-                  "note": "Not established: the vacuum level and steam-consumption ranges quoted for three-stage ejectors, and how far mechanical vacuum pumps had displaced ejectors by the early 1980s."
+                  "note": "Not established: the vacuum level and steam-consumption ranges quoted for three-stage ejectors, and how far mechanical vacuum pumps had displaced ejectors by the early 1980s.",
+                  "edges": [
+                    {
+                      "to": "facility.steam",
+                      "rel": "consumes",
+                      "basis": "documented"
+                    }
+                  ]
                 }
               ],
               "facts": [
@@ -510,6 +517,11 @@
               "to": "chem.refining.atmospheric-distillation.fractionating-tower.naphtha-hydrotreating",
               "rel": "step",
               "basis": "documented"
+            },
+            {
+              "to": "facility.gases.hydrogen",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -601,6 +613,11 @@
             {
               "to": "chem.refining.catalytic-reforming.platinum-catalyst",
               "rel": "consumes"
+            },
+            {
+              "to": "chem.ethylene.feedstock.naphtha",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -628,6 +645,11 @@
                 {
                   "to": "chem.refining.isomerisation.mtbe.ion-exchange-resin",
                   "rel": "consumes"
+                },
+                {
+                  "to": "chem.butadiene.sources.cracker-c4",
+                  "rel": "consumes",
+                  "basis": "inferred"
                 }
               ]
             }
@@ -947,6 +969,11 @@
                 {
                   "to": "chem.ethylene.ethylene-oxide.air-oxidation.silver-catalyst",
                   "rel": "consumes"
+                },
+                {
+                  "to": "chem.ethylene.monomer",
+                  "rel": "consumes",
+                  "basis": "documented"
                 }
               ]
             },
@@ -1235,6 +1262,16 @@
                   "to": "chem.propylene.propylene-oxide.chlorohydrin.dichloropropane",
                   "rel": "produces",
                   "role": "product"
+                },
+                {
+                  "to": "chem.propylene.sources.cracker-c3",
+                  "rel": "consumes",
+                  "basis": "documented"
+                },
+                {
+                  "to": "metal.caustic-soda",
+                  "rel": "consumes",
+                  "basis": "documented"
                 }
               ]
             },
@@ -1314,6 +1351,16 @@
                 {
                   "to": "chem.propylene.cumene.alkylation.phosphoric-acid-catalyst",
                   "rel": "consumes"
+                },
+                {
+                  "to": "chem.styrene.benzene",
+                  "rel": "consumes",
+                  "basis": "documented"
+                },
+                {
+                  "to": "chem.propylene.sources.cracker-c3",
+                  "rel": "consumes",
+                  "basis": "inferred"
                 }
               ]
             },
@@ -1494,6 +1541,11 @@
               "to": "chem.acrylonitrile.downstream",
               "rel": "step",
               "basis": "documented"
+            },
+            {
+              "to": "chem.propylene.sources",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -1604,6 +1656,11 @@
                   "to": "chem.abs.grafting.rubber-phase.butadiene-raw",
                   "rel": "produces",
                   "role": "product"
+                },
+                {
+                  "to": "chem.butadiene.sources.cracker-c4",
+                  "rel": "consumes",
+                  "basis": "inferred"
                 }
               ]
             },
@@ -1808,6 +1865,16 @@
               "to": "chem.styrene.ethylbenzene.intermediate",
               "rel": "produces",
               "role": "product"
+            },
+            {
+              "to": "chem.styrene.benzene",
+              "rel": "consumes",
+              "basis": "documented"
+            },
+            {
+              "to": "chem.ethylene.monomer",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -2170,6 +2237,11 @@
                   "to": "chem.abs.regrind",
                   "rel": "consumes",
                   "basis": "inferred"
+                },
+                {
+                  "to": "chem.abs.additives.pigment-masterbatch",
+                  "rel": "consumes",
+                  "basis": "documented"
                 }
               ]
             },
@@ -2328,7 +2400,14 @@
                     }
                   ],
                   "confidence": "medium",
-                  "note": "Cable constructions varied by market and by supplier; the jacket material was almost always flexible PVC."
+                  "note": "Cable constructions varied by market and by supplier; the jacket material was almost always flexible PVC.",
+                  "edges": [
+                    {
+                      "to": "chem.pvc.compound.flexible",
+                      "rel": "made of",
+                      "basis": "inferred"
+                    }
+                  ]
                 }
               ],
               "facts": [
@@ -2380,6 +2459,11 @@
                     {
                       "to": "chem.epoxy.dgeba.bisphenol-a.acetone",
                       "rel": "consumes"
+                    },
+                    {
+                      "to": "chem.propylene.cumene.cleavage.phenol",
+                      "rel": "consumes",
+                      "basis": "documented"
                     }
                   ]
                 },
@@ -2602,7 +2686,14 @@
                   "era": "1940s",
                   "children": [],
                   "confidence": "high",
-                  "note": "Established: the Rochow direct process is the standard industrial route to organosilicon chlorosilanes reported by Rochow and Muller in the 1940s. Not established: the stated tonnages dates temperatures pressures yields and 1980s operating details as given."
+                  "note": "Established: the Rochow direct process is the standard industrial route to organosilicon chlorosilanes reported by Rochow and Muller in the 1940s. Not established: the stated tonnages dates temperatures pressures yields and 1980s operating details as given.",
+                  "edges": [
+                    {
+                      "to": "metal.silica.mgsi",
+                      "rel": "consumes",
+                      "basis": "documented"
+                    }
+                  ]
                 },
                 {
                   "id": "chem.silicone.polymer",
@@ -2726,7 +2817,14 @@
                   "era": "1920s",
                   "inputs": [],
                   "note": "Upstream: chem.natural-gas.uses.hydrogen.to-ammonia.ammonia. Established: Urea and melamine formaldehyde thermosets for white insulation and fittings. Not established: the stated moisture and heat resistance specifics as given.",
-                  "confidence": "low"
+                  "confidence": "low",
+                  "edges": [
+                    {
+                      "to": "chem.natural-gas.uses.fertiliser-ammonia",
+                      "rel": "consumes",
+                      "basis": "documented"
+                    }
+                  ]
                 }
               ],
               "confidence": "low",
@@ -2913,7 +3011,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Isopropyl%20alcohol"
       ],
-      "note": "Not established: the 82.6 C boiling point, the 2-12% flammable range, the acetone-hydrogenation conditions of 100-150 C and 5-20 bar at 95-98% selectivity, and the 99.5-99.9% electronics purity. The two industrial routes - hydration of propene and hydrogenation of acetone - are standard."
+      "note": "Not established: the 82.6 C boiling point, the 2-12% flammable range, the acetone-hydrogenation conditions of 100-150 C and 5-20 bar at 95-98% selectivity, and the 99.5-99.9% electronics purity. The two industrial routes - hydration of propene and hydrogenation of acetone - are standard.",
+      "edges": [
+        {
+          "to": "chem.propylene.sources.cracker-c3",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.ethanol": {
       "id": "chem.ethanol",
@@ -4003,7 +4108,14 @@
       "era": "1980s",
       "children": [],
       "note": "Isoprene is not a C64 material; it is here because it shares the C5 stream and the same cracking chemistry. Established: Propylene from cracker FCC and dedicated routes with splitter purification. Not established: the stated supply shares and naphtha yield specifics as given.",
-      "confidence": "low"
+      "confidence": "low",
+      "edges": [
+        {
+          "to": "chem.propylene.sources.cracker-c3",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "chem.propylene.polymerisation": {
       "id": "chem.propylene.polymerisation",
@@ -4015,7 +4127,14 @@
       "era": "1950s",
       "children": [],
       "confidence": "low",
-      "note": "Established: About 7 million tonnes of polypropylene in 1983, the fastest-growing major plastic as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: About 7 million tonnes of polypropylene in 1983, the fastest-growing major plastic as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "edges": [
+        {
+          "to": "chem.propylene.sources.cracker-c3",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "chem.propylene.flame-retardants": {
       "id": "chem.propylene.flame-retardants",
@@ -4129,7 +4248,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Epoxy"
       ],
-      "note": "DGEBA is the bisphenol A diglycidyl ether made from bisphenol A and epichlorohydrin. Not established: the 170-190 g/eq epoxide equivalent weight, the 4-12 C melting range of the liquid grades, and the 100 parts resin to 20-60 parts hardener formulation."
+      "note": "DGEBA is the bisphenol A diglycidyl ether made from bisphenol A and epichlorohydrin. Not established: the 170-190 g/eq epoxide equivalent weight, the 4-12 C melting range of the liquid grades, and the 100 parts resin to 20-60 parts hardener formulation.",
+      "edges": [
+        {
+          "to": "chem.epoxy.dgeba.epichlorohydrin",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.epoxy.dgeba.epichlorohydrin": {
       "id": "chem.epoxy.dgeba.epichlorohydrin",
@@ -4277,7 +4403,14 @@
         }
       ],
       "confidence": "medium",
-      "note": "The node is the acid, and the oxidation that makes it is described in the text of the acid itself; the feedstock is the refinery aromatics complex."
+      "note": "The node is the acid, and the oxidation that makes it is described in the text of the acid itself; the feedstock is the refinery aromatics complex.",
+      "edges": [
+        {
+          "to": "mb.passives.caps.film.polyester-metallisation.pet-polymerisation.paraxylene",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.polyester.pet.ethylene-glycol": {
       "id": "chem.polyester.pet.ethylene-glycol",
@@ -5223,6 +5356,18 @@
       "note": "The ammonia itself is a natural-gas product: chem.natural-gas.uses.hydrogen.to-ammonia.ammonia. Commercial ammonia solution is graded on the Baume scale, with about 30 wt% ammonia as the typical high-concentration product. Not established: the 20-29 wt% electronic-grade figure, the sub-micron filtration and low-sodium specification, and the 99.9% anhydrous ammonia a fab received.",
       "sources": [
         "https://en.wikipedia.org/wiki/Ammonia%20solution"
+      ],
+      "edges": [
+        {
+          "to": "metal.cyanide-precursor",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "facility.water.ultrapure",
+          "rel": "made from",
+          "basis": "documented"
+        }
       ]
     },
     "chem.fab-chemicals.dopants.phosphine": {
@@ -5341,7 +5486,19 @@
       "category": "silicon",
       "era": "1960s",
       "note": "The phenol chain is chem.propylene.cumene.cleavage.phenol and the formaldehyde chain is chem.pom.formaldehyde. The node is the resin, not the making of it. Established: Novolac resin for film integrity distinct from photosensitive part. Not established: the stated molecular weight and functionality specifics as given.",
-      "confidence": "low"
+      "confidence": "low",
+      "edges": [
+        {
+          "to": "chem.propylene.cumene.cleavage.phenol",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.propylene.cumene.cleavage.phenol",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.photoresist.diazonaphthoquinone": {
       "id": "chem.photoresist.diazonaphthoquinone",
@@ -5456,7 +5613,14 @@
         }
       ],
       "confidence": "medium",
-      "note": "The exact sub-schedules of the US halogenated solvent rule (1984) had tiered deadlines by source size; the 1989 completion date is the one usually quoted."
+      "note": "The exact sub-schedules of the US halogenated solvent rule (1984) had tiered deadlines by source size; the 1989 completion date is the one usually quoted.",
+      "edges": [
+        {
+          "to": "chem.ethylene.monomer",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.solvents.methylene-chloride": {
       "id": "chem.solvents.methylene-chloride",
@@ -5570,7 +5734,14 @@
       "era": "1960s",
       "children": [],
       "confidence": "low",
-      "note": "Established: Made by hydrolysis of acrylonitrile in an 85-93% sulphuric acid solution at 90-120 C in a batch or continuous reactor in the 1980s (the later propane-oxidation route came later and as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: Made by hydrolysis of acrylonitrile in an 85-93% sulphuric acid solution at 90-120 C in a batch or continuous reactor in the 1980s (the later propane-oxidation route came later and as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "edges": [
+        {
+          "to": "chem.acrylonitrile.monomer",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.acrylonitrile.downstream.methyl-methacrylate.acetone-cyanohydrin": {
       "id": "chem.acrylonitrile.downstream.methyl-methacrylate.acetone-cyanohydrin",
@@ -5906,7 +6077,14 @@
       "era": "ancient",
       "children": [],
       "confidence": "low",
-      "note": "Established: Sodium montmorillonite is a dioctahedral 2:1 smectite: two tetrahedral silica sheets sandwiching an octahedral aluminium sheet, with the negative layer charge balanced by exchangea as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: Sodium montmorillonite is a dioctahedral 2:1 smectite: two tetrahedral silica sheets sandwiching an octahedral aluminium sheet, with the negative layer charge balanced by exchangea as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "edges": [
+        {
+          "to": "chem.crude.rig.drilling-mud.bentonite.montmorillonite.soda-ash.clay-pit",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.crude.rig.drilling-mud.bentonite.montmorillonite.soda-ash.clay-pit": {
       "id": "chem.crude.rig.drilling-mud.bentonite.montmorillonite.soda-ash.clay-pit",
@@ -5940,6 +6118,11 @@
         {
           "to": "chem.pvc.plasticiser.ethylhexanol",
           "rel": "made from"
+        },
+        {
+          "to": "c64.case.abs-resin.phthalic-anhydride",
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },
@@ -6084,7 +6267,14 @@
         }
       ],
       "confidence": "medium",
-      "note": "Not established: the propylene-per-tonne-of-feed ratio and the annualised tonnage illustration for a 500000-tonne-per-year cracker."
+      "note": "Not established: the propylene-per-tonne-of-feed ratio and the annualised tonnage illustration for a 500000-tonne-per-year cracker.",
+      "edges": [
+        {
+          "to": "chem.ethylene.feedstock.naphtha",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "chem.thermosets.phenolic.hexamine": {
       "id": "chem.thermosets.phenolic.hexamine",
@@ -6696,7 +6886,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Argon"
       ],
-      "note": "Argon is a byproduct of cryogenic air separation. Not established: the 1-3% of air figure, the 99.999% purity, and the description of argon filling sputtering cathodes and inerting the annealing and ashing steps in a 1980s fab."
+      "note": "Argon is a byproduct of cryogenic air separation. Not established: the 1-3% of air figure, the 99.999% purity, and the description of argon filling sputtering cathodes and inerting the annealing and ashing steps in a 1980s fab.",
+      "edges": [
+        {
+          "to": "facility.nitrogen.atmospheric-air",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.fab-chemicals.etch-gases.cf4": {
       "id": "chem.fab-chemicals.etch-gases.cf4",
@@ -7462,6 +7659,11 @@
             {
               "to": "metal.silica-sand",
               "rel": "consumes"
+            },
+            {
+              "to": "metal.soda-ash",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         }
@@ -7500,7 +7702,30 @@
         }
       ],
       "confidence": "low",
-      "note": "Established: The titanium tetrachloride of the Ziegler-Natta catalyst is made from titanium ore - rutile or ilmenite - by chlorinating it with coke and chlorine at 900-1,000 C, then distilling as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: The titanium tetrachloride of the Ziegler-Natta catalyst is made from titanium ore - rutile or ilmenite - by chlorinating it with coke and chlorine at 900-1,000 C, then distilling as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "edges": [
+        {
+          "to": "metal.titanium-tetrachloride",
+          "rel": "produces",
+          "role": "product",
+          "basis": "documented"
+        },
+        {
+          "to": "metal.ilmenite-sand",
+          "rel": "consumes",
+          "basis": "documented"
+        },
+        {
+          "to": "metal.chlorine",
+          "rel": "consumes",
+          "basis": "documented"
+        },
+        {
+          "to": "metal.coke",
+          "rel": "consumes",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.crude.stimulation.hydraulic-fracturing.proppant.sand-processing": {
       "id": "chem.crude.stimulation.hydraulic-fracturing.proppant.sand-processing",
@@ -7518,6 +7743,11 @@
           "to": "chem.crude.stimulation.hydraulic-fracturing.proppant",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "chem.crude.stimulation.hydraulic-fracturing.proppant.sand-processing.sand-mine",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -7851,6 +8081,16 @@
           "to": "chem.solvents.trichloroethane",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "metal.chlorine",
+          "rel": "consumes",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.natural-gas.uses.acetylene",
+          "rel": "step",
+          "basis": "inferred"
         }
       ]
     },
@@ -7888,6 +8128,17 @@
           "to": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "metal.caustic-soda",
+          "rel": "consumes",
+          "basis": "inferred"
+        },
+        {
+          "to": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.zsm-5",
+          "rel": "produces",
+          "role": "product",
+          "basis": "inferred"
         }
       ]
     },
@@ -7931,7 +8182,14 @@
       "category": "fluids",
       "era": "1940s",
       "note": "Acetone's own route: chem.propylene.cumene.cleavage.acetone. Established: Acetone as selective acetylene solvent for solubility and vapour pressure reasons. Not established: the stated cumene co-location and flammability handling specifics as given.",
-      "confidence": "low"
+      "confidence": "low",
+      "edges": [
+        {
+          "to": "chem.propylene.cumene.cleavage.acetone",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.acrylonitrile.sovere.reactor.heat-removal.salt-bath.molten-salt": {
       "id": "chem.acrylonitrile.sovere.reactor.heat-removal.salt-bath.molten-salt",
@@ -9368,7 +9626,13 @@
         "https://en.wikipedia.org/wiki/Mylar"
       ],
       "confidence": "medium",
-      "edges": []
+      "edges": [
+        {
+          "to": "chem.polyester.pet.terephthalic-acid",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.pvc.vcm.oxychlorination": {
       "id": "chem.pvc.vcm.oxychlorination",
@@ -9400,6 +9664,16 @@
           "rel": "produces",
           "role": "product",
           "basis": "typical-1982"
+        },
+        {
+          "to": "chem.ethylene.monomer",
+          "rel": "consumes",
+          "basis": "documented"
+        },
+        {
+          "to": "metal.hydrochloric-acid",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },

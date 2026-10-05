@@ -548,6 +548,13 @@
                   "label": "Contact plating",
                   "value": "30 microinch gold over nickel, standard for the era"
                 }
+              ],
+              "edges": [
+                {
+                  "to": "c64.connector-jacks.metalworking.brass-stock",
+                  "rel": "made of",
+                  "basis": "inferred"
+                }
               ]
             },
             {
@@ -1653,6 +1660,11 @@
             {
               "to": "facility.electricity",
               "rel": "consumes"
+            },
+            {
+              "to": "metal.nickel.ingot",
+              "rel": "consumes",
+              "basis": "inferred"
             }
           ]
         }
@@ -2050,6 +2062,11 @@
         {
           "to": "metal.zinc.ingot",
           "rel": "consumes"
+        },
+        {
+          "to": "c64.connector-jacks.metalworking.brass-stock",
+          "rel": "consumes",
+          "basis": "inferred"
         }
       ]
     },

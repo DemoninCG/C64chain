@@ -1430,6 +1430,11 @@
             {
               "to": "metal.caustic-soda",
               "rel": "consumes"
+            },
+            {
+              "to": "metal.tin.ingot",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         }
@@ -3432,6 +3437,11 @@
           "to": "metal.alumina",
           "rel": "made from",
           "basis": "inferred"
+        },
+        {
+          "to": "metal.hydrofluoric-acid",
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },
@@ -3942,6 +3952,13 @@
       ],
       "sources": [
         "https://en.wikipedia.org/wiki/Anode_slime"
+      ],
+      "edges": [
+        {
+          "to": "metal.anode-slime",
+          "rel": "made from",
+          "basis": "documented"
+        }
       ]
     },
     "metal.ferrite.dopants": {
@@ -4900,7 +4917,14 @@
           "value": "2Zn + O2 -> 2ZnO at 400-600 C"
         }
       ],
-      "note": "The exact powder route for a given varistor is proprietary; medium confidence. The atmospheric oxidation of zinc metal is the bottom of this branch and is a certainty."
+      "note": "The exact powder route for a given varistor is proprietary; medium confidence. The atmospheric oxidation of zinc metal is the bottom of this branch and is a certainty.",
+      "edges": [
+        {
+          "to": "metal.zinc.ingot",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "metal.salt-solar-pan": {
       "id": "metal.salt-solar-pan",
@@ -4931,6 +4955,12 @@
         {
           "to": "metal.salt-brine",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.salt-brine",
+          "rel": "produces",
+          "role": "product",
+          "basis": "documented"
         }
       ]
     },
@@ -8435,6 +8465,11 @@
       "edges": [
         {
           "to": "metal.phosphate.rock",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.natural-gas.uses.fertiliser-ammonia",
           "rel": "made from",
           "basis": "documented"
         }

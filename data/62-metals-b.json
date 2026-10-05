@@ -1404,7 +1404,14 @@
               "value": "order 0.05-0.2 kg of balls per tonne of ore ground"
             }
           ],
-          "note": "Consumption depends heavily on the abrasive index of the ore; medium confidence."
+          "note": "Consumption depends heavily on the abrasive index of the ore; medium confidence.",
+          "edges": [
+            {
+              "to": "metal.steel",
+              "rel": "made of",
+              "basis": "documented"
+            }
+          ]
         }
       ],
       "edges": [
@@ -2279,6 +2286,11 @@
               "to": "metal.lime",
               "rel": "consumes",
               "basis": "typical-1982"
+            },
+            {
+              "to": "metal.coke",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         }
@@ -2425,6 +2437,11 @@
           "to": "metal.cs2-synthesis",
           "rel": "made from",
           "basis": "inferred"
+        },
+        {
+          "to": "chem.ethanol",
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },

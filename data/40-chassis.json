@@ -706,6 +706,13 @@
               "note": "In part in conflict: that early and late caps are not interchangeable is established, and the difference is described as 0.25 mm in the material thickness of the cross part of the peg tops. The 5 mm and 3 mm cross lengths are not established by any source read for this node. The underside guide ribs are described by teardowns but not dimensioned.",
               "sources": [
                 "https://breadbox64.com/early-c64-keyboard"
+              ],
+              "edges": [
+                {
+                  "to": "chem.abs.grade",
+                  "rel": "made of",
+                  "basis": "documented"
+                }
               ]
             }
           ],
@@ -1686,6 +1693,11 @@
         {
           "to": "c64.case.abs-resin.o-xylene",
           "rel": "made from"
+        },
+        {
+          "to": "facility.nitrogen.atmospheric-air",
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },
@@ -2186,6 +2198,11 @@
           "to": "c64.packaging.deinking",
           "rel": "step",
           "basis": "typical-1982"
+        },
+        {
+          "to": "c64.packaging.wastepaper",
+          "rel": "made from",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -2453,6 +2470,13 @@
       "note": "Neoprene, also polychloroprene, is established as a family of synthetic rubbers produced by polymerisation of chloroprene, which exhibits good chemical stability and maintains flexibility over a wide temperature range. Not established: that it was chosen specifically for solvent resistance against screen inks, and the same chloroprene compound being used for cable jackets and gaskets.",
       "sources": [
         "https://en.wikipedia.org/wiki/Neoprene"
+      ],
+      "edges": [
+        {
+          "to": "chem.rubber.neoprene",
+          "rel": "made of",
+          "basis": "documented"
+        }
       ]
     },
     "c64.packaging.manual.paper": {
@@ -3433,6 +3457,11 @@
           "to": "c64.cables.rf-cable.centre-conductor",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "facility.electricity",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -3677,6 +3706,11 @@
         {
           "to": "chem.abs.grade",
           "rel": "consumes"
+        },
+        {
+          "to": "c64.decor.pad-print.ink",
+          "rel": "consumes",
+          "basis": "inferred"
         }
       ]
     },
@@ -3784,7 +3818,14 @@
                 "nitrided alloy steel"
               ],
               "confidence": "medium",
-              "note": "Not established: the screw diameter, the L/D ratio and the nitrided grade on the C64 case press. The general function of a plasticising screw is documented."
+              "note": "Not established: the screw diameter, the L/D ratio and the nitrided grade on the C64 case press. The general function of a plasticising screw is documented.",
+              "edges": [
+                {
+                  "to": "metal.steel",
+                  "rel": "made of",
+                  "basis": "inferred"
+                }
+              ]
             },
             {
               "id": "c64.case.moulding.hydraulics",
@@ -3894,6 +3935,11 @@
           "to": "chem.polyethylene.resin",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "c64.cables.rf-cable.centre-conductor",
+          "rel": "consumes",
+          "basis": "inferred"
         }
       ]
     },
@@ -3932,7 +3978,14 @@
         "polishing compound"
       ],
       "confidence": "medium",
-      "note": "Not established: the cavity count, the tool size, the cycle time and the tool life on a Commodore keycap tool."
+      "note": "Not established: the cavity count, the tool size, the cycle time and the tool life on a Commodore keycap tool.",
+      "edges": [
+        {
+          "to": "metal.die-steel",
+          "rel": "consumes",
+          "basis": "documented"
+        }
+      ]
     },
     "c64.case.tooling": {
       "id": "c64.case.tooling",

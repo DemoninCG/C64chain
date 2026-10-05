@@ -480,12 +480,7 @@
         "https://en.wikipedia.org/wiki/Tungsten"
       ],
       "children": [],
-      "edges": [
-        {
-          "to": "metal.tungsten.wire",
-          "rel": "made of"
-        }
-      ]
+      "edges": []
     },
     "metal.silver.contact-powder": {
       "id": "metal.silver.contact-powder",
@@ -1068,7 +1063,14 @@
         "metal.tungsten.powder"
       ],
       "children": [],
-      "note": "Not established: the 0.04-0.08 mm filament diameter, the 60-150 mm length, the 6.3 V heater, the 0.01 g mass for 30 cm, and a ductile-to-brittle transition near room temperature. The tungsten reference states only that tungsten can be worked by forging, drawing, rolling or extruding, and that polycrystalline tungsten is intrinsically brittle."
+      "note": "Not established: the 0.04-0.08 mm filament diameter, the 60-150 mm length, the 6.3 V heater, the 0.01 g mass for 30 cm, and a ductile-to-brittle transition near room temperature. The tungsten reference states only that tungsten can be worked by forging, drawing, rolling or extruding, and that polycrystalline tungsten is intrinsically brittle.",
+      "edges": [
+        {
+          "to": "metal.tungsten.powder",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "metal.sylvinite": {
       "id": "metal.sylvinite",
@@ -2219,6 +2221,13 @@
               "note": "Medium confidence; cupellation as an assay method is well documented.",
               "inputs": [
                 "metal.silver.electrorefining"
+              ],
+              "edges": [
+                {
+                  "to": "chem.glass-fiber.borax",
+                  "rel": "consumes",
+                  "basis": "documented"
+                }
               ]
             }
           ],
@@ -2801,6 +2810,11 @@
             {
               "to": "metal.limestone",
               "rel": "consumes"
+            },
+            {
+              "to": "metal.galena",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         }

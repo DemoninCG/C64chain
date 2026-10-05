@@ -564,7 +564,14 @@
           "value": "light oil, heavy creosote oil, and pitch"
         }
       ],
-      "note": "Medium confidence on the tar yield; it varies with the coal and the oven design."
+      "note": "Medium confidence on the tar yield; it varies with the coal and the oven design.",
+      "edges": [
+        {
+          "to": "metal.coking-coal",
+          "rel": "made from",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "metal.soft-pitch": {
       "id": "metal.soft-pitch",
@@ -589,7 +596,14 @@
           "value": "aromatic, carcinogenic, and it has to be kept above its softening point in storage"
         }
       ],
-      "note": "Medium confidence on the softening point classifications; they vary between suppliers."
+      "note": "Medium confidence on the softening point classifications; they vary between suppliers.",
+      "edges": [
+        {
+          "to": "metal.coke.tar-pitch",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "metal.habers-catalyst": {
       "id": "metal.habers-catalyst",
@@ -688,6 +702,11 @@
           "to": "metal.ferrite.radio.aniso-die",
           "rel": "uses",
           "basis": "typical-1982"
+        },
+        {
+          "to": "metal.ferrite.raw-materials",
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },
@@ -1178,6 +1197,11 @@
               "to": "metal.coke.quench-blow",
               "rel": "consumes",
               "basis": "documented"
+            },
+            {
+              "to": "facility.water",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -1420,6 +1444,11 @@
               "to": "metal.ferrite.mixing",
               "rel": "step",
               "basis": "documented"
+            },
+            {
+              "to": "metal.ferrite.raw-materials",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -1451,7 +1480,14 @@
               "value": "order 100,000-1,000,000 shots depending on the abrasive behaviour of the powder"
             }
           ],
-          "note": "Medium confidence on die life; abrasive wear of the powder is highly formulation-dependent."
+          "note": "Medium confidence on die life; abrasive wear of the powder is highly formulation-dependent.",
+          "edges": [
+            {
+              "to": "metal.die-steel",
+              "rel": "contains",
+              "basis": "documented"
+            }
+          ]
         },
         {
           "id": "metal.ferrite.sintering",
@@ -1797,6 +1833,11 @@
                   "to": "metal.gold.ingot",
                   "rel": "produces",
                   "role": "product"
+                },
+                {
+                  "to": "metal.hydrochloric-acid",
+                  "rel": "consumes",
+                  "basis": "documented"
                 }
               ]
             },
@@ -2084,6 +2125,11 @@
               "to": "metal.zinc.leach-purify",
               "rel": "step",
               "basis": "documented"
+            },
+            {
+              "to": "metal.limestone",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         }
@@ -2315,6 +2361,11 @@
           "to": "chem.styrene.benzene.coal-tar",
           "rel": "made from",
           "basis": "typical-1982"
+        },
+        {
+          "to": "metal.coking-coal",
+          "rel": "made from",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -2342,7 +2393,14 @@
         }
       ],
       "note": "Medium confidence on the breeze yield; it depends on the crusher settings and the quenching practice.",
-      "inputs": []
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.coke",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "metal.activated-carbon": {
       "id": "metal.activated-carbon",
@@ -2488,6 +2546,11 @@
           "to": "metal.cadmium-residue",
           "rel": "made from",
           "basis": "inferred"
+        },
+        {
+          "to": "metal.zinc.ingot",
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },
@@ -2514,7 +2577,14 @@
           "value": "85-92%, limited mostly by this step"
         }
       ],
-      "note": "The 5-10% zinc loss figure is a rule of thumb; medium confidence."
+      "note": "The 5-10% zinc loss figure is a rule of thumb; medium confidence.",
+      "edges": [
+        {
+          "to": "metal.zinc.oxide",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "metal.zinc.oxide": {
       "id": "metal.zinc.oxide",
@@ -2536,7 +2606,14 @@
         }
       ],
       "note": "Medium confidence; the sinter quality figures are typical rather than specification values.",
-      "inputs": []
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.sphalerite",
+          "rel": "made from",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "metal.rare-earths.bastnasite": {
       "id": "metal.rare-earths.bastnasite",

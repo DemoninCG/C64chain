@@ -1786,7 +1786,19 @@
                   "value": "~125-150 mm, matching the wafer"
                 }
               ],
-              "inputs": []
+              "inputs": [],
+              "edges": [
+                {
+                  "to": "mb.logic.bipolar.litho.masks.blank",
+                  "rel": "made from",
+                  "basis": "inferred"
+                },
+                {
+                  "to": "metal.chromium",
+                  "rel": "made of",
+                  "basis": "typical-1982"
+                }
+              ]
             }
           ],
           "edges": [
@@ -2579,6 +2591,11 @@
               "to": "mb.logic.bipolar.process.base.boron",
               "rel": "consumes",
               "basis": "documented"
+            },
+            {
+              "to": "facility.electricity",
+              "rel": "consumes",
+              "basis": "typical-1982"
             }
           ]
         },
@@ -2787,6 +2804,11 @@
             {
               "to": "metal.silica.field-oxide",
               "rel": "consumes"
+            },
+            {
+              "to": "metal.hydrofluoric-acid",
+              "rel": "consumes",
+              "basis": "typical-1982"
             }
           ]
         },
@@ -2825,6 +2847,11 @@
               "to": "metal.aluminum",
               "rel": "consumes",
               "basis": "typical-1982"
+            },
+            {
+              "to": "facility.electricity",
+              "rel": "consumes",
+              "basis": "typical-1982"
             }
           ]
         },
@@ -2857,6 +2884,11 @@
             },
             {
               "to": "facility.nitrogen",
+              "rel": "consumes",
+              "basis": "typical-1982"
+            },
+            {
+              "to": "facility.electricity",
               "rel": "consumes",
               "basis": "typical-1982"
             }
@@ -2904,6 +2936,11 @@
               "to": "metal.silica.field-oxide",
               "rel": "produces",
               "role": "product"
+            },
+            {
+              "to": "facility.electricity",
+              "rel": "consumes",
+              "basis": "typical-1982"
             }
           ]
         }
@@ -3102,6 +3139,16 @@
               "to": "chem.silane.monosilane",
               "rel": "consumes",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.logic.bipolar.process.oxidation.steam",
+              "rel": "consumes",
+              "basis": "typical-1982"
+            },
+            {
+              "to": "facility.electricity",
+              "rel": "consumes",
+              "basis": "typical-1982"
             }
           ]
         },
@@ -3142,6 +3189,16 @@
               "to": "metal.silica.field-oxide",
               "rel": "produces",
               "role": "product"
+            },
+            {
+              "to": "facility.gases.oxygen",
+              "rel": "consumes",
+              "basis": "documented"
+            },
+            {
+              "to": "facility.electricity",
+              "rel": "consumes",
+              "basis": "typical-1982"
             }
           ]
         },
@@ -3190,6 +3247,11 @@
             },
             {
               "to": "chem.silane.monosilane",
+              "rel": "consumes",
+              "basis": "typical-1982"
+            },
+            {
+              "to": "facility.electricity",
               "rel": "consumes",
               "basis": "typical-1982"
             }
@@ -3315,6 +3377,11 @@
               "to": "metal.silica.field-oxide",
               "rel": "produces",
               "role": "product"
+            },
+            {
+              "to": "facility.electricity",
+              "rel": "consumes",
+              "basis": "typical-1982"
             }
           ]
         }
@@ -3376,6 +3443,11 @@
             },
             {
               "to": "metal.silver",
+              "rel": "consumes",
+              "basis": "typical-1982"
+            },
+            {
+              "to": "facility.electricity",
               "rel": "consumes",
               "basis": "typical-1982"
             }
@@ -3558,6 +3630,13 @@
                 {
                   "label": "Tool life",
                   "value": "~0.2-2 million shots"
+                }
+              ],
+              "edges": [
+                {
+                  "to": "metal.steel",
+                  "rel": "made of",
+                  "basis": "inferred"
                 }
               ]
             }
@@ -3815,6 +3894,11 @@
         {
           "to": "metal.silica.field-oxide",
           "rel": "consumes"
+        },
+        {
+          "to": "facility.electricity",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },

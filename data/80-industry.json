@@ -57,6 +57,11 @@
             {
               "to": "facility.nitrogen.expander",
               "rel": "at"
+            },
+            {
+              "to": "facility.nitrogen.atmospheric-air",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -83,7 +88,19 @@
             "https://en.wikipedia.org/wiki/Pressure_swing_adsorption"
           ],
           "note": "A PSA unit will not deliver oxygen, at any pressure; 4-6 MPa is a liquid-oxygen or high-pressure-pipeline convention and belongs to the cryogenic branch, not to this one. Not established: the 90-99% nitrogen output and the 7-10 bar operating pressure. The pressure swing adsorption article documents the mechanism and the adsorbents (zeolite, activated carbon, silica gel, alumina, synthetic resins) but states no product purity or pressure.",
-          "children": []
+          "children": [],
+          "edges": [
+            {
+              "to": "facility.compressed-air",
+              "rel": "consumes",
+              "basis": "documented"
+            },
+            {
+              "to": "facility.nitrogen.zeolite",
+              "rel": "consumes",
+              "basis": "documented"
+            }
+          ]
         },
         {
           "id": "facility.nitrogen.membrane",
@@ -111,7 +128,14 @@
             "https://en.wikipedia.org/wiki/Air_separation"
           ],
           "children": [],
-          "note": "Not established: the 90-95% purity ceiling, the 20-40 bar feed pressure, and that membrane units were new and uncommon by 1983 and took the small-plant market from PSA only in the 1990s. Membrane separation is documented as an alternative to cryogenic air separation; the numbers and the dated market history are not."
+          "note": "Not established: the 90-95% purity ceiling, the 20-40 bar feed pressure, and that membrane units were new and uncommon by 1983 and took the small-plant market from PSA only in the 1990s. Membrane separation is documented as an alternative to cryogenic air separation; the numbers and the dated market history are not.",
+          "edges": [
+            {
+              "to": "facility.compressed-air",
+              "rel": "consumes",
+              "basis": "documented"
+            }
+          ]
         },
         {
           "id": "facility.nitrogen.liquid-storage",
@@ -375,6 +399,16 @@
               "to": "facility.oil.lpg",
               "rel": "produces",
               "role": "product"
+            },
+            {
+              "to": "facility.oil",
+              "rel": "consumes",
+              "basis": "inferred"
+            },
+            {
+              "to": "facility.oil",
+              "rel": "consumes",
+              "basis": "inferred"
             }
           ]
         }
@@ -605,6 +639,11 @@
         {
           "to": "facility.oil",
           "rel": "made from"
+        },
+        {
+          "to": "chem.natural-gas",
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },
@@ -4840,6 +4879,11 @@
                 {
                   "to": "facility.power.gas-plant.turbine",
                   "rel": "at"
+                },
+                {
+                  "to": "chem.natural-gas",
+                  "rel": "consumes",
+                  "basis": "documented"
                 }
               ]
             },
@@ -4861,7 +4905,14 @@
                 "https://en.agi.or.jp/media/publications/workingpaper/WP2015-10.pdf"
               ],
               "confidence": "high",
-              "children": []
+              "children": [],
+              "edges": [
+                {
+                  "to": "facility.power.uranium",
+                  "rel": "consumes",
+                  "basis": "documented"
+                }
+              ]
             },
             {
               "id": "facility.power.grid",

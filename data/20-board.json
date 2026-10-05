@@ -228,7 +228,14 @@
               "era": "1980s",
               "inputs": [],
               "confidence": "medium",
-              "note": "A welded mild-steel frame carrying pot, tunnel, conveyor, hood and flux plumbing is the ordinary machine body. Not established: the frame dimensions, weld method, or steel grade on the C64 wave machine."
+              "note": "A welded mild-steel frame carrying pot, tunnel, conveyor, hood and flux plumbing is the ordinary machine body. Not established: the frame dimensions, weld method, or steel grade on the C64 wave machine.",
+              "edges": [
+                {
+                  "to": "metal.steel",
+                  "rel": "made of",
+                  "basis": "documented"
+                }
+              ]
             },
             {
               "id": "mb.solder.wave.preheat",
@@ -494,6 +501,16 @@
             {
               "to": "facility.electricity",
               "rel": "consumes"
+            },
+            {
+              "to": "metal.solder",
+              "rel": "consumes",
+              "basis": "documented"
+            },
+            {
+              "to": "chem.rosin",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         }
@@ -795,6 +812,16 @@
             {
               "to": "facility.electricity",
               "rel": "consumes"
+            },
+            {
+              "to": "metal.solder",
+              "rel": "consumes",
+              "basis": "typical-1982"
+            },
+            {
+              "to": "chem.solder-chemicals.rosin-flux",
+              "rel": "consumes",
+              "basis": "typical-1982"
             }
           ]
         },
@@ -1466,6 +1493,16 @@
             {
               "to": "facility.electricity",
               "rel": "consumes"
+            },
+            {
+              "to": "mb.photo.plotter.film",
+              "rel": "consumes",
+              "basis": "documented"
+            },
+            {
+              "to": "mb.pcb.photoresist",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -1484,6 +1521,11 @@
             {
               "to": "facility.electricity",
               "rel": "consumes"
+            },
+            {
+              "to": "mb.pcb.laminate",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         }
@@ -1906,7 +1948,14 @@
           "era": "1980s",
           "confidence": "medium",
           "inputs": [],
-          "note": "A tungsten-carbide end mill cutting glass-filled laminate is ordinary routing practice, with short tool life from glass abrasion. Not established: the cutter diameter, coating, or change schedule for the 250407 outline and slot."
+          "note": "A tungsten-carbide end mill cutting glass-filled laminate is ordinary routing practice, with short tool life from glass abrasion. Not established: the cutter diameter, coating, or change schedule for the 250407 outline and slot.",
+          "edges": [
+            {
+              "to": "metal.tungsten.carbide",
+              "rel": "contains",
+              "basis": "documented"
+            }
+          ]
         }
       ],
       "edges": [
