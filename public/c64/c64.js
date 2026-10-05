@@ -2,6 +2,7 @@ import { C, UI } from './palette.js';
 import { BOX, SOLID, toScreenText } from './petscii.js';
 import { TextMode, COLS, ROWS, wrapText } from './textmode.js';
 import { childLines, layoutChildren, visibleWindow, clampStart, ensureCursorVisible, connectionsOf, EDGE_MODES, modeById, kindColor, nodeContent } from './treeview.js';
+import { renderElements, stepCursor, cellFromXY, elementAt } from './periodictable.js';
 
 const LEFT = { x: 1, y: 1, w: 48, h: 38 };
 const RIGHT = { x: 51, y: 1, w: 28, h: 38 };
@@ -25,15 +26,17 @@ const state = {
   edgeMode: 'supply',
   edgeMenu: false,
   edgeCursor: EDGE_MODES.findIndex((m) => m.def),
+  tab: 'tree',
+  elCur: { p: 4, g: 8 },
 };
 
 let tm = null;
 let toggleHits = [];
-let childHits = [];
 let backHit = null;
 let treeChildHits = [];
 let edgeHit = null;
 let menuHits = [];
+let tabHits = [];
 
 function U(s) {
   return toScreenText(s);
@@ -70,6 +73,20 @@ function centerText(y, str, fg, bg) {
 function renderTitle() {
   tm.fillRect(0, 0, COLS, 1, 32, C.YELLOW, UI.BG);
   tm.text(2, 0, '**** C64 SUPPLY CHAIN ****', C.YELLOW, UI.BG);
+  tabHits = [];
+  const tabs = [
+    { id: 'tree', label: '[TREE]' },
+    { id: 'elements', label: '[ELEMENTS]' },
+  ];
+  let x = COLS - 2;
+  for (let i = tabs.length - 1; i >= 0; i--) {
+    const t = tabs[i];
+    const on = state.tab === t.id;
+    x -= t.label.length;
+    tm.text(x, 0, U(t.label), on ? C.BLACK : C.LTBLUE, on ? C.LTGREY : UI.BG);
+    tabHits.push({ x0: x, x1: x + t.label.length - 1, y: 0, id: t.id });
+    x -= 1;
+  }
 }
 
 const TREE = {
@@ -170,15 +187,8 @@ function renderLeft() {
   }
 }
 
-function nodeChildren(id) {
-  const n = state.nodes[id];
-  if (!n) return [];
-  return (n.children ?? []).filter((c) => state.nodes[c]);
-}
-
 function renderRight() {
   box(RIGHT.x, RIGHT.y, RIGHT.w, RIGHT.h, UI.FRAME_FG, UI.BG, 'NODE');
-  childHits = [];
   const ix = RIGHT.x + 1;
   const iw = RIGHT.w - 2;
   const y0 = RIGHT.y + 1;
@@ -188,30 +198,18 @@ function renderRight() {
     tm.text(ix, y0, U(state.err || 'LOADING...'), C.LTRED, UI.BG, iw);
     return;
   }
-  const kids = nodeChildren(state.selected).map((id) => ({
-    id,
-    simple_name: state.nodes[id]?.simple_name ?? state.nodes[id]?.name ?? id,
-  }));
-  const L = nodeContent(n, kids, iw);
+  const L = nodeContent(n, iw);
   state.nodeScroll = Math.min(Math.max(0, state.nodeScroll), Math.max(0, L.length - maxRows));
   const win = L.slice(state.nodeScroll, state.nodeScroll + maxRows);
   let y = y0;
-  let span = null;
-  const flushSpan = () => {
-    if (span) childHits.push({ y0: span.y0, y1: y - 1, id: span.id });
-    span = null;
-  };
   for (const row of win) {
     if (row.t === 'SEP') {
       for (let i = 0; i < iw; i++) tm.set(ix + i, y, BOX.H, C.GREY, UI.BG);
     } else {
       tm.text(ix, y, row.t, row.fg, UI.BG, iw);
     }
-    if (row.kid !== (span?.id ?? null) || row.kid === null) flushSpan();
-    if (row.kid !== null && span === null) span = { id: row.kid, y0: y };
     y++;
   }
-  flushSpan();
   if (state.nodeScroll > 0) tm.text(ix + iw - 5, y0, U('^MORE'), C.GREY, UI.BG, 6);
   if (state.nodeScroll + maxRows < L.length) tm.text(ix + iw - 5, y0 + maxRows - 1, U('vMORE'), C.GREY, UI.BG, 6);
 }
@@ -236,7 +234,7 @@ function renderBottom() {
     x += s.length + 1;
   }
   const st = state.cursor ? String.fromCharCode(SOLID) : ' ';
-  tm.text(2, ROWS - 1, U('UP/DN=CURSOR ENTER=OPEN LEFT=BACK 0=ROOT []=SCROLL'), C.GREY, UI.BG);
+  tm.text(2, ROWS - 1, U(state.tab === 'elements' ? 'ARROWS=CURSOR ENTER=SHOW IN TREE TAB=TREE PANEL' : 'UP/DN=CURSOR ENTER=OPEN LEFT=BACK 0=ROOT []=SCROLL'), C.GREY, UI.BG);
   tm.set(COLS - 3, ROWS - 1, st.charCodeAt(0), C.YELLOW, UI.BG);
 
   const ey = BOTTOM.y + 2;
@@ -293,11 +291,32 @@ function pickEdgeMode(id) {
 function render() {
   tm.clear(UI.BODY_FG, UI.BG);
   renderTitle();
-  renderLeft();
-  renderRight();
+  if (state.tab === 'elements') {
+    renderElements(tm, state.elCur);
+  } else {
+    renderLeft();
+    renderRight();
+  }
   renderBottom();
   if (state.edgeMenu) renderMenu();
   tm.present();
+}
+
+// Tab switching never touches selected/path/cursors, so the tree panel is
+// exactly where the user left it when they switch back.
+function setTab(t) {
+  if (t !== 'tree' && t !== 'elements') return;
+  state.tab = t;
+  state.edgeMenu = false;
+  render();
+}
+
+function jumpToEvidence() {
+  const el = elementAt(state.elCur.p, state.elCur.g);
+  if (!el || !el.ev || !state.nodes[el.ev]) return;
+  state.tab = 'tree';
+  state.edgeMenu = false;
+  track(el.ev);
 }
 
 function track(id, push = true) {
@@ -406,6 +425,15 @@ function cellFromEvent(e) {
 
 function wireInput() {
   window.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') { e.preventDefault(); setTab(state.tab === 'tree' ? 'elements' : 'tree'); return; }
+    if (state.tab === 'elements') {
+      if (e.key === 'ArrowUp') { e.preventDefault(); state.elCur = stepCursor(state.elCur, -1, 0); render(); }
+      else if (e.key === 'ArrowDown') { e.preventDefault(); state.elCur = stepCursor(state.elCur, 1, 0); render(); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); state.elCur = stepCursor(state.elCur, 0, -1); render(); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); state.elCur = stepCursor(state.elCur, 0, 1); render(); }
+      else if (e.key === 'Enter') { e.preventDefault(); jumpToEvidence(); }
+      return;
+    }
     if (e.key === 'F2') { e.preventDefault(); state.edgeMenu ? closeEdgeMenu() : openEdgeMenu(); return; }
     if (state.edgeMenu) {
       if (e.key === 'ArrowUp') { e.preventDefault(); state.edgeCursor = (state.edgeCursor + EDGE_MODES.length - 1) % EDGE_MODES.length; render(); }
@@ -438,7 +466,15 @@ function wireInput() {
       closeEdgeMenu();
       return;
     }
-    if (edgeHit && c.y === edgeHit.y && c.x >= edgeHit.x0 && c.x <= edgeHit.x1) { openEdgeMenu(); return; }
+    if (state.tab === 'tree' && edgeHit && c.y === edgeHit.y && c.x >= edgeHit.x0 && c.x <= edgeHit.x1) { openEdgeMenu(); return; }
+    for (const t of tabHits) {
+      if (c.y === t.y && c.x >= t.x0 && c.x <= t.x1) { setTab(t.id); return; }
+    }
+    if (state.tab === 'elements') {
+      const cell = cellFromXY(c.x, c.y);
+      if (cell) { state.elCur = cell; render(); }
+      return;
+    }
     if (backHit && c.y === backHit.y && c.x >= backHit.x0 && c.x <= backHit.x1) { goBack(); return; }
     for (const t of treeChildHits) {
       if (c.y >= t.y0 && c.y <= t.y1 && c.x >= TREE.cx0 && c.x < TREE.cx0 + TREE.cw) {
@@ -450,11 +486,9 @@ function wireInput() {
     for (const t of toggleHits) {
       if (c.y === t.y && c.x >= t.x0 && c.x <= t.x1) { toggle(t.key); return; }
     }
-    for (const ch of childHits) {
-      if (c.y >= ch.y0 && c.y <= ch.y1 && c.x >= RIGHT.x && c.x < RIGHT.x + RIGHT.w) { track(ch.id); return; }
-    }
   });
   tm.canvas.addEventListener('wheel', (e) => {
+    if (state.tab === 'elements') return;
     const c = cellFromEvent(e);
     if (c.x >= LEFT.x && c.x < LEFT.x + LEFT.w && c.y >= LEFT.y && c.y < LEFT.y + LEFT.h) {
       scrollTree(e.deltaY > 0 ? 2 : -2);

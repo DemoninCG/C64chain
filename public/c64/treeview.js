@@ -63,24 +63,17 @@ export function kindColor(kind) {
   return KIND_COLOR[kind] ?? 12;
 }
 
-export function nodeContent(n, kids, iw) {
+export function nodeContent(n, iw) {
   const L = [];
   const S = (s) => toScreenText(String(s ?? ''));
-  const push = (t, fg, kid = null) => L.push({ t, fg, kid });
-  for (const ln of wrapText(S(n.simple_name ?? n.name ?? n.id), iw)) push(ln, C.YELLOW);
+  const push = (t, fg) => L.push({ t, fg });
+  for (const ln of wrapText(S(n.name ?? n.id), iw)) push(ln, C.YELLOW);
   push(S(n.id).slice(0, iw), C.GREY);
   push(S(`${n.kind ?? '?'} * ${n.category ?? '?'}`).slice(0, iw), C.CYAN);
-  push(S(`SCOPE:${n.scope ?? 'chain'}${n.era ? ' ' + n.era : ''}`).slice(0, iw), C.GREY);
   push('SEP', C.GREY);
   push('DESC:', C.GREY);
   for (const ln of wrapText(S(n.description ?? '(NO DESCRIPTION)'), iw)) push(ln, C.LTBLUE);
-  if (kids.length) {
-    push(`CONTAINS ${kids.length}:`, C.GREY);
-    kids.forEach(({ id, simple_name }, i) => {
-      const lines = wrapText(S(`${i + 1}:${simple_name ?? id}`), iw);
-      lines.forEach((ln, j) => push(ln, j === 0 ? C.WHITE : C.GREY, id));
-    });
-  } else {
+  if (!(n.children ?? []).length) {
     push('END OF LINE: RAW', C.GREY);
   }
   return L;
