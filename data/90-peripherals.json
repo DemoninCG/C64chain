@@ -2512,8 +2512,15 @@
                       }
                     ],
                     "confidence": "medium",
-                    "note": "Nitrile rubber comes from butadiene and acrylonitrile, the same two monomers as the ABS of a television cabinet, both from crude oil. Rubber and plastics in 1982 shared the same petrochemical feedstock.",
-                    "children": []
+                    "note": "Nitrile rubber comes from butadiene and acrylonitrile, the same two monomers as the ABS of a television cabinet, both from crude oil. Rubber and plastics in 1982 shared the same petrochemical feedstock. Only the spring-steel arm is currently linked (to music wire); the rubber has no nitrile/butyl substance node and the hub material is unattested as nylon versus acetal, so neither is forced onto an edge.",
+                    "children": [],
+                    "edges": [
+                      {
+                        "to": "c64.keyboard-switches.keycap.spring.music-wire",
+                        "rel": "made of",
+                        "basis": "inferred"
+                      }
+                    ]
                   },
                   {
                     "id": "peripheral.cassette.deck.transport.worm",
