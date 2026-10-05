@@ -284,6 +284,7 @@ for (const p of pointers) {
   const node = {
     id: p.id,
     name: stubName(p.id),
+    simple_name: stubName(p.id),
     description: p.text,
     kind: 'material',
     category: stubCategory(p.id),
@@ -477,6 +478,9 @@ for (const [id, n] of defs) {
 
 for (const [id, node] of defs) {
   if (!node.name) err(`${id}: missing "name"`);
+  if (node.simple_name === undefined) warn(`${id}: missing "simple_name" (short display label, see SCHEMA.md)`);
+  else if (typeof node.simple_name !== 'string' || !node.simple_name.trim()) err(`${id}: "simple_name" must be a non-empty string`);
+  else if (node.simple_name.length > 48) warn(`${id}: "simple_name" is ${node.simple_name.length} chars (max 48): "${node.simple_name}"`);
   if (!node.description) warn(`${id}: missing "description"`);
   else if (node.description.length < 30) warn(`${id}: "description" is very short (${node.description.length} chars)`);
   if (!node.kind) err(`${id}: missing "kind"`);
@@ -605,6 +609,7 @@ if (adopted?.length) {
   const node = {
     id: 'unlinked.catalogue',
     name: 'Published but unlinked materials',
+    simple_name: 'Unlinked materials',
     description: `These ${adopted.length} nodes were written as canonical, reusable subtrees — a fragment's "made from" chains in full detail — but no other branch ended up referencing them, so nothing linked them into the tree. They are collected here rather than deleted. Where a component subtree inlines its own shorter version of the same material chain, this is the long one.`,
     kind: 'facility',
     category: majorityCategory(adopted),
@@ -833,7 +838,7 @@ for (const id of seen) {
 
 function strip(node) {
   const o = { id: node.id, file: node.__file };
-  for (const k of ['name', 'description', 'kind', 'category', 'era', 'confidence', 'note', 'scope']) {
+  for (const k of ['name', 'simple_name', 'description', 'kind', 'category', 'era', 'confidence', 'note', 'scope']) {
     if (node[k] !== undefined) o[k] = node[k];
   }
     for (const k of ['inputs', 'facts', 'places', 'sources']) {

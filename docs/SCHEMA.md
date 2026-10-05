@@ -23,6 +23,18 @@ and are stitched together by `scripts/build.mjs`.
   // WHY the process mattered. Avoid marketing language.
   "description": "High-purity aluminum foil chemically etched in a chlorate bath to roughen the surface, multiplying effective area ~100x so electrolytic capacitance fits in a 8 mm tube.",
 
+  // REQUIRED — short display label for narrow renderers (the C64 text-mode
+  // viewer fits ~26 chars per panel). The shortest form that still identifies
+  // the thing: drop leading "The ", parenthetical detail ("PVC resin
+  // (suspension homopolymer powder)" -> "PVC resin"), and post-colon detail
+  // ("Breadbin case: two-piece ABS shell" -> "Breadbin case"). Keep part
+  // numbers and designators (U8, 7406, 250407), chemical identity, and any
+  // value that distinguishes siblings. Standard industry abbreviations only
+  // (PVC, ABS, PCB, CRT, DIP, TTL); never invent new ones. ASCII only
+  // (u for µ, - for en-dashes). Aim <= 30 chars, never exceed 48. If `name`
+  // already meets this, repeat it verbatim.
+  "simple_name": "PVC resin",
+
   // REQUIRED — one of:
   //   part      a discrete physical object that exists as a unit
   //   process   an industrial operation that creates or transforms something

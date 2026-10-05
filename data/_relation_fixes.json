@@ -163,6 +163,15 @@
       "why": "the opposite edge is already stored",
       "parentName": "Fluidised-bed roaster",
       "childName": "Roasting of sphalerite to zinc oxide"
+    },
+    {
+      "from": "c64.case",
+      "to": "c64.case.other-polymers.polyester-film",
+      "was": "children",
+      "action": "delete",
+      "why": "HAND: polyester film is not case material - the film's own description places its uses in insulation, keycap-legend overlay and PSU sleeves, and the breadbin case spec is ABS. Content preserved via pending merge into chem.polyester.pet.film.",
+      "parentName": "Breadbin case: two-piece ABS shell",
+      "childName": "Polyester / PET film (insulation, overlay)"
     }
   ],
   "reassign": [
@@ -225,6 +234,27 @@
       "why": "the tool is impregnated WITH industrial diamond; it does not use the process that makes it",
       "parentName": "Diamond scriber and dicing saw",
       "childName": "Industrial diamond from graphite"
+    },
+    {
+      "from": "c64.joystick.gate.spring",
+      "to": "c64.joystick.gate.spring.wire",
+      "was": "children",
+      "action": "reassign",
+      "to_relation": "contains",
+      "why": "HAND: the coiled music-wire winding is a discrete wire physically in the spring; both descriptions and the spring facts table name drawn music-wire/stainless wire as the stock. Made-of rejected: the wire is a pointable component, not a dispersed formulation.",
+      "parentName": "Centring springs",
+      "childName": "Centring spring wire"
+    },
+    {
+      "from": "chem.acrylonitrile",
+      "to": "chem.acrylonitrile.monomer",
+      "was": "children",
+      "action": "reassign",
+      "to_relation": "produces",
+      "role": "product",
+      "why": "HAND: the SOVERE ammoxidation's output is acrylonitrile monomer (C3H3N) - the monomer description says so verbatim ('as made by propylene ammoxidation'); the operation brings the substance into being, so it is produces stored on the process, not a finishing step.",
+      "parentName": "Acrylonitrile and the ammoxidation",
+      "childName": "Acrylonitrile monomer"
     }
   ],
   "reverse": {

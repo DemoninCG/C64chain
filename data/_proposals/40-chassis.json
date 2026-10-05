@@ -315,6 +315,11 @@
       "from": "chem.silicone.polymer.key-domes",
       "to": "c64.keyboard-switches.domes",
       "why": "Duplicates: the same conductive elastomer key domes at the same level (both kind part). The chem node is the path-local copy under the silicone branch (generic prose plus a C64 note); the 33-passives-c node is the machine-specific canonical dome (confidence high vs medium, 3 facts vs 2, sourced, with a made-of composition edge and a moulding chain). The 40-chassis dome nodes (conductive-rubber, silicone, carbon-black) are already merged away, so this completes the pair from the chemistry side. Re-pointings (1): chem.silicone.polymer children chem.silicone.polymer.key-domes -> c64.keyboard-switches.domes. Facts union: adopt Travel ~0.5-2 mm (survivor has none); force ranges overlap (loser 0.5-2 N is ~50-200 gf vs survivor 150-250 g dome-alone) so keep the survivor's and note the loser's. Flag: loser description says 8-12 mm travel, contradicting its own 0.5-2 mm fact and the 3-4 mm full-key travel; drop the 8-12 mm prose on apply."
+    },
+    {
+      "from": "c64.case.other-polymers.polyester-film",
+      "to": "chem.polyester.pet.film",
+      "why": "Duplicates: biaxially oriented PET film at the same level (both kind material). The survivor is the canonical published node (confidence high vs medium, sourced Mylar/PET, made-of resin edge); the loser is the path-local copy that survived the dissolution of its routing-note parent c64.case.other-polymers and now sits in the 40-chassis shared map. Keep-rule 2 and 3: canonical over path-local, general id over contextual. No re-pointings: the loser has no inbound references (its former c64.case children link was deleted as wrong - film is not case material). Content union: fold the loser C64-use sentences (thin insulation, keycap-legend overlay, PSU amber capacitor sleeve) into the survivor note; adopt the loser terephthalic-acid input lineage (consistent with the survivor resin edge)."
     }
   ],
   "renames": [],

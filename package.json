@@ -8,6 +8,8 @@
     "build": "node scripts/build.mjs",
     "start": "node scripts/build.mjs && node scripts/serve.mjs",
     "serve": "node scripts/serve.mjs",
+    "start:classic": "node scripts/build.mjs && node scripts/serve.mjs --classic",
+    "serve:classic": "node scripts/serve.mjs --classic",
     "test": "node scripts/selftest.mjs"
   }
 }
