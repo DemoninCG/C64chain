@@ -3602,6 +3602,18 @@
       "why": "Same furnace-black feedstock at the same level (both kind material): the domes copy describes itself as the same feedstock used in the resistors. Keep-rule 1 and 4: the passives copy is richer (sourced Carbon_black wiki, made-from residuum feed plus uses furnace edges) and already the recorded survivor of two earlier carbon-black merges, which named this domes copy as next to follow. Re-pointings (1): c64.keyboard-switches.domes.composition made-of carbon-black -> survivor. Content union: fold the grade/loading specificity (high-structure furnace black, percolation loading, responsive-vs-stiff) into the survivor note as unestablished. Facts union: none (loser 0 facts).",
       "loserDescription": "The same furnace-black feedstock used in the resistors, compounded into the elastomer. The dome's conductivity and its wear rate are both set by the grade and loading of this powder. A high-structure furnace black gives a stronger percolation network at lower loading, so a dome can be made conductive with less filler and stay soft; the grade choice is the difference between a responsive key and a stiff one.",
       "loserFacts": null
+    },
+    {
+      "loser": "c64.connector-jacks.metalworking.brass-stock.brass-zinc",
+      "loserName": "Zinc of the brass",
+      "loserFile": "32-passives-b.json",
+      "survivor": "metal.zinc.brass",
+      "survivorName": "Brass",
+      "survivorFile": "60-metals.json",
+      "proposal": "direct (fan-out duplicate pointer)",
+      "why": "Confused pointer node: named as the zinc of the brass but described zinc-metal production; the brass-stock parent already carries the correct made-of edges to copper cathode and canonical zinc.brass. Same-file removal, no re-pointings needed. Recorded.",
+      "loserDescription": "Zinc is recovered from sphalerite ore, roasted to the oxide and either smelted to crude zinc or leached and electrowon; it is the element that makes copper springy and hard-working.",
+      "loserFacts": []
     }
   ]
 }

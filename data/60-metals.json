@@ -3426,7 +3426,14 @@
       "sources": [
         "https://www.sciencedirect.com/topics/engineering/aluminum-smelter"
       ],
-      "inputs": []
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.alumina",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "metal.hydrofluoric-acid": {
       "id": "metal.hydrofluoric-acid",
@@ -8425,7 +8432,13 @@
         "https://patents.google.com/patent/DE2058954C2/en"
       ],
       "confidence": "medium",
-      "edges": []
+      "edges": [
+        {
+          "to": "metal.phosphate.rock",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     }
   }
 }

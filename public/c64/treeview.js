@@ -78,7 +78,7 @@ export function nodeContent(n, kids, iw) {
     push(`CONTAINS ${kids.length}:`, C.GREY);
     kids.forEach(({ id, simple_name }, i) => {
       const lines = wrapText(S(`${i + 1}:${simple_name ?? id}`), iw);
-      lines.forEach((ln, j) => push(ln, j === 0 ? C.WHITE : C.GREY, id));
+      lines.forEach((ln) => push(ln, C.WHITE, id));
     });
   } else {
     push('END OF LINE: RAW', C.GREY);

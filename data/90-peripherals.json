@@ -420,7 +420,14 @@
                     "sources": [
                       "https://en.wikipedia.org/wiki/Tungsten"
                     ],
-                    "note": "Tungsten has the highest melting point of all known elements, at 3,422 C, and is used in incandescent lamp filaments. Not established: the 0.04-0.08 mm wire diameter, the 60-150 mm length, and the claim that this filament is by far the largest source of tube failure."
+                    "note": "Tungsten has the highest melting point of all known elements, at 3,422 C, and is used in incandescent lamp filaments. Not established: the 0.04-0.08 mm wire diameter, the 60-150 mm length, and the claim that this filament is by far the largest source of tube failure.",
+                    "edges": [
+                      {
+                        "to": "metal.tungsten.wire",
+                        "rel": "made of",
+                        "basis": "inferred"
+                      }
+                    ]
                   },
                   {
                     "id": "peripheral.tv.crt.gun.grids",
@@ -575,7 +582,19 @@
                         ],
                         "confidence": "medium",
                         "children": [],
-                        "note": "Nylon 66 is a documented engineering thermoplastic, and a glass-filled grade of a thermoplastic is a normal coil former material where heat and mechanical strength both matter. Not established: that the bobbin was specifically PA66 rather than glass-filled PET, PBT or phenolic, the 30% chopped E-glass loading, the figure of about 150 C for the stiffness the glass fill buys, and the claim that phenolic would have cracked on a hot winding. Nylon 66 is also the material this file gives the cassette hub, which is the better-evidenced of the two uses; the coil former and the hub are different parts and are not evidence for each other."
+                        "note": "Nylon 66 is a documented engineering thermoplastic, and a glass-filled grade of a thermoplastic is a normal coil former material where heat and mechanical strength both matter. Not established: that the bobbin was specifically PA66 rather than glass-filled PET, PBT or phenolic, the 30% chopped E-glass loading, the figure of about 150 C for the stiffness the glass fill buys, and the claim that phenolic would have cracked on a hot winding. Nylon 66 is also the material this file gives the cassette hub, which is the better-evidenced of the two uses; the coil former and the hub are different parts and are not evidence for each other.",
+                        "edges": [
+                          {
+                            "to": "chem.polyamide.nylon-66",
+                            "rel": "made of",
+                            "basis": "documented"
+                          },
+                          {
+                            "to": "chem.glass-fiber",
+                            "rel": "made of",
+                            "basis": "inferred"
+                          }
+                        ]
                       }
                     ],
                     "note": "Magnet wire and enamelled copper wire are documented as the normal way a deflection coil is wound. Not established: the 0.2-0.4 mm wire gauge, bifilar or twisted-pair winding in the hum-bucking coils, epoxy or polyurethane immersion varnish, and the specific coil nesting of horizontals outside and verticals inside. The link drawn here between the opposed horizontal coils and the hum-cancelling head winding of a cassette deck is a design analogy, not a documented shared lineage; the head winding is documented on its own node, and nothing consulted says the yoke coil was wound to cancel mains hum.",
@@ -1676,6 +1695,13 @@
                     "children": [],
                     "sources": [
                       "https://en.wikipedia.org/wiki/Aluminum%20electrolytic%20capacitor"
+                    ],
+                    "edges": [
+                      {
+                        "to": "metal.aluminum.foil",
+                        "rel": "contains",
+                        "basis": "inferred"
+                      }
                     ]
                   },
                   {
@@ -2653,7 +2679,14 @@
                     "era": "1982",
                     "confidence": "medium",
                     "inputs": [],
-                    "children": []
+                    "children": [],
+                    "edges": [
+                      {
+                        "to": "metal.steel",
+                        "rel": "made of",
+                        "basis": "typical-1982"
+                      }
+                    ]
                   }
                 ],
                 "edges": [
@@ -3317,7 +3350,14 @@
       ],
       "confidence": "medium",
       "children": [],
-      "note": "Polyethylene is documented as the most commonly produced plastic, with low-density and high-density forms and many variations, produced in excess of 100 million tonnes a year. Not established: the 1000-3000 bar and 200 C figures as the specification for this grade - the low-density grade is the high-pressure one and that is the route the facts take, but no polymerisation process source was consulted for the numbers - the 2NaCl to Cl2 plus 2Na equation and the claim of about 3 V and 30-40 C for salt electrolysis, where cell voltage and electrolyte temperature are not the same quantity and a chlor-alkali cell runs warm, the vinyl chloride route to PVC, chloromethane as the foam blowing agent, and the Teesside, Gulf Coast and Saudi Arabia works. The two paths meeting in a cable jacket - ethylene from a steam cracker and chlorine from brine electrolysis - is a genuine convergence of the petrochemical and salt chains."
+      "note": "Polyethylene is documented as the most commonly produced plastic, with low-density and high-density forms and many variations, produced in excess of 100 million tonnes a year. Not established: the 1000-3000 bar and 200 C figures as the specification for this grade - the low-density grade is the high-pressure one and that is the route the facts take, but no polymerisation process source was consulted for the numbers - the 2NaCl to Cl2 plus 2Na equation and the claim of about 3 V and 30-40 C for salt electrolysis, where cell voltage and electrolyte temperature are not the same quantity and a chlor-alkali cell runs warm, the vinyl chloride route to PVC, chloromethane as the foam blowing agent, and the Teesside, Gulf Coast and Saudi Arabia works. The two paths meeting in a cable jacket - ethylene from a steam cracker and chlorine from brine electrolysis - is a genuine convergence of the petrochemical and salt chains.",
+      "edges": [
+        {
+          "to": "chem.polyethylene.resin",
+          "rel": "made of",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "peripheral.cassette.tape.oxide.iron": {
       "id": "peripheral.cassette.tape.oxide.iron",
@@ -3689,7 +3729,14 @@
       ],
       "confidence": "medium",
       "children": [],
-      "note": "Copper(II) oxide, CuO, is documented: it is a black solid, one of the two stable oxides of copper, and a product of copper mining that is the precursor to many other copper compounds. That is the substance this node names. Not established: that copper is the activator that deepens the green and creates the donor level the blue co-activator needs, that it was supplied to the phosphor maker as the oxide rather than as a copper salt or a copper concentrate, the sulphuric acid step, and the Chuquicamata, Butte and Zambia attributions. The activator roles of Ag, Au, Sb and Eu in the P22 phosphors are far better documented than copper, which is why this node is thinner than its neighbours."
+      "note": "Copper(II) oxide, CuO, is documented: it is a black solid, one of the two stable oxides of copper, and a product of copper mining that is the precursor to many other copper compounds. That is the substance this node names. Not established: that copper is the activator that deepens the green and creates the donor level the blue co-activator needs, that it was supplied to the phosphor maker as the oxide rather than as a copper salt or a copper concentrate, the sulphuric acid step, and the Chuquicamata, Butte and Zambia attributions. The activator roles of Ag, Au, Sb and Eu in the P22 phosphors are far better documented than copper, which is why this node is thinner than its neighbours.",
+      "edges": [
+        {
+          "to": "metal.copper.cathode",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "peripheral.tv.crt.phosphor.zns.europium": {
       "id": "peripheral.tv.crt.phosphor.zns.europium",
@@ -4031,7 +4078,7 @@
       "id": "peripheral.cassette.deck.head.core",
       "name": "Permalloy or ferrite core",
       "simple_name": "Permalloy or ferrite core",
-      "kind": "material",
+      "kind": "part",
       "category": "magnetics",
       "era": "1982",
       "description": "The gap has to be made with both faces flat and parallel to a micron or so across a couple of millimetres, which ferrite does well by lapping and permalloy does well by etching. A high-permeability nickel-iron alloy, permalloy, gives the inductance needed for the playback winding; the mu-metal shield can around the front suppresses external fields.",
@@ -4065,7 +4112,7 @@
       "id": "peripheral.cassette.deck.head.winding",
       "name": "Lacquered copper wire, figure-eight",
       "simple_name": "Lacquered copper wire",
-      "kind": "material",
+      "kind": "part",
       "category": "magnetics",
       "era": "1982",
       "description": "The winding was a fine enamelled (lacquered) copper wire, typically 40 AWG, a few hundred to a couple of thousand turns, wound so that it sits astride the gap with two halves that see the drive motor's stray field in opposite directions. The hum-cancelling figure-eight was the reason a 1541 did not pick up the buzz of its own motor. The lacquer itself is the same polyurethane-imide over a polyester base as a television yoke winding.",
@@ -4153,7 +4200,14 @@
       ],
       "confidence": "medium",
       "children": [],
-      "note": "Stamped end bells are made of cold-reduced sheet steel and the bushings are made of copper and tin, so a motor housing draws on the steel and the tin rather than containing them."
+      "note": "Stamped end bells are made of cold-reduced sheet steel and the bushings are made of copper and tin, so a motor housing draws on the steel and the tin rather than containing them.",
+      "edges": [
+        {
+          "to": "peripheral.tv.crt.mask.steel",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
     },
     "peripheral.cassette.deck.logic.gold-wire": {
       "id": "peripheral.cassette.deck.logic.gold-wire",
@@ -4343,7 +4397,7 @@
       "id": "peripheral.tv.speaker.cone",
       "name": "Paper pulp cone",
       "simple_name": "Paper pulp cone",
-      "kind": "material",
+      "kind": "part",
       "category": "packaging",
       "era": "1982",
       "description": "The cone is a paper pulp: refined wood fibre pressed wet into a shaped blank and dried, giving a light, stiff, cheap diaphragm. It is essentially the same material as a paper bag, which is why it creases if you poke it. A small set used a paper cone; a later or better one a woven or moulded polypropylene cone.",
@@ -4830,7 +4884,14 @@
       ],
       "confidence": "medium",
       "children": [],
-      "note": "Cold rolling as a route is documented, and cold-reduced low-carbon sheet is the right family of material for a shadow mask: the mask has to hold a slot geometry through a stress-relieving heat treatment, so residual stress and flatness matter more than strength. Not established: the 1008 or 1010 grade designation and the sub-0.1% carbon, the 200-350 MPa yield strength for that grade, the hydrogen or nitrogen annealing atmosphere, the 700-800 C annealing temperature, the 0.1-0.2 mm final gauge, and the Gary, Kawasaki and Itaqui works. A mask alloy that matched the panel expansion was a real problem, which is why bimetallic and electroformed nickel masks exist at all; a single low-carbon steel sheet is the 1982 answer, but the specific grade is a reconstruction."
+      "note": "Cold rolling as a route is documented, and cold-reduced low-carbon sheet is the right family of material for a shadow mask: the mask has to hold a slot geometry through a stress-relieving heat treatment, so residual stress and flatness matter more than strength. Not established: the 1008 or 1010 grade designation and the sub-0.1% carbon, the 200-350 MPa yield strength for that grade, the hydrogen or nitrogen annealing atmosphere, the 700-800 C annealing temperature, the 0.1-0.2 mm final gauge, and the Gary, Kawasaki and Itaqui works. A mask alloy that matched the panel expansion was a real problem, which is why bimetallic and electroformed nickel masks exist at all; a single low-carbon steel sheet is the 1982 answer, but the specific grade is a reconstruction.",
+      "edges": [
+        {
+          "to": "metal.steel.sheet",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "peripheral.tv.crt.phosphor.aluminium": {
       "id": "peripheral.tv.crt.phosphor.aluminium",
@@ -4859,6 +4920,13 @@
       "children": [],
       "sources": [
         "https://en.wikipedia.org/wiki/Aluminium"
+      ],
+      "edges": [
+        {
+          "to": "metal.aluminum.ingot",
+          "rel": "made of",
+          "basis": "documented"
+        }
       ]
     },
     "peripheral.tv.crt.phosphor.zns": {

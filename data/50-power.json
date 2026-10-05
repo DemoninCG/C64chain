@@ -293,7 +293,14 @@
                   "confidence": "medium",
                   "note": "Observed on the 902503-02: the protective-earth pin 'somehow connects to the transformer, looks like it goes in the layer between the primary and secondary winding', and does not extend to the output. The brick is all-plastic, so there is nothing to bond earth to on the outside.",
                   "children": [],
-                  "inputs": []
+                  "inputs": [],
+                  "edges": [
+                    {
+                      "to": "metal.aluminum.foil",
+                      "rel": "made of",
+                      "basis": "inferred"
+                    }
+                  ]
                 }
               ],
               "note": "Not established: the 0.25-0.4 mm wire, the 500-1200 turns per winding, the 18 V centre-tapped and 9 V secondaries, the layer layout, and the class H 180 C rating by virtue of the enamel. The 902503-02 teardown confirms the winding structure - 9 V AC on pins 9 and 11, and \"18V AC with a 'center' tab on pin 6\" - but no source documents the wire gauge, turn count or insulation class for this transformer.",
@@ -436,7 +443,14 @@
                   ],
                   "confidence": "high",
                   "children": [],
-                  "inputs": []
+                  "inputs": [],
+                  "edges": [
+                    {
+                      "to": "metal.silica.polysilicon",
+                      "rel": "made from",
+                      "basis": "inferred"
+                    }
+                  ]
                 },
                 {
                   "id": "c64.psu.rectifier.bridge-alternative",
@@ -567,7 +581,14 @@
                   "sources": [
                     "https://forum.vcfed.org/index.php?threads/salvaging-the-commodore-64-brick-of-death-epoxied-power-supply-and-rebuilding-it-many-pictures.1241364/"
                   ],
-                  "confidence": "high"
+                  "confidence": "high",
+                  "edges": [
+                    {
+                      "to": "mb.passives.caps.tantalum",
+                      "rel": "contains",
+                      "basis": "typical-1982"
+                    }
+                  ]
                 }
               ]
             },
@@ -832,7 +853,14 @@
           ],
           "confidence": "high",
           "note": "Modern practice would use an extruded finned profile in 6063 aluminium; a folded sheet U gives only 0.02-0.04 m2 of surface, an order of magnitude less than the fins a switching supply would use for the same power.",
-          "children": []
+          "children": [],
+          "edges": [
+            {
+              "to": "metal.aluminum.sheet",
+              "rel": "made of",
+              "basis": "documented"
+            }
+          ]
         },
         {
           "id": "c64.psu.bulk-cap",
@@ -905,7 +933,14 @@
             "http://www.zimmers.net/anonftp/pub/cbm/schematics/computers/c64/c64extps.gif"
           ],
           "confidence": "high",
-          "children": []
+          "children": [],
+          "edges": [
+            {
+              "to": "mb.passives.caps.tantalum",
+              "rel": "contains",
+              "basis": "typical-1982"
+            }
+          ]
         },
         {
           "id": "c64.psu.board",
@@ -1360,7 +1395,14 @@
               ],
               "note": "The distinction between the two secondary fuses was made by inspection: the fast-acting one is a straight piece of fusible wire while the slow one contains a visible spiral or spring.",
               "children": [],
-              "inputs": []
+              "inputs": [],
+              "edges": [
+                {
+                  "to": "c64.mains.fuses.thermal-fuse.alloy",
+                  "rel": "contains",
+                  "basis": "inferred"
+                }
+              ]
             },
             {
               "id": "c64.mains.fuses.thermal-fuse",
@@ -2403,7 +2445,14 @@
       ],
       "note": "Not established: 20-30% glass content by weight in 3-6 mm strands, or the ~150-200 C distortion temperature. E-glass is documented as an alumino-borosilicate glass with less than 1% alkali oxides used for glass-reinforced plastics, and glass fibre reinforcement of nylon 66 is documented, but no source gives the glass fraction, the strand length or a distortion temperature for a glass-filled phenolic.",
       "children": [],
-      "inputs": []
+      "inputs": [],
+      "edges": [
+        {
+          "to": "chem.glass-fiber",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
     },
     "c64.mains.switch.contacts.copper-silver": {
       "id": "c64.mains.switch.contacts.copper-silver",

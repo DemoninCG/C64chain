@@ -593,7 +593,7 @@
               "name": "Metal shell shroud and strain relief",
               "simple_name": "Shell shroud, strain relief",
               "description": "On the machine side the socket is a plastic-shell type with no metal shroud; the shroud is on the cable plug, where it is what provides the plug's shell ground and its mechanical strength. Both were stamped and plated the same way.",
-              "kind": "part",
+              "kind": "note",
               "category": "interconnect",
               "era": "1982-1984",
               "confidence": "medium",
@@ -1072,7 +1072,14 @@
           "value": "carbon black in an organic binder, screen-printed and cured"
         }
       ],
-      "inputs": []
+      "inputs": [],
+      "edges": [
+        {
+          "to": "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
     },
     "c64.switches.power-slider.mechanism.leaf-spring.steel": {
       "id": "c64.switches.power-slider.mechanism.leaf-spring.steel",
@@ -1083,7 +1090,14 @@
       "category": "passives",
       "era": "ancient",
       "confidence": "medium",
-      "note": "Not established: high-carbon hardened-and-tempered strip steel for this switch, and the shared origin with razor blades and automotive leaf springs."
+      "note": "Not established: high-carbon hardened-and-tempered strip steel for this switch, and the shared origin with razor blades and automotive leaf springs.",
+      "edges": [
+        {
+          "to": "metal.steel.sheet",
+          "rel": "made of",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "c64.switches.power-slider.body.melamine": {
       "id": "c64.switches.power-slider.body.melamine",
@@ -1157,7 +1171,14 @@
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
-      "note": "Not established: this terminal's brass wire or brass-over-mandrel stock, the springy-and-solderable property argument, and the heading operation."
+      "note": "Not established: this terminal's brass wire or brass-over-mandrel stock, the springy-and-solderable property argument, and the heading operation.",
+      "edges": [
+        {
+          "to": "metal.zinc.brass",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
     },
     "c64.connector-jacks.control-ports.insulator.nylon": {
       "id": "c64.connector-jacks.control-ports.insulator.nylon",
@@ -1213,7 +1234,14 @@
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
-      "note": "A springy phosphor bronze wiper/contact alloy is documented for potentiometer contacts. Not established: phosphor bronze or brass-tempered strip for this card-edge socket leaf, and the claim that it is the same material family as the switch and cartridge contacts."
+      "note": "A springy phosphor bronze wiper/contact alloy is documented for potentiometer contacts. Not established: phosphor bronze or brass-tempered strip for this card-edge socket leaf, and the claim that it is the same material family as the switch and cartridge contacts.",
+      "edges": [
+        {
+          "to": "metal.zinc.brass",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
     },
     "c64.connector-jacks.moulding.phenolic": {
       "id": "c64.connector-jacks.moulding.phenolic",
@@ -1325,7 +1353,19 @@
           "value": "~0.1-0.3 mm for switch leaves"
         }
       ],
-      "inputs": []
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.copper.cathode",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "metal.tin.ingot",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "c64.connector-jacks.metalworking.brass-stock": {
       "id": "c64.connector-jacks.metalworking.brass-stock",
@@ -1350,10 +1390,6 @@
       "inputs": [],
       "children": [],
       "edges": [
-        {
-          "to": "c64.connector-jacks.metalworking.brass-stock.brass-zinc",
-          "rel": "made of"
-        },
         {
           "to": "metal.copper.cathode",
           "rel": "made of"
@@ -1408,7 +1444,13 @@
       "confidence": "medium",
       "inputs": [],
       "note": "Not established: brine by chlor-alkali electrolysis and then ammonia plus carbon as the route to this plating cyanide, deliberate low free cyanide for preferential gold deposition, and a persistent effluent-control and safety burden on the cyanide gold shops through the late 1970s and 1980s.",
-      "edges": []
+      "edges": [
+        {
+          "to": "metal.salt-brine",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "c64.switches.power-slider.body.nylon.filler": {
       "id": "c64.switches.power-slider.body.nylon.filler",
@@ -1486,19 +1528,6 @@
         }
       ]
     },
-    "c64.connector-jacks.metalworking.brass-stock.brass-zinc": {
-      "id": "c64.connector-jacks.metalworking.brass-stock.brass-zinc",
-      "name": "Zinc of the brass",
-      "simple_name": "Zinc of the brass",
-      "description": "Zinc is recovered from sphalerite ore, roasted to the oxide and either smelted to crude zinc or leached and electrowon; it is the element that makes copper springy and hard-working.",
-      "kind": "material",
-      "category": "metals",
-      "era": "ancient",
-      "confidence": "medium",
-      "note": "The zinc chain belongs to the metals file; referenced here only.",
-      "inputs": [],
-      "children": []
-    },
     "c64.switches.level-sliders.section": {
       "id": "c64.switches.level-sliders.section",
       "name": "Single and ganged (twin) sections",
@@ -1524,7 +1553,14 @@
           "era": "1982-1984",
           "confidence": "medium",
           "inputs": [],
-          "note": "Not established: drawn steel shaft pressed through the moulded wiper carriers joining all sections, and alignment held over millions of slider cycles by using drawn steel rather than moulded plastic."
+          "note": "Not established: drawn steel shaft pressed through the moulded wiper carriers joining all sections, and alignment held over millions of slider cycles by using drawn steel rather than moulded plastic.",
+          "edges": [
+            {
+              "to": "metal.steel.sheet",
+              "rel": "made of",
+              "basis": "typical-1982"
+            }
+          ]
         },
         {
           "id": "c64.switches.level-sliders.section.bushing",

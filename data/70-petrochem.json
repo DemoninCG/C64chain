@@ -2159,7 +2159,19 @@
                 }
               ],
               "confidence": "medium",
-              "note": "Machine sizes and throughputs are typical of the era's compounding lines."
+              "note": "Machine sizes and throughputs are typical of the era's compounding lines.",
+              "edges": [
+                {
+                  "to": "chem.abs.regrind",
+                  "rel": "consumes",
+                  "basis": "inferred"
+                },
+                {
+                  "to": "chem.abs.regrind",
+                  "rel": "consumes",
+                  "basis": "inferred"
+                }
+              ]
             },
             {
               "id": "chem.abs.pelletising.vacuum-vent",
@@ -2376,7 +2388,7 @@
                   "name": "Epoxy in a C64",
                   "simple_name": "Epoxy in a C64",
                   "description": "Four places. The board's laminate resin. The power supply's transformer bobbin and coil potting, and the mains filter capacitor's encapsulation. The die attach inside the VIC-II, the SID and the CPU packages, where the chip was bonded to a small ceramic or epoxy header with an epoxy that had to survive 180-260 C without delaminating. And the heatsink adhesive in the SID's tab, which in some designs was a two-part filled epoxy.",
-                  "kind": "part",
+                  "kind": "note",
                   "category": "plastics",
                   "era": "1982",
                   "facts": [
@@ -4220,7 +4232,7 @@
       "name": "Where the C64's ethylene ends up",
       "simple_name": "C64 ethylene uses",
       "description": "Concretely: the styrene monomer for the ABS case and the SAN matrix, the ethylene oxide route to ethylene glycol for anything polyester in the power supply, the polyethylene in the power cord's insulation and in the moulded cable accessories, and the C2 in the vinyl chloride monomer for the PVC jacket and for the keyboard's keycaps in the less common grades. A C64's ethylene demand is a few tens of grams.",
-      "kind": "material",
+      "kind": "note",
       "category": "plastics",
       "era": "1982",
       "children": [],
@@ -8541,7 +8553,19 @@
                       "category": "industry",
                       "era": "1980s",
                       "note": "Polyethylene: chem.ethylene.polyethylene in this file. Established: Geophone takeout cable and junction box as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s specifics as given.",
-                      "confidence": "low"
+                      "confidence": "low",
+                      "edges": [
+                        {
+                          "to": "chem.polyethylene.resin",
+                          "rel": "made of",
+                          "basis": "inferred"
+                        },
+                        {
+                          "to": "chem.polyethylene.resin",
+                          "rel": "made of",
+                          "basis": "inferred"
+                        }
+                      ]
                     }
                   ],
                   "confidence": "low",
@@ -8705,7 +8729,7 @@
                   "name": "Entry hole into the pay zone",
                   "simple_name": "Entry hole into the pay zone",
                   "description": "The first connection to the reservoir is itself a jet-perforated hole in cement, and it is the smallest diameter in the whole production system: a few millimetres through which the entire well flow must pass.",
-                  "kind": "part",
+                  "kind": "note",
                   "category": "industry",
                   "era": "1980s",
                   "confidence": "medium",
@@ -8819,6 +8843,16 @@
                 {
                   "to": "chem.crude.stimulation.acidising.mud-acid",
                   "rel": "consumes"
+                },
+                {
+                  "to": "chem.crude.stimulation.acidising.mud-acid.corrosion-inhibitor.tubing",
+                  "rel": "consumes",
+                  "basis": "inferred"
+                },
+                {
+                  "to": "chem.crude.stimulation.acidising.mud-acid.corrosion-inhibitor.tubing",
+                  "rel": "consumes",
+                  "basis": "inferred"
                 }
               ]
             }

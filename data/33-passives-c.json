@@ -1096,7 +1096,14 @@
       "confidence": "medium",
       "inputs": [],
       "children": [],
-      "note": "Not established: the seven-or-nine conductor count by joystick model, and that the conductors were tinned copper rather than bare copper. The five-signals-plus-common-and-fire accounting is not tied to a specific stick in any source in this file."
+      "note": "Not established: the seven-or-nine conductor count by joystick model, and that the conductors were tinned copper rather than bare copper. The five-signals-plus-common-and-fire accounting is not tied to a specific stick in any source in this file.",
+      "edges": [
+        {
+          "to": "metal.copper.cathode",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
     },
     "c64.joystick.knob.abs": {
       "id": "c64.joystick.knob.abs",
@@ -1403,7 +1410,14 @@
         }
       ],
       "inputs": [],
-      "note": "Not established: argon or krypton fill gas, the few kPa pressure, the claim that argon cannot outgas, the acoustic damping role, and the later switch to vacuum-filled hybrid cans. No document consulted describes crystal can filling."
+      "note": "Not established: argon or krypton fill gas, the few kPa pressure, the claim that argon cannot outgas, the acoustic damping role, and the later switch to vacuum-filled hybrid cans. No document consulted describes crystal can filling.",
+      "edges": [
+        {
+          "to": "facility.argon",
+          "rel": "made of",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "mb.crystal.y1.case.support-wire.wire": {
       "id": "mb.crystal.y1.case.support-wire.wire",
@@ -1692,7 +1706,19 @@
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
-      "note": "Not established: hydrogen-nitrogen cover during this lid weld, hydrogen diffusion of internal oxide onto getters, and any getter mirror observed on opening this can."
+      "note": "Not established: hydrogen-nitrogen cover during this lid weld, hydrogen diffusion of internal oxide onto getters, and any getter mirror observed on opening this can.",
+      "edges": [
+        {
+          "to": "facility.nitrogen",
+          "rel": "made of",
+          "basis": "inferred"
+        },
+        {
+          "to": "metal.hydrogen",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
     },
     "mb.crystal.y1.electrodes.chromium": {
       "id": "mb.crystal.y1.electrodes.chromium",
@@ -2615,6 +2641,11 @@
             {
               "to": "facility.water",
               "rel": "consumes"
+            },
+            {
+              "to": "mb.crystal.y1.cutting.cleanroom.deionised-water",
+              "rel": "consumes",
+              "basis": "typical-1982"
             }
           ]
         }

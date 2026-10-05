@@ -3296,7 +3296,15 @@
         "purge gas"
       ],
       "confidence": "medium",
-      "note": "Not established: the sorbent grade, the number of beds and the 96-99% para-xylene recovery figure, and that a 1982 ABS supplier used a Parex unit at all. No encyclopaedia article covers the Parex process, and the C64 own documents say nothing about the petrochemical chain feeding the resin."
+      "note": "Not established: the sorbent grade, the number of beds and the 96-99% para-xylene recovery figure, and that a 1982 ABS supplier used a Parex unit at all. No encyclopaedia article covers the Parex process, and the C64 own documents say nothing about the petrochemical chain feeding the resin.",
+      "edges": [
+        {
+          "to": "c64.case.abs-resin.o-xylene",
+          "rel": "produces",
+          "role": "product",
+          "basis": "inferred"
+        }
+      ]
     },
     "c64.packaging.eps-expansion": {
       "id": "c64.packaging.eps-expansion",
@@ -4004,6 +4012,11 @@
           "to": "c64.case.tooling.graphite-electrode",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "c64.case.tooling.brass-electrode",
+          "rel": "consumes",
+          "basis": "inferred"
         }
       ]
     },
