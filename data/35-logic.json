@@ -993,6 +993,14 @@
                   "to": "mb.logic.bipolar.cleanroom.wetbench",
                   "rel": "at",
                   "basis": "documented"
+                },
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                },
+                {
+                  "to": "facility.water",
+                  "rel": "consumes"
                 }
               ]
             },
@@ -1071,6 +1079,20 @@
                     "facility.water",
                     "facility.water.ultrapure",
                     "facility.electricity"
+                  ],
+                  "edges": [
+                    {
+                      "to": "facility.electricity",
+                      "rel": "consumes"
+                    },
+                    {
+                      "to": "facility.water",
+                      "rel": "consumes"
+                    },
+                    {
+                      "to": "facility.water.ultrapure",
+                      "rel": "consumes"
+                    }
                   ]
                 }
               ]
@@ -1470,6 +1492,12 @@
       ],
       "inputs": [
         "facility.electricity"
+      ],
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
       ]
     },
     "mb.logic.bipolar.cleanroom.wetbench": {
@@ -1786,6 +1814,12 @@
               ],
               "inputs": [
                 "facility.electricity"
+              ],
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
               ]
             }
           ],
@@ -1822,7 +1856,13 @@
               "inputs": [
                 "facility.electricity"
               ],
-              "note": "Not established: the plate material, the 150-200 C setpoint, the one or two minute dwell, or that such a plate stood at every wet bench in the bay. A hot plate is a necessary piece of photolithography equipment but no source describes it."
+              "note": "Not established: the plate material, the 150-200 C setpoint, the one or two minute dwell, or that such a plate stood at every wet bench in the bay. A hot plate is a necessary piece of photolithography equipment but no source describes it.",
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
+              ]
             }
           ],
           "edges": [
@@ -1891,6 +1931,12 @@
               ],
               "inputs": [
                 "facility.electricity"
+              ],
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
               ]
             },
             {
@@ -1906,6 +1952,12 @@
               ],
               "inputs": [
                 "facility.electricity"
+              ],
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
               ]
             },
             {
@@ -1935,6 +1987,12 @@
               ],
               "inputs": [
                 "facility.electricity"
+              ],
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
               ]
             }
           ],
@@ -2257,6 +2315,12 @@
               ],
               "inputs": [
                 "facility.electricity"
+              ],
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
               ]
             }
           ],
@@ -2883,6 +2947,12 @@
               "note": "Implanters were standard in CMOS lines by the early 1980s; diffusion was still the workhorse in bipolar logic, which is one of the more interesting differences between the two processes. The dopant gases are the same three the bipolar line uses - phosphine for the n-well, diborane for the p-well, sometimes arsine - and they are ingredients named in `inputs`, published once at chem.fab-chemicals.dopants. Electricity is a cross-cutting service and is a `from` edge, not a component.",
               "inputs": [
                 "facility.electricity"
+              ],
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
               ]
             }
           ],
@@ -3378,6 +3448,12 @@
               ],
               "inputs": [
                 "facility.electricity"
+              ],
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
               ]
             },
             {
@@ -3532,6 +3608,12 @@
           ],
           "inputs": [
             "facility.electricity"
+          ],
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
           ]
         },
         {
@@ -3562,6 +3644,12 @@
           ],
           "inputs": [
             "facility.electricity"
+          ],
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
           ]
         }
       ],
@@ -3792,6 +3880,12 @@
       "note": "For 3-5 um logic geometries, a photographic mask stepper was adequate and much faster than electron-beam writing; beam writing was reserved for the DRAM and custom-chip masks.",
       "inputs": [
         "facility.electricity"
+      ],
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
       ]
     },
     "mb.logic.bipolar.process.base.boron": {

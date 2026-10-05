@@ -386,6 +386,12 @@
               "note": "A heater in a barrel with a replaceable tinned copper tip is the ordinary soldering iron. Not established: whether the C64 line used nichrome or cartridge heaters, tip plating, or the tinned-tip maintenance routine.",
               "sources": [
                 "https://en.wikipedia.org/wiki/Soldering"
+              ],
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
               ]
             },
             {
@@ -399,7 +405,13 @@
                 "facility.electricity"
               ],
               "confidence": "medium",
-              "note": "An arm or hood drawing off flux smoke is the ordinary solder-bench fitting, since the smoke is resin vapour. Not established: the hood type, airflow, or filter arrangement over the C64 hand-soldering benches."
+              "note": "An arm or hood drawing off flux smoke is the ordinary solder-bench fitting, since the smoke is resin vapour. Not established: the hood type, airflow, or filter arrangement over the C64 hand-soldering benches.",
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
+              ]
             }
           ],
           "note": "Hand work with iron, wire and pliers under an extraction arm for connectors, fuse clips, jumpers and rejects is ordinary bench practice. Not established: the 25-60 W iron power, 315-380 deg C tip temperature, or copper-tip construction on the C64 line.",
@@ -550,7 +562,13 @@
                     "facility.electricity"
                   ],
                   "note": "Failure of vibratory feeding, not of the machine itself, was the usual reason a line stopped on a board full of axial parts.",
-                  "confidence": "medium"
+                  "confidence": "medium",
+                  "edges": [
+                    {
+                      "to": "facility.electricity",
+                      "rel": "consumes"
+                    }
+                  ]
                 }
               ],
               "note": "A magazine-fed machine picking each part and pushing it into its holes is the ordinary insertion engine. Not established: the make or model on the C64 line, the 0.3-0.6 s cycle time on this board, or the half-minute machine-time figure for about 90 parts."
@@ -566,7 +584,13 @@
                 "facility.electricity"
               ],
               "confidence": "medium",
-              "note": "Holding the board in a jig with locating pins through insertion, wave and test is ordinary line practice. Not established: the jig material, pin layout, or whether the same jig family carried the 250407 board through all three stages."
+              "note": "Holding the board in a jig with locating pins through insertion, wave and test is ordinary line practice. Not established: the jig material, pin layout, or whether the same jig family carried the 250407 board through all three stages.",
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
+              ]
             }
           ],
           "edges": [
@@ -823,6 +847,12 @@
               "note": "A rack of switching electronics with a go or no-go readout is ordinary 1980s digital test equipment. Not established: the tester make or model, relay-matrix size, or display type used for the 250407 board.",
               "sources": [
                 "https://en.wikipedia.org/wiki/In-circuit_testing"
+              ],
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
               ]
             }
           ],
@@ -955,7 +985,13 @@
                 "facility.electricity"
               ],
               "confidence": "medium",
-              "note": "Feeding composite video to a small monitor or colour television and judging the picture by eye is ordinary functional-test practice. Not established: the make, size, or monochrome-versus-colour mix of the monitors on the C64 line."
+              "note": "Feeding composite video to a small monitor or colour television and judging the picture by eye is ordinary functional-test practice. Not established: the make, size, or monochrome-versus-colour mix of the monitors on the C64 line.",
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
+              ]
             }
           ]
         },
@@ -1201,6 +1237,12 @@
               "note": "That vector photoplotters driven by Gerber format data were the dominant plotting technology for PCB artwork of this period is established: Standard Gerber was a numerical control format designed by Gerber Systems Corp to drive their vector photo plotters for the PCB industry in the 1960s and 1970s. Not established: that the exposure was a corona discharge from a stepped wire or shaped electrode, that flatbed machines laid a film flat and so became the standard for two-sided work, the hundreds of beds claim elsewhere in this branch, and that this machine was a Gerber-branded electrostatic plotter. Modern boards use direct imaging, for which Gerber is also the standard image input format, so the format outlived the machine.",
               "sources": [
                 "https://en.wikipedia.org/wiki/Gerber_format"
+              ],
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
               ]
             },
             {
@@ -1214,7 +1256,13 @@
                 "facility.electricity"
               ],
               "confidence": "medium",
-              "note": "Pen plotters drawing artwork directly on film or mylar are the documented predecessor technology, slower with real line-width variation. Not established: that check plots for the 251137 artwork were pen-plotted, or that any prototype 250407 layer used one."
+              "note": "Pen plotters drawing artwork directly on film or mylar are the documented predecessor technology, slower with real line-width variation. Not established: that check plots for the 251137 artwork were pen-plotted, or that any prototype 250407 layer used one.",
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
+              ]
             },
             {
               "id": "mb.photo.plotter.laser",
@@ -1591,7 +1639,13 @@
             "facility.electricity"
           ],
           "confidence": "medium",
-          "note": "Clamping film and resist under vacuum so the film sits hard with no bubbles or shadowing is ordinary contact exposure. Not established: the frame size, diaphragm material, or pump-down time for the 250407 exposures."
+          "note": "Clamping film and resist under vacuum so the film sits hard with no bubbles or shadowing is ordinary contact exposure. Not established: the frame size, diaphragm material, or pump-down time for the 250407 exposures.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         },
         {
           "id": "mb.pcb.exposure.lamp",
@@ -1605,7 +1659,17 @@
             "facility.water"
           ],
           "confidence": "medium",
-          "note": "A mercury-vapour source rich in near ultraviolet where acrylate resists are sensitive is the ordinary exposure lamp. Not established: whether the 250407 exposure used mercury-vapour or metal-halide, its wattage, or the water-cooling and choke arrangement."
+          "note": "A mercury-vapour source rich in near ultraviolet where acrylate resists are sensitive is the ordinary exposure lamp. Not established: whether the 250407 exposure used mercury-vapour or metal-halide, its wattage, or the water-cooling and choke arrangement.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            },
+            {
+              "to": "facility.water",
+              "rel": "consumes"
+            }
+          ]
         }
       ],
       "edges": [
@@ -1771,7 +1835,13 @@
             "facility.electricity"
           ],
           "confidence": "medium",
-          "note": "Stepping a tape-fed head through a tool table over pinned or vacuum-held fixtures is ordinary numerical-control drilling. Not established: the drill make, tape format, or sub-millimetre positioning actually held on the 250407 order."
+          "note": "Stepping a tape-fed head through a tool table over pinned or vacuum-held fixtures is ordinary numerical-control drilling. Not established: the drill make, tape format, or sub-millimetre positioning actually held on the 250407 order.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         },
         {
           "id": "mb.pcb.drill.bit",
@@ -2223,7 +2293,13 @@
             "facility.electricity"
           ],
           "confidence": "medium",
-          "note": "Heating platens with steam coils or embedded electric resistance elements is the ordinary press arrangement. Not established: whether the laminate supplier used gas- or oil-fired central steam or electric heat, or that the press was the largest fuel load on that site."
+          "note": "Heating platens with steam coils or embedded electric resistance elements is the ordinary press arrangement. Not established: whether the laminate supplier used gas- or oil-fired central steam or electric heat, or that the press was the largest fuel load on that site.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         }
       ],
       "edges": [

@@ -2308,7 +2308,13 @@
           "inputs": [
             "facility.electricity"
           ],
-          "note": "Not established: mechanical versus hydraulic press blanking to a controlled thickness, and the densify plus fire-on-silver-electrodes sinter sequence for these discs."
+          "note": "Not established: mechanical versus hydraulic press blanking to a controlled thickness, and the densify plus fire-on-silver-electrodes sinter sequence for these discs.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         }
       ],
       "note": "Not established: the 1200-1300 C sinter and the 700-850 C silver electrode fire through the glass frit. What is documented is the construction - the early ceramic disc style was a disc with metallisation on both sides contacted with tinned wires, and the modern disc style is a single-layer disc with a resin coating and through-hole leads. The single-electrode-pair structure is the documented reason a disc has no internal inductance cancellation.",
@@ -2665,7 +2671,13 @@
           "inputs": [
             "facility.electricity"
           ],
-          "note": "Not established: a temperature-controlled rack of trays holding finished parts at temperature and bias, and hours-or-days burn-in at a 1982 capacitor plant for this supply."
+          "note": "Not established: a temperature-controlled rack of trays holding finished parts at temperature and bias, and hours-or-days burn-in at a 1982 capacitor plant for this supply.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         },
         {
           "id": "mb.passives.caps.alu-electrolytic.aging.test",
@@ -2904,7 +2916,13 @@
           "inputs": [
             "facility.electricity"
           ],
-          "note": "Stacking and solidifying by pressure is documented. Not established: a heated hydraulic press, registration pins, or that this is the step that turns loose printed film into a solid bar."
+          "note": "Stacking and solidifying by pressure is documented. Not established: a heated hydraulic press, registration pins, or that this is the step that turns loose printed film into a solid bar.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         }
       ],
       "note": "Not established: the 10-60 active layer count for a 1982 0.1 uF 50 V part, the lamination pressure in tens of MPa, and the 200-400 C debind ramp. What is documented is that the printed sheets are stacked in the required number of layers, solidified by pressure, and that the binder is burnt out of the stack after cutting."
@@ -2995,7 +3013,13 @@
           "inputs": [
             "facility.electricity"
           ],
-          "note": "Not established: the pulsed laser head with in-line ohmmeter measuring thousands of times per second, and the excimer laser for fine-resolution cuts. The source establishes only that thick film resistors are trimmed by laser among other methods."
+          "note": "Not established: the pulsed laser head with in-line ohmmeter measuring thousands of times per second, and the excimer laser for fine-resolution cuts. The source establishes only that thick film resistors are trimmed by laser among other methods.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         }
       ],
       "edges": [
@@ -3758,7 +3782,13 @@
           "inputs": [
             "facility.electricity"
           ],
-          "note": "Firing at about 850 C is documented. Not established: the belt or pusher tunnel with profiled hot zones, the drying and burnout stages, and the claim that too fast a cool micro-cracks the glass."
+          "note": "Firing at about 850 C is documented. Not established: the belt or pusher tunnel with profiled hot zones, the drying and burnout stages, and the claim that too fast a cool micro-cracks the glass.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         }
       ],
       "note": "The 850 C firing peak is documented. Not established: driving the resistors at 1.5 times rated power for 15-25 minutes to age them in the firing, which is the substantive claim here.",
@@ -3787,6 +3817,12 @@
       ],
       "inputs": [
         "facility.electricity"
+      ],
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
       ]
     },
     "mb.passives.resistors.discrete-axial.metal-film.vacuum-deposition": {
@@ -3810,7 +3846,13 @@
       "inputs": [
         "facility.electricity"
       ],
-      "note": "Contradicted as stated. The source says thin film resistors are made by sputtering, a method of vacuum deposition, and that metal film resistors are usually coated with nickel chromium by techniques that may include sputtering but need not be limited to it. Nothing supports 'vacuum deposited - not sputtered - was standard for axial resistors in 1982', nor the 50-500 nm film thickness or the 10^-3 to 10^-5 Torr figure."
+      "note": "Contradicted as stated. The source says thin film resistors are made by sputtering, a method of vacuum deposition, and that metal film resistors are usually coated with nickel chromium by techniques that may include sputtering but need not be limited to it. Nothing supports 'vacuum deposited - not sputtered - was standard for axial resistors in 1982', nor the 50-500 nm film thickness or the 10^-3 to 10^-5 Torr figure.",
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
     },
     "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black.furnace": {
       "id": "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black.furnace",
@@ -3884,7 +3926,13 @@
               "inputs": [
                 "facility.electricity"
               ],
-              "note": "Not established: wire-rack dipping, epoxy versus PVC solution as the coating, and the tapered-shoulder-at-each-lead-exit with a second dip giving the second shoulder."
+              "note": "Not established: wire-rack dipping, epoxy versus PVC solution as the coating, and the tapered-shoulder-at-each-lead-exit with a second dip giving the second shoulder.",
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes"
+                }
+              ]
             }
           ]
         },
@@ -4072,7 +4120,13 @@
             "facility.electricity"
           ],
           "children": [],
-          "note": "Cutting the pressed stack into individual components is documented. Not established: that a resin-bonded diamond blade is used, or that this is 'the same abrasive technology as the crystal grinder'."
+          "note": "Cutting the pressed stack into individual components is documented. Not established: that a resin-bonded diamond blade is used, or that this is 'the same abrasive technology as the crystal grinder'.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         }
       ]
     }

@@ -3841,7 +3841,12 @@
             "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
           ],
           "confidence": "high",
-          "edges": []
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         },
         {
           "id": "mb.cpu.fe.deposition",

@@ -2318,7 +2318,13 @@
       "inputs": [
         "facility.electricity"
       ],
-      "note": "Not established: that phenolic bodies were compression rather than injection moulded for this connector, and the short-flow cheap-die argument. No source consulted establishes thermoset processing."
+      "note": "Not established: that phenolic bodies were compression rather than injection moulded for this connector, and the short-flow cheap-die argument. No source consulted establishes thermoset processing.",
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes"
+        }
+      ]
     },
     "mb.passives.resistors.discrete-axial.carbon-film.film-deposit": {
       "id": "mb.passives.resistors.discrete-axial.carbon-film.film-deposit",

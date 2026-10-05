@@ -1816,7 +1816,13 @@
           "inputs": [
             "facility.electricity"
           ],
-          "note": "Not established: hydraulic flat-bed type with heated platens, and that small presses of this type cured the whole C64 dome sheet in one shot."
+          "note": "Not established: hydraulic flat-bed type with heated platens, and that small presses of this type cured the whole C64 dome sheet in one shot.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         },
         {
           "id": "c64.keyboard-switches.domes.moulding.tool",
@@ -2385,7 +2391,13 @@
           "inputs": [
             "facility.electricity"
           ],
-          "note": "Quartz is documented as trigonal alpha-quartz in space group P3221 with a fixed cell, so crystallographic orientation by X-ray is meaningful. Not established: the four-circle diffractometer, the ~35 degree AT-cut as the mid-1980s general-purpose standard, and the claim that this angle flattens the frequency-temperature curve. The 573 C alpha-beta transition is documented but is not the frequency-temperature flatness argument."
+          "note": "Quartz is documented as trigonal alpha-quartz in space group P3221 with a fixed cell, so crystallographic orientation by X-ray is meaningful. Not established: the four-circle diffractometer, the ~35 degree AT-cut as the mid-1980s general-purpose standard, and the claim that this angle flattens the frequency-temperature curve. The 573 C alpha-beta transition is documented but is not the frequency-temperature flatness argument.",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes"
+            }
+          ]
         },
         {
           "id": "mb.crystal.y1.blank-preparation.lapping",
@@ -2494,7 +2506,13 @@
             "facility.water"
           ],
           "children": [],
-          "note": "Not established: that cleaning from lapping onward is done washed and clean, and that a fingerprint on a 0.07 mm plate shifts the frequency. Sensible contamination control, but unsourced."
+          "note": "Not established: that cleaning from lapping onward is done washed and clean, and that a fingerprint on a 0.07 mm plate shifts the frequency. Sensible contamination control, but unsourced.",
+          "edges": [
+            {
+              "to": "facility.water",
+              "rel": "consumes"
+            }
+          ]
         }
       ],
       "note": "Not established: the 350-400 C vacuum bake for 1-2 hours and its claimed removal of pyroelectric drift and the dope effect. No document consulted describes the post-cut bake or its mechanism. The one nearby documented quartz fact is the alpha-beta transformation at 573 C, well above this bake.",
