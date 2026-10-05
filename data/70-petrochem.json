@@ -993,6 +993,11 @@
                 {
                   "to": "chem.ethylene.polyethylene.ldpe.initiator",
                   "rel": "consumes"
+                },
+                {
+                  "to": "chem.tert-butyl-peroxybenzoate",
+                  "rel": "consumes",
+                  "basis": "documented"
                 }
               ]
             },
@@ -3510,7 +3515,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Benzoyl%20peroxide"
       ],
-      "note": "Benzoyl peroxide is a chain-growth radical initiator. Its half-life is one hour at 92 C and one minute at 131 C, so a 60-90 C dosing temperature is low for this initiator and the operating figure needs checking. Not established: the 0.05-0.5 wt% loading and the benzoic acid residue and yellowing claim."
+      "note": "Benzoyl peroxide is a chain-growth radical initiator. Its half-life is one hour at 92 C and one minute at 131 C, so a 60-90 C dosing temperature is low for this initiator and the operating figure needs checking. Not established: the 0.05-0.5 wt% loading and the benzoic acid residue and yellowing claim.",
+      "edges": [
+        {
+          "to": "chem.benzoyl-chloride",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.styrene.polymerisation.bulk-gpps.suspending-agent": {
       "id": "chem.styrene.polymerisation.bulk-gpps.suspending-agent",
@@ -8834,6 +8846,128 @@
       ],
       "confidence": "medium",
       "edges": []
+    },
+    "chem.toluene": {
+      "id": "chem.toluene",
+      "name": "Toluene (methylbenzene)",
+      "description": "Methylbenzene (C6H5CH3), the C7 aromatic of the BTX cut: a colourless liquid boiling at 110.6 C, recovered from reformer naphtha and cracker streams and from coke-oven gas by distillation or solvent extraction. Hydrodealkylation converts it to benzene plus methane, and side-chain oxidation converts it to benzoic acid and benzaldehyde. The oxidation leg is the one that reaches the polystyrene peroxide on this tree.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1840s",
+      "facts": [
+        {
+          "label": "Formula and boiling point",
+          "value": "C7H8, 92.14 g/mol, bp 110.6 C"
+        },
+        {
+          "label": "BTX sources",
+          "value": "crude oil at low levels; gasoline reformer and ethylene-cracker byproduct; coke-from-coal byproduct; final BTX separation by distillation or solvent extraction"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Toluene",
+        "https://en.wikipedia.org/wiki/Benzoic_acid"
+      ],
+      "confidence": "medium",
+      "edges": []
+    },
+    "chem.benzoic-acid": {
+      "id": "chem.benzoic-acid",
+      "name": "Benzoic acid",
+      "description": "Benzenecarboxylic acid (C7H6O2), the simplest aromatic carboxylic acid: colourless crystals melting at 122 C and boiling at 250 C, made commercially by partial oxidation of toluene with oxygen over cobalt or manganese naphthenates in high yield. The acid chlorinates to benzoyl chloride and decarboxylates oxidatively to phenol; food-grade material is produced synthetically. On this tree it is the carbon skeleton behind the benzoyl chloride that makes both the polystyrene peroxide and the LDPE perester.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1900s",
+      "facts": [
+        {
+          "label": "Formula and melting/boiling points",
+          "value": "C7H6O2, 122.12 g/mol, mp 122 C, bp 250 C"
+        },
+        {
+          "label": "Commercial oxidation",
+          "value": "toluene plus O2 over Co or Mn naphthenates; patent example 155-165 C at 0.55-0.62 MPa for 8-10 h, 71-82% conversion, rectified to 99.00%+ purity"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Benzoic_acid",
+        "https://en.wikipedia.org/wiki/Toluene",
+        "https://patents.google.com/patent/CN101492368B/en"
+      ],
+      "confidence": "high",
+      "edges": [
+        {
+          "to": "chem.toluene",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
+    },
+    "chem.benzoyl-chloride": {
+      "id": "chem.benzoyl-chloride",
+      "name": "Benzoyl chloride",
+      "description": "Benzenecarbonyl chloride (C6H5COCl), the acyl chloride of benzoic acid: a colourless fuming liquid boiling at 198 C, made from benzotrichloride with water or benzoic acid and from the parent acid with phosphorus pentachloride, thionyl chloride or oxalyl chloride. It is mainly useful for the production of organic peroxides, with dyes, perfumes, pharmaceuticals and resins as other outlets. On this tree it is the shared precursor: with hydrogen peroxide and sodium hydroxide it gives dibenzoyl peroxide, and with tert-butyl hydroperoxide it gives tert-butyl peroxybenzoate.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1832",
+      "facts": [
+        {
+          "label": "Formula and boiling point",
+          "value": "C6H5COCl, 140.57 g/mol, mp -1 C, bp 198 C"
+        },
+        {
+          "label": "Peroxide reactions",
+          "value": "2 C6H5COCl plus H2O2 plus 2 NaOH to (C6H5CO)2O2 plus 2 NaCl plus 2 H2O; TBPB by benzoyl-chloride plus tert-butyl-hydroperoxide acylation, HCl removed in vacuo, virtually quantitative yield"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Benzoyl_chloride",
+        "https://en.wikipedia.org/wiki/Benzoic_acid",
+        "https://patents.google.com/patent/US1851832"
+      ],
+      "confidence": "high",
+      "edges": [
+        {
+          "to": "chem.benzoic-acid",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
+    },
+    "chem.tert-butyl-peroxybenzoate": {
+      "id": "chem.tert-butyl-peroxybenzoate",
+      "name": "tert-Butyl peroxybenzoate (TBPB)",
+      "description": "tert-Butyl peroxybenzoate (C6H5CO3CMe3, C11H14O3), the most widely produced perester: a pale-yellow liquid of density 1.034 and melting point 8-9 C carrying 8.16 wt% active oxygen, made by acylation of tert-butyl hydroperoxide with benzoyl chloride. It initiates ethylene to LDPE alongside vinyl chloride, styrene, acrylic esters and unsaturated polyester resins at about 1-2% for resin cure. Half-life is 10 hours at 104 C, one hour at 124 C and one minute at 165 C with a self-accelerating decomposition temperature near 60 C; decomposition gives carbon dioxide, acetone, methane, tert-butanol, benzoic acid and benzene, the last of which can diffuse from LDPE film in food uses.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1950s",
+      "facts": [
+        {
+          "label": "Formula and active oxygen",
+          "value": "C11H14O3, 194.23 g/mol, density 1.034, mp 8-9 C, bp 112 C (decomposes), 8.16 wt% active oxygen"
+        },
+        {
+          "label": "Half-life and storage",
+          "value": "10 h at 104 C, 1 h at 124 C, 1 min at 165 C; SADT about 60 C; stored between 10 C and 50 C"
+        },
+        {
+          "label": "LDPE use",
+          "value": "radical initiator for ethylene to LDPE; 1-2% for unsaturated polyester resin cure; benzene diffusion from LDPE film noted for food uses"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tert-Butyl_peroxybenzoate",
+        "https://en.wikipedia.org/wiki/Organic_peroxide",
+        "https://luperox.arkema.com/en/product-families/thermoplastics/low-density-polyethylene-ldpe-eva/",
+        "https://polymerization-chem.com/5-ester-peroxides.html"
+      ],
+      "confidence": "high",
+      "edges": [
+        {
+          "to": "chem.benzoyl-chloride",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     }
   }
 }
