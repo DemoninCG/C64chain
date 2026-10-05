@@ -4907,7 +4907,14 @@
       ],
       "confidence": "medium",
       "note": "A C-60 and a C-90 differ in length and gauge. A C-60 at 12 microns and a C-90 at 9 microns hold about the same total oxide per side, so the C-90 has to be made of a higher-output oxide (often cobalt-modified) to hold as much. The polyester base film is an ingredient of the slitting step. Not established: the coating-line web width, the rotary slitter knives, the static charge that holds the thin film off the rollers, and the 9-12 micron base gauge. The 3.81 mm strip width and the 45 m per side for a C-60 are the reliable parts.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "chem.polyester.pet.film",
+          "rel": "consumes",
+          "basis": "documented"
+        }
+      ]
     },
     "peripheral.tv.chassis.pcb.plating": {
       "id": "peripheral.tv.chassis.pcb.plating",

@@ -2750,12 +2750,13 @@
       "inputs": [],
       "edges": [
         {
-          "to": "metal.phosphate-ore",
+          "to": "facility.electricity",
           "rel": "consumes"
         },
         {
-          "to": "facility.electricity",
-          "rel": "consumes"
+          "to": "metal.ammonium-phosphate",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -3991,23 +3992,21 @@
     "mb.passives.caps.mlcc.print-electrodes": {
       "id": "mb.passives.caps.mlcc.print-electrodes",
       "name": "Screen-printing internal electrodes",
-      "description": "A metal paste is printed onto the green sheets to define the buried internal electrodes, the sheets being cut from the rolled foil afterwards. In 1982 the commodity MLCC still used a noble-metal paste: the displacement of palladium-bearing electrodes by cheaper nickel is dated to 1993 by TDK, with copper and nickel arriving later still after a late-1990s surge in noble-metal prices. So the older, expensive palladium-silver electrode was the mainstream choice at this date, not a legacy one.",
+      "description": "A metal paste is printed onto the green sheets to define the buried internal electrodes, the sheets being cut from the rolled foil afterwards. Both metallurgies were in production in 1982: Murata began mass-producing nickel-electrode MLCCs in 1982, while palladium-silver remained the mainstream commodity electrode through the 1980s and was largely displaced by nickel base-metal electrodes only afterwards. TDK's 1993 date marks one maker's transition, not the industry's.",
       "kind": "process",
       "category": "passives",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
-        "https://en.wikipedia.org/wiki/Ceramic_capacitor"
+        "https://en.wikipedia.org/wiki/Ceramic_capacitor",
+        "https://ethw.org/Milestones:Commercialization_of_Multilayer_Ceramic_Capacitors_with_Nickel_Electrodes,_1982",
+        "https://www.tti.com/content/ttiinc/en/resources/marketeye/categories/passives/me-zogbi-20231011.html"
       ],
-      "note": "Not established, and in tension with the source cited: the switch from palladium-bearing to nickel internal electrodes is dated there to 1993 by TDK, with cheaper base metals developing after a late-1990s noble-metal price surge, not to the 1982 commodity part. Screen-printing a metal paste onto the green sheets is documented; the 1982 nickel-versus-palladium-silver balance is not.",
+      "note": "Screen-printing a metal paste that co-fires with the ceramic is documented. Palladium was the primary MLCC electrode metal through the 1980s and 1990s with nickel base-metal electrodes displacing it afterwards; nickel-electrode MLCCs were nevertheless in mass production from 1982. TDK's 1993 date marks one maker's transition, not the industry's.",
       "facts": [
         {
-          "label": "1982 internal electrode",
-          "value": "palladium-silver or similar noble metal for a 1982 part; nickel only from 1993 and later base metals after that"
-        },
-        {
-          "label": "Legacy alternative",
-          "value": "nickel, from 1993 onward"
+          "label": "1982 internal electrodes",
+          "value": "palladium-silver mainstream, with nickel-electrode MLCCs in mass production from 1982 (Murata); industry-wide displacement of palladium by nickel base-metal electrodes came later."
         },
         {
           "label": "Print",

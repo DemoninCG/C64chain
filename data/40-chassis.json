@@ -3726,7 +3726,19 @@
         "braid wires"
       ],
       "confidence": "medium",
-      "note": "Not established: the line speed, the number of passes and the spark test on the cable that shipped with the C64."
+      "note": "Not established: the line speed, the number of passes and the spark test on the cable that shipped with the C64.",
+      "edges": [
+        {
+          "to": "chem.pvc.compound.flexible",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "chem.polyethylene.resin",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "c64.keyboard.keycaps.tool": {
       "id": "c64.keyboard.keycaps.tool",

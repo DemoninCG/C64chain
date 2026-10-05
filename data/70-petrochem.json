@@ -1636,6 +1636,11 @@
             {
               "to": "chem.styrene.ethylbenzene.zeolite-catalyst",
               "rel": "consumes"
+            },
+            {
+              "to": "chem.styrene.ethylbenzene.intermediate",
+              "rel": "produces",
+              "role": "product"
             }
           ]
         },
@@ -1685,6 +1690,11 @@
               "to": "facility.steam.styrene",
               "rel": "produces",
               "role": "product"
+            },
+            {
+              "to": "chem.styrene.ethylbenzene.intermediate",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -2340,6 +2350,12 @@
                       "to": "mb.pcb.photoresist.carrier",
                       "rel": "produces",
                       "role": "product"
+                    },
+                    {
+                      "to": "chem.polyester.pet.resin",
+                      "rel": "produces",
+                      "role": "product",
+                      "basis": "typical-1982"
                     }
                   ]
                 }
@@ -8505,7 +8521,13 @@
       ],
       "confidence": "high",
       "note": "Established: biaxially oriented PET film under the stated trade names, with high tensile strength, chemical and dimensional stability, transparency and electrical insulation, and metallised barrier properties. Not established: 1982 film thicknesses, metallisation thicknesses, roll widths, 1983 tonnages, and the casting and stretching temperatures as 1982 practice. PET resin pellets have no canonical material node; the polymerisation is chem.polyester.pet.",
-      "edges": []
+      "edges": [
+        {
+          "to": "chem.polyester.pet.resin",
+          "rel": "made of",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "chem.polystyrene.resin": {
       "id": "chem.polystyrene.resin",
@@ -8648,6 +8670,90 @@
       ],
       "confidence": "medium",
       "note": "Established: 1,4-butanediol is the colourless viscous primary alcohol HOCH2CH2CH2CH2OH, the diol monomer for PBT with dimethyl terephthalate or terephthalic acid. Not established: the 1980s industrial route, temperatures pressures and catalysts, purities, and tonnages as 1982 practice. Category plastics as a polyester diol feedstock, like ethylene glycol, rather than fluids. Era 1970s for the PBT engineering use; first synthesis 1890.",
+      "edges": []
+    },
+    "chem.polyester.pet.resin": {
+      "id": "chem.polyester.pet.resin",
+      "name": "PET resin (polyethylene terephthalate pellets)",
+      "description": "Polyethylene terephthalate as it leaves the polymeriser: solid pellets of (C10H8O4)n chains, made by transesterification of dimethyl terephthalate with ethylene glycol with methanol as byproduct, or by esterification of purified terephthalic acid with ethylene glycol with water as byproduct, polycondensed under vacuum over an antimony or titanium catalyst. Film-grade resin runs 0.60-0.70 intrinsic viscosity; remelted and cast to amorphous sheet, it is the feed for biaxially drawn BOPET film sold as Mylar, Melinex, Lumirror and Hostaphan, and for magnetic-tape base and capacitor dielectric.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1950s",
+      "facts": [
+        {
+          "label": "Repeat unit",
+          "value": "(C10H8O4)n"
+        },
+        {
+          "label": "Film-grade intrinsic viscosity",
+          "value": "0.60-0.70"
+        },
+        {
+          "label": "Density and melting point",
+          "value": "1.38 g/cm3, 260 C"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Polyethylene_terephthalate",
+        "https://en.wikipedia.org/wiki/Mylar"
+      ],
+      "confidence": "medium",
+      "edges": []
+    },
+    "chem.pvc.vcm.oxychlorination": {
+      "id": "chem.pvc.vcm.oxychlorination",
+      "name": "VCM by oxychlorination (balanced ethylene route)",
+      "description": "Ethylene plus hydrogen chloride plus oxygen over a copper(II) chloride catalyst to 1,2-dichloroethane, which is cracked to vinyl chloride monomer with the HCl recycled to the oxychlorination stage; together with direct chlorination and EDC cracking this is the balanced VCM process. The ethylene route displaced the acetylene-mercury route across the US and Europe during the 20th century, and EDC cracking has been the major vinyl chloride route since the late 1950s.",
+      "kind": "process",
+      "category": "plastics",
+      "era": "1950s",
+      "facts": [
+        {
+          "label": "Oxychlorination",
+          "value": "CH2=CH2 + 2HCl + 1/2O2 to EDC + H2O over CuCl2"
+        },
+        {
+          "label": "Cracking",
+          "value": "EDC to VCM + HCl, 50-60% per-pass conversion"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Vinyl_chloride",
+        "https://en.wikipedia.org/wiki/Oxychlorination"
+      ],
+      "confidence": "medium",
+      "note": "Vinyl chloride monomer has two documented production routes in 1982: the acetylene route over mercuric chloride and this balanced oxychlorination route (ethylene plus hydrogen chloride plus oxygen to EDC over copper(II) chloride, EDC cracked to VCM with hydrogen chloride recycled, with direct chlorination). Both routes were in operation; the dual production is intentional. Same two-route pattern as the SAN matrix.",
+      "edges": [
+        {
+          "to": "chem.pvc.vcm",
+          "rel": "produces",
+          "role": "product",
+          "basis": "typical-1982"
+        }
+      ]
+    },
+    "chem.styrene.ethylbenzene.intermediate": {
+      "id": "chem.styrene.ethylbenzene.intermediate",
+      "name": "Ethylbenzene (styrene intermediate)",
+      "description": "Ethylbenzene (C8H10, C6H5CH2CH3), the alkylation product of benzene and ethylene: a colourless liquid that is the styrene chain's central intermediate, with over 99% of production dehydrogenated to styrene. Vapour-phase alkylation over zeolite catalysts in the 1980s, including the Mobil-Badger ZSM-5 family whose first commercial zeolite ethylbenzene process dates to the 1970s, displaced the older aluminium-chloride and supported-phosphoric-acid routes.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1930s",
+      "facts": [
+        {
+          "label": "Formula",
+          "value": "C8H10, boiling point 136 C"
+        },
+        {
+          "label": "Share to styrene",
+          "value": "over 99% of ethylbenzene dehydrogenated to styrene"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ethylbenzene",
+        "https://www.exxonmobilchemical.com/en/catalysts-and-technology-licensing/benzene-alkylation"
+      ],
+      "confidence": "medium",
       "edges": []
     }
   }
