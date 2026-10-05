@@ -54,10 +54,6 @@
           "rel": "made from"
         },
         {
-          "to": "metal.steel.sheet",
-          "rel": "made of"
-        },
-        {
           "to": "metal.tinplate",
           "rel": "made of"
         },
@@ -795,7 +791,161 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Cold_rolling"
       ],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.steel.hot-strip",
+          "rel": "made of"
+        },
+        {
+          "to": "metal.steel.cold-rolling",
+          "rel": "step"
+        }
+      ]
+    },
+    "metal.steel.slab": {
+      "id": "metal.steel.slab",
+      "name": "Continuous-cast steel slab",
+      "simple_name": "Cast steel slab",
+      "description": "What the continuous caster makes: liquid steel frozen into a 10-30 t slab, 900-1350 mm wide, cut by torch or flying shear. The slab changes chemistry nowhere on its way to the mill; it is steel in cast form, and the hot strip mill only changes its shape.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Mass",
+          "value": "10-30 t per slab"
+        },
+        {
+          "label": "Width",
+          "value": "900-1350 mm for slab"
+        },
+        {
+          "label": "Cutting",
+          "value": "torch cut or flying shear"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Continuous_casting"
+      ],
       "children": []
+    },
+    "metal.steel.hot-strip": {
+      "id": "metal.steel.hot-strip",
+      "name": "Hot-rolled strip, 2-12 mm",
+      "simple_name": "Hot-rolled strip",
+      "description": "The hot strip mill's output: low-carbon steel rolled from reheated slab to 2-12 mm strip and coiled still hot. It carries mill scale that pickling removes before cold rolling, and its grain is as-rolled, not the recrystallised equiaxed grain the anneal gives finished sheet.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Thickness",
+          "value": "2-12 mm off the finishing train"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Cold_rolling"
+      ],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.steel.slab",
+          "rel": "made of"
+        },
+        {
+          "to": "metal.steel.hot-rolling",
+          "rel": "step"
+        }
+      ]
+    },
+    "metal.steel.hot-rolling": {
+      "id": "metal.steel.hot-rolling",
+      "name": "Hot-roll the slab to strip",
+      "simple_name": "Hot rolling to strip",
+      "description": "Reheat the slab to 1150-1250 C, descale it with a high-pressure water jet, and roll it through a roughing stand and a finishing train to 2-12 mm strip. The 1982 mill ran a reversing rougher ahead of a continuous finishing train and coiled the strip hot; gauge control and edge cracking are the operating problems.",
+      "kind": "process",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Reheat",
+          "value": "1150-1250 C"
+        },
+        {
+          "label": "Descale",
+          "value": "high-pressure water jet"
+        },
+        {
+          "label": "Exit",
+          "value": "2-12 mm strip, coiled hot"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Cold_rolling"
+      ],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.steel.slab",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.steel.hot-strip",
+          "rel": "produces",
+          "role": "product"
+        },
+        {
+          "to": "metal.steel.caster",
+          "rel": "step"
+        }
+      ]
+    },
+    "metal.steel.cold-rolling": {
+      "id": "metal.steel.cold-rolling",
+      "name": "Cold-roll the strip to sheet",
+      "simple_name": "Cold rolling to sheet",
+      "description": "Take the pickled hot strip through a Sendzimir or multi-high cluster mill to 0.2-0.5 mm sheet, with rolling oil on the rolls and an anneal between passes. Annealing in hydrogen or hydrogen-nitrogen recrystallises the work-hardened strip to soft equiaxed grain that stamps without tearing.",
+      "kind": "process",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "high",
+      "facts": [
+        {
+          "label": "Exit",
+          "value": "0.2-0.5 mm sheet"
+        },
+        {
+          "label": "Mill",
+          "value": "Sendzimir or multi-high cluster mill, rolling oil emulsion"
+        }
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Cold_rolling"
+      ],
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.steel.hot-strip",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.rolling-oil",
+          "rel": "consumes"
+        },
+        {
+          "to": "metal.steel.sheet",
+          "rel": "produces",
+          "role": "product"
+        },
+        {
+          "to": "metal.steel.hot-rolling",
+          "rel": "step"
+        }
+      ]
     },
     "metal.tinplate": {
       "id": "metal.tinplate",
@@ -1781,6 +1931,11 @@
         {
           "to": "metal.steel.bof",
           "rel": "step"
+        },
+        {
+          "to": "metal.steel.slab",
+          "rel": "produces",
+          "role": "product"
         }
       ]
     },

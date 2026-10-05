@@ -895,7 +895,14 @@
       "era": "1983",
       "inputs": [],
       "confidence": "medium",
-      "note": "Not established: that polypropylene was the cheapest acid-resistant pipe for 1980s wet-bench waste lines, or that spun-bonded polypropylene was the standard air-filter pre-filter material of the decade."
+      "note": "Not established: that polypropylene was the cheapest acid-resistant pipe for 1980s wet-bench waste lines, or that spun-bonded polypropylene was the standard air-filter pre-filter material of the decade.",
+      "edges": [
+        {
+          "to": "chem.propylene.polymerisation",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "facility.electricity.askarel": {
       "id": "facility.electricity.askarel",
@@ -927,7 +934,14 @@
       "category": "fluids",
       "era": "1983",
       "confidence": "low",
-      "note": "Not verified for a specific 1980s askarel producer."
+      "note": "Not verified for a specific 1980s askarel producer.",
+      "edges": [
+        {
+          "to": "chem.styrene.benzene",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "facility.cleanroom.silica": {
       "id": "facility.cleanroom.silica",
@@ -1376,7 +1390,14 @@
       "era": "1983",
       "inputs": [],
       "confidence": "medium",
-      "note": "Not established: that spun-bonded polypropylene was the standard 1980s cleanroom garment material or the standard tacky-mat material. Spun-bonded fabric has no separate encyclopaedia article, and no standard or industry document was located for this material in the cleanroom trade in that decade."
+      "note": "Not established: that spun-bonded polypropylene was the standard 1980s cleanroom garment material or the standard tacky-mat material. Spun-bonded fabric has no separate encyclopaedia article, and no standard or industry document was located for this material in the cleanroom trade in that decade.",
+      "edges": [
+        {
+          "to": "chem.propylene.polymerisation",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "facility.hazardous-waste.metal-hydroxide-sludge": {
       "id": "facility.hazardous-waste.metal-hydroxide-sludge",
@@ -1993,6 +2014,11 @@
         {
           "to": "facility.electricity",
           "rel": "consumes"
+        },
+        {
+          "to": "facility.water.ultrapure",
+          "rel": "consumes",
+          "basis": "inferred"
         }
       ]
     },
@@ -3278,6 +3304,11 @@
         {
           "to": "facility.water",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.activated-carbon",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },

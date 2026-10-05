@@ -69,24 +69,37 @@ stays readable.
 - Reviewed-and-kept: 6 restored nodes, kraft/EPS/pentane history, the
   `$qaPass` block in `50-power.json`, `estimate.mjs` NaN fix, `metal.benzene`
   merge, README figure refresh. Boron thresholds reconciled (no issue).
+- **README OCR paths (2026-10-06).** Fetch-verified all six: derived
+  `<id>_djvu.txt` holds for four, two use internal filenames (see README);
+  README now lists the actual text files.
+- **Slab/rolling route for sheet steel (2026-10-06).** 4 new nodes in
+  `61-metals-a.json` (`metal.steel.slab`, `metal.steel.hot-strip`,
+  `metal.steel.hot-rolling`, `metal.steel.cold-rolling`); the caster produces
+  slab, hot rolling produces strip, cold rolling produces sheet; the direct
+  `metal.steel → sheet` link is removed. Chain orphans 423 → 422 (caster
+  rescued). Slab deliberately omits a parallel `made of steel` shortcut: it
+  would close a refinement cycle through the generic steel node's form links
+  (steel → tinplate → sheet); the substance link rides on the
+  caster-consumes-steel/produces-slab route instead.
+- **Fastener specification (2026-10-06).** `c64.keyboard.body.screws`
+  de-asserted: the zinc-nickel/brass-look chemistry and the motive claim are
+  removed; the finish is recorded as observed gold colour with chemistry not
+  established; `inputs` reduced to steel. Not mapped to sheet steel.
+- **Held-out composition edges (2026-10-06).** All 37 non-rescuing proposals
+  applied as typed edges with ledger basis (one with added `role: product`);
+  every row mechanically re-verified (holder/target exist, relation storable,
+  no duplicate). 4 `other` ledger rows were already present and skipped.
+  Content only, no reachability claimed.
+- **Legacy retypes (2026-10-06).** Both migrated from `inputs` to typed edges
+  (`si.mould.press` consumes electricity with basis inferred; diode packaging
+  step to `chem.epoxy` with basis documented) with the legacy `inputs` entries
+  removed, so no double-storage.
 
 ## 0. Still open, non-blocking
 
 - Push the commits to `origin/main`.
 - Decide whether the large build artifacts (`public/tree.*`, `docs/TREE.md`)
   stay committed or move to a release artifact.
-- **The README's documented OCR path is wrong for two of its six reference
-  documents.** It says each scan's text is at
-  `archive.org/download/<id>/<id>_djvu.txt`. That holds for four of the six, but
-  **404s** for two, because their internal filenames differ from the item id:
-
-  | item id | actual text file |
-  | --- | --- |
-  | `commodore-128-troubleshooting-and-repair-c128` | `Commodore_128_Troubleshooting_and_Repair_djvu.txt` |
-  | `c-64-c-128-parallel-interface-92000-g-version-6` | `C64-C128 Parallel-Interface 92000-G Version 6_djvu.txt` (spaces, needs percent-encoding) |
-
-  All six items exist and are reachable; only the derived path is
-  unreliable. Check a fetch before briefing anyone to use these documents.
 - **`scripts/ingredients.mjs` and `scripts/build.mjs` now agree on normalisation,**
   but `scripts/ambig.mjs`, `analyse.mjs`, `spotcheck.mjs`, `project.mjs` and
   `estimate.mjs` were not re-checked for it and each carries its own copy of some
@@ -155,20 +168,9 @@ graphite electrode is supported should the pass add and research the appropriate
 needle-coke/calcination feedstock. Do not model that feed before the process and
 electrode decisions are settled.
 
-## 4. Scoped next: leaf-pass modeling gaps (not started)
+## 4. Leaf-pass modeling gaps (done 2026-10-06; see log above)
 
-From the 2026-10-06 leaf review, in order:
-
-1. **Slab/rolling route for sheet steel.** `metal.steel.sheet` (GAP_NEW_NODE):
-   add a slab intermediate and hot/cold-rolling production path; do not link
-   sheet directly to generic steel (form mismatch, skips stated stages).
-2. **Fastener specification.** `c64.keyboard.body.screws` (GAP_EVIDENCE):
-   count, thread, steel form and finish all unestablished; the
-   `c64.case.fasteners` context does not settle this leaf's spec. Do not map
-   screws to sheet steel or assert zinc-nickel.
-3. **Held-out composition edges.** 37 non-rescuing proposals (e.g. 60/40
-   solder made of tin/lead ingots) are factually sound but connect no
-   reachability; apply as content only with upstream-anchor work, not as a
-   connectivity fix.
-4. **Legacy retypes.** 2 held-out proposals where the holder already references
-   the target via `children`/`from`; needs per-row retype review.
+All four items closed with the gate green: slab/rolling route, fastener
+de-assertion, 37 held-out composition edges, 2 legacy retypes. The 4 `other`
+ledger rows in the scale15 `held-out.json` were already in the data and were
+left untouched.

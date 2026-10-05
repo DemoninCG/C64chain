@@ -164,13 +164,14 @@ description inline).
 ## Reference documents
 
 Six unrestricted scans are on the Internet Archive, each with searchable OCR
-text at `archive.org/download/<id>/<id>_djvu.txt`:
+text at `archive.org/download/<id>/<textfile>`. For four of the six the text
+file is `<id>_djvu.txt`; the other two use their internal filenames:
 
 - `The_Anatomy_of_the_Commodore_64`
 - `The_Anatomy_of_the_1541_Disk_Drive`
-- `commodore-128-troubleshooting-and-repair-c128`
+- `commodore-128-troubleshooting-and-repair-c128` (text file `Commodore_128_Troubleshooting_and_Repair_djvu.txt`)
 - `Commodore_128_Book_1_Internals`
-- `c-64-c-128-parallel-interface-92000-g-version-6`
+- `c-64-c-128-parallel-interface-92000-g-version-6` (text file `C64-C128 Parallel-Interface 92000-G Version 6_djvu.txt`, spaces need percent-encoding)
 - `C64-C64C_Service_Manual_1992-03_Commodore`
 
 The service manual alone is 75,000 characters of OCR containing 901226/901227/

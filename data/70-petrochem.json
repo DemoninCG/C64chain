@@ -369,6 +369,12 @@
               "to": "chem.refining.catalytic-reforming",
               "rel": "step",
               "basis": "documented"
+            },
+            {
+              "to": "chem.refining.atmospheric-distillation.fractionating-tower.cut-points",
+              "rel": "produces",
+              "role": "product",
+              "basis": "inferred"
             }
           ]
         },
@@ -712,7 +718,19 @@
               "era": "1950s",
               "children": [],
               "note": "The steam-dilution numbers for a naphtha cracker are recorded on the steam cracking step at chem.ethylene.steam-cracking. Established: Naphtha plus steam to ethylene propylene butenes and aromatics. Not established: the stated weight yields and capacity shares as given.",
-              "confidence": "low"
+              "confidence": "low",
+              "edges": [
+                {
+                  "to": "chem.ethylene.feedstock.naphtha",
+                  "rel": "consumes",
+                  "basis": "documented"
+                },
+                {
+                  "to": "facility.steam",
+                  "rel": "consumes",
+                  "basis": "documented"
+                }
+              ]
             }
           ],
           "note": "Detail under chem.butadiene. Established: Refinery to polymer handover via naphtha C4 and reformer aromatics. Not established: the stated benzene to styrene routing specifics as given.",
@@ -3211,7 +3229,24 @@
             }
           ],
           "note": "The C64 chips were 2 micron NMOS designs of the late 1970s fabricated in the early 1980s; both diffusion and implantation were in use for that generation. Established: Dopant sources for boron phosphorus and arsenic closing to ammonia chlorine fluorspar and gas. Not established: the stated closed loop chemistries and generation specifics as given.",
-          "confidence": "low"
+          "confidence": "low",
+          "edges": [
+            {
+              "to": "chem.fab-chemicals.dopants.phosphine",
+              "rel": "consumes",
+              "basis": "documented"
+            },
+            {
+              "to": "chem.fab-chemicals.dopants.arsine",
+              "rel": "consumes",
+              "basis": "documented"
+            },
+            {
+              "to": "chem.fab-chemicals.dopants.diborane",
+              "rel": "consumes",
+              "basis": "documented"
+            }
+          ]
         },
         {
           "id": "chem.fab-chemicals.spec-purity",
@@ -3710,7 +3745,14 @@
       "category": "plastics",
       "era": "1960s",
       "confidence": "medium",
-      "note": "Not established: the storage-temperature range, blanket, inhibitor and temperature-limit claims quoted, and the account of vinyl chloride self-inhibition as a painful discovery turned safety feature."
+      "note": "Not established: the storage-temperature range, blanket, inhibitor and temperature-limit claims quoted, and the account of vinyl chloride self-inhibition as a painful discovery turned safety feature.",
+      "edges": [
+        {
+          "to": "chem.pvc.vcm",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
     },
     "chem.pvc.polymerisation.suspending-agent": {
       "id": "chem.pvc.polymerisation.suspending-agent",
@@ -4787,7 +4829,14 @@
         }
       ],
       "confidence": "medium",
-      "note": "The exact LLDPE share of 1983 is an estimate; growth in this period was rapid."
+      "note": "The exact LLDPE share of 1983 is an estimate; growth in this period was rapid.",
+      "edges": [
+        {
+          "to": "chem.ethylene.monomer",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.ethylene.polyethylene.hdpe.ziegler-natta.titanium-catalyst": {
       "id": "chem.ethylene.polyethylene.hdpe.ziegler-natta.titanium-catalyst",
@@ -5131,6 +5180,18 @@
       "note": "Lead comes from the lead/zinc mining and flotation chain, not from this subsystem. The 183 C eutectic is 63/37 Sn-Pb, not 60/40; 60/40 is not a eutectic alloy and melts at 188 C. Not established: the 250-260 C wave-bath temperature, the 300-350 C iron temperature, and the 60-70% share of world solder in 1983.",
       "sources": [
         "https://en.wikipedia.org/wiki/Solder"
+      ],
+      "edges": [
+        {
+          "to": "metal.tin.ingot",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "metal.lead.ingot",
+          "rel": "made of",
+          "basis": "documented"
+        }
       ]
     },
     "chem.pcb-chemicals.laminate": {
@@ -5680,7 +5741,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Acetone"
       ],
-      "note": "About 83% of acetone is made by the cumene process and about a third of world supply is used as a solvent. Not established: the 56 C boiling point, the 2.5-13% flammable range, and the use for the epoxy residues of a coil winding."
+      "note": "About 83% of acetone is made by the cumene process and about a third of world supply is used as a solvent. Not established: the 56 C boiling point, the 2.5-13% flammable range, and the use for the epoxy residues of a coil winding.",
+      "edges": [
+        {
+          "to": "chem.propylene.cumene.cleavage.acetone",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.solvents.other-oxygenated": {
       "id": "chem.solvents.other-oxygenated",
@@ -6249,7 +6317,14 @@
         }
       ],
       "confidence": "low",
-      "note": "The activity figures for late-1980s catalysts are order-of-magnitude and were rising quickly year to year."
+      "note": "The activity figures for late-1980s catalysts are order-of-magnitude and were rising quickly year to year.",
+      "edges": [
+        {
+          "to": "metal.titanium-tetrachloride",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "chem.propylene.sources.cracker-c3": {
       "id": "chem.propylene.sources.cracker-c3",
@@ -6376,7 +6451,14 @@
       "category": "fluids",
       "era": "ancient",
       "note": "Chlorine electrolysis belongs to the chlorine subsystem; the hydrogen requirement is chem.natural-gas.uses.hydrogen. Established: Chlorine from brine electrolysis plus carbon monoxide for phosgene. Not established: the stated reformer versus coke sourcing specifics as given.",
-      "confidence": "medium"
+      "confidence": "medium",
+      "edges": [
+        {
+          "to": "metal.salt-brine",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.abs.additives.pigment-masterbatch": {
       "id": "chem.abs.additives.pigment-masterbatch",
@@ -6768,7 +6850,14 @@
         }
       ],
       "confidence": "low",
-      "note": "Established: The heavy, aromatic, high-molecular-weight end of crude as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: The heavy, aromatic, high-molecular-weight end of crude as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "edges": [
+        {
+          "to": "chem.petroleum",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.crude.reservoir.reservoir-rock.marine-carbonate": {
       "id": "chem.crude.reservoir.reservoir-rock.marine-carbonate",
@@ -6791,7 +6880,14 @@
       "era": "ancient",
       "children": [],
       "confidence": "low",
-      "note": "Established: The tin in a 60/40 solder was smelted from cassiterite, the tin ore, and cassiterite is one of the rarer tin deposits in the world: Bolivias placer and vein cassiterite, the Corni as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: The tin in a 60/40 solder was smelted from cassiterite, the tin ore, and cassiterite is one of the rarer tin deposits in the world: Bolivias placer and vein cassiterite, the Corni as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "edges": [
+        {
+          "to": "metal.cassiterite",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     
     "chem.solder-chemicals.rosin-flux.activator": {
@@ -6827,7 +6923,19 @@
         }
       ],
       "confidence": "medium",
-      "note": "Not established: the solvent identities listed, the wire and core diameter ranges quoted, the flux-content figure, and the core-drawing process description including the acid-value drift claim."
+      "note": "Not established: the solvent identities listed, the wire and core diameter ranges quoted, the flux-content figure, and the core-drawing process description including the acid-value drift claim.",
+      "edges": [
+        {
+          "to": "chem.rosin",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.solder-chemicals.rosin-flux.activator",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.solder-chemicals.rosin-flux.activator.amine-halide": {
       "id": "chem.solder-chemicals.rosin-flux.activator.amine-halide",
@@ -6861,7 +6969,14 @@
       "era": "1970s",
       "children": [],
       "confidence": "low",
-      "note": "Established: 99.999% and, for the very best, 99.9999% as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: 99.999% and, for the very best, 99.9999% as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "edges": [
+        {
+          "to": "facility.nitrogen.atmospheric-air",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.fab-chemicals.process-gases.helium": {
       "id": "chem.fab-chemicals.process-gases.helium",
@@ -7124,6 +7239,16 @@
               "edges": [
                 {
                   "to": "chem.ethylene.monomer",
+                  "rel": "consumes",
+                  "basis": "documented"
+                },
+                {
+                  "to": "chem.natural-gas.composition.ethane-propane",
+                  "rel": "consumes",
+                  "basis": "documented"
+                },
+                {
+                  "to": "facility.nitrogen",
                   "rel": "consumes",
                   "basis": "documented"
                 }
@@ -7405,6 +7530,11 @@
         {
           "to": "chem.pcb-chemicals.etching.ferric-chloride",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.chlorine",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -7841,6 +7971,11 @@
           "to": "chem.fab-chemicals.process-gases.nitrogen",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "facility.nitrogen.atmospheric-air",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -7954,6 +8089,16 @@
           "to": "chem.fab-chemicals.etch-gases.cf4.fluorine-from-fluorspar.anhydrous-hf",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "metal.fluorspar",
+          "rel": "consumes",
+          "basis": "documented"
+        },
+        {
+          "to": "metal.sulphuric-acid",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -8047,6 +8192,11 @@
             {
               "to": "chem.natural-gas.composition.methane",
               "rel": "consumes"
+            },
+            {
+              "to": "metal.chlorine",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         }

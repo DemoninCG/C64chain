@@ -965,7 +965,7 @@
               "id": "c64.keyboard.body.screws",
               "name": "Keyboard retaining screws (gold-coloured)",
               "simple_name": "Keyboard retaining screws",
-              "description": "Roughly twenty small self-tapping screws with a gold or brass finish hold the keyboard backplate and body together. The gold colour is a zinc-nickel or brass-look plating, chosen because it reads as 'quality' on a part the customer never sees.",
+              "description": "Small self-tapping screws with a gold-coloured finish hold the keyboard backplate and body together; teardowns show about twenty of them. The finish reads gold in photographs, but no document records the plating chemistry, the thread, the steel grade or the exact count.",
               "kind": "part",
               "category": "metals",
               "era": "1982",
@@ -976,12 +976,11 @@
                 },
                 {
                   "label": "Finish",
-                  "value": "gold-ish zinc-nickel or brass plating"
+                  "value": "gold-coloured in teardown photos; chemistry not established"
                 }
               ],
               "inputs": [
-                "steel",
-                "zinc-nickel"
+                "steel"
               ],
               "confidence": "medium",
               "note": "Not established: the count, the thread and the plating on the keyboard retaining screws. The screws are visible in teardowns but no document records their specification or finish."
@@ -1528,6 +1527,11 @@
             {
               "to": "c64.case.tooling.brass-electrode",
               "rel": "consumes"
+            },
+            {
+              "to": "facility.electricity",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         }
@@ -2238,7 +2242,14 @@
       "inputs": [],
       "confidence": "medium",
       "children": [],
-      "note": "Not established: that the corrugating adhesive was a maize or tapioca starch dextrin. Starch is the documented corrugating adhesive; the source crop is not recorded."
+      "note": "Not established: that the corrugating adhesive was a maize or tapioca starch dextrin. Starch is the documented corrugating adhesive; the source crop is not recorded.",
+      "edges": [
+        {
+          "to": "c64.packaging.maize",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "c64.packaging.maize": {
       "id": "c64.packaging.maize",
@@ -2998,7 +3009,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Pad_printing"
       ],
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "chem.silicone.compound",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "c64.decor.pad-print.ink": {
       "id": "c64.decor.pad-print.ink",

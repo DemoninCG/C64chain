@@ -3621,15 +3621,18 @@
       ],
       "confidence": "medium",
       "children": [],
-      "inputs": [
-        "chem.epoxy"
-      ],
+      "inputs": [],
       "note": "Not established: silver-glass die attach at 430 C, the 80Au/20Sn reflow, the 50-150 um aluminium wedge bond, and epoxy or glass-preform encapsulation at 150-175 C for an axial rectifier. Wire bonding and epoxy as technologies are documented, but the specific attach, wire and moulding conditions for an axial diode have no source here.",
       "edges": [
         {
           "to": "c64.psu.rectifier.diode.die",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "chem.epoxy",
+          "rel": "step",
+          "basis": "documented"
         }
       ]
     },

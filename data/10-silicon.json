@@ -2997,8 +2997,7 @@
       "category": "silicon",
       "era": "1970s-1982",
       "inputs": [
-        "si.leadframe",
-        "facility.electricity"
+        "si.leadframe"
       ],
       "facts": [
         {
@@ -3021,6 +3020,11 @@
           "to": "si.emc",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "facility.electricity",
+          "rel": "consumes",
+          "basis": "inferred"
         }
       ]
     },
