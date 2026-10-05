@@ -168,7 +168,7 @@
           "id": "chem.refining.scale",
           "name": "The refining industry in 1983",
           "simple_name": "Refining industry in 1983",
-          "description": "Around 750-850 refineries existed worldwide, of which more than 300 were in the United States alone (US capacity about 19 million bbl/d). The largest refining regions in 1983 were the US Gulf Coast, the US Midwest, Western Europe (Rotterdam, Antwerp, Fos-sur-Mer), the Caribbean (USVI, Curaçao), Japan and Singapore, and the Middle East (Ras Tanura, Ruwais, Kuwait). About 3-5% of the crude throughput was burned as refinery fuel gas.",
+          "description": "Around 750-850 refineries existed worldwide, of which more than 300 were in the United States alone (US capacity about 19 million bbl/d). The largest refining regions in 1983 were the US Gulf Coast, the US Midwest, Western Europe (Rotterdam, Antwerp, Fos-sur-Mer), the Caribbean (USVI, Curacao), Japan and Singapore, and the Middle East (Ras Tanura, Ruwais, Kuwait). About 3-5% of the crude throughput was burned as refinery fuel gas.",
           "kind": "note",
           "category": "industry",
           "era": "1983",
@@ -5591,7 +5591,23 @@
       "category": "fluids",
       "era": "1970s",
       "confidence": "medium",
-      "note": "Not established: the resin lifetime range quoted in operating hours, and how widely the stated macroporous or gel-type sulphonic-acid polystyrene formulation was used in 1980s MTBE service."
+      "sources": [
+        "https://en.wikipedia.org/wiki/Divinylbenzene",
+        "https://en.wikipedia.org/wiki/Ion-exchange_resin"
+      ],
+      "note": "Not established: the resin lifetime range quoted in operating hours, and how widely the stated macroporous or gel-type sulphonic-acid polystyrene formulation was used in 1980s MTBE service.",
+      "edges": [
+        {
+          "to": "facility.steam.styrene",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.styrene.divinylbenzene",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.refining.claus.catalyst": {
       "id": "chem.refining.claus.catalyst",

@@ -4,7 +4,7 @@
  * scripts/build.mjs resolves refs, reports errors, breaks cycles and
  * produces every output file. Run: node scripts/selftest.mjs
  */
-import { mkdtemp, mkdir, writeFile, rm, readFile } from 'node:fs/promises';
+import { mkdtemp, mkdir, writeFile, rm, readFile, readdir } from 'node:fs/promises';
 import { execFile } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -217,6 +217,26 @@ has('resolves an exact id input', (t4.nodes['a.ingrediented'].from ?? []).includ
 has('drops inputs that match no node', !(t4.nodes['a.ingrediented'].from ?? []).some((f) => f.includes('unlisted')));
 has('reports ingredient link rate', /ingredients resolved into real "from" links/.test(o4));
 has('keeps the original prose inputs', Array.isArray(t4.nodes['a.ingrediented'].inputs));
+
+// --- PETSCII hygiene: the real data must be plain ASCII ----------------------
+// The text-mode viewer only renders PETSCII, so non-ASCII is fixed at the data
+// level (scripts/normalize-text.mjs handles the common cases; anything outside
+// its table is fixed by hand). Unlike every check above, this one scans the
+// real data/ directory rather than the synthetic tree, because it guards
+// authoring input, not builder behavior.
+const nonAsciiHits = [];
+{
+  const realData = path.join(HERE, '..', 'data');
+  const realFiles = (await readdir(realData)).filter((f) => f.endsWith('.json')).sort();
+  for (const f of realFiles) {
+    const lines = (await readFile(path.join(realData, f), 'utf8')).split('\n');
+    lines.forEach((ln, i) => {
+      if ([...ln].some((ch) => ch.codePointAt(0) > 126)) nonAsciiHits.push(`${f}:${i + 1}`);
+    });
+  }
+}
+has('data is plain ASCII', nonAsciiHits.length === 0,
+  nonAsciiHits.length ? `${nonAsciiHits.length} hit(s): ${nonAsciiHits.slice(0, 5).join(', ')} — run npm run normalize-text, then fix the rest by hand` : '');
 
 let bad = 0;
 for (const [label, ok, note] of checks) {

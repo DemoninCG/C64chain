@@ -458,7 +458,7 @@
       "loserFacts": [
         {
           "label": "Hematite",
-          "value": "62-66% Fe, Pilbara and Carajás"
+          "value": "62-66% Fe, Pilbara and Carajas"
         },
         {
           "label": "Magnetite",
@@ -3538,7 +3538,7 @@
       "survivorName": "Polished 100 mm CZ silicon wafer",
       "survivorFile": "10-silicon.json",
       "proposal": "10-silicon.json",
-      "why": "Same p-type starting wafer at the same level; both kind part. Si.wafer (Polished 100 mm CZ, 4-inch, 10-20 ohm-cm boron, polished + flats, every logic die patterned; 4 facts Diameter/Thickness/Resistivity/Orientation, medium) vs bipolar substrate (p-type starting wafer slice, lightly doped insulator, everything sits on crystal; 0 facts, high, Czochralski_method source). Keep-rule 1 (4 facts vs 0) + 3 (general si.wafer over contextual mb.logic path-local) wins si.wafer. No substance-vs-object split lost (both parts, same wafer). Re-pointings: none (loser inline under bipolar.process with no id-string references elsewhere; wafer->substrate contains already DELETEd in si.wafer edges fix; process children substrate inline deleted on apply). Facts union: none (loser 0 facts; Czochralski_method source already covered by si.wafer? Si.wafer sources? Si.wafer sources? Check – si.wafer sources? Not shown – si.wafer node has no sources field? Actually si.wafer node lines 2072-2164: no sources (only facts/confidence/note/children/edges – no sources). Loser sources Czochralski_method – adopt? Survivor si.wafer has no sources – adopt Czochralski_method source? Good – facts union: adopt source Czochralski_method (if missing). Recorded here; central adopts on apply (or applyproposals handles sources union? Previous merges facts unions adopted central serial via adopt_facts.py (not via applyproposals) – for substrates, central will adopt source (like facts unions) after apply (or ...?). Record here; central adopts.",
+      "why": "Same p-type starting wafer at the same level; both kind part. Si.wafer (Polished 100 mm CZ, 4-inch, 10-20 ohm-cm boron, polished + flats, every logic die patterned; 4 facts Diameter/Thickness/Resistivity/Orientation, medium) vs bipolar substrate (p-type starting wafer slice, lightly doped insulator, everything sits on crystal; 0 facts, high, Czochralski_method source). Keep-rule 1 (4 facts vs 0) + 3 (general si.wafer over contextual mb.logic path-local) wins si.wafer. No substance-vs-object split lost (both parts, same wafer). Re-pointings: none (loser inline under bipolar.process with no id-string references elsewhere; wafer->substrate contains already DELETEd in si.wafer edges fix; process children substrate inline deleted on apply). Facts union: none (loser 0 facts; Czochralski_method source already covered by si.wafer? Si.wafer sources? Si.wafer sources? Check - si.wafer sources? Not shown - si.wafer node has no sources field? Actually si.wafer node lines 2072-2164: no sources (only facts/confidence/note/children/edges - no sources). Loser sources Czochralski_method - adopt? Survivor si.wafer has no sources - adopt Czochralski_method source? Good - facts union: adopt source Czochralski_method (if missing). Recorded here; central adopts on apply (or applyproposals handles sources union? Previous merges facts unions adopted central serial via adopt_facts.py (not via applyproposals) - for substrates, central will adopt source (like facts unions) after apply (or ...?). Record here; central adopts.",
       "loserDescription": "A slice of p-type silicon, lightly doped so that it is a good insulator between transistor islands and does not leak much reverse current. Everything the tree contains - the transistors, the resistors, the isolation - sits on this one piece of crystal.",
       "loserFacts": null
     },
@@ -3550,7 +3550,7 @@
       "survivorName": "Polished 100 mm CZ silicon wafer",
       "survivorFile": "10-silicon.json",
       "proposal": "10-silicon.json",
-      "why": "Same p-type starting wafer; both kind part. Si.wafer (4 facts, medium, general id) vs cmos substrate (p-type substrate and tub wells implanted, twin-tub; 0 facts? Check – likely 0 facts; contextual mb.logic path-local). Keep-rule 1+3 wins si.wafer. Tub wells (n-well/p-well implants) are doped regions IN substrate, not separate objects – wells stay with cmos.process flow (implant steps), substrate merges (wafer). No substance split lost. Re-pointings: none (inline, no id refs; wafer->substrate already DELETEd). Facts union: none (loser 0 facts). Note: cmos substrate description wells (deep n-well/shallow p-well, punch-through) stays with cmos.process flow (implant steps), not adopted to si.wafer (si.wafer is starting wafer before wells – wells are flow-added features, like ...? Correct – do not adopt well prose to starting wafer (would claim starting wafer has wells – false – wells implanted during flow). Recorded.",
+      "why": "Same p-type starting wafer; both kind part. Si.wafer (4 facts, medium, general id) vs cmos substrate (p-type substrate and tub wells implanted, twin-tub; 0 facts? Check - likely 0 facts; contextual mb.logic path-local). Keep-rule 1+3 wins si.wafer. Tub wells (n-well/p-well implants) are doped regions IN substrate, not separate objects - wells stay with cmos.process flow (implant steps), substrate merges (wafer). No substance split lost. Re-pointings: none (inline, no id refs; wafer->substrate already DELETEd). Facts union: none (loser 0 facts). Note: cmos substrate description wells (deep n-well/shallow p-well, punch-through) stays with cmos.process flow (implant steps), not adopted to si.wafer (si.wafer is starting wafer before wells - wells are flow-added features, like ...? Correct - do not adopt well prose to starting wafer (would claim starting wafer has wells - false - wells implanted during flow). Recorded.",
       "loserDescription": "The wafer is p-type, lightly doped. On top of it two wells are implanted: a deep n-well and a somewhat shallower p-well. The n-well holds every p-channel transistor; the p-well (or the substrate itself, on simpler parts) holds every n-channel transistor. Two tubs, two polarities, one chip - that is the 'twin tub'. The wells must be deep enough that they do not punch through into each other and short the two transistor types together.",
       "loserFacts": [
         {
@@ -3589,6 +3589,18 @@
       "proposal": "40-chassis.json",
       "why": "Duplicates: biaxially oriented PET film at the same level (both kind material). The survivor is the canonical published node (confidence high vs medium, sourced Mylar/PET, made-of resin edge); the loser is the path-local copy that survived the dissolution of its routing-note parent c64.case.other-polymers and now sits in the 40-chassis shared map. Keep-rule 2 and 3: canonical over path-local, general id over contextual. No re-pointings: the loser has no inbound references (its former c64.case children link was deleted as wrong - film is not case material). Content union: fold the loser C64-use sentences (thin insulation, keycap-legend overlay, PSU amber capacitor sleeve) into the survivor note; adopt the loser terephthalic-acid input lineage (consistent with the survivor resin edge).",
       "loserDescription": "Polyester film is used as thin insulation, as overlay film on some keycap legends, and as the amber capacitor sleeve material in the power supply. It comes from terephthalic acid and ethylene glycol, both of which come out of the aromatics and olefin chains already used elsewhere in the machine.",
+      "loserFacts": null
+    },
+    {
+      "loser": "c64.keyboard-switches.domes.composition.carbon-black",
+      "loserName": "Carbon black filler (petroleum-derived)",
+      "loserFile": "33-passives-c.json",
+      "survivor": "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black",
+      "survivorName": "Carbon black (channel/process black)",
+      "survivorFile": "31-passives-a.json",
+      "proposal": "95-residual.json",
+      "why": "Same furnace-black feedstock at the same level (both kind material): the domes copy describes itself as the same feedstock used in the resistors. Keep-rule 1 and 4: the passives copy is richer (sourced Carbon_black wiki, made-from residuum feed plus uses furnace edges) and already the recorded survivor of two earlier carbon-black merges, which named this domes copy as next to follow. Re-pointings (1): c64.keyboard-switches.domes.composition made-of carbon-black -> survivor. Content union: fold the grade/loading specificity (high-structure furnace black, percolation loading, responsive-vs-stiff) into the survivor note as unestablished. Facts union: none (loser 0 facts).",
+      "loserDescription": "The same furnace-black feedstock used in the resistors, compounded into the elastomer. The dome's conductivity and its wear rate are both set by the grade and loading of this powder. A high-structure furnace black gives a stronger percolation network at lower loading, so a dome can be made conductive with less filler and stay soft; the grade choice is the difference between a responsive key and a stiff one.",
       "loserFacts": null
     }
   ]

@@ -2,13 +2,13 @@
   "$comment": "Relation schema. The single source of truth for which relation may connect which pair of node kinds. docs/RELATIONS.md is generated from this file's intent and must not disagree with it; scripts/audit.mjs should validate against this table, not against a list inside the audit. Status: PROPOSAL, not yet enforced.",
   "$principle": "A node's `kind` decides which relations may leave it. This is the standard the two-relation scheme never had: `children` currently means contains, breaks-down-into, is-made-by, belongs-to-the-same-organisation-as, and is-a-note-about.",
   "directions": {
-    "$comment": "Three different directions, previously conflated into one sentence in RELATIONS.md §3. Confusing them is how the viewer ended up drawing a supply chain as a nested tree.",
+    "$comment": "Three different directions, previously conflated into one sentence in RELATIONS.md Sec. 3. Confusing them is how the viewer ended up drawing a supply chain as a nested tree.",
     "storage": "Which node holds the edge in the data file. Always the container or the consumer.",
-    "upstream": "The direction a reader walks to get back toward the mine. This is what reachability is defined on (RELATIONS.md §8).",
+    "upstream": "The direction a reader walks to get back toward the mine. This is what reachability is defined on (RELATIONS.md Sec. 8).",
     "arrow": "What the viewer draws. Refinement edges point outward from the object; flow edges point along the direction of physical movement."
   },
   "connectivity": {
-    "$comment": "Which relations admit a node into the graph (RELATIONS.md §8). Separate from `family`, which is about how the edge is DRAWN. A relation can be drawn as a cross-link and still count for membership.",
+    "$comment": "Which relations admit a node into the graph (RELATIONS.md Sec. 8). Separate from `family`, which is about how the edge is DRAWN. A relation can be drawn as a cross-link and still count for membership.",
     "carries": [
       "contains",
       "made of",
@@ -158,7 +158,7 @@
       "test": "Does it go in? Reagents, feedstock, consumables, and utilities.",
       "note": "Target is always a material. Utilities are materials, so `process -> Electricity at the factory wall` is `consumes`, and every facility target becomes unambiguously `at`. facility->material is the plant's own feedstock. site->material ADDED Wave 4.5: a site draws in feedstock like a facility (intake draws river water); judgement site->material offers it and nothing else stores the pair.",
       "count": 1009,
-      "count_note": "628 of the 922 process->material edges came from the `inputs` field, which means they were recorded as inputs and are therefore `consumes` mechanically. See RELATIONS.md §8."
+      "count_note": "628 of the 922 process->material edges came from the `inputs` field, which means they were recorded as inputs and are therefore `consumes` mechanically. See RELATIONS.md Sec. 8."
     },
     "produces": {
       "family": "flow",
@@ -242,7 +242,7 @@
       "tool",
       "facility"
     ],
-    "_scope_note": "DECIDED Phase 0 (Wave 3 §5-8/31/36): hub_rules fires ONLY for process/tool/facility sources, where `consumes` is storable. Other sources (material, part, org, site, note) fall through to the kind-pair table / judgement questions. This is the only rule that could otherwise assign an answer `answer_must_be_storable` fails (47 measured unstoreable edges). Also never fires on a `children` containment edge (8 delivery-infrastructure edges: industry>steam/water/gases/compressed-air, power>electricity, water>ultrapure/industrial, ultrapure>di-loop).",
+    "_scope_note": "DECIDED Phase 0 (Wave 3 Sec. 5-8/31/36): hub_rules fires ONLY for process/tool/facility sources, where `consumes` is storable. Other sources (material, part, org, site, note) fall through to the kind-pair table / judgement questions. This is the only rule that could otherwise assign an answer `answer_must_be_storable` fails (47 measured unstoreable edges). Also never fires on a `children` containment edge (8 delivery-infrastructure edges: industry>steam/water/gases/compressed-air, power>electricity, water>ultrapure/industrial, ultrapure>di-loop).",
     "facility.electricity": {
       "relation": "consumes",
       "why": "you consume electricity. Nothing else is possible."
@@ -281,7 +281,7 @@
   "judgement_questions": {
     "$comment": "Every kind-pair that needs a human decision, and the test that settles it. Kept HERE rather than in relate.mjs so the audit and the work lists read the same list. relate.mjs refuses to classify an edge that is in none of these and no relation's `stored` list -- that is what UNMAPPED means, and getting it to zero is the test that the schema is complete.",
     "_delete_is_always_available": "ADDED 2026-10-04 after Wave 1 calibration. BOTH agents independently reported that a test which cannot say 'this edge is wrong' forces known-bad edges into a residue bucket and produces a confident false label. Agent A: a test that cannot say this edge is wrong will generate confident false labels on exactly this class -- and named three it had to dump into 'made from'. So DELETE is a legal answer on every question below. An edge can be wrong without its kind-pair being unusual, and 441 of the 908 material->material edges cannot be confirmed from the parent's own description at all, so the parent text is not a reliable oracle either.",
-    "_index_parents_are_not_yours": "ADDED 2026-10-04. 80 edges leave an index or grouping node (c64.bottoms-out, unlinked.catalogue, industry, c64.extras, metal, logistics.*, facility.foundries). Both agents hit these and had no valid answer, because no relation means anything from a node that exists only to hold others. DO NOT decide these: report them and move on. Wave 4.2/4.3 dissolves the index nodes and gives those edges real parents. See _index_parents below. PHASE 0 AMENDMENT (Wave 3 §5-34/42): an index parent that was given a real kind (facility.foundries -> org) is NO LONGER covered by this exclusion -- report it for re-dissolve instead of skipping it. The schema does not bless the promotion; the promotion created the trap.",
+    "_index_parents_are_not_yours": "ADDED 2026-10-04. 80 edges leave an index or grouping node (c64.bottoms-out, unlinked.catalogue, industry, c64.extras, metal, logistics.*, facility.foundries). Both agents hit these and had no valid answer, because no relation means anything from a node that exists only to hold others. DO NOT decide these: report them and move on. Wave 4.2/4.3 dissolves the index nodes and gives those edges real parents. See _index_parents below. PHASE 0 AMENDMENT (Wave 3 Sec. 5-34/42): an index parent that was given a real kind (facility.foundries -> org) is NO LONGER covered by this exclusion -- report it for re-dissolve instead of skipping it. The schema does not bless the promotion; the promotion created the trap.",
     "_index_parents": [
       "c64.bottoms-out",
       "c64.extras",
@@ -298,7 +298,7 @@
       "c64.packaging",
       "c64.mains"
     ],
-    "_index_parents_note": "PHASE 0 (Wave 3 §5-13/64): wrap-and-marking (process, leaker, not caps) and c64.packaging/c64.mains (round-3 leak) added. EXCEPTION (Wave 3 §5-64): a disclosed convergence index with its own children (metal.copper.foil: 'deliberate convergence node' with .ra/.ed-drum children, ~10 fragments) is EXCLUDED from dissolution -- detector must not flag colon-items matching own children alone.",
+    "_index_parents_note": "PHASE 0 (Wave 3 Sec. 5-13/64): wrap-and-marking (process, leaker, not caps) and c64.packaging/c64.mains (round-3 leak) added. EXCEPTION (Wave 3 Sec. 5-64): a disclosed convergence index with its own children (metal.copper.foil: 'deliberate convergence node' with .ra/.ed-drum children, ~10 fragments) is EXCLUDED from dissolution -- detector must not flag colon-items matching own children alone.",
     "material->material": {
       "edges": 898,
       "decide": "made of | made from | DELETE",
@@ -320,7 +320,7 @@
       "edges": 87,
       "decide": "contains | consumes | DELETE",
       "test": "Could you point at it inside the tool (permanent impregnated/filling: diamond grit IN saw/dice/grinding-wheel)? -> `contains` (ADDED Wave 5 schema-gap ruling; tool->material now storable). Does the operation TAKE the material in as a consumable the machine eats (drill bits, coolant, grinding wheel, silane charge)? -> `consumes`. Or is the target a permanent fitting of the machine (a motor, a guard, a cabinet) or a mis-typed process? -> DELETE and report (fitting is already recorded on the larger node; a process target is a kind bug). DECIDED Phase 0: `uses` is NOT offered here because it has no legal storage for this pair.",
-      "note": "REWRITTEN Phase 0 per Wave 3 §5-28 (old `uses | contains` had no storage; only `consumes` storable). EXTENDED Wave 5 (schema-gap ruling): `contains` added with tool->material storage for impregnated/filled tools (diamond blades contain grit, pointable; consumable-eaten still `consumes`; fittings still DELETE)."
+      "note": "REWRITTEN Phase 0 per Wave 3 Sec. 5-28 (old `uses | contains` had no storage; only `consumes` storable). EXTENDED Wave 5 (schema-gap ruling): `contains` added with tool->material storage for impregnated/filled tools (diamond blades contain grit, pointable; consumable-eaten still `consumes`; fittings still DELETE)."
     },
     "facility->material": {
       "edges": 64,
@@ -330,7 +330,7 @@
     "part->process": {
       "edges": 300,
       "decide": "produces (reversed) | step | REFILE as part>material | kind bug (retype part->tool, then uses reversed) | DELETE",
-      "test": "Three real questions, then delete. (1) Is the operation's output a DISTINCT COMPONENT that ends up inside me -- a separate object? A grading step whose output is a powder that goes into the capacitor; a metallising run whose output is a film that goes into me. -> `REFILE as part>material`, and record it. NOT this when the operation changes a FEATURE of me rather than adding a separate object: plating, chroming, HASL, enamelling, potting, blackening, etching, printing, PRESS FORMING. A layer on me is not a component of me. TWO EXCEPTIONS, both added in round 4: (a) if the output BECOMES the part's load-bearing element rather than an insert inside it -- a grown blank, a green sheet, an etched foil roll, a formed casing -- answer `REFILE` and record that the finishing step is unmodelled; (b) a SHARED material node (metal.solder, metal.copper) is never a component of me: if the material is the tree's canonical node for a substance rather than a part-specific one, it is not an insert. (2) DID I EXIST AS MYSELF BEFORE THIS OPERATION? No -- the operation brings me into being, and its output is me as finally sold -> `produces`, stored on the process. Exactly one per node. Yes -- it refines, finishes, coats, trims, grades or tests me -> `step`. The board exists before the HASL dip. The mask exists before photoetching. The transistor exists before die-attach. TIE-BREAK, and it is not optional: if I have other modelled stages, `produces` goes to the LAST one named in my own description, and every earlier stage is `step`. My own description decides what `me` means. Without this, a parent with six modelled stages answers 'no, I did not exist' six times and trips `produces_must_be_unique`. (3) Is the operation's output a LARGER OBJECT THAT MERELY CONTAINS ME -- a cable assembly containing the plug, a PSU containing a bolting regulator, pack-out closing a box of already-finished parts? -> `DELETE`. The containment is recorded on the larger node, so this edge is a duplicate of it. (4) Otherwise `DELETE`, including any child that is commentary rather than an operation: report it, because `about` only accepts a `note` target and kind changes are central. GUARDS (Phase 0, Wave 3 §5-52/66/67): (a) ENUMERATION GUARD -- if my own description lists stages as an unordered enumeration with no ordering signal (no then/before/after/followed-by), the clause-2 tie-break DOES NOT APPLY; report no qualifier rather than promoting the last noun (mb.pcb.bareboard drilled/etched/stripped/masked/legended/finished -> finish is wrong). (b) BOUGHT CASE -- if I was bought as a finished input (mb.pcb: outside PCB house; 10 ops refine, none brings into being), correct answer is NO produces at all; report per never_default_to_produces. (c) ANCHOR REQUIRED -- tie-break needs a stage named in MY description; datasheet parents (mb.cpu/vic/sid/ram/roms) name none, so literal application to test nodes (ram.sort, roms.verify, vic.test, cpu>burnin) is forbidden.",
+      "test": "Three real questions, then delete. (1) Is the operation's output a DISTINCT COMPONENT that ends up inside me -- a separate object? A grading step whose output is a powder that goes into the capacitor; a metallising run whose output is a film that goes into me. -> `REFILE as part>material`, and record it. NOT this when the operation changes a FEATURE of me rather than adding a separate object: plating, chroming, HASL, enamelling, potting, blackening, etching, printing, PRESS FORMING. A layer on me is not a component of me. TWO EXCEPTIONS, both added in round 4: (a) if the output BECOMES the part's load-bearing element rather than an insert inside it -- a grown blank, a green sheet, an etched foil roll, a formed casing -- answer `REFILE` and record that the finishing step is unmodelled; (b) a SHARED material node (metal.solder, metal.copper) is never a component of me: if the material is the tree's canonical node for a substance rather than a part-specific one, it is not an insert. (2) DID I EXIST AS MYSELF BEFORE THIS OPERATION? No -- the operation brings me into being, and its output is me as finally sold -> `produces`, stored on the process. Exactly one per node. Yes -- it refines, finishes, coats, trims, grades or tests me -> `step`. The board exists before the HASL dip. The mask exists before photoetching. The transistor exists before die-attach. TIE-BREAK, and it is not optional: if I have other modelled stages, `produces` goes to the LAST one named in my own description, and every earlier stage is `step`. My own description decides what `me` means. Without this, a parent with six modelled stages answers 'no, I did not exist' six times and trips `produces_must_be_unique`. (3) Is the operation's output a LARGER OBJECT THAT MERELY CONTAINS ME -- a cable assembly containing the plug, a PSU containing a bolting regulator, pack-out closing a box of already-finished parts? -> `DELETE`. The containment is recorded on the larger node, so this edge is a duplicate of it. (4) Otherwise `DELETE`, including any child that is commentary rather than an operation: report it, because `about` only accepts a `note` target and kind changes are central. GUARDS (Phase 0, Wave 3 Sec. 5-52/66/67): (a) ENUMERATION GUARD -- if my own description lists stages as an unordered enumeration with no ordering signal (no then/before/after/followed-by), the clause-2 tie-break DOES NOT APPLY; report no qualifier rather than promoting the last noun (mb.pcb.bareboard drilled/etched/stripped/masked/legended/finished -> finish is wrong). (b) BOUGHT CASE -- if I was bought as a finished input (mb.pcb: outside PCB house; 10 ops refine, none brings into being), correct answer is NO produces at all; report per never_default_to_produces. (c) ANCHOR REQUIRED -- tie-break needs a stage named in MY description; datasheet parents (mb.cpu/vic/sid/ram/roms) name none, so literal application to test nodes (ram.sort, roms.verify, vic.test, cpu>burnin) is forbidden.",
       "never_default_to_produces": "If nothing qualifies under clause 2's first limb, do NOT promote the last one. Report that nothing produces this node. Measured worse than first recorded: 8 of 27 sampled parents ended with no producer (round 2 recorded 4 of 20). That is a content gap worth surfacing, not a relation to invent. PHASE 0: includes the BOUGHT case and the UNORDERED-ENUMERATION case -- both REPORT, never promote.",
       "note": "ROUND 3: known-hard rows 8/9 = 89%, so the finishing clause works. FRESH rows 13/18 = 72%, and all six disagreements trace to three causes, two of them structural: (a) THREE of six were the assembly hole -- an operation whose output is a LARGER object containing the parent, which no clause covered; now clause 3. Both agents named it independently, and agent A said it 'arguably wants a contains-reversed relation, which the answer list does not offer'. (b) ONE was a kind bug: c64.mains.switch.contacts.copper-silver is named 'Copper and silver ores' and typed `part`. (c) TWO were clause 2 contradicting ITSELF: as written ('the operation's OUTPUT is a materially different precursor that becomes me') the output is the precursor, which selects an EARLY operation, while its own gloss ('the one operation that gets produces') requires the output to be me, which selects the LAST. Opposite answers wherever the output is an intermediate. Clause 2 is now keyed on 'did I exist as myself before this operation', which has no such ambiguity. Only one disagreement (process-node granularity: a node bundling a winding vs one bundling the whole capacitor) looks irreducible.",
       "calibration": "3/5 round 1, 12/20 round 2, 21/27 round 3 (fresh 13/18)",
@@ -391,7 +391,7 @@
       "test": "An operation carried out inside a plant. Always `at`, reversed -- unless the plant IS the operation, in which case the node should be `process`, not `facility`.",
       "note": "NEW, same run."
     },
-    "_evidence_order": "PHASE 0 (Wave 3 §5-61): description > note > from/inputs. A note beats from/inputs (repair log newer than edge arrays: 5/5 bipolar, 2 tv disowals, facts-retracted rows), but a repaired description beats a stale note (c64.keyboard.cable 24-conductor warning left behind after text fix). Where note and edge disagree, note wins and edge is stale; where description and note disagree on prose, description wins. facts belongs on the untrusted list alongside inputs.",
+    "_evidence_order": "PHASE 0 (Wave 3 Sec. 5-61): description > note > from/inputs. A note beats from/inputs (repair log newer than edge arrays: 5/5 bipolar, 2 tv disowals, facts-retracted rows), but a repaired description beats a stale note (c64.keyboard.cable 24-conductor warning left behind after text fix). Where note and edge disagree, note wins and edge is stale; where description and note disagree on prose, description wins. facts belongs on the untrusted list alongside inputs.",
     "org->material": {
       "edges": 6,
       "decide": "DELETE",
@@ -418,7 +418,7 @@
     }
   },
   "reversals": {
-    "$comment": "Edges stored in the wrong direction. Deliberately NOT part of the mechanical kind-pair pass: each class needs a human decision, which is what docs/assessment.md §1 caught and what the first draft of RELATIONS.md got wrong.",
+    "$comment": "Edges stored in the wrong direction. Deliberately NOT part of the mechanical kind-pair pass: each class needs a human decision, which is what docs/assessment.md Sec. 1 caught and what the first draft of RELATIONS.md got wrong.",
     "tool->process": {
       "edges": 20,
       "reverse_to_uses": 13,
@@ -533,14 +533,14 @@
     },
     "sequence": {
       "required": false,
-      "note": "PHASE 0 (Wave 3 §5-73): optional order hint for step chains where JSON array order is the only record (20-board operations in order). No relation carries order today; sequence preserves it without forcing fake linearisation (recipes are DAGs, store follows)."
+      "note": "PHASE 0 (Wave 3 Sec. 5-73): optional order hint for step chains where JSON array order is the only record (20-board operations in order). No relation carries order today; sequence preserves it without forcing fake linearisation (recipes are DAGs, store follows)."
     }
   },
   "audit_rules": {
-    "$comment": "Checks for scripts/audit.mjs, all driven from this file so the prose cannot drift from the gate. All are tree-wide, so per HANDOFF §6 they must be run centrally after any fan-out, not only per fragment. Severity is stated explicitly; nothing is an implicit FAIL.",
+    "$comment": "Checks for scripts/audit.mjs, all driven from this file so the prose cannot drift from the gate. All are tree-wide, so per HANDOFF Sec. 6 they must be run centrally after any fan-out, not only per fragment. Severity is stated explicitly; nothing is an implicit FAIL.",
     "kind_pair_not_in_schema": "FAIL. (source kind, target kind) is not in the relation's `stored` list.",
     "consumes_target_is_part": "FAIL. Explicitly forbidden by narrow_kinds. No edge needs it.",
-    "note_with_outgoing_non_about_edge": "FAIL. A note with supply edges is a mis-typed node or an index node. PHASE 0: a child of a note is DELETE or about -- no judgement question exists for note>* (Wave 3 §5-78/79). 6 from-leaks close with one build.mjs guard (skip kind:note when deriving from); 15 children-holders stay manual Wave 4.2.",
+    "note_with_outgoing_non_about_edge": "FAIL. A note with supply edges is a mis-typed node or an index node. PHASE 0: a child of a note is DELETE or about -- no judgement question exists for note>* (Wave 3 Sec. 5-78/79). 6 from-leaks close with one build.mjs guard (skip kind:note when deriving from); 15 children-holders stay manual Wave 4.2.",
     "made_from_paralleling_a_process_route": "WARN with agreement check. Redundancy is sanctioned; disagreement is not. FAIL only if the shortcut contradicts the route.",
     "duplicate_inverse_encoding": "FAIL. `made by` is derived, so it cannot be stored; this catches a hand edit that reintroduces it.",
     "directed_upstream_reachability": "FAIL if any node in data/ is unreachable from the root by the connectivity rule above.",
@@ -552,11 +552,11 @@
     "answer_must_be_storable": "FAIL. An edge assigned an answer whose relation cannot store that kind-pair is not a classification, it is a shrug. This is the check that would have caught `step` and `about` on part->process in round 3, and `step` on material->process in round 2. Mechanically checkable: every answer in a judgement question's `decide` list must name a relation whose `stored` list accepts the kind-pair. Run it in `relate.mjs plan`."
   },
   "open_questions": {
-    "$comment": "All four of RELATIONS.md §11 are now DECIDED. Kept as a record so the reasoning is not lost, and so a later session can see what was settled and on what grounds.",
+    "$comment": "All four of RELATIONS.md Sec. 11 are now DECIDED. Kept as a record so the reasoning is not lost, and so a later session can see what was settled and on what grounds.",
     "produces_target_may_be_part": "DECIDED: `produces -> part` allowed (moulding yields the case). `consumes -> part` NOT allowed and now explicitly so in `narrow_kinds` -- a process takes in substances, not discrete objects, and no edge in the tree needs it.",
     "uses_carries_connectivity": "DECIDED: YES, downward from a reached process. Measured cost zero today (the 195 tool nodes are already downward-reachable via `children`). Revisitable, per the user's note.",
     "made_from_allowed_at_all": "DECIDED: KEEP, as a deliberate redundancy and as a visual convenience. The parallel-route audit drops from FAIL to WARN-with-agreement-check.",
-    "inputs_provenance_trust": "DECIDED: DO NOT TRUST. All 628 process->material edges derived from `inputs` get verified by parallel agents before they are written. See RELATIONS.md §9 wave 2."
+    "inputs_provenance_trust": "DECIDED: DO NOT TRUST. All 628 process->material edges derived from `inputs` get verified by parallel agents before they are written. See RELATIONS.md Sec. 9 wave 2."
   },
   "verification_required": {
     "$comment": "Edges that must be checked by a human or an agent before being written. Recorded so no wave skips them.",
@@ -644,7 +644,7 @@
     "known_content_gap": "27% of sampled parents in rounds 3 and 4 end with no producer. The tree under-models the operation that brings many parts into being. This is not a relation problem and Wave 2 confirms it is not an ingredient problem either."
   },
   "wave3_examinations": {
-    "method": "One read-only agent per branch, examining structure rather than individual edges. Fixed report template with a required \"what it blocks\" column, so findings are orderable. 22 reports complete; the point is the global picture, not per-edge verdicts. PHASE 0: 22/22 compiled in docs/WAVE3-FINDINGS.md; §5-80 adjudicated in migration plan.",
+    "method": "One read-only agent per branch, examining structure rather than individual edges. Fixed report template with a required \"what it blocks\" column, so findings are orderable. 22 reports complete; the point is the global picture, not per-edge verdicts. PHASE 0: 22/22 compiled in docs/WAVE3-FINDINGS.md; Sec. 5-80 adjudicated in migration plan.",
     "THE_DOMINANT_DEFECT_one_pattern_named_independently_four_times": [
       "petrochem/feedstock: 12 of the 14 children of the `chem` index are typed `process` and named \"Substance: <a route>\".",
       "petrochem/polymers: 9 polymer branch heads typed `process`; FIVE have no substance node anywhere beneath them.",

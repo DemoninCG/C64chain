@@ -1078,9 +1078,7 @@
                   "value": "RG-59 / RG-6 style 75 ohm"
                 }
               ],
-              "inputs": [
-                "tinned copper braid"
-              ],
+              "inputs": [],
               "confidence": "medium",
               "note": "A 70%-covered braid leaks RF, and that leakage is why a badly-made RF cable puts a visible ghost on the picture. Anything not fully shielded is worth replacing rather than adjusting.",
               "children": [
@@ -1110,7 +1108,14 @@
                   "sources": [
                     "https://en.wikipedia.org/wiki/Coaxial_cable"
                   ],
-                  "note": "That a woven copper braid serves as the concentric conducting shield in coaxial cable is established. Not established: that this braid was tinned, the 70-95% coverage figures, the second pass, and the maypole versus tubular braider. Coverage is the number that matters: a 70%-covered braid leaks RF, and that leakage is why a badly-made RF cable puts a visible ghost on the picture."
+                  "note": "That a woven copper braid serves as the concentric conducting shield in coaxial cable is established. Not established: that this braid was tinned, the 70-95% coverage figures, the second pass, and the maypole versus tubular braider. Coverage is the number that matters: a 70%-covered braid leaks RF, and that leakage is why a badly-made RF cable puts a visible ghost on the picture.",
+                  "edges": [
+                    {
+                      "to": "c64.cables.rf-cable.copper-wire",
+                      "rel": "step",
+                      "basis": "typical-1982"
+                    }
+                  ]
                 }
               ],
               "edges": [

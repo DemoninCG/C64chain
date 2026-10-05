@@ -181,4 +181,8 @@ loser's content somewhere better rather than relying on this.
 3. Don't invent. If you are unsure of a 1980s detail, set `confidence: "low"`
    or leave it out. Use `note` to flag known uncertainty.
 4. Names in `name` are the thing. Detail goes in `description`.
+5. Plain ASCII text: the text-mode viewer is PETSCII-only, so no
+   em-dashes, en-dashes, curly quotes, accented letters, or other non-ASCII
+   characters. `npm run normalize-text` fixes the common cases; anything
+   outside its table is fixed by hand. `npm test` fails if any remain.
 5. Every leaf should end at something you could buy or dig out of the ground.

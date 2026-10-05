@@ -15,6 +15,11 @@
       "from": "c64.case.abs-resin.chalcopyrite",
       "to": "metal.copper.ore",
       "why": "Child of the node merged above, and a second copy of the same ground: chalcopyrite is copper ore, which is what metal.copper.ore already publishes. Merged in the same pass rather than leaving a known duplicate one level down. Its two children, froth flotation and flash smelting, are adopted by metal.copper.ore; flotation is a documented terminal process in its own right and is listed in the audit's TERMINAL_PROCS exemptions."
+    },
+    {
+      "from": "c64.keyboard-switches.domes.composition.carbon-black",
+      "to": "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black",
+      "why": "Same furnace-black feedstock at the same level (both kind material): the domes copy describes itself as the same feedstock used in the resistors. Keep-rule 1 and 4: the passives copy is richer (sourced Carbon_black wiki, made-from residuum feed plus uses furnace edges) and already the recorded survivor of two earlier carbon-black merges, which named this domes copy as next to follow. Re-pointings (1): c64.keyboard-switches.domes.composition made-of carbon-black -> survivor. Content union: fold the grade/loading specificity (high-structure furnace black, percolation loading, responsive-vs-stiff) into the survivor note as unestablished. Facts union: none (loser 0 facts)."
     }
   ]
 }

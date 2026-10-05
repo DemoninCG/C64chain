@@ -1274,6 +1274,13 @@
       "note": "Not established: patenting and drawing as the wire route, the 0.6-0.9 percent carbon figure, and the thousands-of-returns-without-taking-a-set endurance for this keycap spring specifically.",
       "sources": [
         "https://en.wikipedia.org/wiki/Music_wire"
+      ],
+      "edges": [
+        {
+          "to": "metal.steel",
+          "rel": "made from",
+          "basis": "documented"
+        }
       ]
     },
     "c64.keyboard-switches.domes.composition": {
@@ -1304,11 +1311,11 @@
           "rel": "made of"
         },
         {
-          "to": "c64.keyboard-switches.domes.composition.carbon-black",
+          "to": "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black",
           "rel": "made of"
         },
         {
-          "to": "chem.rubber",
+          "to": "chem.rubber.neoprene",
           "rel": "made of"
         }
       ]
@@ -1550,23 +1557,12 @@
           "rel": "made of"
         },
         {
-          "to": "chem.rubber",
+          "to": "chem.rubber.neoprene",
           "rel": "made of"
         }
       ]
     },
-    "c64.keyboard-switches.domes.composition.carbon-black": {
-      "id": "c64.keyboard-switches.domes.composition.carbon-black",
-      "name": "Carbon black filler (petroleum-derived)",
-      "simple_name": "Carbon black filler",
-      "description": "The same furnace-black feedstock used in the resistors, compounded into the elastomer. The dome's conductivity and its wear rate are both set by the grade and loading of this powder. A high-structure furnace black gives a stronger percolation network at lower loading, so a dome can be made conductive with less filler and stay soft; the grade choice is the difference between a responsive key and a stiff one.",
-      "kind": "material",
-      "category": "passives",
-      "era": "1982-1984",
-      "confidence": "medium",
-      "note": "Not established: that a high-structure furnace black gives a stronger percolation network at lower loading, and that this is what distinguishes a responsive key from a stiff one. No carbon-black grade comparison is available in the sources consulted.",
-      "inputs": []
-    },
+    
     "c64.keyboard-switches.domes.composition.elastomer.silicone": {
       "id": "c64.keyboard-switches.domes.composition.elastomer.silicone",
       "name": "Silicone dome compound",
