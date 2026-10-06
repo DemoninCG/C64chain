@@ -2271,6 +2271,11 @@
         {
           "to": "facility.electricity",
           "rel": "consumes"
+        },
+        {
+          "to": "mb.pcb.mask.ink",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -2301,6 +2306,11 @@
             {
               "to": "facility.electricity",
               "rel": "consumes"
+            },
+            {
+              "to": "mb.pcb.legend.white-ink",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -2320,6 +2330,11 @@
             {
               "to": "facility.electricity",
               "rel": "consumes"
+            },
+            {
+              "to": "mb.pcb.legend.colour-ink",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         }
@@ -2606,8 +2621,154 @@
         {
           "to": "mb.pcb.laminate.press",
           "rel": "uses"
+        },
+        {
+          "to": "mb.pcb.laminate.prepreg",
+          "rel": "consumes",
+          "basis": "documented"
+        },
+        {
+          "to": "mb.pcb.laminate.core",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
-    }
+    },
+    "mb.pcb.bareboard.fabrication": {
+        "id": "mb.pcb.bareboard.fabrication",
+        "name": "Bare-board fabrication (etch, drill, mask, legend, finish)",
+        "simple_name": "Bare-board fabrication",
+        "description": "Outside-house sequence of imaging, etching, drilling, masking, legend and finish turning FR-4 laminate into finished bare board fab 250406 ready for insertion.",
+        "kind": "process",
+        "category": "board",
+        "era": "1983",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Era $1-2 board cost and high etch and drill yield per candidate facts are era quotes, not established as this house cost; Commodore bought laminate and used outside house per laminate node.",
+        "children": [],
+        "edges": [
+          {
+            "to": "mb.pcb.bareboard",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "mb.pcb.laminate",
+            "rel": "consumes",
+            "basis": "documented"
+          }
+        ]
+      },
+    "mb.pcb.laminate.prepreg": {
+        "id": "mb.pcb.laminate.prepreg",
+        "name": "B-stage epoxy-glass prepreg",
+        "simple_name": "Prepreg",
+        "description": "Partly cured B-stage woven E-glass in brominated epoxy, stacked as foil, prepreg, core and prepreg book and press-cured into FR-4.",
+        "kind": "material",
+        "category": "board",
+        "era": "1980s",
+        "sources": [],
+        "confidence": "low",
+        "note": "Resin content 45-60% and gelation 140-160C per laminate facts are period ranges, not established for this supplier prepreg.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.glass-fiber",
+            "rel": "made of",
+            "basis": "inferred"
+          },
+          {
+            "to": "chem.epoxy.brominated-epoxy",
+            "rel": "made of",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.pcb.laminate.core": {
+        "id": "mb.pcb.laminate.core",
+        "name": "FR-4 laminate core",
+        "simple_name": "Laminate core",
+        "description": "Cured epoxy-glass inner core sheet in the laminate book between prepreg plies, pressed with foil faces into 1.6mm panel.",
+        "kind": "material",
+        "category": "board",
+        "era": "1980s",
+        "sources": [],
+        "confidence": "low",
+        "note": "Core thickness and composition beyond 1.6mm panel with 35um foil per laminate facts are not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.glass-fiber",
+            "rel": "made of",
+            "basis": "inferred"
+          },
+          {
+            "to": "chem.epoxy.brominated-epoxy",
+            "rel": "made of",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.pcb.legend.colour-ink": {
+        "id": "mb.pcb.legend.colour-ink",
+        "name": "Coloured epoxy legend ink",
+        "simple_name": "Colour ink",
+        "description": "Coloured non-white epoxy screen-print ink for extra-colour bands and outlines marking functional regions and PAL or NTSC variant.",
+        "kind": "material",
+        "category": "board",
+        "era": "1980s",
+        "sources": [],
+        "confidence": "low",
+        "note": "Exact colour set on 250407 not confirmed per candidate note; pigment load not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.epoxy.dgeba",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.pcb.legend.white-ink": {
+        "id": "mb.pcb.legend.white-ink",
+        "name": "White epoxy legend ink",
+        "simple_name": "White ink",
+        "description": "White epoxy screen-print ink squeegeed through tensioned emulsion-coated mesh and baked onto cured mask for designators and outlines.",
+        "kind": "material",
+        "category": "board",
+        "era": "1980s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Mesh count, emulsion type and bake schedule for 250407 legend are not established per candidate note.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.epoxy.dgeba",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.pcb.mask.ink": {
+        "id": "mb.pcb.mask.ink",
+        "name": "Green epoxy solder-mask ink",
+        "simple_name": "Mask ink",
+        "description": "Green solvent-based epoxy solder-mask ink screen-printed with apertures over pads and holes and thermally or UV cured.",
+        "kind": "material",
+        "category": "board",
+        "era": "1980s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Cure around 150C for half an hour and 0.01-0.02mm thickness per candidate facts are period ranges, not established for this board.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.epoxy.dgeba",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      }
   }
 }

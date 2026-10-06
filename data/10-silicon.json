@@ -1305,6 +1305,11 @@
                   "to": "mb.discretes.led.gallium",
                   "rel": "made from",
                   "basis": "typical-1982"
+                },
+                {
+                  "to": "mb.discretes.led.substrate.phosphorus",
+                  "rel": "made from",
+                  "basis": "inferred"
                 }
               ]
             }
@@ -1314,6 +1319,11 @@
               "to": "mb.discretes.led.gallium",
               "rel": "made from",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.discretes.led.epi.junction-die",
+              "rel": "contains",
+              "basis": "documented"
             }
           ]
         },
@@ -1971,6 +1981,11 @@
           "rel": "produces",
           "role": "product",
           "basis": "typical-1982"
+        },
+        {
+          "to": "si.polysilicon.coke.calciner.vacuum-residue",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -2117,6 +2132,21 @@
           "to": "mb.logic.package.die.scribe",
           "rel": "step",
           "basis": "documented"
+        },
+        {
+          "to": "c64.psu.regulator.variant-discrete.pass-npn.triple-diffusion",
+          "rel": "step",
+          "basis": "inferred"
+        },
+        {
+          "to": "mb.discretes.epi.subcollector",
+          "rel": "step",
+          "basis": "inferred"
+        },
+        {
+          "to": "si.attach.diced-die",
+          "rel": "contains",
+          "basis": "inferred"
         }
       ]
     },
@@ -2233,6 +2263,16 @@
           "to": "si.wafer.diamond.grit",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "si.wafer.diamond.graphite-charge",
+          "rel": "consumes",
+          "basis": "documented"
+        },
+        {
+          "to": "si.wafer.diamond.catalyst",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -2475,6 +2515,16 @@
           "to": "metal.chromium.metal",
           "rel": "step",
           "basis": "inferred"
+        },
+        {
+          "to": "mb.logic.bipolar.litho.masks.blank",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "mb.logic.bipolar.litho.masks.chrome",
+          "rel": "made of",
+          "basis": "documented"
         }
       ]
     },
@@ -2543,6 +2593,11 @@
         },
         {
           "to": "chem.silane.monosilane",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "si.front-end.resist",
           "rel": "consumes",
           "basis": "typical-1982"
         }
@@ -2704,6 +2759,11 @@
           "to": "si.emc.silica",
           "rel": "made of",
           "basis": "documented"
+        },
+        {
+          "to": "si.emc.resin",
+          "rel": "step",
+          "basis": "documented"
         }
       ]
     },
@@ -2743,6 +2803,11 @@
           "to": "metal.caustic-soda",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "si.emc.resin.formaldehyde",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -3021,6 +3086,16 @@
           "to": "metal.tin.ingot",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "si.trim.trim-form-press",
+          "rel": "uses",
+          "basis": "documented"
+        },
+        {
+          "to": "si.trim.final-ate",
+          "rel": "uses",
+          "basis": "documented"
         }
       ]
     },
@@ -3848,6 +3923,11 @@
               "to": "metal.hydrofluoric-acid",
               "rel": "consumes",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.cpu.fe.contacts.alsi-feed",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -3883,6 +3963,11 @@
               "to": "chem.silane.monosilane",
               "rel": "consumes",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.cpu.fe.passivation.teos",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -3910,6 +3995,11 @@
               "to": "chem.solvents.trichloroethane",
               "rel": "consumes",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.cpu.fe.photoresist.dnq",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -4161,6 +4251,11 @@
           "to": "metal.aluminum.ingot",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "mb.discretes.bjt.resist",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -4207,6 +4302,11 @@
           "to": "facility.gases.hydrogen",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "mb.discretes.epi.subcollector",
+          "rel": "step",
+          "basis": "documented"
         }
       ]
     },
@@ -4228,7 +4328,14 @@
         "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
       ],
       "confidence": "high",
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+        {
+          "to": "mb.discretes.isolation.resist",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "mb.discretes.test": {
       "id": "mb.discretes.test",
@@ -4257,6 +4364,11 @@
       "edges": [
         {
           "to": "facility.test-equipment.functional",
+          "rel": "uses",
+          "basis": "inferred"
+        },
+        {
+          "to": "mb.discretes.test.curve-tracer",
           "rel": "uses",
           "basis": "inferred"
         }
@@ -4308,6 +4420,12 @@
         {
           "to": "metal.zinc.ingot",
           "rel": "consumes",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "mb.discretes.led.epi.junction-die",
+          "rel": "produces",
+          "role": "product",
           "basis": "typical-1982"
         }
       ]
@@ -4435,6 +4553,11 @@
       "edges": [
         {
           "to": "facility.test-equipment.functional",
+          "rel": "uses",
+          "basis": "inferred"
+        },
+        {
+          "to": "mb.pla.test.vector-tester",
           "rel": "uses",
           "basis": "inferred"
         }
@@ -4694,6 +4817,11 @@
           "to": "chem.silane.monosilane",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "mb.roms.process.resist",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -4827,6 +4955,11 @@
           "to": "chem.silane.monosilane",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "mb.sid.process.resist",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -4909,6 +5042,11 @@
         },
         {
           "to": "chem.silane.monosilane",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "mb.vic.process.resist",
           "rel": "consumes",
           "basis": "typical-1982"
         }
@@ -5014,6 +5152,11 @@
         {
           "to": "metal.graphite.electrode",
           "rel": "made from"
+        },
+        {
+          "to": "si.wafer.diamond.grit.graphite-charge",
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },
@@ -5028,6 +5171,606 @@
       "confidence": "high",
       "provenance": "complete",
       "inputs": []
-    }
+    },
+    "mb.cpu.fe.contacts.alsi-feed": {
+        "id": "mb.cpu.fe.contacts.alsi-feed",
+        "name": "Al-1pctSi evaporation/sputter feed",
+        "simple_name": "Al-Si feed, 1pctSi",
+        "description": "Aluminium alloyed with 0.5-1% silicon as the evaporation/sputtering charge for the 1-2 um contact metallization; the silicon fraction stops aluminium spiking through the thin junctions.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: exact charge form (wire, slug, sputter target) and 0.5-1% band endpoints beyond the candidate quote not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.aluminum.ingot",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.cpu.fe.passivation.teos": {
+        "id": "mb.cpu.fe.passivation.teos",
+        "name": "Tetraethyl orthosilicate PSG precursor",
+        "simple_name": "TEOS precursor",
+        "description": "Tetraethyl orthosilicate feed for the CVD phosphosilicate-glass overcoat; co-fed with phosphine at 700-800 C to grow the sealing PSG under the pad windows.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1982",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: TEOS-vs-silane PSG route split at this fab not established; PECVD nitride alternative explicitly unconfirmed per candidate note and is NOT modeled.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.silica.tcs",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.cpu.fe.photoresist.dnq": {
+        "id": "mb.cpu.fe.photoresist.dnq",
+        "name": "Positive DNQ/novolac resist formulation",
+        "simple_name": "DNQ resist formulation",
+        "description": "Factory-mixed positive photoresist: diazonaphthoquinone sensitizer in novolac resin, as-spun 1-2 um, developed in dilute TMAH. Consumable distinguished from the chem.photoresist process/family node.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1970s-1982",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Photoresist"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: AZ-1350 brand, bake schedule, aligner models per candidate note not established; formulation type only.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.photoresist.novolac",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.discretes.bjt.resist": {
+        "id": "mb.discretes.bjt.resist",
+        "name": "Planar-BJT DNQ resist formulation",
+        "simple_name": "BJT litho resist",
+        "description": "Positive DNQ/novolac resist formulation consumed by the planar epitaxial BJT mask levels (isolation, base, emitter, contact). Same substance as the CPU resist, scoped here for central merge.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1970s-1982",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Planar_process"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: mask count per device not established; merge candidate with mb.cpu.fe.photoresist.dnq and siblings.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.photoresist.novolac",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.discretes.epi.subcollector": {
+        "id": "mb.discretes.epi.subcollector",
+        "name": "n+ subcollector diffusion",
+        "simple_name": "n+ subcollector",
+        "description": "Heavily arsenic/phosphorus-doped n+ buried-layer diffusion preceding epitaxy; the epi collector is grown over it for uniformity and carrier control.",
+        "kind": "process",
+        "category": "silicon",
+        "era": "1960s-1982",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Planar_process"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: reactor geometry/temperatures per candidate note not established; buried-layer dose not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.fab-chemicals.dopants.arsine",
+            "rel": "consumes",
+            "basis": "typical-1982"
+          }
+        ]
+      },
+    "mb.discretes.isolation.resist": {
+        "id": "mb.discretes.isolation.resist",
+        "name": "Isolation-mask DNQ resist formulation",
+        "simple_name": "Isolation resist",
+        "description": "Positive DNQ/novolac resist formulation for the isolation/base/emitter window masks of the planar epitaxial flow. Scoped merge candidate with sibling resist nodes.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1959-1982",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Planar_process",
+          "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: boron-trichloride feed grade and thermal-oxide mask thickness not established; those two inputs stay open (see reason).",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.photoresist.novolac",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.discretes.led.epi.junction-die": {
+        "id": "mb.discretes.led.epi.junction-die",
+        "name": "LPE GaP/GaAsP junction die",
+        "simple_name": "LPE junction die",
+        "description": "Epitaxial double-heterostructure junction die as grown by liquid-phase epitaxy: alternating Zn-doped p-type and S-doped n-type GaP/GaAsP layers a few microns thick, before die attach and epoxy lens packaging.",
+        "kind": "part",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: 850-900 C melt, boron-doped charge, alternating-sweep detail and Zn/S dopant identities per candidate note not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "mb.discretes.led.gallium",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.discretes.led.gallium.recovery": {
+        "id": "mb.discretes.led.gallium.recovery",
+        "name": "Gallium recovery from Bayer liquor",
+        "simple_name": "Ga recovery, Bayer",
+        "description": "Alkaline ion-exchange/liquor-treatment recovery of trace gallium from Bayer-process aluminate liquor and bauxite/zinc residues, refined to 99.9-99.99% metal.",
+        "kind": "process",
+        "category": "metals",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: amalgam vs hydroxide-extraction route and residue (red-mud vs zinc-residue) split not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "mb.discretes.led.gallium",
+            "rel": "produces",
+            "role": "product",
+            "basis": "inferred"
+          },
+          {
+            "to": "metal.bayer-liquor",
+            "rel": "consumes",
+            "basis": "documented"
+          }
+        ]
+      },
+    "mb.discretes.led.substrate.phosphorus": {
+        "id": "mb.discretes.led.substrate.phosphorus",
+        "name": "Semiconductor-grade white phosphorus feed",
+        "simple_name": "White phosphorus P4",
+        "description": "High-purity white-phosphorus (P4) feed for GaP substrate growth and GaP/GaAsP LPE charges, via the phosphate-rock electric-furnace route.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+        ],
+        "confidence": "low",
+        "note": "Hedged: GaAs-vs-GaP substrate selection per candidate unresolved; arsenic-metal side has no canonical node and stays open.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.phosphate-ore",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.discretes.test.curve-tracer": {
+        "id": "mb.discretes.test.curve-tracer",
+        "name": "Discrete curve tracer and bin tester",
+        "simple_name": "Curve tracer / bin tester",
+        "description": "Semiconductor curve tracer with wafer-probe card plus packaged-part bin tester grading hFE/VCEO (bipolar) and leakage/drop (rectifiers); distinct from the powered C64-board functional station.",
+        "kind": "tool",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: needle counts, hFE 100-300 band bias conditions and ATE model per candidate note not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "facility.electricity",
+            "rel": "consumes",
+            "basis": "typical-1982"
+          }
+        ]
+      },
+    "mb.pla.test.vector-tester": {
+        "id": "mb.pla.test.vector-tester",
+        "name": "PLA truth-table vector tester",
+        "simple_name": "PLA vector tester",
+        "description": "Socketed automatic tester stepping the PLA truth table (16 inputs x /OE over 8 outputs) plus address-decode timing check; probe-card front end with packaged-part socket for final test.",
+        "kind": "tool",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+        ],
+        "confidence": "low",
+        "note": "Hedged: 28-needle card, ~65536-vector exhaustiveness and timing limits per candidate note not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "facility.electricity",
+            "rel": "consumes",
+            "basis": "typical-1982"
+          }
+        ]
+      },
+    "mb.roms.process.resist": {
+        "id": "mb.roms.process.resist",
+        "name": "Mask-ROM DNQ resist formulation",
+        "simple_name": "ROM litho resist",
+        "description": "Positive DNQ/novolac resist formulation for the NMOS mask-ROM flow including the extra programming-level mask. Merge candidate with sibling resist nodes.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Photoresist",
+          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: 8+1 mask-level count and mask-cost-vs-yield claim per candidate note not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.photoresist.novolac",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.sid.process.resist": {
+        "id": "mb.sid.process.resist",
+        "name": "SID NMOS-analogue resist formulation",
+        "simple_name": "SID litho resist",
+        "description": "Positive DNQ/novolac resist formulation for the 6581 mixed NMOS-analogue flow (phase accumulators, DAC poly resistors, tub-isolated analogue block).",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Photoresist",
+          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: internal Norristown 6580/6581 topology per candidate note is typical-period practice, not published detail.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.photoresist.novolac",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.vic.process.resist": {
+        "id": "mb.vic.process.resist",
+        "name": "VIC-II silicon-gate resist formulation",
+        "simple_name": "VIC litho resist",
+        "description": "Positive DNQ/novolac resist formulation for the VIC-II mixed digital/analogue silicon-gate flow (9-10 mask levels, single aluminium layer).",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Photoresist"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: 8562 die size/mask count and on-die resistor values per candidate note not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.photoresist.novolac",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "si.attach.diced-die": {
+        "id": "si.attach.diced-die",
+        "name": "Diced known-good die",
+        "simple_name": "Diced die",
+        "description": "Sawn and inspected known-good semiconductor die as the workpiece entering die attach: probed, scribed/broken, visually inspected, ready for eutectic bonding to the lead-frame tab.",
+        "kind": "part",
+        "category": "silicon",
+        "era": "1982",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: eutectic 361 C / 3.4pctSi and inspection magnifications per candidate note not established as attach parameters.",
+        "children": [],
+        "edges": [
+          {
+            "to": "si.attach",
+            "rel": "step",
+            "basis": "documented"
+          }
+        ]
+      },
+    "si.emc.resin.formaldehyde": {
+        "id": "si.emc.resin.formaldehyde",
+        "name": "Aqueous formaldehyde feed",
+        "simple_name": "Formaldehyde aqueous",
+        "description": "Aqueous formaldehyde (methanol-oxidation product over silver) condensed with phenol under acid to the novolac, then carried to epoxy-novolac moulding compound.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Epoxy"
+        ],
+        "confidence": "low",
+        "note": "Hedged: concentration/formalin stabilizer and methanol grade not established; direct benzene edge on the parent is not the resin reagent (phenol is).",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.natural-gas",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "si.front-end.resist": {
+        "id": "si.front-end.resist",
+        "name": "Generic front-end DNQ resist formulation",
+        "simple_name": "Front-end resist",
+        "description": "Positive DNQ/novolac resist formulation consumed across the generic 10-mask-level NMOS front-end flow (contact/Micralign 1:1 printing in AZ-1350 class resist).",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Photoresist",
+          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: AZ-1350 brand and 1:1-print specificity beyond candidate text not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.photoresist.novolac",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "si.leadframe.alloy.vim-strip": {
+        "id": "si.leadframe.alloy.vim-strip",
+        "name": "FeNi vacuum-induction melting and strip rolling",
+        "simple_name": "VIM and strip rolling",
+        "description": "Vacuum-induction melting, casting, hot-rolling then cold-rolling/annealing of FeNi 42/58 strip to 0.15-0.20 mm for lead frames.",
+        "kind": "process",
+        "category": "metals",
+        "era": "1982",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: melt-shop specifics (charge mix, anneal cycle) not established; C194-copper alternative excluded from this path.",
+        "children": [],
+        "edges": [
+          {
+            "to": "si.leadframe.alloy",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "metal.ferronickel",
+            "rel": "consumes",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "si.mask.plate.patterning": {
+        "id": "si.mask.plate.patterning",
+        "name": "Photomask blank coating and patterning",
+        "simple_name": "Mask patterning",
+        "description": "Soda-lime/quartz blank preparation, 100-150 nm chromium sputtering, resist coat/expose/develop, chrome etch, Zeiss inspection and needle repair: the plate-making recipe.",
+        "kind": "process",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Photomask"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: perchloric vs sulfuric-perchromate etchant split and Zeiss-tool specificity not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "si.mask.plate",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "mb.logic.bipolar.litho.masks.writer",
+            "rel": "uses",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "si.polysilicon.coke.calciner.vacuum-residue": {
+        "id": "si.polysilicon.coke.calciner.vacuum-residue",
+        "name": "Heavy vacuum residue coker feed",
+        "simple_name": "Vacuum residue feed",
+        "description": "Dense vacuum-tower bottoms (asphaltene/metal-porphyrin pitch) as the delayed-coker feed for silicon-grade needle coke, calcined 1200-1350 C.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+        ],
+        "confidence": "low",
+        "note": "Hedged: heavy-sour grade assignment and refinery routing per candidate notes not established; merge candidate with si.polysilicon.coke.crude.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.petroleum",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "si.polysilicon.coke.crude.vacuum-distillation": {
+        "id": "si.polysilicon.coke.crude.vacuum-distillation",
+        "name": "Crude vacuum distillation",
+        "simple_name": "Vacuum tower",
+        "description": "Atmospheric-residue vacuum distillation at 350-400 C and 30-50 mmHg; bottoms pitch is the coker feed carrying V/Ni porphyrins.",
+        "kind": "process",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+        ],
+        "confidence": "low",
+        "note": "Hedged: tower pressure/temperature and heavy-crude grade per candidate note not established; vanadium tolerance unnumbered.",
+        "children": [],
+        "edges": [
+          {
+            "to": "si.polysilicon.coke.crude",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "chem.petroleum",
+            "rel": "consumes",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "si.trim.trim-form-press": {
+        "id": "si.trim.trim-form-press",
+        "name": "IC trim-and-form press",
+        "simple_name": "Trim-and-form press",
+        "description": "8-16 station trim-and-form press: lead trimming, bending to package pitch, flattening, then tin/tin-lead solder-pot dipping.",
+        "kind": "tool",
+        "category": "silicon",
+        "era": "1982",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: station count range ends and solder-pot alloy per candidate facts only.",
+        "children": [],
+        "edges": [
+          {
+            "to": "facility.electricity",
+            "rel": "consumes",
+            "basis": "typical-1982"
+          }
+        ]
+      },
+    "si.trim.final-ate": {
+        "id": "si.trim.final-ate",
+        "name": "Packaged-IC socketed final tester",
+        "simple_name": "Final ATE socket tester",
+        "description": "Socketed automatic tester running the packaged-device final program (distinct from the C64-board functional station): go/no-go with lot/date-code-marked body feed.",
+        "kind": "tool",
+        "category": "silicon",
+        "era": "1982",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
+        ],
+        "confidence": "low",
+        "note": "Hedged: Teradyne/Fairchild model assignment and test-program contents per candidate note/facts not established as the as-used flow.",
+        "children": [],
+        "edges": [
+          {
+            "to": "facility.electricity",
+            "rel": "consumes",
+            "basis": "typical-1982"
+          }
+        ]
+      },
+    "si.wafer.diamond.graphite-charge": {
+        "id": "si.wafer.diamond.graphite-charge",
+        "name": "HPHT graphite powder charge",
+        "simple_name": "Graphite HPHT charge",
+        "description": "High-purity graphite powder charge (not finished electrodes) pressed and sintered for belt-press diamond synthesis at 5-6 GPa and 1300-1600 C.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Synthetic_diamond"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: powder grade/provenance vs electrode stock not established; electrode edge retained as the legacy path.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.coke",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "si.wafer.diamond.catalyst": {
+        "id": "si.wafer.diamond.catalyst",
+        "name": "HPHT diamond metal catalyst",
+        "simple_name": "Fe/Co/Ni catalyst",
+        "description": "Iron/cobalt/nickel diamond-metal catalyst charge for HPHT graphite-to-diamond conversion in the belt press.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Synthetic_diamond"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: Fe-vs-Co-vs-Ni selection and catalyst fraction not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.nickel.ingot",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "si.wafer.diamond.grit.graphite-charge": {
+        "id": "si.wafer.diamond.grit.graphite-charge",
+        "name": "Abrasive-grit graphite synthesis feed",
+        "simple_name": "Grit graphite feed",
+        "description": "Graphite synthesis feed for HPHT abrasive-grit production (belt press, 0.15 mm early stones); distinct from the graphite-electrode product.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Synthetic_diamond"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: grit-maker identity per candidate note not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.coke",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      }
   }
 }

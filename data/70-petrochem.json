@@ -1428,7 +1428,14 @@
               "sources": [
                 "https://en.wikipedia.org/wiki/Cumene%20process"
               ],
-              "note": "Cumene is oxidised in air to cumene hydroperoxide. Not established: the 120-140 C liquid-phase autoxidation, the hydroperoxide initiator or cobalt/manganese catalyst option, the 20-40 wt% hydroperoxide concentration, and the runaway above 150 C."
+              "note": "Cumene is oxidised in air to cumene hydroperoxide. Not established: the 120-140 C liquid-phase autoxidation, the hydroperoxide initiator or cobalt/manganese catalyst option, the 20-40 wt% hydroperoxide concentration, and the runaway above 150 C.",
+              "edges": [
+                {
+                  "to": "chem.propylene.cumene.oxidation.cumene-feed",
+                  "rel": "consumes",
+                  "basis": "documented"
+                }
+              ]
             },
             {
               "id": "chem.propylene.cumene.cleavage",
@@ -1452,6 +1459,11 @@
                   "to": "chem.propylene.cumene.cleavage.acetone",
                   "rel": "produces",
                   "role": "co-product"
+                },
+                {
+                  "to": "chem.propylene.cumene.cleavage.hydroperoxide-feed",
+                  "rel": "consumes",
+                  "basis": "documented"
                 }
               ]
             }
@@ -1622,6 +1634,11 @@
                 {
                   "to": "chem.acrylonitrile.downstream.methyl-methacrylate.acetone-cyanohydrin",
                   "rel": "consumes"
+                },
+                {
+                  "to": "chem.acrylonitrile.downstream.methyl-methacrylate.methanol-feed",
+                  "rel": "consumes",
+                  "basis": "documented"
                 }
               ]
             }
@@ -2732,6 +2749,11 @@
                       "rel": "produces",
                       "role": "product",
                       "basis": "typical-1982"
+                    },
+                    {
+                      "to": "chem.polyester.pet.dimethyl-terephthalate",
+                      "rel": "consumes",
+                      "basis": "documented"
                     }
                   ]
                 }
@@ -3745,7 +3767,19 @@
       ],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Mercury restriction dates vary by country; German and Dutch controls on mercury from chlor-alkali and acetylene plants began in the 1970s and tightened through the 1980s-90s."
+      "note": "Mercury restriction dates vary by country; German and Dutch controls on mercury from chlor-alkali and acetylene plants began in the 1970s and tightened through the 1980s-90s.",
+      "edges": [
+        {
+          "to": "chem.natural-gas.uses.acetylene.to-vinyl-chloride.mercury-catalyst.mercuric-chloride",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.natural-gas.uses.acetylene.to-vinyl-chloride.mercury-catalyst.charcoal-support",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.drill-fluid": {
       "id": "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.drill-fluid",
@@ -3778,7 +3812,19 @@
       ],
       "note": "Glycol synthesis is the ethylene oxide branch: chem.ethylene.ethylene-glycol. Established: Triethylene glycol as standard dehydration absorbent. Not established: the stated 95 wt percent purity trend and carryover specifics as given.",
       "confidence": "low",
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+        {
+          "to": "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol.ethylene-oxide",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol.diethylene-glycol",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.sweetening.amine": {
       "id": "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.sweetening.amine",
@@ -4555,7 +4601,24 @@
       "inputs": [],
       "note": "The styrene comes from chem.styrene; the propylene glycol from the propylene and ethylene oxide chains. Established: Unsaturated polyester from maleic anhydride and propylene glycol in styrene with peroxide cure. Not established: the stated molecular weights temperatures and 1980s use specifics as given.",
       "confidence": "low",
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+        {
+          "to": "chem.polyester.unsaturated.maleic-anhydride",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.polyester.unsaturated.propylene-glycol",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.polyester.unsaturated.styrene-monomer",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.polyester.pet.terephthalic-acid": {
       "id": "chem.polyester.pet.terephthalic-acid",
@@ -4619,7 +4682,19 @@
       ],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Not established: the platinum and rhenium loadings quoted, the crystallite-size and chlorine-promotion claims, and the economics of regeneration and off-site platinum reclamation."
+      "note": "Not established: the platinum and rhenium loadings quoted, the crystallite-size and chlorine-promotion claims, and the economics of regeneration and off-site platinum reclamation.",
+      "edges": [
+        {
+          "to": "chem.refining.catalytic-reforming.platinum-catalyst.platinum-metal",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.refining.catalytic-reforming.platinum-catalyst.alumina-support",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.abs.san-matrix": {
       "id": "chem.abs.san-matrix",
@@ -4780,6 +4855,18 @@
       "note": "Upstream: chem.butadiene. Nylon 66 is a polycondensation of hexamethylenediamine and adipic acid; equal amounts are combined in water and the salt is heated in batches or continuously. Not established: the 250-270 C and 10-20 bar salt conditions, the 270-280 C polymerisation under a small nitrogen pressure, and the butadiene hydrocyanation feedstock route attributed to the 1980s.",
       "sources": [
         "https://en.wikipedia.org/wiki/Nylon%2066"
+      ],
+      "edges": [
+        {
+          "to": "chem.polyamide.nylon-66.adipic-acid",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.polyamide.nylon-66.hmda",
+          "rel": "made from",
+          "basis": "documented"
+        }
       ]
     },
     "chem.polycarbonate.phosgene": {
@@ -4793,7 +4880,19 @@
       "children": [],
       "confidence": "low",
       "provenance": "incomplete",
-      "note": "Established: Carbonyl chloride, COCl2, made by oxidising carbon monoxide with chlorine over activated carbon at 100-150 C as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: Carbonyl chloride, COCl2, made by oxidising carbon monoxide with chlorine over activated carbon at 100-150 C as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "edges": [
+        {
+          "to": "chem.polycarbonate.phosgene.carbon-monoxide",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.polycarbonate.phosgene.chlorine-feed",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.acrylonitrile.sovere.catalyst": {
       "id": "chem.acrylonitrile.sovere.catalyst",
@@ -5395,7 +5494,14 @@
       ],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Hypophosphite is made by reacting yellow phosphorus with caustic soda under pressure; the chemistry is standard."
+      "note": "Hypophosphite is made by reacting yellow phosphorus with caustic soda under pressure; the chemistry is standard.",
+      "edges": [
+        {
+          "to": "chem.pcb-chemicals.plating.immersion-gold.electroless-nickel.hypophosphite.yellow-phosphorus",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.pcb-chemicals.etching.ferric-chloride": {
       "id": "chem.pcb-chemicals.etching.ferric-chloride",
@@ -5429,7 +5535,19 @@
       "era": "1970s",
       "confidence": "low",
       "provenance": "incomplete",
-      "note": "The liner consumption per panel is an order-of-magnitude figure; the solvent-free trend is the reliable part of this node."
+      "note": "The liner consumption per panel is an order-of-magnitude figure; the solvent-free trend is the reliable part of this node.",
+      "edges": [
+        {
+          "to": "chem.pcb-chemicals.dry-film-resist.lamination.release-liner.polyester-resin",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.pcb-chemicals.dry-film-resist.lamination.release-liner.polyethylene-resin",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.fab-chemicals.sulfuric-acid": {
       "id": "chem.fab-chemicals.sulfuric-acid",
@@ -5474,7 +5592,14 @@
       ],
       "note": "Anthraquinone is now usually made from naphthalene; the anthracene route is the older one. Established: Electronic grade hydrogen peroxide for piranha clean and wet oxidation. Not established: the stated concentration purity metal levels and displacement histories as given.",
       "confidence": "low",
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+        {
+          "to": "chem.fab-chemicals.hydrogen-peroxide.anthraquinone",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.fab-chemicals.hydrochloric-acid": {
       "id": "chem.fab-chemicals.hydrochloric-acid",
@@ -5512,7 +5637,19 @@
       "era": "1979",
       "note": "TMAH manufacture is either the electrolytic route from trimethylamine hydrochloride or an ion-exchange route; both are industrial. Established: TMAH for positive resist development and aluminium etching. Not established: the stated concentration and late 1970s adoption specifics as given.",
       "confidence": "low",
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+        {
+          "to": "chem.fab-chemicals.tmah.trimethylamine",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.fab-chemicals.tmah.quaternary-salt",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.fab-chemicals.etch-gases": {
       "id": "chem.fab-chemicals.etch-gases",
@@ -5597,7 +5734,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Phosphine"
       ],
-      "note": "Not established: the 5-15% dilution in hydrogen or nitrogen for the dopant gas reactor, the ion-implantation use, and the gas-cabinet practice in 1983."
+      "note": "Not established: the 5-15% dilution in hydrogen or nitrogen for the dopant gas reactor, the ion-implantation use, and the gas-cabinet practice in 1983.",
+      "edges": [
+        {
+          "to": "chem.fab-chemicals.dopants.phosphine.white-phosphorus",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "chem.fab-chemicals.dopants.arsine": {
       "id": "chem.fab-chemicals.dopants.arsine",
@@ -5635,7 +5779,19 @@
       "children": [],
       "confidence": "low",
       "provenance": "incomplete",
-      "note": "Established: The p-type sources as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: The p-type sources as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "edges": [
+        {
+          "to": "chem.fab-chemicals.dopants.diborane.bf3-feed",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.fab-chemicals.dopants.diborane.hydride-feed",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphate-rock": {
       "id": "chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphate-rock",
@@ -5979,7 +6135,19 @@
       "era": "1930s",
       "confidence": "low",
       "provenance": "incomplete",
-      "note": "Established: A compound that made the C64 possible twice over: it is the intermediate for methyl methacrylate, and the HCN it carries is the feedstock for methyl methacrylate and for the older as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: A compound that made the C64 possible twice over: it is the intermediate for methyl methacrylate, and the HCN it carries is the feedstock for methyl methacrylate and for the older as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "edges": [
+        {
+          "to": "chem.acrylonitrile.downstream.methyl-methacrylate.acetone-cyanohydrin.acetone-grade",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.acrylonitrile.downstream.methyl-methacrylate.acetone-cyanohydrin.hcn-feed",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.refining.octane.tetraethyl-lead": {
       "id": "chem.refining.octane.tetraethyl-lead",
@@ -6487,7 +6655,19 @@
       "era": "1950s",
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "The US ban on tris(2,3-dibromopropyl) phosphate under the Consumer Product Safety Act dates from 1977; the chlorinated phosphate was its less-toxic replacement."
+      "note": "The US ban on tris(2,3-dibromopropyl) phosphate under the Consumer Product Safety Act dates from 1977; the chlorinated phosphate was its less-toxic replacement.",
+      "edges": [
+        {
+          "to": "chem.propylene.flame-retardants.tdcpp.propylene-oxide",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.propylene.flame-retardants.tdcpp.phosphorus-oxychloride",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.propylene.polymerisation.stereospecific-catalyst": {
       "id": "chem.propylene.polymerisation.stereospecific-catalyst",
@@ -6628,7 +6808,14 @@
       "era": "1930s",
       "note": "Neoprene's process chemistry is standard; the intermediate toxicity warnings are well established. Established: Neoprene as emulsion chloroprene rubber for gaskets and cable jackets. Not established: the stated polymerisation temperature and use specifics as given.",
       "confidence": "low",
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+        {
+          "to": "chem.rubber.neoprene.chloroprene-monomer",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.rubber.epdm": {
       "id": "chem.rubber.epdm",
@@ -7356,7 +7543,19 @@
       "era": "1960s",
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Not established: the microsphere size range quoted, and the allocation of cracking activity and attrition resistance between matrix and zeolite."
+      "note": "Not established: the microsphere size range quoted, and the allocation of cracking activity and attrition resistance between matrix and zeolite.",
+      "edges": [
+        {
+          "to": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina.sodium-silicate",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina.aluminium-sulphate",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.zsm-5": {
       "id": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.zsm-5",
@@ -7425,6 +7624,11 @@
               "to": "chem.natural-gas.composition.ethane-propane",
               "rel": "produces",
               "role": "product"
+            },
+            {
+              "to": "chem.natural-gas.composition.ethane-propane.wellhead-gas",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -7493,7 +7697,14 @@
               "era": "1960s",
               "confidence": "low",
               "provenance": "incomplete",
-              "note": "The regasification fuel figure of about 0.3 t/t LNG is the standard design value; the C64 extrapolation is order-of-magnitude."
+              "note": "The regasification fuel figure of about 0.3 t/t LNG is the standard design value; the C64 extrapolation is order-of-magnitude.",
+              "edges": [
+                {
+                  "to": "chem.natural-gas.processing.liquefaction.terminal.lng-fluid",
+                  "rel": "consumes",
+                  "basis": "documented"
+                }
+              ]
             },
             {
               "id": "chem.natural-gas.processing.liquefaction.carrier",
@@ -7508,7 +7719,15 @@
             }
           ],
           "confidence": "low",
-          "note": "Established: Chilling gas to -162 C so it becomes a liquid at atmospheric pressure, cutting volume about 600-fold for the same energy as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+          "note": "Established: Chilling gas to -162 C so it becomes a liquid at atmospheric pressure, cutting volume about 600-fold for the same energy as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+          "edges": [
+            {
+              "to": "chem.natural-gas.processing.liquefaction.terminal.lng-fluid",
+              "rel": "produces",
+              "role": "product",
+              "basis": "documented"
+            }
+          ]
         },
         {
           "id": "chem.natural-gas.processing.pipeline",
@@ -7800,6 +8019,11 @@
           "rel": "produces",
           "role": "co-product",
           "basis": "typical-1982"
+        },
+        {
+          "to": "chem.styrene.benzene.aromatics-recovery.reformer-naphtha",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -7828,6 +8052,16 @@
           "to": "chem.styrene.benzene.aromatics-recovery.sulfolane",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.sulphur-dioxide",
+          "rel": "consumes",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.process-water",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -9806,6 +10040,11 @@
         {
           "to": "chem.polycarbonate.phosgene",
           "rel": "made from"
+        },
+        {
+          "to": "chem.polycarbonate.resin.bisphenol-a",
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },
@@ -9855,7 +10094,13 @@
       "confidence": "medium",
       "provenance": "incomplete",
       "note": "Established: POM is the acetal and polyacetal engineering thermoplastic for stiff low-friction precision parts, in homopolymer and copolymer grades under the stated trade names. Not established: comonomer loadings, polymerisation temperatures pressures and catalysts, 1983 tonnages, and the moulding tolerances as 1982 practice. The formaldehyde feed has no canonical material node; the methanol oxidation is chem.pom.formaldehyde.",
-      "edges": []
+      "edges": [
+        {
+          "to": "chem.pom.resin.formaldehyde-feed",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.polyester.pet.film": {
       "id": "chem.polyester.pet.film",
@@ -9920,6 +10165,11 @@
         {
           "to": "mb.passives.caps.film.polystyrene.styrene-polymerisation",
           "rel": "step",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.polystyrene.resin.styrene-monomer",
+          "rel": "made from",
           "basis": "documented"
         }
       ]
@@ -10295,6 +10545,1025 @@
           "basis": "documented"
         }
       ]
-    }
+    },
+    "chem.acrylonitrile.downstream.methyl-methacrylate.methanol-feed": {
+        "id": "chem.acrylonitrile.downstream.methyl-methacrylate.methanol-feed",
+        "name": "Methanol for ACH esterification (MMA grade)",
+        "simple_name": "Methanol for MMA",
+        "description": "Synthesis-gas methanol as esterification alcohol for acetone cyanohydrin to methyl methacrylate.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1930s",
+        "sources": [],
+        "confidence": "low",
+        "note": "Esterification and sulphuric-acid dehydration conditions and yields not established per candidate note; feed grade only.",
+        "children": [],
+        "edges": [
+          {
+            "to": "c64.case.other-polymers.methanol",
+            "rel": "step",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "chem.acrylonitrile.downstream.methyl-methacrylate.acetone-cyanohydrin.acetone-grade": {
+        "id": "chem.acrylonitrile.downstream.methyl-methacrylate.acetone-cyanohydrin.acetone-grade",
+        "name": "Acetone for acetone cyanohydrin (ACH grade)",
+        "simple_name": "Acetone for ACH",
+        "description": "Acetone as reacted with hydrogen cyanide to acetone cyanohydrin for methyl methacrylate.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1930s",
+        "sources": [],
+        "confidence": "low",
+        "note": "ACH-grade distinction only; HCl versus HCN stoichiometry nuance per candidate note left open.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.propylene.cumene.cleavage.acetone",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "chem.acrylonitrile.downstream.methyl-methacrylate.acetone-cyanohydrin.hcn-feed": {
+        "id": "chem.acrylonitrile.downstream.methyl-methacrylate.acetone-cyanohydrin.hcn-feed",
+        "name": "Hydrogen cyanide for ACH (Andrussow grade)",
+        "simple_name": "Hydrogen cyanide for ACH",
+        "description": "Hydrogen cyanide as reacted with acetone to acetone cyanohydrin, from acrylonitrile by-product or Andrussow synthesis.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1930s",
+        "sources": [],
+        "confidence": "low",
+        "note": "Andrussow versus by-product split and containment specifics not established; feed grade only.",
+        "children": []
+      },
+    "chem.butadiene.sources.sounsby.furfural.pentosan-residue": {
+        "id": "chem.butadiene.sources.sounsby.furfural.pentosan-residue",
+        "name": "Pentosan crop residue for furfural (hulls/cobs/bagasse)",
+        "simple_name": "Pentosan residue",
+        "description": "Agricultural residue carrying pentosan hemicellulose - rice hulls, corn cobs or bagasse - as treated by acid and steam to furfural.",
+        "kind": "material",
+        "category": "fluids",
+        "era": "1960s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "A fifth of hardwood dry weight and bark-versus-bagasse split per candidate description only; residue grade, no yield figures.",
+        "children": []
+      },
+    "chem.butadiene.sources.sounsby.furfural.acid-hydrolysis": {
+        "id": "chem.butadiene.sources.sounsby.furfural.acid-hydrolysis",
+        "name": "Acid hydrolysis of pentosan to furfural",
+        "simple_name": "Pentosan hydrolysis",
+        "description": "Acid and steam treatment of pentosan residue yielding furfural extractive solvent.",
+        "kind": "process",
+        "category": "fluids",
+        "era": "1960s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Acid strength, steam conditions and inhibition practice not established; type-level step only.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.butadiene.sources.sounsby.furfural.pentosan-residue",
+            "rel": "consumes",
+            "basis": "documented"
+          },
+          {
+            "to": "chem.butadiene.sources.sounsby.furfural",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          }
+        ]
+      },
+    "chem.fab-chemicals.dopants.arsine.arsenic-trioxide": {
+        "id": "chem.fab-chemicals.dopants.arsine.arsenic-trioxide",
+        "name": "Arsenic(III) oxide for arsine",
+        "simple_name": "Arsenic oxide",
+        "description": "Arsenic trioxide as reduced with zinc and hydrochloric acid or hydrogen to arsine dopant gas.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1970s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Arsine"
+        ],
+        "confidence": "medium",
+        "note": "Implant versus source-oxide use and ppb exhaust-monitor claims not established per candidate note; precursor grade only.",
+        "children": []
+      },
+    "chem.fab-chemicals.dopants.arsine.reduction": {
+        "id": "chem.fab-chemicals.dopants.arsine.reduction",
+        "name": "Reduction of arsenic oxide to arsine",
+        "simple_name": "Arsine reduction",
+        "description": "Reduction of arsenic oxide with zinc in acid or with hydrogen to arsine.",
+        "kind": "process",
+        "category": "silicon",
+        "era": "1970s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Arsine"
+        ],
+        "confidence": "medium",
+        "note": "Zinc/acid versus hydrogen split and dilution in hydrogen not established as 1982 practice; type-level step.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.fab-chemicals.dopants.arsine.arsenic-trioxide",
+            "rel": "consumes",
+            "basis": "documented"
+          },
+          {
+            "to": "chem.fab-chemicals.dopants.arsine",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          }
+        ]
+      },
+    "chem.fab-chemicals.dopants.diborane.bf3-feed": {
+        "id": "chem.fab-chemicals.dopants.diborane.bf3-feed",
+        "name": "Boron trifluoride for diborane",
+        "simple_name": "Boron trifluoride feed",
+        "description": "Boron trifluoride as reacted with sodium hydride or hydride to diborane p-type source.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1970s",
+        "sources": [],
+        "confidence": "low",
+        "note": "Neat-cylinder delivery and 0.5-5% in hydrogen per candidate description only; BF3-from-fluorspar link not typed, left open.",
+        "children": []
+      },
+    "chem.fab-chemicals.dopants.diborane.hydride-feed": {
+        "id": "chem.fab-chemicals.dopants.diborane.hydride-feed",
+        "name": "Hydride reducer for diborane (sodium hydride / BCl3 leg)",
+        "simple_name": "Hydride feed",
+        "description": "Sodium hydride or boron trichloride plus hydride leg reducing boron trifluoride to diborane.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1970s",
+        "sources": [],
+        "confidence": "low",
+        "note": "Sodium hydride versus BCl3-plus-hydride split and BF2+ transition per candidate description only; grade only.",
+        "children": []
+      },
+    "chem.fab-chemicals.dopants.phosphine.white-phosphorus": {
+        "id": "chem.fab-chemicals.dopants.phosphine.white-phosphorus",
+        "name": "White phosphorus (P4) for phosphine",
+        "simple_name": "White phosphorus",
+        "description": "Elemental white/yellow phosphorus condensed under water from the arc furnace, as converted to phosphine dopant.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1970s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Phosphine"
+        ],
+        "confidence": "medium",
+        "note": "5-15% dilution and ion-implantation versus deposition split not established per candidate note; P4 grade only.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphate-rock",
+            "rel": "made from",
+            "basis": "documented"
+          }
+        ]
+      },
+    "chem.fab-chemicals.hydrogen-peroxide.naphthalene-feed": {
+        "id": "chem.fab-chemicals.hydrogen-peroxide.naphthalene-feed",
+        "name": "Naphthalene for anthraquinone (H2O2 route)",
+        "simple_name": "Naphthalene feed",
+        "description": "Naphthalene as converted to 9,10-anthraquinone working solution for hydrogen peroxide.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1970s",
+        "sources": [],
+        "confidence": "low",
+        "note": "Naphthalene-versus-anthracene split per candidate note only; feed grade, no purity figures.",
+        "children": []
+      },
+    "chem.fab-chemicals.hydrogen-peroxide.anthraquinone": {
+        "id": "chem.fab-chemicals.hydrogen-peroxide.anthraquinone",
+        "name": "Anthraquinone working solution (ethyl-anthraquinone)",
+        "simple_name": "Anthraquinone",
+        "description": "2-ethyl-anthraquinone working solution as hydrogenated over palladium and re-oxidised by air to hydrogen peroxide.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1970s",
+        "sources": [],
+        "confidence": "low",
+        "note": "0.2-0.5 M working strength, 50-60 C, 3-5 bar and 90-95% yield per candidate description only; type-level solution, conditions in note.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.fab-chemicals.hydrogen-peroxide.naphthalene-feed",
+            "rel": "made from",
+            "basis": "documented"
+          }
+        ]
+      },
+    "chem.fab-chemicals.tmah.trimethylamine": {
+        "id": "chem.fab-chemicals.tmah.trimethylamine",
+        "name": "Trimethylamine for TMAH",
+        "simple_name": "Trimethylamine",
+        "description": "Trimethylamine as quaternised via methyl-chloride-derived salt and converted by electrolysis or ion exchange to tetramethylammonium hydroxide.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1979",
+        "sources": [],
+        "confidence": "low",
+        "note": "Electrolytic versus ion-exchange split per candidate note only; precursor grade, no concentration claims.",
+        "children": []
+      },
+    "chem.fab-chemicals.tmah.quaternary-salt": {
+        "id": "chem.fab-chemicals.tmah.quaternary-salt",
+        "name": "Methyl-chloride quaternary salt for TMAH",
+        "simple_name": "Quaternary salt",
+        "description": "Methyl-chloride-derived quaternary ammonium salt as ion-exchanged or electrolysed to TMAH developer.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1979",
+        "sources": [],
+        "confidence": "low",
+        "note": "Quat composition and sodium limits per candidate description only; grade only.",
+        "children": []
+      },
+    "chem.natural-gas.composition.ethane-propane.wellhead-gas": {
+        "id": "chem.natural-gas.composition.ethane-propane.wellhead-gas",
+        "name": "Raw wellhead natural-gas stream",
+        "simple_name": "Wellhead gas",
+        "description": "Raw wellhead gas stream as produced at the field, carrying methane with ethane, propane and heavier for cryogenic separation.",
+        "kind": "material",
+        "category": "fluids",
+        "era": "ancient",
+        "sources": [],
+        "confidence": "low",
+        "note": "1.5-8 bar LPG recovery and steam-dilution comparisons per candidate description only; stream grade, no composition figures.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.natural-gas",
+            "rel": "made of",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "chem.natural-gas.processing.liquefaction.terminal.lng-fluid": {
+        "id": "chem.natural-gas.processing.liquefaction.terminal.lng-fluid",
+        "name": "Liquefied natural gas (LNG fluid)",
+        "simple_name": "LNG",
+        "description": "Methane liquefied at -162 C for storage and shipment, as held in vacuum-insulated tanks and regasified at the terminal.",
+        "kind": "material",
+        "category": "industry",
+        "era": "1960s",
+        "sources": [],
+        "confidence": "low",
+        "note": "20,000-160,000 m3 tanks and 125,000-165,000 m3 carriers per candidate description only; 0.3 t/t regas fuel as design value in note.",
+        "children": []
+      },
+    "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol.ethylene-oxide": {
+        "id": "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol.ethylene-oxide",
+        "name": "Ethylene oxide for triethylene glycol",
+        "simple_name": "Ethylene oxide feed",
+        "description": "Ethylene oxide as reacted with diethylene glycol to triethylene glycol dehydration absorbent.",
+        "kind": "material",
+        "category": "fluids",
+        "era": "1980s",
+        "sources": [],
+        "confidence": "low",
+        "note": "95 wt% purity trend per candidate description only; EO-branch link via chem.ethylene.ethylene-glycol noted but not typed.",
+        "children": []
+      },
+    "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol.diethylene-glycol": {
+        "id": "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol.diethylene-glycol",
+        "name": "Diethylene glycol for triethylene glycol",
+        "simple_name": "Diethylene glycol feed",
+        "description": "Diethylene glycol as reacted with ethylene oxide to triethylene glycol.",
+        "kind": "material",
+        "category": "fluids",
+        "era": "1980s",
+        "sources": [],
+        "confidence": "low",
+        "note": "Contactor 20-50 C and reboiler figures per incoming dehydration prose only; grade only.",
+        "children": []
+      },
+    "chem.natural-gas.uses.acetylene.to-vinyl-chloride.mercury-catalyst.mercuric-chloride": {
+        "id": "chem.natural-gas.uses.acetylene.to-vinyl-chloride.mercury-catalyst.mercuric-chloride",
+        "name": "Mercuric chloride (HgCl2) for acetylene catalyst",
+        "simple_name": "Mercuric chloride",
+        "description": "Mercuric chloride impregnated at 0.3-0.5% on charcoal adsorbing anhydrous HCl for acetylene to vinyl chloride.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1930s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "0.3-0.5% loading and tens of kg/yr Hg loss per candidate description and facts; restriction dates in note.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.mercury-source",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "chem.natural-gas.uses.acetylene.to-vinyl-chloride.mercury-catalyst.charcoal-support": {
+        "id": "chem.natural-gas.uses.acetylene.to-vinyl-chloride.mercury-catalyst.charcoal-support",
+        "name": "Activated charcoal support (HgCl2 catalyst grade)",
+        "simple_name": "Charcoal support",
+        "description": "Activated charcoal support carrying mercuric chloride for the acetylene hydrochlorination catalyst.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1930s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Support grade only; distinct from vinylidene-chloride mercuric-cell charcoal in tree, not substituted.",
+        "children": []
+      },
+    "chem.pcb-chemicals.dry-film-resist.lamination.release-liner.polyester-resin": {
+        "id": "chem.pcb-chemicals.dry-film-resist.lamination.release-liner.polyester-resin",
+        "name": "Polyester liner resin (dry-film grade)",
+        "simple_name": "Polyester liner resin",
+        "description": "Polyester resin as cast to 25 micron release liner for dry-film lamination.",
+        "kind": "material",
+        "category": "board",
+        "era": "1970s",
+        "sources": [],
+        "confidence": "low",
+        "note": "25 micron and tenth-m2-per-panel figures per candidate description and note only; order-of-magnitude, grade only.",
+        "children": []
+      },
+    "chem.pcb-chemicals.dry-film-resist.lamination.release-liner.polyethylene-resin": {
+        "id": "chem.pcb-chemicals.dry-film-resist.lamination.release-liner.polyethylene-resin",
+        "name": "Polyethylene liner resin (dry-film grade)",
+        "simple_name": "Polyethylene liner resin",
+        "description": "Polyethylene resin as cast to release liner alternative to polyester.",
+        "kind": "material",
+        "category": "board",
+        "era": "1970s",
+        "sources": [],
+        "confidence": "low",
+        "note": "PE-versus-polyester choice per candidate description only; grade only.",
+        "children": []
+      },
+    "chem.pcb-chemicals.plating.immersion-gold.electroless-nickel.hypophosphite.yellow-phosphorus": {
+        "id": "chem.pcb-chemicals.plating.immersion-gold.electroless-nickel.hypophosphite.yellow-phosphorus",
+        "name": "Yellow phosphorus (P4) for hypophosphite",
+        "simple_name": "Yellow phosphorus",
+        "description": "Yellow phosphorus as reacted with caustic soda under pressure to sodium hypophosphite reducer.",
+        "kind": "material",
+        "category": "board",
+        "era": "1940s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Caustic-plus-carbonate recipe and hydrogen vent/flare per candidate description only; P4 grade, no tonnage.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphate-rock",
+            "rel": "made from",
+            "basis": "documented"
+          }
+        ]
+      },
+    "chem.photoresist.diazonaphthoquinone.sulfonate-precursor": {
+        "id": "chem.photoresist.diazonaphthoquinone.sulfonate-precursor",
+        "name": "Naphthoquinone diazide sulfonate precursor (DNQ acid)",
+        "simple_name": "DNQ sulfonate",
+        "description": "1,2-naphthoquinone-2-diazide-5-sulphonic acid as esterified onto novolac hydroxyls to diazonaphthoquinone sensitiser.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1960s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Diazonaphthoquinone",
+          "https://en.wikipedia.org/wiki/Novolak",
+          "https://en.wikipedia.org/wiki/Photoresist"
+        ],
+        "confidence": "medium",
+        "note": "1,4-isomer preference and 20-30 wt% diazo content not established per candidate note; precursor grade only.",
+        "children": []
+      },
+    "chem.photoresist.diazonaphthoquinone.esterification": {
+        "id": "chem.photoresist.diazonaphthoquinone.esterification",
+        "name": "Esterification of DNQ sulfonate onto novolac",
+        "simple_name": "DNQ esterification",
+        "description": "Esterification of the sulfonate precursor onto phenolic hydroxyls of novolac to photosensitive DNQ ester.",
+        "kind": "process",
+        "category": "silicon",
+        "era": "1960s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Diazonaphthoquinone"
+        ],
+        "confidence": "medium",
+        "note": "Esterification conditions and sensitiser loadings not established; type-level step, mixture not synthesis to novolac itself.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.photoresist.diazonaphthoquinone.sulfonate-precursor",
+            "rel": "consumes",
+            "basis": "documented"
+          },
+          {
+            "to": "chem.photoresist.diazonaphthoquinone",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          }
+        ]
+      },
+    "chem.polyamide.nylon-66.adipic-acid": {
+        "id": "chem.polyamide.nylon-66.adipic-acid",
+        "name": "Adipic acid for nylon 6,6",
+        "simple_name": "Adipic acid",
+        "description": "Adipic acid as condensed with hexamethylenediamine to nylon salt and polymerised to nylon 6,6.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1930s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Nylon%2066"
+        ],
+        "confidence": "medium",
+        "note": "250-270 C salt and 270-280 C polymerisation per candidate description only; butadiene hydrocyanation attribution hedged in note.",
+        "children": []
+      },
+    "chem.polyamide.nylon-66.hmda": {
+        "id": "chem.polyamide.nylon-66.hmda",
+        "name": "Hexamethylenediamine for nylon 6,6 (HMDA)",
+        "simple_name": "Hexamethylenediamine",
+        "description": "Hexamethylenediamine as condensed with adipic acid to nylon 6,6 salt.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1930s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Nylon%2066"
+        ],
+        "confidence": "medium",
+        "note": "Adiponitrile-hydrogenation versus acid-plus-ammonia split per candidate description only; grade only.",
+        "children": []
+      },
+    "chem.polycarbonate.phosgene.carbon-monoxide": {
+        "id": "chem.polycarbonate.phosgene.carbon-monoxide",
+        "name": "Carbon monoxide for phosgene",
+        "simple_name": "Carbon monoxide",
+        "description": "Carbon monoxide as oxidised with chlorine over activated carbon to phosgene.",
+        "kind": "material",
+        "category": "fluids",
+        "era": "ancient",
+        "sources": [],
+        "confidence": "low",
+        "note": "100-150 C over activated carbon per candidate description and note as type only; reformer versus coke source not typed.",
+        "children": []
+      },
+    "chem.polycarbonate.phosgene.chlorine-feed": {
+        "id": "chem.polycarbonate.phosgene.chlorine-feed",
+        "name": "Chlorine for phosgene (PC grade)",
+        "simple_name": "Chlorine for phosgene",
+        "description": "Chlorine gas as reacted with carbon monoxide to phosgene for polycarbonate.",
+        "kind": "material",
+        "category": "fluids",
+        "era": "ancient",
+        "sources": [],
+        "confidence": "low",
+        "note": "PC-grade distinction only; chlor-alkali origin via metal.chlorine.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.chlorine",
+            "rel": "made of",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "chem.polycarbonate.resin.bisphenol-a": {
+        "id": "chem.polycarbonate.resin.bisphenol-a",
+        "name": "Bisphenol A for polycarbonate (PC grade)",
+        "simple_name": "Bisphenol A",
+        "description": "Bisphenol A as reacted with phosgene by the interfacial route to polycarbonate resin.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1950s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Polycarbonate"
+        ],
+        "confidence": "high",
+        "note": "Interfacial and melt-polycondensation temperatures and 1983 tonnages not established per candidate note; BPA grade only.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.epoxy.dgeba.bisphenol-a",
+            "rel": "step",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "chem.polyester.pet.dimethyl-terephthalate": {
+        "id": "chem.polyester.pet.dimethyl-terephthalate",
+        "name": "Dimethyl terephthalate for PET (DMT)",
+        "simple_name": "Dimethyl terephthalate",
+        "description": "Dimethyl terephthalate as transesterified with ethylene glycol to PET with methanol coproduct.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1950s",
+        "sources": [],
+        "confidence": "low",
+        "note": "180-280 C transesterification and acid-route comparison per candidate description and note as type only; DMT grade.",
+        "children": []
+      },
+    "chem.polyester.pet.dmt-synthesis": {
+        "id": "chem.polyester.pet.dmt-synthesis",
+        "name": "Dimethyl terephthalate synthesis for PET",
+        "simple_name": "DMT synthesis",
+        "description": "Oxidation via para-xylene to terephthalate and esterification to dimethyl terephthalate for PET.",
+        "kind": "process",
+        "category": "plastics",
+        "era": "1950s",
+        "sources": [],
+        "confidence": "low",
+        "note": "Para-xylene oxidation capital and 1970s-versus-1980s route choice per candidate description only; type-level step.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.polyester.pet.dimethyl-terephthalate",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          }
+        ]
+      },
+    "chem.polyester.unsaturated.maleic-anhydride": {
+        "id": "chem.polyester.unsaturated.maleic-anhydride",
+        "name": "Maleic anhydride for unsaturated polyester",
+        "simple_name": "Maleic anhydride",
+        "description": "Maleic anhydride as condensed with propylene glycol and dissolved in styrene to unsaturated polyester.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1930s",
+        "sources": [],
+        "confidence": "low",
+        "note": "1,000-2,000 molecular weight and 20-80 C peroxide cure per candidate description only; grade only.",
+        "children": []
+      },
+    "chem.polyester.unsaturated.propylene-glycol": {
+        "id": "chem.polyester.unsaturated.propylene-glycol",
+        "name": "Propylene glycol for unsaturated polyester",
+        "simple_name": "Propylene glycol",
+        "description": "Propylene glycol as condensed with maleic anhydride to unsaturated polyester.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1930s",
+        "sources": [],
+        "confidence": "low",
+        "note": "Propylene and ethylene-oxide chain origin per candidate note only; grade only.",
+        "children": []
+      },
+    "chem.polyester.unsaturated.styrene-monomer": {
+        "id": "chem.polyester.unsaturated.styrene-monomer",
+        "name": "Styrene monomer for unsaturated polyester (UP grade)",
+        "simple_name": "Styrene for UP",
+        "description": "Styrene monomer as crosslinking solvent for unsaturated polyester.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1930s",
+        "sources": [],
+        "confidence": "low",
+        "note": "UP-grade distinction only; chem.styrene is a process so not substituted, per verdict.",
+        "children": []
+      },
+    "chem.polystyrene.resin.styrene-monomer": {
+        "id": "chem.polystyrene.resin.styrene-monomer",
+        "name": "Styrene monomer for polystyrene (GPPS grade)",
+        "simple_name": "Styrene monomer",
+        "description": "Styrene monomer as polymerised to general-purpose polystyrene.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1930s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Polystyrene"
+        ],
+        "confidence": "high",
+        "note": "GPPS clear-hard-brittle character established; bulk/suspension temperatures and residual monomer per candidate note not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.styrene",
+            "rel": "step",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "chem.pom.resin.formaldehyde-feed": {
+        "id": "chem.pom.resin.formaldehyde-feed",
+        "name": "Formaldehyde for POM (acetal grade)",
+        "simple_name": "Formaldehyde for POM",
+        "description": "Formaldehyde from methanol oxidation as polymerised to polyoxymethylene homopolymer and copolymer.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1950s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Polyoxymethylene"
+        ],
+        "confidence": "medium",
+        "note": "Delrin versus Celcon comonomer and catalyst specifics not established per candidate note; feed grade only.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.pom.formaldehyde",
+            "rel": "step",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "chem.propylene.cumene.cleavage.hydroperoxide-feed": {
+        "id": "chem.propylene.cumene.cleavage.hydroperoxide-feed",
+        "name": "Cumene hydroperoxide for cleavage (CHP)",
+        "simple_name": "Cumene hydroperoxide",
+        "description": "Cumene hydroperoxide as cleaved with sulphuric acid or zeolite to phenol and acetone.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1940s",
+        "sources": [],
+        "confidence": "low",
+        "note": "50-80 C cleavage and 85-95% selectivity per candidate description as type only; acid-versus-zeolite choice in note.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.propylene.cumene.oxidation",
+            "rel": "step",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "chem.propylene.cumene.oxidation.cumene-feed": {
+        "id": "chem.propylene.cumene.oxidation.cumene-feed",
+        "name": "Cumene for oxidation (CHP grade)",
+        "simple_name": "Cumene feed",
+        "description": "Cumene as oxidised in air to cumene hydroperoxide.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1940s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Cumene%20process"
+        ],
+        "confidence": "medium",
+        "note": "120-140 C, initiator versus Co/Mn and 20-40 wt% per candidate description and note as representative only.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.propylene.cumene.alkylation",
+            "rel": "step",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "chem.propylene.flame-retardants.tdcpp.propylene-oxide": {
+        "id": "chem.propylene.flame-retardants.tdcpp.propylene-oxide",
+        "name": "Propylene oxide for TDCPP",
+        "simple_name": "Propylene oxide feed",
+        "description": "Propylene oxide as reacted with phosphorus oxychloride to tris(2,3-dichloropropyl) phosphate.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1950s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Propylene-oxide-process versus material grade distinction per verdict; feed grade, no loading figures.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.propylene.propylene-oxide",
+            "rel": "step",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "chem.propylene.flame-retardants.tdcpp.phosphorus-oxychloride": {
+        "id": "chem.propylene.flame-retardants.tdcpp.phosphorus-oxychloride",
+        "name": "Phosphorus oxychloride for TDCPP (POCl3)",
+        "simple_name": "Phosphorus oxychloride",
+        "description": "Phosphorus oxychloride as reacted with propylene oxide to TDCPP flame retardant.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1950s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Chlorinated-versus-brominated ban history per candidate note only; POCl3 grade.",
+        "children": []
+      },
+    "chem.pvc.plasticiser.ethylhexanol.butyraldehyde": {
+        "id": "chem.pvc.plasticiser.ethylhexanol.butyraldehyde",
+        "name": "Butyraldehyde for 2-ethylhexanol (oxo grade)",
+        "simple_name": "Butyraldehyde",
+        "description": "Butyraldehyde oxo intermediate from propylene and ethylene as hydrogenated to 2-ethylhexanol.",
+        "kind": "material",
+        "category": "fluids",
+        "era": "1930s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/2-Ethylhexanol",
+          "https://en.wikipedia.org/wiki/Bis(2-ethylhexyl)_phthalate"
+        ],
+        "confidence": "medium",
+        "note": "Oxo-route temperatures, pressures and catalysts not established per candidate note; intermediate grade only.",
+        "children": []
+      },
+    "chem.pvc.plasticiser.ethylhexanol.oxo-process": {
+        "id": "chem.pvc.plasticiser.ethylhexanol.oxo-process",
+        "name": "Oxo aldol-hydrogenation to 2-ethylhexanol",
+        "simple_name": "Oxo to ethylhexanol",
+        "description": "Aldol condensation and hydrogenation of butyraldehyde to 2-ethylhexanol plasticiser alcohol.",
+        "kind": "process",
+        "category": "fluids",
+        "era": "1930s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/2-Ethylhexanol"
+        ],
+        "confidence": "medium",
+        "note": "Oxo conditions and 1983 volumes not established; type-level step.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.pvc.plasticiser.ethylhexanol.butyraldehyde",
+            "rel": "consumes",
+            "basis": "documented"
+          },
+          {
+            "to": "chem.pvc.plasticiser.ethylhexanol",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          }
+        ]
+      },
+    "chem.pvc.polymerisation.suspending-agent.vinyl-acetate": {
+        "id": "chem.pvc.polymerisation.suspending-agent.vinyl-acetate",
+        "name": "Vinyl acetate for PVA suspending agent",
+        "simple_name": "Vinyl acetate",
+        "description": "Vinyl acetate as hydrolysed to partially hydrolysed polyvinyl alcohol suspending agent.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1930s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Partial hydrolysis 0.5-2% of water phase per candidate description only; monomer grade.",
+        "children": []
+      },
+    "chem.pvc.polymerisation.suspending-agent.hydrolysis": {
+        "id": "chem.pvc.polymerisation.suspending-agent.hydrolysis",
+        "name": "Hydrolysis of vinyl acetate to PVA",
+        "simple_name": "VAM hydrolysis",
+        "description": "Hydrolysis of vinyl acetate to partially hydrolysed polyvinyl alcohol for PVC suspension.",
+        "kind": "process",
+        "category": "plastics",
+        "era": "1930s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Second-colloid stabiliser option per candidate description only; type-level step, not polystyrene agent.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.pvc.polymerisation.suspending-agent.vinyl-acetate",
+            "rel": "consumes",
+            "basis": "documented"
+          },
+          {
+            "to": "chem.pvc.polymerisation.suspending-agent",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          }
+        ]
+      },
+    "chem.refining.catalytic-reforming.platinum-catalyst.platinum-metal": {
+        "id": "chem.refining.catalytic-reforming.platinum-catalyst.platinum-metal",
+        "name": "Platinum metal for reforming catalyst (Pt-Re grade)",
+        "simple_name": "Platinum metal",
+        "description": "Platinum crystallites for platinum-rhenium on chlorided alumina reforming catalyst.",
+        "kind": "material",
+        "category": "fluids",
+        "era": "1960s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "0.3-0.4 wt% Pt and 0.1-0.5 wt% Re per candidate facts as not established in note; metal grade only.",
+        "children": []
+      },
+    "chem.refining.catalytic-reforming.platinum-catalyst.alumina-support": {
+        "id": "chem.refining.catalytic-reforming.platinum-catalyst.alumina-support",
+        "name": "Chlorided gamma-alumina support (reforming grade)",
+        "simple_name": "Alumina support",
+        "description": "Gamma-alumina support promoted with chlorine carrying platinum-rhenium crystallites.",
+        "kind": "material",
+        "category": "fluids",
+        "era": "1960s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "1 nm crystallites, chlorine promotion and reclamation economics per candidate note not established; support grade, not smelter alumina.",
+        "children": []
+      },
+    "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina.sodium-silicate": {
+        "id": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina.sodium-silicate",
+        "name": "Sodium silicate for FCC matrix",
+        "simple_name": "Sodium silicate",
+        "description": "Sodium silicate as precipitated with aluminium sulphate and caustic-gelled to FCC silica-alumina matrix.",
+        "kind": "material",
+        "category": "fluids",
+        "era": "1960s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Precipitation and spray-drying per candidate description only; salt grade, soda-silica process not substituted.",
+        "children": []
+      },
+    "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina.aluminium-sulphate": {
+        "id": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina.aluminium-sulphate",
+        "name": "Aluminium sulphate for FCC matrix",
+        "simple_name": "Aluminium sulphate",
+        "description": "Aluminium sulphate as precipitated with sodium silicate to FCC matrix.",
+        "kind": "material",
+        "category": "fluids",
+        "era": "1960s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "40-90 micron microspheres and activity split per candidate note not established; salt grade.",
+        "children": []
+      },
+    "chem.rubber.neoprene.chloroprene-monomer": {
+        "id": "chem.rubber.neoprene.chloroprene-monomer",
+        "name": "Chloroprene monomer for neoprene",
+        "simple_name": "Chloroprene",
+        "description": "Chloroprene as emulsion-polymerised to neoprene oil- and weather-resistant rubber.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1930s",
+        "sources": [],
+        "confidence": "low",
+        "note": "40 C emulsion and acetylene-plus-chlorine via vinylacetylene per candidate description; intermediate toxicity in note, monomer grade.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.natural-gas.uses.acetylene",
+            "rel": "step",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "chem.solvents.trichloroethylene.tetrachloroethane": {
+        "id": "chem.solvents.trichloroethylene.tetrachloroethane",
+        "name": "Tetrachloroethane intermediate for TCE",
+        "simple_name": "Tetrachloroethane",
+        "description": "Tetrachloroethane from acetylene chlorination as dehydrochlorinated to trichloroethylene.",
+        "kind": "material",
+        "category": "fluids",
+        "era": "1930s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Acetylene chlorination route per candidate description only; intermediate grade.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.natural-gas.uses.acetylene",
+            "rel": "step",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "chem.solvents.trichloroethylene.tce-synthesis": {
+        "id": "chem.solvents.trichloroethylene.tce-synthesis",
+        "name": "Acetylene chlorination plus dehydrochlorination to TCE",
+        "simple_name": "TCE synthesis",
+        "description": "Chlorination of acetylene to tetrachloroethane followed by dehydrochlorination to trichloroethylene.",
+        "kind": "process",
+        "category": "fluids",
+        "era": "1930s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Conversion/selectivity and 1990 phase-out per candidate note only; type-level step.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.solvents.trichloroethylene.tetrachloroethane",
+            "rel": "consumes",
+            "basis": "documented"
+          },
+          {
+            "to": "chem.solvents.trichloroethylene",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          }
+        ]
+      },
+    "chem.styrene.benzene.aromatics-recovery.reformer-naphtha": {
+        "id": "chem.styrene.benzene.aromatics-recovery.reformer-naphtha",
+        "name": "Reformer naphtha for aromatics recovery (C6-C8)",
+        "simple_name": "Reformer naphtha",
+        "description": "Reformer naphtha carrying a few percent C6-C8 aromatics as extracted by sulfolane to benzene and toluene.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1965",
+        "sources": [],
+        "confidence": "low",
+        "note": "Sulfolane-versus-acid extraction and isooctane azeotrope per candidate description as type only; reformer grade, cracker naphtha not substituted.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.refining.catalytic-reforming",
+            "rel": "step",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.sulphur-dioxide": {
+        "id": "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.sulphur-dioxide",
+        "name": "Sulphur dioxide for sulfolane (C4 route grade)",
+        "simple_name": "Sulphur dioxide",
+        "description": "Sulphur dioxide as reacted with butadiene to sulfolene and hydrolysed to sulfolane.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1960s",
+        "sources": [],
+        "confidence": "low",
+        "note": "100-140 C first step per candidate facts as representative only; Claus-burned sulphur origin noted but not typed.",
+        "children": []
+      },
+    "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.process-water": {
+        "id": "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.process-water",
+        "name": "Process water for sulfolene hydrolysis to sulfolane",
+        "simple_name": "Hydrolysis water",
+        "description": "Water with base opening the sulfolene ring to sulfolane.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1960s",
+        "sources": [],
+        "confidence": "low",
+        "note": "Second-ring hydrolysis per candidate description only; utility grade.",
+        "children": []
+      },
+    "chem.styrene.benzene.coal-tar.benzol-recovery": {
+        "id": "chem.styrene.benzene.coal-tar.benzol-recovery",
+        "name": "Coke-oven benzol recovery (wash-oil strip)",
+        "simple_name": "Benzol recovery",
+        "description": "Cooling of coke-oven gas with wash-oil benzol washing and steam stripping to crude benzole for benzene.",
+        "kind": "process",
+        "category": "plastics",
+        "era": "ancient",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Wash-oil and steam-strip details and 1983 regional shares per candidate note not established; type-level step.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.coke.gas",
+            "rel": "consumes",
+            "basis": "documented"
+          },
+          {
+            "to": "chem.styrene.benzene.coal-tar",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          }
+        ]
+      },
+    "chem.thermosets.phenolic.hexamine.formaldehyde-grade": {
+        "id": "chem.thermosets.phenolic.hexamine.formaldehyde-grade",
+        "name": "Formaldehyde for hexamine (curing-agent grade)",
+        "simple_name": "Formaldehyde for hexamine",
+        "description": "Formaldehyde as reacted with ammonia to hexamethylenetetramine curing agent.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1920s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Novolac-cure versus rubber-accelerator dual role per candidate note not established; feed grade only.",
+        "children": []
+      },
+    "chem.thermosets.phenolic.hexamine.synthesis": {
+        "id": "chem.thermosets.phenolic.hexamine.synthesis",
+        "name": "Hexamine synthesis from formaldehyde and ammonia",
+        "simple_name": "Hexamine synthesis",
+        "description": "Condensation of formaldehyde with ammonia to hexamethylenetetramine.",
+        "kind": "process",
+        "category": "plastics",
+        "era": "1920s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Formaldehyde-plus-ammonia stoichiometry per candidate description only; type-level step.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.thermosets.phenolic.hexamine.formaldehyde-grade",
+            "rel": "consumes",
+            "basis": "documented"
+          },
+          {
+            "to": "metal.ammonia",
+            "rel": "consumes",
+            "basis": "documented"
+          },
+          {
+            "to": "chem.thermosets.phenolic.hexamine",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          }
+        ]
+      }
   }
 }

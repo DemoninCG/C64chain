@@ -66,6 +66,18 @@ stays readable.
   in the scale15 temp dir). Tungsten powder/wire inversion corrected
   (`powder made of wire` deleted, `wire made of powder` kept). Chain orphans
   435 → 423; LB FAIL unchanged (graphite electrode stands).
+- **Modeling pass (2026-10-08).** Six parallel packages (silicon fab, board +
+  power dies, petrochem monomers, metals refining, misc, evidence ×3) over the
+  leaf-review remainder: 160 net new nodes + 272 edges applied with central
+  mechanical verification (no live/alias/merged collisions, storable pairs,
+  produces roles, refinement-cycle check). Evidence sweep: 342/342 KEEP, zero
+  proposals — the GAP_EVIDENCE backlog is correctly hedged caution, not missed
+  edges. Arbitration caught 4 new LB orphans (anchored: LED contains die, EMC
+  step resin-synthesis, cupel made-from magnesia, blister-feed merged into
+  blister), 4 double-stored legacy inputs (removed), 1 unstoreable made-from
+  (repointed to material→process step per precedent), 1 blister duplicate
+  merged via `_proposals`. 58 sourceless nodes accepted (all medium/low with
+  hedging notes; zero high). Nodes 2,420 → 2,580, chain orphans 284 → 294.
 - Reviewed-and-kept: 6 restored nodes, kraft/EPS/pentane history, the
   `$qaPass` block in `50-power.json`, `estimate.mjs` NaN fix, `metal.benzene`
   merge, README figure refresh. Boron thresholds reconciled (no issue).
@@ -254,15 +266,15 @@ de-assertion, 37 held-out composition edges, 2 legacy retypes. The 4 `other`
 ledger rows in the scale15 `held-out.json` were already in the data and were
 left untouched.
 
-## 5. Leaf-review remainder triage (2026-10-08; parallel packages)
+## 5. Leaf-review remainder triage (done 2026-10-08; all six packages executed)
 
 The 2026-10-06 leaf review covered 1,499 leaves; the `provenance` flag now
-records the outcome on every surviving reviewed leaf (raw 90 / complete ~420 /
-incomplete ~600; 11 reviewed nodes were deleted since, 3 rename-survivors
-flagged per original verdict). What remains clusters into disjoint packages
-suitable for parallel read-only verdicts + central implementation (the
-leaf-pass procedure: no stubs without a live source, mechanical verification,
-serial apply):
+records the outcome on every surviving reviewed leaf (raw 90 / complete 421 /
+incomplete 604; 11 reviewed nodes were deleted since, 3 rename-survivors
+flagged per original verdict). All six packages ran in parallel (8 agents:
+evidence split in thirds) with central verification and serial apply —
+see the log entry above for arbitration outcomes. The evidence sweep returned
+342/342 KEEP: the GAP_EVIDENCE backlog is hedged caution, not missed edges.
 
 - **P1 silicon fab chemistry (~25 rows).** Photoresist formulations (7 rows,
   one shared DNQ/novolac node likely covers most), mask blanks, etch feeds

@@ -1464,7 +1464,14 @@
           "value": "local exhaust at about 100 mm from the wave, plus a baghouse"
         }
       ],
-      "note": "Medium confidence on the dust composition; the lead oxide figure is representative."
+      "note": "Medium confidence on the dust composition; the lead oxide figure is representative.",
+      "edges": [
+        {
+          "to": "metal.solder.fume",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "metal.solder.waste-leachate": {
       "id": "metal.solder.waste-leachate",
@@ -2127,6 +2134,11 @@
         {
           "to": "facility.gases.hydrogen",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.tungsten.trioxide",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -3181,6 +3193,60 @@
           "rel": "consumes"
         }
       ]
-    }
+    },
+    "metal.solder.fume": {
+        "id": "metal.solder.fume",
+        "name": "Wave-solder flux fume",
+        "simple_name": "Flux fume",
+        "description": "Wave-solder flux fume aerosol of lead oxide and rosin-acid degradation products captured at about 100 mm from the wave.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Dust composition representative per the baghouse note.",
+        "children": []
+      },
+    "metal.solder.hood-extraction": {
+        "id": "metal.solder.hood-extraction",
+        "name": "Hood extraction and baghouse collection",
+        "simple_name": "Hood extraction",
+        "description": "Wave-solder hood local-exhaust ventilation with capture hood and baghouse collecting PbO-rosin dust.",
+        "kind": "process",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.solder.fume",
+            "rel": "produces",
+            "role": "waste",
+            "basis": "documented"
+          }
+        ]
+      },
+    "metal.tungsten.trioxide": {
+        "id": "metal.tungsten.trioxide",
+        "name": "Tungsten trioxide",
+        "simple_name": "Trioxide",
+        "description": "Tungsten trioxide (WO3) calcine from APT for hydrogen reduction at 500-1000 C to porous tungsten powder with K/Alumina doping.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "high",
+        "note": "Not established: APT calcination detail; APT itself has no modelled producer (boundary).",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.tungsten.apt",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      }
   }
 }

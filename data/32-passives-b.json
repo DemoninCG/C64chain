@@ -1286,7 +1286,19 @@
       "era": "1982-1984",
       "confidence": "low",
       "provenance": "incomplete",
-      "inputs": []
+      "inputs": [],
+      "edges": [
+        {
+          "to": "c64.connector-jacks.moulding.pbt.uv-stabiliser.benzotriazole-uv",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "c64.connector-jacks.moulding.pbt.uv-stabiliser.glass-filler",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "c64.connector-jacks.metalworking.gold.dore": {
       "id": "c64.connector-jacks.metalworking.gold.dore",
@@ -1943,6 +1955,17 @@
         {
           "to": "facility.water",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.copper.blister",
+          "rel": "consumes",
+          "basis": "documented"
+        },
+        {
+          "to": "metal.copper.cathode-brass-strip",
+          "rel": "produces",
+          "role": "product",
+          "basis": "documented"
         }
       ]
     },
@@ -2150,6 +2173,53 @@
           "rel": "about"
         }
       ]
-    }
+    },
+    "c64.connector-jacks.moulding.pbt.uv-stabiliser.benzotriazole-uv": {
+        "id": "c64.connector-jacks.moulding.pbt.uv-stabiliser.benzotriazole-uv",
+        "name": "Benzotriazole UV absorber (PBT grade)",
+        "simple_name": "Benzotriazole UV absorber",
+        "description": "Benzotriazole ultraviolet absorber compounded into PBT at minor mass to slow yellowing and embrittlement in light.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1982-1984",
+        "sources": [],
+        "confidence": "low",
+        "note": "Distinct PBT UV grade, not the copper-foil BTA coupling agent chem.pcb-chemicals.laminate.copper-foil.benzotriazole. Absorber loading and cost relevance per candidate description only; synthesis upstream out of scope.",
+        "children": []
+      },
+    "c64.connector-jacks.moulding.pbt.uv-stabiliser.glass-filler": {
+        "id": "c64.connector-jacks.moulding.pbt.uv-stabiliser.glass-filler",
+        "name": "Chopped glass filler for PBT",
+        "simple_name": "Glass filler",
+        "description": "Short chopped glass filler compounded into PBT for stiffness and low creep.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1982-1984",
+        "sources": [],
+        "confidence": "low",
+        "note": "Filler cut length and loading not established; grade only. Made from E-glass fibre stock.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.glass-fiber",
+            "rel": "made of",
+            "basis": "inferred"
+          }
+        ]
+      },
+    
+    "metal.copper.cathode-brass-strip": {
+        "id": "metal.copper.cathode-brass-strip",
+        "name": "Electrorefined cathode for brass strip",
+        "simple_name": "Brass-strip cathode",
+        "description": "99.99% electrorefined copper cathode destined for brass contact strip and connector plating, cast to wire rod and rolled to foil.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982-1984",
+        "sources": [],
+        "confidence": "high",
+        "note": "Separate grade node: metal.copper.cathode already has producer metal.copper.tankhouse; this avoids a duplicate-producer conflict.",
+        "children": []
+      }
   }
 }

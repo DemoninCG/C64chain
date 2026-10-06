@@ -1899,7 +1899,6 @@
                 "description": "A console or a large set of the early 1980s was often a real cabinet: a wood frame veneered with walnut, mahogany or teak, sometimes over particle board. The cheaper route was a printed polyester or melamine laminate, several sheets laminated and printed with a photographic woodgrain. A 13 inch portable used moulded ABS with the grain embossed into the mould texture and painted.",
                 "inputs": [
                   "walnut or mahogany veneer",
-                  "particle board",
                   "melamine or polyester laminate"
                 ],
                 "facts": [
@@ -1919,7 +1918,24 @@
                 "confidence": "medium",
                 "provenance": "incomplete",
                 "note": "Again the one renewable leaf: a veneer cabinet is wood and board, not a polymer. A tree, cut and sliced. Check the type on a console set of the period and it is very often plastic, but this node is the case where it was not.",
-                "children": []
+                "children": [],
+                "edges": [
+                  {
+                    "to": "peripheral.tv.cabinet.wood.veneer",
+                    "rel": "made of",
+                    "basis": "inferred"
+                  },
+                  {
+                    "to": "peripheral.tv.cabinet.wood.particle-board",
+                    "rel": "made of",
+                    "basis": "inferred"
+                  },
+                  {
+                    "to": "peripheral.tv.cabinet.wood.laminate",
+                    "rel": "made of",
+                    "basis": "inferred"
+                  }
+                ]
               },
               {
                 "id": "peripheral.tv.cabinet.screws",
@@ -5744,6 +5760,84 @@
       "confidence": "medium",
       "note": "The 1702 and the C128 RGBI monitors are real objects but they are not upstream of a 1982 C64, so they do not belong on a supply line.",
       "children": []
-    }
+    },
+    "peripheral.tv.cabinet.wood.hardwood-log": {
+        "id": "peripheral.tv.cabinet.wood.hardwood-log",
+        "name": "Hardwood logs (walnut/mahogany/teak)",
+        "simple_name": "Hardwood logs",
+        "description": "Felled and delimbed hardwood trunk sections (walnut, mahogany or teak) for slicing or rotary-cutting into veneer leaves.",
+        "kind": "material",
+        "category": "packaging",
+        "era": "1982",
+        "sources": [],
+        "confidence": "low",
+        "note": "Not established: the species mix, plantation source and rotation; the packaging log node is conifer-leaning and is not substituted (wrong species/use). Renewable endpoint with no upstream typed edge (cf. forest-stand).",
+        "children": []
+      },
+    "peripheral.tv.cabinet.wood.veneer": {
+        "id": "peripheral.tv.cabinet.wood.veneer",
+        "name": "Sliced hardwood veneer",
+        "simple_name": "Wood veneer",
+        "description": "Sliced or rotary-cut hardwood veneer about 0.6 mm thick, several leaves per log, for cabinet faces.",
+        "kind": "material",
+        "category": "packaging",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: leaves-per-log and exact thickness as period cabinet practice (candidate facts say 0.6 mm, about 4-8 leaves per log).",
+        "children": [],
+        "edges": [
+          {
+            "to": "peripheral.tv.cabinet.wood.hardwood-log",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "peripheral.tv.cabinet.wood.particle-board": {
+        "id": "peripheral.tv.cabinet.wood.particle-board",
+        "name": "Particle board (urea/phenol binder)",
+        "simple_name": "Particle board",
+        "description": "Wood chips pressed with a urea or phenol binder into board for cabinet carcasses under veneer or laminate.",
+        "kind": "material",
+        "category": "packaging",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: the pressing figures as period cabinet practice (candidate facts say about 8-10 MPa); binder grade recorded via the tree's canonical melamine-resin material as amino-resin representative.",
+        "children": [],
+        "edges": [
+          {
+            "to": "c64.packaging.wood-chips",
+            "rel": "made from",
+            "basis": "inferred"
+          },
+          {
+            "to": "c64.switches.power-slider.body.melamine.melamine-resin",
+            "rel": "made of",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "peripheral.tv.cabinet.wood.laminate": {
+        "id": "peripheral.tv.cabinet.wood.laminate",
+        "name": "Printed woodgrain laminate",
+        "simple_name": "Woodgrain laminate",
+        "description": "Melamine-impregnated paper or polyester film printed with a photographic woodgrain, laminated in several sheets for cheap cabinet faces.",
+        "kind": "material",
+        "category": "packaging",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: sheet count, print process and film thickness on the TV cabinet.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.polyester.pet.film",
+            "rel": "made of",
+            "basis": "inferred"
+          }
+        ]
+      }
   }
 }

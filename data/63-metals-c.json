@@ -1434,6 +1434,11 @@
                   "to": "metal.ferrite.mixing",
                   "rel": "step",
                   "basis": "inferred"
+                },
+                {
+                  "to": "metal.ferrite.binder",
+                  "rel": "consumes",
+                  "basis": "documented"
                 }
               ]
             }
@@ -1565,6 +1570,13 @@
           ],
           "inputs": [
             "metal.ferrite.pressing"
+          ],
+          "edges": [
+            {
+              "to": "metal.ferrite.green-compact",
+              "rel": "consumes",
+              "basis": "documented"
+            }
           ]
         },
         {
@@ -2879,6 +2891,143 @@
           "basis": "documented"
         }
       ]
-    }
+    },
+    "metal.ferrite.binder": {
+        "id": "metal.ferrite.binder",
+        "name": "PVA and PVA-PEG granulation binder",
+        "simple_name": "Ferrite binder",
+        "description": "Polyvinyl alcohol or PVA-polyethylene-glycol binder dosed with water to granulate ferrite powder into free-flowing granules for die filling.",
+        "kind": "material",
+        "category": "magnetics",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Granulation practice proprietary per candidate note; PVA polymerisation via vinyl-acetate hydrolysis not modelled, ethylene shown only as ultimate shortcut; 0.5-2% binder, 8-12% water and 100-400um granules per candidate description and facts.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.ethylene.monomer",
+            "rel": "made from",
+            "basis": "typical-1982"
+          }
+        ]
+      },
+    "metal.ferrite.green-compact": {
+        "id": "metal.ferrite.green-compact",
+        "name": "Ferrite green compact",
+        "simple_name": "Green compact",
+        "description": "Dry-pressed unsintered ferrite green compact (E, EE, toroid, drum core) awaiting belt/tunnel-kiln firing with about 1% linear shrinkage.",
+        "kind": "material",
+        "category": "magnetics",
+        "era": "1982",
+        "sources": [],
+        "confidence": "high",
+        "note": "",
+        "children": []
+      },
+    "metal.ferrite.pressing-operation": {
+        "id": "metal.ferrite.pressing-operation",
+        "name": "Ferrite compact pressing",
+        "simple_name": "Compact pressing",
+        "description": "Dry pressing of granulated ferrite powder in a hardened steel die at 100-200 MPa into green compacts.",
+        "kind": "process",
+        "category": "magnetics",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Distinct operation node; the existing pressing node is kind tool (the die/press itself).",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.ferrite.green-compact",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "metal.ferrite.pressing",
+            "rel": "uses",
+            "basis": "documented"
+          }
+        ]
+      },
+    "metal.rare-earths.carbonatite-ore": {
+        "id": "metal.rare-earths.carbonatite-ore",
+        "name": "Carbonatite rare-earth ore",
+        "simple_name": "Carbonatite ore",
+        "description": "Clark Mountain carbonatite ore at 8-12% rare-earth oxides in bastnasite with calcite, barite and dolomite gangue.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "high",
+        "note": "Mountain Pass ore; Bayan Obo iron-ore by-product route unmodelled.",
+        "children": []
+      },
+    "metal.rare-earths.mountain-pass-mining": {
+        "id": "metal.rare-earths.mountain-pass-mining",
+        "name": "Mountain Pass mining and flotation",
+        "simple_name": "Carbonatite mining",
+        "description": "Open-pit mining, dredging and flotation of Mountain Pass carbonatite to bastnasite concentrate for the on-site separation plant.",
+        "kind": "process",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "high",
+        "note": "",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.rare-earths.bastnasite",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "metal.rare-earths.carbonatite-ore",
+            "rel": "consumes",
+            "basis": "documented"
+          }
+        ]
+      },
+    "metal.celestine": {
+        "id": "metal.celestine",
+        "name": "Celestine ore",
+        "simple_name": "Celestine",
+        "description": "Celestine (strontium sulphate, SrSO4) ore mined in Spain, Mexico, Iran and China for conversion to carbonate.",
+        "kind": "material",
+        "category": "magnetics",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: relative country shares in 1982 per the carbonate note.",
+        "children": []
+      },
+    "metal.strontium-carbonate.conversion": {
+        "id": "metal.strontium-carbonate.conversion",
+        "name": "Celestine to carbonate conversion",
+        "simple_name": "Carbonate conversion",
+        "description": "Conversion of mined celestine to strontium carbonate for ferrite magnets and CRT cathode carbonates.",
+        "kind": "process",
+        "category": "magnetics",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.strontium-carbonate",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "metal.celestine",
+            "rel": "consumes",
+            "basis": "documented"
+          }
+        ]
+      }
   }
 }

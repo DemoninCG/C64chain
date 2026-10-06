@@ -533,7 +533,14 @@
                 "https://forum.vcfed.org/index.php?threads/salvaging-the-commodore-64-brick-of-death-epoxied-power-supply-and-rebuilding-it-many-pictures.1241364/"
               ],
               "confidence": "high",
-              "provenance": "incomplete"
+              "provenance": "incomplete",
+              "edges": [
+                {
+                  "to": "c64.psu.regulator.variant-7805.die",
+                  "rel": "contains",
+                  "basis": "inferred"
+                }
+              ]
             },
             {
               "id": "c64.psu.regulator.variant-si3052p",
@@ -688,7 +695,14 @@
                   ],
                   "confidence": "medium",
                   "provenance": "incomplete",
-                  "note": "The C64 mainboard itself uses 2N3904 and 2N4401 in TO-92 packages for its audio and cassette motor drives (Q1-Q8 in the 326298 parts list), so the same parts bins would have supplied the brick."
+                  "note": "The C64 mainboard itself uses 2N3904 and 2N4401 in TO-92 packages for its audio and cassette motor drives (Q1-Q8 in the 326298 parts list), so the same parts bins would have supplied the brick.",
+                  "edges": [
+                    {
+                      "to": "c64.psu.regulator.variant-discrete.driver.die",
+                      "rel": "contains",
+                      "basis": "inferred"
+                    }
+                  ]
                 },
                 {
                   "id": "c64.psu.regulator.variant-discrete.reference",
@@ -1745,7 +1759,14 @@
               ],
               "note": "Both are Japanese VHF small-signal types with f_T in the low hundreds of MHz; the exact figures are not verified against a 1982 data book.",
               "children": [],
-              "inputs": []
+              "inputs": [],
+              "edges": [
+                {
+                  "to": "mb.rf-modulator.rf-oscillator.rf-transistor.die",
+                  "rel": "contains",
+                  "basis": "inferred"
+                }
+              ]
             },
             {
               "id": "mb.rf-modulator.rf-oscillator.channel-trimmer",
@@ -1877,7 +1898,14 @@
                   ],
                   "note": "This stage lives on the mainboard rather than inside the modulator, which is why the modulator's audio input could be a simple high-impedance network. The transistor itself is one of the C64's ordinary small-signal discretes (2N3904, Commodore stock 902658-01), from the same bins as the other board-level amplifiers, not one of the 2SC parts the modulator uses.",
                   "children": [],
-                  "inputs": []
+                  "inputs": [],
+                  "edges": [
+                    {
+                      "to": "mb.rf-modulator.audio-chain.fm-modulator.audio-amplifier.die",
+                      "rel": "contains",
+                      "basis": "inferred"
+                    }
+                  ]
                 }
               ]
             },
@@ -2063,7 +2091,14 @@
               ],
               "note": "The C64 mainboard itself uses 2.7 V (1N4371) and 7.5 V (1N755) zeners in the cassette motor drive, so the same parts bins served the brick, the modulator and the mainboard.",
               "children": [],
-              "inputs": []
+              "inputs": [],
+              "edges": [
+                {
+                  "to": "mb.rf-modulator.supply.zener.die",
+                  "rel": "contains",
+                  "basis": "inferred"
+                }
+              ]
             }
           ]
         },
@@ -2971,6 +3006,11 @@
         {
           "to": "c64.psu.transformer.winding.insulation.kapton.pyromellitic-dianhydride",
           "rel": "made from"
+        },
+        {
+          "to": "c64.psu.transformer.winding.insulation.kapton.diamine",
+          "rel": "made from",
+          "basis": "inferred"
         }
       ]
     },
@@ -3000,7 +3040,14 @@
       "confidence": "high",
       "provenance": "incomplete",
       "children": [],
-      "inputs": []
+      "inputs": [],
+      "edges": [
+        {
+          "to": "c64.psu.transformer.winding.insulation.kapton.pseudocumene",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "c64.psu.transformer.winding.insulation.crepe-paper.pulp": {
       "id": "c64.psu.transformer.winding.insulation.crepe-paper.pulp",
@@ -3560,7 +3607,14 @@
       ],
       "confidence": "high",
       "provenance": "incomplete",
-      "inputs": []
+      "inputs": [],
+      "edges": [
+        {
+          "to": "c64.psu.regulator.variant-discrete.pass-npn.triple-diffusion.diffusion-glass",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "c64.psu.regulator.variant-discrete.pass-npn.die-attach": {
       "id": "c64.psu.regulator.variant-discrete.pass-npn.die-attach",
@@ -4289,6 +4343,11 @@
         {
           "to": "facility.electricity",
           "rel": "consumes"
+        },
+        {
+          "to": "c64.psu.nameplate.metallised-label.bopp.cast-film",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -4880,6 +4939,188 @@
           ]
         }
       ]
-    }
+    },
+    "c64.psu.regulator.variant-discrete.pass-npn.triple-diffusion.diffusion-glass": {
+        "id": "c64.psu.regulator.variant-discrete.pass-npn.triple-diffusion.diffusion-glass",
+        "name": "Phosphorus/boron diffusion glass source",
+        "simple_name": "P/B diffusion glass",
+        "description": "Phosphorus- and boron-bearing doped-oxide diffusion source fired onto the power-transistor wafer; at drive-in the P and B diffuse through the masked oxide to form collector-base, base-emitter and deep collector-emitter regions.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Planar_process"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: exact POCl3/BBr3 vs painted-glass vehicle not established; stated (P,B,B,P) sequence and 1-2 um / 20-40 um depths are candidate facts, not independently sourced.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.fab-chemicals.dopants.phosphine",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "c64.psu.nameplate.metallised-label.bopp.cast-film": {
+        "id": "c64.psu.nameplate.metallised-label.bopp.cast-film",
+        "name": "Cast polyolefin label film",
+        "simple_name": "Cast film",
+        "description": "Cast (unstretched) polypropylene or polyethylene film, extruded and chill-cast, feedstock for biaxial orientation into BOPP label film.",
+        "kind": "material",
+        "category": "packaging",
+        "era": "1980s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Whether cast stock was PP or PE and stretch ratios 3-5x MD / 4-10x TD plus 110-140C set are process description, not established label spec.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.polyethylene.resin",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "c64.psu.regulator.variant-7805.die": {
+        "id": "c64.psu.regulator.variant-7805.die",
+        "name": "7805 monolithic regulator die",
+        "simple_name": "7805 die",
+        "description": "Monolithic 5V regulator silicon die containing reference, error amplifier, current limit and pass transistor, before TO-220 packaging.",
+        "kind": "part",
+        "category": "silicon",
+        "era": "1983",
+        "sources": [],
+        "confidence": "medium",
+        "note": "5V 1.5A rating and TO-220 versus TO-3P body variant per candidate facts; die size and diffusion sequence not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.silica.polysilicon",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "c64.psu.regulator.variant-discrete.driver.die": {
+        "id": "c64.psu.regulator.variant-discrete.driver.die",
+        "name": "Driver transistor die (small-signal NPN)",
+        "simple_name": "Driver die",
+        "description": "Small-signal NPN silicon die for the discrete regulator driver and error-amplifier stage, TO-92 class before encapsulation.",
+        "kind": "part",
+        "category": "silicon",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "hFE 100-400 and 2N3904/BC547-class assignment per candidate facts; same bins as board Q1-Q8 per candidate note; exact beta and die size not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.silica.polysilicon",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "c64.psu.transformer.winding.insulation.kapton.pseudocumene": {
+        "id": "c64.psu.transformer.winding.insulation.kapton.pseudocumene",
+        "name": "Pseudocumene aromatics feed",
+        "simple_name": "Pseudocumene",
+        "description": "1,2,4-trimethylbenzene C9 aromatic from reformer and naphtha cut, oxidised to trimellitic acid then dehydrated to pyromellitic dianhydride.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1980s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Oxidation yields and dehydration conditions not established; shown as petroleum-aromatics shortcut via naphtha.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.ethylene.feedstock.naphtha",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "c64.psu.transformer.winding.insulation.kapton.diamine": {
+        "id": "c64.psu.transformer.winding.insulation.kapton.diamine",
+        "name": "Aromatic diamine (oxydianiline/phenylenediamine)",
+        "simple_name": "Diamine",
+        "description": "4,4'-oxydianiline or p-phenylenediamine aromatic diamine co-monomer polymerised with pyromellitic dianhydride to polyimide.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1980s",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Which diamine was used in this film and dimethylacetamide polymerisation at 200-300C per candidate facts are not established for this build.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.styrene.benzene",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.rf-modulator.audio-chain.fm-modulator.audio-amplifier.die": {
+        "id": "mb.rf-modulator.audio-chain.fm-modulator.audio-amplifier.die",
+        "name": "SID audio amplifier transistor die (2N3904 class)",
+        "simple_name": "Audio amplifier die",
+        "description": "Small-signal NPN die for the SID Q2 common-emitter stage feeding the modulator audio input from the CAN 5V rail.",
+        "kind": "part",
+        "category": "silicon",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "2N3904 stock 902658-01 assignment per candidate facts; same bins as board amplifiers per candidate note; die size not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.silica.polysilicon",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.rf-modulator.rf-oscillator.rf-transistor.die": {
+        "id": "mb.rf-modulator.rf-oscillator.rf-transistor.die",
+        "name": "VHF transistor die (2SC1730 and 2SC2778 class)",
+        "simple_name": "VHF die",
+        "description": "VHF small-signal NPN die for 60MHz picture-carrier oscillator, low output capacitance, TO-92 class.",
+        "kind": "part",
+        "category": "silicon",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "fT 250-350MHz class and Vceo 20-40V per candidate facts are not verified against 1982 data book per candidate note.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.silica.polysilicon",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.rf-modulator.supply.zener.die": {
+        "id": "mb.rf-modulator.supply.zener.die",
+        "name": "8.2V zener diode die (HZ-7A1 class)",
+        "simple_name": "Zener die",
+        "description": "Heavily doped silicon PN-junction die reverse-biased into breakdown for modulator shunt stabiliser.",
+        "kind": "part",
+        "category": "silicon",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "HZ-7A1 6.8-8.2V assignment and tolerance and drift per candidate facts are type ranges, not verified for this module.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.silica.polysilicon",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      }
   }
 }

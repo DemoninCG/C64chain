@@ -2143,6 +2143,11 @@
               "to": "metal.hydrofluoric-acid",
               "rel": "consumes",
               "basis": "typical-1982"
+            },
+            {
+              "to": "mb.logic.bipolar.litho.etch.ammonium-fluoride",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -2485,6 +2490,11 @@
                 {
                   "to": "facility.electricity",
                   "rel": "consumes"
+                },
+                {
+                  "to": "mb.logic.bipolar.process.isolation.diffusion.p-glass",
+                  "rel": "consumes",
+                  "basis": "documented"
                 }
               ]
             },
@@ -4137,6 +4147,11 @@
           "to": "chem.fab-chemicals.dopants.diborane",
           "rel": "made from",
           "basis": "typical-1982"
+        },
+        {
+          "to": "mb.logic.bipolar.process.base.boron.doped-oxide",
+          "rel": "made from",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -4614,6 +4629,128 @@
           "rel": "about"
         }
       ]
-    }
+    },
+    "mb.logic.bipolar.litho.develop.tmah-synthesis": {
+        "id": "mb.logic.bipolar.litho.develop.tmah-synthesis",
+        "name": "TMAH electrolytic synthesis",
+        "simple_name": "TMAH synthesis",
+        "description": "Electrolytic/ion-exchange synthesis of tetramethylammonium hydroxide with sub-micron filtration in ultrapure water to 25 wt% developer; sodium-free so no threshold-shift defects.",
+        "kind": "process",
+        "category": "silicon",
+        "era": "1979",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Photoresist"
+        ],
+        "confidence": "low",
+        "note": "Hedged: electrolytic-vs-ion-exchange route split and trimethylamine feed per candidate note not established; KOH alternative deliberately not modeled (NaCl brine is not a KCl path).",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.fab-chemicals.tmah",
+            "rel": "produces",
+            "role": "product",
+            "basis": "inferred"
+          },
+          {
+            "to": "facility.water.ultrapure",
+            "rel": "consumes",
+            "basis": "documented"
+          }
+        ]
+      },
+    "mb.logic.bipolar.litho.etch.ammonium-fluoride": {
+        "id": "mb.logic.bipolar.litho.etch.ammonium-fluoride",
+        "name": "Ammonium fluoride buffer salt",
+        "simple_name": "Ammonium fluoride NH4F",
+        "description": "Crystalline ammonium fluoride buffer salt for buffered oxide etch (BOE): HF buffered with NH4F opening diffusion/contact windows, stopping at Si/Si3N4.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: NH4F synthesis route (fluorspar acidulation vs ammonia neutralization split) not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.fluorspar",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.logic.bipolar.process.base.boron.doped-oxide": {
+        "id": "mb.logic.bipolar.process.base.boron.doped-oxide",
+        "name": "Boron-doped oxide diffusion source",
+        "simple_name": "Boron doped-oxide source",
+        "description": "Boron-doped oxide solid diffusion source (B2O3 glass) placed face-to-face with the wafer in the diffusion boat; active species boron oxide, cheaper to handle than diborane gas.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: doped-oxide vs BN-wafer selection and B2O3 loading not established; diborane-oxidation preparation route inferred.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.fab-chemicals.dopants.diborane",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.logic.bipolar.process.base.boron.borax.source-firing": {
+        "id": "mb.logic.bipolar.process.base.boron.borax.source-firing",
+        "name": "Boron solid-source firing",
+        "simple_name": "Solid-source firing",
+        "description": "Firing of boron-doped oxide / boron nitride face-to-face diffusion sources: glass preparation, BN wafer bake and boat loading for base diffusions.",
+        "kind": "process",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
+        ],
+        "confidence": "low",
+        "note": "Hedged: renamed off borax per candidate note (sodium tetraborate is not the boat species); firing schedule not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "mb.logic.bipolar.process.base.boron.borax",
+            "rel": "produces",
+            "role": "product",
+            "basis": "typical-1982"
+          },
+          {
+            "to": "chem.fab-chemicals.dopants.diborane",
+            "rel": "consumes",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.logic.bipolar.process.isolation.diffusion.p-glass": {
+        "id": "mb.logic.bipolar.process.isolation.diffusion.p-glass",
+        "name": "Phosphorus spin-on glass source",
+        "simple_name": "P spin-on glass",
+        "description": "Phosphorus-bearing spun-on emulsion / deposited P2O5-SiO2 glass source fired at 1000-1150 C for graded-junction isolation diffusions.",
+        "kind": "material",
+        "category": "silicon",
+        "era": "1980s",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
+        ],
+        "confidence": "medium",
+        "note": "Hedged: emulsion-vs-deposited-glass vehicle and P loading not established.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.fab-chemicals.dopants.phosphine",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      }
   }
 }

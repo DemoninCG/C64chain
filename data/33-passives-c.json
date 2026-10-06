@@ -620,7 +620,19 @@
                   "value": "tens of microwatts (mA-scale drive in the 74LS629)"
                 }
               ],
-              "inputs": []
+              "inputs": [],
+              "edges": [
+                {
+                  "to": "mb.crystal.oscillator.pierce.load-capacitor",
+                  "rel": "contains",
+                  "basis": "documented"
+                },
+                {
+                  "to": "mb.crystal.oscillator.pierce.series-resistor",
+                  "rel": "contains",
+                  "basis": "documented"
+                }
+              ]
             },
             {
               "id": "mb.crystal.oscillator.pll",
@@ -2704,6 +2716,72 @@
           "rel": "consumes"
         }
       ]
-    }
+    },
+    "mb.crystal.oscillator.pierce.load-capacitor": {
+        "id": "mb.crystal.oscillator.pierce.load-capacitor",
+        "name": "Pierce load capacitor (ceramic)",
+        "simple_name": "Load capacitor",
+        "description": "Ceramic load capacitor at the crystal CL setting Pierce frequency together with stray and transistor capacitance.",
+        "kind": "part",
+        "category": "passives",
+        "era": "1982-1984",
+        "sources": [],
+        "confidence": "medium",
+        "note": "CL 20-32pF typical per candidate facts; exact trim assignment on 250407 not established; ceramic and C0G assignment per candidate note.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.alumina",
+            "rel": "made of",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.crystal.oscillator.pierce.series-resistor": {
+        "id": "mb.crystal.oscillator.pierce.series-resistor",
+        "name": "Pierce drive-level series resistor",
+        "simple_name": "Series resistor",
+        "description": "Series resistor setting Pierce drive level and limiting crystal dissipation.",
+        "kind": "part",
+        "category": "passives",
+        "era": "1982-1984",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Resistance value and 74LS629 drive conditions not established for this board; tens-of-microwatts drive per candidate facts.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.alumina",
+            "rel": "made of",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "mb.crystal.y1.cutting.cleanroom.deioniser": {
+        "id": "mb.crystal.y1.cutting.cleanroom.deioniser",
+        "name": "Deioniser and DI-water loop",
+        "simple_name": "Deioniser",
+        "description": "Ion-exchange and DI loop purifying industrial water to deionised rinse water for crystal process rinses.",
+        "kind": "process",
+        "category": "passives",
+        "era": "1982-1984",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Whether industrial versus ultrapure grade and resin versus membrane specifics are not established; shown as industrial feed to DI loop as typical-1982.",
+        "children": [],
+        "edges": [
+          {
+            "to": "mb.crystal.y1.cutting.cleanroom.deionised-water",
+            "rel": "produces",
+            "role": "product",
+            "basis": "inferred"
+          },
+          {
+            "to": "facility.water.industrial",
+            "rel": "consumes",
+            "basis": "typical-1982"
+          }
+        ]
+      }
   }
 }

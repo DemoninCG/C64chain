@@ -3253,7 +3253,14 @@
           "inputs": [
             "metal.copper.wire"
           ],
-          "note": "The 8-pin and 10-pin single-in-line form factor on a 2.54 mm pitch is documented by the parts list. Not established: that the leads come from a copper-alloy lead frame plated in tin or solder, and that the package is wave-soldered."
+          "note": "The 8-pin and 10-pin single-in-line form factor on a 2.54 mm pitch is documented by the parts list. Not established: that the leads come from a copper-alloy lead frame plated in tin or solder, and that the package is wave-soldered.",
+          "edges": [
+            {
+              "to": "mb.passives.resistors.cermet-networks.encapsulation.lead-frame.strip",
+              "rel": "made of",
+              "basis": "inferred"
+            }
+          ]
         }
       ],
       "note": "The on-board network is documented in the primary parts list as a Bourns part - RP1,RP2 '330, 8 Pin (Bourns No. 4308R-102-330)', RP3 '3.3KQ, 8 Pin (Bourns No. 4308R-101-332)', RP4 '3.3KQ, 10 Pin' - which settles the single-in-line pin count but not the encapsulant. Not established: a fire-resistant epoxy or phenolic varnish carrying the colour code, and that glass-filled epoxy was the standard SIP encapsulant.",
@@ -4404,6 +4411,26 @@
           ]
         }
       ]
-    }
+    },
+    "mb.passives.resistors.cermet-networks.encapsulation.lead-frame.strip": {
+        "id": "mb.passives.resistors.cermet-networks.encapsulation.lead-frame.strip",
+        "name": "Copper-alloy lead-frame strip, tin-plated",
+        "simple_name": "Lead-frame strip",
+        "description": "Copper-alloy strip, tin or solder plated, stamped into SIP leads on 2.54mm pitch for wave soldering.",
+        "kind": "material",
+        "category": "passives",
+        "era": "1982-1984",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Tin versus solder plate and wave-soldering of this array are not established per candidate note; copper-alloy assignment per candidate description; plating shown as typical-1982.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.copper.cathode",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      }
   }
 }

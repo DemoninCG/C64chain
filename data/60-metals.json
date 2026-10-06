@@ -1030,6 +1030,11 @@
         {
           "to": "metal.aluminum.rolling-oil.tallow",
           "rel": "made of"
+        },
+        {
+          "to": "metal.aluminum.rolling-oil.base-stock",
+          "rel": "made from",
+          "basis": "inferred"
         }
       ]
     },
@@ -4721,7 +4726,14 @@
           "value": "calcined bone ash Ca3(PO4)2, or magnesia or alumina for larger units"
         }
       ],
-      "note": "By 1982 the major refineries were largely on magnesia or alumina cupels; medium confidence that bone ash remained in use anywhere significant."
+      "note": "By 1982 the major refineries were largely on magnesia or alumina cupels; medium confidence that bone ash remained in use anywhere significant.",
+      "edges": [
+        {
+          "to": "metal.magnesia",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "metal.copper.enamel-resin": {
       "id": "metal.copper.enamel-resin",
@@ -5333,6 +5345,13 @@
           ],
           "sources": [
             "https://en.wikipedia.org/wiki/Hall%E2%80%93H%C3%A9roult_process"
+          ],
+          "edges": [
+            {
+              "to": "metal.hall-heroult.lining-mix",
+              "rel": "consumes",
+              "basis": "documented"
+            }
           ]
         },
         {
@@ -6109,6 +6128,11 @@
           "rel": "produces",
           "role": "product",
           "basis": "documented"
+        },
+        {
+          "to": "metal.copper.blister",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -6152,9 +6176,7 @@
           "era": "1982",
           "confidence": "medium",
           "provenance": "incomplete",
-          "inputs": [
-            "sodium-silicofluoride"
-          ],
+          "inputs": [],
           "facts": [
             {
               "label": "Bath",
@@ -6177,6 +6199,11 @@
             {
               "to": "metal.sulphuric-acid",
               "rel": "consumes"
+            },
+            {
+              "to": "metal.sodium-silicofluoride",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         }
@@ -6722,6 +6749,11 @@
         {
           "to": "metal.die-steel",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.electrical-steel.die-set",
+          "rel": "uses",
+          "basis": "documented"
         }
       ]
     },
@@ -6969,6 +7001,11 @@
               "to": "metal.silica.tcs.fluid-bed-chlorination",
               "rel": "step",
               "basis": "documented"
+            },
+            {
+              "to": "metal.silicon-tetrachloride",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         }
@@ -6990,6 +7027,12 @@
           "to": "metal.silica.tcs",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "metal.silicon-tetrachloride",
+          "rel": "produces",
+          "role": "co-product",
+          "basis": "documented"
         }
       ]
     },
@@ -7555,6 +7598,11 @@
             {
               "to": "metal.hydrochloric-acid",
               "rel": "consumes"
+            },
+            {
+              "to": "metal.nitric-acid",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         }
@@ -8520,6 +8568,11 @@
         {
           "to": "metal.aluminum.rolling-oil",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.aluminum.interstage-anneal",
+          "rel": "uses",
+          "basis": "documented"
         }
       ]
     },
@@ -8661,6 +8714,439 @@
           "basis": "documented"
         }
       ]
-    }
+    },
+    "metal.aluminum.rolling-oil.base-stock": {
+        "id": "metal.aluminum.rolling-oil.base-stock",
+        "name": "Rolling-oil mineral base stock",
+        "simple_name": "Mineral base stock",
+        "description": "Paraffinic mineral-oil base stock for aluminium cold-rolling lubricant, blended with fatty-acid esters into water-in-oil emulsion or neat oil.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: crude source and refinery route for the base stock; boundary of this model.",
+        "children": []
+      },
+    "metal.aluminum.interstage-anneal": {
+        "id": "metal.aluminum.interstage-anneal",
+        "name": "Interstage anneal furnace",
+        "simple_name": "Anneal furnace",
+        "description": "Gas-fired or electric interstage anneal furnace at 200-400 C that resets rolling texture between cold-mill passes.",
+        "kind": "tool",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "high",
+        "note": "",
+        "children": []
+      },
+    "metal.rendered-fat": {
+        "id": "metal.rendered-fat",
+        "name": "Rendered fat feedstock",
+        "simple_name": "Rendered fat",
+        "description": "Rendered animal fat (tallow) and pressed vegetable oils (palm, rapeseed) as feedstock for hydrolysis to fatty acids.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: rendering plant route; farm and slaughterhouse stages are out of scope.",
+        "children": []
+      },
+    "metal.fat.rendering-esterification": {
+        "id": "metal.fat.rendering-esterification",
+        "name": "Fat rendering and esterification",
+        "simple_name": "Rendering and esterification",
+        "description": "Fat rendering followed by hydrolysis to fatty acids and re-esterification on a paraffinic mineral base for rolling-lubricant esters.",
+        "kind": "process",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Medium confidence on the 1982 tallow/vegetable split per the ester node note.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.aluminum.rolling-oil.tallow",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "metal.rendered-fat",
+            "rel": "consumes",
+            "basis": "documented"
+          }
+        ]
+      },
+    "metal.copper.blister": {
+        "id": "metal.copper.blister",
+        "name": "Converter blister melt",
+        "simple_name": "Blister melt",
+        "description": "Converter blister copper melt feeding the horizontal straight-mould anode casting machine.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: converter and fire-refining detail between concentrate and casting ladle; stub/scrap rate stays hedged per the casting note.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.copper.concentrate",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "metal.tdi": {
+        "id": "metal.tdi",
+        "name": "Toluene di-isocyanate",
+        "simple_name": "TDI",
+        "description": "Toluene di-isocyanate monomer for polyurethane wire-enamel synthesis with blocked-isocyanate cure.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: TDI plant route; commercial grades proprietary.",
+        "children": []
+      },
+    "metal.polyol": {
+        "id": "metal.polyol",
+        "name": "Enamel polyol",
+        "simple_name": "Polyol",
+        "description": "Diol/polyol co-monomer reacted with di-isocyanate into thermosetting urethane wire enamel.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: polyol plant route; commercial grades proprietary.",
+        "children": []
+      },
+    "metal.copper.enamel-synthesis": {
+        "id": "metal.copper.enamel-synthesis",
+        "name": "Polyurethane enamel synthesis",
+        "simple_name": "Enamel synthesis",
+        "description": "Synthesis of polyurethane magnet-wire enamel from diol and di-isocyanate with blocked-isocyanate cure.",
+        "kind": "process",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Medium confidence overall; commercial wire-enamel chemistry proprietary per the resin note.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.copper.enamel-resin",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "metal.tdi",
+            "rel": "consumes",
+            "basis": "documented"
+          },
+          {
+            "to": "metal.polyol",
+            "rel": "consumes",
+            "basis": "documented"
+          }
+        ]
+      },
+    "metal.sodium-silicofluoride": {
+        "id": "metal.sodium-silicofluoride",
+        "name": "Sodium silicofluoride",
+        "simple_name": "Silicofluoride",
+        "description": "Sodium silicofluoride treatment chemical for nodular PCB-foil bonding etch in warm sulfuric acid.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: silicofluoride plant route from fluorspar; 1980s chromate-to-silane shift stays hedged per the bonding note.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.fluorspar",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "metal.electrical-steel.anneal": {
+        "id": "metal.electrical-steel.anneal",
+        "name": "GOES final orientation anneal",
+        "simple_name": "GOES anneal",
+        "description": "Final grain-orientation anneal of silicon steel strip at 700-1000 C in hydrogen with bias field, producing M4-M6 GOES for transformer laminations.",
+        "kind": "process",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "high",
+        "note": "Not established: two-step vs continuous-process split across 1982 suppliers.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.electrical-steel",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "metal.steel.sheet",
+            "rel": "consumes",
+            "basis": "documented"
+          },
+          {
+            "to": "facility.gases.hydrogen",
+            "rel": "consumes",
+            "basis": "documented"
+          }
+        ]
+      },
+    "metal.electrical-steel.die-set": {
+        "id": "metal.electrical-steel.die-set",
+        "name": "E-E compound blanking die",
+        "simple_name": "Blanking die",
+        "description": "Compound E-E blanking die set for stamping 0.3 mm GOES strip into lamination stacks on a 400-800 t press.",
+        "kind": "tool",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "high",
+        "note": "",
+        "children": []
+      },
+    "metal.aluminum.dross-remelt": {
+        "id": "metal.aluminum.dross-remelt",
+        "name": "Dross furnace remelt",
+        "simple_name": "Dross remelt",
+        "description": "Dross-furnace remelting of aluminium skimmings, returning dirty low-grade metal to the pot at about 5% of primary energy.",
+        "kind": "process",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Medium precision on the remelt energy saving per the dross note.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.aluminum.dross-recovered",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "metal.hall-heroult.dross",
+            "rel": "step",
+            "basis": "documented"
+          }
+        ]
+      },
+    "metal.aluminum.dross-recovered": {
+        "id": "metal.aluminum.dross-recovered",
+        "name": "Dross-recovered aluminium",
+        "simple_name": "Recovered aluminium",
+        "description": "Low-grade remelted aluminium recovered from dross skimmings for return to the pot.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: recovered-metal assay; grading link to metal.aluminum.ingot left to central review since hall-heroult already produces ingot.",
+        "children": []
+      },
+    "metal.hall-heroult.lining-mix": {
+        "id": "metal.hall-heroult.lining-mix",
+        "name": "Rammed lining mix",
+        "simple_name": "Lining mix",
+        "description": "Rammed monolithic carbon lining mix of calcined coke, graphite and hot soft pitch for Hall-Heroult pot relining.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "high",
+        "note": "Not established: graphite grade node and calcined-petroleum-coke grade; mix composition varies by cell generation.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.coke",
+            "rel": "made from",
+            "basis": "inferred"
+          },
+          {
+            "to": "metal.soft-pitch",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "metal.nickel.electrorefining": {
+        "id": "metal.nickel.electrorefining",
+        "name": "Nickel electrorefining to cathode",
+        "simple_name": "Nickel electrorefining",
+        "description": "Electrolytic refining/electrowinning of nickel to 99.8-99.9% cathode and briquette for stainless, plating and alloy feed.",
+        "kind": "process",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "high",
+        "note": "Not established: sulphide-concentrate vs laterite-matte feed split for 1982 cathode; Mond carbonyl route stays separate.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.nickel.ingot",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "metal.nickel.sulphide-concentrate",
+            "rel": "consumes",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "metal.pgm.slime-refining": {
+        "id": "metal.pgm.slime-refining",
+        "name": "Slime PGM refining",
+        "simple_name": "PGM refining",
+        "description": "Solvent-extraction and precipitation refining of anode slime to palladium (and platinum/rhodium), the secondary PGM source beside Sudbury/Norilsk/Bushveld.",
+        "kind": "process",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: slime assays (medium confidence) and the primary-vs-secondary supply split; Bushveld/Norilsk concentrate feed unmodelled.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.palladium",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "metal.anode-slime",
+            "rel": "consumes",
+            "basis": "documented"
+          }
+        ]
+      },
+    "metal.magnesia": {
+        "id": "metal.magnesia",
+        "name": "Dead-burnt magnesia",
+        "simple_name": "Magnesia",
+        "description": "Dead-burnt magnesite or seawater magnesia for basic AOD ladle linings, 200-300 mm magnesia or magnesia-carbon brick.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: seawater vs magnesite-mine source split; magnesia mining outside this subsystem per the ladle note.",
+        "children": []
+      },
+    "metal.refractory-ladle.manufacture": {
+        "id": "metal.refractory-ladle.manufacture",
+        "name": "Ladle lining manufacture",
+        "simple_name": "Lining manufacture",
+        "description": "Manufacture of replaceable magnesia ladle linings for AOD stainless vessels.",
+        "kind": "process",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.refractory-ladle",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "metal.magnesia",
+            "rel": "consumes",
+            "basis": "documented"
+          }
+        ]
+      },
+    "metal.nitric-acid": {
+        "id": "metal.nitric-acid",
+        "name": "Nitric acid for rod etch",
+        "simple_name": "Nitric acid",
+        "description": "Nitric acid for hot HCl/HNO3 polish etching of sawn polysilicon rod segments before puller charging.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: etch recipe varied plant to plant and was rarely published; Ostwald-route anchor inferred.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.ammonia",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "metal.silicon-tetrachloride": {
+        "id": "metal.silicon-tetrachloride",
+        "name": "Silicon tetrachloride",
+        "simple_name": "Tetrachloride",
+        "description": "Silicon tetrachloride by-product of fluid-bed chlorination (bp 57.6 C), recycled with hydrogen and silicon to trichlorosilane or sold to fumed-silica makers.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: 1982 recycle-vs-sale split varied strongly by plant per the recycle note.",
+        "children": []
+      },
+    "metal.pine-stump.feed": {
+        "id": "metal.pine-stump.feed",
+        "name": "Pine stump feedstock",
+        "simple_name": "Pine stumps",
+        "description": "Pine stumps and mill residues as steam-distillation feedstock shared with rosin production.",
+        "kind": "material",
+        "category": "fluids",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Forestry-residue boundary; distinct from bled gum resin.",
+        "children": []
+      },
+    "metal.pine-stump.distillation": {
+        "id": "metal.pine-stump.distillation",
+        "name": "Pine-stump distillation",
+        "simple_name": "Stump distillation",
+        "description": "Steam distillation of pine stumps yielding turpentine (alpha-pinene, beta-pinene, camphene) first and rosin residue.",
+        "kind": "process",
+        "category": "fluids",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Medium confidence on order-of-processing per the turpentine note; rosin-residue node unmodelled.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.turpentine",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "metal.pine-stump.feed",
+            "rel": "consumes",
+            "basis": "documented"
+          }
+        ]
+      }
   }
 }

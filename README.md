@@ -71,7 +71,7 @@ the peripherals a 1983 user needed: a television, a cassette drive, a joystick.
 
 ## Scale
 
-2,420 nodes, 10 levels deep, 1,469 end points, 16 category buckets. Thirteen index/grouping nodes were dissolved in the Wave 4 migration (content survives under real parents or in the generated catalogue); edges are ten typed relations in `edges[]` (judgement 0, UNMAPPED 0, ASSERT-FAIL 0). The longest single chain is
+2,580 nodes, 10 levels deep, 1,599 end points, 16 category buckets. Thirteen index/grouping nodes were dissolved in the Wave 4 migration (content survives under real parents or in the generated catalogue); edges are ten typed relations in `edges[]` (judgement 0, UNMAPPED 0, ASSERT-FAIL 0). The longest single chain is
 15 hops and runs:
 
 > mainboard → 74-series glue logic → 7406 hex inverter → how a 74LS chip is

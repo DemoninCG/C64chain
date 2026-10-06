@@ -879,6 +879,11 @@
           "to": "metal.sulphuric-acid",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "metal.cobalt.liquor",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -2957,6 +2962,52 @@
           "basis": "documented"
         }
       ]
-    }
+    },
+    "metal.cobalt.liquor": {
+        "id": "metal.cobalt.liquor",
+        "name": "Cobalt sulphate liquor",
+        "simple_name": "Cobalt liquor",
+        "description": "Cobalt sulphate pregnant liquor from dissolving cobalt hydroxide or crude metal in sulfuric acid, fed to insoluble anodes and cobalt starter cathodes.",
+        "kind": "material",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "high",
+        "note": "Not established: whether 1982 feed was hydroxide, crude metal, or Copperbelt ore leach; ore anchor is an inferred shortcut.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.cobalt.ore",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "metal.nickel.carbonate-calcination": {
+        "id": "metal.nickel.carbonate-calcination",
+        "name": "Nickel carbonate calcination",
+        "simple_name": "Carbonate calcination",
+        "description": "Ammonia-strip, boil, precipitation and 400-600 C calcination of basic nickel carbonate to 99.0-99.5% NiO for ferronickel, stainless and plating.",
+        "kind": "process",
+        "category": "metals",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: carbonate precipitation detail; post-1982 pressure-leach routes excluded per the oxide note.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.nickel.nickel-oxide",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          },
+          {
+            "to": "metal.nickel.laterite",
+            "rel": "consumes",
+            "basis": "inferred"
+          }
+        ]
+      }
   }
 }

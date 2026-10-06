@@ -89,6 +89,13 @@
       "note": "The synthesis-gas route and the copper/zinc oxide catalyst are established; the 200-300 C and 50-100 bar figures are not stated by the source. The formaldehyde branch over silver or iron-molybdenum is likewise uncited.",
       "sources": [
         "https://en.wikipedia.org/wiki/Methanol"
+      ],
+      "edges": [
+        {
+          "to": "c64.case.other-polymers.methanol.syngas",
+          "rel": "consumes",
+          "basis": "documented"
+        }
       ]
     },
     {
@@ -1111,6 +1118,11 @@
                       "to": "c64.cables.rf-cable.copper-wire",
                       "rel": "step",
                       "basis": "typical-1982"
+                    },
+                    {
+                      "to": "c64.cables.rf-cable.braid-wire",
+                      "rel": "made of",
+                      "basis": "documented"
                     }
                   ]
                 }
@@ -3942,7 +3954,19 @@
               ],
               "confidence": "medium",
               "provenance": "incomplete",
-              "note": "Not established: the injection pressures, the oil grade and the clamp force on a C64 case press."
+              "note": "Not established: the injection pressures, the oil grade and the clamp force on a C64 case press.",
+              "edges": [
+                {
+                  "to": "c64.case.moulding.hydraulics.oil",
+                  "rel": "consumes",
+                  "basis": "inferred"
+                },
+                {
+                  "to": "c64.case.moulding.hydraulics.castings",
+                  "rel": "contains",
+                  "basis": "inferred"
+                }
+              ]
             }
           ],
           "facts": [
@@ -4151,7 +4175,24 @@
           ],
           "confidence": "medium",
           "provenance": "incomplete",
-          "note": "Not established: the guide pillar count, the ejector pin diameter, the coolant temperature and the cold-runner choice on a Commodore case tool."
+          "note": "Not established: the guide pillar count, the ejector pin diameter, the coolant temperature and the cold-runner choice on a Commodore case tool.",
+          "edges": [
+            {
+              "to": "c64.case.tooling.mould-assembly.ejectors",
+              "rel": "contains",
+              "basis": "inferred"
+            },
+            {
+              "to": "c64.case.tooling.mould-assembly.base",
+              "rel": "contains",
+              "basis": "inferred"
+            },
+            {
+              "to": "facility.water.industrial",
+              "rel": "consumes",
+              "basis": "typical-1982"
+            }
+          ]
         }
       ],
       "edges": [
@@ -4476,6 +4517,152 @@
       "provenance": "incomplete",
       "note": "Not established: that the Commodore rainbow badge was printed in metallised flake ink, and that the print was burnished. The comparison against hot foil stamping is a general decorating argument, not a record of what Commodore did.",
       "children": []
-    }
+    },
+    "c64.cables.rf-cable.braid-wire": {
+        "id": "c64.cables.rf-cable.braid-wire",
+        "name": "Tinned copper braid wire",
+        "simple_name": "Braid wire",
+        "description": "Fine drawn copper wire, tinned, woven over the coax dielectric by a braiding machine into the concentric shield braid of 75-ohm consumer coax.",
+        "kind": "material",
+        "category": "interconnect",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Tinning of this specific C64 RF lead braid and any 70-95% coverage or second-pass figures are not established per candidate note; tin feed shown as typical-1982 shortcut.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.copper.cathode",
+            "rel": "made from",
+            "basis": "inferred"
+          },
+          {
+            "to": "metal.tin.ingot",
+            "rel": "made from",
+            "basis": "typical-1982"
+          }
+        ]
+      },
+    "c64.case.other-polymers.methanol.syngas": {
+        "id": "c64.case.other-polymers.methanol.syngas",
+        "name": "Synthesis gas (CO/H2) for methanol",
+        "simple_name": "Synthesis gas",
+        "description": "Carbon monoxide plus hydrogen as made by steam reforming of natural gas, the defined feed for methanol synthesis over copper/zinc oxide.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1982",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Methanol"
+        ],
+        "confidence": "medium",
+        "note": "200-300 C and 50-100 bar figures not established per candidate note; kept out of facts. Coal gasification as alternate feed not modelled.",
+        "children": []
+      },
+    "c64.case.other-polymers.methanol.reforming": {
+        "id": "c64.case.other-polymers.methanol.reforming",
+        "name": "Natural-gas steam reforming to syngas",
+        "simple_name": "Steam reforming",
+        "description": "Reforming of natural gas to carbon monoxide and hydrogen supplying the methanol synthesis gas.",
+        "kind": "process",
+        "category": "plastics",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Reformer temperatures, pressures and catalyst details not established; type-level route only.",
+        "children": [],
+        "edges": [
+          {
+            "to": "chem.natural-gas",
+            "rel": "consumes",
+            "basis": "inferred"
+          },
+          {
+            "to": "c64.case.other-polymers.methanol.syngas",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          }
+        ]
+      },
+    "c64.case.moulding.hydraulics.oil": {
+        "id": "c64.case.moulding.hydraulics.oil",
+        "name": "Hydraulic oil charge (mineral oil)",
+        "simple_name": "Hydraulic oil",
+        "description": "Mineral hydraulic-oil charge circulating in the injection-press clamp unit: it drives the toggle or the platen, provides injection and holding pressure, and drives the ejector. A petroleum-derived lubricant refined from crude, analogous to the circulating hydraulic oil of the laminate press.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: ISO VG 46-68 as the grade on the C64 case press (candidate note disowns the oil grade); charge volume and change interval are not established either.",
+        "children": [],
+        "edges": [
+          {
+            "to": "facility.oil",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "c64.case.moulding.hydraulics.castings": {
+        "id": "c64.case.moulding.hydraulics.castings",
+        "name": "Clamp-unit steel castings",
+        "simple_name": "Steel castings",
+        "description": "Cast-steel static structure of the hydraulic clamp unit: cylinders, housings and platens cast in steel, forming the frame that carries the clamp load.",
+        "kind": "part",
+        "category": "plastics",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Casting process and alloy not established; recorded as cast steel per the inputs string.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.steel",
+            "rel": "made of",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "c64.case.tooling.mould-assembly.ejectors": {
+        "id": "c64.case.tooling.mould-assembly.ejectors",
+        "name": "Ejector-plate assembly with pins",
+        "simple_name": "Ejector assembly",
+        "description": "Ejector-plate assembly with hardened pins set under every feature that would imprint on the visible face; the pins push the cooled ABS part off the core.",
+        "kind": "part",
+        "category": "plastics",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: the pin diameter (candidate facts say about 3-6 mm), pin count and plate stroke on the Commodore case tool.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.die-steel",
+            "rel": "made of",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "c64.case.tooling.mould-assembly.base": {
+        "id": "c64.case.tooling.mould-assembly.base",
+        "name": "Mould base with guides and cooling",
+        "simple_name": "Mould base",
+        "description": "Mould base carrying the finished plates, with guide pillars or bushes aligning the halves and water lines through cores and plates removing plasticisation heat.",
+        "kind": "part",
+        "category": "plastics",
+        "era": "1982",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: the guide pillar count (candidate facts say 4), the coolant temperature and the runner choice on the Commodore case tool.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.die-steel",
+            "rel": "made of",
+            "basis": "inferred"
+          }
+        ]
+      }
   }
 }

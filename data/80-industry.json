@@ -933,7 +933,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Polyvinylidene_fluoride"
       ],
-      "note": "Not established: the 170 C melting point and the claim that PVDF will not support microbial growth. The PVDF article supports its origin by polymerising vinylidene difluoride and its non-reactive character; the numbers are not in it."
+      "note": "Not established: the 170 C melting point and the claim that PVDF will not support microbial growth. The PVDF article supports its origin by polymerising vinylidene difluoride and its non-reactive character; the numbers are not in it.",
+      "edges": [
+        {
+          "to": "facility.water.pvdf.vinylidene-fluoride",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "facility.water.pp": {
       "id": "facility.water.pp",
@@ -1569,6 +1576,13 @@
       "provenance": "incomplete",
       "sources": [
         "https://en.wikipedia.org/wiki/Glass_fiber"
+      ],
+      "edges": [
+        {
+          "to": "metal.silica-sand",
+          "rel": "made from",
+          "basis": "inferred"
+        }
       ]
     },
     "facility.cleanroom.hepa-glass-fibre": {
@@ -2345,9 +2359,7 @@
       "kind": "process",
       "category": "fluids",
       "era": "1960-1990",
-      "inputs": [
-        "filtered water"
-      ],
+      "inputs": [],
       "confidence": "high",
       "provenance": "complete",
       "sources": [
@@ -2365,6 +2377,11 @@
         {
           "to": "facility.steam.ion-resin",
           "rel": "consumes"
+        },
+        {
+          "to": "facility.water.filtered",
+          "rel": "consumes",
+          "basis": "inferred"
         }
       ]
     },
@@ -2418,7 +2435,6 @@
       "category": "fluids",
       "era": "1970-1990",
       "inputs": [
-        "filtered water",
         "high-pressure pump"
       ],
       "facts": [
@@ -2437,7 +2453,14 @@
         "https://en.wikipedia.org/wiki/Reverse_osmosis"
       ],
       "note": "Modern practice is two-pass RO with antiscalant dosing and a final UV and ultrafiltration; the 1980s plant had a single pass and no antiscalant. Not established: the 10-15 bar brackish and 55-70 bar seawater operating pressures and the 95-99.5% salt rejection figures. The reverse osmosis article gives 2-17 bar for fresh and brackish water and 40-82 bar for seawater, and states no rejection percentage.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "facility.water.filtered",
+          "rel": "consumes",
+          "basis": "inferred"
+        }
+      ]
     },
     "facility.water.uv": {
       "id": "facility.water.uv",
@@ -4873,7 +4896,91 @@
       ],
       "confidence": "medium",
       "note": "The wage index here is general, not Commodore-specific: ILO Bureau of Labour Statistics hourly compensation costs for production workers in US SIC 36 electronic and other electrical equipment. It is the cleanest single measure of why the work was in Hong Kong and Taiwan - roughly one-fifth to one-quarter of the American cost per hour - but it says nothing about Commodore specifically."
-    }
+    },
+    "facility.water.pvdf.vinylidene-fluoride": {
+        "id": "facility.water.pvdf.vinylidene-fluoride",
+        "name": "Vinylidene fluoride monomer for PVDF (VDF)",
+        "simple_name": "Vinylidene fluoride",
+        "description": "Vinylidene fluoride as polymerised to polyvinylidene fluoride ultrapure-water pipe and liner.",
+        "kind": "material",
+        "category": "plastics",
+        "era": "1983",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Polyvinylidene_fluoride"
+        ],
+        "confidence": "medium",
+        "note": "170 C melting and no-microbial-growth claims not established per candidate note; R22 pyrolysis to VDF not typed.",
+        "children": []
+      },
+    "facility.water.pvdf.vdf-synthesis": {
+        "id": "facility.water.pvdf.vdf-synthesis",
+        "name": "Vinylidene fluoride synthesis for PVDF (R22 leg)",
+        "simple_name": "VDF synthesis",
+        "description": "Synthesis of vinylidene fluoride monomer feeding PVDF polymerisation.",
+        "kind": "process",
+        "category": "plastics",
+        "era": "1983",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Polyvinylidene_fluoride"
+        ],
+        "confidence": "medium",
+        "note": "R22-derived VDF route per candidate inputs only; conditions not established, type-level step.",
+        "children": [],
+        "edges": [
+          {
+            "to": "facility.water.pvdf.vinylidene-fluoride",
+            "rel": "produces",
+            "role": "product",
+            "basis": "documented"
+          }
+        ]
+      },
+    "facility.cleanroom.prefilter-media.felting": {
+        "id": "facility.cleanroom.prefilter-media.felting",
+        "name": "Coarse glass-fibre melting and felting",
+        "simple_name": "Coarse fibre felting",
+        "description": "Coarse glass melted and blown into fibres 100-1000x coarser than HEPA microfibre, felted into a disposable pre-filter mat in a steel frame or V-bank panel.",
+        "kind": "process",
+        "category": "silicon",
+        "era": "1983",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: melt temperature, fibre diameter and binder for the coarse grade; HEPA figures describe the finer borosilicate grade, not this mat.",
+        "children": [],
+        "edges": [
+          {
+            "to": "metal.silica-sand",
+            "rel": "consumes",
+            "basis": "inferred"
+          },
+          {
+            "to": "facility.cleanroom.prefilter-media",
+            "rel": "produces",
+            "role": "product",
+            "basis": "inferred"
+          }
+        ]
+      },
+    "facility.water.filtered": {
+        "id": "facility.water.filtered",
+        "name": "Filtered water (RO/ion-exchange feed)",
+        "simple_name": "Filtered water",
+        "description": "Clarified, multimedia-filtered water feeding the reverse-osmosis unit and the ion-exchange demineraliser: suspended solids, colour and turbidity removed, ionic load still present.",
+        "kind": "material",
+        "category": "fluids",
+        "era": "1970-1990",
+        "sources": [],
+        "confidence": "medium",
+        "note": "Not established: turbidity, SDI or silica figures at the RO inlet; 1980s single-pass practice without antiscalant per the RO note. Operating pressures and rejection percentages stay disowned.",
+        "children": [],
+        "edges": [
+          {
+            "to": "facility.water.river-intake",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
+      }
   },
   "nodes": [
     {
@@ -5573,6 +5680,12 @@
             {
               "to": "facility.water.filter-sand",
               "rel": "consumes",
+              "basis": "inferred"
+            },
+            {
+              "to": "facility.water.filtered",
+              "rel": "produces",
+              "role": "product",
               "basis": "inferred"
             }
           ]

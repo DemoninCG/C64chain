@@ -3625,7 +3625,23 @@
       "proposal": "direct (orphan-triage duplicate)",
       "why": "Same substance at the same level: generic FR-4 panel vs the C64 board-shop panel. Survivor is reached, C64-specific and richer (8 facts, merchant-panel route); loser had zero inbound references and no children, so nothing to re-point or adopt. The loser's brominated-epoxy edge already exists on the survivor; the branched-epoxy edge was adopted onto the survivor in the same pass.",
       "loserDescription": "Woven glass cloth impregnated with a brominated epoxy resin at 50-60% resin content, then pressed at 170-180 C and 0.3-1.5 MPa in a multi-daylight press.",
-      "loserFacts": ["Press: 170-180 C, 0.3-1.5 MPa", "Board thickness: 1.6 mm (nominal)", "Resin content: 50-60 wt%"]
+      "loserFacts": [
+        "Press: 170-180 C, 0.3-1.5 MPa",
+        "Board thickness: 1.6 mm (nominal)",
+        "Resin content: 50-60 wt%"
+      ]
+    },
+    {
+      "loser": "metal.copper.blister-feed",
+      "loserName": "Blister copper refinery feed",
+      "loserFile": "32-passives-b.json",
+      "survivor": "metal.copper.blister",
+      "survivorName": "Converter blister melt",
+      "survivorFile": "60-metals.json",
+      "proposal": "32-passives-b.json",
+      "why": "Same substance: converter blister copper melt. Feed is the refinery-bound cut, blister the casting-bound cut; both made from concentrate with the converter/fire-refining middle unmodelled. Survivor keeps both uses (anode casting + electrorefining repoint). Clears a load-bearing orphan and a high-without-source violation.",
+      "loserDescription": "Molten blister copper from the smelter, cast into refinery feed for electrolytic refining to 4N cathode for brass strip and plating.",
+      "loserFacts": null
     }
   ]
 }
