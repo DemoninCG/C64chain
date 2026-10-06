@@ -96,7 +96,15 @@ export function renderElements(grid, cursor) {
   const U = (s) => toScreenText(s);
   elBox(grid, 1, 1, 78, 38, UI.FRAME_FG, UI.BG, 'ELEMENTS');
   const counts = elementCounts();
-  grid.text(3, 2, U(`PURE ${counts.pure} - IN COMPOUNDS ${counts.comp} - ABSENT ${counts.absent} (OF 118)`), C.GREY, UI.BG);
+  let tx = 3;
+  const seg = (label, fg, bg) => {
+    grid.text(tx, 2, U(' ' + label + ' '), fg, bg);
+    tx += label.length + 3;
+  };
+  seg(`PURE ${counts.pure}`, C.BLACK, C.LTGREEN);
+  seg(`IN COMPOUNDS ${counts.comp}`, C.BLACK, C.YELLOW);
+  seg(`ABSENT ${counts.absent}`, C.GREY, UI.BG);
+  grid.text(tx, 2, U('(OF 118)'), C.GREY, UI.BG);
 
   const { ox, cw } = EL_GEOM;
   for (const e of ELEMENTS) {
@@ -112,21 +120,11 @@ export function renderElements(grid, cursor) {
   grid.text(2, cellY(8), U('LA'), C.GREY, UI.BG, 2);
   grid.text(2, cellY(9), U('AC'), C.GREY, UI.BG, 2);
 
-  const ly = cellY(9) + 2 + 2;
-  let lx = 4;
-  const chip = (label, fg, bg) => {
-    grid.text(lx, ly, U(' ' + label + ' '), fg, bg);
-    lx += label.length + 3;
-  };
-  chip('PURE', C.BLACK, C.LTGREEN);
-  chip('IN COMPOUNDS', C.BLACK, C.YELLOW);
-  chip('ABSENT', C.GREY, UI.BG);
-  grid.text(4, ly + 1, U(`${counts.pure} PURE - ${counts.comp} IN COMPOUNDS - ${counts.absent} ABSENT`), C.GREY, UI.BG);
-
+  const dy = cellY(9) + 2 + 1;
   const el = elementAt(cursor.p, cursor.g);
   if (el) {
     const st = STATUS_STYLE[el.st];
-    grid.text(4, ly + 3, U(`${el.z} ${el.s} ${el.n} - ${st.label}`), C.YELLOW, UI.BG);
-    grid.text(4, ly + 4, U(el.ev ? `E.G. ${el.ev}` : 'NO NODE MENTIONS IT'), C.LTBLUE, UI.BG, 72);
+    grid.text(4, dy, U(`${el.z} ${el.s} ${el.n} - ${st.label}`), C.YELLOW, UI.BG);
+    grid.text(4, dy + 1, U(el.ev ? `E.G. ${el.ev}` : 'NO NODE MENTIONS IT'), C.LTBLUE, UI.BG, 72);
   }
 }

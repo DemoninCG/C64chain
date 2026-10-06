@@ -1,7 +1,7 @@
 import { C, UI } from './palette.js';
 import { BOX, SOLID, toScreenText } from './petscii.js';
 import { TextMode, COLS, ROWS, wrapText } from './textmode.js';
-import { childLines, layoutChildren, visibleWindow, clampStart, ensureCursorVisible, connectionsOf, EDGE_MODES, modeById, kindColor, nodeContent } from './treeview.js';
+import { childLines, layoutTreeBoxes, planTreePanel, groupRouted, groupRails, trunkSpan, visibleWindow, clampStart, ensureCursorVisible, connectionsOf, EDGE_MODES, modeById, kindColor, nodeContent } from './treeview.js';
 import { renderElements, stepCursor, cellFromXY, elementAt } from './periodictable.js';
 
 const LEFT = { x: 1, y: 1, w: 48, h: 38 };
@@ -64,6 +64,27 @@ function box(x, y, w, h, fg, bg, title) {
   }
 }
 
+// Commodore rainbow, left to right. BLUE is swapped for LTBLUE so the last
+// band stays visible against the blue panel background.
+const RAINBOW = [C.RED, C.ORANGE, C.YELLOW, C.GREEN, C.LTBLUE];
+
+function rainbowBox(x, y, w, h) {
+  const bg = UI.BG;
+  const band = (i) => RAINBOW[Math.min(RAINBOW.length - 1, Math.floor((i / w) * RAINBOW.length))];
+  for (let i = 0; i < w; i++) {
+    const fg = band(i);
+    tm.set(x + i, y, i === 0 ? BOX.TL : i === w - 1 ? BOX.TR : BOX.H, fg, bg);
+    tm.set(x + i, y + h - 1, i === 0 ? BOX.BL : i === w - 1 ? BOX.BR : BOX.H, fg, bg);
+  }
+  for (let j = 1; j < h - 1; j++) {
+    tm.set(x, y + j, BOX.V, band(0), bg);
+    tm.set(x + w - 1, y + j, BOX.V, band(w - 1), bg);
+  }
+  for (let j = 1; j < h - 1; j++) {
+    for (let i = 1; i < w - 1; i++) tm.set(x + i, y + j, 32, band(i), bg);
+  }
+}
+
 function centerText(y, str, fg, bg) {
   const s = U(str).slice(0, COLS);
   const x = Math.max(0, Math.floor((COLS - s.length) / 2));
@@ -90,7 +111,7 @@ function renderTitle() {
 }
 
 const TREE = {
-  tx: 2, ty: 4, tw: 20, th: 6,
+  tx: 2, ty: 4, tw: 20,
   trunkX: 24,
   cx0: 26, cw: 22,
   pathY: 2,
@@ -102,11 +123,13 @@ function treeKids() {
   const n = state.nodes[state.selected];
   if (!n) return [];
   const mode = modeById(state.edgeMode);
-  return connectionsOf(n, state.nodes, new Set(mode.rels), { chain: !!mode.chain }).map(({ id, routed }) => ({
+  const conns = groupRouted(connectionsOf(n, state.nodes, new Set(mode.rels), { chain: !!mode.chain }));
+  return conns.map(({ id, routed, via }) => ({
     id,
     simple_name: state.nodes[id]?.simple_name ?? state.nodes[id]?.name ?? id,
     kind: state.nodes[id]?.kind,
     routed,
+    via: routed ? via : null,
   }));
 }
 
@@ -140,12 +163,13 @@ function renderLeft() {
   tm.text(TREE.cx0, TREE.statY, connLine, C.GREY, UI.BG, 12);
 
   const nameLines = childLines(tName, TREE.tw - 4, 3);
-  const tMid = TREE.ty + Math.floor((TREE.th - 1) / 2);
-  box(TREE.tx, TREE.ty, TREE.tw, TREE.th, kindColor(n.kind), UI.BG);
+  const th = nameLines.length + 2;
+  const tMid = TREE.ty + Math.floor((th - 1) / 2);
+  if (state.selected === (state.meta?.root ?? 'c64')) rainbowBox(TREE.tx, TREE.ty, TREE.tw, th);
+  else box(TREE.tx, TREE.ty, TREE.tw, th, kindColor(n.kind), UI.BG);
   nameLines.forEach((ln, i) => {
     tm.text(TREE.tx + 2, TREE.ty + 1 + i, ln, C.WHITE, UI.BG, TREE.tw - 4);
   });
-  tm.text(TREE.tx + 2, TREE.ty + TREE.th - 2, connLine, C.GREY, UI.BG, TREE.tw - 4);
 
   if (!kids.length) {
     tm.text(TREE.cx0, TREE.kidsY + 2, U('(END OF LINE)'), C.GREY, UI.BG, TREE.cw - 2);
@@ -153,37 +177,58 @@ function renderLeft() {
   }
 
   const textW = TREE.cw - 4;
-  const boxes = layoutChildren(kids, textW, 3);
+  const subW = textW - 2;
+  const boxes = layoutTreeBoxes(kids, textW);
   const maxRows = iy1 - TREE.kidsY + 1;
   state.treeScroll = clampStart(state.treeScroll, boxes.length);
   const win = visibleWindow(boxes, state.treeScroll, maxRows, 1);
 
   let y = TREE.kidsY;
   const drawn = [];
-  for (const b of win.visible) {
+  const drawnById = new Map();
+  for (const b of planTreePanel(kids, win.visible, TREE.cx0, TREE.cw)) {
     const isCur = b.index === state.treeCursor;
-    box(TREE.cx0, y, TREE.cw, b.h, kindColor(b.kind), UI.BG);
+    const btw = b.grouped ? subW : textW;
+    box(b.bx, y, b.bw, b.h, kindColor(b.kind), UI.BG);
     b.lines.forEach((ln, i) => {
-      tm.text(TREE.cx0 + 2, y + 1 + i, ln, isCur ? C.WHITE : C.GREY, UI.BG, textW);
+      tm.text(b.bx + 2, y + 1 + i, ln, isCur ? C.WHITE : C.GREY, UI.BG, btw);
     });
-    if (b.routed) tm.set(TREE.cx0 + TREE.cw - 2, y, '*'.charCodeAt(0), C.YELLOW, UI.BG);
     const mid = y + Math.floor(b.h / 2);
-    drawn.push({ ...b, y, mid });
-    treeChildHits.push({ y0: y, y1: y + b.h - 1, id: b.id, index: b.index });
+    const d = { ...b, y, mid };
+    drawn.push(d);
+    drawnById.set(b.id, d);
+    treeChildHits.push({ y0: y, y1: y + b.h - 1, id: b.id, index: b.index, x0: b.bx, x1: b.bx + b.bw - 1 });
     y += b.h + 1;
   }
 
   if (win.hasMoreAbove) tm.text(ix1 - 5, TREE.kidsY, U('^MORE'), C.GREY, UI.BG, 6);
   if (win.hasMoreBelow) tm.text(ix1 - 5, iy1, U('vMORE'), C.GREY, UI.BG, 6);
 
-  const lo = Math.min(tMid, drawn[0].mid);
-  const hi = Math.max(tMid, drawn[drawn.length - 1].mid);
+  const { lo, hi: hiAnchor } = trunkSpan(tMid, drawn);
+  // The trunk serves direct connections only: extend past the window only
+  // when a direct box waits below. Grouped children belong to their
+  // parent's rail, so a window ending mid-group still terminates here.
+  const lastVis = win.visible.length ? win.visible[win.visible.length - 1].index : -1;
+  const moreDirectBelow = boxes.slice(lastVis + 1).some((b) => !b.sub);
+  const hi = moreDirectBelow ? iy1 : hiAnchor;
   for (let r = lo; r <= hi; r++) tm.set(TREE.trunkX, r, BOX.V, C.GREY, UI.BG);
   for (let x = TREE.tx + TREE.tw; x < TREE.trunkX; x++) tm.set(x, tMid, BOX.H, C.GREY, UI.BG);
   tm.set(TREE.trunkX, tMid, BOX.X, C.GREY, UI.BG);
   for (const d of drawn) {
+    if (d.grouped) continue;
     for (let x = TREE.trunkX + 1; x < TREE.cx0; x++) tm.set(x, d.mid, BOX.H, C.GREY, UI.BG);
     tm.set(TREE.trunkX, d.mid, BOX.X, C.GREY, UI.BG);
+  }
+  // Routed boxes hang off their parent process: a rail drops from the
+  // parent's bottom-left corner (or the window top when the parent has
+  // scrolled out), with a junction into each grouped child.
+  const { rails, links } = groupRails(drawn, drawnById, TREE.kidsY, TREE.cx0);
+  for (const r of rails) {
+    for (let y = r.y0; y <= r.y1; y++) tm.set(r.x, y, BOX.V, C.GREY, UI.BG);
+  }
+  for (const l of links) {
+    tm.set(l.x, l.y, BOX.X, C.GREY, UI.BG);
+    tm.set(l.x + 1, l.y, BOX.H, C.GREY, UI.BG);
   }
 }
 
@@ -362,7 +407,7 @@ function moveCursor(d) {
   const total = treeKids().length;
   if (!total) return;
   state.treeCursor = Math.min(total - 1, Math.max(0, state.treeCursor + d));
-  const boxes = layoutChildren(treeKids(), TREE.cw - 4, 3);
+  const boxes = layoutTreeBoxes(treeKids(), TREE.cw - 4);
   state.treeScroll = ensureCursorVisible(
     state.treeCursor, state.treeScroll, boxes, (LEFT.y + LEFT.h - 2) - TREE.kidsY + 1, 1,
   );
@@ -477,7 +522,7 @@ function wireInput() {
     }
     if (backHit && c.y === backHit.y && c.x >= backHit.x0 && c.x <= backHit.x1) { goBack(); return; }
     for (const t of treeChildHits) {
-      if (c.y >= t.y0 && c.y <= t.y1 && c.x >= TREE.cx0 && c.x < TREE.cx0 + TREE.cw) {
+      if (c.y >= t.y0 && c.y <= t.y1 && c.x >= (t.x0 ?? TREE.cx0) && c.x <= (t.x1 ?? TREE.cx0 + TREE.cw - 1)) {
         state.treeCursor = t.index;
         track(t.id);
         return;

@@ -90,8 +90,9 @@ export function nodeContent(n, iw) {
   if (!hasConnections(n)) {
     // Provenance decides the end-of-line label: a connectionless node is a
     // raw endpoint only when reviewed as one. Unflagged nodes keep it neutral.
-    const pl = PROVENANCE_LABEL[n.provenance];
-    push(pl ? `END OF LINE: ${pl}` : 'END OF LINE', C.GREY);
+    // Wrapped: the longest label is 41 chars, the panel fits 26 per row.
+    const label = PROVENANCE_LABEL[n.provenance] ? `END OF LINE: ${PROVENANCE_LABEL[n.provenance]}` : 'END OF LINE';
+    for (const ln of wrapText(S(label), iw)) push(ln, C.GREY);
   }
   return L;
 }
@@ -149,7 +150,7 @@ export function connectionsOf(node, nodes, relSet, opts = {}) {
         done.add(t);
         if (ENTITY.has(nodes[t].kind)) {
           seen.add(t);
-          out.push({ id: t, via: 'routed', routed: true });
+          out.push({ id: t, via: startId, routed: true });
         } else if (LIFT_KINDS.has(nodes[t].kind)) {
           seen.add(t);
           stack.push(t);
@@ -176,6 +177,83 @@ export function connectionsOf(node, nodes, relSet, opts = {}) {
     }
   }
   return out;
+}
+
+// Order connections so entities routed through a process list directly under
+// that process. Routed orphans (parent not listed) keep relative order at end.
+export function groupRouted(conns) {
+  const out = [];
+  const placed = new Set();
+  for (const c of conns) {
+    if (c.routed) continue;
+    out.push(c);
+    for (const r of conns) {
+      if (r.routed && !placed.has(r.id) && r.via === c.id) {
+        out.push(r);
+        placed.add(r.id);
+      }
+    }
+  }
+  for (const r of conns) if (r.routed && !placed.has(r.id)) out.push(r);
+  return out;
+}
+
+// Lay out child boxes, narrowing ones routed under a listed parent process so
+// the tree panel can indent them. Marks narrowed boxes with sub = true.
+export function layoutTreeBoxes(kids, textW, indent = 2) {
+  const boxes = layoutChildren(kids, textW, 3);
+  const ids = new Set(kids.map((k) => k.id));
+  boxes.forEach((b, i) => {
+    if (kids[i].via && ids.has(kids[i].via)) {
+      const lines = childLines(kids[i].simple_name, textW - indent, 3);
+      b.lines = lines;
+      b.h = lines.length + 2;
+      b.sub = true;
+    }
+  });
+  return boxes;
+}
+
+// Draw plan for the visible tree-panel boxes: routed boxes under a listed
+// parent process stay indented even when the parent has scrolled out of view,
+// so a group reads the same while scrolling.
+export function planTreePanel(kids, visible, cx0, cw, indent = 2) {
+  return visible.map((b) => {
+    const via = kids[b.index]?.via ?? null;
+    const grouped = !!b.sub;
+    return {
+      ...b,
+      via,
+      grouped,
+      bx: grouped ? cx0 + indent : cx0,
+      bw: grouped ? cw - indent : cw,
+    };
+  });
+}
+
+// Vertical span of the main connection trunk: it ends at the last directly
+// connected box, never inside a routed group hanging off a parent process.
+export function trunkSpan(tMid, drawn) {
+  const anchors = drawn.filter((d) => !d.grouped);
+  return {
+    lo: Math.min(tMid, drawn[0].mid),
+    hi: Math.max(tMid, ...anchors.map((d) => d.mid)),
+  };
+}
+
+// Rail segments plus junctions linking grouped boxes to their parent
+// process. A parent scrolled out above leaves its rail starting at the
+// window top, so the group stays visibly attached while scrolling.
+export function groupRails(drawn, byId, topY, x) {
+  const rails = [];
+  const links = [];
+  for (const d of drawn) {
+    if (!d.grouped) continue;
+    const p = byId.get(d.via);
+    rails.push({ x, y0: p ? p.y + p.h : topY, y1: d.mid });
+    links.push({ x, y: d.mid });
+  }
+  return { rails, links };
 }
 
 export function ensureCursorVisible(cursor, startIdx, boxes, maxRows, gap = 1) {
