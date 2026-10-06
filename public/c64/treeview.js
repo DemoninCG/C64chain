@@ -48,6 +48,20 @@ export const EDGE_MODES = [
   { id: 'all', label: 'ALL', desc: 'everything but produces', rels: ['contains', 'made of', 'made from', 'step', 'consumes', 'uses', 'at', 'owned by', 'about'], chain: true },
 ];
 
+export const PROVENANCE_LABEL = {
+  raw: 'RAW MATERIAL',
+  complete: 'SUPPLY KNOWLEDGE COMPLETE',
+  incomplete: 'SUPPLY KNOWLEDGE GAP',
+};
+
+// End of line means no onward connections at all: legacy children, typed
+// edges, resolved ingredient links, or a derived producer. Checking children
+// alone mislabels nodes whose only links are typed edges.
+export function hasConnections(n) {
+  return !!((n.children ?? []).length || (n.edges ?? []).length
+    || (n.from ?? []).length || (n.made_by ?? []).length);
+}
+
 export const KIND_COLOR = {
   part: 7,
   material: 13,
@@ -73,8 +87,11 @@ export function nodeContent(n, iw) {
   push('SEP', C.GREY);
   push('DESC:', C.GREY);
   for (const ln of wrapText(S(n.description ?? '(NO DESCRIPTION)'), iw)) push(ln, C.LTBLUE);
-  if (!(n.children ?? []).length) {
-    push('END OF LINE: RAW', C.GREY);
+  if (!hasConnections(n)) {
+    // Provenance decides the end-of-line label: a connectionless node is a
+    // raw endpoint only when reviewed as one. Unflagged nodes keep it neutral.
+    const pl = PROVENANCE_LABEL[n.provenance];
+    push(pl ? `END OF LINE: ${pl}` : 'END OF LINE', C.GREY);
   }
   return L;
 }

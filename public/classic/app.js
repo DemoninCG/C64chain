@@ -583,6 +583,7 @@ function renderPanel(id) {
     tag(n.kind ?? '?', colorOf(n.category), true),
     tag(n.category ?? '?'),
     tag(`scope: ${n.scope ?? 'chain'}`),
+    n.provenance ? tag(`provenance: ${n.provenance}`, n.provenance === 'raw' ? '#9ece6a' : n.provenance === 'complete' ? '#7dcfff' : '#e0af68') : '',
     n.era ? tag(n.era) : '',
     n.confidence ? tag(`confidence: ${n.confidence}`, n.confidence === 'high' ? '#9ece6a' : n.confidence === 'medium' ? '#e0af68' : '#f7768e') : '',
     (parents[id]?.length ?? 0) > 1 ? tag(`used ${parents[id].length}×`, '#7dcfff') : '',
@@ -621,11 +622,14 @@ function renderPanel(id) {
     : '';
 
   const kids = kidsOf(n);
+  const hasConn = (n.children ?? []).length || (n.edges ?? []).length
+    || (n.from ?? []).length || (n.made_by ?? []).length;
+  const PROV_END = { raw: 'raw material', complete: 'supply knowledge complete', incomplete: 'supply knowledge gap' };
   const kidHtml = kids.length
     ? `<div class="kids"><h4>contains / made of — refinement, ${kids.length}</h4><ol>${kids
         .map((k) => `<li><a data-go="${k.id}"><i class="sw" style="background:${colorOf(k.category)}"></i>${esc(k.name)}<span class="c">${k.children?.length ?? 0}↓</span></a></li>`)
         .join('')}</ol></div>`
-    : '<div class="kids"><h4>end of the line</h4><ol><li style="padding:4px 8px;color:#545d70">raw material</li></ol></div>';
+    : (hasConn ? '' : `<div class="kids"><h4>end of the line</h4><ol><li style="padding:4px 8px;color:#545d70">${esc(PROV_END[n.provenance] ?? 'nothing further modeled')}</li></ol></div>`);
 
   // Wave 5 typed relations on dump-edges semantics (typed as stored, legacy by
   // mechanical disposition). Refinement above (dendrogram, progressive one-subtree
