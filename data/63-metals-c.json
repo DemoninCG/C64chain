@@ -4,7 +4,7 @@
   "roots": [
     {
       "id": "metal.zinc",
-      "name": "Zinc: die-cast alloy, plating, brass, varistor",
+      "name": "Zinc",
       "simple_name": "Zinc",
       "description": "Zinc is the fourth non-ferrous metal and the most recycled one. In a 1982 C64 it appears as a die-cast zinc alloy for the case-mounted parts and the key plungers, as a plating on steel for EMI shields and chassis fasteners, as brass (copper-zinc) for the bus-bar and connector bodies, and as zinc oxide in the varistor that clamps the supply spikes off the mains input. The smelting industry in 1982 was in the middle of its biggest change in a century: the roast-leach-electrowin zinc-iron plant was replacing the horizontal retort furnace.",
       "kind": "material",
@@ -52,7 +52,7 @@
     },
     {
       "id": "metal.ferrite",
-      "name": "Ferrite: transformer and choke cores",
+      "name": "Ferrite",
       "simple_name": "Ferrite",
       "description": "The C64's power supply transformer, the filter chokes, the RF modulator coil and the ferrite beads on the board are all ceramic magnetic materials, not metal. A power ferrite is a spinel (either MnO.Fe2O3.ZnO or NiO.Fe2O3.ZnO) pressed as a powder and fired to 1200-1300 C, which is powder metallurgy in the truest sense: the magnetisation is not in the metal particles, it is in the magnetic domain walls of a ceramic. This is the branch where the metals tree stops being about metal and starts being about oxide chemistry, and the raw materials are iron oxide, manganese carbonate, zinc oxide and nickel oxide.",
       "kind": "material",
@@ -130,7 +130,7 @@
     },
     {
       "id": "metal.gold",
-      "name": "Gold: plating, bonding wire, contacts",
+      "name": "Gold",
       "simple_name": "Gold",
       "description": "A C64 contains perhaps 0.2-1 g of gold. It is the flash on the edge-connector fingers, the plating on the IC leads, the ball or wedge bond from the die pad to the package, and the contacts in the 'jewel' switch mechanisms. Gold is the only metal that does not tarnish and does not form an insulating oxide, which is the entire reason it is used where an electrical contact has to survive years untouched. All of that gold is refined to 99.99% from an ore averaging a few grams per tonne, and in 1982 essentially all of it came out of a cyanide leach.",
       "kind": "material",
@@ -187,7 +187,7 @@
     },
     {
       "id": "metal.coke",
-      "name": "Coke and coke oven gas: the reducing agent",
+      "name": "Coke and coke oven gas",
       "simple_name": "Coke and coke oven gas",
       "description": "Coke is the black, porous, 90% carbon solid that makes the blast furnace possible, and it is also the reductant in the tin, lead, zinc, manganese, ferrochrome and ferrosilicon furnaces. A tonne of coke is roughly 70% of the fuel and 30% of the reductant in a blast furnace charge, and nothing works without it. By 1982 the coke oven was a mature and much-diagnosed industry: the air pollution from coking, and the fact that a coke oven is the largest single source of coal tar and benzene in the industrial world, were the reasons the Clean Air Act of 1970 and its amendments hit coal and coke first.",
       "kind": "material",
@@ -221,7 +221,7 @@
       "children": [
         {
           "id": "metal.coke.battery",
-          "name": "The battery, its flue and the chimney",
+          "name": "Battery, its flue and the chimney",
           "simple_name": "Battery, flue, chimney",
           "description": "A coke battery is a long brick building. These are 50-100 ovens in a row, 40-60 m long, with a 60-70 m chimney at one end and a quenching tower at the other. Between every pair of ovens is a heating flue, so there are twice as many flues as ovens, and the gas from the ovens is burned in those flues and the hot gas is then drawn up the chimney. The chimney is the tall thing on the coke works skyline, and it is there for the combustion products, not for a draft. A battery is a piece of 1880s engineering that has been continuously rebuilt ever since and is essentially the same machine today.",
           "kind": "site",
@@ -251,7 +251,7 @@
           "children": [
             {
               "id": "metal.coke.cold-strip",
-              "name": "The cold-strip push and the bench",
+              "name": "Cold-strip push and the bench",
               "simple_name": "Cold-strip push",
               "description": "The hottest, ugliest machine in the coking plant: a horizontal bar on a chain, 3-5 m long, permanently red, that pushes red coke out of the chambers onto the collecting bench. Its life is measured in weeks and its water-cooling is the operator's main concern. Everyone who worked on a battery in the 1980s had a job that was hot enough to need its own PPE rotation, which is the reason the whole industry has a 'coke oven man' occupational category and a very specific set of burn scars.",
               "kind": "tool",
@@ -294,7 +294,7 @@
     },
     {
       "id": "metal.chromium",
-      "name": "Chromium: stainless, ferrochrome, hard chrome",
+      "name": "Chromium",
       "simple_name": "Chromium",
       "description": "Chromium does three separate jobs: it makes stainless steel stainless, it is the alloying element in the NiCr film resistors on the board, and as hexavalent chromium it is the hard chrome plating on switch contacts, the keyboard frame hinges and the RF shielding. The plating chemistry is the one with a body of regulation attached to it, and the ferrochrome industry is a South African monopoly that gave apartheid-era South Africa its nickname 'Chrome City'.",
       "kind": "material",
@@ -445,7 +445,7 @@
     },
     "metal.coke.tar-pitch": {
       "id": "metal.coke.tar-pitch",
-      "name": "Coal tar and pitch: the binder under everything",
+      "name": "Coal tar and pitch",
       "simple_name": "Coal tar and pitch",
       "description": "The tar that comes off a coke oven condenses as a dense black liquid, and it is the source of three of the most important carbonaceous materials in this file. Distilled, it gives crude tar, heavy creosote oil, and pitch. It is the binder in the carbon anode, the coke-battery electrode, the extrusion die lubricant and the aluminium pot lining. A tonne of coke gives roughly 30-50 kg of crude tar, and a tonne of that tar gives a few tens of kilos of soft pitch. So the coke oven is upstream of the aluminium pot, the coke battery and the graphite electrode, and the carbon-anode branch of this file is not an independent industry at all. It is the coke oven's tar still.",
       "kind": "material",
@@ -621,7 +621,7 @@
     },
     "metal.habers-catalyst": {
       "id": "metal.habers-catalyst",
-      "name": "Iron catalyst for ammonia synthesis",
+      "name": "Iron catalyst",
       "simple_name": "Iron ammonia catalyst",
       "description": "The hydrogen in the cyanide comes from ammonia, and the ammonia's Haber-Bosch reaction runs over a promoted iron catalyst made from magnetite or from mill scale. The cyanide that leaches the gold, and the chlorine that makes the hydrochloric acid, and the aluminium in the case all depend on an iron-ore-derived catalyst in a gas works. The Haber-Bosch catalyst is a 1980s version of the same magnetite mined for steel.",
       "kind": "material",
@@ -729,7 +729,7 @@
     },
     "metal.ferrite.raw-materials": {
       "id": "metal.ferrite.raw-materials",
-      "name": "Ferrite raw materials: the oxide blend",
+      "name": "Ferrite raw materials",
       "simple_name": "Ferrite raw materials",
       "description": "The three powders that get blended, and each one has its own industrial route. The iron oxide is either mill scale from the aluminium or the steel mill (washed, dried and milled, and the cheapest source) or a precipitated oxide made by acid leaching hematite. The manganese is manganese carbonate, a chemical precipitate from a manganese sulphate solution. The zinc is zinc oxide, made by roasting zinc ore or by burning zinc metal. The blend has to be accurate to about 0.2% in each component, because the magnetic properties are extremely sensitive to it, and by the 1980s the oxide suppliers were selling pre-blended 'master mixes' to the smaller ferrite makers precisely because the blending was the hard part.",
       "kind": "material",
@@ -761,7 +761,7 @@
       "children": [
         {
           "id": "metal.ferrite.mix-house",
-          "name": "The mix house and the recipe book",
+          "name": "Mix house and the recipe book",
           "simple_name": "Mix house and the recipe book",
           "description": "The place where a ferrite formula is actually executed. A blend of perhaps 300 kg of oxide is weighed into a mixer (a ribbon blender or a ball mill) to 0.1 kg, sampled, analysed, and then the result is used to correct the next batch. The correction logic is where the manufacturer differs: some makers blend to the analysis and some blend to the recipe, and the argument between them is an old one. The mix house also holds the master recipes, and the confidentiality around them is a matter of pride rather than of deep mystery. A 1980s small ferrite factory had one mix house, one kiln line and one grinding room, and made a few hundred tonnes a year.",
           "kind": "facility",
@@ -998,7 +998,7 @@
     },
     "metal.gold.uraninite": {
       "id": "metal.gold.uraninite",
-      "name": "The uraninite in the Witwatersrand reef",
+      "name": "Uraninite in the Witwatersrand reef",
       "simple_name": "Witwatersrand uraninite",
       "description": "The gold reef is also the world's largest gold-uranium conglomerate, and the same reef that was being mined for gold was being mined for uranium by a separate set of shafts from the 1950s onwards. The uraninite is present as discrete grains on the carbon seams, and it recovers in the gold plant's gravity circuits and in the tailings retreatment plants. The uranium in the C64's power supply (in a 1982 it might have been a South African or Canadian utility's grid, but the fuel cycle is the same one) came from the same bed as the gold on the edge connectors.",
       "kind": "material",
@@ -1027,7 +1027,7 @@
     },
     "metal.monazite.beach": {
       "id": "metal.monazite.beach",
-      "name": "The heavy-mineral beach and its dredge",
+      "name": "Heavy-mineral beach and its dredge",
       "simple_name": "Mineral beach dredge",
       "description": "A beach on the east coast of Queensland or on the Malabar coast of Kerala where the wave has concentrated ilmenite, zircon, rutile, monazite and xenotime into a dark, 1-10% heavy-mineral band a metre or two thick in the sand. It is worked by a cutter-suction dredge or a walking dredge on a barge, which pumps the sand onto a floating concentrator with shaking tables, spirals, a magnetic separator and an electrostatic separator. This is the shared geological endpoint of a surprising amount of this file: the titanium dioxide, the coltan, the thorium residue, the rare earths and the zircon all came out of a band like this one, which is why a capacitor's tantalum and a television's red phosphor can be argued about at the same beach.",
       "kind": "material",
@@ -1245,7 +1245,7 @@
         },
         {
           "id": "metal.coke.quench-tower",
-          "name": "The quench tower and the coke push",
+          "name": "Quench tower and the coke push",
           "simple_name": "Quench tower",
           "description": "The physical heart of the battery: a tall steel tower with spray nozzles fed by a 300 mm main, a receiving pan, and a surge hopper from which a 2-3 m pusher car pushes the cooled coke onto a belt. Behind it stands the battery, bricked with about 20,000 refractory bricks per oven chamber in the modern design and castable in the older one, all of which has to survive 1300 C cycling every twenty hours forever. The doors are the coke-side door on top and the charging door below, and the charging machinery is driven by a single large winch.",
           "kind": "tool",
@@ -1301,7 +1301,7 @@
     },
     "metal.coal-preparation": {
       "id": "metal.coal-preparation",
-      "name": "Coal preparation: crushing, washing, blending",
+      "name": "Coal preparation",
       "simple_name": "Coal preparation",
       "description": "Run-of-mine coking coal is crushed to under 50 mm and washed, because the ash that matters is the mineral matter (clay bands and pyritic nodules) that can be taken off by a dense-media wash at about 1.4-1.6 specific gravity. The washed coal then goes to a blending yard, because a coke oven wants a consistent blend and no single seam is consistent. Blending is done by a stacker-reclaimer in a yard, and the recipe is a metallurgical decision that is still made on the basis of the dilatation and the sulphur.",
       "kind": "process",
@@ -1581,7 +1581,7 @@
         },
         {
           "id": "metal.ferrite.grinding",
-          "name": "Grinding the fired part to size",
+          "name": "Grind the fired part to size",
           "simple_name": "Grind to size",
           "description": "Because the fired part cannot be held to a useful dimension by pressing, it is lapped and ground. An E core is face-ground and the bore is ground. A toroid is OD and ID ground. In 1982 this was a double-disc or a planetary grinder with a diamond wheel, and it was expensive enough that a great many ferrite parts were still sold with a loose dimension tolerance and machined by the customer. The final steps are the coating: a thin epoxy or phenolic coat, or a dry lacquer coat and bake, which holds the core together, insulates it from the winding, and gives it a corrosion-resistant surface.",
           "kind": "process",
@@ -2346,7 +2346,7 @@
     },
     "metal.ferrite.radio.aniso-die": {
       "id": "metal.ferrite.radio.aniso-die",
-      "name": "The anisotropic pressing die",
+      "name": "Anisotropic pressing die",
       "simple_name": "Anisotropic press die",
       "description": "A ferrite pressed in an ordinary die has its pores flattened in the pressing direction, and flattened pores cut the permeability in that direction roughly in half. So a plain-pressed ferrite rod is a poor antenna core along its length. To avoid that, a rod core is pressed in a die with a fine central punch, so the powder is displaced radially and the pores and the grains align across the rod instead of along it. The same die idea is behind the toroid's oriented product and behind ferrite for read heads. It is a small piece of die engineering with a large effect, and it is why ferrite die makers were a specialist trade in the 1980s.",
       "kind": "tool",
@@ -2364,7 +2364,7 @@
     },
     "metal.coal-tailings": {
       "id": "metal.coal-tailings",
-      "name": "The wash plant tailings and the creek",
+      "name": "Wash plant tailings and the creek",
       "simple_name": "Wash-plant tailings",
       "description": "The other end of the coal preparation. Dense-medium washing rejects 15-30% of the mined tonnage as a fine waste with a high ash content, and in the Appalachian coal country in the early 1980s that waste was routinely placed in the creeks. The valley fills and the stream failures (the Buffalo Creek disaster in West Virginia in 1972 killed 125 people) were the reason the Surface Mining Control and Reclamation Act of 1977 exists and why by 1982 a coal mine had to have a reclamation plan and a bond. So the coke chain in a 1982 C64 has, at its far end, one of the first major environmental regulations in the United States.",
       "kind": "material",
@@ -2440,7 +2440,7 @@
     },
     "metal.coke.quench-blow": {
       "id": "metal.coke.quench-blow",
-      "name": "The coke quench blow tank and its drain",
+      "name": "Coke quench blow tank and its drain",
       "simple_name": "Quench blow tank",
       "description": "Quenching has three products, not one: the coke, the water with the fine carbon in it, and the coke breeze. It is the 3-10 mm fraction that the blast furnace cannot use because it would be blown through the burden. Breeze is worth something: a coke plant sells it for sinter-plant fuel, for foundry moulding sand, and in 1982 increasingly for the electrode and anode pitch trade as a cheap carbon filler. So the coke oven's smallest product feeds three of the other branches in this file, and the water carries 1-3 kg of suspended carbon per tonne of coke quenched.",
       "kind": "material",
@@ -2594,8 +2594,8 @@
     },
     "metal.zinc.dust": {
       "id": "metal.zinc.dust",
-      "name": "Zinc dust for cementation",
-      "simple_name": "Zinc dust for cementation",
+      "name": "Zinc dust",
+      "simple_name": "Zinc dust",
       "description": "The purification step uses zinc metal itself, atomised from a small kettle, as the reagent that throws out copper, cadmium and cobalt. The cemented metals (a black sludge heavy with copper and cadmium) is filtered off and shipped to a cadmium refinery, which is where the world's cadmium came from in 1982. So the zinc plant's purification residue is a cadmium ore in all but name.",
       "kind": "material",
       "category": "metals",
@@ -2663,7 +2663,7 @@
     },
     "metal.zinc.oxide": {
       "id": "metal.zinc.oxide",
-      "name": "Zinc oxide sinter: the smelter's intermediate",
+      "name": "Zinc oxide sinter",
       "simple_name": "Zinc oxide sinter",
       "description": "The dead-roast sinter is the actual feed to the leach circuit, and its specification is a compromise between the roast and the leach. It wants to be as completely roasted as possible so that the zinc is all in the oxide, but it also wants to be porous enough for the sulphuric acid to reach it, which is what the sintering stage of the roaster-sinter plant is for. Between 5 and 10% of the zinc stays locked up in the silicate matrix and is lost in the leach residue, which is the second big reason a zinc plant's recovery is not higher than it is.",
       "kind": "material",
@@ -2848,7 +2848,7 @@
     },
     "metal.zinc.chloride": {
       "id": "metal.zinc.chloride",
-      "name": "Zinc chloride (ZnCl2): flux activator and galvanising flux",
+      "name": "Zinc chloride (ZnCl2)",
       "simple_name": "Zinc chloride",
       "description": "Zinc chloride is the inorganic salt ZnCl2, a white hygroscopic and strongly deliquescent crystalline solid supplied anhydrous or as hydrates. It is made by reacting zinc metal (or zinc oxide, carbonate or sulphide) with hydrochloric acid, in industry Zn + 2 HCl -> ZnCl2 + H2, with the hydrate grade set by evaporation. Its job in this tree is flux chemistry: it dissolves passivating metal oxides and exposes clean metal, which is why it is the halide activator in activated rosin flux for solder wire and (with ammonium chloride as the double salts) the flux in hot-dip galvanising and the acid-chloride zinc plating bath.",
       "kind": "material",

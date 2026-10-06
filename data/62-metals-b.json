@@ -4,7 +4,7 @@
   "roots": [
     {
       "id": "metal.copper",
-      "name": "Copper: track, winding wire, foil, contacts",
+      "name": "Copper",
       "simple_name": "Copper",
       "description": "The most-used metal after iron, and in a C64 it is everywhere the electricity goes and everywhere the heat has to leave. The PCB tracks are 35 um copper foil on 1.6 mm FR-4; the switch-mode transformer is wound with 0.2-0.4 mm enamelled magnet wire; the rectifiers and the regulator leadframes are copper. The edge connector fingers and the heatsink mounts are copper alloy. All of it starts as porphyry ore at 0.4-1% Cu, which is why copper smelters are, in the 1980s, as much sulfuric acid plants as they are metal plants.",
       "kind": "material",
@@ -132,7 +132,7 @@
     },
     {
       "id": "metal.nickel",
-      "name": "Nickel: connector plating, alloys, stainless",
+      "name": "Nickel",
       "simple_name": "Nickel",
       "description": "Nickel is small in mass and enormous in function. In a C64 it is the plating on the connector shells and the gold-plated edge connector fingers' underlayer, the constantan and nichrome of the thin-film resistors on the board, the Invar of the composite-video circuit's chroma delay, and the bulk of AISI 304 and 430 stainless in the audio jack and the shield cans. 1982 was the year nickel was in a price crisis. The 1982-83 LME collapse, following the Escondida-adjacent and the Sherritt expansions of the late 1970s, took nickel from about $4/lb in 1980 to under $1.30/lb by 1983.",
       "kind": "material",
@@ -195,7 +195,7 @@
     },
     {
       "id": "metal.tin",
-      "name": "Tin: solder alloy, tin plate, contacts",
+      "name": "Tin",
       "simple_name": "Tin",
       "description": "Tin is the metal that made electronics solderable. On a 1982 C64 board there are roughly 3,500 through-hole joints and most of them are joined with a lead-tin alloy, so there is a couple of hundred grams of tin per machine. Tin also does two other jobs in the machine: it is the coating on tin-plated steel (tinplate, though a home computer case is not canned food) and it is the facing on tin-plated copper-alloy switch and connector contacts, where it stops the copper from tarnishing and gives a low and stable contact resistance.",
       "kind": "material",
@@ -287,7 +287,7 @@
     },
     {
       "id": "metal.cobalt",
-      "name": "Cobalt: the carbide binder, the ferrite dopant and the magnet alloy",
+      "name": "Cobalt",
       "simple_name": "Cobalt",
       "description": "Cobalt is the element nobody thinks of and cannot do without. In a 1982 C64 and its peripherals it is the metal that holds tungsten carbide together in a drill cone, an end mill and a stamping die; the grain-boundary dopant that makes NiZn ferrite behave; the balance element in the iron-nickel-cobalt lid sealed onto a memory chip's ceramic package; a few percent of an Alnico correction magnet; and, at the top of the price range, half of a samarium-cobalt magnet. The mass in any one machine is a few grams. What is worth tracing is where it comes from, because cobalt is almost never mined for itself: it is overwhelmingly a by-product reporting out of somebody else's circuit, most often a copper-cobalt orebody or a nickel refinery, so the cobalt supply chain is largely a set of attachments to the copper and nickel branches.",
       "kind": "material",
@@ -419,7 +419,7 @@
     },
     "metal.copper.haulage": {
       "id": "metal.copper.haulage",
-      "name": "The haul road, the ramp and the truck cycle",
+      "name": "Haul road, the ramp and the truck cycle",
       "simple_name": "Haul road and ramp",
       "description": "The economics of an open pit are a haulage problem. A 130-tonne truck on a 2 km round trip from the loading point to the crusher, at about 25 km/h loaded and 40 km/h empty, takes 3-5 minutes per cycle including spotting and loading, so a shovel with a 4-second loading cycle needs about 6-8 trucks to keep it fed. The ramp grade matters enormously (every 1% of extra grade costs roughly 1-2% of the truck's payload) and so does where the crusher is put. A large porphyry pit moves 100,000-400,000 tonnes a day, and the fleet is 100-400 trucks.",
       "kind": "process",
@@ -486,7 +486,7 @@
     },
     "metal.cobalt.ore": {
       "id": "metal.cobalt.ore",
-      "name": "Cobalt ore: heterogenite, carrollite and asbolane",
+      "name": "Cobalt ore",
       "simple_name": "Cobalt ore",
       "description": "Most cobalt never appears as a cobalt mineral at all. In the Copperbelt (the Shaba and Nkana strata of Zaire and Zambia) it sits in the sulphide ores as carrollite, Cu(Co,Ni)2S4, and it is recovered by flotation alongside the copper sulphides, so its output tracks the copper mine's. Where the deposit weathers, the same cobalt is oxidised to heterogenite, CoO(OH), a black manganese-rich oxide in the near-surface ore, and it is the oxide that the later hydrometallurgical flowsheets treat. A third source is asbolane, (Ni,Co)2-xMn4+(O,OH)4.nH2O, the cobalt-nickel-manganese oxide that forms in New Caledonian laterite. Grades are low: laterites run 0.1-1.5% Co, and the oxide zones are mined at a few percent.",
       "kind": "material",
@@ -785,7 +785,7 @@
     },
     "metal.cobalt.ammoniacal-leach": {
       "id": "metal.cobalt.ammoniacal-leach",
-      "name": "The Sherritt-Gordon ammonia pressure leach",
+      "name": "Sherritt-Gordon ammonia pressure leach",
       "simple_name": "Ammonia pressure leach",
       "description": "The second big route takes cobalt out of a nickel refinery rather than out of an orebody, and it exists because the nickel circuit was already there. Nickel concentrate or matte is leached with ammonia and ammonium sulphate in horizontal autoclaves under air at elevated pressure, which dissolves the nickel, cobalt and copper as metal-ammine complexes while the sulphide sulphur is oxidised and leaves as ammonium sulphate. It is a saleable fertiliser, which is what made the process pay. Cobalt is then separated from nickel on the fact that the cobalt ammine is far more stable: it is held in solution while the nickel is thrown down, and the cobalt stream is finished separately to metal. Because the feed is somebody else's concentrate, every tonne of cobalt this route makes is a tonne that did not have to be mined.",
       "kind": "process",
@@ -999,7 +999,7 @@
         },
         {
           "id": "metal.copper.converter",
-          "name": "The Peirce-Smith converter and its tuyeres",
+          "name": "Peirce-Smith converter and its tuyeres",
           "simple_name": "Peirce-Smith converter",
           "description": "The converter is a cylindrical steel shell, 3.5-4.8 m inside diameter and 8-10 m long, on trunnions so it can be tilted, lined with magnesite brick, with 20-40 tuyeres along one side at the trunnion line. Air at 30-50% oxygen is blown in at 5-10 bar through water-cooled tuyeres that must be cleared and re-cleared by hand every few hours as the lining erodes, and a tuyeres that is not cleared becomes a plug and the whole heat is lost. The operator tilts the converter so the slag runs out of the mouth, then charges back, and there is no continuous process anywhere else in smelting with quite that much manual involvement. It is the machine that has been unchanged since 1865, and it is still the standard.",
           "kind": "tool",
@@ -1092,7 +1092,7 @@
       "children": [
         {
           "id": "metal.copper.flash-furnace",
-          "name": "The flash furnace, its tuyeres and the concentrate burn",
+          "name": "Flash furnace, its tuyeres and the concentrate burn",
           "simple_name": "Flash furnace",
           "description": "The furnace is a 20-25 m tall, 5-7 m diameter vertical shaft with a refractory lining, fed by a few hundred tonnes an hour of dried concentrate through a hopper, and blown at the bottom by 30-60% oxygen-enriched air through tuyeres. The concentrate burns as it falls (it is the fuel as well as the charge) so the furnace needs almost no external heat. The reaction happens in the first metre above the tuyeres, the particles are spent, and the matte and slag settle into the two-deep bath at the bottom. The shaft above is used to preheat the charge with the rising offgas, and a flash furnace treats more tonnage in less volume than anything else in smelting.",
           "kind": "tool",
@@ -1779,7 +1779,7 @@
       "children": [
         {
           "id": "metal.lime.shaft-kiln",
-          "name": "The counter-current shaft kiln",
+          "name": "Counter-current shaft kiln",
           "simple_name": "Shaft kiln",
           "description": "Because limestone goes in at the top at ambient temperature and lime comes out at the bottom at 1000 C, the shaft has to be a heat exchanger as well as a kiln, and that is why a shaft kiln makes a better lime than a rotary one. The gases go up, the stone goes down, and the last of the fuel burns out in the upper third. Below the burn zone the calcination is isothermal, so the lime is not over-heated and does not shrink the kiln's yield.",
           "kind": "tool",
@@ -1804,7 +1804,7 @@
         },
         {
           "id": "metal.lime.rotary-kiln",
-          "name": "The rotary kiln and the preheater",
+          "name": "Rotary kiln and the preheater",
           "simple_name": "Rotary kiln",
           "description": "A 1.5-2.5 m diameter, 40-60 m long rotary kiln, inclined a few degrees, turning 1-3 rpm, heated by a burner at the lower discharge end with coal, coke or gas, and fitted at the upper end with a preheater or a flash dryer for the limestone. The rotary kiln makes worse lime than the shaft kiln (the residence time varies through the bed and the lime is over- and under-burnt) but it makes it faster and it copes with a variable feed, so a captive plant at a steelworks or an alumina refinery used one. A 2000 t/day rotary lime kiln is the sort of thing that sits next to a coke-oven battery.",
           "kind": "tool",
@@ -1917,7 +1917,7 @@
     },
     "metal.lime.slaking": {
       "id": "metal.lime.slaking",
-      "name": "Slaking: quicklime to hydrated lime",
+      "name": "Slaking",
       "simple_name": "Slaking",
       "description": "CaO + H2O -> Ca(OH)2, releasing about 65% more mass and enough heat to boil water. Slaking is done in a pan with a rotating rake, or in a ball mill in the paper industry, and the product is a fine white powder or a milk. It is done at the steelworks, at the water treatment plant and at the board fab's causticisation circuit. The safety point that every plant's training programme is about is that a lump of quicklime dropped into a drum of water will split the drum.",
       "kind": "process",
@@ -1995,7 +1995,7 @@
       "children": [
         {
           "id": "metal.nickel.autoclave",
-          "name": "The ammonia-hydrogen autoclave",
+          "name": "Ammonia-hydrogen autoclave",
           "simple_name": "Ammonia-hydrogen autoclave",
           "description": "A 10-15 m long, 3-5 m diameter, titanium or 316L-lined pressure vessel in a 6-10 stage cascade. In each stage the liquor is contacted with hydrogen and stirred, and the nickel comes out onto the walls and the cooling surfaces. The whole chemistry depends on the fact that ammonia complexes nickel and copper so strongly that hydrogen alone cannot reduce them at atmospheric pressure; the autoclave gives the extra pressure to push the equilibrium over. Removing the ammonia and boiling the slurry then precipitates basic nickel carbonate, which is calcined to nickel oxide.",
           "kind": "tool",
@@ -2230,7 +2230,7 @@
     },
     "metal.tin.smelting": {
       "id": "metal.tin.smelting",
-      "name": "Tin smelting: reduction of SnO2 with carbon",
+      "name": "Tin smelting",
       "simple_name": "Tin smelting",
       "description": "Cassiterite is one of the easiest oxide ores to reduce: SnO2 + C -> Sn + CO2 goes at only 1200-1400 C, far below copper or iron, because tin's oxides are unstable. The Malaysian and Indonesian smelters in 1982 were reverberatory or electric furnaces on 5-20 t capacity, fired with coke, charged with concentrate and about 15% limestone as a flux, and tapped a crude tin at 99.5-99.8% in maybe eight hours. The furnace is a long, narrow, brick-lined box with a step grate at the firebox end, so the charge moves gradually forward and meets rising temperatures. It is a reverberatory used for a purely solid-solid reaction, which is why tin smelting smells of SO2 only when the concentrate is sulphide.",
       "kind": "process",
@@ -2531,7 +2531,7 @@
     },
     "metal.lime.kiln-gas": {
       "id": "metal.lime.kiln-gas",
-      "name": "The lime kiln gas and its CO2",
+      "name": "Lime kiln gas and its CO2",
       "simple_name": "Lime kiln gas",
       "description": "A lime kiln makes carbon dioxide as its main product, roughly 0.44 t of CO2 per tonne of CaO, and in 1982 that gas was usually burnt or dumped because there was nowhere to put it. Its two real uses were the Solvay tower, which is built beside its lime kilns, and (much later) the emerging practice of feeding kiln gas to a nearby chemical plant. So the limestone quarry behind a C64's case carries a hidden carbon footprint that did not become an engineering problem until the 1990s.",
       "kind": "material",
@@ -2788,7 +2788,7 @@
     },
     "metal.tin.slag": {
       "id": "metal.tin.slag",
-      "name": "The tin smelter's slag and its tin loss",
+      "name": "Tin smelter's slag and its tin loss",
       "simple_name": "Tin smelter slag",
       "description": "A tin smelter loses 1-3% of its tin into the slag, and the slag is a silicate of iron and silica with tin locked up in it. Recovering that tin is a separate business: the slag is crushed and re-smelted, or in Malaysia and Brazil it was re-smelted in a small furnace to recover the tin. A tin smelter therefore has a second, smaller smelter, and the discipline of a tin plant is judged by its recovery, which is why the industry published recovery figures with a seriousness that most primary metals do not.",
       "kind": "material",

@@ -37,8 +37,8 @@
     },
     "chem.petroleum": {
       "id": "chem.petroleum",
-      "name": "Petroleum: light sour crude oil",
-      "simple_name": "Light sour crude oil",
+      "name": "Petroleum",
+      "simple_name": "Petroleum",
       "description": "The dig-it-out endpoint of the whole petrochemical chain. Crude is a mixture of thousands of hydrocarbons from methane to asphaltenes, plus sulphur compounds, nitrogen compounds, resins, asphaltenes and trace metals. The grades that feed the 1980s steam crackers are light, low-sulphur: Arab Light at 35-36 degrees API and Brent Blend at 38-39 were the benchmarks of the era.",
       "kind": "material",
       "category": "fluids",
@@ -78,7 +78,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Natural_gas"
       ],
-      "name": "Natural gas: the gas field",
+      "name": "Natural gas",
       "simple_name": "Natural gas",
       "description": "Methane, mostly: either the gas cap sitting on an oil reservoir or a gas-only field. In 1983 world gas production was roughly 2.9-3.0 trillion cubic metres a year, of which about 70% was still associated with oil and much of it was flared or burned at the wellhead. Gas matters to a C64 three ways: as acetylene for PVC and chlorinated solvents, as hydrogen for ammonia and hydrochloric acid, and as the fuel that moved the plastics.",
       "kind": "material",
@@ -160,7 +160,7 @@
     },
     "chem.refining": {
       "id": "chem.refining",
-      "name": "Refining: turning crude into fuels and feedstocks",
+      "name": "Refining",
       "simple_name": "Refining",
       "description": "Atmospheric and vacuum distillation to cut crude into fractions, then conversion and upgrading processes to make the specific products industry wants. For the C64 the interesting products are not the fuels but the naphtha that gets steam-cracked to ethylene, the benzene for styrene, the LPG for crackers, and the elemental sulphur recovered from hydrogen sulphide. In 1983 world refining capacity was roughly 65-70 million barrels a day, about 30% above demand, and the industry was running at 65-75% utilisation.",
       "kind": "process",
@@ -169,7 +169,7 @@
       "children": [
         {
           "id": "chem.refining.scale",
-          "name": "The refining industry in 1983",
+          "name": "Refining industry in 1983",
           "simple_name": "Refining industry in 1983",
           "description": "Around 750-850 refineries existed worldwide, of which more than 300 were in the United States alone (US capacity about 19 million bbl/d). The largest refining regions in 1983 were the US Gulf Coast, the US Midwest, Western Europe (Rotterdam, Antwerp, Fos-sur-Mer), the Caribbean (USVI, Curacao), Japan and Singapore, and the Middle East (Ras Tanura, Ruwais, Kuwait). About 3-5% of the crude throughput was burned as refinery fuel gas.",
           "kind": "note",
@@ -384,8 +384,8 @@
         },
         {
           "id": "chem.refining.vacuum-residue-processing",
-          "name": "Converting the vacuum residue",
-          "simple_name": "Converting the vacuum residue",
+          "name": "Convert the vacuum residue",
+          "simple_name": "Convert the vacuum residue",
           "description": "The 2-5% of crude that will not distil is the hardest material in the refinery. It must be converted (into coke, into gasoline, or into distillate) or it is sold as fuel oil. This is where the refinery's biggest single units and its biggest capital decisions sit. Hydrocracking cracked heavy oil and hydrogenated the fragments in one step at 350-450 C and 80-200 bar of hydrogen over cobalt-molybdenum or nickel-molybdenum on alumina, giving 70-90% diesel with almost no sulphur. The process that let a refinery make diesel rather than fuel oil.",
           "kind": "process",
           "category": "industry",
@@ -541,7 +541,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Claus_process"
           ],
-          "name": "Claus process: recovering elemental sulphur",
+          "name": "Claus process",
           "simple_name": "Claus process",
           "description": "Three-quarters of a mole of oxygen is used to burn a third of the hydrogen sulphide to sulphur dioxide, then the two react over an alumina catalyst to make sulphur and water: 2 H2S + SO2 -> 3 S + 2 H2O. The Claus unit turns the refinery's or gas plant's worst stream into a saleable commodity, and its output is the elemental sulphur that the whole 1980s chemical industry (rubber vulcanisation, fungicides, sulphuric acid) depended on. The Canadian oil sands' sulphur problem and the Arabian gas sweetening builds both exist because of this unit.",
           "kind": "process",
@@ -708,7 +708,7 @@
         },
         {
           "id": "chem.refining.polymer-feedstocks",
-          "name": "Refinery to polymer: the handover",
+          "name": "Refinery to polymer",
           "simple_name": "Refinery to polymer",
           "description": "Three handovers matter. Naphtha plus steam into a cracker gives ethylene and propylene. C4 from the same cracker gives butadiene and isobutylene. Reformer naphtha into the aromatics complex gives benzene, which with ethylene gives styrene. This node is the place where the fuel industry stops and the polymer industry starts, and it is the join that makes a C64 physically possible. The cracker hands over a C4 stream of 1-butene, the 2-butenes and isobutylene, and extracting the butadiene out of it is a second plant; the isobutylene left behind goes to MTBE or alkylate and the butenes go to hydroformylation for plasticisers. Benzene out of the aromatics complex is alkylated with ethylene in excess benzene (to suppress diethylbenzene) to give ethylbenzene, which is then dehydrogenated.",
           "kind": "process",
@@ -750,7 +750,7 @@
     },
     "chem.ethylene": {
       "id": "chem.ethylene",
-      "name": "Ethylene: steam cracking and the polymers of it",
+      "name": "Ethylene",
       "simple_name": "Ethylene",
       "description": "Steam cracking naphtha at 800-900 C over cast alloy coils is the largest single chemical reaction in the world by tonnage. World ethylene capacity in 1983 was about 27-30 million tonnes a year, and roughly half of it went into polyethylene and the rest into ethylene oxide, styrene and solvents. Every polyethylene cable sheath, every styrene monomer and every polyester fibre in a C64 starts in a coiled coil furnace.",
       "kind": "process",
@@ -759,7 +759,7 @@
       "children": [
         {
           "id": "chem.ethylene.scale",
-          "name": "The ethylene industry in 1983",
+          "name": "Ethylene industry in 1983",
           "simple_name": "Ethylene industry in 1983",
           "description": "About 27-30 Mt/yr of world ethylene capacity in 1983, of which the United States held roughly 19 Mt (about two thirds) and Western Europe about 8 Mt, with the Gulf Coast of the US, the Rhine-Ruhr, Antwerp, the Suez Gulf and the Japanese and Korean coasts as the clusters. A 1980s cracker cost $150-400 million and took three to five years to build.",
           "kind": "facility",
@@ -1110,7 +1110,7 @@
           "children": [
             {
               "id": "chem.ethylene.polyethylene.ldpe",
-              "name": "LDPE: free-radical high-pressure process",
+              "name": "LDPE",
               "simple_name": "LDPE",
               "description": "Ethylene is polymerised at 200-300 C and 1,000-2,000 bar in a jacketed or tubular reactor with a peroxide initiator, in the liquid phase (below about 280 C) or the gas phase (above it). The density of 0.91-0.93 comes entirely from chain branching: the very high pressure creates radicals on the growing chain, the chain folds, and the branches that stop it crystallising. In 1983 the process was mature to the point of being a cost exercise, and it still made most of the world polyethylene.",
               "kind": "process",
@@ -1145,7 +1145,7 @@
             },
             {
               "id": "chem.ethylene.polyethylene.hdpe",
-              "name": "HDPE: coordination catalysis at low pressure",
+              "name": "HDPE",
               "simple_name": "HDPE",
               "description": "Ethylene at 20-60 bar and 150-260 C over a transition-metal catalyst gives linear polyethylene with almost no long-chain branching, so it crystallises tightly and has a density of 0.94-0.97. Because the polymer comes out of the reactor as a powder or a slurry rather than a melt, HDPE in 1983 was made in a slurry loop or a gas-phase fluidised bed and then converted by extrusion. The Phillips chromium oxide process (1952) ran chromium oxide on silica at 20-40 bar and 150-200 C in a slurry loop, and it is the reason a 1980s plastics plant had the diluent-recovery section that was its largest single energy consumer. Union Carbide's Unipoly gas-phase process polymerised ethylene as a gas in a fluidised bed at 20-30 bar and 70-100 C with the catalyst on a support: no diluent to recover and no slurry to centrifuge, and by the early 1980s the technology for every new large plant.",
               "kind": "process",
@@ -1743,7 +1743,7 @@
               "children": [
                 {
                   "id": "chem.butadiene.sources.houdry.dehydrogenation-furnace",
-                  "name": "The butane dehydrogenation furnace",
+                  "name": "Butane dehydrogenation furnace",
                   "simple_name": "Butane dehydrogenation furnace",
                   "description": "Dehydrogenation of butane to butenes is endothermic, so the reactor is a bank of fired tubes. This is cast iron or cast alloy, several hundred tubes, with the furnace gas at 500-700 C. The catalyst inside is platinum on alumina or chromia, and the giveaway of a fouled furnace is the pressure drop across the tubes: the butene polymerises on the catalyst, makes green coke, and the coke blocks the tube. This unit is the reason the butadiene plant in a 1980s complex was often the noisiest building on the site.",
                   "kind": "tool",
@@ -1908,7 +1908,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Styrene"
       ],
-      "name": "Styrene: benzene plus ethylene, and the plastics of it",
+      "name": "Styrene",
       "simple_name": "Styrene",
       "description": "Benzene is alkylated with ethylene to ethylbenzene, and the ethylbenzene is dehydrogenated to styrene. About 12-14 million tonnes of styrene were made in 1983, of which roughly two thirds went to polystyrene and the rest to SAN, ABS and SBR. Styrene is a C64 material in a way that is easy to miss: the SAN matrix of the case, the styrene in the graft phase, and the polystyrene that was in the packaging and in some of the mouldings.",
       "kind": "process",
@@ -1971,7 +1971,7 @@
             },
             {
               "id": "chem.styrene.dehydrogenation.fired-furnace",
-              "name": "The dehydrogenation furnace",
+              "name": "Dehydrogenation furnace",
               "simple_name": "Dehydrogenation furnace",
               "description": "The dehydrogenation of ethylbenzene is strongly endothermic (about 0.22 GJ of heat per tonne of ethylbenzene) and it is carried out in a bank of shell-and-tube reactors with the heat applied from the outside. A 1980s styrene plant's furnaces were its largest energy consumers and its largest single source of stack emissions, which is why the industry spent the 1980s on better coil metallurgy, on vacuum insulation of the reactor, and on a staged feed arrangement that fed the preheated reactor's effluent straight back into the next reactor's inlet. Steam diluent keeps the partial pressure low and a polymerisation inhibitor (sulfolane, a chlorinated hydrocarbon or a proprietary organic) is dosed at tens of parts per million to hold the styrene down. Refinery fuel gas or natural gas, about 0.2 GJ of heat per tonne of ethylbenzene. Worth stating plainly, because a substantial part of the carbon in a plastic is burned rather than polymerised.",
               "kind": "tool",
@@ -2026,7 +2026,7 @@
               "children": [
                 {
                   "id": "chem.styrene.polymerisation.bulk-gpps.finishing",
-                  "name": "Finishing: devolatilisation and pelletising",
+                  "name": "Finishing",
                   "simple_name": "Finishing",
                   "description": "Polystyrene has to be devolatilised after the bulk polymerisation, because the monomer left in the melt is both a smell and a peroxide risk. A 1980s finishing line was a twin-screw extruder at 200-240 C and 5-50 mbar with two vacuum vents, then a strand die into a water bath, then a rotary cutter. The same machine geometry as the ABS line, and for the same reason: somebody in the plastics industry decided once that devolatilisation and pelletising should be one operation and never went back.",
                   "kind": "process",
@@ -2035,7 +2035,7 @@
                   "children": [
                     {
                       "id": "chem.styrene.polymerisation.bulk-gpps.finishing.devolatiliser",
-                      "name": "The devolatiliser",
+                      "name": "Devolatiliser",
                       "simple_name": "Devolatiliser",
                       "description": "A falling-film or wiped-film evaporator with two stages of vacuum, taking the residual styrene from a few per cent down to a few hundred parts per million. The polymer is deliberately kept above its own melting point but below its decomposition point, which for polystyrene is a window of about 40 C. The whole of the finishing engineering is about staying in that window while the pressure falls and the viscosity rises.",
                       "kind": "tool",
@@ -2155,7 +2155,7 @@
       "children": [
         {
           "id": "chem.abs.grafting",
-          "name": "Graft copolymerisation: growing SAN on the rubber",
+          "name": "Graft copolymerisation",
           "simple_name": "Graft copolymerisation",
           "description": "The heart of the process. 20-40 parts of a low-cis polybutadiene rubber dissolved in xylene or toluene is charged to a reactor, and styrene plus acrylonitrile is added at 60-80 C in the presence of a persulphate initiator, a chelating agent and a mercaptan chain transfer agent. The radicals abstract a hydrogen from the polybutadiene's 1,2-vinyl unit, creating a radical site on the rubber; styrene and acrylonitrile then copolymerise from that site, and SAN chains grow out of the rubber particle. Each particle therefore becomes a rubber core with a SAN shell. High-graft material, more than about 70% of the monomer grafted, gives a small uniform particle and the best impact strength, while low graft gives larger particles and worse impact. The particle is either salt-like (elastomeric core, rigid SAN shell) or sandwich-like, and which one forms is set by how fast the graft shell precipitates. The rubber is dissolved in xylene or toluene and the monomer emulsified in an aqueous phase carrying the initiator, chelant and transfer agent, and at the end the polymer is devolatilised at 220-250 C and 1-10 mbar to strip the xylene. This is the single biggest energy item in the plant, at one to two tonnes of solvent per tonne of polymer.",
           "kind": "process",
@@ -2228,7 +2228,7 @@
         },
         {
           "id": "chem.abs.blending",
-          "name": "Blending the graft into the matrix",
+          "name": "Blend the graft into the matrix",
           "simple_name": "Graft blending",
           "description": "The graft is mixed into the SAN at 25-50 parts graft per 100 parts SAN for a general purpose grade and up to 50-70 parts for a high-impact grade. That ratio (not the chemistry) is what a plastics buyer specifies: rubber content sets the impact strength, the heat distortion temperature and the price per kilogram.",
           "kind": "process",
@@ -2433,7 +2433,7 @@
               "sources": [
                 "https://en.wikipedia.org/wiki/Polyvinyl_chloride"
               ],
-              "name": "PVC: vinyl chloride and suspension polymerisation",
+              "name": "PVC",
               "simple_name": "PVC",
               "description": "About 3.5 million tonnes of PVC in 1983, of which maybe 5-8% was flexible and the rest rigid. Two-thirds of the monomer came from the oxychlorination of ethylene and the rest from acetylene and HCl. The C64 used it in the power cord's jacket and insulation, in the moulded cable accessories, and in the odd keycap or knob. The stability system matters because unstabilised PVC decomposes at 140 C. Suspension polymerisation in water with a suspending agent is 65-70% of world PVC: VCM dispersed as 0.1-1 mm beads at 50-70 C and 6-12 bar for 5-10 hours to 70-85% conversion.",
               "kind": "process",
@@ -2527,7 +2527,7 @@
             },
             {
               "id": "chem.epoxy",
-              "name": "Epoxy: bisphenol A and epichlorohydrin",
+              "name": "Epoxy",
               "simple_name": "Epoxy",
               "description": "DGEBA epoxy is made by hydrolyzing bisphenol A with epichlorohydrin, then dehydrochlorinating to close the epoxide ring. About 800,000-1,000,000 tonnes of epoxy resin were made in 1983, of which the largest single use was the glass-reinforced laminate for printed circuit boards. A C64 has epoxy in its board, in the transformer and coil potting of its power supply, in the die-attach of its chips, and in the adhesive that holds the SID's heatsink tab.",
               "kind": "process",
@@ -2710,7 +2710,7 @@
             },
             {
               "id": "chem.polyester",
-              "name": "Polyesters: PET, PBT and unsaturated polyester",
+              "name": "Polyesters",
               "simple_name": "Polyesters",
               "description": "Three families that share the same two feedstocks. This is ethylene glycol or propylene glycol, and a terephthalic or maleic/fumaric acid. PET in 1983 was overwhelmingly a fibre and bottle business, PBT was the engineering thermoplastic, and unsaturated polyester was the resin of the glass-reinforced mouldings. In a 1983 electronic assembly, the polyester was the transformer bobbin insulation, the relay base, the film capacitors, and any glass-filled moulding. PBT is polymerised by transesterification and polycondensation like PET but with butanediol, giving a melting point of about 225 C against PET's 260 C and a faster crystallisation, which is why it is the engineering grade: it sets in a 5-10 mm wall in 5-10 seconds where PET needs a minute.",
               "kind": "process",
@@ -2964,7 +2964,7 @@
     "chem.polycarbonate": "Bisphenol A polycarbonate by the interfacial phosgene route, and the phosgene / chlorine chain behind it.",
     "chem.rubber": {
       "id": "chem.rubber",
-      "name": "Elastomers: natural rubber, neoprene, EPDM",
+      "name": "Elastomers",
       "simple_name": "Elastomers",
       "description": "Three rubbers for three different jobs in and around a 1983 machine: natural rubber for the feet and plinths and the moulded grips, neoprene for gaskets and the flexible cable jacket, and EPDM for the cable's weather-resistant insulation. The C64's case feet are elastomer pads stuck to the underside of the case, and they are the only rubber on the outside of the machine.",
       "kind": "material",
@@ -3000,7 +3000,7 @@
       "children": [
         {
           "id": "chem.solvents.vapour-degreaser",
-          "name": "The vapour degreaser",
+          "name": "Vapour degreaser",
           "simple_name": "Vapour degreaser",
           "description": "A tank of boiling solvent with a cold condenser coil above it. Parts are lowered into the vapour, the vapour condenses on the part and washes the grease off, the condensate runs back into the boil tank, and the distilled clean solvent is pumped to the sump. It was astonishingly effective and astonishingly cheap, and it filled a plant with vapour. This is why it was also the plant's largest solvent loss and its largest occupational and air-emission exposure. A large plant had three or four machines with 20-40 litre tanks. The tank runs continuously with a boiling sump and a distilled-solvent reservoir, and in practice 5-20% of the charge had to be replaced each month through dragout, evaporation and the azeotroping of oil and water back into the tank.",
           "kind": "tool",
@@ -3020,7 +3020,7 @@
             },
             {
               "id": "chem.solvents.vapour-degreaser.condenser-coil",
-              "name": "The condenser and the tank",
+              "name": "Condenser and the tank",
               "simple_name": "Condenser and tank",
               "description": "The machine has two working parts: a boiling sump at the bottom that supplies the vapour, and a water-cooled coil above it that condenses the vapour and drips it back clean. The whole design depends on the vapour being kept out of the room, so the machine had a lid and a draught, and the lid was opened to put the parts in, which is exactly when the vapour left. A 20-40 litre tank boiled away 1-3 litres of solvent a day in a well-run plant, and that vapour was the emission the regulator was measuring. Three losses ran at once (evaporation out of the open tank, drag-out on the parts and carry-over into the room ventilation) and the 1980s answers were a lid that stayed shut, a water-cooling coil with more area, a basket that dripped over the tank rather than the floor and, at the largest sites, a vapour condenser returning condensate to the distilled reservoir.",
               "kind": "tool",
@@ -3082,7 +3082,7 @@
         },
         {
           "id": "chem.solvents.regulation",
-          "name": "Regulation: why the solvent list changed",
+          "name": "Regulation",
           "simple_name": "Regulation",
           "description": "Three forces rewrote a 1980s solvent shelf. The US Clean Air Act's 1970 and 1977 amendments and the resulting state implementation plans constrained volatile organic compound emissions, and because a chlorinated degreaser is an emission source, they hit the degreaser directly. The 1983-1989 federal halogenated solvent action set dates for the chlorinated degreasers. And the Montreal Protocol, signed in 1987, removed the CFCs and the halon-cleaning gases.",
           "kind": "note",
@@ -3230,7 +3230,7 @@
     "chem.photoresist": "Positive diazonaphthoquinone-novolac photoresist chemistry, TMAH alkaline development, dehydration and hard bakes, and resist stripping.",
     "chem.fab-chemicals": {
       "id": "chem.fab-chemicals",
-      "name": "The wet chemicals of a 1980s silicon fab",
+      "name": "Wet chemicals of a 1980s silicon fab",
       "simple_name": "Wet fab chemicals",
       "description": "A 1983 wafer fab consumed tens of thousands of gallons a day of ultrapure water and a few thousand gallons of five electronic-grade acids, and its entire chemistry was aimed at one thing: keeping a few hundred metallic atoms per square centimetre off the wafer. This branch traces those chemicals (sulphuric acid, hydrogen peroxide, the buffered HF etch, the plasma etch gases, the dopant gases and the photoresist) back to the sulphur, the chlorine, the fluorine, the ammonia and the natural gas they were made from. The wet bench of the period used 10-20 litre recirculating baths of buffered HF and piranha, and the chemicals came in returnable fluoropolymer containers or, for the largest users, by bulk tanker.",
       "kind": "process",
@@ -3362,7 +3362,7 @@
         },
         {
           "id": "chem.fab-chemicals.spec-purity",
-          "name": "The purity ladder",
+          "name": "Purity ladder",
           "simple_name": "Purity ladder",
           "description": "The 1980s specification ladder, from technical grade to the electronic grade that a wafer demanded: a technical acid at about 5N with metals at tens and hundreds of parts per million; an electronic acid at about 8N; and the 9N-10N grade with a total metal content under 10 parts per billion. The reason the ladder existed was the relationship between a metal atom's concentration and the device: a wafer with 10 parts per billion of iron in a cubic centimetre of silicon has more iron atoms in the active volume than it has dopant atoms.",
           "kind": "note",
@@ -3391,7 +3391,7 @@
     },
     "chem.pcb-chemicals": {
       "id": "chem.pcb-chemicals",
-      "name": "The chemistry of making the board",
+      "name": "Chemistry of making the board",
       "simple_name": "Board chemistry",
       "description": "A 1983 bare board goes through about eleven wet operations, and each one is a chemical plant: laminate impregnation and pressing, copper foil treatment, dry-film lamination, alkaline or ferric etching, drilling, electroless copper, electroplating, solder mask, silkscreen, and a final clean. The C64's board is a single-layer FR-4 board with through-hole parts, which is the simplest case (one copper layer, no plating on the holes) and that removes the electroless copper and the gold entirely. Solder mask and silkscreen are two inks rather than one operation: the mask is an epoxy or acrylate screen-printed or curtain-coated through a 100-150 micron stencil and cured at 150 C, the green being a phthalocyanine green in a novolac epoxy vehicle, and the legend is a separate white epoxy ink cured the same way through a 150-200 micron stainless mesh.",
       "kind": "process",
@@ -3409,8 +3409,8 @@
           "children": [
             {
               "id": "chem.pcb-chemicals.dry-film-resist.lamination",
-              "name": "Laminating the dry film",
-              "simple_name": "Laminating the dry film",
+              "name": "Laminate the dry film",
+              "simple_name": "Laminate the dry film",
               "description": "The dry film comes off a protective polyester or polyethylene release liner, is laid on the cleaned and dried copper, and is squeezed onto it by a hot laminator at 110-150 C and 3-5 bar with a silicone rubber roller. The rollers are silicone because the film must not stick to them and the liner must, and the whole operation is a controlled vacuum or a controlled pressure depending on the machine: without the pressure, the air trapped between the film and the copper becomes a bubble and the bubble becomes an etch defect.",
               "kind": "process",
               "category": "board",
@@ -3559,7 +3559,7 @@
         },
         {
           "id": "chem.solder-chemicals.reflow-profile",
-          "name": "The thermal profile is the process",
+          "name": "Thermal profile is the process",
           "simple_name": "Thermal profile",
           "description": "The reason the soldering chemistry is mostly temperature management: a through-hole joint sees 250-260 C for one to three seconds in the wave, which is enough to make the intermetallic and not enough to damage the flux or the laminate; a surface-mount joint sees a 220-245 C peak for 30-120 seconds in a reflow oven or a hot plate. Over-temperature grows the intermetallic and dulls the joint; under-temperature makes a cold solder joint that fails in service. Every one of these numbers is a chemical property, because the eutectic is a chemical fact.",
           "kind": "note",
@@ -3655,7 +3655,7 @@
     },
     "chem.crude.reservoir": {
       "id": "chem.crude.reservoir",
-      "name": "The reservoir: where the oil sits",
+      "name": "Reservoir",
       "simple_name": "Reservoir",
       "description": "Oil exists in pore space between grains of sandstone or in fractures and vugs of carbonate, held down by an overburden of rock and by an overlying gas cap or water. This is the physical thing that the whole upstream industry is trying to reach. Oil squeezed out of the source rock moves updip along a permeable sandstone or through a fault until it is trapped, driven by a buoyancy of roughly 0.2-0.4 degrees API per 1,000 ft, with the column height set by the capillary entry pressure of the seal.",
       "kind": "material",
@@ -4059,7 +4059,7 @@
     },
     "chem.styrene.polymerisation.bulk-gpps.suspending-agent": {
       "id": "chem.styrene.polymerisation.bulk-gpps.suspending-agent",
-      "name": "Suspending agent for suspension polystyrene",
+      "name": "Suspending agent",
       "simple_name": "Suspending agent",
       "description": "Gelatin, methylcellulose or polyvinyl alcohol, at 0.1-1% of the water phase. It has to hold the bead together without letting the bead coalesce, and the whole engineering of suspension polystyrene is the engineering of that balance: too little and the beads fuse, too much and the bead has a hard skin that traps monomer and leaves styrene odour in the bead.",
       "kind": "material",
@@ -4149,7 +4149,7 @@
     },
     "chem.butadiene.polymerisation.structures": {
       "id": "chem.butadiene.polymerisation.structures",
-      "name": "The four polybutadiene microstructures",
+      "name": "Four polybutadiene microstructures",
       "simple_name": "Polybutadiene microstructures",
       "description": "cis-1,4 (the elastomer; the chain is flexible below its glass transition), trans-1,4 (the chain is regular and crystalline, so it is a plastic not a rubber), 1,2-vinyl (a pendant vinyl group, also rubbery but with a high glass transition because of the pendant group), and 3,4-vinyl (rare). The rubbery ones are cis-1,4 and 1,2. The ratio between them is set by temperature, catalyst and solvent, and it is why polybutadiene rubber has a glass transition near -100 C and is the most flexible of the common rubbers. The ratio of the four microstructures is a dial, not an accident: a rare-earth or titanium coordination catalyst gives cis-1,4, lithium butyllithium gives more 1,2-vinyl in a polar solvent and more cis-1,4 in a hydrocarbon, and temperature moves it again.",
       "kind": "material",
@@ -4528,7 +4528,7 @@
     },
     "chem.epoxy.brominated-epoxy": {
       "id": "chem.epoxy.brominated-epoxy",
-      "name": "Brominated epoxy for FR-4",
+      "name": "Brominated epoxy",
       "simple_name": "Brominated epoxy for FR-4",
       "description": "Tetrabromobisphenol A based epoxy, brominated to about 20-40% bromine, blended into the resin at 10-30% so the laminate meets UL 94 V-0. The bromine works by releasing hydrogen bromide in the flame and smothering it, and it works so well that the industry continued using it through the 1980s even as the first brominated flame retardant ban had already arrived. It is the epoxy in the C64's board.",
       "kind": "material",
@@ -4698,7 +4698,7 @@
     },
     "chem.abs.san-matrix": {
       "id": "chem.abs.san-matrix",
-      "name": "The SAN matrix",
+      "name": "SAN matrix",
       "simple_name": "SAN matrix",
       "description": "The continuous phase: styrene with 24-32% acrylonitrile, made separately by bulk, emulsion or suspension polymerisation. It has to be made separately because it has to be a continuous phase, not a grafted one. In 1983 a large ABS plant bought its SAN in, or made it on site in a bulk reactor and then devolatilised. The two-route choice is a plant's economics, not a chemistry question.",
       "kind": "material",
@@ -4781,7 +4781,7 @@
     },
     "chem.abs.grade": {
       "id": "chem.abs.grade",
-      "name": "The ABS grade the C64 case used",
+      "name": "ABS grade the C64 case used",
       "simple_name": "C64 ABS grade",
       "description": "A high-impact, general purpose injection moulding grade in the family of the low-cis, medium-graft commercial ABS sold as Cycolac 2800 or equivalent, with a notched Izod impact strength of 150-250 J/m and a moulding shrinkage of 0.4-0.7%. The UL 94 flammability rating would be HB or 2A: a home computer in a living room could not be in a 0.4 mm wall V-0 plastic, so the case had to be thicker than the V-0 rating allowed.",
       "kind": "material",
@@ -4918,8 +4918,8 @@
     },
     "chem.acrylonitrile.sovere.byproducts": {
       "id": "chem.acrylonitrile.sovere.byproducts",
-      "name": "By-products: acetonitrile, hydrogen cyanide, acrylic acid",
-      "simple_name": "Acetonitrile/HCN/acrylic acid",
+      "name": "By-products",
+      "simple_name": "By-products",
       "description": "Acetonitrile is the biggest by-product at 3-8% of the acrylonitrile and it had a real market. It went into solvent and into acrylonitrile copolymer fibres. Hydrogen cyanide was a small but lethal by-product, and its formation was the reason for the halide promoter. Acrylic acid came from the hydrolysis of a little of the acrylonitrile, and it was a nuisance in 1980s practice because it fouled the distillation train.",
       "kind": "material",
       "category": "plastics",
@@ -4973,7 +4973,7 @@
     },
     "chem.abs.grafting.rubber-phase": {
       "id": "chem.abs.grafting.rubber-phase",
-      "name": "The polybutadiene rubber phase",
+      "name": "Polybutadiene rubber phase",
       "simple_name": "Polybutadiene rubber phase",
       "description": "A low-cis (40-60% cis, therefore glassy rather than rubbery on its own) butyllithium-polymerised polybutadiene at 0.5-2% residual oil, with the whole chain ending in a couple of reactive sites. The low cis content is deliberate: a high-cis rubber dissolves in its own polymer at reactor temperature and the particle boundaries blur, whereas a low-cis rubber keeps a sharp core-shell particle that survives compounding.",
       "kind": "material",
@@ -6505,7 +6505,7 @@
     },
     "chem.crude.rig.drilling-mud.bentonite.montmorillonite.soda-ash.clay-pit": {
       "id": "chem.crude.rig.drilling-mud.bentonite.montmorillonite.soda-ash.clay-pit",
-      "name": "The clay pit",
+      "name": "Clay pit",
       "simple_name": "Clay pit",
       "description": "A 10-20 m thick bentonite bed, opened up and worked as an open pit or a shallow underground mine, in a landscape that looks like a lunar plain because the clay is grey-white when fresh and weathers to a pale crust. It is the last dig-it-out node of the crude branch's drilling chain, and it is the point at which a machine that will one day hold a C64's case first touches something that came out of the ground with no hydrocarbons in it at all.",
       "kind": "material",
@@ -6874,7 +6874,7 @@
     },
     "chem.abs.drying.desiccant.molecular-sieve": {
       "id": "chem.abs.drying.desiccant.molecular-sieve",
-      "name": "The 3A molecular sieve itself",
+      "name": "3A molecular sieve itself",
       "simple_name": "3A molecular sieve",
       "description": "The desiccant in the dryer is a synthetic zeolite with a 3 angstrom pore opening, which admits the water molecule (kinetic diameter about 2.65 angstrom) and excludes anything bigger. That single geometric fact is why a molecular sieve can dry a plastic to 200 ppm: it is a molecular filter, not an absorber. The zeolite is made by hydrothermal synthesis from an alumina gel, a silica source and an organic template at 150-200 C and autogenous pressure in an autoclave, and then the template is burned out of the pore at 500-550 C, which is what opens the pores. A zeolite powder cannot go in a dryer bed (it dusts and it fluidises) so it is formed into 2-4 mm extruded pellets with about 4% of clay and silica binder, and the binder is the part that stops the pellet taking up water itself, because the bed's capacity is only 20-22% of its own weight. Alumina, sodium silicate and sodium hydroxide are gelled, seeded with a few crystals of the product zeolite and heated in an autoclave at 150-200 C for 24-96 hours, and nucleation and growth control is the whole art. This is why crystal size distribution is a commercial specification and a 2-micron zeolite for a cracker drier costs more than a 50-micron one.",
       "kind": "material",
@@ -7194,7 +7194,7 @@
     },
     "chem.crude.reservoir.reservoir-rock": {
       "id": "chem.crude.reservoir.reservoir-rock",
-      "name": "Reservoir rock: sandstone and carbonate",
+      "name": "Reservoir rock",
       "simple_name": "Reservoir rock",
       "description": "Porosity 15-35% and permeability 50-2,000 mD for a good sandstone. Carbonate reservoirs have most of their porosity as vugs and fractures and typically 5-25% matrix porosity. Around 60% of world oil reserves and 80% of world gas reserves were in carbonate rock, most of it fractured Arab-type in the Middle East.",
       "kind": "material",
@@ -7310,7 +7310,7 @@
     },
     "chem.solder-chemicals.rosin-flux.rosin-flux-base": {
       "id": "chem.solder-chemicals.rosin-flux.rosin-flux-base",
-      "name": "The flux base and its solvent",
+      "name": "Flux base and its solvent",
       "simple_name": "Flux base and solvent",
       "description": "A liquid flux is rosin, activator and solvent, and the solvent is what makes it a liquid. Through the 1980s the solder wire's core was a rope of activated rosin flux in an alcohol or glycol ether solvent (isopropyl alcohol, or a glycol ether), and the core was drawn into a wire of solder by a wire-drawing machine. The active rosin in the core had to be clean enough to be drawn: any acid-value drift or gum would tear the wire. A solder wire is a core-drawing operation: a rope of activated flux is drawn together with a tube of alloy through successive dies until the wire is 0.3-0.8 mm across and the flux core 0.1-0.3 mm.",
       "kind": "material",
@@ -7808,7 +7808,7 @@
           "children": [
             {
               "id": "chem.natural-gas.uses.acetylene.quench.absorption-train",
-              "name": "The absorption and recovery train",
+              "name": "Absorption and recovery train",
               "simple_name": "Absorption and recovery",
               "description": "The acetylene is absorbed out of the cracked mixture in a solvent and taken off the top of the tower at high purity, which is the whole reason for doing the separation this way. Acetone's job is to hold acetylene (which at 20 C and 12 bar will dissolve to about 2.2 volumes of solvent per volume of acetylene) while letting the hydrogen, methane and carbon monoxide straight through. The dark, dangerous part of this plant is not the chemistry but the acetylene itself: above 2 bar in the presence of a metal, acetylene will detonate into its own decomposition products, and the whole extraction plant is designed around never letting that happen.",
               "kind": "process",
@@ -7968,7 +7968,7 @@
     },
     "chem.pcb-chemicals.etching.ferric-chloride.regeneration": {
       "id": "chem.pcb-chemicals.etching.ferric-chloride.regeneration",
-      "name": "Regenerating the ferric chloride etchant",
+      "name": "Regenerate the ferric chloride etchant",
       "simple_name": "Ferric chloride regeneration",
       "description": "Spent ferric chloride is ferrous chloride and copper chloride, and it has to be oxidised back to ferric before it can etch again. The industrial way was a chlorination cell: chlorine into the ferrous solution at 60-80 C, converting ferrous back to ferric and precipitating the copper as cuprous chloride. The cell was a piece of the chlor-alkali plant's technology, and the chlorine in it was often the same chlorine that the plant bought for its own electroplating line. Chlorine regenerates the feric ion and the copper comes out as a precipitate, which in 1983 meant a chloride concentration that climbed and had to be bled off and a copper sludge with its own disposal limits.",
       "kind": "process",
@@ -8076,7 +8076,7 @@
       "children": [
         {
           "id": "chem.butadiene.sources.cracker-c4.c4-recovery.depentaniser",
-          "name": "The depentaniser",
+          "name": "Depentaniser",
           "simple_name": "Depentaniser",
           "description": "A 40-60 tray column operating at 25-40 bar, taking the C5 cut point at about 50-60 C. Its overhead is the C4 stream that goes to the extractor. Its bottoms are the C5+ gasoline fraction that goes to the aromatics recovery or to the gasoline pool. It is the least glamorous column in the plant and the one that most often needs its furnace cleaned.",
           "kind": "tool",
@@ -8088,7 +8088,7 @@
         },
         {
           "id": "chem.butadiene.sources.cracker-c4.c4-recovery.c3-c4-splitter",
-          "name": "The C3/C4 splitter",
+          "name": "C3/C4 splitter",
           "simple_name": "C3/C4 splitter",
           "description": "A 60-80 tray column separating propane overhead from the butanes. It is a good example of a column that has nothing to do with the product of interest: the butadiene extractor's feed comes off the bottom of this splitter, and the splitter's job is only to keep the propane out of the extractor so the extractor's solvent does not have to separate propane from butadiene as well.",
           "kind": "tool",
@@ -8144,7 +8144,7 @@
         },
         {
           "id": "chem.propylene.sources.cracker-c3.c3-recovery.propylene-column",
-          "name": "The propylene splitter column",
+          "name": "Propylene splitter column",
           "simple_name": "Propylene splitter column",
           "description": "A 50-70 tray column 50-70 m tall that separates the propylene overhead from the propane that has to be recycled back to the furnace. Propylene and propane have a relative volatility of about 1.1, so this is a distillation with a reflux ratio of 15-25 and a lot of energy; the 1980s development was a packed or tray hybrid with a side stripper and a low-pressure-drop design, because the column's cost is its energy consumption.",
           "kind": "tool",
@@ -8223,7 +8223,7 @@
     },
     "chem.thermosets.phenolic.formaldehyde": {
       "id": "chem.thermosets.phenolic.formaldehyde",
-      "name": "The formaldehyde in a phenolic",
+      "name": "Formaldehyde in a phenolic",
       "simple_name": "Formaldehyde in phenolic",
       "description": "Methanol oxidised to formaldehyde over silver at 600-700 C. The same formaldehyde as the acetal plastics, from the same methanol, from the same synthesis gas. Phenolic resin and POM sitting a few hundred metres apart in a 1980s chemical park is not a coincidence. Both are formaldehyde chemistry.",
       "kind": "process",
@@ -8237,7 +8237,7 @@
     },
     "chem.acrylonitrile.sovere.catalyst.catalyst-manufacture": {
       "id": "chem.acrylonitrile.sovere.catalyst.catalyst-manufacture",
-      "name": "Making the ammoxidation catalyst",
+      "name": "Make the ammoxidation catalyst",
       "simple_name": "Catalyst manufacture",
       "description": "The ammoxidation catalyst is a shaped, robust porous solid, and making it is a small ceramics industry. A bismuth molybdate catalyst is prepared by impregnating precipitated bismuth molybdate or by sol-gel methods onto a silica support, then shaping it into 3-5 mm extrudates or spray-dried microspheres and calcining at 500-700 C. The support is silica gel, and silica gel is made from sand. That is the whole chain from a dune to a transistor's acrylonitrile in three steps. The powder is extruded into trilobe or quadrilobe shapes (the lobes give more external surface per unit volume than a cylinder, and less diffusion limitation) and then dried and calcined at 500-700 C, which converts the oxide precursor into the active bismuth molybdate phase.",
       "kind": "process",
@@ -8496,7 +8496,7 @@
       "children": [
         {
           "id": "chem.fab-chemicals.dopants.phosphine.phosphorus-source.electric-furnace",
-          "name": "The submerged arc phosphorus furnace",
+          "name": "Submerged arc phosphorus furnace",
           "simple_name": "Submerged arc phosphorus furnace",
           "description": "A 30-100 MW furnace in which phosphate rock, coke and silica are heated to 1,400-1,500 C by three graphite electrodes dipped into the charge, and the phosphorus vapour (P4) is taken off, condensed under water and stored under water because it ignites in air. A 1980s US plant made 100,000-150,000 tonnes of yellow phosphorus a year, and the greater part of that went to phosphoric acid for fertiliser rather than to any electronics use.",
           "kind": "tool",
@@ -8746,8 +8746,8 @@
     },
     "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.zeolite-manufacture": {
       "id": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.zeolite-manufacture",
-      "name": "Making the FCC zeolite",
-      "simple_name": "Making the FCC zeolite",
+      "name": "Make the FCC zeolite",
+      "simple_name": "Make the FCC zeolite",
       "description": "A synthetic zeolite is not mined. It is crystallised. The reagents are an alumina source, a silica source, an alkali and a template, and the product is a 3-5 micron crystal of a lattice so regular that it was named after the mineral zeolite. The FCC catalyst's lattice is what makes it a shape-selective acid, and the same recipe with a different template and a different silica-to-alumina ratio gives the MFI zeolite of the styrene alkylation and the 3A sieve of the cracker drier. One family of chemistry, four jobs, and about a tenth of a tonne of catalyst per year for every 10,000 bbl/d of FCC capacity. The Y zeolite is grown from an aluminosilicate gel at 100-200 C with a seed and then dealuminated (by acid leaching, by chlorination with HCl or ammonium persulphate, or thermally with steam) to raise its silica-to-alumina ratio from about 5 to about 6-10.",
       "kind": "process",
       "category": "fluids",
@@ -8847,7 +8847,7 @@
     },
     "chem.acrylonitrile.sovere.reactor.heat-removal.salt-bath.molten-salt": {
       "id": "chem.acrylonitrile.sovere.reactor.heat-removal.salt-bath.molten-salt",
-      "name": "The molten salt itself",
+      "name": "Molten salt itself",
       "simple_name": "Molten salt",
       "description": "A mixture of potassium nitrate, sodium nitrite and sometimes calcium nitrate, chosen for a melting point a little below the operating temperature and for a decomposition temperature a good deal above it. It is a beautiful heat-transfer medium and an oxidising one, and a small leak from the reactor puts hot nitrate into a hydrocarbon process. This is why the original SOVERE design was eventually superseded. The nitrate salts came from the same nitric acid that a fab's wet bench bought.",
       "kind": "material",
@@ -9034,8 +9034,8 @@
     },
     "chem.solvents.regulation.epa.substitutes": {
       "id": "chem.solvents.regulation.epa.substitutes",
-      "name": "The 1980s substitution: isopropanol, NMP, hydrocarbons",
-      "simple_name": "1980s substitutes",
+      "name": "1980s substitution",
+      "simple_name": "1980s substitution",
       "description": "What actually replaced the chlorinated degreasers, and why it took about ten years rather than two. The candidates were isopropyl alcohol, N-methylpyrrolidone, and increasingly hydrocarbon solvents and aqueous detergents. Each was available, each worked, and none of them was free: isopropanol is flammable, NMP has reproductive toxicity concerns, and hydrocarbons have a low flash point too. The substitution was driven by regulation and by the fact that a chlorinated degreaser needed a permit and an oxygen emission permit and a reporting line to the regulator, and by nothing else at all. The substitution was easy because it was a move along an existing supply chain: isopropyl alcohol sat next to the acetone plant in a complex that already had propylene, and the chlorinated solvent it replaced was the only one on the list that needed a mercury-catalysed acetylene route or a chlorine plant to make.",
       "kind": "note",
       "category": "fluids",
@@ -9282,7 +9282,7 @@
     },
     "chem.fab-chemicals.etch-gases.barrel-etcher": {
       "id": "chem.fab-chemicals.etch-gases.barrel-etcher",
-      "name": "The barrel plasma etcher",
+      "name": "Barrel plasma etcher",
       "simple_name": "Barrel plasma etcher",
       "description": "A quartz or alumina tube with electrodes at the top and bottom, gas fed in at the top, RF at 13.56 MHz, and wafers standing vertically in slots around the tube wall. It was the workhorse of the 1980s for silicon dioxide and aluminium etching and for resist ashing, and it was cheap, simple and gently non-uniform. This was acceptable when the field of view was small and the line was a couple of microns. The planar (magnetron) etcher, where the plasma is generated above the wafer by a magnetically confined source, gave the flatness that a later generation of chips needed.",
       "kind": "tool",
@@ -9331,7 +9331,7 @@
     },
     "chem.crude.rig.pressure-control": {
       "id": "chem.crude.rig.pressure-control",
-      "name": "Well control: BOP, diverter and kill",
+      "name": "Well control",
       "simple_name": "Well control",
       "description": "The blowout preventer stack (annular preventer plus 3-5 ram preventers) and the choke manifold above the wellhead, rated 5,000-15,000 psi. Before the 1970s and 1980s safety emphasis, the classic profile was a vertical string, overbalanced mud and a diverter. 1980s practice added the above-the-bit diverter packoff for kick tolerance.",
       "kind": "tool",
@@ -9342,7 +9342,7 @@
     },
     "chem.crude": {
       "id": "chem.crude",
-      "name": "Crude oil: finding it, drilling it, lifting it",
+      "name": "Crude oil",
       "simple_name": "Crude oil",
       "description": "The upstream end of the chain. Seismic surveys pick a structure, a rig drills a 5-7 km hole through rock, casing and cement line the hole, the well is completed and perforated into the reservoir, then often artificially stimulated. An 8 kg C64 case corresponds to only 1-3 litres of crude oil, but that crude was found under 5-10 km of overburden using a drilling rig that cost tens of millions of dollars.",
       "kind": "process",
@@ -9579,7 +9579,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Drilling_rig"
           ],
-          "name": "The drilling rig",
+          "name": "Drilling rig",
           "simple_name": "Drilling rig",
           "description": "Rotary drilling: the drill string is rotated from the surface, the bit mills a hole, mud circulates to carry cuttings out and to control formation pressure. Offshore this is a jack-up, a semisubmersible or a drillship. Onshore it is a land rig with a derrick. 1980s rigs reached 6,000-7,500 m total depth on routine programs.",
           "kind": "facility",
@@ -9704,7 +9704,7 @@
         },
         {
           "id": "chem.crude.stimulation",
-          "name": "Well stimulation: fracturing and acidising",
+          "name": "Well stimulation",
           "simple_name": "Well stimulation",
           "description": "Almost no reservoir delivers its whole potential through a millimetre perforation. Stimulation makes the rock permeable by fracture or by dissolving the rock. It is one of the biggest single levers on oil and gas supply and it consumes enormous volumes of water, sand and, for acidising, corrosive acid. Heavy oil and tar sands were stimulated with steam at 250-350 C, injected, soaked and then produced on at Cold Lake and Athabasca scale. One steam cycle costs several tonnes of water and roughly 0.5-1 barrel of 60% fuel oil per tonne of steam.",
           "kind": "process",
@@ -10601,7 +10601,7 @@
       },
     "chem.butadiene.sources.sounsby.furfural.pentosan-residue": {
         "id": "chem.butadiene.sources.sounsby.furfural.pentosan-residue",
-        "name": "Pentosan crop residue for furfural (hulls/cobs/bagasse)",
+        "name": "Pentosan crop residue",
         "simple_name": "Pentosan residue",
         "description": "Agricultural residue carrying pentosan hemicellulose (rice hulls, corn cobs or bagasse) as treated by acid and steam to furfural.",
         "kind": "material",
@@ -10640,7 +10640,7 @@
       },
     "chem.fab-chemicals.dopants.arsine.arsenic-trioxide": {
         "id": "chem.fab-chemicals.dopants.arsine.arsenic-trioxide",
-        "name": "Arsenic(III) oxide for arsine",
+        "name": "Arsenic(III) oxide",
         "simple_name": "Arsenic oxide",
         "description": "Arsenic trioxide as reduced with zinc and hydrochloric acid or hydrogen to arsine dopant gas.",
         "kind": "material",
@@ -10683,7 +10683,7 @@
       },
     "chem.fab-chemicals.dopants.diborane.bf3-feed": {
         "id": "chem.fab-chemicals.dopants.diborane.bf3-feed",
-        "name": "Boron trifluoride for diborane",
+        "name": "Boron trifluoride",
         "simple_name": "Boron trifluoride feed",
         "description": "Boron trifluoride as reacted with sodium hydride or hydride to diborane p-type source.",
         "kind": "material",
@@ -10709,7 +10709,7 @@
       },
     "chem.fab-chemicals.dopants.phosphine.white-phosphorus": {
         "id": "chem.fab-chemicals.dopants.phosphine.white-phosphorus",
-        "name": "White phosphorus (P4) for phosphine",
+        "name": "White phosphorus (P4)",
         "simple_name": "White phosphorus",
         "description": "Elemental white/yellow phosphorus condensed under water from the arc furnace, as converted to phosphine dopant.",
         "kind": "material",
@@ -10764,7 +10764,7 @@
       },
     "chem.fab-chemicals.tmah.trimethylamine": {
         "id": "chem.fab-chemicals.tmah.trimethylamine",
-        "name": "Trimethylamine for TMAH",
+        "name": "Trimethylamine",
         "simple_name": "Trimethylamine",
         "description": "Trimethylamine as quaternised via methyl-chloride-derived salt and converted by electrolysis or ion exchange to tetramethylammonium hydroxide.",
         "kind": "material",
@@ -10777,7 +10777,7 @@
       },
     "chem.fab-chemicals.tmah.quaternary-salt": {
         "id": "chem.fab-chemicals.tmah.quaternary-salt",
-        "name": "Methyl-chloride quaternary salt for TMAH",
+        "name": "Methyl-chloride quaternary salt",
         "simple_name": "Quaternary salt",
         "description": "Methyl-chloride-derived quaternary ammonium salt as ion-exchanged or electrolysed to TMAH developer.",
         "kind": "material",
@@ -10836,7 +10836,7 @@
       },
     "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol.diethylene-glycol": {
         "id": "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol.diethylene-glycol",
-        "name": "Diethylene glycol for triethylene glycol",
+        "name": "Diethylene glycol",
         "simple_name": "Diethylene glycol feed",
         "description": "Diethylene glycol as reacted with ethylene oxide to triethylene glycol.",
         "kind": "material",
@@ -10849,7 +10849,7 @@
       },
     "chem.natural-gas.uses.acetylene.to-vinyl-chloride.mercury-catalyst.mercuric-chloride": {
         "id": "chem.natural-gas.uses.acetylene.to-vinyl-chloride.mercury-catalyst.mercuric-chloride",
-        "name": "Mercuric chloride (HgCl2) for acetylene catalyst",
+        "name": "Mercuric chloride (HgCl2)",
         "simple_name": "Mercuric chloride",
         "description": "Mercuric chloride impregnated at 0.3-0.5% on charcoal adsorbing anhydrous HCl for acetylene to vinyl chloride.",
         "kind": "material",
@@ -10908,8 +10908,8 @@
       },
     "chem.pcb-chemicals.plating.immersion-gold.electroless-nickel.hypophosphite.yellow-phosphorus": {
         "id": "chem.pcb-chemicals.plating.immersion-gold.electroless-nickel.hypophosphite.yellow-phosphorus",
-        "name": "Yellow phosphorus (P4) for hypophosphite",
-        "simple_name": "Yellow phosphorus",
+        "name": "Yellow phosphorus (P4)",
+        "simple_name": "Yellow phosphorus (P4)",
         "description": "Yellow phosphorus as reacted with caustic soda under pressure to sodium hypophosphite reducer.",
         "kind": "material",
         "category": "board",
@@ -10973,7 +10973,7 @@
       },
     "chem.polyamide.nylon-66.adipic-acid": {
         "id": "chem.polyamide.nylon-66.adipic-acid",
-        "name": "Adipic acid for nylon 6,6",
+        "name": "Adipic acid",
         "simple_name": "Adipic acid",
         "description": "Adipic acid as condensed with hexamethylenediamine to nylon salt and polymerised to nylon 6,6.",
         "kind": "material",
@@ -10988,7 +10988,7 @@
       },
     "chem.polyamide.nylon-66.hmda": {
         "id": "chem.polyamide.nylon-66.hmda",
-        "name": "Hexamethylenediamine for nylon 6,6 (HMDA)",
+        "name": "Hexamethylenediamine",
         "simple_name": "Hexamethylenediamine",
         "description": "Hexamethylenediamine as condensed with adipic acid to nylon 6,6 salt.",
         "kind": "material",
@@ -11003,7 +11003,7 @@
       },
     "chem.polycarbonate.phosgene.carbon-monoxide": {
         "id": "chem.polycarbonate.phosgene.carbon-monoxide",
-        "name": "Carbon monoxide for phosgene",
+        "name": "Carbon monoxide",
         "simple_name": "Carbon monoxide",
         "description": "Carbon monoxide as oxidised with chlorine over activated carbon to phosgene.",
         "kind": "material",
@@ -11016,8 +11016,8 @@
       },
     "chem.polycarbonate.phosgene.chlorine-feed": {
         "id": "chem.polycarbonate.phosgene.chlorine-feed",
-        "name": "Chlorine for phosgene (PC grade)",
-        "simple_name": "Chlorine for phosgene",
+        "name": "Chlorine",
+        "simple_name": "Chlorine",
         "description": "Chlorine gas as reacted with carbon monoxide to phosgene for polycarbonate.",
         "kind": "material",
         "category": "fluids",
@@ -11036,7 +11036,7 @@
       },
     "chem.polycarbonate.resin.bisphenol-a": {
         "id": "chem.polycarbonate.resin.bisphenol-a",
-        "name": "Bisphenol A for polycarbonate (PC grade)",
+        "name": "Bisphenol A",
         "simple_name": "Bisphenol A",
         "description": "Bisphenol A as reacted with phosgene by the interfacial route to polycarbonate resin.",
         "kind": "material",
@@ -11058,7 +11058,7 @@
       },
     "chem.polyester.pet.dimethyl-terephthalate": {
         "id": "chem.polyester.pet.dimethyl-terephthalate",
-        "name": "Dimethyl terephthalate for PET (DMT)",
+        "name": "Dimethyl terephthalate",
         "simple_name": "Dimethyl terephthalate",
         "description": "Dimethyl terephthalate as transesterified with ethylene glycol to PET with methanol coproduct.",
         "kind": "material",
@@ -11071,7 +11071,7 @@
       },
     "chem.polyester.pet.dmt-synthesis": {
         "id": "chem.polyester.pet.dmt-synthesis",
-        "name": "Dimethyl terephthalate synthesis for PET",
+        "name": "Dimethyl terephthalate synthesis",
         "simple_name": "DMT synthesis",
         "description": "Oxidation via para-xylene to terephthalate and esterification to dimethyl terephthalate for PET.",
         "kind": "process",
@@ -11092,7 +11092,7 @@
       },
     "chem.polyester.unsaturated.maleic-anhydride": {
         "id": "chem.polyester.unsaturated.maleic-anhydride",
-        "name": "Maleic anhydride for unsaturated polyester",
+        "name": "Maleic anhydride",
         "simple_name": "Maleic anhydride",
         "description": "Maleic anhydride as condensed with propylene glycol and dissolved in styrene to unsaturated polyester.",
         "kind": "material",
@@ -11105,7 +11105,7 @@
       },
     "chem.polyester.unsaturated.propylene-glycol": {
         "id": "chem.polyester.unsaturated.propylene-glycol",
-        "name": "Propylene glycol for unsaturated polyester",
+        "name": "Propylene glycol",
         "simple_name": "Propylene glycol",
         "description": "Propylene glycol as condensed with maleic anhydride to unsaturated polyester.",
         "kind": "material",
@@ -11175,7 +11175,7 @@
       },
     "chem.propylene.cumene.cleavage.hydroperoxide-feed": {
         "id": "chem.propylene.cumene.cleavage.hydroperoxide-feed",
-        "name": "Cumene hydroperoxide for cleavage (CHP)",
+        "name": "Cumene hydroperoxide",
         "simple_name": "Cumene hydroperoxide",
         "description": "Cumene hydroperoxide as cleaved with sulphuric acid or zeolite to phenol and acetone.",
         "kind": "material",
@@ -11195,8 +11195,8 @@
       },
     "chem.propylene.cumene.oxidation.cumene-feed": {
         "id": "chem.propylene.cumene.oxidation.cumene-feed",
-        "name": "Cumene for oxidation (CHP grade)",
-        "simple_name": "Cumene feed",
+        "name": "Cumene",
+        "simple_name": "Cumene",
         "description": "Cumene as oxidised in air to cumene hydroperoxide.",
         "kind": "material",
         "category": "plastics",
@@ -11237,7 +11237,7 @@
       },
     "chem.propylene.flame-retardants.tdcpp.phosphorus-oxychloride": {
         "id": "chem.propylene.flame-retardants.tdcpp.phosphorus-oxychloride",
-        "name": "Phosphorus oxychloride for TDCPP (POCl3)",
+        "name": "Phosphorus oxychloride",
         "simple_name": "Phosphorus oxychloride",
         "description": "Phosphorus oxychloride as reacted with propylene oxide to TDCPP flame retardant.",
         "kind": "material",
@@ -11250,7 +11250,7 @@
       },
     "chem.pvc.plasticiser.ethylhexanol.butyraldehyde": {
         "id": "chem.pvc.plasticiser.ethylhexanol.butyraldehyde",
-        "name": "Butyraldehyde for 2-ethylhexanol (oxo grade)",
+        "name": "Butyraldehyde",
         "simple_name": "Butyraldehyde",
         "description": "Butyraldehyde oxo intermediate from propylene and ethylene as hydrogenated to 2-ethylhexanol.",
         "kind": "material",
@@ -11294,7 +11294,7 @@
       },
     "chem.pvc.polymerisation.suspending-agent.vinyl-acetate": {
         "id": "chem.pvc.polymerisation.suspending-agent.vinyl-acetate",
-        "name": "Vinyl acetate for PVA suspending agent",
+        "name": "Vinyl acetate",
         "simple_name": "Vinyl acetate",
         "description": "Vinyl acetate as hydrolysed to partially hydrolysed polyvinyl alcohol suspending agent.",
         "kind": "material",
@@ -11333,7 +11333,7 @@
       },
     "chem.refining.catalytic-reforming.platinum-catalyst.platinum-metal": {
         "id": "chem.refining.catalytic-reforming.platinum-catalyst.platinum-metal",
-        "name": "Platinum metal for reforming catalyst (Pt-Re grade)",
+        "name": "Platinum metal",
         "simple_name": "Platinum metal",
         "description": "Platinum crystallites for platinum-rhenium on chlorided alumina reforming catalyst.",
         "kind": "material",
@@ -11359,7 +11359,7 @@
       },
     "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina.sodium-silicate": {
         "id": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina.sodium-silicate",
-        "name": "Sodium silicate for FCC matrix",
+        "name": "Sodium silicate",
         "simple_name": "Sodium silicate",
         "description": "Sodium silicate as precipitated with aluminium sulphate and caustic-gelled to FCC silica-alumina matrix.",
         "kind": "material",
@@ -11372,7 +11372,7 @@
       },
     "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina.aluminium-sulphate": {
         "id": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina.aluminium-sulphate",
-        "name": "Aluminium sulphate for FCC matrix",
+        "name": "Aluminium sulphate",
         "simple_name": "Aluminium sulphate",
         "description": "Aluminium sulphate as precipitated with sodium silicate to FCC matrix.",
         "kind": "material",
@@ -11385,8 +11385,8 @@
       },
     "chem.rubber.neoprene.chloroprene-monomer": {
         "id": "chem.rubber.neoprene.chloroprene-monomer",
-        "name": "Chloroprene monomer for neoprene",
-        "simple_name": "Chloroprene",
+        "name": "Chloroprene monomer",
+        "simple_name": "Chloroprene monomer",
         "description": "Chloroprene as emulsion-polymerised to neoprene oil- and weather-resistant rubber.",
         "kind": "material",
         "category": "plastics",
@@ -11405,7 +11405,7 @@
       },
     "chem.solvents.trichloroethylene.tetrachloroethane": {
         "id": "chem.solvents.trichloroethylene.tetrachloroethane",
-        "name": "Tetrachloroethane intermediate for TCE",
+        "name": "Tetrachloroethane intermediate",
         "simple_name": "Tetrachloroethane",
         "description": "Tetrachloroethane from acetylene chlorination as dehydrochlorinated to trichloroethylene.",
         "kind": "material",
@@ -11451,7 +11451,7 @@
       },
     "chem.styrene.benzene.aromatics-recovery.reformer-naphtha": {
         "id": "chem.styrene.benzene.aromatics-recovery.reformer-naphtha",
-        "name": "Reformer naphtha for aromatics recovery (C6-C8)",
+        "name": "Reformer naphtha",
         "simple_name": "Reformer naphtha",
         "description": "Reformer naphtha carrying a few percent C6-C8 aromatics as extracted by sulfolane to benzene and toluene.",
         "kind": "material",
@@ -11471,7 +11471,7 @@
       },
     "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.sulphur-dioxide": {
         "id": "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.sulphur-dioxide",
-        "name": "Sulphur dioxide for sulfolane (C4 route grade)",
+        "name": "Sulphur dioxide",
         "simple_name": "Sulphur dioxide",
         "description": "Sulphur dioxide as reacted with butadiene to sulfolene and hydrolysed to sulfolane.",
         "kind": "material",
@@ -11484,8 +11484,8 @@
       },
     "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.process-water": {
         "id": "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.process-water",
-        "name": "Process water for sulfolene hydrolysis to sulfolane",
-        "simple_name": "Hydrolysis water",
+        "name": "Process water",
+        "simple_name": "Process water",
         "description": "Water with base opening the sulfolene ring to sulfolane.",
         "kind": "material",
         "category": "plastics",

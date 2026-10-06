@@ -4,7 +4,7 @@
   "shared": {
     "metal.rosin.activator": {
       "id": "metal.rosin.activator",
-      "name": "The halide activator in the flux core",
+      "name": "Halide activator in the flux core",
       "simple_name": "Halide flux activator",
       "description": "Plain rosin is a weak flux. The electronics industry improved it by adding a small amount of acid activator (in 1982 almost always zinc chloride, or in the more aggressive grades a zinc chloride-ammonium chloride mixture) so the flux can remove oxides that rosin alone would leave. The trade is real: more activator means a better joint and a corrosive residue that, if it is not washed off, eats the copper. This is why the flux grade is a specification on the wire, and why the electronics-grade rosin wire of 1982 was normally a mildly activated (MA) or activated (A) flux rather than pure RMA.",
       "kind": "material",
@@ -490,7 +490,7 @@
     },
     "metal.carbon.anode": {
       "id": "metal.carbon.anode",
-      "name": "Carbon anode for the Hall-Heroult cell",
+      "name": "Carbon anode",
       "simple_name": "Carbon anode",
       "description": "Calcined petroleum coke at 90-95% carbon, ground to 1-20 mm, mixed with 25-30% of crushed and baked coke returns and 25-30% coal-tar pitch as the binder, extruded through a die with a threaded stud on the end, and roasted at 1000-1100 C for 20-30 hours. The point of roasting rather than baking is to drive the volatiles out before the anode goes into the cell, because an anode that gases in the pot poisons the metal. Consumption is 0.45-0.55 t of anode per tonne of aluminium, and the anode is consumed continuously. This is what makes aluminium smelting a carbon business as much as an electrochemical one.",
       "kind": "part",
@@ -727,7 +727,7 @@
     },
     "metal.phosphate-ore": {
       "id": "metal.phosphate-ore",
-      "name": "Apatite ore for phosphoric acid",
+      "name": "Apatite ore",
       "simple_name": "Apatite ore",
       "description": "The Florida pebble phosphate (a marine sedimentary phosphorite of fossil bones and excreta) is the classic source, and it is the end consumer of most of the sulfuric acid made in the copper and zinc branches of this file. It is mined by dragline or bucket-wheel stripping of 5-15 m of overburden over a 3-6 m ore layer, then crushed and slurry-piped to a beneficiation plant. Almost no phosphate rock in 1982 came from a chemical process: the whole fertiliser industry downstream of the copper and zinc smelters is a sedimentary rock mined out of a swampy coastal plain.",
       "kind": "material",
@@ -961,7 +961,7 @@
     },
     "metal.aluminum.foil": {
       "id": "metal.aluminum.foil",
-      "name": "Aluminium foil, 6-25 um, for capacitors",
+      "name": "Aluminium foil, 6-25 um",
       "simple_name": "Aluminium foil 6-25um",
       "description": "The C64's power supply is full of electrolytic capacitors, and every one of them is an aluminium foil sandwich: a thin cathode foil wound with a thicker anode foil and a paper separator soaked in electrolyte. Making 6 um foil is a genuinely hard rolling problem. At that gauge the metal is thinner than the oxide skin that forms on it, so the rolls and the housekeeping are the whole technology.",
       "kind": "material",
@@ -1040,7 +1040,7 @@
     },
     "metal.aluminum.sheet": {
       "id": "metal.aluminum.sheet",
-      "name": "Aluminium sheet: the case and the shields",
+      "name": "Aluminium sheet",
       "simple_name": "Aluminium sheet",
       "description": "Two uses in a C64: the heat-sink and shield material, and the case itself. The Commodore breadbin case is an aluminium extrusion with a stove-enamel finish, and the internal shields and the modulator compartment are plain sheet. Cold-rolled 1050A or 3003 sheet at 0.3-1.5 mm goes into drawing and stamping. The anodising or powder coating is the plastics-and-paint agent's business, but the substrate starts here. A 1982 C64 has several kilograms of aluminium foundry alloy in its key plungers and the joystick and case-bracket castings.",
       "kind": "material",
@@ -1076,7 +1076,7 @@
     },
     "metal.aluminum.extrusion": {
       "id": "metal.aluminum.extrusion",
-      "name": "Aluminium extrusion: the case and the heat sinks",
+      "name": "Aluminium extrusion",
       "simple_name": "Aluminium extrusion",
       "description": "A hot billet is forced through a steel die by a ram at 420-500 C, at 20-100 MN of pressure, at several metres a second, and the profile that comes out is straight and, if the die is good, dimensionally within a fraction of a millimetre. The Commodore case is a complicated extrusion: the cooling fins, the rail and the case walls are all one profile, and the visible finish is a consequence of the die geometry. The rectifier and regulator heat sinks are separate small extrusions or machined blocks.",
       "kind": "process",
@@ -1138,7 +1138,7 @@
           "children": [
             {
               "id": "metal.aluminum.soak-furnace",
-              "name": "The soak furnace and the billet's temperature history",
+              "name": "Soak furnace and the billet's temperature history",
               "simple_name": "Soak furnace",
               "description": "Billet quality is set before the press ever sees it. The billets are heated in a gas- or oil-fired pit furnace to 420-500 C and held for 3-24 hours so that the temperature is uniform through the section, because a billet with a hot core and a cold skin extrudes with a surface tear and a soft interior. The furnace is a 3-5 m long box with a hot zone and a transition zone, and the entire extrusion industry's reputation for inconsistent profiles is mostly the reputation of its furnaces. A C64's case extrusion depended on the profile being within a fraction of a millimetre, because it had to fit a plastic moulding and a painted finish.",
               "kind": "tool",
@@ -1244,7 +1244,7 @@
     },
     "metal.copper.wire": {
       "id": "metal.copper.wire",
-      "name": "Enamelled magnet wire for transformer windings",
+      "name": "Enamelled magnet wire",
       "simple_name": "Enamelled magnet wire",
       "description": "The switch-mode transformer in a C64's power supply (and any small mains-frequency transformer) is a coil of enamelled copper wire. The wire starts as 6-8 mm rod, is patented (heated to 200-350 C so the work-hardening from drawing anneals out), then drawn through a series of diamond dies to 0.15-0.5 mm, then enamelled and baked. 1982's magnet wire was overwhelmingly polyurethane enamel, sometimes with a nylon or polyester overcoat. Polyurethane is the classic because it strips cleanly from the copper and does not need a flame to remove.",
       "kind": "part",
@@ -1288,7 +1288,7 @@
     },
     "metal.copper.foil": {
       "id": "metal.copper.foil",
-      "name": "Copper foil: 35 um PCB and 6-18 um capacitor foil",
+      "name": "Copper foil",
       "simple_name": "Copper foil 35um/6-18um",
       "description": "Two completely different foils with the same name. The PCB foil is 35 um copper (70 um on very old boards) electrolytically deposited or rolled. The C64's board is single-sided, so it is one sheet of foil laminated to 1.6 mm FR-4. The capacitor foil is electro-deposited drum foil, deposited 6-18 um onto a rotating stainless or titanium drum from a copper sulphate bath, stripped and wound, then roughened again for etching just like aluminium foil.",
       "kind": "material",
@@ -1327,7 +1327,7 @@
     },
     "metal.anode-slime": {
       "id": "metal.anode-slime",
-      "name": "Anode slime: the real reason to smelt copper",
+      "name": "Anode slime",
       "simple_name": "Anode slime",
       "description": "The sludge on the tankhouse cell floor, 5-20 kg per tonne of copper refined, containing gold, silver, platinum, palladium, selenium and tellurium. It is dried and shipped to precious-metals refineries, where the gold is separated by cupellation, the selenium by roasting to SeO2 and volatilising, and the platinum group metals by solvent extraction and precipitation. By 1982 the anode slime was typically worth more per tonne than the copper in the anode, and a copper mine with good gold credits could be a gold mine that happened to have copper in it.",
       "kind": "material",
@@ -1656,7 +1656,7 @@
         },
         {
           "id": "metal.zinc.electrowinning-cell",
-          "name": "The single-deck electrolysis cell",
+          "name": "Single-deck electrolysis cell",
           "simple_name": "Single-deck electrolysis cell",
           "description": "The 1980s zinc tankhouse cell was a plain open-top concrete or rubber-lined steel box, 3-6 m long, 1.5-2.5 m wide, 2-3 m deep, with an aluminium cathode every 15-25 mm and a lead anode between them. The electrolyte is fed in at one end and pulled out at the other. The plates go in, run for 24-72 hours, come out, get scraped, and go to the melting furnace. A modern plant with 300,000-400,000 m2 of cathode area is a building the size of a football pitch. This is one of the least mechanised and most manually-intensive electrolysis plants in the industry, because the plate handling has never lent itself to automation.",
           "kind": "tool",
@@ -2286,7 +2286,7 @@
         },
         {
           "id": "metal.chromium.aod.lance",
-          "name": "The AOD lance and its tuyere block",
+          "name": "AOD lance and its tuyere block",
           "simple_name": "AOD lance",
           "description": "The lance is a 10-25 cm carbon-molybdenum or refractory tube lowered into the metal on a mast, and it carries both the argon and the oxygen. Around it sits a refractory tuyere block in the ladle lining with a single small hole through which the gas is injected into the melt, so the gas is introduced a few hundred millimetres below the surface and the stirring is far more effective than a surface lance. The lance itself is a consumable: the oxygen attacks the tip, and a lance lasts one heat or a few hours, so there is a pile of spent lances outside every AOD vessel.",
           "kind": "tool",
@@ -2750,9 +2750,9 @@
     },
     "metal.iron.burden": {
       "id": "metal.iron.burden",
-      "name": "Blast furnace burden: sinter, pellets, lump ore, coke and flux",
+      "name": "Blast furnace burden",
       "simple_name": "Blast furnace burden",
-      "description": "The furnace eats a precisely weighed blend, batched in 1-3 t bins and dumped in a rotating order around the bell-less throat so the burden descends evenly. Sinter is 55-65% Fe and 8-12% gangue. Pellets are 62-66% Fe and are nearly always the majority of the iron-bearing burden in a modern furnace because they are uniform and permeable. Lump ore is 45-60% Fe and is in retreat. The blend is sized and ground so it is permeable enough for the gas to reach the burden and rigid enough not to collapse into the raceways.",
+      "description": "The furnace eats a precisely weighed blend, batched in 1-3 t bins and dumped in a rotating order around the bell-less throat so the burden descends evenly. Sinter is 55-65% Fe and 8-12% gangue. Pellets are 62-66% Fe and are nearly always the majority of the iron-bearing burden in a modern furnace because they are uniform and permeable. Lump ore is 45-60% Fe and is in retreat. The blend is sized and ground so it is permeable enough for the gas to reach the burden and rigid enough not to collapse into the raceways. Coke and flux make up the rest of the burden.",
       "kind": "material",
       "category": "metals",
       "era": "1982",
@@ -2861,7 +2861,7 @@
     },
     "metal.die-steel": {
       "id": "metal.die-steel",
-      "name": "Tool steel: SKD61 / H13 / D2, the moulds and dies",
+      "name": "Tool steel",
       "simple_name": "Tool steel SKD61/H13/D2",
       "description": "The C64's case, the keycaps, the key plungers and the disk-drive and modulator housings were all made in injection-moulding dies, and every one of those dies and every aluminium extrusion die was cut from tool steel. SKD61 in Japan and H13 in the US and DIN X40CrMoV51 in Europe are the same alloy: 5% chromium, 5% molybdenum, 1% vanadium, 0.4% carbon, air-hardening to about 50-54 HRC. It is made in a small vacuum arc or vacuum induction furnace, forged, annealed, and then given three heat treatments (austenitising at 1000-1050 C, air cooling, and double tempering at 500-550 C) before it goes near the machine. A single C64 case die weighs 1-4 tonnes and cost tens of thousands of dollars, and it is the reason the tool steel branch is in this file at all.",
       "kind": "material",
@@ -3225,9 +3225,9 @@
     },
     "metal.ferrite.bead": {
       "id": "metal.ferrite.bead",
-      "name": "Ferrite bead: a small cylinder of NiZn or MnZn",
+      "name": "Ferrite bead",
       "simple_name": "Ferrite bead",
-      "description": "A bead is just a pressed and fired ferrite with a hole through it, made on a bead press with a die that forms the cylinder in a few milliseconds. A 1982 board might carry a dozen: one on each supply line to the analogue section, one on the video line, one or two on the mains lead of the supply. The bead impedance is a rising curve with frequency, set entirely by the ferrite's complex permeability, and the bead's job is to convert a common-mode current into a small radiated field and a small conducted noise instead of a large one. The bead and the RF transformer are the same pressed powder.",
+      "description": "A bead is just a pressed and fired ferrite with a hole through it, made on a bead press with a die that forms the cylinder in a few milliseconds. A 1982 board might carry a dozen: one on each supply line to the analogue section, one on the video line, one or two on the mains lead of the supply. The bead impedance is a rising curve with frequency, set entirely by the ferrite's complex permeability, and the bead's job is to convert a common-mode current into a small radiated field and a small conducted noise instead of a large one. The bead and the RF transformer are the same pressed powder. The bead is a small cylinder of NiZn or MnZn ferrite.",
       "kind": "part",
       "category": "magnetics",
       "era": "1982",
@@ -3260,7 +3260,7 @@
     },
     "metal.ferrite.modulator": {
       "id": "metal.ferrite.modulator",
-      "name": "The RF modulator coil",
+      "name": "RF modulator coil",
       "simple_name": "RF modulator coil",
       "description": "The C64's TV modulator, which puts the composite video onto the RF of channel 3 or 4 so a television could display the machine, contains a small ferrite-loaded coil. It is a few turns of enamelled copper wire on a ferrite core or threaded through a ferrite bead. This is the one place in the machine where nickel-zinc ferrite is genuinely a radio-frequency component rather than a filter. The modulator itself and the television are the optics/television agents' business. The core is this branch's.",
       "kind": "part",
@@ -3355,7 +3355,7 @@
     },
     "metal.zinc-oxide-varistor": {
       "id": "metal.zinc-oxide-varistor",
-      "name": "Zinc oxide varistor: the mains spike clamp",
+      "name": "Zinc oxide varistor",
       "simple_name": "Zinc oxide varistor",
       "description": "The C64's power supply faces the mains directly. A zinc oxide varistor disc (ZnO powder pressed and sintered between two fired electrodes) sits across the input, and its resistance is astronomically high until the mains edge is exceeded, at which point it conducts and clamps the surge. ZnO is essentially a doped semiconductor ceramic: zinc oxide powder mixed with a few mol percent of the oxides of bismuth, cobalt, nickel, manganese and antimony, calcined, granulated with a binder, dry-pressed at 100-200 MPa, fired at 1100-1300 C, and cooled under a reducing atmosphere so the grain boundaries become the non-stoichiometry that gives the voltage knee. So the surge protection on the input filter is a zinc metallurgy product, and, incidentally, the same powder metallurgy as the ferrites.",
       "kind": "part",
@@ -3448,9 +3448,9 @@
     },
     "metal.salt-rock": {
       "id": "metal.salt-rock",
-      "name": "Halite bed: Wieliczka, Michigan, the saltbelt",
+      "name": "Halite bed",
       "simple_name": "Halite bed",
-      "description": "Salt deposited in an evaporating sea and buried later; mined by room-and-pillar, with the salt crushed and screened for the brine saturator. The Wieliczka mine in Poland is the oldest deep salt mine still working, and Polish rock salt was the classic feed for the eastern European chlor-alkali industry.",
+      "description": "Salt deposited in an evaporating sea and buried later; mined by room-and-pillar, with the salt crushed and screened for the brine saturator. The Wieliczka mine in Poland is the oldest deep salt mine still working, and Polish rock salt was the classic feed for the eastern European chlor-alkali industry. The Michigan saltbelt was the other source.",
       "kind": "material",
       "category": "metals",
       "era": "1982",
@@ -3480,7 +3480,7 @@
     },
     "metal.salt-evaporite": {
       "id": "metal.salt-evaporite",
-      "name": "Halite evaporite: the rock",
+      "name": "Halite evaporite",
       "simple_name": "Halite evaporite",
       "description": "A bedded evaporite sequence of halite with interbedded gypsum and clay, laid down when a restricted sea evaporated. Nothing chemical about it. It is just a dried-up ocean.",
       "kind": "material",
@@ -3665,7 +3665,7 @@
     },
     "metal.bif-banding": {
       "id": "metal.bif-banding",
-      "name": "The silica and iron oxide banding",
+      "name": "Silica and iron oxide banding",
       "simple_name": "Silica and iron oxide banding",
       "description": "A stack of alternating 1 mm to 10 m bands of chert (cryptocrystalline silica) and iron oxide, the whole thing metamorphosed, with the hematite in the oxidised upper part and magnetite in the reduced lower part and the P-rich band (the band that gives the Sudbury nickel deposit and the Phalaborwa copper) where fossil bacteria oxidised the iron. Each band is a single depositional event or a group of them, and the ore-to-waste ratio of a Banded Iron Formation is often 1:2, so the pit that produces a tonne of iron ore has to move three tonnes of rock.",
       "kind": "material",
@@ -3691,7 +3691,7 @@
     },
     "metal.abyssal-clay": {
       "id": "metal.abyssal-clay",
-      "name": "The abyssal red clay beneath the nodules",
+      "name": "Abyssal red clay beneath the nodules",
       "simple_name": "Abyssal red clay",
       "description": "A soft, red, pelagic clay that covers the abyssal plains at 4,000-6,000 m and that took the better part of 100 million years to accumulate, one centimetre at a time. The nodules sit on top of it.",
       "kind": "material",
@@ -3712,7 +3712,7 @@
     },
     "metal.molybdenum": {
       "id": "metal.molybdenum",
-      "name": "Molybdenum: a tool steel alloying element",
+      "name": "Molybdenum",
       "simple_name": "Molybdenum",
       "description": "Molybdenum is in the tool steel, in the stainless and in the hydrodesulphurisation catalyst. In 1982 almost no molybdenum came from a molybdenum mine: about half came from the molybdenite recovered as a by-product of the porphyry copper concentrators, where it is a few hundred ppm of the concentrate and reports to a separate flotation circuit, and the other half came as molybdic oxide from roasting. The ore is molybdenite, MoS2, in the Climax and Henderson porphyry in Colorado and in the Bingham Canyon concentrate. Molybdenum and tungsten share the greisen hydrothermal environment, so scheelite CaWO4 and molybdenite are sometimes intergrown in the same vein and the two metals can be recovered from one orebody. The source is a porphyry or a granite vein.",
       "kind": "material",
@@ -3752,7 +3752,7 @@
     },
     "metal.vanadium": {
       "id": "metal.vanadium",
-      "name": "Vanadium: a small alloying element",
+      "name": "Vanadium",
       "simple_name": "Vanadium",
       "description": "Tool steel and the AOD of stainless steel both use vanadium, and the source is genuinely unusual. Most vanadium came from vanadiferous titanomagnetite (a magnetite containing 1-6% vanadium) which was a problem in the iron ore of the Panzhihua district in China and in the U.S. and Canadian Mesabi ranges until somebody worked out how to separate it. By 1982 the US route was slag processing: the titanomagnetite went into a blast furnace or an oxygen converter, and the vanadium reported to the slag, and the slag was ground and reprocessed. The other source is spent petroleum catalyst, which by the late 1980s was a genuine and growing vanadium source.",
       "kind": "material",
@@ -3832,7 +3832,7 @@
     },
     "metal.ferrochrome.slag": {
       "id": "metal.ferrochrome.slag",
-      "name": "The self-fluxing chromite slag",
+      "name": "Self-fluxing chromite slag",
       "simple_name": "Self-fluxing chromite slag",
       "description": "A ferrochrome furnace is self-fluxing, which means the ore's own silica is balanced by the ore's own magnesia and there is nothing to add. The chromite is 16% MgO and 20% SiO2 and the ratio of the two is already about right for a liquid slag at 1500 C. That is why the smelter does not need lime, and it is also why the ore is smelted as it is rather than being beneficiated: a ferrochrome plant is a furnace and a power station, and the beneficiation happens in the ore dressing only if the ore is too fine to charge.",
       "kind": "material",
@@ -3865,7 +3865,7 @@
     },
     "metal.chromite.merensky": {
       "id": "metal.chromite.merensky",
-      "name": "The Merensky Reef: the same layer as the chrome",
+      "name": "Merensky Reef",
       "simple_name": "Merensky Reef",
       "description": "Just below the chromitite seams of the Bushveld Complex lies a 0.4-1 m layer of pyroxenite carrying 3-8 g/t of platinum-group metals (the Merensky Reef) and it is the reason the chromite is mined as it is. The waste from a chromite pit is a platinum ore, so the two industries are financially intertwined, and the chromite pits were dug by companies that made their real money on platinum.",
       "kind": "material",
@@ -3896,7 +3896,7 @@
     },
     "metal.ferrite.nizn.doping": {
       "id": "metal.ferrite.nizn.doping",
-      "name": "NiZn dopants: copper, cobalt and calcium",
+      "name": "NiZn dopants",
       "simple_name": "NiZn dopants",
       "description": "The NiZn family is doped with copper and cobalt to shape the grain-boundary physics, and with calcium to control the sintering. The NiZn product of the 1980s was deliberately split by composition into a high-permeability low-loss grade for transformers below 1 MHz and a very high-permeability grade for read heads and for antenna cores, and the difference between them was a fraction of a percent of dopant. It is a good example of a material in which the last tenth of a percent of the recipe is the difference between two products.",
       "kind": "material",
@@ -3929,7 +3929,7 @@
     },
     "metal.ferrite.nizn.co-source": {
       "id": "metal.ferrite.nizn.co-source",
-      "name": "The nickel and cobalt raw materials for NiZn",
+      "name": "Nickel and cobalt raw materials",
       "simple_name": "NiZn raw materials",
       "description": "The Ni-Zn family's nickel does not come as metal. It comes as nickel oxide, or as green nickel hydroxide precipitate from a laterite leach, and the cobalt comes as metal, as oxide, or (much more cheaply) as a cobalt hydroxide carried out of the nickel refinery's ammonia circuit. Which is the point: the cobalt in a NiZn ferrite, the cobalt in a superalloy and the cobalt binder in a tungsten-carbide drill cone all came out of the same few refineries, so the price a ferrite maker paid for its dopant was set by the nickel market rather than by anything to do with ferrite. By 1982 that price was falling rather than rising. Cobalt was about $12.50/lb in May, down from $25/lb in 1980, and about $5/lb by 1983-84 as new supply arrived.",
       "kind": "material",
@@ -4075,7 +4075,7 @@
     },
     "metal.ferrite.dopants": {
       "id": "metal.ferrite.dopants",
-      "name": "Dopants: calcium, silicon, cobalt and the grain boundaries",
+      "name": "Dopants",
       "simple_name": "Dopants",
       "description": "The last half percent of the ferrite recipe does most of the work. A small calcium and silicon addition forms a grain-boundary phase that makes the grain boundaries insulating and therefore suppresses eddy-current loss. Cobalt raises the anisotropy and the permeability at low field, which matters for a filter inductor. Lithium prevents wall-jumping in a high-coercivity ferrite. These additions are 0.1-2% each and they are why a power ferrite's chemistry is a trade secret and why the same nominal composition from two suppliers will not behave the same way.",
       "kind": "material",
@@ -4267,7 +4267,7 @@
     },
     "metal.bauxite.kaolinite": {
       "id": "metal.bauxite.kaolinite",
-      "name": "The kaolinite and gibbsite beneath the bauxite",
+      "name": "Kaolinite and gibbsite beneath the bauxite",
       "simple_name": "Kaolinite and gibbsite",
       "description": "The economic bauxite is a 3-12 m blanket of iron-stained nodules sitting directly on kaolinite clay, and the kaolinite is the reactive silica that has to be neutralised by lime or washed out. Below that is the saprolite, the partly-weathered parent rock. The oxide precipitated in a tropical weathering profile above a clay, on top of Cretaceous or Tertiary sediment, and the silica problem is a mineralogical fact about the same profile rather than an impurity someone failed to remove.",
       "kind": "material",
@@ -4594,7 +4594,7 @@
     },
     "metal.nickel.limonite-garnierite": {
       "id": "metal.nickel.limonite-garnierite",
-      "name": "Limonite and garnierite: the two nickel minerals",
+      "name": "Limonite and garnierite",
       "simple_name": "Limonite and garnierite",
       "description": "It is a mineral solution rather than a mineral. There is no nickel mineral in a laterite. Nickel substitutes for magnesium in the smectite and kaolinite clays (the mineral is garnierite, which is really a mixture) and it substitutes for iron in the goethite of the limonite, so a limonite laterite's nickel is spread through amorphous iron oxide at a few percent. The two grades of laterite that matter commercially are the high-iron limonite ore and the low-silica saprolite ore, and the difference between them is the grade of the nickel-bearing lattice, which is why the pressure leach was developed for one and not the other.",
       "kind": "material",
@@ -4630,7 +4630,7 @@
     },
     "metal.dms.fe-silicon": {
       "id": "metal.dms.fe-silicon",
-      "name": "Ferrosilicon powder for dense-media separation",
+      "name": "Ferrosilicon powder",
       "simple_name": "Ferrosilicon powder",
       "description": "The liquid in a dense-medium separator is ferrosilicon. It is an alloy of iron and silicon made in exactly the submerged arc furnace described in the electrical-steel and metallurgical-silicon branches of this file. So a 1982 concentrator that separated galena from sphalerite by density was running a slurry of metallurgical silicon, and the silicon branch of this tree reaches a zinc concentrator as well as a power transformer. Silicon really does end up everywhere: 60-90% of all ferrosilicon production goes into the steel and aluminium branches, but the rest goes into heavy-media separation, and it is the sharpest possible illustration of why a tree like this has cross-links.",
       "kind": "material",
@@ -4683,7 +4683,7 @@
     },
     "metal.manganese.oxide-phase": {
       "id": "metal.manganese.oxide-phase",
-      "name": "The oxide and carbonate phases of the ore",
+      "name": "Oxide and carbonate phases of the ore",
       "simple_name": "Oxide-carbonate phases",
       "description": "The manganese in a supergene ore is not one mineral but four. Pyrolusite MnO2 is the black, soft, fibrous one; psilomelane is a barium-bearing cryptocrystalline mixture; braunite Mn2O3 is the hard brown one; and rhodochrosite MnCO3 is the pink carbonate in the primary zone. The refractory braunite is the one the smelter hates, because it takes three times the reductant and gives a high slag. Which phase a shipment is made of determines whether it goes to a ferromanganese furnace or to a chemical plant, and the assay is a chemical analysis, not a visual test.",
       "kind": "material",
@@ -4763,7 +4763,7 @@
     },
     "metal.copper.wire-lubricant": {
       "id": "metal.copper.wire-lubricant",
-      "name": "Drawing lubricant: copper sulfonate or oil emulsion",
+      "name": "Drawing lubricant",
       "simple_name": "Drawing lubricant",
       "description": "The die must be lubricated or the copper galls and the die wears out. In the 1980s the standard was a water-based emulsion or a copper-sulfonate-and-fatty-acid concentrate, applied in a die box or as a once-through bath. Lubricant chemistry is also the friction and galling story in the die, which is why the drawing lubricant industry is a small speciality chemical business rather than an oil business.",
       "kind": "material",
@@ -4785,7 +4785,7 @@
     },
     "metal.chromium.cell.diaphragm": {
       "id": "metal.chromium.cell.diaphragm",
-      "name": "The diaphragm and the asbestos inheritance",
+      "name": "Diaphragm and the asbestos inheritance",
       "simple_name": "Asbestos diaphragm",
       "description": "The cell needs the anodic chlorine kept away from the trivalent chromium in the catholyte, and the membrane that does that was, until the 1980s, asbestos cloth. It is the same asbestos as the chlor-alkali diaphragm cells. So the chromium and chlor-alkali industries of the early twentieth century share a materials problem that was only being dealt with in the 1980s, in both cases by a conversion programme driven by worker exposure rather than by metallurgy. The 1982 answer was a synthetic fibre diaphragm, which worked and cost more.",
       "kind": "material",
@@ -4832,7 +4832,7 @@
     },
     "metal.coke-breeze": {
       "id": "metal.coke-breeze",
-      "name": "Coke breeze: the sinter fuel",
+      "name": "Coke breeze",
       "simple_name": "Coke breeze",
       "description": "The 3-10 mm fraction of coke, screened out at the coke plant, that would be too small for the blast furnace. A steelworks' sinter plant is therefore a consumer of its own coke plant's fines. It is a neat example of an internal recycling loop in the iron and carbon chain that closes from the coke oven's quench, through the sinter plant, back into the blast furnace's burn.",
       "kind": "material",
@@ -4860,7 +4860,7 @@
     },
     "metal.silica.reducer": {
       "id": "metal.silica.reducer",
-      "name": "Carbothermal reductant: coke and woodchips",
+      "name": "Carbothermal reductant",
       "simple_name": "Carbothermal reductant",
       "description": "The silicon furnace burns roughly one tonne of high-ash-reduction carbon per three tonnes of silicon, and the recipe is a tight compromise: too much ash and you get slag, too much volatile and the furnace fumes. Producers blend low-ash petroleum coke or anthracite with a proportion of woodchips, because the wood brings in hydrogen and potassium that volatilise out and are quietly useful, and because the porosity of the burnt wood helps the charge breathe. The same class of carbon, at different purity, is the reductant in the tin, lead, zinc, ferrosilicon, ferromanganese and ferrochrome branches of this file.",
       "kind": "material",
@@ -4896,7 +4896,7 @@
     },
     "metal.laterite-terrace": {
       "id": "metal.laterite-terrace",
-      "name": "The Cretaceous laterite surface",
+      "name": "Cretaceous laterite surface",
       "simple_name": "Cretaceous laterite",
       "description": "A flat, deeply weathered surface on Cretaceous sandstone where a tropical lateritic profile has developed over tens of millions of years, with a bauxite horizon at the top, kaolinite below it, and the saprolite and fresh rock beneath. The flatness is the point (it is why the pits are cheap and the ore is shallow) and it is a direct consequence of the rock type and of the extraordinarily long, warm, wet chemical weathering that made it.",
       "kind": "material",
@@ -4918,7 +4918,7 @@
     },
     "metal.gold.contact-jewel": {
       "id": "metal.gold.contact-jewel",
-      "name": "Gold-plated contacts: the edge connector and the switches",
+      "name": "Gold-plated contacts",
       "simple_name": "Gold-plated contacts",
       "description": "Two very different gold contacts in the C64. The 62-way edge connector at the rear has gold-flashed fingers. It is a 35 um copper-alloy finger with 0.1-0.5 um of gold and a nickel underplate, inserted in the board by a wipe in the card guides. The keyboard and the rocker switches use either gold-plated copper-alloy leaf springs or, in the better keys, solid silver or silver-alloy contacts. The gold flash on the edge connector is the only place where gold must survive thousands of insertions, and it does so because the nickel underplate stops the copper from diffusing into the gold and the gold itself never oxidises.",
       "kind": "material",
@@ -5140,7 +5140,7 @@
       "children": [
         {
           "id": "metal.chlor-alkali.digram-cell",
-          "name": "The diaphragm cell and the asbestos problem",
+          "name": "Diaphragm cell and the asbestos problem",
           "simple_name": "Diaphragm cell",
           "description": "The 1980s chlor-alkali cell was a rectangular steel box, 2-3 m long, with an anode compartment of brine and a cathode compartment of water separated by an asbestos cloth diaphragm deposited on a wire gauze. The diaphragm was cheap, durable and effective, and it was the reason the world's chlor-alkali industry had a mesothelioma problem. The cell voltage was low, 3.0-3.5 V, and the caustic carried 10-15 g/L of salt because the diaphragm let chloride through. The Hooker Chemical conversion at Niagara Falls in 1984 to a membrane cell was the moment the asbestos diaphragm began to disappear from the industry.",
           "kind": "tool",
@@ -5971,7 +5971,7 @@
         },
         {
           "id": "metal.collector",
-          "name": "The hydraulic collector head",
+          "name": "Hydraulic collector head",
           "simple_name": "Hydraulic collector",
           "description": "The machine the whole idea rests on: a manifold of suction nozzles, 10-30 m across, towed along the seabed at 1-3 knots, that lifts the nodules into a riser pipe and up to a ship 4,000-6,000 m above. The 1970s trials worked at the point where the ocean is deepest to learn whether nodules survive being lifted (the attrition of the nodules on the way up turned out to be a genuine engineering problem) and the riserless concepts that would have solved it were still on paper. It is a beautiful illustration of how much of deep-sea mining is really a fluid mechanics problem.",
           "kind": "tool",
@@ -6168,7 +6168,7 @@
       "children": [
         {
           "id": "metal.copper.foil.bonding",
-          "name": "Nodular treatment for PCB foil adhesion",
+          "name": "Nodular treatment",
           "simple_name": "Nodular PCB treatment",
           "description": "Bare copper foil will not bond to epoxy. It delaminates. So the foil is treated in a warm sulfuric acid bath with a silicofluoride or a silane (historically sodium silicofluoride, later silanes) which grows a forest of microscopic oxide nodules on the surface. The resin flows into the forest and locks in, and the peel strength goes from a few N/cm to about 20 N/cm. This etching of the foil surface is the single most important step in making a copper-clad laminate, and the silicofluoride comes from the same fluorochemical industry as the hydrofluoric acid in the aluminium and tantalum branches.",
           "kind": "process",
@@ -6662,7 +6662,7 @@
     },
     "metal.pellet": {
       "id": "metal.pellet",
-      "name": "Pelletising the concentrate on a disc or a pelletiser",
+      "name": "Pelletise the concentrate on a disc or a pelletiser",
       "simple_name": "Ore pelletising",
       "description": "Very fine concentrate (under 45 um) is mixed with 5-8% bentonite binder and 0.5-1% limestone, moistened, and fed to a rotating disc pelletiser or a drum pelletiser where 3-10 mm green pellets are rolled up by capillary action. The green pellets are then fired on a travelling grate at 1200-1350 C in an oxidising atmosphere, which sinters the surface, gives the pellet its compressive strength and, if the furnace is properly controlled, magnetises it. The hematite becomes magnetite, which means the pellet can itself be recovered magnetically, and its reduction in the blast furnace is faster. Pelletising is what made the 1970s and 1980s post-and-tensile steel possible and it is the reason Brazil and Canada have a modern steel industry at all.",
       "kind": "process",
@@ -7146,8 +7146,8 @@
     },
     "metal.manganese.sintering": {
       "id": "metal.manganese.sintering",
-      "name": "Sintering the manganese ore",
-      "simple_name": "Sintering the manganese ore",
+      "name": "Sinter the manganese ore",
+      "simple_name": "Sinter the manganese ore",
       "description": "Manganese ore is very fine and very friable, so it cannot be blown into a submerged arc furnace as a powder. It is sintered first, on a travelling grate exactly like the lead sinter, to make a 30-50 mm porous cake.",
       "kind": "process",
       "category": "metals",
@@ -7246,8 +7246,8 @@
         },
         {
           "id": "metal.manganese.inclusion-removal",
-          "name": "Removing the inclusions: degassing and filtration",
-          "simple_name": "Removing the inclusions",
+          "name": "Remove the inclusions",
+          "simple_name": "Remove the inclusions",
           "description": "A modern low-sulphur steel has few MnS inclusions but a lot of fine Al2O3, and that is a different problem: fine alumina does not float out, so it has to be filtered. A 1980s plate mill that wanted clean, formable sheet for deep drawing or for tinplating ran a ladle through a vacuum degasser to flush hydrogen and nitrogen and then through a ceramic foam filter in the ladle, or poured through a tundish filter. This is the technology that made the C64's chassis panel and the tinplate base material reproducible rather than lucky.",
           "kind": "process",
           "category": "metals",
@@ -7290,7 +7290,7 @@
     },
     "metal.cassiterite.alluvial": {
       "id": "metal.cassiterite.alluvial",
-      "name": "Alluvial cassiterite gravel: dredging and panning",
+      "name": "Alluvial cassiterite gravel",
       "simple_name": "Alluvial dredging",
       "description": "Tin gravel is a beach or stream deposit: pebbles and clay with a few grams of cassiterite per tonne. The classical recovery is the sluice and the jig, where a stream of water over an inclined riffled box stratifies by density and the heavy mineral stays behind. The Kinta Valley in Perak, Malaysia, was dredged on an enormous scale from the 1900s through the 1980s by suction dredges working a 100 m wide alluvial fan at 30-100 m depth, pumping gravel through a 3-6 inch suction pipe to a floating washing plant and a jig. Off Thailand and Indonesia it was offshore and shallow-sea dredging. Gravel is essentially quarried from a sea floor.",
       "kind": "process",
@@ -7343,8 +7343,8 @@
     },
     "metal.aluminum.blending": {
       "id": "metal.aluminum.blending",
-      "name": "Alloying to 3003, 6063 or A13",
-      "simple_name": "Alloying to 3003, 6063 or A13",
+      "name": "Alloy to 3003, 6063 or A13",
+      "simple_name": "Alloy to 3003, 6063 or A13",
       "description": "The rolling mill is not a refinery. It melts primary ingot, remelted can scrap and dross recovery in a reverberatory or an induction furnace, adds the alloying elements as lumps of master alloy, degasses with a rotating argon lance to strip hydrogen, and skims the dross. Manganese for 3003, magnesium and silicon for 6063, silicon for the A13 casting alloy. So the C64's case metal is partly recycled metal, and its chemistry is set in a small furnace rather than a pot.",
       "kind": "process",
       "category": "metals",
@@ -7625,7 +7625,7 @@
     },
     "metal.refractory-ladle": {
       "id": "metal.refractory-ladle",
-      "name": "The refractory ladle lining",
+      "name": "Refractory ladle lining",
       "simple_name": "Refractory ladle lining",
       "description": "The AOD vessel is lined with magnesia or with magnesia-carbon, and the slag at pH 5 or higher eats a basic lining. This is why a stainless ladle lining is more expensive and more carefully maintained than a mild steel one. The lining is a consumable of its own, replaced every few hundred heats. So the chromium branch reaches the bottom not only in an ore body but in a sea of magnesia sand, and the magnesia is from seawater or from a magnesite mine.",
       "kind": "material",
@@ -7650,7 +7650,7 @@
     },
     "metal.copper.patenting": {
       "id": "metal.copper.patenting",
-      "name": "Patenting: annealing the rod before drawing",
+      "name": "Patenting",
       "simple_name": "Patenting",
       "description": "Copper work-hardens fast: a few percent of reduction raises the tensile strength enormously and the wire simply snaps in the die. So the rod is heated (in steam, in air, or in a fluidised bed) to about 200-350 C, which recrystallises the elongated drawing structure back to equiaxed grains, and then quenched. The black oxide that air patenting leaves is actually helpful, because it stops the wire rusting in the draw bin. Patenting is the cheapest trick in the whole wire business.",
       "kind": "process",
@@ -7757,7 +7757,7 @@
       "children": [
         {
           "id": "metal.copper.enamelling.furnace",
-          "name": "The enamelling line and the cure oven",
+          "name": "Enamelling line and the cure oven",
           "simple_name": "Enamelling line",
           "description": "A magnet-wire enamelling line is a 20-40 m long machine: a pay-off, a bunch of dies applying 10-20 coats with flash-off between them, a vertical cure oven 8-15 m tall, a capstan, a take-up. The cure oven is gas or electric at 150-220 C with the wire passing through it in a helix, and it is the cure schedule and not the coating that decides the wire's class. A class 155 wire needs a full hour at temperature. A class 130 wire can get away with less. In 1982 the whole world's magnet wire was made on lines of exactly this design, whether the wire came from Japan, France or the United States.",
           "kind": "tool",
@@ -7810,7 +7810,7 @@
     },
     "metal.ferrite.gap-scrape": {
       "id": "metal.ferrite.gap-scrape",
-      "name": "Cutting the air gap in the centre leg",
+      "name": "Cut the air gap in the centre leg",
       "simple_name": "Air-gap cutting",
       "description": "An ungapped ferrite E core has a very high inductance and would not regulate a switch-mode supply. The switcher's magnetising current would be wrong and the whole design fails. So the gap is made deliberately, and on a 1982 E core it was cut with a carbide-tipped scraper (literally a hand blade run along the face of the centre leg) to 0.2-1.0 mm. Cutting rather than inserting a gap material keeps the inductance high and spreads the gap's fringing over an area, and it does it with a machine a ferrite buyer can operate. The tolerance of that hand cut is what sets the inductance tolerance, and the whole thing is one of the more beautiful pieces of 1980s manufacturing: a blade and a number.",
       "kind": "process",
@@ -7910,7 +7910,7 @@
     },
     "metal.banded-iron-formation": {
       "id": "metal.banded-iron-formation",
-      "name": "Banded iron formation: a chemical precipitate from seawater",
+      "name": "Banded iron formation",
       "simple_name": "Banded iron formation",
       "description": "Around 2.0-1.8 billion years ago, the oceans contained dissolved ferrous iron and oxygen appeared in the atmosphere as a result of an earlier generation of photosynthetic organisms. Wherever the oxygen-rich surface water sank and met the anoxic iron-rich deep water, the iron oxidised and precipitated, as a jelly of iron oxide that settled as a chemical mud. It compacted into alternating silica and iron bands, and it is that banding which gives the rock its name and which makes the high-grade hematite ore bodies on the Hamersley Range the size they are.",
       "kind": "material",
@@ -7967,7 +7967,7 @@
     },
     "metal.sphalerite.host": {
       "id": "metal.sphalerite.host",
-      "name": "The host basin and its caprock",
+      "name": "Host basin and its caprock",
       "simple_name": "Host basin and its caprock",
       "description": "A sedimentary basin with a metal-bearing horizon in it. The Red Dog deposit is a Devonian shale-hosted lens in the Buckland River basin on the Tukarakka Peninsula. Broken Hill is a metamorphosed, deformed massive sulphide in a sequence of Proterozoic metasediments. In both cases the orebody sits at a specific stratigraphic level, and the mine is a series of ramps and stopes chasing a bedding-parallel body a few metres thick.",
       "kind": "material",
@@ -8090,7 +8090,7 @@
     },
     "metal.nickel.ore-washing": {
       "id": "metal.nickel.ore-washing",
-      "name": "The laterite washing and screening plant",
+      "name": "Laterite washing and screening plant",
       "simple_name": "Laterite wash plant",
       "description": "The laterite arrives from a bucket-wheel excavator as a slurry, and it goes through a log washer, a scrubber, a screen tower and a series of hydrocyclones, and the -0.5 mm fraction is rejected outright as low-grade clay. The coarse fraction is dewatered on a screen and stacked in a concrete bin. In the Cuban and Philippine operations the stacked ore was then leached in place on a pad, in the Queensland operations it was dried in a rotary dryer and shipped to a furnace. The whole plant exists because the ore is a soft, wet, variable, low-grade bulk material, and the plants are mostly about handling water.",
       "kind": "process",
@@ -8178,7 +8178,7 @@
     },
     "metal.sphalerite.mill": {
       "id": "metal.sphalerite.mill",
-      "name": "Zinc concentrator: differential flotation",
+      "name": "Zinc concentrator",
       "simple_name": "Zinc concentrator",
       "description": "The ore is crushed to 10-25 mm, ground to 50-100 um in a ball or autogenous mill, and floated in stages. The classic circuit is differential: copper and lead sulphides are floated first with a stronger collector and a higher pH, and then the sphalerite is floated from the tailings with a weaker collector at a lower pH, with copper sulphate added as an activator because sphalerite does not float on its own. That gives a 50-60% Zn concentrate at 85-92% recovery. The Red Dog and Sullivan concentrators were among the largest in the world and are the reason those two mines could be mines at all.",
       "kind": "process",
@@ -8305,7 +8305,7 @@
     },
     "metal.chromite.bench": {
       "id": "metal.chromite.bench",
-      "name": "Following a seam: the narrow-bench problem",
+      "name": "Follow a seam",
       "simple_name": "Seam following",
       "description": "A normal open pit advances in benches 15 m high and 100-200 m wide, with haul roads on every bench. A chromite seam is 1-6 m thick, so the pit has to advance along the seam instead, and the benches are 100-200 m high with a 5-10 m working width and a haul road cut into the wall. The consequence is a bench width of a few tens of metres where a truck needs twenty, so the ore is either hauled a long way or handled by a shovel that strips the ore off the face and tips it down to a loading point on the bench floor. That is why the Bushveld pits look nothing like an iron ore pit even though they move similar tonnages, and it is a nice demonstration that mining cost is a function of geometry before it is a function of the rock.",
       "kind": "process",
@@ -8370,7 +8370,7 @@
       "children": [
         {
           "id": "metal.galena.sorting-table",
-          "name": "The sorting table",
+          "name": "Sorting table",
           "simple_name": "Sorting table",
           "description": "A sloping table with a light on it and a raised lip, worked by two or three people, one on each side. Galena is bright and heavy and galena-bearing limestone is dark and light, so the visual contrast is real, and the sorter's job is to lift out the dark lumps at perhaps 2-4 tonnes per shift. It is the lowest-skill, lowest-pay, highest-volume job in the lead industry, and it is where a great many Missouri families started.",
           "kind": "tool",
@@ -8497,7 +8497,7 @@
     },
     "metal.manganese.furnace-lining": {
       "id": "metal.manganese.furnace-lining",
-      "name": "The submerged arc furnace and its refractory",
+      "name": "Submerged arc furnace and its refractory",
       "simple_name": "Arc furnace refractory",
       "description": "A ferromanganese furnace is 25-100 MVA with three electrodes 1.5-2.0 m in diameter, and the difference from a silicon furnace is the slag: the ferromanganese process makes a large volume of a liquid, low-basicity slag, so the furnace is a slag vessel with an electrode in it. The shell is steel with a refractory lining of magnesite or magnesite-carbon, and the lining is eroded by the slag at 1500 C faster than in a silicon furnace. Carbon pastes, electrode paste made of the same coke-and-pitch as the aluminium anode, are rammed into holes in the roof around each electrode. So a ferromanganese plant is a coke-and-pitch shop as much as a manganese shop, which is the same convergence as the ferrochrome and ferrosilicon branches.",
       "kind": "tool",
@@ -8578,7 +8578,7 @@
     },
     "metal.hematite.stockyard": {
       "id": "metal.hematite.stockyard",
-      "name": "The ore stockyard and the ship loader",
+      "name": "Ore stockyard and the ship loader",
       "simple_name": "Ore stockyard",
       "description": "Because the ships are 180,000-250,000 dwt and the mine's output is lumpy, the ore goes into a 1-2 million tonne stockyard with a stacker and a travelling shiploader. The shiploader is a 100 m long gantry on rails with a slewing chute that trims the ship's hold as it loads, so a 250,000 dwt vessel is filled flat without a bulker or a trimming machine. The whole Pilbara export chain (mine, conveyor, stockyard, loader, ship) was built to move one commodity in enormous tonnage at very low cost, and it is the reason Australian iron ore is the cheapest iron in the world.",
       "kind": "tool",
@@ -9078,7 +9078,7 @@
       },
     "metal.nitric-acid": {
         "id": "metal.nitric-acid",
-        "name": "Nitric acid for rod etch",
+        "name": "Nitric acid",
         "simple_name": "Nitric acid",
         "description": "Nitric acid for hot HCl/HNO3 polish etching of sawn polysilicon rod segments before puller charging.",
         "kind": "material",

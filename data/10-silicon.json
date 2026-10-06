@@ -75,7 +75,7 @@
             "si.mask.plate",
             {
               "id": "mb.cpu.mask.stepper",
-              "name": "The 10x stepper arriving at the end of the period",
+              "name": "10x stepper arriving at the end of the period",
               "simple_name": "10x stepper, late arrival",
               "description": "Reduction steppers (GCA, Canon, Magnifire, and later ASML) that printed a 10x-reduced reticle with a +-0.2-0.3 um overlay and broke the industry below the 1 um limit. By 1982 a 1:1 contact printer could just barely hold a 2 um line, so a 2 um 6510 was still printable 1:1. The steppers were arriving for the next generation, not for this part. Canon FPA-series 10x machines were among the first installed.",
               "kind": "note",
@@ -324,7 +324,7 @@
         "si.wafer",
         {
           "id": "mb.ram.cell",
-          "name": "The 1T1C memory cell",
+          "name": "1T1C memory cell",
           "simple_name": "1T1C memory cell",
           "description": "Each of the 65,536 bits is one access transistor plus one capacitor. The cell uses THREE polysilicon layers: poly 1 is the word line crossing the device, poly 2 is the overlapping plate of the storage capacitor (the plate is doped n+ and shared with the bit line), poly 3 is the bit line itself. Around 3.5 um x 8 um per cell in 1982. This is big compared with modern trench/stacked cells. Double-diffused poly (DDP) cells, where the source and drain are separately implanted so the cell can be offset, were used by several 64K DRAM makers.",
           "kind": "part",
@@ -409,7 +409,7 @@
           "children": [
             {
               "id": "mb.ram.mask.reticle",
-              "name": "5x reticle: chrome on quartz",
+              "name": "5x reticle",
               "simple_name": "5x reticle",
               "description": "A 3x3 inch fused-quartz or borosilicate plate coated with 100-150 nm of sputtered chromium, exposed from a 10x or 20x artwork intermediate by a mask stepper, developed, the chrome etched in perchloric/sulfuric acid, inspected against the database on a Zeiss comparison tool, and mounted in a reticle cassette. Because quartz has a thermal expansion near zero, the reticle pattern stays put through a mask-level thermal cycle. The reason quartz beat glass once steppers became common.",
               "kind": "part",
@@ -544,7 +544,7 @@
         "si.wafer",
         {
           "id": "mb.roms.mask",
-          "name": "The ROM-only mask plate",
+          "name": "ROM-only mask plate",
           "simple_name": "ROM-only mask plate",
           "description": "Because the ROM pattern is a physical edit to the flow, Commodore held a separate chrome-on-glass plate for each ROM number. It was cut from the ROM's bit map by the same pattern generator used for the logic masks, inspected against the database, and stored in a mask library. 901226-01 and 901227-03 each required their own.",
           "kind": "part",
@@ -1517,8 +1517,8 @@
           "children": [
             {
               "id": "mb.color-ram.cell.load",
-              "name": "The load device: polysilicon resistor or depletion transistor",
-              "simple_name": "Polysilicon resistor or depletion load",
+              "name": "Load device",
+              "simple_name": "Load device",
               "description": "This is the real difference between a 2114 and a CMOS SRAM, and it is an extra process step. A ratioed NMOS latch needs something in series with the pull-down transistor to act as a load: on 1982 parts this was typically an undoped or lightly doped polysilicon resistor deposited in the same LPCVD step as the gate, or a depletion-mode NMOS transistor (gate tied to source, threshold deliberately shifted negative by an extra implant) acting as a current source. The depletion option needed one more implant than the resistor option. Not established: which option the C64's 2114 used.",
               "kind": "part",
               "category": "silicon",
@@ -1576,7 +1576,7 @@
         },
         {
           "id": "mb.color-ram.mask",
-          "name": "The 2114 mask set",
+          "name": "2114 mask set",
           "simple_name": "2114 mask set",
           "description": "Eight or nine 1:1 levels: n+ field, LOCOS active area, contact, polysilicon (gate and, if used, the load resistor pattern), self-aligned diffusion, metal, passivation pad, and alignment/test levels, printed from chrome-on-glass plates with grid-broken alignment.",
           "kind": "part",
@@ -1761,7 +1761,7 @@
         },
         {
           "id": "mb.pla.vs-pal",
-          "name": "PLA versus PAL: why the name misleads",
+          "name": "PLA versus PAL",
           "simple_name": "PLA versus PAL",
           "description": "The C64's part is called a PLA, but the parts most readers know by that name (the 16L8, 16R8, 20L8) are PALs, and the two are not interchangeable in sourcing or programming. A PAL is a generic catalogue device: every 16L8 from every vendor is the same silicon, and the buyer programs it. A mask-programmed PLA is a custom device: the buyer cannot program it, and nobody else ever made this function. That is the whole reason fakes are so common. The SuperPLA, realPLA, PLA20V8, PLAnkton and PLAtinum parts sold as replacements are typically GAL/EPROM emulations or freshly mask-programmed parts from a third party, and the C64's PLA is precisely the component where a substitute can fail in ways that are hard to trace.",
           "kind": "note",
@@ -1824,7 +1824,7 @@
         },
         {
           "id": "mb.pla.economics",
-          "name": "The economics of one custom mask set",
+          "name": "Economics of one custom mask set",
           "simple_name": "Economics of one mask set",
           "description": "The 906114-01 encodes the entire C64 memory map in a die smaller than the fingertip, and Commodore sold millions of C64s, so once the mask was paid for the part was dirt cheap per unit. But the flip side is that the function exists nowhere else in the world. Any machine needing a different bank-switch map needs a different mask, a different lot and a different lead time. Which is why C64Cs needed a different PLA (MOS 8721) to support the cartridge port's new banking. It is also why the cost of a single counterfeit or of a dead original is disproportionate to the value of the silicon inside it.",
           "kind": "note",
@@ -2064,8 +2064,8 @@
     },
     "si.cz.seed": {
       "id": "si.cz.seed",
-      "name": "Seed crystal for CZ pulling",
-      "simple_name": "Seed crystal for CZ pulling",
+      "name": "Seed crystal",
+      "simple_name": "Seed crystal",
       "description": "A short (100)-oriented sliver cut from a previous ingot, used to set the orientation and the defect-free growth of the new boule. Its diameter has to match the finished boule, so a seed is cut and ground for each crystal-pulling station.",
       "kind": "material",
       "category": "silicon",
@@ -2319,7 +2319,7 @@
     },
     "si.clean": {
       "id": "si.clean",
-      "name": "Wafer cleaning: Piranha, RCA SC-1 and megasonic",
+      "name": "Wafer cleaning",
       "simple_name": "Wafer cleaning",
       "description": "A 1982 fab cleaned more often and washed harder than a modern one, because particles rather than yield models set the pace. The sequence before a furnace step was megasonic at 1.6 MHz in deionised water, a hot Piranha of 3:1 H2SO4:H2O2 at 120 C to strip organics and metals, a dilute HF dip to remove native oxide, then RCA SC-1 (NH4OH:H2O2:H2O 1:1:5 at 75-80 C) or SC-2 (HCl:H2O2:H2O), and a megasonic rinse with particle-count filtration and an N2 blow-off. Between every mask level the same sequence ran again.",
       "kind": "process",
@@ -2386,7 +2386,7 @@
     },
     "si.litho": {
       "id": "si.litho",
-      "name": "Photolithography: coat, bake, expose, develop",
+      "name": "Photolithography",
       "simple_name": "Photolithography",
       "description": "Every layer of every die is defined the same way. The wafer is coated on a spinner at 2000-5000 rpm to 1-3 um of positive photoresist, soft-baked at 90-100 C, aligned to the mask on a 1:1 contact or proximity aligner, exposed through the chrome plate at 30-50 mJ/cm2, spray-developed in 5-10% tetramethylammonium hydroxide, hard-baked, stripped, and cleaned. Shipley AZ-1350 was the workhorse thin-film resist of the whole industry and the higher-solids AZ-1354 was used wherever the film had to stand up to a deep etch.",
       "kind": "process",
@@ -3166,7 +3166,7 @@
     },
     "si.probe-card": {
       "id": "si.probe-card",
-      "name": "Probe card: gold-plated needles on a printed board",
+      "name": "Probe card",
       "simple_name": "Probe card",
       "description": "Before dicing, every die is probed on the wafer through a probe card: a fibreglass or ceramic substrate with a pattern of gold-plated tungsten or rhenium needles on 0.1 inch centres, hanging on a probe ring over the die and stepping down with a few grams of force. In 1982 cards were hand-drilled or photofabricated. Automatic stepping probe stations were still a novelty at these pad counts.",
       "kind": "part",
@@ -3585,7 +3585,7 @@
     },
     "mb.cpu.dicing": {
       "id": "mb.cpu.dicing",
-      "name": "Die separation: scribe and break, or diamond-wheel saw",
+      "name": "Die separation",
       "simple_name": "Die separation",
       "description": "The wafer is flipped onto a vacuum chuck, scored along the scribe lines with a diamond scriber or, in the more expensive method, cut with a resin-bonded diamond wheel on a saw, leaving a kerf of 50-100 um. Small dies like the 6510 (about 3.5 x 3.9 mm) were often diced by scribing and snapping, then washed dry.",
       "kind": "process",
@@ -3632,7 +3632,7 @@
     },
     "mb.cpu.front-end": {
       "id": "mb.cpu.front-end",
-      "name": "2 um NMOS front end: the layer stack",
+      "name": "2 um NMOS front end",
       "simple_name": "2 um NMOS front end",
       "description": "A silicon-gate, double-polysilicon NMOS process flow on p-type (100) CZ silicon: heavily doped n+ source/drain first, LOCOS field oxide, heavily n-doped polysilicon gate, self-aligned arsenic source/drain, contact cuts, aluminium metallization, then phosphosilicate glass plus a plasma nitride seal. Ten mask levels, ~50 major process steps, roughly 6-8 weeks of fab cycle time.",
       "kind": "process",
@@ -3973,7 +3973,7 @@
         },
         {
           "id": "mb.cpu.fe.photoresist",
-          "name": "Positive photoresist: spin, soft-bake, expose, develop",
+          "name": "Positive photoresist",
           "simple_name": "Positive photoresist",
           "description": "Wafer coated on a spinner (2000-4000 rpm) to 1-2 um of AZ-1350, dried 90-100 C for 20-30 min on a hot plate, aligned to the mask in a Coburn 2400 contact printer or a Perkin-Elmer Micralign MA-2 optical proximity aligner, exposed through the chrome plate, then spray-developed in 5-10% tetramethylammonium hydroxide. Between every step: megasonic clean, dilute H2SO4:H2O2, and a hard bake.",
           "kind": "process",
@@ -4738,7 +4738,7 @@
     },
     "mb.ram.cell.doublepoly": {
       "id": "mb.ram.cell.doublepoly",
-      "name": "Second polysilicon layer: the storage capacitor",
+      "name": "Second polysilicon layer",
       "simple_name": "Second polysilicon layer",
       "description": "The key DRAM process problem in 1982. A second conformal polysilicon layer had to be deposited and patterned so that its edge was razor sharp and its overlap onto the access transistor was tight. Deposition was LPCVD silane at ~800-850 C. The plate was doped n+ with a phosphorus implant and annealed. Refractory metal silicides (WSi2, TiSi2) were being introduced on gates in 1983-84 but were not universal in 1982 64K DRAMs.",
       "kind": "process",
@@ -4827,7 +4827,7 @@
     },
     "mb.roms.programming": {
       "id": "mb.roms.programming",
-      "name": "Mask programming: one mask set per ROM revision",
+      "name": "Mask programming",
       "simple_name": "Mask programming",
       "description": "An NMOS mask ROM of 1982 was an NMOS transistor array with a decoder, programmed by removing or adding contacts/metal at the array intersections. The usual 1980s implementation was contact programming: the programmer and sense-amp metal were left unconnected at a bit=1 location, and the ROM-only mask plate was drawn with those contact cuts simply omitted, or, in the opposite polarity, extra contact cuts were added for every 0. The array is arranged 32 bit lines (or 24, using 6 cells of 4 transistors) across 2048 words for the 8 KB parts.",
       "kind": "process",
@@ -4875,8 +4875,8 @@
     },
     "mb.roms.verify": {
       "id": "mb.roms.verify",
-      "name": "Verifying every ROM bit",
-      "simple_name": "Verifying every ROM bit",
+      "name": "Verify every ROM bit",
+      "simple_name": "Verify every ROM bit",
       "description": "A mask ROM cannot be re-programmed, so its contents are verified twice. On the wafer, a 24-needle probe card runs a read-only pattern through the 8192 or 4096 addresses and sums the data. After assembly, the part goes into an automatic tester that reads the whole array and checks it against a resident signature and, for the C64's BASIC and KERNAL, the published checksum. Any failure meant a defective mask or a contamination particle, and the whole mask set had to be re-run.",
       "kind": "process",
       "category": "silicon",
@@ -4902,7 +4902,7 @@
     },
     "mb.sid.process": {
       "id": "mb.sid.process",
-      "name": "NMOS hybrid process: digital counters on an analogue poly",
+      "name": "NMOS hybrid process",
       "simple_name": "NMOS hybrid process",
       "description": "The 6581 was not a purely digital NMOS part. Its 24-bit phase accumulators, the noise LFSR and the envelope generators are ordinary silicon-gate NMOS with depletion loads, the same technology as the 6510. Its DACs, the filter and the VCA are analogue: long polysilicon resistors laid down in the same polysilicon deposition, a large-area common-emitter output transistor, and a big p-diffused 'pump' resistor in the VCA. All of it in one 2-4 um process with a single aluminium layer, and with the analogue section laid out shielded inside its own p-epitaxial tub.",
       "kind": "process",

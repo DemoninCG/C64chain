@@ -235,6 +235,66 @@ if (process.argv.includes('--grammar')) {
   process.exit(0);
 }
 
+/* --titles: name-grammar detector mode. Classes 1-3 are rule candidates;
+ * class 4 (gerund processes) is listed for the conservative central pass only.
+ * question-names on kind=note are blessed by CHECKLIST and never flagged;
+ * parens (formulas/grades/part numbers) are never flagged.
+ */
+if (process.argv.includes('--titles')) {
+  const rows = [];
+  for (const [id, n] of Object.entries(N)) {
+    if (!inScope(n)) continue;
+    if (typeof n.name !== 'string') continue;
+    const cls = new Set();
+    if (n.name.includes(':')) cls.add('colon');
+    if (n.kind !== 'note' && / for /i.test(n.name)) cls.add('for-rel');
+    if (/^the /i.test(n.name)) cls.add('the-opener');
+    if (n.kind === 'process' && /^[A-Z][a-z]+ing\b/.test(n.name)) cls.add('gerund');
+    if (n.kind !== 'note' && /^(why|how|what|where)\b/i.test(n.name)) cls.add('question');
+    if (!cls.size) continue;
+    rows.push({ id, file: n.file, kind: n.kind, name: n.name, simple: n.simple_name ?? '(none)', cls: [...cls] });
+  }
+  if (process.argv.includes('--json')) {
+    console.log(JSON.stringify({ titles: rows }, null, 2));
+    process.exit(0);
+  }
+  console.log(`\n=== title classes${ONLY ? ` -- ${ONLY}` : ''} ===`);
+  console.log(`\ntotal: ${rows.length} node(s)`);
+  const byCls = {};
+  for (const r of rows) for (const c of r.cls) byCls[c] = (byCls[c] ?? 0) + 1;
+  console.log('by class: ' + Object.entries(byCls).sort((a, b) => b[1] - a[1]).map(([c, n]) => `${c}=${n}`).join(' '));
+  if (process.argv.includes('--list')) {
+    console.log(`\n########## TITLE HITS ##########`);
+    for (const r of rows) {
+      console.log(`\n  ${r.id} [${r.file}] kind=${r.kind} [${r.cls.join('+')}]`);
+      console.log(`    name:   "${r.name}"`);
+      console.log(`    simple: "${r.simple}"`);
+    }
+  }
+  if (process.argv.includes('--titlecal')) {
+    const CAL3 = [
+      'metal.cobalt', 'metal.iron.burden', 'c64.connector-jacks.moulding',
+      'metal.banded-iron-formation', 'metal.ferrite.dopants', 'metal.zinc.chloride',
+      'mb.color-ram.cell.load', 'metal.gold.contact-jewel',
+      'metal.potassium', 'metal.dms.fe-silicon', 'metal.copper.wire',
+      'mb.vic.process', 'chem.fab-chemicals.dopants.diborane.hydride-feed',
+      'metal.manganese.smelter-electricity', 'facility.foundries.hong-kong',
+      'facility.foundries.subcontract-network', 'mb.logic.cmos.litho',
+      'c64.keyboard.switches', 'mb.photo', 'mb.sid.process',
+    ];
+    console.log(`\n########## TITLE CALIBRATION SET (20) ##########`);
+    for (const id of CAL3) {
+      const n = N[id];
+      if (!n) { console.log(`\n  ${id}: NOT FOUND`); continue; }
+      console.log(`\n### ${id} [${n.file}] kind=${n.kind} cat=${n.category}`);
+      console.log(`NAME: ${n.name}`);
+      console.log(`SIMPLE: ${n.simple_name ?? '(none)'}`);
+      console.log(`DESC: ${(n.description ?? '(none)').slice(0, 400)}`);
+    }
+  }
+  process.exit(0);
+}
+
 if (process.argv.includes('--calibration')) {
   // 25 raw-leaf-heavy ids for blind calibration; print full text for verdicts
   const CAL = [

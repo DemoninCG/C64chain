@@ -148,7 +148,7 @@
     },
     {
       "id": "mb.solder",
-      "name": "Soldering the C64 mainboard",
+      "name": "Solder the C64 mainboard",
       "simple_name": "Mainboard soldering",
       "description": "Every joint on the C64 mainboard is made with 63/37 tin-lead alloy activated by rosin flux: about 600 in one pass through a wave-soldering machine, the rest by hand afterwards on the connectors, fuse clips, big electrolytics and wire jumpers. This branch follows the machines, the settings and the bench that make those joints. The alloy itself, its wire and its bar, are the shared node metal.solder.",
       "kind": "process",
@@ -303,7 +303,7 @@
         },
         {
           "id": "mb.solder.profile",
-          "name": "The wave-soldering profile",
+          "name": "Wave-soldering profile",
           "simple_name": "Wave-soldering profile",
           "description": "The machine is set by five numbers together: pot temperature, conveyor speed, preheat temperature, preheat time and flux concentration. Get them wrong in a specific way and you get a specific, diagnosable defect. A joint cools from 250 deg C to 183 deg C in about a second. If the board and the lead start cold the joint solidifies from the outside inward and you get the dull, grainy, poorly wetted fillet a line inspector rejects, which is the entire point of the preheat tunnel. Large thermal-mass leads (the big axial electrolytic, the tabbed regulator) heat far more slowly than the solder around them, so the line runs the conveyor slowly enough that the solder stays molten until the lead is hot, which in turn slows every board on the machine.",
           "kind": "process",
@@ -782,7 +782,7 @@
           "children": [
             {
               "id": "mb.assembly.shield.tab",
-              "name": "The VIC-II heat-sink tab",
+              "name": "VIC-II heat-sink tab",
               "simple_name": "VIC-II heat-sink tab",
               "description": "A metal tab welded inside the shield lid pressed against the top of the video chip package, so the shield doubled as a heat sink for the chip that dissipated about 1.5 W. This was a deliberate design fix for a real heat problem, not a later addition, and it is a neat example of the enclosure, the ground return and the thermal path being one part.",
               "kind": "part",
@@ -957,7 +957,7 @@
             },
             {
               "id": "mb.test.ict.tester",
-              "name": "The tester itself",
+              "name": "Tester itself",
               "simple_name": "In-circuit tester",
               "description": "A rack of switching electronics driving the fixture, with a go or no-go readout and a reject bin. It is ordinary 1980s digital test equipment: a small computer, a relay matrix and a display, all built from the same logic families the C64 itself uses.",
               "kind": "tool",
@@ -1233,7 +1233,7 @@
     },
     {
       "id": "mb.photo",
-      "name": "Phototooling: how C64 copper artwork became an etched board",
+      "name": "Phototooling",
       "simple_name": "Phototooling",
       "description": "The chain that turns a board database into a resist image. The 250407 artwork is number 251137. It was drawn on a design workstation, reduced to aperture-table plot files, plotted onto photographic film at a jobbing house, developed, checked on a test coupon, and used as the mask that prints the board's dry-film resist before etching.",
       "kind": "process",
@@ -1261,7 +1261,7 @@
       "children": [
         {
           "id": "mb.photo.design",
-          "name": "The board database on the design system",
+          "name": "Board database on the design system",
           "simple_name": "Board database, design system",
           "description": "In 1983 the layout lived on the CAD vendor's own workstation, not in a modern repository. Traces, pads, components and drill data were edited on the machine and periodically written out as plot files on nine-track tape and then on 8-inch floppy disks. Copying it to the jobbing house was a physical act of transporting magnetic media, and a lost tape meant the whole panel waited.",
           "kind": "process",
@@ -1497,7 +1497,7 @@
           "children": [
             {
               "id": "mb.photo.rephoto.master",
-              "name": "The artwork master",
+              "name": "artwork master",
               "simple_name": "Artwork master",
               "description": "The film treated as the authoritative copy of the design, stored flat and handled by the edges. It is the board's master record, and losing it means paying for the panel again.",
               "kind": "part",
@@ -1513,8 +1513,8 @@
         },
         {
           "id": "mb.photo.mask",
-          "name": "Printing the artwork onto the resist",
-          "simple_name": "Printing artwork onto resist",
+          "name": "Print the artwork onto the resist",
+          "simple_name": "Print artwork onto resist",
           "description": "The artwork film is laid against the exposed dry-film resist on the board and exposed in the vacuum frame. Where the film is clear, the resist hardens and resists the etch. Where it is opaque, the resist stays soft and the copper beneath is etched away. This is the moment the phototooling chain finally touches the board, and every solder joint on the finished machine is located by this exposure.",
           "kind": "process",
           "category": "board",
@@ -1542,8 +1542,8 @@
         },
         {
           "id": "mb.photo.panel",
-          "name": "Panelising the order",
-          "simple_name": "Panelising the order",
+          "name": "Panelise the order",
+          "simple_name": "Panelise the order",
           "description": "The board is one part out of a panel of identical boards nested in a sheet large enough for the process equipment. The panel gets tooling holes for registration and for the drill, and the boards are held together by small perforated mouse-bite tabs that are broken out by hand or by a router after the panel is finished. Those tabs leave a characteristic rough edge on the board outline, visible on a 1983 board if you look for it. This is where the layout cost of an order is amortised, and why a two-layer panel in 1983 could hold a surprising number of boards.",
           "kind": "process",
           "category": "board",
@@ -2025,8 +2025,8 @@
     },
     "mb.pcb.drill": {
       "id": "mb.pcb.drill",
-      "name": "Drilling every component hole",
-      "simple_name": "Drilling component holes",
+      "name": "Drill every component hole",
+      "simple_name": "Drill component holes",
       "description": "The board is drilled on a numerical-control drill for every component lead, jumper, jack and mounting hole. Because there are no vias, the drill programme is just a component position list. There is no barrel to plate afterwards and no second drill file to reconcile.",
       "kind": "process",
       "category": "board",
@@ -2142,7 +2142,7 @@
     },
     "mb.pcb.finish": {
       "id": "mb.pcb.finish",
-      "name": "Surface finish: pads and edge contacts",
+      "name": "Surface finish",
       "simple_name": "Surface finish",
       "description": "After etching the copper is protected, made solderable, and given a wear-resistant finish where it will be touched. On this board, because there are no plated barrels, the finish job is far simpler than on a modern via board: a solderable coating on the pads and a hard plating on the contact surfaces inside the three board-mounted sockets. Exposed copper that is neither coated nor plated gets an anti-tarnish treatment. It is a benzotriazole-type organic protectant that stops it darkening in storage and handling, which is cheap, invisible, and easy to skip until someone notices the boards going brown in the box.",
       "kind": "process",

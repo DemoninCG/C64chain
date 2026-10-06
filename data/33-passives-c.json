@@ -455,7 +455,7 @@
           "children": [
             {
               "id": "mb.crystal.y1.case",
-              "name": "HC-49/U case: crimp, weld and argon fill",
+              "name": "HC-49/U case",
               "simple_name": "HC-49/U case",
               "description": "The plate sits on a pair of wire supports in a crimped and welded nickel can, filled with argon or krypton at a few kPa. The can is drawn from nickel-plated steel or brass, and its small welded lid is what makes the unit hermetic. The reason a 1982 crystal does not drift as the humidity of an attic changes.",
               "kind": "part",
@@ -636,7 +636,7 @@
             },
             {
               "id": "mb.crystal.oscillator.pll",
-              "name": "PLL: MC4044 into the 74LS629 VCO",
+              "name": "PLL",
               "simple_name": "MC4044 into 74LS629 VCO",
               "description": "The 74LS629's second oscillator is a voltage-controlled oscillator. The MC4044 phase/frequency detector compares a divided colour clock against the VIC-II's phase clock and returns a DC control voltage on pin 8, which the 74LS629's frequency-control pin steers. That is the whole of the C64's PLL: a crystal oscillator holding the exact subcarrier frequency, and a tracking VCO running SLOWER than it at 8.1818 MHz, locked to it, for the dot clock.",
               "kind": "part",
@@ -1730,7 +1730,7 @@
     },
     "mb.crystal.y1.case.nickel-can.weld.gas": {
       "id": "mb.crystal.y1.case.nickel-can.weld.gas",
-      "name": "Forming gas for welding",
+      "name": "Forming gas",
       "simple_name": "Forming gas for welding",
       "description": "A mixture of hydrogen and nitrogen used as a cover during the lid weld. Hydrogen also diffuses any internal oxide onto the getters, which is why a well-made can can have a getter mirror at the bottom after opening.",
       "kind": "material",
@@ -2024,8 +2024,8 @@
     },
     "mb.crystal.y1.grinding": {
       "id": "mb.crystal.y1.grinding",
-      "name": "Grinding the lens shape",
-      "simple_name": "Grinding the lens shape",
+      "name": "Grind the lens shape",
+      "simple_name": "Grind the lens shape",
       "description": "The face is bevelled and the outline ground so the finished blank is a lens or plano-convex dome rather than a flat slab. The convexity is deliberate: it makes the crystal's resonant frequency less sensitive to surface damage and to where the mounting points press on it.",
       "kind": "process",
       "category": "silicon",

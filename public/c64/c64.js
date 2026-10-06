@@ -123,7 +123,11 @@ function treeKids() {
   const n = state.nodes[state.selected];
   if (!n) return [];
   const mode = modeById(state.edgeMode);
-  const conns = groupRouted(connectionsOf(n, state.nodes, new Set(mode.rels), { chain: !!mode.chain }));
+  // The generated backlog container is a data-team working area, not part of
+  // the machine: keep it out of the tree panel (nothing routes through a
+  // facility, so no grouped children are orphaned by this).
+  const conns = groupRouted(connectionsOf(n, state.nodes, new Set(mode.rels), { chain: !!mode.chain }))
+    .filter((c) => c.id !== 'unlinked.catalogue');
   return conns.map(({ id, routed, via }) => ({
     id,
     simple_name: state.nodes[id]?.simple_name ?? state.nodes[id]?.name ?? id,

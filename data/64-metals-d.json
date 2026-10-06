@@ -4,7 +4,7 @@
   "roots": [
     {
       "id": "metal.aluminum",
-      "name": "Primary aluminium: ingot, foil, sheet, extrusion",
+      "name": "Primary aluminium",
       "simple_name": "Primary aluminium",
       "description": "Where the C64's aluminium comes from. Bauxite is dug, digested in caustic soda to alumina, and electrolysed in molten cryolite to 99.7% metal. It is about 13,000-17,000 kWh per tonne, the largest single industrial electricity draw anywhere in this tree. The ingot is then DC-cast to a rolling ingot and rolled down to 6-25 um foil for the electrolytic capacitors in the power supply, to sheet for the case and shield cans, and extruded for the heat sinks. Note that the capacitor foil and the plain foil are different jobs for the same rolling mill.",
       "kind": "material",
@@ -56,9 +56,9 @@
     },
     {
       "id": "metal.sodium",
-      "name": "Sodium compounds: caustic soda and soda ash",
+      "name": "Sodium compounds",
       "simple_name": "Sodium compounds",
-      "description": "Sodium is not in the machine as a metal, but the C64 could not exist without it: caustic soda dissolves bauxite to make alumina, and the same chlor-alkali industry that makes the caustic soda also makes the chlorine and hydrogen that become the hydrochloric acid for the silicon plant. Behind both sits a bed of rock salt or a bucket of evaporite from a solar salt pan.",
+      "description": "Sodium is not in the machine as a metal, but the C64 could not exist without it: caustic soda dissolves bauxite to make alumina, and the same chlor-alkali industry that makes the caustic soda also makes the chlorine and hydrogen that become the hydrochloric acid for the silicon plant. Behind both sits a bed of rock salt or a bucket of evaporite from a solar salt pan. Soda ash is the other half of the sodium story.",
       "kind": "material",
       "category": "metals",
       "era": "1982",
@@ -82,7 +82,7 @@
     },
     {
       "id": "metal.tantalum",
-      "name": "Tantalum powder for electrolytic capacitors",
+      "name": "Tantalum powder",
       "simple_name": "Tantalum powder",
       "description": "A 1982 C64 has a no tantalum capacitors on the 250407 mainboard (alu+ceramics per repaired passives note), in the analogue filter section, and tantalum beads in small packages. Each one is a sintered porous tantalum anode with a tantalum oxide dielectric and a solid manganese dioxide or a liquid electrolyte. The tantalum metal is won from columbite-tantalite, a refractory oxide ore, through a hydrofluoric-acid digestion that is one of the most corrosive industrial processes in existence. In 1982-83 there was a real tantalum supply crisis (the Congo and Brazil supply, the Botswana and Zimbabwe expansions, the US stockpile, and a price that doubled) and it is the one place in this tree where a commodity shock from a mining country touched a home computer.",
       "kind": "material",
@@ -152,7 +152,7 @@
     },
     {
       "id": "metal.manganese",
-      "name": "Manganese: the steel deoxidiser",
+      "name": "Manganese",
       "simple_name": "Manganese",
       "description": "Manganese has no visible place in a C64, but without it the steel the case and the shielding are made from would have inclusions and blowholes in it. Almost all manganese ore is used to make ferromanganese, which is added to the steelmaking furnace as a deoxidiser and desulphuriser and as an alloying element.",
       "kind": "material",
@@ -187,7 +187,7 @@
     },
     {
       "id": "metal.iron",
-      "name": "Iron ore: the hematite and magnetite end of the chain",
+      "name": "Iron ore",
       "simple_name": "Iron ore",
       "description": "Iron ore is dug, concentrated, reduced and never appears in a C64. The 1982 iron ore trade was dominated by three names: Mount Whaleback and the Pilbara in Western Australia, the Carajas and Quadrilatero Ferrifero in Brazil, and the Labrador Trough and the Mesabi range in North America. The ore is hematite, or magnetite, or both in a metamorphic banded iron formation. It is a rock that is 2 billion years old and was originally a chemical precipitate out of seawater.",
       "kind": "material",
@@ -464,7 +464,7 @@
     },
     "metal.pegmatite-crystals": {
       "id": "metal.pegmatite-crystals",
-      "name": "The crystals and the rare-metal pockets",
+      "name": "Crystals and the rare-metal pockets",
       "simple_name": "Rare-metal pockets",
       "description": "A pegmatite is the last thing a granite magma crystallises, and because it is water-rich and volatile-rich it can hold elements that have no business being in a granite at all (lithium, tantalum, niobium, beryllium, tin, the rare earths) at hundreds of times their normal concentration. Those elements concentrate in the last pockets to crystallise, and a pocket 30 cm across can hold a few kilos of coltan worth more than the whole pegmatite around it. The tantalum was in small pockets in a last-stage granite pocket, hand-sorted out of a rock whose crystals are bigger than your fist, in a pegmatite that is less than 0.1% tantalum.",
       "kind": "material",
@@ -565,7 +565,7 @@
     },
     "metal.tantalum.thorium": {
       "id": "metal.tantalum.thorium",
-      "name": "Thorium in the coltan: a radioactive by-product",
+      "name": "Thorium in the coltan",
       "simple_name": "Thorium in coltan",
       "description": "Columbite-tantalite carries thorium and uranium in solid solution, typically 0.01-0.5% Th as ThO2, and because thorium's chemistry is so close to the rare earths it follows them through the whole fluoride circuit and reports with the rare-earth product. It is an alpha emitter, so the refinery's thorium residue is a radioactive waste that has to be stored, and in 1982 the disposal arrangements in most producing countries were informal.",
       "kind": "material",
@@ -646,7 +646,7 @@
     },
     "metal.soda-ash.lime-kiln": {
       "id": "metal.soda-ash.lime-kiln",
-      "name": "The lime kilns that feed the Solvay tower",
+      "name": "Lime kilns that feed the Solvay tower",
       "simple_name": "Solvay lime kilns",
       "description": "The Solvay process needs carbon dioxide and it gets it by burning limestone in a shaft kiln beside the tower, in the same way a sugar mill burns bagasse. The kiln gas, after the dust is knocked out and the gas is cooled and scrubbed, is about 40-45% carbon dioxide on a dry basis. It is lower than the 98% a dedicated CO2 plant would produce, but it came free with the lime the process also needed. The Solvay works was therefore a self-contained chemical plant that took limestone and salt and made soda ash, calcium chloride and CO2 in one site.",
       "kind": "process",
@@ -877,7 +877,7 @@
       "children": [
         {
           "id": "metal.tantalum.digest-vessel",
-          "name": "The fluoride digestion vessel",
+          "name": "Fluoride digestion vessel",
           "simple_name": "Digestion vessel",
           "description": "The digestor is the most aggressively corrosive piece of equipment in the metals tree. Anhydrous hydrofluoric acid at 100-200 C attacks glass, attacks most metals, and attacks concrete. So the vessel is Monel, nickel, or Teflon-lined, with the condenser and the piping also in Monel, and there is a continuous fluoride leak problem because HF is off-gassing from a boiling slurry. The industry answer through the 1980s was the Monel plant, with a steam stripping system to recover the HF and a caustic scrubber on the vent, and it was the single largest reason the industry needed a process chemist rather than a metallurgist.",
           "kind": "tool",
@@ -922,7 +922,7 @@
     },
     "metal.tantalum.separation": {
       "id": "metal.tantalum.separation",
-      "name": "Separation of tantalum from niobium: K2TaF7",
+      "name": "Separation of tantalum from niobium",
       "simple_name": "Tantalum-niobium split",
       "description": "From the fluoride solution the tantalum is selectively precipitated as potassium heptafluorotantalate, K2TaF7, by adding potassium chloride and hydrofluoric acid at 70-90 C, and this is the step that separates it from niobium, because K2TaF7 is far less soluble than K2NbF7. The K2TaF7 crystals are filtered, washed and dried. Then the metal is won from it in one of two ways. The potassium reduction: K2TaF7 is reduced with liquid potassium metal, or with sodium, at 700-800 C, giving a coarse tantalum powder. The aluminium reduction: K2TaF7 is reduced with aluminium in an induction furnace, and the charge is self-separating by particle size. The tantalum comes out as the finer powder and the aluminium-fluoride slag on top. The capacitor industry wanted the sodium-reduction powder specifically, because it could be made much finer.",
       "kind": "process",
@@ -956,7 +956,7 @@
       "children": [
         {
           "id": "metal.tantalum.kcl-cycle",
-          "name": "Recycling the potassium and fluorine",
+          "name": "Recycle the potassium and fluorine",
           "simple_name": "Potassium-fluorine recycle",
           "description": "The potassium in K2TaF7 and the fluorine in it both come back. The mother liquor from the precipitation is evaporated and the potassium is recycled, and the fluoride is recovered from the aluminium fluoride slag in the metal reduction by hydrolysing it to fluoride and re-fluorinating. A modern tantalum plant's fluorine and potassium consumption is a small fraction of its theoretical requirement because of this loop, and the 1980s plants were learning it. It is a small detail that says something about how tight the tantalum business economics were, and the answer is that they were tight enough to make the 1982-83 supply crisis severe.",
           "kind": "process",
@@ -1006,7 +1006,7 @@
     },
     "metal.columbite.concentrator": {
       "id": "metal.columbite.concentrator",
-      "name": "Coltan concentrator: gravity, magnet and electrostatic",
+      "name": "Coltan concentrator",
       "simple_name": "Coltan concentrator",
       "description": "The coltan upgrade in a small operation is a classic three-stage gravity and magnetic plant: a shaking table or a jig throws away the quartz and mica, a magnetic separator takes off the magnetite and ilmenite, and a second gravity stage with a dense-medium separator makes a 20-30% Ta2O5 concentrate from a 0.05-0.1% pegmatite. Electrostatic separation takes out the zircon. The mass yield is under 1%, so the concentrator's job is mostly to throw away 99.5% of the rock, which is why a coltan operation is a small, cheap, labour-intensive plant sitting next to the pit rather than a large mill.",
       "kind": "process",
@@ -1108,7 +1108,7 @@
     },
     "metal.barite.mud-system": {
       "id": "metal.barite.mud-system",
-      "name": "Barite, bentonite and lime: the drilling mud system",
+      "name": "Barite, bentonite and lime",
       "simple_name": "Drilling mud system",
       "description": "A drilling mud is not one material. It is a designed composite. The barite is the weight. It is the only cheap, abundant mineral dense enough to hold back formation pressure at a density of 1.5-2.0. The bentonite is the viscosity and the filtration control, and it works because its sodium montmorillonite swells in water to several times its dry volume. The lime and the lime-soil inhibitors control the calcium contamination that comes up with the cement and that would flocculate the bentonite. So the barite branch of this tree converges with the bentonite branch of the steel branch, and both converge on the drilling of the oil and gas wells that produce the crude oil the plastics agent starts from.",
       "kind": "material",
@@ -1179,7 +1179,7 @@
     },
     "metal.nickel-monel": {
       "id": "metal.nickel-monel",
-      "name": "Monel: nickel with copper",
+      "name": "Monel",
       "simple_name": "Monel",
       "description": "The alloy that made the fluorine chemistry of the 1980s possible: 60-70% nickel with 30% copper, and sometimes molybdenum, made in the same vacuum-melted, cast-and-rolled route as any nickel alloy. Monel resists hydrofluoric acid better than almost anything because the nickel fluoride film that forms is protective while aluminium fluoride and steel fluoride are not.",
       "kind": "material",

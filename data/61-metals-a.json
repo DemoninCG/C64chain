@@ -4,9 +4,9 @@
   "roots": [
     {
       "id": "metal.steel",
-      "name": "Steel: sheet, stainless, tin plate, tool steel",
+      "name": "Steel",
       "simple_name": "Steel",
-      "description": "Steel is the machine's frame, its shields, its fasteners and its tooling, and in mass it dominates everything else in the C64. The route is: iron ore plus coke plus limestone into a blast furnace for hot metal; hot metal plus oxygen plus scrap into a steelmaking vessel; steel through a continuous caster into a slab; slab through a hot mill and a cold mill into sheet. Then three specialties matter for this tree: grain-oriented electrical steel for the power supply transformer, stainless for the jack and the shields, and hardened tool steel for the injection moulding dies and the extrusion dies.",
+      "description": "Steel is the machine's frame, its shields, its fasteners and its tooling, and in mass it dominates everything else in the C64. The route is: iron ore plus coke plus limestone into a blast furnace for hot metal; hot metal plus oxygen plus scrap into a steelmaking vessel; steel through a continuous caster into a slab; slab through a hot mill and a cold mill into sheet. Then three specialties matter for this tree: grain-oriented electrical steel for the power supply transformer, stainless for the jack and the shields, hardened tool steel for the injection moulding dies and the extrusion dies, and tin plate for the switch bodies and shields.",
       "kind": "material",
       "category": "metals",
       "era": "1982",
@@ -95,7 +95,7 @@
     },
     {
       "id": "metal.solder",
-      "name": "63/37 Sn-Pb solder: wire, bar, paste",
+      "name": "63/37 Sn-Pb solder",
       "simple_name": "63/37 Sn-Pb solder",
       "description": "The alloy that makes electronics manufacturable. 63% tin, 37% lead is a true eutectic, so it melts and freezes at one temperature, 183 C, with no mushy interval. This means a joint goes from solid to liquid in milliseconds and the reflow time window can be measured in seconds. That property is why a decade of copper thicknesses and lead-free anxiety has not displaced it from the bench. A C64 has roughly 3,500 through-hole joints. At about 30 mg of solder per joint that is around 100 g of alloy per machine, in wire fed from spools and in a few kilos of bar in the wave-solder tank.",
       "kind": "material",
@@ -151,7 +151,7 @@
     },
     {
       "id": "metal.silver",
-      "name": "Silver: contacts, solder paste, brazing",
+      "name": "Silver",
       "simple_name": "Silver",
       "description": "Silver is the most electrically conductive of any element, and it is used in a C64 where the contact has to carry current at low force: the contacts of the rocker switches and of many of the keyboard switches, the silver-bearing solder and brazing alloys for the heat sinks and chassis joints, the silver-filled epoxy and silver ink of the keyboard membrane, and the silver that comes out of the lead and copper refineries as a by-product. Most of the world's silver is mined as a by-product (of lead, of copper, of zinc) and only about a fifth comes from a primary silver mine.",
       "kind": "material",
@@ -196,7 +196,7 @@
     },
     {
       "id": "metal.lead",
-      "name": "Lead: the base metal of 63/37 solder",
+      "name": "Lead",
       "simple_name": "Lead",
       "description": "Lead is the soft, low-melting, cheap half of the solder alloy, and it is the reason soldering works at all: pure tin wets copper badly and has no strength, and pure lead does not wet anything. Lead also has its own huge pre-electronics industrial life (storage batteries, cable sheath, pigment) and its 1982 smelting industry is the oldest continuous industrial process in the book. The C64 carries a couple of hundred grams of it, which is why the machine is the emblem of leaded-solder legislation.",
       "kind": "material",
@@ -241,7 +241,7 @@
     },
     {
       "id": "metal.potassium",
-      "name": "Potassium chloride (KCl) for tantalum reduction",
+      "name": "Potassium chloride (KCl)",
       "simple_name": "Potassium chloride",
       "description": "Not a C64 component (potassium never appears in the machine) but it is a mandatory reagent in the tantalum branch, because the metal is won as a fluoride salt and reduced with metal, not from an oxide. Potassium also divides tantalum from niobium in the fluoride chemistry. It is included so the tantalum branch reaches a real, mined leaf instead of stopping at an implied reagent.",
       "kind": "material",
@@ -270,7 +270,7 @@
     },
     {
       "id": "metal.tungsten",
-      "name": "Tungsten: filaments, carbide and alloying element",
+      "name": "Tungsten",
       "simple_name": "Tungsten",
       "description": "Very little tungsten is inside a 1982 C64, and almost all of what there is sits in capital equipment and consumables rather than in the machine: the heater filament in a television's electron gun, the cemented-carbide cutters that drill the mainboard and route the glass-epoxy laminate, the carbide dies that draw the power-supply transformer's magnet wire, the tungsten-rhenium needles of a wafer probe card, and a percent or two of it in the simple tooling and stamping steels. What it is: the highest-melting-point of all metals at 3422 C, boiling at 5930 C, density 19.25 g/cm3. It is a metal that is essentially never found as native metal, because wolframite and scheelite carry it at 0.3-2.5% WO3 and it has to be chemically opened before it can be reduced. It is not in the case mould: SKD61 and H13 are chromium-molybdenum-vanadium steels with no tungsten in them at all, and the alloying element in that family is molybdenum.",
       "kind": "material",
@@ -486,7 +486,7 @@
     },
     "metal.silver.contact-powder": {
       "id": "metal.silver.contact-powder",
-      "name": "Silver contact powder: Ag-SnO2 and Ag-graphite",
+      "name": "Silver contact powder",
       "simple_name": "Silver contact powder",
       "description": "A switch contact is not silver metal. It is a powder metallurgy composite: 80-95% silver powder mixed with 5-15% of a refractory oxide (tin oxide, cadmium oxide or graphite) pressed at 200-400 MPa and sintered at 700-950 C. The oxide breaks up the silver grain boundaries and suppresses the metal transfer that otherwise builds up on a small, low-force contact, at the price of some conductivity. Silver-graphite is the same idea for sliding contacts, and silver-graphite in a rotary encoder or a potentiometer is the single most common use of silver powder in electronics.",
       "kind": "material",
@@ -547,7 +547,7 @@
     },
     "metal.mercury-source": {
       "id": "metal.mercury-source",
-      "name": "Mercury: cinnabar from Idrija and Almaden",
+      "name": "Mercury",
       "simple_name": "Mercury",
       "description": "Amalgamation consumes mercury and does not give it back, so a silver mine that amalgamated needed a mercury supply. Cinnabar, HgS, the vermilion pigment mineral, came from Idrija in Slovenia (the largest mercury mine in the world for 500 years) and from Almaden in Spain, and from the New Idria and New Almaden mines in California. Cinnabar forms in shallow hydrothermal systems, and the Spanish and Yugoslav mines are in exactly the kind of fractured carbonate and volcanic rocks that the precious-metal branches of this file have already been through.",
       "kind": "material",
@@ -587,7 +587,7 @@
     },
     "metal.solder.waste-water": {
       "id": "metal.solder.waste-water",
-      "name": "The solder wash-water waste stream",
+      "name": "Solder wash-water waste stream",
       "simple_name": "Solder wash-water",
       "description": "A C64 assembly line's cleaning water carried dissolved lead, tin, flux residues and a lot of suspended solids. In 1982 the standard practice was dilute and discharge: a settling tank and a pH adjustment, then to the drain. The lead was almost all in the sludge, so the sludge went to a hazardous-waste landfill and the liquid went out. This is the last place the C64's lead leaves the factory, and it is the reason leaded solder became a regulatory object rather than merely an occupational one.",
       "kind": "material",
@@ -724,7 +724,7 @@
       "children": [
         {
           "id": "metal.iron.burden-shaft",
-          "name": "The furnace stack, throat and bustle pipe",
+          "name": "Furnace stack, throat and bustle pipe",
           "simple_name": "Stack, throat, bustle",
           "description": "The 20-30 m stack is lined with 1,000-2,000 mm of refractory and carries the burden down through a rotating throat seal into a stock column. The burden rests on a 'ledge' in the wall where the gas changes from upward to horizontal flow. The place every blast furnace operator watches, because if the burden descends too fast the gas gets through and the furnace races. At the bottom, the bustle pipe wraps the furnace and delivers the blast through the tuyeres, with the hot blast stoves (Cowper stoves, 8-12 per furnace, each 8-12 m tall) heating the air to 1000-1300 C on the gas from the previous cycle. A 1982 furnace is a machine about 25 m tall and 9 m wide with a 3,500 m3 working volume, and it holds about 100 tonnes of burden in flight at any moment.",
           "kind": "site",
@@ -970,7 +970,7 @@
     },
     "metal.tinplate": {
       "id": "metal.tinplate",
-      "name": "Tinplate: the tin-coated steel sheet",
+      "name": "Tinplate",
       "simple_name": "Tinplate",
       "description": "Tinplate is 0.15-0.3 mm of low-carbon steel with 1.1-11.2 g/m2 of tin on both sides, made on a continuous electrolytic line at 4-8 m/s. The strip is degreased and pickled in hydrochloric or sulfuric acid, rinsed, then tinned in a stannous sulphate bath with a fluoroborate additive, rinsed, and either given a food-can passivation in chromic acid or (in the electronics and tinplate trade) an electrolytic passivation in a chromate or tin-oxide bath. A C64 uses a few square metres of tinplate a year at most, in switch bodies and shields. The chromate passivation is the same chemistry as the zinc chromate passivation in the plating branch.",
       "kind": "material",
@@ -1009,9 +1009,9 @@
     },
     "metal.rolling-oil": {
       "id": "metal.rolling-oil",
-      "name": "Steel rolling oil: emulsion and hydraulic oil",
+      "name": "Steel rolling oil",
       "simple_name": "Steel rolling oil",
-      "description": "Hot rolling of steel uses water emulsion. Cold rolling uses a neat oil or a water-in-oil emulsion, chemically similar to the aluminium rolling lubricant but with a much higher base oil viscosity and a lot of boundary additives. So the C64's steel mill and its aluminium mill are the same kind of lubricant plant, and both are quietly downstream of crude oil.",
+      "description": "Hot rolling of steel uses water emulsion. Cold rolling uses a neat oil or a water-in-oil emulsion, chemically similar to the aluminium rolling lubricant but with a much higher base oil viscosity and a lot of boundary additives. So the C64's steel mill and its aluminium mill are the same kind of lubricant plant, and both are quietly downstream of crude oil. The branch also covers hydraulic oil.",
       "kind": "material",
       "category": "metals",
       "era": "1982",
@@ -1338,7 +1338,7 @@
       "children": [
         {
           "id": "metal.silver.mine-mexican",
-          "name": "The Zacatecas-Potosi silver vein mines",
+          "name": "Zacatecas-Potosi silver vein mines",
           "simple_name": "Zacatecas-Potosi silver mines",
           "description": "Mines like the Fresnillo, the Zacatecas and the San Luis Potosi: an underground operation on steeply dipping epithermal quartz veins carrying native silver, argentite and the antimony sulphides, worked in the Spanish colonial era by water-driven mills, mercury amalgamation and patio amalgamation, and by 1982 by mechanised narrow-vein mining and flotation. The Fresnillo mine is a silver mine that also happens to be the world's largest producer of antimony, which is a neat illustration of the interpenetration of these branches.",
           "kind": "facility",
@@ -1368,7 +1368,7 @@
     },
     "metal.cinnabar.bed": {
       "id": "metal.cinnabar.bed",
-      "name": "The cinnabar vein",
+      "name": "Cinnabar vein",
       "simple_name": "Cinnabar vein",
       "description": "A scarlet vein of cinnabar in brecciated limestone, sometimes 10 m wide, worked by open pit and by fire-setting underground since Roman times. It is the only mercury ore that has ever mattered commercially, and it is an example of a metal that exists in one mineral, in one setting, in a few places on Earth.",
       "kind": "material",
@@ -1387,7 +1387,7 @@
     },
     "metal.solder.paste": {
       "id": "metal.solder.paste",
-      "name": "Solder paste: powder in flux",
+      "name": "Solder paste",
       "simple_name": "Solder paste",
       "description": "Solder paste is a mixture of atomised alloy powder at 60-90% by weight in a flux vehicle, and in 1982 it was the technology for surface-mount parts, which Commodore did not really use on the mainboard but which every other electronics maker in the world was. The powder particle size is controlled by the printing stencil: a 0.5 mm gap needs 20-45 um powder so the powder does not bridge the gap with two particles. Alloy powder is not made by atomising finished solder. It is made by atomising the melt and then the 63/37 particles are aged so they develop an oxide shell of a controlled thickness, so that paste sits on a pad for minutes without the paste shrinking or the surface going dull.",
       "kind": "material",
@@ -1422,7 +1422,7 @@
     },
     "metal.solder.waste": {
       "id": "metal.solder.waste",
-      "name": "The solder factory's own waste streams",
+      "name": "Solder factory's own waste streams",
       "simple_name": "Solder factory waste",
       "description": "A solder pot, a dross heap, a flux residue stream, a wash-water drain and a baghouse for the flux fumes. The dross goes to a reclaimer or to a hazardous-waste disposal contract. The baghouse dust is lead oxide and rosin and is genuinely hazardous. And the wash water goes to the drain with the lead in it. In 1982 this was the least regulated part of the whole electronics industry, and it is the reason the United States' lead exposure limits for electronics workers (which were set at a time when electronics was not a regulated industry) exist at all. The waste stream is a leaf of this tree and a genuinely uncomfortable one.",
       "kind": "material",
@@ -1446,7 +1446,7 @@
     },
     "metal.solder.waste-baghouse": {
       "id": "metal.solder.waste-baghouse",
-      "name": "The flux fume baghouse and its dust",
+      "name": "Flux fume baghouse and its dust",
       "simple_name": "Flux fume baghouse",
       "description": "The wave-solder hood has an extraction duct and a baghouse, because the fume is an aerosol of lead oxide and of rosin-acid degradation products. The dust is 30-60% lead oxide and it is collected as a hazardous waste. A big 1982 line threw away tens of kilograms a week. The control measure was local exhaust ventilation with a capture hood about 100 mm from the wave, and the compliance measure was an area respirator, which was why electronics assembly was one of the more heavily respirated occupations of the period.",
       "kind": "material",
@@ -1500,7 +1500,7 @@
     },
     "metal.lead.parkes": {
       "id": "metal.lead.parkes",
-      "name": "Parkes process: zinc drossing and desilverisation",
+      "name": "Parkes process",
       "simple_name": "Parkes process",
       "description": "The genius step, invented in 1850 and still standard in 1982. The molten bullion is stirred with a few tenths of a percent of zinc, which has a much stronger chemical affinity for silver than lead does, so a zinc-silver intermetallic (AgZn2, Ag2Zn5) migrates to the zinc 'dross' floating on top. The dross is skimmed, and the now-silver-poor lead is treated again with fresh zinc until it is down to 10-30 g/t silver. The dross is then distilled in a retort: zinc boils at 907 C and is condensed, and the silver and gold stay behind, to be cupelled. The zinc is a sacrificial reagent and goes back into the alloy.",
       "kind": "process",
@@ -1538,7 +1538,7 @@
       "children": [
         {
           "id": "metal.lead.betts",
-          "name": "Betts process: electrolytic refining",
+          "name": "Betts process",
           "simple_name": "Betts process",
           "description": "The rival to the Parkes process, and the answer for the last fraction of a gram of bismuth. Anodes of impure lead are dissolved in a caustic soda solution containing sodium plumbite (Na2PbO3), and pure lead plates onto the cathode. The chemistry is unusual. The anode dissolves as plumbite and the deposit forms by the reaction of plumbite with metal, which is why the bath has to be kept in a narrow alkaline window. Cost is high, energy is high, so it was used only as a finishing step on top of the Parkes route, and in the 1980s it was being displaced by the Betterton-Krastchkow continuous drossing tower.",
           "kind": "process",
@@ -1631,7 +1631,7 @@
     },
     "metal.lead.dross-smelting": {
       "id": "metal.lead.dross-smelting",
-      "name": "Retorting the Parkes dross to recover the zinc",
+      "name": "Retort the Parkes dross to recover the zinc",
       "simple_name": "Dross zinc recovery",
       "description": "After the silver has been skimmed off as dross, the dross itself has to be processed, and it is done in a cast-iron retort: the dross is mixed with charcoal and a little limestone, charged into a retort at 800-950 C, and the zinc distils out (it boils at 907 C) into a condenser where it is collected as a crude zinc metal. The silver and gold stay in the retort. A dross retort holds 100-500 kg and takes 8-20 hours, and a refinery had six to a dozen of them. The recovered zinc is dirty and goes back into the next drossing cycle, which is why the Parkes process consumes no net zinc even though it uses some every time round.",
       "kind": "process",
@@ -1663,7 +1663,7 @@
       "children": [
         {
           "id": "metal.lead.dross-retort",
-          "name": "The dross retort and its condenser",
+          "name": "Dross retort and its condenser",
           "simple_name": "Dross retort and its condenser",
           "description": "A cast-iron or steel tube, 1.5-3 m long, charged at one end and heated in a coke-fired setting, with a condenser of iron pipes at the cool end into which the zinc vapour condenses and runs out as a crude metal. The retort has to be skimmed of oxide and it is a batch process, so a refinery ran a bank of them in shifts. It is an object that is essentially unchanged since the 1850s, which makes it one of the oldest continuous processes in this file.",
           "kind": "tool",
@@ -1928,7 +1928,7 @@
       "children": [
         {
           "id": "metal.steel.mould-wall",
-          "name": "The copper mould wall of the continuous caster",
+          "name": "Copper mould wall of the continuous caster",
           "simple_name": "Copper mould wall",
           "description": "The copper alloy plate (phosphor bronze in most designs) that does the single hardest job in the whole of steelmaking, withdrawing heat from 1600 C steel at a rate that makes a millimetre of metal freeze in a second, and doing it hundreds of thousands of times. The plates are thin, 5-30 mm, and are cooled internally by high-pressure water, and they are plated and re-ground as they wear. Their thermal-fatigue cracking is the plant's central maintenance problem, and every crack means a slab defect that a tinplate maker will find on the inspection line.",
           "kind": "tool",
@@ -2055,7 +2055,7 @@
     },
     "metal.tinplate.tin-pots": {
       "id": "metal.tinplate.tin-pots",
-      "name": "The tinning line: greening, tinning, soaking",
+      "name": "Tinning line",
       "simple_name": "Tinning line",
       "description": "The line has four electrolytic tanks in series. These are a 'greening' or pretreat tank to strip the last oxide, two or more tinning tanks with soluble tin anodes, and a 'soaking' tank to heal any bare spots. The strip runs through as a ribbon, and the tin is applied at a controlled thickness by the current and by how long the strip spends in the stannate bath. The mechanical complexity is in the handling: a 0.2 mm ribbon travelling at 6 m/s has to be threaded, cleaned and welded end to end several times a shift.",
       "kind": "process",
@@ -2290,7 +2290,7 @@
       "children": [
         {
           "id": "metal.solution-mining.well",
-          "name": "The injection and recovery well pair",
+          "name": "Injection and recovery well pair",
           "simple_name": "Injection-recovery wells",
           "description": "Solution mining is two wells and a plant. A cemented well is drilled horizontally into the potash seam and a casing is set with a perforated liner. Hot water at 80-90 C is injected at a pressure of a few hundred psi, the seam is about 1-3 m thick and dissolves over a 30-200 m horizontal section, and a second well 500 m away draws the brine back. The well field is fracked between the wells to connect the fracture, and the plant evaporates the brine in a multiple-effect evaporator. It is a genuine engineering oddity (a mine with no mine) and it works because potash dissolves in hot brine and clay does not.",
           "kind": "tool",
@@ -2509,7 +2509,7 @@
     },
     "metal.silver.mill": {
       "id": "metal.silver.mill",
-      "name": "Silver mill: crushing, grinding and flotation",
+      "name": "Silver mill",
       "simple_name": "Silver mill",
       "description": "Ore at 300-1500 g/t is crushed to 10-25 mm, ground in a ball mill to 50-100 um, and floated with a xanthate or a thio compound collector at pH 8-10. Silver sulphides float with the lead and zinc sulphides they are intergrown with, so the circuit produces a bulk concentrate that the smelter treats as a lead concentrate. The recovery is 60-85% and the tailings are the reason the Zacatecas and Guanajuato districts look the way they do. It is a very large volume of finely ground rock in long, engineered tailings impoundments.",
       "kind": "process",
@@ -2562,8 +2562,8 @@
     },
     "metal.solder.alloy-making": {
       "id": "metal.solder.alloy-making",
-      "name": "Casting the 63/37 bar",
-      "simple_name": "Casting the 63/37 bar",
+      "name": "Cast the 63/37 bar",
+      "simple_name": "Cast the 63/37 bar",
       "description": "The alloy is made in a handful of ways, all of them embarrassingly simple. The best is the cored wire method: rods of high-purity tin are cast inside a steel tube pre-filled with molten lead at exactly 37%, so the tube's own wall meters the lead. The tube and the core are then rolled and drawn out to wire in one operation, and the core forms down the middle as the flux. This is how most electronics solder wire is still made. The alternative, and what the solder manufacturer would do for its own bar stock, is simply to melt the two ingots together in a grease pot with a little antimony or phosphorus and pour into ingot moulds.",
       "kind": "process",
       "category": "metals",
@@ -2594,7 +2594,7 @@
       "children": [
         {
           "id": "metal.solder.cored-wire",
-          "name": "The cored-wire manufacturing method",
+          "name": "Cored-wire manufacturing method",
           "simple_name": "Cored-wire making",
           "description": "The standard way to make electronics solder wire, and the reason the alloy composition is so consistent. A steel tube with a wall thickness calculated for 37% lead by volume is filled with molten high-purity tin (actually with the exact alloy, but the wall does the metering) and the tube is cold-drawn and then drawn to wire in the same multiwire machine the copper industry uses. The core forms down the middle as the tube collapses. The result is a wire in which the flux core is in the middle of the metal rather than smeared along it, which is what stops the flux from being wiped off during handling. The alternative (extruding a bar of flux and then jacketing it in molten alloy) gives a worse wire and was being displaced by the cored method through the 1980s.",
           "kind": "process",
@@ -2764,7 +2764,7 @@
         },
         {
           "id": "metal.solder.wave-solder.knife",
-          "name": "The hot-air knife and the solder wave",
+          "name": "Hot-air knife and the solder wave",
           "simple_name": "Hot-air knife",
           "description": "A pump throws molten solder up a nozzle to form a standing wave 3-8 mm high, and the board is dragged across it on a conveyor with fingers. As the board leaves, a 'hot-air knife' (a duct blowing 200-300 C air across the solder line) blows the excess solder off the pads and off the solder side of the board, and what runs off goes back into the pot through a trough. The whole operation is a temperature profile in space: preheat, flux activation, wave, drain, and the knife. Getting the four temperatures right (preheat, pot, board and cleaning) is the entire craft.",
           "kind": "tool",
@@ -2803,7 +2803,7 @@
     },
     "metal.solder.lead-hazard": {
       "id": "metal.solder.lead-hazard",
-      "name": "The leaded-solder problem in the 1980s",
+      "name": "Leaded-solder problem in the 1980s",
       "simple_name": "Leaded-solder hazard",
       "description": "Lead in solder was the first workplace poison to arrive with electronics. It was already deeply regulated for the smelter workers (the whole lead industry is under air-monitoring and blood-lead surveillance) and by the early 1980s occupational-health attention had turned to the solder bench: solder fume is an aerosol of lead oxide particles, and the flux fumes carry it. The US OSHA lead standard covered soldering. The C64 is the emblem of this because it was sold by the million with a leaded-solder supply chain: the solder manufacturer, the wave-solder pot, the washing machines that washed the flux off, the drain water, and finally the landfill. Every one of those is a different regulatory jurisdiction and none of them was solved in 1982.",
       "kind": "process",
@@ -2840,7 +2840,7 @@
     },
     "metal.solder.pot": {
       "id": "metal.solder.pot",
-      "name": "The wave-solder pot and its dross",
+      "name": "Wave-solder pot and its dross",
       "simple_name": "Wave-solder pot",
       "description": "A 5-20 kg pot of 63/37 at 250-280 C with a pump and a wave-forming nozzle, plus a rotating skimmer and an oil skimmer. The surface of a working solder pot accumulates a metre of black oxide dross (tin oxide, lead oxide and flux residue) and it has to be skimmed off every shift and every night, and it is a genuine metallurgical waste stream: the dross contains most of the lead and a lot of the tin, and in 1982 the recovery options were poor. A dross reclaimer sold a few percent of the metal back and the rest went out as lead-containing waste. This is the point at which the solder chain and the lead chain close on each other.",
       "kind": "process",
@@ -2869,7 +2869,7 @@
       "children": [
         {
           "id": "metal.solder.dross-oxide",
-          "name": "The dross oxide film on the solder pot",
+          "name": "Dross oxide film on the solder pot",
           "simple_name": "Solder dross oxide",
           "description": "At 250-280 C the surface of molten Sn-Pb oxidises continuously (tin oxide forms preferentially because it has the lower oxidation potential) so the pot grows a skin of SnO2 with lead oxide and flux in it. The skimmer takes it off, but the formation is unavoidable, which is why wave-solder lines had a person whose whole job was pot maintenance and why the flux was designed to keep the oxide mobile and floatable rather than letting it crust over.",
           "kind": "process",
@@ -2902,7 +2902,7 @@
     },
     "metal.solder.cleaning": {
       "id": "metal.solder.cleaning",
-      "name": "Cleaning the flux residue off the board",
+      "name": "Clean the flux residue off the board",
       "simple_name": "Flux residue cleaning",
       "description": "A rosin-fluxed board is covered in a sticky, slightly acidic film of flux decomposition products that will corrode the copper and will not accept a conformal coating. In 1982 it was removed in an aqueous machine (a conveyor with spray bars and drying ovens) often followed by a trichloroethane or perchloroethylene vapour degreaser. The cleaning water left the factory through the drain with the lead in it, which is the other half of the 1982 leaded-solder problem and the reason the electronics industry spent the late 1980s arguing about what to do about it.",
       "kind": "process",
