@@ -4,8 +4,7 @@ import { TextMode, COLS, ROWS, wrapText } from './textmode.js';
 import { childLines, layoutTreeBoxes, planTreePanel, groupRouted, groupRails, trunkSpan, visibleWindow, clampStart, ensureCursorVisible, connectionsOf, EDGE_MODES, modeById, kindColor, nodeContent } from './treeview.js';
 import { renderElements, stepCursor, cellFromXY, elementAt } from './periodictable.js';
 
-const LEFT = { x: 1, y: 1, w: 48, h: 38 };
-const RIGHT = { x: 51, y: 1, w: 28, h: 38 };
+const LEFT = { x: 1, y: 1, w: 78, h: 38 };
 const BOTTOM = { x: 1, y: 40, w: 78, h: 4 };
 
 const state = {
@@ -34,9 +33,12 @@ let tm = null;
 let toggleHits = [];
 let backHit = null;
 let treeChildHits = [];
+let nodeBox = null;
 let edgeHit = null;
 let menuHits = [];
 let tabHits = [];
+let animating = false;
+let animFrame = null;
 
 function U(s) {
   return toScreenText(s);
@@ -111,22 +113,23 @@ function renderTitle() {
 }
 
 const TREE = {
-  tx: 2, ty: 4, tw: 20,
-  trunkX: 24,
-  cx0: 26, cw: 22,
+  tx: 2, ty: 4, tw: 26,
+  trunkX: 34,
+  cx0: 36, cw: 42,
   pathY: 2,
   statY: 3,
   kidsY: 4,
+  nx: 2, nw: 26,
 };
 
-function treeKids() {
-  const n = state.nodes[state.selected];
-  if (!n) return [];
+function kidsFor(id) {
+  const node = state.nodes[id];
+  if (!node) return [];
   const mode = modeById(state.edgeMode);
-  // The generated backlog container is a data-team working area, not part of
-  // the machine: keep it out of the tree panel (nothing routes through a
-  // facility, so no grouped children are orphaned by this).
-  const conns = groupRouted(connectionsOf(n, state.nodes, new Set(mode.rels), { chain: !!mode.chain }))
+  // Same backlog-container exclusion as the tree panel: keep it out of the
+  // view (nothing routes through a facility, so no grouped children are
+  // orphaned by this).
+  const conns = groupRouted(connectionsOf(node, state.nodes, new Set(mode.rels), { chain: !!mode.chain }))
     .filter((c) => c.id !== 'unlinked.catalogue');
   return conns.map(({ id, routed, via }) => ({
     id,
@@ -135,6 +138,10 @@ function treeKids() {
     routed,
     via: routed ? via : null,
   }));
+}
+
+function treeKids() {
+  return kidsFor(state.selected);
 }
 
 function trackedName() {
@@ -146,6 +153,7 @@ function renderLeft() {
   box(LEFT.x, LEFT.y, LEFT.w, LEFT.h, UI.FRAME_FG, UI.BG, 'TREE');
   treeChildHits = [];
   backHit = null;
+  nodeBox = null;
   const ix1 = LEFT.x + LEFT.w - 2;
   const iy1 = LEFT.y + LEFT.h - 2;
   const n = state.nodes[state.selected];
@@ -174,6 +182,31 @@ function renderLeft() {
   nameLines.forEach((ln, i) => {
     tm.text(TREE.tx + 2, TREE.ty + 1 + i, ln, C.WHITE, UI.BG, TREE.tw - 4);
   });
+
+  const nodeNy = TREE.ty + th + 1;
+  const nodeNh = iy1 - nodeNy + 1;
+  if (nodeNh >= 4) {
+    box(TREE.nx, nodeNy, TREE.nw, nodeNh, UI.FRAME_FG, UI.BG, 'NODE');
+    const nix = TREE.nx + 1;
+    const niw = TREE.nw - 2;
+    const ny0 = nodeNy + 1;
+    const nmax = nodeNy + nodeNh - 2 - ny0 + 1;
+    const L = nodeContent(n, niw);
+    state.nodeScroll = Math.min(Math.max(0, state.nodeScroll), Math.max(0, L.length - nmax));
+    const nwin = L.slice(state.nodeScroll, state.nodeScroll + nmax);
+    let ny = ny0;
+    for (const row of nwin) {
+      if (row.t === 'SEP') {
+        for (let i = 0; i < niw; i++) tm.set(nix + i, ny, BOX.H, C.GREY, UI.BG);
+      } else {
+        tm.text(nix, ny, row.t, row.fg, UI.BG, niw);
+      }
+      ny++;
+    }
+    if (state.nodeScroll > 0) tm.text(nix + niw - 5, ny0, U('^MORE'), C.GREY, UI.BG, 6);
+    if (state.nodeScroll + nmax < L.length) tm.text(nix + niw - 5, ny0 + nmax - 1, U('vMORE'), C.GREY, UI.BG, 6);
+    nodeBox = { x0: TREE.nx, x1: TREE.nx + TREE.nw - 1, y0: nodeNy, y1: nodeNy + nodeNh - 1 };
+  }
 
   if (!kids.length) {
     tm.text(TREE.cx0, TREE.kidsY + 2, U('(END OF LINE)'), C.GREY, UI.BG, TREE.cw - 2);
@@ -234,33 +267,6 @@ function renderLeft() {
     tm.set(l.x, l.y, BOX.X, C.GREY, UI.BG);
     tm.set(l.x + 1, l.y, BOX.H, C.GREY, UI.BG);
   }
-}
-
-function renderRight() {
-  box(RIGHT.x, RIGHT.y, RIGHT.w, RIGHT.h, UI.FRAME_FG, UI.BG, 'NODE');
-  const ix = RIGHT.x + 1;
-  const iw = RIGHT.w - 2;
-  const y0 = RIGHT.y + 1;
-  const maxRows = RIGHT.y + RIGHT.h - 2 - y0 + 1;
-  const n = state.nodes[state.selected];
-  if (!n) {
-    tm.text(ix, y0, U(state.err || 'LOADING...'), C.LTRED, UI.BG, iw);
-    return;
-  }
-  const L = nodeContent(n, iw);
-  state.nodeScroll = Math.min(Math.max(0, state.nodeScroll), Math.max(0, L.length - maxRows));
-  const win = L.slice(state.nodeScroll, state.nodeScroll + maxRows);
-  let y = y0;
-  for (const row of win) {
-    if (row.t === 'SEP') {
-      for (let i = 0; i < iw; i++) tm.set(ix + i, y, BOX.H, C.GREY, UI.BG);
-    } else {
-      tm.text(ix, y, row.t, row.fg, UI.BG, iw);
-    }
-    y++;
-  }
-  if (state.nodeScroll > 0) tm.text(ix + iw - 5, y0, U('^MORE'), C.GREY, UI.BG, 6);
-  if (state.nodeScroll + maxRows < L.length) tm.text(ix + iw - 5, y0 + maxRows - 1, U('vMORE'), C.GREY, UI.BG, 6);
 }
 
 function renderBottom() {
@@ -344,7 +350,6 @@ function render() {
     renderElements(tm, state.elCur);
   } else {
     renderLeft();
-    renderRight();
   }
   renderBottom();
   if (state.edgeMenu) renderMenu();
@@ -355,6 +360,11 @@ function render() {
 // exactly where the user left it when they switch back.
 function setTab(t) {
   if (t !== 'tree' && t !== 'elements') return;
+  if (animating && animFrame !== null) {
+    cancelAnimationFrame(animFrame);
+    animFrame = null;
+    animating = false;
+  }
   state.tab = t;
   state.edgeMenu = false;
   render();
@@ -369,6 +379,7 @@ function jumpToEvidence() {
 }
 
 function track(id, push = true) {
+  if (animating) return;
   if (!id || !state.nodes[id]) return;
   if (id === state.selected) {
     state.treeCursor = 0;
@@ -377,37 +388,234 @@ function track(id, push = true) {
     render();
     return;
   }
+  const src = push && state.tab === 'tree'
+    ? treeChildHits.find((t) => t.id === id) ?? null
+    : null;
   if (push) state.path.push(state.selected);
   state.selected = id;
   state.treeCursor = 0;
   state.treeScroll = 0;
   state.nodeScroll = 0;
-  render();
+  if (src) startTrackAnimation(src);
+  else render();
+}
+
+function animDuration(s, dst) {
+  const dy = Math.abs(s.y0 - dst.y0);
+  const dx = Math.abs(s.x0 - dst.x0);
+  return Math.min(750, Math.max(320, 320 + dy * 8 + dx * 2));
+}
+
+function drawAnimBase(tName) {
+  box(LEFT.x, LEFT.y, LEFT.w, LEFT.h, UI.FRAME_FG, UI.BG, 'TREE');
+  const ix1 = LEFT.x + LEFT.w - 2;
+  const crumbs = [...state.path.map((pid) => U(state.nodes[pid]?.simple_name ?? pid)), tName].join('>');
+  const maxCrumb = ix1 - 9;
+  const tail = crumbs.length > maxCrumb ? crumbs.slice(crumbs.length - maxCrumb) : crumbs;
+  tm.text(LEFT.x + 1, TREE.pathY, U('[BACK]'), C.BLACK, C.LTGREY);
+  tm.text(LEFT.x + 8, TREE.pathY, tail, C.GREY, UI.BG, maxCrumb);
+}
+
+function drawAnimBox(x0, y0, x1, y1, fg, isRoot) {
+  const w = x1 - x0 + 1;
+  const h = y1 - y0 + 1;
+  if (w < 2 || h < 2) return;
+  if (isRoot) rainbowBox(x0, y0, w, h);
+  else box(x0, y0, w, h, fg, UI.BG);
+}
+
+// Shared box-flight driver. Forward (drill-down): left/top expand first,
+// then right/bottom shrink. Reverse (step-up): right/bottom expand first,
+// then left/top slide home. Empty box throughout; caller sets state before
+// calling so the breadcrumb already shows the destination.
+function animateBoxMove(s, dst, { fg, isRoot, tName, total, reverse = false }) {
+  animating = true;
+  treeChildHits = [];
+  backHit = null;
+  nodeBox = null;
+  const t0 = performance.now();
+  function frame(now) {
+    if (!animating) return;
+    const t = Math.min(1, (now - t0) / total);
+    let r;
+    if (!reverse) {
+      if (t < 0.5) {
+        const k = t / 0.5;
+        r = {
+          x0: Math.round(s.x0 + (dst.x0 - s.x0) * k),
+          y0: Math.round(s.y0 + (dst.y0 - s.y0) * k),
+          x1: s.x1,
+          y1: s.y1,
+        };
+      } else {
+        const k = (t - 0.5) / 0.5;
+        r = {
+          x0: dst.x0,
+          y0: dst.y0,
+          x1: Math.round(s.x1 + (dst.x1 - s.x1) * k),
+          y1: Math.round(s.y1 + (dst.y1 - s.y1) * k),
+        };
+      }
+    } else {
+      if (t < 0.5) {
+        const k = t / 0.5;
+        r = {
+          x0: s.x0,
+          y0: s.y0,
+          x1: Math.round(s.x1 + (dst.x1 - s.x1) * k),
+          y1: Math.round(s.y1 + (dst.y1 - s.y1) * k),
+        };
+      } else {
+        const k = (t - 0.5) / 0.5;
+        r = {
+          x0: Math.round(s.x0 + (dst.x0 - s.x0) * k),
+          y0: Math.round(s.y0 + (dst.y0 - s.y0) * k),
+          x1: dst.x1,
+          y1: dst.y1,
+        };
+      }
+    }
+    tm.clear(UI.BODY_FG, UI.BG);
+    renderTitle();
+    drawAnimBase(tName);
+    drawAnimBox(r.x0, r.y0, r.x1, r.y1, fg, isRoot);
+    renderBottom();
+    tm.present();
+    if (t < 1) {
+      animFrame = requestAnimationFrame(frame);
+    } else {
+      animating = false;
+      animFrame = null;
+      render();
+    }
+  }
+  animFrame = requestAnimationFrame(frame);
+}
+
+function startTrackAnimation(src) {
+  const tName = U(trackedName());
+  const th = childLines(tName, TREE.tw - 4, 3).length + 2;
+  const dst = { x0: TREE.tx, y0: TREE.ty, x1: TREE.tx + TREE.tw - 1, y1: TREE.ty + th - 1 };
+  const s = { x0: src.x0, y0: src.y0, x1: src.x1, y1: src.y1 };
+  const n = state.nodes[state.selected];
+  const isRoot = state.selected === (state.meta?.root ?? 'c64');
+  const fg = isRoot ? null : kindColor(n?.kind);
+  animateBoxMove(s, dst, { fg, isRoot, tName, total: animDuration(s, dst), reverse: false });
+}
+
+function startBackAnimation(srcRect, dstRect, departingNode) {
+  const tName = U(trackedName());
+  // The flying box is the departing child, never the rainbow root frame.
+  const fg = kindColor(departingNode?.kind);
+  animateBoxMove(srcRect, dstRect, { fg, isRoot: false, tName, total: animDuration(srcRect, dstRect), reverse: true });
+}
+
+function startRootBlank() {
+  const tName = U(trackedName());
+  animating = true;
+  treeChildHits = [];
+  backHit = null;
+  nodeBox = null;
+  const t0 = performance.now();
+  const total = 100;
+  function frame(now) {
+    if (!animating) return;
+    const t = Math.min(1, (now - t0) / total);
+    tm.clear(UI.BODY_FG, UI.BG);
+    renderTitle();
+    drawAnimBase(tName);
+    renderBottom();
+    tm.present();
+    if (t < 1) {
+      animFrame = requestAnimationFrame(frame);
+    } else {
+      animating = false;
+      animFrame = null;
+      render();
+    }
+  }
+  animFrame = requestAnimationFrame(frame);
 }
 
 function goBack() {
-  const prev = state.path.pop();
+  if (animating) return;
+  const prev = state.path[state.path.length - 1];
   if (prev === undefined || !state.nodes[prev]) {
+    if (state.path.length) state.path.pop();
     render();
     return;
   }
+  const departingId = state.selected;
+  const departingNode = state.nodes[departingId];
+  // Source: the current top-left selected frame for the departing node.
+  const srcName = U(departingNode?.simple_name ?? departingNode?.name ?? departingId);
+  const srcTh = childLines(srcName, TREE.tw - 4, 3).length + 2;
+  const srcRect = { x0: TREE.tx, y0: TREE.ty, x1: TREE.tx + TREE.tw - 1, y1: TREE.ty + srcTh - 1 };
+  // Destination: where the departing node sits in the parent's connection
+  // list. The view always opens at the top, so pre-scroll the parent state
+  // until the target is in view, then fly the box home to it.
+  const parentKids = kidsFor(prev);
+  const idx = parentKids.findIndex((k) => k.id === departingId);
+  if (idx < 0) {
+    state.path.pop();
+    state.selected = prev;
+    state.treeCursor = 0;
+    state.treeScroll = 0;
+    state.nodeScroll = 0;
+    render();
+    return;
+  }
+  const textW = TREE.cw - 4;
+  const boxes = layoutTreeBoxes(parentKids, textW);
+  const maxRows = (LEFT.y + LEFT.h - 2) - TREE.kidsY + 1;
+  const scroll = ensureCursorVisible(idx, 0, boxes, maxRows, 1);
+  const win = visibleWindow(boxes, scroll, maxRows, 1);
+  let y = TREE.kidsY;
+  let dstRect = null;
+  for (const b of planTreePanel(parentKids, win.visible, TREE.cx0, TREE.cw)) {
+    if (b.index === idx) {
+      dstRect = { x0: b.bx, y0: y, x1: b.bx + b.bw - 1, y1: y + b.h - 1 };
+      break;
+    }
+    y += b.h + 1;
+  }
+  if (!dstRect) {
+    state.path.pop();
+    state.selected = prev;
+    state.treeCursor = 0;
+    state.treeScroll = 0;
+    state.nodeScroll = 0;
+    render();
+    return;
+  }
+  state.path.pop();
   state.selected = prev;
-  state.treeCursor = 0;
-  state.treeScroll = 0;
+  state.treeCursor = idx;
+  state.treeScroll = scroll;
   state.nodeScroll = 0;
-  render();
+  startBackAnimation(srcRect, dstRect, departingNode);
 }
 
 function goRoot() {
+  if (animating) return;
+  const root = state.meta?.root ?? 'c64';
+  if (state.selected === root && state.path.length === 0) {
+    state.treeCursor = 0;
+    state.treeScroll = 0;
+    state.nodeScroll = 0;
+    render();
+    return;
+  }
   state.path = [];
-  state.selected = state.meta?.root ?? 'c64';
+  state.selected = root;
   state.treeCursor = 0;
   state.treeScroll = 0;
   state.nodeScroll = 0;
-  render();
+  startRootBlank();
 }
 
 function moveCursor(d) {
+  if (animating) return;
   const total = treeKids().length;
   if (!total) return;
   state.treeCursor = Math.min(total - 1, Math.max(0, state.treeCursor + d));
@@ -419,6 +627,7 @@ function moveCursor(d) {
 }
 
 function scrollTree(d) {
+  if (animating) return;
   const total = treeKids().length;
   if (!total) return;
   state.treeScroll = clampStart(state.treeScroll + d, total);
@@ -426,6 +635,7 @@ function scrollTree(d) {
 }
 
 function enterCursor() {
+  if (animating) return;
   const kids = treeKids();
   if (kids[state.treeCursor]) track(kids[state.treeCursor].id);
 }
@@ -475,6 +685,7 @@ function cellFromEvent(e) {
 function wireInput() {
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Tab') { e.preventDefault(); setTab(state.tab === 'tree' ? 'elements' : 'tree'); return; }
+    if (animating) return;
     if (state.tab === 'elements') {
       if (e.key === 'ArrowUp') { e.preventDefault(); state.elCur = stepCursor(state.elCur, -1, 0); render(); }
       else if (e.key === 'ArrowDown') { e.preventDefault(); state.elCur = stepCursor(state.elCur, 1, 0); render(); }
@@ -507,6 +718,10 @@ function wireInput() {
   });
   tm.canvas.addEventListener('click', (e) => {
     const c = cellFromEvent(e);
+    for (const t of tabHits) {
+      if (c.y === t.y && c.x >= t.x0 && c.x <= t.x1) { setTab(t.id); return; }
+    }
+    if (animating) return;
     if (state.edgeMenu) {
       for (const m of menuHits) {
         const { x } = menuXY();
@@ -516,9 +731,6 @@ function wireInput() {
       return;
     }
     if (state.tab === 'tree' && edgeHit && c.y === edgeHit.y && c.x >= edgeHit.x0 && c.x <= edgeHit.x1) { openEdgeMenu(); return; }
-    for (const t of tabHits) {
-      if (c.y === t.y && c.x >= t.x0 && c.x <= t.x1) { setTab(t.id); return; }
-    }
     if (state.tab === 'elements') {
       const cell = cellFromXY(c.x, c.y);
       if (cell) { state.elCur = cell; render(); }
@@ -537,13 +749,14 @@ function wireInput() {
     }
   });
   tm.canvas.addEventListener('wheel', (e) => {
+    if (animating) return;
     if (state.tab === 'elements') return;
     const c = cellFromEvent(e);
-    if (c.x >= LEFT.x && c.x < LEFT.x + LEFT.w && c.y >= LEFT.y && c.y < LEFT.y + LEFT.h) {
-      scrollTree(e.deltaY > 0 ? 2 : -2);
-    } else if (c.x >= RIGHT.x && c.x < RIGHT.x + RIGHT.w && c.y >= RIGHT.y && c.y < RIGHT.y + RIGHT.h) {
+    if (nodeBox && c.x >= nodeBox.x0 && c.x <= nodeBox.x1 && c.y >= nodeBox.y0 && c.y <= nodeBox.y1) {
       state.nodeScroll = Math.max(0, state.nodeScroll + (e.deltaY > 0 ? 3 : -3));
       render();
+    } else if (c.x >= LEFT.x && c.x < LEFT.x + LEFT.w && c.y >= LEFT.y && c.y < LEFT.y + LEFT.h) {
+      scrollTree(e.deltaY > 0 ? 2 : -2);
     }
   }, { passive: true });
 }
