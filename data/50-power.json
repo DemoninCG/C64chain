@@ -49,7 +49,7 @@
           "id": "c64.psu.transformer",
           "name": "Mains transformer, 40-46 VA",
           "simple_name": "Mains transformer, 40-46 VA",
-          "description": "The whole of the supply's energy conversion. One primary on 117 V mains, a centre-tapped ~18 V secondary feeding the 5 V regulator, and a separate ~9 V winding feeding straight out to the C64. The two secondaries are galvanically isolated from each other as well as from the primary - that isolation is what lets the C64 tie their grounds together only at the rectifier. Every wound transformer is proved before it is potted or assembled: a 1500-2500 V AC dielectric withstand between primary and all secondaries, an insulation-resistance check at 500 V DC, a turns-ratio and phasing check between the taps, and a loaded run at nominal line voltage.",
+          "description": "The whole of the supply's energy conversion. One primary on 117 V mains, a centre-tapped ~18 V secondary feeding the 5 V regulator, and a separate ~9 V winding feeding straight out to the C64. The two secondaries are galvanically isolated from each other as well as from the primary. That isolation is what lets the C64 tie their grounds together only at the rectifier. Every wound transformer is proved before it is potted or assembled: a 1500-2500 V AC dielectric withstand between primary and all secondaries, an insulation-resistance check at 500 V DC, a turns-ratio and phasing check between the taps, and a loaded run at nominal line voltage.",
           "kind": "part",
           "category": "magnetics",
           "era": "1982",
@@ -126,7 +126,7 @@
                   "id": "c64.psu.transformer.core.ferrite-alternative",
                   "name": "MnZn ferrite E-core alternative",
                   "simple_name": "MnZn ferrite E-core",
-                  "description": "Later Commodore bricks and the C64C/Plus4 supplies switched to a pressed manganese-zinc ferrite core. Ferrite has much higher resistivity than silicon steel so it can be used as a solid moulded shape with no lamination joints, giving lower core loss at 60 Hz and a much lighter assembly - at several times the material cost, and with a supply chain in Japan or Germany rather than the local steel mill.",
+                  "description": "Later Commodore bricks and the C64C/Plus4 supplies switched to a pressed manganese-zinc ferrite core. Ferrite has much higher resistivity than silicon steel so it can be used as a solid moulded shape with no lamination joints, giving lower core loss at 60 Hz and a much lighter assembly. This is at several times the material cost, and with a supply chain in Japan or Germany rather than the local steel mill.",
                   "kind": "part",
                   "category": "magnetics",
                   "era": "1984",
@@ -153,7 +153,7 @@
                     }
                   ],
                   "confidence": "medium",
-                  "note": "Not the design in this brick: the 251053-02 teardown is plainly a stack of punched steel laminations. The alternative belongs to later Commodore supplies and is set out here because the comparison is the whole point of the choice - about 10^5 ohm.m against roughly 5x10^-7 ohm.m for silicon steel, at half to a third the saturation induction, so the ferrite core must be physically larger even though it is lighter. Which Commodore part numbers used ferrite could not be verified per part number from a primary source; mark the supply chain as unconfirmed. The oxide blend, the pressing and the firing are the shared metal.ferrite line.",
+                  "note": "Not the design in this brick: the 251053-02 teardown is plainly a stack of punched steel laminations. The alternative belongs to later Commodore supplies and is set out here because the comparison is the whole point of the choice. This is about 10^5 ohm.m against roughly 5x10^-7 ohm.m for silicon steel, at half to a third the saturation induction, so the ferrite core must be physically larger even though it is lighter. Which Commodore part numbers used ferrite could not be verified per part number from a primary source; mark the supply chain as unconfirmed. The oxide blend, the pressing and the firing are the shared metal.ferrite line.",
                   "children": [
                     "metal.ferrite.e-core"
                   ],
@@ -200,7 +200,7 @@
                   ],
                   "name": "Enamelled magnet wire",
                   "simple_name": "Enamelled magnet wire",
-                  "description": "Bare copper rod drawn down to 0.25-0.4 mm through a series of tungsten-carbide or diamond dies, then coated in two or more passes of a thermosetting enamel - typically polyester-imide (Grade 2 / THEIC) - and baked to cure it. Each coat adds roughly 5-10 um, so a double-grade wire has 25-40% more copper per given window area than bare wire.",
+                  "description": "Bare copper rod drawn down to 0.25-0.4 mm through a series of tungsten-carbide or diamond dies, then coated in two or more passes of a thermosetting enamel (typically polyester-imide (Grade 2 / THEIC)) and baked to cure it. Each coat adds roughly 5-10 um, so a double-grade wire has 25-40% more copper per given window area than bare wire.",
                   "kind": "part",
                   "category": "magnetics",
                   "era": "1982",
@@ -274,7 +274,7 @@
                   "id": "c64.psu.transformer.winding.screen",
                   "name": "Interwinding earth screen",
                   "simple_name": "Interwinding earth screen",
-                  "description": "The protective-earth conductor is bonded to an aluminium or copper foil laid between the primary and the secondary windings - or sometimes to the transformer frame bolt. It does not leave the transformer: the earthing path is closed inside the potted block and never reaches the plastic case or the computer. The foil is plain rolled aluminium or copper, lapped and left uncut so it cannot tear, and it is deliberately insulated from both windings.",
+                  "description": "The protective-earth conductor is bonded to an aluminium or copper foil laid between the primary and the secondary windings (or sometimes to the transformer frame bolt). It does not leave the transformer: the earthing path is closed inside the potted block and never reaches the plastic case or the computer. The foil is plain rolled aluminium or copper, lapped and left uncut so it cannot tear, and it is deliberately insulated from both windings.",
                   "kind": "part",
                   "category": "magnetics",
                   "era": "1982",
@@ -304,7 +304,7 @@
                   ]
                 }
               ],
-              "note": "Not established: the 0.25-0.4 mm wire, the 500-1200 turns per winding, the 18 V centre-tapped and 9 V secondaries, the layer layout, and the class H 180 C rating by virtue of the enamel. The 902503-02 teardown confirms the winding structure - 9 V AC on pins 9 and 11, and \"18V AC with a 'center' tab on pin 6\" - but no source documents the wire gauge, turn count or insulation class for this transformer.",
+              "note": "Not established: the 0.25-0.4 mm wire, the 500-1200 turns per winding, the 18 V centre-tapped and 9 V secondaries, the layer layout, and the class H 180 C rating by virtue of the enamel. The 902503-02 teardown confirms the winding structure (9 V AC on pins 9 and 11, and \"18V AC with a 'center' tab on pin 6\") but no source documents the wire gauge, turn count or insulation class for this transformer.",
               "edges": [
                 {
                   "to": "c64.psu.transformer.winding.insulation",
@@ -482,7 +482,7 @@
           "id": "c64.psu.regulator",
           "name": "5 V linear voltage regulator",
           "simple_name": "5 V linear voltage regulator",
-          "description": "The pass element that turns roughly 8-10 V of pulsating DC into 5.00 V. Three different implementations appear in C64 bricks inside two years, and the choice of which one determines how much heat has to be removed. At full load the drop across the pass device is 3-5 V at 1.5 A, so 4.5-7.5 W has to go into the heatsink - which is why these supplies run hot and why the electrolytics above them cook.",
+          "description": "The pass element that turns roughly 8-10 V of pulsating DC into 5.00 V. Three different implementations appear in C64 bricks inside two years, and the choice of which one determines how much heat has to be removed. At full load the drop across the pass device is 3-5 V at 1.5 A, so 4.5-7.5 W has to go into the heatsink, which is why these supplies run hot and why the electrolytics above them cook.",
           "kind": "part",
           "category": "power",
           "era": "1982",
@@ -546,7 +546,7 @@
               "id": "c64.psu.regulator.variant-si3052p",
               "name": "Sanken SI-3052P integrated regulator",
               "simple_name": "Sanken SI-3052P regulator",
-              "description": "The regulator in the later 902503-02, which many hobbyists misidentify as a transistor because it is moulded in a TO-3P-looking package. It is a 5 V / 2 A linear regulator with an internal error amplifier and a foldback current limit that kicks in at about 2.4 A. The datasheet explicitly warns that the output must not be raised by inserting a resistor in the ground pin - and Commodore inserted a 300 Ohm resistor in the ground pin anyway, to make up for the drop in the output cable.",
+              "description": "The regulator in the later 902503-02, which many hobbyists misidentify as a transistor because it is moulded in a TO-3P-looking package. It is a 5 V / 2 A linear regulator with an internal error amplifier and a foldback current limit that kicks in at about 2.4 A. The datasheet explicitly warns that the output must not be raised by inserting a resistor in the ground pin, and Commodore inserted a 300 Ohm resistor in the ground pin anyway, to make up for the drop in the output cable.",
               "kind": "part",
               "category": "power",
               "era": "1984",
@@ -572,7 +572,7 @@
                 "https://mygeekyhobby.com/2018/10/30/commodore-c64-power-supply-902503-02-part-1/"
               ],
               "confidence": "high",
-              "note": "The ground-lift trick raises the output a few tens of millivolts to compensate for the resistive drop of a metre of thin output wire, but it also corrupts the regulator's ground reference and interferes with its current-limit behaviour - the datasheet says so in Note 3. Modifying this circuit is the standard modern replacement and is well documented.",
+              "note": "The ground-lift trick raises the output a few tens of millivolts to compensate for the resistive drop of a metre of thin output wire, but it also corrupts the regulator's ground reference and interferes with its current-limit behaviour. The datasheet says so in Note 3. Modifying this circuit is the standard modern replacement and is well documented.",
               "children": [
                 {
                   "id": "c64.psu.regulator.variant-si3052p.stability-cap",
@@ -795,7 +795,7 @@
                   "id": "c64.psu.regulator.variant-discrete.thermal-shutdown",
                   "name": "Thermal shutdown",
                   "simple_name": "Thermal shutdown",
-                  "description": "A temperature-sensitive element in contact with the heatsink - a thermistor or a bimetallic thermal switch - that shorts or removes the driver bias when the sink passes roughly 90-110 C, so the supply folds back rather than destroying itself. Commodore's bricks more often relied on a thermal fuse in the primary and on the epoxy pot for heat retention, which is the root of their reputation.",
+                  "description": "A temperature-sensitive element in contact with the heatsink (a thermistor or a bimetallic thermal switch) that shorts or removes the driver bias when the sink passes roughly 90-110 C, so the supply folds back rather than destroying itself. Commodore's bricks more often relied on a thermal fuse in the primary and on the epoxy pot for heat retention, which is the root of their reputation.",
                   "kind": "part",
                   "category": "power",
                   "era": "1982",
@@ -1036,13 +1036,13 @@
             "https://forum.vcfed.org/index.php/threads/salvaging-the-commodore-64-brick-of-death-epoxied-power-supply-and-rebuilding-it-many-pictures.1241364/"
           ],
           "confidence": "high",
-          "note": "ABS is used because it is tough, chemically inert to the epoxy and the PVC of the cord, and injection moulds to a good surface for the moulded-in lettering. It burns readily - which is why the flammability rating and the 94-HB test are part of the approval, not decoration.",
+          "note": "ABS is used because it is tough, chemically inert to the epoxy and the PVC of the cord, and injection moulds to a good surface for the moulded-in lettering. This is why the flammability rating and the 94-HB test are part of the approval, not decoration.",
           "children": [
             {
               "id": "c64.psu.case.screws",
               "name": "Case screws",
               "simple_name": "Case screws",
-              "description": "Cross-recessed pan-head self-tapping screws into moulded bosses in the plastic, and in a mains appliance they must be short enough that they cannot reach the primary wiring - a specific check in the safety audit.",
+              "description": "Cross-recessed pan-head self-tapping screws into moulded bosses in the plastic, and in a mains appliance they must be short enough that they cannot reach the primary wiring. This is a specific check in the safety audit.",
               "kind": "part",
               "category": "metals",
               "era": "1982",
@@ -1147,7 +1147,7 @@
           "id": "c64.psu.power-led",
           "name": "Power indicator LED",
           "simple_name": "Power indicator LED",
-          "description": "Not present on every brick. Where fitted it is a 3 mm red LED in a small nylon bezel, fed from the 5 V rail through a 330 Ohm to 1 kOhm resistor so that the constant ~7 mA is well inside the LED's safe operating current, and the resistor - not the LED - is what limits the current when the rail is at 5.4 V.",
+          "description": "Not present on every brick. Where fitted it is a 3 mm red LED in a small nylon bezel, fed from the 5 V rail through a 330 Ohm to 1 kOhm resistor so that the constant ~7 mA is well inside the LED's safe operating current, and the resistor (not the LED) is what limits the current when the rail is at 5.4 V.",
           "kind": "part",
           "category": "power",
           "era": "1982",
@@ -1242,7 +1242,7 @@
               "value": "~10,000 operations typical for a 1980s rocker"
             }
           ],
-          "note": "Not established for the brick's own switch: its rating, contact alloy, endurance figure, or the snap-action wiping mechanism. The C64's own supply switch is a documented, numbered part - the 1992 service manual parts list gives SW1 as \"Rocker Switch DPDT 904500-01\" on the connector panel \"(Power, ON, OFF) 251095-01\", and the circuit theory states that the filtered 5 V rail \"is then controlled by on/off switch S1\" - but that is the machine's switch, not the brick's, and the double-pole configuration corroborates only the note that the machine's switch interrupts both supplies.",
+          "note": "Not established for the brick's own switch: its rating, contact alloy, endurance figure, or the snap-action wiping mechanism. The C64's own supply switch is a documented, numbered part. The 1992 service manual parts list gives SW1 as \"Rocker Switch DPDT 904500-01\" on the connector panel \"(Power, ON, OFF) 251095-01\", and the circuit theory states that the filtered 5 V rail \"is then controlled by on/off switch S1\". But that is the machine's switch, not the brick's, and the double-pole configuration corroborates only the note that the machine's switch interrupts both supplies.",
           "children": [
             {
               "id": "c64.mains.switch.contacts",
@@ -1267,7 +1267,7 @@
                   "value": "~0.01-0.1 mm per 10,000 operations in the worst case"
                 }
               ],
-              "note": "Not established, and partly contradicted: the reason given for preferring silver - that its oxide is still electrically conductive. The conductivity ranking is documented (\"The electrical conductivity of silver is the highest of all metals, greater even than copper\") and silver's blackening is documented (\"silver tarnishes in air to form the black silver sulfide\"), but the silver article describes an amphoteric oxide, not a conducting one, so the load-bearing claim is unsupported. Also unestablished: Ag-SnO2 contact practice in 1980s mains switches, the ~1-3 N contact force and the erosion rate.",
+              "note": "Not established, and partly contradicted: the reason given for preferring silver (that its oxide is still electrically conductive). The conductivity ranking is documented (\"The electrical conductivity of silver is the highest of all metals, greater even than copper\") and silver's blackening is documented (\"silver tarnishes in air to form the black silver sulfide\"), but the silver article describes an amphoteric oxide, not a conducting one, so the load-bearing claim is unsupported. Also unestablished: Ag-SnO2 contact practice in 1980s mains switches, the ~1-3 N contact force and the erosion rate.",
               "children": [],
               "inputs": [],
               "edges": [
@@ -1433,7 +1433,7 @@
               "confidence": "high",
               "name": "Thermal fuse",
               "simple_name": "Thermal fuse",
-              "description": "A one-shot temperature fuse: a fusible alloy link, often a fine wire of a low-melting alloy such as a bismuth-lead-tin-indium eutectic, bonded to the transformer or mounted in thermal contact with it. At its trip temperature - typically 100-130 C - the link melts and opens the circuit permanently. It cannot be reset, which is intentional: the fault that overheated the transformer is not allowed to be repeated.",
+              "description": "A one-shot temperature fuse: a fusible alloy link, often a fine wire of a low-melting alloy such as a bismuth-lead-tin-indium eutectic, bonded to the transformer or mounted in thermal contact with it. At its trip temperature (typically 100-130 C) the link melts and opens the circuit permanently. It cannot be reset, which is intentional: the fault that overheated the transformer is not allowed to be repeated.",
               "facts": [
                 {
                   "label": "Trip temperature",
@@ -1470,7 +1470,7 @@
           "confidence": "medium",
           "name": "X-rated line filter capacitor",
           "simple_name": "X-rated line filter capacitor",
-          "description": "A small polypropylene film capacitor connected across line and neutral to shunt radio-frequency noise that the switching action of the rectifier diodes and the regulator would otherwise inject back onto the supply. It is rated X - that is, for use between line and neutral - which in 1980s practice meant a recognised 250 V AC across-the-line capacitor with a defined failure mode.",
+          "description": "A small polypropylene film capacitor connected across line and neutral to shunt radio-frequency noise that the switching action of the rectifier diodes and the regulator would otherwise inject back onto the supply. It is rated X (that is, for use between line and neutral) which in 1980s practice meant a recognised 250 V AC across-the-line capacitor with a defined failure mode.",
           "facts": [
             {
               "label": "Typical value",
@@ -1489,7 +1489,7 @@
               "value": "VDE, UL and CSA component recognition; the mark is printed on the body"
             }
           ],
-          "note": "Not established from a teardown photograph: that a specific Commodore brick contains an X-rated capacitor, although they are a standard fit in any listed appliance of this era and enthusiasts repairing original bricks commonly replace a RIFA suppression capacitor. The physics of the circuit requires it, but its presence in this specific assembly is inferred rather than documented. On the RIFA point specifically: RIFA was the dominant European supplier of X-rated metallised film capacitors in the 1980s, and parts from that era are now treated as a fire hazard in their own right - decades-old metallised-film suppression capacitors that have been sitting unused can draw leakage current, heat and in the worst cases short, which is why they are replaced on sight rather than tested. The failure was a design weakness, not a manufacturing defect.",
+          "note": "Not established from a teardown photograph: that a specific Commodore brick contains an X-rated capacitor, although they are a standard fit in any listed appliance of this era and enthusiasts repairing original bricks commonly replace a RIFA suppression capacitor. The physics of the circuit requires it, but its presence in this specific assembly is inferred rather than documented. On the RIFA point specifically: RIFA was the dominant European supplier of X-rated metallised film capacitors in the 1980s, and parts from that era are now treated as a fire hazard in their own right. Decades-old metallised-film suppression capacitors that have been sitting unused can draw leakage current, heat and in the worst cases short, which is why they are replaced on sight rather than tested. The failure was a design weakness, not a manufacturing defect.",
           "children": [
             {
               "id": "c64.mains.line-capacitor.metallised-film",
@@ -1735,7 +1735,7 @@
               "value": "~56 kOhm and 47 ohm series resistors with 30-51 pF capacitors"
             }
           ],
-          "note": "Channel setting is a resistor strapping and the channel trimmer, not a switched band. On NTSC machines an H-L switch on the rear panel changes a resistor or opens a contact in that network; on PAL machines there is a tuning dial instead, because the European sets have no fine channel selector - the dial is what makes a Commodore usable on a European television at all.",
+          "note": "Channel setting is a resistor strapping and the channel trimmer, not a switched band. On NTSC machines an H-L switch on the rear panel changes a resistor or opens a contact in that network. On PAL machines there is a tuning dial instead, because the European sets have no fine channel selector. The dial is what makes a Commodore usable on a European television at all.",
           "children": [
             {
               "id": "mb.rf-modulator.rf-oscillator.rf-transistor",
@@ -1816,7 +1816,7 @@
                   "value": "a screw trimmer capacitor on terminal 10 in the 251025 drawing"
                 }
               ],
-              "note": "A junction varactor in a 60 MHz television modulator is unusual - most designs tune with a trimmer - so the MA57 may be a varicap used for a small frequency-modulation or level function rather than for the channel. Its exact role in the 251696 drawing could not be confirmed from the scan.",
+              "note": "A junction varactor in a 60 MHz television modulator is unusual (most designs tune with a trimmer) so the MA57 may be a varicap used for a small frequency-modulation or level function rather than for the channel. Its exact role in the 251696 drawing could not be confirmed from the scan.",
               "children": [],
               "inputs": []
             }
@@ -1858,7 +1858,7 @@
               "value": "the SID's amplified audio, fed from CN5 pin 3"
             }
           ],
-          "note": "Television sound is transmitted as FM on a subcarrier, and the tuner recovers it by beating the subcarrier against a local oscillator at the same frequency to produce the 6.0 or 5.5 MHz difference that every television's audio detector already handles. Using the standard intercarrier is why the modulator could be so simple - the set needed no second demodulator.",
+          "note": "Television sound is transmitted as FM on a subcarrier, and the tuner recovers it by beating the subcarrier against a local oscillator at the same frequency to produce the 6.0 or 5.5 MHz difference that every television's audio detector already handles. Using the standard intercarrier is why the modulator could be so simple. The set needed no second demodulator.",
           "children": [
             {
               "id": "mb.rf-modulator.audio-chain.fm-modulator",
@@ -1929,7 +1929,7 @@
                   "value": "a link or a switch contact in the oscillator bias network"
                 }
               ],
-              "note": "Not established: terminal 8 being shorted to ground for PAL (5.5 MHz) and open for NTSC (4.5 MHz), and its implementation as a link or switch contact in the oscillator bias network. The 1992 service manual confirms two modulator variants exist - schematic 251025 for board 250425-01 and schematic 251696 for board 250407-04, the latter listed as \"Modulator NTSC\" - which supports the two-market point, but the terminal-8 strapping note is not in any source consulted."
+              "note": "Not established: terminal 8 being shorted to ground for PAL (5.5 MHz) and open for NTSC (4.5 MHz), and its implementation as a link or switch contact in the oscillator bias network. The 1992 service manual confirms two modulator variants exist (schematic 251025 for board 250425-01 and schematic 251696 for board 250407-04, the latter listed as \"Modulator NTSC\") which supports the two-market point, but the terminal-8 strapping note is not in any source consulted."
             }
           ]
         },
@@ -2044,7 +2044,7 @@
           "confidence": "medium",
           "name": "Modulator supply and zener stabiliser",
           "simple_name": "Modulator supply",
-          "description": "The modulator runs from the C64's ~9 V unregulated DC rail - the same rail that feeds the cassette motor - not from the clean 5 V. Q6 (2SC2120) buffers the feed and a zener with electrolytics sets the working voltage for the analog sections.",
+          "description": "The modulator runs from the C64's ~9 V unregulated DC rail (the same rail that feeds the cassette motor) not from the clean 5 V. Q6 (2SC2120) buffers the feed and a zener with electrolytics sets the working voltage for the analog sections.",
           "facts": [
             {
               "label": "Input",
@@ -2074,7 +2074,7 @@
               "provenance": "incomplete",
               "name": "8.2 V Zener diode",
               "simple_name": "8.2 V Zener diode",
-              "description": "A heavily doped PN junction reverse-biased into breakdown. The doping is so heavy that the depletion layer is only a few microns wide, which gives the device a very low capacitance and a fast, hard breakdown - ideal for a shunt regulator and for clamping.",
+              "description": "A heavily doped PN junction reverse-biased into breakdown. The doping is so heavy that the depletion layer is only a few microns wide, which gives the device a very low capacitance and a fast, hard breakdown. This is ideal for a shunt regulator and for clamping.",
               "facts": [
                 {
                   "label": "Type",
@@ -2110,7 +2110,7 @@
           "confidence": "low",
           "name": "Illustrative hybrid module construction (not Commodore)",
           "simple_name": "Hybrid module (not Commodore)",
-          "description": "ILLUSTRATIVE ONLY - this is not how any Commodore RF modulator was built. Both Commodore drawings that can be read (schematic 251025 and 251696) show a discrete through-hole board with Japanese small-signal transistors, two miniature RF transformers, a trimmer and about thirty resistors and capacitors, with an RCA phono jack on the module. What follows is the thin-film hybrid construction used by RF modulator modules from Japanese games manufacturers of the same period - a real and common alternative construction of the period, but no Commodore part number has been matched to it. Confidence in every node below is low as a statement about the C64 and high only as a statement about hybrid modules in general.",
+          "description": "ILLUSTRATIVE ONLY. This is not how any Commodore RF modulator was built. Both Commodore drawings that can be read (schematic 251025 and 251696) show a discrete through-hole board with Japanese small-signal transistors, two miniature RF transformers, a trimmer and about thirty resistors and capacitors, with an RCA phono jack on the module. What follows is the thin-film hybrid construction used by RF modulator modules from Japanese games manufacturers of the same period. A real and common alternative construction of the period, but no Commodore part number has been matched to it. Confidence in every node below is low as a statement about the C64 and high only as a statement about hybrid modules in general.",
           "facts": [
             {
               "label": "Substrate",
@@ -2200,7 +2200,7 @@
                   "confidence": "low",
                   "name": "The 1984 C64C video path",
                   "simple_name": "1984 C64C video path",
-                  "description": "The later C64 boards do not simply carry a better modulator - they changed where the signal is encoded. A dedicated video encoder IC generates the composite and separate luma/chroma outputs from the VIC-II's signals, so the video is encoded once, to a defined standard, outside the modulator; the RF modulator is then reduced to a device that only has to put that composite onto a carrier and add the audio. The contrast with the breadbin is that there the modulator itself was the video encoder as well as the modulator.",
+                  "description": "The later C64 boards do not simply carry a better modulator. They changed where the signal is encoded. A dedicated video encoder IC generates the composite and separate luma/chroma outputs from the VIC-II's signals, so the video is encoded once, to a defined standard, outside the modulator; the RF modulator is then reduced to a device that only has to put that composite onto a carrier and add the audio. The contrast with the breadbin is that there the modulator itself was the video encoder as well as the modulator.",
                   "facts": [
                     {
                       "label": "Encoding point",
@@ -2228,7 +2228,7 @@
               "confidence": "low",
               "name": "The 'toad' module nickname",
               "simple_name": "'toad' module nickname",
-              "description": "Early Commodore modulators are sometimes described by hobbyists as a toad or a blob: the epoxy-covered module sits on the mainboard with its lead frame splayed out, and from the top it does look like an animal. The nickname is not a Commodore part name - it exists only in the collector community.",
+              "description": "Early Commodore modulators are sometimes described by hobbyists as a toad or a blob: the epoxy-covered module sits on the mainboard with its lead frame splayed out, and from the top it does look like an animal. The nickname is not a Commodore part name. It exists only in the collector community.",
               "note": "No published source uses this nickname for the C64 modulator; it may come from a different platform. The attribution of the nickname to the C64 modulator is uncertain."
             }
           ]
@@ -2259,7 +2259,7 @@
           "sources": [
             "https://breadbox64.com/c64-rf-modulator-battle/"
           ],
-          "note": "Empirical tests comparing the original modulator with modern replacements on the same CRT found almost no visible difference, which is the strongest evidence that the modulator was not the main limit - and on S-Video, bypassing the modulator's RF stage entirely, the original's luma and chroma outputs measured slightly better than most replacements.",
+          "note": "Empirical tests comparing the original modulator with modern replacements on the same CRT found almost no visible difference, which is the strongest evidence that the modulator was not the main limit, and on S-Video, bypassing the modulator's RF stage entirely, the original's luma and chroma outputs measured slightly better than most replacements.",
           "children": []
         },
         {
@@ -2270,7 +2270,7 @@
           "confidence": "high",
           "name": "Two composite paths in one module",
           "simple_name": "Two composite paths",
-          "description": "Because the module has to keep working as a monitor passthrough, it carries two paths: the luma and colour signals are buffered straight through to CN5 so a monitor still gets an unmodified signal, while a separate summed composite is what drives the RF section. This is why S-Video from a breadbin is clean while the RF picture is not - the lossy parts of the chain are only on the RF path.",
+          "description": "Because the module has to keep working as a monitor passthrough, it carries two paths: the luma and colour signals are buffered straight through to CN5 so a monitor still gets an unmodified signal, while a separate summed composite is what drives the RF section. This is why S-Video from a breadbin is clean while the RF picture is not. The lossy parts of the chain are only on the RF path.",
           "facts": [
             {
               "label": "Terminals 6 and 7",
@@ -2610,7 +2610,7 @@
       "id": "c64.psu.bulk-cap.electrolyte",
       "name": "Electrolytic electrolyte",
       "simple_name": "Electrolytic electrolyte",
-      "description": "An aqueous solution of an ammonium or amine salt - ammonium pentaborate was the classic low-voltage recipe - that forms the counter-electrode ion layer against the oxide. In an aluminium electrolytic the cathode reaction deposits a hydrated aluminium oxide or tin layer from the metal ion, and the leakage current is exactly that reaction rate.",
+      "description": "An aqueous solution of an ammonium or amine salt (ammonium pentaborate was the classic low-voltage recipe) that forms the counter-electrode ion layer against the oxide. In an aluminium electrolytic the cathode reaction deposits a hydrated aluminium oxide or tin layer from the metal ion, and the leakage current is exactly that reaction rate.",
       "kind": "material",
       "category": "passives",
       "era": "1980s",
@@ -2630,7 +2630,7 @@
       ],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Partly contradicted. The documented low-voltage electrolyte systems are glycol/borax - \"Electrolytes based on ethylene glycol and boric acid\" - plus almost-anhydrous organic solvents (DMF, DMA, gamma-butyrolactone) and water-rich low-ESR systems; ammonium pentaborate as \"the classic low-voltage recipe\" is not among them, and the pH 4.5-7.0 range and the I = kCV leakage relation are not stated. What is documented is that the electrolyte supplies oxygen for self-healing, that service life is limited by electrolyte loss, and that organic-solvent systems give low leakage and long life."
+      "note": "Partly contradicted. The documented low-voltage electrolyte systems are glycol/borax (\"Electrolytes based on ethylene glycol and boric acid\") plus almost-anhydrous organic solvents (DMF, DMA, gamma-butyrolactone) and water-rich low-ESR systems; ammonium pentaborate as \"the classic low-voltage recipe\" is not among them, and the pH 4.5-7.0 range and the I = kCV leakage relation are not stated. What is documented is that the electrolyte supplies oxygen for self-healing, that service life is limited by electrolyte loss, and that organic-solvent systems give low leakage and long life."
     },
     "c64.psu.bulk-cap.separator": {
       "id": "c64.psu.bulk-cap.separator",
@@ -3023,7 +3023,7 @@
       ],
       "name": "Pyromellitic dianhydride monomer",
       "simple_name": "Pyromellitic dianhydride",
-      "description": "The diacid anhydride half of Kapton is made by air oxidation of pseudocumene to trimellitic acid and then dehydrating it - a petroleum-aromatics chain. The diamine half is 4,4'-oxydianiline or p-phenylenediamine, both aromatics intermediates.",
+      "description": "The diacid anhydride half of Kapton is made by air oxidation of pseudocumene to trimellitic acid and then dehydrating it. This is a petroleum-aromatics chain. The diamine half is 4,4'-oxydianiline or p-phenylenediamine, both aromatics intermediates.",
       "kind": "material",
       "category": "plastics",
       "era": "1980s",
@@ -3256,7 +3256,7 @@
           "inputs": [
             "chem.propylene"
           ],
-          "note": "Not established: the cast-film route for capacitor film - extrusion through a flat die onto a chilled cast roll at 200-250 C, heat-setting, and slitting to 20-60 um webs - or the 20-40 um starting gauge. Polypropylene film is documented as extruded and, for biaxially oriented film, stretched in both directions; capacitor-grade machine-direction-oriented cast film on a chill roll is not documented.",
+          "note": "Not established: the cast-film route for capacitor film (extrusion through a flat die onto a chilled cast roll at 200-250 C, heat-setting, and slitting to 20-60 um webs) or the 20-40 um starting gauge. Polypropylene film is documented as extruded and, for biaxially oriented film, stretched in both directions; capacitor-grade machine-direction-oriented cast film on a chill roll is not documented.",
           "edges": [
             {
               "to": "facility.electricity",
@@ -3464,7 +3464,7 @@
           ]
         }
       ],
-      "note": "Order confirmed in part: the 902503-02 teardown states that \"The diodes and fuses are soldered directly to the transformer 'pins'\" and that \"The rest of the components are mounted on a small printed circuit board (PCB)\". Not established: the epoxy potting and close-and-test sequence, because the same teardown states that this part number \"is not 'potted' and can be opened and inspected\" - potting applies to the later sealed bricks, not to the unit documented here. Also unestablished: the 2-8 h burn-in and the <= 0.1 ohm earth-continuity figure."
+      "note": "Order confirmed in part: the 902503-02 teardown states that \"The diodes and fuses are soldered directly to the transformer 'pins'\" and that \"The rest of the components are mounted on a small printed circuit board (PCB)\". Not established: the epoxy potting and close-and-test sequence, because the same teardown states that this part number \"is not 'potted' and can be opened and inspected\". Potting applies to the later sealed bricks, not to the unit documented here. Also unestablished: the 2-8 h burn-in and the <= 0.1 ohm earth-continuity figure."
     },
     "c64.psu.bulk-cap.winding": {
       "id": "c64.psu.bulk-cap.winding",
@@ -3556,7 +3556,7 @@
       ],
       "name": "Bolting the regulator to the heatsink",
       "simple_name": "Bolting regulator to heatsink",
-      "description": "The regulator tab or TO-3 can is bolted to the folded aluminium plate with a thin layer of thermal compound - in 1982 typically a zinc-oxide paste in a silicone or hydrocarbon base, or sometimes simply a piece of thin copper foil. The thermal interface matters more than the compound brand: dry metal-to-metal contact is roughly ten times worse than a properly filled joint.",
+      "description": "The regulator tab or TO-3 can is bolted to the folded aluminium plate with a thin layer of thermal compound. This is in 1982 typically a zinc-oxide paste in a silicone or hydrocarbon base, or sometimes simply a piece of thin copper foil. The thermal interface matters more than the compound brand: dry metal-to-metal contact is roughly ten times worse than a properly filled joint.",
       "kind": "process",
       "category": "assembly",
       "era": "1982",
@@ -3587,7 +3587,7 @@
       ],
       "name": "Triple-diffused planar process",
       "simple_name": "Triple-diffused planar process",
-      "description": "Three sequential dopings - collector-base, base-emitter, and a deep collector-emitter - through a photolithographically masked oxide. The heavy collector-emitter diffusion carries the load current while the shallow, tightly controlled base-emitter diffusion sets the gain and the breakdown voltage. This is the process that made 15 A transistors possible at all.",
+      "description": "Three sequential dopings (collector-base, base-emitter, and a deep collector-emitter) through a photolithographically masked oxide. The heavy collector-emitter diffusion carries the load current while the shallow, tightly controlled base-emitter diffusion sets the gain and the breakdown voltage. This is the process that made 15 A transistors possible at all.",
       "kind": "process",
       "category": "silicon",
       "era": "1980s",
@@ -3660,7 +3660,7 @@
       ],
       "name": "Emitter wire bonds",
       "simple_name": "Emitter wire bonds",
-      "description": "Two to four 100-200 um aluminium wires are wedge-bonded from the emitter metallisation to the emitter lead to carry the full emitter current; the collector current flows through the die's back contact straight into the header. Ultrasonic wedge bonding at 50-250 g per wire was the universal method - ball bonding was for fine-pitch.",
+      "description": "Two to four 100-200 um aluminium wires are wedge-bonded from the emitter metallisation to the emitter lead to carry the full emitter current. The collector current flows through the die's back contact straight into the header. Ultrasonic wedge bonding at 50-250 g per wire was the universal method. Ball bonding was for fine-pitch.",
       "kind": "process",
       "category": "silicon",
       "era": "1980s",
@@ -3762,7 +3762,7 @@
           "id": "c64.psu.transformer.winding.process.lead-termination",
           "name": "Lead termination and crimped flag terminals",
           "simple_name": "Crimped flag terminals",
-          "description": "The winding leads are soldered or, in the 1983-84 bricks, soldered directly to the transformer's own pins; the line cord and interwinding conductors terminate in tin-plated brass crimp flags. Under the epoxy pour the crimps are the weak link - they can anneal and let go - and the PVC of the line cord is visibly browned right at the pin.",
+          "description": "The winding leads are soldered or, in the 1983-84 bricks, soldered directly to the transformer's own pins. The line cord and interwinding conductors terminate in tin-plated brass crimp flags. Under the epoxy pour the crimps are the weak link (they can anneal and let go) and the PVC of the line cord is visibly browned right at the pin.",
           "kind": "process",
           "category": "assembly",
           "era": "1983",
@@ -4073,7 +4073,7 @@
           "id": "c64.psu.transformer.core.stack.clamp-hardware",
           "name": "Clamp bolts and angle plates",
           "simple_name": "Clamp bolts and angle plates",
-          "description": "Mild steel angle plates bolted across the yokes, or two long tie bolts through the core legs, with the axial clamp force chosen so the interlaminar pressure is roughly 3-10 kg/mm2 - enough to stop the stack buzzing at 50 Hz, not so much that the punched edges crack.",
+          "description": "Mild steel angle plates bolted across the yokes, or two long tie bolts through the core legs, with the axial clamp force chosen so the interlaminar pressure is roughly 3-10 kg/mm2. This is enough to stop the stack buzzing at 50 Hz, not so much that the punched edges crack.",
           "kind": "part",
           "category": "magnetics",
           "era": "1982",
@@ -4231,7 +4231,7 @@
       "sources": [
         "https://www.c64-wiki.com/wiki/RF_Jack"
       ],
-      "note": "The C64 Wiki notes that beside the RF jack you often see an H-L switch for channels 3 and 4 (NTSC only) or a control dial for adjusting the oscillator frequency - the two mechanisms correspond to the two markets.",
+      "note": "The C64 Wiki notes that beside the RF jack you often see an H-L switch for channels 3 and 4 (NTSC only) or a control dial for adjusting the oscillator frequency. The two mechanisms correspond to the two markets.",
       "children": [],
       "inputs": []
     },
@@ -4312,7 +4312,7 @@
       ],
       "name": "Biaxial orientation",
       "simple_name": "Biaxial orientation",
-      "description": "A cast polypropylene or cast polyethylene film is stretched in the machine direction, cooled, then stretched again in the transverse direction and heat-set. The two stretching steps line the polymer chains up in both directions, so the film has high tensile strength and tear resistance whatever the pull direction - which is exactly why a torn BOPP label ends in a straight line rather than a ragged one.",
+      "description": "A cast polypropylene or cast polyethylene film is stretched in the machine direction, cooled, then stretched again in the transverse direction and heat-set. The two stretching steps line the polymer chains up in both directions, so the film has high tensile strength and tear resistance whatever the pull direction, which is exactly why a torn BOPP label ends in a straight line rather than a ragged one.",
       "kind": "process",
       "category": "packaging",
       "era": "1980s",
@@ -4394,7 +4394,7 @@
       "id": "c64.psu.bulk-cap.alu-foil.formation",
       "name": "Electrolytic formation of the anode oxide",
       "simple_name": "Anode oxide formation",
-      "description": "The wound wet cell is energised from a DC source at a voltage ramped up to the rated working voltage. At the anode the aluminium oxidises to a dense amorphous alumina film only a few nanometres thick - the dielectric. Raising the voltage thickens the film; raising the temperature thickens it faster but also lets it dissolve, which is why forming is done hot and forming voltage is always lower than the operating voltage.",
+      "description": "The wound wet cell is energised from a DC source at a voltage ramped up to the rated working voltage. At the anode the aluminium oxidises to a dense amorphous alumina film only a few nanometres thick. This is the dielectric. Raising the voltage thickens the film; raising the temperature thickens it faster but also lets it dissolve, which is why forming is done hot and forming voltage is always lower than the operating voltage.",
       "kind": "process",
       "category": "passives",
       "era": "1980s",
@@ -4537,7 +4537,7 @@
       "confidence": "medium",
       "name": "Epoxy encapsulant as RF seal",
       "simple_name": "Epoxy encapsulant as RF seal",
-      "description": "A clear or opaque filled epoxy poured or transfer moulded over the finished substrate. In RF modules it does three jobs at once: it excludes moisture and contaminants, it holds the components against vibration, and - because it is a low-loss dielectric with a stable dielectric constant - it fixes the stray capacitance around the tank, which is what stops the carrier drifting with humidity. A conductive epoxy variant is used as a ground plane on the reverse of the substrate.",
+      "description": "A clear or opaque filled epoxy poured or transfer moulded over the finished substrate. In RF modules it does three jobs at once: it excludes moisture and contaminants, it holds the components against vibration, and (because it is a low-loss dielectric with a stable dielectric constant) it fixes the stray capacitance around the tank, which is what stops the carrier drifting with humidity. A conductive epoxy variant is used as a ground plane on the reverse of the substrate.",
       "facts": [
         {
           "label": "Fill",
@@ -4622,7 +4622,7 @@
           "confidence": "medium",
           "name": "Attaching the substrate to the lead frame",
           "simple_name": "Attach substrate to lead frame",
-          "description": "The substrate is aligned to the lead frame to within a few microns, given a thin coat of conductive epoxy - silver-filled epoxy is the usual choice because it cures at only 150-200 C - or a screen-printed solder paste is printed and reflowed, then the assembly is baked so the die attaches without stress. Silver-filled epoxy has no metallurgical bond and can debond with thermal cycling, which is the classic failure mode of a hybrid module.",
+          "description": "The substrate is aligned to the lead frame to within a few microns, given a thin coat of conductive epoxy (silver-filled epoxy is the usual choice because it cures at only 150-200 C) or a screen-printed solder paste is printed and reflowed, then the assembly is baked so the die attaches without stress. Silver-filled epoxy has no metallurgical bond and can debond with thermal cycling, which is the classic failure mode of a hybrid module.",
           "facts": [
             {
               "label": "Alignment",
@@ -4800,7 +4800,7 @@
       "confidence": "high",
       "name": "Safety approvals and standards",
       "simple_name": "Safety approvals and standards",
-      "description": "The brick is certified as a component rather than as an appliance. In the United States that is UL 478, Power Supply Units, with the file number moulded into the case - 13J5 with 'FOR USE WITH COMMODORE COMPUTER' on the 3-83 build. In Canada it is CSA, in Singapore the NLS scheme, and in West Germany VDE. Each is a recognised component mark; the finished C64 was then certified separately under whichever national scheme applied to the appliance.",
+      "description": "The brick is certified as a component rather than as an appliance. In the United States that is UL 478, Power Supply Units, with the file number moulded into the case. This is 13J5 with 'FOR USE WITH COMMODORE COMPUTER' on the 3-83 build. In Canada it is CSA, in Singapore the NLS scheme, and in West Germany VDE. Each is a recognised component mark; the finished C64 was then certified separately under whichever national scheme applied to the appliance.",
       "facts": [
         {
           "label": "US",
@@ -4847,7 +4847,7 @@
               "value": "the design file is what the applicant submits to obtain the listing; the brick's own final-test branch carries the type tests themselves"
             }
           ],
-          "note": "Not established: the contents of the design file submitted for this supply - schematic, PCB artwork, BOM, transformer winding instruction and insulation-system drawing, enclosure material specification - and the periodic follow-up factory inspection that checks production still matches. UL is documented as certifying products against its own standards; the file-and-follow-up regime is not documented in the sources consulted.",
+          "note": "Not established: the contents of the design file submitted for this supply (schematic, PCB artwork, BOM, transformer winding instruction and insulation-system drawing, enclosure material specification) and the periodic follow-up factory inspection that checks production still matches. UL is documented as certifying products against its own standards; the file-and-follow-up regime is not documented in the sources consulted.",
           "children": [],
           "inputs": [
             "chem.abs"
@@ -4861,7 +4861,7 @@
           "confidence": "medium",
           "name": "Routine production tests",
           "simple_name": "Routine production tests",
-          "description": "Beyond the type tests, every unit gets a dielectric withstand test between the primary and the secondaries, an earth-continuity test, and a functional test with a load on both outputs. The dielectric withstand is the test that actually keeps people alive, because the failure it detects - a foil short, a pinched wire, a solder splash across the bobbin - is the fault that puts mains on a 5 V rail.",
+          "description": "Beyond the type tests, every unit gets a dielectric withstand test between the primary and the secondaries, an earth-continuity test, and a functional test with a load on both outputs. The dielectric withstand is the test that actually keeps people alive, because the failure it detects (a foil short, a pinched wire, a solder splash across the bobbin) is the fault that puts mains on a 5 V rail.",
           "facts": [
             {
               "label": "Dielectric withstand",
@@ -4890,7 +4890,7 @@
               "provenance": "complete",
               "name": "Lot sampling and the critical-component control plan",
               "simple_name": "Lot sampling control plan",
-              "description": "Listing does not mean every unit is tested at every test. Instead the manufacturer submits a control plan: the dielectric withstand and earth continuity are 100% tests because they are the safety-critical ones, while the routine functional and leakage-current checks are sampled at an agreed quality level - typically one in three to one in thirty, with any failure escalating the lot to 100%. Critical components (the transformer, the switch, the fuse, the line capacitor, the cord set) come only from named manufacturers and are subject to incoming inspection.",
+              "description": "Listing does not mean every unit is tested at every test. Instead the manufacturer submits a control plan: the dielectric withstand and earth continuity are 100% tests because they are the safety-critical ones, while the routine functional and leakage-current checks are sampled at an agreed quality level. This is typically one in three to one in thirty, with any failure escalating the lot to 100%. Critical components (the transformer, the switch, the fuse, the line capacitor, the cord set) come only from named manufacturers and are subject to incoming inspection.",
               "facts": [
                 {
                   "label": "Safety tests",

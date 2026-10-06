@@ -8,7 +8,7 @@
       "id": "facility.nitrogen",
       "name": "Nitrogen supply",
       "simple_name": "Nitrogen supply",
-      "description": "The single largest bulk gas. Used for inerting storage tanks and vessels, blanketing, purging, and as the carrier gas in diffusion furnaces and plasma etchers. Small plants bought a few tonnes a month of liquid N2; a furnace-loaded fab wanted tens of tonnes a day and built its own ASU.",
+      "description": "The single largest bulk gas. Used for inerting storage tanks and vessels, blanketing, purging, and as the carrier gas in diffusion furnaces and plasma etchers. Small plants bought a few tonnes a month of liquid N2. A furnace-loaded fab wanted tens of tonnes a day and built its own ASU.",
       "kind": "material",
       "category": "fluids",
       "era": "1983",
@@ -44,7 +44,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Air_separation"
           ],
-          "note": "Oxygen delivery pressure is the one number that gets conflated: 4000-6000 kPa is the high-pressure liquid-oxygen case, pumped at 50-100 bar before the warm end of the vaporiser, while a plant that piped oxygen directly would normally run at 400-600 kPa. Not established: the 1,000-5,000 Nm3/h small-unit size and the oxygen delivery pressures as figures. The air separation article describes the cycle and the high- and low-pressure columns; it gives no delivery pressure and no unit size.",
+          "note": "Oxygen delivery pressure is the one number that gets conflated: 4000-6000 kPa is the high-pressure liquid-oxygen case, pumped at 50-100 bar before the warm end of the vaporiser, while a plant that piped oxygen directly would normally run at 400-600 kPa. Not established: the 1,000-5,000 Nm3/h small-unit size and the oxygen delivery pressures as figures. The air separation article describes the cycle and the high- and low-pressure columns. It gives no delivery pressure and no unit size.",
           "children": [],
           "edges": [
             {
@@ -89,7 +89,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Pressure_swing_adsorption"
           ],
-          "note": "A PSA unit will not deliver oxygen, at any pressure; 4-6 MPa is a liquid-oxygen or high-pressure-pipeline convention and belongs to the cryogenic branch, not to this one. Not established: the 90-99% nitrogen output and the 7-10 bar operating pressure. The pressure swing adsorption article documents the mechanism and the adsorbents (zeolite, activated carbon, silica gel, alumina, synthetic resins) but states no product purity or pressure.",
+          "note": "A PSA unit will not deliver oxygen, at any pressure. 4-6 MPa is a liquid-oxygen or high-pressure-pipeline convention and belongs to the cryogenic branch, not to this one. Not established: the 90-99% nitrogen output and the 7-10 bar operating pressure. The pressure swing adsorption article documents the mechanism and the adsorbents (zeolite, activated carbon, silica gel, alumina, synthetic resins) but states no product purity or pressure.",
           "children": [],
           "edges": [
             {
@@ -108,7 +108,7 @@
           "id": "facility.nitrogen.membrane",
           "name": "Membrane nitrogen generator",
           "simple_name": "Membrane nitrogen generator",
-          "description": "Hollow-fibre asymmetric polyimide or cellulose acetate membranes in a pressure vessel, 20-40 bar feed, with N2 diffusing through the wall faster than O2. Cheap, silent, no regeneration heat, and limited to about 90-95% nitrogen - which is fine for blanketing and not fine for a furnace. By 1983 membrane units were new and uncommon; they took the small-plant market from PSA in the 1990s.",
+          "description": "Hollow-fibre asymmetric polyimide or cellulose acetate membranes in a pressure vessel, 20-40 bar feed, with N2 diffusing through the wall faster than O2. Cheap, silent, no regeneration heat, and limited to about 90-95% nitrogen, which is fine for blanketing and not fine for a furnace. By 1983 membrane units were new and uncommon. They took the small-plant market from PSA in the 1990s.",
           "kind": "facility",
           "category": "fluids",
           "era": "1980s",
@@ -131,7 +131,7 @@
             "https://en.wikipedia.org/wiki/Air_separation"
           ],
           "children": [],
-          "note": "Not established: the 90-95% purity ceiling, the 20-40 bar feed pressure, and that membrane units were new and uncommon by 1983 and took the small-plant market from PSA only in the 1990s. Membrane separation is documented as an alternative to cryogenic air separation; the numbers and the dated market history are not.",
+          "note": "Not established: the 90-95% purity ceiling, the 20-40 bar feed pressure, and that membrane units were new and uncommon by 1983 and took the small-plant market from PSA only in the 1990s. Membrane separation is documented as an alternative to cryogenic air separation. The numbers and the dated market history are not.",
           "edges": [
             {
               "to": "facility.compressed-air",
@@ -183,7 +183,7 @@
       "id": "facility.argon",
       "name": "Argon",
       "simple_name": "Argon",
-      "description": "Argon is not made; it is separated out. It is the third component of air and comes off the top of the ASU's nitrogen column, either as an argon-nitrogen mixture from a simple unit or as 99.99% pure from a dedicated argon column. Most 1980s plants bought it by the tanker as a by-product of someone else's oxygen plant.",
+      "description": "Argon is not made. It is separated out. It is the third component of air and comes off the top of the ASU's nitrogen column, either as an argon-nitrogen mixture from a simple unit or as 99.99% pure from a dedicated argon column. Most 1980s plants bought it by the tanker as a by-product of someone else's oxygen plant.",
       "kind": "material",
       "category": "fluids",
       "era": "1983",
@@ -221,7 +221,7 @@
       "id": "facility.helium",
       "name": "Helium",
       "simple_name": "Helium",
-      "description": "In 1983 helium was a genuinely scarce, genuinely odd commodity. Most of the world's supply came from a handful of natural-gas fractionation plants in Texas, Wyoming, Kansas and New Mexico, which extracted the 0.0005-0.005% helium in the gas as a crude 50-75% mixture. The rest came from four dedicated underground helium fields - the hug gas of Amarillo, Texas, and the Dixon and Harley fields in Kansas. Cryogenic separation of helium from LNG did not become industrial until the late 1990s.",
+      "description": "In 1983 helium was a genuinely scarce, genuinely odd commodity. Most of the world's supply came from a handful of natural-gas fractionation plants in Texas, Wyoming, Kansas and New Mexico, which extracted the 0.0005-0.005% helium in the gas as a crude 50-75% mixture. The rest came from four dedicated underground helium fields. These were the hug gas of Amarillo, Texas, and the Dixon and Harley fields in Kansas. Cryogenic separation of helium from LNG did not become industrial until the late 1990s.",
       "kind": "material",
       "category": "fluids",
       "era": "1983",
@@ -239,13 +239,13 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Helium"
       ],
-      "note": "Helium was rationed and price-controlled in the US until the 1996 helium policy change; a factory that needed it in 1983 wrote to a supplier, waited, and paid whatever was quoted. Not established: the helium content of natural gas quoted here (0.05-0.5 vol%, and 0.0005-0.005% in the description) and the 50-75% crude purity. Reference sources give helium in natural gas as up to several per cent by volume in the richest fields, which does not support these figures either way. Also not established: that cryogenic separation of helium from LNG did not become industrial until the late 1990s. Cryogenic separation from natural gas was in commercial use from the 1920s, and no source was located that dates LNG-based recovery as claimed.",
+      "note": "Helium was rationed and price-controlled in the US until the 1996 helium policy change. A factory that needed it in 1983 wrote to a supplier, waited, and paid whatever was quoted. Not established: the helium content of natural gas quoted here (0.05-0.5 vol%, and 0.0005-0.005% in the description) and the 50-75% crude purity. Reference sources give helium in natural gas as up to several per cent by volume in the richest fields, which does not support these figures either way. Also not established: that cryogenic separation of helium from LNG did not become industrial until the late 1990s. Cryogenic separation from natural gas was in commercial use from the 1920s, and no source was located that dates LNG-based recovery as claimed.",
       "children": [
         {
           "id": "facility.helium.hug-gas",
           "name": "Hug gas from an underground helium reservoir",
           "simple_name": "Hug gas",
-          "description": "The Permian Basin of west Texas and the southwest Kansas gas fields hold helium that never migrated out of the crust, trapped under impermeable salt and anhydrite since geological time. These are drilled specifically for helium, at tiny volumes - Amarillo field production was only tens of millions of cubic feet a year even in its peak.",
+          "description": "The Permian Basin of west Texas and the southwest Kansas gas fields hold helium that never migrated out of the crust, trapped under impermeable salt and anhydrite since geological time. These are drilled specifically for helium, at tiny volumes. Amarillo field production was only tens of millions of cubic feet a year even in its peak.",
           "kind": "facility",
           "category": "industry",
           "era": "1983",
@@ -302,13 +302,13 @@
           ],
           "confidence": "medium",
           "children": [],
-          "note": "Not established: that the 1983 US East Coast grid coal feeding the C64 supply came specifically from Appalachian room-and-pillar mines at 150-600 m depth, or from the listed Powder River, Silesian, Ruhr, Bowen Basin and Witbank sources; the basins and methods are generic industry description without a source tying them to this supply."
+          "note": "Not established: that the 1983 US East Coast grid coal feeding the C64 supply came specifically from Appalachian room-and-pillar mines at 150-600 m depth, or from the listed Powder River, Silesian, Ruhr, Bowen Basin and Witbank sources. The basins and methods are generic industry description without a source tying them to this supply."
         },
         {
           "id": "facility.coal.prep-plant",
           "name": "Coal preparation plant",
           "simple_name": "Coal prep plant",
-          "description": "Crushed, screened, washed and dried at the mine mouth. 1980s plants were dense-medium washers plus hydrocyclones; the resulting 2-inch x 0 coal with 8-12% moisture is what a boiler of that era was designed to burn. Thermal drying was the last step - a screen-deck or flash dryer brought the fuel down to about 8-12% moisture, because wetter coal burns slower, raises stack temperature and can quench a boiler screen tube.",
+          "description": "Crushed, screened, washed and dried at the mine mouth. 1980s plants were dense-medium washers plus hydrocyclones. The resulting 2-inch x 0 coal with 8-12% moisture is what a boiler of that era was designed to burn. Thermal drying was the last step. A screen-deck or flash dryer brought the fuel down to about 8-12% moisture, because wetter coal burns slower, raises stack temperature and can quench a boiler screen tube.",
           "kind": "facility",
           "category": "industry",
           "era": "1983",
@@ -453,7 +453,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Acetylene"
       ],
-      "note": "Not established: the 15 bar filling pressure and the porous monolithic calcium-carbide-and-acetone mass. The acetylene article confirms acetylene solubility in acetone and that calcium carbide production needs an electric arc furnace; the cylinder charging pressure is not stated in the text read.",
+      "note": "Not established: the 15 bar filling pressure and the porous monolithic calcium-carbide-and-acetone mass. The acetylene article confirms acetylene solubility in acetone and that calcium carbide production needs an electric arc furnace. The cylinder charging pressure is not stated in the text read.",
       "edges": [
         {
           "to": "metal.steel.sheet",
@@ -504,7 +504,7 @@
       ],
       "confidence": "medium",
       "provenance": "complete",
-      "note": "Chromate inhibitors were being phased out across the industrial West in the 1980s - the same decade Commodore's own site was a Superfund listing because of chlorinated solvent handling.",
+      "note": "Chromate inhibitors were being phased out across the industrial West in the 1980s. The same decade Commodore's own site was a Superfund listing because of chlorinated solvent handling.",
       "children": [],
       "edges": [
         {
@@ -542,7 +542,7 @@
       "id": "facility.water.ultrapure",
       "name": "Ultrapure water",
       "simple_name": "Ultrapure water",
-      "description": "The water that rinses a silicon wafer between every process step, and the water in which the thermal oxide grows. Target in 1983 was 10-15 MOhm-cm (roughly 1 ppb total ionic impurities) held at 20-25 C, distributed in 304 stainless or PVDF-lined piping. The yellow-lit photolithography bay and the wet chemical benches were the biggest consumers; the C64 itself was an assembly operation, not a fab, but every IC on its board came from a plant running exactly this chain. A modern practice note: the same chain now ends with UV and ultrafiltration, not with a mixed bed.",
+      "description": "The water that rinses a silicon wafer between every process step, and the water in which the thermal oxide grows. Target in 1983 was 10-15 MOhm-cm (roughly 1 ppb total ionic impurities) held at 20-25 C, distributed in 304 stainless or PVDF-lined piping. The yellow-lit photolithography bay and the wet chemical benches were the biggest consumers. The C64 itself was an assembly operation, not a fab, but every IC on its board came from a plant running exactly this chain. A modern practice note: the same chain now ends with UV and ultrafiltration, not with a mixed bed.",
       "kind": "material",
       "category": "fluids",
       "era": "1970-1990",
@@ -579,7 +579,7 @@
       "id": "facility.water.industrial",
       "name": "Ordinary industrial water",
       "simple_name": "Industrial water",
-      "description": "The 99% of the plant's water use: cooling, washing, rinsing, boiler feed, human use. Deliberately not ultrapure, deliberately recycled. This branch is what a factory that needs cooling towers, a degreasing line or boiler make-up should point at; it draws the same raw intake as the ultrapure plant. Everything the plant throws away comes back through two routes: acid, solvent and dump rinses are collected, neutralised, filtered and returned to the pretreatment inlet - water conservation in a 1983 fab was a cost decision, not an environmental one, and a mature plant typically recovered 50-70% of its demand - while the liquid that could not be reclaimed was neutralised, settled and, where the acidity and fluoride demanded it, lime-neutralised with fluoride precipitation, then discharged to a municipal sewer under a permit or to an outfall.",
+      "description": "The 99% of the plant's water use: cooling, washing, rinsing, boiler feed, human use. Deliberately not ultrapure, deliberately recycled. This branch is what a factory that needs cooling towers, a degreasing line or boiler make-up should point at. It draws the same raw intake as the ultrapure plant. Everything the plant throws away comes back through two routes: acid, solvent and dump rinses are collected, neutralised, filtered and returned to the pretreatment inlet (water conservation in a 1983 fab was a cost decision, not an environmental one, and a mature plant typically recovered 50-70% of its demand) while the liquid that could not be reclaimed was neutralised, settled and, where the acidity and fluoride demanded it, lime-neutralised with fluoride precipitation, then discharged to a municipal sewer under a permit or to an outfall.",
       "kind": "material",
       "category": "fluids",
       "era": "1960-1990",
@@ -632,7 +632,7 @@
         "https://en.wikipedia.org/wiki/Air_separation"
       ],
       "children": [],
-      "note": "Not established: the 99.6% industrial grade figure and the oxygen plasma strip use in fabs. Air separation units producing 97.5-99.5% oxygen are documented; merchant liquid oxygen grades are not.",
+      "note": "Not established: the 99.6% industrial grade figure and the oxygen plasma strip use in fabs. Air separation units producing 97.5-99.5% oxygen are documented. Merchant liquid oxygen grades are not.",
       "edges": [
         {
           "to": "facility.nitrogen.atmospheric-air",
@@ -660,13 +660,13 @@
         "https://en.wikipedia.org/wiki/Hydrogen_production"
       ],
       "children": [],
-      "note": "Not established: the 100 Nm3/h threshold above which steam methane reforming was the standard, and the 95% reformer / 99.99% electrolytic purity pair. Steam methane reforming as the cheapest source of industrial hydrogen is documented; the sizes and purities are not."
+      "note": "Not established: the 100 Nm3/h threshold above which steam methane reforming was the standard, and the 95% reformer / 99.99% electrolytic purity pair. Steam methane reforming as the cheapest source of industrial hydrogen is documented. The sizes and purities are not."
     },
     "facility.gases.carbon-dioxide": {
       "id": "facility.gases.carbon-dioxide",
       "name": "Carbon dioxide (dry ice)",
       "simple_name": "Carbon dioxide",
-      "description": "Used in the plant for refrigerant cargo, for the dry-ice shipping of perishables, and - in the electronics plant - for nothing much; the two dry-ice applications in a 1980s C64 supply chain were chilling the shipped goods and cleaning moulds of frost. A large part of the 1980s merchant supply came not from an oil refinery but from hydrogen- and ammonia-based fertiliser plants, where the shift-reactor CO2 was captured and dried; it ends at natural gas and air.",
+      "description": "Used in the plant for refrigerant cargo, for the dry-ice shipping of perishables, and (in the electronics plant) for nothing much; the two dry-ice applications in a 1980s C64 supply chain were chilling the shipped goods and cleaning moulds of frost. A large part of the 1980s merchant supply came not from an oil refinery but from hydrogen- and ammonia-based fertiliser plants, where the shift-reactor CO2 was captured and dried. It ends at natural gas and air.",
       "kind": "material",
       "sources": [
         "https://en.wikipedia.org/wiki/Carbon_dioxide"
@@ -676,7 +676,7 @@
       "inputs": [],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Established by the cited article: that carbon dioxide is a by-product of the industrial production of hydrogen by steam reforming and of the water gas shift reaction in ammonia production, both processes beginning with water and natural gas; and that liquid and solid carbon dioxide are important refrigerants in the food industry, employed during the transportation and storage of frozen foods, with solid carbon dioxide, called dry ice, used for small shipments where refrigeration equipment is not practical. Not established: that a large part of the 1980s merchant supply came from fertiliser plants with shift-reactor CO2 captured and dried, the dry-ice cleaning of moulds, the claim that the electronics plant had no real use for it, and the inputs listed here; the article names hydrogen and ammonia as sources but gives no share and no date for merchant supply in the 1980s.",
+      "note": "Established by the cited article: that carbon dioxide is a by-product of the industrial production of hydrogen by steam reforming and of the water gas shift reaction in ammonia production, both processes beginning with water and natural gas; and that liquid and solid carbon dioxide are important refrigerants in the food industry, employed during the transportation and storage of frozen foods, with solid carbon dioxide, called dry ice, used for small shipments where refrigeration equipment is not practical. Not established: that a large part of the 1980s merchant supply came from fertiliser plants with shift-reactor CO2 captured and dried, the dry-ice cleaning of moulds, the claim that the electronics plant had no real use for it, and the inputs listed here. The article names hydrogen and ammonia as sources but gives no share and no date for merchant supply in the 1980s.",
       "edges": [
         {
           "to": "facility.oil",
@@ -693,7 +693,7 @@
       "id": "facility.steam.styrene",
       "name": "Styrene monomer",
       "simple_name": "Styrene monomer",
-      "description": "Produced by dehydrogenating ethylbenzene or by cracking benzene, both from the aromatic fraction of an oil refinery. A C8H8 molecule - the same feedstock family as the styrene in the ABS case of the C64.",
+      "description": "Produced by dehydrogenating ethylbenzene or by cracking benzene, both from the aromatic fraction of an oil refinery. A C8H8 molecule. This is the same feedstock family as the styrene in the ABS case of the C64.",
       "kind": "material",
       "category": "plastics",
       "era": "1983",
@@ -772,7 +772,7 @@
       "id": "facility.coal.magnetite-ore",
       "name": "Magnetite ore body",
       "simple_name": "Magnetite ore body",
-      "description": "Magnetite is rare as a bulk ore and common as a concentrates: the dense-medium coal washer only needs a few grams of Fe3O4 per litre of circulating slurry, so the ore was mined in small tonnages - often lake-shore or gabbro deposits - and concentrated by flotation and magnetic separation. Ends at the ore body in the ground.",
+      "description": "Magnetite is rare as a bulk ore and common as a concentrates: the dense-medium coal washer only needs a few grams of Fe3O4 per litre of circulating slurry, so the ore was mined in small tonnages (often lake-shore or gabbro deposits) and concentrated by flotation and magnetic separation. Ends at the ore body in the ground.",
       "kind": "material",
       "category": "metals",
       "era": "1983",
@@ -798,7 +798,7 @@
       ],
       "confidence": "medium",
       "provenance": "raw",
-      "note": "Established by the cited article: anthracite as a hard, compact variety of coal with the highest carbon content, the fewest impurities and the highest energy density of all coals; the South Wales anthracite field lying west of Swansea and Llanelli; China mining more than three-quarters of world anthracite output and Vietnam among the principal producing countries; and that anthracite is divided by size, with fines below 10 mm going to sintering and pelletising. Not established: the Far East import flow, the Hon Gai and Pingxiang sources, and the use of anthracite fines as boiler fuel for the stations feeding this supply - the article says the principal use of anthracite is domestic heating and that its high value makes it prohibitively expensive for power plant use, and it names sintering and pelletising, not steam raising, as the fines applications."
+      "note": "Established by the cited article: anthracite as a hard, compact variety of coal with the highest carbon content, the fewest impurities and the highest energy density of all coals; the South Wales anthracite field lying west of Swansea and Llanelli; China mining more than three-quarters of world anthracite output and Vietnam among the principal producing countries; and that anthracite is divided by size, with fines below 10 mm going to sintering and pelletising. Not established: the Far East import flow, the Hon Gai and Pingxiang sources, and the use of anthracite fines as boiler fuel for the stations feeding this supply. The article says the principal use of anthracite is domestic heating and that its high value makes it prohibitively expensive for power plant use, and it names sintering and pelletising, not steam raising, as the fines applications."
     },
     "facility.nitrogen.atmospheric-air": {
       "id": "facility.nitrogen.atmospheric-air",
@@ -823,12 +823,12 @@
           "id": "facility.nitrogen.atmospheric-air.intake",
           "name": "Air intake stack",
           "simple_name": "Air intake stack",
-          "description": "A tall concrete or brick stack with louvres facing away from the prevailing wind, feeding a plenum and the air compressor. Intakes were sited so that no two of them - for air, for cooling water, for the coal yard - were close enough to contaminate each other.",
+          "description": "A tall concrete or brick stack with louvres facing away from the prevailing wind, feeding a plenum and the air compressor. Intakes were sited so that no two of them (for air, for cooling water, for the coal yard) were close enough to contaminate each other.",
           "kind": "site",
           "category": "fluids",
           "era": "1960-1990",
           "confidence": "medium",
-          "note": "Not established: the concrete or brick stack with louvres, the plenum, the era, and the siting rule that no two intakes - for air, for cooling water, for the coal yard - were close enough to contaminate each other. No plant-layout, intake-design or siting document was located; the node describes a generic arrangement without a source."
+          "note": "Not established: the concrete or brick stack with louvres, the plenum, the era, and the siting rule that no two intakes (for air, for cooling water, for the coal yard) were close enough to contaminate each other. No plant-layout, intake-design or siting document was located. The node describes a generic arrangement without a source."
         }
       ],
       "note": "CO2 figure uncertain: the quoted 0.03% is the pre-1990 concentration. The standard reference composition of dry air gives carbon dioxide as 0.04%. The nitrogen, oxygen and argon figures are the standard 78.08 / 20.95 / 0.93%."
@@ -888,7 +888,7 @@
       "id": "facility.water.di-loop",
       "name": "Ultrapure distribution loop",
       "simple_name": "Ultrapure distribution loop",
-      "description": "Slotted 316L stainless or PVDF-lined pipework in a continuous recirculating loop, running hot at 60-80 C to suppress bacteria, with take-off points at each wet bench. A loop that is not constantly moving will grow biofilm within a day - the single hardest problem in 1980s ultrapure water. Modern fabs add a terminal ultrafiltration barrier here (1-100 nm hollow-fibre membranes at 1-4 bar, stripping colloids, bacteria and endotoxin); in the 1980s the state of the art was a 0.2 micrometre-rated PTFE or nylon cartridge on the last loop, or nothing at all, and the loop ran hot instead. The liquid leaving the plant is the 10-15 MOhm-cm water the wet benches are plumbed to.",
+      "description": "Slotted 316L stainless or PVDF-lined pipework in a continuous recirculating loop, running hot at 60-80 C to suppress bacteria, with take-off points at each wet bench. A loop that is not constantly moving will grow biofilm within a day. This was the single hardest problem in 1980s ultrapure water. Modern fabs add a terminal ultrafiltration barrier here (1-100 nm hollow-fibre membranes at 1-4 bar, stripping colloids, bacteria and endotoxin). In the 1980s the state of the art was a 0.2 micrometre-rated PTFE or nylon cartridge on the last loop, or nothing at all, and the loop ran hot instead. The liquid leaving the plant is the 10-15 MOhm-cm water the wet benches are plumbed to.",
       "kind": "material",
       "category": "fluids",
       "era": "1970-1990",
@@ -907,7 +907,7 @@
         "316L stainless"
       ],
       "confidence": "medium",
-      "note": "Modern fabs run the loop cold and sterilise it; running hot was the 1980s answer to bio-growth. Not established: the 60-80 C hot-loop practice, the 10-15 Mohm-cm offtake figure, and the terminal ultrafiltration comparison for 1980s plants. No document was located on 1980s ultrapure water distribution loop temperature.",
+      "note": "Modern fabs run the loop cold and sterilise it. Running hot was the 1980s answer to bio-growth. Not established: the 60-80 C hot-loop practice, the 10-15 Mohm-cm offtake figure, and the terminal ultrafiltration comparison for 1980s plants. No document was located on 1980s ultrapure water distribution loop temperature.",
       "children": [],
       "edges": [
         {
@@ -933,7 +933,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Polyvinylidene_fluoride"
       ],
-      "note": "Not established: the 170 C melting point and the claim that PVDF will not support microbial growth. The PVDF article supports its origin by polymerising vinylidene difluoride and its non-reactive character; the numbers are not in it.",
+      "note": "Not established: the 170 C melting point and the claim that PVDF will not support microbial growth. The PVDF article supports its origin by polymerising vinylidene difluoride and its non-reactive character. The numbers are not in it.",
       "edges": [
         {
           "to": "facility.water.pvdf.vinylidene-fluoride",
@@ -976,7 +976,7 @@
       "confidence": "medium",
       "provenance": "complete",
       "children": [],
-      "note": "Established by the cited article: askarel as a trade name under which PCBs were sold in the United Kingdom and the United States alongside Aroclor and Asbestol; the dielectric utility of PCBs resting on chemical stability, low flammability and high dielectric constant; insulating fluid for transformers and capacitors as a closed application; commercial production from 1929 under Swann Chemical and taken over by Monsanto in 1935; and the United States ban on domestic production under the Toxic Substances Control Act of 1976, effective January 1, 1978, with enclosed uses such as transformer insulating fluid allowed to remain in service. Not established: a 1980s end date - the legislation and its effective date in the source are 1976 and 1978, and the article separately dates commercial production bans to 1979, all earlier than the 1980s this node closes on. Also not established: the chlorobenzene and biphenyl feedstock route, which the article does not cover.",
+      "note": "Established by the cited article: askarel as a trade name under which PCBs were sold in the United Kingdom and the United States alongside Aroclor and Asbestol; the dielectric utility of PCBs resting on chemical stability, low flammability and high dielectric constant; insulating fluid for transformers and capacitors as a closed application; commercial production from 1929 under Swann Chemical and taken over by Monsanto in 1935; and the United States ban on domestic production under the Toxic Substances Control Act of 1976, effective January 1, 1978, with enclosed uses such as transformer insulating fluid allowed to remain in service. Not established: a 1980s end date. The legislation and its effective date in the source are 1976 and 1978, and the article separately dates commercial production bans to 1979, all earlier than the 1980s this node closes on. Also not established: the chlorobenzene and biphenyl feedstock route, which the article does not cover.",
       "edges": [
         {
           "to": "facility.electricity.chlorobenzene",
@@ -1025,7 +1025,7 @@
       "id": "facility.hazardous-waste.tce-feedstock",
       "name": "Ethylene from the steam cracker",
       "simple_name": "Steam-cracker ethylene",
-      "description": "The chlorination of ethylene, or the oxychlorination of 1,2-dichloroethane, which is itself from the chlorination of ethylene. The ethylene came from naphtha steam cracking - the same petrochemical chain as everything else on this tree. Ends at the crude oil still.",
+      "description": "The chlorination of ethylene, or the oxychlorination of 1,2-dichloroethane, which is itself from the chlorination of ethylene. The ethylene came from naphtha steam cracking. This is the same petrochemical chain as everything else on this tree. Ends at the crude oil still.",
       "kind": "material",
       "category": "fluids",
       "era": "1983",
@@ -1077,7 +1077,7 @@
       "id": "facility.hazardous-waste.plating-rinse",
       "name": "Cyanide- and metal-bearing plating rinse",
       "simple_name": "Plating rinse",
-      "description": "Rinse water carrying gold, tin, copper, nickel and chromium out of the plating line. The cyanide-bearing stream needed alkaline chlorination before discharge; the acid-bearing stream went to the neutralisation tank. Both ended up in the same hydroxide sludge.",
+      "description": "Rinse water carrying gold, tin, copper, nickel and chromium out of the plating line. The cyanide-bearing stream needed alkaline chlorination before discharge. The acid-bearing stream went to the neutralisation tank. Both ended up in the same hydroxide sludge.",
       "kind": "material",
       "category": "fluids",
       "era": "1983",
@@ -1104,7 +1104,7 @@
       ],
       "confidence": "medium",
       "children": [],
-      "note": "Established: uranium ore as the mined feedstock, extraction by open pit, underground mining or in-situ leaching, and the near-total use of mined uranium as reactor fuel. Not established: that the ore feeding this supply was graded and leached in the 1970s-80s, or that it came from Uravan on the Colorado Plateau, from New Mexico, from Rossing in Namibia and from Canada; no mine or mill document was located for any of these places or for the flowsheet described.",
+      "note": "Established: uranium ore as the mined feedstock, extraction by open pit, underground mining or in-situ leaching, and the near-total use of mined uranium as reactor fuel. Not established: that the ore feeding this supply was graded and leached in the 1970s-80s, or that it came from Uravan on the Colorado Plateau, from New Mexico, from Rossing in Namibia and from Canada. No mine or mill document was located for any of these places or for the flowsheet described.",
       "edges": [
         {
           "to": "facility.power.uranium-vanadium-ore",
@@ -1126,13 +1126,13 @@
       "era": "1983",
       "confidence": "medium",
       "provenance": "raw",
-      "note": "Corrected: the chlorine leach and the salt-roast soda-ash-leach flowsheet previously given here are both wrong as stated. Vanadium metal production begins with roasting crushed ore with sodium chloride or sodium carbonate at about 850 C to give sodium metavanadate; the aqueous extract of that solid is acidified to give red cake, a polyvanadate salt, which is reduced with calcium metal. Carnotite was the Colorado Plateau ore, first mined in the Uravan Mineral Belt from 1898, and it carried vanadium as well as uranium, so vanadium came out as a by-product of uranium production. Confidence stays medium because which of the two the mills serving this supply ran principally for is not established, and no plant-level document for the 1983 route was found. An earlier citation to the Colorado Geological Survey study was withdrawn: it is a 164-page PDF that could not be read end to end in this environment, so its wording was second-hand."
+      "note": "Corrected: the chlorine leach and the salt-roast soda-ash-leach flowsheet previously given here are both wrong as stated. Vanadium metal production begins with roasting crushed ore with sodium chloride or sodium carbonate at about 850 C to give sodium metavanadate. The aqueous extract of that solid is acidified to give red cake, a polyvanadate salt, which is reduced with calcium metal. Carnotite was the Colorado Plateau ore, first mined in the Uravan Mineral Belt from 1898, and it carried vanadium as well as uranium, so vanadium came out as a by-product of uranium production. Confidence stays medium because which of the two the mills serving this supply ran principally for is not established, and no plant-level document for the 1983 route was found. An earlier citation to the Colorado Geological Survey study was withdrawn: it is a 164-page PDF that could not be read end to end in this environment, so its wording was second-hand."
     },
     "facility.power.iron-ore": {
       "id": "facility.power.iron-ore",
       "name": "Iron ore (hematite/magnetite)",
       "simple_name": "Iron ore",
-      "description": "The blast-furnace feed, and the reason a power station's turbine steel has a supply chain at all. US supply was Mesabi Range hematite and taconite in the Lake Superior district, shipped by rail to the blast furnaces of the Great Lakes steel belt; Europe and Japan imported Brazilian pellets and ore. Ends at the orebody.",
+      "description": "The blast-furnace feed, and the reason a power station's turbine steel has a supply chain at all. US supply was Mesabi Range hematite and taconite in the Lake Superior district, shipped by rail to the blast furnaces of the Great Lakes steel belt. Europe and Japan imported Brazilian pellets and ore. Ends at the orebody.",
       "kind": "material",
       "category": "metals",
       "era": "1983",
@@ -1194,7 +1194,7 @@
       "id": "facility.power.coking-coal-seam",
       "name": "High-Bituminous coking coal seam",
       "simple_name": "Coking coal seam",
-      "description": "A very specific subset of bituminous coal - the seam that swells and fuses in the coke oven, distinct from the steam coal the power station burns. The Pennsylvania/Kentucky/West Virginia 'High Bituminous' field.",
+      "description": "A very specific subset of bituminous coal. This is the seam that swells and fuses in the coke oven, distinct from the steam coal the power station burns. The Pennsylvania/Kentucky/West Virginia 'High Bituminous' field.",
       "kind": "material",
       "category": "industry",
       "era": "Carboniferous",
@@ -1287,7 +1287,7 @@
       "id": "facility.coal.overburden-strip",
       "name": "Overburden strip of shale and clay",
       "simple_name": "Overburden strip",
-      "description": "Burden stripped in benches to reach the coal seam - often 10-60 m of rock and dirt per metre of coal in the Powder River Basin. The overburden itself becomes a backfill and a landfill-pond liner.",
+      "description": "Burden stripped in benches to reach the coal seam. This was often 10-60 m of rock and dirt per metre of coal in the Powder River Basin. The overburden itself becomes a backfill and a landfill-pond liner.",
       "kind": "material",
       "category": "industry",
       "era": "1983",
@@ -1316,7 +1316,7 @@
       "id": "facility.coal.seam",
       "name": "Bituminous coal seam in sedimentary rock",
       "simple_name": "Bituminous coal seam",
-      "description": "The raw input, full stop. In the northern Appalachian basin the commercial coal is in the middle and upper Pennsylvanian (Conemaugh, Monongahela, Kittanning, Freeport) formations - Carboniferous, roughly 300 million years old, laid down in swamp forests and buried under Pennsylvanian sediment.",
+      "description": "The raw input, full stop. In the northern Appalachian basin the commercial coal is in the middle and upper Pennsylvanian (Conemaugh, Monongahela, Kittanning, Freeport) formations. This is Carboniferous, roughly 300 million years old, laid down in swamp forests and buried under Pennsylvanian sediment.",
       "kind": "material",
       "category": "industry",
       "era": "Carboniferous",
@@ -1366,7 +1366,7 @@
       "id": "facility.water.ro-membrane",
       "name": "Cellulose acetate / TFC membrane",
       "simple_name": "Cellulose acetate membrane",
-      "description": "A 0.2-1.5 micrometre-thick selective layer on a polysulphone support, wound into a spiral and potted with epoxy. This is the same membrane family as the 1541 floppy's read/write head gap in spirit - a nanoscale selective barrier - but the RO element was 1 m long.",
+      "description": "A 0.2-1.5 micrometre-thick selective layer on a polysulphone support, wound into a spiral and potted with epoxy. This is the same membrane family as the 1541 floppy's read/write head gap in spirit (a nanoscale selective barrier) but the RO element was 1 m long.",
       "kind": "material",
       "sources": [
         "https://en.wikipedia.org/wiki/Reverse_osmosis"
@@ -1422,7 +1422,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Anthracite"
       ],
-      "note": "Not established: the 1-2 mm grading as a filter medium. Anthracite is documented as a hard, high-carbon coal used for power generation and metallurgy; its use as crushed filter coal is not stated in the cited article.",
+      "note": "Not established: the 1-2 mm grading as a filter medium. Anthracite is documented as a hard, high-carbon coal used for power generation and metallurgy. Its use as crushed filter coal is not stated in the cited article.",
       "edges": [
         {
           "to": "facility.coal",
@@ -1534,7 +1534,7 @@
         "https://en.wikipedia.org/wiki/Aquifer"
       ],
       "children": [],
-      "note": "Not established: that the Lehigh Valley, Chianan Plain and Hong Kong aquifers are confined sand-and-gravel of Pleistocene age. Aquifers as a concept are sourced; the per-place geology is not.",
+      "note": "Not established: that the Lehigh Valley, Chianan Plain and Hong Kong aquifers are confined sand-and-gravel of Pleistocene age. Aquifers as a concept are sourced. The per-place geology is not.",
       "edges": [
         {
           "to": "facility.water.aquifer",
@@ -1644,7 +1644,7 @@
       "era": "1983",
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Established: liquefied petroleum gas as the propane-and-butane mixture sold as a bulk fuel for industrial heat, and its origin at the gas field or as a refinery stream. Not established: that the Hong Kong and Japanese industrial estates feeding this supply burned LPG rather than town gas, fuel oil or kerosene, or that this LPG was the feedstock for an alkylation unit; the location and route claims carry no source."
+      "note": "Established: liquefied petroleum gas as the propane-and-butane mixture sold as a bulk fuel for industrial heat, and its origin at the gas field or as a refinery stream. Not established: that the Hong Kong and Japanese industrial estates feeding this supply burned LPG rather than town gas, fuel oil or kerosene, or that this LPG was the feedstock for an alkylation unit. The location and route claims carry no source."
     },
     "facility.oil.reservoir": {
       "id": "facility.oil.reservoir",
@@ -1717,7 +1717,7 @@
       "id": "facility.nitrogen.zeolite",
       "name": "Zeolite molecular sieve (synthetic)",
       "simple_name": "Zeolite molecular sieve",
-      "description": "Crystalline hydrated aluminosilicate with a uniform 3-5 angstrom pore, made by hydrothermal crystallisation of bentonite, kaolin or synthetic gels. Uniform aperture size is what makes PSA possible - a zeolite with 3A pores excludes N2 and adsorbs only O2 and H2O; the 4A and 5A grades are used elsewhere in gas drying.",
+      "description": "Crystalline hydrated aluminosilicate with a uniform 3-5 angstrom pore, made by hydrothermal crystallisation of bentonite, kaolin or synthetic gels. Uniform aperture size is what makes PSA possible. A zeolite with 3A pores excludes N2 and adsorbs only O2 and H2O. The 4A and 5A grades are used elsewhere in gas drying.",
       "kind": "material",
       "category": "industry",
       "era": "1983",
@@ -1729,7 +1729,7 @@
         "https://en.wikipedia.org/wiki/Zeolite",
         "https://en.wikipedia.org/wiki/Pressure_swing_adsorption"
       ],
-      "note": "The same chemistry gives the 4A sieve that fills the R-2400 filter's perforated shell in the C64's power supply, if the cartridge was the zeolite type rather than the coil type. Not established: the 3-5 angstrom pore size and the claim that a 3A pore excludes N2 while adsorbing O2 and water. The zeolite article confirms that the major molecular sieves 3A, 4A and 5A are all LTA type and defines molecular sieving by size exclusion; the pore figures and the selective-adsorption detail are not in it.",
+      "note": "The same chemistry gives the 4A sieve that fills the R-2400 filter's perforated shell in the C64's power supply, if the cartridge was the zeolite type rather than the coil type. Not established: the 3-5 angstrom pore size and the claim that a 3A pore excludes N2 while adsorbing O2 and water. The zeolite article confirms that the major molecular sieves 3A, 4A and 5A are all LTA type and defines molecular sieving by size exclusion. The pore figures and the selective-adsorption detail are not in it.",
       "edges": [
         {
           "to": "metal.alumina",
@@ -1745,7 +1745,7 @@
       "id": "facility.hazardous-waste.generation",
       "name": "Spent acid, solvent and plating waste streams",
       "simple_name": "Acid, solvent, plating waste",
-      "description": "The three physical waste streams that carried almost all of a 1980s electronics plant's hazardous load: the spent acids and alkalis from etching and cleaning, the spent organic solvents and resist stripper from photolithography and degreasing, and the cyanide- and metal-bearing rinses from gold and tin plating. Each was a bulk liquid, collected in a tank, and each needed its own treatment route. Small generators - which in 1983 was most of Commodore's Hong Kong subcontractor base - had almost no obligations at all beyond a monthly manifest.",
+      "description": "The three physical waste streams that carried almost all of a 1980s electronics plant's hazardous load: the spent acids and alkalis from etching and cleaning, the spent organic solvents and resist stripper from photolithography and degreasing, and the cyanide- and metal-bearing rinses from gold and tin plating. Each was a bulk liquid, collected in a tank, and each needed its own treatment route. Small generators (which in 1983 was most of Commodore's Hong Kong subcontractor base) had almost no obligations at all beyond a monthly manifest.",
       "kind": "material",
       "category": "fluids",
       "era": "1983",
@@ -1778,7 +1778,7 @@
       "confidence": "medium",
       "provenance": "incomplete",
       "children": [],
-      "note": "Not established: the construction and the endpoint as stated. The encyclopaedia has no article on aluminium conductor steel-reinforced cable (the title does not exist), and no conductor standard was located; aluminium strands around a steel core for tensile strength is generic industry practice, carried here without a source.",
+      "note": "Not established: the construction and the endpoint as stated. The encyclopaedia has no article on aluminium conductor steel-reinforced cable (the title does not exist), and no conductor standard was located. Aluminium strands around a steel core for tensile strength is generic industry practice, carried here without a source.",
       "edges": [
         {
           "to": "facility.power.grid.line",
@@ -1802,7 +1802,7 @@
       "confidence": "medium",
       "provenance": "complete",
       "children": [],
-      "note": "Established: the front end of the fuel cycle in general terms - concentrate converted to UF6, enriched by isotope separation, then fabricated into ceramic UO2 pellets, sintered, ground to length, clad in zircaloy and assembled into a fuel element. Not established: the 2.5-3.5 percent U-235 figure as a 1983 light-water-reactor enrichment, the 8 mm pellet diameter, or the claim that in 1983 US HEU was being phased down and the world enrichment market was switching to centrifuge cascades; no reactor fuel specification or 1983 enrichment-market document backs them here.",
+      "note": "Established: the front end of the fuel cycle in general terms. This is concentrate converted to UF6, enriched by isotope separation, then fabricated into ceramic UO2 pellets, sintered, ground to length, clad in zircaloy and assembled into a fuel element. Not established: the 2.5-3.5 percent U-235 figure as a 1983 light-water-reactor enrichment, the 8 mm pellet diameter, or the claim that in 1983 US HEU was being phased down and the world enrichment market was switching to centrifuge cascades. No reactor fuel specification or 1983 enrichment-market document backs them here.",
       "edges": [
         {
           "to": "facility.power.uranium-ore",
@@ -1893,7 +1893,7 @@
       "id": "facility.steam.fuel",
       "name": "Industrial boiler fuel",
       "simple_name": "Industrial boiler fuel",
-      "description": "Anthracite, bituminous coal, fuel oil or - very commonly in Hong Kong, Japan and Taiwan - coal briquettes pressed from imported anthracite fines in a ring-die or pillow press.",
+      "description": "Anthracite, bituminous coal, fuel oil or (very commonly in Hong Kong, Japan and Taiwan) coal briquettes pressed from imported anthracite fines in a ring-die or pillow press.",
       "kind": "material",
       "category": "industry",
       "era": "1983",
@@ -1921,7 +1921,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Electrical_steel"
       ],
-      "note": "Deliberately stiff magnetically so it laminates easily and does not ring when punched - 'GOES' is stamped on the laminations.",
+      "note": "Deliberately stiff magnetically so it laminates easily and does not ring when punched. 'GOES' is stamped on the laminations.",
       "children": [
         {
           "id": "facility.electricity.grain-oriented-mill",
@@ -1953,7 +1953,7 @@
       "id": "facility.electricity.insulating-oil",
       "name": "Transformer insulating oil",
       "simple_name": "Transformer insulating oil",
-      "description": "Mineral oil (naphthenic or paraffinic), a by-product of vacuum distillation of crude. Also Askarel (PCB-filled chlorinated dielectric) in older units - a PCB source that explains part of the PCB contamination of the Hudson/Superfund sites.",
+      "description": "Mineral oil (naphthenic or paraffinic), a by-product of vacuum distillation of crude. Also Askarel (PCB-filled chlorinated dielectric) in older units. This is a PCB source that explains part of the PCB contamination of the Hudson/Superfund sites.",
       "kind": "material",
       "category": "fluids",
       "era": "1983",
@@ -1962,7 +1962,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Polychlorinated_biphenyl"
       ],
-      "note": "Askarel transformers were phased out in the US after the EPA began classifying PCBs as hazardous in 1979; by 1983 new units were mineral-oil or dry-type.",
+      "note": "Askarel transformers were phased out in the US after the EPA began classifying PCBs as hazardous in 1979. By 1983 new units were mineral-oil or dry-type.",
       "children": [],
       "edges": [
         {
@@ -2003,7 +2003,7 @@
       "id": "facility.power.coal-plant.turbine-steel",
       "name": "Nickel-alloy rotor and casing steel",
       "simple_name": "Nickel-alloy rotor steel",
-      "description": "For a 540 C steam turbine the high-pressure rotor needed 0.5-0.8% Cr-Mo-V steel and the last stages austenitic stainless; the whole thing was forged, normalised, stress-relieved and then creep-rupture proof-tested.",
+      "description": "For a 540 C steam turbine the high-pressure rotor needed 0.5-0.8% Cr-Mo-V steel and the last stages austenitic stainless. The whole thing was forged, normalised, stress-relieved and then creep-rupture proof-tested.",
       "kind": "material",
       "category": "metals",
       "era": "1983",
@@ -2049,7 +2049,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Acetylene"
       ],
-      "note": "Not established: that locally generated carbide acetylene was the practice in the Far East with imported cylinders common, and that this flame welded every sheet-metal chassis in the factory. Acetylene's use for welding and cutting is documented; the site practice is not.",
+      "note": "Not established: that locally generated carbide acetylene was the practice in the Far East with imported cylinders common, and that this flame welded every sheet-metal chassis in the factory. Acetylene's use for welding and cutting is documented. The site practice is not.",
       "edges": [
         {
           "to": "facility.gases",
@@ -2095,7 +2095,7 @@
       "id": "facility.gases.hydrogen.electrolysis",
       "name": "Electrolysis of demineralised water",
       "simple_name": "Water electrolysis",
-      "description": "In a diaphragm or, from the 1970s, an alkaline cell, a nickel-plated or activated-titanium cathode makes hydrogen while a nickel anode makes oxygen. Fed with conductivity-grade water at 20-25 C. Output purity is 99.99% once the cell gas is passed over a palladium diffuser or an oxygen getter - the 'deoxo' step that killed the last 0.1% of oxygen.",
+      "description": "In a diaphragm or, from the 1970s, an alkaline cell, a nickel-plated or activated-titanium cathode makes hydrogen while a nickel anode makes oxygen. Fed with conductivity-grade water at 20-25 C. Output purity is 99.99% once the cell gas is passed over a palladium diffuser or an oxygen getter. This is the 'deoxo' step that killed the last 0.1% of oxygen.",
       "kind": "process",
       "category": "industry",
       "era": "1970-1990",
@@ -2117,7 +2117,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Electrolysis_of_water"
       ],
-      "note": "Not established: the 50-55 kWh per kg energy figure, the nickel anode and activated-titanium cathode construction, the palladium diffuser deoxo step, and the 99.99% output purity. The electrolysis article confirms water electrolysis gives hydrogen at the cathode and oxygen at the anode and describes the palladium-diffusion problem; it does not state the specific cell chemistry or energy figure of that era.",
+      "note": "Not established: the 50-55 kWh per kg energy figure, the nickel anode and activated-titanium cathode construction, the palladium diffuser deoxo step, and the 99.99% output purity. The electrolysis article confirms water electrolysis gives hydrogen at the cathode and oxygen at the anode and describes the palladium-diffusion problem. It does not state the specific cell chemistry or energy figure of that era.",
       "edges": [
         {
           "to": "facility.electricity",
@@ -2153,7 +2153,7 @@
           "id": "facility.steam.trap",
           "name": "Steam trap",
           "simple_name": "Steam trap",
-          "description": "A thermostatic (bimetallic or liquid-expansion) or mechanical bucket trap with a strainer upstream. Failed-open traps cost fuel; failed-closed traps flooded the plant. Every steam system of the era leaked at a few percent of its steam load, largely from these.",
+          "description": "A thermostatic (bimetallic or liquid-expansion) or mechanical bucket trap with a strainer upstream. Failed-open traps cost fuel. Failed-closed traps flooded the plant. Every steam system of the era leaked at a few percent of its steam load, largely from these.",
           "kind": "part",
           "category": "industry",
           "era": "1983",
@@ -2211,7 +2211,7 @@
               "id": "facility.steam.lime",
               "name": "Burn and hydrate lime",
               "simple_name": "Burn and hydrate lime",
-              "description": "Quicklime CaO is burnt from limestone in a vertical or flash calciner at about 1000 C, losing its carbon dioxide as CO2 and leaving a caustic porous solid; it is then hydrated, an exothermic reaction that turns it into slaked lime Ca(OH)2 for the lime-soda process. Ends at the limestone quarry face.",
+              "description": "Quicklime CaO is burnt from limestone in a vertical or flash calciner at about 1000 C, losing its carbon dioxide as CO2 and leaving a caustic porous solid. It is then hydrated, an exothermic reaction that turns it into slaked lime Ca(OH)2 for the lime-soda process. Ends at the limestone quarry face.",
               "kind": "process",
               "category": "industry",
               "era": "1983",
@@ -2255,7 +2255,7 @@
           "id": "facility.steam.demineralisation",
           "name": "Ion-exchange demineralisation",
           "simple_name": "Ion-exchange demineralisation",
-          "description": "A cation exchanger in the sodium form swaps Ca/Mg for Na; a strongly basic anion exchanger then swaps the bicarbonate/sulphate/chloride anions for OH; CO2 is degassed between the two beds by a packed or bubble column, because skipping the degasser overloaded the anion resin with carbonic acid and shortened its life; the effluent is then polished in a mixed bed to the sodium-chloride equivalent of a few tens of ppb. Resin is regenerated with 10-20% caustic and 6-12% hydrochloric or sulphuric acid, and each regeneration blew a large slug of acidic or alkaline brine once or twice a day that had to go somewhere - in 1983 usually a lined lagoon, a settling pond and then a discharge permit.",
+          "description": "A cation exchanger in the sodium form swaps Ca/Mg for Na; a strongly basic anion exchanger then swaps the bicarbonate/sulphate/chloride anions for OH; CO2 is degassed between the two beds by a packed or bubble column, because skipping the degasser overloaded the anion resin with carbonic acid and shortened its life; the effluent is then polished in a mixed bed to the sodium-chloride equivalent of a few tens of ppb. Resin is regenerated with 10-20% caustic and 6-12% hydrochloric or sulphuric acid, and each regeneration blew a large slug of acidic or alkaline brine once or twice a day that had to go somewhere. This was in 1983 usually a lined lagoon, a settling pond and then a discharge permit.",
           "kind": "process",
           "category": "industry",
           "era": "1960-1990",
@@ -2277,7 +2277,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Ion-exchange_resin"
           ],
-          "note": "Modern practice adds a second pass of RO/mixed bed and typically achieves 18 Mohm-cm; the 1980s benchmark for a good mixed bed was 10-15 Mohm-cm.",
+          "note": "Modern practice adds a second pass of RO/mixed bed and typically achieves 18 Mohm-cm. The 1980s benchmark for a good mixed bed was 10-15 Mohm-cm.",
           "children": [],
           "edges": [
             {
@@ -2296,7 +2296,7 @@
       "id": "facility.helium.cryo-separation",
       "name": "Cryogenic helium separation from natural gas",
       "simple_name": "Cryogenic helium separation",
-      "description": "The gas is chilled to -190 C through a train of plate-fin heat exchangers; helium, having the second-lowest boiling point, stays in the vapour phase and is drawn off from the top of the cold box as a crude 50-75% helium stream. Then purified by cryogenic adsorption, catalytic dehydrogenation of the residual hydrogen and activated-carbon adsorption of the nitrogen - the last step adsorbs the nitrogen on a char bed at 77 K to give 99.995% (5N) or 99.9999% (6N) helium. The same activated-carbon adsorption principle as the water-treatment carbon, run at liquid-nitrogen temperature.",
+      "description": "The gas is chilled to -190 C through a train of plate-fin heat exchangers. Helium, having the second-lowest boiling point, stays in the vapour phase and is drawn off from the top of the cold box as a crude 50-75% helium stream. Then purified by cryogenic adsorption, catalytic dehydrogenation of the residual hydrogen and activated-carbon adsorption of the nitrogen. The last step adsorbs the nitrogen on a char bed at 77 K to give 99.995% (5N) or 99.9999% (6N) helium. The same activated-carbon adsorption principle as the water-treatment carbon, run at liquid-nitrogen temperature.",
       "kind": "process",
       "category": "industry",
       "era": "1970-1990",
@@ -2328,7 +2328,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Helium"
           ],
-          "note": "Not established: the 4.2 K figure, the 0.5-1% per day evaporation rate and the truck top-up practice. The helium article confirms that most helium is liquefied by a cryogenic process and that the safety issues resemble liquid nitrogen; the numbers are not in it.",
+          "note": "Not established: the 4.2 K figure, the 0.5-1% per day evaporation rate and the truck top-up practice. The helium article confirms that most helium is liquefied by a cryogenic process and that the safety issues resemble liquid nitrogen. The numbers are not in it.",
           "edges": [
             {
               "to": "facility.helium",
@@ -2389,7 +2389,7 @@
       "id": "facility.water.mixed-bed",
       "name": "Mixed-bed deioniser",
       "simple_name": "Mixed-bed deioniser",
-      "description": "A single resin bed with the cation and anion beads thoroughly mixed, polishing the effluent of the two-bed demineraliser down to a few tens of parts per billion of the sodium-chloride equivalent. It was the top of the 1980s purity curve and was standard offtake to the wet benches; the resin was regenerated with caustic and acid at the same time rather than in sequence, which is what gave the single-pass polish its quality.",
+      "description": "A single resin bed with the cation and anion beads thoroughly mixed, polishing the effluent of the two-bed demineraliser down to a few tens of parts per billion of the sodium-chloride equivalent. It was the top of the 1980s purity curve and was standard offtake to the wet benches. The resin was regenerated with caustic and acid at the same time rather than in sequence, which is what gave the single-pass polish its quality.",
       "kind": "process",
       "category": "fluids",
       "era": "1960-1990",
@@ -2430,7 +2430,7 @@
       "id": "facility.water.ro",
       "name": "Reverse osmosis",
       "simple_name": "Reverse osmosis",
-      "description": "Cellulose acetate or thin-film composite spiral-wound elements in 6-inch pressure vessels rejecting 90-99% of dissolved ions, 95-98% of organics and, importantly for the 1980s plant, most of the silica and hardness. The first RO units were installed at plants like this from the mid-1970s; by 1983 they were displacing two beds of ion exchange ahead of the polishers.",
+      "description": "Cellulose acetate or thin-film composite spiral-wound elements in 6-inch pressure vessels rejecting 90-99% of dissolved ions, 95-98% of organics and, importantly for the 1980s plant, most of the silica and hardness. The first RO units were installed at plants like this from the mid-1970s. By 1983 they were displacing two beds of ion exchange ahead of the polishers.",
       "kind": "process",
       "category": "fluids",
       "era": "1970-1990",
@@ -2452,7 +2452,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Reverse_osmosis"
       ],
-      "note": "Modern practice is two-pass RO with antiscalant dosing and a final UV and ultrafiltration; the 1980s plant had a single pass and no antiscalant. Not established: the 10-15 bar brackish and 55-70 bar seawater operating pressures and the 95-99.5% salt rejection figures. The reverse osmosis article gives 2-17 bar for fresh and brackish water and 40-82 bar for seawater, and states no rejection percentage.",
+      "note": "Modern practice is two-pass RO with antiscalant dosing and a final UV and ultrafiltration. The 1980s plant had a single pass and no antiscalant. Not established: the 10-15 bar brackish and 55-70 bar seawater operating pressures and the 95-99.5% salt rejection figures. The reverse osmosis article gives 2-17 bar for fresh and brackish water and 40-82 bar for seawater, and states no rejection percentage.",
       "children": [],
       "edges": [
         {
@@ -2586,13 +2586,13 @@
       "category": "fluids",
       "era": "1960-1990",
       "confidence": "medium",
-      "note": "Not established: that 1980s chillers were almost all ammonia or R-12/CFC-11. Modern chillers are documented as vapour-compression units on a separate condenser water loop; the refrigerant mix of the 1980s is not sourced here."
+      "note": "Not established: that 1980s chillers were almost all ammonia or R-12/CFC-11. Modern chillers are documented as vapour-compression units on a separate condenser water loop. The refrigerant mix of the 1980s is not sourced here."
     },
     "facility.steam.boiler": {
       "id": "facility.steam.boiler",
       "name": "Water-tube boiler",
       "simple_name": "Water-tube boiler",
-      "description": "Two-drum or three-drum evaporators with a superheater. Industrial boilers of 4-20 t/h fired coal at about 6-9 bar saturated, directly into the plant's heating and process network. Economisers and feedwater heaters recovered heat; a fraction of the boiler water was blown down to keep total dissolved solids and alkalinity inside limits, which is why the make-up had to be soft or demineralised or the cycles of concentration collapsed. That blowdown went to a flash tank for heat recovery and then to the cooling-water basin. Two spring-loaded safety valves per drum, a feedwater level regulator and a refractory-lined sight-glass port were the bits an operator actually watched.",
+      "description": "Two-drum or three-drum evaporators with a superheater. Industrial boilers of 4-20 t/h fired coal at about 6-9 bar saturated, directly into the plant's heating and process network. Economisers and feedwater heaters recovered heat. A fraction of the boiler water was blown down to keep total dissolved solids and alkalinity inside limits, which is why the make-up had to be soft or demineralised or the cycles of concentration collapsed. That blowdown went to a flash tank for heat recovery and then to the cooling-water basin. Two spring-loaded safety valves per drum, a feedwater level regulator and a refractory-lined sight-glass port were the bits an operator actually watched.",
       "kind": "tool",
       "category": "industry",
       "era": "1960-1990",
@@ -2663,7 +2663,7 @@
         }
       ],
       "confidence": "medium",
-      "note": "These units were called 'pass turbines' or 'back-pressure turbines' and were the main cogeneration technology before the 1980s gas-engine programme; natural-gas-fired turbine-generator sets took over from about 1980.",
+      "note": "These units were called 'pass turbines' or 'back-pressure turbines' and were the main cogeneration technology before the 1980s gas-engine programme. Natural-gas-fired turbine-generator sets took over from about 1980.",
       "children": [
         {
           "id": "facility.steam.turbine-governor",
@@ -2685,7 +2685,7 @@
       "id": "facility.argon.argon-column",
       "name": "Argon recovery column",
       "simple_name": "Argon recovery column",
-      "description": "A second, smaller column that separates the nitrogen-argon mixture from the top of the nitrogen column into pure argon bottoms and nitrogen tops. Installed when the oxygen plant needed the argon value or the customer paid for it - usually in a semiconductor or welding-wire plant, not in a steelworks.",
+      "description": "A second, smaller column that separates the nitrogen-argon mixture from the top of the nitrogen column into pure argon bottoms and nitrogen tops. Installed when the oxygen plant needed the argon value or the customer paid for it. This was usually in a semiconductor or welding-wire plant, not in a steelworks.",
       "kind": "tool",
       "category": "industry",
       "era": "1960-1990",
@@ -2699,7 +2699,7 @@
       "id": "facility.nitrogen.tube-trailer",
       "name": "Tube trailer (bulk gas road delivery)",
       "simple_name": "Tube trailer",
-      "description": "A tractor-trailer carrying 30-40 high-pressure cylinders or a single multi-compartment tube bundle of 6,000-15,000 litres, delivering liquid nitrogen, oxygen or argon from a merchant plant. In 1983 this was how a factory without an on-site ASU got its gases; the driver's unload was a vent line that fogged the yard and alarmed the neighbours.",
+      "description": "A tractor-trailer carrying 30-40 high-pressure cylinders or a single multi-compartment tube bundle of 6,000-15,000 litres, delivering liquid nitrogen, oxygen or argon from a merchant plant. In 1983 this was how a factory without an on-site ASU got its gases. The driver's unload was a vent line that fogged the yard and alarmed the neighbours.",
       "kind": "tool",
       "category": "fluids",
       "era": "1960-1990",
@@ -2720,7 +2720,7 @@
       "id": "facility.compressed-air.compressor",
       "name": "Air compressor",
       "simple_name": "Air compressor",
-      "description": "Reciprocating or, from the 1960s onward, oil-injected rotary screw machines. A large electronics plant ran several 100-300 kW screw units; a small sub-contractor ran one 30 kW reciprocating machine under a concrete acoustic enclosure.",
+      "description": "Reciprocating or, from the 1960s onward, oil-injected rotary screw machines. A large electronics plant ran several 100-300 kW screw units. A small sub-contractor ran one 30 kW reciprocating machine under a concrete acoustic enclosure.",
       "kind": "tool",
       "category": "industry",
       "era": "1960-1990",
@@ -2825,14 +2825,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Compressed_air"
       ],
-      "note": "Modern practice is a zero-pressure-change desiccant dryer with a heated purge and dew-point controlled switching; in 1983 the purge air was thrown away, which is why instrument-air plants were noisy and hot. Not established: the 2-10 C refrigerant and -40 to -70 C desiccant dew points, and the claim that the purge air was thrown away in 1983. The compressed air article shows a Joule-Thomson refrigerated dryer on a compressor set; it gives no dew points and says nothing about desiccant units of that period.",
+      "note": "Modern practice is a zero-pressure-change desiccant dryer with a heated purge and dew-point controlled switching. In 1983 the purge air was thrown away, which is why instrument-air plants were noisy and hot. Not established: the 2-10 C refrigerant and -40 to -70 C desiccant dew points, and the claim that the purge air was thrown away in 1983. The compressed air article shows a Joule-Thomson refrigerated dryer on a compressor set. It gives no dew points and says nothing about desiccant units of that period.",
       "children": []
     },
     "facility.compressed-air.receiver": {
       "id": "facility.compressed-air.receiver",
       "name": "Air receiver (accumulator)",
       "simple_name": "Air receiver",
-      "description": "A vertical ASME code air vessel, 1-10 m3, acting as a buffer so the compressor could unload on a pressure switch. It also stored enough air to ride through a power cut for a few minutes - which in a fab meant keeping the wet-bench exhaust and the compressors together.",
+      "description": "A vertical ASME code air vessel, 1-10 m3, acting as a buffer so the compressor could unload on a pressure switch. It also stored enough air to ride through a power cut for a few minutes, which in a fab meant keeping the wet-bench exhaust and the compressors together.",
       "kind": "tool",
       "category": "industry",
       "era": "1960-1990",
@@ -2846,7 +2846,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Pressure_vessel"
       ],
-      "note": "Not established: the 2-10 m3 capacity at 8 bar and the claim that the receiver rode through a power cut for a few minutes. The ASME code vessel is sourced; the sizing is not."
+      "note": "Not established: the 2-10 m3 capacity at 8 bar and the claim that the receiver rode through a power cut for a few minutes. The ASME code vessel is sourced. The sizing is not."
     },
     "facility.power.cement-kiln": {
       "id": "facility.power.cement-kiln",
@@ -2873,7 +2873,7 @@
       "category": "industry",
       "era": "1983",
       "confidence": "medium",
-      "note": "Established: that the heat source for a boiler is the combustion of coal, oil or natural gas, per the encyclopaedia article on boilers. Not established: the conveyor, hopper and boiler feed screw line-up, the oil tank and pump skid, and the claim that manual barrow-and-shovel coal handling was still normal at plants below about 10 t/h; the boiler article does not describe fuel handling plant, and no boiler-handling standard or plant survey was located."
+      "note": "Established: that the heat source for a boiler is the combustion of coal, oil or natural gas, per the encyclopaedia article on boilers. Not established: the conveyor, hopper and boiler feed screw line-up, the oil tank and pump skid, and the claim that manual barrow-and-shovel coal handling was still normal at plants below about 10 t/h. The boiler article does not describe fuel handling plant, and no boiler-handling standard or plant survey was located."
     },
     "facility.nitrogen.asu-heat-exchanger": {
       "id": "facility.nitrogen.asu-heat-exchanger",
@@ -2888,7 +2888,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Air_separation"
       ],
-      "note": "Not established: the 10-20 m height of the cold box. The air separation article confirms the plate fin brazed aluminium heat exchangers inside a cold box and the 1-2 K approach between the combined condenser and reboiler; the height is not stated."
+      "note": "Not established: the 10-20 m height of the cold box. The air separation article confirms the plate fin brazed aluminium heat exchangers inside a cold box and the 1-2 K approach between the combined condenser and reboiler. The height is not stated."
     },
     "facility.nitrogen.asu-tower": {
       "id": "facility.nitrogen.asu-tower",
@@ -2916,13 +2916,13 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Air_separation"
       ],
-      "note": "Not established: that expansion turbines were standard from the 1960s onward and drove the air compressor. The air separation article says modern ASUs use expansion turbines for cooling with the output helping to drive the air compressor; it does not date the practice."
+      "note": "Not established: that expansion turbines were standard from the 1960s onward and drove the air compressor. The air separation article says modern ASUs use expansion turbines for cooling with the output helping to drive the air compressor. It does not date the practice."
     },
     "facility.cleanroom.ffu": {
       "id": "facility.cleanroom.ffu",
       "name": "Fan filter unit and laminar flow",
       "simple_name": "Fan filter unit",
-      "description": "A 2.4 x 1.2 m fan-filter unit or a fan coil with an integral HEPA, blowing filtered air down through perforated ceiling tiles at 0.3-0.5 m/s to give unidirectional ('laminar') flow. Open cleanroom used ceiling FFUs over the whole floor; the 1980s move was to a 'minienvironment' - a small FFU box over each process tool inside a Class 1000 room - which was the direct ancestor of today's SMIF pods.",
+      "description": "A 2.4 x 1.2 m fan-filter unit or a fan coil with an integral HEPA, blowing filtered air down through perforated ceiling tiles at 0.3-0.5 m/s to give unidirectional ('laminar') flow. Open cleanroom used ceiling FFUs over the whole floor. The 1980s move was to a 'minienvironment' (a small FFU box over each process tool inside a Class 1000 room) which was the direct ancestor of today's SMIF pods.",
       "kind": "tool",
       "category": "silicon",
       "era": "1970-1990",
@@ -2990,7 +2990,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Thermal_oxidizer"
       ],
-      "note": "Solvent recovery by activated-carbon adsorption and distillation was increasingly preferred for cost reasons even in 1983 - recovery plant cost money to buy but paid back in solvent.",
+      "note": "Solvent recovery by activated-carbon adsorption and distillation was increasingly preferred for cost reasons even in 1983. Recovery plant cost money to buy but paid back in solvent.",
       "edges": [
         {
           "to": "chem.natural-gas",
@@ -3030,7 +3030,7 @@
           "category": "industry",
           "era": "1983",
           "confidence": "medium",
-          "note": "Not established: the 60-80 percent combustion-air share for drying and suspending pulverised coal, or that the same air swept the powder between the boiler tube banks on the stations feeding this supply; the split and the duty carry no source."
+          "note": "Not established: the 60-80 percent combustion-air share for drying and suspending pulverised coal, or that the same air swept the powder between the boiler tube banks on the stations feeding this supply. The split and the duty carry no source."
         }
       ]
     },
@@ -3038,7 +3038,7 @@
       "id": "facility.power.coal-plant.boiler",
       "name": "Water-tube boiler and evaporator",
       "simple_name": "Coal boiler and evaporator",
-      "description": "Drum-type water-tube boiler, typically 300-900 MW, drum at ~15 MPa and 340-370 C. Feedwater circulates through downcomers and up risers around a flame path several hundred passes long; saturated steam leaves the drum to be superheated. Superheaters raise that saturated steam to 540-565 C by hanging banks of tube bundles in the radiant and convective pass, and reheaters do the same again to the steam coming back out of the high-pressure turbine - higher steam temperature is the single biggest lever on plant thermal efficiency. An economiser, a bank of finned tubes in the flue-gas path, preheats feedwater from about 120 C to the saturation temperature using the last 8-10% of the flue-gas heat. Ash from the boiler hoppers was quenched, then either dewatered and trucked to a landfill or put wet into a hopper and pumped as slurry; fly ash was collected in electrostatic precipitators or baghouses and trucked dry or ponded.",
+      "description": "Drum-type water-tube boiler, typically 300-900 MW, drum at ~15 MPa and 340-370 C. Feedwater circulates through downcomers and up risers around a flame path several hundred passes long. Saturated steam leaves the drum to be superheated. Superheaters raise that saturated steam to 540-565 C by hanging banks of tube bundles in the radiant and convective pass, and reheaters do the same again to the steam coming back out of the high-pressure turbine. Higher steam temperature is the single biggest lever on plant thermal efficiency. An economiser, a bank of finned tubes in the flue-gas path, preheats feedwater from about 120 C to the saturation temperature using the last 8-10% of the flue-gas heat. Ash from the boiler hoppers was quenched, then either dewatered and trucked to a landfill or put wet into a hopper and pumped as slurry. Fly ash was collected in electrostatic precipitators or baghouses and trucked dry or ponded.",
       "kind": "tool",
       "category": "industry",
       "era": "1960-1985",
@@ -3094,7 +3094,7 @@
           "id": "facility.power.coal-plant.condenser",
           "name": "Surface condenser",
           "simple_name": "Surface condenser",
-          "description": "Thousands of stainless-steel tubes with condensing exhaust steam outside and cooling water inside. The condensate is the plant's own feedwater; cleanliness here directly sets boiler-tube life.",
+          "description": "Thousands of stainless-steel tubes with condensing exhaust steam outside and cooling water inside. The condensate is the plant's own feedwater. Cleanliness here directly sets boiler-tube life.",
           "kind": "tool",
           "category": "industry",
           "era": "1960-1985",
@@ -3109,7 +3109,7 @@
           "id": "facility.power.coal-plant.generator",
           "name": "Generator (turbo-alternator)",
           "simple_name": "Turbo-generator",
-          "description": "The turbine shaft turns a 2- or 4-pole alternator at 3000/3600 rpm. A 500 MVA water-cooled unit is about 12 m long and 6 m wide. Output was 13.8 kV or 21 kV - far too low to transmit, hence the step-up transformer next door.",
+          "description": "The turbine shaft turns a 2- or 4-pole alternator at 3000/3600 rpm. A 500 MVA water-cooled unit is about 12 m long and 6 m wide. Output was 13.8 kV or 21 kV. This was far too low to transmit, hence the step-up transformer next door.",
           "kind": "tool",
           "category": "power",
           "era": "1960-1985",
@@ -3175,7 +3175,7 @@
       "id": "facility.power.gas-plant.turbine",
       "name": "Gas turbine",
       "simple_name": "Gas turbine",
-      "description": "A compressor, a combustor at 1400-1600 C and a turbine in a single shaft or two. Open-cycle efficiency only 25-35% in 1983 - the poor number that made gas peakers expensive until combined cycle became standard in the 1990s.",
+      "description": "A compressor, a combustor at 1400-1600 C and a turbine in a single shaft or two. Open-cycle efficiency only 25-35% in 1983. This was the poor number that made gas peakers expensive until combined cycle became standard in the 1990s.",
       "kind": "tool",
       "category": "power",
       "era": "1970-1990",
@@ -3240,7 +3240,7 @@
       "id": "facility.coal.washing",
       "name": "Dense-medium coal washing",
       "simple_name": "Coal washing",
-      "description": "Raw coal is floated on a magnetite/water slurry of specific gravity ~1.35; the light coal floats, the ash-rich shale sinks. This is where the mountaintop-removal debate's 'coal refuse' piles come from.",
+      "description": "Raw coal is floated on a magnetite/water slurry of specific gravity ~1.35. The light coal floats, the ash-rich shale sinks. This is where the mountaintop-removal debate's 'coal refuse' piles come from.",
       "kind": "process",
       "category": "industry",
       "era": "1983",
@@ -3288,7 +3288,7 @@
       "id": "facility.coal.longwall",
       "name": "Longwall face",
       "simple_name": "Longwall face",
-      "description": "A mechanised shearer cuts a 2-3 m slice across the panel; the roof is allowed to cave into the goaf and the coal flows to a shearer loader. High recovery, high output, and a lot of subsidence.",
+      "description": "A mechanised shearer cuts a 2-3 m slice across the panel. The roof is allowed to cave into the goaf and the coal flows to a shearer loader. High recovery, high output, and a lot of subsidence.",
       "kind": "process",
       "category": "industry",
       "era": "1983",
@@ -3400,7 +3400,7 @@
       "id": "facility.water.multimedia-filtration",
       "name": "Multimedia (sand) filtration",
       "simple_name": "Sand filtration",
-      "description": "Pressure filters in lead/catalysed iron tanks, 3.5-4.5 m diameter, containing 600-700 mm of graded media - typically 100 mm anthracite on 50 mm sand on 25 mm garnet. Backwashed with air scour plus water at 20-40 m/h.",
+      "description": "Pressure filters in lead/catalysed iron tanks, 3.5-4.5 m diameter, containing 600-700 mm of graded media. This was typically 100 mm anthracite on 50 mm sand on 25 mm garnet. Backwashed with air scour plus water at 20-40 m/h.",
       "kind": "process",
       "category": "fluids",
       "era": "1960-1990",
@@ -3478,7 +3478,7 @@
       "id": "facility.cleanroom.gowning-supplies",
       "name": "Garment and consumable supply",
       "simple_name": "Garment supply",
-      "description": "Garments were not laundryable in the era - a hooded coverall was worn once and destroyed. The plant bought enormous quantities of spun-bonded polypropylene garments, hoods, overshoes, gloves, wipes and tacky mats, and washed nothing. One 1980s 5,000-person fab burned something like a million garments a year.",
+      "description": "Garments were not laundryable in the era. A hooded coverall was worn once and destroyed. The plant bought enormous quantities of spun-bonded polypropylene garments, hoods, overshoes, gloves, wipes and tacky mats, and washed nothing. One 1980s 5,000-person fab burned something like a million garments a year.",
       "kind": "process",
       "category": "logistics",
       "era": "1983",
@@ -3491,7 +3491,7 @@
       ],
       "confidence": "medium",
       "provenance": "complete",
-      "note": "The garment figure is an order-of-magnitude estimate; No published 1983 consumption figure was found. Modern fabs launder and reuse garments and use more reusable materials, which was one of the first sustainability targets in the industry.",
+      "note": "The garment figure is an order-of-magnitude estimate. No published 1983 consumption figure was found. Modern fabs launder and reuse garments and use more reusable materials, which was one of the first sustainability targets in the industry.",
       "children": [],
       "edges": [
         {
@@ -3504,7 +3504,7 @@
       "id": "facility.hazardous-waste.neutralisation",
       "name": "Acid neutralisation with lime",
       "simple_name": "Acid neutralisation",
-      "description": "The cheapest and by far the most common treatment: slaked lime or limestone slurry is dosed into a reaction tank, the acid is neutralised, the metal hydroxides precipitate out, and the tank is then settled and the supernatant discharged. It converts an acid into a sludge - which is still a hazardous waste, just a solid one.",
+      "description": "The cheapest and by far the most common treatment: slaked lime or limestone slurry is dosed into a reaction tank, the acid is neutralised, the metal hydroxides precipitate out, and the tank is then settled and the supernatant discharged. It converts an acid into a sludge, which is still a hazardous waste, just a solid one.",
       "kind": "process",
       "category": "industry",
       "era": "1960-1990",
@@ -3518,7 +3518,7 @@
           "id": "facility.hazardous-waste.settling-pond",
           "name": "Settling pond / lagoon",
           "simple_name": "Settling pond",
-          "description": "An unlined or clay-lined earthen basin into which treated effluent was discharged and solids allowed to settle, with the supernatant decanted to a stream or a municipal sewer. Thousands of these existed in 1983; the liner requirements came later. The pond was often the plant's cheapest and worst idea.",
+          "description": "An unlined or clay-lined earthen basin into which treated effluent was discharged and solids allowed to settle, with the supernatant decanted to a stream or a municipal sewer. Thousands of these existed in 1983. The liner requirements came later. The pond was often the plant's cheapest and worst idea.",
           "kind": "site",
           "category": "industry",
           "era": "1960-1990",
@@ -3539,7 +3539,7 @@
           ]
         }
       ],
-      "note": "No document located that describes lime or limestone neutralisation of semiconductor waste streams as the commonest treatment. The general chemistry is not in question; the claim about frequency of practice in the 1980s electronics industry is unsourced.",
+      "note": "No document located that describes lime or limestone neutralisation of semiconductor waste streams as the commonest treatment. The general chemistry is not in question. The claim about frequency of practice in the 1980s electronics industry is unsourced.",
       "edges": [
         {
           "to": "facility.hazardous-waste.metal-hydroxide-sludge",
@@ -3577,7 +3577,7 @@
           "id": "facility.power.air-preheater",
           "name": "Ljungstrom / regenerative air preheater",
           "simple_name": "Ljungstrom preheater",
-          "description": "The flue gas gives up its heat to the incoming combustion air through a slow-rotating bank of corrugated steel plates - exhaust gas at ~300 C, air at ~300 C. This alone recovered several percent of the coal's energy.",
+          "description": "The flue gas gives up its heat to the incoming combustion air through a slow-rotating bank of corrugated steel plates. This is exhaust gas at ~300 C, air at ~300 C. This alone recovered several percent of the coal's energy.",
           "kind": "tool",
           "category": "industry",
           "era": "1960-1985",
@@ -3588,7 +3588,7 @@
           "id": "facility.power.coal-plant.scrubber",
           "name": "Wet flue-gas desulphuriser (scrubber)",
           "simple_name": "Flue-gas scrubber",
-          "description": "Required in the US from about 1978 onward once new-source performance standards took effect. Slaked lime or limestone slurry absorbs SO2 to calcium sulphite, which is then forced-oxidised to gypsum; the stack gas is reheated so the plume still rises.",
+          "description": "Required in the US from about 1978 onward once new-source performance standards took effect. Slaked lime or limestone slurry absorbs SO2 to calcium sulphite, which is then forced-oxidised to gypsum. The stack gas is reheated so the plume still rises.",
           "kind": "process",
           "category": "industry",
           "era": "1978-1990",
@@ -3724,7 +3724,7 @@
       "id": "facility.cleanroom.hepa",
       "name": "HEPA (absolute) filter",
       "simple_name": "HEPA filter",
-      "description": "Deep pleated borosilicate glass-fibre media in a galvanised steel casing, rated 99.97% efficient at 0.3 micrometres - the most penetrating particle size, hence 'most penetrating diameter'. A 2.4 m x 1.2 m filter was the ceiling module of every 1980s fab, ceiling and laminar-flow bench alike.",
+      "description": "Deep pleated borosilicate glass-fibre media in a galvanised steel casing, rated 99.97% efficient at 0.3 micrometres. This is the most penetrating particle size, hence 'most penetrating diameter'. A 2.4 m x 1.2 m filter was the ceiling module of every 1980s fab, ceiling and laminar-flow bench alike.",
       "kind": "part",
       "category": "silicon",
       "era": "1983",
@@ -3746,7 +3746,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/HEPA"
       ],
-      "note": "HEPA rated at 0.3 um is the number quoted then; it is a worst-case penetration figure, not the true 0.5 um count the class designation used.",
+      "note": "HEPA rated at 0.3 um is the number quoted then. It is a worst-case penetration figure, not the true 0.5 um count the class designation used.",
       "children": [],
       "edges": [
         {
@@ -3796,7 +3796,7 @@
       "id": "facility.cleanroom.bobbin-and-tools",
       "name": "Wafer carriers and handling hardware",
       "simple_name": "Wafer carriers",
-      "description": "In 1983 a wafer still travelled in a quartz boat inside a plastic carrier, or hand-carried in a PTFE-wafer cassette from process to process. The SMIF FOUP - the sealed nitrogen-purged single-wafer container that made the whole modern fab possible - arrived with SEMI E10 in the early 1990s. Before that, every transfer was an opportunity for a particle, and a large fraction of the total defect budget.",
+      "description": "In 1983 a wafer still travelled in a quartz boat inside a plastic carrier, or hand-carried in a PTFE-wafer cassette from process to process. The SMIF FOUP (the sealed nitrogen-purged single-wafer container that made the whole modern fab possible) arrived with SEMI E10 in the early 1990s. Before that, every transfer was an opportunity for a particle, and a large fraction of the total defect budget.",
       "kind": "part",
       "category": "silicon",
       "era": "1983",
@@ -3808,7 +3808,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
       ],
-      "note": "Modern practice is the 300 mm FOUP in a minienvironment with automatic material handling; the 1980s practice was a person carrying a cassette.",
+      "note": "Modern practice is the 300 mm FOUP in a minienvironment with automatic material handling. The 1980s practice was a person carrying a cassette.",
       "children": [
         {
           "id": "facility.cleanroom.quartz-boat",
@@ -3842,7 +3842,7 @@
       "id": "facility.hazardous-waste.manifest",
       "name": "The RCRA manifest",
       "simple_name": "RCRA manifest",
-      "description": "A multi-part paper form - the shipping paper, the generator certification and the transporter and facility certifications - carried with the load from generator to treatment, storage or disposal facility, with signed copies returned to the generator. This is the paper trail that later made it possible to reconstruct where Commodore's waste went.",
+      "description": "A multi-part paper form (the shipping paper, the generator certification and the transporter and facility certifications) carried with the load from generator to treatment, storage or disposal facility, with signed copies returned to the generator. This is the paper trail that later made it possible to reconstruct where Commodore's waste went.",
       "kind": "part",
       "category": "packaging",
       "era": "1983",
@@ -3893,7 +3893,7 @@
       "id": "logistics.shipping.containerisation",
       "name": "Containerisation (40-foot box)",
       "simple_name": "Containerisation",
-      "description": "ISO 40-foot general purpose container: 12.192 m x 2.438 m x 2.591 m internal, holding up to about 32-36 tonnes. One TEU is a 20-foot box; a 40-foot box is two. Box rates had replaced weight rates on the main east-west lanes by the end of the 1970s, so a low-density, high-value cargo like a C64 paid per box rather than per tonne.",
+      "description": "ISO 40-foot general purpose container: 12.192 m x 2.438 m x 2.591 m internal, holding up to about 32-36 tonnes. One TEU is a 20-foot box. A 40-foot box is two. Box rates had replaced weight rates on the main east-west lanes by the end of the 1970s, so a low-density, high-value cargo like a C64 paid per box rather than per tonne.",
       "kind": "part",
       "category": "packaging",
       "era": "1983",
@@ -3915,13 +3915,13 @@
         "https://www.ams.usda.gov/sites/default/files/media/RTIReportChapter14.pdf"
       ],
       "confidence": "medium",
-      "note": "The C64 weighed roughly 4 kg boxed; a 40-ft box at 32 t payload would in principle hold hundreds, but in practice the limit was volume and the fact that C64s were not stackable with the packaging of the day, so 250-350 is a working estimate, not a documented figure."
+      "note": "The C64 weighed roughly 4 kg boxed. A 40-ft box at 32 t payload would in principle hold hundreds, but in practice the limit was volume and the fact that C64s were not stackable with the packaging of the day, so 250-350 is a working estimate, not a documented figure."
     },
     "logistics.shipping.bill-of-lading": {
       "id": "logistics.shipping.bill-of-lading",
       "name": "The bill of lading",
       "simple_name": "bill of lading",
-      "description": "The negotiable document that made containerised trade possible: a carrier-issued contract of carriage naming the shipper, the consignee, the port of loading and discharge, the freight terms, and the description of the goods. Without it the goods did not move; with it, the bank paid on presentation. The 1983 electronic BOL did not exist - the paper document was the mechanism.",
+      "description": "The negotiable document that made containerised trade possible: a carrier-issued contract of carriage naming the shipper, the consignee, the port of loading and discharge, the freight terms, and the description of the goods. Without it the goods did not move. With it, the bank paid on presentation. The 1983 electronic BOL did not exist. The paper document was the mechanism.",
       "kind": "part",
       "category": "packaging",
       "era": "1983",
@@ -3934,7 +3934,7 @@
       "id": "logistics.shipping.import-duty",
       "name": "US import duty on a computer in 1983",
       "simple_name": "US import duty",
-      "description": "The C64 entered the United States under the Tariff Schedules of the United States (the TSUS - the HTS did not exist until 1989), classified as an accounting, computing and other data processing machine incorporating a calculating mechanism, item 676.15, dutiable at 5.5% ad valorem. Separately, item 807.00 gave a duty allowance for the US components shipped out for assembly abroad - which for Commodore meant a deduction for the value of the MOS chips and the case shipped to Hong Kong, so only the value added in Hong Kong paid duty.",
+      "description": "The C64 entered the United States under the Tariff Schedules of the United States (the TSUS. The HTS did not exist until 1989), classified as an accounting, computing and other data processing machine incorporating a calculating mechanism, item 676.15, dutiable at 5.5% ad valorem. Separately, item 807.00 gave a duty allowance for the US components shipped out for assembly abroad. This for Commodore meant a deduction for the value of the MOS chips and the case shipped to Hong Kong, so only the value added in Hong Kong paid duty.",
       "kind": "process",
       "category": "logistics",
       "era": "1983",
@@ -3968,7 +3968,7 @@
       "id": "logistics.shipping.customs-valuation",
       "name": "Customs valuation and the paper trail",
       "simple_name": "Customs valuation",
-      "description": "US customs value was the transaction value - the price actually paid or payable - which is why Commodore's transfer-pricing between Commodore Electronics Ltd (Bahamas), Commodore Japan Ltd and the Hong Kong branch became the subject of a US Tax Court case that ran from 1991 and shifted $116 million of income between entities. The same transfer prices determined the duty. The documentation for a 1983 shipment would have included a commercial invoice, packing list, bill of lading and, in a bonded warehouse or an export-processing-zone deal, a certificate of origin.",
+      "description": "US customs value was the transaction value (the price actually paid or payable) which is why Commodore's transfer-pricing between Commodore Electronics Ltd (Bahamas), Commodore Japan Ltd and the Hong Kong branch became the subject of a US Tax Court case that ran from 1991 and shifted $116 million of income between entities. The same transfer prices determined the duty. The documentation for a 1983 shipment would have included a commercial invoice, packing list, bill of lading and, in a bonded warehouse or an export-processing-zone deal, a certificate of origin.",
       "kind": "process",
       "category": "logistics",
       "era": "1983",
@@ -3990,7 +3990,7 @@
           "id": "logistics.shipping.commercial-documents",
           "name": "Commercial invoice, packing list and certificate of origin",
           "simple_name": "Invoice, packing list, origin",
-          "description": "The three documents that travelled with the container besides the bill of lading. The invoice stated the price actually paid or payable, which is the number customs used; the packing list was the count and weight the carrier checked against the manifest; the certificate of origin was what made the 807.00 assembly-relief deduction claimable. In a bonded warehouse or an export-processing-zone deal all three had to be issued and retained for years - which is why the tax case could reconstruct Commodore's internal transfer prices two decades later.",
+          "description": "The three documents that travelled with the container besides the bill of lading. The invoice stated the price actually paid or payable, which is the number customs used; the packing list was the count and weight the carrier checked against the manifest; the certificate of origin was what made the 807.00 assembly-relief deduction claimable. In a bonded warehouse or an export-processing-zone deal all three had to be issued and retained for years. This is why the tax case could reconstruct Commodore's internal transfer prices two decades later.",
           "kind": "part",
           "sources": [
             "https://en.wikipedia.org/wiki/Commercial_invoice",
@@ -4007,7 +4007,7 @@
       "id": "logistics.shipping.c64-count",
       "name": "The volume Commodore was moving",
       "simple_name": "Commodore shipment volume",
-      "description": "By March 1983 the C64 was shipping at about 25,000 units a month and had passed the Apple II in monthly unit sales; roughly half a million had sold in the first six months. At 300 units a 40-foot box, that is about 83 TEU a month - about four to five ships' worth of containers a month, which sounds trivial until you remember it was compounding 20-30% a month.",
+      "description": "By March 1983 the C64 was shipping at about 25,000 units a month and had passed the Apple II in monthly unit sales. Roughly half a million had sold in the first six months. At 300 units a 40-foot box, that is about 83 TEU a month. This was about four to five ships' worth of containers a month, which sounds trivial until you remember it was compounding 20-30% a month.",
       "kind": "note",
       "category": "industry",
       "era": "1983",
@@ -4031,7 +4031,7 @@
       "id": "logistics.shipping.ports",
       "name": "The ports",
       "simple_name": "ports",
-      "description": "Kaohsiung was Taiwan's largest container port and was ranked the world's fifth-largest container port in 1982; its first container terminal was built 1969-70 and Container Terminal No. 4 in the Zhongxing Commercial Harbor Area was built from 1983. Keelung, on the northern approach to Taipei, opened the first Taiwanese container ship movements in January 1972 and worked on a filled jetty because of the terrain. Hong Kong's Victoria Harbour terminals, Rotterdam, and Long Beach or Oakland on the US West Coast, plus New York and Newark on the East Coast, completed the set.",
+      "description": "Kaohsiung was Taiwan's largest container port and was ranked the world's fifth-largest container port in 1982. Its first container terminal was built 1969-70 and Container Terminal No. 4 in the Zhongxing Commercial Harbor Area was built from 1983. Keelung, on the northern approach to Taipei, opened the first Taiwanese container ship movements in January 1972 and worked on a filled jetty because of the terrain. Hong Kong's Victoria Harbour terminals, Rotterdam, and Long Beach or Oakland on the US West Coast, plus New York and Newark on the East Coast, completed the set.",
       "kind": "facility",
       "category": "logistics",
       "era": "1983",
@@ -4065,7 +4065,7 @@
       "id": "logistics.shipping.routes",
       "name": "Route times: transpacific and Europe-Asia",
       "simple_name": "Transpacific and Europe-Asia",
-      "description": "Kaohsiung or Hong Kong to Long Beach is about 4,500-5,000 nautical miles via the Luzon Strait and the great circle; at 16-18 knots that is roughly 12-14 days port to port, plus 3-7 days in the terminal on each end. Hong Kong to Rotterdam via the Suez Canal is about 11,000 nautical miles, 22-26 days, with 5-7 days of canal transit and waiting. These were the numbers that set Commodore's inventory position: eight weeks of sea transit each way on the Pacific route, eleven to twelve weeks each way on the Europe route.",
+      "description": "Kaohsiung or Hong Kong to Long Beach is about 4,500-5,000 nautical miles via the Luzon Strait and the great circle. At 16-18 knots that is roughly 12-14 days port to port, plus 3-7 days in the terminal on each end. Hong Kong to Rotterdam via the Suez Canal is about 11,000 nautical miles, 22-26 days, with 5-7 days of canal transit and waiting. These were the numbers that set Commodore's inventory position: eight weeks of sea transit each way on the Pacific route, eleven to twelve weeks each way on the Europe route.",
       "kind": "note",
       "category": "industry",
       "era": "1983",
@@ -4080,24 +4080,24 @@
         }
       ],
       "confidence": "medium",
-      "note": "These are order-of-magnitude figures derived from distances and 1980s liner speeds; No published 1983 schedule for a specific Commodore carrier service was found."
+      "note": "These are order-of-magnitude figures derived from distances and 1980s liner speeds. No published 1983 schedule for a specific Commodore carrier service was found."
     },
     "logistics.shipping.air-freight": {
       "id": "logistics.shipping.air-freight",
       "name": "Air freight for the high-value parts",
       "simple_name": "Air freight",
-      "description": "Customs values tell the story: a box of 300 C64s entered at, say, $150-200 declared value each would carry $45,000-60,000 of electronics inside a container whose ocean freight was a few hundred dollars. The ICs were the opposite case: a 6510 and a VIC-II at internal transfer value were a tiny fraction of the customs value of the finished case, so nobody flew the chips - the chips came by sea inside the container, and the container moved once. Air freight was for prototypes, for a replacement part in an emergency, and for the tape and the spares.",
+      "description": "Customs values tell the story: a box of 300 C64s entered at, say, $150-200 declared value each would carry $45,000-60,000 of electronics inside a container whose ocean freight was a few hundred dollars. The ICs were the opposite case: a 6510 and a VIC-II at internal transfer value were a tiny fraction of the customs value of the finished case, so nobody flew the chips. The chips came by sea inside the container, and the container moved once. Air freight was for prototypes, for a replacement part in an emergency, and for the tape and the spares.",
       "kind": "note",
       "category": "industry",
       "era": "1983",
       "confidence": "medium",
-      "note": "Air freight in 1983 was priced by weight with a minimum weight, so the economics made it essentially unusable for consumer electronics inbound freight; it was used for sample and prototype shipments and for urgent replacement parts."
+      "note": "Air freight in 1983 was priced by weight with a minimum weight, so the economics made it essentially unusable for consumer electronics inbound freight. It was used for sample and prototype shipments and for urgent replacement parts."
     },
     "logistics.shipping.demurrage": {
       "id": "logistics.shipping.demurrage",
       "name": "Demurrage, detention and the inventory cost",
       "simple_name": "Demurrage and detention",
-      "description": "Two separate costs. Demurrage is the charge for leaving a container on the terminal beyond the free time; in 1983 free time was commonly four to five days and the daily charge escalated. Detention is the charge for keeping the container beyond the time allowed at the other end. On top of both sat the real cost: eight to twelve weeks of sea transit each way meant Commodore had to hold inventory in transit and in the destination warehouse, which is exactly the cost structure that rewarded the 'just-in-time' port-to-port discipline and punished Commodore's famous spotty availability in 1983.",
+      "description": "Two separate costs. Demurrage is the charge for leaving a container on the terminal beyond the free time. In 1983 free time was commonly four to five days and the daily charge escalated. Detention is the charge for keeping the container beyond the time allowed at the other end. On top of both sat the real cost: eight to twelve weeks of sea transit each way meant Commodore had to hold inventory in transit and in the destination warehouse, which is exactly the cost structure that rewarded the 'just-in-time' port-to-port discipline and punished Commodore's famous spotty availability in 1983.",
       "kind": "note",
       "category": "industry",
       "era": "1983",
@@ -4133,13 +4133,13 @@
         "https://spectrum.ieee.org/commodore-64"
       ],
       "confidence": "high",
-      "note": "These are Dougherty's estimates, not Commodore's accounts - Commodore never confirmed them. The $135 initial production cost is a Commodore figure."
+      "note": "These are Dougherty's estimates, not Commodore's accounts. Commodore never confirmed them. The $135 initial production cost is a Commodore figure."
     },
     "logistics.people.direct-labour": {
       "id": "logistics.people.direct-labour",
       "name": "Direct assembly labour per machine",
       "simple_name": "Assembly labour",
-      "description": "Roughly 0.5-1.5 person-hours per machine across population, insertion (automated), wave-solder, assembly, test and packing, plus a share of the test and rework. At 1983 Hong Kong and Japanese electronics wage levels of roughly HK$9-14 or JPY 500-700 per hour, that is about US$1-3 per machine of direct labour - between 3% and 8% of the $35-50 production cost. Direct labour is genuinely tiny compared with the IC content, which is exactly the point Commodore's vertical integration strategy rested on.",
+      "description": "Roughly 0.5-1.5 person-hours per machine across population, insertion (automated), wave-solder, assembly, test and packing, plus a share of the test and rework. At 1983 Hong Kong and Japanese electronics wage levels of roughly HK$9-14 or JPY 500-700 per hour, that is about US$1-3 per machine of direct labour. This was between 3% and 8% of the $35-50 production cost. Direct labour is genuinely tiny compared with the IC content, which is exactly the point Commodore's vertical integration strategy rested on.",
       "kind": "note",
       "category": "industry",
       "era": "1983",
@@ -4156,7 +4156,7 @@
       "id": "logistics.people.hk-wages",
       "name": "Hong Kong electronics wages, 1983",
       "simple_name": "Hong Kong wages",
-      "description": "The Hong Kong Census and Statistics Department's Quarterly Report of Wages, Salaries and Employee Benefits Statistics carried explicit occupational breakdowns for the electronics industry in 1983 - assembler, soldering worker, tester/aligner, quality control operator, packer, machine operator - with average daily wages and normal hours, and it separately flagged that piece rates were common in manufacturing and that the survey therefore reported them on a time basis. Operative daily wages across manufacturing generally sat around HK$60-100 in 1983, so an assembler earned roughly HK$9-14 per hour at a 7-8.5 hour day. Hong Kong had no statutory minimum wage at all in 1983.",
+      "description": "The Hong Kong Census and Statistics Department's Quarterly Report of Wages, Salaries and Employee Benefits Statistics carried explicit occupational breakdowns for the electronics industry in 1983 (assembler, soldering worker, tester/aligner, quality control operator, packer, machine operator) with average daily wages and normal hours, and it separately flagged that piece rates were common in manufacturing and that the survey therefore reported them on a time basis. Operative daily wages across manufacturing generally sat around HK$60-100 in 1983, so an assembler earned roughly HK$9-14 per hour at a 7-8.5 hour day. Hong Kong had no statutory minimum wage at all in 1983.",
       "kind": "note",
       "category": "industry",
       "era": "1983",
@@ -4179,7 +4179,7 @@
         "https://training.itcilo.org/actrav_cdrom1/english/global/seura/usholy5.htm"
       ],
       "confidence": "medium",
-      "note": "The scanned 1983 Census and Statistics Department tables are OCR-garbled; the HK$60-100 daily figure is read off the reported range across manufacturing occupations and should be treated as a range, not a single number."
+      "note": "The scanned 1983 Census and Statistics Department tables are OCR-garbled. The HK$60-100 daily figure is read off the reported range across manufacturing occupations and should be treated as a range, not a single number."
     },
     "logistics.people.wave-solder-worker": {
       "id": "logistics.people.wave-solder-worker",
@@ -4200,7 +4200,7 @@
       "id": "logistics.people.design-team",
       "name": "The C64 chip design team",
       "simple_name": "C64 chip design team",
-      "description": "A team of about seven people, working in parallel on two chips, in nine months. Al Charpentier designed the VIC-II with two draftsmen and one CAD operator. Bob Yannes designed the SID with two draftsmen and one CAD operator. Charles Winterble, then director of worldwide engineering, authorised and managed the project. The whole effort began in January 1981, spent about two weeks studying the Mattel Intellivision, the TI 99/4A and the Atari 800, and finished with first-pass silicon in November 1981 that worked except for one bad sprite. The chips were designed in a modular, deliberately uncompact style - Yannes built one oscillator module and repeated it rather than multiplexing - because design time was the scarce resource, not die area. Neither designer had a modern CAD workstation; logic was simulated by hand.",
+      "description": "A team of about seven people, working in parallel on two chips, in nine months. Al Charpentier designed the VIC-II with two draftsmen and one CAD operator. Bob Yannes designed the SID with two draftsmen and one CAD operator. Charles Winterble, then director of worldwide engineering, authorised and managed the project. The whole effort began in January 1981, spent about two weeks studying the Mattel Intellivision, the TI 99/4A and the Atari 800, and finished with first-pass silicon in November 1981 that worked except for one bad sprite. The chips were designed in a modular, deliberately uncompact style (Yannes built one oscillator module and repeated it rather than multiplexing) because design time was the scarce resource, not die area. Neither designer had a modern CAD workstation. Logic was simulated by hand.",
       "kind": "note",
       "category": "industry",
       "era": "1981-1982",
@@ -4232,7 +4232,7 @@
       "id": "logistics.people.c64-system-team",
       "name": "The C64 system design team",
       "simple_name": "C64 system design team",
-      "description": "After Tramiel decided in late November 1981 that the VIC-II and SID would go into a 64 KB home computer rather than a game console, the machine itself was designed in about five weeks. The architecture was laid out on paper in two days; five working prototypes were finished just before the new year. The team was Bob Yannes, Bob Russell, Shiraz Shivji and David Ziembicki, with Yash Terakura of Commodore Japan involved on the Japanese variant. They worked over Thanksgiving and Christmas. Charlie Winterble had set the deadline; Tramiel had decided the machine had to be at the January 1982 CES.",
+      "description": "After Tramiel decided in late November 1981 that the VIC-II and SID would go into a 64 KB home computer rather than a game console, the machine itself was designed in about five weeks. The architecture was laid out on paper in two days. Five working prototypes were finished just before the new year. The team was Bob Yannes, Bob Russell, Shiraz Shivji and David Ziembicki, with Yash Terakura of Commodore Japan involved on the Japanese variant. They worked over Thanksgiving and Christmas. Charlie Winterble had set the deadline. Tramiel had decided the machine had to be at the January 1982 CES.",
       "kind": "note",
       "category": "industry",
       "era": "1981-1982",
@@ -4273,7 +4273,7 @@
       "id": "logistics.people.production-engineering",
       "name": "The production engineers who fixed it",
       "simple_name": "production engineers",
-      "description": "The unsung labour in Commodore's story: David Ziembicki (production engineer, then Commodore West Chester), Bruce Crocket and Charles Winterble, who had to debug the project and bring it into production, and Robert H. Lane, who became president of Commodore Business Machines Inc in November 1982 and was fired by Tramiel after the June 1983 CES. Kentron's 150 Japanese engineers and technicians - brought in specifically because Commodore Japan's production engineering had worked on the VIC-20 - are the documented reason the C64 was eventually manufacturable at all.",
+      "description": "The unsung labour in Commodore's story: David Ziembicki (production engineer, then Commodore West Chester), Bruce Crocket and Charles Winterble, who had to debug the project and bring it into production, and Robert H. Lane, who became president of Commodore Business Machines Inc in November 1982 and was fired by Tramiel after the June 1983 CES. Kentron's 150 Japanese engineers and technicians (brought in specifically because Commodore Japan's production engineering had worked on the VIC-20) are the documented reason the C64 was eventually manufacturable at all.",
       "kind": "note",
       "category": "industry",
       "era": "1982-1983",
@@ -4287,7 +4287,7 @@
       "id": "logistics.people.qa-defects",
       "name": "The labour cost of the quality problems",
       "simple_name": "Quality labour cost",
-      "description": "Commodore's labour did not just build machines, it found and reworked other people's mistakes. The 'sparkle' defect was traced after three weeks to a ROM - not the VIC-II - with a pre-charging circuit that was sensitive to a bus contention spike; three million such ROMs were already in service. A logic error put 64 clock cycles on a scanline instead of 65 and took about five months into production to fix. Assembly-line workers over-adjusted the colour potentiometer until it saturated the colour and wiped out the luma. Electric screwdrivers cut traces on the disk-drive connector, and because those traces went to a connector nobody tested, they passed final inspection. Charles Winterble: 'It takes a very tough person to say I'm not shipping these because they're not as good as they could be - especially when people are clamoring to buy them.'",
+      "description": "Commodore's labour did not just build machines, it found and reworked other people's mistakes. The 'sparkle' defect was traced after three weeks to a ROM (not the VIC-II) with a pre-charging circuit that was sensitive to a bus contention spike. Three million such ROMs were already in service. A logic error put 64 clock cycles on a scanline instead of 65 and took about five months into production to fix. Assembly-line workers over-adjusted the colour potentiometer until it saturated the colour and wiped out the luma. Electric screwdrivers cut traces on the disk-drive connector, and because those traces went to a connector nobody tested, they passed final inspection. Charles Winterble: 'It takes a very tough person to say I'm not shipping these because they're not as good as they could be - especially when people are clamoring to buy them.'",
       "kind": "note",
       "category": "industry",
       "era": "1982-1984",
@@ -4315,7 +4315,7 @@
       "id": "facility.foundries.corporate-structure",
       "name": "The corporate chain that owned all of it",
       "simple_name": "corporate chain",
-      "description": "From the US Tax Court record: Commodore Holding B.V. (Netherlands) at the top; Commodore International Ltd (Bahamas); Commodore Electronics Ltd (CEL, Bahamas) as the principal operating corporation; Commodore Business Machines Inc (CBM, West Chester PA) as the US sales subsidiary and the site of the semiconductor division; Commodore Japan Ltd (CJL); Commodore Electronics (Hong Kong) Ltd (CE(HK)L) and, after April 1982, the Hong Kong branch of CEL; Commodore Buromaschinen GmbH (West Germany); and CBM International Sales Inc, the DISC. MOS Technology became a division of CBM on 1 January 1981 - which is why all the chips were still stamped with the MOS logo until 1989.",
+      "description": "From the US Tax Court record: Commodore Holding B.V. (Netherlands) at the top; Commodore International Ltd (Bahamas); Commodore Electronics Ltd (CEL, Bahamas) as the principal operating corporation; Commodore Business Machines Inc (CBM, West Chester PA) as the US sales subsidiary and the site of the semiconductor division; Commodore Japan Ltd (CJL); Commodore Electronics (Hong Kong) Ltd (CE(HK)L) and, after April 1982, the Hong Kong branch of CEL; Commodore Buromaschinen GmbH (West Germany); and CBM International Sales Inc, the DISC. MOS Technology became a division of CBM on 1 January 1981. This is why all the chips were still stamped with the MOS logo until 1989.",
       "kind": "org",
       "category": "industry",
       "era": "1983",
@@ -4534,7 +4534,7 @@
       "id": "facility.foundries.mos",
       "name": "MOS Technology / Commodore Semiconductor Group fab, Norristown PA",
       "simple_name": "MOS fab, Norristown PA",
-      "description": "The fab that made the 6510, the 6567/6569 VIC-II, the 6581 SID, the 6526 CIA and the ROMs. MOS Technology was founded in 1969 by John Paivinen, Mort Jaffe and Don McLaughlin as a second source for Texas Instruments' calculator chips, was majority-owned by Allen-Bradley from 1970, and built its own plant on 14 acres of the Valley Forge Corporate Center, 950 Rittenhouse Road, Norristown, Pennsylvania. It was a 1-micron NMOS fab running 4-inch wafers, and it is the only place the C64's silicon came from - none of the five custom chips could ever be second-sourced. Commodore bought MOS outright for a 9.4% stake in CBM in November 1976 and merged it in 1981. The fab was closed in 1992 after Commodore's bankruptcy.",
+      "description": "The fab that made the 6510, the 6567/6569 VIC-II, the 6581 SID, the 6526 CIA and the ROMs. MOS Technology was founded in 1969 by John Paivinen, Mort Jaffe and Don McLaughlin as a second source for Texas Instruments' calculator chips, was majority-owned by Allen-Bradley from 1970, and built its own plant on 14 acres of the Valley Forge Corporate Center, 950 Rittenhouse Road, Norristown, Pennsylvania. It was a 1-micron NMOS fab running 4-inch wafers, and it is the only place the C64's silicon came from. None of the five custom chips could ever be second-sourced. Commodore bought MOS outright for a 9.4% stake in CBM in November 1976 and merged it in 1981. The fab was closed in 1992 after Commodore's bankruptcy.",
       "kind": "org",
       "category": "silicon",
       "era": "1970-1993",
@@ -4561,7 +4561,7 @@
         "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=9100312V.txt"
       ],
       "confidence": "high",
-      "note": "Sources variously call the location Norristown, Valley Forge or Lower Providence; the EPA documents put the plant at 950 Rittenhouse Road in Lower Providence Township, Norristown PA, in the former Valley Forge Corporate Center.",
+      "note": "Sources variously call the location Norristown, Valley Forge or Lower Providence. The EPA documents put the plant at 950 Rittenhouse Road in Lower Providence Township, Norristown PA, in the former Valley Forge Corporate Center.",
       "edges": [
         {
           "to": "facility.foundries.business-machines-inc",
@@ -4573,7 +4573,7 @@
           "id": "facility.foundries.mos.captive-prototyping",
           "name": "The captive fab as a prototyping advantage",
           "simple_name": "captive prototyping fab",
-          "description": "The reason Commodore could design a chip in nine months: the fab was not full, the mask shop and the processing line were on site, and a designer could pull a test chip in a few weeks - or, in an emergency, four days. Ziembicki's line is the whole story of Commodore's speed: 'We were using people who were there anyway... You waste a little bit of silicon, but silicon's pretty cheap. It's only sand.'",
+          "description": "The reason Commodore could design a chip in nine months: the fab was not full, the mask shop and the processing line were on site, and a designer could pull a test chip in a few weeks (or, in an emergency, four days). Ziembicki's line is the whole story of Commodore's speed: 'We were using people who were there anyway... You waste a little bit of silicon, but silicon's pretty cheap. It's only sand.'",
           "kind": "note",
           "category": "silicon",
           "era": "1981",
@@ -4628,7 +4628,7 @@
           "id": "facility.foundries.board-layout-dispute",
           "name": "The automated-insertion board layout fight",
           "simple_name": "automated board layout fight",
-          "description": "Commodore's US plant used automatic component insertion; the Japanese plant did not, and the two wanted different component spacing. Charpentier's group won: the C64 board was laid out for automated insertion, and production was moved to a Hong Kong plant that had the automated tools. This single decision is why every C64 motherboard was made in Hong Kong.",
+          "description": "Commodore's US plant used automatic component insertion. The Japanese plant did not, and the two wanted different component spacing. Charpentier's group won: the C64 board was laid out for automated insertion, and production was moved to a Hong Kong plant that had the automated tools. This single decision is why every C64 motherboard was made in Hong Kong.",
           "kind": "note",
           "category": "industry",
           "era": "1982",
@@ -4643,7 +4643,7 @@
       "id": "facility.foundries.hong-kong",
       "name": "The Hong Kong operation (CE(HK)L and the CEL Hong Kong branch)",
       "simple_name": "CE(HK)L/CEL Hong Kong",
-      "description": "Where the C64 really got built. Commodore Electronics (Hong Kong) Ltd had been making watches and calculators since 1979, and manufactured VIC-20 units from April 1982; later the Hong Kong branch of Commodore Electronics Ltd took over. Mass production of the production-redesigned 'C-64A' began at the Hong Kong branch in March 1983, and that branch employed approximately 2,500 people. Commodore's Hong Kong operation bought or produced watches, calculators and computers, and by 1983 it was the assembly centre for the whole company's output. Commodore had Hong Kong subsidiaries listed as Commodore Business Machines Ltd (Hong Kong) and Commodore Electronics (Hong Kong) Ltd.",
+      "description": "Where the C64 really got built. Commodore Electronics (Hong Kong) Ltd had been making watches and calculators since 1979, and manufactured VIC-20 units from April 1982. Later the Hong Kong branch of Commodore Electronics Ltd took over. Mass production of the production-redesigned 'C-64A' began at the Hong Kong branch in March 1983, and that branch employed approximately 2,500 people. Commodore's Hong Kong operation bought or produced watches, calculators and computers, and by 1983 it was the assembly centre for the whole company's output. Commodore had Hong Kong subsidiaries listed as Commodore Business Machines Ltd (Hong Kong) and Commodore Electronics (Hong Kong) Ltd.",
       "kind": "org",
       "category": "industry",
       "era": "1982-1986",
@@ -4669,13 +4669,13 @@
         "https://www.c64-wiki.com/wiki/Commodore"
       ],
       "confidence": "high",
-      "note": "The 2,500 headcount and the March 1983 mass-production start are the parties' stipulated facts in the US Tax Court record, not Commodore's published accounts and not industry averages. The exact street address of the Commodore Hong Kong plant is not established in the sources consulted; it is not confirmed as Kwai Chung, Tsuen Wan or Kwun Tong. Photographs of the plant taken in December 1992 by Robert Baker, a Commodore production engineer sent from West Chester PA for the Amiga 600 pilot run, show a robotised through-hole insertion machine, a long assembly/test line and bench test desks.",
+      "note": "The 2,500 headcount and the March 1983 mass-production start are the parties' stipulated facts in the US Tax Court record, not Commodore's published accounts and not industry averages. The exact street address of the Commodore Hong Kong plant is not established in the sources consulted. It is not confirmed as Kwai Chung, Tsuen Wan or Kwun Tong. Photographs of the plant taken in December 1992 by Robert Baker, a Commodore production engineer sent from West Chester PA for the Amiga 600 pilot run, show a robotised through-hole insertion machine, a long assembly/test line and bench test desks.",
       "children": [
         {
           "id": "facility.foundries.hk-pcb",
           "name": "Hong Kong PCB fabricator",
           "simple_name": "Hong Kong PCB fabricator",
-          "description": "All sixteen versions of the C64 motherboard were manufactured in Hong Kong. Hong Kong in the early 1980s was a genuine centre of bare-board fabrication - dozens of small plants doing gold-impregnated or tin-lead plated FR-4 double-sided boards on a 0.3-0.4 mm grid with the pads drilled and plated by a subcontractor. Commodore did not own one; it bought them.",
+          "description": "All sixteen versions of the C64 motherboard were manufactured in Hong Kong. Hong Kong in the early 1980s was a genuine centre of bare-board fabrication. This was dozens of small plants doing gold-impregnated or tin-lead plated FR-4 double-sided boards on a 0.3-0.4 mm grid with the pads drilled and plated by a subcontractor. Commodore did not own one. It bought them.",
           "kind": "org",
           "category": "board",
           "era": "1983",
@@ -4687,7 +4687,7 @@
             "https://spectrum.ieee.org/commodore-64"
           ],
           "confidence": "high",
-          "note": "The bare-board manufacturer is not named in any source consulted; 'manufactured in Hong Kong' is the documented claim."
+          "note": "The bare-board manufacturer is not named in any source consulted. 'Manufactured in Hong Kong' is the documented claim."
         },
         {
           "id": "facility.foundries.hk-injection",
@@ -4719,7 +4719,7 @@
           "id": "facility.foundries.psu-maker",
           "name": "Power supply / transformer sub-contractor",
           "simple_name": "Power supply sub-contractor",
-          "description": "The linear power supply inside the C64 - the big orange or black transformer, the rectifier and the linear regulators - came from outside suppliers, cost an estimated $5-10 including connectors, and one of Ziembicki's complaints was that a supplier that had passed engineering approval then quietly changed the design without telling anybody.",
+          "description": "The linear power supply inside the C64 (the big orange or black transformer, the rectifier and the linear regulators) came from outside suppliers, cost an estimated $5-10 including connectors, and one of Ziembicki's complaints was that a supplier that had passed engineering approval then quietly changed the design without telling anybody.",
           "kind": "org",
           "category": "power",
           "era": "1983",
@@ -4733,7 +4733,7 @@
             "https://spectrum.ieee.org/commodore-64"
           ],
           "confidence": "medium",
-          "note": "Established by the cited article: that an outside supplier provided a power supply for engineering approval, got it approved and then changed the design without telling anybody, in the words of Commodore production engineer David Ziembicki; and that power supply and miscellaneous connectors appear in the parts cost breakdown at 5 to 10 dollars, beside 1 to 2 dollars for the printed-circuit board, 1 to 2 for the plastic case and under 10 for the keyboard. Not established: that the supply was the linear arrangement of a large transformer, a rectifier and linear regulators described here - the source names no internal supply components. The cost figure is also not a Commodore figure: the article attributes the whole parts breakdown to an estimate by Dougherty of Berkeley Softworks, and Commodore would not confirm the cost figures."
+          "note": "Established by the cited article: that an outside supplier provided a power supply for engineering approval, got it approved and then changed the design without telling anybody, in the words of Commodore production engineer David Ziembicki; and that power supply and miscellaneous connectors appear in the parts cost breakdown at 5 to 10 dollars, beside 1 to 2 dollars for the printed-circuit board, 1 to 2 for the plastic case and under 10 for the keyboard. Not established: that the supply was the linear arrangement of a large transformer, a rectifier and linear regulators described here. The source names no internal supply components. The cost figure is also not a Commodore figure: the article attributes the whole parts breakdown to an estimate by Dougherty of Berkeley Softworks, and Commodore would not confirm the cost figures."
         }
       ]
     },
@@ -4741,7 +4741,7 @@
       "id": "facility.foundries.kentron",
       "name": "Kentron Co., Ltd., Ina, Japan",
       "simple_name": "Kentron, Ina Japan",
-      "description": "The small Japanese production-engineering company that Commodore Japan acquired in October 1982 and that actually fixed the C64. Kentron had about 150 employees at its height and expertise in production engineering, quality control, work standards, purchasing and materials control. Commodore Japan substantially redesigned the machine into the 'C-64A' with Kentron's help; Kentron produced prototypes in late 1982 and began mass production in January 1983 - two months before the Hong Kong branch started, which is why Kentron, not Hong Kong, is where the machine was made buildable. Kentron was a CJL subsidiary from October 1982 to June 1986, when it was sold to an unrelated party.",
+      "description": "The small Japanese production-engineering company that Commodore Japan acquired in October 1982 and that actually fixed the C64. Kentron had about 150 employees at its height and expertise in production engineering, quality control, work standards, purchasing and materials control. Commodore Japan substantially redesigned the machine into the 'C-64A' with Kentron's help. Kentron produced prototypes in late 1982 and began mass production in January 1983. This was two months before the Hong Kong branch started, which is why Kentron, not Hong Kong, is where the machine was made buildable. Kentron was a CJL subsidiary from October 1982 to June 1986, when it was sold to an unrelated party.",
       "kind": "org",
       "category": "industry",
       "era": "1982-1986",
@@ -4779,7 +4779,7 @@
       "id": "facility.foundries.japan-vendors",
       "name": "Japanese assembly vendors for the VIC-20",
       "simple_name": "Japanese VIC-20 vendors",
-      "description": "The VIC-20 - the machine whose case, board size and BASIC the C64 inherited - was first built in Japan by Shinwa Electric Company, then by Japanese Cash Register (JCR), both assembling and manufacturing to Commodore Japan Limited's specifications and under its direction. Japanese Cash Register also owned a factory on Ina road; CJL's engineering headquarters was at Isaka.",
+      "description": "The VIC-20 (the machine whose case, board size and BASIC the C64 inherited) was first built in Japan by Shinwa Electric Company, then by Japanese Cash Register (JCR), both assembling and manufacturing to Commodore Japan Limited's specifications and under its direction. Japanese Cash Register also owned a factory on Ina road. CJL's engineering headquarters was at Isaka.",
       "kind": "org",
       "category": "industry",
       "era": "1981-1982",
@@ -4793,7 +4793,7 @@
         "https://www.c64-wiki.com/wiki/Commodore"
       ],
       "confidence": "medium",
-      "note": "The C64-Wiki list of Commodore entities includes 'Commodore Japan Limited in Japan (Isaka)'; the Tax Court record confirms Shinwa Electric and Japanese Cash Register as the VIC-20 assemblers but does not give their locations."
+      "note": "The C64-Wiki list of Commodore entities includes 'Commodore Japan Limited in Japan (Isaka)'. The Tax Court record confirms Shinwa Electric and Japanese Cash Register as the VIC-20 assemblers but does not give their locations."
     },
     "facility.foundries.braunschweig": {
       "id": "facility.foundries.braunschweig",
@@ -4826,7 +4826,7 @@
       "id": "facility.foundries.corby",
       "name": "Commodore Business Machines (UK), Corby",
       "simple_name": "Commodore Corby, UK",
-      "description": "The British end. Commodore UK's head office was in Slough and it built calculators at a factory on Teesside; in 1983 it announced a new GBP 20 million home computer factory at Corby, Northamptonshire, as the European manufacturing and distribution centre for the C64 and VIC-20, expecting 300 jobs by the end of 1984 and 700,000 units a year by then. The Corby plant was in place by September 1984 with 850 jobs on a ten-acre site, ran flat out sixteen hours a day, and was closed as a manufacturing base in January 1986.",
+      "description": "The British end. Commodore UK's head office was in Slough and it built calculators at a factory on Teesside. In 1983 it announced a new GBP 20 million home computer factory at Corby, Northamptonshire, as the European manufacturing and distribution centre for the C64 and VIC-20, expecting 300 jobs by the end of 1984 and 700,000 units a year by then. The Corby plant was in place by September 1984 with 850 jobs on a ten-acre site, ran flat out sixteen hours a day, and was closed as a manufacturing base in January 1986.",
       "kind": "org",
       "category": "industry",
       "era": "1983-1986",
@@ -4859,7 +4859,7 @@
       "id": "facility.foundries.other-sites",
       "name": "The rest of the manufacturing map, 1983",
       "simple_name": "rest of manufacturing map",
-      "description": "By 1983 Commodore described itself as an international company with manufacturing in Japan, Hong Kong, West Germany, the UK, Pennsylvania and California in the United States, and Scarborough in Metropolitan Toronto. C64 units carried the MADE IN HONG KONG, West Germany or England marks, and were assembled in at least 11 factories worldwide over the model's life. Commodore did not, at this stage, have a Commodore Taiwan plant - the Taiwanese supply chain in this story is the sub-contractor base, not a Commodore factory.",
+      "description": "By 1983 Commodore described itself as an international company with manufacturing in Japan, Hong Kong, West Germany, the UK, Pennsylvania and California in the United States, and Scarborough in Metropolitan Toronto. C64 units carried the MADE IN HONG KONG, West Germany or England marks, and were assembled in at least 11 factories worldwide over the model's life. Commodore did not, at this stage, have a Commodore Taiwan plant. The Taiwanese supply chain in this story is the sub-contractor base, not a Commodore factory.",
       "kind": "facility",
       "category": "industry",
       "era": "1983",
@@ -4874,13 +4874,13 @@
         }
       ],
       "confidence": "high",
-      "note": "The $680 M / 44.7% figure is Commodore's own reported fiscal-1983 sales, not an industry figure, and it is here only because the 1983 annual review is the source for the list of manufacturing countries beside it. Commodore Taiwan as a subsidiary is a later-1980s development; No 1983 evidence of a Commodore-owned Taiwan factory has been found. A Philippine assembly operation definitely existed by the 1990s (the Philippine government seized Amiga and CD32 stock after Commodore's 1994 bankruptcy over a debt to a factory there), but that is outside the 1982-84 window."
+      "note": "The $680 M / 44.7% figure is Commodore's own reported fiscal-1983 sales, not an industry figure, and it is here only because the 1983 annual review is the source for the list of manufacturing countries beside it. Commodore Taiwan as a subsidiary is a later-1980s development. No 1983 evidence of a Commodore-owned Taiwan factory has been found. A Philippine assembly operation definitely existed by the 1990s (the Philippine government seized Amiga and CD32 stock after Commodore's 1994 bankruptcy over a debt to a factory there), but that is outside the 1982-84 window."
     },
     "facility.foundries.subcontract-network": {
       "id": "facility.foundries.subcontract-network",
       "name": "The sub-contractor geography: Japan, Korea, Taiwan, the Philippines",
       "simple_name": "Japan, Korea, Taiwan, Philippines",
-      "description": "Commodore's own factories were few; its supply base was enormous. Japan supplied the disks and a great deal of the precision mechanics and passives. Taiwan and Korea supplied the display-grade passives, the transformers, the coils, the keyboards and the power supplies, through the export processing zones. The Philippines and Malaysia supplied the switching power supplies and the magnetics by the late 1980s. Hong Kong was the assembly and test node, sitting between them, with the boards printed locally and the chips arriving from Pennsylvania.",
+      "description": "Commodore's own factories were few. Its supply base was enormous. Japan supplied the disks and a great deal of the precision mechanics and passives. Taiwan and Korea supplied the display-grade passives, the transformers, the coils, the keyboards and the power supplies, through the export processing zones. The Philippines and Malaysia supplied the switching power supplies and the magnetics by the late 1980s. Hong Kong was the assembly and test node, sitting between them, with the boards printed locally and the chips arriving from Pennsylvania.",
       "kind": "org",
       "category": "logistics",
       "era": "1983",
@@ -4895,7 +4895,7 @@
         }
       ],
       "confidence": "medium",
-      "note": "The wage index here is general, not Commodore-specific: ILO Bureau of Labour Statistics hourly compensation costs for production workers in US SIC 36 electronic and other electrical equipment. It is the cleanest single measure of why the work was in Hong Kong and Taiwan - roughly one-fifth to one-quarter of the American cost per hour - but it says nothing about Commodore specifically."
+      "note": "The wage index here is general, not Commodore-specific: ILO Bureau of Labour Statistics hourly compensation costs for production workers in US SIC 36 electronic and other electrical equipment. It is the cleanest single measure of why the work was in Hong Kong and Taiwan (roughly one-fifth to one-quarter of the American cost per hour) but it says nothing about Commodore specifically."
     },
     "facility.water.pvdf.vinylidene-fluoride": {
         "id": "facility.water.pvdf.vinylidene-fluoride",
@@ -4987,7 +4987,7 @@
       "id": "facility.power",
       "name": "Industrial electricity supply (1983)",
       "simple_name": "Industrial electricity supply",
-      "description": "The electricity that ran every press, oven, wave-solder machine, conveyor and test rig. In 1983 the world's grids were coal, oil, gas and hydro - not the gas-turbine-dominated grids of today - and industrial customers bought it on a two-part tariff with a demand charge. This node is the utility's own end: the generating stations, the transmission network and the price. The customer's end, from the service drop to the machine tool, is the separate node facility.electricity.",
+      "description": "The electricity that ran every press, oven, wave-solder machine, conveyor and test rig. In 1983 the world's grids were coal, oil, gas and hydro (not the gas-turbine-dominated grids of today) and industrial customers bought it on a two-part tariff with a demand charge. This node is the utility's own end: the generating stations, the transmission network and the price. The customer's end, from the service drop to the machine tool, is the separate node facility.electricity.",
       "kind": "facility",
       "category": "energy",
       "era": "1983",
@@ -5039,13 +5039,13 @@
               "id": "facility.power.coal-plant.receiving",
               "name": "Coal receiving and stockyard",
               "simple_name": "Coal stockyard",
-              "description": "Unload from rail unit trains or self-unloading barges into a yard. In the 1980s the East Coast plants were fed by unit trains; Japan's and Korea's coal came by Panamax and post-Panamax bulker.",
+              "description": "Unload from rail unit trains or self-unloading barges into a yard. In the 1980s the East Coast plants were fed by unit trains. Japan's and Korea's coal came by Panamax and post-Panamax bulker.",
               "kind": "facility",
               "category": "industry",
               "era": "1983",
               "inputs": [],
               "confidence": "medium",
-              "note": "Not established: that East Coast plants took coal from rail unit trains or self-unloading barges, or that Japanese and Korean coal came by Panamax and post-Panamax bulker, for the stations feeding this supply; the delivery modes carry no source."
+              "note": "Not established: that East Coast plants took coal from rail unit trains or self-unloading barges, or that Japanese and Korean coal came by Panamax and post-Panamax bulker, for the stations feeding this supply. The delivery modes carry no source."
             },
             {
               "id": "facility.power.hydro-plant",
@@ -5094,13 +5094,13 @@
                   "id": "facility.power.hydro-plant.tailrace",
                   "name": "Tailrace and reservoir",
                   "simple_name": "Tailrace and reservoir",
-                  "description": "Where the water goes back to the river - and, downstream of the dam, the river itself is the raw water intake for the industrial park that the dam's power attracted.",
+                  "description": "Where the water goes back to the river. And, downstream of the dam, the river itself is the raw water intake for the industrial park that the dam's power attracted.",
                   "kind": "facility",
                   "category": "industry",
                   "era": "1960-1990",
                   "children": [],
                   "confidence": "low",
-                  "note": "Established: only the term's meaning - the channel carrying water away after it leaves the wheel or turbine. Not established: that a downstream river served as the raw-water intake for an attracted industrial park in any particular case; the node makes a generic siting claim."
+                  "note": "Established: only the term's meaning. This is the channel carrying water away after it leaves the wheel or turbine. Not established: that a downstream river served as the raw-water intake for an attracted industrial park in any particular case. The node makes a generic siting claim."
                 }
               ],
               "edges": [
@@ -5114,7 +5114,7 @@
               "id": "facility.power.oil-plant",
               "name": "Oil-fired steam power plant",
               "simple_name": "Oil power plant",
-              "description": "The 1980s default in much of Asia and the Middle East, and the reason Taiwan's grid was 58.8% oil in 1980. Residual fuel oil and fuel oil burned in a boiler instead of coal - cheaper to handle, dirtier, and dead on arrival once the 1979 oil shock and OPEC reset prices.",
+              "description": "The 1980s default in much of Asia and the Middle East, and the reason Taiwan's grid was 58.8% oil in 1980. Residual fuel oil and fuel oil burned in a boiler instead of coal. This was cheaper to handle, dirtier, and dead on arrival once the 1979 oil shock and OPEC reset prices.",
               "kind": "facility",
               "category": "energy",
               "era": "1960-1990",
@@ -5125,7 +5125,7 @@
                   "id": "facility.power.oil-plant.stack",
                   "name": "Tall chimney",
                   "simple_name": "Tall chimney",
-                  "description": "A 150-250 m concrete or steel chimney to get the plume above the inversion layer and disperse sulphur dioxide over a large area. Not a pollution control device - a dilution device.",
+                  "description": "A 150-250 m concrete or steel chimney to get the plume above the inversion layer and disperse sulphur dioxide over a large area. Not a pollution control device. It is a dilution device.",
                   "kind": "site",
                   "category": "energy",
                   "era": "1960-1990",
@@ -5135,7 +5135,7 @@
                   ]
                 }
               ],
-              "note": "Not established here: that Taiwan's grid was 58.8% oil in 1980. That figure is quoted with sources on the parent node facility.power; it has not been checked against a primary statistical series for this node. The description of oil-fired generation as the 1980s default in much of Asia is not sourced either.",
+              "note": "Not established here: that Taiwan's grid was 58.8% oil in 1980. That figure is quoted with sources on the parent node facility.power. It has not been checked against a primary statistical series for this node. The description of oil-fired generation as the 1980s default in much of Asia is not sourced either.",
               "edges": [
                 {
                   "to": "facility.power.oil-plant.boiler",
@@ -5152,7 +5152,7 @@
               "id": "facility.power.gas-plant",
               "name": "Gas-fired power plant",
               "simple_name": "Gas power plant",
-              "description": "Two different things share this name. For the 1983 industrial economy the honest answer is that almost none of the grid came from natural gas - gas turbines ran mainly for peak load, standby and cogeneration. Taiwan's first LNG cargo arrived in 1983 and natural gas did not become a grid fuel until the 1990s.",
+              "description": "Two different things share this name. For the 1983 industrial economy the honest answer is that almost none of the grid came from natural gas. Gas turbines ran mainly for peak load, standby and cogeneration. Taiwan's first LNG cargo arrived in 1983 and natural gas did not become a grid fuel until the 1990s.",
               "kind": "facility",
               "category": "energy",
               "era": "1970-1990",
@@ -5165,7 +5165,7 @@
               "sources": [
                 "https://en.agi.or.jp/media/publications/workingpaper/WP2015-10.pdf"
               ],
-              "note": "In the US the big gas-fired build-out came after 1990, with the EPA NOx rules; in 1983 a gas turbine plant was an unusual and expensive thing to run on a peak-load schedule.",
+              "note": "In the US the big gas-fired build-out came after 1990, with the EPA NOx rules. In 1983 a gas turbine plant was an unusual and expensive thing to run on a peak-load schedule.",
               "confidence": "high",
               "provenance": "incomplete",
               "children": [],
@@ -5185,7 +5185,7 @@
               "id": "facility.power.nuclear-plant",
               "name": "Nuclear power plant",
               "simple_name": "Nuclear power plant",
-              "description": "Not a 'coal/oil/gas/hydro' machine, but it was 10.2% of Taiwan's electricity in 1980 - the first reactor at Chinshan came on line in 1978, followed by Chinshan 2 (1979), Chinshan 3, Feitsui and Lungmen. Any 1983 power bill in northern Taiwan could legitimately be traced to a uranium fuel rod.",
+              "description": "Not a 'coal/oil/gas/hydro' machine, but it was 10.2% of Taiwan's electricity in 1980. The first reactor at Chinshan came on line in 1978, followed by Chinshan 2 (1979), Chinshan 3, Feitsui and Lungmen. Any 1983 power bill in northern Taiwan could legitimately be traced to a uranium fuel rod.",
               "kind": "facility",
               "category": "energy",
               "era": "1978-1990",
@@ -5231,7 +5231,7 @@
                 "https://www.eia.gov/totalenergy/data/annual/showtext.php?t=ptb0810"
               ],
               "confidence": "medium",
-              "note": "Losses have fallen by only a few percentage points since 1983 because the physics of I2R dominates; a modern grid still loses 5-8%.",
+              "note": "Losses have fallen by only a few percentage points since 1983 because the physics of I2R dominates. A modern grid still loses 5-8%.",
               "children": [
                 {
                   "id": "facility.power.grid.line",
@@ -5256,7 +5256,7 @@
                   "id": "facility.power.grid.substation",
                   "name": "Utility substation",
                   "simple_name": "Utility substation",
-                  "description": "Transformer bays, circuit breakers, buswork and the control house that steps transmission voltage down to the 11-34.5 kV distribution level. Utility substations outnumbered the plants; a 1980s industrial park typically had one primary substation feeding a ring of unit substation transformers.",
+                  "description": "Transformer bays, circuit breakers, buswork and the control house that steps transmission voltage down to the 11-34.5 kV distribution level. Utility substations outnumbered the plants. A 1980s industrial park typically had one primary substation feeding a ring of unit substation transformers.",
                   "kind": "site",
                   "category": "energy",
                   "era": "1960-1990",
@@ -5269,7 +5269,7 @@
                   "id": "facility.power.grid.distribution",
                   "name": "Medium-voltage distribution feeder",
                   "simple_name": "Distribution feeder",
-                  "description": "Overhead or underground 11-13.8 kV feeders with reclosers, sectionalisers and fuses. Underground feeders were standard in the new Hong Kong industrial estates and in Japanese and Korean industrial parks; overhead was normal in the US outside cities.",
+                  "description": "Overhead or underground 11-13.8 kV feeders with reclosers, sectionalisers and fuses. Underground feeders were standard in the new Hong Kong industrial estates and in Japanese and Korean industrial parks. Overhead was normal in the US outside cities.",
                   "kind": "site",
                   "sources": [
                     "https://en.wikipedia.org/wiki/Electric_power_distribution"
@@ -5283,7 +5283,7 @@
                     }
                   ],
                   "confidence": "medium",
-                  "note": "Established by the cited article: distribution substations step transmission voltage down to a medium-voltage band of 600 V to 35 kV, and primary distribution lines carry that medium voltage out to distribution transformers near the customer. Not established: the per-country figures of 11 kV for Hong Kong, 20-22 kV for Taiwan and 13.8 kV for the US, the claim that underground feeders were standard in the new Hong Kong industrial estates and in Japanese and Korean parks, and the recloser, sectionaliser and fuse line-up; none of these is stated in the source read, and no utility document was located for these territories."
+                  "note": "Established by the cited article: distribution substations step transmission voltage down to a medium-voltage band of 600 V to 35 kV, and primary distribution lines carry that medium voltage out to distribution transformers near the customer. Not established: the per-country figures of 11 kV for Hong Kong, 20-22 kV for Taiwan and 13.8 kV for the US, the claim that underground feeders were standard in the new Hong Kong industrial estates and in Japanese and Korean parks, and the recloser, sectionaliser and fuse line-up. None of these is stated in the source read, and no utility document was located for these territories."
                 }
               ]
             }
@@ -5325,7 +5325,7 @@
             "https://www.eia.gov/totalenergy/data/annual/showtext.php?t=ptb0810",
             "https://www.econ.umd.edu/sites/www.econ.umd.edu/files/pubs/Electricity_Prices_Quantities_ReStat_2013.pdf"
           ],
-          "note": "Modern practice is the same two-part structure, but with hourly and time-of-use pricing and, in some markets, deregulated retail suppliers; the 1980s tariff was a regulated cost-of-service tariff set by a public utility commission.",
+          "note": "Modern practice is the same two-part structure, but with hourly and time-of-use pricing and, in some markets, deregulated retail suppliers. The 1980s tariff was a regulated cost-of-service tariff set by a public utility commission.",
           "confidence": "high"
         }
       ],
@@ -5419,7 +5419,7 @@
                   ],
                   "confidence": "medium",
                   "children": [],
-                  "note": "Not established: the epoxy cementing of porcelain bushings onto transformer winding ends. Porcelain and glass insulators are documented for overhead lines; transformer bushing construction is not covered by the sources read.",
+                  "note": "Not established: the epoxy cementing of porcelain bushings onto transformer winding ends. Porcelain and glass insulators are documented for overhead lines. Transformer bushing construction is not covered by the sources read.",
                   "edges": [
                     {
                       "to": "facility.electricity.feldspar",
@@ -5450,7 +5450,7 @@
                   "id": "facility.electricity.mcc",
                   "name": "Motor control centre",
                   "simple_name": "Motor control centre",
-                  "description": "A vertical lineup of combination starters and contactors with a fused disconnect per motor, feeding the compressors, injection-moulding presses, conveyors and extract fans. The 1980s unit had no variable-frequency drives at all - speed control was a pole-changing or slip-ring motor.",
+                  "description": "A vertical lineup of combination starters and contactors with a fused disconnect per motor, feeding the compressors, injection-moulding presses, conveyors and extract fans. The 1980s unit had no variable-frequency drives at all. Speed control was a pole-changing or slip-ring motor.",
                   "kind": "tool",
                   "category": "power",
                   "era": "1983",
@@ -5499,7 +5499,7 @@
                   "id": "facility.electricity.power-factor",
                   "name": "Power factor correction capacitors",
                   "simple_name": "Power factor capacitors",
-                  "description": "Motor loads are inductive, so a big factory runs at 0.7-0.85 power factor and gets penalised by the utility. Banks of switched capacitor kVAr corrected it. A capacitor is the cheapest industrial electronics ever made - a polypropylene film between two aluminium foils.",
+                  "description": "Motor loads are inductive, so a big factory runs at 0.7-0.85 power factor and gets penalised by the utility. Banks of switched capacitor kVAr corrected it. A capacitor is the cheapest industrial electronics ever made. This is a polypropylene film between two aluminium foils.",
                   "kind": "part",
                   "category": "power",
                   "era": "1983",
@@ -5522,7 +5522,7 @@
             }
           ],
           "confidence": "medium",
-          "note": "Established: the standard customer-substation function and equipment (transformation between voltage levels, circuit breaker, switchgear, protection), per the cited article. Not established: that any particular plant's yard matched this exact line-up; the node describes a typical yard.",
+          "note": "Established: the standard customer-substation function and equipment (transformation between voltage levels, circuit breaker, switchgear, protection), per the cited article. Not established: that any particular plant's yard matched this exact line-up. The node describes a typical yard.",
           "sources": [
             "https://en.wikipedia.org/wiki/Substation"
           ]
@@ -5568,7 +5568,7 @@
           "id": "facility.steam.header",
           "name": "Steam header and distribution",
           "simple_name": "Steam header",
-          "description": "A large-diameter steel pipe - 300-800 mm - with flanged or socket-welded branches to each user, insulation lagged in magnesium-block or calcium-silicate, and a trap at every low point. Steam was distributed at constant pressure from a header rather than generated at each machine.",
+          "description": "A large-diameter steel pipe (300-800 mm) with flanged or socket-welded branches to each user, insulation lagged in magnesium-block or calcium-silicate, and a trap at every low point. Steam was distributed at constant pressure from a header rather than generated at each machine.",
           "kind": "facility",
           "category": "energy",
           "era": "1960-1990",
@@ -5594,7 +5594,7 @@
       "id": "facility.water",
       "name": "Water for a factory",
       "simple_name": "Water for a factory",
-      "description": "Every 1980s electronics and metals plant drank more water than it realised, and it arrived from one of two places. Two distinct demands sit on top of it: ordinary industrial water for cooling, rinsing, process and human use, and, in the fab, water pure enough to grow an oxide on silicon without introducing a defect. Point consumers at facility.water.industrial or facility.water.ultrapure rather than at this node, and attach them with `from` - a water treatment plant is an ingredient of the process, never a component of the product.",
+      "description": "Every 1980s electronics and metals plant drank more water than it realised, and it arrived from one of two places. Two distinct demands sit on top of it: ordinary industrial water for cooling, rinsing, process and human use, and, in the fab, water pure enough to grow an oxide on silicon without introducing a defect. Point consumers at facility.water.industrial or facility.water.ultrapure rather than at this node, and attach them with `from`. A water treatment plant is an ingredient of the process, never a component of the product.",
       "kind": "material",
       "category": "fluids",
       "era": "1960-1990",
@@ -5610,7 +5610,7 @@
           "id": "facility.water.raw-intake",
           "name": "Raw water intake",
           "simple_name": "Raw water intake",
-          "description": "Either a surface intake from a river or reservoir, or a deep well into a confined aquifer. Surface water for cooling, well water for the ultrapure plant - because groundwater is already filtered by geology and low in organics.",
+          "description": "Either a surface intake from a river or reservoir, or a deep well into a confined aquifer. Surface water for cooling, well water for the ultrapure plant. This is because groundwater is already filtered by geology and low in organics.",
           "kind": "site",
           "category": "fluids",
           "era": "1960-1990",
@@ -5619,7 +5619,7 @@
               "id": "facility.water.well",
               "name": "Deep well and well pump",
               "simple_name": "Deep well and pump",
-              "description": "A 150-300 mm steel or PVC casing to 100-300 m with a deep-turbine or submersible pump. In the Lehigh Valley the sand-and-gravel aquifer gave soft, iron-bearing water that had to be degreased; in Taiwan the wells hit 100-300 m of Pleistocene gravel.",
+              "description": "A 150-300 mm steel or PVC casing to 100-300 m with a deep-turbine or submersible pump. In the Lehigh Valley the sand-and-gravel aquifer gave soft, iron-bearing water that had to be degreased. In Taiwan the wells hit 100-300 m of Pleistocene gravel.",
               "kind": "facility",
               "category": "fluids",
               "era": "1983",
@@ -5632,7 +5632,7 @@
               "id": "facility.water.surface-intake",
               "name": "River / reservoir intake and pump house",
               "simple_name": "River/reservoir intake",
-              "description": "A screened intake structure with travelling-bar screens, coarse screens and a low-lift pump house on the bank. In practice many 1980s plants - including Commodore's Taiwanese subcontractors in the export-processing zones - bought municipal or industrial-zone water from the local authority and paid a tariff, rather than taking their own.",
+              "description": "A screened intake structure with travelling-bar screens, coarse screens and a low-lift pump house on the bank. In practice many 1980s plants (including Commodore's Taiwanese subcontractors in the export-processing zones) bought municipal or industrial-zone water from the local authority and paid a tariff, rather than taking their own.",
               "kind": "site",
               "category": "fluids",
               "era": "1960-1990",
@@ -5643,7 +5643,7 @@
             }
           ],
           "confidence": "low",
-          "note": "The node describes a generic intake choice (surface water for cooling, well water for the ultrapure plant) on the rationale that groundwater is geologically filtered and low in organics. No intake design, capacity, or water-quality figure is established here; the node makes no cited quantitative claim.",
+          "note": "The node describes a generic intake choice (surface water for cooling, well water for the ultrapure plant) on the rationale that groundwater is geologically filtered and low in organics. No intake design, capacity, or water-quality figure is established here. The node makes no cited quantitative claim.",
           "edges": [
             {
               "to": "facility.water.river-intake",
@@ -5727,7 +5727,7 @@
           "id": "facility.gases.hydrogen.uses",
           "name": "Where hydrogen went in a 1980s electronics plant",
           "simple_name": "Hydrogen uses",
-          "description": "Hydrocarbon and silicone greasing, hydrogen annealing of the copper and the metallisation, the reducing atmosphere in the diffusion furnace and the epitaxial reactor, and - for the tie-in with this story - the hydrogen atmosphere in the case of a lamp or a nickel/plated through-hole fill was not yet standard practice.",
+          "description": "Hydrocarbon and silicone greasing, hydrogen annealing of the copper and the metallisation, the reducing atmosphere in the diffusion furnace and the epitaxial reactor, and (for the tie-in with this story) the hydrogen atmosphere in the case of a lamp or a nickel/plated through-hole fill was not yet standard practice.",
           "kind": "note",
           "sources": [
             "https://en.wikipedia.org/wiki/Hydrogen"
@@ -5741,18 +5741,18 @@
           "id": "facility.argon.uses",
           "name": "Where argon went in a 1980s plant",
           "simple_name": "Argon uses",
-          "description": "TIG welding of the sheet metal and the transformer laminations, the inert blanket over the 1800 C silicon melt in the crystal puller, and - increasingly - argon sputter deposition of the aluminium interconnect in a fab. Almost all of it went into joining metal, not into making silicon.",
+          "description": "TIG welding of the sheet metal and the transformer laminations, the inert blanket over the 1800 C silicon melt in the crystal puller, and (increasingly) argon sputter deposition of the aluminium interconnect in a fab. Almost all of it went into joining metal, not into making silicon.",
           "kind": "note",
           "category": "industry",
           "era": "1983",
           "confidence": "medium",
-          "note": "Not established: the claim that argon sputter deposition of aluminium interconnect was growing in fabs by 1983, and that almost all argon went into joining metal. Argon is documented as a by-product of air separation; its 1983 distribution of uses is not."
+          "note": "Not established: the claim that argon sputter deposition of aluminium interconnect was growing in fabs by 1983, and that almost all argon went into joining metal. Argon is documented as a by-product of air separation. Its 1983 distribution of uses is not."
         },
         {
           "id": "facility.helium.supply-constraint",
           "name": "The 1980s helium shortage",
           "simple_name": "1980s helium shortage",
-          "description": "US Bureau of Mines and then BLM administered the supply; the Cliffside field ran out in the mid-1970s and production was rationed, so helium became genuinely rationed and expensive for laboratories and for leak testing. This is a real constraint on the 1980s helium supply chain, not a later phenomenon.",
+          "description": "US Bureau of Mines and then BLM administered the supply. The Cliffside field ran out in the mid-1970s and production was rationed, so helium became genuinely rationed and expensive for laboratories and for leak testing. This is a real constraint on the 1980s helium supply chain, not a later phenomenon.",
           "kind": "note",
           "sources": [
             "https://en.wikipedia.org/wiki/Helium"
@@ -5760,7 +5760,7 @@
           "category": "industry",
           "era": "1970s-1980s",
           "confidence": "medium",
-          "note": "Established by the cited article: that after the Helium Acts Amendments of 1960 the US Bureau of Mines arranged for five private plants to recover helium from natural gas and built a 425-mile pipeline from Bushton, Kansas to the government partially depleted Cliffside gas field near Amarillo, Texas, where a helium-nitrogen mixture was injected and stored until needed; and that most United States helium is extracted from the Hugoton gas field area of Kansas, Oklahoma and the Texas Panhandle. Not established: that the Cliffside field ran out in the mid-1970s, that the Bureau of Land Management took over administration, and that helium was rationed and expensive for laboratories and leak testing in the 1980s; the article dates the federal withdrawal of the reserve to 1996 and treats the shortage as a later problem, and no 1980s allocation document was located."
+          "note": "Established by the cited article: that after the Helium Acts Amendments of 1960 the US Bureau of Mines arranged for five private plants to recover helium from natural gas and built a 425-mile pipeline from Bushton, Kansas to the government partially depleted Cliffside gas field near Amarillo, Texas, where a helium-nitrogen mixture was injected and stored until needed; and that most United States helium is extracted from the Hugoton gas field area of Kansas, Oklahoma and the Texas Panhandle. Not established: that the Cliffside field ran out in the mid-1970s, that the Bureau of Land Management took over administration, and that helium was rationed and expensive for laboratories and leak testing in the 1980s. The article dates the federal withdrawal of the reserve to 1996 and treats the shortage as a later problem, and no 1980s allocation document was located."
         }
       ],
       "edges": [
@@ -5794,7 +5794,7 @@
       "id": "facility.compressed-air",
       "name": "Instrument air and plant air",
       "simple_name": "Instrument and plant air",
-      "description": "Every factory ran on compressed air. Instrument air was dried, oil-free air fed to the air-line and to the logic valves; plant air was for the pneumatic tools, the automated insertion machines and the ejectors. The classic 1980s split was a dedicated compressor for instrument air and one or more dirty machines for everything else.",
+      "description": "Every factory ran on compressed air. Instrument air was dried, oil-free air fed to the air-line and to the logic valves. Plant air was for the pneumatic tools, the automated insertion machines and the ejectors. The classic 1980s split was a dedicated compressor for instrument air and one or more dirty machines for everything else.",
       "kind": "material",
       "category": "energy",
       "era": "1960-1990",
@@ -5813,7 +5813,7 @@
           "id": "facility.compressed-air.ring-main",
           "name": "Ring main and distribution",
           "simple_name": "Ring main",
-          "description": "Black steel pipe - galvanised or, better, painted steel - in a ring around the plant with drop-legs to each machine. A ring rather than a spine so that a single closed valve could isolate a section for maintenance. Drops went through a service unit with a tap, a pressure regulator, a filter and a flowmeter at each bench.",
+          "description": "Black steel pipe (galvanised or, better, painted steel) in a ring around the plant with drop-legs to each machine. A ring rather than a spine so that a single closed valve could isolate a section for maintenance. Drops went through a service unit with a tap, a pressure regulator, a filter and a flowmeter at each bench.",
           "kind": "site",
           "category": "energy",
           "era": "1960-1990",
@@ -5879,7 +5879,7 @@
       "id": "facility.hazardous-waste",
       "name": "Hazardous and industrial waste, 1980s practice",
       "simple_name": "Hazardous waste",
-      "description": "The part of the story usually left out. A 1980s electronics plant generated, per fab, tens of thousands of gallons of spent acid, spent solvent, cyanide-bearing rinse, and metal-bearing sludge a year, plus a smaller amount of contaminated equipment and packaging. What happened to it was loosely governed - in the US by RCRA, which had only been in force for three years in 1983 - and often not well.",
+      "description": "The part of the story usually left out. A 1980s electronics plant generated, per fab, tens of thousands of gallons of spent acid, spent solvent, cyanide-bearing rinse, and metal-bearing sludge a year, plus a smaller amount of contaminated equipment and packaging. What happened to it was loosely governed (in the US by RCRA, which had only been in force for three years in 1983) and often not well.",
       "kind": "facility",
       "category": "industry",
       "era": "1983",
@@ -5888,7 +5888,7 @@
           "id": "facility.hazardous-waste.rcra",
           "name": "RCRA: the cradle-to-grave regime",
           "simple_name": "RCRA",
-          "description": "The Resource Conservation and Recovery Act became law on 21 October 1976. Its Subtitle C hazardous waste regulations were promulgated 26 February and 19 May 1980 and took effect 19 November 1980 - so in 1983 the whole American electronics industry was three years into the most consequential change in waste handling since the Clean Air Act. Generators must determine whether a waste is hazardous, accumulate it in a closed, labelled, inspected area for no more than 90 days, describe it on a manifest, and ship it only to a permitted treatment, storage or disposal facility.",
+          "description": "The Resource Conservation and Recovery Act became law on 21 October 1976. Its Subtitle C hazardous waste regulations were promulgated 26 February and 19 May 1980 and took effect 19 November 1980. So in 1983 the whole American electronics industry was three years into the most consequential change in waste handling since the Clean Air Act. Generators must determine whether a waste is hazardous, accumulate it in a closed, labelled, inspected area for no more than 90 days, describe it on a manifest, and ship it only to a permitted treatment, storage or disposal facility.",
           "kind": "note",
           "category": "industry",
           "era": "1980-1990",
@@ -5911,24 +5911,24 @@
             "https://www.epa.gov/rcra/resource-conservation-and-recovery-act-timeline"
           ],
           "confidence": "high",
-          "note": "A regulatory regime, not a thing in the supply chain, hence a note. The 1984 Hazardous and Solid Waste Amendments tightened this substantially, including the ban on land disposal of untreated hazardous waste; in 1983 that ban did not yet exist and land disposal of untreated sludge was routine and lawful."
+          "note": "A regulatory regime, not a thing in the supply chain, hence a note. The 1984 Hazardous and Solid Waste Amendments tightened this substantially, including the ban on land disposal of untreated hazardous waste. In 1983 that ban did not yet exist and land disposal of untreated sludge was routine and lawful."
         },
         {
           "id": "facility.hazardous-waste.ocean-outfall",
           "name": "Ocean outfall",
           "simple_name": "Ocean outfall",
-          "description": "In the coastal Far East - Taiwan, Hong Kong, Singapore, the Philippines - dilute effluent was and is discharged through a permitted outfall diffuser into the sea, often at a designated ocean disposal zone beyond the territorial limit. The dilution argument is real; so is the fact that the 1980s outfalls had almost no metals monitoring.",
+          "description": "In the coastal Far East (Taiwan, Hong Kong, Singapore, the Philippines) dilute effluent was and is discharged through a permitted outfall diffuser into the sea, often at a designated ocean disposal zone beyond the territorial limit. The dilution argument is real. So is the fact that the 1980s outfalls had almost no metals monitoring.",
           "kind": "site",
           "category": "industry",
           "era": "1970-1990",
           "confidence": "medium",
-          "note": "The offshore dumping of raw sludge - not diluted effluent - was also common in the Far East until the early 1990s and was progressively banned."
+          "note": "The offshore dumping of raw sludge (not diluted effluent) was also common in the Far East until the early 1990s and was progressively banned."
         },
         {
           "id": "facility.hazardous-waste.commodore-site",
           "name": "Commodore's own solvent site: the CSG Superfund case",
           "simple_name": "Commodore CSG Superfund site",
-          "description": "The clearest documented example in this whole story. A 250-gallon underground concrete tank at the MOS Technology site at 950 Rittenhouse Road, Norristown, Pennsylvania - installed with the building in 1970 - leaked in 1974. It stored the trichloroethene and other solvents used to clean silicon wafers. MOS replaced it with an unlined steel tank, which leaked too. In 1978 the Audubon Water Company, which supplied the public water system, detected trichloroethene in its wells. PADER concluded by 1979 that the contamination could not be excavated. A ground-water recovery well and a spray/treatment system began in November 1981; an air stripper began in February 1984. The site went on the Superfund National Priorities List on 4 October 1989 and the fab was closed in 1992.",
+          "description": "The clearest documented example in this whole story. A 250-gallon underground concrete tank at the MOS Technology site at 950 Rittenhouse Road, Norristown, Pennsylvania (installed with the building in 1970) leaked in 1974. It stored the trichloroethene and other solvents used to clean silicon wafers. MOS replaced it with an unlined steel tank, which leaked too. In 1978 the Audubon Water Company, which supplied the public water system, detected trichloroethene in its wells. PADER concluded by 1979 that the contamination could not be excavated. A ground-water recovery well and a spray/treatment system began in November 1981. An air stripper began in February 1984. The site went on the Superfund National Priorities List on 4 October 1989 and the fab was closed in 1992.",
           "kind": "site",
           "category": "industry",
           "era": "1978-1994",
@@ -6035,7 +6035,7 @@
           "id": "facility.cleanroom.classes",
           "name": "Class 100 and Class 1000 zoning",
           "simple_name": "Class 100/1000 zoning",
-          "description": "Federal Standard 209E Class 100 in the lithography, etch and metallisation bays; Class 1000 in the diffusion, cleaning and packaging areas; Class 10,000 in the corridors, the airlock and the material store. The class was maintained by air pressure differentials - the Class 100 room slightly positive to the Class 1000 room, which was positive to the corridor - which is why the doors of a 1980s fab always felt like they were being blown open.",
+          "description": "Federal Standard 209E Class 100 in the lithography, etch and metallisation bays; Class 1000 in the diffusion, cleaning and packaging areas; Class 10,000 in the corridors, the airlock and the material store. The class was maintained by air pressure differentials (the Class 100 room slightly positive to the Class 1000 room, which was positive to the corridor) which is why the doors of a 1980s fab always felt like they were being blown open.",
           "kind": "facility",
           "category": "silicon",
           "era": "1970-1990",
@@ -6056,7 +6056,7 @@
           "id": "facility.cleanroom.amber-room",
           "name": "Amber (yellow) room for photolithography",
           "simple_name": "Amber photolithography room",
-          "description": "The lithography bay was lit only through yellow filters - either yellow-lens fluorescent fixtures or, later, a laminated film - so that no light below about 500 nm reached the photoresist. The 1980s specification was that irradiance from 350 to 500 nm should stay below roughly 0.5 W/m2 at the work surface, with the rest of the spectrum unrestricted. Resists of the period were sensitive to the mercury g-line (436 nm), h-line (405 nm) and i-line (365 nm).",
+          "description": "The lithography bay was lit only through yellow filters (either yellow-lens fluorescent fixtures or, later, a laminated film) so that no light below about 500 nm reached the photoresist. The 1980s specification was that irradiance from 350 to 500 nm should stay below roughly 0.5 W/m2 at the work surface, with the rest of the spectrum unrestricted. Resists of the period were sensitive to the mercury g-line (436 nm), h-line (405 nm) and i-line (365 nm).",
           "kind": "site",
           "category": "silicon",
           "era": "1970-1990",
@@ -6074,7 +6074,7 @@
             "https://www.chiphistory.org/128-an-intel-wafer-fab-cleanroom-circa-1980",
             "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=91008R8P.TXT"
           ],
-          "note": "The classic 1980s yellow room was a room with yellow fluorescent tubes. That alone was often not enough - later measurement work has shown legacy 'yellow' tube lighting can still expose resist within an hour - so good fabs added a second, external filter film. Modern practice is to run the room in white light and rely on the area's low-actinic-UV requirement plus dosimetry.",
+          "note": "The classic 1980s yellow room was a room with yellow fluorescent tubes. That alone was often not enough (later measurement work has shown legacy 'yellow' tube lighting can still expose resist within an hour) so good fabs added a second, external filter film. Modern practice is to run the room in white light and rely on the area's low-actinic-UV requirement plus dosimetry.",
           "confidence": "medium"
         },
         {
@@ -6095,7 +6095,7 @@
           "id": "facility.cleanroom.passivation",
           "name": "Passivation and packaging areas",
           "simple_name": "Passivation and packaging",
-          "description": "Passivation (the final silicon nitride or phosphosilicate glass over the completed aluminium) and then the back-end: wafer probe, dice, die attach, wire bond, and the moulding of the ceramic or plastic package. The back end in 1983 was Class 10000 to Class 1000, not Class 100 - the contaminating work (bonding, moulding compound) happened there.",
+          "description": "Passivation (the final silicon nitride or phosphosilicate glass over the completed aluminium) and then the back-end: wafer probe, dice, die attach, wire bond, and the moulding of the ceramic or plastic package. The back end in 1983 was Class 10000 to Class 1000, not Class 100. The contaminating work (bonding, moulding compound) happened there.",
           "kind": "facility",
           "category": "silicon",
           "era": "1970-1990",
@@ -6126,7 +6126,7 @@
           "id": "facility.cleanroom.hvac",
           "name": "Temperature and humidity control",
           "simple_name": "Temperature and humidity",
-          "description": "20-22 C and 40-60% relative humidity, tighter than any other building of the era, and the single most expensive thing in the building to get right. The 1980s control was a system of pneumatic controllers and a mechanical chart recorder; a modern fab uses thousands of sensors and a BMS.",
+          "description": "20-22 C and 40-60% relative humidity, tighter than any other building of the era, and the single most expensive thing in the building to get right. The 1980s control was a system of pneumatic controllers and a mechanical chart recorder. A modern fab uses thousands of sensors and a BMS.",
           "kind": "facility",
           "category": "energy",
           "era": "1970-1990",
@@ -6139,7 +6139,7 @@
           "id": "facility.cleanroom.airlock",
           "name": "Gowning and airlock",
           "simple_name": "Gowning airlock",
-          "description": "A two-stage airlock - a 'dirty airlock' for incoming components and personnel in street clothes, and a 'clean airlock' with a cross-over bench for gowning. The costume of the era was a hooded coverall plus boots; in the amber room a yellow-coated garment as well.",
+          "description": "A two-stage airlock. It is a 'dirty airlock' for incoming components and personnel in street clothes, and a 'clean airlock' with a cross-over bench for gowning. The costume of the era was a hooded coverall plus boots; in the amber room a yellow-coated garment as well.",
           "kind": "site",
           "category": "silicon",
           "era": "1970-1990",
@@ -6152,7 +6152,7 @@
           "id": "facility.cleanroom.cost",
           "name": "What the building cost (1983 dollars)",
           "simple_name": "Building cost",
-          "description": "For scale: a small 4-inch fab cost about $4 million in 1970 (about $31 million in 2024 money); a full production fab in 1983 ran from roughly $100 million to several hundred million dollars - National Semiconductor announced a $100 million, 290,000 sq ft plant in August 1983, and UMC spent about $200 million on a 1.2 micron fab in the same year. That is why owning a fab was only ever available to very large firms.",
+          "description": "For scale: a small 4-inch fab cost about $4 million in 1970 (about $31 million in 2024 money). A full production fab in 1983 ran from roughly $100 million to several hundred million dollars. National Semiconductor announced a $100 million, 290,000 sq ft plant in August 1983, and UMC spent about $200 million on a 1.2 micron fab in the same year. That is why owning a fab was only ever available to very large firms.",
           "kind": "note",
           "category": "silicon",
           "era": "1983",
@@ -6171,13 +6171,13 @@
             "https://www.asianometry.com/p/the-economics-of-tsmcs-giga-fabs"
           ],
           "confidence": "high",
-          "note": "The $100-300 M figure quoted for a 1980s production fab is right for a 1980s production fab; the $4 M figure is right for an early small 4-inch fab like MOS's, and the two should not be compared without saying which decade and which class of plant is meant."
+          "note": "The $100-300 M figure quoted for a 1980s production fab is right for a 1980s production fab. The $4 M figure is right for an early small 4-inch fab like MOS's, and the two should not be compared without saying which decade and which class of plant is meant."
         },
         {
           "id": "facility.cleanroom.workforce",
           "name": "Fab workforce, 1980s",
           "simple_name": "Fab workforce",
-          "description": "A large 1983 fab ran 5,000-10,000 employees, of whom the majority working on the wafer lines were women - the largest single female industrial workforce in many of the regions where the plants went, because the tool operators and the wafer handling were culturally coded as women's work even though they were skilled and tightly controlled.",
+          "description": "A large 1983 fab ran 5,000-10,000 employees, of whom the majority working on the wafer lines were women. This was the largest single female industrial workforce in many of the regions where the plants went, because the tool operators and the wafer handling were culturally coded as women's work even though they were skilled and tightly controlled.",
           "kind": "note",
           "category": "industry",
           "era": "1983",
@@ -6202,7 +6202,7 @@
       "id": "facility.test-equipment",
       "name": "Factory and engineering test equipment",
       "simple_name": "Test equipment",
-      "description": "Every C64 that left the Hong Kong line had been through a functional test, and the boards had been tested electrically before population and after soldering. In-circuit testers and flying probes were the technology of the era; the automated ATE industry of the 1990s did not exist yet. The capital equipment here was made by the test-and-measurement industry, which is why it is categorised `industry` rather than `assembly` - assembly is reserved for the operations themselves.",
+      "description": "Every C64 that left the Hong Kong line had been through a functional test, and the boards had been tested electrically before population and after soldering. In-circuit testers and flying probes were the technology of the era. The automated ATE industry of the 1990s did not exist yet. The capital equipment here was made by the test-and-measurement industry, which is why it is categorised `industry` rather than `assembly`. Assembly is reserved for the operations themselves.",
       "kind": "tool",
       "category": "industry",
       "era": "1983",
@@ -6211,7 +6211,7 @@
           "id": "facility.test-equipment.ict",
           "name": "In-circuit tester (ICT)",
           "simple_name": "In-circuit tester",
-          "description": "A bed-of-nails fixture pressing 1000 or so spring-loaded probes onto the bare board's pads, measuring resistance, capacitance, diode voltage and, at an increasing share, functional signatures at each node - all in a few seconds. By 1983 the analogue resistance-only tester was giving way to the analogue-plus-functional 'in-circuit functional tester' that could catch an unpopulated IC or a wrong-orientation part without a board-level functional test.",
+          "description": "A bed-of-nails fixture pressing 1000 or so spring-loaded probes onto the bare board's pads, measuring resistance, capacitance, diode voltage and, at an increasing share, functional signatures at each node. This was all in a few seconds. By 1983 the analogue resistance-only tester was giving way to the analogue-plus-functional 'in-circuit functional tester' that could catch an unpopulated IC or a wrong-orientation part without a board-level functional test.",
           "kind": "tool",
           "category": "industry",
           "era": "1983",
@@ -6223,7 +6223,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/In-circuit_testing"
           ],
-          "note": "The bed-of-nails fixture itself is bespoke per board revision - which is one of the reasons a new motherboard revision was expensive to introduce and why the 250407 revision mattered."
+          "note": "The bed-of-nails fixture itself is bespoke per board revision. This is one of the reasons a new motherboard revision was expensive to introduce and why the 250407 revision mattered."
         },
         {
           "id": "facility.test-equipment.functional",
@@ -6243,7 +6243,7 @@
           "id": "facility.test-equipment.test-rom",
           "name": "Test ROM in the final-test fixture",
           "simple_name": "Test ROM",
-          "description": "A dedicated test ROM - the '501' diagnostic ROM is the one most C64 owners meet - loaded into the machine's own ROM socket during factory final test so the machine could self-test its own RAM, character ROM, CIA timers and VIC registers. It is the same object a user later used to prove the machine worked.",
+          "description": "A dedicated test ROM (the '501' diagnostic ROM is the one most C64 owners meet) loaded into the machine's own ROM socket during factory final test so the machine could self-test its own RAM, character ROM, CIA timers and VIC registers. It is the same object a user later used to prove the machine worked.",
           "kind": "part",
           "category": "silicon",
           "era": "1983",
@@ -6255,13 +6255,13 @@
           ],
           "confidence": "medium",
           "provenance": "incomplete",
-          "note": "Not established: that Commodore's factory final test loaded the 501 diagnostic ROM into the machine's own ROM socket, or that the 501 ROM was the diagnostic most C64 owners met. The existence of a 501 test ROM is not in doubt; its use in final-test fixtures is."
+          "note": "Not established: that Commodore's factory final test loaded the 501 diagnostic ROM into the machine's own ROM socket, or that the 501 ROM was the diagnostic most C64 owners met. The existence of a 501 test ROM is not in doubt. Its use in final-test fixtures is."
         },
         {
           "id": "facility.test-equipment.burn-in",
           "name": "Burn-in oven and sockets",
           "simple_name": "Burn-in oven",
-          "description": "A forced-air oven at 70-100 C with burn-in sockets, holding hundreds of boards for 24-72 hours so that early-life component failures - bad solder joints, marginal ICs, leaky capacitors - showed up on the line instead of in the customer's house. Commodore's 1982-83 quality record suggests it was not always run long enough.",
+          "description": "A forced-air oven at 70-100 C with burn-in sockets, holding hundreds of boards for 24-72 hours so that early-life component failures (bad solder joints, marginal ICs, leaky capacitors) showed up on the line instead of in the customer's house. Commodore's 1982-83 quality record suggests it was not always run long enough.",
           "kind": "tool",
           "sources": [
             "https://en.wikipedia.org/wiki/Burn-in",
@@ -6286,7 +6286,7 @@
           "id": "facility.test-equipment.bare-board",
           "name": "Bare-board test and flying probe",
           "simple_name": "Bare-board test",
-          "description": "Bare PCB test came first: a bed-of-nails grid fixture to prove every net was etched and plated correctly, catching a shorts-heavy board before it was populated and therefore before the parts were on it. The flying probe - a robot or CNC head with a moving needle that touched nets individually without a fixture - existed by the early 1980s as an engineering diagnostic, and only later became the standard production tester once it got fast enough.",
+          "description": "Bare PCB test came first: a bed-of-nails grid fixture to prove every net was etched and plated correctly, catching a shorts-heavy board before it was populated and therefore before the parts were on it. The flying probe (a robot or CNC head with a moving needle that touched nets individually without a fixture) existed by the early 1980s as an engineering diagnostic, and only later became the standard production tester once it got fast enough.",
           "kind": "tool",
           "category": "industry",
           "era": "1983",
@@ -6294,13 +6294,13 @@
           "sources": [
             "https://en.wikipedia.org/wiki/In-circuit_testing"
           ],
-          "note": "Today the flying probe has largely displaced the bed-of-nails in production, which removes the per-revision fixture cost - a genuine change in the economics of board design between 1983 and now.",
+          "note": "Today the flying probe has largely displaced the bed-of-nails in production, which removes the per-revision fixture cost. This is a genuine change in the economics of board design between 1983 and now.",
           "children": [
             {
               "id": "facility.test-equipment.needle-probe",
               "name": "Spring probe and tungsten needle",
               "simple_name": "Tungsten needle probe",
-              "description": "The bed-of-nails is a field of sprung tungsten-rhenium or beryllium-copper pins on a 2.54 mm grid, each pressing a few grams onto a pad to make contact. The 1980s fixtures were drilled and wired by hand or on a numerical-control machine from the Gerber artwork - which is why a board layout change meant a new fixture.",
+              "description": "The bed-of-nails is a field of sprung tungsten-rhenium or beryllium-copper pins on a 2.54 mm grid, each pressing a few grams onto a pad to make contact. The 1980s fixtures were drilled and wired by hand or on a numerical-control machine from the Gerber artwork, which is why a board layout change meant a new fixture.",
               "kind": "part",
               "category": "industry",
               "era": "1983",
@@ -6318,7 +6318,7 @@
                 }
               ],
               "confidence": "medium",
-              "note": "Tungsten-rhenium was the common needle alloy in this era; beryllium copper became the standard later, and both carry real occupational-exposure caveats for the operators who handled them.",
+              "note": "Tungsten-rhenium was the common needle alloy in this era. Beryllium copper became the standard later, and both carry real occupational-exposure caveats for the operators who handled them.",
               "edges": [
                 {
                   "to": "metal.tungsten.wire",
@@ -6335,7 +6335,7 @@
         }
       ],
       "confidence": "low",
-      "note": "Established: in-circuit (bed-of-nails) and flying-probe testing as the era's board-test technologies, per the cited page. Not established: the claim that an automated test-equipment industry did not exist until the 1990s; programmable instrument buses date to the 1970s.",
+      "note": "Established: in-circuit (bed-of-nails) and flying-probe testing as the era's board-test technologies, per the cited page. Not established: the claim that an automated test-equipment industry did not exist until the 1990s. Programmable instrument buses date to the 1970s.",
       "sources": [
         "https://en.wikipedia.org/wiki/In-circuit_testing"
       ]

@@ -145,6 +145,96 @@ if (process.argv.includes('--list')) {
   }
 }
 
+/* --grammar: AI-dash-grammar detector mode.
+ *
+ * Scope is mechanical: only the spaced hyphen " - " (the normalize-text
+ * rendering of an em/en-dash) and ";" are flagged. Unspaced hyphens --
+ * ranges (3-12 m), part numbers (901226-01), compounds (iron-stained),
+ * tolerances (+/-1 C) -- can never match and must never be touched.
+ * Existing parentheses and quoted testimony are out of scope.
+ * Function labels tell the agent which rigid rewrite applies:
+ *   pair       enclosing aside      -> brackets: X (aside) Y
+ *   appendage  " - plus/and/with "  -> comma: X, and Y
+ *   trailing   dash runs to "."     -> full stop + new sentence
+ *   which      " - which/where... " -> comma+which, or split to "This..."
+ *   ie         " - i.e./e.g. "      -> "(i.e. gloss)"
+ *   semicolon  ";" joining clauses  -> full stop (lists with commas: keep)
+ */
+if (process.argv.includes('--grammar')) {
+  const rows = [];
+  for (const [id, n] of Object.entries(N)) {
+    if (!inScope(n)) continue;
+    for (const field of FIELDS) {
+      const text = n[field];
+      if (!text) continue;
+      const dashes = (text.match(/ - /g) || []).length;
+      const semis = (text.match(/;/g) || []).length;
+      if (!dashes && !semis) continue;
+      const funcs = new Set();
+      if (/ - (i\.e\.|e\.g\.)/i.test(text)) funcs.add('ie');
+      if (/ - (plus|and|with) /i.test(text)) funcs.add('appendage');
+      if (/ - (which|where|who|whose) /i.test(text)) funcs.add('which');
+      const sents = text.split(/(?<=[.!?])\s+/);
+      for (const s of sents) {
+        const k = (s.match(/ - /g) || []).length;
+        if (k >= 2) funcs.add('pair');
+        else if (k === 1) funcs.add('trailing');
+      }
+      if (semis) funcs.add('semicolon');
+      rows.push({ id, file: n.file, batch: batchOf(n), field, dashes, semis, funcs: [...funcs] });
+    }
+  }
+  if (process.argv.includes('--json')) {
+    console.log(JSON.stringify({ grammar: rows }, null, 2));
+    process.exit(0);
+  }
+  const totD = rows.reduce((a, r) => a + r.dashes, 0);
+  const totS = rows.reduce((a, r) => a + r.semis, 0);
+  console.log(`\n=== grammar (spaced dash + semicolon)${ONLY ? ` -- ${ONLY}` : ''} ===`);
+  console.log(`\ntotal: ${rows.length} field(s) across ${new Set(rows.map((r) => r.id)).size} node(s); " - " uses: ${totD}; ";" uses: ${totS}`);
+  const byFunc = {};
+  for (const r of rows) for (const f of r.funcs) byFunc[f] = (byFunc[f] ?? 0) + 1;
+  console.log('by function: ' + Object.entries(byFunc).sort((a, b) => b[1] - a[1]).map(([f, c]) => `${f}=${c}`).join(' '));
+  const byBatch = {};
+  for (const r of rows) byBatch[r.batch] = (byBatch[r.batch] ?? 0) + 1;
+  console.log('by batch: ' + Object.entries(byBatch).sort((a, b) => b[1] - a[1]).map(([b, c]) => `${b}=${c}`).join(' '));
+  const byFile = {};
+  for (const r of rows) byFile[r.file] = (byFile[r.file] ?? 0) + 1;
+  console.log('by fragment: ' + Object.entries(byFile).sort((a, b) => b[1] - a[1]).map(([f, c]) => `${f.replace('.json', '')}=${c}`).join(' '));
+  if (process.argv.includes('--list')) {
+    console.log(`\n########## GRAMMAR HITS ##########`);
+    for (const r of rows) {
+      const n = N[r.id];
+      const text = n[r.field] ?? '';
+      const at = text.indexOf(' - ');
+      const semiAt = text.indexOf(';');
+      const anchor = at >= 0 ? at : semiAt;
+      const from = Math.max(0, anchor - 100);
+      console.log(`\n  ${r.id} [${r.batch}/${r.file}] .${r.field} [${r.funcs.join('+')}] d=${r.dashes} s=${r.semis}`);
+      console.log(`    "...${text.slice(from, anchor + 140).replace(/\n/g, ' ')}..."`);
+    }
+  }
+  if (process.argv.includes('--gramcal')) {
+    const CAL2 = [
+      'c64.mainboard', 'mb.cia.mask', 'mb.sid.revisions', 'mb.cpu',
+      'mb.ram.mask', 'mb.sid', 'mb.ram.cell', 'mb.pla.vs-pal',
+      'mb.discretes.test', 'si.front-end', 'si.emc.resin',
+      'c64.packaging.foam-caps', 'mb.ram', 'mb.cpu.fab.assembly',
+      'mb.cpu.mask-set', 'mb.cpu.fab.cleanroom', 'metal.aluminum.ingot',
+      'mb.cia.tod', 'c64.io-panel', 'mb.pla.array',
+    ];
+    console.log(`\n########## GRAMMAR CALIBRATION SET (20) ##########`);
+    for (const id of CAL2) {
+      const n = N[id];
+      if (!n) { console.log(`\n  ${id}: NOT FOUND`); continue; }
+      console.log(`\n### ${id} [${n.file}] kind=${n.kind} cat=${n.category}`);
+      console.log(`DESC: ${n.description ?? '(none)'}`);
+      console.log(`NOTE: ${n.note ?? '(none)'}`);
+    }
+  }
+  process.exit(0);
+}
+
 if (process.argv.includes('--calibration')) {
   // 25 raw-leaf-heavy ids for blind calibration; print full text for verdicts
   const CAL = [

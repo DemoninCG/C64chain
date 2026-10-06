@@ -17,7 +17,7 @@
         "https://www.classynemesis.com/blog/repair-c64-keyboard"
       ],
       "confidence": "high",
-      "note": "The C64 keyboard is not a flexible membrane with silver-ink traces. It is a rubber-dome keyboard on a rigid printed circuit board with plated conductive pads, and the domes themselves are the conductive element. Earlier VIC-20-generation Commodore keyboards also used rigid boards but with bare, unplated copper pads, which oxidise - the reason some early C64 keyboards need cleaning while later ones do not. Commodore did use silver-filled ink pads on some other keyboards and peripherals of the period, so that construction is worth carrying, but it is not the breadbin C64.",
+      "note": "The C64 keyboard is not a flexible membrane with silver-ink traces. It is a rubber-dome keyboard on a rigid printed circuit board with plated conductive pads, and the domes themselves are the conductive element. Earlier VIC-20-generation Commodore keyboards also used rigid boards but with bare, unplated copper pads, which oxidise. The reason some early C64 keyboards need cleaning while later ones do not. Commodore did use silver-filled ink pads on some other keyboards and peripherals of the period, so that construction is worth carrying, but it is not the breadbin C64.",
       "facts": [
         {
           "label": "Keys",
@@ -50,7 +50,7 @@
           "id": "c64.keyboard-switches.matrix",
           "name": "8 x 8 keyboard matrix",
           "simple_name": "8 x 8 keyboard matrix",
-          "description": "Eight column lines snake around the board and eight row lines snake around the other way, each pair of crossing traces forming one key. Pressing a key connects its column to its row; the firmware walks the matrix by writing a pattern to CIA #1's port A and reading port B. Because one row line can touch eight different columns, a single conducting bridge is the entire 'switch'.",
+          "description": "Eight column lines snake around the board and eight row lines snake around the other way, each pair of crossing traces forming one key. Pressing a key connects its column to its row. The firmware walks the matrix by writing a pattern to CIA #1's port A and reading port B. Because one row line can touch eight different columns, a single conducting bridge is the entire 'switch'.",
           "kind": "part",
           "category": "board",
           "era": "1982-1984",
@@ -77,7 +77,7 @@
               "id": "c64.keyboard-switches.matrix.pcb",
               "name": "Rigid keyboard PCB with plated pads",
               "simple_name": "Keyboard PCB, plated pads",
-              "description": "A glass-epoxy laminate board, drilled and plated through in the usual way, carrying the matrix traces as copper and terminating each key position in a pair of plated pads. On the breadbin keyboard the pads are plated metal; on the earlier VIC-20-derived boards they were bare copper, and bare copper oxidises into a high-resistance film - the reason those keyboards need periodic cleaning and later ones generally do not.",
+              "description": "A glass-epoxy laminate board, drilled and plated through in the usual way, carrying the matrix traces as copper and terminating each key position in a pair of plated pads. On the breadbin keyboard the pads are plated metal. On the earlier VIC-20-derived boards they were bare copper, and bare copper oxidises into a high-resistance film. The reason those keyboards need periodic cleaning and later ones generally do not.",
               "kind": "part",
               "category": "board",
               "era": "1982-1984",
@@ -103,7 +103,7 @@
                   "id": "c64.keyboard.pcb.matrix",
                   "name": "How the 8 x 8 matrix and the two odd keys work",
                   "simple_name": "Matrix and two odd keys",
-                  "description": "The CIA drives one of eight rows low and reads the eight columns; a pressed key connects one row to one column, and sixty-four positions are scanned. RESTORE is wired straight to the NMI line, bypassing the matrix entirely, which is why RESTORE works even while the CPU is jammed. SHIFT LOCK is a mechanically latching switch wired to the same two lines as the left SHIFT, so the firmware sees a shift and never sees a separate key.",
+                  "description": "The CIA drives one of eight rows low and reads the eight columns. A pressed key connects one row to one column, and sixty-four positions are scanned. RESTORE is wired straight to the NMI line, bypassing the matrix entirely, which is why RESTORE works even while the CPU is jammed. SHIFT LOCK is a mechanically latching switch wired to the same two lines as the left SHIFT, so the firmware sees a shift and never sees a separate key.",
                   "kind": "note",
                   "category": "board",
                   "era": "1982",
@@ -140,7 +140,7 @@
                   "id": "c64.keyboard.pcb.contacts",
                   "name": "Contact pads (gold or carbon)",
                   "simple_name": "Contact pads (gold or carbon)",
-                  "description": "Each key position terminates in two pads on the rigid board. The carbon-loaded rubber dome that bridges them is the moving conductor: pressed, it closes the circuit between the pads; released, the pads are open. On gold-plated keyboards the pads are gold over nickel; on cheaper sets they are a carbon or graphite coating on the copper, which is the version that needs cleaning.",
+                  "description": "Each key position terminates in two pads on the rigid board. The carbon-loaded rubber dome that bridges them is the moving conductor: pressed, it closes the circuit between the pads. Released, the pads are open. On gold-plated keyboards the pads are gold over nickel. On cheaper sets they are a carbon or graphite coating on the copper, which is the version that needs cleaning.",
                   "kind": "part",
                   "category": "board",
                   "era": "1982",
@@ -196,7 +196,7 @@
           "id": "c64.keyboard-switches.domes",
           "name": "Carbon-loaded rubber domes",
           "simple_name": "Carbon-loaded rubber domes",
-          "description": "Each key position has a small moulded rubber pill, domed upwards, whose underside carries a conductive carbon-loaded contact that bridges two pads when the dome is crushed. Because carbon is loaded into the rubber as a filler rather than plated on, the dome is its own contact - it wears slightly with use and it is the consumable part of the switch.",
+          "description": "Each key position has a small moulded rubber pill, domed upwards, whose underside carries a conductive carbon-loaded contact that bridges two pads when the dome is crushed. Because carbon is loaded into the rubber as a filler rather than plated on, the dome is its own contact. It wears slightly with use and it is the consumable part of the switch.",
           "kind": "part",
           "category": "plastics",
           "era": "1982-1984",
@@ -230,13 +230,13 @@
               "rel": "made of"
             }
           ],
-          "note": "Merged key-domes noted 0.5-2 N operating force (approx 50-200 gf); surviving 150-250 g dome-alone kept, loser force noted here. Loser 8-12 mm travel claim dropped as contradicting its own 0.5-2 mm fact and 3-4 mm full-key travel."
+          "note": "Merged key-domes noted 0.5-2 N operating force (approx 50-200 gf). Surviving 150-250 g dome-alone kept, loser force noted here. Loser 8-12 mm travel claim dropped as contradicting its own 0.5-2 mm fact and 3-4 mm full-key travel."
         },
         {
           "id": "c64.keyboard-switches.keycap",
           "name": "Keycap and plunger mechanism",
           "simple_name": "Keycap and plunger mechanism",
-          "description": "A double-shot moulded keycap on a cross-shaped plastic stem. The stem sits in a plunger barrel and carries either a coil spring back up (the common later C64 keycap) or, on the earliest VIC-20-derived keyboards, nothing at all - those rely purely on the rubber dome for their return and feel markedly sluggish.",
+          "description": "A double-shot moulded keycap on a cross-shaped plastic stem. The stem sits in a plunger barrel and carries either a coil spring back up (the common later C64 keycap) or, on the earliest VIC-20-derived keyboards, nothing at all. It is those rely purely on the rubber dome for their return and feel markedly sluggish.",
           "kind": "part",
           "category": "plastics",
           "era": "1982-1984",
@@ -273,7 +273,7 @@
               "category": "passives",
               "era": "1982-1984",
               "confidence": "medium",
-              "note": "Music wire (high-carbon steel) or stainless; the spring wire is wound on a small coil-winder in the millions.",
+              "note": "Music wire (high-carbon steel) or stainless. The spring wire is wound on a small coil-winder in the millions.",
               "inputs": [],
               "children": [],
               "edges": [
@@ -299,7 +299,7 @@
           "id": "c64.keyboard-switches.shift-lock",
           "name": "SHIFT LOCK and RESTORE, the two off-matrix keys",
           "simple_name": "SHIFT LOCK and RESTORE keys",
-          "description": "Two of the 66 keys are not in the scanned 8x8 matrix. SHIFT LOCK is wired in parallel with LSHIFT on the same wire, so the firmware cannot tell the two apart and pressing SHIFT LOCK simply holds the shift bit down. RESTORE is on a completely different wire, straight to the 6510 NMI pin, so pressing it halts the CPU with no firmware involvement at all - a hardware reset, not a key.",
+          "description": "Two of the 66 keys are not in the scanned 8x8 matrix. SHIFT LOCK is wired in parallel with LSHIFT on the same wire, so the firmware cannot tell the two apart and pressing SHIFT LOCK simply holds the shift bit down. RESTORE is on a completely different wire, straight to the 6510 NMI pin, so pressing it halts the CPU with no firmware involvement at all. It is a hardware reset, not a key.",
           "kind": "note",
           "category": "passives",
           "era": "1982-1984",
@@ -310,7 +310,7 @@
             "https://c64os.com/post/howthekeyboardworks"
           ],
           "confidence": "high",
-          "note": "Documented on the C64 wiki keyboard page. Key count cross-checked against the C64 Service Manual (\"KEYS 66 Keys total, 2 Cursor control keys, 4 Function keys\") and against c64.keyboard, whose facts give 66 total with 8x8 = 64 scanned and 2 off-matrix. SHIFT LOCK is a discrete latching mechanical switch fitted into the keyboard PCB (Mitsumi-branded, plate-mounted, with a cruciform slider adapter for the keycap mount), neither the Mitsumi standard mechanical lock nor a membrane lock. A documented teardown with disassembly photographs establishes this; the latching-dome arrangement previously recorded here is withdrawn for the 1982 breadbin. The later C64C revision uses a Mitsumi standard mechanical latching switch, a different part. Continuity tracing of a keyboard PCB corroborates the wiring: SHIFT LOCK shares exactly the Left Shift row/column lines (indistinguishable to the firmware), RESTORE sits on its own GND plus NMI pair, and the matrix carries the remaining 64 keys.",
+          "note": "Documented on the C64 wiki keyboard page. Key count cross-checked against the C64 Service Manual (\"KEYS 66 Keys total, 2 Cursor control keys, 4 Function keys\") and against c64.keyboard, whose facts give 66 total with 8x8 = 64 scanned and 2 off-matrix. SHIFT LOCK is a discrete latching mechanical switch fitted into the keyboard PCB (Mitsumi-branded, plate-mounted, with a cruciform slider adapter for the keycap mount), neither the Mitsumi standard mechanical lock nor a membrane lock. A documented teardown with disassembly photographs establishes this. The latching-dome arrangement previously recorded here is withdrawn for the 1982 breadbin. The later C64C revision uses a Mitsumi standard mechanical latching switch, a different part. Continuity tracing of a keyboard PCB corroborates the wiring: SHIFT LOCK shares exactly the Left Shift row/column lines (indistinguishable to the firmware), RESTORE sits on its own GND plus NMI pair, and the matrix carries the remaining 64 keys.",
           "facts": [
             {
               "label": "SHIFT LOCK",
@@ -337,7 +337,7 @@
             "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore",
             "https://c64os.com/post/howthekeyboardworks"
           ],
-          "note": "The mainboard end is confirmed: the 250407 parts list has CN1 as 'Header w/LKG Sil 2.54 CTR 20 Pin', a 20-pin locking silicon header on a 2.54 mm pitch, which is what the ribbon plugs into. Independently corroborated by continuity tracing of a keyboard PCB: 18 connected wires (solder points labelled 0-8 and A-I), pin 2 an orientation spacer, +5V unconnected, RESTORE on its own GND plus NMI pair. Not established: the 0.5-1.27 mm conductor pitch, the PVC jacket, the insulation-displacement crimp at the keyboard end, and the fatigue-fracture-at-the-header failure mode - none of that appears in the primary documentation.",
+          "note": "The mainboard end is confirmed: the 250407 parts list has CN1 as 'Header w/LKG Sil 2.54 CTR 20 Pin', a 20-pin locking silicon header on a 2.54 mm pitch, which is what the ribbon plugs into. Independently corroborated by continuity tracing of a keyboard PCB: 18 connected wires (solder points labelled 0-8 and A-I), pin 2 an orientation spacer, +5V unconnected, RESTORE on its own GND plus NMI pair. Not established: the 0.5-1.27 mm conductor pitch, the PVC jacket, the insulation-displacement crimp at the keyboard end, and the fatigue-fracture-at-the-header failure mode. It is none of that appears in the primary documentation.",
           "facts": [
             {
               "label": "Construction",
@@ -378,7 +378,7 @@
         "https://en.wikipedia.org/wiki/Crystal_oscillator"
       ],
       "confidence": "high",
-      "note": "The C64 master crystal is not a 2 MHz part. On the NTSC breadbin (ASSY 250407) Y1 is 14.31818 MHz, six times the NTSC colour subcarrier, and the 74LS629 / MC4044 PLL multiplies it by four to give an 8.1818 MHz dot clock, which the 74LS193 divides by 7 to 1.16883 MHz and the 74LS74 halves to the 1.022727 MHz Phi 2 CPU clock. The \"2 MHz\" figure in circulation is the approximate output of that divider, not the crystal. The PAL crystal is 17.734475 MHz, four times the PAL subcarrier; later C64B/C boards used a 16 MHz crystal with a dedicated clock-generator IC.",
+      "note": "The C64 master crystal is not a 2 MHz part. On the NTSC breadbin (ASSY 250407) Y1 is 14.31818 MHz, six times the NTSC colour subcarrier, and the 74LS629 / MC4044 PLL multiplies it by four to give an 8.1818 MHz dot clock, which the 74LS193 divides by 7 to 1.16883 MHz and the 74LS74 halves to the 1.022727 MHz Phi 2 CPU clock. The \"2 MHz\" figure in circulation is the approximate output of that divider, not the crystal. The PAL crystal is 17.734475 MHz, four times the PAL subcarrier. Later C64B/C boards used a 16 MHz crystal with a dedicated clock-generator IC.",
       "facts": [
         {
           "label": "Y1, NTSC",
@@ -457,7 +457,7 @@
               "id": "mb.crystal.y1.case",
               "name": "HC-49/U case: crimp, weld and argon fill",
               "simple_name": "HC-49/U case",
-              "description": "The plate sits on a pair of wire supports in a crimped and welded nickel can, filled with argon or krypton at a few kPa. The can is drawn from nickel-plated steel or brass, and its small welded lid is what makes the unit hermetic - the reason a 1982 crystal does not drift as the humidity of an attic changes.",
+              "description": "The plate sits on a pair of wire supports in a crimped and welded nickel can, filled with argon or krypton at a few kPa. The can is drawn from nickel-plated steel or brass, and its small welded lid is what makes the unit hermetic. The reason a 1982 crystal does not drift as the humidity of an attic changes.",
               "kind": "part",
               "category": "passives",
               "era": "1982-1984",
@@ -489,7 +489,7 @@
                   "id": "mb.crystal.y1.case.support-wire",
                   "name": "Spring-wire supports",
                   "simple_name": "Spring-wire supports",
-                  "description": "Two short wires spot-welded to the plate's major faces at the nodal points. Because quartz is piezoelectric, mechanically stressing it shifts its resonant frequency, so the supports must sit where the strain of the vibrating mode is smallest - the whole reason the plate is bevelled and domed.",
+                  "description": "Two short wires spot-welded to the plate's major faces at the nodal points. Because quartz is piezoelectric, mechanically stressing it shifts its resonant frequency, so the supports must sit where the strain of the vibrating mode is smallest. The whole reason the plate is bevelled and domed.",
                   "kind": "part",
                   "category": "passives",
                   "era": "1982-1984",
@@ -600,7 +600,7 @@
               "id": "mb.crystal.oscillator.pierce",
               "name": "Pierce oscillator and load capacitors",
               "simple_name": "Pierce oscillator",
-              "description": "The crystal acts as a negative-resistance element in a Pierce oscillator with a small load capacitor at its CL and the drive level set by a series resistor. Its frequency is set by the crystal's CL, the load capacitors and the transistor's input capacitance all in series: at 14 MHz with a few tens of picofarads involved, a fraction of a millimetre of stray copper shifts the trim range, which is why the C64 needed an adjustable element here rather than a fixed capacitor. The oscillator is a high-gain positive-feedback amplifier at all frequencies until the crystal's impedance peaks at the design frequency, so the circuit is designed to start on noise and settle; a badly driven crystal never settles, which is the classic symptom of a cracked plate.",
+              "description": "The crystal acts as a negative-resistance element in a Pierce oscillator with a small load capacitor at its CL and the drive level set by a series resistor. Its frequency is set by the crystal's CL, the load capacitors and the transistor's input capacitance all in series: at 14 MHz with a few tens of picofarads involved, a fraction of a millimetre of stray copper shifts the trim range, which is why the C64 needed an adjustable element here rather than a fixed capacitor. The oscillator is a high-gain positive-feedback amplifier at all frequencies until the crystal's impedance peaks at the design frequency, so the circuit is designed to start on noise and settle. A badly driven crystal never settles, which is the classic symptom of a cracked plate.",
               "kind": "part",
               "category": "passives",
               "era": "1982-1984",
@@ -609,7 +609,7 @@
               ],
               "confidence": "high",
               "provenance": "incomplete",
-              "note": "The discrete load caps are ceramic (see mb.passives.caps.trim and the C0G timing caps); a Pierce oscillator's frequency is very sensitive to stray capacitance, which is why the C64 needed an adjustable trim.",
+              "note": "The discrete load caps are ceramic (see mb.passives.caps.trim and the C0G timing caps). A Pierce oscillator's frequency is very sensitive to stray capacitance, which is why the C64 needed an adjustable trim.",
               "facts": [
                 {
                   "label": "Typical CL",
@@ -704,7 +704,7 @@
                   ]
                 }
               ],
-              "note": "Topology confirmed on the 250407 board: U31 is a 74LS629 dual voltage-controlled oscillator, U32 an MC4044 phase/frequency detector whose dc output on pin 8 feeds the frequency-control input, pin 2, of U31. Not established, and contradicted by the same source: the 'x4 multiply' and 'a tracking VCO four times faster' claims. The service manual gives Y1 as 14.31818 MHz producing the colour clock and the second half of U31 as the 8.1818 MHz DOT clock, so the dot clock is the SLOWER of the two - 8.1818/14.31818 is 7/4, and the phase lock is colour clock divided by 14 against dot clock divided by 8."
+              "note": "Topology confirmed on the 250407 board: U31 is a 74LS629 dual voltage-controlled oscillator, U32 an MC4044 phase/frequency detector whose dc output on pin 8 feeds the frequency-control input, pin 2, of U31. Not established, and contradicted by the same source: the 'x4 multiply' and 'a tracking VCO four times faster' claims. The service manual gives Y1 as 14.31818 MHz producing the colour clock and the second half of U31 as the 8.1818 MHz DOT clock, so the dot clock is the SLOWER of the two. 8.1818/14.31818 is 7/4, and the phase lock is colour clock divided by 14 against dot clock divided by 8."
             }
           ]
         }
@@ -725,7 +725,7 @@
         "https://en.wikipedia.org/wiki/Acrylonitrile_butadiene_styrene"
       ],
       "confidence": "high",
-      "note": "The C64's bundled joystick is a plain 2-button 4-way unit; the 3-button version came later and was supplied separately or with the C64C. Commodore also sold a version with a fire button on the shaft and a third button on the knob top; Commodore 4611 and its successors are cited for these in the retro literature, but no Commodore part number is established for the specific 1982 bundle.",
+      "note": "The C64's bundled joystick is a plain 2-button 4-way unit. The 3-button version came later and was supplied separately or with the C64C. Commodore also sold a version with a fire button on the shaft and a third button on the knob top. Commodore 4611 and its successors are cited for these in the retro literature, but no Commodore part number is established for the specific 1982 bundle.",
       "facts": [
         {
           "label": "Directions",
@@ -750,7 +750,7 @@
           "id": "c64.joystick.gate",
           "name": "4-way direction gate",
           "simple_name": "4-way direction gate",
-          "description": "A cross-shaped sliding gate that physically interlocks so only one of the four directions can be closed at a time - the same gating trick as a keyboard's 3-key rollover prevention. The gate rides on four ribs and is held centred by four springs, so it is self-centring and has no detented 'gate 2' half-way position.",
+          "description": "A cross-shaped sliding gate that physically interlocks so only one of the four directions can be closed at a time. It is the same gating trick as a keyboard's 3-key rollover prevention. The gate rides on four ribs and is held centred by four springs, so it is self-centring and has no detented 'gate 2' half-way position.",
           "kind": "part",
           "category": "interconnect",
           "era": "1982-1984",
@@ -812,7 +812,7 @@
                   "id": "c64.joystick.gate.spring.replacement",
                   "name": "Why springs are the failure point",
                   "simple_name": "Springs are the failure point",
-                  "description": "Gate springs carry the whole centring duty and are cycled by every direction press. Once one is weakened the stick sits off-centre and the machine reads a direction the user is not pressing - the most common single joystick fault of the era.",
+                  "description": "Gate springs carry the whole centring duty and are cycled by every direction press. Once one is weakened the stick sits off-centre and the machine reads a direction the user is not pressing. It is the most common single joystick fault of the era.",
                   "kind": "note",
                   "category": "passives",
                   "era": "1982-1984",
@@ -831,14 +831,14 @@
               "category": "passives",
               "era": "1982-1984",
               "confidence": "medium",
-              "note": "Friction pads are standard in this class of joystick; pad dimensions for the C64's unit are not established.",
+              "note": "Friction pads are standard in this class of joystick. Pad dimensions for the C64's unit are not established.",
               "inputs": [],
               "children": [
                 {
                   "id": "c64.joystick.gate.friction.nylon-bushing",
                   "name": "Nylon bushing in the chassis",
                   "simple_name": "Nylon bushing in the chassis",
-                  "description": "A moulded nylon bushing in the ABS chassis that the steel shaft runs in. Nylon is used because it is self-lubricating and will not gall the shaft; a metal bushing would seize onto the shaft as it rimes.",
+                  "description": "A moulded nylon bushing in the ABS chassis that the steel shaft runs in. Nylon is used because it is self-lubricating and will not gall the shaft. A metal bushing would seize onto the shaft as it rimes.",
                   "kind": "part",
                   "category": "plastics",
                   "era": "1982-1984",
@@ -927,7 +927,7 @@
               "id": "c64.joystick.microswitches.leaves",
               "name": "Sprung leaf contact",
               "simple_name": "Sprung leaf contact",
-              "description": "Inside each switch a formed leaf is bowed against a fixed contact; pressing the plunger straightens the leaf onto it. The contacts are gold-plated over nickel because a joystick switch is a low-current, high-cycle signal contact where a stable millivolt-level resistance matters, and because the leaf is wiped clean on every actuation.",
+              "description": "Inside each switch a formed leaf is bowed against a fixed contact. Pressing the plunger straightens the leaf onto it. The contacts are gold-plated over nickel because a joystick switch is a low-current, high-cycle signal contact where a stable millivolt-level resistance matters, and because the leaf is wiped clean on every actuation.",
               "kind": "part",
               "category": "interconnect",
               "era": "1982-1984",
@@ -997,12 +997,12 @@
           "id": "c64.joystick.knob",
           "name": "ABS knob and top button",
           "simple_name": "ABS knob and top button",
-          "description": "The moulded handle on the top of the shaft. On a 2-button unit it is a plain grip knob; on a 3-button unit a fire switch is moulded into the shaft and a third button into the knob's top, sprung against the shaft and actuated by a rod inside it. Black ABS, textured on the grip faces.",
+          "description": "The moulded handle on the top of the shaft. On a 2-button unit it is a plain grip knob. On a 3-button unit a fire switch is moulded into the shaft and a third button into the knob's top, sprung against the shaft and actuated by a rod inside it. Black ABS, textured on the grip faces.",
           "kind": "part",
           "category": "plastics",
           "era": "1982-1984",
           "confidence": "medium",
-          "note": "A soft overmould on the grip was a quality feature on some 1980s sticks and absent on the cheap bundled ones; I cannot say which the C64 bundle shipped with.",
+          "note": "A soft overmould on the grip was a quality feature on some 1980s sticks and absent on the cheap bundled ones. I cannot say which the C64 bundle shipped with.",
           "facts": [
             {
               "label": "Material",
@@ -1035,7 +1035,7 @@
           "category": "interconnect",
           "era": "1982-1984",
           "confidence": "medium",
-          "note": "The coiled cable was traditionally PVC-insulated stranded copper; some units shipped with a straight lead. The number of conductors varies between joystick models and the C64 bundle's count is not established.",
+          "note": "The coiled cable was traditionally PVC-insulated stranded copper. Some units shipped with a straight lead. The number of conductors varies between joystick models and the C64 bundle's count is not established.",
           "facts": [
             {
               "label": "Conductors",
@@ -1052,7 +1052,7 @@
               "id": "c64.joystick.cable.plug",
               "name": "DE-9 male plug contacts",
               "simple_name": "DE-9 male plug contacts",
-              "description": "Stamped brass pins, gold-flashed over nickel, moulded into a thermoplastic D-shell that keys to the socket's D-shape. Because the D-shell is polarised, the plug physically cannot be inserted backwards - the same mechanical trick as the moulded keyway on a D-sub generally.",
+              "description": "Stamped brass pins, gold-flashed over nickel, moulded into a thermoplastic D-shell that keys to the socket's D-shape. Because the D-shell is polarised, the plug physically cannot be inserted backwards. It is the same mechanical trick as the moulded keyway on a D-sub generally.",
               "kind": "part",
               "category": "interconnect",
               "era": "1982-1984",
@@ -1115,7 +1115,7 @@
       "id": "c64.joystick.cable.plug.conductor",
       "name": "Stranded conductor",
       "simple_name": "Stranded conductor",
-      "description": "Fine-stranded copper, tinned, for flexibility. Seven or nine of them, depending on the joystick model - the C64 reads five signals plus the common and the fire button.",
+      "description": "Fine-stranded copper, tinned, for flexibility. Seven or nine of them, depending on the joystick model. It is the C64 reads five signals plus the common and the fire button.",
       "kind": "material",
       "category": "passives",
       "era": "1982-1984",
@@ -1143,7 +1143,7 @@
         "https://en.wikipedia.org/wiki/Acrylonitrile_butadiene_styrene"
       ],
       "confidence": "high",
-      "note": "The three monomers are traced once, under the keycap ABS; this knob is the same copolymer.",
+      "note": "The three monomers are traced once, under the keycap ABS. This knob is the same copolymer.",
       "facts": [
         {
           "label": "Melt flow",
@@ -1167,12 +1167,12 @@
       "id": "c64.joystick.shaft.steel",
       "name": "Cold-drawn steel bar",
       "simple_name": "Cold-drawn steel bar",
-      "description": "Mild or low-alloy steel, cold-drawn to a square section and cut to length. The gate's press fit is what locates the shaft; the steel is unplated except where it passes through the chassis, where corrosion is a genuine failure mode on a machine stored in a damp shed. The steel begins as sintered hematite-magnetite pellets and lump ore charged with coke and limestone, and the bulk of world steel in 1982 was made that way, so rust and pitting on a forty-year-old joystick shaft is this ore still trying to get out.",
+      "description": "Mild or low-alloy steel, cold-drawn to a square section and cut to length. The gate's press fit is what locates the shaft. The steel is unplated except where it passes through the chassis, where corrosion is a genuine failure mode on a machine stored in a damp shed. The steel begins as sintered hematite-magnetite pellets and lump ore charged with coke and limestone, and the bulk of world steel in 1982 was made that way, so rust and pitting on a forty-year-old joystick shaft is this ore still trying to get out.",
       "kind": "material",
       "category": "metals",
       "era": "1982-1984",
       "confidence": "low",
-      "note": "The frozen-shaft failure is well documented across the vintage joystick genre; the steel chain itself belongs to the metals file.",
+      "note": "The frozen-shaft failure is well documented across the vintage joystick genre. The steel chain itself belongs to the metals file.",
       "facts": [
         {
           "label": "Section",
@@ -1207,7 +1207,7 @@
       "id": "c64.joystick.microswitches.plastic-case",
       "name": "Switch case polymer",
       "simple_name": "Switch case polymer",
-      "description": "A small moulded case in a filled thermoset or a glass-filled nylon, chosen so the case survives being dropped off a desk with the stick still in hand - which, for a joystick sold with a computer, was a frequent event.",
+      "description": "A small moulded case in a filled thermoset or a glass-filled nylon, chosen so the case survives being dropped off a desk with the stick still in hand. This, for a joystick sold with a computer, was a frequent event.",
       "kind": "material",
       "category": "plastics",
       "era": "1982-1984",
@@ -1242,7 +1242,7 @@
       "id": "c64.joystick.gate.friction.nylon-bushing.resin",
       "name": "Lubricated nylon 6,6 bushing resin",
       "simple_name": "Lubricated nylon 6,6 resin",
-      "description": "A lubricated or unfilled nylon grade, chosen for low friction against steel. The base polymer is nylon 6,6 from hexamethylenediamine and adipic acid; caprolactam is the route to nylon 6, a different grade. The joystick contains nylon in this bushing, in its microswitch cases and in its gate.",
+      "description": "A lubricated or unfilled nylon grade, chosen for low friction against steel. The base polymer is nylon 6,6 from hexamethylenediamine and adipic acid. Caprolactam is the route to nylon 6, a different grade. The joystick contains nylon in this bushing, in its microswitch cases and in its gate.",
       "kind": "material",
       "category": "plastics",
       "era": "1982-1984",
@@ -1293,7 +1293,7 @@
       "id": "c64.keyboard-switches.keycap.spring.music-wire",
       "name": "Music wire (patented steel)",
       "simple_name": "Music wire",
-      "description": "A high-carbon steel wire, patented and drawn to a fine diameter, with a very high tensile strength - which is what lets a millimetre-thick coil inside a keycap return thousands of times without taking a set.",
+      "description": "A high-carbon steel wire, patented and drawn to a fine diameter, with a very high tensile strength. This is what lets a millimetre-thick coil inside a keycap return thousands of times without taking a set.",
       "kind": "material",
       "category": "metals",
       "era": "ancient",
@@ -1322,7 +1322,7 @@
       "id": "c64.keyboard-switches.domes.composition",
       "name": "Carbon-filled elastomer compound",
       "simple_name": "Carbon-filled elastomer",
-      "description": "Carbon black is compounded into the elastomer at a few tens of per cent by weight. The particles form a percolation network so the dome conducts along its own bulk, and the higher the loading the lower the resistance - but too much loading makes the dome brittle. This is the same black powder that goes into resistor films and pot tracks.",
+      "description": "Carbon black is compounded into the elastomer at a few tens of per cent by weight. The particles form a percolation network so the dome conducts along its own bulk, and the higher the loading the lower the resistance. It is but too much loading makes the dome brittle. This is the same black powder that goes into resistor films and pot tracks.",
       "kind": "material",
       "category": "plastics",
       "era": "1982-1984",
@@ -1422,7 +1422,7 @@
       "id": "mb.crystal.y1.case.argon-fill",
       "name": "Argon or krypton fill gas",
       "simple_name": "Argon or krypton fill gas",
-      "description": "The can is filled with a chemically inert gas before welding. Argon is preferred because it does not react with the electrode and cannot outgas; krypton was used where a slightly more hermetic atmosphere was wanted. The gas also damps acoustic vibration in the plate.",
+      "description": "The can is filled with a chemically inert gas before welding. Argon is preferred because it does not react with the electrode and cannot outgas. Krypton was used where a slightly more hermetic atmosphere was wanted. The gas also damps acoustic vibration in the plate.",
       "kind": "material",
       "category": "passives",
       "era": "1982-1984",
@@ -1451,7 +1451,7 @@
       "id": "mb.crystal.y1.case.support-wire.wire",
       "name": "Gold or nickel support wire",
       "simple_name": "Gold or nickel support wire",
-      "description": "Fine wire, 0.1-0.2 mm, spot-welded to the plate electrodes. Gold is preferred where maximum Q is needed; nickel is the cost-driven choice for the volume 1982 HC-49.",
+      "description": "Fine wire, 0.1-0.2 mm, spot-welded to the plate electrodes. Gold is preferred where maximum Q is needed. Nickel is the cost-driven choice for the volume 1982 HC-49.",
       "kind": "material",
       "category": "passives",
       "era": "1982-1984",
@@ -1469,7 +1469,7 @@
       "id": "c64.joystick.knob.abs.filler",
       "name": "Pigments and fillers in the ABS knob",
       "simple_name": "Pigments, fillers in ABS",
-      "description": "The knob is black because of a pigment - usually a carbon black or an iron oxide - dispersed in the ABS before moulding, and it is stiffened with glass or mineral filler. Where a lighter colour was wanted the whitener was rutile titanium dioxide from ilmenite, which is the same titanium chain as the barium titanate capacitor powder.",
+      "description": "The knob is black because of a pigment (usually a carbon black or an iron oxide) dispersed in the ABS before moulding, and it is stiffened with glass or mineral filler. Where a lighter colour was wanted the whitener was rutile titanium dioxide from ilmenite, which is the same titanium chain as the barium titanate capacitor powder.",
       "kind": "material",
       "category": "plastics",
       "era": "1982-1984",
@@ -1529,7 +1529,7 @@
       "id": "c64.keyboard-switches.ribbon.film.pvc",
       "name": "PVC jacket",
       "simple_name": "PVC jacket",
-      "description": "The ribbon's outer jacket is extruded PVC, the cheapest flexible insulation available. Vinyl chloride is made by oxychlorinating ethylene with chlorine, and the chlorine comes from salt - rock salt mined or solution-mined - while the ethylene comes from a steam cracker. So the ribbon cable ends at both rock salt and crude oil.",
+      "description": "The ribbon's outer jacket is extruded PVC, the cheapest flexible insulation available. Vinyl chloride is made by oxychlorinating ethylene with chlorine, and the chlorine comes from salt (rock salt mined or solution-mined) while the ethylene comes from a steam cracker. So the ribbon cable ends at both rock salt and crude oil.",
       "kind": "material",
       "category": "plastics",
       "era": "1982-1984",
@@ -1564,7 +1564,7 @@
       "category": "passives",
       "confidence": "medium",
       "provenance": "incomplete",
-      "description": "The second-shot colour is a pigment dispersed in the ABS matrix at high loading. Organic pigments give brighter colours and cost more; inorganic iron oxides give the earthier browns, reds and blacks. The moulder buys a masterbatch rather than raw pigment, so the colour arrives as a compounded material.",
+      "description": "The second-shot colour is a pigment dispersed in the ABS matrix at high loading. Organic pigments give brighter colours and cost more. Inorganic iron oxides give the earthier browns, reds and blacks. The moulder buys a masterbatch rather than raw pigment, so the colour arrives as a compounded material.",
       "inputs": [],
       "note": "Not established: high-loading dispersion in the ABS matrix, the organic-bright-versus-inorganic-earthy split for C64 caps, and masterbatch purchase rather than raw pigment by the moulder."
     },
@@ -1592,7 +1592,7 @@
       "category": "plastics",
       "era": "1982-1984",
       "confidence": "medium",
-      "note": "Which elastomer the C64's dome sheet used is not established; both were standard.",
+      "note": "Which elastomer the C64's dome sheet used is not established. Both were standard.",
       "inputs": [],
       "children": [],
       "edges": [
@@ -1646,7 +1646,7 @@
       "id": "c64.joystick.knob.abs.filler.pigment-dispersion.tio2",
       "name": "Titanium dioxide whitener",
       "simple_name": "Titanium dioxide whitener",
-      "description": "Where a lighter colour was used, the whitener was rutile TiO2 from ilmenite - the same titanium chain as the barium titanate powder.",
+      "description": "Where a lighter colour was used, the whitener was rutile TiO2 from ilmenite. It is the same titanium chain as the barium titanate powder.",
       "kind": "material",
       "category": "metals",
       "era": "1982-1984",
@@ -1675,7 +1675,7 @@
       "kind": "material",
       "category": "passives",
       "confidence": "medium",
-      "description": "The outer shot is pigmented with an organic or inorganic colourant at high loading. The light legends on the dark brown-grey caps - and, on some sets, the orange or grey function-key caps - are all achievable with pigmented ABS; the moulding must be run at high enough pressure that the two shots fuse rather than delaminate.",
+      "description": "The outer shot is pigmented with an organic or inorganic colourant at high loading. The light legends on the dark brown-grey caps (and, on some sets, the orange or grey function-key caps) are all achievable with pigmented ABS. The moulding must be run at high enough pressure that the two shots fuse rather than delaminate.",
       "inputs": [],
       "sources": [
         "https://wiki.themk.org/index.php/Commodore_64",
@@ -1714,7 +1714,7 @@
       "id": "c64.keyboard-switches.matrix.pcb.pad-plating.gold",
       "name": "Gold flash on the key pads",
       "simple_name": "Gold flash on the key pads",
-      "description": "A thin gold flash over nickel on the key pads. Gold does not oxidise, so the dome keeps making contact for decades; where the flash is thin or gone, the key stops working until cleaned.",
+      "description": "A thin gold flash over nickel on the key pads. Gold does not oxidise, so the dome keeps making contact for decades. Where the flash is thin or gone, the key stops working until cleaned.",
       "kind": "material",
       "category": "board",
       "era": "1982-1984",
@@ -1872,7 +1872,7 @@
       "era": "1982",
       "confidence": "high",
       "provenance": "complete",
-      "description": "The legends on the TOP of the keycap - letters, numbers and symbols - are moulded into the plastic, not printed on it. The cap is injection-moulded twice in one tool cycle: first in the dark brown-grey base colour, then a second shot of a contrasting lighter colour is injected into a slightly larger cavity, covering everything except the legend characters, which are left as uncoated islands of the first shot. Nothing is printed on the top face, so the legend cannot wear off - which is why a forty-year-old cap still reads cleanly, and why the mould line and the islands are visible when a cap is pulled off its stem. This covers the cap top only: the graphics characters on the front wall are a different process (c64.keyboard.keycaps.legend), and the two are told apart at a glance by whether the character wears.",
+      "description": "The legends on the TOP of the keycap (letters, numbers and symbols) are moulded into the plastic, not printed on it. The cap is injection-moulded twice in one tool cycle: first in the dark brown-grey base colour, then a second shot of a contrasting lighter colour is injected into a slightly larger cavity, covering everything except the legend characters, which are left as uncoated islands of the first shot. Nothing is printed on the top face, so the legend cannot wear off. This is why a forty-year-old cap still reads cleanly, and why the mould line and the islands are visible when a cap is pulled off its stem. This covers the cap top only: the graphics characters on the front wall are a different process (c64.keyboard.keycaps.legend), and the two are told apart at a glance by whether the character wears.",
       "facts": [
         {
           "label": "Applies to",
@@ -1902,7 +1902,7 @@
         "https://wiki.themk.org/index.php/Commodore_64",
         "https://deskthority.net/viewtopic.php?t=8102"
       ],
-      "note": "The top face of the cap is double-shot, white legends on a very dark brown; the PETSCII legends on the front face are printed separately. Keyboard Wiki (themk.org): The alphanumeric keys are double-shot white on a very dark brown. Deskthority thread 8102: With the exception of the spacebar, they are all double shot injection molded keycaps. Neither the Commodore C64/C64C Service Manual nor The Anatomy of the Commodore 64 discusses keycap printing. The 1988 C64C is different: the same Keyboard Wiki page records All legends ... pad-printed on top of the keys for that machine.",
+      "note": "The top face of the cap is double-shot, white legends on a very dark brown. The PETSCII legends on the front face are printed separately. Keyboard Wiki (themk.org): The alphanumeric keys are double-shot white on a very dark brown. Deskthority thread 8102: With the exception of the spacebar, they are all double shot injection molded keycaps. Neither the Commodore C64/C64C Service Manual nor The Anatomy of the Commodore 64 discusses keycap printing. The 1988 C64C is different: the same Keyboard Wiki page records All legends ... pad-printed on top of the keys for that machine.",
       "children": [],
       "edges": [
         {
@@ -1929,7 +1929,7 @@
       "category": "plastics",
       "era": "1982-1984",
       "confidence": "medium",
-      "note": "Compression-moulded dome sheets were standard; whether the C64's came as a sheet or pre-applied to a carrier film is not established.",
+      "note": "Compression-moulded dome sheets were standard. Whether the C64's came as a sheet or pre-applied to a carrier film is not established.",
       "facts": [
         {
           "label": "Cure",
@@ -1979,7 +1979,7 @@
           ],
           "inputs": [],
           "children": [],
-          "note": "Not established: machined versus spark-eroded construction, one hemispherical cavity per key, and the claims about replacement on re-specification and polish transfer to the dome mating face. Mitsumi produced most of Commodore's keyboards, so the dome sheets came through a Japanese keyboard supply chain, but no tooling record for these tools was located. Ordinary mould practice mills the bulk of a cavity and reserves sinker EDM for deep ribs, sharp internal corners and texture no cutter can reach; a smooth hemispherical cavity is ball-millable, so machining is the ordinary route and spark erosion would need a further reason. Compression-mould tooling guides describe the process as ordering metal blocks and CNC-machining the cavities, in aluminium or steel, with no EDM stage. That prior does not establish this tool either way."
+          "note": "Not established: machined versus spark-eroded construction, one hemispherical cavity per key, and the claims about replacement on re-specification and polish transfer to the dome mating face. Mitsumi produced most of Commodore's keyboards, so the dome sheets came through a Japanese keyboard supply chain, but no tooling record for these tools was located. Ordinary mould practice mills the bulk of a cavity and reserves sinker EDM for deep ribs, sharp internal corners and texture no cutter can reach. A smooth hemispherical cavity is ball-millable, so machining is the ordinary route and spark erosion would need a further reason. Compression-mould tooling guides describe the process as ordering metal blocks and CNC-machining the cavities, in aluminium or steel, with no EDM stage. That prior does not establish this tool either way."
         }
       ],
       "edges": [
@@ -2002,7 +2002,7 @@
       "id": "c64.keyboard-switches.matrix.pcb.pad-plating",
       "name": "Plating of the key pads",
       "simple_name": "Plating of the key pads",
-      "description": "The exposed pads are plated - gold over nickel on later keyboards - so the carbon contact of the rubber dome has a low-resistance, non-oxidising surface to bridge onto. Where the plating is absent or has worn through, the bare copper oxidises and the key needs cleaning.",
+      "description": "The exposed pads are plated (gold over nickel on later keyboards) so the carbon contact of the rubber dome has a low-resistance, non-oxidising surface to bridge onto. Where the plating is absent or has worn through, the bare copper oxidises and the key needs cleaning.",
       "kind": "process",
       "category": "board",
       "era": "1982-1984",
@@ -2047,7 +2047,7 @@
           "id": "mb.crystal.y1.grinding.diamond-wheel",
           "name": "Diamond grinding wheel",
           "simple_name": "Diamond grinding wheel",
-          "description": "A resin-bonded diamond wheel, used wet, that bevels the plate edge and cuts the lens curvature. In 1982 diamond abrasive was largely synthetic, made from graphite under a shock wave; natural diamond was reserved for dressing the wheels.",
+          "description": "A resin-bonded diamond wheel, used wet, that bevels the plate edge and cuts the lens curvature. In 1982 diamond abrasive was largely synthetic, made from graphite under a shock wave. Natural diamond was reserved for dressing the wheels.",
           "kind": "tool",
           "category": "passives",
           "era": "1982-1984",
@@ -2095,7 +2095,7 @@
       "category": "passives",
       "era": "1982-1984",
       "confidence": "medium",
-      "note": "Some 1980s HC-49/U crystals used nickel electrodes over chromium for economy; gold-over-chromium was the higher-reliability standard.",
+      "note": "Some 1980s HC-49/U crystals used nickel electrodes over chromium for economy. Gold-over-chromium was the higher-reliability standard.",
       "facts": [
         {
           "label": "Adhesion layer",
@@ -2213,7 +2213,7 @@
           "note": "Not established: hardened steel as the cavity-tool material, the polished-cavity-to-gloss-finish causal link, and the thousands-of-knobs-per-tool-life figure."
         }
       ],
-      "note": "Not established: whether the knob was two-shot or single-shot moulded, and whether it carried a moulded-in texture or soft overmould. Most 1980s joystick knobs were single-shot ABS; no document consulted describes it.",
+      "note": "Not established: whether the knob was two-shot or single-shot moulded, and whether it carried a moulded-in texture or soft overmould. Most 1980s joystick knobs were single-shot ABS. No document consulted describes it.",
       "edges": [
         {
           "to": "c64.joystick.knob.abs",
@@ -2259,7 +2259,7 @@
       "id": "c64.joystick.microswitches.plastic-case.solder-lugs",
       "name": "Through-hole mounting and solder lugs",
       "simple_name": "Mounting and solder lugs",
-      "description": "The switches are pushed into holes in the joystick's printed board and their pins soldered from underneath. Positioning them on that board is what sets how far the gate has to travel before a direction registers - the mechanical timing of the whole joystick.",
+      "description": "The switches are pushed into holes in the joystick's printed board and their pins soldered from underneath. Positioning them on that board is what sets how far the gate has to travel before a direction registers. It is the mechanical timing of the whole joystick.",
       "kind": "process",
       "category": "assembly",
       "era": "1982-1984",
@@ -2284,7 +2284,7 @@
       "id": "mb.crystal.y1.case.nickel-can.stock",
       "name": "Drawn can stock",
       "simple_name": "Drawn can stock",
-      "description": "The HC-49/U can is deep-drawn from thin nickel-plated strip in a progressive tool, then the crimped collar is rolled and the lid welded on. Both operations happen before the plate goes in - the can is made empty and loaded later.",
+      "description": "The HC-49/U can is deep-drawn from thin nickel-plated strip in a progressive tool, then the crimped collar is rolled and the lid welded on. Both operations happen before the plate goes in. The can is made empty and loaded later.",
       "kind": "process",
       "category": "passives",
       "era": "1982-1984",
@@ -2348,7 +2348,7 @@
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
-      "note": "Not established: hot concentrated sodium or potassium hydroxide as the growth solvent, and that the caustic is made by chlor-alkali electrolysis so the crystal chain reaches rock salt. Hydrothermal growth in an autoclave is documented; the alkali solvent and its chlorine link are not, in the sources consulted.",
+      "note": "Not established: hot concentrated sodium or potassium hydroxide as the growth solvent, and that the caustic is made by chlor-alkali electrolysis so the crystal chain reaches rock salt. Hydrothermal growth in an autoclave is documented. The alkali solvent and its chlorine link are not, in the sources consulted.",
       "edges": [
         {
           "to": "metal.caustic-soda",
@@ -2396,7 +2396,7 @@
       "confidence": "medium",
       "provenance": "incomplete",
       "inputs": [],
-      "note": "Not established: the specific claim that a single dissolved ion on a resonating plate changes the frequency measurably. Deionised rinse water as the standard is uncontroversial; the quantitative sensitivity assertion is not documented in any source consulted."
+      "note": "Not established: the specific claim that a single dissolved ion on a resonating plate changes the frequency measurably. Deionised rinse water as the standard is uncontroversial. The quantitative sensitivity assertion is not documented in any source consulted."
     },
     "c64.joystick.knob.abs.fire-button": {
       "id": "c64.joystick.knob.abs.fire-button",
@@ -2428,7 +2428,7 @@
         "https://en.wikipedia.org/wiki/Synthetic_quartz"
       ],
       "confidence": "high",
-      "note": "This node was moved up out of natural-quartz, where it sat as if natural and synthetic quartz were parent and child; its id retains the old path because ids are stable. By the early 1980s this route, not mined rock crystal, supplied nearly every blank in the industry.",
+      "note": "This node was moved up out of natural-quartz, where it sat as if natural and synthetic quartz were parent and child. Its id retains the old path because ids are stable. By the early 1980s this route, not mined rock crystal, supplied nearly every blank in the industry.",
       "facts": [
         {
           "label": "Growth temperature",
@@ -2449,7 +2449,7 @@
           "id": "mb.crystal.y1.natural-quartz.synthetic.autoclave",
           "name": "Steel autoclave with seed crystals",
           "simple_name": "Autoclave with seed crystals",
-          "description": "A filled, sealed pressure vessel - usually Hastelloy or 17-4PH steel liner - held at high temperature and pressure so an alkaline solution dissolves silica from the feed and re-deposits it on thin zoned seed plates hung in the vessel. Temperature gradients create the supersaturation that drives growth, and the growth zones themselves are what later become the tuned crystal resonators.",
+          "description": "A filled, sealed pressure vessel (usually Hastelloy or 17-4PH steel liner) held at high temperature and pressure so an alkaline solution dissolves silica from the feed and re-deposits it on thin zoned seed plates hung in the vessel. Temperature gradients create the supersaturation that drives growth, and the growth zones themselves are what later become the tuned crystal resonators.",
           "kind": "tool",
           "category": "silicon",
           "era": "1982-1984",
@@ -2551,7 +2551,7 @@
           "id": "mb.crystal.y1.blank-preparation.xray-orienting",
           "name": "X-ray orientation and AT-cut angle selection",
           "simple_name": "X-ray orientation, AT-cut",
-          "description": "A synthetic rough is indexed by X-ray diffraction so its Z axis and X axis are known, then sawn at a chosen angle to the X axis (the 'AT-cut'). The mid-1980s standard for general-purpose oscillators was about 35 degrees; this angle is chosen because it lands the resonance on a flat, temperature-insensitive point in the quartz stiffness-temperature curve.",
+          "description": "A synthetic rough is indexed by X-ray diffraction so its Z axis and X axis are known, then sawn at a chosen angle to the X axis (the 'AT-cut'). The mid-1980s standard for general-purpose oscillators was about 35 degrees. This angle is chosen because it lands the resonance on a flat, temperature-insensitive point in the quartz stiffness-temperature curve.",
           "kind": "tool",
           "category": "silicon",
           "era": "1982-1984",
@@ -2604,7 +2604,7 @@
           ],
           "inputs": [],
           "children": [],
-          "note": "Not established: the double-lap sequence, aluminium oxide down to colloidal silica, the 0.15 mm final thickness, and that blanks were lapped by outside lapidary shops. The tree's own source for the parent node is a lapping reference, not a crystal-process source; no document consulted here supports these figures.",
+          "note": "Not established: the double-lap sequence, aluminium oxide down to colloidal silica, the 0.15 mm final thickness, and that blanks were lapped by outside lapidary shops. The tree's own source for the parent node is a lapping reference, not a crystal-process source. No document consulted here supports these figures.",
           "edges": [
             {
               "to": "mb.crystal.y1.blank-preparation.lapping.colloidal-silica",
@@ -2644,7 +2644,7 @@
       "id": "mb.crystal.y1.cutting",
       "name": "Cutting the plate and vacuum baking",
       "simple_name": "Cutting and vacuum baking",
-      "description": "The plated blank is cut with a diamond wheel into individual resonator plates, then the plates are vacuum-baked at around 400 C to drive off adsorbed moisture and contaminants. That vacuum bake is what removes the piezoelectric pyroelectric drift and the 'dope' effect - the stress-induced frequency shift as a crystal heats - and it is why a crystal that has been opened is never a good crystal.",
+      "description": "The plated blank is cut with a diamond wheel into individual resonator plates, then the plates are vacuum-baked at around 400 C to drive off adsorbed moisture and contaminants. That vacuum bake is what removes the piezoelectric pyroelectric drift and the 'dope' effect (the stress-induced frequency shift as a crystal heats) and it is why a crystal that has been opened is never a good crystal.",
       "kind": "process",
       "category": "silicon",
       "era": "1982-1984",
@@ -2747,7 +2747,7 @@
         "era": "1982-1984",
         "sources": [],
         "confidence": "medium",
-        "note": "Resistance value and 74LS629 drive conditions not established for this board; tens-of-microwatts drive per candidate facts.",
+        "note": "Resistance value and 74LS629 drive conditions not established for this board. Tens-of-microwatts drive per candidate facts.",
         "children": [],
         "edges": [
           {
@@ -2767,7 +2767,7 @@
         "era": "1982-1984",
         "sources": [],
         "confidence": "medium",
-        "note": "Whether industrial versus ultrapure grade and resin versus membrane specifics are not established; shown as industrial feed to DI loop as typical-1982.",
+        "note": "Whether industrial versus ultrapure grade and resin versus membrane specifics are not established. Shown as industrial feed to DI loop as typical-1982.",
         "children": [],
         "edges": [
           {
