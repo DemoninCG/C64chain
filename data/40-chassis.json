@@ -86,7 +86,7 @@
       ],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "The synthesis-gas route and the copper/zinc oxide catalyst are established; the 200-300 C and 50-100 bar figures are not stated by the source. The formaldehyde branch over silver or iron-molybdenum is likewise uncited.",
+      "note": "The synthesis-gas route, the copper/zinc oxide catalyst, and the 200-300 C and 50-100 bar figures are standard methanol-synthesis practice. The formaldehyde branch over silver or iron-molybdenum is uncited.",
       "sources": [
         "https://en.wikipedia.org/wiki/Methanol"
       ],
@@ -1818,7 +1818,19 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Acetic_acid"
       ],
-      "note": "The methanol carbonylation route is established and was the dominant one: rhodium-catalysed methanol carbonylation became the dominant method of acetic acid production, with the first plant on that catalyst built in 1970. Not established: the 150-200 C figure, the ethanol-oxidation alternative, and that the acetic anhydride for a cellulose triacetate base came from this route. Cellulose triacetate film base is made from acetic anhydride, which is made from methanol by carbonylation. So the negative that carries a keycap legend is partly wood and partly natural gas, which is as far as this trail usefully goes."
+      "note": "The methanol carbonylation route is established and was the dominant one: rhodium-catalysed methanol carbonylation became the dominant method of acetic acid production, with the first plant on that catalyst built in 1970. Not established: the 150-200 C figure, the ethanol-oxidation alternative, and that the acetic anhydride for a cellulose triacetate base came from this route. Cellulose triacetate film base is made from acetic anhydride, which is made from methanol by carbonylation. So the negative that carries a keycap legend is partly wood and partly natural gas, which is as far as this trail usefully goes.",
+      "edges": [
+  {
+    "to": "chem.methanol",
+    "rel": "made from",
+    "basis": "typical-1982"
+  },
+  {
+    "to": "chem.ethanol",
+    "rel": "made from",
+    "basis": "typical-1982"
+  }
+]
     },
     "c64.decor.prepress.cellulose": {
       "id": "c64.decor.prepress.cellulose",
@@ -2250,7 +2262,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Corrugated_box"
       ],
-      "children": []
+      "children": [],
+      "edges": [
+  {
+    "to": "c64.packaging.corn-starch",
+    "rel": "made from",
+    "basis": "typical-1982"
+  }
+]
     },
     "c64.packaging.corn-starch": {
       "id": "c64.packaging.corn-starch",
@@ -2933,7 +2952,7 @@
       "id": "c64.case.feet.elastomer",
       "name": "Foot elastomer compound",
       "simple_name": "Foot elastomer compound",
-      "description": "A soft, low-durometer elastomer drop-in-moulded over a small ABS boss, or a moulded-in flexible nub. The chemistry is trivial but the tooling is not: it is a two-shot or insert-mould operation with an elastomer barrel and a much longer cure than the ABS.",
+      "description": "A soft, dark, low-durometer self-adhesive pad stuck to the case bottom, not a moulded nub: the corrected parent records stick-on pads per the service manual. The elastomer chemistry is unidentified.",
       "kind": "material",
       "category": "plastics",
       "era": "1982",
@@ -2942,7 +2961,7 @@
       ],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "The chemistry is trivial but the tooling is not: this is a two-shot or insert-mould operation with an elastomer barrel and a much longer cure than the ABS. It reuses the same butadiene and styrene monomers as the ABS and the SBR, which is a reminder that all four plastics in this machine trace back to the same steam cracker."
+      "note": "Rewritten to match the corrected parent: stick-on self-adhesive pads, not moulded nubs. Compound unattested: SBR vs soft-PVC vs silicone unpinned; no SBR node exists in-tree."
     },
     "c64.decor.prepress.film": {
       "id": "c64.decor.prepress.film",
@@ -2956,7 +2975,19 @@
       "confidence": "medium",
       "provenance": "incomplete",
       "children": [],
-      "note": "Not established: the film type and gauge carried on a Commodore prepress line. The material is described here as a class of product, not a recorded part."
+      "note": "Not established: the film type and gauge carried on a Commodore prepress line. The material is described here as a class of product, not a recorded part.",
+      "edges": [
+  {
+    "to": "c64.decor.prepress.film-base",
+    "rel": "made of",
+    "basis": "typical-1982"
+  },
+  {
+    "to": "c64.decor.prepress.silver-halide",
+    "rel": "made of",
+    "basis": "typical-1982"
+  }
+]
     },
     "c64.decor.screen-print.mesh": {
       "id": "c64.decor.screen-print.mesh",
@@ -3125,7 +3156,14 @@
       ],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Not established: whether the plates were grained aluminium offset plates or photopolymer plates on the C64 packaging runs."
+      "note": "Not established: whether the plates were grained aluminium offset plates or photopolymer plates on the C64 packaging runs.",
+      "edges": [
+  {
+    "to": "metal.aluminum.sheet",
+    "rel": "made of",
+    "basis": "typical-1982"
+  }
+]
     },
     "c64.packaging.litho-ink": {
       "id": "c64.packaging.litho-ink",
@@ -4517,7 +4555,19 @@
       "confidence": "medium",
       "provenance": "incomplete",
       "note": "Not established: that the Commodore rainbow badge was printed in metallised flake ink, and that the print was burnished. The comparison against hot foil stamping is a general decorating argument, not a record of what Commodore did.",
-      "children": []
+      "children": [],
+      "edges": [
+  {
+    "to": "c64.decor.metallised.flake",
+    "rel": "made of",
+    "basis": "inferred"
+  },
+  {
+    "to": "c64.decor.metallised.binders",
+    "rel": "made of",
+    "basis": "inferred"
+  }
+]
     },
     "c64.cables.rf-cable.braid-wire": {
         "id": "c64.cables.rf-cable.braid-wire",

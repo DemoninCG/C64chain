@@ -1610,7 +1610,14 @@
                       "https://en.wikipedia.org/wiki/Potentiometer",
                       "https://en.wikipedia.org/wiki/Carbon%20black"
                     ],
-                    "note": "Potentiometers are commonly the volume control on audio equipment, and carbon black is made by the incomplete combustion of coal tar, vegetable matter or petroleum products. Not established: the carbon film on a phenolic or ceramic substrate, the sprung brass or copper wiper, the 10-100 kohm audio taper and the 0.25-0.5 W rating."
+                    "note": "Potentiometers are commonly the volume control on audio equipment, and carbon black is made by the incomplete combustion of coal tar, vegetable matter or petroleum products. Not established: the carbon film on a phenolic or ceramic substrate, the sprung brass or copper wiper, the 10-100 kohm audio taper and the 0.25-0.5 W rating.",
+                    "edges": [
+  {
+    "to": "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black",
+    "rel": "made of",
+    "basis": "typical-1982"
+  }
+]
                   }
                 ]
               },
@@ -1675,12 +1682,18 @@
                     "note": "The silicon steel is a different alloy from the low-carbon steel of the shadow mask: it is deliberately alloyed with silicon to raise resistivity and suppress eddy currents, and it is a thin, carefully annealed strip. Both, though, came off a blast furnace. Electrical steel is made as cold-rolled strip under 2 mm thick, cut into laminations and stacked to form transformer cores, and grain-oriented grades run about 3% silicon. Not established: the 0.30-0.35 mm C5 or C21 lamination, the epoxy potting and taping, and the 40-60 VA rating for a 13 inch set.",
                     "children": [],
                     "sources": [
-                      "https://en.wikipedia.org/wiki/Electrical%20steel"
+                      "https://en.wikipedia.org/wiki/Electrical%20steel",
+                      "https://edcorusa.com/pages/m-6-steel-lamination"
                     ],
                     "edges": [
                       {
                         "to": "metal.copper.enamelling",
                         "rel": "step"
+                      },
+                      {
+                        "to": "metal.electrical-steel",
+                        "rel": "contains",
+                        "basis": "documented"
                       }
                     ]
                   },
@@ -2959,14 +2972,14 @@
               },
               {
                 "id": "peripheral.cassette.deck.link",
-                "name": "Nine-pin serial link to the C64",
-                "simple_name": "nine-pin serial to C64",
+                "name": "Six-pin DIN serial link to the C64",
+                "simple_name": "six-pin serial to C64",
                 "kind": "part",
                 "category": "interconnect",
                 "era": "1982",
-                "description": "The 1541 connected to the C64 by a nine-pin high-density D-subminiature cable carrying the serial bus, which is how the drive knew there was a computer and the computer knew there was a drive.",
+                "description": "The 1541 connected to the C64 by a six-pin DIN serial IEC bus cable, which is how the drive knew there was a computer and the computer knew there was a drive. (An earlier revision of this node said nine-pin D-sub, which matches joystick/RS-232 practice, not the drive.)",
                 "children": [],
-                "confidence": "high",
+                "confidence": "medium",
                 "provenance": "incomplete",
                 "sources": [
                   "https://archive.org/details/The_Anatomy_of_the_1541_Disk_Drive",
@@ -3246,15 +3259,20 @@
       "confidence": "medium",
       "provenance": "incomplete",
       "children": [],
-      "note": "One grade of ore fed both the steel of a shadow mask and the oxide on a cassette, by two completely different routes.",
+      "note": "One grade of ore fed both the steel of a shadow mask and the oxide on a cassette, by two completely different routes. Ferrous-salt-plus-caustic precipitation route documented in Suntech US4054643A.",
+      "sources": [
+        "https://patents.google.com/patent/US4054643A/en"
+      ],
       "edges": [
         {
           "to": "metal.iron",
-          "rel": "made from"
+          "rel": "made from",
+          "basis": "documented"
         },
         {
           "to": "metal.caustic-soda",
-          "rel": "made from"
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },
@@ -3857,7 +3875,19 @@
       "confidence": "medium",
       "provenance": "incomplete",
       "children": [],
-      "note": "ABS is documented: a thermoplastic terpolymer of styrene, acrylonitrile and butadiene in common use since the 1950s, amorphous with no definitive melting point because of varying chain lengths and degrees of cross-linking, with a glass transition temperature of approximately 105 C, and usable between about -20 and 80 C for the majority of applications. That last range is the useful part here, because a cassette shell works near room temperature and has no thermal duty. Not established: that the shell was ABS rather than clear or smoke general-purpose polystyrene, the 1-2 mm wall, the 200-240 C injection moulding temperature, and the Japan, Europe and United States attributions. The claim that a shell needed to hold a dimension, and therefore that the stiffer of the two polymers was the one chosen, is an engineering argument. A shell could equally be a thin polystyrene moulding with ribs."
+      "note": "ABS is documented: a thermoplastic terpolymer of styrene, acrylonitrile and butadiene in common use since the 1950s, amorphous with no definitive melting point because of varying chain lengths and degrees of cross-linking, with a glass transition temperature of approximately 105 C, and usable between about -20 and 80 C for the majority of applications. That last range is the useful part here, because a cassette shell works near room temperature and has no thermal duty. Not established: that the shell was ABS rather than clear or smoke general-purpose polystyrene, the 1-2 mm wall, the 200-240 C injection moulding temperature, and the Japan, Europe and United States attributions. The claim that a shell needed to hold a dimension, and therefore that the stiffer of the two polymers was the one chosen, is an engineering argument. A shell could equally be a thin polystyrene moulding with ribs.",
+      "edges": [
+  {
+    "to": "chem.abs.grade",
+    "rel": "made of",
+    "basis": "typical-1982"
+  },
+  {
+    "to": "chem.polystyrene.resin",
+    "rel": "made of",
+    "basis": "typical-1982"
+  }
+]
     },
     "peripheral.tv.chassis.pcb.glass": {
       "id": "peripheral.tv.chassis.pcb.glass",
@@ -3959,7 +3989,14 @@
       "confidence": "medium",
       "provenance": "incomplete",
       "children": [],
-      "note": "Not established: 40 AWG or 0.1-0.13 mm enamelled copper, the figure-eight hum-cancelling winding, and the turns count for a 1541 read/write head."
+      "note": "Not established: 40 AWG or 0.1-0.13 mm enamelled copper, the figure-eight hum-cancelling winding, and the turns count for a 1541 read/write head.",
+      "edges": [
+  {
+    "to": "metal.copper.enamelling",
+    "rel": "step",
+    "basis": "typical-1982"
+  }
+]
     },
     "peripheral.cassette.deck.stepper.rotor": {
       "id": "peripheral.cassette.deck.stepper.rotor",
