@@ -1,5 +1,14 @@
 /* Commodore 64 production process tree — viewer.
  * No dependencies. Consumes the flat node map emitted by scripts/build.mjs.
+ *
+ * Two views of the same data:
+ *   flow    stratified supply flow. Every unique node is drawn ONCE, in a
+ *           column (tier) by BFS depth from the C64: raw materials left, the
+ *           finished machine right. Edges are supply links (children + typed
+ *           contains/made of/made from/step/consumes + from + made_by).
+ *           The most-reused inputs (electricity, water, coke, ...) are lifted
+ *           onto a utility rail so they stop covering the flow in crossings.
+ *   outline indented prose outline (refinement edges only).
  */
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
@@ -7,14 +16,14 @@ const SVG_NS = 'http://www.w3.org/2000/svg';
 /* ------------------------------------------------------------------ state */
 
 const N = {};                 // id -> node
-const parents = {};           // id -> [parent ids]
+const parents = {};           // id -> [parent ids] (refinement children only)
 let META = {};
 let ROOT = 'c64';
 let haystack = new Map();     // id -> lowercased searchable text
 
 const collapsed = new Set();
 let selected = null;
-let view = 'tree';
+let view = 'flow';
 let depthLimit = 3;
 let query = '';
 let matches = new Set();      // ids matching query
@@ -23,18 +32,36 @@ let forceOpen = new Set();    // ancestors of the selected node, always expanded
 let catOff = new Set();
 let kindOff = new Set();
 let confOff = new Set();
-let scopeOff = new Set();     // chain/context/alternate toggles (Wave 5 scope policy; default all on)
+let scopeOff = new Set();     // chain/context/alternate toggles (default all on)
 let dimUnrelated = false;
 let markShared = true;
-let vis = [];                 // visible instances, pre-order
-let byKey = new Map();        // instance key -> instance
-let layoutByKey = new Map();  // instance key -> {x, y} in SVG user units
+let groupFlow = true;         // continent (category x tier cells) vs all nodes
+let expandedCells = new Set(); // band keys (`${tier}|${category}`) opened in place
+let hubRailOn = true;         // lift top hubs onto a utility rail
+let flowLabels = false;       // label every dot in all-nodes mode
+let vis = [];                 // outline rows, pre-order
+let byKey = new Map();        // outline instance key -> instance
+let layoutByKey = new Map();  // outline instance key -> {x, y}
+let flowPos = new Map();      // node id -> {x, y} in SVG user units
+let flowCellOf = new Map();   // node id -> cell key (grouped mode)
+let flowCellPos = new Map();  // cell key -> {x, y}
+let flowBounds = { w: 1, h: 1 };
 let cam = { x: 0, y: 0, k: 1 };
 
 const ROW = 26;
 const BOXH = 21;
 const CHARW = 6.35;           // px per char at 12px system font
 const SUBW = 5.6;
+
+/* Flow geometry. Columns run raw (left) -> C64 (right). */
+const F_COLW_ALL = 120;       // px per tier, all-nodes mode
+const F_PITCH_ALL = 16;       // px per node within a tier
+const F_COLW_GRP = 210;       // px per tier, grouped mode
+const F_CELLH = 56;           // px per category cell within a tier
+const F_RAILH = 84;           // reserved height for the hub rail
+const F_PAD = 40;
+const HUB_N = 8;              // hubs lifted to the rail
+const HUB_MIN_INDEG = 6;
 
 const CAT_COLOR = {
   silicon: '#7aa2f7', passives: '#9ece6a', board: '#e0af68', plastics: '#bb9af7',
@@ -81,7 +108,7 @@ for (const [id, n] of Object.entries(N)) {
 }
 
 // NB: no rendering happens here. Everything below this point is declarations,
-// and the tree is only painted at the very bottom of the file, so that no
+// and the views are only painted at the very bottom of the file, so that no
 // `const` helper can be in its temporal dead zone when boot runs.
 
 /* ------------------------------------------------------------------ chrome */
@@ -150,9 +177,6 @@ function buildConfChips() {
 }
 
 function buildScopeChips() {
-  // Wave 5 scope policy (chain/context/alternate; catalogue blessed terminal for
-  // context/alternate; gate on load-bearing chain). Default all on (show all) so
-  // hiding a container never hides contents unexpectedly (README scaffolding note).
   const by = {};
   for (const n of Object.values(N)) by[n.scope ?? 'chain'] = (by[n.scope ?? 'chain'] ?? 0) + 1;
   const keys = Object.keys(by).sort();
@@ -171,11 +195,7 @@ function buildScopeChips() {
 
 /* -------------------------------------------------------------- filtering */
 
-// Wave 5: refinement only for the dendrogram (legacy children + typed
-// contains/made of, like build refinedKids). Dendrogram survives migration
-// (refinement edges ARE the tree); flow/context never expand (detail-panel
-// cross-links followed without expanding, otherwise +consumes explodes 27->53k
-// on hubs like gold 3014x; progressive one-subtree expansion required).
+// Refinement edges for the outline (legacy children + typed contains/made of).
 const REFT = new Set(['contains', 'made of']);
 const kidsOf = (n) => {
   const out = (n.children ?? []).map((c) => N[c]).filter(Boolean);
@@ -185,10 +205,26 @@ const kidsOf = (n) => {
   return out;
 };
 
+// Supply edges for the flow: everything the node depends on. Children are the
+// refinement backbone; typed edges + from + made_by are the supply line.
+const SUPPLY_RELS = new Set(['contains', 'made of', 'made from', 'step', 'consumes']);
+function flowSuccIds(id) {
+  const n = N[id];
+  if (!n) return [];
+  const out = new Set();
+  for (const c of n.children ?? []) if (N[c]) out.add(c);
+  for (const e of n.edges ?? []) if (e && e.to && SUPPLY_RELS.has(e.rel) && N[e.to]) out.add(e.to);
+  for (const f of n.from ?? []) if (N[f]) out.add(f);
+  // made_by is derived from produces and points at the producer process: the
+  // node cannot exist without it, so it is a supply edge too.
+  for (const p of n.made_by ?? []) if (N[p]) out.add(p);
+  out.delete(id);
+  return [...out];
+}
+
 const ENTITY = new Set(['part', 'material']);
-const PROCESSISH = new Set(['process', 'tool', 'facility']);
-let projection = 'full';      // 'full' | 'entities'
-let showChips = true;         // dead-end process nodes, shown as leaves on their parent
+let projection = 'full';      // 'full' | 'entities' — applies to the outline only
+let showChips = true;
 let showEditorial = false;
 
 const passes = (n) => {
@@ -198,8 +234,117 @@ const passes = (n) => {
   if (scopeOff.has(n.scope ?? 'chain')) return false;
   return true;
 };
+const shown = (n, filtering) => {
+  if (!n || !passes(n)) return false;
+  if (n.editorial && !showEditorial && !filtering) return false;
+  return true;
+};
 
-/* Does anything below this node survive the projection? */
+/* The filtered supply graph: adjacency restricted to shown nodes. */
+function flowGraph() {
+  const filtering = query && pathIds.size > 0;
+  const ids = Object.values(N).filter((n) => shown(n, filtering)).map((n) => n.id);
+  const keep = new Set(ids);
+  const succ = new Map();
+  const par = new Map();
+  for (const id of ids) { succ.set(id, []); par.set(id, []); }
+  for (const id of ids) {
+    for (const s of flowSuccIds(id)) {
+      if (!keep.has(s)) continue;
+      succ.get(id).push(s);
+      par.get(s).push(id);
+    }
+  }
+  return { ids, succ, par };
+}
+
+/* BFS tiers from the root over the filtered supply graph. Shortest-path (not
+ * longest-path): the graph has genuine industrial cycles (energy/material
+ * loops), on which longest-path relaxation diverges to thousands of phantom
+ * tiers. BFS is bounded, balanced and deterministic. Cycle edges simply draw
+ * as dashed returns. Unreachable nodes are omitted, same as the outline. */
+function flowTiers(succ) {
+  const depth = new Map();
+  if (!succ.has(ROOT)) return { depth, maxD: 0 };
+  depth.set(ROOT, 0);
+  const q = [ROOT];
+  while (q.length) {
+    const id = q.shift();
+    for (const s of succ.get(id)) {
+      if (!depth.has(s)) { depth.set(s, depth.get(id) + 1); q.push(s); }
+    }
+  }
+  let maxD = 0;
+  for (const d of depth.values()) maxD = Math.max(maxD, d);
+  return { depth, maxD };
+}
+
+function flowIndeg(par) {
+  const m = new Map();
+  for (const [id, ps] of par) m.set(id, ps.length);
+  return m;
+}
+
+/* Order nodes within each tier to cut crossings: barycentric sweeps against
+ * the previous tier (dependents), then the next (dependencies), with id
+ * tiebreaks so the result is deterministic. */
+function orderTiers(layers, par, succ, order) {
+  const posOf = (m, id) => m.get(id) ?? -1;
+  for (let sweep = 0; sweep < 3; sweep++) {
+    for (let L = 1; L < layers.length; L++) {
+      const prev = order;
+      const arr = layers[L].slice().sort((a, b) => {
+        const pa = par.get(a).filter((p) => posOf(prev, p) >= 0);
+        const pb = par.get(b).filter((p) => posOf(prev, p) >= 0);
+        const ma = pa.length ? pa.reduce((s, p) => s + posOf(prev, p), 0) / pa.length : 1e9;
+        const mb = pb.length ? pb.reduce((s, p) => s + posOf(prev, p), 0) / pb.length : 1e9;
+        return ma - mb || (a < b ? -1 : 1);
+      });
+      layers[L] = arr;
+      arr.forEach((id, i) => order.set(id, i + L * 1e6));
+    }
+    for (let L = layers.length - 2; L >= 0; L--) {
+      const prev = order;
+      const arr = layers[L].slice().sort((a, b) => {
+        const sa = succ.get(a).filter((s) => posOf(prev, s) >= 0);
+        const sb = succ.get(b).filter((s) => posOf(prev, s) >= 0);
+        const ma = sa.length ? sa.reduce((s, p) => s + posOf(prev, p), 0) / sa.length : 1e9;
+        const mb = sb.length ? sb.reduce((s, p) => s + posOf(prev, p), 0) / sb.length : 1e9;
+        return ma - mb || (a < b ? -1 : 1);
+      });
+      layers[L] = arr;
+      arr.forEach((id, i) => order.set(id, i + L * 1e6));
+    }
+  }
+}
+
+/* Upstream + downstream closure of one node (cycle-safe via visited sets).
+ * Returns {nodes:Set, edges:Set<"a>b">}. */
+function lineageOf(id, succ, par) {
+  const nodes = new Set([id]);
+  const edges = new Set();
+  const up = [id];
+  while (up.length) {
+    const cur = up.pop();
+    for (const s of succ.get(cur) ?? []) {
+      edges.add(`${cur}>${s}`);
+      if (!nodes.has(s)) { nodes.add(s); up.push(s); }
+    }
+  }
+  const dn = [id];
+  const seenDn = new Set([id]);
+  while (dn.length) {
+    const cur = dn.pop();
+    for (const p of par.get(cur) ?? []) {
+      edges.add(`${p}>${cur}`);
+      nodes.add(p);
+      if (!seenDn.has(p)) { seenDn.add(p); dn.push(p); }
+    }
+  }
+  return { nodes, edges };
+}
+
+/* Does anything below this node survive the projection? (outline only) */
 const hasEntityMemo = new Map();
 function hasEntityBelow(id) {
   if (hasEntityMemo.has(id)) return hasEntityMemo.get(id);
@@ -218,7 +363,6 @@ function buildVisible() {
   let uid = 0;
   const filtering = query && pathIds.size > 0;
   const projecting = projection === 'entities';
-  // Entity-only view needs fresh subtree answers for the node count this call.
   if (projecting) hasEntityMemo.clear();
 
   function mk(n, depth, pkey, chip) {
@@ -245,24 +389,14 @@ function buildVisible() {
     return inst;
   }
 
-  /* A hidden process node is not simply dropped and is not simply shown.
-   * projectEntity emits an entity and, for each child:
-   *   - entity child        -> projected normally
-   *   - process child       -> promoted: the top-most entities beneath it are
-   *                            lifted to sit where the process was, at the same
-   *                            depth, so the chain stays connected and flat
-   *   - process with nothing material below -> kept as a dimmed chip
-   */
   function chip(n, depth, pkey) {
     const inst = mk(n, depth, pkey, true);
-    vis.push(inst); // mk() only builds the object; a chip still has to be rendered
+    vis.push(inst);
     return inst;
   }
 
   function promote(n, depth, pkey) {
     const out = [];
-    // A process the search explicitly matched stays reachable as a chip, or the
-    // search would silently drop it from a view that only draws entities.
     if (filtering && pathIds.has(n.id)) out.push(chip(n, depth, pkey));
     for (const k of kidsOf(n)) {
       if (!passes(k)) continue;
@@ -314,171 +448,416 @@ function buildVisible() {
 /* ----------------------------------------------------------------- render */
 
 function render() {
-  buildVisible();
   const depthSlider = $('#depthSlider');
   depthSlider.max = Math.max(4, META.maxDepth);
   $('#depthOut').textContent = depthLimit;
 
-  const leaves = vis.filter((v) => !v.open).length;
-  const distinct = new Set(vis.map((v) => v.id)).size;
-  $('#status').innerHTML =
-    `showing <b>${vis.length.toLocaleString()}</b> rows · <b>${distinct.toLocaleString()}</b> unique` +
-    (distinct < META.nodes ? ` of ${META.nodes.toLocaleString()}` : '') +
-    ` · ${leaves.toLocaleString()} end points · selected <b>${esc(selected ?? '—')}</b>`;
-
-  if (view === 'outline') renderOutline();
-  else renderTree();
+  if (view === 'outline') {
+    buildVisible();
+    const leaves = vis.filter((v) => !v.open).length;
+    const distinct = new Set(vis.map((v) => v.id)).size;
+    $('#status').innerHTML =
+      `showing <b>${vis.length.toLocaleString()}</b> rows · <b>${distinct.toLocaleString()}</b> unique` +
+      (distinct < META.nodes ? ` of ${META.nodes.toLocaleString()}` : '') +
+      ` · ${leaves.toLocaleString()} end points · selected <b>${esc(selected ?? '—')}</b>`;
+    renderOutline();
+  } else {
+    renderFlow();
+  }
+  syncChrome();
 }
 
-function renderTree() {
+function syncChrome() {
+  const outline = view === 'outline';
+  $('#depthSlider').disabled = !outline;
+  $('#fitAll').disabled = outline;
+}
+
+/* --------------------------------------------------------------- flow view */
+
+function catRank(counts) {
+  return Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+}
+
+function renderFlow() {
   const svg = $('#canvas');
   svg.replaceChildren();
   $('#outline').hidden = true;
   svg.hidden = false;
 
-  if (!vis.length) return;
+  const { ids, succ, par } = flowGraph();
+  flowPos = new Map();
+  flowCellOf = new Map();
+  flowCellPos = new Map();
 
-  // per-depth column widths from the names actually on screen
-  const maxName = [];
-  for (const v of vis) maxName[v.depth] = Math.max(maxName[v.depth] ?? 0, v.n.name.length);
-  const colX = [0];
-  for (let d = 0; d < maxName.length; d++) {
-    const chars = maxName[d] ?? 4;
-    colX.push(colX[d] + (chars ? Math.min(340, Math.max(110, chars * CHARW + 46)) : 110));
+  if (!succ.has(ROOT)) {
+    $('#status').innerHTML = 'flow · nothing passes the current filters';
+    flowBounds = { w: 600, h: 200 };
+    const g = el('g', { id: 'g', transform: `translate(${cam.x} ${cam.y}) scale(${cam.k})` });
+    const t = el('text', { x: 40, y: 60, class: 'fempty' });
+    t.textContent = 'Nothing passes the current filters — loosen a category or kind toggle.';
+    g.appendChild(t);
+    svg.appendChild(g);
+    svg.dataset.w = 600;
+    svg.dataset.h = 200;
+    applyTransform();
+    buildHubs(new Map());
+    return;
   }
 
-  // y placement
-  const pos = new Map();
-  let cursor = 0;
-  function place(inst) {
-    if (!inst.open || !inst.kids.length) {
-      const p = { x: colX[inst.depth] ?? 0, y: cursor * ROW + ROW / 2 };
-      pos.set(inst.uid, p);
-      cursor++;
-      return p;
-    }
-    const ps = inst.kids.map(place);
-    const p = { x: colX[inst.depth] ?? 0, y: (ps[0].y + ps[ps.length - 1].y) / 2 };
-    pos.set(inst.uid, p);
-    return p;
-  }
-  place(vis[0]);
+  const { depth, maxD } = flowTiers(succ);
+  const indeg = flowIndeg(par);
+  const placed = ids.filter((id) => depth.has(id));
 
-  const W = colX[colX.length - 1] + 360;
-  const H = Math.max(cursor * ROW, 80);
+  // Hubs: most-consumed inputs. Lifted to the rail when enabled.
+  const hubs = hubRailOn
+    ? placed.filter((id) => id !== ROOT && (indeg.get(id) ?? 0) >= HUB_MIN_INDEG)
+      .sort((a, b) => (indeg.get(b) ?? 0) - (indeg.get(a) ?? 0) || (a < b ? -1 : 1))
+      .slice(0, HUB_N)
+    : [];
+  const hubSet = new Set(hubs);
 
-  layoutByKey = new Map();
-  for (const inst of vis) {
-    const p = pos.get(inst.uid);
-    if (p) layoutByKey.set(inst.key, p);
-  }
+  // Lineage of the selection, for emphasis.
+  let lin = null;
+  if (selected && succ.has(selected)) lin = lineageOf(selected, succ, par);
 
-  // If the caller asked for an anchor, correct the pan so that node lands back
-  // on the pixel it was clicked at.
-  if (anchorPending) {
-    const p = layoutByKey.get(anchorPending.key);
-    if (p) {
-      cam.x = anchorPending.sx - p.x * cam.k;
-      cam.y = anchorPending.sy - p.y * cam.k;
-    }
-    anchorPending = null;
-  }
-
+  let edgeCount = 0;
   const g = el('g', { id: 'g', transform: `translate(${cam.x} ${cam.y}) scale(${cam.k})` });
-
-  // related set for dimming
-  let related = null;
-  if (dimUnrelated && selected && N[selected]) {
-    related = new Set([selected]);
-    const st = [selected];
-    while (st.length) {
-      const id = st.pop();
-      for (const p of parents[id] ?? []) if (!related.has(p)) { related.add(p); st.push(p); }
-    }
-    const st2 = [selected];
-    while (st2.length) {
-      const id = st2.pop();
-      for (const c of N[id]?.children ?? []) if (!related.has(c)) { related.add(c); st2.push(c); }
-    }
-  }
-
   const linksG = el('g');
   const nodesG = el('g');
-  for (const inst of vis) {
-    const p = pos.get(inst.uid);
-    if (!inst.open || !inst.kids.length) continue;
-    for (const k of inst.kids) {
-      const q = pos.get(k.uid);
-      // A child of a closed node is never laid out, so it has no position.
-      // Skip it rather than dereferencing undefined -- this was crashing the
-      // whole render and taking every process chip down with it.
-      if (!p || !q) continue;
-      const dx = Math.max(24, (q.x - p.x) * 0.5);
-      const hot = related && (related.has(inst.id) && related.has(k.id));
-      linksG.appendChild(el('path', {
-        class: `lk${hot ? ' hot' : ''}`,
-        d: `M${p.x + 2} ${p.y} C${p.x + dx} ${p.y} ${q.x - dx} ${q.y} ${q.x - 2} ${q.y}`,
-      }));
-    }
-  }
 
-  for (const inst of vis) {
-    const p = pos.get(inst.uid);
-    if (!p) continue;
-    const n = inst.n;
-    const name = (n.name.length > 52 ? `${n.name.slice(0, 51)}…` : n.name) + (inst.chip ? ' ⚙' : '');
-    const w = name.length * CHARW + 26;
-    const x = p.x;
-    const y = p.y - BOXH / 2;
-    const c = colorOf(n.category);
-    const classes = ['nd'];
-    if (selected === inst.id) classes.push('sel');
-    if (matches.has(inst.id)) classes.push('match');
-    if (related && !related.has(inst.id)) classes.push('faint');
-    if (inst.chip) classes.push('chip');
-
-    const gg = el('g', {
-      class: classes.join(' '),
-      'data-key': inst.key,
-      transform: `translate(${x} ${p.y})`,
-    });
-    gg.appendChild(el('rect', { class: 'box', x: 0, y: -BOXH / 2, width: w, height: BOXH, rx: 5 }));
-    gg.appendChild(el('rect', { class: 'accent', x: 0, y: -BOXH / 2, width: 3, height: BOXH, fill: c }));
-    if (markShared && inst.shared) {
-      gg.appendChild(el('rect', {
-        class: 'box', x: 0.5, y: -BOXH / 2 + 0.5, width: w - 1, height: BOXH - 1, rx: 5,
-        fill: 'none', stroke: c, 'stroke-dasharray': '2 3', opacity: 0.75,
-      }));
-    }
-    const tx = el('text', { x: 9, y: 4, fill: c === '#565f89' ? '#a9b1d6' : '#d7deec' });
-    tx.textContent = name;
-    gg.appendChild(tx);
-
-    if (inst.expandable) {
-      const lx = w + 5;
-      gg.appendChild(el('path', { class: 'tog', d: `M${lx - 5} -7 h10 a2 2 0 0 1 2 2 v10 a2 2 0 0 1 -2 2 h-10 a2 2 0 0 1 -2 -2 v-10 a2 2 0 0 1 2 -2 z` }));
-      const tt = el('text', { class: 'tog', x: lx, y: 3.5, 'text-anchor': 'middle' });
-      tt.textContent = inst.open ? '−' : String(inst.n.children.length);
-      gg.appendChild(tt);
-      // A real hit target for the badge. Hit-testing is done by asking which
-      // element the pointer is over, never by comparing coordinates: the
-      // viewport and SVG user units are different spaces once pan/zoom is
-      // applied, so any arithmetic between them silently misfires.
-      gg.appendChild(el('rect', {
-        class: 'tog-hit', x: lx - 10, y: -11, width: 20, height: 22, rx: 4,
-        fill: 'transparent', 'data-toggle': inst.key,
-      }));
-    }
-    nodesG.appendChild(gg);
-  }
+  if (groupFlow) edgeCount = renderFlowGrouped(g, linksG, nodesG, { placed, succ, par, depth, maxD, indeg, hubSet, lin });
+  else edgeCount = renderFlowAll(g, linksG, nodesG, { placed, succ, par, depth, maxD, indeg, hubSet, hubs, lin });
 
   g.appendChild(linksG);
   g.appendChild(nodesG);
   svg.appendChild(g);
-  svg.dataset.w = W;
-  svg.dataset.h = H;
-
+  svg.dataset.w = flowBounds.w;
+  svg.dataset.h = flowBounds.h;
   applyTransform();
+
+  $('#status').innerHTML =
+    `flow · <b>${placed.length.toLocaleString()}</b> nodes · <b>${edgeCount.toLocaleString()}</b> links` +
+    ` · <b>${maxD + 1}</b> tiers · ${groupFlow
+      ? `grouped by category${expandedCells.size ? ` · ${expandedCells.size} band${expandedCells.size > 1 ? 's' : ''} open` : ''}`
+      : 'all nodes'}` +
+    (hubSet.size ? ` · ${hubSet.size} hubs on rail` : '') +
+    ` · selected <b>${esc(selected ?? '—')}</b>`;
+
+  buildHubs(indeg);
+}
+
+/* Continent: one cell per (tier, category). Edges aggregated with widths.
+ * Returns the number of drawn links. */
+function renderFlowGrouped(g, linksG, nodesG, ctx) {
+  const { placed, succ, depth, maxD, hubSet, lin } = ctx;
+  const xOf = (d) => F_PAD + (maxD - d) * F_COLW_GRP;
+
+  // cells
+  const cells = new Map(); // key `${d}|${cat}` -> {key, d, cat, members:[], expanded}
+  for (const id of placed) {
+    if (hubSet.has(id)) continue;
+    const key = `${depth.get(id)}|${N[id].category}`;
+    if (!cells.has(key)) cells.set(key, { key, d: depth.get(id), cat: N[id].category, members: [] });
+    cells.get(key).members.push(id);
+  }
+  for (const k of [...expandedCells]) if (!cells.has(k)) expandedCells.delete(k);
+  const byTier = new Map();
+  for (const cell of cells.values()) {
+    cell.expanded = expandedCells.has(cell.key);
+    cell.members.sort();
+    if (!byTier.has(cell.d)) byTier.set(cell.d, []);
+    byTier.get(cell.d).push(cell);
+  }
+  const catOrder = catRank(META.byCategory ?? {});
+  for (const arr of byTier.values()) {
+    arr.sort((a, b) => (catOrder.indexOf(a.cat) - catOrder.indexOf(b.cat)) || (a.cat < b.cat ? -1 : 1));
+  }
+
+  // Top-aligned columns; an expanded band takes one row per member plus a header.
+  const F_PITCH_EXP = 14;
+  const F_HEAD_EXP = 26;
+  const cellH = (cell) => cell.expanded
+    ? F_HEAD_EXP + cell.members.length * F_PITCH_EXP + 8
+    : F_CELLH;
+  let maxColH = F_RAILH;
+  for (const [d, arr] of byTier) {
+    let y = F_RAILH;
+    for (const cell of arr) {
+      const h = cellH(cell);
+      const p = { x: xOf(d), y: y + h / 2 };
+      flowCellPos.set(cell.key, p);
+      for (const m of cell.members) flowCellOf.set(m, cell.key);
+      if (cell.expanded) {
+        cell.members.forEach((m, i) => flowPos.set(m, {
+          x: xOf(d), y: y + F_HEAD_EXP + i * F_PITCH_EXP + F_PITCH_EXP / 2,
+        }));
+      } else {
+        for (const m of cell.members) flowPos.set(m, p);
+      }
+      y += h + 8;
+    }
+    maxColH = Math.max(maxColH, y);
+  }
+  // hub rail positions: spread along the rail so same-tier hubs never stack
+  const rail = layoutHubRail([...hubSet], depth, xOf);
+  for (const [h, p] of rail.pos) flowPos.set(h, p);
+
+  const H = maxColH + F_PAD;
+  const W = Math.max(F_PAD * 2 + (maxD + 1) * F_COLW_GRP, rail.right + F_PAD + 240);
+  flowBounds = { w: W, h: H };
+
+  // Edges: aggregated between collapsed cells, per-node for expanded members.
+  const isExp = (id) => expandedCells.has(flowCellOf.get(id) ?? '');
+  const agg = new Map(); // "ck1>ck2" -> count
+  const expEdges = [];
+  let edgeCount = 0;
+  for (const id of placed) {
+    for (const s of succ.get(id) ?? []) {
+      if (!depth.has(s)) continue;
+      edgeCount++;
+      if (hubSet.has(id) || hubSet.has(s)) continue;
+      if (isExp(id) || isExp(s)) { expEdges.push([id, s]); continue; }
+      const a = flowCellOf.get(id);
+      const b = flowCellOf.get(s);
+      if (!a || !b || a === b) continue;
+      agg.set(`${a}>${b}`, (agg.get(`${a}>${b}`) ?? 0) + 1);
+    }
+  }
+  for (const [k, n] of agg) {
+    const [a, b] = k.split('>');
+    const p = flowCellPos.get(a);
+    const q = flowCellPos.get(b);
+    if (!p || !q) continue;
+    const hot = lin && lin.nodes.has(cellMember(a, cells)) && lin.nodes.has(cellMember(b, cells));
+    const dx = Math.max(24, Math.abs(q.x - p.x) * 0.5);
+    // Supply runs right-to-left (C64 at right); cubic handles either direction.
+    linksG.appendChild(el('path', {
+      class: `fedge${hot ? ' hot' : ''}${lin && dimUnrelated && !hot ? ' faint' : ''}`,
+      d: `M${p.x} ${p.y} C${p.x - dx} ${p.y} ${q.x + dx} ${q.y} ${q.x} ${q.y}`,
+      'stroke-width': (1 + Math.log10(n)).toFixed(2),
+      opacity: hot ? 0.9 : 0.28,
+    }));
+  }
+  // per-node edges touching expanded bands (member to cell centre or member)
+  for (const [a, b] of expEdges) {
+    const p = flowPos.get(a);
+    const q = flowPos.get(b);
+    if (!p || !q) continue;
+    const hot = lin && lin.edges.has(`${a}>${b}`);
+    const isBack = (depth.get(b) ?? 0) <= (depth.get(a) ?? 0);
+    const dx = Math.max(18, Math.abs(q.x - p.x) * 0.45);
+    linksG.appendChild(el('path', {
+      class: `fedge${isBack ? ' back' : ''}${hot ? ' hot' : ''}${lin && dimUnrelated && !hot ? ' faint' : ''}`,
+      d: `M${p.x} ${p.y} C${p.x - dx} ${p.y} ${q.x + dx} ${q.y} ${q.x} ${q.y}`,
+      opacity: hot ? 0.95 : isBack ? 0.22 : 0.3,
+    }));
+  }
+  // hub droplines + hub upstream edges (already counted above; drawn from the rail here)
+  drawHubLinks(linksG, ctx);
+
+  // hub nodes
+  for (const h of hubSet) drawFlowNode(nodesG, h, ctx, { r: 9, hub: true });
+  // cells (containers first, so expanded members draw on top of their band)
+  const expMembers = [];
+  for (const [key, cell] of cells) {
+    const p = flowCellPos.get(key);
+    const w = F_COLW_GRP - 26;
+    const h = cell.expanded ? cellH(cell) - 8 : F_CELLH - 12;
+    const hasSel = selected && flowCellOf.get(selected) === key;
+    const hasMatch = [...matches].some((m) => flowCellOf.get(m) === key);
+    const onLin = lin && cell.members.some((m) => lin.nodes.has(m));
+    const cls = ['fcell'];
+    if (hasSel) cls.push('sel');
+    else if (hasMatch) cls.push('match');
+    if (lin && dimUnrelated && !onLin && !hasSel) cls.push('faint');
+    if (cell.expanded) cls.push('open');
+    const gg = el('g', { class: cls.join(' '), 'data-cell': key, transform: `translate(${p.x - w / 2} ${p.y - h / 2})` });
+    gg.appendChild(el('rect', { class: 'box', width: w, height: h, rx: 7, fill: colorOf(cell.cat), opacity: cell.expanded ? 0.08 : 0.16 }));
+    gg.appendChild(el('rect', { x: 0, y: 0, width: 3.5, height: h, fill: colorOf(cell.cat) }));
+    if (cell.expanded) {
+      const t1 = el('text', { x: 10, y: 17, class: 't1' });
+      t1.textContent = `${cell.cat} · ${cell.members.length} nodes · tier ${maxD - cell.d}`;
+      gg.appendChild(t1);
+    } else {
+      const t1 = el('text', { x: 10, y: 19, class: 't1' });
+      t1.textContent = cell.cat;
+      const t2 = el('text', { x: 10, y: 35, class: 't2' });
+      t2.textContent = `${cell.members.length} nodes · tier ${maxD - cell.d}`;
+      gg.appendChild(t1);
+      gg.appendChild(t2);
+    }
+    const title = el('title');
+    title.textContent = cell.expanded
+      ? `${cell.cat} — ${cell.members.length} nodes shown. Double-click to collapse.`
+      : `${cell.cat} — ${cell.members.length} nodes. Double-click to expand in place.`;
+    gg.appendChild(title);
+    // hit area carries one member id so a click selects something real
+    gg.appendChild(el('rect', { x: 0, y: 0, width: w, height: h, fill: 'transparent', 'data-id': cell.members[0] }));
+    nodesG.appendChild(gg);
+    if (cell.expanded) expMembers.push(...cell.members);
+  }
+  for (const m of expMembers) drawFlowNode(nodesG, m, ctx, { r: 4, forceLabel: true });
+  return edgeCount;
+}
+
+function cellMember(cellKey, cells) {
+  const c = cells.get(cellKey);
+  return c ? c.members[0] : null;
+}
+
+/* Region: every node as a dot in its tier column. Returns link count. */
+function renderFlowAll(g, linksG, nodesG, ctx) {
+  const { placed, succ, depth, maxD, hubSet, hubs, lin } = ctx;
+  const xOf = (d) => F_PAD + (maxD - d) * F_COLW_ALL;
+
+  const layers = Array.from({ length: maxD + 1 }, () => []);
+  for (const id of placed) {
+    if (hubSet.has(id)) continue;
+    layers[depth.get(id)].push(id);
+  }
+  for (const arr of layers) arr.sort();
+  const order = new Map();
+  layers.forEach((arr, L) => arr.forEach((id, i) => order.set(id, i + L * 1e6)));
+  orderTiers(layers, ctx.par, succ, order);
+
+  const tallest = Math.max(1, ...layers.map((a) => a.length));
+  const yOf = (L, i) => F_RAILH + (tallest - layers[L].length) * F_PITCH_ALL / 2 + i * F_PITCH_ALL + F_PITCH_ALL / 2;
+  layers.forEach((arr, L) => arr.forEach((id, i) => flowPos.set(id, { x: xOf(L), y: yOf(L, i) })));
+  const rail = layoutHubRail(hubs, depth, xOf);
+  for (const [h, p] of rail.pos) flowPos.set(h, p);
+
+  flowBounds = { w: Math.max(F_PAD * 2 + (maxD + 1) * F_COLW_ALL + 130, rail.right + F_PAD + 250), h: F_RAILH + tallest * F_PITCH_ALL + F_PAD };
+
+  let edgeCount = 0;
+  for (const id of placed) {
+    const p = flowPos.get(id);
+    if (!p) continue;
+    for (const s of succ.get(id) ?? []) {
+      const q = flowPos.get(s);
+      if (!q) continue;
+      edgeCount++;
+      if (hubSet.has(id) || hubSet.has(s)) continue; // drawn as droplines
+      const isBack = depth.get(s) <= depth.get(id);
+      const hot = lin && lin.edges.has(`${id}>${s}`);
+      const dx = Math.max(18, Math.abs(q.x - p.x) * 0.45);
+      linksG.appendChild(el('path', {
+        class: `fedge${isBack ? ' back' : ''}${hot ? ' hot' : ''}${lin && dimUnrelated && !hot ? ' faint' : ''}`,
+        d: `M${p.x} ${p.y} C${p.x - dx} ${p.y} ${q.x + dx} ${q.y} ${q.x} ${q.y}`,
+        opacity: hot ? 0.95 : isBack ? 0.22 : 0.3,
+      }));
+    }
+  }
+  drawHubLinks(linksG, ctx); // rail drawing only; links counted in the loop above
+
+  for (const id of placed) drawFlowNode(nodesG, id, ctx, {});
+  return edgeCount;
+}
+
+/* Hub rail links: droplines from each hub to its dependents, plus the hub's
+ * own upstream edges from its rail position. Drawing only — every link was
+ * already counted by the caller. */
+function drawHubLinks(linksG, ctx) {
+  const { succ, par, lin } = ctx;
+  for (const [h, p] of flowPos) {
+    if (!isHub(h, ctx)) continue;
+    for (const dep of par.get(h) ?? []) {
+      const qq = flowPos.get(dep);
+      if (!qq) continue;
+      const hot = lin && lin.edges.has(`${dep}>${h}`);
+      linksG.appendChild(el('path', {
+        class: `fdrop${hot ? ' hot' : ''}${lin && dimUnrelated && !hot ? ' faint' : ''}`,
+        d: `M${qq.x} ${qq.y} L${p.x} ${p.y}`,
+        opacity: hot ? 0.8 : 0.16,
+      }));
+    }
+    for (const s of succ.get(h) ?? []) {
+      const q = flowPos.get(s);
+      if (!q) continue;
+      const hot = lin && lin.edges.has(`${h}>${s}`);
+      const dx = Math.max(18, Math.abs(q.x - p.x) * 0.45);
+      linksG.appendChild(el('path', {
+        class: `fedge${hot ? ' hot' : ''}${lin && dimUnrelated && !hot ? ' faint' : ''}`,
+        d: `M${p.x} ${p.y} C${p.x - dx} ${p.y} ${q.x + dx} ${q.y} ${q.x} ${q.y}`,
+        opacity: hot ? 0.9 : 0.3,
+      }));
+    }
+  }
+}
+
+function isHub(id, ctx) {
+  return ctx.hubSet.has(id);
+}
+
+/* Rail layout: hubs sharing a tier would otherwise land on the exact same
+ * point (stacked dots, overprinted labels). Sort by tier and enforce a
+ * minimum horizontal gap, alternating two rows so long labels clear each
+ * other. Returns {pos: Map, right: maxX}. */
+const HUB_GAP = 200;
+function layoutHubRail(hubs, depth, xOf) {
+  const pos = new Map();
+  const rows = [F_RAILH * 0.32, F_RAILH * 0.68];
+  const sorted = hubs.slice().sort((a, b) => (depth.get(a) - depth.get(b)) || (a < b ? -1 : 1));
+  let prevX = -Infinity;
+  let right = 0;
+  sorted.forEach((h, i) => {
+    const x = Math.max(xOf(depth.get(h)), prevX + HUB_GAP);
+    const p = { x, y: rows[i % 2] };
+    pos.set(h, p);
+    prevX = x;
+    right = Math.max(right, x);
+  });
+  return { pos, right };
+}
+
+function drawFlowNode(nodesG, id, ctx, { r = 5, hub = false, forceLabel = false }) {
+  const p = flowPos.get(id);
+  if (!p) return;
+  const n = N[id];
+  const { lin } = ctx;
+  const onLin = lin && lin.nodes.has(id);
+  const cls = ['fnd'];
+  if (selected === id) cls.push('sel');
+  else if (matches.has(id)) cls.push('match');
+  if (hub) cls.push('hub');
+  if (lin && dimUnrelated && !onLin && selected !== id) cls.push('faint');
+  const gg = el('g', { class: cls.join(' '), 'data-id': id, transform: `translate(${p.x} ${p.y})` });
+  const c = colorOf(n.category);
+  if (markShared && (ctx.indeg.get(id) ?? 0) > 1 && !hub) {
+    gg.appendChild(el('circle', { r: r + 3, fill: 'none', stroke: c, 'stroke-width': 1, 'stroke-dasharray': '2 2', opacity: 0.8 }));
+  }
+  gg.appendChild(el('circle', { class: 'dot', r, fill: id === ROOT ? '#ff007c' : c, stroke: '#0b0d13', 'stroke-width': 1 }));
+  const showText = flowLabels || hub || forceLabel || selected === id || matches.has(id) || id === ROOT;
+  if (showText) {
+    const t = el('text', { x: r + 5, y: 4 });
+    const label = n.simple_name ?? n.name;
+    t.textContent = label.length > 34 ? `${label.slice(0, 33)}…` : label;
+    gg.appendChild(t);
+  }
+  const title = el('title');
+  title.textContent = `${n.name} — ${n.kind} · ${n.category} · used ${(ctx.indeg.get(id) ?? 0)}×`;
+  gg.appendChild(title);
+  const hit = el('circle', { r: Math.max(9, r + 2), fill: 'transparent', 'data-id': id });
+  gg.appendChild(hit);
+  nodesG.appendChild(gg);
+}
+
+/* Most-reused strip: the inputs the whole machine converges on. */
+function buildHubs(indeg) {
+  const box = $('#hubs');
+  if (!box) return;
+  const top = [...indeg.entries()]
+    .filter(([id]) => id !== ROOT && N[id])
+    .sort((a, b) => b[1] - a[1] || (a[0] < b[0] ? -1 : 1))
+    .slice(0, 12);
+  box.innerHTML = top
+    .map(([id, c]) => `<span class="c${selected === id ? ' on' : ''}" data-hub="${id}" title="${esc(N[id].name)}">${esc((N[id].simple_name ?? N[id].name).slice(0, 22))} <b>${c}×</b></span>`)
+    .join('');
+  box.onclick = (e) => {
+    const c = e.target.closest('[data-hub]');
+    if (!c) return;
+    select(c.dataset.hub, { reveal: true });
+  };
 }
 
 function renderOutline() {
@@ -598,7 +977,6 @@ function renderPanel(id) {
   const inputs = Array.isArray(n.inputs) && n.inputs.length
     ? `<dl class="meta"><dt>from</dt><dd>${n.inputs.map(esc).join(' · ')}</dd></dl>` : '';
 
-  // Resolved ingredient links — the `from` relation built by scripts/build.mjs.
   const fromLinks = Array.isArray(n.from) && n.from.length
     ? `<div class="kids"><h4>made of — ${n.from.length} linked</h4><ol>${n.from
         .map((f) => N[f] ? `<li><a data-go="${f}"><i class="sw" style="background:${colorOf(N[f].category)}"></i>${esc(N[f].name)}<span class="c">${KIND_LABEL[N[f].kind] ?? N[f].kind}</span></a></li>` : '')
@@ -631,12 +1009,6 @@ function renderPanel(id) {
         .join('')}</ol></div>`
     : (hasConn ? '' : `<div class="kids"><h4>end of the line</h4><ol><li style="padding:4px 8px;color:#545d70">${esc(PROV_END[n.provenance] ?? 'nothing further modeled')}</li></ol></div>`);
 
-  // Wave 5 typed relations on dump-edges semantics (typed as stored, legacy by
-  // mechanical disposition). Refinement above (dendrogram, progressive one-subtree
-  // expansion, safe default); flow/context below as cross-links followed without
-  // expanding (reveal ancestors, never subtree-expand, otherwise hubs explode).
-  // made by derived from produces (viewer renders derived set as expandable
-  // "how this is made" list, so expand-6510 survives; storing both would duplicate).
   const edgeLi = (to, extra = '') => N[to]
     ? `<li><a data-go="${to}"><i class="sw" style="background:${colorOf(N[to].category)}"></i>${esc(N[to].name)}<span class="c">${esc(extra || (KIND_LABEL[N[to].kind] ?? N[to].kind))}</span></a></li>`
     : '';
@@ -669,8 +1041,7 @@ function renderPanel(id) {
     ${refineTypedHtml}${flowHtml}${ctxHtml}
     ${kidHtml}
     <div class="act">
-      ${kids.length ? '<button data-act="expand">expand subtree</button>' : ''}
-      <button data-act="reveal">reveal in tree</button>
+      <button data-act="reveal">reveal in flow</button>
       <button data-act="copy">copy id</button>
     </div>`;
 
@@ -678,10 +1049,7 @@ function renderPanel(id) {
     const go = e.target.closest('[data-go]');
     if (go) return select(go.dataset.go, { reveal: true });
     const act = e.target.closest('[data-act]')?.dataset.act;
-    if (act === 'expand') {
-      expandSubtree(id);
-      render();
-    } else if (act === 'reveal') {
+    if (act === 'reveal') {
       select(id, { reveal: true });
     } else if (act === 'copy') {
       navigator.clipboard?.writeText(id);
@@ -702,9 +1070,8 @@ function revealTo(id) {
     matches = new Set();
     pathIds = new Set();
   }
-  // Deliberately does NOT raise depthLimit: raising it to reveal one deep node
-  // would expand the entire 3,500-node tree and make the view unusable. The
-  // ancestor chain is force-opened instead.
+  // The flow draws every node, so revealing never needs to raise depthLimit.
+  // The outline keeps its ancestor chain force-open as before.
 }
 
 function select(id, opts = {}) {
@@ -712,77 +1079,57 @@ function select(id, opts = {}) {
   if (opts.reveal) revealTo(id);
   render();
   renderPanel(id);
-  if (opts.reveal) {
-    const inst = vis.find((v) => v.id === id);
-    if (inst) centreOn(inst);
-  }
+  if (opts.reveal) centreOn(id);
 }
 
-function centreOn(inst) {
-  if (view !== 'tree') {
-    const row = $('#outline').querySelector('.orow.sel');
-    row?.scrollIntoView({ block: 'center' });
+function flowCentre(id) {
+  return flowPos.get(id) ?? flowCellPos.get(flowCellOf.get(id) ?? '') ?? null;
+}
+
+function centreOn(id) {
+  if (view !== 'flow') {
+    if (view === 'outline') {
+      const row = $('#outline').querySelector('.orow.sel');
+      row?.scrollIntoView({ block: 'center' });
+    }
     return;
   }
-  const p = layoutByKey.get(inst.key);
+  const p = typeof id === 'string' ? flowCentre(id) : null;
   if (!p) return;
   const svg = $('#canvas');
   const vp = svg.getBoundingClientRect();
-  cam.x = Math.max(16, vp.width / 3 - p.x * cam.k);
+  cam.x = vp.width / 2 - p.x * cam.k;
   cam.y = vp.height / 2 - p.y * cam.k;
   applyTransform();
 }
 
 function centreRoot() {
-  // Fit first, then centre. The root sits at the vertical midpoint of the whole
-  // canvas, which on a deep tree is thousands of pixels below the viewport, so
-  // fitting without panning to it would leave the button apparently inert.
+  if (view !== 'flow') {
+    fit();
+    return;
+  }
   fit();
-  const root = vis[0];
-  if (root) centreOn(root);
+  if (flowPos.has(ROOT)) centreOn(ROOT);
 }
 
-/* Keep the node you just acted on exactly where it was on screen.
- *
- * Without this, opening a node near the bottom of a 8000px canvas re-centres
- * everything above it and the thing you clicked moves out from under the
- * cursor — which is what made the tree feel impossible to track. */
-let anchorPending = null;
-function anchorTo(inst) {
-  if (view !== 'tree' || !inst) return;
-  const p = layoutByKey.get(inst.key);
-  if (!p) return;
-  anchorPending = { key: inst.key, sx: p.x * cam.k + cam.x, sy: p.y * cam.k + cam.y };
+/* Expand or collapse a grouped band in place: only that band's members become
+ * individual nodes, everything else stays grouped. */
+function toggleCell(key) {
+  if (!groupFlow) return;
+  expandedCells.has(key) ? expandedCells.delete(key) : expandedCells.add(key);
+  render();
 }
 
 function updateProjNote() {
-  const chips = N ? Object.keys(N).length : 0;
-  $('#projNote').textContent = projection === 'entities'
-    ? 'Processes are routed through, so components stay connected to their raw materials. A process with nothing material below it is kept as a chip rather than dropped.'
-    : 'Everything is shown: components, materials, processes, tools and facilities.';
-  void chips;
+  const el_ = $('#projNote');
+  if (!el_) return;
+  el_.textContent = projection === 'entities'
+    ? 'Outline shows components and materials only; processes are routed through. The flow always shows everything passing the kind filter, so processes stay visible there.'
+    : 'Outline shows everything. The flow always shows the full supply graph passing the category/kind/scope filters.';
 }
 
 function applyTransform() {
   $('#canvas').querySelector('#g')?.setAttribute('transform', `translate(${cam.x} ${cam.y}) scale(${cam.k})`);
-}
-
-function expandSubtree(id) {
-  // Wave 5 progressive one-subtree expansion, refinement only (never flow:
-  // +consumes explodes on hubs; flow links in detail panel reveal without expanding).
-  const st = [id];
-  let maxd = 0;
-  while (st.length) {
-    const cur = st.pop();
-    collapsed.delete(cur);
-    for (const k of kidsOf(N[cur] ?? {})) st.push(k.id);
-  }
-  const d = (x) => { let r = 0; const s = [[x, 0]]; const seen = new Set(); while (s.length) { const [c, dd] = s.pop(); if (seen.has(c)) continue; seen.add(c); r = Math.max(r, dd); for (const k of kidsOf(N[c] ?? {})) s.push([k.id, dd + 1]); } return r; };
-  maxd = d(id);
-  depthLimit = Math.max(depthLimit, maxd + 1);
-  const inst = vis.find((v) => v.id === id);
-  if (inst) inst.open = true;
-  for (const v of vis) v.open = true;
 }
 
 function expandToDepth(n) {
@@ -821,8 +1168,6 @@ function runSearch(q) {
   hits.sort((a, b) => b[1] - a[1]);
   for (const [id] of hits.slice(0, 400)) {
     matches.add(id);
-    // Walk the whole ancestor chain, not just the direct parent: the reveal has
-    // to start at the root or nothing renders.
     const seenChain = new Set();
     const up = [id];
     while (up.length) {
@@ -863,45 +1208,33 @@ const hl = (s, terms) => {
 
 function wire() {
   const svg = $('#canvas');
+  // Pair-detection for band double-clicks. Each single click re-renders the
+  // whole SVG, so the two clicks of a double-click land in different DOM
+  // generations and the browser cannot pair them into a dblclick on the band.
+  let lastBandClick = { key: null, t: 0 };
 
-  // node clicks — badge vs body, decided by element, not by arithmetic
   svg.addEventListener('click', (e) => {
     if (suppressClick) { suppressClick = false; return; }
-    const badge = e.target.closest('[data-toggle]');
-    if (badge) {
-      const inst = byKey.get(badge.dataset.toggle);
-      if (!inst?.expandable) return;
-      // Decide from what the user can SEE, not from the collapsed set. The two
-      // can disagree — a node can be shut by the depth limit without being in
-      // `collapsed` — and asking `collapsed` first made the first click on a
-      // depth-limited node silently do nothing.
-      if (inst.open) {
-        collapsed.add(inst.id);
-      } else {
-        collapsed.delete(inst.id);
-        depthLimit = Math.max(depthLimit, inst.depth + 1);
-        const sl = $('#depthSlider');
-        sl.max = Math.max(4, META.maxDepth);
-        sl.value = Math.min(depthLimit, +sl.max);
+    const hit = e.target.closest('[data-id]');
+    if (!hit) return;
+    const cellG = e.target.closest('[data-cell]');
+    if (cellG && groupFlow) {
+      const key = cellG.dataset.cell;
+      const now = performance.now();
+      if (lastBandClick.key === key && now - lastBandClick.t < 450) {
+        lastBandClick = { key: null, t: 0 };
+        toggleCell(key);
+        return;
       }
-      anchorTo(inst);
-      render();
-      return;
+      lastBandClick = { key, t: now };
     }
-    const g = e.target.closest('g.nd');
-    if (!g) return;
-    const inst = byKey.get(g.dataset.key);
-    if (inst) select(inst.id);
+    select(hit.dataset.id);
   });
   svg.addEventListener('dblclick', (e) => {
-    const g = e.target.closest('g.nd');
-    if (!g) return;
-    const inst = vis[+g.dataset.uid];
-    if (inst?.expandable) {
-      collapsed.delete(inst.id);
-      depthLimit = Math.max(depthLimit, inst.depth + 1);
-      render();
-    }
+    // Fallback for browsers that do pair the clicks (e.g. when nothing
+    // re-rendered between them). The manual pairing above handles the rest.
+    const cell = e.target.closest('[data-cell]');
+    if (cell && groupFlow) toggleCell(cell.dataset.cell);
   });
 
   $('#outline').addEventListener('click', (e) => {
@@ -921,7 +1254,7 @@ function wire() {
     const vp = svg.getBoundingClientRect();
     const mx = e.clientX - vp.left;
     const my = e.clientY - vp.top;
-    const k = Math.min(4, Math.max(0.12, cam.k * (e.deltaY < 0 ? 1.12 : 0.89)));
+    const k = Math.min(4, Math.max(0.08, cam.k * (e.deltaY < 0 ? 1.12 : 0.89)));
     cam.x = mx - (mx - cam.x) * (k / cam.k);
     cam.y = my - (my - cam.y) * (k / cam.k);
     cam.k = k;
@@ -932,9 +1265,6 @@ function wire() {
   let suppressClick = false;
   svg.addEventListener('pointerdown', (e) => {
     if (e.button !== 0) return;
-    // Any new press clears a stale suppress flag. Without this, a drag whose
-    // trailing click never arrives leaves the latch set and the user's next
-    // real click is silently swallowed.
     suppressClick = false;
     drag = { x: e.clientX, y: e.clientY, cx: cam.x, cy: cam.y, moved: false };
   });
@@ -942,9 +1272,6 @@ function wire() {
     if (!drag) return;
     const dx = e.clientX - drag.x;
     const dy = e.clientY - drag.y;
-    // Only become a drag past a few pixels, so a click stays a click. Pointer
-    // capture is taken late, and only for real drags, so it can never retarget
-    // the click that follows.
     if (!drag.moved && Math.hypot(dx, dy) < 4) return;
     if (!drag.moved) {
       drag.moved = true;
@@ -970,11 +1297,11 @@ function wire() {
       view = b.dataset.view;
       cam.y = 0;
       render();
-      if (view === 'tree') fit();
+      fit();
     };
   });
 
-  // projection switch
+  // projection switch (outline only; the flow always shows the full graph)
   document.querySelectorAll('[data-proj]').forEach((b) => {
     b.onclick = () => {
       document.querySelectorAll('[data-proj]').forEach((x) => x.classList.toggle('on', x === b));
@@ -988,6 +1315,9 @@ function wire() {
   });
   $('#showChips').onchange = (e) => { showChips = e.target.checked; render(); };
   $('#showEditorial').onchange = (e) => { showEditorial = e.target.checked; render(); };
+  $('#groupFlow').onchange = (e) => { groupFlow = e.target.checked; render(); fit(); };
+  $('#hubRail').onchange = (e) => { hubRailOn = e.target.checked; render(); };
+  $('#flowLabels').onchange = (e) => { flowLabels = e.target.checked; render(); };
   updateProjNote();
 
   // search
@@ -1029,8 +1359,7 @@ function wire() {
 
   // controls
   $('#centreRoot').onclick = () => centreRoot();
-  $('#expandAll').onclick = () => { depthLimit = 99; collapsed.clear(); forceOpen.clear(); render(); fit(); };
-  $('#collapseAll').onclick = () => expandToDepth(1);
+  $('#fitAll').onclick = () => fit();
   $('#depthSlider').oninput = (e) => {
     depthLimit = +e.target.value;
     collapsed.clear();
@@ -1043,51 +1372,47 @@ function wire() {
   // keyboard
   document.addEventListener('keydown', (e) => {
     if (e.target === search) return;
-    const cur = vis.findIndex((v) => v.id === selected);
-    const inst = vis[cur] ?? vis[0];
     switch (e.key) {
       case '/': e.preventDefault(); search.focus(); search.select(); break;
       case '?': e.preventDefault(); $('#hint').textContent =
-        'click node = select · click the +n badge = expand/collapse · dbl-click = open that level · scroll = zoom · drag = pan · / = search · 0 = centre root · Esc = clear search'; break;
+        'click node = select + highlight its whole supply line · dbl-click a band = expand/collapse it in place · scroll = zoom · drag = pan · / = search · 0 = centre root · Esc = clear search'; break;
       case '0': centreRoot(); break;
       case 'Escape': search.value = ''; runSearch(''); break;
-      case 'ArrowDown': e.preventDefault(); if (vis[Math.min(vis.length - 1, cur + 1)]) { select(vis[Math.max(0, Math.min(vis.length - 1, cur + 1))].id, { reveal: true }); } break;
-      case 'ArrowUp': e.preventDefault(); if (vis[Math.max(0, cur - 1)]) select(vis[Math.max(0, cur - 1)].id, { reveal: true }); break;
-      case 'ArrowRight':
+      case 'ArrowDown': case 'ArrowUp': case 'ArrowLeft': case 'ArrowRight': {
+        if (view !== 'flow') break;
         e.preventDefault();
-        if (inst?.expandable && !inst.open) { collapsed.delete(inst.id); render(); select(inst.id); }
-        else if (inst?.kids[0]) select(inst.kids[0].id);
+        const step = 80;
+        if (e.key === 'ArrowDown') cam.y -= step;
+        if (e.key === 'ArrowUp') cam.y += step;
+        if (e.key === 'ArrowLeft') cam.x += step;
+        if (e.key === 'ArrowRight') cam.x -= step;
+        applyTransform();
         break;
-      case 'ArrowLeft':
-        e.preventDefault();
-        if (inst?.open) { collapsed.add(inst.id); render(); }
-        else { const p = vis.find((v) => v.key === inst?.pid); if (p) select(p.id); }
-        break;
-      case 'Enter': case ' ':
-        if (inst?.expandable) {
-          e.preventDefault();
-          collapsed.has(inst.id) ? collapsed.delete(inst.id) : collapsed.add(inst.id);
-          render();
-        }
-        break;
+      }
+      case '+': case '=': cam.k = Math.min(4, cam.k * 1.15); applyTransform(); break;
+      case '-': case '_': cam.k = Math.max(0.08, cam.k * 0.87); applyTransform(); break;
       default: break;
     }
   });
 
-  window.addEventListener('resize', () => { if (view === 'tree') fit(); });
+  window.addEventListener('resize', () => fit());
 }
 
 function fit() {
   const svg = $('#canvas');
   if (svg.hidden) return;
-  const W = +svg.dataset.w || 1;
+  if (view !== 'flow') return;
+  const W = flowBounds.w || 1;
+  const H = flowBounds.h || 1;
   const vp = svg.getBoundingClientRect();
-  // Fit the width, but never zoom out past legibility: a deep tree is 8000px
-  // tall, and scaling to fit all of it would make every label 1px high.
-  const k = Math.min(1, Math.max(0.5, vp.width / (W + 80)));
+  if (vp.width < 10 || vp.height < 10) return;
+  // Fit the width; the flow is far taller than any viewport, so fitting the
+  // height would shrink everything past legibility. Start at the raw end.
+  const k = Math.min(1.5, Math.max(0.08, vp.width / (W + 60)));
   cam.k = k;
   cam.x = 24;
-  cam.y = 24;
+  cam.y = 16;
+  void H;
   applyTransform();
 }
 
@@ -1110,6 +1435,6 @@ buildKindChips();
 buildConfChips();
 buildScopeChips();
 wire();
-expandToDepth(depthLimit);
-renderPanel(null);
 render();
+renderPanel(null);
+fit();

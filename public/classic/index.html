@@ -30,12 +30,11 @@
       <button data-proj="entities" title="Components and materials only. Processes are routed through, and terminal ones become chips.">Components &amp; materials</button>
     </div>
     <div class="seg" role="group" aria-label="View">
-      <button data-view="tree" class="on" title="Dendrogram">Tree</button>
+      <button data-view="flow" class="on" title="Stratified flow: every unique node once, raw materials left, C64 right">Flow</button>
       <button data-view="outline" title="Indented outline">Outline</button>
     </div>
-    <button id="centreRoot" title="Jump back to the Commodore 64 at the top of the tree (0)">Centre root</button>
-    <button id="expandAll" title="Expand the entire tree (may be slow)">Expand all</button>
-    <button id="collapseAll" title="Collapse to depth 1">Collapse</button>
+    <button id="centreRoot" title="Jump back to the Commodore 64 at the right edge of the flow (0)">Centre root</button>
+    <button id="fitAll" title="Fit the whole flow on screen">Fit all</button>
   </div>
 </header>
 
@@ -44,6 +43,14 @@
     <section>
       <h3>Category</h3>
       <div id="legend" class="legend"></div>
+    </section>
+    <section>
+      <h3>Flow</h3>
+      <label class="check"><input type="checkbox" id="groupFlow" checked> group by category x tier</label>
+      <label class="check"><input type="checkbox" id="hubRail" checked> lift utility hubs to a rail</label>
+      <label class="check"><input type="checkbox" id="flowLabels"> label every node</label>
+      <div id="hubs" class="chips hubs"></div>
+      <p class="note-inline">Bands are the most-reused inputs (electricity, water, coke, acids). Click to inspect; they are what turns a tree into a web.</p>
     </section>
     <section>
       <h3>Kind</h3>
@@ -64,12 +71,12 @@
       <p class="note-inline" id="projNote"></p>
     </section>
     <section>
-      <h3>Depth</h3>
+      <h3>Depth (outline)</h3>
       <label class="slider">expand to level <output id="depthOut">3</output>
         <input id="depthSlider" type="range" min="1" max="14" value="3">
       </label>
       <label class="check"><input type="checkbox" id="dimUnrelated"> dim unrelated when selected</label>
-      <label class="check"><input type="checkbox" id="showRefs" checked> highlight shared subtrees</label>
+      <label class="check"><input type="checkbox" id="showRefs" checked> mark shared nodes</label>
     </section>
     <section class="exports">
       <h3>Export</h3>
@@ -83,7 +90,7 @@
   <div id="stage">
     <svg id="canvas" xmlns="http://www.w3.org/2000/svg" tabindex="0"></svg>
     <div id="outline" hidden></div>
-    <div id="hint" class="hint">scroll to zoom · drag to pan · click a node for detail · <kbd>dbl-click</kbd> to expand</div>
+    <div id="hint" class="hint">scroll to zoom · drag to pan · click a node for detail · <kbd>dbl-click</kbd> a band to expand it</div>
     <pre id="crash" hidden></pre>
   </div>
 

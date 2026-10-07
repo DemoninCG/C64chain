@@ -87,29 +87,27 @@ board 105, chem gaps 15, spine 4, root 1.
 
 ## Using the viewer
 
-Open `index.html` via `npm start`. The dendrogram opens three levels deep.
+Open `index.html` via `npm start`. The classic viewer opens on the flow: every
+unique node drawn once, raw materials at the left, the finished C64 at the
+right, in tiers by distance from the machine.
 
 | action | result |
 | --- | --- |
-| click a node | selects it and fills the detail panel |
-| click the `+n` / `−` badge | expands or collapses just that node |
-| double-click a node | opens it and everything below it |
+| click a node | selects it, fills the detail panel, and highlights its whole supply line |
+| double-click a band | opens that tier as individual nodes |
 | scroll / drag | zoom / pan |
 | `Centre root` (or `0`) | jumps back to the C64 itself |
 
-Two behaviours worth knowing, because both were bugs and both are deliberate
-now. The root node sits at the vertical midpoint of the whole canvas — on a
-tree 8,000 px tall that is far below the window — so *Centre root* pans to it
-rather than just refitting. And when you expand a node, the pan is corrected so
-that **the node you clicked stays on the same pixel**; otherwise everything
-below it shifts and the thing you were aiming at slides out from under the
-cursor.
+Grouped bands are one category in one tier; edge width is the number of
+supply links inside. The most-reused inputs (electricity, water, coke, the
+acids) are lifted onto a rail above the flow, because drawing all of their
+edges in place buries everything else. Dashed edges run against the flow:
+genuine industrial cycles, mostly energy and material loops.
 
-Search reveals matches **and every ancestor**, so a hit at level 14 arrives with
-its 14-level breadcrumb rather than an empty screen. The outline view is easier
-for reading prose. `dim unrelated` greys out everything that is neither an
-ancestor nor a descendant of the current selection, which is the fastest way to
-isolate one supply chain.
+Search highlights matches without rearranging the layout, so the flow stays
+put while you look. The outline view is easier for reading prose.
+`dim unrelated` greys out everything outside the selected node's supply line,
+which is the fastest way to isolate one chain.
 
 ## Two relations, not one
 

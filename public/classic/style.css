@@ -257,6 +257,46 @@ aside {
 .nd .tog-hit:hover { fill: #ffffff14; }
 .badge { font: 9px ui-monospace, Consolas, monospace; }
 
+/* ------------------------------------------------------------ flow view */
+
+.fedge { fill: none; stroke: #3a4358; stroke-width: 1; }
+.fedge.back { stroke-dasharray: 4 4; stroke: #2e3547; }
+.fedge.hot { stroke: #7aa2f7; }
+.fedge.faint { opacity: 0.06 !important; }
+.fdrop { fill: none; stroke: #4a5468; stroke-width: 1; }
+.fdrop.hot { stroke: #7aa2f7; }
+.fdrop.faint { opacity: 0.06 !important; }
+
+.fnd { cursor: pointer; }
+.fnd circle { pointer-events: none; }
+.fnd text { fill: var(--fg-dim); font-size: 11px; pointer-events: none; }
+.fnd:hover text { fill: var(--fg); }
+.fnd.hub text { fill: var(--fg); font-weight: 600; }
+.fnd.sel circle.dot { stroke: #fff; stroke-width: 2; }
+.fnd.sel text { fill: #fff; }
+.fnd.match circle.dot { stroke: var(--hot); stroke-width: 2; }
+.fnd.faint { opacity: .12; }
+.fnd [data-id] { pointer-events: all; cursor: pointer; }
+
+.fcell { cursor: pointer; }
+.fcell rect.box { stroke: #2c3346; stroke-width: 1; }
+.fcell text { pointer-events: none; }
+.fcell text.t1 { fill: var(--fg); font-size: 12px; font-weight: 600; }
+.fcell text.t2 { fill: var(--fg-faint); font-size: 10px; font-family: ui-monospace, Consolas, monospace; }
+.fcell:hover rect.box { stroke: var(--fg-dim); }
+.fcell.sel rect.box { stroke: #fff; stroke-width: 1.8; }
+.fcell.open rect.box { stroke-dasharray: 5 3; }
+.fcell.match rect.box { stroke: var(--hot); stroke-width: 1.6; }
+.fcell.faint { opacity: .25; }
+
+.fempty { fill: var(--fg-faint); font-size: 14px; }
+
+.hubs { margin-top: 8px; }
+.hubs .c.on { border-color: var(--accent); color: var(--fg); }
+
+button:disabled { opacity: .35; cursor: default; }
+button:disabled:hover { color: var(--fg-dim); border-color: var(--line-2); }
+
 /* ----------------------------------------------------------- outline */
 
 #outline { position: absolute; inset: 0; overflow: auto; padding: 10px 6px 60px; }
