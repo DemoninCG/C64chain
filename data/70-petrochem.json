@@ -281,7 +281,14 @@
                   "era": "1930s",
                   "confidence": "medium",
                   "note": "Established: A fired or steam reboiler supplies the vapour to the bottom of the tower, and side strippers remove the light ends from the kerosene and gas-oil draws so the side columns are not l as standard practice. Not established: the era specific prevalence supplier choices and detailed operating splits as given.",
-                  "provenance": "incomplete"
+                  "provenance": "incomplete",
+                  "edges": [
+  {
+    "to": "facility.steam",
+    "rel": "consumes",
+    "basis": "typical-1982"
+  }
+]
                 },
                 {
                   "id": "chem.refining.atmospheric-distillation.fractionating-tower.overhead",
@@ -434,7 +441,14 @@
                   ],
                   "confidence": "medium",
                   "note": "Not established: the vessel dimensions, coke tonnage per cycle, yield range and cycle time quoted, and the characterisation of drum switching as the highest-risk refinery operation.",
-                  "provenance": "incomplete"
+                  "provenance": "incomplete",
+                  "edges": [
+  {
+    "to": "facility.water",
+    "rel": "consumes",
+    "basis": "typical-1982"
+  }
+]
                 }
               ],
               "confidence": "low",
@@ -584,7 +598,14 @@
               ],
               "confidence": "medium",
               "note": "Not established: the furnace temperature range and first-stage conversion figures quoted, and the operating claims about rich-side firing, oxygen excess and soot plugging.",
-              "provenance": "incomplete"
+              "provenance": "incomplete",
+              "edges": [
+  {
+    "to": "chem.natural-gas.composition.h2s",
+    "rel": "consumes",
+    "basis": "typical-1982"
+  }
+]
             }
           ],
           "confidence": "high",
@@ -844,7 +865,14 @@
               "sources": [
                 "https://en.wikipedia.org/wiki/Steam%20cracking"
               ],
-              "note": "Feed is mixed with very hot steam and briefly heated in a furnace with the reaction temperature around 850 C. Not established: the 20-40 m box with 40-80 coiled coils, the 4 in cast tube in ten passes, the 30-50 MW firing rate, and the roughly 70% radiant duty. The 800-900 C range is for modern units, not a 1982 figure."
+              "note": "Feed is mixed with very hot steam and briefly heated in a furnace with the reaction temperature around 850 C. Not established: the 20-40 m box with 40-80 coiled coils, the 4 in cast tube in ten passes, the 30-50 MW firing rate, and the roughly 70% radiant duty. The 800-900 C range is for modern units, not a 1982 figure.",
+              "edges": [
+  {
+    "to": "chem.ethylene.steam-cracking",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
             },
             {
               "id": "chem.ethylene.steam-cracking.decoking",
@@ -863,6 +891,11 @@
                   "to": "chem.ethylene.steam-cracking.decoking.coke",
                   "rel": "produces",
                   "role": "product"
+                },
+                {
+                  "to": "chem.ethylene.steam-cracking",
+                  "rel": "step",
+                  "basis": "typical-1982"
                 }
               ]
             },
@@ -942,7 +975,14 @@
               ],
               "confidence": "low",
               "note": "Established: The cracked gas is quenched with recycled process gas rather than directly with liquid, stopping at 350-400 C as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
-              "provenance": "incomplete"
+              "provenance": "incomplete",
+              "edges": [
+  {
+    "to": "chem.ethylene.quench",
+    "rel": "step",
+    "basis": "typical-1982"
+  }
+]
             },
             {
               "id": "chem.ethylene.quench.decanter",
@@ -954,7 +994,14 @@
               "era": "1950s",
               "confidence": "low",
               "note": "Established: The condensed liquid is settled and decanted, separating the heavy C9+ tar from the gasoline and C4 streams as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
-              "provenance": "incomplete"
+              "provenance": "incomplete",
+              "edges": [
+  {
+    "to": "chem.ethylene.quench",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
             }
           ],
           "confidence": "low",
@@ -1095,7 +1142,14 @@
                 "https://en.wikipedia.org/wiki/Ethylene%20glycol"
               ],
               "note": "Diethylene and triethylene glycol are the major byproducts and separating them from water is energy-intensive, which is the point this node makes. Not established: the 197, 245 and 285 C boiling points, the 30-100 mbar vacuum and the multi-column configuration.",
-              "provenance": "incomplete"
+              "provenance": "incomplete",
+              "edges": [
+  {
+    "to": "chem.ethylene.ethylene-glycol",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
             }
           ],
           "facts": [
@@ -1776,7 +1830,14 @@
                   "era": "1950s",
                   "confidence": "medium",
                   "note": "The description of furnace-tube coking in butane dehydrogenation is standard. Specific designs vary.",
-                  "provenance": "incomplete"
+                  "provenance": "incomplete",
+                  "edges": [
+  {
+    "to": "chem.butadiene.sources.houdry",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
                 }
               ],
               "facts": [
@@ -1831,6 +1892,11 @@
                 {
                   "to": "chem.butadiene.polymerisation.lithium-catalyst.butyllithium",
                   "rel": "consumes"
+                },
+                {
+                  "to": "chem.butadiene.polymerisation",
+                  "rel": "step",
+                  "basis": "typical-1982"
                 }
               ]
             },
@@ -1995,7 +2061,14 @@
               "era": "1970s",
               "confidence": "medium",
               "note": "Not established: the tube count, tube dimensions, pressure range and train arrangement quoted, and the claim that the furnace was the dominant plant energy consumer driving heat-integration work.",
-              "provenance": "incomplete"
+              "provenance": "incomplete",
+              "edges": [
+  {
+    "to": "chem.styrene.dehydrogenation",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
             },
             {
               "id": "chem.styrene.dehydrogenation.fired-furnace",
@@ -2013,7 +2086,14 @@
               ],
               "note": "The heat of dehydrogenation of ethylbenzene is about 0.22 GJ/t; the figure here is rounded. Established: Dehydrogenation furnace as endothermic shell and tube bank. Not established: the stated heat figure and 1980s furnace specifics as given.",
               "confidence": "low",
-              "provenance": "incomplete"
+              "provenance": "incomplete",
+              "edges": [
+  {
+    "to": "chem.styrene.dehydrogenation",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
             }
           ],
           "confidence": "low",
@@ -2086,7 +2166,14 @@
                       ],
                       "confidence": "medium",
                       "note": "Not established: the melt-temperature, vacuum and residual-monomer figures quoted, and the stated operating window between melting and decomposition for polystyrene.",
-                      "provenance": "incomplete"
+                      "provenance": "incomplete",
+                      "edges": [
+  {
+    "to": "chem.styrene.polymerisation.bulk-gpps.finishing",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
                     },
                     {
                       "id": "chem.styrene.polymerisation.bulk-gpps.finishing.pelletiser",
@@ -2098,7 +2185,14 @@
                       "era": "1950s",
                       "confidence": "medium",
                       "note": "Not established: the die-hole count and diameter, bath-temperature and pellet-size figures quoted, and the claim that underwater pelletising was becoming the 1980s preference for polystyrene.",
-                      "provenance": "incomplete"
+                      "provenance": "incomplete",
+                      "edges": [
+  {
+    "to": "chem.styrene.polymerisation.bulk-gpps.finishing",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
                     }
                   ],
                   "confidence": "low",
@@ -2288,6 +2382,11 @@
             {
               "to": "chem.abs.san-matrix",
               "rel": "consumes"
+            },
+            {
+              "to": "chem.abs.grafting",
+              "rel": "step",
+              "basis": "documented"
             }
           ]
         },
@@ -2334,11 +2433,6 @@
               "provenance": "incomplete",
               "note": "Machine sizes and throughputs are typical of the era's compounding lines.",
               "edges": [
-                {
-                  "to": "chem.abs.regrind",
-                  "rel": "consumes",
-                  "basis": "inferred"
-                },
                 {
                   "to": "chem.abs.regrind",
                   "rel": "consumes",
@@ -2447,7 +2541,14 @@
           ],
           "confidence": "medium",
           "provenance": "incomplete",
-          "note": "The 200 ppm specification is a common engineering target; typical material arrives at 0.05-0.15%. The desiccant is recorded as a \"from\" ingredient: a drying step is made of its molecular sieve bed, it does not contain it. Not established: the 80-90 C for 2-4 h drying cycle, the under 0.02% moisture target, and the 3A molecular sieve bed as 1980s ABS practice. The 0.3-0.4 wt% equilibrium moisture figure and the silver-streak, void and lost-impact-strength failure mode are plausible but undocumented here."
+          "note": "The 200 ppm specification is a common engineering target; typical material arrives at 0.05-0.15%. The desiccant is recorded as a \"from\" ingredient: a drying step is made of its molecular sieve bed, it does not contain it. Not established: the 80-90 C for 2-4 h drying cycle, the under 0.02% moisture target, and the 3A molecular sieve bed as 1980s ABS practice. The 0.3-0.4 wt% equilibrium moisture figure and the silver-streak, void and lost-impact-strength failure mode are plausible but undocumented here.",
+          "edges": [
+  {
+    "to": "chem.abs.drying.desiccant",
+    "rel": "consumes",
+    "basis": "documented"
+  }
+]
         },
         
         {
@@ -2819,7 +2920,7 @@
                   "category": "plastics",
                   "era": "1940s",
                   "children": [],
-                  "confidence": "high",
+                  "confidence": "medium",
                   "provenance": "incomplete",
                   "note": "Established: the Rochow direct process is the standard industrial route to organosilicon chlorosilanes reported by Rochow and Muller in the 1940s. Not established: the stated tonnages dates temperatures pressures yields and 1980s operating details as given.",
                   "edges": [
@@ -3197,9 +3298,19 @@
           "value": "4-6%"
         }
       ],
-      "confidence": "low",
+      "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Established: C2H6O, boiling 78.4 C as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: C2H6O, boiling 78.4 C as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "edges": [
+  {
+    "to": "chem.ethylene.monomer",
+    "rel": "made from",
+    "basis": "documented"
+  }
+],
+      "sources": [
+  "https://patents.google.com/patent/US3686334A/en"
+]
     },
     "chem.sulfur": {
       "id": "chem.sulfur",
@@ -3588,6 +3699,11 @@
             {
               "to": "chem.isopropanol",
               "rel": "consumes"
+            },
+            {
+              "to": "chem.solvents.trichloroethane",
+              "rel": "consumes",
+              "basis": "documented"
             }
           ]
         },
@@ -3672,7 +3788,14 @@
           "era": "1960s",
           "confidence": "low",
           "provenance": "incomplete",
-          "note": "Established: The hydrogenating reactors make water and ammonia, and the separator water carries dissolved H2S and NH3 as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+          "note": "Established: The hydrogenating reactors make water and ammonia, and the separator water carries dissolved H2S and NH3 as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+          "edges": [
+  {
+    "to": "facility.steam",
+    "rel": "consumes",
+    "basis": "typical-1982"
+  }
+]
         }
       ],
       "confidence": "low",
@@ -4131,7 +4254,19 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Ethylbenzene"
       ],
-      "note": "Catalytic dehydrogenation of ethylbenzene gives hydrogen and styrene, and over 99% of ethylbenzene production goes to styrene. Not established: magnetite or hematite promoted with potassium oxide, copper oxide and molybdenum, the extruded ring or granular bed form, the 600-700 C, 40-50% per-pass conversion and 90-93% selectivity, and the sulfolane polymerisation inhibitor."
+      "note": "Catalytic dehydrogenation of ethylbenzene gives hydrogen and styrene, and over 99% of ethylbenzene production goes to styrene. Not established: magnetite or hematite promoted with potassium oxide, copper oxide and molybdenum, the extruded ring or granular bed form, the 600-700 C, 40-50% per-pass conversion and 90-93% selectivity, and the sulfolane polymerisation inhibitor.",
+      "edges": [
+  {
+    "to": "metal.magnetite",
+    "rel": "made from",
+    "basis": "documented"
+  },
+  {
+    "to": "metal.hematite",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
     },
     "chem.styrene.ethylbenzene.zeolite-catalyst": {
       "id": "chem.styrene.ethylbenzene.zeolite-catalyst",
@@ -4214,7 +4349,14 @@
       ],
       "confidence": "medium",
       "note": "Glass transition values for elastomers vary a few degrees with grade and measurement.",
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+  {
+    "to": "chem.butadiene.polymerisation",
+    "rel": "step",
+    "basis": "inferred"
+  }
+]
     },
     "chem.butadiene.polymerisation.neodymium-catalyst.neodymium-source": {
       "id": "chem.butadiene.polymerisation.neodymium-catalyst.neodymium-source",
@@ -4253,7 +4395,7 @@
       "id": "chem.butadiene.polymerisation.lithium-catalyst.butyllithium",
       "name": "Butyllithium",
       "simple_name": "Butyllithium",
-      "description": "A pyrophoric organolithium, always supplied as a 10-20% solution in hexane and never in bulk. In 1980s practice it was the initiator for the solution polymerisation of polybutadiene and for the SBR made by anionic polymerisation, and its manufacture from lithium metal and butyl chloride or butane was a speciality chemical operation with a lot of solvent handling.",
+      "description": "A pyrophoric organolithium, always supplied as a 10-20% solution in hexane and never in bulk. In 1980s practice it was the initiator for the solution polymerisation of polybutadiene and for the SBR made by anionic polymerisation, and its manufacture from lithium metal and butyl chloride was a speciality chemical operation with a lot of solvent handling.",
       "kind": "material",
       "category": "plastics",
       "era": "1960s",
@@ -4268,7 +4410,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Organolithium%20chemistry"
       ],
-      "note": "Butyllithium is among the most used organolithium reagents. Not established: the 10-20 wt% solution in hexane, its pyrophoricity as a handling fact for this application, and the manufacture from lithium metal and butyl chloride or butane."
+      "note": "Butyllithium is among the most used organolithium reagents. Not established: the 10-20 wt% solution in hexane, its pyrophoricity as a handling fact for this application, and the manufacture from lithium metal and butyl chloride."
     },
     "chem.butadiene.sources.cracker-c4": {
       "id": "chem.butadiene.sources.cracker-c4",
@@ -4315,7 +4457,14 @@
       "era": "1960s",
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Furfural is a biomass-derived chemical rather than a petrochemical one, and it is the one clear biomass input in the C4 chain."
+      "note": "Furfural is a biomass-derived chemical rather than a petrochemical one, and it is the one clear biomass input in the C4 chain.",
+      "edges": [
+  {
+    "to": "chem.butadiene.sources.sounsby.furfural.pentosan-residue",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
     },
     "chem.butadiene.sources.sounsby.nmp": {
       "id": "chem.butadiene.sources.sounsby.nmp",
@@ -4364,6 +4513,11 @@
           "to": "chem.propylene.sources.cracker-c3",
           "rel": "made from",
           "basis": "inferred"
+        },
+        {
+          "to": "chem.propylene.sources.propylene-splitter",
+          "rel": "step",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -4536,7 +4690,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Epichlorohydrin",
         "https://en.wikipedia.org/wiki/Epoxy"
-      ]
+      ],
+      "edges": [
+  {
+    "to": "metal.chlorine",
+    "rel": "made from",
+    "basis": "inferred"
+  }
+]
     },
     "chem.epoxy.hardeners": {
       "id": "chem.epoxy.hardeners",
@@ -4574,7 +4735,14 @@
       "era": "1960s",
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Not established: the polyol reactants listed, the functionality and glass-transition claims, and the account of brominated novolac epoxy as the FR-4 flame-retardant system."
+      "note": "Not established: the polyol reactants listed, the functionality and glass-transition claims, and the account of brominated novolac epoxy as the FR-4 flame-retardant system.",
+      "edges": [
+  {
+    "to": "chem.epoxy.dgeba",
+    "rel": "made from",
+    "basis": "inferred"
+  }
+]
     },
     "chem.epoxy.brominated-epoxy": {
       "id": "chem.epoxy.brominated-epoxy",
@@ -4596,7 +4764,14 @@
       ],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "FR-4 formulations vary; not all consumer FR-4 of the 1980s was brominated, and the C64's board grade is not documented."
+      "note": "FR-4 formulations vary; not all consumer FR-4 of the 1980s was brominated, and the C64's board grade is not documented.",
+      "edges": [
+  {
+    "to": "chem.epoxy.dgeba",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
     },
     "chem.epoxy.dgeba.bisphenol-a.acetone": {
       "id": "chem.epoxy.dgeba.bisphenol-a.acetone",
@@ -4608,7 +4783,14 @@
       "era": "1950s",
       "note": "The cumene chain is chem.propylene.cumene. Established: Acetone as BPA co-reactant from shared cumene oxidation. Not established: the stated reactor proximity and bisphenol routing specifics as given.",
       "confidence": "medium",
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+  {
+    "to": "chem.propylene.cumene.cleavage.acetone",
+    "rel": "made of",
+    "basis": "inferred"
+  }
+]
     },
     "chem.ethylene.feedstock": {
       "id": "chem.ethylene.feedstock",
@@ -4621,7 +4803,19 @@
       "children": [],
       "confidence": "low",
       "note": "Established: Naphtha was 70-80% of world cracker capacity in 1983, ethane and propane 20-30% as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+  {
+    "to": "chem.ethylene.feedstock.naphtha",
+    "rel": "made from",
+    "basis": "documented"
+  },
+  {
+    "to": "chem.ethylene.feedstock.ethane",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
     },
     "chem.ethylene.uses-c64": {
       "id": "chem.ethylene.uses-c64",
@@ -4711,7 +4905,14 @@
       "era": "1950s",
       "note": "Upstream: chem.ethylene.ethylene-glycol. Established: Ethylene glycol for PET with high purity hydrolysis control. Not established: the stated 2.2 tonne ratio and 99.9 percent purity specifics as given.",
       "confidence": "low",
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+  {
+    "to": "chem.ethylene.ethylene-glycol",
+    "rel": "step",
+    "basis": "documented"
+  }
+]
     },
     "chem.refining.catalytic-reforming.platinum-catalyst": {
       "id": "chem.refining.catalytic-reforming.platinum-catalyst",
@@ -4828,7 +5029,14 @@
       ],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Regrind fractions are practice rather than specification. A moulding plant's own rules governed this."
+      "note": "Regrind fractions are practice rather than specification. A moulding plant's own rules governed this.",
+      "edges": [
+  {
+    "to": "chem.abs.grade",
+    "rel": "made of",
+    "basis": "inferred"
+  }
+]
     },
     "chem.abs.grade": {
       "id": "chem.abs.grade",
@@ -5159,7 +5367,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Ziegler%E2%80%93Natta%20catalyst"
       ],
-      "note": "All modern supported Ziegler-Natta catalysts use TiCl4 as the active ingredient on an MgCl2 support, and the 1970s discovery that magnesium chloride greatly enhances titanium catalyst activity is what made the supported catalyst family dominant. Not established: the roughly hundred active sites per gram, the 50-80 C and 50-100 bar conditions, and the AlEt2Cl alternative cocatalyst."
+      "note": "All modern supported Ziegler-Natta catalysts use TiCl4 as the active ingredient on an MgCl2 support, and the 1970s discovery that magnesium chloride greatly enhances titanium catalyst activity is what made the supported catalyst family dominant. Not established: the roughly hundred active sites per gram, the 50-80 C and 50-100 bar conditions, and the AlEt2Cl alternative cocatalyst.",
+      "edges": [
+  {
+    "to": "metal.titanium-tetrachloride",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
     },
     "chem.ethylene.polyethylene.hdpe.ziegler-natta.aluminium-alkyl": {
       "id": "chem.ethylene.polyethylene.hdpe.ziegler-natta.aluminium-alkyl",
@@ -5181,7 +5396,19 @@
         "https://en.wikipedia.org/wiki/Triethylaluminium",
         "https://en.wikipedia.org/wiki/Ziegler%E2%80%93Natta%20catalyst"
       ],
-      "note": "Triethylaluminium is exceedingly pyrophoric and is the organoaluminium cocatalyst paired with titanium-based catalysts. Not established: its alkylation of titanium and reduction of Ti(IV) to Ti(III), its water and oxygen scavenging, and the 5-10% dilution in hydrocarbon as 1980s handling practice."
+      "note": "Triethylaluminium is exceedingly pyrophoric and is the organoaluminium cocatalyst paired with titanium-based catalysts. Not established: its alkylation of titanium and reduction of Ti(IV) to Ti(III), its water and oxygen scavenging, and the 5-10% dilution in hydrocarbon as 1980s handling practice.",
+      "edges": [
+  {
+    "to": "metal.aluminum",
+    "rel": "made from",
+    "basis": "documented"
+  },
+  {
+    "to": "chem.ethylene.monomer",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
     },
     "chem.ethylene.polyethylene.ldpe.initiator": {
       "id": "chem.ethylene.polyethylene.ldpe.initiator",
@@ -5232,7 +5459,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Ethylene%20oxide"
       ],
-      "note": "Almost all industrial ethylene oxide has been made by direct oxidation of ethylene over a silver catalyst since 1940. Not established: 10-20% silver on low-surface-area alpha-alumina, the chlorine promoter, the 80-90% selectivity and 10-15% per-pass conversion, the 2-5 year catalyst life, and the silver recovery."
+      "note": "Almost all industrial ethylene oxide has been made by direct oxidation of ethylene over a silver catalyst since 1940. Not established: 10-20% silver on low-surface-area alpha-alumina, the chlorine promoter, the 80-90% selectivity and 10-15% per-pass conversion, the 2-5 year catalyst life, and the silver recovery.",
+      "edges": [
+  {
+    "to": "metal.silver",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
     },
     "chem.ethylene.steam-cracking.furnace.coiled-coil": {
       "id": "chem.ethylene.steam-cracking.furnace.coiled-coil",
@@ -5363,7 +5597,14 @@
       ],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Not established: the blend proportions, slurry density range, pumping rates and thickening times quoted, and how widely silica flour and fluid-loss additives were used in early-1980s Class G jobs."
+      "note": "Not established: the blend proportions, slurry density range, pumping rates and thickening times quoted, and how widely silica flour and fluid-loss additives were used in early-1980s Class G jobs.",
+      "edges": [
+  {
+    "to": "facility.power.cement-portland",
+    "rel": "made of",
+    "basis": "documented"
+  }
+]
     },
     "chem.crude.rig.casing-cement.dispersant": {
       "id": "chem.crude.rig.casing-cement.dispersant",
@@ -5576,7 +5817,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Iron(III)%20chloride"
       ],
-      "note": "Copper etching by ferric chloride, with the copper(II) chloride rinsed away, is standard. Not established: the 35-42 degrees Baume working concentration, the about 3-5 molar figure, and the chlorine-cell and hydrogen-peroxide regeneration routes."
+      "note": "Copper etching by ferric chloride, with the copper(II) chloride rinsed away, is standard. Not established: the 35-42 degrees Baume working concentration, the about 3-5 molar figure, and the chlorine-cell and hydrogen-peroxide regeneration routes.",
+      "edges": [
+  {
+    "to": "metal.chlorine",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
     },
     "chem.pcb-chemicals.dry-film-resist.lamination.release-liner": {
       "id": "chem.pcb-chemicals.dry-film-resist.lamination.release-liner",
@@ -5665,7 +5913,14 @@
       "inputs": [],
       "note": "The hydrogen for the chlorine and hydrogen burner is chem.natural-gas.uses.hydrogen. Established: Electronic grade hydrochloric acid for piranha native oxide etch and plasma chloride chemistry. Not established: the stated normality grades and chemical room specifics as given.",
       "confidence": "low",
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+  {
+    "to": "metal.hydrochloric-acid",
+    "rel": "made of",
+    "basis": "typical-1982"
+  }
+]
     },
     "chem.fab-chemicals.nitric-acid": {
       "id": "chem.fab-chemicals.nitric-acid",
@@ -6058,7 +6313,14 @@
       "era": "1920s",
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Not established: the boiling point, synthesis routes and end-use list quoted, and the regulatory account of late-1980s US EPA action on degreasing and aerosol-propellant uses."
+      "note": "Not established: the boiling point, synthesis routes and end-use list quoted, and the regulatory account of late-1980s US EPA action on degreasing and aerosol-propellant uses.",
+      "edges": [
+  {
+    "to": "chem.natural-gas.composition.methane",
+    "rel": "made from",
+    "basis": "typical-1982"
+  }
+]
     },
     "chem.solvents.cfc": {
       "id": "chem.solvents.cfc",
@@ -6550,7 +6812,7 @@
       "category": "fluids",
       "era": "ancient",
       "children": [],
-      "confidence": "low",
+      "confidence": "medium",
       "provenance": "incomplete",
       "note": "Established: Sodium montmorillonite is a dioctahedral 2:1 smectite: two tetrahedral silica sheets sandwiching an octahedral aluminium sheet, with the negative layer charge balanced by exchangea as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
       "edges": [
@@ -6559,7 +6821,11 @@
           "rel": "made from",
           "basis": "documented"
         }
-      ]
+      ],
+      "sources": [
+  "https://pubs.usgs.gov/publication/b1082M",
+  "https://patents.google.com/patent/US20170260098A1/en"
+]
     },
     "chem.crude.rig.drilling-mud.bentonite.montmorillonite.soda-ash.clay-pit": {
       "id": "chem.crude.rig.drilling-mud.bentonite.montmorillonite.soda-ash.clay-pit",
@@ -7092,7 +7358,14 @@
       "era": "1970s",
       "confidence": "medium",
       "note": "Not established: the boiling-range cut, the relative ethylene cost claim, and the statement that gas-oil cracking had mostly disappeared by the 1980s.",
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+  {
+    "to": "chem.petroleum",
+    "rel": "made from",
+    "basis": "typical-1982"
+  }
+]
     },
     "chem.crude.rig.drilling-mud.bentonite": {
       "id": "chem.crude.rig.drilling-mud.bentonite",
@@ -7455,14 +7728,24 @@
       "category": "silicon",
       "era": "1970s",
       "note": "Helium separation from a natural gas plant belongs to the gas processing branch: chem.natural-gas.processing. Established: Helium as cryogenic natural gas liquids byproduct for leak detection and cooling. Not established: the stated concentration ranges and purity specifics as given.",
-      "confidence": "low",
-      "provenance": "incomplete"
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "edges": [
+  {
+    "to": "chem.natural-gas",
+    "rel": "made from",
+    "basis": "documented"
+  }
+],
+      "sources": [
+  "https://www.usgs.gov/news/national-news-release/usgs-estimates-306-billion-cubic-feet-recoverable-helium-united-states"
+]
     },
     "chem.fab-chemicals.process-gases.argon": {
       "id": "chem.fab-chemicals.process-gases.argon",
       "name": "Argon",
       "simple_name": "Argon",
-      "description": "A by-product of the air separation unit at 1-3% of the air, purified to 99.999%. It fills the sputtering cathodes (the argon ions are accelerated across the gap and knock atoms out of the aluminium or titanium target) and it is the inert atmosphere of the annealing and ashing steps. The sputtering itself is the metals chain, but the gas that drives it is an air separation product.",
+      "description": "A by-product of the air separation unit at 0.93% of dry air, purified to 99.999%. It fills the sputtering cathodes (the argon ions are accelerated across the gap and knock atoms out of the aluminium or titanium target) and it is the inert atmosphere of the annealing and ashing steps. The sputtering itself is the metals chain, but the gas that drives it is an air separation product.",
       "kind": "material",
       "category": "silicon",
       "era": "1970s",
@@ -7471,7 +7754,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Argon"
       ],
-      "note": "Argon is a byproduct of cryogenic air separation. Not established: the 1-3% of air figure, the 99.999% purity, and the description of argon filling sputtering cathodes and inerting the annealing and ashing steps in a 1980s fab.",
+      "note": "Argon is a byproduct of cryogenic air separation. Established: 0.93% of dry air. Not established: the 99.999% purity, and the description of argon filling sputtering cathodes and inerting the annealing and ashing steps in a 1980s fab.",
       "edges": [
         {
           "to": "facility.nitrogen.atmospheric-air",
@@ -7512,7 +7795,14 @@
       "era": "1980s",
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "BCl3 is made by chlorinating boron oxide or elemental boron; the chemistry is standard but the 1980s supply details are not well documented."
+      "note": "BCl3 is made by chlorinating boron oxide or elemental boron; the chemistry is standard but the 1980s supply details are not well documented.",
+      "edges": [
+  {
+    "to": "metal.chlorine",
+    "rel": "made of",
+    "basis": "typical-1982"
+  }
+]
     },
     "chem.fab-chemicals.etch-gases.nf3": {
       "id": "chem.fab-chemicals.etch-gases.nf3",
@@ -7595,7 +7885,14 @@
       ],
       "confidence": "low",
       "provenance": "incomplete",
-      "note": "Established: The catalyst is not a mystery material: it is activated alumina, and the alumina is refined from bauxite as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: The catalyst is not a mystery material: it is activated alumina, and the alumina is refined from bauxite as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "edges": [
+  {
+    "to": "metal.bauxite",
+    "rel": "made from",
+    "basis": "typical-1982"
+  }
+]
     },
     "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina": {
       "id": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina",
@@ -7625,7 +7922,7 @@
       "id": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.zsm-5",
       "name": "ZSM-5 octane additive",
       "simple_name": "ZSM-5 octane additive",
-      "description": "A small-pore zeolite (mordenite framework, 10-membered rings) blended at 3-15% into the USY catalyst to crack the C7-C10 straight chains that were killing octane after the lead phase-down. This is the direct ancestor of the propylene and isobutylene it also made: ZSM-5 selectively shapes the products towards C3 and C4 olefins.",
+      "description": "A small-pore zeolite (MFI framework, 10-membered rings) blended at 3-15% into the USY catalyst to crack the C7-C10 straight chains that were killing octane after the lead phase-down. This is the direct ancestor of the propylene and isobutylene it also made: ZSM-5 selectively shapes the products towards C3 and C4 olefins.",
       "kind": "material",
       "category": "fluids",
       "era": "1970s",
@@ -7679,7 +7976,14 @@
               "era": "1970s",
               "confidence": "low",
               "provenance": "incomplete",
-              "note": "Established: A brazed plate-and-fin aluminium exchanger 10-30 m long, cryogenic to -80 C, containing dozens of channels as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+              "note": "Established: A brazed plate-and-fin aluminium exchanger 10-30 m long, cryogenic to -80 C, containing dozens of channels as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+              "edges": [
+  {
+    "to": "metal.aluminum.ingot",
+    "rel": "made from",
+    "basis": "typical-1982"
+  }
+]
             }
           ],
           "confidence": "low",
@@ -7863,7 +8167,14 @@
           ],
           "confidence": "medium",
           "note": "Not established: the furnace temperature range, pressure range and per-pass acetylene yield quoted, and the burner-material and soot-sensitivity claims.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "chem.natural-gas.composition.methane",
+    "rel": "consumes",
+    "basis": "typical-1982"
+  }
+]
         },
         {
           "id": "chem.natural-gas.uses.acetylene.quench",
@@ -8152,7 +8463,14 @@
           "era": "1950s",
           "confidence": "medium",
           "provenance": "incomplete",
-          "note": "Not established: the tray count, pressure and cut-point figures quoted, the stream-routing description, and the maintenance remark about furnace cleaning."
+          "note": "Not established: the tray count, pressure and cut-point figures quoted, the stream-routing description, and the maintenance remark about furnace cleaning.",
+          "edges": [
+  {
+    "to": "chem.butadiene.sources.cracker-c4.c4-recovery",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
         },
         {
           "id": "chem.butadiene.sources.cracker-c4.c4-recovery.c3-c4-splitter",
@@ -8164,7 +8482,14 @@
           "era": "1950s",
           "confidence": "medium",
           "provenance": "incomplete",
-          "note": "Not established: the tray count quoted and the claim that the column exists only to keep propane out of the downstream extractor feed."
+          "note": "Not established: the tray count quoted and the claim that the column exists only to keep propane out of the downstream extractor feed.",
+          "edges": [
+  {
+    "to": "chem.butadiene.sources.cracker-c4.c4-recovery",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
         }
       ],
       "confidence": "low",
@@ -8230,7 +8555,14 @@
           ],
           "confidence": "medium",
           "note": "Not established: the tray count, column height, relative volatility and reflux-ratio figures quoted, and the description of 1980s low-pressure-drop and side-stripper developments.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "chem.propylene.sources.cracker-c3.c3-recovery",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
         }
       ],
       "confidence": "low",
@@ -8587,7 +8919,14 @@
             "https://en.wikipedia.org/wiki/Phosphorus"
           ],
           "note": "Phosphate rock with sand and coke is heated to 1,200-1,500 C to give P4. Not established: the 30-100 MW furnace rating, the three graphite electrodes, the condensation and storage under water, and the 100,000-150,000 tonne per year US figure for a 1980s plant.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphate-rock",
+    "rel": "consumes",
+    "basis": "typical-1982"
+  }
+]
         },
         {
           "id": "chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphoric-acid",
@@ -8938,7 +9277,19 @@
       "era": "1980s",
       "note": "Cross-link: chem.butadiene. The nitrile rubber it is cut from is described under chem.butadiene; the copy of that node that used to sit here was folded away as a duplicate. Established: Packer elastomer nitrile HNBR as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s specifics as given.",
       "confidence": "medium",
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+  {
+    "to": "chem.acrylonitrile.monomer",
+    "rel": "made from",
+    "basis": "documented"
+  },
+  {
+    "to": "chem.butadiene",
+    "rel": "step",
+    "basis": "documented"
+  }
+]
     },
     "chem.crude.rig.bit.tungsten-carbide": {
       "id": "chem.crude.rig.bit.tungsten-carbide",
@@ -9251,7 +9602,14 @@
           "era": "1980s",
           "confidence": "low",
           "note": "Established: Active and reserve pits, the pump, the surface mixing hopper (mud pit) and the flowline over the shaker as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "chem.crude.rig.drilling-mud",
+    "rel": "consumes",
+    "basis": "documented"
+  }
+]
         }
       ],
       "confidence": "medium",
@@ -9944,7 +10302,7 @@
               "id": "chem.crude.separation.oil-water-coalescer",
               "name": "Oil-water coalescer",
               "simple_name": "Oil-water coalescer",
-              "description": "A packed or membrane device that lets separated water droplets out of the crude without carrying oil. Produced-water disposal in 1983 was to a pit or a treatment plant. The offshore discharge limit under the 1983 amendments to the US Clean Water Act required 42 ppm oil and no visible sheen, which is why coalescers and hydrocyclones appeared on offshore platforms.",
+              "description": "A packed or membrane device that lets separated water droplets out of the crude without carrying oil. Produced-water disposal in 1983 was to a pit or a treatment plant. The offshore discharge limit under the US Clean Water Act offshore rules (1979, 44 FR 22075) required 42 ppm oil and no visible sheen, which is why coalescers and hydrocyclones appeared on offshore platforms.",
               "kind": "tool",
               "category": "industry",
               "era": "1980s",
@@ -10127,7 +10485,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Polycarbonate"
       ],
-      "confidence": "high",
+      "confidence": "medium",
       "provenance": "incomplete",
       "note": "Established: bisphenol A polycarbonate is a strong tough transparent engineering thermoplastic with carbonate groups, made by the interfacial phosgene route, with bisphenol A residue. Not established: 1983 tonnages, interfacial and melt-polycondensation temperatures pressures and purities, and the bisphenol A feedstock route as 1982 practice. The bisphenol A half of the feed has no canonical material node. The phosgene half is chem.polycarbonate.phosgene.",
       "edges": [
@@ -10252,7 +10610,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Polystyrene"
       ],
-      "confidence": "high",
+      "confidence": "medium",
       "provenance": "incomplete",
       "note": "Established: polystyrene is the styrene polymer, with general purpose grade clear hard and brittle, at several million tonnes a year. Not established: 1983 tonnages, bulk and suspension temperatures pressures conversions and initiator loadings, and residual monomer levels as 1982 practice. The styrene monomer feed has no canonical material node. Ethylbenzene and dehydrogenation are under chem.styrene.",
       "edges": [
@@ -10694,7 +11052,24 @@
         "confidence": "low",
         "note": "Andrussow versus by-product split and containment specifics not established; feed grade only.",
         "children": [],
-        "provenance": "incomplete"
+        "provenance": "incomplete",
+        "edges": [
+  {
+    "to": "chem.natural-gas.composition.methane",
+    "rel": "made from",
+    "basis": "documented"
+  },
+  {
+    "to": "metal.ammonia",
+    "rel": "made from",
+    "basis": "documented"
+  },
+  {
+    "to": "chem.acrylonitrile.sovere.byproducts",
+    "rel": "made from",
+    "basis": "inferred"
+  }
+]
       },
     "chem.butadiene.sources.sounsby.furfural.pentosan-residue": {
         "id": "chem.butadiene.sources.sounsby.furfural.pentosan-residue",
@@ -10794,7 +11169,14 @@
         "confidence": "low",
         "note": "Neat-cylinder delivery and 0.5-5% in hydrogen per candidate description only; BF3-from-fluorspar link not typed, left open.",
         "children": [],
-        "provenance": "incomplete"
+        "provenance": "incomplete",
+        "edges": [
+  {
+    "to": "metal.fluorspar",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
       },
     "chem.fab-chemicals.dopants.diborane.hydride-feed": {
         "id": "chem.fab-chemicals.dopants.diborane.hydride-feed",
@@ -10942,7 +11324,14 @@
         "confidence": "low",
         "note": "95 wt% purity trend per candidate description only; EO-branch link via chem.ethylene.ethylene-glycol noted but not typed.",
         "children": [],
-        "provenance": "incomplete"
+        "provenance": "incomplete",
+        "edges": [
+  {
+    "to": "chem.ethylene.monomer",
+    "rel": "made from",
+    "basis": "typical-1982"
+  }
+]
       },
     "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol.diethylene-glycol": {
         "id": "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol.diethylene-glycol",
@@ -10956,7 +11345,14 @@
         "confidence": "low",
         "note": "Contactor 20-50 C and reboiler figures per incoming dehydration prose only; grade only.",
         "children": [],
-        "provenance": "incomplete"
+        "provenance": "incomplete",
+        "edges": [
+  {
+    "to": "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol.ethylene-oxide",
+    "rel": "made from",
+    "basis": "typical-1982"
+  }
+]
       },
     "chem.natural-gas.uses.acetylene.to-vinyl-chloride.mercury-catalyst.mercuric-chloride": {
         "id": "chem.natural-gas.uses.acetylene.to-vinyl-chloride.mercury-catalyst.mercuric-chloride",
@@ -11005,7 +11401,14 @@
         "confidence": "low",
         "note": "25 micron and tenth-m2-per-panel figures per candidate description and note only; order-of-magnitude, grade only.",
         "children": [],
-        "provenance": "incomplete"
+        "provenance": "incomplete",
+        "edges": [
+  {
+    "to": "chem.polyester.pet.resin",
+    "rel": "made of",
+    "basis": "typical-1982"
+  }
+]
       },
     "chem.pcb-chemicals.dry-film-resist.lamination.release-liner.polyethylene-resin": {
         "id": "chem.pcb-chemicals.dry-film-resist.lamination.release-liner.polyethylene-resin",
@@ -11019,7 +11422,14 @@
         "confidence": "low",
         "note": "PE-versus-polyester choice per candidate description only; grade only.",
         "children": [],
-        "provenance": "incomplete"
+        "provenance": "incomplete",
+        "edges": [
+  {
+    "to": "chem.polyethylene.resin",
+    "rel": "made of",
+    "basis": "typical-1982"
+  }
+]
       },
     "chem.pcb-chemicals.plating.immersion-gold.electroless-nickel.hypophosphite.yellow-phosphorus": {
         "id": "chem.pcb-chemicals.plating.immersion-gold.electroless-nickel.hypophosphite.yellow-phosphorus",
@@ -11210,6 +11620,11 @@
             "rel": "produces",
             "role": "product",
             "basis": "documented"
+          },
+          {
+            "to": "mb.passives.caps.film.polyester-metallisation.pet-polymerisation.paraxylene",
+            "rel": "consumes",
+            "basis": "documented"
           }
         ],
         "provenance": "incomplete"
@@ -11254,7 +11669,14 @@
         "confidence": "low",
         "note": "UP-grade distinction only; chem.styrene is a process so not substituted, per verdict.",
         "children": [],
-        "provenance": "incomplete"
+        "provenance": "incomplete",
+        "edges": [
+  {
+    "to": "chem.styrene",
+    "rel": "step",
+    "basis": "inferred"
+  }
+]
       },
     "chem.polystyrene.resin.styrene-monomer": {
         "id": "chem.polystyrene.resin.styrene-monomer",
@@ -11626,7 +12048,14 @@
         "confidence": "low",
         "note": "100-140 C first step per candidate facts as representative only; Claus-burned sulphur origin noted but not typed.",
         "children": [],
-        "provenance": "incomplete"
+        "provenance": "incomplete",
+        "edges": [
+  {
+    "to": "chem.sulfur",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
       },
     "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.process-water": {
         "id": "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.process-water",
@@ -11681,7 +12110,14 @@
         "confidence": "medium",
         "note": "Novolac-cure versus rubber-accelerator dual role per candidate note not established; feed grade only.",
         "children": [],
-        "provenance": "incomplete"
+        "provenance": "incomplete",
+        "edges": [
+  {
+    "to": "chem.pom.formaldehyde",
+    "rel": "step",
+    "basis": "inferred"
+  }
+]
       },
     "chem.thermosets.phenolic.hexamine.synthesis": {
         "id": "chem.thermosets.phenolic.hexamine.synthesis",

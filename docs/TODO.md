@@ -165,6 +165,24 @@ stays readable.
   novolac precursor, methylchlorosilane intermediate (low priority),
   propylene-monomer material (tree-design call); mask-repair needle claim
   (possible anachronism, keep hedged).
+- Wave 2 hold-outs (petrochem, needs archive.org return or dedicated pass):
+  rulings — sulfolane second step (Shell patent: Raney-Ni hydrogenation vs
+  tree's base-hydrolysis account; process-water edge held out accordingly),
+  acrylic-acid route (tree's AN-hydrolysis account contradicts standard
+  propylene-oxidation history; existing made-from edge untouched pending
+  Kirk-Othmer read), PET-resin DMT leg (R1 vs R2 tension; held for R2 per
+  arsine precedent), silver-catalyst alumina leg (smelter-grade trap; silver
+  leg applied), EG 2.2 t/t figure (suspect vs ~0.33 stoichiometry);
+  NEW-NODE proposals — methanol material (×2 agents), refinery fuel gas,
+  sodium-lead alloy + ethyl chloride, residue materials, NiO + support
+  grades, lithium metal + n-butyl chloride, p-cresol + isobutylene (BHT),
+  FCC-C3 material, tubular LDPE reactor, bulk propylene oxide, methyl
+  chloride, urea, fermentation-ethanol feed, white-spirit cut,
+  tetrachloroethane, phosphorus trichloride; prose flags — Houdry
+  chromia-alumina (not Pt), kieselguhr SPA carrier (not soda-silica),
+  C3-splitter tray count (125–200, not 50–70), NMP synthesis rewrite,
+  expander/quench-exchanger conflation, diether-donor date; borane-from-
+  fluoride process missing boron feed (boric acid/borax).
 - Provenance research waves (guide: `docs/RESEARCH-GUIDE.md`; rulings R1–R5
   in §9): Wave 1 done (25 hubs, 92% agreement, applied). Remaining per
   §0 queue below, sliced by theme: petrochem monomers, silicon fab
