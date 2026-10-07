@@ -681,7 +681,8 @@
                   "to": "facility.electricity",
                   "rel": "consumes"
                 }
-              ]
+              ],
+              "provenance": "incomplete"
             }
           ],
           "edges": [
@@ -935,7 +936,8 @@
                   "to": "facility.electricity",
                   "rel": "consumes"
                 }
-              ]
+              ],
+              "provenance": "incomplete"
             },
             {
               "id": "mb.test.ict.presence",
@@ -953,7 +955,8 @@
                   "to": "facility.electricity",
                   "rel": "consumes"
                 }
-              ]
+              ],
+              "provenance": "incomplete"
             },
             {
               "id": "mb.test.ict.tester",
@@ -1079,7 +1082,8 @@
                   "to": "facility.electricity",
                   "rel": "consumes"
                 }
-              ]
+              ],
+              "provenance": "incomplete"
             }
           ]
         },
@@ -1212,7 +1216,8 @@
                   "to": "facility.electricity",
                   "rel": "consumes"
                 }
-              ]
+              ],
+              "provenance": "incomplete"
             }
           ],
           "note": "A last power-on pass over the cased machine before packing is ordinary factory practice. Not established: which ports or functions the C64 final pass covered, how long it ran, or what fraction of machines saw it.",
@@ -1356,7 +1361,8 @@
                 "https://en.wikipedia.org/wiki/RS-274X"
               ],
               "note": "On this board the drill programme is trivial to split out from the copper data, precisely because there are no vias: the drill file is only component holes, mounting holes and the connector slots. A via-heavy board of the same era is where plot data and drill data were most often confused, and the result was a hole in the wrong place.",
-              "confidence": "high"
+              "confidence": "high",
+              "provenance": "incomplete"
             }
           ],
           "edges": [
@@ -1421,7 +1427,8 @@
                   "to": "facility.electricity",
                   "rel": "consumes"
                 }
-              ]
+              ],
+              "provenance": "incomplete"
             },
             {
               "id": "mb.photo.plotter.laser",
@@ -1580,7 +1587,8 @@
         "mb.solder.wave"
       ],
       "confidence": "medium",
-      "note": "Piping nitrogen over the pot to thin the oxide skin and cut dross is an available option, with cheaper machines running open to air. Not established: whether the C64 line used a nitrogen blanket, at what flow, or the dross rate without it."
+      "note": "Piping nitrogen over the pot to thin the oxide skin and cut dross is an available option, with cheaper machines running open to air. Not established: whether the C64 line used a nitrogen blanket, at what flow, or the dross rate without it.",
+      "provenance": "incomplete"
     },
     "mb.solder.wave.cooling": {
       "id": "mb.solder.wave.cooling",
@@ -1603,7 +1611,8 @@
           "to": "facility.electricity",
           "rel": "consumes"
         }
-      ]
+      ],
+      "provenance": "complete"
     },
     "mb.photo.design.workstation.display.glass": {
       "id": "mb.photo.design.workstation.display.glass",
@@ -2366,7 +2375,8 @@
           "to": "facility.electricity",
           "rel": "consumes"
         }
-      ]
+      ],
+      "provenance": "incomplete"
     },
     "mb.photo.plotter.film": {
       "id": "mb.photo.plotter.film",
@@ -2658,7 +2668,8 @@
             "rel": "consumes",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "mb.pcb.laminate.prepreg": {
         "id": "mb.pcb.laminate.prepreg",
@@ -2728,7 +2739,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.pcb.legend.white-ink": {
         "id": "mb.pcb.legend.white-ink",
@@ -2748,7 +2760,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "mb.pcb.mask.ink": {
         "id": "mb.pcb.mask.ink",
@@ -2768,7 +2781,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       }
   }
 }

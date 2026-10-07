@@ -5449,7 +5449,8 @@
           ],
           "confidence": "medium",
           "children": [],
-          "note": "No source was found for the three-roll mill in this position. A three-roll gap mill is a standard machine for dispersing a pigment paste and breaking agglomerates by shear between rollers, and a narrow particle-size distribution is a real requirement for a fine phosphor dot, so the machine is a reasonable choice. Not established: the roll gap of a few microns set by feel, the 2-6 micron particle size quoted for screen-printing grade phosphor, and that a three-roll mill rather than a ball mill, a colloid mill or a bead mill was what a CRT phosphor line actually ran. The gap figure in particular is a shop-floor rule of thumb rather than a specification."
+          "note": "No source was found for the three-roll mill in this position. A three-roll gap mill is a standard machine for dispersing a pigment paste and breaking agglomerates by shear between rollers, and a narrow particle-size distribution is a real requirement for a fine phosphor dot, so the machine is a reasonable choice. Not established: the roll gap of a few microns set by feel, the 2-6 micron particle size quoted for screen-printing grade phosphor, and that a three-roll mill rather than a ball mill, a colloid mill or a bead mill was what a CRT phosphor line actually ran. The gap figure in particular is a shop-floor rule of thumb rather than a specification.",
+          "provenance": "incomplete"
         }
       ],
       "note": "Printing and firing are one operation on the panel and are kept as one node, because the frit only becomes a binder in the furnace: you cannot specify one without the other. The three-roll mill that refines the slurry is a child because it is capital equipment standing beside the line. The frit and the vehicle are ingredients and are not.",
@@ -5715,7 +5716,8 @@
       ],
       "confidence": "low",
       "note": "Ion-pump or penning-gauge helium leak testing at that sensitivity was standard practice. The exact acceptance spec varies by plant, which is why the confidence here is low. The node is the kiln: the leak test used to share the title with it, and two different objects do not belong in one name.",
-      "children": []
+      "children": [],
+      "provenance": "incomplete"
     },
     "peripheral.tv.crt.vacuum.rear-al": {
       "id": "peripheral.tv.crt.vacuum.rear-al",
@@ -5772,7 +5774,8 @@
         "sources": [],
         "confidence": "low",
         "note": "Not established: the species mix, plantation source and rotation; the packaging log node is conifer-leaning and is not substituted (wrong species/use). Renewable endpoint with no upstream typed edge (cf. forest-stand).",
-        "children": []
+        "children": [],
+        "provenance": "raw"
       },
     "peripheral.tv.cabinet.wood.veneer": {
         "id": "peripheral.tv.cabinet.wood.veneer",
@@ -5792,7 +5795,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "peripheral.tv.cabinet.wood.particle-board": {
         "id": "peripheral.tv.cabinet.wood.particle-board",

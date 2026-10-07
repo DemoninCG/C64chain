@@ -471,7 +471,8 @@
                   "sources": [
                     "http://www.zimmers.net/anonftp/pub/cbm/schematics/computers/c64/manual-html/Page_19.html"
                   ],
-                  "confidence": "high"
+                  "confidence": "high",
+                  "provenance": "incomplete"
                 }
               ],
               "note": "Not established: the 1N5400's ratings as quoted (100 V reverse, 3 A average at 75 C lead temperature), the DO-201AD epoxy-filled axial body, and the practice of marking the cathode with a stripe for the parts used in this supply. The 902503-02 teardown records only that the rectifier diodes \"should be marked 1N5400\"; no datasheet-level source was consulted."
@@ -1164,7 +1165,8 @@
           "confidence": "low",
           "note": "Confirmed only on some replacement bricks; not verified inside an original Commodore brick, and the 251053-02 teardown photo descriptions do not mention one. The 3-83/13-83 case markings list only 'power supply', no indicator, which suggests the indicator is on later units only.",
           "children": [],
-          "inputs": []
+          "inputs": [],
+          "provenance": "incomplete"
         },
         {
           "id": "c64.psu.nameplate",
@@ -3459,7 +3461,8 @@
               "note": "Exact creepage and clearance figures depend on the pollution degree, the insulation type and the applicable standard edition; the values above are the order of magnitude for basic insulation at these voltages, not a substitute for the standard's tables.",
               "inputs": [
                 "c64.psu.transformer.winding.screen"
-              ]
+              ],
+              "provenance": "incomplete"
             }
           ]
         }
@@ -3578,7 +3581,8 @@
       "note": "The 251053-02 teardown shows the heatsink as a 'featureless aluminium plate bent into a U-shape' with a drilled and tapped hole for the regulator screw; a drill bit slipped into the soft aluminium and had to be drilled out from several angles, which is a good illustration of how thin and soft the sink actually is.",
       "inputs": [
         "c64.psu.heatsink"
-      ]
+      ],
+      "provenance": "complete"
     },
     "c64.psu.regulator.variant-discrete.pass-npn.triple-diffusion": {
       "id": "c64.psu.regulator.variant-discrete.pass-npn.triple-diffusion",
@@ -4233,7 +4237,8 @@
       ],
       "note": "The C64 Wiki notes that beside the RF jack you often see an H-L switch for channels 3 and 4 (NTSC only) or a control dial for adjusting the oscillator frequency. The two mechanisms correspond to the two markets.",
       "children": [],
-      "inputs": []
+      "inputs": [],
+      "provenance": "incomplete"
     },
     "c64.mains.switch.contacts.copper-silver.silver-refining": {
       "id": "c64.mains.switch.contacts.copper-silver.silver-refining",
@@ -4790,7 +4795,8 @@
       "children": [],
       "inputs": [
         "c64.psu.transformer.winding.screen"
-      ]
+      ],
+      "provenance": "complete"
     },
     "c64.mains.approvals": {
       "id": "c64.mains.approvals",
@@ -4851,7 +4857,8 @@
           "children": [],
           "inputs": [
             "chem.abs"
-          ]
+          ],
+          "provenance": "incomplete"
         },
         {
           "id": "c64.mains.approvals.normal-tests",
@@ -4960,7 +4967,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "c64.psu.nameplate.metallised-label.bopp.cast-film": {
         "id": "c64.psu.nameplate.metallised-label.bopp.cast-film",
@@ -4980,7 +4988,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "c64.psu.regulator.variant-7805.die": {
         "id": "c64.psu.regulator.variant-7805.die",
@@ -5000,7 +5009,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "c64.psu.regulator.variant-discrete.driver.die": {
         "id": "c64.psu.regulator.variant-discrete.driver.die",
@@ -5020,7 +5030,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "c64.psu.transformer.winding.insulation.kapton.pseudocumene": {
         "id": "c64.psu.transformer.winding.insulation.kapton.pseudocumene",
@@ -5040,7 +5051,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "c64.psu.transformer.winding.insulation.kapton.diamine": {
         "id": "c64.psu.transformer.winding.insulation.kapton.diamine",
@@ -5060,7 +5072,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "mb.rf-modulator.audio-chain.fm-modulator.audio-amplifier.die": {
         "id": "mb.rf-modulator.audio-chain.fm-modulator.audio-amplifier.die",
@@ -5080,7 +5093,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.rf-modulator.rf-oscillator.rf-transistor.die": {
         "id": "mb.rf-modulator.rf-oscillator.rf-transistor.die",
@@ -5100,7 +5114,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.rf-modulator.supply.zener.die": {
         "id": "mb.rf-modulator.supply.zener.die",
@@ -5120,7 +5135,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       }
   }
 }

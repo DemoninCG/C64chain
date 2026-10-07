@@ -691,7 +691,8 @@
                       "label": "Lead length (DIP-14)",
                       "value": "~7.6 mm from body shoulder to tip"
                     }
-                  ]
+                  ],
+                  "provenance": "incomplete"
                 },
                 {
                   "id": "mb.logic.package.geometry.rowspacing",
@@ -719,7 +720,8 @@
                       "label": "Rare wide variant",
                       "value": "0.900 in (22.86 mm)"
                     }
-                  ]
+                  ],
+                  "provenance": "incomplete"
                 },
             {
               "id": "mb.logic.package.leadframe",
@@ -768,7 +770,8 @@
                   "sources": [
                     "https://www.precisionmicro.com/components/lead-frames"
                   ],
-                  "inputs": []
+                  "inputs": [],
+                  "provenance": "incomplete"
                 }
               ],
               "edges": [
@@ -1229,7 +1232,8 @@
                   "label": "On resistance",
                   "value": "hundreds of ohms to a few kohm"
                 }
-              ]
+              ],
+              "provenance": "incomplete"
             },
             {
               "id": "mb.logic.cmos.now",
@@ -1723,7 +1727,8 @@
           "rel": "made from",
           "basis": "inferred"
         }
-      ]
+      ],
+      "provenance": "complete"
     },
     "mb.logic.bipolar.litho": {
       "id": "mb.logic.bipolar.litho",
@@ -2545,7 +2550,8 @@
                   "rel": "produces",
                   "role": "product"
                 }
-              ]
+              ],
+              "provenance": "incomplete"
             },
             {
               "id": "mb.logic.bipolar.process.isolation.trench",
@@ -2571,7 +2577,8 @@
                   "rel": "produces",
                   "role": "product"
                 }
-              ]
+              ],
+              "provenance": "complete"
             }
           ],
           "edges": [
@@ -3904,7 +3911,8 @@
           "to": "metal.silica-sand",
           "rel": "consumes"
         }
-      ]
+      ],
+      "provenance": "complete"
     },
     "mb.logic.package.die.passivation": {
       "id": "mb.logic.package.die.passivation",
@@ -4000,7 +4008,8 @@
           "to": "mb.crystal.y1.cutting.dicing-saw",
           "rel": "uses"
         }
-      ]
+      ],
+      "provenance": "incomplete"
     },
     "mb.logic.package.leadframe.plating": {
       "id": "mb.logic.package.leadframe.plating",
@@ -4089,7 +4098,8 @@
           ],
           "confidence": "high",
           "note": "A press toolset, consumed over hundreds of millions of strokes. This is capital equipment rather than a part.",
-          "inputs": []
+          "inputs": [],
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -4656,7 +4666,8 @@
             "rel": "consumes",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.logic.bipolar.litho.etch.ammonium-fluoride": {
         "id": "mb.logic.bipolar.litho.etch.ammonium-fluoride",
@@ -4678,7 +4689,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.logic.bipolar.process.base.boron.doped-oxide": {
         "id": "mb.logic.bipolar.process.base.boron.doped-oxide",
@@ -4700,7 +4712,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.logic.bipolar.process.base.boron.borax.source-firing": {
         "id": "mb.logic.bipolar.process.base.boron.borax.source-firing",
@@ -4728,7 +4741,8 @@
             "rel": "consumes",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "mb.logic.bipolar.process.isolation.diffusion.p-glass": {
         "id": "mb.logic.bipolar.process.isolation.diffusion.p-glass",
@@ -4750,7 +4764,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       }
   }
 }

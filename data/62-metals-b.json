@@ -109,24 +109,9 @@
       "children": [],
       "edges": [
         {
-          "to": "metal.hydrochloric-acid",
-          "rel": "made from",
-          "basis": "inferred"
-        },
-        {
-          "to": "metal.silica.mgsi",
-          "rel": "made from",
-          "basis": "inferred"
-        },
-        {
-          "to": "metal.silica.petcoke",
-          "rel": "made from",
-          "basis": "typical-1982"
-        },
-        {
           "to": "metal.silica.polysilicon",
-          "rel": "made from",
-          "basis": "inferred"
+          "rel": "made of",
+          "basis": "documented"
         }
       ]
     },
@@ -1028,7 +1013,8 @@
           "note": "Medium confidence; the Peirce-Smith converter geometry is very well documented.",
           "sources": [
             "https://en.wikipedia.org/wiki/Peirce%E2%80%93Smith_converter"
-          ]
+          ],
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -1247,7 +1233,8 @@
               "value": "a travelling scraper on the cell floor"
             }
           ],
-          "note": "Medium confidence; the seeding practice is proprietary."
+          "note": "Medium confidence; the seeding practice is proprietary.",
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -1800,7 +1787,8 @@
               "value": "80-90% of theoretical lime"
             }
           ],
-          "note": "Zone layout is standard practice; medium confidence on the yield range."
+          "note": "Zone layout is standard practice; medium confidence on the yield range.",
+          "provenance": "incomplete"
         },
         {
           "id": "metal.lime.rotary-kiln",
@@ -1822,7 +1810,8 @@
             }
           ],
           "note": "Medium confidence; the fuel figure assumes a preheater, which is where most of the saving is.",
-          "children": []
+          "children": [],
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -2981,7 +2970,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "metal.nickel.carbonate-calcination": {
         "id": "metal.nickel.carbonate-calcination",
@@ -3007,7 +2997,8 @@
             "rel": "consumes",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       }
   }
 }

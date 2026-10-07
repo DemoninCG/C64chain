@@ -373,7 +373,8 @@
           "note": "Medium confidence on the coefficient ranges; the mechanism is textbook.",
           "inputs": [
             "metal.solder.preheater"
-          ]
+          ],
+          "provenance": "incomplete"
         }
       ],
       "inputs": [
@@ -482,7 +483,8 @@
         "https://en.wikipedia.org/wiki/Tungsten"
       ],
       "children": [],
-      "edges": []
+      "edges": [],
+      "provenance": "complete"
     },
     "metal.silver.contact-powder": {
       "id": "metal.silver.contact-powder",
@@ -752,7 +754,8 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Blast_furnace"
           ],
-          "children": []
+          "children": [],
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -850,7 +853,8 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Continuous_casting"
       ],
-      "children": []
+      "children": [],
+      "provenance": "complete"
     },
     "metal.steel.hot-strip": {
       "id": "metal.steel.hot-strip",
@@ -923,7 +927,8 @@
           "to": "metal.steel.caster",
           "rel": "step"
         }
-      ]
+      ],
+      "provenance": "complete"
     },
     "metal.steel.cold-rolling": {
       "id": "metal.steel.cold-rolling",
@@ -966,7 +971,8 @@
           "to": "metal.steel.hot-rolling",
           "rel": "step"
         }
-      ]
+      ],
+      "provenance": "complete"
     },
     "metal.tinplate": {
       "id": "metal.tinplate",
@@ -1383,7 +1389,8 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Cinnabar",
         "https://en.wikipedia.org/wiki/Mercury_(element)"
-      ]
+      ],
+      "provenance": "raw"
     },
     "metal.solder.paste": {
       "id": "metal.solder.paste",
@@ -1680,7 +1687,8 @@
               "value": "iron pipe condenser, crude zinc metal collecting in a pot"
             }
           ],
-          "note": "Medium confidence; the retort geometry is standard historical practice."
+          "note": "Medium confidence; the retort geometry is standard historical practice.",
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -2311,7 +2319,8 @@
               "value": "multiple-effect evaporation of the brine"
             }
           ],
-          "note": "Medium confidence; solution mining of potash at Thames and Belle Plaine is well described in the mining literature."
+          "note": "Medium confidence; solution mining of potash at Thames and Belle Plaine is well described in the mining literature.",
+          "provenance": "incomplete"
         }
       ],
       "inputs": [],
@@ -2791,7 +2800,8 @@
             }
           ],
           "note": "The temperature windows are standard; medium confidence on the conveyor speed range.",
-          "children": []
+          "children": [],
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -2836,7 +2846,8 @@
           "to": "metal.lead.ingot",
           "rel": "consumes"
         }
-      ]
+      ],
+      "provenance": "complete"
     },
     "metal.solder.pot": {
       "id": "metal.solder.pot",
@@ -2997,7 +3008,8 @@
           ],
           "sources": [
             "https://en.wikipedia.org/wiki/Sintering"
-          ]
+          ],
+          "provenance": "incomplete"
         },
         {
           "id": "metal.lead.self-fluxing",
@@ -3226,7 +3238,8 @@
             "role": "waste",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "metal.tungsten.trioxide": {
         "id": "metal.tungsten.trioxide",
@@ -3246,7 +3259,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       }
   }
 }

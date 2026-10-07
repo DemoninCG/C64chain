@@ -701,7 +701,8 @@
                       "label": "Later boards",
                       "value": "C64B/C moved to a 16 MHz crystal and a dedicated clock-generator IC"
                     }
-                  ]
+                  ],
+                  "provenance": "incomplete"
                 }
               ],
               "note": "Topology confirmed on the 250407 board: U31 is a 74LS629 dual voltage-controlled oscillator, U32 an MC4044 phase/frequency detector whose dc output on pin 8 feeds the frequency-control input, pin 2, of U31. Not established, and contradicted by the same source: the 'x4 multiply' and 'a tracking VCO four times faster' claims. The service manual gives Y1 as 14.31818 MHz producing the colour clock and the second half of U31 as the 8.1818 MHz DOT clock, so the dot clock is the SLOWER of the two. 8.1818/14.31818 is 7/4, and the phase lock is colour clock divided by 14 against dot clock divided by 8."
@@ -1666,7 +1667,8 @@
           "rel": "made from",
           "basis": "documented"
         }
-      ]
+      ],
+      "provenance": "incomplete"
     },
     "c64.keyboard-switches.keycap.double-shot.legend-colour": {
       "id": "c64.keyboard-switches.keycap.double-shot.legend-colour",
@@ -1979,7 +1981,8 @@
           ],
           "inputs": [],
           "children": [],
-          "note": "Not established: machined versus spark-eroded construction, one hemispherical cavity per key, and the claims about replacement on re-specification and polish transfer to the dome mating face. Mitsumi produced most of Commodore's keyboards, so the dome sheets came through a Japanese keyboard supply chain, but no tooling record for these tools was located. Ordinary mould practice mills the bulk of a cavity and reserves sinker EDM for deep ribs, sharp internal corners and texture no cutter can reach. A smooth hemispherical cavity is ball-millable, so machining is the ordinary route and spark erosion would need a further reason. Compression-mould tooling guides describe the process as ordering metal blocks and CNC-machining the cavities, in aluminium or steel, with no EDM stage. That prior does not establish this tool either way."
+          "note": "Not established: machined versus spark-eroded construction, one hemispherical cavity per key, and the claims about replacement on re-specification and polish transfer to the dome mating face. Mitsumi produced most of Commodore's keyboards, so the dome sheets came through a Japanese keyboard supply chain, but no tooling record for these tools was located. Ordinary mould practice mills the bulk of a cavity and reserves sinker EDM for deep ribs, sharp internal corners and texture no cutter can reach. A smooth hemispherical cavity is ball-millable, so machining is the ordinary route and spark erosion would need a further reason. Compression-mould tooling guides describe the process as ordering metal blocks and CNC-machining the cavities, in aluminium or steel, with no EDM stage. That prior does not establish this tool either way.",
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -2139,7 +2142,8 @@
               "era": "1982-1984",
               "confidence": "medium",
               "inputs": [],
-              "note": "Not established: evaporation above a rotating blank, drawn stainless versus nickel strip as the mask stock, and chemical etching to the electrode shape for the Y1 electrodes."
+              "note": "Not established: evaporation above a rotating blank, drawn stainless versus nickel strip as the mask stock, and chemical etching to the electrode shape for the Y1 electrodes.",
+              "provenance": "incomplete"
             }
           ],
           "note": "Not established: shadow-mask evaporation, the 200-400 nm gold thickness, and that mask area together with plate thickness sets the crystal capacitance. No source consulted describes crystal electrode metallisation.",
@@ -2210,7 +2214,8 @@
           "era": "1982-1984",
           "confidence": "medium",
           "inputs": [],
-          "note": "Not established: hardened steel as the cavity-tool material, the polished-cavity-to-gloss-finish causal link, and the thousands-of-knobs-per-tool-life figure."
+          "note": "Not established: hardened steel as the cavity-tool material, the polished-cavity-to-gloss-finish causal link, and the thousands-of-knobs-per-tool-life figure.",
+          "provenance": "incomplete"
         }
       ],
       "note": "Not established: whether the knob was two-shot or single-shot moulded, and whether it carried a moulded-in texture or soft overmould. Most 1980s joystick knobs were single-shot ABS. No document consulted describes it.",
@@ -2380,7 +2385,8 @@
           "era": "1982-1984",
           "confidence": "medium",
           "inputs": [],
-          "note": "Not established: hardened tool steel as the cam-and-die material and the Camweld-or-similar automatic machine identification for the keycap spring coiler."
+          "note": "Not established: hardened tool steel as the cam-and-die material and the Camweld-or-similar automatic machine identification for the keycap spring coiler.",
+          "provenance": "incomplete"
         }
       ],
       "note": "Not established: that the keycap plunger springs were made on cam-controlled coil-winders at tens of thousands per hour. This is a general statement about spring manufacturing, not about this keyboard."
@@ -2781,7 +2787,8 @@
             "rel": "consumes",
             "basis": "typical-1982"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       }
   }
 }

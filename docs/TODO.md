@@ -154,6 +154,22 @@ stays readable.
 ## 0. Still open, non-blocking
 
 - Push the commits to `origin/main`.
+- Wave 1 hold-outs (both calibration agents converged; central action
+  deferred to the relevant wave): prose fixes — zinc-oxide ferrite (not
+  silicate matrix) + calcine-vs-sinter wording, GOES final anneal
+  1150–1220 C (not 700–1000 C), cresol (not phenol) novolac + phenol-edge
+  retarget once a cresol node exists, sovere 15–25 bar pressure error +
+  Sovere/Sohio naming check; re-anchor the gas-processing hub (ethane-propane
+  `step` is load-bearing for 8 nodes incl. LNG-fluid — model proper
+  produces/consumes coverage there first, then the step can go); NEW-NODE proposals — cresol-formaldehyde
+  novolac precursor, methylchlorosilane intermediate (low priority),
+  propylene-monomer material (tree-design call); mask-repair needle claim
+  (possible anachronism, keep hedged).
+- Provenance research waves (guide: `docs/RESEARCH-GUIDE.md`; rulings R1–R5
+  in §9): Wave 1 done (25 hubs, 92% agreement, applied). Remaining per
+  §0 queue below, sliced by theme: petrochem monomers, silicon fab
+  chemistry, metals refining, board/assembly + power dies, passives,
+  industry/utilities + peripherals/chassis tail.
 - Orphan queue for batch 2: catalogue N–Z leftovers (~25, triage B diverged
   onto small-comps instead), untriaged metals clusters (lime ×6, tin slag /
   atomisation, extrusion, converting, cobalt leach, tantalum tail, barite

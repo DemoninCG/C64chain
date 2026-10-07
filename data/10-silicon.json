@@ -458,7 +458,8 @@
             }
           ],
           "confidence": "low",
-          "note": "Contradicted by the source. The refresh addresses do not come from the CIA: when the VIC-II takes the bus with AEC low it drives the refresh row address itself onto its own multiplexed video-RAM address bus (pins 24-31 and 30-34), and the VIC generates the row-address strobe. What the KERNAL does is write the raster counter at $D012 so the VIC steps through its eight refresh addresses. It does not clock a CIA A12 line. Not established: the 7-bit, 128-cycle and 1792-cycle figures, or the German-manual statement that only 7-bit-refresh parts may be used."
+          "note": "Contradicted by the source. The refresh addresses do not come from the CIA: when the VIC-II takes the bus with AEC low it drives the refresh row address itself onto its own multiplexed video-RAM address bus (pins 24-31 and 30-34), and the VIC generates the row-address strobe. What the KERNAL does is write the raster counter at $D012 so the VIC steps through its eight refresh addresses. It does not clock a CIA A12 line. Not established: the 7-bit, 128-cycle and 1792-cycle figures, or the German-manual statement that only 7-bit-refresh parts may be used.",
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -1021,7 +1022,8 @@
             "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore",
             "https://archive.org/details/The_Anatomy_of_the_Commodore_64"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "provenance": "incomplete"
         },
         {
           "id": "mb.cia.serial",
@@ -1046,7 +1048,8 @@
             "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore",
             "https://archive.org/details/The_Anatomy_of_the_Commodore_64"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "provenance": "incomplete"
         },
         {
           "id": "mb.cia.mask",
@@ -1951,7 +1954,8 @@
       "category": "metals",
       "era": "ancient-",
       "confidence": "medium",
-      "note": "Biotite in particular carries a lot of iron and is a classic contaminant marker in a quartz shipment."
+      "note": "Biotite in particular carries a lot of iron and is a classic contaminant marker in a quartz shipment.",
+      "provenance": "raw"
     },
     "si.polysilicon.coke.calciner": {
       "id": "si.polysilicon.coke.calciner",
@@ -2445,7 +2449,8 @@
         "https://en.wikipedia.org/wiki/Photolithography",
         "https://en.wikipedia.org/wiki/Cleanroom"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "provenance": "incomplete"
     },
     "si.litho.aligner": {
       "id": "si.litho.aligner",
@@ -2510,11 +2515,6 @@
           "to": "metal.silica-sand",
           "rel": "made from",
           "basis": "documented"
-        },
-        {
-          "to": "metal.chromium.metal",
-          "rel": "step",
-          "basis": "inferred"
         },
         {
           "to": "mb.logic.bipolar.litho.masks.blank",
@@ -3469,12 +3469,7 @@
         {
           "to": "metal.bauxite",
           "rel": "made from",
-          "basis": "inferred"
-        },
-        {
-          "to": "metal.soda-ash",
-          "rel": "made from",
-          "basis": "inferred"
+          "basis": "documented"
         }
       ]
     },
@@ -4038,7 +4033,8 @@
             "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication",
             "https://en.wikipedia.org/wiki/Polycrystalline_silicon"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "provenance": "incomplete"
         },
         {
           "id": "mb.cpu.fe.etcher",
@@ -4166,7 +4162,8 @@
             "si.mask.plate"
           ],
           "confidence": "medium",
-          "note": "A 1 um defect on a 2 um feature is not something the process can tolerate, which is why mask repair was routine work rather than an exception."
+          "note": "A 1 um defect on a 2 um feature is not something the process can tolerate, which is why mask repair was routine work rather than an exception.",
+          "provenance": "complete"
         }
       ],
       "edges": [
@@ -4472,7 +4469,8 @@
         "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
       ],
       "confidence": "high",
-      "note": "This is the mechanical reason the 906114-01 is unreplaceable in practice: there is no second source, no substitute function, and no way to change the logic without new silicon."
+      "note": "This is the mechanical reason the 906114-01 is unreplaceable in practice: there is no second source, no substitute function, and no way to change the logic without new silicon.",
+      "provenance": "complete"
     },
     "mb.pla.process": {
       "id": "mb.pla.process",
@@ -5150,10 +5148,6 @@
       "note": "Established: synthetic saw-grade grit belt process + abrasive use (same passage as si.wafer.diamond process note). Not established: which maker supplied wafer-slicing blades in 1982.",
       "edges": [
         {
-          "to": "metal.graphite.electrode",
-          "rel": "made from"
-        },
-        {
           "to": "si.wafer.diamond.grit.graphite-charge",
           "rel": "made from",
           "basis": "documented"
@@ -5192,7 +5186,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "mb.cpu.fe.passivation.teos": {
         "id": "mb.cpu.fe.passivation.teos",
@@ -5214,7 +5209,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.cpu.fe.photoresist.dnq": {
         "id": "mb.cpu.fe.photoresist.dnq",
@@ -5236,7 +5232,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.discretes.bjt.resist": {
         "id": "mb.discretes.bjt.resist",
@@ -5258,7 +5255,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.discretes.epi.subcollector": {
         "id": "mb.discretes.epi.subcollector",
@@ -5280,7 +5278,8 @@
             "rel": "consumes",
             "basis": "typical-1982"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "mb.discretes.isolation.resist": {
         "id": "mb.discretes.isolation.resist",
@@ -5303,7 +5302,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.discretes.led.epi.junction-die": {
         "id": "mb.discretes.led.epi.junction-die",
@@ -5325,7 +5325,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.discretes.led.gallium.recovery": {
         "id": "mb.discretes.led.gallium.recovery",
@@ -5353,7 +5354,8 @@
             "rel": "consumes",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.discretes.led.substrate.phosphorus": {
         "id": "mb.discretes.led.substrate.phosphorus",
@@ -5375,7 +5377,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.discretes.test.curve-tracer": {
         "id": "mb.discretes.test.curve-tracer",
@@ -5397,7 +5400,8 @@
             "rel": "consumes",
             "basis": "typical-1982"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.pla.test.vector-tester": {
         "id": "mb.pla.test.vector-tester",
@@ -5419,7 +5423,8 @@
             "rel": "consumes",
             "basis": "typical-1982"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.roms.process.resist": {
         "id": "mb.roms.process.resist",
@@ -5442,7 +5447,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.sid.process.resist": {
         "id": "mb.sid.process.resist",
@@ -5465,7 +5471,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "mb.vic.process.resist": {
         "id": "mb.vic.process.resist",
@@ -5487,7 +5494,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "si.attach.diced-die": {
         "id": "si.attach.diced-die",
@@ -5509,7 +5517,8 @@
             "rel": "step",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "si.emc.resin.formaldehyde": {
         "id": "si.emc.resin.formaldehyde",
@@ -5531,7 +5540,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "si.front-end.resist": {
         "id": "si.front-end.resist",
@@ -5554,7 +5564,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "si.leadframe.alloy.vim-strip": {
         "id": "si.leadframe.alloy.vim-strip",
@@ -5582,7 +5593,8 @@
             "rel": "consumes",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "si.mask.plate.patterning": {
         "id": "si.mask.plate.patterning",
@@ -5610,7 +5622,8 @@
             "rel": "uses",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "si.polysilicon.coke.calciner.vacuum-residue": {
         "id": "si.polysilicon.coke.calciner.vacuum-residue",
@@ -5632,7 +5645,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "si.polysilicon.coke.crude.vacuum-distillation": {
         "id": "si.polysilicon.coke.crude.vacuum-distillation",
@@ -5660,7 +5674,8 @@
             "rel": "consumes",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "si.trim.trim-form-press": {
         "id": "si.trim.trim-form-press",
@@ -5682,7 +5697,8 @@
             "rel": "consumes",
             "basis": "typical-1982"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "si.trim.final-ate": {
         "id": "si.trim.final-ate",
@@ -5704,7 +5720,8 @@
             "rel": "consumes",
             "basis": "typical-1982"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "si.wafer.diamond.graphite-charge": {
         "id": "si.wafer.diamond.graphite-charge",
@@ -5726,7 +5743,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "si.wafer.diamond.catalyst": {
         "id": "si.wafer.diamond.catalyst",
@@ -5748,7 +5766,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "si.wafer.diamond.grit.graphite-charge": {
         "id": "si.wafer.diamond.grit.graphite-charge",
@@ -5770,7 +5789,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       }
   }
 }

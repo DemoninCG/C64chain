@@ -1186,7 +1186,8 @@
               "value": "100-600 t, machined over days"
             }
           ],
-          "note": "Die lives vary enormously with profile complexity and alloy; medium confidence."
+          "note": "Die lives vary enormously with profile complexity and alloy; medium confidence.",
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -1678,7 +1679,8 @@
             }
           ],
           "note": "Medium confidence; the cell layout is standard but varies between plants.",
-          "children": []
+          "children": [],
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -2308,7 +2310,8 @@
             }
           ],
           "note": "Medium confidence; the lance geometry and injection depth are standard practice.",
-          "children": []
+          "children": [],
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -5175,7 +5178,8 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Chlor-alkali_process"
           ],
-          "note": "The Hooker conversion year is a well-documented landmark in the chlor-alkali industry."
+          "note": "The Hooker conversion year is a well-documented landmark in the chlor-alkali industry.",
+          "provenance": "incomplete"
         },
         {
           "id": "metal.chlor-alkali.dechlorination",
@@ -5224,7 +5228,8 @@
           "category": "fluids",
           "era": "1980s",
           "confidence": "medium",
-          "note": "The membrane cell commercialised from the late 1970s and displaced mercury cells through the 1980s-90s. The timetable varied by region."
+          "note": "The membrane cell commercialised from the late 1970s and displaced mercury cells through the 1980s-90s. The timetable varied by region.",
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -5373,7 +5378,8 @@
               "value": "2-10 cm"
             }
           ],
-          "note": "The feed rate is a rule of thumb that varies with cell design; medium confidence."
+          "note": "The feed rate is a rule of thumb that varies with cell design; medium confidence.",
+          "provenance": "incomplete"
         },
         {
           "id": "metal.hall-heroult.dross",
@@ -5661,7 +5667,8 @@
                   "value": "order 0.3-1.5 kg of hydrate per m2 of filter area per minute"
                 }
               ],
-              "note": "Filtration rates vary with product particle size; medium confidence on the range."
+              "note": "Filtration rates vary with product particle size; medium confidence on the range.",
+              "provenance": "incomplete"
             }
           ],
           "inputs": [
@@ -5729,7 +5736,8 @@
               "sources": [
                 "https://en.wikipedia.org/wiki/Aluminium_oxide",
                 "https://en.wikipedia.org/wiki/Bauxite"
-              ]
+              ],
+              "provenance": "incomplete"
             }
           ],
           "inputs": [
@@ -6086,7 +6094,8 @@
           "note": "Upcasting was still widely used in the 1980s but continuous casting replaced it from the 1990s; medium confidence on the 1982 split.",
           "sources": [
             "https://en.wikipedia.org/wiki/Wire_drawing"
-          ]
+          ],
+          "provenance": "incomplete"
         }
       ],
       "inputs": [],
@@ -6495,7 +6504,8 @@
               "value": "zinc oxide fume from disturbed surfaces; metal-fume fever"
             }
           ],
-          "note": "Furnace design varies widely; medium confidence on capacities."
+          "note": "Furnace design varies widely; medium confidence on capacities.",
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -8383,7 +8393,8 @@
               "value": "order 2-4 t of rock sorted per person per shift"
             }
           ],
-          "note": "Medium confidence; sorting rates are anecdotal and vary enormously with the ore."
+          "note": "Medium confidence; sorting rates are anecdotal and vary enormously with the ore.",
+          "provenance": "incomplete"
         }
       ],
       "inputs": [],
@@ -8520,7 +8531,8 @@
         }
       ],
       "note": "Medium confidence; the ferromanganese furnace design is well described in ferroalloy practice.",
-      "children": []
+      "children": [],
+      "provenance": "incomplete"
     },
     "metal.aluminum.cold-rolling": {
       "id": "metal.aluminum.cold-rolling",
@@ -8603,7 +8615,8 @@
           "value": "180,000-250,000 dwt capesize, loaded in 12-24 h"
         }
       ],
-      "note": "Not established: the 1-2 Mt stockyard capacity, the 100 m slewing gantry with trimming chute, the 1,500-10,000 t/h loading rate and the 12-24 h vessel loading time. The Pilbara reference gives the region's resource and production rate but no port or stockyard engineering, and the neighbouring ore-loader node carries the ship figures instead."
+      "note": "Not established: the 1-2 Mt stockyard capacity, the 100 m slewing gantry with trimming chute, the 1,500-10,000 t/h loading rate and the 12-24 h vessel loading time. The Pilbara reference gives the region's resource and production rate but no port or stockyard engineering, and the neighbouring ore-loader node carries the ship figures instead.",
+      "provenance": "incomplete"
     },
     "metal.dielectric-grading": {
       "id": "metal.dielectric-grading",
@@ -8670,7 +8683,8 @@
               "rel": "step",
               "basis": "documented"
             }
-          ]
+          ],
+          "provenance": "complete"
         }
       ]
     },
@@ -8726,7 +8740,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "Not established: crude source and refinery route for the base stock; boundary of this model.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "metal.aluminum.interstage-anneal": {
         "id": "metal.aluminum.interstage-anneal",
@@ -8739,7 +8754,8 @@
         "sources": [],
         "confidence": "high",
         "note": "",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "metal.rendered-fat": {
         "id": "metal.rendered-fat",
@@ -8752,7 +8768,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "Not established: rendering plant route; farm and slaughterhouse stages are out of scope.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "metal.fat.rendering-esterification": {
         "id": "metal.fat.rendering-esterification",
@@ -8778,7 +8795,8 @@
             "rel": "consumes",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "metal.copper.blister": {
         "id": "metal.copper.blister",
@@ -8798,7 +8816,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "metal.tdi": {
         "id": "metal.tdi",
@@ -8811,7 +8830,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "Not established: TDI plant route; commercial grades proprietary.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "metal.polyol": {
         "id": "metal.polyol",
@@ -8824,7 +8844,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "Not established: polyol plant route; commercial grades proprietary.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "metal.copper.enamel-synthesis": {
         "id": "metal.copper.enamel-synthesis",
@@ -8855,7 +8876,8 @@
             "rel": "consumes",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "metal.sodium-silicofluoride": {
         "id": "metal.sodium-silicofluoride",
@@ -8875,7 +8897,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "metal.electrical-steel.anneal": {
         "id": "metal.electrical-steel.anneal",
@@ -8906,7 +8929,8 @@
             "rel": "consumes",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "metal.electrical-steel.die-set": {
         "id": "metal.electrical-steel.die-set",
@@ -8919,7 +8943,8 @@
         "sources": [],
         "confidence": "high",
         "note": "",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "metal.aluminum.dross-remelt": {
         "id": "metal.aluminum.dross-remelt",
@@ -8945,7 +8970,8 @@
             "rel": "step",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "metal.aluminum.dross-recovered": {
         "id": "metal.aluminum.dross-recovered",
@@ -8958,7 +8984,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "Not established: recovered-metal assay; grading link to metal.aluminum.ingot left to central review since hall-heroult already produces ingot.",
-        "children": []
+        "children": [],
+        "provenance": "complete"
       },
     "metal.hall-heroult.lining-mix": {
         "id": "metal.hall-heroult.lining-mix",
@@ -8983,7 +9010,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "metal.nickel.electrorefining": {
         "id": "metal.nickel.electrorefining",
@@ -9009,7 +9037,8 @@
             "rel": "consumes",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "metal.pgm.slime-refining": {
         "id": "metal.pgm.slime-refining",
@@ -9035,7 +9064,8 @@
             "rel": "consumes",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "metal.magnesia": {
         "id": "metal.magnesia",
@@ -9048,7 +9078,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "Not established: seawater vs magnesite-mine source split; magnesia mining outside this subsystem per the ladle note.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "metal.refractory-ladle.manufacture": {
         "id": "metal.refractory-ladle.manufacture",
@@ -9074,7 +9105,8 @@
             "rel": "consumes",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "metal.nitric-acid": {
         "id": "metal.nitric-acid",
@@ -9094,7 +9126,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "metal.silicon-tetrachloride": {
         "id": "metal.silicon-tetrachloride",
@@ -9107,7 +9140,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "Not established: 1982 recycle-vs-sale split varied strongly by plant per the recycle note.",
-        "children": []
+        "children": [],
+        "provenance": "complete"
       },
     "metal.pine-stump.feed": {
         "id": "metal.pine-stump.feed",
@@ -9120,7 +9154,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "Forestry-residue boundary; distinct from bled gum resin.",
-        "children": []
+        "children": [],
+        "provenance": "raw"
       },
     "metal.pine-stump.distillation": {
         "id": "metal.pine-stump.distillation",
@@ -9146,7 +9181,8 @@
             "rel": "consumes",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       }
   }
 }

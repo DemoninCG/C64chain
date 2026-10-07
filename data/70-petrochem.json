@@ -29,6 +29,16 @@
       "provenance": "incomplete",
       "edges": [
         {
+          "to": "chem.ethylene.feedstock.naphtha",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.ethylene.feedstock.ethane",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
           "to": "chem.ethylene.ethylene-oxide",
           "rel": "step",
           "basis": "documented"
@@ -233,7 +243,8 @@
                     }
                   ],
                   "confidence": "medium",
-                  "note": "Coil counts and duty vary widely by refinery; these are typical 1980s figures."
+                  "note": "Coil counts and duty vary widely by refinery; these are typical 1980s figures.",
+                  "provenance": "incomplete"
                 }
               ],
               "note": "Fouling monitoring practice varies; the mechanisms described are standard. Established: Crude preheat train with heat recovery to fired heater temperatures. Not established: the stated temperature ranges and integration specifics as given.",
@@ -257,7 +268,8 @@
                   "category": "industry",
                   "era": "1930s",
                   "confidence": "medium",
-                  "note": "Tray packing on the atmospheric side was rare in the 1980s; structured packing arrived mainly on vacuum columns and on hydrotreaters."
+                  "note": "Tray packing on the atmospheric side was rare in the 1980s; structured packing arrived mainly on vacuum columns and on hydrotreaters.",
+                  "provenance": "incomplete"
                 },
                 {
                   "id": "chem.refining.atmospheric-distillation.fractionating-tower.reboiler",
@@ -268,7 +280,8 @@
                   "category": "industry",
                   "era": "1930s",
                   "confidence": "medium",
-                  "note": "Established: A fired or steam reboiler supplies the vapour to the bottom of the tower, and side strippers remove the light ends from the kerosene and gas-oil draws so the side columns are not l as standard practice. Not established: the era specific prevalence supplier choices and detailed operating splits as given."
+                  "note": "Established: A fired or steam reboiler supplies the vapour to the bottom of the tower, and side strippers remove the light ends from the kerosene and gas-oil draws so the side columns are not l as standard practice. Not established: the era specific prevalence supplier choices and detailed operating splits as given.",
+                  "provenance": "incomplete"
                 },
                 {
                   "id": "chem.refining.atmospheric-distillation.fractionating-tower.overhead",
@@ -285,7 +298,8 @@
                     }
                   ],
                   "note": "LPG endpoint: chem.natural-gas.composition.ethane-propane. Established: Overhead condenser with reflux and fuel gas recovery. Not established: the stated burning versus recovery practices as 1980s standard as given.",
-                  "confidence": "low"
+                  "confidence": "low",
+                  "provenance": "incomplete"
                 }
               ],
               "facts": [
@@ -419,7 +433,8 @@
                     }
                   ],
                   "confidence": "medium",
-                  "note": "Not established: the vessel dimensions, coke tonnage per cycle, yield range and cycle time quoted, and the characterisation of drum switching as the highest-risk refinery operation."
+                  "note": "Not established: the vessel dimensions, coke tonnage per cycle, yield range and cycle time quoted, and the characterisation of drum switching as the highest-risk refinery operation.",
+                  "provenance": "incomplete"
                 }
               ],
               "confidence": "low",
@@ -475,7 +490,8 @@
                     }
                   ],
                   "confidence": "medium",
-                  "note": "Not established: the reactor and regenerator temperature, pressure and yield figures quoted, and the claim that two-stage regeneration was standard 1980s practice."
+                  "note": "Not established: the reactor and regenerator temperature, pressure and yield figures quoted, and the claim that two-stage regeneration was standard 1980s practice.",
+                  "provenance": "incomplete"
                 }
               ],
               "confidence": "high",
@@ -567,7 +583,8 @@
                 }
               ],
               "confidence": "medium",
-              "note": "Not established: the furnace temperature range and first-stage conversion figures quoted, and the operating claims about rich-side firing, oxygen excess and soot plugging."
+              "note": "Not established: the furnace temperature range and first-stage conversion figures quoted, and the operating claims about rich-side firing, oxygen excess and soot plugging.",
+              "provenance": "incomplete"
             }
           ],
           "confidence": "high",
@@ -692,7 +709,8 @@
             }
           ],
           "confidence": "low",
-          "note": "Established: Tetraethyl lead was phased out of most industrialised markets between 1978 and 1985 as catalytic converters spread as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+          "note": "Established: Tetraethyl lead was phased out of most industrialised markets between 1978 and 1985 as catalytic converters spread as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+          "provenance": "incomplete"
         },
         {
           "id": "chem.refining.products",
@@ -780,7 +798,8 @@
             }
           ],
           "confidence": "medium",
-          "note": "Capacity and cost figures for this period are approximate; cracker capital costs roughly doubled between 1978 and 1981."
+          "note": "Capacity and cost figures for this period are approximate; cracker capital costs roughly doubled between 1978 and 1981.",
+          "provenance": "incomplete"
         },
         {
           "id": "chem.ethylene.steam-cracking",
@@ -862,7 +881,8 @@
                 }
               ],
               "confidence": "medium",
-              "note": "Not established: the cracked-gas temperature range, the work-recovery share quoted, and the claim linking the 1970s energy crisis to a generation of more efficient crackers."
+              "note": "Not established: the cracked-gas temperature range, the work-recovery share quoted, and the claim linking the 1970s energy crisis to a generation of more efficient crackers.",
+              "provenance": "incomplete"
             }
           ],
           "facts": [
@@ -921,7 +941,8 @@
                 }
               ],
               "confidence": "low",
-              "note": "Established: The cracked gas is quenched with recycled process gas rather than directly with liquid, stopping at 350-400 C as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+              "note": "Established: The cracked gas is quenched with recycled process gas rather than directly with liquid, stopping at 350-400 C as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+              "provenance": "incomplete"
             },
             {
               "id": "chem.ethylene.quench.decanter",
@@ -932,7 +953,8 @@
               "category": "plastics",
               "era": "1950s",
               "confidence": "low",
-              "note": "Established: The condensed liquid is settled and decanted, separating the heavy C9+ tar from the gasoline and C4 streams as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+              "note": "Established: The condensed liquid is settled and decanted, separating the heavy C9+ tar from the gasoline and C4 streams as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+              "provenance": "incomplete"
             }
           ],
           "confidence": "low",
@@ -1072,7 +1094,8 @@
               "sources": [
                 "https://en.wikipedia.org/wiki/Ethylene%20glycol"
               ],
-              "note": "Diethylene and triethylene glycol are the major byproducts and separating them from water is energy-intensive, which is the point this node makes. Not established: the 197, 245 and 285 C boiling points, the 30-100 mbar vacuum and the multi-column configuration."
+              "note": "Diethylene and triethylene glycol are the major byproducts and separating them from water is energy-intensive, which is the point this node makes. Not established: the 197, 245 and 285 C boiling points, the 30-100 mbar vacuum and the multi-column configuration.",
+              "provenance": "incomplete"
             }
           ],
           "facts": [
@@ -1126,7 +1149,8 @@
                   "category": "plastics",
                   "era": "1950s",
                   "confidence": "medium",
-                  "note": "Not established: the attribution of the autoclave and tubular processes to specific originators and decades, and the claims about molecular-weight distribution, conversion and devolatilising practice favouring tubular reactors by the 1980s."
+                  "note": "Not established: the attribution of the autoclave and tubular processes to specific originators and decades, and the claims about molecular-weight distribution, conversion and devolatilising practice favouring tubular reactors by the 1980s.",
+                  "provenance": "incomplete"
                 }
               ],
               "confidence": "low",
@@ -1531,7 +1555,8 @@
                   "rel": "uses",
                   "basis": "documented"
                 }
-              ]
+              ],
+              "provenance": "incomplete"
             },
             {
               "id": "chem.acrylonitrile.sovere.distillation",
@@ -1750,7 +1775,8 @@
                   "category": "plastics",
                   "era": "1950s",
                   "confidence": "medium",
-                  "note": "The description of furnace-tube coking in butane dehydrogenation is standard. Specific designs vary."
+                  "note": "The description of furnace-tube coking in butane dehydrogenation is standard. Specific designs vary.",
+                  "provenance": "incomplete"
                 }
               ],
               "facts": [
@@ -1887,7 +1913,8 @@
               "to": "chem.abs.grafting.chain-transfer-agent",
               "rel": "consumes"
             }
-          ]
+          ],
+          "provenance": "complete"
         }
       ],
       "facts": [
@@ -1967,7 +1994,8 @@
               "category": "plastics",
               "era": "1970s",
               "confidence": "medium",
-              "note": "Not established: the tube count, tube dimensions, pressure range and train arrangement quoted, and the claim that the furnace was the dominant plant energy consumer driving heat-integration work."
+              "note": "Not established: the tube count, tube dimensions, pressure range and train arrangement quoted, and the claim that the furnace was the dominant plant energy consumer driving heat-integration work.",
+              "provenance": "incomplete"
             },
             {
               "id": "chem.styrene.dehydrogenation.fired-furnace",
@@ -1984,7 +2012,8 @@
                 }
               ],
               "note": "The heat of dehydrogenation of ethylbenzene is about 0.22 GJ/t; the figure here is rounded. Established: Dehydrogenation furnace as endothermic shell and tube bank. Not established: the stated heat figure and 1980s furnace specifics as given.",
-              "confidence": "low"
+              "confidence": "low",
+              "provenance": "incomplete"
             }
           ],
           "confidence": "low",
@@ -2056,7 +2085,8 @@
                         }
                       ],
                       "confidence": "medium",
-                      "note": "Not established: the melt-temperature, vacuum and residual-monomer figures quoted, and the stated operating window between melting and decomposition for polystyrene."
+                      "note": "Not established: the melt-temperature, vacuum and residual-monomer figures quoted, and the stated operating window between melting and decomposition for polystyrene.",
+                      "provenance": "incomplete"
                     },
                     {
                       "id": "chem.styrene.polymerisation.bulk-gpps.finishing.pelletiser",
@@ -2067,7 +2097,8 @@
                       "category": "plastics",
                       "era": "1950s",
                       "confidence": "medium",
-                      "note": "Not established: the die-hole count and diameter, bath-temperature and pellet-size figures quoted, and the claim that underwater pelletising was becoming the 1980s preference for polystyrene."
+                      "note": "Not established: the die-hole count and diameter, bath-temperature and pellet-size figures quoted, and the claim that underwater pelletising was becoming the 1980s preference for polystyrene.",
+                      "provenance": "incomplete"
                     }
                   ],
                   "confidence": "low",
@@ -3016,7 +3047,8 @@
               "category": "fluids",
               "era": "1960s",
               "confidence": "medium",
-              "note": "Not established: the frequency range quoted, the fill-solvent identities listed, and the claim that 1983 electronics plants used ultrasonic cleaning ahead of vapour degreasing for fine and crevice work."
+              "note": "Not established: the frequency range quoted, the fill-solvent identities listed, and the claim that 1983 electronics plants used ultrasonic cleaning ahead of vapour degreasing for fine and crevice work.",
+              "provenance": "incomplete"
             },
             {
               "id": "chem.solvents.vapour-degreaser.condenser-coil",
@@ -3037,7 +3069,8 @@
                 }
               ],
               "confidence": "low",
-              "note": "Established: The machine has two working parts: a boiling sump at the bottom that supplies the vapour, and a water-cooled coil above it that condenses the vapour and drips it back clean as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+              "note": "Established: The machine has two working parts: a boiling sump at the bottom that supplies the vapour, and a water-cooled coil above it that condenses the vapour and drips it back clean as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+              "provenance": "incomplete"
             }
           ],
           "facts": [
@@ -3256,7 +3289,8 @@
               "era": "1960s",
               "inputs": [],
               "note": "Resist stripping belongs to this step. The stripping numbers are in its description. Established: Dehydration and hard bakes for water removal and image hardening. Not established: the stated temperature ranges and plasma resistance specifics as given.",
-              "confidence": "low"
+              "confidence": "low",
+              "provenance": "incomplete"
             },
             {
               "id": "chem.photoresist.plasma-resist",
@@ -3671,7 +3705,8 @@
           "category": "industry",
           "era": "ancient",
           "confidence": "low",
-          "note": "Established: A subsiding basin in which organic mud is buried, buried deeper, cooked and squeezed, the whole petroleum system is source, maturation, migration, reservoir, seal and trap, and it as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+          "note": "Established: A subsiding basin in which organic mud is buried, buried deeper, cooked and squeezed, the whole petroleum system is source, maturation, migration, reservoir, seal and trap, and it as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+          "provenance": "raw"
         }
       ],
       "confidence": "low",
@@ -4178,7 +4213,8 @@
         }
       ],
       "confidence": "medium",
-      "note": "Glass transition values for elastomers vary a few degrees with grade and measurement."
+      "note": "Glass transition values for elastomers vary a few degrees with grade and measurement.",
+      "provenance": "incomplete"
     },
     "chem.butadiene.polymerisation.neodymium-catalyst.neodymium-source": {
       "id": "chem.butadiene.polymerisation.neodymium-catalyst.neodymium-source",
@@ -4258,6 +4294,11 @@
       "note": "C4 compositions depend heavily on cracker severity and feedstock; the ranges given are typical naphtha-cracker figures.",
       "edges": [
         {
+          "to": "chem.ethylene.feedstock.naphtha",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
           "to": "chem.refining.isomerisation.mtbe",
           "rel": "step",
           "basis": "documented"
@@ -4335,14 +4376,18 @@
       "category": "plastics",
       "era": "1950s",
       "children": [],
-      "confidence": "low",
+      "confidence": "medium",
       "provenance": "incomplete",
       "note": "Established: About 7 million tonnes of polypropylene in 1983, the fastest-growing major plastic as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "sources": [
+        "https://www.epa.gov/sites/default/files/2020-10/documents/c06s06-4.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9658047/"
+      ],
       "edges": [
         {
           "to": "chem.propylene.sources.cracker-c3",
           "rel": "made from",
-          "basis": "inferred"
+          "basis": "documented"
         }
       ]
     },
@@ -4469,6 +4514,11 @@
           "to": "chem.epoxy.dgeba.epichlorohydrin",
           "rel": "made from",
           "basis": "documented"
+        },
+        {
+          "to": "chem.polycarbonate.resin.bisphenol-a",
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },
@@ -4570,7 +4620,8 @@
       "era": "1980s",
       "children": [],
       "confidence": "low",
-      "note": "Established: Naphtha was 70-80% of world cracker capacity in 1983, ethane and propane 20-30% as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: Naphtha was 70-80% of world cracker capacity in 1983, ethane and propane 20-30% as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "provenance": "incomplete"
     },
     "chem.ethylene.uses-c64": {
       "id": "chem.ethylene.uses-c64",
@@ -4852,9 +4903,11 @@
       ],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Upstream: chem.butadiene. Nylon 66 is a polycondensation of hexamethylenediamine and adipic acid. Equal amounts are combined in water and the salt is heated in batches or continuously. Not established: the 250-270 C and 10-20 bar salt conditions, the 270-280 C polymerisation under a small nitrogen pressure, and the butadiene hydrocyanation feedstock route attributed to the 1980s.",
+      "note": "Upstream: chem.butadiene. Nylon 66 is a polycondensation of hexamethylenediamine and adipic acid. Equal amounts are combined in water and the salt is heated in batches or continuously. The butadiene hydrocyanation feedstock route is documented (DuPont nickel-catalysed double hydrocyanation, commercial from 1971). Not established: the 250-270 C and 10-20 bar salt conditions and the 270-280 C polymerisation under a small nitrogen pressure as 1982 specifics.",
       "sources": [
-        "https://en.wikipedia.org/wiki/Nylon%2066"
+        "https://en.wikipedia.org/wiki/Nylon%2066",
+        "https://patents.google.com/patent/US4851466A/en",
+        "https://www.acs.org/education/whatischemistry/landmarks/carotherspolymers.html"
       ],
       "edges": [
         {
@@ -5739,7 +5792,7 @@
         {
           "to": "chem.fab-chemicals.dopants.phosphine.white-phosphorus",
           "rel": "made from",
-          "basis": "inferred"
+          "basis": "documented"
         }
       ]
     },
@@ -5780,6 +5833,9 @@
       "confidence": "low",
       "provenance": "incomplete",
       "note": "Established: The p-type sources as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "sources": [
+        "https://patents.google.com/patent/US3013863A/en"
+      ],
       "edges": [
         {
           "to": "chem.fab-chemicals.dopants.diborane.bf3-feed",
@@ -5849,7 +5905,7 @@
       "kind": "material",
       "category": "silicon",
       "era": "1960s",
-      "note": "The phenol chain is chem.propylene.cumene.cleavage.phenol and the formaldehyde chain is chem.pom.formaldehyde. The node is the resin, not the making of it. Established: Novolac resin for film integrity distinct from photosensitive part. Not established: the stated molecular weight and functionality specifics as given.",
+      "note": "The phenol chain is chem.propylene.cumene.cleavage.phenol and the formaldehyde chain is si.emc.resin.formaldehyde. The node is the resin, not the making of it. Established: Novolac resin for film integrity distinct from photosensitive part. Not established: the stated molecular weight and functionality specifics as given.",
       "confidence": "low",
       "provenance": "incomplete",
       "edges": [
@@ -5859,7 +5915,7 @@
           "basis": "documented"
         },
         {
-          "to": "chem.propylene.cumene.cleavage.phenol",
+          "to": "si.emc.resin.formaldehyde",
           "rel": "made from",
           "basis": "documented"
         }
@@ -5901,7 +5957,8 @@
       "category": "silicon",
       "era": "1980s",
       "confidence": "medium",
-      "note": "Negative and image-reversal resists are a family of chemistries described here rather than an operation in the 1980s line."
+      "note": "Negative and image-reversal resists are a family of chemistries described here rather than an operation in the 1980s line.",
+      "provenance": "incomplete"
     },
     "chem.solvents.trichloroethane": {
       "id": "chem.solvents.trichloroethane",
@@ -6456,7 +6513,8 @@
         }
       ],
       "confidence": "medium",
-      "note": "Not established: the world gas production figure quoted for 1983, and the per-machine gas quantity implied for one computer's plastics and energy."
+      "note": "Not established: the world gas production figure quoted for 1983, and the per-machine gas quantity implied for one computer's plastics and energy.",
+      "provenance": "raw"
     },
     "chem.natural-gas.uses.hydrogen.to-ammonia.catalyst.magnetite": {
       "id": "chem.natural-gas.uses.hydrogen.to-ammonia.catalyst.magnetite",
@@ -6720,7 +6778,7 @@
         {
           "to": "chem.ethylene.feedstock.naphtha",
           "rel": "made from",
-          "basis": "inferred"
+          "basis": "documented"
         }
       ]
     },
@@ -7033,7 +7091,8 @@
       "category": "plastics",
       "era": "1970s",
       "confidence": "medium",
-      "note": "Not established: the boiling-range cut, the relative ethylene cost claim, and the statement that gas-oil cracking had mostly disappeared by the 1980s."
+      "note": "Not established: the boiling-range cut, the relative ethylene cost claim, and the statement that gas-oil cracking had mostly disappeared by the 1980s.",
+      "provenance": "incomplete"
     },
     "chem.crude.rig.drilling-mud.bentonite": {
       "id": "chem.crude.rig.drilling-mud.bentonite",
@@ -7173,7 +7232,8 @@
         }
       ],
       "confidence": "low",
-      "note": "Established: Organic-rich marine shale as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: Organic-rich marine shale as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "provenance": "raw"
     },
     "chem.crude.reservoir.trap": {
       "id": "chem.crude.reservoir.trap",
@@ -7190,7 +7250,8 @@
         }
       ],
       "confidence": "low",
-      "note": "Established: Anticline, fault, pinch-out or stratigraphic trap as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: Anticline, fault, pinch-out or stratigraphic trap as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "provenance": "raw"
     },
     "chem.crude.reservoir.reservoir-rock": {
       "id": "chem.crude.reservoir.reservoir-rock",
@@ -7220,7 +7281,8 @@
       "era": "ancient",
       "children": [],
       "confidence": "low",
-      "note": "Established: An oil column of tens to hundreds of metres stands between a gas cap and a water contact, with oil saturation in the pay zone often only 50-80% of pore volume as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: An oil column of tens to hundreds of metres stands between a gas cap and a water contact, with oil saturation in the pay zone often only 50-80% of pore volume as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "provenance": "raw"
     },
     "chem.crude.reservoir.oil-column.oil-in-place": {
       "id": "chem.crude.reservoir.oil-column.oil-in-place",
@@ -7231,7 +7293,8 @@
       "category": "industry",
       "era": "ancient",
       "confidence": "low",
-      "note": "Established: The volume of hydrocarbons physically present in the rock, before any recovery factor as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: The volume of hydrocarbons physically present in the rock, before any recovery factor as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "provenance": "raw"
     },
     "chem.petroleum.asphaltene": {
       "id": "chem.petroleum.asphaltene",
@@ -7267,7 +7330,8 @@
       "category": "industry",
       "era": "ancient",
       "confidence": "low",
-      "note": "Established: Dolomitised limestone and dolomite of the Arabian shelf: high initial productivity, typically 4,000-10,000 bbl/d per well with strong water drive, but rapid flow assurance decline as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: Dolomitised limestone and dolomite of the Arabian shelf: high initial productivity, typically 4,000-10,000 bbl/d per well with strong water drive, but rapid flow assurance decline as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "provenance": "raw"
     },
     "chem.solder-chemicals.solder-alloy.tin-source": {
       "id": "chem.solder-chemicals.solder-alloy.tin-source",
@@ -7602,7 +7666,8 @@
               "category": "industry",
               "era": "1970s",
               "confidence": "low",
-              "note": "Established: A radial or axial turbine in the cold box, handling 10,000-40,000 kW on a big plant, recovering 5-15% of the gas enthalpy and reaching -30 to -80 C as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+              "note": "Established: A radial or axial turbine in the cold box, handling 10,000-40,000 kW on a big plant, recovering 5-15% of the gas enthalpy and reaching -30 to -80 C as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+              "provenance": "incomplete"
             },
             {
               "id": "chem.natural-gas.processing.cryogenic-separation.cold-box",
@@ -7715,7 +7780,8 @@
               "category": "logistics",
               "era": "1980s",
               "confidence": "low",
-              "note": "LNG carrier prices and fleet size in the early 1980s are order-of-magnitude figures."
+              "note": "LNG carrier prices and fleet size in the early 1980s are order-of-magnitude figures.",
+              "provenance": "incomplete"
             }
           ],
           "confidence": "low",
@@ -7747,7 +7813,8 @@
               "category": "logistics",
               "era": "1980s",
               "confidence": "low",
-              "note": "Established: Concrete weight-coated line with a hot-water or electrical trace heater for hydrate prevention, and a wet-insulated riser with a buoyancy module for the first 100-300 m of water as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+              "note": "Established: Concrete weight-coated line with a hot-water or electrical trace heater for hydrate prevention, and a wet-insulated riser with a buoyancy module for the first 100-300 m of water as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+              "provenance": "incomplete"
             }
           ],
           "note": "A pipeline and an LNG carrier move a bulk stream, they do not make one, so transport is the category here and the gas plant that feeds them is a plant. Established: Gas pipeline as bulk transport with epoxy and polyethylene coating. Not established: the stated diameters grades pressures and compressor spacings as given.",
@@ -7795,7 +7862,8 @@
             }
           ],
           "confidence": "medium",
-          "note": "Not established: the furnace temperature range, pressure range and per-pass acetylene yield quoted, and the burner-material and soot-sensitivity claims."
+          "note": "Not established: the furnace temperature range, pressure range and per-pass acetylene yield quoted, and the burner-material and soot-sensitivity claims.",
+          "provenance": "incomplete"
         },
         {
           "id": "chem.natural-gas.uses.acetylene.quench",
@@ -8161,7 +8229,8 @@
             }
           ],
           "confidence": "medium",
-          "note": "Not established: the tray count, column height, relative volatility and reflux-ratio figures quoted, and the description of 1980s low-pressure-drop and side-stripper developments."
+          "note": "Not established: the tray count, column height, relative volatility and reflux-ratio figures quoted, and the description of 1980s low-pressure-drop and side-stripper developments.",
+          "provenance": "incomplete"
         }
       ],
       "confidence": "low",
@@ -8397,7 +8466,8 @@
                 }
               ],
               "confidence": "medium",
-              "note": "Stump distillation cycle times and charge sizes vary by still design; the figures are representative of the small-batch practice that survived into the 1980s."
+              "note": "Stump distillation cycle times and charge sizes vary by still design; the figures are representative of the small-batch practice that survived into the 1980s.",
+              "provenance": "incomplete"
             }
           ],
           "facts": [
@@ -8516,7 +8586,8 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Phosphorus"
           ],
-          "note": "Phosphate rock with sand and coke is heated to 1,200-1,500 C to give P4. Not established: the 30-100 MW furnace rating, the three graphite electrodes, the condensation and storage under water, and the 100,000-150,000 tonne per year US figure for a 1980s plant."
+          "note": "Phosphate rock with sand and coke is heated to 1,200-1,500 C to give P4. Not established: the 30-100 MW furnace rating, the three graphite electrodes, the condensation and storage under water, and the 100,000-150,000 tonne per year US figure for a 1980s plant.",
+          "provenance": "incomplete"
         },
         {
           "id": "chem.fab-chemicals.dopants.phosphine.phosphorus-source.phosphoric-acid",
@@ -9076,7 +9147,8 @@
       "category": "fluids",
       "era": "1930s",
       "confidence": "low",
-      "note": "The fuel-oil share of 1983 refinery output and the regulatory context are order-of-magnitude figures. Exact shares varied widely by region."
+      "note": "The fuel-oil share of 1983 refinery output and the regulatory context are order-of-magnitude figures. Exact shares varied widely by region.",
+      "provenance": "incomplete"
     },
     "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling": {
       "id": "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling",
@@ -9166,7 +9238,8 @@
             "drill collars"
           ],
           "note": "Drill pipe steel is a metals chain, not a petrochemical one. The petroleum-derived material here is the mud, the cement and the bit matrix. Established: Drill string as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s specifics as given.",
-          "confidence": "low"
+          "confidence": "low",
+          "provenance": "incomplete"
         },
         {
           "id": "chem.crude.rig.rotary-drilling.mud-system",
@@ -9177,7 +9250,8 @@
           "category": "industry",
           "era": "1980s",
           "confidence": "low",
-          "note": "Established: Active and reserve pits, the pump, the surface mixing hopper (mud pit) and the flowline over the shaker as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+          "note": "Established: Active and reserve pits, the pump, the surface mixing hopper (mud pit) and the flowline over the shaker as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+          "provenance": "incomplete"
         }
       ],
       "confidence": "medium",
@@ -9215,7 +9289,8 @@
           "category": "industry",
           "era": "1980s",
           "confidence": "low",
-          "note": "Established: Conductor, surface, intermediate and production casing, each cemented across its shoe as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+          "note": "Established: Conductor, surface, intermediate and production casing, each cemented across its shoe as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+          "provenance": "incomplete"
         }
       ],
       "confidence": "low",
@@ -9257,7 +9332,8 @@
           "category": "industry",
           "era": "1980s",
           "confidence": "low",
-          "note": "Established: A steel or aluminium tube with a diamond-set reaming shell and a core lifter, run on the bottom hole assembly at low RPM (20-100) and low weight as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+          "note": "Established: A steel or aluminium tube with a diamond-set reaming shell and a core lifter, run on the bottom hole assembly at low RPM (20-100) and low weight as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+          "provenance": "incomplete"
         }
       ],
       "confidence": "low",
@@ -9278,7 +9354,8 @@
       "category": "plastics",
       "era": "1970s",
       "confidence": "medium",
-      "note": "Not established: the solids-content range quoted for loop slurry operation, and the commercial characterisation of the gas-phase process as the 1980s newcomer whose case rested on eliminating solvent recovery."
+      "note": "Not established: the solids-content range quoted for loop slurry operation, and the commercial characterisation of the gas-phase process as the 1980s newcomer whose case rested on eliminating solvent recovery.",
+      "provenance": "incomplete"
     },
     "chem.fab-chemicals.etch-gases.barrel-etcher": {
       "id": "chem.fab-chemicals.etch-gases.barrel-etcher",
@@ -9302,7 +9379,8 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Plasma%20etching"
       ],
-      "note": "Plasma etching uses RF excitation at 13.56 MHz, and a fluorine-bearing gas etches silicon dioxide selectively in conjunction with photolithography. Not established: the quartz or alumina barrel with top and bottom electrodes, the vertical wafer slots, the 0.1-10 torr range, and the barrel's description as the workhorse of the 1980s."
+      "note": "Plasma etching uses RF excitation at 13.56 MHz, and a fluorine-bearing gas etches silicon dioxide selectively in conjunction with photolithography. Not established: the quartz or alumina barrel with top and bottom electrodes, the vertical wafer slots, the 0.1-10 torr range, and the barrel's description as the workhorse of the 1980s.",
+      "provenance": "incomplete"
     },
     "chem.crude.rig.bit": {
       "id": "chem.crude.rig.bit",
@@ -9323,7 +9401,8 @@
           "era": "1983",
           "children": [],
           "confidence": "low",
-          "note": "Established: The emerging bit of the early 1980s: sintered diamond compact cutters brazed to a steel body with no cones and no bearings, turning rather than grinding as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+          "note": "Established: The emerging bit of the early 1980s: sintered diamond compact cutters brazed to a steel body with no cones and no bearings, turning rather than grinding as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+          "provenance": "incomplete"
         }
       ],
       "confidence": "low",
@@ -9338,7 +9417,8 @@
       "category": "industry",
       "era": "1980s",
       "confidence": "low",
-      "note": "Established: The blowout preventer stack (annular preventer plus 3-5 ram preventers) and the choke manifold above the wellhead, rated 5,000-15,000 psi as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: The blowout preventer stack (annular preventer plus 3-5 ram preventers) and the choke manifold above the wellhead, rated 5,000-15,000 psi as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "provenance": "incomplete"
     },
     "chem.crude": {
       "id": "chem.crude",
@@ -9379,7 +9459,8 @@
                   "category": "industry",
                   "era": "1980s",
                   "confidence": "medium",
-                  "note": "Established: truck-mounted hydraulic vibrators sweeping frequency into the ground are the standard land vibroseis source replacing explosive shot holes for repeatability. Not established: the stated 10-80 Hz sweep range, hold conditions, and 1,000-2,000 m regional shotpoint spacing as 1980s practice."
+                  "note": "Established: truck-mounted hydraulic vibrators sweeping frequency into the ground are the standard land vibroseis source replacing explosive shot holes for repeatability. Not established: the stated 10-80 Hz sweep range, hold conditions, and 1,000-2,000 m regional shotpoint spacing as 1980s practice.",
+                  "provenance": "incomplete"
                 },
                 {
                   "id": "chem.crude.exploration.seismic-survey.airgun-array",
@@ -9390,7 +9471,8 @@
                   "category": "industry",
                   "era": "1980s",
                   "confidence": "low",
-                  "note": "Established: Offshore and in shallow water the source was a 1,000-10,000 cu-in (16-160 litre) airgun array fired every 10-15 s from the stern of a seismic vessel as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+                  "note": "Established: Offshore and in shallow water the source was a 1,000-10,000 cu-in (16-160 litre) airgun array fired every 10-15 s from the stern of a seismic vessel as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+                  "provenance": "incomplete"
                 },
                 {
                   "id": "chem.crude.exploration.seismic-survey.explosive-shot",
@@ -9462,7 +9544,8 @@
                         }
                       ],
                       "confidence": "low",
-                      "note": "Established: A 1-2 kg mass suspended in a magnetic field inside a case 3-5 cm across, coil movement induces a signal proportional to ground velocity as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+                      "note": "Established: A 1-2 kg mass suspended in a magnetic field inside a case 3-5 cm across, coil movement induces a signal proportional to ground velocity as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+                      "provenance": "incomplete"
                     },
                     {
                       "id": "chem.crude.exploration.seismic-survey.geophone-array.takeout-cable",
@@ -9500,7 +9583,8 @@
                   "category": "industry",
                   "era": "1980s",
                   "confidence": "low",
-                  "note": "Established: Field recording on 1/2 in or 1 in nine-track magnetic tape (typically 2000 inch/s, 12.5-50 Hz bandwidth) or, from the early 1980s, 12-bit digital field recorders writing 3M/IBM-com as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+                  "note": "Established: Field recording on 1/2 in or 1 in nine-track magnetic tape (typically 2000 inch/s, 12.5-50 Hz bandwidth) or, from the early 1980s, 12-bit digital field recorders writing 3M/IBM-com as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+                  "provenance": "incomplete"
                 }
               ],
               "facts": [
@@ -9595,7 +9679,8 @@
               "category": "industry",
               "era": "1980s",
               "confidence": "low",
-              "note": "Rig newbuild prices moved violently through 1981-83 (a deepwater rig that cost $60m in 1980 was quoted above $100m in 1983). Treat these as order-of-magnitude figures."
+              "note": "Rig newbuild prices moved violently through 1981-83 (a deepwater rig that cost $60m in 1980 was quoted above $100m in 1983). Treat these as order-of-magnitude figures.",
+              "provenance": "incomplete"
             }
           ],
           "confidence": "high",
@@ -9642,7 +9727,8 @@
                     "copper or steel liner"
                   ],
                   "confidence": "medium",
-                  "note": "Charge weight and composition varied widely with depth and rock toughness. The jet mechanism is well established."
+                  "note": "Charge weight and composition varied widely with depth and rock toughness. The jet mechanism is well established.",
+                  "provenance": "incomplete"
                 },
                 {
                   "id": "chem.crude.well-completion.perforation.entry-hole",
@@ -9669,7 +9755,8 @@
               "era": "1980s",
               "children": [],
               "confidence": "low",
-              "note": "Established: An elastomer-sealed packer run and set in the casing to isolate zones and provide a seat for the tubing hanger as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+              "note": "Established: An elastomer-sealed packer run and set in the casing to isolate zones and provide a seat for the tubing hanger as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+              "provenance": "incomplete"
             },
             {
               "id": "chem.crude.well-completion.christmas-tree",
@@ -9690,7 +9777,8 @@
                 }
               ],
               "confidence": "low",
-              "note": "Established: The valve stack on top of the casing: casing spool, tubing spool, master valve, wing valves with gauges, and the flowline tee off the wing as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+              "note": "Established: The valve stack on top of the casing: casing spool, tubing spool, master valve, wing valves with gauges, and the flowline tee off the wing as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+              "provenance": "incomplete"
             }
           ],
           "confidence": "medium",
@@ -9732,7 +9820,8 @@
                   "category": "industry",
                   "era": "1980s",
                   "confidence": "low",
-                  "note": "Established: Blender trucks, sand trucks and a high-pressure pump unit (one pumping unit at 25,000 psi), laid out in a yard over the rig as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+                  "note": "Established: Blender trucks, sand trucks and a high-pressure pump unit (one pumping unit at 25,000 psi), laid out in a yard over the rig as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+                  "provenance": "incomplete"
                 }
               ],
               "confidence": "high",
@@ -9799,7 +9888,8 @@
               "category": "industry",
               "era": "ancient",
               "confidence": "low",
-              "note": "Established: The first vessel, sized 1-5% of the fields liquid capacity, where the wellstream is bled at 25-70 bar to a stable pressure and temperature as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+              "note": "Established: The first vessel, sized 1-5% of the fields liquid capacity, where the wellstream is bled at 25-70 bar to a stable pressure and temperature as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+              "provenance": "incomplete"
             },
             {
               "id": "chem.crude.separation.three-phase",
@@ -9835,7 +9925,8 @@
                 }
               ],
               "confidence": "low",
-              "note": "Established: A crude preheater to 150-200 C followed by a settler and then a desalter, where the crude is washed with recycled water to strip salts as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+              "note": "Established: A crude preheater to 150-200 C followed by a settler and then a desalter, where the crude is washed with recycled water to strip salts as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+              "provenance": "incomplete"
             },
             {
               "id": "chem.crude.separation.electrostatic",
@@ -9846,7 +9937,8 @@
               "category": "industry",
               "era": "1980s",
               "confidence": "low",
-              "note": "High-conductivity crudes could not be electrocoalesced in the 1980s. That limitation is why electrogravitational units (large DACC-type vessels) were preferred for crude."
+              "note": "High-conductivity crudes could not be electrocoalesced in the 1980s. That limitation is why electrogravitational units (large DACC-type vessels) were preferred for crude.",
+              "provenance": "incomplete"
             },
             {
               "id": "chem.crude.separation.oil-water-coalescer",
@@ -9857,7 +9949,8 @@
               "category": "industry",
               "era": "1980s",
               "confidence": "medium",
-              "note": "The 42 ppm / 30 ppm benchmark figures for produced-water oil content are the long-standing offshore standard. The 1983 date for that particular rule reference is a common citation but the precise effective date varies by jurisdiction."
+              "note": "The 42 ppm / 30 ppm benchmark figures for produced-water oil content are the long-standing offshore standard. The 1983 date for that particular rule reference is a common citation but the precise effective date varies by jurisdiction.",
+              "provenance": "incomplete"
             }
           ],
           "confidence": "low",
@@ -9910,7 +10003,8 @@
             }
           ],
           "note": "The five standard measurements are API gravity, sulphur, simulated distillation, Conradson carbon residue and pour point, and their numbers are facts of this node. Its from edge is the crude it measures. Established: Crude assay as a type. Not established: the stated API sulphur distillation carbon residue pour point figures as generally verified.",
-          "confidence": "low"
+          "confidence": "low",
+          "provenance": "incomplete"
         },
         {
           "id": "chem.crude.c64-fraction",
@@ -10564,7 +10658,8 @@
             "rel": "step",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.acrylonitrile.downstream.methyl-methacrylate.acetone-cyanohydrin.acetone-grade": {
         "id": "chem.acrylonitrile.downstream.methyl-methacrylate.acetone-cyanohydrin.acetone-grade",
@@ -10584,7 +10679,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.acrylonitrile.downstream.methyl-methacrylate.acetone-cyanohydrin.hcn-feed": {
         "id": "chem.acrylonitrile.downstream.methyl-methacrylate.acetone-cyanohydrin.hcn-feed",
@@ -10597,7 +10693,8 @@
         "sources": [],
         "confidence": "low",
         "note": "Andrussow versus by-product split and containment specifics not established; feed grade only.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.butadiene.sources.sounsby.furfural.pentosan-residue": {
         "id": "chem.butadiene.sources.sounsby.furfural.pentosan-residue",
@@ -10610,7 +10707,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "A fifth of hardwood dry weight and bark-versus-bagasse split per candidate description only; residue grade, no yield figures.",
-        "children": []
+        "children": [],
+        "provenance": "raw"
       },
     "chem.butadiene.sources.sounsby.furfural.acid-hydrolysis": {
         "id": "chem.butadiene.sources.sounsby.furfural.acid-hydrolysis",
@@ -10636,7 +10734,8 @@
             "role": "product",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.fab-chemicals.dopants.arsine.arsenic-trioxide": {
         "id": "chem.fab-chemicals.dopants.arsine.arsenic-trioxide",
@@ -10651,7 +10750,8 @@
         ],
         "confidence": "medium",
         "note": "Implant versus source-oxide use and ppb exhaust-monitor claims not established per candidate note; precursor grade only.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.fab-chemicals.dopants.arsine.reduction": {
         "id": "chem.fab-chemicals.dopants.arsine.reduction",
@@ -10679,7 +10779,8 @@
             "role": "product",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.fab-chemicals.dopants.diborane.bf3-feed": {
         "id": "chem.fab-chemicals.dopants.diborane.bf3-feed",
@@ -10692,7 +10793,8 @@
         "sources": [],
         "confidence": "low",
         "note": "Neat-cylinder delivery and 0.5-5% in hydrogen per candidate description only; BF3-from-fluorspar link not typed, left open.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.fab-chemicals.dopants.diborane.hydride-feed": {
         "id": "chem.fab-chemicals.dopants.diborane.hydride-feed",
@@ -10705,7 +10807,8 @@
         "sources": [],
         "confidence": "low",
         "note": "Sodium hydride versus BCl3-plus-hydride split and BF2+ transition per candidate description only; grade only.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.fab-chemicals.dopants.phosphine.white-phosphorus": {
         "id": "chem.fab-chemicals.dopants.phosphine.white-phosphorus",
@@ -10727,7 +10830,8 @@
             "rel": "made from",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.fab-chemicals.hydrogen-peroxide.naphthalene-feed": {
         "id": "chem.fab-chemicals.hydrogen-peroxide.naphthalene-feed",
@@ -10740,7 +10844,8 @@
         "sources": [],
         "confidence": "low",
         "note": "Naphthalene-versus-anthracene split per candidate note only; feed grade, no purity figures.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.fab-chemicals.hydrogen-peroxide.anthraquinone": {
         "id": "chem.fab-chemicals.hydrogen-peroxide.anthraquinone",
@@ -10760,7 +10865,8 @@
             "rel": "made from",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.fab-chemicals.tmah.trimethylamine": {
         "id": "chem.fab-chemicals.tmah.trimethylamine",
@@ -10773,7 +10879,8 @@
         "sources": [],
         "confidence": "low",
         "note": "Electrolytic versus ion-exchange split per candidate note only; precursor grade, no concentration claims.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.fab-chemicals.tmah.quaternary-salt": {
         "id": "chem.fab-chemicals.tmah.quaternary-salt",
@@ -10786,7 +10893,8 @@
         "sources": [],
         "confidence": "low",
         "note": "Quat composition and sodium limits per candidate description only; grade only.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.natural-gas.composition.ethane-propane.wellhead-gas": {
         "id": "chem.natural-gas.composition.ethane-propane.wellhead-gas",
@@ -10819,7 +10927,8 @@
         "sources": [],
         "confidence": "low",
         "note": "20,000-160,000 m3 tanks and 125,000-165,000 m3 carriers per candidate description only; 0.3 t/t regas fuel as design value in note.",
-        "children": []
+        "children": [],
+        "provenance": "complete"
       },
     "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol.ethylene-oxide": {
         "id": "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol.ethylene-oxide",
@@ -10832,7 +10941,8 @@
         "sources": [],
         "confidence": "low",
         "note": "95 wt% purity trend per candidate description only; EO-branch link via chem.ethylene.ethylene-glycol noted but not typed.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol.diethylene-glycol": {
         "id": "chem.natural-gas.sources.non-associated-gas.discovery-and-drilling.dehydration.triethylene-glycol.diethylene-glycol",
@@ -10845,7 +10955,8 @@
         "sources": [],
         "confidence": "low",
         "note": "Contactor 20-50 C and reboiler figures per incoming dehydration prose only; grade only.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.natural-gas.uses.acetylene.to-vinyl-chloride.mercury-catalyst.mercuric-chloride": {
         "id": "chem.natural-gas.uses.acetylene.to-vinyl-chloride.mercury-catalyst.mercuric-chloride",
@@ -10865,7 +10976,8 @@
             "rel": "made from",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.natural-gas.uses.acetylene.to-vinyl-chloride.mercury-catalyst.charcoal-support": {
         "id": "chem.natural-gas.uses.acetylene.to-vinyl-chloride.mercury-catalyst.charcoal-support",
@@ -10878,7 +10990,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "Support grade only; distinct from vinylidene-chloride mercuric-cell charcoal in tree, not substituted.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.pcb-chemicals.dry-film-resist.lamination.release-liner.polyester-resin": {
         "id": "chem.pcb-chemicals.dry-film-resist.lamination.release-liner.polyester-resin",
@@ -10891,7 +11004,8 @@
         "sources": [],
         "confidence": "low",
         "note": "25 micron and tenth-m2-per-panel figures per candidate description and note only; order-of-magnitude, grade only.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.pcb-chemicals.dry-film-resist.lamination.release-liner.polyethylene-resin": {
         "id": "chem.pcb-chemicals.dry-film-resist.lamination.release-liner.polyethylene-resin",
@@ -10904,7 +11018,8 @@
         "sources": [],
         "confidence": "low",
         "note": "PE-versus-polyester choice per candidate description only; grade only.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.pcb-chemicals.plating.immersion-gold.electroless-nickel.hypophosphite.yellow-phosphorus": {
         "id": "chem.pcb-chemicals.plating.immersion-gold.electroless-nickel.hypophosphite.yellow-phosphorus",
@@ -10924,7 +11039,8 @@
             "rel": "made from",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.photoresist.diazonaphthoquinone.sulfonate-precursor": {
         "id": "chem.photoresist.diazonaphthoquinone.sulfonate-precursor",
@@ -10941,7 +11057,8 @@
         ],
         "confidence": "medium",
         "note": "1,4-isomer preference and 20-30 wt% diazo content not established per candidate note; precursor grade only.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.photoresist.diazonaphthoquinone.esterification": {
         "id": "chem.photoresist.diazonaphthoquinone.esterification",
@@ -10969,7 +11086,8 @@
             "role": "product",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.polyamide.nylon-66.adipic-acid": {
         "id": "chem.polyamide.nylon-66.adipic-acid",
@@ -10984,7 +11102,8 @@
         ],
         "confidence": "medium",
         "note": "250-270 C salt and 270-280 C polymerisation per candidate description only; butadiene hydrocyanation attribution hedged in note.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.polyamide.nylon-66.hmda": {
         "id": "chem.polyamide.nylon-66.hmda",
@@ -10999,7 +11118,8 @@
         ],
         "confidence": "medium",
         "note": "Adiponitrile-hydrogenation versus acid-plus-ammonia split per candidate description only; grade only.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.polycarbonate.phosgene.carbon-monoxide": {
         "id": "chem.polycarbonate.phosgene.carbon-monoxide",
@@ -11012,7 +11132,8 @@
         "sources": [],
         "confidence": "low",
         "note": "100-150 C over activated carbon per candidate description and note as type only; reformer versus coke source not typed.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.polycarbonate.phosgene.chlorine-feed": {
         "id": "chem.polycarbonate.phosgene.chlorine-feed",
@@ -11054,7 +11175,8 @@
             "rel": "step",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.polyester.pet.dimethyl-terephthalate": {
         "id": "chem.polyester.pet.dimethyl-terephthalate",
@@ -11067,7 +11189,8 @@
         "sources": [],
         "confidence": "low",
         "note": "180-280 C transesterification and acid-route comparison per candidate description and note as type only; DMT grade.",
-        "children": []
+        "children": [],
+        "provenance": "complete"
       },
     "chem.polyester.pet.dmt-synthesis": {
         "id": "chem.polyester.pet.dmt-synthesis",
@@ -11088,7 +11211,8 @@
             "role": "product",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "incomplete"
       },
     "chem.polyester.unsaturated.maleic-anhydride": {
         "id": "chem.polyester.unsaturated.maleic-anhydride",
@@ -11101,7 +11225,8 @@
         "sources": [],
         "confidence": "low",
         "note": "1,000-2,000 molecular weight and 20-80 C peroxide cure per candidate description only; grade only.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.polyester.unsaturated.propylene-glycol": {
         "id": "chem.polyester.unsaturated.propylene-glycol",
@@ -11114,7 +11239,8 @@
         "sources": [],
         "confidence": "low",
         "note": "Propylene and ethylene-oxide chain origin per candidate note only; grade only.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.polyester.unsaturated.styrene-monomer": {
         "id": "chem.polyester.unsaturated.styrene-monomer",
@@ -11127,7 +11253,8 @@
         "sources": [],
         "confidence": "low",
         "note": "UP-grade distinction only; chem.styrene is a process so not substituted, per verdict.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.polystyrene.resin.styrene-monomer": {
         "id": "chem.polystyrene.resin.styrene-monomer",
@@ -11149,7 +11276,8 @@
             "rel": "step",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.pom.resin.formaldehyde-feed": {
         "id": "chem.pom.resin.formaldehyde-feed",
@@ -11171,7 +11299,8 @@
             "rel": "step",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.propylene.cumene.cleavage.hydroperoxide-feed": {
         "id": "chem.propylene.cumene.cleavage.hydroperoxide-feed",
@@ -11191,7 +11320,8 @@
             "rel": "step",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.propylene.cumene.oxidation.cumene-feed": {
         "id": "chem.propylene.cumene.oxidation.cumene-feed",
@@ -11213,7 +11343,8 @@
             "rel": "step",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.propylene.flame-retardants.tdcpp.propylene-oxide": {
         "id": "chem.propylene.flame-retardants.tdcpp.propylene-oxide",
@@ -11233,7 +11364,8 @@
             "rel": "step",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.propylene.flame-retardants.tdcpp.phosphorus-oxychloride": {
         "id": "chem.propylene.flame-retardants.tdcpp.phosphorus-oxychloride",
@@ -11246,7 +11378,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "Chlorinated-versus-brominated ban history per candidate note only; POCl3 grade.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.pvc.plasticiser.ethylhexanol.butyraldehyde": {
         "id": "chem.pvc.plasticiser.ethylhexanol.butyraldehyde",
@@ -11262,7 +11395,8 @@
         ],
         "confidence": "medium",
         "note": "Oxo-route temperatures, pressures and catalysts not established per candidate note; intermediate grade only.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.pvc.plasticiser.ethylhexanol.oxo-process": {
         "id": "chem.pvc.plasticiser.ethylhexanol.oxo-process",
@@ -11290,7 +11424,8 @@
             "role": "product",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.pvc.polymerisation.suspending-agent.vinyl-acetate": {
         "id": "chem.pvc.polymerisation.suspending-agent.vinyl-acetate",
@@ -11303,7 +11438,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "Partial hydrolysis 0.5-2% of water phase per candidate description only; monomer grade.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.pvc.polymerisation.suspending-agent.hydrolysis": {
         "id": "chem.pvc.polymerisation.suspending-agent.hydrolysis",
@@ -11329,7 +11465,8 @@
             "role": "product",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.refining.catalytic-reforming.platinum-catalyst.platinum-metal": {
         "id": "chem.refining.catalytic-reforming.platinum-catalyst.platinum-metal",
@@ -11342,7 +11479,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "0.3-0.4 wt% Pt and 0.1-0.5 wt% Re per candidate facts as not established in note; metal grade only.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.refining.catalytic-reforming.platinum-catalyst.alumina-support": {
         "id": "chem.refining.catalytic-reforming.platinum-catalyst.alumina-support",
@@ -11355,7 +11493,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "1 nm crystallites, chlorine promotion and reclamation economics per candidate note not established; support grade, not smelter alumina.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina.sodium-silicate": {
         "id": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina.sodium-silicate",
@@ -11368,7 +11507,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "Precipitation and spray-drying per candidate description only; salt grade, soda-silica process not substituted.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina.aluminium-sulphate": {
         "id": "chem.refining.fluid-catalytic-cracking.zeolite-catalyst.silica-alumina.aluminium-sulphate",
@@ -11381,7 +11521,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "40-90 micron microspheres and activity split per candidate note not established; salt grade.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.rubber.neoprene.chloroprene-monomer": {
         "id": "chem.rubber.neoprene.chloroprene-monomer",
@@ -11401,7 +11542,8 @@
             "rel": "step",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.solvents.trichloroethylene.tetrachloroethane": {
         "id": "chem.solvents.trichloroethylene.tetrachloroethane",
@@ -11421,7 +11563,8 @@
             "rel": "step",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.solvents.trichloroethylene.tce-synthesis": {
         "id": "chem.solvents.trichloroethylene.tce-synthesis",
@@ -11447,7 +11590,8 @@
             "role": "product",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.styrene.benzene.aromatics-recovery.reformer-naphtha": {
         "id": "chem.styrene.benzene.aromatics-recovery.reformer-naphtha",
@@ -11467,7 +11611,8 @@
             "rel": "step",
             "basis": "inferred"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.sulphur-dioxide": {
         "id": "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.sulphur-dioxide",
@@ -11480,7 +11625,8 @@
         "sources": [],
         "confidence": "low",
         "note": "100-140 C first step per candidate facts as representative only; Claus-burned sulphur origin noted but not typed.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.process-water": {
         "id": "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.process-water",
@@ -11493,7 +11639,8 @@
         "sources": [],
         "confidence": "low",
         "note": "Second-ring hydrolysis per candidate description only; utility grade.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.styrene.benzene.coal-tar.benzol-recovery": {
         "id": "chem.styrene.benzene.coal-tar.benzol-recovery",
@@ -11519,7 +11666,8 @@
             "role": "product",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       },
     "chem.thermosets.phenolic.hexamine.formaldehyde-grade": {
         "id": "chem.thermosets.phenolic.hexamine.formaldehyde-grade",
@@ -11532,7 +11680,8 @@
         "sources": [],
         "confidence": "medium",
         "note": "Novolac-cure versus rubber-accelerator dual role per candidate note not established; feed grade only.",
-        "children": []
+        "children": [],
+        "provenance": "incomplete"
       },
     "chem.thermosets.phenolic.hexamine.synthesis": {
         "id": "chem.thermosets.phenolic.hexamine.synthesis",
@@ -11563,7 +11712,8 @@
             "role": "product",
             "basis": "documented"
           }
-        ]
+        ],
+        "provenance": "complete"
       }
   }
 }
