@@ -89,7 +89,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Pressure_swing_adsorption"
           ],
-          "note": "A PSA unit will not deliver oxygen, at any pressure. 4-6 MPa is a liquid-oxygen or high-pressure-pipeline convention and belongs to the cryogenic branch, not to this one. Not established: the 90-99% nitrogen output and the 7-10 bar operating pressure. The pressure swing adsorption article documents the mechanism and the adsorbents (zeolite, activated carbon, silica gel, alumina, synthetic resins) but states no product purity or pressure.",
+          "note": "Oxygen-enrichment PSA exists as a separate practice; the 4-6 MPa liquid-oxygen and high-pressure-pipeline conventions belong to the cryogenic branch, not to this one. Not established: the 90-99% nitrogen output and the 7-10 bar operating pressure. The pressure swing adsorption article documents the mechanism and the adsorbents (zeolite, activated carbon, silica gel, alumina, synthetic resins) but states no product purity or pressure.",
           "children": [],
           "edges": [
             {
@@ -412,7 +412,7 @@
               "value": "100,000-300,000 bbl/day"
             }
           ],
-          "confidence": "high",
+          "confidence": "medium",
           "provenance": "incomplete",
           "sources": [
             "https://en.wikipedia.org/wiki/Oil_refinery"
@@ -423,11 +423,6 @@
               "to": "facility.oil.lpg",
               "rel": "produces",
               "role": "product"
-            },
-            {
-              "to": "facility.oil",
-              "rel": "consumes",
-              "basis": "inferred"
             },
             {
               "to": "facility.oil",
@@ -680,10 +675,6 @@
       "note": "Established by the cited article: that carbon dioxide is a by-product of the industrial production of hydrogen by steam reforming and of the water gas shift reaction in ammonia production, both processes beginning with water and natural gas; and that liquid and solid carbon dioxide are important refrigerants in the food industry, employed during the transportation and storage of frozen foods, with solid carbon dioxide, called dry ice, used for small shipments where refrigeration equipment is not practical. Not established: that a large part of the 1980s merchant supply came from fertiliser plants with shift-reactor CO2 captured and dried, the dry-ice cleaning of moulds, the claim that the electronics plant had no real use for it, and the inputs listed here. The article names hydrogen and ammonia as sources but gives no share and no date for merchant supply in the 1980s.",
       "edges": [
         {
-          "to": "facility.oil",
-          "rel": "made from"
-        },
-        {
           "to": "chem.natural-gas",
           "rel": "made from",
           "basis": "documented"
@@ -922,7 +913,7 @@
       "id": "facility.water.pvdf",
       "name": "PVDF (polyvinylidene fluoride)",
       "simple_name": "PVDF",
-      "description": "A fluoropolymer from vinylidene fluoride, chemically inert to ultrapure water and to most process acids, used as a liner or as solid pipe in ultrapure service. Melting point about 170 C, and it will not support microbial growth.",
+      "description": "A fluoropolymer from vinylidene fluoride, chemically inert to ultrapure water and to most process acids, used as a liner or as solid pipe in ultrapure service. Melting point about 177 C, and it will not support microbial growth.",
       "kind": "material",
       "category": "plastics",
       "era": "1983",
@@ -935,7 +926,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Polyvinylidene_fluoride"
       ],
-      "note": "Not established: the 170 C melting point and the claim that PVDF will not support microbial growth. The PVDF article supports its origin by polymerising vinylidene difluoride and its non-reactive character. The numbers are not in it.",
+      "note": "Not established: the claim that PVDF will not support microbial growth. The PVDF article supports its origin by polymerising vinylidene difluoride and its non-reactive character, and gives the melting point as 177 C.",
       "edges": [
         {
           "to": "facility.water.pvdf.vinylidene-fluoride",
@@ -996,7 +987,7 @@
       "era": "1983",
       "confidence": "low",
       "provenance": "incomplete",
-      "note": "Not verified for a specific 1980s askarel producer.",
+      "note": "Not verified for a specific 1980s askarel producer. Era caveat: US PCB production for askarel halted in 1977 with the TSCA ban effective 1978-79, so a 1983 chlorobenzene feed reads as legacy in-service fluid or non-US make, not current US production.",
       "edges": [
         {
           "to": "chem.styrene.benzene",
@@ -1574,7 +1565,7 @@
       "inputs": [
         "silica"
       ],
-      "confidence": "high",
+      "confidence": "medium",
       "provenance": "incomplete",
       "sources": [
         "https://en.wikipedia.org/wiki/Glass_fiber"
@@ -1780,11 +1771,21 @@
       "confidence": "medium",
       "provenance": "incomplete",
       "children": [],
-      "note": "Not established: the construction and the endpoint as stated. The encyclopaedia has no article on aluminium conductor steel-reinforced cable (the title does not exist), and no conductor standard was located. Aluminium strands around a steel core for tensile strength is generic industry practice, carried here without a source.",
+      "note": "Not established: the construction and the endpoint as stated. The encyclopaedia has no article on aluminium conductor steel-reinforced cable (the title does not exist). Aluminium strands around a steel core for tensile strength is generic industry practice, carried here with an ASTM B232 scope citation; the pre-1982 lineage of the composition is unverified.",
       "edges": [
         {
           "to": "facility.power.grid.line",
           "rel": "at"
+        },
+        {
+          "to": "metal.aluminum",
+          "rel": "made of",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "metal.steel",
+          "rel": "made of",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -1900,13 +1901,35 @@
       "category": "industry",
       "era": "1983",
       "inputs": [],
-      "confidence": "high",
+      "confidence": "medium",
       "provenance": "incomplete",
       "sources": [
         "https://en.wikipedia.org/wiki/Anthracite",
         "https://en.wikipedia.org/wiki/Petroleum"
       ],
-      "children": []
+      "children": [],
+      "edges": [
+  {
+    "to": "facility.coal",
+    "rel": "made from",
+    "basis": "typical-1982"
+  },
+  {
+    "to": "facility.steam.anthracite",
+    "rel": "made from",
+    "basis": "typical-1982"
+  },
+  {
+    "to": "chem.refining.products.fuel-oil",
+    "rel": "made from",
+    "basis": "typical-1982"
+  },
+  {
+    "to": "facility.steam.briquette",
+    "rel": "made from",
+    "basis": "typical-1982"
+  }
+]
     },
     "facility.electricity.electrical-steel": {
       "id": "facility.electricity.electrical-steel",
@@ -2551,11 +2574,23 @@
           "category": "fluids",
           "era": "1983",
           "inputs": [],
-          "confidence": "high",
+          "confidence": "medium",
           "provenance": "incomplete",
           "sources": [
             "https://en.wikipedia.org/wiki/Cooling_tower"
-          ]
+          ],
+          "edges": [
+  {
+    "to": "chem.pvc.resin",
+    "rel": "made of",
+    "basis": "typical-1982"
+  },
+  {
+    "to": "chem.polystyrene.resin",
+    "rel": "made of",
+    "basis": "typical-1982"
+  }
+]
         }
       ],
       "note": "Not established: the evaporation loss of about 1% of circulating flow per 10 C of wet-bulb depression, the 4-8 cycles of concentration figure, and the 20-60 m shell height. The cooling tower cited describes evaporative cooling and drift eliminators but gives none of these figures.",
@@ -2571,15 +2606,22 @@
       "id": "facility.water.evaporative-cooling",
       "name": "Evaporative (swamp) cooler",
       "simple_name": "Evaporative cooler",
-      "description": "A finned coil with water sprayed over it and an induced-draft fan. Far cheaper than a chiller and it worked well in Hong Kong, Taiwan and Singapore, where the wet-bulb temperature was already low; useless in a humid July in Pennsylvania.",
+      "description": "A finned coil with water sprayed over it and an induced-draft fan. Far cheaper than a chiller in dry climates where the wet-bulb depression is large; marginal in humid coastal sites, where the wet bulb runs high.",
       "kind": "tool",
       "category": "fluids",
       "era": "1960-1990",
-      "confidence": "high",
+      "confidence": "medium",
       "sources": [
         "https://en.wikipedia.org/wiki/Evaporative_cooler"
       ],
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+  {
+    "to": "facility.water",
+    "rel": "consumes",
+    "basis": "typical-1982"
+  }
+]
     },
     "facility.water.chiller": {
       "id": "facility.water.chiller",
@@ -2789,7 +2831,7 @@
       "kind": "tool",
       "category": "industry",
       "era": "1960-1990",
-      "confidence": "high",
+      "confidence": "medium",
       "sources": [
         "https://en.wikipedia.org/wiki/Compressed_air"
       ],
@@ -2803,7 +2845,7 @@
       "kind": "tool",
       "category": "industry",
       "era": "1960-1990",
-      "confidence": "high",
+      "confidence": "medium",
       "sources": [
         "https://en.wikipedia.org/wiki/Compressed_air"
       ],
@@ -5060,14 +5102,21 @@
               "id": "facility.power.coal-plant.receiving",
               "name": "Coal receiving and stockyard",
               "simple_name": "Coal stockyard",
-              "description": "Unload from rail unit trains or self-unloading barges into a yard. In the 1980s the East Coast plants were fed by unit trains. Japan's and Korea's coal came by Panamax and post-Panamax bulker.",
+              "description": "Unload from rail unit trains or self-unloading barges into a yard. In the 1980s the East Coast plants were fed by unit trains. Japan's and Korea's coal came by Panamax and Capesize bulker.",
               "kind": "facility",
               "category": "industry",
               "era": "1983",
               "inputs": [],
               "confidence": "medium",
-              "note": "Not established: that East Coast plants took coal from rail unit trains or self-unloading barges, or that Japanese and Korean coal came by Panamax and post-Panamax bulker, for the stations feeding this supply. The delivery modes carry no source.",
-              "provenance": "incomplete"
+              "note": "Not established: that East Coast plants took coal from rail unit trains or self-unloading barges, or that Japanese and Korean coal came by Panamax and Capesize bulker, for the stations feeding this supply. The delivery modes carry no source.",
+              "provenance": "incomplete",
+              "edges": [
+  {
+    "to": "facility.coal",
+    "rel": "consumes",
+    "basis": "typical-1982"
+  }
+]
             },
             {
               "id": "facility.power.hydro-plant",
@@ -5153,7 +5202,7 @@
                   "kind": "site",
                   "category": "energy",
                   "era": "1960-1990",
-                  "confidence": "high",
+                  "confidence": "medium",
                   "sources": [
                     "https://en.wikipedia.org/wiki/Chimney"
                   ],
@@ -5191,7 +5240,7 @@
                 "https://en.agi.or.jp/media/publications/workingpaper/WP2015-10.pdf"
               ],
               "note": "In the US the big gas-fired build-out came after 1990, with the EPA NOx rules. In 1983 a gas turbine plant was an unusual and expensive thing to run on a peak-load schedule.",
-              "confidence": "high",
+              "confidence": "medium",
               "provenance": "incomplete",
               "children": [],
               "edges": [
@@ -5210,7 +5259,7 @@
               "id": "facility.power.nuclear-plant",
               "name": "Nuclear power plant",
               "simple_name": "Nuclear power plant",
-              "description": "Not a 'coal/oil/gas/hydro' machine, but it was 10.2% of Taiwan's electricity in 1980. The first reactor at Chinshan came on line in 1978, followed by Chinshan 2 (1979), Chinshan 3, Feitsui and Lungmen. Any 1983 power bill in northern Taiwan could legitimately be traced to a uranium fuel rod.",
+              "description": "Not a 'coal/oil/gas/hydro' machine, but it was 10.2% of Taiwan's electricity in 1980. The first reactor at Chinshan came on line in 1978, followed by further units at Chinshan and Kuosheng through the early 1980s. Any 1983 power bill in northern Taiwan could legitimately be traced to a uranium fuel rod.",
               "kind": "facility",
               "category": "energy",
               "era": "1978-1990",
@@ -5223,7 +5272,7 @@
               "sources": [
                 "https://en.agi.or.jp/media/publications/workingpaper/WP2015-10.pdf"
               ],
-              "confidence": "high",
+              "confidence": "medium",
               "provenance": "incomplete",
               "children": [],
               "edges": [
@@ -5390,7 +5439,7 @@
           "kind": "facility",
           "category": "energy",
           "era": "1960-1990",
-          "confidence": "high",
+          "confidence": "medium",
           "sources": [
             "https://en.wikipedia.org/wiki/Distribution_transformer"
           ],
@@ -5670,7 +5719,14 @@
               "confidence": "medium",
               "provenance": "incomplete",
               "children": [],
-              "note": "Not established: that Commodore's Taiwanese subcontractors in the export-processing zones bought municipal or industrial-zone water rather than taking their own. No waterworks or government document located on Taiwanese industrial water supply in that period."
+              "note": "Not established: that Commodore's Taiwanese subcontractors in the export-processing zones bought municipal or industrial-zone water rather than taking their own. No waterworks or government document located on Taiwanese industrial water supply in that period.",
+              "edges": [
+  {
+    "to": "facility.water.river-intake",
+    "rel": "consumes",
+    "basis": "typical-1982"
+  }
+]
             }
           ],
           "confidence": "low",
@@ -6252,12 +6308,19 @@
             "bed-of-nails fixture",
             "spring probe"
           ],
-          "confidence": "high",
+          "confidence": "medium",
           "sources": [
             "https://en.wikipedia.org/wiki/In-circuit_testing"
           ],
           "note": "The bed-of-nails fixture itself is bespoke per board revision. This is one of the reasons a new motherboard revision was expensive to introduce and why the 250407 revision mattered.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "facility.test-equipment.needle-probe",
+    "rel": "contains",
+    "basis": "typical-1982"
+  }
+]
         },
         {
           "id": "facility.test-equipment.functional",
@@ -6265,9 +6328,6 @@
           "simple_name": "Functional tester",
           "description": "A powered-up test station running a test program from ROM that exercised the VIC-II registers, checked the RAM, drove the keyboard matrix and read back the RAM. On a Commodore line this was a dedicated fixture with a monitor and a keyboard, and the operator's job was to load, run, read the result, box or quarantine.",
           "kind": "tool",
-          "sources": [
-            "https://en.wikipedia.org/wiki/Functional_testing"
-          ],
           "category": "industry",
           "era": "1983",
           "confidence": "medium",

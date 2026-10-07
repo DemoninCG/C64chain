@@ -194,6 +194,16 @@ stays readable.
   decision, diatomite carrier, cast cracker alloy, TBHP chain,
   tetrachloroethane, EB zeolite-synthesis nodes, PO/MeCl/urea (from Wave 2);
   emitter.gold kept as era-context child (pre-Schottky, unlinked from 74LS).
+- Wave 8 hold-outs (industry/utilities): oil-stack at-edge unstorable
+  (site-to-facility has no stored relation; banked); steel transmission-tower
+  NEW-NODE + insulator-porcelain at-edge (belong to out-of-slice nodes);
+  calcium-carbide acetylene material (central authorship call); hydro siting
+  cases / well hydrogeology / grid territory voltages (need site evidence);
+  stack height band, header piping standard, drum practice, chiller
+  refrigerants, burn-in/ATE period practice, manufacturing-FCT source,
+  RO/membrane plant history, PVDF/VDF route pillars; gas/nuclear Taiwan
+  figures need AGI-paper verification (unit names repaired); wrong-domain
+  Functional_testing source removed; PVDF aligned to 177 C.
 - Wave 7 hold-outs (chassis/peripherals): deck naming review (cassette.deck
   nodes describe the 1541 floppy, not a cassette deck; display-name pass
   banked, ids untouched); gun-blackening Aquadag-vs-flame route; implosion
@@ -242,10 +252,10 @@ stays readable.
   for Pd/Pt/Rh refining (scope call); gold-reef deepest-grade sentence fixed
   to match note; xanthate renamed ethyl (SIPC acronym dropped as isopropyl).
 - Provenance research waves (guide: `docs/RESEARCH-GUIDE.md`; rulings R1–R5
-  in §9): Waves 1–6 done. Wave 7 (chassis/peripherals) in progress.
-  Remaining: industry/utilities, then a provenance re-review pass (flags
-  were deliberately left untouched by research waves; promotion to complete
-  needs the re-review discipline, never an edge count).
+  in §9): Waves 1–7 done. Wave 8 (industry/utilities) in progress.
+  Remaining: a provenance re-review pass (flags were deliberately left
+  untouched by research waves; promotion to complete needs the re-review
+  discipline, never an edge count).
 - Orphan queue for batch 2: catalogue N–Z leftovers (~25, triage B diverged
   onto small-comps instead), untriaged metals clusters (lime ×6, tin slag /
   atomisation, extrusion, converting, cobalt leach, tantalum tail, barite
