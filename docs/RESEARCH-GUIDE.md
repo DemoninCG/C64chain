@@ -89,7 +89,7 @@ The eleven below are verified to have OCR text today:
 | 11 | `fairchild-discrete-data-book-analog-division-1985` | `Fairchild Discrete Data Book Analog Division 1985_djvu.txt` | discretes, regulators |
 | 12 | `NASA_NTRS_Archive_19810016959` | `<id>_djvu.txt` | polysilicon CVD route (1981, directly on-point for Siemens/TCS) |
 | 13 | `NASA_NTRS_Archive_19790023597` | `<id>_djvu.txt` | silicon material, gaseous melt reduction (1979) |
-| 14 | `DTIC_ADA086022` | `<id>_djvu.txt` | quartz crystal production tech (1980, MM&T program) |
+| 14 | ~~`DTIC_ADA086022`~~ REMOVED 2026-10-07 | — | STRUCK: verified in-session to be a Raytheon thick-film hybrid oscillator report (DELET-TR-76-8119-F), NOT quartz production. Do not cite for quartz/crucible claims. A true quartz-crystal MM&T source is still unidentified (TODO §0). |
 | 15 | `DTIC_AD0267138` | `<id>_djvu.txt` | barium titanate capacitors to 200 C (1961, ceramic caps) |
 | 16 | `polymersinelectr0000unse` | `<id>_djvu.txt` | Polymers in Electronics symposium (1984: resists, novolac, packaging) |
 | 17 | `encyclopediaofse0000unse_m1f1` | `<id>_djvu.txt` | Encyclopedia of Semiconductor Technology (1984) |

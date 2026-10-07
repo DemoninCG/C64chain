@@ -999,7 +999,7 @@
           "id": "mb.cia.tod",
           "name": "Time-of-day clock",
           "simple_name": "Time-of-day clock",
-          "description": "The CIA's time-of-day clock is a 17-bit counter clocked from the serial pin, which the C64 mainboard drives from one side of the AC line through a 470 kohm resistor. The resulting clock is therefore a divided version of the mains frequency, trimmed per unit at final test by selecting a film capacitor. The timer counters themselves are static CMOS-style ripple counters, so they hold their count with the clock stopped, which is why a dead battery or a flat mains filter freezes the clock.",
+          "description": "The CIA's time-of-day clock is a 50/60 Hz-driven real-time clock with four BCD registers (tenths of seconds, seconds, minutes, hours) plus an alarm, clocked from one side of the AC line through a 470 kohm resistor on the mainboard. The resulting clock is therefore a divided version of the mains frequency, trimmed per unit at final test by selecting a film capacitor. The 6526 is an NMOS part, and the C64 has no battery backup: with the mains-derived clock stopped, the clock stops too.",
           "kind": "part",
           "category": "silicon",
           "era": "1982",
@@ -1009,8 +1009,8 @@
           ],
           "facts": [
             {
-              "label": "Counter",
-              "value": "17 bits (14 h x 60 min x 60 s + tenths/AM-PM)"
+              "label": "Registers",
+              "value": "BCD tenths, seconds, minutes, hours, plus alarm"
             },
             {
               "label": "Reference",
@@ -1985,11 +1985,6 @@
           "rel": "produces",
           "role": "product",
           "basis": "typical-1982"
-        },
-        {
-          "to": "si.polysilicon.coke.calciner.vacuum-residue",
-          "rel": "consumes",
-          "basis": "documented"
         }
       ]
     },
@@ -2009,7 +2004,10 @@
       ],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Not established: that any particular silicon supplier fed its furnaces with vacuum-residue coke rather than coal-tar pitch, anthracite or low-ash coal, nor the vacuum-tower pressure, the coking-heater temperature or the vanadium figure. Traces of vanadium and nickel in metallurgical silicon, and hence in its carbon reductant, are real, but the level a silicon plant had to tolerate is not a published number."
+      "note": "Not established: that any particular silicon supplier fed its furnaces with vacuum-residue coke rather than coal-tar pitch, anthracite or low-ash coal, nor the vacuum-tower pressure, the coking-heater temperature or the vanadium figure. Traces of vanadium and nickel in metallurgical silicon, and hence in its carbon reductant, are real, but the level a silicon plant had to tolerate is not a published number.",
+      "sources": [
+  "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+]
     },
     "si.polysilicon.coke.anthracite": {
       "id": "si.polysilicon.coke.anthracite",
@@ -2269,7 +2267,7 @@
           "role": "product"
         },
         {
-          "to": "si.wafer.diamond.graphite-charge",
+          "to": "si.wafer.diamond.grit.graphite-charge",
           "rel": "consumes",
           "basis": "documented"
         },
@@ -2477,7 +2475,7 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Aligner_(semiconductor)"
       ],
-      "confidence": "high",
+      "confidence": "low",
       "provenance": "incomplete",
       "note": "Named machines are illustrative of the period rather than a documented inventory of the Norristown line. Reduction steppers (GCA, Canon, Magnifire, later ASML) were arriving in 1982-83 and were the next generation, not this one."
     },
@@ -2673,11 +2671,6 @@
       "provenance": "incomplete",
       "note": "Melted in a vacuum induction furnace, cast, hot-rolled, then cold-rolled and annealed. In 1982 the nickel in it came overwhelmingly from sulphide concentrates (Sudbury in Ontario, the Norilsk-Talnakh massif and the Philippines) won either by the Mond carbonyl loop or by high-pressure acid leach of laterite, then electrolytically refined. The low-carbon steel half came from hematite ore, coke and limestone.",
       "edges": [
-        {
-          "to": "metal.copper.cathode",
-          "rel": "made from",
-          "basis": "inferred"
-        },
         {
           "to": "metal.nickel.ingot",
           "rel": "made from",
@@ -4034,7 +4027,14 @@
             "https://en.wikipedia.org/wiki/Polycrystalline_silicon"
           ],
           "confidence": "high",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+            {
+              "to": "chem.silane.monosilane",
+              "rel": "consumes",
+              "basis": "typical-1982"
+            }
+          ]
         },
         {
           "id": "mb.cpu.fe.etcher",
@@ -4051,12 +4051,12 @@
             {
               "to": "chem.fab-chemicals.etch-gases",
               "rel": "consumes",
-              "basis": "documented"
+              "basis": "typical-1982"
             },
             {
               "to": "chem.fab-chemicals.etch-gases.cf4",
               "rel": "consumes",
-              "basis": "documented"
+              "basis": "typical-1982"
             },
             {
               "to": "chem.fab-chemicals.etch-gases.cl2",
@@ -4250,7 +4250,7 @@
           "basis": "typical-1982"
         },
         {
-          "to": "mb.discretes.bjt.resist",
+          "to": "mb.cpu.fe.photoresist.dnq",
           "rel": "consumes",
           "basis": "typical-1982"
         }
@@ -4328,7 +4328,7 @@
       "provenance": "incomplete",
       "edges": [
         {
-          "to": "mb.discretes.isolation.resist",
+          "to": "mb.cpu.fe.photoresist.dnq",
           "rel": "consumes",
           "basis": "typical-1982"
         }
@@ -4817,7 +4817,7 @@
           "basis": "typical-1982"
         },
         {
-          "to": "mb.roms.process.resist",
+          "to": "mb.cpu.fe.photoresist.dnq",
           "rel": "consumes",
           "basis": "typical-1982"
         }
@@ -4955,7 +4955,7 @@
           "basis": "typical-1982"
         },
         {
-          "to": "mb.sid.process.resist",
+          "to": "mb.cpu.fe.photoresist.dnq",
           "rel": "consumes",
           "basis": "typical-1982"
         }
@@ -5044,7 +5044,7 @@
           "basis": "typical-1982"
         },
         {
-          "to": "mb.vic.process.resist",
+          "to": "mb.cpu.fe.photoresist.dnq",
           "rel": "consumes",
           "basis": "typical-1982"
         }
@@ -5201,11 +5201,16 @@
           "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
         ],
         "confidence": "medium",
-        "note": "Hedged: TEOS-vs-silane PSG route split at this fab not established; PECVD nitride alternative explicitly unconfirmed per candidate note and is NOT modeled.",
+        "note": "Hedged: TEOS-vs-silane PSG route split at this fab not established; PECVD nitride alternative explicitly unconfirmed per candidate note and is NOT modeled. TEOS is the ethanol ester of silicon tetrachloride, not a trichlorosilane derivative.",
         "children": [],
         "edges": [
           {
-            "to": "metal.silica.tcs",
+            "to": "metal.silicon-tetrachloride",
+            "rel": "made from",
+            "basis": "inferred"
+          },
+          {
+            "to": "chem.ethanol",
             "rel": "made from",
             "basis": "inferred"
           }
@@ -5235,29 +5240,7 @@
         ],
         "provenance": "incomplete"
       },
-    "mb.discretes.bjt.resist": {
-        "id": "mb.discretes.bjt.resist",
-        "name": "Planar-BJT DNQ resist formulation",
-        "simple_name": "BJT litho resist",
-        "description": "Positive DNQ/novolac resist formulation consumed by the planar epitaxial BJT mask levels (isolation, base, emitter, contact). Same substance as the CPU resist, scoped here for central merge.",
-        "kind": "material",
-        "category": "silicon",
-        "era": "1970s-1982",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Planar_process"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: mask count per device not established; merge candidate with mb.cpu.fe.photoresist.dnq and siblings.",
-        "children": [],
-        "edges": [
-          {
-            "to": "chem.photoresist.novolac",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "incomplete"
-      },
+    
     "mb.discretes.epi.subcollector": {
         "id": "mb.discretes.epi.subcollector",
         "name": "n+ subcollector diffusion",
@@ -5281,30 +5264,7 @@
         ],
         "provenance": "complete"
       },
-    "mb.discretes.isolation.resist": {
-        "id": "mb.discretes.isolation.resist",
-        "name": "Isolation-mask DNQ resist formulation",
-        "simple_name": "Isolation resist",
-        "description": "Positive DNQ/novolac resist formulation for the isolation/base/emitter window masks of the planar epitaxial flow. Scoped merge candidate with sibling resist nodes.",
-        "kind": "material",
-        "category": "silicon",
-        "era": "1959-1982",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Planar_process",
-          "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: boron-trichloride feed grade and thermal-oxide mask thickness not established; those two inputs stay open (see reason).",
-        "children": [],
-        "edges": [
-          {
-            "to": "chem.photoresist.novolac",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "incomplete"
-      },
+    
     "mb.discretes.led.epi.junction-die": {
         "id": "mb.discretes.led.epi.junction-die",
         "name": "LPE GaP/GaAsP junction die",
@@ -5426,77 +5386,9 @@
         ],
         "provenance": "incomplete"
       },
-    "mb.roms.process.resist": {
-        "id": "mb.roms.process.resist",
-        "name": "Mask-ROM DNQ resist formulation",
-        "simple_name": "ROM litho resist",
-        "description": "Positive DNQ/novolac resist formulation for the NMOS mask-ROM flow including the extra programming-level mask. Merge candidate with sibling resist nodes.",
-        "kind": "material",
-        "category": "silicon",
-        "era": "1980s",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Photoresist",
-          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: 8+1 mask-level count and mask-cost-vs-yield claim per candidate note not established.",
-        "children": [],
-        "edges": [
-          {
-            "to": "chem.photoresist.novolac",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "incomplete"
-      },
-    "mb.sid.process.resist": {
-        "id": "mb.sid.process.resist",
-        "name": "SID NMOS-analogue resist formulation",
-        "simple_name": "SID litho resist",
-        "description": "Positive DNQ/novolac resist formulation for the 6581 mixed NMOS-analogue flow (phase accumulators, DAC poly resistors, tub-isolated analogue block).",
-        "kind": "material",
-        "category": "silicon",
-        "era": "1980s",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Photoresist",
-          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: internal Norristown 6580/6581 topology per candidate note is typical-period practice, not published detail.",
-        "children": [],
-        "edges": [
-          {
-            "to": "chem.photoresist.novolac",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "incomplete"
-      },
-    "mb.vic.process.resist": {
-        "id": "mb.vic.process.resist",
-        "name": "VIC-II silicon-gate resist formulation",
-        "simple_name": "VIC litho resist",
-        "description": "Positive DNQ/novolac resist formulation for the VIC-II mixed digital/analogue silicon-gate flow (9-10 mask levels, single aluminium layer).",
-        "kind": "material",
-        "category": "silicon",
-        "era": "1980s",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Photoresist"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: 8562 die size/mask count and on-die resistor values per candidate note not established.",
-        "children": [],
-        "edges": [
-          {
-            "to": "chem.photoresist.novolac",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "incomplete"
-      },
+    
+    
+    
     "si.attach.diced-die": {
         "id": "si.attach.diced-die",
         "name": "Diced known-good die",
@@ -5555,7 +5447,7 @@
           "https://en.wikipedia.org/wiki/Photoresist",
           "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
         ],
-        "confidence": "medium",
+        "confidence": "low",
         "note": "Hedged: AZ-1350 brand and 1:1-print specificity beyond candidate text not established.",
         "children": [],
         "edges": [
@@ -5625,29 +5517,7 @@
         ],
         "provenance": "incomplete"
       },
-    "si.polysilicon.coke.calciner.vacuum-residue": {
-        "id": "si.polysilicon.coke.calciner.vacuum-residue",
-        "name": "Heavy vacuum residue coker feed",
-        "simple_name": "Vacuum residue feed",
-        "description": "Dense vacuum-tower bottoms (asphaltene/metal-porphyrin pitch) as the delayed-coker feed for silicon-grade needle coke, calcined 1200-1350 C.",
-        "kind": "material",
-        "category": "silicon",
-        "era": "1980s",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
-        ],
-        "confidence": "low",
-        "note": "Hedged: heavy-sour grade assignment and refinery routing per candidate notes not established; merge candidate with si.polysilicon.coke.crude.",
-        "children": [],
-        "edges": [
-          {
-            "to": "chem.petroleum",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "incomplete"
-      },
+    
     "si.polysilicon.coke.crude.vacuum-distillation": {
         "id": "si.polysilicon.coke.crude.vacuum-distillation",
         "name": "Crude vacuum distillation",
@@ -5688,7 +5558,7 @@
         "sources": [
           "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
         ],
-        "confidence": "medium",
+        "confidence": "low",
         "note": "Hedged: station count range ends and solder-pot alloy per candidate facts only.",
         "children": [],
         "edges": [
@@ -5723,29 +5593,7 @@
         ],
         "provenance": "incomplete"
       },
-    "si.wafer.diamond.graphite-charge": {
-        "id": "si.wafer.diamond.graphite-charge",
-        "name": "HPHT graphite powder charge",
-        "simple_name": "Graphite HPHT charge",
-        "description": "High-purity graphite powder charge (not finished electrodes) pressed and sintered for belt-press diamond synthesis at 5-6 GPa and 1300-1600 C.",
-        "kind": "material",
-        "category": "metals",
-        "era": "1982",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Synthetic_diamond"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: powder grade/provenance vs electrode stock not established; electrode edge retained as the legacy path.",
-        "children": [],
-        "edges": [
-          {
-            "to": "metal.coke",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "incomplete"
-      },
+    
     "si.wafer.diamond.catalyst": {
         "id": "si.wafer.diamond.catalyst",
         "name": "HPHT diamond metal catalyst",
@@ -5781,16 +5629,10 @@
           "https://en.wikipedia.org/wiki/Synthetic_diamond"
         ],
         "confidence": "medium",
-        "note": "Hedged: grit-maker identity per candidate note not established.",
+        "note": "Hedged: grit-maker identity per candidate note not established. The blast-furnace-coke leg is removed: HPHT graphite comes from petroleum/needle coke, not blast-furnace coke.",
         "children": [],
-        "edges": [
-          {
-            "to": "metal.coke",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
+        "edges": [],
+        "provenance": "incomplete"
       }
   }
 }

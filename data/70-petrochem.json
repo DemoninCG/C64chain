@@ -698,6 +698,11 @@
                   "rel": "consumes"
                 },
                 {
+                  "to": "chem.methanol",
+                  "rel": "consumes",
+                  "basis": "inferred"
+                },
+                {
                   "to": "chem.butadiene.sources.cracker-c4",
                   "rel": "consumes",
                   "basis": "inferred"
@@ -3279,6 +3284,20 @@
           "basis": "documented"
         }
       ]
+    },
+    "chem.methanol": {
+      "id": "chem.methanol",
+      "name": "Methanol",
+      "simple_name": "Methanol",
+      "description": "CH3OH, the C1 alcohol: methanol plus isobutylene over an acidic resin gives MTBE; oxidised it gives formaldehyde; aminated it gives methylamines. Made from synthesis gas (carbon monoxide plus hydrogen) over a copper-zinc catalyst at type level.",
+      "kind": "material",
+      "category": "fluids",
+      "era": "1920s",
+      "confidence": "low",
+      "provenance": "incomplete",
+      "note": "Established: methanol as the C1 feed to MTBE etherification, formaldehyde oxidation and methylamine chemistry as types. Not established: the synthesis-gas route conditions, the coal-vs-gas feedstock split, or any 1983 tonnage or purity as given.",
+      "children": [],
+      "edges": []
     },
     "chem.ethanol": {
       "id": "chem.ethanol",

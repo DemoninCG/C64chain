@@ -675,7 +675,9 @@
                   "category": "packaging",
                   "era": "1960s",
                   "sources": [
-                    "https://en.wikipedia.org/wiki/Dual_in-line_package"
+                    "https://en.wikipedia.org/wiki/Dual_in-line_package",
+                    "https://archive.org/download/1983-rca-cmos-ic-databook/1983-RCA-Cmos-Ic-Databook_djvu.txt",
+                    "https://archive.org/download/bitsavers_tidataBookeTTLDataBook2ndEd_2627593/1977_Supplement_to_the_TTL_DataBook_2nd_Ed__djvu.txt"
                   ],
                   "confidence": "high",
                   "facts": [
@@ -771,7 +773,8 @@
                     "https://www.precisionmicro.com/components/lead-frames"
                   ],
                   "inputs": [],
-                  "provenance": "incomplete"
+                  "provenance": "incomplete",
+                  "scope": "alternate"
                 }
               ],
               "edges": [
@@ -1067,7 +1070,7 @@
                   "kind": "site",
                   "category": "industry",
                   "era": "1980s",
-                  "confidence": "medium",
+                  "confidence": "low",
                   "provenance": "incomplete",
                   "inputs": [],
                   "note": "Not established: that sputterers, evaporators, a sinter furnace and ion implanters shared one vacuum tool room with argon flowing, or any of the equipment inventory. Sputtering and evaporation are documented as techniques. The bay is a layout assumption.",
@@ -1213,7 +1216,9 @@
               "confidence": "high",
               "note": "The transmission-gate cell is a real object. Two MOSFETs of opposite polarity in parallel is what the 4066 is actually made of.",
               "sources": [
-                "https://en.wikipedia.org/wiki/CMOS"
+                "https://en.wikipedia.org/wiki/CMOS",
+                "https://archive.org/download/motorola-cmos-integrated-circuits-1978/Motorola%20CMOS%20Integrated%20Circuits%201978_djvu.txt",
+                "https://archive.org/download/1983-rca-cmos-ic-databook/1983-RCA-Cmos-Ic-Databook_djvu.txt"
               ],
               "facts": [
                 {
@@ -1557,19 +1562,7 @@
         }
       ]
     },
-    "mb.logic.bipolar.process.base.boron.borax": {
-      "id": "mb.logic.bipolar.process.base.boron.borax",
-      "name": "Boron oxide (B2O3) solid source",
-      "simple_name": "Boron oxide (B2O3) solid source",
-      "description": "For thermal diffusion, boron was often carried in a boron-doped oxide or a boron nitride wafer placed face-to-face with the silicon in the diffusion boat. Cheaper and easier to handle than gas. The active species is boron oxide, B2O3. The name previously used here said 'borax', which is the sodium tetraborate and a different (and not the standard) source.",
-      "kind": "material",
-      "category": "silicon",
-      "era": "1980s",
-      "confidence": "medium",
-      "provenance": "incomplete",
-      "note": "Solid-source BN and doped-oxide diffusion was the classic boron diffusion technique before diborane became routine. Renamed from 'Borax / boron oxide source' because borax (Na2B4O7) is not what went in the boat. The gas source is no longer inlined here: chem.fab-chemicals.dopants.diborane publishes diborane and boron trifluoride, which is more detailed than the one-sentence node that used to sit here.",
-      "inputs": []
-    },
+    
     "mb.logic.package.assembly.mould.compound.pigment": {
       "id": "mb.logic.package.assembly.mould.compound.pigment",
       "name": "Carbon black pigment",
@@ -1918,7 +1911,7 @@
               "kind": "tool",
               "category": "silicon",
               "era": "1980s",
-              "confidence": "medium",
+              "confidence": "low",
               "provenance": "incomplete",
               "inputs": [
                 "facility.electricity"
@@ -2096,7 +2089,7 @@
             {
               "to": "chem.fab-chemicals.tmah",
               "rel": "consumes",
-              "basis": "typical-1982"
+              "basis": "documented"
             },
             {
               "to": "metal.salt-brine",
@@ -2537,6 +2530,7 @@
               "category": "silicon",
               "era": "1970s-1980s",
               "confidence": "medium",
+              "scope": "alternate",
               "note": "Dielectric isolation was used by Fairchild and a few others for high-performance analog and for some logic families in the 1970s and 1980s, but junction isolation was cheaper and dominated standard 74LS. Not established: which isolation a given vendor's 74LS used; most 74LS parts are believed to be junction-isolated. The citation that used to sit here, en.wikipedia.org/wiki/Dielectric_isolation, does not exist: there is no encyclopaedia article on dielectric isolation of bipolar circuits, and the plausible nearby subjects are about something else (isolation transformers, through-silicon vias, dielectric withstand testing). It was removed rather than repointed at a misleading neighbour, so nothing here rests on a link a reader can follow.",
               "sources": [],
               "inputs": [],
@@ -2641,15 +2635,15 @@
         },
         {
           "id": "mb.logic.bipolar.process.emitter",
-          "name": "Emitter diffusion and the gold in it",
-          "simple_name": "Emitter diffusion and gold",
-          "description": "The third diffusion. Through a finer mask, a very heavily doped n+ region is driven into the boron base, forming the emitter. Because the n+ emitter is so much more heavily doped than the p base, the emitter-base junction is forward-biased at only 0.7 V and injects enormous current gain, but only as long as the emitter does not punch through the thin base under the reverse bias of the collector. Pushing gold into the emitter diffuses the emitter junction forward slightly, making the junction harder for holes to reverse-inject, which suppresses punch-through and the associated capacitance, and raises the gain. This is the 'gold-doped emitter'.",
+          "name": "Emitter diffusion",
+          "simple_name": "Emitter diffusion",
+          "description": "The third diffusion. Through a finer mask, a very heavily doped n+ region is driven into the boron base, forming the emitter. Because the n+ emitter is so much more heavily doped than the p base, the emitter-base junction is forward-biased at only 0.7 V and injects enormous current gain, but only as long as the emitter does not punch through the thin base under the reverse bias of the collector. Gold doping of the emitter (co-diffused gold suppressing punch-through and reverse injection) was a pre-Schottky saturated-logic technique and is not 74LS practice: LS uses Schottky clamps instead, so no gold leg is stored on this 74LS flow.",
           "kind": "process",
           "category": "silicon",
           "era": "1980s",
           "confidence": "medium",
           "provenance": "incomplete",
-          "note": "The gold-doped (Au-doped) polysilicon emitter was a real and important technique of this era, used to raise gain and suppress the emitter-base reverse conductance ('knee'). It was implemented by co-depositing a tiny amount of gold in the emitter polysilicon or dopant glass, then driving it in with the arsenic or phosphorus. Confidence medium: the technique is well documented, but it is not confirmed that a specific 74LS vendor's 1983 process used it. It was common in high-performance bipolar rather than mandatory in low-cost logic. A self-aligned polysilicon emitter (deposit a thin arsenic-doped polysilicon film, pattern it to define the emitter, then push, so the arsenic is confined by the polysilicon walls and the emitter comes out shallower and more uniform) was the other refinement of the era, widespread in analog through the 1980s and 1990s and doubtful on a commodity 74LS. The arsine itself is an ingredient and is named in `inputs`, not inlined as a child. Its provenance is worth recording: arsenic occurs as arsenide in copper and lead concentrates, roasting drives it off as arsenic trioxide fume, and the trioxide is reduced and hydrogenated to arsine. Arsenic-bearing copper concentrates were a notorious long-time smelting hazard, which is why arsenic control in copper works is a regulated topic today.",
+          "note": "The gold-doped (Au-doped) polysilicon emitter was a real technique of the pre-Schottky era, not of 74LS: gold-doped saturated logic was superseded by Schottky-clamped logic (production from 1969; 74S in 1971, LS after), and gold-doped vs Schottky devices are mutually exclusive. It was implemented by co-depositing a tiny amount of gold in the emitter polysilicon or dopant glass, then driving it in with the arsenic or phosphorus. Confidence medium: the technique is well documented, but it is not 74LS practice, so this flow stores no gold leg. It was common in high-performance bipolar rather than mandatory in low-cost logic. A self-aligned polysilicon emitter (deposit a thin arsenic-doped polysilicon film, pattern it to define the emitter, then push, so the arsenic is confined by the polysilicon walls and the emitter comes out shallower and more uniform) was the other refinement of the era, widespread in analog through the 1980s and 1990s and doubtful on a commodity 74LS. The arsine itself is an ingredient and is named in `inputs`, not inlined as a child. Its provenance is worth recording: arsenic occurs as arsenide in copper and lead concentrates, roasting drives it off as arsenic trioxide fume, and the trioxide is reduced and hydrogenated to arsine. Arsenic-bearing copper concentrates were a notorious long-time smelting hazard, which is why arsenic control in copper works is a regulated topic today.",
           "sources": [
             "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
           ],
@@ -2661,10 +2655,6 @@
             {
               "label": "Rs",
               "value": "10-30 ohm/sq"
-            },
-            {
-              "label": "Gold purpose",
-              "value": "suppress emitter-base reverse leakage and push-through"
             }
           ],
           "inputs": [],
@@ -2672,16 +2662,6 @@
           "edges": [
             {
               "to": "chem.fab-chemicals.dopants.arsine",
-              "rel": "consumes",
-              "basis": "typical-1982"
-            },
-            {
-              "to": "mb.logic.bipolar.process.emitter.gold",
-              "rel": "consumes",
-              "basis": "documented"
-            },
-            {
-              "to": "metal.gold",
               "rel": "consumes",
               "basis": "typical-1982"
             }
@@ -3036,12 +3016,12 @@
         {
           "to": "chem.photoresist.diazonaphthoquinone",
           "rel": "consumes",
-          "basis": "typical-1982"
+          "basis": "documented"
         },
         {
           "to": "chem.photoresist.novolac",
           "rel": "consumes",
-          "basis": "typical-1982"
+          "basis": "documented"
         }
       ]
     },
@@ -4096,7 +4076,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Lead_frame"
           ],
-          "confidence": "high",
+          "confidence": "low",
           "note": "A press toolset, consumed over hundreds of millions of strokes. This is capital equipment rather than a part.",
           "inputs": [],
           "provenance": "incomplete"
@@ -4149,17 +4129,12 @@
       "children": [],
       "edges": [
         {
-          "to": "mb.logic.bipolar.process.base.boron.borax",
-          "rel": "made from",
-          "basis": "inferred"
-        },
-        {
-          "to": "chem.fab-chemicals.dopants.diborane",
+          "to": "mb.logic.bipolar.process.base.boron.doped-oxide",
           "rel": "made from",
           "basis": "typical-1982"
         },
         {
-          "to": "mb.logic.bipolar.process.base.boron.doped-oxide",
+          "to": "chem.fab-chemicals.dopants.diborane",
           "rel": "made from",
           "basis": "typical-1982"
         }
@@ -4175,7 +4150,7 @@
       "era": "1980s",
       "confidence": "medium",
       "provenance": "complete",
-      "note": "Gold as a recombination centre in silicon is well established physics. Its use in Au-doped emitters is a documented period technique. Exact concentration is on the order of a fraction of a percent in the emitter. metal.gold is an ingredient, so it hangs off `inputs`.",
+      "note": "Gold as a recombination centre in silicon is well established physics. Its use in Au-doped emitters is a documented pre-Schottky saturated-logic technique, mutually exclusive with the Schottky clamps that 74LS uses instead. Exact concentration is on the order of a fraction of a percent in the emitter. metal.gold is an ingredient, so it hangs off `inputs`.",
       "inputs": [],
       "edges": [
         {
@@ -4298,7 +4273,7 @@
         {
           "to": "chem.silane.monosilane",
           "rel": "made from",
-          "basis": "inferred"
+          "basis": "documented"
         },
         {
           "to": "facility.nitrogen.atmospheric-air",
@@ -4434,7 +4409,7 @@
       "kind": "material",
       "category": "packaging",
       "era": "1980s",
-      "confidence": "medium",
+      "confidence": "low",
       "provenance": "incomplete",
       "inputs": [],
       "note": "That the legend is printed in ink or by laser and carries a four-digit year-and-week date code is documented. Not established: a phenolic or epoxy ink with a pigment, baking or UV curing, or that ink marking is why a 1982 part is still readable and a modern ball-grid array is not."
@@ -4458,7 +4433,7 @@
       "kind": "tool",
       "category": "packaging",
       "era": "1980s",
-      "confidence": "medium",
+      "confidence": "low",
       "provenance": "incomplete",
       "inputs": [],
       "note": "Not established: the ceramic or printed-circuit card substrate, the cantilever needle construction, the needle lifetime in touches, or the days and hundreds-to-thousands of dollars to build a card for a new part number. Wafer test before dicing is documented. The card is not."
@@ -4659,7 +4634,7 @@
             "to": "chem.fab-chemicals.tmah",
             "rel": "produces",
             "role": "product",
-            "basis": "inferred"
+            "basis": "documented"
           },
           {
             "to": "facility.water.ultrapure",
@@ -4731,7 +4706,7 @@
         "children": [],
         "edges": [
           {
-            "to": "mb.logic.bipolar.process.base.boron.borax",
+            "to": "mb.logic.bipolar.process.base.boron.doped-oxide",
             "rel": "produces",
             "role": "product",
             "basis": "typical-1982"

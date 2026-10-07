@@ -165,8 +165,7 @@ stays readable.
   novolac precursor, methylchlorosilane intermediate (low priority),
   propylene-monomer material (tree-design call); mask-repair needle claim
   (possible anachronism, keep hedged).
-- Wave 2 hold-outs (petrochem, needs archive.org return or dedicated pass):
-  rulings — sulfolane second step (Shell patent: Raney-Ni hydrogenation vs
+- Wave 2 hold-outs (petrochem, needs archive.org return or dedicated pass):  rulings — sulfolane second step (Shell patent: Raney-Ni hydrogenation vs
   tree's base-hydrolysis account; process-water edge held out accordingly),
   acrylic-acid route (tree's AN-hydrolysis account contradicts standard
   propylene-oxidation history; existing made-from edge untouched pending
@@ -183,11 +182,22 @@ stays readable.
   C3-splitter tray count (125–200, not 50–70), NMP synthesis rewrite,
   expander/quench-exchanger conflation, diether-donor date; borane-from-
   fluoride process missing boron feed (boric acid/borax).
+- Wave 3 hold-outs (silicon/logic): guide §4 row 14 struck (DTIC_ADA086022
+  is a thick-film oscillator report, not quartz; true quartz-crystal MM&T id
+  still unidentified); TEOS synthesis route documented upgrade (SiCl4+ethanol
+  legs stored as inferred); DNQ/novolac documented upgrades pending 1984
+  Polymers symposium OCR (borrow-walled); fab-process documented upgrades
+  pending semiconductor encyclopedia OCR (borrow-walled); diamond-belt
+  numbers contradiction (source figures vs node figures); si.front-end.resist
+  sixth DNQ duplicate (merge candidacy not declared; later pass); NEW-NODEs
+  banked — TMA/trimethylamine legs for methanol node, methoxy-silane leg
+  decision, diatomite carrier, cast cracker alloy, TBHP chain,
+  tetrachloroethane, EB zeolite-synthesis nodes, PO/MeCl/urea (from Wave 2);
+  emitter.gold kept as era-context child (pre-Schottky, unlinked from 74LS).
 - Provenance research waves (guide: `docs/RESEARCH-GUIDE.md`; rulings R1–R5
-  in §9): Wave 1 done (25 hubs, 92% agreement, applied). Remaining per
-  §0 queue below, sliced by theme: petrochem monomers, silicon fab
-  chemistry, metals refining, board/assembly + power dies, passives,
-  industry/utilities + peripherals/chassis tail.
+  in §9): Waves 1–2 done. Wave 3 (silicon/logic) in progress. Remaining per
+  §0 queue below, sliced by theme: metals refining, board/assembly + power
+  dies, passives, industry/utilities + peripherals/chassis tail.
 - Orphan queue for batch 2: catalogue N–Z leftovers (~25, triage B diverged
   onto small-comps instead), untriaged metals clusters (lime ×6, tin slag /
   atomisation, extrusion, converting, cobalt leach, tantalum tail, barite

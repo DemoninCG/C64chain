@@ -3642,6 +3642,102 @@
       "why": "Same substance: converter blister copper melt. Feed is the refinery-bound cut, blister the casting-bound cut; both made from concentrate with the converter/fire-refining middle unmodelled. Survivor keeps both uses (anode casting + electrorefining repoint). Clears a load-bearing orphan and a high-without-source violation.",
       "loserDescription": "Molten blister copper from the smelter, cast into refinery feed for electrolytic refining to 4N cathode for brass strip and plating.",
       "loserFacts": null
+    },
+    {
+      "loser": "mb.discretes.bjt.resist",
+      "loserName": "Planar-BJT DNQ resist formulation",
+      "loserFile": "10-silicon.json",
+      "survivor": "mb.cpu.fe.photoresist.dnq",
+      "survivorName": "Positive DNQ/novolac resist formulation",
+      "survivorFile": "10-silicon.json",
+      "proposal": "wave3.json",
+      "why": "Same DNQ/novolac positive resist by loser's own description; survivor already carries made-from novolac; sole inbound (bjt consumes) repoints to survivor",
+      "loserDescription": "Positive DNQ/novolac resist formulation consumed by the planar epitaxial BJT mask levels (isolation, base, emitter, contact). Same substance as the CPU resist, scoped here for central merge.",
+      "loserFacts": null
+    },
+    {
+      "loser": "mb.discretes.isolation.resist",
+      "loserName": "Isolation-mask DNQ resist formulation",
+      "loserFile": "10-silicon.json",
+      "survivor": "mb.cpu.fe.photoresist.dnq",
+      "survivorName": "Positive DNQ/novolac resist formulation",
+      "survivorFile": "10-silicon.json",
+      "proposal": "wave3.json",
+      "why": "Same substance per loser description; sole inbound (isolation consumes) repoints",
+      "loserDescription": "Positive DNQ/novolac resist formulation for the isolation/base/emitter window masks of the planar epitaxial flow. Scoped merge candidate with sibling resist nodes.",
+      "loserFacts": null
+    },
+    {
+      "loser": "mb.logic.bipolar.process.base.boron.borax",
+      "loserName": "Boron oxide (B2O3) solid source",
+      "loserFile": "35-logic.json",
+      "survivor": "mb.logic.bipolar.process.base.boron.doped-oxide",
+      "survivorName": "Boron-doped oxide diffusion source",
+      "survivorFile": "35-logic.json",
+      "proposal": "wave3.json",
+      "why": "Loser IS the doped-oxide solid source under a legacy id (own note renames off borax); inbound source-firing produces repoints to survivor; parent boron borax leg dropped separately",
+      "loserDescription": "For thermal diffusion, boron was often carried in a boron-doped oxide or a boron nitride wafer placed face-to-face with the silicon in the diffusion boat. Cheaper and easier to handle than gas. The active species is boron oxide, B2O3. The name previously used here said 'borax', which is the sodium tetraborate and a different (and not the standard) source.",
+      "loserFacts": null
+    },
+    {
+      "loser": "mb.roms.process.resist",
+      "loserName": "Mask-ROM DNQ resist formulation",
+      "loserFile": "10-silicon.json",
+      "survivor": "mb.cpu.fe.photoresist.dnq",
+      "survivorName": "Positive DNQ/novolac resist formulation",
+      "survivorFile": "10-silicon.json",
+      "proposal": "wave3.json",
+      "why": "Same substance per loser description; sole inbound (roms.process consumes) repoints",
+      "loserDescription": "Positive DNQ/novolac resist formulation for the NMOS mask-ROM flow including the extra programming-level mask. Merge candidate with sibling resist nodes.",
+      "loserFacts": null
+    },
+    {
+      "loser": "mb.sid.process.resist",
+      "loserName": "SID NMOS-analogue resist formulation",
+      "loserFile": "10-silicon.json",
+      "survivor": "mb.cpu.fe.photoresist.dnq",
+      "survivorName": "Positive DNQ/novolac resist formulation",
+      "survivorFile": "10-silicon.json",
+      "proposal": "wave3.json",
+      "why": "Same substance per loser description; sole inbound (sid.process consumes) repoints",
+      "loserDescription": "Positive DNQ/novolac resist formulation for the 6581 mixed NMOS-analogue flow (phase accumulators, DAC poly resistors, tub-isolated analogue block).",
+      "loserFacts": null
+    },
+    {
+      "loser": "mb.vic.process.resist",
+      "loserName": "VIC-II silicon-gate resist formulation",
+      "loserFile": "10-silicon.json",
+      "survivor": "mb.cpu.fe.photoresist.dnq",
+      "survivorName": "Positive DNQ/novolac resist formulation",
+      "survivorFile": "10-silicon.json",
+      "proposal": "wave3.json",
+      "why": "Same substance per loser description; sole inbound (vic.process consumes) repoints",
+      "loserDescription": "Positive DNQ/novolac resist formulation for the VIC-II mixed digital/analogue silicon-gate flow (9-10 mask levels, single aluminium layer).",
+      "loserFacts": null
+    },
+    {
+      "loser": "si.polysilicon.coke.calciner.vacuum-residue",
+      "loserName": "Heavy vacuum residue coker feed",
+      "loserFile": "10-silicon.json",
+      "survivor": "si.polysilicon.coke.crude",
+      "survivorName": "Sour crude residue, vacuum distilled",
+      "survivorFile": "10-silicon.json",
+      "proposal": "wave3.json",
+      "why": "Same vacuum-tower-bottoms coker feed (loser declares candidacy); inbound calciner consumes repoints; loser petroleum leg dropped (universal stamp, agent A2-style ruling)",
+      "loserDescription": "Dense vacuum-tower bottoms (asphaltene/metal-porphyrin pitch) as the delayed-coker feed for silicon-grade needle coke, calcined 1200-1350 C.",
+      "loserFacts": null
+    },
+    {
+      "loser": "si.wafer.diamond.graphite-charge",
+      "loserName": "HPHT graphite powder charge",
+      "loserFile": "10-silicon.json",
+      "survivor": "si.wafer.diamond.grit.graphite-charge",
+      "survivorName": "Abrasive-grit graphite synthesis feed",
+      "survivorFile": "10-silicon.json",
+      "proposal": "wave3.json",
+      "why": "Same HPHT graphite feed; survivor is provenance complete; inbound diamond consumes repoints; survivor coke leg dropped separately (wrong coke family)",
+      "loserDescription": "High-purity graphite powder charge (not finished electrodes) pressed and sintered for belt-press diamond synthesis at 5-6 GPa and 1300-1600 C.",
+      "loserFacts": null
     }
   ]
 }
