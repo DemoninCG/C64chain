@@ -606,6 +606,23 @@
       ],
       "note": "Not established: the few-litres-an-hour volume, the settling-tank and pH-adjustment treatment, or the sludge-to-landfill split for any specific 1982 assembly line."
     },
+    "metal.antimony": {
+      "id": "metal.antimony",
+      "name": "Antimony metal",
+      "simple_name": "Antimony metal",
+      "description": "Brittle silver-white metalloid alloyed at tenths of a percent into tin-lead solder as an Sb-Sn hardener or lead-antimony master alloy for creep resistance. Predominantly from stibnite ore, often as a by-product of gold, lead and silver mining.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "low",
+      "provenance": "incomplete",
+      "note": "Established: stibnite as the predominant ore mineral and antimony in solders as a normal alloying addition as types. Not established: the stibnite-to-metal refining route, 1982 tonnages, or the C64 solder's actual antimony content. The stibnite ore branch is unmodelled.",
+      "sources": [
+        "https://www.earthmagazine.org/article/mineral-resource-month-antimony-0/"
+      ],
+      "children": [],
+      "edges": []
+    },
     "metal.solder.antimony": {
       "id": "metal.solder.antimony",
       "name": "Antimony addition to stiffen the alloy",
@@ -633,6 +650,13 @@
       "note": "Antimony level is a supplier specification, not something visible on a C64; 0.1-0.5% is the normal commercial range for electronics-grade Sn-Pb.",
       "sources": [
         "https://en.wikipedia.org/wiki/Solder"
+      ],
+      "edges": [
+        {
+          "to": "metal.antimony",
+          "rel": "made from",
+          "basis": "inferred"
+        }
       ]
     },
     "metal.solder.silver-solder-paste": {
@@ -781,7 +805,7 @@
       "kind": "material",
       "category": "metals",
       "era": "1982",
-      "confidence": "high",
+      "confidence": "medium",
       "provenance": "incomplete",
       "inputs": [],
       "facts": [
@@ -1475,7 +1499,7 @@
       "edges": [
         {
           "to": "metal.solder.fume",
-          "rel": "made from",
+          "rel": "made of",
           "basis": "documented"
         }
       ]
@@ -1688,7 +1712,14 @@
             }
           ],
           "note": "Medium confidence; the retort geometry is standard historical practice.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.lead.dross-smelting",
+    "rel": "uses",
+    "basis": "documented"
+  }
+]
         }
       ],
       "edges": [
@@ -2332,6 +2363,11 @@
         {
           "to": "facility.water",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.solution-mining.well",
+          "rel": "uses",
+          "basis": "documented"
         }
       ]
     },
@@ -2801,7 +2837,14 @@
           ],
           "note": "The temperature windows are standard; medium confidence on the conveyor speed range.",
           "children": [],
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.solder.pot",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
         }
       ],
       "edges": [
@@ -2947,6 +2990,16 @@
         {
           "to": "facility.water",
           "rel": "consumes"
+        },
+        {
+          "to": "chem.solvents.trichloroethane",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "chem.solvents.perchloroethylene",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -2991,7 +3044,7 @@
           "kind": "tool",
           "category": "metals",
           "era": "1982",
-          "confidence": "high",
+          "confidence": "medium",
           "facts": [
             {
               "label": "Grate width",
@@ -3009,7 +3062,14 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Sintering"
           ],
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.lead.sintering",
+    "rel": "uses",
+    "basis": "documented"
+  }
+]
         },
         {
           "id": "metal.lead.self-fluxing",
@@ -3250,7 +3310,7 @@
         "category": "metals",
         "era": "1982",
         "sources": [],
-        "confidence": "high",
+        "confidence": "medium",
         "note": "Not established: APT calcination detail; APT itself has no modelled producer (boundary).",
         "children": [],
         "edges": [

@@ -383,7 +383,7 @@
       "id": "metal.gold.reef",
       "name": "Witwatersrand gold reef conglomerate",
       "simple_name": "Witwatersrand reef",
-      "description": "A 2.9 billion year old quartzite with rounded pebbles of quartz and jasper in a fine matrix. It is a fossil beach. The gold is in the matrix, as discrete grains a few microns across, and the deepest part of the deposit has the highest grade because it is the oldest and the most distal. It is one of the largest gold concentrations ever formed and it is a sediment.",
+      "description": "A 2.9 billion year old quartzite with rounded pebbles of quartz and jasper in a fine matrix. It is a fossil beach. The gold is in the matrix, as discrete grains a few microns across, in streaks in the upper, younger conglomerate layers of the Supergroup rather than the deepest part. It is one of the largest gold concentrations ever formed and it is a sediment.",
       "kind": "material",
       "category": "metals",
       "confidence": "medium",
@@ -470,11 +470,6 @@
           "to": "metal.coke.tar",
           "rel": "made from",
           "basis": "typical-1982"
-        },
-        {
-          "to": "metal.soft-pitch",
-          "rel": "made from",
-          "basis": "inferred"
         }
       ]
     },
@@ -565,7 +560,7 @@
       "kind": "material",
       "category": "metals",
       "era": "1982",
-      "confidence": "medium",
+      "confidence": "high",
       "provenance": "incomplete",
       "facts": [
         {
@@ -584,7 +579,10 @@
           "rel": "made from",
           "basis": "typical-1982"
         }
-      ]
+      ],
+      "sources": [
+  "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=9101QCA7.txt"
+]
     },
     "metal.soft-pitch": {
       "id": "metal.soft-pitch",
@@ -901,7 +899,7 @@
       "kind": "material",
       "category": "magnetics",
       "era": "1982",
-      "confidence": "medium",
+      "confidence": "high",
       "provenance": "incomplete",
       "places": [
         "Almeria, Spain"
@@ -918,8 +916,16 @@
       ],
       "note": "Strontium supply is a genuine constraint on hard-ferrite production; medium confidence on the source countries' relative shares in 1982.",
       "sources": [
-        "https://en.wikipedia.org/wiki/Strontium"
-      ]
+        "https://en.wikipedia.org/wiki/Strontium",
+        "https://pubs.usgs.gov/periodicals/mcs2020/mcs2020-strontium.pdf"
+      ],
+      "edges": [
+  {
+    "to": "metal.celestine",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
     },
     "metal.gold.ore": {
       "id": "metal.gold.ore",
@@ -1224,7 +1230,9 @@
             }
           ],
           "sources": [
-            "https://en.wikipedia.org/wiki/Coke"
+            "https://en.wikipedia.org/wiki/Coke",
+            "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=9101QCA7.txt",
+            "https://www.epa.gov/sites/default/files/2020-11/documents/c12s02_may08.pdf"
           ],
           "note": "Wet quenching was near-universal in 1982. German practice had led the switch to dry by then and the rest of the world followed in the 1980s-90s.",
           "children": [],
@@ -1234,7 +1242,8 @@
           "edges": [
             {
               "to": "metal.coke.quench-blow",
-              "rel": "consumes",
+              "rel": "produces",
+              "role": "co-product",
               "basis": "documented"
             },
             {
@@ -1284,11 +1293,6 @@
           "basis": "inferred"
         },
         {
-          "to": "metal.coke.quench-blow",
-          "rel": "consumes",
-          "basis": "inferred"
-        },
-        {
           "to": "metal.coking-coal",
           "rel": "consumes",
           "basis": "typical-1982"
@@ -1334,9 +1338,15 @@
           "basis": "documented"
         },
         {
-          "to": "metal.coal-tailings",
+          "to": "metal.coking-coal.seam",
           "rel": "consumes",
-          "basis": "documented"
+          "basis": "typical-1982"
+        },
+        {
+          "to": "metal.coal-tailings",
+          "rel": "produces",
+          "role": "waste",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -1482,7 +1492,8 @@
             }
           ],
           "sources": [
-            "https://en.wikipedia.org/wiki/Spinel"
+            "https://en.wikipedia.org/wiki/Spinel",
+            "http://article.sapub.org/10.5923.j.materials.20120206.01.html"
           ],
           "inputs": [
             "metal.ferrite.mixing"
@@ -1577,6 +1588,11 @@
               "to": "metal.ferrite.green-compact",
               "rel": "consumes",
               "basis": "documented"
+            },
+            {
+              "to": "metal.ferrite.pressing-operation",
+              "rel": "step",
+              "basis": "documented"
             }
           ]
         },
@@ -1646,7 +1662,14 @@
           "inputs": [
             "metal.ferrite.sintering"
           ],
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.ferrite.sintering",
+    "rel": "step",
+    "basis": "documented"
+  }
+]
         }
       ],
       "inputs": [],
@@ -1865,7 +1888,7 @@
               "id": "metal.gold.electrorefining",
               "name": "Electrorefine the gold to 99.99%",
               "simple_name": "Gold electrorefining",
-              "description": "The Dore is cast into anodes and dissolved in an aqueous solution of gold chloride in hydrochloric acid at 50-60 C. The electrolyte is the Wohlwill process electrolyte, with a little silver nitrate added to make the silver chloride stay solid and drop out. Gold plates onto a pure gold or platinum cathode at 99.99% and the whole refinery runs at 2-5 V with a very high current efficiency. Every gold refinery in the world in 1982 used the Wohlwill process and it is essentially unchanged today.",
+              "description": "The Dore is cast into anodes and dissolved in an aqueous solution of gold chloride in hydrochloric acid at 50-60 C. The electrolyte is the Wohlwill process electrolyte, with a little silver nitrate added to make the silver chloride stay solid and drop out. Gold plates onto a pure gold or platinum cathode at 99.99% and the whole refinery runs at 2-5 V with a very high current efficiency. The Wohlwill process was the standard high-purity route in 1982 (mine bullion was Miller fire-refined first) and is essentially unchanged today.",
               "kind": "process",
               "category": "metals",
               "era": "1982",
@@ -1886,7 +1909,9 @@
                 }
               ],
               "sources": [
-                "https://en.wikipedia.org/wiki/Wohlwill_process"
+                "https://en.wikipedia.org/wiki/Wohlwill_process",
+                "https://patents.google.com/patent/US625863A/en",
+                "https://www.britannica.com/technology/Wohlwill-process"
               ],
               "inputs": [
                 "metal.gold.dore-melting"
@@ -1971,6 +1996,11 @@
         {
           "to": "metal.lime",
           "rel": "consumes",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "metal.gold.pachuca",
+          "rel": "uses",
           "basis": "typical-1982"
         }
       ]
@@ -2214,7 +2244,8 @@
         },
         {
           "to": "metal.zinc.jarosite-residue",
-          "rel": "consumes",
+          "rel": "produces",
+          "role": "waste",
           "basis": "documented"
         },
         {
@@ -2277,7 +2308,7 @@
             },
             {
               "label": "Sinter",
-              "value": "50-60% Zn, 6-10% Zn soluble, rest in the silicate matrix"
+              "value": "50-60% Zn, 6-10% Zn soluble, rest in zinc ferrite"
             },
             {
               "label": "Feed",
@@ -2298,7 +2329,7 @@
           "kind": "process",
           "category": "metals",
           "era": "1982",
-          "confidence": "medium",
+          "confidence": "high",
           "provenance": "incomplete",
           "facts": [
             {
@@ -2322,18 +2353,17 @@
           "edges": [
             {
               "to": "metal.cadmium-residue",
-              "rel": "consumes",
+              "rel": "produces",
+              "role": "co-product",
               "basis": "documented"
             }
-          ]
+          ],
+          "sources": [
+  "https://pubs.usgs.gov/myb/vol1/2018/myb1-2018-zinc.pdf"
+]
         }
       ],
       "edges": [
-        {
-          "to": "metal.zinc.oxide",
-          "rel": "consumes",
-          "basis": "inferred"
-        },
         {
           "to": "facility.gases.oxygen",
           "rel": "consumes",
@@ -2342,6 +2372,11 @@
         {
           "to": "metal.sphalerite",
           "rel": "consumes",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "metal.zinc.roaster",
+          "rel": "uses",
           "basis": "typical-1982"
         }
       ]
@@ -2429,11 +2464,6 @@
       "inputs": [],
       "edges": [
         {
-          "to": "chem.styrene.benzene.coal-tar",
-          "rel": "made from",
-          "basis": "typical-1982"
-        },
-        {
           "to": "metal.coking-coal",
           "rel": "made from",
           "basis": "typical-1982"
@@ -2448,7 +2478,7 @@
       "kind": "material",
       "category": "metals",
       "era": "1982",
-      "confidence": "medium",
+      "confidence": "high",
       "provenance": "incomplete",
       "facts": [
         {
@@ -2469,10 +2499,13 @@
       "edges": [
         {
           "to": "metal.coke",
-          "rel": "made from",
+          "rel": "made of",
           "basis": "documented"
         }
-      ]
+      ],
+      "sources": [
+  "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=9101QCA7.txt"
+]
     },
     "metal.activated-carbon": {
       "id": "metal.activated-carbon",
@@ -2602,7 +2635,7 @@
       "kind": "material",
       "category": "metals",
       "era": "1982",
-      "confidence": "medium",
+      "confidence": "high",
       "provenance": "incomplete",
       "facts": [
         {
@@ -2619,16 +2652,15 @@
       "inputs": [],
       "edges": [
         {
-          "to": "metal.cadmium-residue",
-          "rel": "made from",
-          "basis": "inferred"
-        },
-        {
           "to": "metal.zinc.ingot",
           "rel": "made from",
           "basis": "documented"
         }
-      ]
+      ],
+      "sources": [
+  "https://metallurgie.rwth-aachen.de/wp-content/uploads/2025/06/art_emc2001_men_id_8594.pdf",
+  "https://data.epo.org/publication-server/rest/v1.0/publication-dates/19850320/patents/EP0134644NWA1/document.html"
+]
     },
     "metal.zinc.jarosite-residue": {
       "id": "metal.zinc.jarosite-residue",
@@ -2655,19 +2687,13 @@
         }
       ],
       "note": "The 5-10% zinc loss figure is a rule of thumb; medium confidence.",
-      "edges": [
-        {
-          "to": "metal.zinc.oxide",
-          "rel": "made from",
-          "basis": "inferred"
-        }
-      ]
+      "edges": []
     },
     "metal.zinc.oxide": {
       "id": "metal.zinc.oxide",
       "name": "Zinc oxide sinter",
       "simple_name": "Zinc oxide sinter",
-      "description": "The dead-roast sinter is the actual feed to the leach circuit, and its specification is a compromise between the roast and the leach. It wants to be as completely roasted as possible so that the zinc is all in the oxide, but it also wants to be porous enough for the sulphuric acid to reach it, which is what the sintering stage of the roaster-sinter plant is for. Between 5 and 10% of the zinc stays locked up in the silicate matrix and is lost in the leach residue, which is the second big reason a zinc plant's recovery is not higher than it is.",
+      "description": "The dead-roast sinter is the actual feed to the leach circuit, and its specification is a compromise between the roast and the leach. It wants to be as completely roasted as possible so that the zinc is all in the oxide, but it also wants to be porous enough for the sulphuric acid to reach it, which is what the sintering stage of the roaster-sinter plant is for. Between 5 and 10% of the zinc stays locked up in zinc ferrite (ZnFe2O4 spinel, with some silicate slag) and is lost in the leach residue, which is the second big reason a zinc plant's recovery is not higher than it is.",
       "kind": "material",
       "category": "metals",
       "era": "1982",
@@ -2676,7 +2702,7 @@
       "facts": [
         {
           "label": "Zinc soluble",
-          "value": "90-95%; the rest is locked in the silicate"
+          "value": "90-95%; the rest is locked in ferrite"
         },
         {
           "label": "Loss",
@@ -2739,9 +2765,9 @@
       "children": [],
       "edges": [
         {
-          "to": "metal.caustic-lime-flotation",
+          "to": "metal.rare-earths.carbonatite-ore",
           "rel": "made from",
-          "basis": "inferred"
+          "basis": "typical-1982"
         }
       ]
     },
@@ -2937,8 +2963,11 @@
         "kind": "process",
         "category": "magnetics",
         "era": "1982",
-        "sources": [],
-        "confidence": "medium",
+        "sources": [
+          "http://article.sapub.org/10.5923.j.materials.20120206.01.html",
+          "https://exa.ai/library/legal/patent/2swtk4y0pkm"
+        ],
+        "confidence": "high",
         "note": "Distinct operation node; the existing pressing node is kind tool (the die/press itself).",
         "children": [],
         "edges": [

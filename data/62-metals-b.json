@@ -104,7 +104,9 @@
       ],
       "sources": [
         "https://www.bernreuter.com/polysilicon/production-processes/",
-        "https://en.wikipedia.org/wiki/Trichlorosilane"
+        "https://en.wikipedia.org/wiki/Trichlorosilane",
+        "https://archive.org/download/NASA_NTRS_Archive_19790023597/NASA_NTRS_Archive_19790023597_djvu.txt",
+        "https://archive.org/download/NASA_NTRS_Archive_19810016959/NASA_NTRS_Archive_19810016959_djvu.txt"
       ],
       "children": [],
       "edges": [
@@ -804,11 +806,6 @@
       "children": [],
       "edges": [
         {
-          "to": "metal.cobalt",
-          "rel": "consumes",
-          "basis": "typical-1982"
-        },
-        {
           "to": "chem.natural-gas.uses.fertiliser-ammonia",
           "rel": "consumes",
           "basis": "typical-1982"
@@ -828,7 +825,7 @@
       "kind": "process",
       "category": "metals",
       "era": "1982",
-      "confidence": "high",
+      "confidence": "medium",
       "provenance": "incomplete",
       "inputs": [],
       "facts": [
@@ -904,6 +901,12 @@
           "to": "metal.cobalt.ore",
           "rel": "consumes",
           "basis": "documented"
+        },
+        {
+          "to": "metal.cobalt.liquor",
+          "rel": "produces",
+          "role": "product",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -1014,7 +1017,14 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Peirce%E2%80%93Smith_converter"
           ],
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.copper.converting",
+    "rel": "uses",
+    "basis": "documented"
+  }
+]
         }
       ],
       "edges": [
@@ -1234,7 +1244,14 @@
             }
           ],
           "note": "Medium confidence; the seeding practice is proprietary.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.copper.tankhouse",
+    "rel": "step",
+    "basis": "typical-1982"
+  }
+]
         }
       ],
       "edges": [
@@ -1788,7 +1805,14 @@
             }
           ],
           "note": "Zone layout is standard practice; medium confidence on the yield range.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.lime.kiln",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
         },
         {
           "id": "metal.lime.rotary-kiln",
@@ -1811,7 +1835,14 @@
           ],
           "note": "Medium confidence; the fuel figure assumes a preheater, which is where most of the saving is.",
           "children": [],
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.lime.kiln",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
         }
       ],
       "edges": [
@@ -2449,7 +2480,7 @@
     },
     "metal.xanthate": {
       "id": "metal.xanthate",
-      "name": "Ethyl xanthate collector (SIPC)",
+      "name": "Ethyl xanthate collector",
       "simple_name": "Ethyl xanthate collector",
       "description": "Xanthate is the workhorse flotation reagent, and it is a petrochemical in disguise: carbon disulphide (from natural gas or from coke-oven gas and methane) reacts with ethanol and caustic soda. Potassium and sodium ethyl xanthates were the standard 1980s collectors for sulphide copper, with a frother on top. So the flotation chemistry that recovers copper in 1982 depends on a sulphur-and-alcohol chain that ends in a gasworks, not a mine.",
       "kind": "material",

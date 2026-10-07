@@ -1161,7 +1161,14 @@
                   "value": "gas or oil fired pit furnace with hot and transition zones"
                 }
               ],
-              "note": "Medium confidence; the soak practice is standard but the times depend entirely on the section size."
+              "note": "Medium confidence; the soak practice is standard but the times depend entirely on the section size.",
+              "edges": [
+  {
+    "to": "metal.aluminum.extrusion",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
             }
           ],
           "note": "Not established: the 2300-2500 t and 500-1500 t press classes, the 200-500 mm container, the hydraulic intensifier, the 3-24 h soak at 420-500 C and the in-line stretcher. The extrusion reference reached in this pass is the general Extrusion article. There is no separate Wikipedia article on aluminium extrusion, so the specific press and soak figures have no encyclopaedic source."
@@ -1187,7 +1194,14 @@
             }
           ],
           "note": "Die lives vary enormously with profile complexity and alloy; medium confidence.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.aluminum.extrusion",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
         }
       ],
       "edges": [
@@ -1355,14 +1369,6 @@
       ],
       "children": [],
       "edges": [
-        {
-          "to": "metal.palladium",
-          "rel": "made from"
-        },
-        {
-          "to": "metal.anode-slime.selenide",
-          "rel": "made from"
-        },
         {
           "to": "metal.anode-slime.cupellation",
           "rel": "step",
@@ -1680,7 +1686,14 @@
           ],
           "note": "Medium confidence; the cell layout is standard but varies between plants.",
           "children": [],
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.zinc.electrowinning",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
         }
       ],
       "edges": [
@@ -1867,7 +1880,7 @@
       "kind": "material",
       "category": "metals",
       "era": "1982",
-      "confidence": "high",
+      "confidence": "medium",
       "provenance": "incomplete",
       "facts": [
         {
@@ -2311,7 +2324,14 @@
           ],
           "note": "Medium confidence; the lance geometry and injection depth are standard practice.",
           "children": [],
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.chromium.aod",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
         }
       ],
       "edges": [
@@ -2818,7 +2838,7 @@
       "kind": "material",
       "category": "metals",
       "era": "1982",
-      "confidence": "high",
+      "confidence": "medium",
       "provenance": "incomplete",
       "inputs": [],
       "facts": [
@@ -4044,7 +4064,7 @@
       "kind": "material",
       "category": "metals",
       "era": "1982",
-      "confidence": "high",
+      "confidence": "medium",
       "provenance": "incomplete",
       "description": "Two of the minor metals that pay for a copper smelter. The slime is roasted in a fluidised bed and the selenium volatilises as SeO2, caught in a hot cyclone or an electrostatic precipitator. The tellurium comes out of the roasted residue by leaching and electrowinning. Both are a few per cent of the slime's mass and both sell at a price per kilogram above the copper, so by 1982 a smelter could not afford to throw them away.",
       "facts": [
@@ -4568,7 +4588,14 @@
       "note": "Medium confidence on the 1982 split between tallow, vegetable and petroleum-based grades.",
       "sources": [
         "https://en.wikipedia.org/wiki/Tallow"
-      ]
+      ],
+      "edges": [
+  {
+    "to": "metal.rendered-fat",
+    "rel": "made from",
+    "basis": "typical-1982"
+  }
+]
     },
     "metal.silica.tcs": {
       "id": "metal.silica.tcs",
@@ -5149,7 +5176,7 @@
           "kind": "tool",
           "category": "metals",
           "era": "1982",
-          "confidence": "high",
+          "confidence": "medium",
           "places": [
             "Niagara Falls, New York"
           ],
@@ -5179,7 +5206,14 @@
             "https://en.wikipedia.org/wiki/Chlor-alkali_process"
           ],
           "note": "The Hooker conversion year is a well-documented landmark in the chlor-alkali industry.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.chlor-alkali",
+    "rel": "uses",
+    "basis": "documented"
+  }
+]
         },
         {
           "id": "metal.chlor-alkali.dechlorination",
@@ -5229,7 +5263,14 @@
           "era": "1980s",
           "confidence": "medium",
           "note": "The membrane cell commercialised from the late 1970s and displaced mercury cells through the 1980s-90s. The timetable varied by region.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.chlor-alkali",
+    "rel": "uses",
+    "basis": "documented"
+  }
+]
         }
       ],
       "edges": [
@@ -5323,7 +5364,7 @@
           "kind": "process",
           "category": "metals",
           "era": "1982",
-          "confidence": "high",
+          "confidence": "medium",
           "provenance": "incomplete",
           "inputs": [
             "calcined-petroleum-coke",
@@ -5379,7 +5420,14 @@
             }
           ],
           "note": "The feed rate is a rule of thumb that varies with cell design; medium confidence.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.hall-heroult",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
         },
         {
           "id": "metal.hall-heroult.dross",
@@ -5668,7 +5716,14 @@
                 }
               ],
               "note": "Filtration rates vary with product particle size; medium confidence on the range.",
-              "provenance": "incomplete"
+              "provenance": "incomplete",
+              "edges": [
+  {
+    "to": "metal.bayer.precipitation",
+    "rel": "uses",
+    "basis": "documented"
+  }
+]
             }
           ],
           "inputs": [
@@ -5737,7 +5792,14 @@
                 "https://en.wikipedia.org/wiki/Aluminium_oxide",
                 "https://en.wikipedia.org/wiki/Bauxite"
               ],
-              "provenance": "incomplete"
+              "provenance": "incomplete",
+              "edges": [
+  {
+    "to": "metal.bayer.calcination",
+    "rel": "uses",
+    "basis": "documented"
+  }
+]
             }
           ],
           "inputs": [
@@ -6095,7 +6157,14 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Wire_drawing"
           ],
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.copper.ingot-casting",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
         }
       ],
       "inputs": [],
@@ -6505,7 +6574,14 @@
             }
           ],
           "note": "Furnace design varies widely; medium confidence on capacities.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.zinc.stripping",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
         }
       ],
       "edges": [
@@ -6726,7 +6802,7 @@
       "kind": "process",
       "category": "metals",
       "era": "1982",
-      "confidence": "high",
+      "confidence": "medium",
       "provenance": "incomplete",
       "inputs": [],
       "facts": [
@@ -7656,7 +7732,14 @@
       "note": "Medium confidence; the magnesia supply chain is well documented but is not part of this subsystem's requested scope.",
       "sources": [
         "https://en.wikipedia.org/wiki/Magnesia"
-      ]
+      ],
+      "edges": [
+  {
+    "to": "metal.magnesia",
+    "rel": "made of",
+    "basis": "typical-1982"
+  }
+]
     },
     "metal.copper.patenting": {
       "id": "metal.copper.patenting",
@@ -7735,6 +7818,11 @@
         {
           "to": "metal.copper.wire-lubricant",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.copper.patenting",
+          "rel": "step",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -8394,7 +8482,14 @@
             }
           ],
           "note": "Medium confidence; sorting rates are anecdotal and vary enormously with the ore.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+  {
+    "to": "metal.galena.sorting",
+    "rel": "uses",
+    "basis": "typical-1982"
+  }
+]
         }
       ],
       "inputs": [],
@@ -8752,7 +8847,7 @@
         "category": "metals",
         "era": "1982",
         "sources": [],
-        "confidence": "high",
+        "confidence": "medium",
         "note": "",
         "children": [],
         "provenance": "incomplete"
@@ -8941,7 +9036,7 @@
         "category": "metals",
         "era": "1982",
         "sources": [],
-        "confidence": "high",
+        "confidence": "medium",
         "note": "",
         "children": [],
         "provenance": "incomplete"
@@ -8996,7 +9091,7 @@
         "category": "metals",
         "era": "1982",
         "sources": [],
-        "confidence": "high",
+        "confidence": "medium",
         "note": "Not established: graphite grade node and calcined-petroleum-coke grade; mix composition varies by cell generation.",
         "children": [],
         "edges": [
@@ -9022,7 +9117,7 @@
         "category": "metals",
         "era": "1982",
         "sources": [],
-        "confidence": "high",
+        "confidence": "medium",
         "note": "Not established: sulphide-concentrate vs laterite-matte feed split for 1982 cathode; Mond carbonyl route stays separate.",
         "children": [],
         "edges": [
@@ -9118,13 +9213,13 @@
         "era": "1982",
         "sources": [],
         "confidence": "medium",
-        "note": "Not established: etch recipe varied plant to plant and was rarely published; Ostwald-route anchor inferred.",
+        "note": "Not established: etch recipe varied plant to plant and was rarely published; Ostwald-route anchor typical of US 1982 practice.",
         "children": [],
         "edges": [
           {
             "to": "metal.ammonia",
             "rel": "made from",
-            "basis": "inferred"
+            "basis": "typical-1982"
           }
         ],
         "provenance": "incomplete"

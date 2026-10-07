@@ -287,7 +287,7 @@
       "kind": "material",
       "category": "metals",
       "era": "1982",
-      "confidence": "medium",
+      "confidence": "high",
       "provenance": "incomplete",
       "facts": [
         {
@@ -303,9 +303,10 @@
           "value": "4.28 g/cm3 API-grade"
         }
       ],
-      "note": "Medium confidence; the mud consumption figure is representative rather than a specific well. Merged rig barite noted nearly insoluble in water.",
+      "note": "The API specification and producer geography are documented; the mud consumption figure is representative rather than a specific well. Merged rig barite noted nearly insoluble in water.",
       "sources": [
-        "https://en.wikipedia.org/wiki/Barite"
+        "https://en.wikipedia.org/wiki/Barite",
+        "https://pubs.usgs.gov/sir/2014/5230/pdf/sir2014-5230.pdf"
       ],
       "edges": [
         {
@@ -593,14 +594,6 @@
       ],
       "children": [],
       "edges": [
-        {
-          "to": "metal.rare-earths.monazite",
-          "rel": "made from"
-        },
-        {
-          "to": "metal.monazite.beach",
-          "rel": "made from"
-        },
         {
           "to": "metal.columbite",
           "rel": "made from",
@@ -1075,16 +1068,8 @@
       "edges": [
         {
           "to": "metal.ferromanganese",
-          "rel": "consumes"
-        },
-        {
-          "to": "metal.manganese",
-          "rel": "consumes"
-        },
-        {
-          "to": "metal.steel",
           "rel": "consumes",
-          "basis": "documented"
+          "basis": "typical-1982"
         }
       ]
     },

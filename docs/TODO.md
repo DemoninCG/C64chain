@@ -194,6 +194,21 @@ stays readable.
   decision, diatomite carrier, cast cracker alloy, TBHP chain,
   tetrachloroethane, EB zeolite-synthesis nodes, PO/MeCl/urea (from Wave 2);
   emitter.gold kept as era-context child (pre-Schottky, unlinked from 74LS).
+- Wave 4 orphan accounting (accepted backlog, LB gate unchanged): 7 nodes
+  orphaned by deleting verified-wrong sole-carrying edges — selenide,
+  palladium (slime-side inversions), benzene-coal-tar (product-for-feed),
+  quench-blow (oven/quenching inversions; product side produces stored),
+  jarosite-residue (leach-purify produces-waste stored), emitter.gold
+  (era-removed), cadmium-residue (fume-catch produces stored). All re-enter
+  the chain-orphan backlog for future anchoring; none restored as
+  wrong-but-resolving.
+- Wave 4 hold-outs (metals): prose flags — nickel-ingot plating-anode account
+  (possible Watts-practice inversion, needs plating literature), lamination
+  consumes die-steel (equipment-as-consumable concern, R3 no-delete recorded),
+  nickel.autoclave consumes-oxide direction (needs process-level remodel);
+  NEW-NODE banked — PGM-bearing nickel-copper matte / Bushveld concentrate
+  for Pd/Pt/Rh refining (scope call); gold-reef deepest-grade sentence fixed
+  to match note; xanthate renamed ethyl (SIPC acronym dropped as isopropyl).
 - Provenance research waves (guide: `docs/RESEARCH-GUIDE.md`; rulings R1–R5
   in §9): Waves 1–2 done. Wave 3 (silicon/logic) in progress. Remaining per
   §0 queue below, sliced by theme: metals refining, board/assembly + power

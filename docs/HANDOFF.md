@@ -130,6 +130,20 @@ Do not "fix" these without a decision.
 - **`JSON.parse` keeps the last duplicate key and tells you nothing.**
   Check for duplicates explicitly after scripted insertions; ban custom
   inserters in favour of `patch.mjs` plus the `edit` tool.
+- **`patch.mjs set` may report failure AFTER writing.** A SET-FAIL on an
+  `edges`/`sources` array does not mean nothing was written (seen twice:
+  the write lands, sometimes as a match-by-`to` replace). Never trust the
+  exit code alone — always re-read the node (or rebuild and check
+  `tree.json`) before retrying, or you will double-apply.
+- **Every delete must leave its target reached, or bank the orphan.**
+  The audit walk follows `made from`/`consumes` outward (holder to target),
+  so deleting even a *wrong* edge can orphan the target when it was the sole
+  carrying inbound (Wave 4 orphaned 7 this way: selenide, palladium,
+  benzene-coal-tar, quench-blow, jarosite, emitter.gold, cadmium-residue —
+  all verified-wrong edges, all banked as backlog, LB gate unchanged). After
+  any delete batch, replicate the section-8 walk and account for every newly
+  orphaned node: revert, re-anchor correctly, or bank explicitly. Never keep
+  a wrong edge just to preserve reachability.
 - **A throttled API answers 200 with no data.** Assert on response shape,
   back off, and distrust clean sweeps that arrive too fast.
 
