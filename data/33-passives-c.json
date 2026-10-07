@@ -702,7 +702,8 @@
                       "value": "C64B/C moved to a 16 MHz crystal and a dedicated clock-generator IC"
                     }
                   ],
-                  "provenance": "incomplete"
+                  "provenance": "incomplete",
+                  "scope": "alternate"
                 }
               ],
               "note": "Topology confirmed on the 250407 board: U31 is a 74LS629 dual voltage-controlled oscillator, U32 an MC4044 phase/frequency detector whose dc output on pin 8 feeds the frequency-control input, pin 2, of U31. Not established, and contradicted by the same source: the 'x4 multiply' and 'a tracking VCO four times faster' claims. The service manual gives Y1 as 14.31818 MHz producing the colour clock and the second half of U31 as the 8.1818 MHz DOT clock, so the dot clock is the SLOWER of the two. 8.1818/14.31818 is 7/4, and the phase lock is colour clock divided by 14 against dot clock divided by 8."
@@ -1567,6 +1568,13 @@
       "provenance": "incomplete",
       "description": "The second-shot colour is a pigment dispersed in the ABS matrix at high loading. Organic pigments give brighter colours and cost more. Inorganic iron oxides give the earthier browns, reds and blacks. The moulder buys a masterbatch rather than raw pigment, so the colour arrives as a compounded material.",
       "inputs": [],
+      "edges": [
+        {
+          "to": "chem.abs.additives.pigment-masterbatch",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
       "note": "Not established: high-loading dispersion in the ABS matrix, the organic-bright-versus-inorganic-earthy split for C64 caps, and masterbatch purchase rather than raw pigment by the moulder."
     },
     "c64.keyboard-switches.keycap.double-shot.legend-colour.pigment.iron-oxide": {
@@ -1579,9 +1587,17 @@
       "provenance": "incomplete",
       "description": "Synthetic iron oxides, made by oxidising iron scrap or precipitating from an iron solution, were the standard browns, reds and blacks of the period and are still used. They begin at iron ore and end up in the keycap, which makes the keycap a surprisingly direct consumer of the iron chain.",
       "inputs": [],
+      "edges": [
+        {
+          "to": "metal.hematite",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ],
       "note": "Not established: scrap oxidation versus solution precipitation as the route for the pigment actually used, and that the brown-grey C64 caps used iron oxides rather than carbon black or organic pigments.",
       "sources": [
-        "https://en.wikipedia.org/wiki/Iron_oxide"
+        "https://en.wikipedia.org/wiki/Iron_oxide",
+        "https://www.earthmagazine.org/article/mineral-resource-month-iron-oxide-pigments-0"
       ]
     },
     "c64.keyboard-switches.domes.composition.elastomer": {
@@ -1794,6 +1810,11 @@
         {
           "to": "metal.silica-sand",
           "rel": "made from"
+        },
+        {
+          "to": "chem.sodium-silicate",
+          "rel": "made from",
+          "basis": "inferred"
         }
       ]
     },
@@ -1835,7 +1856,14 @@
       "inputs": [
         "chem.abs"
       ],
-      "note": "Not established: the crimped strain-relief construction and the claim that strain relief decides cable life. Plausible connector practice, but no document consulted describes a joystick cable assembly."
+      "note": "Not established: the crimped strain-relief construction and the claim that strain relief decides cable life. Plausible connector practice, but no document consulted describes a joystick cable assembly.",
+      "edges": [
+        {
+          "to": "c64.joystick.cable.plug.conductor",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "c64.joystick.microswitches.leaves.gold-plating": {
       "id": "c64.joystick.microswitches.leaves.gold-plating",
@@ -1852,10 +1880,6 @@
       "edges": [
         {
           "to": "metal.gold.ingot",
-          "rel": "consumes"
-        },
-        {
-          "to": "metal.tin.ingot",
           "rel": "consumes"
         },
         {
@@ -2077,14 +2101,14 @@
       "id": "mb.crystal.y1.supports",
       "name": "Mounting and soldering of the crystal",
       "simple_name": "Crystal mounting, soldering",
-      "description": "The four HC-49 leads are formed to a right angle and soldered onto the board in a wave-solder pass. The crystal's case sits at the board's natural mechanical frequency well below the circuit's operating frequency, which is deliberate: an HC-49 body has several overtone resonances that would otherwise produce spurious oscillator modes.",
+      "description": "The two HC-49 leads are formed to a right angle and soldered onto the board in a wave-solder pass. The crystal's case sits at the board's natural mechanical frequency well below the circuit's operating frequency, which is deliberate: an HC-49 body has several overtone resonances that would otherwise produce spurious oscillator modes.",
       "kind": "process",
       "category": "assembly",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "incomplete",
       "inputs": [],
-      "note": "Not established: right-angle forming of the four HC-49 leads, wave-solder mounting of Y1, and the board-frequency versus overtone-resonance spurious-mode rationale.",
+      "note": "Not established: right-angle forming of the two HC-49 leads, wave-solder mounting of Y1, and the board-frequency versus overtone-resonance spurious-mode rationale.",
       "edges": [
         
       ]
@@ -2618,10 +2642,6 @@
             },
             {
               "to": "metal.alumina",
-              "rel": "consumes"
-            },
-            {
-              "to": "metal.silica-sand",
               "rel": "consumes"
             },
             {

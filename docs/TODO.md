@@ -194,6 +194,19 @@ stays readable.
   decision, diatomite carrier, cast cracker alloy, TBHP chain,
   tetrachloroethane, EB zeolite-synthesis nodes, PO/MeCl/urea (from Wave 2);
   emitter.gold kept as era-context child (pre-Schottky, unlinked from 74LS).
+- Wave 6 hold-outs (passives): MERGE proposals HELD as lossy — dmt.px into
+  PET dmt-synthesis (loser carries PBT butanediol-condensation context the
+  PET step lacks) and connector phenol-route into cumene cleavage (loser
+  carries benzene-consumes leg the step lacks); revisit in a PBT/phenolic
+  route-modelling pass, not as blind merges. HELD plating-bath nickel leg
+  (selective-Au source 403-unverifiable; description-grounding uncertain).
+  Banked: gold-bath redundant consumes pairs (reachability-gated),
+  crimp-press direct zinc consumes (needs re-anchor review), MLCC Ni-vs-PdAg
+  formulation contest (IEEE-1982-Ni claim unfetched), tantalum peripheral
+  (correctly off-mainboard), pad-plating gold-over-nickel contest + solder-lug
+  board presumption (need joystick/keyboard teardowns), shield.tab
+  welded-vs-foil variant, PET TA-vs-DMT route overlap (kept parallel, R1),
+  carbon-black channel-wording relics elsewhere in branch.
 - Wave 5 hold-outs (board/power): PMDA-vs-TMA chemistry question (standard
   route is durene oxidation; tree's pseudocumene leg stands pending
   Kirk-Othmer check; possible durene NEW-NODE); 2SC/1SS/MA/HZ Japanese
@@ -219,9 +232,10 @@ stays readable.
   for Pd/Pt/Rh refining (scope call); gold-reef deepest-grade sentence fixed
   to match note; xanthate renamed ethyl (SIPC acronym dropped as isopropyl).
 - Provenance research waves (guide: `docs/RESEARCH-GUIDE.md`; rulings R1–R5
-  in §9): Waves 1–2 done. Wave 3 (silicon/logic) in progress. Remaining per
-  §0 queue below, sliced by theme: metals refining, board/assembly + power
-  dies, passives, industry/utilities + peripherals/chassis tail.
+  in §9): Waves 1–5 done. Wave 6 (passives) in progress. Remaining: chassis,
+  peripherals, industry/utilities, then a provenance re-review pass (flags
+  were deliberately left untouched by research waves; promotion to complete
+  needs the re-review discipline, never an edge count).
 - Orphan queue for batch 2: catalogue N–Z leftovers (~25, triage B diverged
   onto small-comps instead), untriaged metals clusters (lime ×6, tin slag /
   atomisation, extrusion, converting, cobalt leach, tantalum tail, barite

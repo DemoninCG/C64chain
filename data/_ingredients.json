@@ -2,6 +2,7 @@
   "$comment": "Ingredient synonym table. scripts/build.mjs tries three ways to turn a node's `inputs` into a real `from` link: (1) the string is already a node id, (2) it normalises to a node name, (3) it matches a key here. This file is case 3 -- the explicit, reviewable part. Keys are matched against a lowercased, punctuation-stripped form of the input string. Values are node ids in this tree.",
   "map": {
     "sodium dichromate": "metal.sodium-dichromate",
+    "sodium silicate": "chem.sodium-silicate",
     "chromium trioxide": "metal.chromate-passivation",
     "chrome trioxide": "metal.chromate-passivation",
     "lead dioxide anode": "metal.lead.ingot",

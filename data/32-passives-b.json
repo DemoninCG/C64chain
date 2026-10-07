@@ -447,6 +447,11 @@
                 {
                   "to": "c64.connector-jacks.av-din.shell.steel-strip",
                   "rel": "step"
+                },
+                {
+                  "to": "metal.steel.sheet",
+                  "rel": "made of",
+                  "basis": "typical-1982"
                 }
               ]
             }
@@ -1006,15 +1011,20 @@
       "provenance": "incomplete",
       "inputs": [],
       "children": [],
+      "sources": [
+        "https://alloys.copper.org/alloy/C51000"
+      ],
       "note": "The 44-pin card-edge form factor is documented twice. It is 'CARTRIDGE / EXPANSION (44-PIN FEMALE) CN6' in the circuit theory and '44 Pin Card Edge' in the parts list. Not established: phosphor bronze as the contact alloy, the gold flash over nickel, or the fatigue and wiping argument.",
       "edges": [
         {
           "to": "metal.copper.cathode",
-          "rel": "made from"
+          "rel": "made from",
+          "basis": "documented"
         },
         {
           "to": "metal.tin.ingot",
-          "rel": "made from"
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },
@@ -1139,12 +1149,12 @@
       "edges": [
         {
           "to": "metal.copper.cathode",
-          "rel": "made of",
+          "rel": "made from",
           "basis": "documented"
         },
         {
           "to": "metal.tin.ingot",
-          "rel": "made of",
+          "rel": "made from",
           "basis": "documented"
         }
       ]
@@ -1232,6 +1242,11 @@
           "to": "metal.salt-brine",
           "rel": "made from",
           "basis": "inferred"
+        },
+        {
+          "to": "chem.natural-gas.uses.fertiliser-ammonia",
+          "rel": "made from",
+          "basis": "documented"
         }
       ]
     },
@@ -1257,7 +1272,7 @@
       "id": "c64.switches.power-slider.body.melamine.melamine-resin",
       "name": "Melamine resin from urea and formaldehyde",
       "simple_name": "Melamine resin from urea",
-      "description": "Melamine is made by condensing urea with formaldehyde. Urea comes from ammonia and carbon dioxide, both cheap industrial gases. Formaldehyde comes from oxidising methanol, which comes from the catalytic conversion of synthesis gas. Both halves were pure petrochemical by 1982.",
+      "description": "Melamine-formaldehyde resin is made by condensing melamine with formaldehyde. (Melamine itself is made from urea, not by urea-formaldehyde condensation.) Urea comes from ammonia and carbon dioxide, both cheap industrial gases. Formaldehyde comes from oxidising methanol, which comes from the catalytic conversion of synthesis gas. Both halves were pure petrochemical by 1982.",
       "kind": "material",
       "category": "plastics",
       "era": "1982-1984",
@@ -1722,6 +1737,11 @@
           "rel": "consumes"
         },
         {
+          "to": "metal.nickel.ingot",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        },
+        {
           "to": "facility.electricity",
           "rel": "consumes"
         }
@@ -1912,11 +1932,11 @@
       "facts": [
         {
           "label": "Thickness",
-          "value": "~0.1-0.5 um"
+          "value": "~0.1-0.25 um (self-limiting displacement ceiling)"
         }
       ],
       "inputs": [],
-      "note": "Not established: the cyanide displacement process with no external current, and the 0.1-0.5 um thickness. Immersion gold flash is standard connector practice, but no document consulted describes it for these contacts.",
+      "note": "Not established: the cyanide displacement process with no external current, and the 0.1-0.25 um thickness. Immersion gold flash is standard connector practice, but no document consulted describes it for these contacts. Thicknesses above ~0.25 um imply electroplate rather than immersion.",
       "edges": [
         {
           "to": "c64.connector-jacks.metalworking.gold",

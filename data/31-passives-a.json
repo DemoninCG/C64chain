@@ -1421,7 +1421,14 @@
       ],
       "inputs": [],
       "children": [],
-      "note": "Not established: the glass frit fraction of about 5 % by weight of the ceramic body, and the specific 1982 binder systems. What is documented is that the casting suspension is the powder with a suitable binder."
+      "note": "Not established: the glass frit fraction of about 5 % by weight of the ceramic body, and the specific 1982 binder systems. What is documented is that the casting suspension is the powder with a suitable binder.",
+      "edges": [
+  {
+    "to": "mb.passives.caps.mlcc.powder",
+    "rel": "made of",
+    "basis": "inferred"
+  }
+]
     },
     "mb.passives.caps.mlcc.green-sheet": {
       "id": "mb.passives.caps.mlcc.green-sheet",
@@ -1690,7 +1697,14 @@
       "confidence": "medium",
       "provenance": "incomplete",
       "inputs": [],
-      "note": "Not established: this feed as the heaviest viscous bituminous aromatic-rich refinery fraction, the 1950s displacement by cheaper cleaner natural gas, and either-feed operation of a 1982 carbon-black plant."
+      "note": "Not established: this feed as the heaviest viscous bituminous aromatic-rich refinery fraction, the 1950s displacement by cheaper cleaner natural gas, and either-feed operation of a 1982 carbon-black plant.",
+      "edges": [
+  {
+    "to": "chem.petroleum",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
     },
     "mb.passives.caps.wrap-and-marking.ink.pigment": {
       "id": "mb.passives.caps.wrap-and-marking.ink.pigment",
@@ -1913,7 +1927,7 @@
       "id": "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black",
       "name": "Carbon black (channel/process black)",
       "simple_name": "Channel/process carbon black",
-      "description": "Furnace black made by feeding heavy residual oil (or natural gas) into a hot air-cooled furnace so that it impinges and soots on water-cooled steel. Furnace black from petroleum feedstock was the standard conductive phase in resistors by the 1980s.",
+      "description": "Furnace black made by atomising heavy residual oil into a hot gas stream in a refractory-lined closed reactor, collected continuously through bag filters. Furnace black from petroleum feedstock was the standard conductive phase in resistors by the 1980s.",
       "kind": "material",
       "category": "passives",
       "era": "1982-1984",
@@ -1923,7 +1937,8 @@
       "children": [],
       "note": "Not established: furnace black from heavy residual oil versus natural gas impinged as soot on water-cooled steel in a hot air-cooled furnace, and petroleum furnace black as the standard resistor conductive phase by the 1980s. Conductive elastomer grades use high-structure furnace black at percolation loading. Whether a higher-structure grade at lower loading is what distinguishes a responsive key from a stiff one is not established.",
       "sources": [
-        "https://en.wikipedia.org/wiki/Carbon_black"
+        "https://en.wikipedia.org/wiki/Carbon_black",
+        "https://www.carbon-black.org/is-carbon-black-safe"
       ],
       "edges": [
         {
@@ -1963,7 +1978,8 @@
       "category": "plastics",
       "era": "1982-1984",
       "sources": [
-        "https://en.wikipedia.org/wiki/Phenolic_resin"
+        "https://en.wikipedia.org/wiki/Phenolic_resin",
+        "https://patents.google.com/patent/US3676925A/en"
       ],
       "confidence": "high",
       "provenance": "incomplete",
@@ -1994,7 +2010,14 @@
         }
       ],
       "inputs": [],
-      "note": "Not established: the Urex and Parex adsorption processes, the aromatics-complex location, and the 1982 shift of PET from bottle grade into film and capacitor dielectric. No document consulted covers paraxylene production."
+      "note": "Not established: the Urex and Parex adsorption processes, the aromatics-complex location, and the 1982 shift of PET from bottle grade into film and capacitor dielectric. No document consulted covers paraxylene production.",
+      "edges": [
+  {
+    "to": "chem.petroleum",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
     },
     "mb.passives.caps.ceramic-disc.press-sinter.body": {
       "id": "mb.passives.caps.ceramic-disc.press-sinter.body",
@@ -2358,6 +2381,16 @@
             {
               "to": "mb.passives.caps.film.polyester-metallisation.pet-polymerisation.paraxylene",
               "rel": "consumes"
+            },
+            {
+              "to": "chem.polyester.pet.terephthalic-acid",
+              "rel": "consumes",
+              "basis": "typical-1982"
+            },
+            {
+              "to": "chem.polyester.pet.ethylene-glycol",
+              "rel": "consumes",
+              "basis": "typical-1982"
             }
           ]
         }
@@ -2410,7 +2443,14 @@
       "confidence": "medium",
       "inputs": [],
       "note": "Not established: vacuum-deposited aluminium electrodes on polystyrene film for these parts, polystyrene outgassing and embrittlement under vacuum heat, and the bake plus cool-deposition remedy.",
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+  {
+    "to": "metal.aluminum.ingot",
+    "rel": "consumes",
+    "basis": "inferred"
+  }
+]
     },
     "mb.passives.caps.ceramic-disc.press-sinter": {
       "id": "mb.passives.caps.ceramic-disc.press-sinter",
@@ -2790,7 +2830,14 @@
             }
           ],
           "inputs": [],
-          "note": "Terminal welding to lead-out terminals during winding is documented. Not established: crimping, and the claim that pure aluminium is used because it will not form a galvanic or resistive joint with the foil, or the iron and silicon limits of a few tenths of a per cent."
+          "note": "Terminal welding to lead-out terminals during winding is documented. Not established: crimping, and the claim that pure aluminium is used because it will not form a galvanic or resistive joint with the foil, or the iron and silicon limits of a few tenths of a per cent.",
+          "edges": [
+  {
+    "to": "metal.aluminum.ingot",
+    "rel": "made of",
+    "basis": "inferred"
+  }
+]
         }
       ],
       "edges": [
@@ -3027,7 +3074,14 @@
           "confidence": "medium",
           "provenance": "incomplete",
           "inputs": [],
-          "note": "Not established: the continuous polyester carrier belt and the short in-line drying oven. No document consulted describes the tape-casting line layout."
+          "note": "Not established: the continuous polyester carrier belt and the short in-line drying oven. No document consulted describes the tape-casting line layout.",
+          "edges": [
+  {
+    "to": "chem.polyester.pet.film",
+    "rel": "contains",
+    "basis": "typical-1982"
+  }
+]
         },
         {
           "id": "mb.passives.caps.mlcc.tape-cast.doctor-blade",
@@ -3825,6 +3879,16 @@
             {
               "to": "facility.electricity",
               "rel": "consumes"
+            },
+            {
+              "to": "chem.ethylene.monomer",
+              "rel": "consumes",
+              "basis": "documented"
+            },
+            {
+              "to": "mb.passives.caps.alu-electrolytic.electrolyte.glycol-ethers",
+              "rel": "step",
+              "basis": "inferred"
             }
           ]
         }
@@ -4118,6 +4182,11 @@
         {
           "to": "facility.electricity",
           "rel": "consumes"
+        },
+        {
+          "to": "mb.passives.resistors.discrete-axial.metal-film.nichrome",
+          "rel": "consumes",
+          "basis": "inferred"
         }
       ]
     },
@@ -4130,9 +4199,10 @@
       "category": "passives",
       "era": "1982-1984",
       "sources": [
-        "https://en.wikipedia.org/wiki/Carbon_black"
+        "https://en.wikipedia.org/wiki/Carbon_black",
+        "https://www.carbon-black.org/is-carbon-black-safe"
       ],
-      "confidence": "high",
+      "confidence": "medium",
       "provenance": "incomplete",
       "facts": [
         {
