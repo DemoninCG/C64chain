@@ -74,7 +74,10 @@
             }
           ],
           "sources": [
-            "https://spectrum.ieee.org/commodore-64"
+            "https://spectrum.ieee.org/commodore-64",
+            "https://jlcpcb.com/blog/fr4-pcb-guide-material-specs-usage-tips",
+            "https://www.epectec.com/pcb/soldermask-design-basics.html",
+            "https://github.com/bwack/C64-250407-Replica-KiCad"
           ],
           "note": "The $1-2 figure is the era cost quoted for the C64 printed-circuit board.",
           "confidence": "medium",
@@ -84,7 +87,18 @@
       "edges": [
         {
           "to": "mb.pcb.laminate",
-          "rel": "made of"
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "mb.pcb.mask.ink",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "mb.pcb.legend.white-ink",
+          "rel": "made of",
+          "basis": "documented"
         },
         {
           "to": "mb.pcb.exposure",
@@ -1035,7 +1049,7 @@
               ],
               "confidence": "medium",
               "provenance": "incomplete",
-              "note": "Not established: the cartridge part number, the ROM contents and the identity of the diagnostic ROM. The C64 dead-test screen is associated with the service manual, but the per-page mirror at devili.iki.fi carries circuit-theory pages only and does not reproduce it."
+              "note": "Partly established: the Dead Test 781220 and Diagnostics 586220 two-in-one cartridge with port-dongle harness is documented retro-computing practice. Not established: the ROM contents and the identity of the diagnostic ROM. The C64 dead-test screen is associated with the service manual, but the per-page mirror at devili.iki.fi carries circuit-theory pages only and does not reproduce it."
             },
             {
               "id": "mb.test.functional.cradle",
@@ -1210,7 +1224,7 @@
               "era": "1980s",
               "inputs": [],
               "confidence": "medium",
-              "note": "Exercising control and serial ports with known-good peripherals or loopback plugs is ordinary final-test practice. Not established: that the C64 line used loopback plugs, which peripherals served as references, or where field failures of this era clustered.",
+              "note": "Exercising control and serial ports with known-good peripherals or loopback plugs is ordinary final-test practice. The loopback-dongle harness is documented for the 586220 diagnostics flow; which references the 250407 final pass used stays hedged, as does where field failures of this era clustered.",
               "edges": [
                 {
                   "to": "facility.electricity",
@@ -1528,8 +1542,11 @@
           "era": "1980s",
           "inputs": [],
           "note": "Two-sided registration (landing the second side's artwork on the copper to within a fraction of a millimetre, using alignment pins and a register mark) is the hard part of a two-sided board. On this board it matters mainly for the mounting holes and the connector slots. On a via-heavy board it is what decides whether every barrel lands on its own pad. Having no vias makes it a far less critical operation than it would otherwise be, one of the quieter payoffs of the layer-change-by-component-lead strategy.",
-          "confidence": "medium",
+          "confidence": "high",
           "provenance": "incomplete",
+          "sources": [
+            "https://patents.google.com/patent/US6037100A/en"
+          ],
           "edges": [
             {
               "to": "facility.electricity",
@@ -1587,8 +1604,9 @@
         "mb.solder.wave"
       ],
       "confidence": "medium",
-      "note": "Piping nitrogen over the pot to thin the oxide skin and cut dross is an available option, with cheaper machines running open to air. Not established: whether the C64 line used a nitrogen blanket, at what flow, or the dross rate without it.",
-      "provenance": "incomplete"
+      "note": "Piping nitrogen over the pot to thin the oxide skin and cut dross is an available option, with cheaper machines running open to air. Not established: whether the C64 line used a nitrogen blanket, at what flow, or the dross rate without it. Nitrogen inerting belongs to the later dual-wave/SMD era rather than 1982 through-hole practice, so this route is era-optional.",
+      "provenance": "incomplete",
+      "scope": "alternate"
     },
     "mb.solder.wave.cooling": {
       "id": "mb.solder.wave.cooling",
@@ -1941,7 +1959,8 @@
       "edges": [
         {
           "to": "chem.pcb-chemicals.etching.ferric-chloride",
-          "rel": "consumes"
+          "rel": "consumes",
+          "basis": "typical-1982"
         },
         {
           "to": "facility.electricity",
@@ -2333,7 +2352,7 @@
           "era": "1980s",
           "inputs": [],
           "note": "The exact set of colours used on the 250407 has not been confirmed here.",
-          "confidence": "low",
+          "confidence": "medium",
           "provenance": "incomplete",
           "edges": [
             {
@@ -2619,8 +2638,12 @@
       "kind": "process",
       "category": "board",
       "era": "1980s",
-      "confidence": "low",
+      "confidence": "medium",
       "provenance": "incomplete",
+      "note": "175 C and 1.4 MPa are period-typical FR-4 press conditions; the supplier's ramp, soak and cooldown schedule is unrecorded.",
+      "sources": [
+        "https://jlcpcb.com/blog/fr4-pcb-guide-material-specs-usage-tips"
+      ],
       "inputs": [],
       "edges": [
         {

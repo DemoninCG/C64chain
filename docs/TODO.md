@@ -194,6 +194,15 @@ stays readable.
   decision, diatomite carrier, cast cracker alloy, TBHP chain,
   tetrachloroethane, EB zeolite-synthesis nodes, PO/MeCl/urea (from Wave 2);
   emitter.gold kept as era-context child (pre-Schottky, unlinked from 74LS).
+- Wave 5 hold-outs (board/power): PMDA-vs-TMA chemistry question (standard
+  route is durene oxidation; tree's pseudocumene leg stands pending
+  Kirk-Othmer check; possible durene NEW-NODE); 2SC/1SS/MA/HZ Japanese
+  discretes need NEC/Toshiba/Hitachi databooks (SMC book struck from guide);
+  RF-modulator part designations need Zimmers 251025/251696 re-read; shield.tab
+  welded-vs-foil variant question; diagnostic ROM EPROM/shell nodes unmodelled
+  (781220/586220 numbers recorded); PP-separator paper-vs-film description
+  overclaims (re-author toward paper before edging); electrolyte recipe
+  contradiction (ammonium-pentaborate vs glycol/borax systems).
 - Wave 4 orphan accounting (accepted backlog, LB gate unchanged): 7 nodes
   orphaned by deleting verified-wrong sole-carrying edges — selenide,
   palladium (slime-side inversions), benzene-coal-tar (product-for-feed),

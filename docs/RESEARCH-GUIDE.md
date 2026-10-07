@@ -85,7 +85,7 @@ The eleven below are verified to have OCR text today:
 | 7 | `1983-rca-cmos-ic-databook` | `1983-RCA-Cmos-Ic-Databook_djvu.txt` | 4044/4066-class CMOS, period specs |
 | 8 | `bitsavers_tidataBookeTTLDataBook2ndEd_2627593` | `1977_Supplement_to_the_TTL_DataBook_2nd_Ed__djvu.txt` | 74LS glue (139, 74, 193, 629-class) |
 | 9 | `motorola-cmos-integrated-circuits-1978` | `Motorola CMOS Integrated Circuits 1978_djvu.txt` | CMOS process context |
-| 10 | `smc-data-catalog-1982-83` | `SMC-Data-Catalog-1982-83_djvu.txt` | discretes (2SC-class, diodes) |
+| 10 | ~~`smc-data-catalog-1982-83`~~ CORRECTED 2026-10-07 | `SMC-Data-Catalog-1982-83_djvu.txt` | STRUCK as discretes source: verified in-session to be Standard Microsystems comms ICs (COM15xx/CRT50xx), zero discretes. Japanese 2SC/1SS/MA parts need NEC/Toshiba/Hitachi databooks. Usable only for SMC comms-IC context. |
 | 11 | `fairchild-discrete-data-book-analog-division-1985` | `Fairchild Discrete Data Book Analog Division 1985_djvu.txt` | discretes, regulators |
 | 12 | `NASA_NTRS_Archive_19810016959` | `<id>_djvu.txt` | polysilicon CVD route (1981, directly on-point for Siemens/TCS) |
 | 13 | `NASA_NTRS_Archive_19790023597` | `<id>_djvu.txt` | silicon material, gaseous melt reduction (1979) |

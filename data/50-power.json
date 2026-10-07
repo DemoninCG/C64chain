@@ -834,7 +834,7 @@
                           "value": "ferric oxide or manganese oxide semiconducting ceramic"
                         }
                       ],
-                      "confidence": "high",
+                      "confidence": "medium",
                       "provenance": "incomplete",
                       "inputs": []
                     }
@@ -3039,7 +3039,7 @@
           "value": "step-growth in dimethylacetamide at ~200-300 C"
         }
       ],
-      "confidence": "high",
+      "confidence": "medium",
       "provenance": "incomplete",
       "children": [],
       "inputs": [],
@@ -3203,7 +3203,14 @@
       "provenance": "incomplete",
       "children": [],
       "note": "A coal-tar/cresol route to trimellitic anhydride existed and was used into the 1990s; the pseudocumene oxidation route became dominant in the 1980s, which is what makes this enamel a petroleum-aromatics product rather than a coal-tar one. The diamine half of the polyamide is ethylenediamine or a similar short-chain diamine, and it is the imide ring plus that diamine that lifts the insulation class to H.",
-      "inputs": []
+      "inputs": [],
+      "edges": [
+        {
+          "to": "c64.psu.transformer.winding.insulation.kapton.pseudocumene",
+          "rel": "made from",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "c64.mains.line-capacitor.metallised-film.winding": {
       "id": "c64.mains.line-capacitor.metallised-film.winding",
@@ -3263,6 +3270,11 @@
             {
               "to": "facility.electricity",
               "rel": "consumes"
+            },
+            {
+              "to": "c64.mains.line-capacitor.metallised-film.polypropylene",
+              "rel": "consumes",
+              "basis": "inferred"
             }
           ]
         }
@@ -3727,9 +3739,10 @@
       "note": "Not established: silver-glass die attach at 430 C, the 80Au/20Sn reflow, the 50-150 um aluminium wedge bond, and epoxy or glass-preform encapsulation at 150-175 C for an axial rectifier. Wire bonding and epoxy as technologies are documented, but the specific attach, wire and moulding conditions for an axial diode have no source here.",
       "edges": [
         {
-          "to": "c64.psu.rectifier.diode.die",
+          "to": "c64.psu.rectifier.diode",
           "rel": "produces",
-          "role": "product"
+          "role": "product",
+          "basis": "inferred"
         },
         {
           "to": "chem.epoxy",
