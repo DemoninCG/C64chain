@@ -1,7 +1,7 @@
 import { C, UI } from './palette.js';
 import { BOX, SOLID, toScreenText } from './petscii.js';
 import { TextMode, COLS, ROWS, wrapText } from './textmode.js';
-import { childLines, layoutTreeBoxes, planTreePanel, groupRouted, groupRails, trunkSpan, visibleWindow, clampStart, ensureCursorVisible, connectionsOf, kindColor, nodeContent } from './treeview.js';
+import { childLines, layoutTreeBoxes, planTreePanel, groupRouted, groupRails, trunkSpan, visibleWindow, clampStart, ensureCursorVisible, connectionsOf, nodeContent } from './treeview.js';
 import { renderElements, stepCursor, cellFromXY, elementAt } from './periodictable.js';
 import { CAT_ORDER, catColor, FLOW_ZOOMS, FLOW_NODE_H, FLOW_COL_GAP, FLOW_ROW_GAP, buildFlowGraph, computeTiers, layoutFlow, edgeCellsFor, clampCam, centreFor, nearestToCentre, flowLabel } from './flowview.js';
 
@@ -59,6 +59,28 @@ function box(x, y, w, h, fg, bg, title) {
   if (title) {
     const t = ' ' + U(title).slice(0, w - 4) + ' ';
     tm.text(x + 2, y, t, C.YELLOW, bg);
+  }
+}
+
+// Note-node frame: solid sides and corners like box(), but the top and
+// bottom borders run dashed (2 on, 1 off) so commentary stands apart from
+// things without changing the footprint.
+function dashBox(x, y, w, h, fg, bg) {
+  tm.set(x, y, BOX.TL, fg, bg);
+  tm.set(x + w - 1, y, BOX.TR, fg, bg);
+  tm.set(x, y + h - 1, BOX.BL, fg, bg);
+  tm.set(x + w - 1, y + h - 1, BOX.BR, fg, bg);
+  for (let i = 1; i < w - 1; i++) {
+    const dash = (i % 3 !== 0);
+    tm.set(x + i, y, dash ? BOX.H : 32, fg, bg);
+    tm.set(x + i, y + h - 1, dash ? BOX.H : 32, fg, bg);
+  }
+  for (let j = 1; j < h - 1; j++) {
+    tm.set(x, y + j, BOX.V, fg, bg);
+    tm.set(x + w - 1, y + j, BOX.V, fg, bg);
+  }
+  for (let j = 1; j < h - 1; j++) {
+    for (let i = 1; i < w - 1; i++) tm.set(x + i, y + j, 32, fg, bg);
   }
 }
 
@@ -189,7 +211,8 @@ function renderLeft() {
   const th = nameLines.length + 2;
   const tMid = TREE.ty + Math.floor((th - 1) / 2);
   if (state.selected === (state.meta?.root ?? 'c64')) rainbowBox(TREE.tx, TREE.ty, TREE.tw, th);
-  else box(TREE.tx, TREE.ty, TREE.tw, th, kindColor(n.kind), UI.BG);
+  else if (n.kind === 'note') dashBox(TREE.tx, TREE.ty, TREE.tw, th, catColor(n.category), UI.BG);
+  else box(TREE.tx, TREE.ty, TREE.tw, th, catColor(n.category), UI.BG);
   nameLines.forEach((ln, i) => {
     tm.text(TREE.tx + 2, TREE.ty + 1 + i, ln, C.WHITE, UI.BG, TREE.tw - 4);
   });
@@ -237,7 +260,9 @@ function renderLeft() {
   for (const b of planTreePanel(kids, win.visible, TREE.cx0, TREE.cw)) {
     const isCur = b.index === state.treeCursor;
     const btw = b.grouped ? subW : textW;
-    box(b.bx, y, b.bw, b.h, kindColor(b.kind), UI.BG);
+    const bc = catColor(state.nodes[b.id]?.category);
+    if (b.kind === 'note') dashBox(b.bx, y, b.bw, b.h, bc, UI.BG);
+    else box(b.bx, y, b.bw, b.h, bc, UI.BG);
     b.lines.forEach((ln, i) => {
       tm.text(b.bx + 2, y + 1 + i, ln, isCur ? C.WHITE : C.GREY, UI.BG, btw);
     });
@@ -441,6 +466,22 @@ function flowBoxAt(sx, sy, w, h, fg, bg, isRoot) {
   for (let j = 1; j < h - 1; j++) for (let i = 1; i < w - 1; i++) if (inFlowView(sx + i, sy + j)) tm.set(sx + i, sy + j, 32, fg, bg);
 }
 
+// Viewport twin of dashBox(): note frames stay dashed inside the pannable
+// world too. Same 2-on-1-off top/bottom rhythm, clipped to the window.
+function flowDashBoxAt(sx, sy, w, h, fg, bg) {
+  if (w < 2 || h < 2) return;
+  const put = (x, y, code, f) => { if (inFlowView(x, y)) tm.set(x, y, code, f, bg); };
+  put(sx, sy, BOX.TL, fg); put(sx + w - 1, sy, BOX.TR, fg);
+  put(sx, sy + h - 1, BOX.BL, fg); put(sx + w - 1, sy + h - 1, BOX.BR, fg);
+  for (let i = 1; i < w - 1; i++) {
+    const dash = (i % 3 !== 0);
+    put(sx + i, sy, dash ? BOX.H : 32, fg);
+    put(sx + i, sy + h - 1, dash ? BOX.H : 32, fg);
+  }
+  for (let j = 1; j < h - 1; j++) { put(sx, sy + j, BOX.V, fg); put(sx + w - 1, sy + j, BOX.V, fg); }
+  for (let j = 1; j < h - 1; j++) for (let i = 1; i < w - 1; i++) if (inFlowView(sx + i, sy + j)) tm.set(sx + i, sy + j, 32, fg, bg);
+}
+
 // Condensed whole-world map for the flow tab's left rail. One character per
 // tier horizontally (raw left, C64 right, matching the world); vertically the
 // world height is squashed into the box. Each cell takes the colour of the
@@ -545,7 +586,8 @@ function renderFlow() {
   const nameLines = childLines(tName, TREE.tw - 4, 3);
   const th = nameLines.length + 2;
   if (state.selected === (state.meta?.root ?? 'c64')) rainbowBox(TREE.tx, TREE.ty, TREE.tw, th);
-  else box(TREE.tx, TREE.ty, TREE.tw, th, kindColor(n.kind), UI.BG);
+  else if (n.kind === 'note') dashBox(TREE.tx, TREE.ty, TREE.tw, th, catColor(n.category), UI.BG);
+  else box(TREE.tx, TREE.ty, TREE.tw, th, catColor(n.category), UI.BG);
   nameLines.forEach((ln, i) => {
     tm.text(TREE.tx + 2, TREE.ty + 1 + i, ln, C.WHITE, UI.BG, TREE.tw - 4);
   });
@@ -630,10 +672,16 @@ function renderFlow() {
     const isSel = id === state.selected;
     const isRoot = id === (state.meta?.root ?? 'c64');
     const fg = isSel ? C.WHITE : isRoot ? C.YELLOW : catColor(node.category);
-    flowBoxAt(sx, sy, p.w, p.h, isSel ? C.WHITE : catColor(node.category), FLOW_BG, isRoot && !isSel);
-    if (isSel) {
-      // Selection gets a bright frame on top of the category colour.
-      flowBoxAt(sx, sy, p.w, p.h, C.WHITE, FLOW_BG, false);
+    if (node.kind === 'note') {
+      // Commentary keeps its dashed frame here too; a selected note goes
+      // dashed-white so both signals survive.
+      flowDashBoxAt(sx, sy, p.w, p.h, isSel ? C.WHITE : catColor(node.category), FLOW_BG);
+    } else {
+      flowBoxAt(sx, sy, p.w, p.h, isSel ? C.WHITE : catColor(node.category), FLOW_BG, isRoot && !isSel);
+      if (isSel) {
+        // Selection gets a bright frame on top of the category colour.
+        flowBoxAt(sx, sy, p.w, p.h, C.WHITE, FLOW_BG, false);
+      }
     }
     const label = flowLabel(node, p.w - 4);
     const lx = sx + 2;
@@ -646,13 +694,6 @@ function renderFlow() {
     void fg;
     flowHits.push({ x0: Math.max(sx, FLOWVIEW.vx0), x1: Math.min(sx + p.w - 1, FLOWVIEW.vx0 + FLOWVIEW.vw - 1), y0: Math.max(sy, FLOWVIEW.vy0), y1: Math.min(sy + p.h - 1, FLOWVIEW.vy0 + FLOWVIEW.vh - 1), id });
   }
-
-  // Viewport centre crosshair: ENTER selects whatever is under it. Skipped
-  // when it would land inside a node box, so it never eats a label char.
-  const ccx = FLOWVIEW.vx0 + Math.floor(FLOWVIEW.vw / 2);
-  const ccy = FLOWVIEW.vy0 + Math.floor(FLOWVIEW.vh / 2);
-  const onNode = flowHits.some((t) => ccx >= t.x0 && ccx <= t.x1 && ccy >= t.y0 && ccy <= t.y1);
-  if (!onNode) tm.set(ccx, ccy, '+'.charCodeAt(0), C.GREY, FLOW_BG);
 
   // Coordinates overlay the world at the top-left corner: the tier/node
   // counts are gone (tiers read off the map width), so position + zoom is all
@@ -856,14 +897,14 @@ function startTrackAnimation(src) {
   const s = { x0: src.x0, y0: src.y0, x1: src.x1, y1: src.y1 };
   const n = state.nodes[state.selected];
   const isRoot = state.selected === (state.meta?.root ?? 'c64');
-  const fg = isRoot ? null : kindColor(n?.kind);
+  const fg = isRoot ? null : catColor(n?.category);
   animateBoxMove(s, dst, { fg, isRoot, tName, total: animDuration(s, dst), reverse: false });
 }
 
 function startBackAnimation(srcRect, dstRect, departingNode) {
   const tName = U(trackedName());
   // The flying box is the departing child, never the rainbow root frame.
-  const fg = kindColor(departingNode?.kind);
+  const fg = catColor(departingNode?.category);
   animateBoxMove(srcRect, dstRect, { fg, isRoot: false, tName, total: animDuration(srcRect, dstRect), reverse: true });
 }
 

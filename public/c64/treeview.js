@@ -1,6 +1,7 @@
 import { wrapText } from './textmode.js';
 import { toScreenText } from './petscii.js';
 import { C } from './palette.js';
+import { catColor } from './flowview.js';
 
 export function childLines(simpleName, textW, maxLines = 4) {
   const lines = wrapText(String(simpleName ?? '?'), textW);
@@ -82,8 +83,9 @@ export function nodeContent(n, iw) {
   const S = (s) => toScreenText(String(s ?? ''));
   const push = (t, fg) => L.push({ t, fg });
   for (const ln of wrapText(S(n.name ?? n.id), iw)) push(ln, C.YELLOW);
-  push(S(n.id).slice(0, iw), C.GREY);
-  push(S(`${n.kind ?? '?'} * ${n.category ?? '?'}`).slice(0, iw), C.CYAN);
+  push(S(n.kind ?? '?').slice(0, iw), C.CYAN);
+  const cc = catColor(n.category);
+  for (const ln of wrapText(S(`${n.category ?? '?'} - ${n.subcat ?? 'other'}`), iw)) push(ln, cc);
   push('SEP', C.GREY);
   push('DESC:', C.GREY);
   for (const ln of wrapText(S(n.description ?? '(NO DESCRIPTION)'), iw)) push(ln, C.LTBLUE);
