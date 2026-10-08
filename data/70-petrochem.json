@@ -1842,7 +1842,7 @@
               "id": "chem.butadiene.sources.houdry",
               "name": "Houdry butane dehydrogenation",
               "simple_name": "Houdry butane dehydrogenation",
-              "description": "n-Butane dehydrogenated endothermically at 480-550 C over platinum on alumina or chromia at 1-5 bar to butenes, which are then extracted and the butadiene purified separately. It was the on-purpose route, it made isobutylene for MTBE as a co-product, and it suffered from the thermodynamics of an endothermic reaction: every 1% of conversion costs a lot of fuel, and 1980s furnace designs pushed single-pass conversion to 40-50% with recirculation.",
+              "description": "n-Butane dehydrogenated endothermically at 480-550 C over chromia-alumina at 1-5 bar to butenes, which are then extracted and the butadiene purified separately. It was the on-purpose route, it made isobutylene for MTBE as a co-product, and it suffered from the thermodynamics of an endothermic reaction: every 1% of conversion costs a lot of fuel, and 1980s furnace designs pushed single-pass conversion to 40-50% with recirculation.",
               "kind": "process",
               "category": "plastics",
               "era": "1940s",
@@ -1851,7 +1851,7 @@
                   "id": "chem.butadiene.sources.houdry.dehydrogenation-furnace",
                   "name": "Butane dehydrogenation furnace",
                   "simple_name": "Butane dehydrogenation furnace",
-                  "description": "Dehydrogenation of butane to butenes is endothermic, so the reactor is a bank of fired tubes. This is cast iron or cast alloy, several hundred tubes, with the furnace gas at 500-700 C. The catalyst inside is platinum on alumina or chromia, and the giveaway of a fouled furnace is the pressure drop across the tubes: the butene polymerises on the catalyst, makes green coke, and the coke blocks the tube. This unit is the reason the butadiene plant in a 1980s complex was often the noisiest building on the site.",
+                  "description": "Dehydrogenation of butane to butenes is endothermic, so the reactor is a bank of fired tubes. This is cast iron or cast alloy, several hundred tubes, with the furnace gas at 500-700 C. The catalyst inside is chromia-alumina in cyclic fixed beds, commercial since 1944, and the giveaway of a fouled furnace is the pressure drop across the tubes: the butene polymerises on the catalyst, makes green coke, and the coke blocks the tube. This unit is the reason the butadiene plant in a 1980s complex was often the noisiest building on the site.",
                   "kind": "tool",
                   "category": "plastics",
                   "era": "1950s",
@@ -6994,15 +6994,15 @@
     },
     "chem.propylene.cumene.alkylation.phosphoric-acid-catalyst.silica-carrier": {
       "id": "chem.propylene.cumene.alkylation.phosphoric-acid-catalyst.silica-carrier",
-      "name": "Silica carrier (the same silica as the cracker drier)",
-      "simple_name": "Silica carrier",
-      "description": "A silica gel of 200-400 m2/g surface area, and a strong family resemblance to the 3A molecular sieve's carrier and to the FCC catalyst's matrix and to the ammoxidation catalyst's support. One amorphous silica, made from sand by the soda-silica route, appears in this file as a support four different times, and it is the petrochemical branch's quietest link to a mineral.",
+      "name": "Kieselguhr carrier (calcined diatomaceous earth)",
+      "simple_name": "Kieselguhr carrier",
+      "description": "Calcined kieselguhr, a mined natural porous silica (diatomaceous earth), carrying the phosphoric acid of the SPA cumene-alkylation catalyst. The acid is held at 60+ wt% as silicon phosphates on the diatomite structure.",
       "kind": "material",
       "category": "plastics",
       "era": "1940s",
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Silica gel is amorphous and porous with nanometre-scale voids, and the same material does appear as a support elsewhere in this chain. Not established: the 200-400 m2/g surface area of the alkylation catalyst's carrier, and the claim that all four supports in this file are one material."
+      "note": "Kieselguhr/diatomaceous earth as the SPA carrier per UOP practice (US4051191, US4912279); the four-supports-are-one-material claim is withdrawn. Not established: the surface area of the alkylation catalyst carrier."
     },
     "chem.propylene.flame-retardants.chlorinated-paraffin": {
       "id": "chem.propylene.flame-retardants.chlorinated-paraffin",
