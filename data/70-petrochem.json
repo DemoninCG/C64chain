@@ -2972,6 +2972,12 @@
                       "to": "chem.methyl-chloride",
                       "rel": "consumes",
                       "basis": "typical-1982"
+                    },
+                    {
+                      "to": "chem.methylchlorosilane",
+                      "rel": "produces",
+                      "role": "product",
+                      "basis": "typical-1982"
                     }
                   ]
                 },
@@ -3004,6 +3010,11 @@
                       "rel": "produces",
                       "role": "product",
                       "basis": "documented"
+                    },
+                    {
+                      "to": "chem.methylchlorosilane",
+                      "rel": "consumes",
+                      "basis": "typical-1982"
                     }
                   ]
                 }
@@ -4613,6 +4624,63 @@
           "to": "metal.coke",
           "rel": "made from",
           "basis": "typical-1982"
+        }
+      ]
+    },
+    "chem.p-cresol": {
+      "id": "chem.p-cresol",
+      "name": "p-Cresol",
+      "simple_name": "p-Cresol",
+      "description": "para-Cresol from toluene sulfonation, alkylated with isobutylene to the hindered-phenol antioxidant BHT. Also the phenol-side feed for m-/p-cresol novolac resists.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1980s",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "note": "Toluene sulfonation route per EHC 168; BHT alkylation commercial. Isobutylene co-feed banked for a C4-olefin pass. Dual use covers the DNQ-novolac phenol-edge retarget.",
+      "children": [],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "chem.toluene",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
+    },
+    "chem.methylchlorosilane": {
+      "id": "chem.methylchlorosilane",
+      "name": "Methylchlorosilane intermediate",
+      "simple_name": "Methylchlorosilane",
+      "description": "Methylchlorosilane (principally dimethyldichlorosilane) from the Rochow direct process, hydrolysed and condensed to silicone polymer. No material made-from legs: the Rochow consumes/produces pair already models the route (R2).",
+      "kind": "material",
+      "category": "fluids",
+      "era": "1980s",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "note": "R2-shaped only: Rochow produces it, silicone-polymer consumes it. Resolves silicone.compound note on the missing chlorosilane node.",
+      "children": [],
+      "inputs": []
+    },
+    "chem.phosphorus-trichloride": {
+      "id": "chem.phosphorus-trichloride",
+      "name": "Phosphorus trichloride",
+      "simple_name": "Phosphorus trichloride",
+      "description": "Phosphorus trichloride from white phosphorus chlorination, converted with oxygen to phosphorus oxychloride for flame-retardant chemistry. Flame-retardant peripheral chemistry, like the TDCPP cluster it feeds.",
+      "kind": "material",
+      "category": "fluids",
+      "era": "1980s",
+      "confidence": "low",
+      "provenance": "incomplete",
+      "note": "POCl3-from-PCl3 per US2741542A; P4 leg rides furnace-product white phosphorus (grade-plausible, inferred). Scoped alternate with the TDCPP cluster.",
+      "children": [],
+      "inputs": [],
+      "scope": "alternate",
+      "edges": [
+        {
+          "to": "chem.fab-chemicals.dopants.phosphine.white-phosphorus",
+          "rel": "made from",
+          "basis": "inferred"
         }
       ]
     },
@@ -7513,7 +7581,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Butylated%20hydroxytoluene"
       ],
-      "note": "Not established: the 0.05-0.2 wt% loading and the para-cresol alkylation with isobutylene. In particular the claim that BHT was the antioxidant of the C64 power supply's capacitor-filling fluid is unsupported. No such material appears in the 1992 service manual parts list."
+      "note": "Not established: the 0.05-0.2 wt% loading and the para-cresol alkylation with isobutylene. In particular the claim that BHT was the antioxidant of the C64 power supply's capacitor-filling fluid is unsupported. No such material appears in the 1992 service manual parts list.",
+      "edges": [
+  {
+    "to": "chem.p-cresol",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
     },
     "chem.ethylene.feedstock.naphtha": {
       "id": "chem.ethylene.feedstock.naphtha",
@@ -12057,7 +12132,14 @@
         "confidence": "medium",
         "note": "Chlorinated-versus-brominated ban history per candidate note only; POCl3 grade.",
         "children": [],
-        "provenance": "incomplete"
+        "provenance": "incomplete",
+        "edges": [
+  {
+    "to": "chem.propylene.flame-retardants.tdcpp.phosphorus-oxychloride",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
       },
     "chem.pvc.plasticiser.ethylhexanol.butyraldehyde": {
         "id": "chem.pvc.plasticiser.ethylhexanol.butyraldehyde",
