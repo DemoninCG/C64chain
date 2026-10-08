@@ -2886,6 +2886,11 @@
         {
           "to": "metal.solder",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.solder.preheater",
+          "rel": "step",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -2986,11 +2991,6 @@
         {
           "to": "metal.solder",
           "rel": "consumes"
-        },
-        {
-          "to": "metal.solder.preheater",
-          "rel": "step",
-          "basis": "typical-1982"
         }
       ]
     },
