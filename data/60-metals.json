@@ -133,7 +133,14 @@
             }
           ]
         }
-      ]
+      ],
+      "edges": [
+  {
+    "to": "metal.quartzite.rock",
+    "rel": "made from",
+    "basis": "typical-1982"
+  }
+]
     },
     "metal.silica.mgsi": {
       "id": "metal.silica.mgsi",
@@ -654,7 +661,14 @@
             }
           ]
         }
-      ]
+      ],
+      "edges": [
+  {
+    "to": "metal.fluorspar.vein",
+    "rel": "made from",
+    "basis": "typical-1982"
+  }
+]
     },
     "metal.sulphuric-acid": {
       "id": "metal.sulphuric-acid",
@@ -1819,6 +1833,11 @@
           "rel": "produces",
           "role": "product",
           "basis": "typical-1982"
+        },
+        {
+          "to": "metal.zinc.electroplate",
+          "rel": "step",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -2260,7 +2279,14 @@
             }
           ]
         }
-      ]
+      ],
+      "edges": [
+  {
+    "to": "metal.chromite.layered",
+    "rel": "made from",
+    "basis": "typical-1982"
+  }
+]
     },
     "metal.chromium.aod": {
       "id": "metal.chromium.aod",
@@ -2380,6 +2406,11 @@
         },
         {
           "to": "metal.chromium",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "metal.refractory-ladle",
           "rel": "consumes",
           "basis": "typical-1982"
         }
@@ -2511,7 +2542,14 @@
         "https://en.wikipedia.org/wiki/Tin_mining",
         "https://en.wikipedia.org/wiki/Cassiterite"
       ],
-      "children": []
+      "children": [],
+      "edges": [
+  {
+    "to": "metal.cassiterite.greisen",
+    "rel": "made from",
+    "basis": "typical-1982"
+  }
+]
     },
     "metal.galena": {
       "id": "metal.galena",
@@ -2574,7 +2612,14 @@
             }
           ]
         }
-      ]
+      ],
+      "edges": [
+  {
+    "to": "metal.galena.rock",
+    "rel": "made from",
+    "basis": "typical-1982"
+  }
+]
     },
     "metal.sphalerite": {
       "id": "metal.sphalerite",
@@ -2644,6 +2689,11 @@
           "to": "metal.sphalerite.host",
           "rel": "made from",
           "basis": "inferred"
+        },
+        {
+          "to": "metal.sphalerite.massive-sulphide",
+          "rel": "made from",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -5505,6 +5555,11 @@
         {
           "to": "facility.electricity",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.aluminum.dross-recovered",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -5660,6 +5715,11 @@
             {
               "to": "metal.lime",
               "rel": "consumes"
+            },
+            {
+              "to": "metal.bauxite.beneficiation",
+              "rel": "step",
+              "basis": "typical-1982"
             }
           ]
         },
@@ -5973,6 +6033,12 @@
         {
           "to": "metal.magnetite",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.hematite",
+          "rel": "produces",
+          "role": "product",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -6139,7 +6205,9 @@
       "edges": [
         {
           "to": "metal.die-steel",
-          "rel": "consumes"
+          "rel": "produces",
+          "role": "product",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -6244,6 +6312,11 @@
           "to": "metal.copper.blister",
           "rel": "consumes",
           "basis": "documented"
+        },
+        {
+          "to": "metal.copper.fire-refining",
+          "rel": "step",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -6776,6 +6849,11 @@
         {
           "to": "metal.limestone",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.hematite.crushing",
+          "rel": "step",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -6911,6 +6989,12 @@
         {
           "to": "metal.quartzite",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.ferrosilicon",
+          "rel": "produces",
+          "role": "product",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -7737,6 +7821,11 @@
           "to": "metal.silica.polysilicon",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "metal.silica.tcs.distillation",
+          "rel": "step",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -8471,6 +8560,12 @@
         {
           "to": "metal.chromite.mine",
           "rel": "at"
+        },
+        {
+          "to": "metal.chromite",
+          "rel": "produces",
+          "role": "product",
+          "basis": "typical-1982"
         }
       ]
     },
