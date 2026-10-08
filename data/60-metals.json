@@ -1903,6 +1903,27 @@
       "children": [],
       "inputs": []
     },
+    "metal.nickel.permalloy": {
+      "id": "metal.nickel.permalloy",
+      "name": "Permalloy head-core alloy (Ni-Fe)",
+      "simple_name": "Permalloy",
+      "description": "High-permeability nickel-iron alloy at about 79% nickel with iron and small molybdenum or copper additions, etched or lapped to a micron-scale gap for playback windings. The high nickel content is what gives the permeability; the alloy is distinct from the higher-nickel mu-metal shield alloy.",
+      "kind": "material",
+      "category": "magnetics",
+      "era": "1982",
+      "confidence": "low",
+      "provenance": "incomplete",
+      "note": "Established as a type: permalloy as the high-permeability Ni-Fe head-core alloy. Not established: the exact 79/17 composition for any 1982 cassette head, the Mo/Cu additions, the etch-vs-lap gap method, or any supplier. Mu-metal shield leg deferred. Created to anchor the cassette head-core alloy leg.",
+      "children": [],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.nickel.ingot",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
+    },
     "metal.stainless.304": {
       "id": "metal.stainless.304",
       "name": "AISI 304 and 430 stainless steel",

@@ -3965,7 +3965,14 @@
       "confidence": "medium",
       "provenance": "incomplete",
       "note": "The nickel comes from the same nickel chain as the CRT grid foil. Mu-metal's nickel content is higher than permalloy's and it must be annealed in hydrogen at about 1100 degrees C to develop its permeability.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.nickel.permalloy",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
     },
     "peripheral.cassette.deck.head.winding": {
       "id": "peripheral.cassette.deck.head.winding",

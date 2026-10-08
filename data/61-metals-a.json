@@ -606,6 +606,20 @@
       ],
       "note": "Not established: the few-litres-an-hour volume, the settling-tank and pH-adjustment treatment, or the sludge-to-landfill split for any specific 1982 assembly line."
     },
+    "metal.stibnite": {
+      "id": "metal.stibnite",
+      "name": "Stibnite ore (Sb2S3)",
+      "simple_name": "Stibnite ore",
+      "description": "Antimony trisulphide, the predominant antimony ore mineral, mined from hydrothermal quartz veins and hot-spring deposits and very often recovered as a by-product of gold, lead and silver mining rather than from a primary antimony mine.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "low",
+      "provenance": "incomplete",
+      "note": "Established as a type: stibnite as the predominant ore mineral. Not established: the vein geology as given for any 1982 supplier, the by-product split, the roasting-reduction refining route, or any tonnage. Created to anchor the antimony ore leg; the mine-to-concentrate chain above it is unmodelled.",
+      "children": [],
+      "inputs": []
+    },
     "metal.antimony": {
       "id": "metal.antimony",
       "name": "Antimony metal",
@@ -616,12 +630,18 @@
       "era": "1982",
       "confidence": "low",
       "provenance": "incomplete",
-      "note": "Established: stibnite as the predominant ore mineral and antimony in solders as a normal alloying addition as types. Not established: the stibnite-to-metal refining route, 1982 tonnages, or the C64 solder's actual antimony content. The stibnite ore branch is unmodelled.",
+      "note": "Established: stibnite as the predominant ore mineral and antimony in solders as a normal alloying addition as types. Not established: the stibnite-to-metal refining route, 1982 tonnages, or the C64 solder's actual antimony content.",
       "sources": [
         "https://www.earthmagazine.org/article/mineral-resource-month-antimony-0/"
       ],
       "children": [],
-      "edges": []
+      "edges": [
+        {
+          "to": "metal.stibnite",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "metal.solder.antimony": {
       "id": "metal.solder.antimony",

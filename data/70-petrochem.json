@@ -7085,6 +7085,27 @@
       "provenance": "incomplete",
       "note": "Not established: the loading and cure-temperature figures quoted, the sulphonation-nitration-reduction synthesis route described, and the cost and FR-4 grading claims."
     },
+    "chem.aniline": {
+      "id": "chem.aniline",
+      "name": "Aniline",
+      "simple_name": "Aniline",
+      "description": "Nitrobenzene hydrogenated to aniline, the aromatic amine condensed with formaldehyde to methylenedianiline hardeners and carried on to diphenylmethane diisocyanate. The nitrobenzene comes from benzene nitration.",
+      "kind": "material",
+      "category": "fluids",
+      "era": "1980s",
+      "confidence": "low",
+      "provenance": "incomplete",
+      "note": "Established as a type: aniline as the amine condensed with formaldehyde to MDA/DDM. Not established: the nitrobenzene route conditions, the benzene feed grade, or any 1982 supplier. Nitrobenzene intermediate unmodelled; created to complete the DDM feed pair.",
+      "children": [],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "chem.styrene.benzene",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
+    },
     "chem.epoxy.hardeners.ddd": {
       "id": "chem.epoxy.hardeners.ddd",
       "name": "4,4'-Diaminodiphenylmethane (DDM/MDA)",
@@ -7099,6 +7120,11 @@
       "edges": [
         {
           "to": "si.emc.resin.formaldehyde",
+          "rel": "made from",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "chem.aniline",
           "rel": "made from",
           "basis": "typical-1982"
         }
