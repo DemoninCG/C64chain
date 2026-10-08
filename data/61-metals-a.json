@@ -2642,8 +2642,28 @@
         {
           "to": "metal.xanthate",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.silver.bulk-concentrate",
+          "rel": "produces",
+          "role": "product",
+          "basis": "typical-1982"
         }
       ]
+    },
+    "metal.silver.bulk-concentrate": {
+      "id": "metal.silver.bulk-concentrate",
+      "name": "Bulk lead-zinc-silver flotation concentrate",
+      "simple_name": "Bulk Pb-Zn-Ag concentrate",
+      "description": "Silver sulphides floated together with intergrown lead and zinc sulphides into a bulk concentrate that the smelter treats as a lead concentrate feed for sintering. An intermediate between the mine's flotation circuit and the lead smelter, not a saleable metal.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "low",
+      "provenance": "incomplete",
+      "note": "Established as a type: bulk concentrate treated as lead smelter feed. Not established: the 2000-8000 g/t Ag and 20-40% Pb grades for any specific 1982 shipment, or any supplier. Created to complete the mill-to-sintering route; sintering consumes it as lead feed.",
+      "children": [],
+      "inputs": []
     },
     "metal.solder.alloy-making": {
       "id": "metal.solder.alloy-making",
@@ -3173,6 +3193,11 @@
         {
           "to": "metal.coke",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.silver.bulk-concentrate",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },

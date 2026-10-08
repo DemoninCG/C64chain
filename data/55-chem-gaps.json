@@ -545,8 +545,28 @@
         {
           "to": "facility.water",
           "rel": "consumes"
+        },
+        {
+          "to": "chem.boric-acid",
+          "rel": "produces",
+          "role": "product",
+          "basis": "typical-1982"
         }
       ]
+    },
+    "chem.boric-acid": {
+      "id": "chem.boric-acid",
+      "name": "Boric acid crystals",
+      "simple_name": "Boric acid",
+      "description": "Boric acid crystallised from colemanite and sulphuric-acid digestion liquor, dried below 100 C. The boron source for glass-fibre batches, electrolytic capacitor electrolytes, television funnel glass and nickel-plating baths.",
+      "kind": "material",
+      "category": "board",
+      "era": "1980s",
+      "confidence": "low",
+      "provenance": "incomplete",
+      "note": "Established as a type: boric acid from colemanite digestion. Not established: the 0.7-0.9 t yield per tonne of 30% B2O3 ore, the below-100 C drying, any 1982 supplier, or the consumer legs (kept to the producer leg until evidenced). Created to complete the borax-acid recipe; consumer legs banked.",
+      "children": [],
+      "inputs": []
     },
     "chem.silane.monosilane.tcs-route": {
       "id": "chem.silane.monosilane.tcs-route",
