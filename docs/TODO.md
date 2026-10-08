@@ -274,8 +274,8 @@ stays readable.
 
 ## 1. Orphan triage (measured 2026-10-04, re-measured 2026-10-07, re-measured 2026-10-08)
 
-284 chain-scope nodes remain unreachable under the directed section-8 walk
-(`relate.mjs audit` WARN, build 2026-10-08T03:54Z, 2573 nodes / 1558 leaves);
+125 chain-scope nodes remain unreachable under the directed section-8 walk
+(`relate.mjs audit` WARN, re-measured 2026-10-08 at 2568+ nodes);
 480 nodes are unreachable in total when the 151
 context and 33 alternate terminals are included (context/alt counts re-check on
 next build; chain figure is the tracked one). The build's own walk shows 0
@@ -290,6 +290,17 @@ Batch-2 (this session, 6 read-only slices + central serial apply, re-measured
 7 NEW-NODEs with anchored legs (stibnite, permalloy, aniline, boric-acid,
 bulk-concentrate, methyl-chloride, urea). 280 zero-edge incompletes remain,
 27 of them orphans.
+Research + creation rounds (this session): 19-judgement clearance; W2
+corrections (sulfolane hydrogenation, acrylic route, EG/EO stoichiometry);
+small-batch prose (Houdry, kieselguhr, C3 trays, NMP, diether date, diamond
+fix, borane feed, resist merge); RF primaries (2SC1684 etc.); OCR batch
+(Taiwan fix, VDF route, RO adjudication); PMDA-vs-TMA adjudication (durene);
+creation rounds (PO, refinery nodes, melamine, carbide, p-cresol, PGM pair,
+catalyst grades, Li/BuCl, crack-alloy, diatomite, methylchlorosilane, PCl3).
+Extrusion-cluster adjudication: case-as-aluminium premise contradicted
+in-tree by the ABS chain — 5 nodes scoped alternate (correctly peripheral,
+same class as tantalum loop), prose left with the sheet-node flag.
+Re-measured 2026-10-08: 125 chain orphans.
 
 The remaining cases fall into these overlapping classes; the older per-class
 estimates are omitted because they were not re-counted after the later passes.
@@ -454,7 +465,7 @@ see the log entry above for arbitration outcomes. The evidence sweep returned
 
 ## 6. New nodes pending creation (NEW-NODE backlog, read-only proposals)
 
-All were banked as read-only `NEW-NODE` verdicts under `docs/RESEARCH-GUIDE.md:9` R5 — central authorship required, never parallel-agent creation (`docs/HANDOFF.md:124` one-owner-per-file, `scripts/patch.mjs` serial). Each needs kind-pair storability (`data/_relation_schema.json`), `id` stability (`data/_aliases.json`, `data/_merged.json`), and description>note trust order before any `provenance:complete` promotion (`docs/SCHEMA.md:105`). Created 2026-10-07: `chem.methanol` (`data/70-petrochem.json:1`) and `chem.sodium-silicate` (`data/55-chem-gaps.json:1`) removed from list.
+All were banked as read-only `NEW-NODE` verdicts under `docs/RESEARCH-GUIDE.md:9` R5 — central authorship required, never parallel-agent creation (`docs/HANDOFF.md:124` one-owner-per-file, `scripts/patch.mjs` serial). Each needs kind-pair storability (`data/_relation_schema.json`), `id` stability (`data/_aliases.json`, `data/_merged.json`), and description>note trust order before any `provenance:complete` promotion (`docs/SCHEMA.md:105`). Created 2026-10-07: `chem.methanol` (`data/70-petrochem.json:1`) and `chem.sodium-silicate` (`data/55-chem-gaps.json:1`) removed from list. Created 2026-10-08 (this session, all with anchored legs unless noted): `metal.stibnite`, `metal.nickel.permalloy`, `chem.aniline`, `chem.boric-acid` (orphan backlog with borax.acid), `metal.silver.bulk-concentrate`, `chem.methyl-chloride`, `chem.urea`, `chem.durene` (+PMDA re-point), `chem.propylene-oxide.bulk`, `chem.ethylene.feedstock.fcc-c3`, `chem.melamine`, `chem.calcium-carbide` (context-scoped with welding side), `chem.p-cresol`, `metal.pgm-matte` + `metal.bushveld-concentrate` (orphan backlog), `metal.nickel-oxide.niO-grade`, `metal.alumina.support`, `metal.lithium`, `metal.n-butyl-chloride`, `metal.crack-alloy`, `chem.diatomite`, `chem.methylchlorosilane` (R2 legs only), `chem.phosphorus-trichloride` (alternate-scoped), `chem.refining.fuel-gas` (orphan backlog), `chem.refining.residue.atmospheric` + `chem.refining.residue.vacuum`. Still open: `chem.trimethylamine`/`tetramethylammonium` (use existing TMAH-route nodes, no new node), `chem.tetrachloroethane` (refused: existing intermediate covers route, R2), `chem.acetylene` (newly banked above).
 
 **High-leverage — each unblocks 2–5 current `CANNOT-DETERMINE` nodes:**
 
@@ -472,7 +483,7 @@ All were banked as read-only `NEW-NODE` verdicts under `docs/RESEARCH-GUIDE.md:9
 
 **Medium — single-leg or era-split needs node (all banked, same gates):**
 
-`chem.fermentation-feed` (ethanol leg 2 of `chem.ethanol`), `chem.refining.fuel-gas` (MTBE/reboiler), `chem.refining.residue` (vacuum/atmospheric), `metal.nickel-oxide.niO-grade` + `metal.alumina.support` (reforming catalyst), `metal.lithium` + `metal.n-butyl-chloride` (butyllithium), `chem.p-cresol` + `chem.isobutylene` (BHT), `chem.cresol-novolac` precursor (phenol vs cresol), `chem.methylchlorosilane` (silicone), `chem.propylene.monomer` (tree-design call), `chem.diatomite` (SPA carrier), `metal.crack-alloy` (Incoloy 800/HP), `chem.tbhP` chain, `chem.eb-zeolite-synthesis`, `chem.white-spirit` cut, `chem.phosphorus-trichloride`, `chem.calcium-carbide` (acetylene `facility.gases.oxygen-acetylene`), `facility.power.transmission-tower` + `facility.power.insulator-porcelain` `at` edge (`data/80-industry.json:1773`), `chem.tubular-ldpe-reactor` (tool/process distinction), `chem.aniline` (material/fluids — MDA condensation + DDS route; DDM leg banked, aniline missing; flagged in A2 triage, verified absent), `metal.nickel.permalloy` (material/magnetics, 60-metals nickel branch — 79Ni/17Fe head-core alloy unblocking `peripheral.cassette.deck.head.core`; mu-metal leg deferred; E triage, id collision-checked).
+`chem.fermentation-feed` (ethanol leg 2 of `chem.ethanol`), `chem.refining.fuel-gas` (MTBE/reboiler), `chem.refining.residue` (vacuum/atmospheric), `metal.nickel-oxide.niO-grade` + `metal.alumina.support` (reforming catalyst), `metal.lithium` + `metal.n-butyl-chloride` (butyllithium), `chem.p-cresol` + `chem.isobutylene` (BHT), `chem.cresol-novolac` precursor (phenol vs cresol), `chem.methylchlorosilane` (silicone), `chem.propylene.monomer` (tree-design call), `chem.diatomite` (SPA carrier), `metal.crack-alloy` (Incoloy 800/HP), `chem.tbhP` chain, `chem.eb-zeolite-synthesis`, `chem.white-spirit` cut, `chem.phosphorus-trichloride`, `chem.calcium-carbide` (acetylene `facility.gases.oxygen-acetylene`), `facility.power.transmission-tower` + `facility.power.insulator-porcelain` `at` edge (`data/80-industry.json:1773`), `chem.tubular-ldpe-reactor` (tool/process distinction), `chem.aniline` (material/fluids — MDA condensation + DDS route; DDM leg banked, aniline missing; flagged in A2 triage, verified absent), `metal.nickel.permalloy` (material/magnetics, 60-metals nickel branch — 79Ni/17Fe head-core alloy unblocking `peripheral.cassette.deck.head.core`; mu-metal leg deferred; E triage, id collision-checked), `chem.acetylene` (material/fluids — TCE tetra-intermediate feed; carbide + NG-POx feeds exist, node missing; banked instead of forcing).
 
 ## 7. Judgement queue re-grown (2026-10-08, 19 edges; was 0 at Wave 4 gate)
 
