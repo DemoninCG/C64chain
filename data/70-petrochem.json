@@ -6467,38 +6467,6 @@
       ],
       "note": "CFCs are useful solvents and their boiling points make them suitable as refrigerants. Not established: the specific boiling points of 23.8 C for CFC-11 and 48 C for CFC-113, and CFC-11 as the expanded-polystyrene blowing agent until the late 1980s."
     },
-    "chem.solvents.acetone": {
-      "id": "chem.solvents.acetone",
-      "name": "Acetone",
-      "simple_name": "Acetone",
-      "description": "Propanone, boiling 56 C. It was the general cleaning solvent for glass, for the epoxy residues of a coil winding operation, and for some stencil and screen operations, and it is the solvent in the acetylene absorption step of the acetylene process and in the electrophotography of copying. It came out of the cumene process and the acetone cyanohydrin process, both of which are propylene plants.",
-      "kind": "material",
-      "category": "fluids",
-      "era": "1910s",
-      "facts": [
-        {
-          "label": "Boiling point",
-          "value": "56 C"
-        },
-        {
-          "label": "Flammable range",
-          "value": "2.5-13% in air"
-        }
-      ],
-      "confidence": "medium",
-      "provenance": "incomplete",
-      "sources": [
-        "https://en.wikipedia.org/wiki/Acetone"
-      ],
-      "note": "About 83% of acetone is made by the cumene process and about a third of world supply is used as a solvent. Not established: the 56 C boiling point, the 2.5-13% flammable range, and the use for the epoxy residues of a coil winding.",
-      "edges": [
-        {
-          "to": "chem.propylene.cumene.cleavage.acetone",
-          "rel": "made of",
-          "basis": "documented"
-        }
-      ]
-    },
     "chem.solvents.other-oxygenated": {
       "id": "chem.solvents.other-oxygenated",
       "name": "Ketones, esters and glycol ethers",
@@ -7304,25 +7272,6 @@
       "note": "The ethylene comes from the cracker: chem.ethylene. Established: EPDM as ethylene diene copolymer with ozone resistance. Not established: the stated diene types and replacement histories as given.",
       "confidence": "low",
       "provenance": "incomplete"
-    },
-    "chem.polycarbonate.phosgene.chlorine": {
-      "id": "chem.polycarbonate.phosgene.chlorine",
-      "name": "Chlorine and carbon monoxide",
-      "simple_name": "Chlorine and carbon monoxide",
-      "description": "Chlorine from brine electrolysis plus carbon monoxide from a reformer or from coke. This is the point at which the chlor-alkali industry (which needs hydrogen to sell its chlorine, and therefore needs natural gas) touches the plastics industry through a molecule with two chlorine atoms and one oxygen.",
-      "kind": "material",
-      "category": "fluids",
-      "era": "ancient",
-      "note": "Chlorine electrolysis belongs to the chlorine subsystem. The hydrogen requirement is chem.natural-gas.uses.hydrogen. Established: Chlorine from brine electrolysis plus carbon monoxide for phosgene. Not established: the stated reformer versus coke sourcing specifics as given.",
-      "confidence": "medium",
-      "provenance": "incomplete",
-      "edges": [
-        {
-          "to": "metal.salt-brine",
-          "rel": "made from",
-          "basis": "documented"
-        }
-      ]
     },
     "chem.abs.additives.pigment-masterbatch": {
       "id": "chem.abs.additives.pigment-masterbatch",
@@ -8780,20 +8729,6 @@
           "rel": "consumes"
         }
       ]
-    },
-    "chem.thermosets.phenolic.formaldehyde": {
-      "id": "chem.thermosets.phenolic.formaldehyde",
-      "name": "Formaldehyde in a phenolic",
-      "simple_name": "Formaldehyde in phenolic",
-      "description": "Methanol oxidised to formaldehyde over silver at 600-700 C. The same formaldehyde as the acetal plastics, from the same methanol, from the same synthesis gas. Phenolic resin and POM sitting a few hundred metres apart in a 1980s chemical park is not a coincidence. Both are formaldehyde chemistry.",
-      "kind": "process",
-      "category": "plastics",
-      "era": "1920s",
-      "children": [
-        "chem.pom.formaldehyde"
-      ],
-      "note": "Shared with chem.pom.formaldehyde. Established: Formaldehyde in phenolic from methanol oxidation over silver. Not established: the stated temperatures and park co-location specifics as given.",
-      "confidence": "low"
     },
     "chem.acrylonitrile.sovere.catalyst.catalyst-manufacture": {
       "id": "chem.acrylonitrile.sovere.catalyst.catalyst-manufacture",
