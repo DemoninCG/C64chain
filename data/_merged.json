@@ -3738,6 +3738,30 @@
       "why": "Same HPHT graphite feed; survivor is provenance complete; inbound diamond consumes repoints; survivor coke leg dropped separately (wrong coke family)",
       "loserDescription": "High-purity graphite powder charge (not finished electrodes) pressed and sintered for belt-press diamond synthesis at 5-6 GPa and 1300-1600 C.",
       "loserFacts": null
+    },
+    {
+      "loser": "chem.fab-chemicals.process-gases",
+      "loserName": "Bulk process gases",
+      "loserFile": "70-petrochem.json",
+      "survivor": "facility.gases",
+      "survivorName": "Industrial gas supply",
+      "survivorFile": "80-industry.json",
+      "proposal": "70-petrochem.json",
+      "why": "Same substances: N2/Ar/He all already in survivor made-of; loser is a fab-consumption view of the plant-supply grouping. Loser inbound catalogue-only, zero edge refs. Preserve loser fab-use prose (sputter/anneal/leak-detect/cryopump) to survivor note. Zero-edge triage A2, centrally arbitrated: survivor reached and decomposed, no prior merge record conflicts.",
+      "loserDescription": "The three gases a fab inhaled by the thousand: nitrogen for inerting, purging and sparging; argon for the sputtering cathodes and for the anneal; and helium for the leak detector, the cryopump and some of the photolithography optics cooling.",
+      "loserFacts": null
+    },
+    {
+      "loser": "chem.pcb-chemicals.laminate.copper-foil",
+      "loserName": "Electrolytic copper foil",
+      "loserFile": "70-petrochem.json",
+      "survivor": "metal.copper.foil",
+      "survivorName": "Copper foil",
+      "survivorFile": "60-metals.json",
+      "proposal": "70-petrochem.json",
+      "why": "Same substance and overlapping grade: 35-70um electrolytic drum foil vs survivor 35um electrolytic PCB foil (survivor already carries laminate made-of, ed-drum produces, cathode/RA legs). Loser inbound catalogue-only; BTA-treatment context re-homes via companion EDGE metal.copper.foil made-of chem.pcb-chemicals.laminate.copper-foil.benzotriazole (applied). Precedent: peripheral.tv.chassis.pcb.copper-foil merged to same survivor. Zero-edge triage A2, centrally arbitrated.",
+      "loserDescription": "A 35-70 micron copper foil, electrodeposited on a rotating drum from a copper sulphate-acid bath and then treated on the bonding surface. The treatment is the interesting part chemically: the foil's teeth are made mechanically or electrochemically, and the surface is then covered with a nodular copper layer bonded to an organo-chrome or a zinc-oleate layer, and in the 1980s increasingly with a benzotriazole layer. Benzotriazole replaced the chromate because hexavalent chromium was being regulated out of the process.",
+      "loserFacts": null
     }
   ]
 }

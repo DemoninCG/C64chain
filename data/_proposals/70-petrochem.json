@@ -1,7 +1,18 @@
 {
   "$comment": "Proposals from the QA pass over data/70-petrochem.json. Nothing here has been applied: every target below lives in a file this agent does not own, or is the generated unlinked.catalogue / a node under c64.bottoms-out. See docs/CHECKLIST.md section 8.",
   "note": "No structural proposals remain. This fragment now audits with zero FAILs and its own share of the duplicate-name warnings resolved; the only things left are cross-fragment merges, which are listed below, and a note about the fixes table. The two shared commodities (chem.natural-gas, chem.petroleum) keep one children edge each, from the `chem` branch root, which scripts/audit.mjs now recognises as a legitimate owner (UTIL_OWNERS); every ingredient reference to them, from all fragments, is a 'from' edge. Fourteen duplicate-name pairs remain, and in each case the petrochemical node is the canonical, richer one, so the merge is always 'fold the sibling into mine' - except where a published `shared` entry in another fragment is the canonical node, which is called out.",
-  "merges": [],
+  "merges": [
+    {
+      "from": "chem.fab-chemicals.process-gases",
+      "to": "facility.gases",
+      "why": "Same substances: N2/Ar/He all already in survivor made-of; loser is a fab-consumption view of the plant-supply grouping. Loser inbound catalogue-only, zero edge refs. Preserve loser fab-use prose (sputter/anneal/leak-detect/cryopump) to survivor note. Zero-edge triage A2, centrally arbitrated: survivor reached and decomposed, no prior merge record conflicts."
+    },
+    {
+      "from": "chem.pcb-chemicals.laminate.copper-foil",
+      "to": "metal.copper.foil",
+      "why": "Same substance and overlapping grade: 35-70um electrolytic drum foil vs survivor 35um electrolytic PCB foil (survivor already carries laminate made-of, ed-drum produces, cathode/RA legs). Loser inbound catalogue-only; BTA-treatment context re-homes via companion EDGE metal.copper.foil made-of chem.pcb-chemicals.laminate.copper-foil.benzotriazole (applied). Precedent: peripheral.tv.chassis.pcb.copper-foil merged to same survivor. Zero-edge triage A2, centrally arbitrated."
+    }
+  ],
   "renames": [],
   "edges": [
     {

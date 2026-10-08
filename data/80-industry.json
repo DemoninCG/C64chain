@@ -314,8 +314,7 @@
           "category": "industry",
           "era": "1983",
           "inputs": [
-            "run-of-mine coal",
-            "process water"
+            "run-of-mine coal"
           ],
           "facts": [
             {
@@ -1714,9 +1713,7 @@
       "kind": "material",
       "category": "industry",
       "era": "1983",
-      "inputs": [
-        "sodium silicate"
-      ],
+      "inputs": [],
       "confidence": "medium",
       "sources": [
         "https://en.wikipedia.org/wiki/Zeolite",
@@ -1727,6 +1724,11 @@
         {
           "to": "metal.alumina",
           "rel": "made of"
+        },
+        {
+          "to": "chem.sodium-silicate",
+          "rel": "made from",
+          "basis": "inferred"
         },
         {
           "to": "facility.nitrogen.psa",
@@ -2508,8 +2510,7 @@
           "category": "industry",
           "era": "1983",
           "inputs": [
-            "quartz glass",
-            "mercury"
+            "quartz glass"
           ],
           "confidence": "medium",
           "note": "Not established: the 254 nm emission figure and the low-pressure mercury quartz-envelope construction. The germicidal UV article covers lamp dose and EPA dosage guidance but gives the emission wavelength only in an unsourced table template.",
@@ -2633,7 +2634,14 @@
       "era": "1960-1990",
       "confidence": "medium",
       "note": "Not established: that 1980s chillers were almost all ammonia or R-12/CFC-11. Modern chillers are documented as vapour-compression units on a separate condenser water loop. The refrigerant mix of the 1980s is not sourced here.",
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes",
+          "basis": "inferred"
+        }
+      ]
     },
     "facility.steam.boiler": {
       "id": "facility.steam.boiler",
@@ -2818,7 +2826,14 @@
             "https://en.wikipedia.org/wiki/Induction_motor"
           ],
           "note": "Not established: that speed control on a 1983 compressor was by pole changing only, and that explosion-proof motors were used in coastal plants. The induction motor article documents three-phase squirrel-cage drives and TEFC enclosure cooling only.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes",
+              "basis": "inferred"
+            }
+          ]
         }
       ],
       "note": "Not established: the 150-400 kW per machine and 7-8 bar discharge figures, and the claim that oil-injected screw machines were standard from the 1960s onward. The air compressor article documents the reciprocating, vane and screw types only."
@@ -3704,9 +3719,7 @@
       "kind": "material",
       "category": "fluids",
       "era": "1983",
-      "inputs": [
-        "chlorine"
-      ],
+      "inputs": [],
       "confidence": "high",
       "provenance": "complete",
       "sources": [
@@ -5706,7 +5719,15 @@
               "confidence": "medium",
               "provenance": "incomplete",
               "children": [],
-              "note": "Not established: the 150-300 mm casing to 100-300 m depths, and the specific claims about Lehigh Valley iron-bearing water and 100-300 m of Pleistocene gravel under Taiwan. No hydrogeological document located for these places."
+              "note": "Not established: the 150-300 mm casing to 100-300 m depths, and the specific claims about Lehigh Valley iron-bearing water and 100-300 m of Pleistocene gravel under Taiwan. No hydrogeological document located for these places.",
+              "edges": [
+                {
+                  "to": "facility.water.industrial",
+                  "rel": "produces",
+                  "role": "product",
+                  "basis": "typical-1982"
+                }
+              ]
             },
             {
               "id": "facility.water.surface-intake",
@@ -6332,7 +6353,14 @@
           "era": "1983",
           "confidence": "medium",
           "note": "Established: the term only. Functional testing is described as black-box testing that verifies whether a system meets its functional requirements, generally ignoring internal program structure, and it tests slices of functionality of the whole system. Not established: a powered-up test station running a test program from ROM that exercised the VIC-II registers, checked the RAM, drove the keyboard matrix and read back the RAM; the dedicated fixture with monitor and keyboard; and the operator procedure of loading, running, reading the result and boxing or quarantining. The article is about software functional testing and says nothing about board-level fixtures, ROM-resident test programs or a Commodore production line.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes",
+              "basis": "inferred"
+            }
+          ]
         },
         {
           "id": "facility.test-equipment.test-rom",
@@ -6376,7 +6404,14 @@
           ],
           "confidence": "medium",
           "note": "Established by the cited articles: burn-in as the practice of exercising components before they are placed in service, so that certain failures occur under supervised conditions and the components in the initial high-failure portion of the bathtub curve can be replaced; that for electronic components it is frequently conducted at elevated temperature and is also called heat soaking; and that burn-in ovens are built for dynamic and static burn-in of integrated circuits and other electronic devices, in air or nitrogen, in sizes from under ten to over 30 cubic feet, with operating temperatures able to go over 260 C. Not established: the 70-100 C figure and the 24-72 hour duration, the hundreds of boards per oven, and the reading of Commodore 1982-83 quality records as showing the burn-in was not run long enough; the sources state that elevated-temperature burn-in is standard but give none of these numbers, and no Commodore quality document was located.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+            {
+              "to": "facility.electricity",
+              "rel": "consumes",
+              "basis": "inferred"
+            }
+          ]
         },
         {
           "id": "facility.test-equipment.bare-board",

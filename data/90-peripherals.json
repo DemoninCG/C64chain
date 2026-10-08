@@ -3529,10 +3529,7 @@
       "category": "metals",
       "era": "1982",
       "description": "The blue ZnS is activated by silver at a fraction of a percent, supplied as silver nitrate. Silver itself came from argentite and from the anode slimes that accumulate in electrolytic copper refining, which is where most of the world's silver of the era was actually recovered.",
-      "inputs": [
-        "silver metal, 99.9%",
-        "nitric acid"
-      ],
+      "inputs": [],
       "facts": [
         {
           "label": "Loading",
@@ -3551,6 +3548,11 @@
         {
           "to": "metal.silver.ingot",
           "rel": "made from"
+        },
+        {
+          "to": "metal.nitric-acid",
+          "rel": "made from",
+          "basis": "inferred"
         }
       ]
     },
@@ -4694,10 +4696,7 @@
       "category": "metals",
       "era": "1982",
       "description": "The cup that carries the emitting coating: a nickel-chromium alloy, about 82% Ni with 18% Cr, spun or deep drawn to a shallow cup. The alloy is chosen because it does not react with the alkaline-earth oxides fired onto it and does not outgas badly in a vacuum that has to hold for the life of the tube. It is an alloy, not a pure metal, so it draws on the blast furnace for its iron as well as on the nickel refinery.",
-      "inputs": [
-        "nickel cathode",
-        "chromium"
-      ],
+      "inputs": [],
       "facts": [
         {
           "label": "Base alloy",
@@ -4719,6 +4718,11 @@
         {
           "to": "metal.nickel.ingot",
           "rel": "made of"
+        },
+        {
+          "to": "metal.chromium",
+          "rel": "made of",
+          "basis": "inferred"
         }
       ]
     },

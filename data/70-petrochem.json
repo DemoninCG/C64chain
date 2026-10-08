@@ -2447,6 +2447,11 @@
                   "to": "chem.abs.additives.pigment-masterbatch",
                   "rel": "consumes",
                   "basis": "documented"
+                },
+                {
+                  "to": "chem.abs.additives.stearate",
+                  "rel": "consumes",
+                  "basis": "documented"
                 }
               ]
             },
@@ -3297,7 +3302,13 @@
       "provenance": "incomplete",
       "note": "Established: methanol as the C1 feed to MTBE etherification, formaldehyde oxidation and methylamine chemistry as types. Not established: the synthesis-gas route conditions, the coal-vs-gas feedstock split, or any 1983 tonnage or purity as given.",
       "children": [],
-      "edges": []
+      "edges": [
+        {
+          "to": "c64.case.other-polymers.methanol.syngas",
+          "rel": "made from",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "chem.ethanol": {
       "id": "chem.ethanol",
@@ -4561,6 +4572,11 @@
           "to": "chem.propylene.sources.cracker-c3",
           "rel": "made from",
           "basis": "documented"
+        },
+        {
+          "to": "chem.propylene.polymerisation.loops-and-slurry",
+          "rel": "uses",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -5773,24 +5789,7 @@
         }
       ]
     },
-    "chem.pcb-chemicals.laminate.copper-foil": {
-      "id": "chem.pcb-chemicals.laminate.copper-foil",
-      "name": "Electrolytic copper foil",
-      "simple_name": "Electrolytic copper foil",
-      "description": "A 35-70 micron copper foil, electrodeposited on a rotating drum from a copper sulphate-acid bath and then treated on the bonding surface. The treatment is the interesting part chemically: the foil's teeth are made mechanically or electrochemically, and the surface is then covered with a nodular copper layer bonded to an organo-chrome or a zinc-oleate layer, and in the 1980s increasingly with a benzotriazole layer. Benzotriazole replaced the chromate because hexavalent chromium was being regulated out of the process.",
-      "kind": "material",
-      "category": "board",
-      "era": "1970s",
-      "children": [],
-      "confidence": "low",
-      "note": "Established: A 35-70 micron copper foil, electrodeposited on a rotating drum from a copper sulphate-acid bath and then treated on the bonding surface as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
-      "edges": [
-        {
-          "to": "chem.pcb-chemicals.laminate.copper-foil.benzotriazole",
-          "rel": "made of"
-        }
-      ]
-    },
+    
     "chem.pcb-chemicals.plating.immersion-gold.electroless-nickel.hypophosphite": {
       "id": "chem.pcb-chemicals.plating.immersion-gold.electroless-nickel.hypophosphite",
       "name": "Sodium hypophosphite and white phosphorus",
@@ -5989,21 +5988,16 @@
       "children": [],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Established: The gases that a barrel or planar plasma etcher used to etch silicon dioxide, polysilicon, aluminium and organic films as standard practice. Not established: the era specific prevalence supplier choices and detailed operating splits as given."
+      "note": "Established: The gases that a barrel or planar plasma etcher used to etch silicon dioxide, polysilicon, aluminium and organic films as standard practice. Not established: the era specific prevalence supplier choices and detailed operating splits as given.",
+      "edges": [
+        {
+          "to": "chem.fab-chemicals.etch-gases.barrel-etcher",
+          "rel": "uses",
+          "basis": "typical-1982"
+        }
+      ]
     },
-    "chem.fab-chemicals.process-gases": {
-      "id": "chem.fab-chemicals.process-gases",
-      "name": "Bulk process gases",
-      "simple_name": "Bulk process gases",
-      "description": "The three gases a fab inhaled by the thousand: nitrogen for inerting, purging and sparging; argon for the sputtering cathodes and for the anneal; and helium for the leak detector, the cryopump and some of the photolithography optics cooling.",
-      "kind": "material",
-      "category": "silicon",
-      "era": "1980s",
-      "children": [],
-      "confidence": "medium",
-      "provenance": "incomplete",
-      "note": "Established: The three gases a fab inhaled by the thousand: nitrogen for inerting, purging and sparging, argon for the sputtering cathodes and for the anneal, and helium for the leak detector, as standard practice. Not established: the era specific prevalence supplier choices and detailed operating splits as given."
-    },
+    
     "chem.fab-chemicals.ammonium-hydroxide": {
       "id": "chem.fab-chemicals.ammonium-hydroxide",
       "name": "Electronic-grade ammonium hydroxide",
@@ -7101,7 +7095,14 @@
       "era": "1950s",
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "The 4,4'-methylenedianiline classification work dates from the 1970s-early 1980s and was a driver of substitution in both epoxy and elastomer applications."
+      "note": "The 4,4'-methylenedianiline classification work dates from the 1970s-early 1980s and was a driver of substitution in both epoxy and elastomer applications.",
+      "edges": [
+        {
+          "to": "si.emc.resin.formaldehyde",
+          "rel": "made from",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "chem.epoxy.hardeners.anhydride": {
       "id": "chem.epoxy.hardeners.anhydride",
@@ -9645,6 +9646,11 @@
         {
           "to": "chem.crude.exploration",
           "rel": "step"
+        },
+        {
+          "to": "chem.crude.rig.pressure-control",
+          "rel": "uses",
+          "basis": "typical-1982"
         }
       ]
     },

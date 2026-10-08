@@ -54,9 +54,20 @@
       "era": "1982",
       "confidence": "low",
       "provenance": "incomplete",
-      "note": "Established: sodium silicate as the precursor to precipitated colloidal silica as a type. Not established: the sand-plus-soda furnace route conditions, precipitation specifics, or any 1982 supplier as given. Its own sand and soda legs are unmodelled.",
+      "note": "Established: sodium silicate as the precursor to precipitated colloidal silica as a type. Not established: the sand-plus-soda furnace route conditions, precipitation specifics, or any 1982 supplier as given. Sand and soda legs stored as inferred composition legs.",
       "children": [],
-      "edges": []
+      "edges": [
+        {
+          "to": "metal.silica-sand",
+          "rel": "made from",
+          "basis": "inferred"
+        },
+        {
+          "to": "metal.soda-ash",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
     },
     "chem.silane": {
       "id": "chem.silane",

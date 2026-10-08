@@ -3101,7 +3101,14 @@
       ],
       "children": [],
       "inputs": [],
-      "note": "Not established: the 2-4 mm softwood against 1-2 mm hardwood fibre lengths, the low-conductivity-ash and low-iron electrical grade specification, and the claim that hardwood pulp gives opacity and printability for the thinner papers. Softwood kraft for high-tear-resistance paper is documented; the electrical-grade specification and the species-to-property assignment are not."
+      "note": "Not established: the 2-4 mm softwood against 1-2 mm hardwood fibre lengths, the low-conductivity-ash and low-iron electrical grade specification, and the claim that hardwood pulp gives opacity and printability for the thinner papers. Softwood kraft for high-tear-resistance paper is documented; the electrical-grade specification and the species-to-property assignment are not.",
+      "edges": [
+        {
+          "to": "c64.packaging.log",
+          "rel": "made from",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "mb.rf-modulator.hybrid-module.alumina-substrate.sintering-aid.magnesite": {
       "id": "mb.rf-modulator.hybrid-module.alumina-substrate.sintering-aid.magnesite",
@@ -3171,7 +3178,14 @@
       "provenance": "incomplete",
       "children": [],
       "inputs": [],
-      "note": "Not established: 60-70 wt% solids in styrene, the 150 C / 6-10 h cure, the minutes-long gel time at 150 C, and the styrene-from-benzene-and-ethylene route. Vacuum impregnation of a completed winding with an insulating varnish is documented; the unsaturated-polyester-in-styrene formulation, its solids figure and its cure schedule are not."
+      "note": "Not established: 60-70 wt% solids in styrene, the 150 C / 6-10 h cure, the minutes-long gel time at 150 C, and the styrene-from-benzene-and-ethylene route. Vacuum impregnation of a completed winding with an insulating varnish is documented; the unsaturated-polyester-in-styrene formulation, its solids figure and its cure schedule are not.",
+      "edges": [
+        {
+          "to": "chem.polyester.unsaturated",
+          "rel": "made of",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "c64.psu.transformer.winding.wire.enamel.resin": {
       "id": "c64.psu.transformer.winding.wire.enamel.resin",
@@ -3471,9 +3485,7 @@
               ],
               "confidence": "medium",
               "note": "Exact creepage and clearance figures depend on the pollution degree, the insulation type and the applicable standard edition; the values above are the order of magnitude for basic insulation at these voltages, not a substitute for the standard's tables.",
-              "inputs": [
-                "c64.psu.transformer.winding.screen"
-              ],
+              "inputs": [],
               "provenance": "incomplete"
             }
           ]
@@ -4868,9 +4880,7 @@
           ],
           "note": "Not established: the contents of the design file submitted for this supply (schematic, PCB artwork, BOM, transformer winding instruction and insulation-system drawing, enclosure material specification) and the periodic follow-up factory inspection that checks production still matches. UL is documented as certifying products against its own standards; the file-and-follow-up regime is not documented in the sources consulted.",
           "children": [],
-          "inputs": [
-            "chem.abs"
-          ],
+          "inputs": [],
           "provenance": "incomplete"
         },
         {

@@ -153,7 +153,6 @@ stays readable.
 
 ## 0. Still open, non-blocking
 
-- Push the commits to `origin/main`.
 - Wave 1 hold-outs (both calibration agents converged; central action
   deferred to the relevant wave): prose fixes — zinc-oxide ferrite (not
   silicate matrix) + calcine-vs-sinter wording, GOES final anneal
@@ -266,15 +265,18 @@ stays readable.
   copper-foil, acetone, feedwater-treatment), and all DELETE verdicts
   (each needs ref-count plus prose preservation first).
 
-## 1. Orphan triage (measured 2026-10-04, re-measured 2026-10-07)
+## 1. Orphan triage (measured 2026-10-04, re-measured 2026-10-07, re-measured 2026-10-08)
 
 284 chain-scope nodes remain unreachable under the directed section-8 walk
-(`relate.mjs audit` WARN); 470 nodes are unreachable in total when the 151
-context and 35 alternate terminals are included. The build's own walk shows 0
+(`relate.mjs audit` WARN, build 2026-10-08T03:54Z, 2573 nodes / 1558 leaves);
+480 nodes are unreachable in total when the 151
+context and 33 alternate terminals are included (context/alt counts re-check on
+next build; chain figure is the tracked one). The build's own walk shows 0
 unreachable because it also follows reverse flow links — a different question.
 The chain backlog is down from 851 via the petroleum trunk, scoping, substance
 nodes, branch audit, the leaf fan-out, and the 2026-10-07 campaign
-(422 → 284).
+(422 → 284), up to 296 after the modelling pass + Wave 8 additions, and back
+to 284 via the 2026-10-08 zero-edge scan batches (§5) + 2 merges.
 
 The remaining cases fall into these overlapping classes; the older per-class
 estimates are omitted because they were not re-counted after the later passes.
@@ -373,7 +375,13 @@ left untouched.
 The 2026-10-06 leaf review covered 1,499 leaves; the `provenance` flag now
 records the outcome on every surviving reviewed leaf (raw 90 / complete 421 /
 incomplete 604; 11 reviewed nodes were deleted since, 3 rename-survivors
-flagged per original verdict). All six packages ran in parallel (8 agents:
+flagged per original verdict). Re-measured 2026-10-08T03:24Z (2575 nodes /
+1571 builder leaves): leaves carry raw 106 / complete 498 / incomplete 773 /
+absent 194; all nodes raw 106 / complete 501 / incomplete 835 / absent 1133.
+The 194 absent leaves are modelling-pass + Wave 8 additions not yet flagged;
+314 incomplete leaves had zero typed `edges[]` at scan start (highest-leverage
+subset), 281 remain after the first application round below.
+All six packages ran in parallel (8 agents:
 evidence split in thirds) with central verification and serial apply —
 see the log entry above for arbitration outcomes. The evidence sweep returned
 342/342 KEEP: the GAP_EVIDENCE backlog is hedged caution, not missed edges.
@@ -401,3 +409,83 @@ see the log entry above for arbitration outcomes. The evidence sweep returned
   held-out composition edges (§4 + orphan campaign), keyboard-screw spec
   (de-asserted, §0 log), solder-alloy tin/lead (live on the renamed
   `solder-alloy-60-40`), tungsten powder/wire inversion (leaf pass).
+- **Zero-edge scan, first round applied 2026-10-08 (312 triaged, 6 slices,
+  read-only agents + central arbitration, gate green throughout).**
+  B metals 6 EDGE (Na-silicate R1 sand+soda; enamel-resin R1 TDI+polyol;
+  pachuca consumes air; furnace-lining consumes tar-pitch; wits-mine produces
+  reef; mix-house produces raw-materials).
+  D chassis/passives 13 EDGE / 16 edges (3 tools contains die-steel;
+  four-slide contains sibling steel rescuing it; polishing consumes compound
+  + tooling uses polishing rescuing it; ink pigment made OF carbon black
+  (central override of proposed made-from: particles survive);
+  pcb-resin made from DGEBA; polybag made of PE; dmt.px consumes PX+methanol
+  content-only; y1.supports consumes solder; trimmer-lock consumes DGEBA +
+  legacy epoxy inputs DELETEd; wirewound made of Ni+Cr; mesh contains 304).
+  C silicon/board/power 5 EDGE + 2 legacy DELETEs (litho uses aligner/spinner
+  with legacy children refs retired; cleanroom consumes electricity;
+  varnish made of UPE rescuing its cascade; softwood made from pulp-log;
+  safety-file ABS + isolation screen legacy inputs DELETEd).
+  E industry 5 EDGE (4 tools consumes electricity; well produces industrial
+  water, no uniqueness conflict).
+  A petrochem 7 EDGE + 2 merges (etch-gases/polymerisation/rotary-drilling
+  uses; twin-screw consumes stearate rescuing it; DDM made from
+  formaldehyde; methanol made from syngas; foil made of BTA; process-gases
+  and chem copper-foil merged via `_proposals`).
+  Central REJECTs (documented, do not re-propose): A1 legacy-duplicate uses
+  (21 already stored as children, migration adds no content); drill/bit +
+  stamp/tool uses (inline children, restructuring risk, no provenance gain);
+  tod cap/resistor DELETE (unresolved prose worth keeping as tooltip);
+  anode-foil HNO3 and TCE chlorine-feed and dielectric chlorine and
+  acetic-acid CO and prep-plant sulfolane-water DELETEs stand from §7.
+  Chain 296 → 284; zero-edge incompletes 314 → 281.
+
+## 6. New nodes pending creation (NEW-NODE backlog, read-only proposals)
+
+All were banked as read-only `NEW-NODE` verdicts under `docs/RESEARCH-GUIDE.md:9` R5 — central authorship required, never parallel-agent creation (`docs/HANDOFF.md:124` one-owner-per-file, `scripts/patch.mjs` serial). Each needs kind-pair storability (`data/_relation_schema.json`), `id` stability (`data/_aliases.json`, `data/_merged.json`), and description>note trust order before any `provenance:complete` promotion (`docs/SCHEMA.md:105`). Created 2026-10-07: `chem.methanol` (`data/70-petrochem.json:1`) and `chem.sodium-silicate` (`data/55-chem-gaps.json:1`) removed from list.
+
+**High-leverage — each unblocks 2–5 current `CANNOT-DETERMINE` nodes:**
+
+| proposed id | kind/category | file | unblocks | why it blocks |
+|---|---|---|---|---|
+| `chem.propylene-oxide.bulk` | `material`/`plastics` | `data/70-petrochem.json` | `chem.polyester.unsaturated.propylene-glycol`, `chem.epoxy.hardeners.*` | PG is PO hydration; only grade-specific `chem.propylene.flame-retardants.tdcpp.propylene-oxide` exists |
+| `chem.methyl-chloride` | `material`/`fluids` | `data/70-petrochem.json` | `chem.silicone.rochow` MeCl leg | Rochow `MeCl + Si/Cu` has no MeCl node |
+| `chem.urea` | `material`/`fluids` | `data/70-petrochem.json` | `chem.thermosets.urea-formaldehyde`, `c64.switches.power-slider.body.melamine.melamine-resin` | MF/UF both `consumes` urea; only `fertiliser-ammonia` exists |
+| `chem.ethylene.feedstock.fcc-c3` | `material`/`plastics` | `data/70-petrochem.json` | `chem.propylene.sources` 30–35% FCC leg | FCC `C3` has process `chem.propylene.sources.propylene-splitter` but no material |
+| `chem.durene` (1,2,4,5-tetramethylbenzene) | `material`/`plastics` | `data/50-power.json` | `c64.psu.transformer.winding.insulation.kapton.pyromellitic-dianhydride` | PMDA standard route is durene oxidation; tree stores pseudocumene→TMA |
+| `chem.trimethylamine` / `chem.tetramethylammonium` | `material`/`fluids` | `data/70-petrochem.json` | `chem.fab-chemicals.tmah.quaternary-salt`, `chem.fab-chemicals.tmah.trimethylamine` | TMAH electrolytic route hedged; no TMA node |
+| `chem.tetrachloroethane` | `material`/`fluids` | `data/70-petrochem.json` | `chem.solvents.trichloroethylene`, `chem.solvents.trichloroethylene.tce-synthesis` | 1980 TCE route is acetylene→tetra→TCE; no intermediate |
+| `metal.stibnite` (`Sb2S3`) | `material`/`metals` | `data/61-metals-a.json` | `metal.antimony` (`data/61-metals-a.json:609`, ore branch still unmodelled `docs/TODO.md:0`) | Sb hardener has no ore |
+| `metal.pgm-matte` / `metal.bushveld-concentrate` | `material`/`metals` | `data/60-metals.json` | `metal.palladium` (`data/60-metals.json:1344` `made from` deleted as inversion) | 1982 Pd/Pt/Rh came from Sudbury/Norilsk matte + Bushveld, not anode slime |
+
+**Medium — single-leg or era-split needs node (all banked, same gates):**
+
+`chem.fermentation-feed` (ethanol leg 2 of `chem.ethanol`), `chem.refining.fuel-gas` (MTBE/reboiler), `chem.refining.residue` (vacuum/atmospheric), `metal.nickel-oxide.niO-grade` + `metal.alumina.support` (reforming catalyst), `metal.lithium` + `metal.n-butyl-chloride` (butyllithium), `chem.p-cresol` + `chem.isobutylene` (BHT), `chem.cresol-novolac` precursor (phenol vs cresol), `chem.methylchlorosilane` (silicone), `chem.propylene.monomer` (tree-design call), `chem.diatomite` (SPA carrier), `metal.crack-alloy` (Incoloy 800/HP), `chem.tbhP` chain, `chem.eb-zeolite-synthesis`, `chem.white-spirit` cut, `chem.phosphorus-trichloride`, `chem.calcium-carbide` (acetylene `facility.gases.oxygen-acetylene`), `facility.power.transmission-tower` + `facility.power.insulator-porcelain` `at` edge (`data/80-industry.json:1773`), `chem.tubular-ldpe-reactor` (tool/process distinction), `chem.aniline` (material/fluids — MDA condensation + DDS route; DDM leg banked, aniline missing; flagged in A2 triage, verified absent), `metal.nickel.permalloy` (material/magnetics, 60-metals nickel branch — 79Ni/17Fe head-core alloy unblocking `peripheral.cassette.deck.head.core`; mu-metal leg deferred; E triage, id collision-checked).
+
+## 7. Judgement queue re-grown (2026-10-08, 19 edges; was 0 at Wave 4 gate)
+
+`relate.mjs plan` (build 2026-10-08T03:24Z): mechanical 4718, judgement 19,
+UNMAPPED 0, ASSERT-FAIL 0. All 19 are legacy `from`/`children` edges on
+modelling-pass + Wave 8 nodes, not yet migrated to typed `edges[]`. Clear
+before orphan anchoring (a wrong typed edge here becomes a wrong-but-resolving
+anchor there).
+
+Cleared 2026-10-08 (build 03:33Z): mechanical 4725, judgement 0, UNMAPPED 0,
+ASSERT-FAIL 0; audit 1 FAIL (known graphite-electrode exception) / 5 WARN.
+7 typed edges added (all `basis` recorded, legacy `inputs` removed, no
+double-storage): P20 `made of` Cr/Mo (inferred; generic-steel leg DELETEd as
+product-index circular), zeolite `made from` Na-silicate (inferred), silver
+activator `made from` HNO3 (inferred; Ag leg already typed), NiCr cathode
+`made of` Cr (inferred; Ni leg already typed), Ta digest `consumes` HNO3
+(documented, EPA source), keyboard screws `made of` steel (inferred,
+de-asserted spec kept). 6 double-stored legacy entries removed with typed
+edge kept (litho-plate, edm graphite/brass, flaking HNO3, switches
+plunger-polymer via plunger route, uv-lamp Hg). 6 wrong/wrong-grade
+legacy entries DELETEd with no typed edge (acetic-acid CO phosgene-grade R2
+duplicate, P20 generic steel, dielectric chlorine, anode-foil HNO3 vs
+chloride/chlorate description, TCE chlorine-feed R2 via feedstock, prep-plant
+sulfolane process-water).
+
+- `material>material` (11, `made of` | `made from` | DELETE): `c64.decor.prepress.acetic-acid` -> CO; `c64.packaging.litho-plate` -> `metal.aluminum.sheet`; `c64.case.tooling.p20` -> `metal.steel` / `metal.chromium` / `metal.molybdenum`; `c64.cables.rf-cable.dielectric` -> chlorine-feed; `facility.nitrogen.zeolite` -> `chem.sodium-silicate` (new node); `peripheral.tv.crt.phosphor.zns.silver` -> `metal.nitric-acid`; `metal.aluminum.anode-foil` -> `metal.nitric-acid`; `facility.hazardous-waste.trichloroethene` -> chlorine-feed; `peripheral.tv.crt.gun.cathode.nio-cr` -> `metal.chromium`.
+- `process>material` (4, `consumes` | `produces` | DELETE): `c64.case.tooling.edm` -> graphite-electrode / brass-electrode (case leather-grain EDM, established — not the dome ruling in §2); `metal.silica.polysilicon.flaking` -> `metal.nitric-acid`; `metal.tantalum.hf-digest` -> `metal.nitric-acid`.
+- `part>material` (3, `contains` | `made of` | DELETE): `c64.keyboard.body.screws` -> `metal.steel` (de-asserted spec, §0 log); `c64.keyboard.switches` -> plunger-polymer; `facility.water.uv-lamp` -> `metal.mercury-source`.
+- `facility>material` (1, `produces` | `at` | DELETE): `facility.coal.prep-plant` -> sulfolane process-water.

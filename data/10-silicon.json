@@ -161,7 +161,6 @@
               "category": "silicon",
               "era": "1970s-1982",
               "inputs": [
-                "electricity",
                 "HEPA filters"
               ],
               "facts": [
@@ -178,7 +177,14 @@
                 "https://en.wikipedia.org/wiki/Cleanroom"
               ],
               "confidence": "high",
-              "provenance": "incomplete"
+              "provenance": "incomplete",
+              "edges": [
+                {
+                  "to": "facility.electricity",
+                  "rel": "consumes",
+                  "basis": "typical-1982"
+                }
+              ]
             },
             {
               "id": "mb.cpu.fab.maskshop",
@@ -2423,8 +2429,6 @@
       "confidence": "medium",
       "note": "The step order, the 1:1 contact and proximity print modes, the alkaline developer and the strip chemistry are documented. Not established: the spin speed and film thickness, the bake temperatures, the exposure dose, the AZ-1350 and AZ-1354 resist choices, the Shipley location and the broken-grid alignment scheme giving plus or minus 0.5 um.",
       "children": [
-        "si.litho.spinner",
-        "si.litho.aligner",
         "si.clean"
       ],
       "edges": [
@@ -2432,6 +2436,16 @@
           "to": "chem.solvents.trichloroethane",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "si.litho.aligner",
+          "rel": "uses",
+          "basis": "documented"
+        },
+        {
+          "to": "si.litho.spinner",
+          "rel": "uses",
+          "basis": "documented"
         }
       ]
     },

@@ -1337,6 +1337,11 @@
         {
           "to": "metal.copper.cathode",
           "rel": "made of"
+        },
+        {
+          "to": "chem.pcb-chemicals.laminate.copper-foil.benzotriazole",
+          "rel": "made of",
+          "basis": "documented"
         }
       ]
     },
@@ -4528,9 +4533,7 @@
       "category": "metals",
       "era": "1982",
       "confidence": "medium",
-      "inputs": [
-        "nitric-acid"
-      ],
+      "inputs": [],
       "facts": [
         {
           "label": "Surface area gain",
@@ -4775,10 +4778,7 @@
       "era": "1982",
       "confidence": "medium",
       "provenance": "incomplete",
-      "inputs": [
-        "toluene-diisocyanate",
-        "polyol"
-      ],
+      "inputs": [],
       "facts": [
         {
           "label": "Former standard",
@@ -4789,7 +4789,19 @@
           "value": "polyurethane dominated thermal class 130-155"
         }
       ],
-      "note": "The chemistry of commercial wire enamels is proprietary; medium confidence on the general description."
+      "note": "The chemistry of commercial wire enamels is proprietary; medium confidence on the general description.",
+      "edges": [
+        {
+          "to": "metal.tdi",
+          "rel": "made of",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "metal.polyol",
+          "rel": "made of",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "metal.copper.wire-lubricant": {
       "id": "metal.copper.wire-lubricant",
@@ -7666,9 +7678,7 @@
           "era": "1982",
           "confidence": "medium",
           "provenance": "incomplete",
-          "inputs": [
-            "nitric-acid"
-          ],
+          "inputs": [],
           "note": "The etch chemistry varied plant to plant and was rarely published; described here from general practice.",
           "facts": [
             {
@@ -8627,7 +8637,14 @@
       ],
       "note": "Medium confidence; the ferromanganese furnace design is well described in ferroalloy practice.",
       "children": [],
-      "provenance": "incomplete"
+      "provenance": "incomplete",
+      "edges": [
+        {
+          "to": "metal.coke.tar-pitch",
+          "rel": "consumes",
+          "basis": "inferred"
+        }
+      ]
     },
     "metal.aluminum.cold-rolling": {
       "id": "metal.aluminum.cold-rolling",

@@ -781,7 +781,15 @@
             }
           ],
           "note": "Medium confidence; the mix-house practice is standard but proprietary in detail.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+            {
+              "to": "metal.ferrite.raw-materials",
+              "rel": "produces",
+              "role": "product",
+              "basis": "typical-1982"
+            }
+          ]
         }
       ],
       "edges": [
@@ -991,7 +999,15 @@
             }
           ],
           "children": [],
-          "note": "Documented: gold mining in the buried parts of the Witwatersrand Supergroup is carried out at depths of 4 km below the surface. Not established: the 1000-6000 m depth range as a mine-by-mine figure, the 40-50 C rock temperature at 3000 m, the 3 C per 100 m gradient, the 20,000-40,000 t broken per shift, the longwall stoping with hydraulic sand fill, and the 60-70% recovery from a 10-40 g/t ore."
+          "note": "Documented: gold mining in the buried parts of the Witwatersrand Supergroup is carried out at depths of 4 km below the surface. Not established: the 1000-6000 m depth range as a mine-by-mine figure, the 40-50 C rock temperature at 3000 m, the 3 C per 100 m gradient, the 20,000-40,000 t broken per shift, the longwall stoping with hydraulic sand fill, and the 60-70% recovery from a 10-40 g/t ore.",
+          "edges": [
+            {
+              "to": "metal.gold.reef",
+              "rel": "produces",
+              "role": "product",
+              "basis": "typical-1982"
+            }
+          ]
         }
       ],
       "inputs": [],
@@ -1796,7 +1812,14 @@
               "value": "0.3-1.5 Nm3 per m3 of slurry per minute"
             }
           ],
-          "note": "Air consumption figures are class values from mineral processing textbooks; medium confidence."
+          "note": "Air consumption figures are class values from mineral processing textbooks; medium confidence.",
+          "edges": [
+            {
+              "to": "facility.compressed-air",
+              "rel": "consumes",
+              "basis": "inferred"
+            }
+          ]
         },
         {
           "id": "metal.gold.cip",

@@ -1496,7 +1496,14 @@
             }
           ],
           "children": [],
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+            {
+              "to": "c64.connector-jacks.metalworking.four-slide-die.tool-steel",
+              "rel": "contains",
+              "basis": "inferred"
+            }
+          ]
         },
         {
           "id": "c64.connector-jacks.metalworking.plating",
@@ -1834,7 +1841,19 @@
           "confidence": "medium",
           "provenance": "incomplete",
           "inputs": [],
-          "note": "Not established: the paraxylene-to-terephthalic-acid-to-DMT route with butanediol, and the synthesis-gas origin of the methanol. No source consulted establishes polyester or DMT."
+          "note": "Not established: the paraxylene-to-terephthalic-acid-to-DMT route with butanediol, and the synthesis-gas origin of the methanol. No source consulted establishes polyester or DMT.",
+          "edges": [
+            {
+              "to": "mb.passives.caps.film.polyester-metallisation.pet-polymerisation.paraxylene",
+              "rel": "consumes",
+              "basis": "inferred"
+            },
+            {
+              "to": "chem.methanol",
+              "rel": "consumes",
+              "basis": "inferred"
+            }
+          ]
         }
       ],
       "note": "Not established: dimethyl terephthalate plus 1,4-butanediol as the formulation of this moulding, DMT from paraxylene, and the 1980s butanediol routes stated here, maleic anhydride hydrogenation and the second route as written.",

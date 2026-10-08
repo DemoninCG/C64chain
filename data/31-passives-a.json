@@ -1543,7 +1543,19 @@
         "https://en.wikipedia.org/wiki/Resistor"
       ],
       "note": "Nichrome is documented as the usual winding wire. Not established: that it has the highest resistivity of the common resistance alloys, and that constantan is chosen where a lower temperature coefficient matters more. It is no constantan figure appears in the source consulted. Note also that the source gives two different Nichrome compositions, 80 Ni / 20 Cr and 60 Ni / 12 Cr / 26 Fe / 2 Mn, melting at 1350-1420 C.",
-      "inputs": []
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.nickel",
+          "rel": "made of",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "metal.chromium",
+          "rel": "made of",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "mb.passives.resistors.discrete-axial.wirewound.bobbin.steatite": {
       "id": "mb.passives.resistors.discrete-axial.wirewound.bobbin.steatite",
@@ -1717,7 +1729,14 @@
       "confidence": "medium",
       "provenance": "incomplete",
       "note": "The carbon-black furnace that makes this pigment is mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black, linked here by id.",
-      "inputs": []
+      "inputs": [],
+      "edges": [
+        {
+          "to": "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black",
+          "rel": "made of",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "mb.passives.caps.mica.muscovite.pegmatite": {
       "id": "mb.passives.caps.mica.muscovite.pegmatite",
@@ -3223,10 +3242,15 @@
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "incomplete",
-      "inputs": [
-        "chem.epoxy"
-      ],
-      "note": "Not established: the epoxy lock and the account of the trimmer as a one-time factory adjustment. That trimmers are for infrequent adjustment during manufacture or repair is documented. The destructive epoxy lock is not, in any source consulted."
+      "inputs": [],
+      "note": "Not established: the epoxy lock and the account of the trimmer as a one-time factory adjustment. That trimmers are for infrequent adjustment during manufacture or repair is documented. The destructive epoxy lock is not, in any source consulted.",
+      "edges": [
+        {
+          "to": "chem.epoxy.dgeba",
+          "rel": "consumes",
+          "basis": "inferred"
+        }
+      ]
     },
     "mb.passives.resistors.cermet-networks.trim": {
       "id": "mb.passives.resistors.cermet-networks.trim",
@@ -3510,7 +3534,14 @@
           "confidence": "medium",
           "provenance": "incomplete",
           "inputs": [],
-          "note": "Not established: matched-metal construction with a slug-shaped cavity, and chrome plating to survive the abrasive mix and the pressing pressure."
+          "note": "Not established: matched-metal construction with a slug-shaped cavity, and chrome plating to survive the abrasive mix and the pressing pressure.",
+          "edges": [
+            {
+              "to": "metal.die-steel",
+              "rel": "contains",
+              "basis": "inferred"
+            }
+          ]
         }
       ],
       "note": "Not established: pressing at tens of tonnes in a matched-metal die to a small-pill slug, baking at 150-200 C, and tin versus brass end caps pressed on after cure for these parts.",
@@ -4058,7 +4089,14 @@
           "confidence": "medium",
           "provenance": "incomplete",
           "inputs": [],
-          "note": "Screen and stencil printing is documented for thick film. Not established: a woven stainless-steel or nylon mesh stretched over a frame and photo-imaged, and the abrasion argument. Note that the printed resistors are inside a sealed package, so the paste never meets the mesh in service."
+          "note": "Screen and stencil printing is documented for thick film. Not established: a woven stainless-steel or nylon mesh stretched over a frame and photo-imaged, and the abrasion argument. Note that the printed resistors are inside a sealed package, so the paste never meets the mesh in service.",
+          "edges": [
+            {
+              "to": "metal.stainless.304",
+              "rel": "contains",
+              "basis": "inferred"
+            }
+          ]
         }
       ],
       "note": "Screen and stencil printing is documented as the thick film deposition method. Not established: the photoemulsion-through-a-film exposure route, the 250-400 mesh, the 10-25 um wet film thickness, and the thixotropy-from-frit-particle-shape argument.",

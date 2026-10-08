@@ -1657,7 +1657,14 @@
       "confidence": "medium",
       "provenance": "incomplete",
       "inputs": [],
-      "note": "Not established: that this laminate's epoxy is derived from bisphenol A and epichlorohydrin. That is the standard chemistry for the epoxy family, but no document consulted ties a particular 1982 keyboard PCB to it."
+      "note": "Not established: that this laminate's epoxy is derived from bisphenol A and epichlorohydrin. That is the standard chemistry for the epoxy family, but no document consulted ties a particular 1982 keyboard PCB to it.",
+      "edges": [
+        {
+          "to": "chem.epoxy.dgeba",
+          "rel": "made from",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "c64.joystick.knob.abs.filler.pigment-dispersion.tio2": {
       "id": "c64.joystick.knob.abs.filler.pigment-dispersion.tio2",
@@ -2110,7 +2117,11 @@
       "inputs": [],
       "note": "Not established: right-angle forming of the two HC-49 leads, wave-solder mounting of Y1, and the board-frequency versus overtone-resonance spurious-mode rationale.",
       "edges": [
-        
+        {
+          "to": "metal.solder",
+          "rel": "consumes",
+          "basis": "inferred"
+        }
       ]
     },
     "mb.crystal.y1.electrodes": {
@@ -2239,7 +2250,14 @@
           "confidence": "medium",
           "inputs": [],
           "note": "Not established: hardened steel as the cavity-tool material, the polished-cavity-to-gloss-finish causal link, and the thousands-of-knobs-per-tool-life figure.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+            {
+              "to": "metal.die-steel",
+              "rel": "contains",
+              "basis": "typical-1982"
+            }
+          ]
         }
       ],
       "note": "Not established: whether the knob was two-shot or single-shot moulded, and whether it carried a moulded-in texture or soft overmould. Most 1980s joystick knobs were single-shot ABS. No document consulted describes it.",
@@ -2410,7 +2428,14 @@
           "confidence": "medium",
           "inputs": [],
           "note": "Not established: hardened tool steel as the cam-and-die material and the Camweld-or-similar automatic machine identification for the keycap spring coiler.",
-          "provenance": "incomplete"
+          "provenance": "incomplete",
+          "edges": [
+            {
+              "to": "metal.die-steel",
+              "rel": "contains",
+              "basis": "inferred"
+            }
+          ]
         }
       ],
       "note": "Not established: that the keycap plunger springs were made on cam-controlled coil-winders at tens of thousands per hour. This is a general statement about spring manufacturing, not about this keyboard."

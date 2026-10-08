@@ -843,9 +843,7 @@
       "category": "metals",
       "era": "1982",
       "confidence": "high",
-      "inputs": [
-        "nitric-acid"
-      ],
+      "inputs": [],
       "facts": [
         {
           "label": "Medium",
@@ -902,6 +900,11 @@
         {
           "to": "metal.hydrofluoric-acid",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.nitric-acid",
+          "rel": "consumes",
+          "basis": "documented"
         },
         {
           "to": "metal.tantalum.thorium",

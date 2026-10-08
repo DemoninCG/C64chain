@@ -53,14 +53,22 @@
           "value": "P20, 1.2311, NAK80 is the corrosion-resistant modern cousin"
         }
       ],
-      "inputs": [
-        "steel",
-        "chromium",
-        "molybdenum"
-      ],
+      "inputs": [],
       "confidence": "low",
       "provenance": "incomplete",
-      "note": "Not established: that the case tools were made in P20 or 1.2311, the stated composition, the 0.9% chromium and 0.2% vanadium, and the 28-36 HRC delivery condition. No document identifies the steel in a C64 case tool."
+      "note": "Not established: that the case tools were made in P20 or 1.2311, the stated composition, the 0.9% chromium and 0.2% vanadium, and the 28-36 HRC delivery condition. No document identifies the steel in a C64 case tool.",
+      "edges": [
+        {
+          "to": "metal.chromium",
+          "rel": "made of",
+          "basis": "inferred"
+        },
+        {
+          "to": "metal.molybdenum",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
     },
     {
       "id": "c64.case.other-polymers.methanol",
@@ -753,7 +761,6 @@
             }
           ],
           "inputs": [
-            "plunger polymer",
             "conductive rubber",
             "gold-plated contact"
           ],
@@ -975,12 +982,17 @@
                   "value": "gold-coloured in teardown photos; chemistry not established"
                 }
               ],
-              "inputs": [
-                "steel"
-              ],
+              "inputs": [],
               "confidence": "medium",
               "provenance": "incomplete",
-              "note": "Not established: the count, the thread and the plating on the keyboard retaining screws. The screws are visible in teardowns but no document records their specification or finish."
+              "note": "Not established: the count, the thread and the plating on the keyboard retaining screws. The screws are visible in teardowns but no document records their specification or finish.",
+              "edges": [
+                {
+                  "to": "metal.steel",
+                  "rel": "made of",
+                  "basis": "inferred"
+                }
+              ]
             }
           ]
         },
@@ -1512,8 +1524,6 @@
             }
           ],
           "inputs": [
-            "graphite electrode",
-            "brass electrode",
             "dielectric oil",
             "hardened H13 cavity"
           ],
@@ -1572,7 +1582,14 @@
       "confidence": "medium",
       "provenance": "incomplete",
       "note": "Not established: the finished roughness figures, the media sequence and the hand-versus-machine split on a Commodore case cavity.",
-      "children": []
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.case.tooling.lapping-compound",
+          "rel": "consumes",
+          "basis": "inferred"
+        }
+      ]
     },
     "c64.case.tooling.plating": {
       "id": "c64.case.tooling.plating",
@@ -1810,9 +1827,7 @@
           "value": "methanol + CO to acetic acid, rhodium catalyst, 150-200 C"
         }
       ],
-      "inputs": [
-        "carbon monoxide"
-      ],
+      "inputs": [],
       "confidence": "medium",
       "provenance": "incomplete",
       "sources": [
@@ -2766,9 +2781,7 @@
           "value": "pre-extruded dielectric tube, then conductor drawn in"
         }
       ],
-      "inputs": [
-        "chlorine"
-      ],
+      "inputs": [],
       "confidence": "medium",
       "sources": [
         "https://en.wikipedia.org/wiki/Coaxial_cable"
@@ -3151,7 +3164,6 @@
         }
       ],
       "inputs": [
-        "aluminium sheet",
         "dyes"
       ],
       "confidence": "medium",
@@ -4248,6 +4260,11 @@
           "to": "c64.case.tooling.lapping-compound",
           "rel": "consumes",
           "basis": "typical-1982"
+        },
+        {
+          "to": "c64.case.tooling.polishing",
+          "rel": "uses",
+          "basis": "inferred"
         }
       ]
     },
