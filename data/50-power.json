@@ -3573,6 +3573,11 @@
           "to": "c64.psu.heatsink",
           "rel": "produces",
           "role": "product"
+        },
+        {
+          "to": "c64.psu.regulator.mounting",
+          "rel": "step",
+          "basis": "inferred"
         }
       ]
     },
@@ -4072,6 +4077,11 @@
         {
           "to": "metal.electrical-steel",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.electrical-steel.die-set",
+          "rel": "uses",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -4332,6 +4342,12 @@
         {
           "to": "metal.lead",
           "rel": "consumes"
+        },
+        {
+          "to": "metal.silver",
+          "rel": "produces",
+          "role": "product",
+          "basis": "documented"
         }
       ]
     },
