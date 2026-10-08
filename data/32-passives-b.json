@@ -1189,6 +1189,11 @@
         {
           "to": "metal.zinc.brass",
           "rel": "made of"
+        },
+        {
+          "to": "metal.copper.cathode-brass-strip",
+          "rel": "made of",
+          "basis": "inferred"
         }
       ]
     },
@@ -1502,6 +1507,11 @@
               "to": "c64.connector-jacks.metalworking.four-slide-die.tool-steel",
               "rel": "contains",
               "basis": "inferred"
+            },
+            {
+              "to": "c64.connector-jacks.metalworking.four-slide-die.coil-stock",
+              "rel": "consumes",
+              "basis": "typical-1982"
             }
           ]
         },
@@ -2143,6 +2153,13 @@
           "inputs": [],
           "note": "Not established: a nitrided steel screw and barrel at 230-280 C for this moulding. Processing temperatures of that order are general injection-moulding practice, but no source consulted ties them to this tool.",
           "provenance": "incomplete"
+        }
+      ],
+      "edges": [
+        {
+          "to": "c64.connector-jacks.moulding.injection-press.tool-steel",
+          "rel": "contains",
+          "basis": "inferred"
         }
       ]
     },
