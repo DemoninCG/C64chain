@@ -27,13 +27,13 @@ const leaf = (id, name, depth = 1) => ({
 
 await writeFile(path.join(data, '00-root.json'), JSON.stringify({
   id: 'c64', name: 'C64', description: 'root node for the self test.', kind: 'part',
-  category: 'computing', children: ['a', 'b', 'a.orr'],
+  category: 'industry', children: ['a', 'b', 'a.orr'],
 }, null, 2));
 
 await writeFile(path.join(data, '10-a.json'), JSON.stringify({
   root: {
     id: 'a', name: 'Branch A', description: 'Branch A of the self test tree.', kind: 'part',
-    category: 'silicon',
+    category: 'semiconductors',
     children: [leaf('a.ore', 'Ore'), { id: 'a.shared', name: 'Shared', description: 'Referenced twice.', kind: 'material', category: 'metals', children: [leaf('a.shared.leaf', 'Leaf', 2)] }],
   },
 }, null, 2));

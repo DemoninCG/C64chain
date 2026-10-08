@@ -9,6 +9,7 @@
       "description": "The roughly 250-odd resistors, capacitors, trimmers and networks soldered to a Commodore 64 ASSY 250407 motherboard. No ICs, no connectors: only the two-terminal and adjustable parts that set the bias, timing and filtering of everything else on the board.",
       "kind": "part",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "sources": [
         "https://www.c64-wiki.com/wiki/Motherboard",
@@ -44,6 +45,7 @@
           "description": "Fixed resistors on the 250407: about seventy 1/4 W axial parts in values from 100 ohm to 1 megohm, plus four thick-film SIP resistor networks and one 500 ohm trimmer. Almost all were 5 percent carbon film. The handful of 1 percent metal film parts sat in the VIC-II colour and timing network.",
           "kind": "part",
           "category": "passives",
+          "subcat": "resistors",
           "era": "1982-1984",
           "confidence": "medium",
           "facts": [
@@ -65,6 +67,7 @@
               "description": "Three manufacturing routes to a 1/4 W axial resistor coexisted in 1982. The 250407 used overwhelmingly carbon film. Carbon composition was still common in cheaper consumer goods. Metal film was reserved for precision.",
               "kind": "part",
               "category": "passives",
+              "subcat": "resistors",
               "era": "1982-1984",
               "confidence": "medium",
               "inputs": [],
@@ -76,6 +79,7 @@
                   "description": "The bulk of the board's resistors. A thin, discontinuous film of carbon and clay laid on a hollow alumina ceramic tube; carbon loading sets the resistance. Cheap, 5 percent, and tolerant of being bent during manual insertion.",
                   "kind": "part",
                   "category": "passives",
+                  "subcat": "resistors",
                   "era": "1982-1984",
                   "sources": [
                     "https://en.wikipedia.org/wiki/Resistor"
@@ -108,6 +112,7 @@
                       "description": "A thin-wall extruded alumina tube, 0.5 mm outside diameter, whose wall carries the film. Hollow construction halves the ceramic mass per resistor, and the tube's inner bore is what the trimmer's abrasive cut reaches.",
                       "kind": "part",
                       "category": "passives",
+                      "subcat": "resistors",
                       "era": "1982-1984",
                       "confidence": "medium",
                       "note": "The Bayer refinery that turns bauxite into this alumina, and its caustic-soda digestion, are metal.alumina and metal.bayer. An earlier local copy of that chain named potassium hydroxide as the 1982 digestant, which is wrong: caustic soda was the mainstream digestant.",
@@ -141,6 +146,7 @@
                       "description": "The trimmed resistor is transfer-moulded in epoxy, or coated in a phenolic shell, sealing the film from humidity. Moulding compound is a phenolic or epoxy resin filled with silica flour.",
                       "kind": "part",
                       "category": "passives",
+                      "subcat": "resistors",
                       "era": "1982-1984",
                       "confidence": "medium",
                       "inputs": [],
@@ -197,6 +203,7 @@
                   "description": "A rod of carbon and clay, compression-moulded into a small cylinder with metal end caps. Very cheap and very noisy, with a wide temperature coefficient and drift. Still used in 1982 in low-cost consumer goods and audio gear, but on the C64 itself it was already being displaced by carbon film.",
                   "kind": "part",
                   "category": "passives",
+                  "subcat": "resistors",
                   "era": "1940s-1982",
                   "sources": [
                     "https://en.wikipedia.org/wiki/Resistor"
@@ -224,6 +231,7 @@
                       "description": "Soft tin or brass caps are pressed over the moulded slug, then a tinned copper wire lead is swaged inside the cap, giving the familiar bulbous ends of a composition resistor.",
                       "kind": "part",
                       "category": "passives",
+                      "subcat": "resistors",
                       "era": "1982-1984",
                       "confidence": "medium",
                       "note": "Lead wire is tin-plated copper drawn from rod, not tinned after the fact.",
@@ -264,6 +272,7 @@
                   "description": "A NiCr or FeCr film vacuum-deposited onto an alumina substrate, then laser-trimmed to a tight tolerance. Where the VIC-II colour burst and the composite video level had to be set to a few parts in a thousand, a 1 percent metal film part was used instead of a 5 percent carbon film.",
                   "kind": "part",
                   "category": "passives",
+                  "subcat": "resistors",
                   "era": "1982-1984",
                   "confidence": "medium",
                   "note": "The 250407's parts list is dominated by 5 percent parts. Which individual reference designators were 1 percent metal film is not confirmed.",
@@ -276,6 +285,7 @@
                       "description": "Metal film parts use a flat alumina bar or a flat ceramic tube rather than a tube-with-a-skin, because the uniform flat substrate is what makes laser scribing produce a stable, precise spiral.",
                       "kind": "part",
                       "category": "passives",
+                      "subcat": "resistors",
                       "era": "1982-1984",
                       "confidence": "medium",
                       "inputs": [],
@@ -299,6 +309,7 @@
                       "description": "A crimped steel or aluminium cap grips the lead and makes contact with the film, then the whole assembly is plated in nickel. Metal film parts are always nickel-plated leads, never bare tin.",
                       "kind": "part",
                       "category": "passives",
+                      "subcat": "resistors",
                       "era": "1982-1984",
                       "confidence": "medium",
                       "inputs": [],
@@ -338,6 +349,7 @@
                   "description": "Resistance wire wound on a ceramic bobbin and vitreously enamelled. Used for the few watts-and-above duties. It is notably the 7805 regulator's dropping resistor and the video level network. Accurate, stable, but large and inductive.",
                   "kind": "part",
                   "category": "passives",
+                  "subcat": "resistors",
                   "era": "1982-1984",
                   "confidence": "medium",
                   "note": "Wound resistors do not appear in the checked 250407 BOM. They were the standard answer for the same problems in the C64's power supply and peripherals of the same era.",
@@ -353,6 +365,7 @@
                       "description": "A grooved steatite or alumina former on which a length of enamelled resistance alloy wire is wound. Steatite (magnesium silicate) was the classic low-cost bobbin material.",
                       "kind": "part",
                       "category": "passives",
+                      "subcat": "resistors",
                       "era": "1982-1984",
                       "confidence": "medium",
                       "children": [],
@@ -387,6 +400,7 @@
                   "description": "An ultra-precise resistor built from rolled, etched metal foil (nickel, a nickel-chromium-iron alloy, or copper) clamped between a rigid steel/ceramic case and a polished die. Changing the roll geometry stretches the foil, so the resistance can be set with a screw to one part in a million.",
                   "kind": "part",
                   "category": "passives",
+                  "subcat": "resistors",
                   "era": "1982-1984",
                   "confidence": "low",
                   "note": "Included to explain the 'foil' end of the precision-resistor family. No metal-foil parts appear in a Commodore 64. These were calibration standards in the lab and appeared in later high-precision analogue equipment.",
@@ -429,6 +443,7 @@
               "description": "The four resistor arrays on the 250407: two 8-way isolated 33 ohm packs (series terminators on the DRAM data bus), one 8-way 3k3 bussed pack and one 10-way 3k3 bussed pack. Each is one alumina substrate with several ruthenium-oxide resistive tracks screen-printed and fired together.",
               "kind": "part",
               "category": "passives",
+              "subcat": "resistors",
               "era": "1982-1984",
               "sources": [
                 "https://www.vishay.com/en/networks-and-arrays/thick-film",
@@ -470,6 +485,7 @@
                   "description": "A 0.6 mm thick 96 percent alumina bar, pre-fired and metallised. Conductive paste is printed through a photo-plated stainless screen onto the top face only, then the whole bar is fired to fuse the glass frit and mature the resistor.",
                   "kind": "part",
                   "category": "passives",
+                  "subcat": "resistors",
                   "era": "1982-1984",
                   "confidence": "medium",
                   "facts": [
@@ -525,6 +541,7 @@
               "description": "The single adjustable part on the 250407 is R27, a 500 ohm cermet trimmer potentiometer that biases U31's crystal oscillator so the 14.31818 MHz colour subcarrier lands exactly on NTSC's subcarrier frequency. It is the reason a C64 needs no colour adjustment in normal use but will show colour shimmer when the crystal ages.",
               "kind": "part",
               "category": "passives",
+              "subcat": "resistors",
               "era": "1982-1984",
               "sources": [
                 "https://www.devili.iki.fi/Computers/Commodore/C64/Service_Manual/Page_06.html"
@@ -554,6 +571,7 @@
                   "description": "A thick-film RuO2 resistive track deposited on the top face of an alumina substrate, with a metal-foil wiper that slides along it. Because the element is a printed film rather than a carbon blob, the tracking is smooth and the part does not develop a scratchy potentiometer feel the way a carbon composition pot does. The usable travel is a fraction of the physical length, because the track is designed to put most of its resistance in the middle of the sweep. That is how a 500 ohm trimmer gets a usable 0-500 ohm range out of a single turn of the adjuster screw.",
                   "kind": "part",
                   "category": "passives",
+                  "subcat": "resistors",
                   "era": "1982-1984",
                   "confidence": "medium",
                   "sources": [
@@ -593,6 +611,7 @@
                   "description": "A knurled brass or stainless screw drives a moulded slider that rides the wiper along the track. Backing-off epoxy locks the setting once the board is aligned.",
                   "kind": "part",
                   "category": "passives",
+                  "subcat": "resistors",
                   "era": "1982-1984",
                   "confidence": "medium",
                   "inputs": [],
@@ -604,6 +623,7 @@
                       "description": "A brass or stainless screw, knurled or slotted, driving the slider. Brass is the usual choice because it machines cleanly at small diameters and does not gall against the moulded slider.",
                       "kind": "part",
                       "category": "passives",
+                      "subcat": "resistors",
                       "era": "1982-1984",
                       "confidence": "medium",
                       "provenance": "incomplete",
@@ -647,6 +667,7 @@
           "description": "The 0.1 uF bypass and small timing capacitors. Dozens of layers of barium-titanate ceramic with screen-printed metal electrodes buried between them, then fired and terminated. Monolithic construction gives huge capacitance in a tiny body because the electrode area is the whole face of every layer.",
           "kind": "part",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1982-1984",
           "sources": [
             "https://en.wikipedia.org/wiki/Ceramic_capacitor"
@@ -729,6 +750,7 @@
           "description": "The polarised bulk capacitors: about fifteen 10 uF/25 V radial parts decoupling the SID and video analogue rails, plus larger axial 100-2200 uF parts on the rectified supply rails. Value comes from a nanometres-thick anodic oxide on etched aluminium foil soaked in electrolyte. It is cheap, large capacitance, and the bulk of the board's supply-rail filtering.",
           "kind": "part",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1982-1984",
           "sources": [
             "https://en.wikipedia.org/wiki/Aluminium_electrolytic_capacitor"
@@ -753,6 +775,7 @@
               "description": "High-purity aluminium foil, roughened by electrochemical etching so that the surface becomes a mass of microscopic pits, then anodically formed to grow an insulating alumina layer on it. Etching multiplies the effective area of the anode, which is how a hundred microfarads fits into a 5 mm can. The foil is wound with a separate cathode foil and absorbent separator, and the liquid electrolyte is the actual second electrode.",
               "kind": "part",
               "category": "passives",
+              "subcat": "capacitors",
               "era": "1982-1984",
               "confidence": "low",
               "facts": [
@@ -794,6 +817,7 @@
               "description": "Aluminium foil, usually a cheaper alloy and often unetched, serving as the return electrode. It carries no dielectric of its own. Its job is simply to collect the return current through the electrolyte.",
               "kind": "part",
               "category": "passives",
+              "subcat": "capacitors",
               "era": "1982-1984",
               "confidence": "high",
               "sources": [
@@ -843,6 +867,7 @@
           "description": "A polarised capacitor built around sintered tantalum powder with an anodic oxide dielectric and a solid electrolyte. Low leakage and very good stability for its size; in the early 1980s tantalum was the default decoupling choice on high-performance professional digital boards.",
           "kind": "part",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1982-1984",
           "sources": [
             "https://pubs.usgs.gov/of/2001/of01-349/of01-349.pdf"
@@ -858,6 +883,7 @@
               "description": "Capacitor-grade tantalum powder is pressed around a tantalum riser wire that becomes the anode connection, and the pellet is vacuum sintered at high temperature so that the powder takes on a sponge-like structure with all particles interconnected. The Ta2O5 dielectric then grows on that internal surface, which is why a gram of powder stores far more capacitance than a gram of film.",
               "kind": "part",
               "category": "passives",
+              "subcat": "capacitors",
               "era": "1982-1984",
               "confidence": "low",
               "facts": [
@@ -894,7 +920,8 @@
               "simple_name": "1980s tantalum supply squeeze",
               "description": "Capacitor tantalum depends on columbite-tantalite ore, essentially all of it from the Kivu region of Zaire and neighbouring Rwanda and Burundi. A collapse in the electronics market in 1982-83 drained the supply chain's stocks, then demand spiked again in 1984 on the PC and automotive booms. The USGS records a significant spike in tantalum demand in 1984, with US factory sales of tantalum capacitors at an all-time high and escalating prices pushing consumers to substitute aluminium parts and to design tantalum out where they could. It was a real, documented shortage in exactly the C64's production window. The documented engineering response was to reduce tantalum content where possible, substitute aluminium electrolytics, and lengthen qualified lead times. It is a good example of how a metals shortage propagates into board design decisions within eighteen months.",
               "kind": "note",
-              "category": "passives",
+              "category": "industry",
+              "subcat": "systems",
               "era": "1983-1984",
               "sources": [
                 "https://pubs.usgs.gov/of/2001/of01-349/of01-349.pdf"
@@ -925,6 +952,7 @@
           "description": "A single fired barium-titanate disc with silver electrodes fired onto its two faces. Enormous capacitance for its size and very cheap, but microphonically noisy, temperature-drifty and physically large, with no self-cancelling inductance. On C64 boards of this era the small 0.1 uF parts were already largely the multilayer form.",
           "kind": "part",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1960s-1982",
           "sources": [
             "https://en.wikipedia.org/wiki/Ceramic_capacitor"
@@ -981,6 +1009,7 @@
           "description": "Film capacitors use a thin metallised plastic film as the dielectric. Non-polar, stable, and tolerant of voltage and temperature excursions. The C64 uses polyester (Melinex/PET) for coupling and decoupling in the analogue paths. Polystyrene appears in the precision timing networks of the same era's equipment.",
           "kind": "part",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1982-1984",
           "confidence": "medium",
           "sources": [
@@ -1010,6 +1039,7 @@
               "description": "A polystyrene dielectric: exceptionally stable, very low dielectric absorption and low loss, historically the timing capacitor of choice for precision RC oscillators before polystyrene's poor mechanical behaviour pushed it into disfavour. Used in analogue equipment of the era, but not a significant part on the C64 mainboard.",
               "kind": "part",
               "category": "passives",
+              "subcat": "capacitors",
               "era": "1982-1984",
               "confidence": "low",
               "note": "Polystyrene parts are not confirmed in the 250407 parts list.",
@@ -1040,6 +1070,7 @@
           "description": "A capacitor built from thin sheets of natural muscovite mica with vacuum-deposited aluminium or silver counter-electrodes. Superb temperature stability and high dielectric strength, too expensive and too fragile for general use, so mica was reserved for precision and high-voltage niches in equipment of the era.",
           "kind": "part",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1982-1984",
           "confidence": "medium",
           "note": "Mica was being displaced by film and ceramic in mass-market consumer boards by the 1980s. The sputtered metal-insulator-metal mica construction is a later, higher-reliability form.",
@@ -1072,6 +1103,7 @@
           "description": "Small adjustable capacitors used to compensate or trim a circuit. On C64-family boards a trimmer capacitor sits in the crystal oscillator's load network, pulling the frequency exactly onto the NTSC or PAL colour subcarrier. Later Commodore boards replaced the earlier adjustable resistor with this capacitor trim.",
           "kind": "part",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1982-1984",
           "sources": [
             "https://www.lemmini.de/C64-PLL-Replacement/C64-PLL-Replacement.html"
@@ -1096,6 +1128,7 @@
               "description": "Two sets of interdigitated metal plates with an adjustable overlap, separated by air or a thin film. Turning the screw changes the overlap and therefore the capacitance continuously, letting the factory trim the oscillator to the exact subcarrier frequency. The dielectric is air, which is why these parts are stable and non-drifting.",
               "kind": "part",
               "category": "passives",
+              "subcat": "capacitors",
               "era": "1982-1984",
               "confidence": "medium",
               "note": "The exact trim capacitor reference designator on the 250407 is uncertain to me. The service manual confirms R27 is the adjustable resistor and the later boards use a capacitive trim in the same role.",
@@ -1118,6 +1151,7 @@
                   "description": "The trimmer's rotor is a small disc of alumina ceramic, silver-metallised on one face through a spiral or interdigitated pattern. Turning the screw rotates the disc against a fixed plate, so the overlapping metallised area (and hence the capacitance) changes continuously.",
                   "kind": "part",
                   "category": "passives",
+                  "subcat": "capacitors",
                   "era": "1982-1984",
                   "confidence": "medium",
                   "facts": [
@@ -1210,6 +1244,7 @@
       "description": "The rotor disc is alumina, polished and metallised with a spiral or interdigitated silver pattern. Alumina is used because it is dimensionally stable, machinable to a fine finish and a good insulator at the trimmer's working voltage.",
       "kind": "material",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
@@ -1227,7 +1262,8 @@
       "simple_name": "Heat-split muscovite sheets",
       "description": "Natural muscovite is mined in large crystal books from pegmatites and delaminated by heating and cementing against a hot plate, so it splits along its perfect basal cleavage into micrometre-thick, optically flat sheets. The crystal's naturally layered atomic structure gives a very uniform, very thin, very stable dielectric when split this way.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "clays-abrasives",
       "era": "ancient",
       "sources": [
         "https://en.wikipedia.org/wiki/Mica"
@@ -1254,7 +1290,8 @@
       "simple_name": "Drawn tantalum wire",
       "description": "The anode lead is fine drawn tantalum wire, spot-welded to the sintered pellet, drawn by the same machinery as refractory metals for furnace leads. Whether the anode body is built from reduced metallic powder or from sintered oxide powder, the specification is the same: extremely high purity, sub-micron, high surface area. Impurities here are the defect mechanism that causes tantalum dielectric failures, and every stage from columbite-tantalite concentrate to powder discards most of the feed, which is why a tantalum capacitor carried a high metal cost per cubic centimetre even in 1982.",
       "kind": "material",
-      "category": "passives",
+      "category": "metals",
+      "subcat": "precious-special",
       "era": "1982-1984",
       "confidence": "high",
       "sources": [
@@ -1274,7 +1311,8 @@
       "simple_name": "Working electrolyte",
       "description": "The conducting liquid that soaks the separator and carries current between the oxide and the cathode: boric or phosphoric acid dissolved in ethylene glycol, dimethylformamide or dimethyl sulfoxide. The solvent must wet the porous separator without dissolving or attacking the oxide, and the acid concentration sets the oxide's equilibrium thickness.",
       "kind": "material",
-      "category": "fluids",
+      "category": "inorganics",
+      "subcat": "acids-salts",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -1316,6 +1354,7 @@
       "description": "A porous, electrolyte-wicking separator keeping the foils apart while letting current through. Bleached kraft paper was still the standard for most 1980s aluminium electrolytics. Low-porosity oriented polypropylene or polyethylene sleeves were the premium, longer-life alternative.",
       "kind": "material",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "high",
       "sources": [
@@ -1347,7 +1386,8 @@
       "simple_name": "Silicone rubber bung",
       "description": "Heat-cured silicone rubber, chosen because it stays soft and chemically inert in contact with the acid electrolyte for decades. Silicone is a siloxane polymer built on a quartz-derived silicon-oxygen backbone.",
       "kind": "material",
-      "category": "passives",
+      "category": "polymers",
+      "subcat": "rubber-additives",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "complete",
@@ -1370,7 +1410,8 @@
       "simple_name": "Barium titanate powder",
       "description": "The heart of the MLCC: sub-micron BaTiO3 crystallites, the only powder that has a very high dielectric constant AND survives the high-temperature processing. Chemistry is shifted from pure BaTiO3 by dopants to move the Curie point below room temperature, giving a Class II (X7R/Z5U) part with high capacitance that still decays with temperature.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "ceramics-refractory",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -1411,7 +1452,8 @@
       "simple_name": "Tape-casting slurry",
       "description": "The BaTiO3 powder is blended with a glass frit (an aid to sintering and to dielectric strength at the electrode interface) and an organic binder into a homogeneous, flowable slip. In 1982 this was an acrylic or PVA binder in water, or a cellulose ester in an organic solvent. Fully water-based PVA systems became dominant later.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "clays-abrasives",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "incomplete",
@@ -1428,12 +1470,12 @@
       "children": [],
       "note": "Not established: the glass frit fraction of about 5 % by weight of the ceramic body, and the specific 1982 binder systems. What is documented is that the casting suspension is the powder with a suitable binder.",
       "edges": [
-  {
-    "to": "mb.passives.caps.mlcc.powder",
-    "rel": "made of",
-    "basis": "inferred"
-  }
-]
+        {
+          "to": "mb.passives.caps.mlcc.powder",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
     },
     "mb.passives.caps.mlcc.green-sheet": {
       "id": "mb.passives.caps.mlcc.green-sheet",
@@ -1442,6 +1484,7 @@
       "description": "The tape-casting slurry doctor-bladed onto a moving polyester carrier and dried to a flexible unfired tape: BaTiO3 powder with glass frit in an organic binder. This sheet, printed with electrode paste and stacked, becomes the dielectric layers of the fired capacitor.",
       "kind": "material",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "complete",
@@ -1482,7 +1525,8 @@
       "simple_name": "Wiper alloy",
       "description": "A nickel-alloy or precious-metal spring contact rubbing on the RuO2 film. Because the cermet element is hard, the wiper is deliberately the sacrificial element and is made of a soft, wear-resistant alloy.",
       "kind": "material",
-      "category": "passives",
+      "category": "metals",
+      "subcat": "precious-special",
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
@@ -1500,7 +1544,8 @@
       "simple_name": "RuO2 cermet resistive paste",
       "description": "The resistive phase is sub-micron ruthenium dioxide powder blended with a lead-borosilicate glass frit and an organic vehicle (butyl acetate / terpineol) into a thixotropic paste. Its sheet resistance is a known function of powder loading, so a given RuO2 fraction sets a given ohms-per-square.",
       "kind": "material",
-      "category": "passives",
+      "category": "metals",
+      "subcat": "precious-special",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -1541,6 +1586,7 @@
       "description": "Nichrome has the highest resistivity of the common resistance alloys and so minimises the wire length needed. Constantan (CuNi) is used where a lower temperature coefficient matters more.",
       "kind": "material",
       "category": "metals",
+      "subcat": "nonferrous",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "incomplete",
@@ -1568,7 +1614,8 @@
       "simple_name": "Steatite bobbin material",
       "description": "Steatite, a compacted and fired magnesium silicate, was the classic low-cost bobbin and ceramic insulator material: it machines green, fires to a hard white body and is cheap.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "ceramics-refractory",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -1590,6 +1637,7 @@
       "description": "80/20 nickel-chromium, or 75/25 iron-chromium, evaporated or sputtered from a heated wire or boat in a vacuum bell. NiCr is chosen for its bulk resistivity (~1.1 uohm-m) and, critically, for having a near-zero temperature coefficient of resistivity.",
       "kind": "material",
       "category": "metals",
+      "subcat": "nonferrous",
       "era": "1982-1984",
       "confidence": "medium",
       "note": "Chromite ore and the ferrochrome made from it are metal.chromite and metal.chromium. South Africa supplied the majority of the chrome ore consumed by the Western electronics industry in 1982.",
@@ -1618,6 +1666,7 @@
       "description": "A nickel-plated steel or aluminium cap, crimped onto the lead and forming the low-resistance joint to the film. Metal film parts are always nickel-plated leads: the plating has to be uniform for the part to be consistent.",
       "kind": "material",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
@@ -1636,6 +1685,7 @@
       "description": "Metal film resistors need a very flat and very uniform substrate because the film resistance is set by the length of the deposited track, not by the substrate geometry. Alumina ceramic bar or a flat ceramic tube is used for that flatness.",
       "kind": "material",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
@@ -1654,6 +1704,7 @@
       "description": "A stiffer, higher-carbon paste than the film slurry. Because it is bulk rather than surface-conductive, the resistance is set by the geometry of the moulded rod itself, not by a pattern on its skin.",
       "kind": "material",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "high",
       "sources": [
@@ -1680,6 +1731,7 @@
       "description": "Carbon black mixed with china clay as a diluent and a phenolic binder in alcohol to a printable paste. Clay fraction is the coarse knob on resistance. Binder keeps the film from flaking off the tube.",
       "kind": "material",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -1709,19 +1761,20 @@
       "simple_name": "Petroleum residuum",
       "description": "The heaviest fraction of an atmospheric or vacuum refinery distillation: a viscous, bituminous, aromatic-rich residue. It was the classical feedstock for furnace black, but from the 1950s onwards natural gas was the cheaper and cleaner alternative, and a carbon-black plant of 1982 could run on either.",
       "kind": "material",
-      "category": "passives",
+      "category": "petrochem",
+      "subcat": "refining",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "incomplete",
       "inputs": [],
       "note": "Not established: this feed as the heaviest viscous bituminous aromatic-rich refinery fraction, the 1950s displacement by cheaper cleaner natural gas, and either-feed operation of a 1982 carbon-black plant.",
       "edges": [
-  {
-    "to": "chem.petroleum",
-    "rel": "made from",
-    "basis": "documented"
-  }
-]
+        {
+          "to": "chem.petroleum",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "mb.passives.caps.wrap-and-marking.ink.pigment": {
       "id": "mb.passives.caps.wrap-and-marking.ink.pigment",
@@ -1729,7 +1782,8 @@
       "simple_name": "Ink pigment",
       "description": "The value marking pigment is carbon black for dark parts and azo or phthalocyanine colour for bright ones, in a resin vehicle that will not be attacked by the board cleaning solvents.",
       "kind": "material",
-      "category": "passives",
+      "category": "polymers",
+      "subcat": "rubber-additives",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "complete",
@@ -1749,7 +1803,8 @@
       "simple_name": "Pegmatite host rock",
       "description": "Mica books grow in the giant granitic pegmatites of the Precambrian shield. These are Minas Gerais in Brazil, Rajasthan in India, Madagascar, and in the United States the Appalachian and Spruce Pine districts of North Carolina. It is mined in situ and split, not manufactured. The books are followed underground and extracted by hand, selectively enough that the surrounding pegmatite stays intact. Brazilian, Indian and US districts all supply capacitor-grade mica. Mica is traded in sizes (block for the thickest uses, thins for splitting) and grading and splitting, not mining, account for most of the value in the material.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "clays-abrasives",
       "era": "ancient",
       "sources": [
         "https://en.wikipedia.org/wiki/Mica"
@@ -1763,7 +1818,8 @@
       "simple_name": "Steatite or alumina base",
       "description": "Low-firing ceramic substrates, steatite (magnesium silicate) or alumina, onto which the high-K layer is applied. Steatite is cheap and fires low. Alumina is tougher and better at heat.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "ceramics-refractory",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "incomplete",
@@ -1776,7 +1832,8 @@
       "simple_name": "Boric acid in the electrolyte",
       "description": "Boric acid sets the oxide chemistry of the anode and, with phosphoric acid, is the reason an aluminium electrolytic has a usable voltage range at all. Commercially it was made from borax, which is mined from evaporite deposits.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "acids-salts",
       "era": "1982-1984",
       "sources": [
         "https://en.wikipedia.org/wiki/Borax"
@@ -1806,7 +1863,8 @@
       "simple_name": "Borax (tincalconite) evaporite",
       "description": "Sodium tetraborate decahydrate occurs in the playas and evaporite deposits of closed desert basins, where boron-bearing volcanic hot springs have fed an evaporating lake for millions of years. It is mined, not synthesised, in the borate districts.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "acids-salts",
       "era": "ancient",
       "sources": [
         "https://en.wikipedia.org/wiki/Borax"
@@ -1820,7 +1878,8 @@
       "simple_name": "Bleached kraft paper separator",
       "description": "A very thin, very porous cellulose tissue wound between the foils. It must be wetted completely by the electrolyte but must not contain ions that would raise the leakage current, so it is washed and bleached before use. Kraft paper separators are why the electrolyte is held in place at all.",
       "kind": "material",
-      "category": "passives",
+      "category": "industry",
+      "subcat": "paper-print-pack",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -1852,6 +1911,7 @@
       "description": "Ruthenium oxide is one of the conductive ceramic phases mixed into a cermet resistor paste, alongside tantalum nitride, lead oxide and others. It is the conductive phase that carries the current, and the glass phase mixed in with it is the insulator that binds the film and gives it its stability. The paste is screen-printed onto a substrate and fused at about 850 C. Ruthenium's scarcity has been a persistent cost driver for cermet resistors.",
       "kind": "material",
       "category": "metals",
+      "subcat": "precious-special",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "complete",
@@ -1874,6 +1934,7 @@
       "description": "Ruthenium occurs almost only as a minor by-product in platinum and nickel ores (Merensky Reef, Sudbury, Norilsk) rather than in a ruthenium ore of its own. It reaches the resistor paste as ammonium ruthenium chloride after a complex refining sequence.",
       "kind": "material",
       "category": "metals",
+      "subcat": "precious-special",
       "era": "ancient",
       "sources": [
         "https://en.wikipedia.org/wiki/Ruthenium"
@@ -1895,7 +1956,8 @@
       "simple_name": "Merensky Reef sulphide ores",
       "description": "Ruthenium and the other platinum-group metals have no ore of their own. They occur at a few parts per million in the Merensky Reef of the Bushveld Complex and in the Sudbury and Norilsk nickel-copper sulphide ores, so the resistor industry bought ruthenium as a refinery by-product at platinum-group prices.",
       "kind": "material",
-      "category": "passives",
+      "category": "metals",
+      "subcat": "precious-special",
       "era": "ancient",
       "sources": [
         "https://en.wikipedia.org/wiki/Merensky_Reef"
@@ -1917,7 +1979,8 @@
       "simple_name": "Talc and soapstone",
       "description": "Steatite is a mixture of talc with clay. Talc is mined from metamorphosed dolomitic rock and is one of the few minerals still worked in a form close to its natural state.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "clays-abrasives",
       "era": "ancient",
       "sources": [
         "https://en.wikipedia.org/wiki/Talc"
@@ -1932,7 +1995,8 @@
       "simple_name": "Diluent clay",
       "description": "A much higher clay fraction than in the film slurry, because a composition resistor has to be a weak conductor in bulk. Kaolin was the traditional diluent, the same mineral as in the film mix.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "clays-abrasives",
       "era": "ancient",
       "confidence": "high",
       "sources": [
@@ -1953,7 +2017,8 @@
       "simple_name": "Channel/process carbon black",
       "description": "Furnace black made by atomising heavy residual oil into a hot gas stream in a refractory-lined closed reactor, collected continuously through bag filters. Furnace black from petroleum feedstock was the standard conductive phase in resistors by the 1980s.",
       "kind": "material",
-      "category": "passives",
+      "category": "petrochem",
+      "subcat": "fuels-carbon",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "incomplete",
@@ -1981,7 +2046,8 @@
       "simple_name": "Kaolin (china clay) diluent",
       "description": "Hydrated aluminium silicate, crushed and classified to a fine particle size. It is inert and non-conducting, so raising its share raises the sheet resistance of the dried film.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "clays-abrasives",
       "era": "ancient",
       "confidence": "medium",
       "note": "The kaolinite mineral is metal.bauxite.kaolinite and its feldspar parent is facility.electricity.feldspar. Both are linked here by id.",
@@ -1999,7 +2065,8 @@
       "simple_name": "Phenolic binder resin",
       "description": "Phenol-formaldehyde, dissolved in alcohol, holds carbon and clay to the tube and survives the 260 C cure. Cured phenolic also serves as the resistor's opaque body coating, which protects the film from humidity.",
       "kind": "material",
-      "category": "plastics",
+      "category": "polymers",
+      "subcat": "thermosets",
       "era": "1982-1984",
       "sources": [
         "https://en.wikipedia.org/wiki/Phenolic_resin",
@@ -2023,7 +2090,8 @@
       "simple_name": "Para-xylene",
       "description": "Paraxylene sits in the aromatics complex of a large refinery, separated from a mixed xylene fraction by fractional distillation and adsorption. It is the pivot molecule of the entire polyester industry: 1982 saw PET moving from bottle-grade into film, fibre and capacitor dielectric at once.",
       "kind": "material",
-      "category": "passives",
+      "category": "petrochem",
+      "subcat": "monomers",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "incomplete",
@@ -2036,12 +2104,12 @@
       "inputs": [],
       "note": "Not established: the Urex and Parex adsorption processes, the aromatics-complex location, and the 1982 shift of PET from bottle grade into film and capacitor dielectric. No document consulted covers paraxylene production.",
       "edges": [
-  {
-    "to": "chem.petroleum",
-    "rel": "made from",
-    "basis": "documented"
-  }
-]
+        {
+          "to": "chem.petroleum",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "mb.passives.caps.ceramic-disc.press-sinter.body": {
       "id": "mb.passives.caps.ceramic-disc.press-sinter.body",
@@ -2050,6 +2118,7 @@
       "description": "The ceramic body of a high-K disc is a modified barium titanate with a glass phase, on an alumina or steatite base. The dielectric-strength figure of about 2.5 kV per micron of effective thickness is a design guideline for the ceramic, not for the finished part.",
       "kind": "material",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
@@ -2066,14 +2135,14 @@
         }
       ]
     },
-    
     "mb.passives.caps.tantalum.packaging.seal.bisphenol-a": {
       "id": "mb.passives.caps.tantalum.packaging.seal.bisphenol-a",
       "name": "Epoxy resin and bisphenol A",
       "simple_name": "Epoxy resin and bisphenol A",
       "description": "The standard epoxy of the period: bisphenol A condensed with epichlorohydrin, cured with an amine. Both halves are petrochemical, and bisphenol A was the dominant resin for adhesive, coating, printed-board and capacitor sealants alike.",
       "kind": "material",
-      "category": "plastics",
+      "category": "polymers",
+      "subcat": "thermosets",
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
@@ -2091,7 +2160,8 @@
       "simple_name": "Manganese chloride",
       "description": "MnCl2 is vapour-decomposed on the hot tantalum surface in a furnace at several hundred degrees, leaving a conformal MnO2 layer that acts as the solid counter-electrode. The chloride is shipped as a hydrate and is hygroscopic, so it had to be kept dry.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "acids-salts",
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
@@ -2109,7 +2179,8 @@
       "simple_name": "Base-metal nickel paste",
       "description": "The internal electrode paste: finely divided nickel in a glass frit and an organic vehicle, screen-printed onto the green sheet and co-fired with the ceramic. Nickel was chosen over silver for cost and over palladium for cost, and it is what let a 0.1 uF 50 V bypass capacitor be sold for a fraction of a cent.",
       "kind": "material",
-      "category": "passives",
+      "category": "metals",
+      "subcat": "nonferrous",
       "era": "1982-1984",
       "confidence": "medium",
       "note": "Screen-printing a metal paste that co-fires with the ceramic is documented, and nickel is documented as one of the cheaper base metals later used for internal electrodes. Not established: the sub-micron to 1 um particle size, the low-pO2 co-fire specifically for a nickel electrode, and that nickel was already the dominant 1982 internal electrode. It is the source dates that change to 1993.",
@@ -2135,7 +2206,8 @@
       "simple_name": "Rare-earth dopant oxides",
       "description": "Lanthanum, dysprosium and yttrium oxides, ground and sieved to sub-micron, are the donor dopants that set the temperature coefficient of an X7R dielectric. The sub-micron sieve is the whole difficulty: a barium titanate powder wants its additives soluble or finely dispersed so that no second phase forms, and an oxide bought at the separation plant's standard grade arrives as lumps. These are the most expensive few grams on the bill of materials and they were bought by the kilogram, not the tonne, so the MLCC maker was dependent on the same two plants as the television maker for the same handful of elements.",
       "kind": "material",
-      "category": "passives",
+      "category": "metals",
+      "subcat": "precious-special",
       "era": "ancient",
       "inputs": [],
       "facts": [
@@ -2167,7 +2239,8 @@
       "simple_name": "Titanium dioxide (TiO2) feed",
       "description": "Ceramic-grade TiO2, made by chlorinating ilmenite or rutile to TiCl4 and re-oxidising, or by sulphuric acid digestion. Low-iron pigment-grade material is used so the fired ceramic has good insulation resistance.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "ceramics-refractory",
       "era": "1982-1984",
       "confidence": "medium",
       "note": "Barium titanate is documented as made by heating barium carbonate and titanium dioxide, so TiO2 is confirmed as a feed. Not established: the chlorination of ilmenite or rutile to TiCl4 and re-oxidation, the sulphuric acid route, low-iron pigment grade for insulation resistance, and the 1982 ilmenite supply geography.",
@@ -2186,6 +2259,7 @@
       "description": "The whole array is coated in an epoxy loaded with fine glass or silica, which both seals the tracks and gives the package its mechanical rigidity. The colour body is the colourant in that coat.",
       "kind": "material",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "incomplete",
@@ -2198,7 +2272,8 @@
       "simple_name": "Nd:YAG laser crystal",
       "description": "Neodymium:yttrium-aluminium-garnet was the standard solid-state laser for resistor trimming: a garnet crystal doped with neodymium, pumped optically and emitting at 1.06 microns. The yttrium-aluminium-garnet host is grown from alumina and yttrium oxide.",
       "kind": "material",
-      "category": "passives",
+      "category": "industry",
+      "subcat": "plant-tooling",
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
@@ -2219,7 +2294,8 @@
       "simple_name": "Atomised silver powder",
       "description": "The conductor paste is fine silver flake or powder, not a bulk metal: it has to print as a paste and then fuse into a continuous conductor at 850 C without melting. Domestically mined silver was almost entirely gone by 1982. The metal was bought on the London spot market.",
       "kind": "material",
-      "category": "passives",
+      "category": "metals",
+      "subcat": "precious-special",
       "era": "1982-1984",
       "confidence": "medium",
       "note": "Mined silver was economically a by-product metal by the 1980s, with Mexico, Peru, the US and Canada still significant districts. Metal.silver.ingot carries the refining side.",
@@ -2247,7 +2323,8 @@
       "simple_name": "Foil metal",
       "description": "Pure nickel or a nickel-iron-chromium alloy, chosen for a low temperature coefficient of resistivity and for its mechanical stability under tension.",
       "kind": "material",
-      "category": "passives",
+      "category": "metals",
+      "subcat": "nonferrous",
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
@@ -2271,6 +2348,7 @@
       "description": "Wrought nickel-chromium resistance alloy, melt-cast and rolled to strip for etching into precision foil resistors: typically 80 Ni / 20 Cr, resistivity around 1.1 uohm-m, with a protective chromium-oxide skin. It is bulk strip stock, not evaporated film: its low temperature coefficient and creep strength survive rolling and etching into the resistive element.",
       "kind": "material",
       "category": "metals",
+      "subcat": "nonferrous",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -2316,6 +2394,7 @@
       "description": "Offset printing inks cured onto the epoxy body. The ink is a pigment in an oil and resin vehicle fired at a few hundred degrees so it will not rub off or solvent-attack during board cleaning.",
       "kind": "material",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "high",
       "provenance": "incomplete",
@@ -2332,6 +2411,7 @@
       "description": "The axial lead is drawn copper wire, cut to length, tinned in a molten tin or tin-lead pot so the resistor dips cleanly in the wave-solder bath. Tinning is what stops the bare copper wire from oxidising between the barrel plating step and the board.",
       "kind": "material",
       "category": "metals",
+      "subcat": "nonferrous",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -2359,7 +2439,8 @@
       "simple_name": "Metallised polyester film",
       "description": "PET pellets are extruded into a cast film, then stretched fast in two perpendicular directions to several times their original length, orienting the polymer chains. That gives a very thin, very uniform, high-tensile dielectric. Then a sub-micron metal layer is vacuum-deposited on one or both faces and the metallised film is wound on a core. No separate foil is used. The electrode IS the deposited layer.",
       "kind": "process",
-      "category": "passives",
+      "category": "polymers",
+      "subcat": "film-fibre",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -2384,7 +2465,8 @@
           "simple_name": "PET polymerisation",
           "description": "The film base is polyethylene terephthalate, made by condensing bis(2-hydroxyethyl) terephthalate (itself from ethylene glycol and terephthalic acid) in a melt polymeriser at ~250-290 C under vacuum. The terephthalic acid came from paraxylene, which came from the aromatics fraction of a steam cracker or a catalytic reformer.",
           "kind": "process",
-          "category": "passives",
+          "category": "polymers",
+          "subcat": "thermoplastics",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -2434,7 +2516,8 @@
       "simple_name": "Styrene polymerisation",
       "description": "Free-radical or ionic polymerisation of styrene, in bulk suspension or emulsion, gives the amorphous thermoplastic. Unmodified polystyrene is brittle and has poor moisture resistance, which is precisely why metalised polystyrene was restricted to sealed precision parts and lost out to polypropylene.",
       "kind": "process",
-      "category": "passives",
+      "category": "polymers",
+      "subcat": "thermoplastics",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -2462,19 +2545,20 @@
       "simple_name": "Vacuum metallisation of PS film",
       "description": "The same vacuum-deposited aluminium electrode as on the polyester film, but on a more delicate substrate: polystyrene outgasses and embrittles under vacuum heat, so the film has to be baked and the deposition kept cool.",
       "kind": "process",
-      "category": "passives",
+      "category": "polymers",
+      "subcat": "film-fibre",
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
       "note": "Not established: vacuum-deposited aluminium electrodes on polystyrene film for these parts, polystyrene outgassing and embrittlement under vacuum heat, and the bake plus cool-deposition remedy.",
       "provenance": "incomplete",
       "edges": [
-  {
-    "to": "metal.aluminum.ingot",
-    "rel": "consumes",
-    "basis": "inferred"
-  }
-]
+        {
+          "to": "metal.aluminum.ingot",
+          "rel": "consumes",
+          "basis": "inferred"
+        }
+      ]
     },
     "mb.passives.caps.ceramic-disc.press-sinter": {
       "id": "mb.passives.caps.ceramic-disc.press-sinter",
@@ -2483,6 +2567,7 @@
       "description": "BaTiO3 powder is pressed into a disc, sintered at 1200-1300 C, then silver electrode paste is screen-printed onto each face and fired at 700-850 C so the silver is glass-bonded to the ceramic. Only two electrodes exist, so the part cannot cancel its own inductance. The structural reason a disc is useless at radio frequencies and a multilayer is not.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -2508,7 +2593,8 @@
           "simple_name": "Disc press and sinter",
           "description": "A mechanical or hydraulic press blanks the disc to a controlled thickness. The sinter then densifies it and fires on the silver electrodes.",
           "kind": "tool",
-          "category": "passives",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -2553,6 +2639,7 @@
       "description": "The sintered anode is anodised to grow the Ta2O5 dielectric, then coated with manganese dioxide by pyrolysing manganese nitrate: the pellet is dipped into an aqueous nitrate solution and baked at about 250 C to leave the dioxide coat. It is the classic 1980s solid tantalum part. A sintered silver-paste counter-electrode existed as an alternative construction. Today's conductive-polymer tantalum is a late-1990s development. The anode is anodised at a voltage above its rated working voltage, usually by a factor of 1.5-2, to build a defect-free oxide. The rated voltage of the part is set by that formation step and cannot be adjusted afterwards.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -2582,6 +2669,7 @@
           "description": "Below the manganese dioxide sits the original tantalum anode body and its second termination. The layer stack is metal, dielectric, counter-electrode, then a conductive path to the case. It is all inside an epoxy dip.",
           "kind": "part",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1982-1984",
           "confidence": "medium",
           "inputs": [],
@@ -2620,6 +2708,7 @@
       "description": "The anode lead is drawn tantalum wire, spot-welded to the sintered pellet, then the assembly is sealed by an epoxy dip. On wet-slug types the hermetic case is glass or a welded metal can with a Teflon ring seal. The part is then marked with its value, rating and the manufacturer.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "facts": [
@@ -2647,6 +2736,7 @@
           "description": "Solid tantalum parts were sealed by dipping in epoxy and curing, which protects the brittle MnO2/dielectric stack against handling and moisture. Wet-slug parts instead used a welded metal can with a glass or Teflon seal.",
           "kind": "process",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1982-1984",
           "confidence": "high",
           "provenance": "complete",
@@ -2680,6 +2770,7 @@
       "description": "Because tantalum metal is expensive, tantalum-bearing scrap (rejected capacitors, anode dust, trimmed pellet scrap) was recovered and returned to the powder supply. This is why a 1983-84 shortage hit prices so hard: recycled powder could not be substituted for virgin powder in a dielectric that had to be defect-free.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "incomplete",
@@ -2692,7 +2783,6 @@
         }
       ]
     },
-    
     "mb.passives.caps.tantalum.anode.press": {
       "id": "mb.passives.caps.tantalum.anode.press",
       "name": "Anode pressing and sintering",
@@ -2700,6 +2790,7 @@
       "description": "Powder is blended with a binder and pressed around the wire, then debound and sintered in vacuum or flowing hydrogen at 1200-1400 C. The pressed pellet is deliberately porous (roughly half its volume is void) because that void is where the dielectric forms.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "complete",
@@ -2732,6 +2823,7 @@
       "description": "Anode foil, separator and cathode foil are wound together on a rotating mandrel into a compact roll. Electrolyte is then vacuum- or pressure-impregnated into the wound roll, filling every pore and pushing out air, which is what finally gives the part its capacitance.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "high",
       "sources": [
@@ -2758,7 +2850,8 @@
           "simple_name": "Winding mandrel",
           "description": "A polished steel mandrel, often Teflon-coated, on which the foil sandwich is wound. Mandrel diameter and surface finish are set by the smallest foil thickness so the finished pack can be released without creasing.",
           "kind": "part",
-          "category": "passives",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -2789,6 +2882,7 @@
       "description": "Aluminium or tinned-copper alloy terminal tabs are crimped onto the anode and cathode edges of the wound pack. The pack is then sleeved (PVC heat-shrink or a printed cardboard outer) and sealed at the end with a rubber or PVC bung that retains the electrolyte against its expansion over temperature. The paper and foil layers you see when you cut one open are the winding itself.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "high",
       "sources": [
@@ -2819,6 +2913,7 @@
           "description": "A rubber or PVC disc that fills the end of the sleeve and retains the electrolyte against thermal expansion and the internal pressure generated during burn-in. It is the visible rubber disc at the base of a radial electrolytic.",
           "kind": "part",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1982-1984",
           "confidence": "high",
           "sources": [
@@ -2840,6 +2935,7 @@
           "description": "A soft aluminium or aluminium-alloy tab, crimped onto the foil edge. Pure aluminium is used because it is the only metal that will not form a galvanic or resistive joint with the foil it must touch.",
           "kind": "part",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -2856,12 +2952,12 @@
           "inputs": [],
           "note": "Terminal welding to lead-out terminals during winding is documented. Not established: crimping, and the claim that pure aluminium is used because it will not form a galvanic or resistive joint with the foil, or the iron and silicon limits of a few tenths of a per cent.",
           "edges": [
-  {
-    "to": "metal.aluminum.ingot",
-    "rel": "made of",
-    "basis": "inferred"
-  }
-]
+            {
+              "to": "metal.aluminum.ingot",
+              "rel": "made of",
+              "basis": "inferred"
+            }
+          ]
         }
       ],
       "edges": [
@@ -2882,6 +2978,7 @@
       "description": "Finished parts are held at an elevated temperature under DC bias so the oxide re-thickens and the leakage current settles: typically 1-2x the rated voltage at 85-125 C for hours to days. A 1980s capacitor therefore arrives already partly formed, which is why an electrolytic recovered from a two-year-old Commodore machine often measures better than a brand-new one.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "facts": [
@@ -2902,7 +2999,8 @@
           "simple_name": "Burn-in chamber",
           "description": "A temperature-controlled rack of trays in which finished parts are held at temperature and bias. A good capacitor plant in 1982 might burn in for hours or days, which is why vintage electrolytics so often arrive already formed.",
           "kind": "tool",
-          "category": "passives",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "complete",
@@ -2924,6 +3022,7 @@
           "description": "Parts are tested for capacitance, dissipation factor and leakage at rated temperature. Rejection rates in a commodity 10 uF 25 V part were small but non-zero, and every rejected part was a loss of scrap aluminium. A bridge or LCR meter at rated frequency and temperature gives capacitance and dissipation factor, and a DC bias step gives leakage. Rejection on leakage is what catches a pinhole in the oxide, the classic failure mode of a fresh electrolytic.",
           "kind": "process",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1982-1984",
           "confidence": "medium",
           "inputs": [],
@@ -2952,6 +3051,7 @@
       "description": "High-purity aluminium rolled to a few tens of microns, often lightly etched, slit into ribbons for the winding. It uses the same aluminium as the anode but a looser specification, because no dielectric quality depends on it.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "high",
       "provenance": "complete",
@@ -2982,6 +3082,7 @@
       "description": "The etched foil is made the anode in a phosphoric or boric acid bath at 90-200 V DC, growing a barrier-type aluminium oxide layer tens of nanometres thick. The rated working voltage of the finished capacitor is just the voltage the oxide can hold, so higher ratings need a thicker oxide and hence less capacitance for the same area.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "complete",
@@ -3023,6 +3124,7 @@
       "description": "Rolled foil offcuts, edge trim and rejected capacitor-grade foil were re-smelted in a holding furnace and re-rolled into fresh anode foil rather than going back to the general scrap stream. The other half of the loop is primary metal: alumina from bauxite, smelted in a Hall-Heroult cell by dissolving it in molten cryolite and electrolytising at 950-970 C to 99.7 % pure cathodes. That closed loop is why capacitor makers were in effect recycling their own aluminium, and why an aluminium price move showed up in 1982 capacitor prices with a lag.",
       "kind": "process",
       "category": "metals",
+      "subcat": "nonferrous",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "complete",
@@ -3069,6 +3171,7 @@
       "description": "The slip is doctor-bladed onto a moving polyester carrier film to a controlled dry thickness. This single step sets the eventual capacitance density, because capacitance is dielectric thickness divided by the number of electrode layers stacked.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -3093,19 +3196,20 @@
           "simple_name": "Moving carrier belt",
           "description": "The green sheet is carried on a continuous polyester belt and dried in a short oven as the doctor blade lays it down, so the green thickness is set by blade clearance against a moving web rather than by a single-shot cast.",
           "kind": "tool",
-          "category": "passives",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
           "inputs": [],
           "note": "Not established: the continuous polyester carrier belt and the short in-line drying oven. No document consulted describes the tape-casting line layout.",
           "edges": [
-  {
-    "to": "chem.polyester.pet.film",
-    "rel": "contains",
-    "basis": "typical-1982"
-  }
-]
+            {
+              "to": "chem.polyester.pet.film",
+              "rel": "contains",
+              "basis": "typical-1982"
+            }
+          ]
         },
         {
           "id": "mb.passives.caps.mlcc.tape-cast.doctor-blade",
@@ -3113,7 +3217,8 @@
           "simple_name": "Doctor blade",
           "description": "A precisely-ground steel or ceramic blade with a controlled edge angle, set to micrometres over the belt. The single most important tool in MLCC making: it sets layer thickness and therefore capacitance density.",
           "kind": "tool",
-          "category": "passives",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -3146,6 +3251,7 @@
       "description": "The printed green sheets are stacked offset so every sheet's electrode lands alternately on the two opposed faces, then compressed in a hydraulic laminator and the organic binder burned out slowly. The result is a monolithic bar of hundreds of ceramic layers with the electrodes sealed inside.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -3175,7 +3281,8 @@
           "simple_name": "Hydraulic laminator",
           "description": "A heated hydraulic press that stacks and consolidates hundreds of sheets at once, aligned by registration pins. This is the step that turns a pile of loose printed film into one solid bar.",
           "kind": "tool",
-          "category": "passives",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -3207,6 +3314,7 @@
       "description": "After firing, the two exposed end faces are terminated with a conducting band that collects current from the hundreds of buried electrodes. In 1982 this was a fired-on or sputtered nickel layer with a solderable silver or tin outer layer, or a simple dipped solder band. The C64 boards were wave-soldered in tin-lead, so the termination had to wet 63/37 solder.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "complete",
@@ -3244,6 +3352,7 @@
       "description": "After alignment a drop of epoxy is flowed over the adjuster so the setting cannot drift in service. On a machine with no calibration facility this trimmer is effectively a one-time factory adjustment for forty years. It is a deliberate, destructive lock: once the trim is set on the factory line that trimmer is not adjustable again.",
       "kind": "process",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "incomplete",
@@ -3264,6 +3373,7 @@
       "description": "An excimer or Nd:YAG laser ablates slots in each printed resistor until a closed-loop bridge calls out the right value. Bulk trimming can be 'slug' or 'v-cut' (pushing a wedge of resistive material aside) rather than ablating material away.",
       "kind": "process",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -3288,7 +3398,8 @@
           "simple_name": "Laser trimming system",
           "description": "A pulsed laser head over a moving substrate with an in-line ohmmeter, cutting and re-measuring thousands of times per second. Excimer lasers were used for fine-resolution cuts on thick films.",
           "kind": "tool",
-          "category": "passives",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -3320,7 +3431,8 @@
       "simple_name": "Epoxy potting and marking",
       "description": "The trimmed network is coated in a fire-resistant epoxy or phenolic varnish that also carries the colour code. It is here a small white dot or body colour denoting the resistance. Glass-filled epoxy was the standard SIP encapsulant.",
       "kind": "process",
-      "category": "plastics",
+      "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [
@@ -3334,6 +3446,7 @@
           "description": "The array's leads are formed from a copper-alloy lead frame, plated in tin or solder, so the package can be inserted on a 2.54 mm pitch and wave-soldered.",
           "kind": "part",
           "category": "passives",
+          "subcat": "resistors",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -3365,6 +3478,7 @@
       "description": "A base-metal paste of finely divided silver or copper in a glass frit, screen-printed and fired at ~850 C to form the end lands, jumpers and common bus the resistive tracks connect to. Silver-palladium pastes were common in this era. Copper pastes needed a nitrogen atmosphere to avoid oxidising.",
       "kind": "process",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "incomplete",
@@ -3406,6 +3520,7 @@
       "description": "A strip of pure or alloy foil is rolled to a very tight radius on a mandrel and acid-etched to remove most of it, leaving fine islands of metal in series across the roll. The number of islands, not the sheet resistivity, sets the resistance.",
       "kind": "process",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "facts": [
@@ -3425,6 +3540,7 @@
           "description": "The rolled foil is immersed in a ferric-nitrate or nitric-acid etch that removes most of it, leaving a fine grid of metal islands. Resistance is then set by the number of islands in the path, which is why foil resistors have their characteristic very high, very stable resistance values.",
           "kind": "process",
           "category": "passives",
+          "subcat": "resistors",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -3466,6 +3582,7 @@
       "description": "The wound wire is coated in a glassy enamel and baked, which is why wirewounds are glassy-bodied. Continuous operation above about 200 C needs cement or silicone instead.",
       "kind": "process",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "incomplete",
@@ -3482,6 +3599,7 @@
       "description": "A pulsed ruby or Nd:YAG laser ablates a thin groove across the film, lengthening the resistive path. A closed-loop measuring bridge runs thousands of cuts per second until the value converges. This (not a mechanical wheel) is what buys the 0.1-1 percent tolerance.",
       "kind": "process",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -3517,7 +3635,8 @@
       "simple_name": "Compression moulding",
       "description": "The mix is pressed in a matched-metal die at tens of tonnes to fill a slug shaped like a small pill, then baked. End caps of tin or brass are pressed on after cure.",
       "kind": "process",
-      "category": "plastics",
+      "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "facts": [
@@ -3534,7 +3653,8 @@
           "simple_name": "Matched metal die",
           "description": "A matched-metal compression die with a cavity shaped like the finished slug. The cavity is chrome plated to survive the abrasive mix and the pressure.",
           "kind": "tool",
-          "category": "passives",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -3569,6 +3689,7 @@
       "description": "A lead is pushed down each end of the tube through the carbon film, and the assembly is barrel-plated in an electroless or electrolytic nickel bath so the film and lead make a low-resistance, solderable joint. In 1982 this was almost always nickel, sometimes with a thin silver flash.",
       "kind": "process",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [
@@ -3581,7 +3702,8 @@
           "simple_name": "Electroplating line",
           "description": "Racks of resistors are plated in a barrel or belt line, then rinsed and dried. Plate thickness is the mechanical anchor that stops the lead being pulled out.",
           "kind": "tool",
-          "category": "passives",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -3610,6 +3732,7 @@
           "description": "The lead and film are plated in a sulfamate or a Watts-type nickel bath. A sulfonamide-derived depolarising agent suppresses hydrogen evolution, so the deposit is ductile and the lead does not become brittle, which matters because a brittle lead snaps inside the resistor.",
           "kind": "process",
           "category": "passives",
+          "subcat": "resistors",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -3656,6 +3779,7 @@
       "description": "A diamond wheel cuts a narrow slot through the film from the end of the tube, lengthening the resistive path a few micrometres at a time until the measured resistance hits the middle of the tolerance band. This is why carbon film resistors are called 'film' and why their tolerance is fixed after firing rather than before.",
       "kind": "process",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "high",
       "sources": [
@@ -3679,7 +3803,8 @@
           "simple_name": "Abrasive cut-off wheel",
           "description": "A thin abrasive wheel, run at tens of thousands of revolutions per minute, cuts a slot through the film. Each pass lengthens the resistive path slightly. A few passes reach value.",
           "kind": "tool",
-          "category": "passives",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982-1984",
           "confidence": "medium",
           "inputs": [
@@ -3704,6 +3829,7 @@
       "description": "The value and tolerance rings are printed on the epoxy body by an offset (rotogravure / dry-offset) coater using inks fired onto the surface. Three bands give significant figures, one multiplier, one tolerance. A 5 percent part gets a gold band. 1 percent gets brown.",
       "kind": "process",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "high",
       "provenance": "complete",
@@ -3741,7 +3867,8 @@
       "simple_name": "Epoxy body moulding",
       "description": "The resistor is placed in a transfer tool and encapsulated in epoxy resin cured at ~150-175 C for several minutes. Epoxy is chosen because it shrinks little and does not stress the film on cooling.",
       "kind": "process",
-      "category": "plastics",
+      "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "incomplete",
@@ -3768,6 +3895,7 @@
       "description": "Plasticised alumina is extruded through a die to a tube, cut to length on a flying saw, and fired in a tunnel kiln. Density is controlled so the film sees a reproducible surface.",
       "kind": "process",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "incomplete",
@@ -3801,7 +3929,8 @@
       "simple_name": "Refractory kiln furniture",
       "description": "Alumina setters and shelves carrying the fired substrates through the kiln, themselves made from tabular alumina. Furnace furniture consumption is a real cost line in ceramics, and it comes from the same alumina as the substrate.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "ceramics-refractory",
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
@@ -3819,7 +3948,8 @@
       "simple_name": "Aluminium oxide abrasive",
       "description": "The standard grinding abrasive of the era, made by calcining alumina. Synthetic diamond was used only where the cut had to be finer.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "clays-abrasives",
       "era": "1982-1984",
       "confidence": "medium",
       "inputs": [],
@@ -3837,7 +3967,8 @@
       "simple_name": "Heat/cement, ruby splitting",
       "description": "A mica book is mounted on a hot plate. A hot blade of mica is pressed onto it with a cement stick, which drives a wedge along the perfect basal cleavage and peels off a sheet a few microns thick. Repeated, it yields hundreds of optically flat sheets from one crystal, and it is the labour-intensive step that made mica capacitors expensive.",
       "kind": "process",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "clays-abrasives",
       "era": "1982-1984",
       "sources": [
         "https://en.wikipedia.org/wiki/Mica"
@@ -3862,7 +3993,8 @@
           "simple_name": "Hot knife and cement stick",
           "description": "A heated mica blade driven by a cement stick along the cleavage plane. The blade has to be hot enough to part the sheets without charring the cement, and both blade and stick are specialist consumables of the splitting trade.",
           "kind": "tool",
-          "category": "passives",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -3886,7 +4018,8 @@
       "simple_name": "Glycol-ether solvent",
       "description": "Ethylene glycol and the glycol ethers used as high-voltage capacitor solvents were derived from ethylene oxide, itself made by oxidising ethylene from a steam cracker. They replaced the glycol-ester electrolytes of the 1950s because they dissolve the anode oxide without attacking it.",
       "kind": "process",
-      "category": "passives",
+      "category": "petrochem",
+      "subcat": "monomers",
       "era": "1982-1984",
       "confidence": "medium",
       "facts": [
@@ -3903,7 +4036,8 @@
           "simple_name": "Ethylene oxide feedstock",
           "description": "Ethylene oxide is made by direct oxidation of ethylene over a silver or chromite catalyst, then reacts with an alcohol to give the glycol ether. The solvent chemistry of an aluminium electrolytic is therefore set two or three steps downstream of a steam cracker.",
           "kind": "process",
-          "category": "passives",
+          "category": "petrochem",
+          "subcat": "monomers",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -3937,7 +4071,8 @@
       "simple_name": "Solid-state BaTiO3 synthesis",
       "description": "Barium carbonate and titanium dioxide are ball-milled with the dopants in water to a homogeneous slurry, then calcined in a kiln at about 1050-1200 C. The carbonate decomposes and the perovskite BaTiO3 crystallises. The mass is reground and wet-milled with a dispersant down to the target particle size.",
       "kind": "process",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "ceramics-refractory",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "complete",
@@ -3992,7 +4127,8 @@
       "simple_name": "Donor / acceptor doping",
       "description": "Trivalent donor dopants (La2O3, Dy2O3, Y2O3) or pentavalent acceptors (Nb2O5, Ta2O5, Sb2O5) are added during calcination. Donors leave the ceramic 'depleted' so the grains sit uniformly in the paraelectric phase at room temperature, which gives the stable, moderate-loss X7R curve. Acceptor dopants raise the Curie point so the material stays ferroelectric and gives a much higher, more temperature-sensitive Z5U.",
       "kind": "process",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "ceramics-refractory",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "complete",
@@ -4012,6 +4148,7 @@
       "description": "The blanks go through a continuous belt or pusher kiln under a controlled low oxygen partial pressure, so the ceramic sinters dense and hermetic while the nickel internal electrodes are not oxidised away. Density matters enormously: a porous body lets moisture attack the electrode stack and destroys the insulation resistance. The atmosphere is a forming gas or nitrogen with an oxygen partial pressure held just low enough that nickel does not oxidise and high enough that the organic binder burns off cleanly. Getting that window right is the hardest part of base-metal MLCC manufacture.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -4043,7 +4180,8 @@
           "simple_name": "Kiln heating elements",
           "description": "Silicon-carbide or nichrome elements in a continuous belt kiln held at ~1300 C for hours. Long soaks at high temperature are what drive the ceramic to theoretical density.",
           "kind": "part",
-          "category": "passives",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -4066,6 +4204,7 @@
       "description": "A stainless-steel mesh stretched over a frame, coated in photosensitive emulsion, contact-exposed through a film or direct-imaged artwork, developed, and then the paste squeegeed through the open areas onto the substrate. Line width is the resistance knob. Thixotropy is essential to the paste: it must flow under the squeegee and then stand without slumping, or the printed line blurs and the resistance drifts off value, and it comes from the shape of the glass frit particles.",
       "kind": "process",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -4089,7 +4228,8 @@
           "simple_name": "Stainless steel mesh",
           "description": "The printing screen is a woven stainless-steel or nylon mesh stretched over a frame and photo-imaged. Stainless was standard because it must survive repeated abrasion by the abrasive paste in the paste.",
           "kind": "tool",
-          "category": "passives",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -4120,6 +4260,7 @@
       "description": "A continuous belt or pusher kiln takes the printed substrate through a controlled temperature ramp so the resistors are 'aged' in the firing. Thick-film resistors are typically driven 50 percent above their rating for 15-25 minutes to burn in the grain boundaries and stabilise the value.",
       "kind": "process",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1982-1984",
       "confidence": "medium",
       "sources": [
@@ -4145,7 +4286,8 @@
           "simple_name": "Continuous kiln",
           "description": "A belt or pusher kiln with profiled hot zones, carrying the printed bar through drying, burnout, peak and controlled cooling. The cooling rate matters as much as the peak, because too fast a cool micro-cracks the glass.",
           "kind": "tool",
-          "category": "passives",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -4176,7 +4318,8 @@
       "simple_name": "Case, die and tension screw",
       "description": "The foil roll is sandwiched between a hardened case and a polished die with a slight bow. Turning the adjustment screw changes the roll's circumference, stretching the foil and raising the resistance by a controlled fraction of a part per million.",
       "kind": "tool",
-      "category": "passives",
+      "category": "industry",
+      "subcat": "plant-tooling",
       "era": "1982-1984",
       "confidence": "medium",
       "note": "The polished die was lapped on cast iron with progressively finer abrasive. A diamond paste finish gives sub-micron flatness.",
@@ -4203,7 +4346,8 @@
       "simple_name": "Vacuum deposition bell",
       "description": "Parts are racked in a vacuum chamber and the resistive film is deposited over the resistive area only, defined by a mask. The documented method for thin film resistors is sputtering. Metal film resistors are usually nickel chromium, deposited by vacuum techniques of which sputtering is one. That vacuum deposition was standard for axial resistors in 1982 is reasonable but the exclusion of sputtering is not supported.",
       "kind": "tool",
-      "category": "passives",
+      "category": "industry",
+      "subcat": "plant-tooling",
       "era": "1982-1984",
       "confidence": "low",
       "provenance": "incomplete",
@@ -4239,7 +4383,8 @@
       "simple_name": "Carbon black furnace",
       "description": "A refractory-lined combustion chamber with a ~1500 C flame and water-cooled steel scraper blades. Feed oil is sprayed across the flame. The resulting soot is scraped off as a mat and pelletised.",
       "kind": "tool",
-      "category": "passives",
+      "category": "industry",
+      "subcat": "plant-tooling",
       "era": "1982-1984",
       "sources": [
         "https://en.wikipedia.org/wiki/Carbon_black",
@@ -4278,7 +4423,8 @@
       "simple_name": "Wrap, sleeving, marking",
       "description": "Not a separate component but the packaging shared across the capacitor families: dipped epoxy for ceramic disc and monolithic parts, printed PVC or polyester sleeving for film caps, cardboard or aluminium sleeves for electrolytics, and printed value/brand markings on all of them.",
       "kind": "process",
-      "category": "packaging",
+      "category": "industry",
+      "subcat": "paper-print-pack",
       "era": "1982-1984",
       "confidence": "medium",
       "note": "The film and foil wrap is covered here for the ceramic and film parts, and under alu-electrolytic.assembly for the electrolytics.",
@@ -4294,6 +4440,7 @@
           "description": "Ceramic and monolithic parts were dip-coated in epoxy or PVC after firing to seal the porous body and to carry the printed marking. A dipped part looks identical to a moulded one, which is why it is hard to tell from a photograph whether a given C64 ceramic is disc or monolithic.",
           "kind": "process",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1982-1984",
           "confidence": "high",
           "sources": [
@@ -4310,7 +4457,8 @@
               "simple_name": "Dip-coating line",
               "description": "Parts on a wire rack are dipped in an epoxy or PVC solution and withdrawn so the coating tapers at both ends, leaving a characteristic tapered shoulder at the lead exit. A second dip gives the second shoulder.",
               "kind": "tool",
-              "category": "passives",
+              "category": "industry",
+              "subcat": "plant-tooling",
               "era": "1982-1984",
               "confidence": "medium",
               "provenance": "incomplete",
@@ -4333,7 +4481,8 @@
           "simple_name": "Printed PVC sleeve",
           "description": "Film capacitors arrived in a printed plastic sleeve printed with the value, the rating and the maker. Sleeve polymer is the same PVC family as the case and the cable jacket.",
           "kind": "part",
-          "category": "plastics",
+          "category": "polymers",
+          "subcat": "thermoplastics",
           "era": "1982-1984",
           "confidence": "medium",
           "inputs": [],
@@ -4361,6 +4510,7 @@
       "description": "Values were printed on the sleeve or dipped coat in an oil-based or epoxy ink on an offset or screen coater. The two-digit and three-digit codes (104 for 100 nF, 104K5V) only became an industry standard in the 1970s.",
       "kind": "material",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "high",
       "sources": [
@@ -4383,6 +4533,7 @@
       "description": "Aluminium or silver is evaporated or sputtered through a shadow-mask onto the mica sheets. Sheets are stacked with a thin metallised layer between each, bonded under heat and pressure, and the stack is diced into individual capacitors.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "note": "Vacuum evaporation was the 1982 technique. Reactive sputtering of a dielectric was the later MIM form.",
@@ -4401,6 +4552,7 @@
           "description": "Aluminium is evaporated rather than sputtered because it is cheap and vapourises at a manageable temperature. It is then left unoxidised under vacuum. Silver electrodes were used where the highest capacitance per unit area was needed.",
           "kind": "process",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -4440,6 +4592,7 @@
       "description": "A metal paste is printed onto the green sheets to define the buried internal electrodes, the sheets being cut from the rolled foil afterwards. Both metallurgies were in production in 1982: Murata began mass-producing nickel-electrode MLCCs in 1982, while palladium-silver remained the mainstream commodity electrode through the 1980s and was largely displaced by nickel base-metal electrodes only afterwards. TDK's 1993 date marks one maker's transition, not the industry's.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "medium",
       "provenance": "complete",
@@ -4488,6 +4641,7 @@
       "description": "The laminated bar is cut with a resin-bonded diamond saw into hundreds or thousands of identical blanks, each one capacitor body. One sintered bar yields thousands of capacitors and one furnace run yields many bars, so the economics only work at that scale. This is why MLCC production had consolidated into a handful of very large Japanese, European and later Taiwanese plants by the early 1980s.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1982-1984",
       "confidence": "high",
       "sources": [
@@ -4513,7 +4667,8 @@
           "simple_name": "Resin-bonded diamond blade",
           "description": "A thin, flat, run-of-the-mill diamond wheel; the same abrasive technology as the crystal grinder but applied to a sintered ceramic bar.",
           "kind": "tool",
-          "category": "passives",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982-1984",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -4532,25 +4687,26 @@
       ]
     },
     "mb.passives.resistors.cermet-networks.encapsulation.lead-frame.strip": {
-        "id": "mb.passives.resistors.cermet-networks.encapsulation.lead-frame.strip",
-        "name": "Copper-alloy lead-frame strip, tin-plated",
-        "simple_name": "Lead-frame strip",
-        "description": "Copper-alloy strip, tin or solder plated, stamped into SIP leads on 2.54mm pitch for wave soldering.",
-        "kind": "material",
-        "category": "passives",
-        "era": "1982-1984",
-        "sources": [],
-        "confidence": "medium",
-        "note": "Tin versus solder plate and wave-soldering of this array are not established per candidate note; copper-alloy assignment per candidate description; plating shown as typical-1982.",
-        "children": [],
-        "edges": [
-          {
-            "to": "metal.copper.cathode",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "incomplete"
-      }
+      "id": "mb.passives.resistors.cermet-networks.encapsulation.lead-frame.strip",
+      "name": "Copper-alloy lead-frame strip, tin-plated",
+      "simple_name": "Lead-frame strip",
+      "description": "Copper-alloy strip, tin or solder plated, stamped into SIP leads on 2.54mm pitch for wave soldering.",
+      "kind": "material",
+      "category": "metals",
+      "subcat": "nonferrous",
+      "era": "1982-1984",
+      "sources": [],
+      "confidence": "medium",
+      "note": "Tin versus solder plate and wave-soldering of this array are not established per candidate note; copper-alloy assignment per candidate description; plating shown as typical-1982.",
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.copper.cathode",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "incomplete"
+    }
   }
 }

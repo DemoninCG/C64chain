@@ -26,9 +26,9 @@ const PROCESSISH = new Set(['process', 'tool', 'facility', 'note', 'org', 'site'
 // `facility` keeps actual production. The split exists so `owned by` and `at`
 // stop being the same relation.
 const VALID_KIND = new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']);
-const VALID_CAT = new Set(['silicon', 'passives', 'board', 'plastics', 'metals', 'magnetics',
-  'interconnect', 'power', 'assembly', 'optics', 'fluids', 'energy', 'packaging',
-  'logistics', 'computing', 'industry']);
+const VALID_CAT = new Set(['semiconductors', 'board', 'passives', 'interconnect',
+  'electric', 'displays', 'metals', 'fluids', 'inorganics', 'petrochem',
+  'polymers', 'industry']);
 
 // category is expected to describe the industry; a kind/category clash is a signal
 /* R3: which kinds an industry category may plausibly contain.
@@ -43,32 +43,27 @@ const VALID_CAT = new Set(['silicon', 'passives', 'board', 'plastics', 'metals',
  * What stays forbidden is the genuinely contradictory case: `assembly` may not
  * contain a `material`, because assembly consumes materials rather than making
  * them. Everything added below is justified by a node that actually exists. */
+/* R3 was rewritten for the 12-category v2 system (docs/CATEGORIES.md). The
+ * v2 buckets are industry-based, and the migration verdicts show every kind
+ * legitimately occurring in almost every bucket (a fab has parts, processes,
+ * tools, facilities, orgs and notes; a refinery likewise). A restrictive
+ * table here would re-create the old failure mode: 33 correct nodes flagged
+ * to hide 17 real findings. So every bucket admits every kind, and R3 is a
+ * vocabulary check only. If a genuinely contradictory pair emerges in QA,
+ * restrict that cell — do not re-grow the whole table by observation. */
 const CAT_OK = {
-  energy: new Set(['facility', 'process', 'org', 'site']),
-  computing: new Set(['part', 'material', 'note']),
-  logistics: new Set(['process', 'facility', 'note', 'org', 'site']),
-  packaging: new Set(['part', 'material', 'process', 'tool', 'note']),
-  assembly: new Set(['process', 'part', 'tool', 'facility', 'note', 'org', 'site']),
-  /* Extended 2026-10-03 (TODO §1b): every set below is exactly the kinds
-   * observed in that category across the 2,454-node tree, plus `note` (legal
-   * anywhere). The suspicious small-count cells were read by hand first:
-   * hk-pcb under board, tower fill under fluids, the crystal cleanroom under
-   * passives, hk-injection under plastics, fuse glass under power, channel
-   * switching under power, and the mill/mix-house/dies/presses under
-   * magnetics are all legitimate. So the extension turns up no WARNs by
-   * construction — its value is as a tripwire: any kind/category pair never
-   * before observed now fires, instead of sitting in the 94% nobody checks. */
-  board: new Set(['material', 'process', 'facility', 'note', 'part', 'tool', 'org', 'site']),
-  fluids: new Set(['material', 'process', 'facility', 'tool', 'part', 'note', 'org', 'site']),
-  industry: new Set(['note', 'material', 'tool', 'part', 'facility', 'process', 'org', 'site']),
-  interconnect: new Set(['process', 'note', 'material', 'part', 'tool']),
-  magnetics: new Set(['material', 'facility', 'tool', 'process', 'part', 'note']),
-  metals: new Set(['material', 'process', 'facility', 'tool', 'part', 'note', 'org', 'site']),
-  optics: new Set(['material', 'part', 'process', 'tool', 'note']),
-  passives: new Set(['material', 'process', 'part', 'tool', 'note', 'facility', 'org', 'site']),
-  plastics: new Set(['facility', 'material', 'process', 'tool', 'note', 'part', 'org', 'site']),
-  power: new Set(['facility', 'tool', 'part', 'material', 'note', 'process', 'org', 'site']),
-  silicon: new Set(['facility', 'part', 'process', 'note', 'material', 'tool']),
+  semiconductors: new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']),
+  board: new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']),
+  passives: new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']),
+  interconnect: new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']),
+  electric: new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']),
+  displays: new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']),
+  metals: new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']),
+  fluids: new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']),
+  inorganics: new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']),
+  petrochem: new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']),
+  polymers: new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']),
+  industry: new Set(['part', 'process', 'material', 'facility', 'tool', 'note', 'org', 'site']),
 };
 
 // cross-cutting services: must never be a `children` edge (CHECKLIST 1a)
@@ -120,14 +115,11 @@ for (const n of all) {
 
 /* -- R3 category ---------------------------------------------------------- */
 
-/* Coverage, stated out loud. R3 can only fire for a category that appears in
- * CAT_OK, and CAT_OK lists five of the sixteen categories in use -- so at the
- * time of writing about 94% of the tree sits in a category whose kind
- * combinations are never checked at all. That is how three non-metals (pine
- * resin, turpentine, a ros in flux activator) sat under category "metals" for
- * the whole QA pass without a warning. Reported as a NOTE rather than left
- * implicit, so widening CAT_OK is a visible piece of work rather than something
- * nobody knows is missing.
+/* Coverage, stated out loud. Under the v2 12-category system CAT_OK covers
+ * every bucket, so the old gap (three non-metals sitting under "metals" for
+ * the whole QA pass unwarned) is closed by construction of the verdict sweep,
+ * not by this rule. R3 is now vocabulary-only; the NOTE below stays as a
+ * tripwire for any category value outside the table.
  */
 const catTotals = new Map();
 for (const n of all) catTotals.set(n.category, (catTotals.get(n.category) ?? 0) + 1);

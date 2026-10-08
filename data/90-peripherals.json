@@ -5,7 +5,8 @@
     "name": "Television and cassette drive",
     "simple_name": "TV and cassette drive",
     "kind": "part",
-    "category": "computing",
+    "category": "industry",
+    "subcat": "systems",
     "era": "1982-1984",
     "children": [
       {
@@ -14,6 +15,7 @@
         "simple_name": "Why television was mandatory",
         "kind": "note",
         "category": "interconnect",
+        "subcat": "systems",
         "era": "1982",
         "description": "The VIC-II chip outputs a 1 MHz-ish analogue composite signal on its own pin: luma, blanking and a colour subcarrier, but no RF. In 1982 there was no agreed analogue video standard between a computer and a monitor, no DE-15 or VGA, and no DVI. Commodore's answer was a small RF modulator, a printed board with one video modulator oscillator and a VHF converter, whose output was injected into the aerial socket of an ordinary television. The TV then had to be tuned to channel 3 (61.75 MHz in the US) or channel 4, and the picture was in colour only if the TV had a colour decoder for that subcarrier frequency.",
         "inputs": [
@@ -60,7 +62,8 @@
         "name": "Domestic colour television set, 13 inch NTSC",
         "simple_name": "Colour TV, 13 inch NTSC",
         "kind": "part",
-        "category": "computing",
+        "category": "displays",
+        "subcat": "systems",
         "era": "1982-1984",
         "description": "A 1982-84 US domestic set: 12.5 or 13 inch diagonal, 525-line NTSC, 60 Hz field rate, all-signal-in-a-can. It was the only display a C64 owner was likely to have, and the C64 looked terrible on it: no separate chrominance bandwidth, a modulated sound carrier that carried the computer's audio, and a colour subcarrier at a frequency the TV's chroma band had to be tuned to.",
         "inputs": [
@@ -107,7 +110,8 @@
             "name": "Picture tube (CRT)",
             "simple_name": "CRT picture tube",
             "kind": "part",
-            "category": "optics",
+            "category": "displays",
+            "subcat": "systems",
             "era": "1982",
             "description": "A vacuum envelope of two pieces of glass welded together: a flat-ish panel carrying the phosphor screen inside its face, and a flanged funnel tapering to a cylindrical neck that carries the electron gun. The panel-to-funnel joint is sealed with a lead-oxide frit fired in a belt kiln. Inside the tube, electrons leave a hot cathode, are focused and accelerated to about 25 kV, steered magnetically across the panel, and slam into phosphor grains through a steel mask.",
             "facts": [
@@ -136,7 +140,8 @@
                 "name": "Faceplate panel and funnel, borosilicate glass",
                 "simple_name": "Faceplate and funnel",
                 "kind": "part",
-                "category": "optics",
+                "category": "displays",
+                "subcat": "tube-glass",
                 "era": "1982",
                 "description": "The tube is made of two glass parts that must expand at the same rate or the tube shatters at the seal. The funnel is a leaded or unlead borosilicate. The panel is a flatter, alkali-free glass with a much lower thermal expansion coefficient. Their junction is a strip of lead borosilicate frit, printed onto both parts and fired, which melts at a temperature low enough that the base glass does not slump.",
                 "facts": [
@@ -187,7 +192,8 @@
                 "name": "P22 phosphor screen, blue/green/red",
                 "simple_name": "P22 phosphor screen",
                 "kind": "part",
-                "category": "optics",
+                "category": "displays",
+                "subcat": "screen-phosphor",
                 "era": "1982",
                 "description": "The inside face of the panel carries a printed tri-colour phosphor: blue zinc sulphide doped with silver, green zinc sulphide doped with gold, and a red phosphor around 610 nm, arranged as a dot triad maybe 0.6-0.8 mm pitch behind the shadow mask. The whole layer is only about 25-40 microns thick wet and shrinks to 15-25 microns fired, then gets a mirror of aluminium vapour on top so the electron beam that misses the phosphor is absorbed instead of lighting the room.",
                 "facts": [
@@ -243,7 +249,8 @@
                 "name": "Shadow mask and aperture grille",
                 "simple_name": "Shadow mask and grille",
                 "kind": "part",
-                "category": "optics",
+                "category": "displays",
+                "subcat": "mask-kiln",
                 "era": "1982",
                 "description": "Without something to stop every beam landing on every phosphor, a CRT would be a monochrome tube with three faint colour washes. The shadow mask is a curved steel foil perforated with about 25,000 slots. The electron beam is steered so each of the three guns aims through the correct hole. The alternative is the aperture grille, two combs of tensioned vertical wires with no foil at all.",
                 "facts": [
@@ -277,7 +284,8 @@
                     "name": "Aperture grille (Trinitron-type)",
                     "simple_name": "Trinitron aperture grille",
                     "kind": "part",
-                    "category": "optics",
+                    "category": "displays",
+                    "subcat": "mask-kiln",
                     "era": "1982",
                     "description": "The alternative to a foil: two combs of vertical wires under tension, typically nickel-chrome plated steel wire, at a 0.5-0.6 mm pitch. Because the mask is vertical wires only, the beam can strike them from any horizontal position, which gives the Trinitron its famous vertically sharp picture and lets the two outer guns share a defocus. Two thin damper wires keep the combs from ringing.",
                     "facts": [
@@ -319,7 +327,8 @@
                 "name": "Electron gun, three guns",
                 "simple_name": "Electron gun, three guns",
                 "kind": "part",
-                "category": "optics",
+                "category": "displays",
+                "subcat": "gun-vacuum",
                 "era": "1982",
                 "description": "Three parallel electron guns in one pinch, one per phosphor, each with a hot cathode, a control grid, a screen grid, a focus grid and an anode. In a 13 inch set of 1982 they were usually separate but adjacent, converging at the screen. The convergence magnets on the neck bent them into line and the electrostatic or magnetic focus brought the three spot sizes down to about 0.5-1.0 mm at the panel.",
                 "facts": [
@@ -351,7 +360,8 @@
                     "name": "Oxide-coated cathode, Ba-Sr-Ca on nickel-chromium",
                     "simple_name": "Oxide-coated cathode",
                     "kind": "part",
-                    "category": "optics",
+                    "category": "displays",
+                    "subcat": "gun-vacuum",
                     "era": "1982",
                     "description": "A cup-shaped nickel-chromium alloy base, sprayed with barium, strontium and calcium carbonates fired to oxides, with a caesium or platinum-tantalum dispenser. The oxides are a thermionic emitter: work function about 2 eV against 4.5 eV for tungsten, which is why a cathode runs at 750-850 degrees C while a tungsten filament runs at 2500.",
                     "facts": [
@@ -398,7 +408,8 @@
                     "name": "Tungsten heater filament",
                     "simple_name": "Tungsten heater filament",
                     "kind": "part",
-                    "category": "optics",
+                    "category": "displays",
+                    "subcat": "gun-vacuum",
                     "era": "1982",
                     "description": "A hair-fine tungsten wire folded into a flat zig-zag under the cathode cup and buried in its oxides. Typical wire 0.04-0.08 mm diameter, 60-150 mm long, running at 6.3 V. It is the only hot tungsten in the gun and by far the largest source of tube failure.",
                     "facts": [
@@ -435,7 +446,8 @@
                     "name": "Focus and screen grids, nickel sheet",
                     "simple_name": "Focus and screen grids",
                     "kind": "part",
-                    "category": "optics",
+                    "category": "displays",
+                    "subcat": "gun-vacuum",
                     "era": "1982",
                     "sources": [
                       "https://en.wikipedia.org/wiki/Cathode-ray_tube"
@@ -474,7 +486,8 @@
                     "name": "Static focus coil on the neck",
                     "simple_name": "Static focus coil on the neck",
                     "kind": "part",
-                    "category": "magnetics",
+                    "category": "electric",
+                    "subcat": "transformer-magnetics",
                     "era": "1982",
                     "description": "On the cheaper sets the three guns were focused by one small coil slipped over the neck outside the vacuum envelope, adjustable from the back of the set. Sets without static focus simply ran the focus grid at a fixed voltage and adjusted focus only for the corners with a convergence adjustment in the yoke.",
                     "inputs": [
@@ -511,7 +524,8 @@
                 "name": "Deflection yoke and deflection coils",
                 "simple_name": "Deflection yoke",
                 "kind": "part",
-                "category": "magnetics",
+                "category": "electric",
+                "subcat": "transformer-magnetics",
                 "era": "1982",
                 "description": "A bell-shaped ferrite or powdered-iron core clamped on the tube neck carrying two orthogonal saddle windings. The horizontal winding is driven by the line output stage and sits in series with the flyback, so the scan current is the same current that steps up to 25 kV. The vertical winding is in the collector of the vertical output stage and carries a sawtooth at 60 Hz.",
                 "facts": [
@@ -543,7 +557,8 @@
                     "name": "Enamelled copper winding, single harness",
                     "simple_name": "Enamelled copper winding",
                     "kind": "part",
-                    "category": "magnetics",
+                    "category": "electric",
+                    "subcat": "transformer-magnetics",
                     "era": "1982",
                     "sources": [
                       "https://en.wikipedia.org/wiki/Magnet%20wire"
@@ -566,7 +581,8 @@
                         "name": "Glass-filled nylon bobbin",
                         "simple_name": "Glass-filled nylon bobbin",
                         "kind": "part",
-                        "category": "plastics",
+                        "category": "polymers",
+                        "subcat": "thermoplastics",
                         "era": "1982",
                         "sources": [
                           "https://en.wikipedia.org/wiki/Nylon%2066"
@@ -612,7 +628,8 @@
                     "name": "Conicity and geometry correction magnets",
                     "simple_name": "Geometry correction magnets",
                     "kind": "part",
-                    "category": "magnetics",
+                    "category": "electric",
+                    "subcat": "transformer-magnetics",
                     "era": "1982",
                     "description": "A 13 inch set with a 90 degree deflection had visible pincushion and barrel distortion. Correction was partly mechanical: a pair of small magnets on the neck that tilted the field to change the deflection centre, a static C-core for pincushion, and inside the flyback a 'geometry' winding that shapes the scan current. The customer-facing result was a V-hold, H-hold, width, height, linearity and convergence control on the back of the chassis, and on a cheap set a bright-line adjustment they could get wrong.",
                     "confidence": "medium",
@@ -639,7 +656,8 @@
                 "name": "EHT / line output transformer (flyback)",
                 "simple_name": "Flyback transformer",
                 "kind": "part",
-                "category": "power",
+                "category": "electric",
+                "subcat": "transformer-magnetics",
                 "era": "1982",
                 "description": "The flyback does three jobs at once: it steps the 120 V B+ up to 20-25 kV for the anode, it develops the high flyback pulse that the line output transistor uses to make its collector current fall fast, and it carries auxiliary windings that supply the 12-25 V the gun heater, the tuner motor, the oscillator and the horizontal oscillator circuits need. In 1982 it was an open-frame transformer on a laminated or ferrite core, wrapped in epoxy and varnished, mounted on the chassis next to the tube neck with several hundred volts between it and everything else.",
                 "facts": [
@@ -676,7 +694,8 @@
                     "name": "Silicon EHT rectifier diode",
                     "simple_name": "Silicon EHT rectifier diode",
                     "kind": "part",
-                    "category": "silicon",
+                    "category": "semiconductors",
+                    "subcat": "discretes-opto",
                     "era": "1982",
                     "description": "A single high-voltage silicon diode, or a small stack of them, rated 3-10 kV reverse and 1-5 mA forward, potted in silicone rubber or epoxy so the 25 kV does not arc. The cathode end of the HV winding goes to the rectifier and the anode to the tube's anode terminal. A set with a failing EHT rectifier was a common and unpleasant repair.",
                     "facts": [
@@ -708,7 +727,8 @@
                     "name": "Anode terminal",
                     "simple_name": "Anode terminal",
                     "kind": "part",
-                    "category": "optics",
+                    "category": "displays",
+                    "subcat": "tube-glass",
                     "era": "1982",
                     "description": "The EHT gets into the tube through a metal button, usually a nickel or Kovar cup, sealed into the funnel wall with a glass frit and then fired. Above that terminal sits a silicone-rubber-covered anode cap that had to survive being touched with a screwdriver in a live set. A rubber anode cap failing was a genuine fire and electrocution hazard, and the safety information people remember about 1970s-80s TVs comes from exactly this part.",
                     "facts": [
@@ -751,7 +771,8 @@
                 "name": "Implosion protection and the safety faceplate",
                 "simple_name": "Implosion protection",
                 "kind": "part",
-                "category": "optics",
+                "category": "displays",
+                "subcat": "tube-glass",
                 "era": "1982",
                 "description": "A colour TV tube holds about 0.5-1.5 tonnes per square metre of glass at a quarter atmosphere, and shatters into shards that will cut. Three defences: a laminate or thicker-than-necessary faceplate whose edges are the thickest part, a mask retaining ring that holds the faceplate to the frame rather than letting it come out, and a wraparound rim so the panel cannot pop forward. Cheap sets used less glass. Expensive and safe sets used a tempered or laminated panel and, from the late 1970s, an implosion protection plate bonded to the front.",
                 "facts": [
@@ -800,6 +821,7 @@
             "simple_name": "RF tuner, VHF and UHF",
             "kind": "part",
             "category": "interconnect",
+            "subcat": "contacts-hardware",
             "era": "1982",
             "description": "The front end. In 1982 the US TV band was VHF channels 2-13 (55-220 MHz) and UHF 14-83 (470-890 MHz), and most sets had either a combined tuner or two side-by-side ones behind a single dial. A high-quality set used a rotary switch with a chain of interlocking contacts. A cheap one used a varactor diode and a small motor, or a continuous mechanical tuning with a motor and a rotor. Whatever the mechanism, the output was always the same: a fixed 45 MHz intermediate frequency.",
             "facts": [
@@ -837,7 +859,8 @@
                 "name": "VHF gangs",
                 "simple_name": "VHF gangs",
                 "kind": "part",
-                "category": "interconnect",
+                "category": "passives",
+                "subcat": "inductive-crystal",
                 "era": "1982",
                 "sources": [
                   "https://en.wikipedia.org/wiki/Tuner%20(radio)",
@@ -874,7 +897,8 @@
                 "name": "UHF tuner with varactor diode",
                 "simple_name": "UHF tuner with varactor diode",
                 "kind": "part",
-                "category": "optics",
+                "category": "interconnect",
+                "subcat": "contacts-hardware",
                 "era": "1982",
                 "sources": [
                   "https://en.wikipedia.org/wiki/Varicap"
@@ -901,7 +925,8 @@
                     "name": "Varactor diode, silicon planar junction",
                     "simple_name": "Varactor diode",
                     "kind": "part",
-                    "category": "silicon",
+                    "category": "semiconductors",
+                    "subcat": "discretes-opto",
                     "era": "1982",
                     "description": "A reverse-biased silicon pn junction used as a voltage-variable capacitor. At zero bias the depletion layer is thin and the capacitance is at its maximum. Raising the reverse voltage widens the depletion layer and drops the capacitance. The diode is a small pill or a leaded axial part soldered into the cavity wall, and the DC bias arrives through a high-value resistor from the tuner supply.",
                     "facts": [
@@ -924,7 +949,8 @@
                     "name": "Cavity resonator, brass or nickel-plated steel",
                     "simple_name": "Cavity resonator",
                     "kind": "part",
-                    "category": "metals",
+                    "category": "interconnect",
+                    "subcat": "contacts-hardware",
                     "era": "1982",
                     "description": "The UHF resonant circuit is a piece of metal: folded sheet or machined brass forming a half-wavelength line, with the shunt capacitance of the varactor at the open end and a tap for the transistor. This is one of the few places in a television where the RF circuit is metal rather than a PCB, because at 800 MHz a printed board would radiate. Brass came from zinc and copper ores.",
                     "inputs": [
@@ -944,7 +970,8 @@
                 "name": "RF amplifier and mixer",
                 "simple_name": "RF amplifier and mixer",
                 "kind": "part",
-                "category": "silicon",
+                "category": "semiconductors",
+                "subcat": "chips",
                 "era": "1982",
                 "description": "A low-noise bipolar or MOSFET amplifier at the antenna frequency, then a mixer down to 45 MHz. In 1982 the RF device was often a silicon planar MOSFET (dual-gate, for the UHF) or a wideband bipolar. The whole RF section lived in a die-cast or stamped zinc-plated steel can to keep it away from the switching supply and the line output.",
                 "confidence": "medium",
@@ -954,7 +981,8 @@
                     "name": "SAW filter at 45 MHz",
                     "simple_name": "SAW filter at 45 MHz",
                     "kind": "part",
-                    "category": "silicon",
+                    "category": "passives",
+                    "subcat": "inductive-crystal",
                     "era": "1982",
                     "description": "By the early 1980s a SAW (surface acoustic wave) filter had largely replaced the LC or ceramic filter in the IF path. Two interdigital transducers on a piezoelectric crystal launch and pick up an acoustic wave along the surface. The finger pattern is designed to pass the wanted band and reject the adjacent channel, sound and colour carriers. It gave a picture with no intermodulation and no cross modulation between the picture, colour and sound carriers.",
                     "facts": [
@@ -1000,6 +1028,7 @@
                 "simple_name": "RF can",
                 "kind": "part",
                 "category": "metals",
+                "subcat": "nonferrous",
                 "era": "1982",
                 "description": "The tuner and front end were a sealed metal can soldered to the main board. On a cheap set it was a stamped zinc-plated steel can; on a good one a die-cast zinc or aluminium can with a machined seam. Zinc plating comes from zinc electroplating baths, so it is the same zinc industry as the galvanised chassis.",
                 "inputs": [
@@ -1022,7 +1051,8 @@
                 "name": "Dial cord and pulley gear train",
                 "simple_name": "Dial cord and pulleys",
                 "kind": "part",
-                "category": "computing",
+                "category": "interconnect",
+                "subcat": "cables",
                 "era": "1982",
                 "description": "The channel knob turned a pulley that wound a braided cord onto another pulley geared to the tuner rotor. It was a real mechanical system that stretched, slipped and broke, and it is the reason every vintage-TV owner has a drawer of spare dial cords. The cord was a braided polyester or nylon sheath over a cotton core.",
                 "inputs": [
@@ -1046,6 +1076,7 @@
             "simple_name": "chassis",
             "kind": "part",
             "category": "board",
+            "subcat": "populate-solder",
             "era": "1982",
             "description": "The electronics of the set. By 1982 this was a single-sided or double-sided printed circuit board carrying a mix of discrete transistors, a handful of silicon integrated circuits (the video amplifier, the chroma, the vertical, the audio), a rotary switch bank and about forty electrolytic and film capacitors. The board sat in a zinc-plated steel chassis with a perforated steel cover, and the flyback sat beside it throwing both heat and electromagnetic noise.",
             "facts": [
@@ -1078,6 +1109,7 @@
                 "simple_name": "FR-4 PCB",
                 "kind": "part",
                 "category": "board",
+                "subcat": "laminate",
                 "era": "1982",
                 "description": "Glass-reinforced epoxy laminate with a copper foil laminated to each side and printed photolithographically. The glass fibre is the reason FR-4 has a low, controlled thermal expansion. The epoxy binds it. It is drilled, plated through with copper, mask-printed and silkscreened. After etching, the whole board is flooded with a green or brown epoxy solder mask about 10-25 microns thick, leaving only the pads open, and white epoxy legend ink is silkscreened through a fine mesh for the reference designators. The mask is itself an epoxy, and the legend is a screen-printable ink cured rather than melted. Mask is printed before the tin-lead dip, so it covers the copper that the dip is going to throw away.",
                 "facts": [
@@ -1124,7 +1156,8 @@
                 "name": "Video chain",
                 "simple_name": "Video chain",
                 "kind": "part",
-                "category": "silicon",
+                "category": "semiconductors",
+                "subcat": "chips",
                 "era": "1982",
                 "description": "The 45 MHz IF is amplified, limited, then detected: the video signal rides on the picture carrier at 45.75 MHz, the colour subcarrier sits 3.58 MHz below it as a sideband, and the sound carrier sits 9 MHz above at 54.75 MHz. The synchronous detector recovers the baseband video; a PLL multiplies the recovered 3.58 MHz subcarrier up and phase-shifts it 90 degrees to drive the two demodulators; the result is U and V, added back to luminance to give R, G and B, which drive the gun cathodes.",
                 "facts": [
@@ -1156,7 +1189,8 @@
                     "name": "Silicon integrated circuit, 4-micron NMOS",
                     "simple_name": "Video IC",
                     "kind": "part",
-                    "category": "silicon",
+                    "category": "semiconductors",
+                    "subcat": "chips",
                     "era": "1982",
                     "sources": [
                       "https://en.wikipedia.org/wiki/Integrated%20circuit"
@@ -1196,7 +1230,8 @@
                     "name": "Discrete IF, driver and video transistors",
                     "simple_name": "Video transistors",
                     "kind": "part",
-                    "category": "silicon",
+                    "category": "semiconductors",
+                    "subcat": "discretes-opto",
                     "era": "1982",
                     "sources": [
                       "https://en.wikipedia.org/wiki/Bipolar%20junction%20transistor"
@@ -1223,7 +1258,8 @@
                         "name": "Transistor die and its package",
                         "simple_name": "transistor die and package",
                         "kind": "part",
-                        "category": "silicon",
+                        "category": "semiconductors",
+                        "subcat": "chips",
                         "era": "1982",
                         "sources": [
                           "https://en.wikipedia.org/wiki/Integrated%20circuit"
@@ -1271,7 +1307,8 @@
                     "name": "Automatic gain control",
                     "simple_name": "Automatic gain control",
                     "kind": "part",
-                    "category": "silicon",
+                    "category": "semiconductors",
+                    "subcat": "chips",
                     "era": "1982",
                     "description": "The AGC samples the DC level off the video detector and feeds a reverse bias back to the first two IF stages, holding the picture bright whether the aerial is good or the C64 modulator is a milliwatt away from nothing. This was the one part of a TV that genuinely cared about the C64 signal, because a C64 was a much weaker source than a broadcast station and the AGC had to find a way to open up. A key-operated AGC defeat, or a 'manual gain' switch, was a modification for fringe-area reception.",
                     "confidence": "medium",
@@ -1286,7 +1323,8 @@
                 "name": "Horizontal line output stage, 15,734 Hz",
                 "simple_name": "Line output stage",
                 "kind": "part",
-                "category": "power",
+                "category": "electric",
+                "subcat": "psu",
                 "era": "1982",
                 "description": "The heart of the set's power and geometry. The line oscillator runs at 15,734 Hz. The driver and the output transistor switch the flyback primary, so the collector current rises linearly during scan and then collapses in the flyback retrace. The flyback uses that collapse to develop a high-voltage pulse, rectified to the EHT. The same transformer runs back through the damper to create a 200-250 V pump rail for the video output stage. In 1982 this was usually a discrete silicon EFT (a triple-diffused or a high-voltage epitaxial transistor) because a single silicon transistor could not safely switch a 900 V collector at 15.7 kHz.",
                 "facts": [
@@ -1319,7 +1357,8 @@
                     "name": "Line oscillator and AFC",
                     "simple_name": "Line oscillator and AFC",
                     "kind": "part",
-                    "category": "silicon",
+                    "category": "semiconductors",
+                    "subcat": "chips",
                     "era": "1982",
                     "description": "A free-running LC oscillator locked to the incoming video by a sync separator and an automatic frequency control loop. When the set was fed a C64 signal it was free-running off the internal oscillator and being pulled by the modulator's sync. It could not lock to a broadcast, so it did not drift. Most of the visible misbehaviour of a C64 on a TV (rolling, tearing, drifting) came from this loop or from the modulator's own sync, not from the computer.",
                     "facts": [
@@ -1342,7 +1381,8 @@
                     "name": "Line choke or choke-and-flyback combination",
                     "simple_name": "Line choke",
                     "kind": "part",
-                    "category": "magnetics",
+                    "category": "electric",
+                    "subcat": "transformer-magnetics",
                     "era": "1982",
                     "description": "Some sets had a separate choke, some combined the choke with the flyback into one transformer. The choke carries the DC component of the line current and presents a high impedance to the 15.7 kHz pulse. It was an iron-powder or ferrite part with a thousand volts across it and was a common failure.",
                     "facts": [
@@ -1365,7 +1405,8 @@
                     "name": "EHT rectifier and capacitor",
                     "simple_name": "EHT rectifier and capacitor",
                     "kind": "part",
-                    "category": "power",
+                    "category": "electric",
+                    "subcat": "psu",
                     "era": "1982",
                     "sources": [
                       "https://en.wikipedia.org/wiki/Flyback_transformer"
@@ -1396,6 +1437,7 @@
                     "simple_name": "High-voltage film capacitor",
                     "kind": "part",
                     "category": "passives",
+                    "subcat": "capacitors",
                     "era": "1982",
                     "sources": [
                       "https://en.wikipedia.org/wiki/Metallized%20film",
@@ -1439,7 +1481,8 @@
                 "name": "Vertical output stage, 60 Hz",
                 "simple_name": "Vertical output stage",
                 "kind": "part",
-                "category": "silicon",
+                "category": "semiconductors",
+                "subcat": "chips",
                 "era": "1982",
                 "description": "The vertical sweep at 60 Hz. The oscillator ran at twice the line rate and a count-down circuit divided by two, a design that keeps the vertical locked to the horizontal. The output stage amplified a small ramp and drove the vertical yoke, with a small electrolytic capacitor across the coil to correct the crosstalk that coupling into the horizontal yoke produced. A IC did most of this, with one or two power transistors at the output.",
                 "facts": [
@@ -1463,7 +1506,8 @@
                     "name": "Vertical IC",
                     "simple_name": "Vertical IC",
                     "kind": "part",
-                    "category": "silicon",
+                    "category": "semiconductors",
+                    "subcat": "chips",
                     "era": "1982",
                     "description": "A single IC contained the oscillator, the count-down divider, the ramp generator and the driver, needing only two or three external transistors. It was one of the first large consumer uses of a mixed-analogue IC that made a television much easier to build, and it is the reason a 1982 TV was a single-board affair.",
                     "facts": [
@@ -1485,7 +1529,8 @@
                 "name": "Audio",
                 "simple_name": "Audio",
                 "kind": "part",
-                "category": "silicon",
+                "category": "semiconductors",
+                "subcat": "chips",
                 "era": "1982",
                 "description": "The sound carrier is taken off the same IF strip at 54.75 MHz, recovered at 4.5 MHz above the video, limited and FM-demodulated, then amplified. The 4.5 MHz intercarrier was chosen so the sound did not interfere with the video and to let the sound survive a picture cut-off (the 'intercarrier' idea). Amplified to a few watts into an 8 ohm speaker, or about 2 W per speaker into two 8 ohm speakers in parallel. The C64's audio came out of this amplifier, which is why it was loud, thin and slightly buzzy.",
                 "facts": [
@@ -1515,6 +1560,7 @@
                     "simple_name": "Sound trap",
                     "kind": "part",
                     "category": "passives",
+                    "subcat": "inductive-crystal",
                     "era": "1982",
                     "description": "The 4.5 MHz intercarrier has to be lifted out of the video baseband without disturbing the 3.58 MHz colour subcarrier, so a trap or SAW filter at 4.5 MHz ran between the video detector and the audio detector. A ceramic or SAW trap on 4.5 MHz was a very visible part in a 1982 set.",
                     "confidence": "medium",
@@ -1527,7 +1573,8 @@
                     "name": "Audio output amplifier",
                     "simple_name": "Audio output amplifier",
                     "kind": "part",
-                    "category": "silicon",
+                    "category": "semiconductors",
+                    "subcat": "chips",
                     "era": "1982",
                     "sources": [
                       "https://en.wikipedia.org/wiki/Audio%20power%20amplifier"
@@ -1550,7 +1597,8 @@
                         "name": "Output power transistor",
                         "simple_name": "output power transistor",
                         "kind": "part",
-                        "category": "silicon",
+                        "category": "semiconductors",
+                        "subcat": "discretes-opto",
                         "era": "1982",
                         "description": "The device that actually pushed the current into the speaker: an NPN/PNP complementary pair on a thick die in a TO-3 or plastic power package, bolted to the chassis as its own heatsink. From 1990s multisilicon dice replaced the single-crystal die, but a 1982 set had one transistor per output channel.",
                         "inputs": [
@@ -1591,6 +1639,7 @@
                     "simple_name": "Volume potentiometer",
                     "kind": "part",
                     "category": "passives",
+                    "subcat": "resistors",
                     "era": "1982",
                     "description": "A rotary carbon track pot, typically 10 kohm or 100 kohm logarithmic (audio taper), spliced into the audio line. The track is a carbon film printed or sprayed on a phenolic or ceramic substrate. The wiper is a sprung brass or copper blade. This is the same technology as the volume control in a pocket radio, and the carbon comes from petroleum coke exactly as the CRT blackening does.",
                     "facts": [
@@ -1612,12 +1661,12 @@
                     ],
                     "note": "Potentiometers are commonly the volume control on audio equipment, and carbon black is made by the incomplete combustion of coal tar, vegetable matter or petroleum products. Not established: the carbon film on a phenolic or ceramic substrate, the sprung brass or copper wiper, the 10-100 kohm audio taper and the 0.25-0.5 W rating.",
                     "edges": [
-  {
-    "to": "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black",
-    "rel": "made of",
-    "basis": "typical-1982"
-  }
-]
+                      {
+                        "to": "mb.passives.resistors.discrete-axial.carbon-film.powder.carbon-black",
+                        "rel": "made of",
+                        "basis": "typical-1982"
+                      }
+                    ]
                   }
                 ]
               },
@@ -1626,7 +1675,8 @@
                 "name": "Television power supply",
                 "simple_name": "Mains power supply",
                 "kind": "part",
-                "category": "power",
+                "category": "electric",
+                "subcat": "psu",
                 "era": "1982",
                 "description": "Most 1982 sets were linear: a hot-chassis or a cold-chassis series/parallel mains transformer stepping 117 V down to about 110 V AC, a diode bridge rectifier, and a big electrolytic reservoir at 120 V feeding the line output. The main electrolytic was the largest, hottest component on the board and usually the first thing to dry out. A minority used a small switchmode supply for the logic rails with a flyback of its own.",
                 "facts": [
@@ -1651,7 +1701,8 @@
                     "name": "Mains transformer, E-I silicon steel",
                     "simple_name": "Mains transformer",
                     "kind": "part",
-                    "category": "magnetics",
+                    "category": "electric",
+                    "subcat": "transformer-magnetics",
                     "era": "1982",
                     "description": "A laminated core of thin silicon steel (about 0.35 mm) stamped into E and I shapes and stacked, with copper windings on bobbins, potted in epoxy or wrapped in tape and varnished. The laminations were needed because mains hum would otherwise magnetostrict the core. The 1982 design was exactly the design from the 1930s.",
                     "inputs": [
@@ -1703,6 +1754,7 @@
                     "simple_name": "Aluminium reservoir",
                     "kind": "part",
                     "category": "passives",
+                    "subcat": "capacitors",
                     "era": "1982",
                     "description": "The reservoir is a wound aluminium foil anode with an oxide film formed on it, an aluminium cathode can, and a paper or synthetic-fibre separator soaked in electrolyte (an ammonium borate or an aluminium chloride solution in glycol). Formed at a few hundred volts, it hums and it leaks, and in a hot chassis it did the most to kill itself.",
                     "facts": [
@@ -1738,7 +1790,8 @@
                     "name": "Mains rectifier bridge",
                     "simple_name": "Mains rectifier bridge",
                     "kind": "part",
-                    "category": "silicon",
+                    "category": "electric",
+                    "subcat": "psu",
                     "era": "1982",
                     "description": "Four silicon diodes in a moulded bridge package, rated at a few amps and 100-200 V. Cheap sets rectified with two diodes and a centre-tapped transformer instead. The bridge was usually on the chassis edge with the heatsink tab or in free air.",
                     "facts": [
@@ -1765,7 +1818,8 @@
             "name": "Loudspeaker, 8 ohm, 3-4 inch",
             "simple_name": "Loudspeaker",
             "kind": "part",
-            "category": "magnetics",
+            "category": "electric",
+            "subcat": "transformer-magnetics",
             "era": "1982",
             "description": "An 8 ohm speaker of about 3.5-4 inch diameter on a small set: a paper pulp cone, a pressed steel or plastic basket, a copper voice coil on a former, and a ferrite magnet. It was screwed to a baffle in the cabinet with the back magnet projecting into whatever space was left, which is why small speakers of the period often had a shallow magnet or a rear vent.",
             "facts": [
@@ -1794,6 +1848,7 @@
                 "simple_name": "Pressed steel basket",
                 "kind": "part",
                 "category": "metals",
+                "subcat": "ferrous",
                 "era": "1982",
                 "description": "The cone is glued to a stamped steel basket that holds the magnet and the voice coil in register. It came off the same cold-reduced low-carbon sheet as the shadow mask and the chassis, with the same iron ore behind it.",
                 "inputs": [
@@ -1825,7 +1880,8 @@
                 "name": "Copper voice coil on a former",
                 "simple_name": "Copper voice coil on a former",
                 "kind": "part",
-                "category": "metals",
+                "category": "electric",
+                "subcat": "transformer-magnetics",
                 "era": "1982",
                 "sources": [
                   "https://en.wikipedia.org/wiki/Voice%20coil"
@@ -1877,7 +1933,8 @@
             "name": "Cabinet and front bezel",
             "simple_name": "Cabinet and front bezel",
             "kind": "part",
-            "category": "plastics",
+            "category": "polymers",
+            "subcat": "thermoplastics",
             "era": "1982",
             "description": "The outside of the set: a moulded plastics shell wrapped around the chassis and the tube, with a wood-grain print or a real veneer. A 1982 13 inch set was typically an injection-moulded ABS or ABS/polycarbonate cabinet, textured, with the front bezel carrying the speaker grille, the control knobs and the brand badge. Larger and older-style sets had a wood-veneered or wood-framed cabinet. The very cheapest had a printed paper laminate over a steel or plastic shell.",
             "facts": [
@@ -1907,7 +1964,8 @@
                 "name": "Wood veneer or woodgrain laminate",
                 "simple_name": "Wood veneer or laminate",
                 "kind": "part",
-                "category": "packaging",
+                "category": "industry",
+                "subcat": "paper-print-pack",
                 "era": "1982",
                 "description": "A console or a large set of the early 1980s was often a real cabinet: a wood frame veneered with walnut, mahogany or teak, sometimes over particle board. The cheaper route was a printed polyester or melamine laminate, several sheets laminated and printed with a photographic woodgrain. A 13 inch portable used moulded ABS with the grain embossed into the mould texture and painted.",
                 "inputs": [
@@ -1956,6 +2014,7 @@
                 "simple_name": "Case screws and brackets",
                 "kind": "part",
                 "category": "metals",
+                "subcat": "ferrous",
                 "era": "1982",
                 "description": "The chassis was fastened into the cabinet with self-tapping screws into plastic bosses, and the back was held with a handful of machine screws into zinc-plated or black-oxide steel. The brackets that carried the tube and the board were zinc-plated sheet steel.",
                 "inputs": [
@@ -1984,7 +2043,8 @@
                 "name": "Brand badge and control knobs",
                 "simple_name": "Brand badge and control knobs",
                 "kind": "part",
-                "category": "plastics",
+                "category": "polymers",
+                "subcat": "thermoplastics",
                 "era": "1982",
                 "description": "The logo badge was an embossed or plated plastic medallion, and the knobs were moulded ABS or phenolic on a zinc or aluminium die-cast core with a moulded pointer. On a cheap set the badge was printed. On a good one it was a plated plastic insert.",
                 "inputs": [
@@ -2011,6 +2071,7 @@
             "simple_name": "Front controls",
             "kind": "part",
             "category": "passives",
+            "subcat": "switches",
             "era": "1982",
             "description": "Brightness, contrast, colour, tint, volume and the channel selector, plus a fine-tuning and a V-hold behind the cabinet. The pots are carbon track or cermet. The switches are an AC line switch and often a rotary band switch or push-buttons for the a/v functions.",
             "facts": [
@@ -2034,7 +2095,8 @@
                 "name": "AC line switch and interlock",
                 "simple_name": "AC line switch and interlock",
                 "kind": "part",
-                "category": "power",
+                "category": "electric",
+                "subcat": "mains-safety",
                 "era": "1982",
                 "description": "A rotary or push-pull mains switch on the front panel, often interlocked so that a set with a back cover off could not be switched on (the 'interlock' on a portable). The switch contacts were silver-plated brass, and the whole switch was a snap-action mechanism in a phenolic body.",
                 "inputs": [
@@ -2066,7 +2128,8 @@
                 "name": "VHF dial and channel drum",
                 "simple_name": "VHF dial and channel drum",
                 "kind": "part",
-                "category": "computing",
+                "category": "interconnect",
+                "subcat": "contacts-hardware",
                 "era": "1982",
                 "description": "The channel numbers were on a printed drum or card behind a window, or on a flat dial plate, driven by the cord from the knob. The UHF channels 14-83 needed a drum or a fan-shaped card because there were 70 of them, which is why UHF dials of the period were a distinctive piece of mechanical design.",
                 "inputs": [
@@ -2094,6 +2157,7 @@
             "simple_name": "Aerial input and antenna lead",
             "kind": "part",
             "category": "interconnect",
+            "subcat": "connectors",
             "era": "1982",
             "description": "The 75 ohm coaxial aerial socket at the back, the twin-lead alternative for indoor aerials, and the telescopic whip on a portable. The C64 was plugged into that socket, in parallel with whatever aerial the set had. The socket was either a threaded F-type, or a cheaper bayonet or push-on type in Europe.",
             "facts": [
@@ -2118,6 +2182,7 @@
                 "simple_name": "F-type coaxial connector",
                 "kind": "part",
                 "category": "interconnect",
+                "subcat": "connectors",
                 "era": "1982",
                 "sources": [
                   "https://en.wikipedia.org/wiki/F%20connector"
@@ -2162,6 +2227,7 @@
                 "simple_name": "Telescopic whip antenna",
                 "kind": "part",
                 "category": "interconnect",
+                "subcat": "contacts-hardware",
                 "era": "1982",
                 "sources": [
                   "https://en.wikipedia.org/wiki/Antenna%20(radio)"
@@ -2205,7 +2271,8 @@
             "name": "Mains lead, suppression filter and fuse",
             "simple_name": "Mains lead, filter, fuse",
             "kind": "part",
-            "category": "power",
+            "category": "electric",
+            "subcat": "mains-safety",
             "era": "1982",
             "description": "A 1982 set had a two or three core mains lead, an entrapment and bypass capacitor for radio interference, and one or two fuses. The mains filter is the reason a television did not buzz on an AM radio, and the reason the plastic of a 1980s set smelled faintly of phenolic. The fuse was a small glass or ceramic cartridge with a wire or a metal link.",
             "facts": [
@@ -2234,6 +2301,7 @@
                 "simple_name": "Mains cord",
                 "kind": "part",
                 "category": "interconnect",
+                "subcat": "cables",
                 "era": "1982",
                 "description": "A flexible cord of 16 or 18 AWG stranded copper inside a PVC or rubber jacket, moulded on to the plug and to the set's inlet. The set's inlet on a 1982 television was not an IEC C13 appliance coupler (that became common on computers and later sets). Most were a hard-wired rubber or vinyl cord straight into the chassis, with a moulded two-pin or three-pin plug at the wall end. A detachable cord on a set was unusual until the mid 1980s.",
                 "inputs": [
@@ -2271,7 +2339,8 @@
                 "name": "Mains suppression",
                 "simple_name": "Mains suppression",
                 "kind": "part",
-                "category": "passives",
+                "category": "electric",
+                "subcat": "mains-safety",
                 "era": "1982",
                 "description": "A high-voltage capacitor across line and neutral (the X capacitor) plus a ferrite-beaded choke in series, to keep the set's switching noise out of the radio. In a 1982 set this was often a paper or film capacitor at 0.01 microfarad rated for mains transients. The modern purple or orange epoxy-drop X capacitor of the 1990s had not appeared, though a metallised film in a plastic case was used. The choke was a few turns on a ferrite or powdered-iron core.",
                 "inputs": [
@@ -2296,6 +2365,7 @@
                     "simple_name": "Polypropylene mains capacitor",
                     "kind": "part",
                     "category": "passives",
+                    "subcat": "capacitors",
                     "era": "1982",
                     "sources": [
                       "https://en.wikipedia.org/wiki/Metallized%20film"
@@ -2333,7 +2403,8 @@
                 "name": "Mains fuse",
                 "simple_name": "Mains fuse",
                 "kind": "part",
-                "category": "power",
+                "category": "electric",
+                "subcat": "mains-safety",
                 "era": "1982",
                 "description": "A 3-4 amp buss fuse in the mains lead holder on sets with a detachable cord, or an internal fuse on the line. The fuse element was a low-melting alloy or a silver wire in a glass cartridge.",
                 "inputs": [
@@ -2370,7 +2441,8 @@
         "name": "Datasette and cassette",
         "simple_name": "Datasette and cassette",
         "kind": "part",
-        "category": "computing",
+        "category": "industry",
+        "subcat": "systems",
         "era": "1982-1984",
         "description": "A C64 with no drive could not save. Commodore's answer was a 1530 or 1541 disk-shaped drive that took ordinary compact cassettes and wrote them with a magnetic head at 9,600 baud, plus a spool of tape that was mostly polyester film and mostly iron oxide. Saving a 1541 program to tape was a two minute operation of real-time winding, and the alignment problems of a 1541 were a running joke precisely because a cassette had no feedback.",
         "facts": [
@@ -2404,7 +2476,8 @@
             "name": "1541 disk drive",
             "simple_name": "1541 disk drive",
             "kind": "part",
-            "category": "computing",
+            "category": "industry",
+            "subcat": "systems",
             "era": "1982",
             "description": "A disk-shaped grey box with a slot on top, containing a stepper motor, a capstan flywheel, a read/write head on a load arm, and a small circuit board with a 6502 CPU, a 6522 interface chip and a mask-programmed logic array. It reads and writes the same standard compact cassette as a music cassette deck, which is why Commodore's error messages included CLOAD and why a music cassette recorder could in principle play a C64 tape.",
             "facts": [
@@ -2436,7 +2509,8 @@
                 "name": "6502 CPU, 6522 PIA and M50174 PLA",
                 "simple_name": "6502, 6522, M50174",
                 "kind": "part",
-                "category": "computing",
+                "category": "semiconductors",
+                "subcat": "chips",
                 "era": "1982",
                 "description": "The 1541's electronics are almost identical in content to the C64's, which is not a coincidence: Commodore reused its own chips. A 6502 runs the operating system and the serial protocol; a 6522 versatile interface adapter talks to the tape, drives the stepper and reads the serial bus to the C64; and a mask-programmed logic array, the M50174, handles the address decode and the stepper phase sequencing so the CPU does not have to bit-bang them.",
                 "facts": [
@@ -2468,7 +2542,8 @@
                     "name": "Silicon this logic is made from",
                     "simple_name": "Logic silicon",
                     "kind": "part",
-                    "category": "silicon",
+                    "category": "semiconductors",
+                    "subcat": "wafer-fab",
                     "era": "1982",
                     "sources": [
                       "https://en.wikipedia.org/wiki/Integrated%20circuit"
@@ -2512,7 +2587,8 @@
                 "name": "Hybrid stepping motor",
                 "simple_name": "Hybrid stepping motor",
                 "kind": "part",
-                "category": "magnetics",
+                "category": "electric",
+                "subcat": "transformer-magnetics",
                 "era": "1982",
                 "description": "A hybrid stepping motor: a permanent-magnet rotor with fine teeth running between two toothed stator poles, with coils on the poles. Two phases driven in sequence step the rotor a fraction of a degree at a time. This is how the 1541 knew where the tape was, and the motor's own inertia is why a 1541 could not skip forward as fast as it could seek.",
                 "facts": [
@@ -2545,7 +2621,8 @@
                     "name": "Toothed stator laminations of silicon steel",
                     "simple_name": "Stator laminations",
                     "kind": "part",
-                    "category": "magnetics",
+                    "category": "electric",
+                    "subcat": "transformer-magnetics",
                     "era": "1982",
                     "sources": [
                       "https://archive.org/details/The_Anatomy_of_the_1541_Disk_Drive",
@@ -2586,7 +2663,8 @@
                     "name": "End bells, bushings and the mounting bracket",
                     "simple_name": "End bells, bushings, bracket",
                     "kind": "part",
-                    "category": "magnetics",
+                    "category": "metals",
+                    "subcat": "ferrous",
                     "era": "1982",
                     "description": "The motor is held between two stamped steel end bells with bronze or sintered bronze bushings for the shafts (or plastic bushings on a cheap drive), and mounted on a steel bracket riveted or screwed into the deck. The whole assembly sat on a die-cast or folded steel chassis plate.",
                     "inputs": [
@@ -2626,7 +2704,8 @@
                 "name": "Tape transport",
                 "simple_name": "Tape transport",
                 "kind": "part",
-                "category": "computing",
+                "category": "industry",
+                "subcat": "systems",
                 "era": "1982",
                 "description": "The cassette slid in and the tape was pressed against a capstan on the drive by a rubber pinch roller, at 4.76 cm/s. The capstan was on a flywheel turned by the stepper motor through a worm reduction, which also let the motor's back-driving put the capstan in the right phase. The same motor rotation drove a cam that loaded the head against the tape. There was no tachometer, no position sensor and no closed loop: the drive simply counted steps and hoped.",
                 "facts": [
@@ -2659,7 +2738,8 @@
                     "name": "Pinch roller and rubber",
                     "simple_name": "Pinch roller and rubber",
                     "kind": "part",
-                    "category": "plastics",
+                    "category": "polymers",
+                    "subcat": "rubber-additives",
                     "era": "1982",
                     "description": "A small roller of black nitrile or butyl rubber on a moulded plastic or nylon hub, on a bent spring steel arm. The rubber had to grip the capstan and the tape without slipping and without depositing rubber onto the tape, and a dried-out pinch roller was the single most common cause of a 1541 failing to read a tape it had just written.",
                     "inputs": [
@@ -2693,7 +2773,8 @@
                     "name": "Worm and worm-wheel reduction",
                     "simple_name": "Worm and worm-wheel reduction",
                     "kind": "part",
-                    "category": "computing",
+                    "category": "industry",
+                    "subcat": "systems",
                     "era": "1982",
                     "description": "The stepper's rotation was reduced by a worm on the motor shaft running in a nylon or brass wheel on the capstan shaft. A worm gear is quiet and gives a high ratio in a small space and is self-locking, which is exactly what is wanted: when the power was off the capstan could not back-drive. The wheel was usually a moulded nylon or acetal wheel with a brass insert.",
                     "inputs": [
@@ -2729,6 +2810,7 @@
                     "description": "Hardened steel pin, 2.0-2.5 mm diameter, ground finish; the tape wraps it against the pinch roller and its surface speed (4.76 cm/s) defines tape speed. Takes the wear. Self-locking worm drive prevents back-driving when unpowered.",
                     "kind": "part",
                     "category": "metals",
+                    "subcat": "ferrous",
                     "era": "1982",
                     "confidence": "medium",
                     "inputs": [],
@@ -2754,7 +2836,8 @@
                 "name": "Read/write head, gap about 1 micrometre",
                 "simple_name": "Read/write head",
                 "kind": "part",
-                "category": "magnetics",
+                "category": "electric",
+                "subcat": "transformer-magnetics",
                 "era": "1982",
                 "description": "A miniature magnetic recording head, essentially the same object as the one in a cassette deck but smaller and more carefully shielded. A ferrite or permalloy core with a laser-cut gap of about a micrometre, a figure-eight winding of lacquered copper to cancel hum from the drive's own motor, a mumetal shield can around the front, and a printed circuit board carrying the preamplifier right at the head to keep the signal short.",
                 "facts": [
@@ -2806,6 +2889,7 @@
                 "simple_name": "1541 circuit board",
                 "kind": "part",
                 "category": "board",
+                "subcat": "populate-solder",
                 "era": "1982",
                 "description": "A single FR-4 board with the CPU, the PIA, the PLA, a handful of logic gates, the head preamplifier, the stepper driver transistors, and the power regulators. It was a through-hole board in 1982, socketed for the CPU and the PIA so they could be replaced, and hand- or wave-soldered.",
                 "facts": [
@@ -2840,7 +2924,8 @@
                 "name": "1541 power supply",
                 "simple_name": "5V and 12V from C64",
                 "kind": "part",
-                "category": "power",
+                "category": "electric",
+                "subcat": "psu",
                 "era": "1982",
                 "description": "The 1541 has no mains input. It gets 5 V and about 12 V DC from the C64 through the six-pin cassette port, and regulates them locally: the 12 V feeds the motor and the head bias, the 5 V feeds the logic, and a linear regulator or a discrete dropper makes the 5 V from a higher rail on some models. There was a fuse and a reverse-polarity protection diode because the port was known to be a point of user error.",
                 "facts": [
@@ -2865,7 +2950,8 @@
                     "name": "Regulator and its electrolytics",
                     "simple_name": "regulator and electrolytics",
                     "kind": "part",
-                    "category": "power",
+                    "category": "electric",
+                    "subcat": "psu",
                     "era": "1982",
                     "sources": [
                       "https://en.wikipedia.org/wiki/Aluminium%20electrolytic%20capacitor"
@@ -2908,7 +2994,8 @@
                 "name": "1541 plastic case",
                 "simple_name": "1541 plastic case",
                 "kind": "part",
-                "category": "plastics",
+                "category": "polymers",
+                "subcat": "thermoplastics",
                 "era": "1982",
                 "description": "A grey ABS clamshell, disc-shaped, about 40 cm across and 9 cm deep, moulded in two halves with the lid carrying the Commodore logo badge and the slot for the cassette. The material is the same ABS as a television cabinet, from the same styrene-butadiene-acrylonitrile chemistry.",
                 "inputs": [
@@ -2943,7 +3030,8 @@
                 "name": "Activity LED",
                 "simple_name": "Activity LED",
                 "kind": "part",
-                "category": "silicon",
+                "category": "semiconductors",
+                "subcat": "discretes-opto",
                 "era": "1982",
                 "description": "A small red LED on the front of the drive, lit while the motor was running or the head was active. It was a gallium arsenide or gallium phosphide die in a 2.5 mm epoxy lens, running at about 2-10 mA from the 5 V rail through a resistor. The LED itself was 1980s technology. The indicator lamps on earlier drives had been incandescent bulbs or neon.",
                 "facts": [
@@ -2976,6 +3064,7 @@
                 "simple_name": "six-pin serial to C64",
                 "kind": "part",
                 "category": "interconnect",
+                "subcat": "cables",
                 "era": "1982",
                 "description": "The 1541 connected to the C64 by a six-pin DIN serial IEC bus cable, which is how the drive knew there was a computer and the computer knew there was a drive. (An earlier revision of this node said nine-pin D-sub, which matches joystick/RS-232 practice, not the drive.)",
                 "children": [],
@@ -2997,7 +3086,8 @@
             "name": "Cassette tape itself",
             "simple_name": "cassette tape",
             "kind": "part",
-            "category": "packaging",
+            "category": "industry",
+            "subcat": "systems",
             "era": "1982",
             "description": "A compact cassette is a 3.81 mm wide strip of polyester film 12 microns thick, coated on one side with about one to two microns of acicular iron oxide pigment in a binder, and wound onto hubs inside a plastic shell. The C64 wrote 9,600 baud onto it, which at 4.76 cm/s works out to a flux transition every 200 to 300 microseconds, near the limit of what a standard-bias cassette could resolve. Almost everything in it is either crude oil or iron ore.",
             "facts": [
@@ -3042,7 +3132,8 @@
                 "name": "Cassette shell and hubs",
                 "simple_name": "Cassette shell and hubs",
                 "kind": "part",
-                "category": "packaging",
+                "category": "industry",
+                "subcat": "systems",
                 "era": "1982",
                 "description": "The compact cassette case: two thin polystyrene or ABS shells, each with a hub, so that the tape is enclosed in a rigid 100 x 64 x 12 mm box with five windows on one edge for the head, capstan and the pressure pad, two hub windows, and the write-protect notches. The hubs were glass-filled nylon or moulded ABS with the six drive slots, running on the two hub spindles.",
                 "facts": [
@@ -3075,7 +3166,8 @@
                     "name": "Hub, glass-filled nylon",
                     "simple_name": "Hub",
                     "kind": "part",
-                    "category": "plastics",
+                    "category": "polymers",
+                    "subcat": "thermoplastics",
                     "era": "1982",
                     "description": "The reel hub runs on the shell's spindle and drives the tape through a wind process. It had to be dimensionally stable and dimensionally tight so the tape wound at a given radius came off at the right tension. It was glass-filled nylon or ABS, with the six drive slots on the inside face for the winding spindle.",
                     "inputs": [
@@ -3115,7 +3207,8 @@
                 "name": "Pressure pad and felt",
                 "simple_name": "Pressure pad and felt",
                 "kind": "part",
-                "category": "packaging",
+                "category": "industry",
+                "subcat": "paper-print-pack",
                 "era": "1982",
                 "description": "A small pad of felt or synthetic non-woven on a stainless steel leaf spring, mounted in a plastic carrier inside the shell behind the head window. Its job was to press the tape gently against the head so the head could read and write reliably, and to press the tape against the shell's ribs to select the C-1 to C-5 path. The felt was the one consumable part of a cassette. It shed debris into the head gap and a worn pad was a classic cause of a 1541 failing.",
                 "inputs": [
@@ -3187,7 +3280,8 @@
       "name": "Polyethylene from ethylene",
       "simple_name": "Polyethylene from ethylene",
       "kind": "material",
-      "category": "plastics",
+      "category": "polymers",
+      "subcat": "thermoplastics",
       "era": "1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Polyethylene"
@@ -3232,7 +3326,8 @@
       "name": "Iron from ore or scrap, leached to a ferrous salt",
       "simple_name": "Iron from ore or scrap",
       "kind": "material",
-      "category": "metals",
+      "category": "inorganics",
+      "subcat": "acids-salts",
       "era": "1982",
       "description": "Tape pigment iron did not need to be virgin: it was often made from ferrous scrap, mill scale or ore, dissolved in hydrochloric or sulphuric acid to ferrous chloride or ferrous sulphate, then precipitated and oxidised. The ore route, when it was used, was the same hematite or magnetite that goes to a blast furnace, digested in acid rather than reduced in a furnace.",
       "inputs": [
@@ -3281,7 +3376,8 @@
       "name": "Crystal-habit modifier, fatty acid or sulphonate",
       "simple_name": "Crystal-habit modifier",
       "kind": "material",
-      "category": "fluids",
+      "category": "polymers",
+      "subcat": "rubber-additives",
       "era": "1982",
       "description": "A surfactant, and the reason the word appears on three unrelated branches: what a tape pigment, a printing-ink deinking flotation cell and a chromium dioxide oxidation all have in common is that the chemistry is dominated by an anionic or amphoteric surface-active agent adsorbed on a particle. Crystal habit is controlled by what is adsorbed on the growing face. The pigment industry used a fatty acid or an alkylbenzene sulphonate, or in the classic process a hydrolysed protein or a polyol, adsorbed on the iron oxide as it precipitated so that growth was fastest along one axis. Without it the pigment came out spherical and a cassette tape of the same thickness held a fraction of the data.",
       "inputs": [
@@ -3308,7 +3404,8 @@
       "name": "Chromium dioxide (Type II pigment)",
       "simple_name": "Type II chromium dioxide",
       "kind": "material",
-      "category": "magnetics",
+      "category": "inorganics",
+      "subcat": "acids-salts",
       "era": "1982",
       "description": "For high-bias Type II tape, chromium dioxide (CrO2): acicular, 20-50 nm, higher coercivity and higher signal-to-noise than ferrite. It is made by oxidising chromic chloride in the presence of a surfactant under pressure and heat, and was patented and controlled tightly by its Japanese inventors. Chromium came from chromite ore, which is mostly in South Africa and the Soviet bloc.",
       "inputs": [
@@ -3353,7 +3450,8 @@
       "name": "Spodumene pegmatite ore",
       "simple_name": "Spodumene pegmatite ore",
       "kind": "material",
-      "category": "metals",
+      "category": "inorganics",
+      "subcat": "clays-abrasives",
       "era": "ancient",
       "sources": [
         "https://en.wikipedia.org/wiki/Spodumene"
@@ -3388,7 +3486,8 @@
       "name": "Lead oxide (litharge), PbO",
       "simple_name": "Lead oxide",
       "kind": "material",
-      "category": "metals",
+      "category": "inorganics",
+      "subcat": "alkali-lime",
       "era": "1982",
       "description": "The lead in the frit started as galena, PbS, roasted in air to a PbO litharge cake, then smelted. Nothing about this is exotic: it is the same 1900s Parkesine process that made lead-acid battery plates, refined to the point where the oxide is pure white and free of the bismuth and antimony that would grey it.",
       "inputs": [
@@ -3435,7 +3534,8 @@
       "simple_name": "Alnico correction magnet",
       "description": "An iron-aluminium-nickel alloy with a high Curie point and a hard, brittle, unmachinable structure. Alnico is cast or sintered as a solid block, aged for days at 600-800 C to precipitate its magnetic phase, and then magnetised in a strong field, and it cannot be ground to shape afterwards, so the geometry of the magnet has to be cast in, which is exactly why a set's pincushion and width adjustments are a fixed arrangement of magnets rather than something the customer can trim. The recipe varies across the family and the variation matters for this tree: the original grades were cobalt-free, but the high-coercivity grades of the 1950s onwards added cobalt, titanium and copper, so an Alnico 5 magnet on a 1982 set is an iron-cobalt alloy and the cobalt in it came out of the Copperbelt, not out of the aluminium or the nickel.",
       "kind": "material",
-      "category": "magnetics",
+      "category": "metals",
+      "subcat": "ferrous",
       "era": "1982",
       "inputs": [],
       "facts": [
@@ -3483,7 +3583,8 @@
       "simple_name": "Samarium-cobalt magnet",
       "description": "A rare-earth permanent magnet with roughly twice the energy product of Alnico from a fraction of the volume, made by sintering or bonding finely divided samarium-cobalt powder and magnetising it. Its coercivity comes from samarium's affinity for cobalt, which holds the grains from rotating back into alignment, so the magnet resists demagnetisation far better than Alnico and does not need the iron it replaced. That is a real advantage on a deflection magnet, and it is exactly why the material was developed for this job and then priced out of a domestic set: samarium oxide was one of the more expensive rare-earth fractions, so the magnet cost was set by the separation plant rather than by the metallurgy.",
       "kind": "material",
-      "category": "magnetics",
+      "category": "metals",
+      "subcat": "precious-special",
       "era": "1982",
       "inputs": [],
       "facts": [
@@ -3527,6 +3628,7 @@
       "simple_name": "Silver activator",
       "kind": "material",
       "category": "metals",
+      "subcat": "precious-special",
       "era": "1982",
       "description": "The blue ZnS is activated by silver at a fraction of a percent, supplied as silver nitrate. Silver itself came from argentite and from the anode slimes that accumulate in electrolytic copper refining, which is where most of the world's silver of the era was actually recovered.",
       "inputs": [],
@@ -3562,6 +3664,7 @@
       "simple_name": "Gold activator",
       "kind": "material",
       "category": "metals",
+      "subcat": "precious-special",
       "era": "1982",
       "description": "The green ZnS:Au needs a discrete gold level about 0.1% down. The gold came from cyanide leaching of refractory ore and from the anode slimes of copper refining, refined by the Wohlwill process to 99.99% and dissolved in aqua regia.",
       "inputs": [
@@ -3597,6 +3700,7 @@
       "simple_name": "Copper activator",
       "kind": "material",
       "category": "metals",
+      "subcat": "nonferrous",
       "era": "1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Copper(II)%20oxide"
@@ -3625,7 +3729,8 @@
       "name": "Europium oxide",
       "simple_name": "Europium oxide",
       "kind": "material",
-      "category": "optics",
+      "category": "metals",
+      "subcat": "precious-special",
       "era": "1982",
       "description": "Europium is the activator that makes a television's red, and it was the one rare earth that a mass market paid for. It is used at a loading of a few tenths of a percent in the host lattice, where the Eu3+ ion's sharp 610 nm 4f-4f transition gives a narrow-band red that the zinc sulphide host itself cannot. Two red formulations were in service in 1982 and the trade between them was chromaticity against stability: CaS:Eu gave the better red but is hygroscopic and had to be protected from moisture, while europium-doped ZnS was more forgiving and slightly less saturated. The oxide itself arrives at 99.9% from the rare-earth separation plant, having begun as a few tenths of a percent of a ton of concentrate.",
       "inputs": [],
@@ -3667,7 +3772,8 @@
       "name": "Alkali-free batch",
       "simple_name": "Alkali-free batch",
       "kind": "material",
-      "category": "optics",
+      "category": "displays",
+      "subcat": "tube-glass",
       "era": "1982",
       "description": "Where the funnel batch leaned on lead and alkali for its expansion match, the panel batch deliberately excluded sodium and potassium and got its properties from silica, alumina and boric oxide plus a small amount of barium to suppress solarisation under the phosphor firing. It is the same silica sand as the funnel, but a batch designed to be unfriendly to sodium.",
       "inputs": [
@@ -3712,7 +3818,8 @@
       "name": "Acicular iron oxide pigment",
       "simple_name": "Acicular iron oxide pigment",
       "kind": "material",
-      "category": "magnetics",
+      "category": "inorganics",
+      "subcat": "clays-abrasives",
       "era": "1982",
       "description": "The magnetic pigment is acicular gamma-iron(III) oxide, gamma-Fe2O3: needle-shaped crystals about 0.3 microns long by 0.08 microns across by 0.01 thick, an aspect ratio of about 3 to 5. It is precipitated from an iron(II) salt by oxidising with air while a surfactant is present, and the surfactant is what forces the crystals to grow as needles instead of spheres. That morphology is the whole reason a cassette can hold what it holds: the long axis lines up with the tape's direction of travel and the short axis resists it.",
       "inputs": [
@@ -3774,7 +3881,8 @@
       "name": "Dispersion",
       "simple_name": "dispersion",
       "kind": "material",
-      "category": "fluids",
+      "category": "polymers",
+      "subcat": "thermoplastics",
       "era": "1982",
       "description": "The pigment was not coated as a powder. It was dispersed in a binder so that the needles separate and stay separated, and then magnetically oriented on the film. A typical binder was a cellulose lacquer, an acrylic or polyurethane, dissolved in a solvent such as toluene, xylene or methyl ethyl ketone. In the 1970s and early 1980s there was also a water-based polyurethane dispersion. The dispersant was a surfactant or a phosphate ester that wets the oxide surface so the needles do not clump back together. The pigment and the binder are combined and then refined on a three-roll mill or a sand mill, working the agglomerates apart from a few tens of microns down to a few microns at 50-70% solids, until the dispersion is smooth. Dispersion quality set the noise floor of the finished tape, because a clump of pigment is a defect that scatters the recording.",
       "inputs": [
@@ -3822,7 +3930,8 @@
       "name": "Felt and the stainless spring",
       "simple_name": "Felt and the stainless spring",
       "kind": "material",
-      "category": "packaging",
+      "category": "industry",
+      "subcat": "paper-print-pack",
       "era": "1982",
       "description": "The pad was wool felt or a bonded polyester fibre web about a millimetre thick, glued to a stainless steel leaf spring in a plastic carrier. Wool felt is carded wool fibre matted and pressed. The spring was a 300-series stainless, so the iron came from the blast furnace and the chromium from chromite, the same chromite as the chrome plating on a telescopic antenna.",
       "inputs": [
@@ -3853,7 +3962,8 @@
       "name": "Shell material",
       "simple_name": "Shell material",
       "kind": "material",
-      "category": "plastics",
+      "category": "polymers",
+      "subcat": "thermoplastics",
       "era": "1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Acrylonitrile%20butadiene%20styrene"
@@ -3879,24 +3989,25 @@
       "children": [],
       "note": "ABS is documented: a thermoplastic terpolymer of styrene, acrylonitrile and butadiene in common use since the 1950s, amorphous with no definitive melting point because of varying chain lengths and degrees of cross-linking, with a glass transition temperature of approximately 105 C, and usable between about -20 and 80 C for the majority of applications. That last range is the useful part here, because a cassette shell works near room temperature and has no thermal duty. Not established: that the shell was ABS rather than clear or smoke general-purpose polystyrene, the 1-2 mm wall, the 200-240 C injection moulding temperature, and the Japan, Europe and United States attributions. The claim that a shell needed to hold a dimension, and therefore that the stiffer of the two polymers was the one chosen, is an engineering argument. A shell could equally be a thin polystyrene moulding with ribs.",
       "edges": [
-  {
-    "to": "chem.abs.grade",
-    "rel": "made of",
-    "basis": "typical-1982"
-  },
-  {
-    "to": "chem.polystyrene.resin",
-    "rel": "made of",
-    "basis": "typical-1982"
-  }
-]
+        {
+          "to": "chem.abs.grade",
+          "rel": "made of",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "chem.polystyrene.resin",
+          "rel": "made of",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "peripheral.tv.chassis.pcb.glass": {
       "id": "peripheral.tv.chassis.pcb.glass",
       "name": "E-glass fibre from silica sand",
       "simple_name": "E-glass fibre from silica sand",
       "kind": "material",
-      "category": "board",
+      "category": "inorganics",
+      "subcat": "silica-glass",
       "era": "1982",
       "description": "The reinforcement is a textile of drawn glass filament: silica sand is melted in a bushing at 1400 degrees C, drawn to a fibre a few microns across, and woven into cloth. It is the same silica as the tank window glass, run through a different furnace.",
       "inputs": [
@@ -3937,7 +4048,8 @@
       "name": "Permalloy or ferrite core",
       "simple_name": "Permalloy or ferrite core",
       "kind": "part",
-      "category": "magnetics",
+      "category": "electric",
+      "subcat": "transformer-magnetics",
       "era": "1982",
       "description": "The gap has to be made with both faces flat and parallel to a micron or so across a couple of millimetres, which ferrite does well by lapping and permalloy does well by etching. A high-permeability nickel-iron alloy, permalloy, gives the inductance needed for the playback winding. The mu-metal shield can around the front suppresses external fields.",
       "inputs": [
@@ -3979,7 +4091,8 @@
       "name": "Lacquered copper wire, figure-eight",
       "simple_name": "Lacquered copper wire",
       "kind": "part",
-      "category": "magnetics",
+      "category": "electric",
+      "subcat": "transformer-magnetics",
       "era": "1982",
       "description": "The winding was a fine enamelled (lacquered) copper wire, typically 40 AWG, a few hundred to a couple of thousand turns, wound so that it sits astride the gap with two halves that see the drive motor's stray field in opposite directions. The hum-cancelling figure-eight was the reason a 1541 did not pick up the buzz of its own motor. The lacquer itself is the same polyurethane-imide over a polyester base as a television yoke winding.",
       "inputs": [
@@ -4000,19 +4113,20 @@
       "children": [],
       "note": "Not established: 40 AWG or 0.1-0.13 mm enamelled copper, the figure-eight hum-cancelling winding, and the turns count for a 1541 read/write head.",
       "edges": [
-  {
-    "to": "metal.copper.enamelling",
-    "rel": "step",
-    "basis": "typical-1982"
-  }
-]
+        {
+          "to": "metal.copper.enamelling",
+          "rel": "step",
+          "basis": "typical-1982"
+        }
+      ]
     },
     "peripheral.cassette.deck.stepper.rotor": {
       "id": "peripheral.cassette.deck.stepper.rotor",
       "name": "Sintered ferrite permanent magnet rotor",
       "simple_name": "Sintered ferrite rotor",
       "kind": "material",
-      "category": "magnetics",
+      "category": "electric",
+      "subcat": "ferrite-process",
       "era": "1982",
       "sources": [
         "https://archive.org/details/The_Anatomy_of_the_1541_Disk_Drive",
@@ -4053,6 +4167,7 @@
       "simple_name": "Steel and bronze bushings",
       "kind": "material",
       "category": "metals",
+      "subcat": "nonferrous",
       "era": "1982",
       "description": "The stamped steel end bells came off the same low-carbon sheet as the shadow mask and the speaker basket. The bushings were sintered bronze, a copper-tin alloy made by pressing bronze powder and sintering it in a reducing atmosphere so it had a connected pore structure that held oil. Copper and tin both feature elsewhere in this branch.",
       "inputs": [
@@ -4089,7 +4204,8 @@
       "name": "Gold bonding wire from the anode slimes",
       "simple_name": "Gold bonding wire",
       "kind": "material",
-      "category": "metals",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Gold"
@@ -4121,7 +4237,8 @@
       "name": "Epoxy mould compound, silica-filled",
       "simple_name": "Epoxy mould compound",
       "kind": "material",
-      "category": "plastics",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1982",
       "description": "The black or off-white plastic that a chip is set in. It is an epoxy novolac resin filled to about 70% with ground fused silica, with a cure promoter and a mould release. The silica filler is what stops the encapsulant from shrinking and cracking the die during cure, and it comes from the same kind of sand as the glass batch.",
       "inputs": [
@@ -4159,6 +4276,7 @@
       "simple_name": "Glass cartridge, silver wire",
       "kind": "material",
       "category": "metals",
+      "subcat": "precious-special",
       "era": "1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Fuse%20(electrical)",
@@ -4195,6 +4313,7 @@
       "simple_name": "Coax or twin-lead",
       "kind": "material",
       "category": "interconnect",
+      "subcat": "cables",
       "era": "1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Coaxial%20cable"
@@ -4235,6 +4354,7 @@
       "simple_name": "Silver-plated switch contacts",
       "kind": "material",
       "category": "metals",
+      "subcat": "precious-special",
       "era": "1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Silver",
@@ -4275,7 +4395,8 @@
       "name": "Paper pulp cone",
       "simple_name": "Paper pulp cone",
       "kind": "part",
-      "category": "packaging",
+      "category": "industry",
+      "subcat": "paper-print-pack",
       "era": "1982",
       "description": "The cone is a paper pulp: refined wood fibre pressed wet into a shaped blank and dried, giving a light, stiff, cheap diaphragm. It is essentially the same material as a paper bag, which is why it creases if you poke it. A small set used a paper cone; a later or better one a woven or moulded polypropylene cone.",
       "inputs": [
@@ -4305,7 +4426,8 @@
       "name": "Ferrite magnet",
       "simple_name": "Ferrite magnet",
       "kind": "material",
-      "category": "magnetics",
+      "category": "electric",
+      "subcat": "ferrite-process",
       "era": "1982",
       "description": "A ring or cup magnet of barium or strontium ferrite, sintered and magnetised across the gap. Barium ferrite needed barium carbonate, which is why barite mining also fed speakers. Ferrite, not Alnico, was the standard by 1982 because it was cheap and had a higher coercivity.",
       "inputs": [
@@ -4343,7 +4465,8 @@
       "name": "Silicon wafer, P-type",
       "simple_name": "Silicon wafer, P-type",
       "kind": "material",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1982",
       "description": "The wafer this die is cut from is a slice of 99.99% silicon: p-type boron-doped substrate with n-epitaxy grown on top for the bipolar transistors, then oxidised, patterned and metallised. A 4-micron process of 1982 ran on a 100 or 125 mm wafer, with 150 mm arriving in 1983. The difference between this wafer and the one in the EHT rectifier is the epitaxy and the oxide, not the feedstock: both come out of the same trichlorosilane and Siemens chain from quartz and metallurgical silicon.",
       "inputs": [
@@ -4384,7 +4507,8 @@
       "name": "Lithium niobate wafer",
       "simple_name": "Lithium niobate wafer",
       "kind": "material",
-      "category": "optics",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Lithium%20niobate"
@@ -4434,7 +4558,8 @@
       "name": "Ferrite E-I or C core",
       "simple_name": "Ferrite E-I or C core",
       "kind": "material",
-      "category": "magnetics",
+      "category": "electric",
+      "subcat": "transformer-magnetics",
       "era": "1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Ferrite%20(magnet)",
@@ -4479,7 +4604,8 @@
       "name": "Glass-to-metal seal materials",
       "simple_name": "glass-to-metal seal materials",
       "kind": "material",
-      "category": "optics",
+      "category": "displays",
+      "subcat": "tube-glass",
       "era": "1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Glass-to-metal%20seal"
@@ -4523,7 +4649,8 @@
       "name": "High-purity silicon and polysilicon",
       "simple_name": "Silicon and polysilicon",
       "kind": "material",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1982",
       "description": "The EHT rectifier needed silicon of 200-1000 ohm cm with very low oxygen, because the junction had to hold 25 kV without leakage or breakdown. High-purity silicon is made by reducing trichlorosilane or silane, in the trichlorosilane route, from metallurgical silicon, which itself is made in a submerged arc furnace from quartz and coke.",
       "inputs": [
@@ -4582,7 +4709,8 @@
       "name": "MnZn ferrite or powdered iron core",
       "simple_name": "MnZn or iron core",
       "kind": "material",
-      "category": "magnetics",
+      "category": "electric",
+      "subcat": "transformer-magnetics",
       "era": "1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Ferrite%20(magnet)"
@@ -4627,7 +4755,8 @@
       "name": "Correction magnets on the tube neck",
       "simple_name": "Neck correction magnets",
       "kind": "material",
-      "category": "magnetics",
+      "category": "electric",
+      "subcat": "transformer-magnetics",
       "era": "1982",
       "description": "A pair of small magnets sitting on the neck of the tube, arranged to tilt the deflection field and move the deflection centre without touching the geometry circuit. In a 1982 domestic set these were almost always cast Alnico. The high-performance alternative, a samarium-cobalt magnet, cost several times as much for no benefit a consumer could see on a 13 inch screen, and only became standard in the small deflection magnets of the 1990s. The mass in either case is a few grams.",
       "inputs": [],
@@ -4668,6 +4797,7 @@
       "simple_name": "Kovar",
       "kind": "material",
       "category": "metals",
+      "subcat": "ferrous",
       "era": "1982",
       "description": "A 29% Ni, 17% Co, 53% Fe alloy whose expansion matches a lead borosilicate glass. It is how the anode lead and the stem get sealed into the glass funnel without cracking the tube wall, and it is the same idea as the frit seal but metal instead of glass.",
       "facts": [
@@ -4701,6 +4831,7 @@
       "simple_name": "Nickel-chromium base",
       "kind": "material",
       "category": "metals",
+      "subcat": "nonferrous",
       "era": "1982",
       "description": "The cup that carries the emitting coating: a nickel-chromium alloy, about 82% Ni with 18% Cr, spun or deep drawn to a shallow cup. The alloy is chosen because it does not react with the alkaline-earth oxides fired onto it and does not outgas badly in a vacuum that has to hold for the life of the tube. It is an alloy, not a pure metal, so it draws on the blast furnace for its iron as well as on the nickel refinery.",
       "inputs": [],
@@ -4739,6 +4870,7 @@
       "simple_name": "Low-carbon sheet steel",
       "kind": "material",
       "category": "metals",
+      "subcat": "ferrous",
       "era": "1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Rolling%20(metalworking)"
@@ -4783,7 +4915,8 @@
       "name": "Vacuum-deposited aluminium backing layer",
       "simple_name": "Aluminium backing layer",
       "kind": "material",
-      "category": "optics",
+      "category": "displays",
+      "subcat": "screen-phosphor",
       "era": "1982",
       "description": "The single most important trick in a CRT, and a layer rather than an operation: a 0.1-0.5 micron aluminium film, 0.1-0.5 microns thick and better than 99.99% pure, evaporated onto the inside of the printed phosphor. Without it, ambient light reflecting off the phosphor coating would lift the black level and the picture would look grey in a lit room. Aluminium is transparent to 25 kV electrons and mirror-reflective to visible light, so light emitted by the phosphor passes out through the glass while room light is bounced back in and trapped. It is deposited in a vacuum evaporator (0.1-0.15 mm foil pinched onto a feed wire and flash-evaporated off resistive or e-beam filaments at about 1500 degrees C, at better than 1e-4 mbar and typically 1e-5) and a thin dust-protection layer of a silicate or organosilicon compound is vapour-deposited on top afterwards, because bare aluminium under 25 kV slowly forms aluminium oxide.",
       "facts": [
@@ -4819,7 +4952,8 @@
       "name": "Phosphor-grade zinc sulphide",
       "simple_name": "Phosphor-grade zinc sulphide",
       "kind": "material",
-      "category": "optics",
+      "category": "displays",
+      "subcat": "screen-phosphor",
       "era": "1982",
       "description": "Zinc sulphide is the host crystal for all three P22 phosphors. It came from sphalerite, the zinc-iron sulphide ore, roasted in air to ZnO with the sulphur captured as SO2 for sulphuric acid. The ZnO was then converted back to high-purity ZnS, either by reacting with H2S or by reducing with hydrogen and re-sulphurising, because phosphor-grade sulphide has to be free of the iron and manganese that quench the emission.",
       "inputs": [
@@ -4873,7 +5007,8 @@
       "name": "Funnel glass batch, melted at 1400 degrees C",
       "simple_name": "Funnel glass batch",
       "kind": "material",
-      "category": "optics",
+      "category": "displays",
+      "subcat": "tube-glass",
       "era": "1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Borosilicate%20glass"
@@ -4923,7 +5058,8 @@
       "name": "Lead borosilicate sealing frit",
       "simple_name": "Lead borosilicate sealing frit",
       "kind": "material",
-      "category": "optics",
+      "category": "displays",
+      "subcat": "tube-glass",
       "era": "1982",
       "description": "The seal that makes a television tube possible, and a substance rather than an object: a glass with a recipe, printed onto the parts that have to become one. Lead oxide, silica, boric oxide and alkali are mixed with a water-soluble or organic vehicle into a paste and screen-printed through a 60-100 mesh onto the rim of the panel and the flange of the funnel, then dried and fired at 600-700 degrees C to drive the vehicle off and devitrify the band. Panel and funnel are then brought together in a continuous belt kiln, where the frit softens and fuses at 430-460 degrees C. Lead does three jobs: it drops the sealing temperature far below the point where the base glass would slump, it can be tuned to match the expansion of either glass, and its high atomic number soaks up the bremsstrahlung X-rays that 25 kV of beam current unavoidably produces inside the tube. The printed band has to be dimensionally exact. Too narrow and it will not seal, too wide and it costs lead.",
       "facts": [
@@ -4967,7 +5103,8 @@
       "name": "Panel glass, alkali-free",
       "simple_name": "Panel glass, alkali-free",
       "kind": "material",
-      "category": "optics",
+      "category": "displays",
+      "subcat": "tube-glass",
       "era": "1982",
       "description": "The panel is not the same glass as the funnel. It is alkali-free borosilicate with an expansion coefficient about a third lower than the funnel, so that when the panel is pressed against a mould during cooling it develops exactly the curvature the shadow mask geometry needs and stays there. Alkali is kept out because sodium and potassium diffuse and react with the phosphor layer on the inside face.",
       "facts": [
@@ -5000,7 +5137,8 @@
       "name": "Coating line",
       "simple_name": "Coating line",
       "kind": "process",
-      "category": "assembly",
+      "category": "industry",
+      "subcat": "plant-tooling",
       "era": "1982",
       "description": "A web of polyester film, a metre or more wide, unwinds and passes under a coating station where the magnetic dispersion is laid down in one or two passes by a doctor blade or a gravure roll, a few microns thick. It passes between magnets that align the acicular particles along the length of the film, then into an oven at 60-100 degrees C to drive off the solvent and cure the binder. A backing-coat station then applies the carbon-black anti-smear layer, and the whole web is slit to width.",
       "inputs": [
@@ -5062,7 +5200,8 @@
       "name": "Slit to 1/8 inch",
       "simple_name": "Slit to 1/8 inch",
       "kind": "process",
-      "category": "assembly",
+      "category": "industry",
+      "subcat": "plant-tooling",
       "era": "1982",
       "description": "The coating line made a web a metre or more wide. It was then slit into 3.81 mm strips with rotary knives, tens of kilovolts of static keeping the thin film from clinging to the rollers. The slit tape was wound onto master reels, then onto cassette reels by a winding line that also cut it to length (45 m per side for a C-60), formed the leader, and inserted the hub.",
       "inputs": [
@@ -5102,7 +5241,8 @@
       "name": "HASL",
       "simple_name": "HASL",
       "kind": "process",
-      "category": "metals",
+      "category": "board",
+      "subcat": "finish-plate",
       "era": "1982",
       "description": "The board was dipped or dragged through a molten bath of 60/40 tin-lead, which left a solder film on the pads and bridged the copper under the mask. Immersion tin plating or gold-flash were also used, but a television of 1982 was overwhelmingly hot-tin-dipped. Tin from cassiterite, lead from galena, both of which are already in this tree.",
       "inputs": [],
@@ -5142,6 +5282,7 @@
       "simple_name": "Chrome-plate the whip rod",
       "kind": "process",
       "category": "metals",
+      "subcat": "solder-finish",
       "era": "1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Chrome%20plating"
@@ -5182,7 +5323,8 @@
       "name": "Injection mould the cabinet",
       "simple_name": "Injection mould the cabinet",
       "kind": "process",
-      "category": "assembly",
+      "category": "polymers",
+      "subcat": "thermoplastics",
       "era": "1982",
       "description": "ABS pellets were dried, melted at 230-260 degrees C, injected into a nickel-chromium plated steel mould at 1000-2000 bar, held under pressure to pack, cooled on a water circuit and ejected. The cabinet was a single moulding with the speaker grille, the bezel ledges, the screw bosses and the airflow slots all integral. The front bezel was often a separate moulding in a different colour. A 13 inch set's mould ran 10,000 to a few hundred thousand shots.",
       "inputs": [
@@ -5250,6 +5392,7 @@
       "simple_name": "Zinc-plated screws",
       "kind": "process",
       "category": "metals",
+      "subcat": "solder-finish",
       "era": "1982",
       "description": "Self-tapping screws into plastic bosses and a handful of machine screws into zinc-plated or black-oxide steel. Zinc plating is the cheapest corrosion protection for a small steel part and it came off the same zinc chain as everything else in this branch.",
       "inputs": [
@@ -5287,6 +5430,7 @@
       "simple_name": "Zinc-plated RF can",
       "kind": "process",
       "category": "metals",
+      "subcat": "solder-finish",
       "era": "1982",
       "description": "The stamped steel RF can was plated in a zinc sulphate or zinc chloride bath with an aluminium or steel anode, then often given a chromate passivation. Zinc plating is cheap corrosion protection and it is the same zinc industry as the CRT phosphor and the die-cast tuner body.",
       "inputs": [
@@ -5329,7 +5473,8 @@
       "name": "Evacuation, getter flash and exhaust tip",
       "simple_name": "Evacuation, getter, exhaust",
       "kind": "process",
-      "category": "assembly",
+      "category": "displays",
+      "subcat": "gun-vacuum",
       "era": "1982",
       "description": "The tube is evacuated on a manifold to better than 1e-6 mbar with a backing line of mechanical and diffusion pumps, tested with a spark-gap or ion gauge. Then the exhaust tip, a small tubulation drawn on the end of the funnel with a tantalum or aluminium-alloy cap welded over it, is opened with a glass break or an RF induction heater. The get, a flash of barium-titanium-palladium inside the neck, absorbs any remaining gas and then fixes a mirror-like barium film on the tube wall. The tip is then crushed flat and sealed.",
       "inputs": [
@@ -5377,7 +5522,8 @@
       "name": "Blacken the anode with a sooty flame",
       "simple_name": "Blacken the anode",
       "kind": "process",
-      "category": "assembly",
+      "category": "displays",
+      "subcat": "gun-vacuum",
       "era": "1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Carbon%20black"
@@ -5397,7 +5543,8 @@
       "name": "Photoetch of the slots",
       "simple_name": "Photoetch of the slots",
       "kind": "process",
-      "category": "assembly",
+      "category": "displays",
+      "subcat": "mask-kiln",
       "era": "1982",
       "description": "The flat sheet is cleaned, coated with photoresist, exposed through a master plate that defines every slot, developed, and etched. Ferric chloride is the etchant of the period for steel. After etching the sheet is washed, stress-relieved by heating, then pressed into a spherical section on a matched former, and the round holes open into slots as it bends.",
       "inputs": [
@@ -5440,7 +5587,8 @@
       "name": "Print and fire the internal phosphor screen",
       "simple_name": "Print and fire phosphor",
       "kind": "process",
-      "category": "optics",
+      "category": "displays",
+      "subcat": "screen-phosphor",
       "era": "1982",
       "description": "Three slurries are laid down in turn: red, then green, then blue, each through a fine nylon mesh onto the inside of the panel, each registered to the last to a few tens of microns. The mesh, not a photo-emulsion, defines the dots. A photographic stencil fixes the screen area and the black border. Each slurry carries 10-30% by weight of a finely ground low-melting glass frit, because without a glassy binder the phosphor dust would wipe off the panel at the first wipe. The printed panel then goes into an exhausted conveyor oven at 430-450 degrees C for 30-60 minutes: the organic vehicle decomposes and burns off completely, which is why the tunnel has to be exhausted, and the frit flows and wets the phosphor grains into a solid, adherent, moisture-resistant layer. Under 400 degrees leaves carbon in the layer. Over 460 starts to attack the phosphor and shift the colour. Some lines ran the blue under nitrogen to protect it. Screen frits of this era could contain lead or barium. The formulations were proprietary.",
       "inputs": [
@@ -5482,7 +5630,8 @@
           "name": "Three-roll mill",
           "simple_name": "Three-roll mill",
           "kind": "tool",
-          "category": "optics",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982",
           "description": "The phosphor slurry is refined on a three-roll (three-mill) gap mill: the rollers set a gap of a few microns and shear the agglomerates down so that the particle size distribution is tight. Screen printing needs a narrow size distribution or the dots print with a rough edge and the resolution falls off.",
           "facts": [
@@ -5515,7 +5664,8 @@
       "name": "Backing coat",
       "simple_name": "Backing coat",
       "kind": "material",
-      "category": "fluids",
+      "category": "polymers",
+      "subcat": "film-fibre",
       "era": "1982",
       "description": "On the back of the magnetic coating was a sub-micron layer of extra pigment and carbon black. It did two things: it gave the visible leader tape (the clear or white strip at the start of a cassette) its colour and its opacity so a deck could find it, and it suppressed print-through, where a signal on one layer of the wound tape magnetises the layer next to it and comes back as a ghost. Carbon black, again, from petroleum coke.",
       "inputs": [
@@ -5548,7 +5698,8 @@
       "name": "Barium getter foil",
       "simple_name": "Barium getter foil",
       "kind": "material",
-      "category": "metals",
+      "category": "displays",
+      "subcat": "gun-vacuum",
       "era": "1982",
       "description": "The getter is a thin foil strip of barium, titanium and palladium powder bonded with a glass frit in a nickel tube. When RF-heated it explodes in a burst of vacuum, sprays barium across the neck, and the barium burns and sticks to the glass as a mirror film. That film is the biggest vapour getter in the tube and turns residual gas into metal. Barium metal was made by reducing barite (BaSO4) with carbon or aluminium.",
       "inputs": [
@@ -5589,6 +5740,7 @@
       "simple_name": "Smelt iron, oxygen blow",
       "kind": "process",
       "category": "metals",
+      "subcat": "ferrous",
       "era": "ancient",
       "description": "Sintered iron ore, coke and limestone are charged to a blast furnace at 1500-1600 degrees C. Hot metal comes out at about 4% carbon, is blown in a BOF to 0.05-0.1%, and is continuously cast into slabs that go to the hot strip mill.",
       "inputs": [
@@ -5649,6 +5801,7 @@
       "simple_name": "Roast, sinter, smelt lead",
       "kind": "process",
       "category": "metals",
+      "subcat": "nonferrous",
       "era": "ancient",
       "sources": [
         "https://en.wikipedia.org/wiki/Lead%20smelting"
@@ -5714,7 +5867,8 @@
       "name": "Convert sulphur dioxide to sulphuric acid",
       "simple_name": "SO2 to sulphuric acid",
       "kind": "process",
-      "category": "fluids",
+      "category": "inorganics",
+      "subcat": "acids-salts",
       "era": "1982",
       "description": "The roaster's off-gas is cleaned, converted to SO3 on a vanadium pentoxide catalyst at about 450 degrees C and absorbed in 98% acid in a double-contact plant. It is the reason a 1982 zinc smelter had an acid plant as large as the roaster.",
       "facts": [
@@ -5741,7 +5895,8 @@
       "name": "Continuous belt kiln",
       "simple_name": "Continuous belt kiln",
       "kind": "tool",
-      "category": "optics",
+      "category": "displays",
+      "subcat": "mask-kiln",
       "era": "1982",
       "description": "A continuous refractory belt kiln, with a jig that aligns the printed panel rim to the funnel flange as the two travel through the firing zone where the frit melts and fuses. The seal is judged visually, by how far the heated frit bulges past its own edge. The tube is then helium leak tested on a separate manifold before it ever goes near the vacuum pumps, and that test is a gauge on a manifold rather than part of the kiln.",
       "facts": [
@@ -5772,7 +5927,8 @@
       "name": "Aluminium coating on the funnel wall",
       "simple_name": "Aluminium funnel coating",
       "kind": "part",
-      "category": "optics",
+      "category": "displays",
+      "subcat": "tube-glass",
       "era": "1982",
       "description": "A separate aluminium mirror, vapour-deposited on the inside of the funnel behind the gun, intended to bounce stray light back towards the phosphor and raise light output. It is distinct from the phosphor back layer, which is where the black level comes from. Modern practice replaced it with a black internal coating on the neck to absorb stray light instead, and moved efficiency to the phosphor and to tinted faceplate glass.",
       "inputs": [
@@ -5794,6 +5950,7 @@
       "simple_name": "Modulator vs transmitter",
       "kind": "note",
       "category": "interconnect",
+      "subcat": "systems",
       "description": "A broadcast TV station transmitted tens of kilowatts. A C64 modulator put out about a milliwatt. The set had to be tuned by hand, and reception quality was a function of the modulator's output impedance matching the aerial input. Anyone who ever moved the TV or unplugged the aerial lead knows how marginal this was.",
       "confidence": "low",
       "note": "Quantitative comparison of received signal levels is reconstructed from general receiver-sensitivity reasoning rather than from a measurement of a specific 1.1902-type modulator.",
@@ -5805,6 +5962,7 @@
       "simple_name": "Later video connectors",
       "kind": "note",
       "category": "interconnect",
+      "subcat": "systems",
       "era": "1985-1990",
       "description": "Commodore's own 1702 monitor took a composite luma-and-blank input over a 5-pin DIN, and in 1985-86 Commodore adopted the DE-9 connector used by the C128's RGBI monitors, which carried separate red, green and blue analogue signals on pins 5, 6, 7 with no modulation at all. There was still no standard, which is why the C128 ended up with a proprietary DIN-8 video connector rather than a DE-15.",
       "confidence": "medium",
@@ -5812,84 +5970,88 @@
       "children": []
     },
     "peripheral.tv.cabinet.wood.hardwood-log": {
-        "id": "peripheral.tv.cabinet.wood.hardwood-log",
-        "name": "Hardwood logs (walnut/mahogany/teak)",
-        "simple_name": "Hardwood logs",
-        "description": "Felled and delimbed hardwood trunk sections (walnut, mahogany or teak) for slicing or rotary-cutting into veneer leaves.",
-        "kind": "material",
-        "category": "packaging",
-        "era": "1982",
-        "sources": [],
-        "confidence": "low",
-        "note": "Not established: the species mix, plantation source and rotation; the packaging log node is conifer-leaning and is not substituted (wrong species/use). Renewable endpoint with no upstream typed edge (cf. forest-stand).",
-        "children": [],
-        "provenance": "raw"
-      },
+      "id": "peripheral.tv.cabinet.wood.hardwood-log",
+      "name": "Hardwood logs (walnut/mahogany/teak)",
+      "simple_name": "Hardwood logs",
+      "description": "Felled and delimbed hardwood trunk sections (walnut, mahogany or teak) for slicing or rotary-cutting into veneer leaves.",
+      "kind": "material",
+      "category": "industry",
+      "subcat": "paper-print-pack",
+      "era": "1982",
+      "sources": [],
+      "confidence": "low",
+      "note": "Not established: the species mix, plantation source and rotation; the packaging log node is conifer-leaning and is not substituted (wrong species/use). Renewable endpoint with no upstream typed edge (cf. forest-stand).",
+      "children": [],
+      "provenance": "raw"
+    },
     "peripheral.tv.cabinet.wood.veneer": {
-        "id": "peripheral.tv.cabinet.wood.veneer",
-        "name": "Sliced hardwood veneer",
-        "simple_name": "Wood veneer",
-        "description": "Sliced or rotary-cut hardwood veneer about 0.6 mm thick, several leaves per log, for cabinet faces.",
-        "kind": "material",
-        "category": "packaging",
-        "era": "1982",
-        "sources": [],
-        "confidence": "medium",
-        "note": "Not established: leaves-per-log and exact thickness as period cabinet practice (candidate facts say 0.6 mm, about 4-8 leaves per log).",
-        "children": [],
-        "edges": [
-          {
-            "to": "peripheral.tv.cabinet.wood.hardwood-log",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
+      "id": "peripheral.tv.cabinet.wood.veneer",
+      "name": "Sliced hardwood veneer",
+      "simple_name": "Wood veneer",
+      "description": "Sliced or rotary-cut hardwood veneer about 0.6 mm thick, several leaves per log, for cabinet faces.",
+      "kind": "material",
+      "category": "industry",
+      "subcat": "paper-print-pack",
+      "era": "1982",
+      "sources": [],
+      "confidence": "medium",
+      "note": "Not established: leaves-per-log and exact thickness as period cabinet practice (candidate facts say 0.6 mm, about 4-8 leaves per log).",
+      "children": [],
+      "edges": [
+        {
+          "to": "peripheral.tv.cabinet.wood.hardwood-log",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "peripheral.tv.cabinet.wood.particle-board": {
-        "id": "peripheral.tv.cabinet.wood.particle-board",
-        "name": "Particle board (urea/phenol binder)",
-        "simple_name": "Particle board",
-        "description": "Wood chips pressed with a urea or phenol binder into board for cabinet carcasses under veneer or laminate.",
-        "kind": "material",
-        "category": "packaging",
-        "era": "1982",
-        "sources": [],
-        "confidence": "medium",
-        "note": "Not established: the pressing figures as period cabinet practice (candidate facts say about 8-10 MPa); binder grade recorded via the tree's canonical melamine-resin material as amino-resin representative.",
-        "children": [],
-        "edges": [
-          {
-            "to": "c64.packaging.wood-chips",
-            "rel": "made from",
-            "basis": "inferred"
-          },
-          {
-            "to": "c64.switches.power-slider.body.melamine.melamine-resin",
-            "rel": "made of",
-            "basis": "inferred"
-          }
-        ]
-      },
+      "id": "peripheral.tv.cabinet.wood.particle-board",
+      "name": "Particle board (urea/phenol binder)",
+      "simple_name": "Particle board",
+      "description": "Wood chips pressed with a urea or phenol binder into board for cabinet carcasses under veneer or laminate.",
+      "kind": "material",
+      "category": "industry",
+      "subcat": "paper-print-pack",
+      "era": "1982",
+      "sources": [],
+      "confidence": "medium",
+      "note": "Not established: the pressing figures as period cabinet practice (candidate facts say about 8-10 MPa); binder grade recorded via the tree's canonical melamine-resin material as amino-resin representative.",
+      "children": [],
+      "edges": [
+        {
+          "to": "c64.packaging.wood-chips",
+          "rel": "made from",
+          "basis": "inferred"
+        },
+        {
+          "to": "c64.switches.power-slider.body.melamine.melamine-resin",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
+    },
     "peripheral.tv.cabinet.wood.laminate": {
-        "id": "peripheral.tv.cabinet.wood.laminate",
-        "name": "Printed woodgrain laminate",
-        "simple_name": "Woodgrain laminate",
-        "description": "Melamine-impregnated paper or polyester film printed with a photographic woodgrain, laminated in several sheets for cheap cabinet faces.",
-        "kind": "material",
-        "category": "packaging",
-        "era": "1982",
-        "sources": [],
-        "confidence": "medium",
-        "note": "Not established: sheet count, print process and film thickness on the TV cabinet.",
-        "children": [],
-        "edges": [
-          {
-            "to": "chem.polyester.pet.film",
-            "rel": "made of",
-            "basis": "inferred"
-          }
-        ]
-      }
+      "id": "peripheral.tv.cabinet.wood.laminate",
+      "name": "Printed woodgrain laminate",
+      "simple_name": "Woodgrain laminate",
+      "description": "Melamine-impregnated paper or polyester film printed with a photographic woodgrain, laminated in several sheets for cheap cabinet faces.",
+      "kind": "material",
+      "category": "industry",
+      "subcat": "paper-print-pack",
+      "era": "1982",
+      "sources": [],
+      "confidence": "medium",
+      "note": "Not established: sheet count, print process and film thickness on the TV cabinet.",
+      "children": [],
+      "edges": [
+        {
+          "to": "chem.polyester.pet.film",
+          "rel": "made of",
+          "basis": "inferred"
+        }
+      ]
+    }
   }
 }

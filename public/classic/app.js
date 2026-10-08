@@ -64,11 +64,10 @@ const HUB_N = 8;              // hubs lifted to the rail
 const HUB_MIN_INDEG = 6;
 
 const CAT_COLOR = {
-  silicon: '#7aa2f7', passives: '#9ece6a', board: '#e0af68', plastics: '#bb9af7',
-  metals: '#f7768e', magnetics: '#ff9e64', interconnect: '#7dcfff', power: '#ff007c',
-  assembly: '#73daca', optics: '#c0caf5', fluids: '#2ac3de', energy: '#e0af68',
-  packaging: '#a9b1d6', logistics: '#9aa5ce', computing: '#ff007c',
-  peripherals: '#ff007c', industry: '#565f89',
+  semiconductors: '#7aa2f7', board: '#e0af68', passives: '#9ece6a',
+  interconnect: '#7dcfff', electric: '#ff9e64', displays: '#c0caf5',
+  metals: '#f7768e', fluids: '#2ac3de', inorganics: '#c8ccd4',
+  petrochem: '#bb9af7', polymers: '#f0a0b8', industry: '#565f89',
 };
 const colorOf = (c) => CAT_COLOR[c] ?? '#565f89';
 

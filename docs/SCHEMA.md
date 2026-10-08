@@ -48,9 +48,25 @@ and are stitched together by `scripts/build.mjs`.
 
   // REQUIRED — subsystem bucket, drives colouring in the UI. This answers
   // "what industry made this", NOT "where does it sit in the machine":
-  //   silicon|passives|board|plastics|metals|magnetics|interconnect|
-  //   power|assembly|optics|fluids|energy|packaging|logistics|computing|
-  //   industry
+  //   semiconductors|board|passives|interconnect|electric|displays|
+  //   metals|fluids|inorganics|petrochem|polymers|industry
+  // (v2, 2026-10-08 — twelve highers, one colour each in the C64 palette;
+  // precise definitions in docs/CATEGORIES.md).
+  //
+  // OPTIONAL but expected — lower-order bucket within `category`, a text label
+  // only (never a colour). Controlled per higher; see docs/CATEGORIES.md.
+  //   semiconductors: chips|discretes-opto|wafer-fab|chip-pack|fab-tooling
+  //   board: laminate|imaging-etch|finish-plate|populate-solder|board-test|systems
+  //   passives: capacitors|resistors|inductive-crystal|switches
+  //   interconnect: connectors|cables|contacts-hardware|systems
+  //   electric: transformer-magnetics|psu|mains-safety|ferrite-process
+  //   displays: tube-glass|screen-phosphor|gun-vacuum|mask-kiln|systems
+  //   metals: ferrous|nonferrous|precious-special|solder-finish
+  //   fluids: water|gases|air-steam|electricity
+  //   inorganics: silica-glass|alkali-lime|clays-abrasives|ceramics-refractory|acids-salts
+  //   petrochem: extraction|refining|monomers|fuels-carbon
+  //   polymers: thermoplastics|thermosets|rubber-additives|film-fibre
+  //   industry: power-grid-plant|plant-tooling|moving-storage|paper-print-pack|systems|agri-textiles
   //
   // There is deliberately no `peripherals` bucket. The machine-position
   // distinction (part of the C64 / needed alongside it / industrial base) is
@@ -59,7 +75,8 @@ and are stitched together by `scripts/build.mjs`.
   // legend row reading "1" — misleading, since filtering by it appears to do
   // nothing. If you want to add nodes to a category, you almost always want a
   // material that no fragment has written yet.
-  "category": "silicon",
+  "category": "semiconductors",
+  "subcat": "chips",
 
   // OPTIONAL — when the process existed/was standard. 1982 = C64 production
   // window. Use era values like "1980s" or "ancient" for things older than that.

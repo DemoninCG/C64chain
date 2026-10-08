@@ -8,7 +8,8 @@
       "simple_name": "C64 power supply",
       "description": "A sealed black ABS box roughly 150 x 100 x 60 mm that sits under the C64 and converts wall mains into 5 V DC for the logic plus unfiltered ~9 V AC for the cassette motor, the RF modulator, the VIC-II's CAN +5 V rail, the SID's +12 V doubler and the 50/60 Hz time-of-day clock. It is a linear supply: an iron-core transformer, two rectifier diodes, one 4700 uF electrolytic, one three-terminal 5 V regulator and a folded aluminium heatsink, all buried under a minty-green epoxy pour from 1983 on.",
       "kind": "part",
-      "category": "power",
+      "category": "electric",
+      "subcat": "psu",
       "era": "1982-1984",
       "facts": [
         {
@@ -51,7 +52,8 @@
           "simple_name": "Mains transformer, 40-46 VA",
           "description": "The whole of the supply's energy conversion. One primary on 117 V mains, a centre-tapped ~18 V secondary feeding the 5 V regulator, and a separate ~9 V winding feeding straight out to the C64. The two secondaries are galvanically isolated from each other as well as from the primary. That isolation is what lets the C64 tie their grounds together only at the rectifier. Every wound transformer is proved before it is potted or assembled: a 1500-2500 V AC dielectric withstand between primary and all secondaries, an insulation-resistance check at 500 V DC, a turns-ratio and phasing check between the taps, and a loaded run at nominal line voltage.",
           "kind": "part",
-          "category": "magnetics",
+          "category": "electric",
+          "subcat": "transformer-magnetics",
           "era": "1982",
           "facts": [
             {
@@ -103,7 +105,8 @@
               "simple_name": "E-I silicon-steel core",
               "description": "A stack of punched E and I laminations with interleaved joints, taped along the yoke edges with a single wrap of masking or Kapton tape. For a 40 VA unit at 60 Hz the stack is maybe 25-35 mm tall in 0.35-0.5 mm plate, and it is clamped hard enough that the laminations must be isolated from each other by the oxide scale left on the punched edges.",
               "kind": "part",
-              "category": "magnetics",
+              "category": "electric",
+              "subcat": "transformer-magnetics",
               "era": "1982",
               "facts": [
                 {
@@ -128,7 +131,8 @@
                   "simple_name": "MnZn ferrite E-core",
                   "description": "Later Commodore bricks and the C64C/Plus4 supplies switched to a pressed manganese-zinc ferrite core. Ferrite has much higher resistivity than silicon steel so it can be used as a solid moulded shape with no lamination joints, giving lower core loss at 60 Hz and a much lighter assembly. This is at several times the material cost, and with a supply chain in Japan or Germany rather than the local steel mill.",
                   "kind": "part",
-                  "category": "magnetics",
+                  "category": "electric",
+                  "subcat": "transformer-magnetics",
                   "era": "1984",
                   "facts": [
                     {
@@ -173,7 +177,8 @@
               "simple_name": "Enamelled copper winding",
               "description": "The primary, the 18 V centre-tapped secondary and the 9 V output secondary are wound in layers on a moulded bobbin, with a few hundred turns of 0.25-0.4 mm enamelled copper wire. Layer insulation between each pass and interleaved padding between the primary and the secondaries carry the 1000-1500 V RMS of the mains.",
               "kind": "part",
-              "category": "magnetics",
+              "category": "electric",
+              "subcat": "transformer-magnetics",
               "era": "1982",
               "facts": [
                 {
@@ -202,7 +207,8 @@
                   "simple_name": "Transformer winding wire",
                   "description": "Bare copper rod drawn down to 0.25-0.4 mm through a series of tungsten-carbide or diamond dies, then coated in two or more passes of a thermosetting enamel (typically polyester-imide (Grade 2 / THEIC)) and baked to cure it. Each coat adds roughly 5-10 um, so a double-grade wire has 25-40% more copper per given window area than bare wire.",
                   "kind": "part",
-                  "category": "magnetics",
+                  "category": "electric",
+                  "subcat": "transformer-magnetics",
                   "era": "1982",
                   "facts": [
                     {
@@ -246,7 +252,8 @@
                   "simple_name": "Moulded nylon bobbin",
                   "description": "A spool-shaped coil former in glass-filled or unfilled nylon 6 or nylon 6,6, with cheek flanges that locate it on the core leg and a continuous slot that keeps the layer insulation in place. Bobbins were (and still are) a Miles-Platts product line, which fits the 'MP' mark found on this transformer.",
                   "kind": "part",
-                  "category": "plastics",
+                  "category": "polymers",
+                  "subcat": "thermoplastics",
                   "era": "1982",
                   "facts": [
                     {
@@ -276,7 +283,8 @@
                   "simple_name": "Interwinding earth screen",
                   "description": "The protective-earth conductor is bonded to an aluminium or copper foil laid between the primary and the secondary windings (or sometimes to the transformer frame bolt). It does not leave the transformer: the earthing path is closed inside the potted block and never reaches the plastic case or the computer. The foil is plain rolled aluminium or copper, lapped and left uncut so it cannot tear, and it is deliberately insulated from both windings.",
                   "kind": "part",
-                  "category": "magnetics",
+                  "category": "electric",
+                  "subcat": "transformer-magnetics",
                   "era": "1982",
                   "facts": [
                     {
@@ -323,6 +331,7 @@
               "description": "A row of brass pins on a small phenolic or nylon board carrying the primary, the interwinding earth, and all the secondary taps. The rectifier diodes and fuses in the 1983-84 bricks are soldered straight onto these pins, which is why the schematic 'terminals' that appear in a teardown are the transformer's own pins rather than a separate board.",
               "kind": "part",
               "category": "interconnect",
+              "subcat": "contacts-hardware",
               "era": "1982",
               "facts": [
                 {
@@ -358,7 +367,8 @@
           "simple_name": "Rectifier diodes, 400GI/1N5400",
           "description": "Two or four stud-less axial rectifier diodes convert the 18 V centre-tapped secondary into pulsating DC. The 902503-02 uses two General Electric 400GI silicon rectifiers in a full-wave centre-tapped configuration, which saves the two extra dice of a bridge; other builds use four 1N5400s or a moulded bridge. The diodes are soldered directly onto the transformer pins.",
           "kind": "part",
-          "category": "power",
+          "category": "electric",
+          "subcat": "psu",
           "era": "1982",
           "facts": [
             {
@@ -386,7 +396,8 @@
               "simple_name": "Axial rectifier diode",
               "description": "A single silicon junction in an axial package with a formed lead, cathode band marked with a stripe. Inside: a die a few hundred microns across with a heavy anode metallisation, a glass passivation, and epoxy or a voidless glass body filled with silicone stress-relief gel to survive the power cycling.",
               "kind": "part",
-              "category": "silicon",
+              "category": "semiconductors",
+              "subcat": "discretes-opto",
               "era": "1982",
               "facts": [
                 {
@@ -414,7 +425,8 @@
                   "simple_name": "Silicon rectifier die",
                   "description": "A 100-150 mm wafer ground to a die typically 2 x 2 x 0.3 mm, with a diffused N-type cathode and metallised anode. The same Czochralski silicon as the VIC-II and the 6510; the detailed wafer process belongs to the silicon branch of this tree.",
                   "kind": "part",
-                  "category": "silicon",
+                  "category": "semiconductors",
+                  "subcat": "chips",
                   "era": "1982",
                   "facts": [
                     {
@@ -460,7 +472,8 @@
                   "simple_name": "Moulded bridge rectifier",
                   "description": "Some builds and most replacement supplies use a packaged bridge: four dice mounted on a common ceramic or moulded body with the terminals formed into the four corners. Commodore's own choice of two discrete diodes over a bridge saved two dice and one package, at the cost of a centre tap on the transformer.",
                   "kind": "part",
-                  "category": "silicon",
+                  "category": "semiconductors",
+                  "subcat": "discretes-opto",
                   "era": "1982",
                   "facts": [
                     {
@@ -485,7 +498,8 @@
           "simple_name": "5 V linear voltage regulator",
           "description": "The pass element that turns roughly 8-10 V of pulsating DC into 5.00 V. Three different implementations appear in C64 bricks inside two years, and the choice of which one determines how much heat has to be removed. At full load the drop across the pass device is 3-5 V at 1.5 A, so 4.5-7.5 W has to go into the heatsink, which is why these supplies run hot and why the electrolytics above them cook.",
           "kind": "part",
-          "category": "power",
+          "category": "electric",
+          "subcat": "psu",
           "era": "1982",
           "facts": [
             {
@@ -514,7 +528,8 @@
               "simple_name": "7805-class three-pin regulator",
               "description": "The simplest form: a monolithic regulator containing the reference, error amplifier, current limit and the pass transistor, in a TO-220 or TO-3P-like plastic body with a tab bolted to the heatsink. In the 251053-02 brick it is a three-legged part with rectangular legs, screwed straight into the folded aluminium plate under a blob of epoxy.",
               "kind": "part",
-              "category": "power",
+              "category": "electric",
+              "subcat": "psu",
               "era": "1983",
               "facts": [
                 {
@@ -549,7 +564,8 @@
               "simple_name": "Sanken SI-3052P regulator",
               "description": "The regulator in the later 902503-02, which many hobbyists misidentify as a transistor because it is moulded in a TO-3P-looking package. It is a 5 V / 2 A linear regulator with an internal error amplifier and a foldback current limit that kicks in at about 2.4 A. The datasheet explicitly warns that the output must not be raised by inserting a resistor in the ground pin, and Commodore inserted a 300 Ohm resistor in the ground pin anyway, to make up for the drop in the output cable.",
               "kind": "part",
-              "category": "power",
+              "category": "electric",
+              "subcat": "psu",
               "era": "1984",
               "facts": [
                 {
@@ -582,6 +598,7 @@
                   "description": "A small electrolytic or tantalum directly across the regulator's input and output pins. The datasheet requires it for loop stability; a 2.2 uF 16 V tantalum appears on some 902503-02 builds and the 3-83 version has the holes for it but does not populate it, which suggests it was a late cost change.",
                   "kind": "part",
                   "category": "passives",
+                  "subcat": "capacitors",
                   "era": "1984",
                   "facts": [
                     {
@@ -609,7 +626,8 @@
               "simple_name": "2N3055/2N3792 regulator",
               "description": "The earliest 'repairable' silver-label brick used a discrete design: an NPN power transistor in a TO-3 can bolted to a heatsink as the series pass, a smaller driver transistor, a zener or low-current regulator as the reference, wirewound resistors in the emitter and base for current limiting, and a thermal shutdown in contact with the heatsink. It is the arrangement the 902503-02's monolithic regulator replaced.",
               "kind": "part",
-              "category": "power",
+              "category": "electric",
+              "subcat": "psu",
               "era": "1982",
               "facts": [
                 {
@@ -641,7 +659,8 @@
                   "simple_name": "2N3055 / 2N3792 power NPN",
                   "description": "A triple-diffused planar NPN power transistor in a TO-3 can: a bolted metal header with an isolation disc, the die brazed or soldered to the header, one or two emitter bonds, and a hermetic can with a glass-sealed pin feedthrough. The 2N3055 is grossly oversized for a 1.5 A load (15 A, 60 V, 115 W dissipation capability), which is exactly why it was chosen: it could not fail thermally even when the circuit was badly designed.",
                   "kind": "part",
-                  "category": "silicon",
+                  "category": "semiconductors",
+                  "subcat": "discretes-opto",
                   "era": "1982",
                   "facts": [
                     {
@@ -682,7 +701,8 @@
                   "simple_name": "Driver transistor",
                   "description": "A small-signal NPN whose job is to supply the ~0.7 V of base drive plus the feedback signal the pass transistor needs. In a 1982 discrete supply this is typically a TO-92 part with hFE around 100-400, or one half of a matched pair. Its collector dissipation is small but its junction temperature is close to the pass transistor's, so it shares the same heatsink metal.",
                   "kind": "part",
-                  "category": "silicon",
+                  "category": "semiconductors",
+                  "subcat": "discretes-opto",
                   "era": "1982",
                   "facts": [
                     {
@@ -711,7 +731,8 @@
                   "simple_name": "Voltage reference",
                   "description": "In a 1982 discrete supply the reference is either a 5.1-6.2 V zener diode biased from a constant-current source, or a low-current three-terminal regulator such as a TL431 or a small 7805 in a TO-92 used purely as a reference. The zener route needs a stable bias current; the temperature coefficient of an ordinary zener is poor, which shows up as output drift with case temperature.",
                   "kind": "part",
-                  "category": "passives",
+                  "category": "semiconductors",
+                  "subcat": "discretes-opto",
                   "era": "1982",
                   "facts": [
                     {
@@ -736,6 +757,7 @@
                   "description": "One to three wirewound resistors in series with the pass transistor's emitter. Their purpose is to develop a signal proportional to output current for current limiting and to force a standing current through the pass transistor so its hFE and therefore the loop gain do not collapse at light load. Wirewound rather than film because the dissipation is fractional watts but the temperature rise has to stay small.",
                   "kind": "part",
                   "category": "passives",
+                  "subcat": "resistors",
                   "era": "1982",
                   "facts": [
                     {
@@ -761,6 +783,7 @@
                       "description": "A copper-manganese-nickel alloy (typically 86% Cu, 12% Mn, 2% Ni) whose resistivity barely changes with temperature. A spiral-wound wirewound resistor is made by winding manganin or constantan wire onto a ceramic or plastic former and baking it under high tension so the winding stress-relaxes and stays against the form.",
                       "kind": "part",
                       "category": "passives",
+                      "subcat": "resistors",
                       "era": "1980s",
                       "facts": [
                         {
@@ -798,7 +821,8 @@
                   "simple_name": "Thermal shutdown",
                   "description": "A temperature-sensitive element in contact with the heatsink (a thermistor or a bimetallic thermal switch) that shorts or removes the driver bias when the sink passes roughly 90-110 C, so the supply folds back rather than destroying itself. Commodore's bricks more often relied on a thermal fuse in the primary and on the epoxy pot for heat retention, which is the root of their reputation.",
                   "kind": "part",
-                  "category": "power",
+                  "category": "electric",
+                  "subcat": "mains-safety",
                   "era": "1982",
                   "facts": [
                     {
@@ -823,6 +847,7 @@
                       "description": "A bead or disc of semiconducting metal oxide whose resistance falls steeply with temperature (10 kOhm at 25 C, ~1 kOhm at 100 C for the standard 10K curve). Glued or bolted to the heatsink and shunting the driver bias, it gives a soft, non-resetting protection that must cool before it re-conducts.",
                       "kind": "part",
                       "category": "passives",
+                      "subcat": "resistors",
                       "era": "1980s",
                       "facts": [
                         {
@@ -850,7 +875,8 @@
           "simple_name": "Folded aluminium heatsink",
           "description": "A thin aluminium plate folded into a U so that one leg clamps under the case and the other presents an area against the regulator. There are no fins: the design relies on the natural convection of a brick sitting under a desk. It is the reason the case runs at 60-70 C and the epoxy never fully cools. The sheet is commercial-purity aluminium folded on a press brake and tapped for the regulator screw, usually left mill finish or painted, occasionally black anodised.",
           "kind": "part",
-          "category": "power",
+          "category": "electric",
+          "subcat": "psu",
           "era": "1982",
           "facts": [
             {
@@ -891,6 +917,7 @@
           "description": "The single reservoir capacitor on the rectifier output. It is the part that has killed the most C64s: as the electrolyte dries out the ripple current is no longer smoothed, the series regulator loses headroom and starts pumping 100/120 Hz ripple onto the 5 V rail, and eventually the cap leaks current into the regulator's ground reference and pushes the output up past 5.5 V. Replacements are still sold as the C64 'fix' four decades later.",
           "kind": "part",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1982",
           "facts": [
             {
@@ -935,6 +962,7 @@
           "description": "Secondary filtering: a 0.22 uF 35 V tantalum and a 47 uF 10 V electrolytic on the 5 V output for stability and for the load transients the VIC-II produces when it banks memory. The tantalum is polar and fails short, so it is the more dramatic failure of the pair.",
           "kind": "part",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1983",
           "facts": [
             {
@@ -971,6 +999,7 @@
           "description": "A single-sided glass-epoxy board about 40 x 30 mm carrying the regulator, the two electrolytics, the tantalum and two resistors, with the identification 'PNE-5' etched into the copper on the earlier build and no marking at all on the later one. It is held in place only by the epoxy that floods the whole case, which is why de-potting usually breaks it.",
           "kind": "part",
           "category": "board",
+          "subcat": "populate-solder",
           "era": "1983",
           "facts": [
             {
@@ -1009,7 +1038,8 @@
           "simple_name": "Black ABS enclosure",
           "description": "A two-half injection-moulded case in black ABS, ~150 x 100 x 60 mm, with a tongue-and-groove seam, ribbing on the sides for stiffness, four case screws and one larger screw holding the cable clamp. On the potted builds the seam is a line of epoxy. Some units have the rating text moulded into the plastic; others have it printed on the underside and on a metallised label.",
           "kind": "part",
-          "category": "plastics",
+          "category": "polymers",
+          "subcat": "thermoplastics",
           "era": "1982",
           "facts": [
             {
@@ -1046,6 +1076,7 @@
               "description": "Cross-recessed pan-head self-tapping screws into moulded bosses in the plastic, and in a mains appliance they must be short enough that they cannot reach the primary wiring. This is a specific check in the safety audit.",
               "kind": "part",
               "category": "metals",
+              "subcat": "ferrous",
               "era": "1982",
               "facts": [
                 {
@@ -1084,6 +1115,7 @@
           "description": "A moulded round DIN socket on the case face carrying the two 5 V conductors, the two 9 V AC conductors and, in the six-pin version, the second 9 V AC leg. Later builds reduced it to four pins. The C64's mainboard has the mating plug, and the two ends of the 5 V pair are deliberately larger-diameter so the plug cannot be inserted backwards.",
           "kind": "part",
           "category": "interconnect",
+          "subcat": "connectors",
           "era": "1982",
           "facts": [
             {
@@ -1112,6 +1144,7 @@
               "description": "The shell is moulded from a glass-filled nylon (PA66-GF) with a chamfered keyway that defines the pin polarisation; the pins are brass, often nickel-plated for wear, and are a press-fit or riveted into the shell. The 5 V pins are larger so that the plug is keyed by power, not by numbering.",
               "kind": "part",
               "category": "interconnect",
+              "subcat": "connectors",
               "era": "1980s",
               "facts": [
                 {
@@ -1150,7 +1183,8 @@
           "simple_name": "Power indicator LED",
           "description": "Not present on every brick. Where fitted it is a 3 mm red LED in a small nylon bezel, fed from the 5 V rail through a 330 Ohm to 1 kOhm resistor so that the constant ~7 mA is well inside the LED's safe operating current, and the resistor (not the LED) is what limits the current when the rail is at 5.4 V.",
           "kind": "part",
-          "category": "power",
+          "category": "semiconductors",
+          "subcat": "discretes-opto",
           "era": "1982",
           "facts": [
             {
@@ -1174,7 +1208,8 @@
           "simple_name": "Rating label",
           "description": "The safety-critical data: input volts and frequency, VA input, 5 V DC watts, 9 V AC VA, the approval marks and the warning text. On the 3-83 build the text is moulded into the case; on the 13-83 it is printed on the underside, duplicated on a top label and given a date on a metallised sticker. Every approval scheme requires this data to be legible without opening the unit.",
           "kind": "part",
-          "category": "packaging",
+          "category": "industry",
+          "subcat": "paper-print-pack",
           "era": "1983",
           "facts": [
             {
@@ -1197,7 +1232,8 @@
               "simple_name": "Metallised polyester label",
               "description": "A 25 um metallised polyester film printed with one or two hit spot colours and applied with an acrylic adhesive. Metallised polyester is used because it is tear-resistant, solvent-resistant and survives the polyester solvents in the potting epoxy, unlike paper.",
               "kind": "part",
-              "category": "packaging",
+              "category": "polymers",
+              "subcat": "film-fibre",
               "era": "1980s",
               "facts": [
                 {
@@ -1224,7 +1260,8 @@
         {
           "id": "c64.mains.switch",
           "kind": "part",
-          "category": "power",
+          "category": "electric",
+          "subcat": "mains-safety",
           "era": "1982",
           "confidence": "medium",
           "name": "Rocker switch",
@@ -1249,7 +1286,8 @@
             {
               "id": "c64.mains.switch.contacts",
               "kind": "part",
-              "category": "power",
+              "category": "electric",
+              "subcat": "mains-safety",
               "era": "1980s",
               "confidence": "medium",
               "name": "Silver-alloy contacts and arc erosion",
@@ -1286,7 +1324,8 @@
             {
               "id": "c64.mains.switch.actuator",
               "kind": "part",
-              "category": "power",
+              "category": "electric",
+              "subcat": "mains-safety",
               "era": "1980s",
               "confidence": "medium",
               "name": "Rocker actuator and case",
@@ -1318,7 +1357,8 @@
         {
           "id": "c64.mains.fuses",
           "kind": "part",
-          "category": "power",
+          "category": "electric",
+          "subcat": "mains-safety",
           "era": "1982",
           "confidence": "high",
           "name": "Primary fuse and thermal fuse",
@@ -1352,7 +1392,8 @@
                 "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
               ],
               "kind": "part",
-              "category": "power",
+              "category": "electric",
+              "subcat": "mains-safety",
               "era": "1980s",
               "confidence": "high",
               "name": "Glass cartridge fuse",
@@ -1392,7 +1433,8 @@
             {
               "id": "c64.mains.fuses.ceramic-wirewound",
               "kind": "part",
-              "category": "power",
+              "category": "electric",
+              "subcat": "mains-safety",
               "era": "1980s",
               "confidence": "high",
               "name": "Ceramic wirewound fuse",
@@ -1430,7 +1472,8 @@
             {
               "id": "c64.mains.fuses.thermal-fuse",
               "kind": "part",
-              "category": "power",
+              "category": "electric",
+              "subcat": "mains-safety",
               "era": "1982",
               "confidence": "high",
               "name": "Thermal fuse",
@@ -1468,6 +1511,7 @@
           "id": "c64.mains.line-capacitor",
           "kind": "part",
           "category": "passives",
+          "subcat": "capacitors",
           "era": "1982-1984",
           "confidence": "medium",
           "name": "X-rated line filter capacitor",
@@ -1500,6 +1544,7 @@
               ],
               "kind": "part",
               "category": "passives",
+              "subcat": "capacitors",
               "era": "1980s",
               "confidence": "high",
               "name": "Metallised polypropylene film capacitor",
@@ -1565,7 +1610,8 @@
     {
       "id": "mb.rf-modulator",
       "kind": "part",
-      "category": "power",
+      "category": "interconnect",
+      "subcat": "contacts-hardware",
       "era": "1982-1984",
       "confidence": "high",
       "name": "Commodore RF modulator module (VHF/UHF TV)",
@@ -1619,7 +1665,8 @@
             "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
           ],
           "kind": "part",
-          "category": "power",
+          "category": "board",
+          "subcat": "populate-solder",
           "era": "1982",
           "confidence": "high",
           "name": "Video amplifier and clip network",
@@ -1647,7 +1694,8 @@
             {
               "id": "mb.rf-modulator.video-chain.ssc-transistor",
               "kind": "part",
-              "category": "silicon",
+              "category": "semiconductors",
+              "subcat": "discretes-opto",
               "era": "1982",
               "confidence": "medium",
               "provenance": "complete",
@@ -1677,7 +1725,8 @@
             {
               "id": "mb.rf-modulator.video-chain.clip-diodes",
               "kind": "part",
-              "category": "silicon",
+              "category": "semiconductors",
+              "subcat": "discretes-opto",
               "era": "1982",
               "confidence": "medium",
               "provenance": "incomplete",
@@ -1709,7 +1758,8 @@
             "https://en.wikipedia.org/wiki/FM_modulation"
           ],
           "kind": "part",
-          "category": "power",
+          "category": "passives",
+          "subcat": "inductive-crystal",
           "era": "1982",
           "confidence": "high",
           "name": "Picture carrier oscillator",
@@ -1742,7 +1792,8 @@
             {
               "id": "mb.rf-modulator.rf-oscillator.rf-transistor",
               "kind": "part",
-              "category": "silicon",
+              "category": "semiconductors",
+              "subcat": "discretes-opto",
               "era": "1982",
               "confidence": "medium",
               "provenance": "complete",
@@ -1774,6 +1825,7 @@
               "id": "mb.rf-modulator.rf-oscillator.channel-trimmer",
               "kind": "part",
               "category": "passives",
+              "subcat": "capacitors",
               "era": "1982",
               "confidence": "medium",
               "provenance": "incomplete",
@@ -1797,7 +1849,8 @@
             {
               "id": "mb.rf-modulator.rf-oscillator.varactor",
               "kind": "part",
-              "category": "silicon",
+              "category": "semiconductors",
+              "subcat": "discretes-opto",
               "era": "1982",
               "confidence": "low",
               "provenance": "incomplete",
@@ -1836,7 +1889,8 @@
             "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore"
           ],
           "kind": "part",
-          "category": "power",
+          "category": "board",
+          "subcat": "populate-solder",
           "era": "1982",
           "confidence": "high",
           "name": "Audio intercarrier path",
@@ -1868,7 +1922,8 @@
                 "https://en.wikipedia.org/wiki/FM_modulation"
               ],
               "kind": "part",
-              "category": "power",
+              "category": "board",
+              "subcat": "populate-solder",
               "era": "1982",
               "confidence": "high",
               "name": "FM modulator network",
@@ -1885,7 +1940,8 @@
                 {
                   "id": "mb.rf-modulator.audio-chain.fm-modulator.audio-amplifier",
                   "kind": "part",
-                  "category": "power",
+                  "category": "semiconductors",
+                  "subcat": "discretes-opto",
                   "era": "1982",
                   "confidence": "medium",
                   "provenance": "complete",
@@ -1914,7 +1970,8 @@
             {
               "id": "mb.rf-modulator.audio-chain.intercarrier-selector",
               "kind": "part",
-              "category": "power",
+              "category": "interconnect",
+              "subcat": "contacts-hardware",
               "era": "1982",
               "confidence": "medium",
               "provenance": "incomplete",
@@ -1942,7 +1999,8 @@
             "https://en.wikipedia.org/wiki/Ferrite_bead"
           ],
           "kind": "part",
-          "category": "power",
+          "category": "interconnect",
+          "subcat": "cables",
           "era": "1982",
           "confidence": "high",
           "name": "RF output network and 75 ohm match",
@@ -1979,6 +2037,7 @@
               ],
               "kind": "part",
               "category": "interconnect",
+              "subcat": "connectors",
               "era": "1982",
               "confidence": "high",
               "name": "RCA phono socket",
@@ -2014,7 +2073,8 @@
             {
               "id": "mb.rf-modulator.rf-oscillator.channel-selection.uhf-output",
               "kind": "part",
-              "category": "power",
+              "category": "interconnect",
+              "subcat": "contacts-hardware",
               "era": "1983",
               "confidence": "medium",
               "provenance": "incomplete",
@@ -2041,7 +2101,8 @@
         {
           "id": "mb.rf-modulator.supply",
           "kind": "part",
-          "category": "power",
+          "category": "electric",
+          "subcat": "psu",
           "era": "1982",
           "confidence": "medium",
           "name": "Modulator supply and zener stabiliser",
@@ -2070,7 +2131,8 @@
             {
               "id": "mb.rf-modulator.supply.zener",
               "kind": "part",
-              "category": "silicon",
+              "category": "semiconductors",
+              "subcat": "discretes-opto",
               "era": "1982",
               "confidence": "medium",
               "provenance": "complete",
@@ -2107,7 +2169,8 @@
         {
           "id": "mb.rf-modulator.hybrid-module",
           "kind": "note",
-          "category": "board",
+          "category": "industry",
+          "subcat": "systems",
           "era": "1982-1984",
           "confidence": "low",
           "name": "Illustrative hybrid module construction (not Commodore)",
@@ -2137,7 +2200,8 @@
         {
           "id": "mb.rf-modulator.variants",
           "kind": "part",
-          "category": "power",
+          "category": "industry",
+          "subcat": "systems",
           "era": "1982-1984",
           "confidence": "high",
           "name": "Modulator part numbers and revisions",
@@ -2185,7 +2249,8 @@
             {
               "id": "mb.rf-modulator.variants.mitsumi",
               "kind": "part",
-              "category": "power",
+              "category": "industry",
+              "subcat": "systems",
               "era": "1983-1984",
               "confidence": "high",
               "name": "Mitsumi-built modules",
@@ -2209,7 +2274,8 @@
                 {
                   "id": "mb.rf-modulator.variants.mitsumi.contrast",
                   "kind": "note",
-                  "category": "power",
+                  "category": "industry",
+                  "subcat": "systems",
                   "era": "1984",
                   "confidence": "low",
                   "name": "1984 C64C video path",
@@ -2237,7 +2303,8 @@
             {
               "id": "mb.rf-modulator.variants.toad",
               "kind": "note",
-              "category": "power",
+              "category": "industry",
+              "subcat": "systems",
               "era": "1982",
               "confidence": "low",
               "name": "'toad' module nickname",
@@ -2250,7 +2317,8 @@
         {
           "id": "mb.rf-modulator.quality",
           "kind": "note",
-          "category": "power",
+          "category": "industry",
+          "subcat": "systems",
           "era": "1982",
           "confidence": "high",
           "name": "Why the RF picture was poor",
@@ -2279,7 +2347,8 @@
         {
           "id": "mb.rf-modulator.quality.composite-chain",
           "kind": "part",
-          "category": "power",
+          "category": "interconnect",
+          "subcat": "cables",
           "era": "1982",
           "confidence": "high",
           "name": "Two composite paths in one module",
@@ -2302,7 +2371,8 @@
             {
               "id": "mb.rf-modulator.quality.composite-chain.ntsc-vs-pal",
               "kind": "note",
-              "category": "power",
+              "category": "industry",
+              "subcat": "systems",
               "era": "1982",
               "confidence": "medium",
               "name": "NTSC and PAL variants",
@@ -2393,7 +2463,8 @@
         "https://en.wikipedia.org/wiki/Film_capacitor"
       ],
       "kind": "material",
-      "category": "plastics",
+      "category": "polymers",
+      "subcat": "film-fibre",
       "era": "1980s",
       "confidence": "high",
       "name": "Polypropylene film",
@@ -2431,6 +2502,7 @@
       ],
       "kind": "material",
       "category": "metals",
+      "subcat": "solder-finish",
       "era": "1980s",
       "confidence": "high",
       "name": "Low-melting fusible alloy",
@@ -2469,7 +2541,8 @@
         "https://en.wikipedia.org/wiki/Soda-lime_glass"
       ],
       "kind": "material",
-      "category": "power",
+      "category": "inorganics",
+      "subcat": "silica-glass",
       "era": "1980s",
       "confidence": "high",
       "provenance": "complete",
@@ -2493,7 +2566,8 @@
     "c64.mains.switch.actuator.filler": {
       "id": "c64.mains.switch.actuator.filler",
       "kind": "material",
-      "category": "plastics",
+      "category": "polymers",
+      "subcat": "thermosets",
       "era": "1980s",
       "confidence": "medium",
       "name": "Glass-reinforced switch body",
@@ -2528,6 +2602,7 @@
       ],
       "kind": "material",
       "category": "metals",
+      "subcat": "nonferrous",
       "era": "ancient",
       "confidence": "high",
       "provenance": "raw",
@@ -2553,7 +2628,8 @@
       "simple_name": "Metallised BOPP film",
       "description": "Biaxially oriented polypropylene film, stretched in both directions so the molecules line up to give high tensile strength and tear resistance in any direction, then vacuum-metallised with aluminium. The printing inks are solvent-based dyes and pigment pastes that are dried and overlaminated.",
       "kind": "material",
-      "category": "packaging",
+      "category": "polymers",
+      "subcat": "film-fibre",
       "era": "1980s",
       "facts": [
         {
@@ -2581,7 +2657,8 @@
       "simple_name": "Aluminium anode foil",
       "description": "The anode is a 12-20 um aluminium foil that has been chemically etched in a hot chlorate or permanganate bath to roughen the surface into a high-area sponge. Because capacitance is proportional to real surface area, the etch multiplies the effective area by 30-100x and is the entire reason a 4700 uF part fits in a 25 mm can. The foil gauge, the rolling lubricant and the last work-hardening pass matter as much as the etch: at 12 um the metal is barely thicker than the oxide skin on it, so a single pinhole becomes a short. The stock foil and its rolling chain are the shared metal.aluminum.foil line, from the rolling ingot down to the slitter.",
       "kind": "material",
-      "category": "passives",
+      "category": "metals",
+      "subcat": "nonferrous",
       "era": "1980s",
       "facts": [
         {
@@ -2626,7 +2703,8 @@
       "simple_name": "Electrolytic electrolyte",
       "description": "An aqueous solution of an ammonium or amine salt (ammonium pentaborate was the classic low-voltage recipe) that forms the counter-electrode ion layer against the oxide. In an aluminium electrolytic the cathode reaction deposits a hydrated aluminium oxide or tin layer from the metal ion, and the leakage current is exactly that reaction rate.",
       "kind": "material",
-      "category": "passives",
+      "category": "inorganics",
+      "subcat": "acids-salts",
       "era": "1980s",
       "facts": [
         {
@@ -2656,6 +2734,7 @@
       "description": "A porous sheet between the anode and the cathode foil, keeping them apart without shorting. The brick's 4700 uF part used a cellulose (kraft paper) separator: a highly absorbent high-purity paper that doubles as the electrolyte reservoir. Microporous polypropylene film was the premium longer-life alternative of the period and is not documented in this part. Paper is hygroscopic and absorbs electrolyte, and the carbonisation of that paper when leakage current rises shorts the cell.",
       "kind": "material",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1980s",
       "facts": [
         {
@@ -2686,6 +2765,7 @@
       "description": "Paper or cotton-linen web impregnated with phenol-formaldehyde resin under heat and pressure. Cheap, dimensionally stable and self-extinguishing, which is why it was the default material for transformer terminal boards and fuseholders.",
       "kind": "material",
       "category": "board",
+      "subcat": "laminate",
       "era": "1980s",
       "facts": [
         {
@@ -2723,7 +2803,8 @@
       "simple_name": "Layer/interwinding insulation",
       "description": "Crepe paper or glass-cloth tape between winding layers, a wide kraft or composite tape wrap between the primary and the secondaries, and in the potted builds strips of polyimide (Kapton) film around the whole winding. The 1983-84 bricks visibly used masking tape on the core yoke edges and something like Kapton over the coil to keep the epoxy pour off the windings.",
       "kind": "material",
-      "category": "magnetics",
+      "category": "electric",
+      "subcat": "transformer-magnetics",
       "era": "1982",
       "facts": [
         {
@@ -2759,7 +2840,8 @@
     "mb.rf-modulator.hybrid-module.alumina-substrate.sintering-aid": {
       "id": "mb.rf-modulator.hybrid-module.alumina-substrate.sintering-aid",
       "kind": "material",
-      "category": "board",
+      "category": "inorganics",
+      "subcat": "ceramics-refractory",
       "era": "1980s",
       "confidence": "medium",
       "name": "Magnesium oxide sintering aid",
@@ -2791,6 +2873,7 @@
       ],
       "kind": "material",
       "category": "metals",
+      "subcat": "nonferrous",
       "era": "ancient",
       "confidence": "high",
       "provenance": "complete",
@@ -2820,7 +2903,8 @@
         "https://en.wikipedia.org/wiki/Soda_ash"
       ],
       "kind": "material",
-      "category": "metals",
+      "category": "inorganics",
+      "subcat": "silica-glass",
       "era": "ancient",
       "confidence": "high",
       "name": "Glass batch and silica sand",
@@ -2836,7 +2920,8 @@
         {
           "id": "c64.mains.fuses.glass-cartridge.tube-glass.batch.regenerator",
           "kind": "facility",
-          "category": "energy",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1980s",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -2869,7 +2954,8 @@
       "simple_name": "Polypropylene separator",
       "description": "A microporous isotactic polypropylene film, 12-25 um thick and about 35-45% porous, made by extruding a film and stretching it or by solvent extraction so that the electrolyte fills the voids while the sheet still keeps the electrodes apart. It replaced paper because it absorbs no electrolyte and, when it overheats, softens instead of carbonising into a conductive bridge.",
       "kind": "material",
-      "category": "plastics",
+      "category": "polymers",
+      "subcat": "film-fibre",
       "era": "1980s",
       "facts": [
         {
@@ -2897,7 +2983,8 @@
       "simple_name": "Cellulose paper separator",
       "description": "A thin kraft paper sheet made on a Fourdrinier or twin-wire machine from long-fibre softwood pulp cooked at 160-180 C in sodium hydroxide; the lignin is washed out into a black liquor that is burned for process heat, roughly 1.2-1.5 t per tonne of pulp, and the pulp is bleached with chlorine or hypochlorite before an acid wash. The paper absorbs electrolyte and swells, and on ageing it chars and shorts.",
       "kind": "material",
-      "category": "passives",
+      "category": "industry",
+      "subcat": "paper-print-pack",
       "era": "1980s",
       "confidence": "medium",
       "provenance": "complete",
@@ -2939,7 +3026,8 @@
       "simple_name": "Crepe paper insulation",
       "description": "A lightly crinkled, unbleached kraft paper that stretches to follow the winding contour without bunching. Made on a Fourdrinier machine from a dilute suspension of long-fibre softwood pulp.",
       "kind": "material",
-      "category": "packaging",
+      "category": "polymers",
+      "subcat": "film-fibre",
       "era": "1980s",
       "confidence": "high",
       "provenance": "complete",
@@ -2961,7 +3049,8 @@
       "simple_name": "Glass-cloth insulation tape",
       "description": "Woven E-glass yarn cloth, ~0.1 mm thick, silane-sized for adhesion, wound in the last layer before the outer tape. Glass has no moisture absorption and much higher dielectric strength than paper, which is why the safety-approved design puts it nearest the primary.",
       "kind": "material",
-      "category": "magnetics",
+      "category": "inorganics",
+      "subcat": "silica-glass",
       "era": "1980s",
       "facts": [
         {
@@ -2997,7 +3086,8 @@
       "simple_name": "Polyimide film",
       "description": "A 12-25 um amber polyimide film used as the barrier between the coil and the epoxy pour and, in later builds, as the layer insulation. Its value is that it does not soften, dissolve or outgas in a hot epoxy cure.",
       "kind": "material",
-      "category": "plastics",
+      "category": "polymers",
+      "subcat": "film-fibre",
       "era": "1980s",
       "facts": [
         {
@@ -3030,7 +3120,8 @@
       "simple_name": "Durene",
       "description": "1,2,4,5-tetramethylbenzene (durol), the symmetrical C10 aromatic separated from methylated xylene/trimethylbenzene streams by crystallization on its high 79 C melting point and catalytically oxidised in the vapour phase to pyromellitic dianhydride, the dianhydride half of Kapton-type polyimide.",
       "kind": "material",
-      "category": "plastics",
+      "category": "petrochem",
+      "subcat": "monomers",
       "era": "1980s",
       "confidence": "medium",
       "provenance": "complete",
@@ -3060,7 +3151,8 @@
       "simple_name": "Pyromellitic dianhydride",
       "description": "The diacid anhydride half of Kapton is made by vapour-phase catalytic oxidation of durene (1,2,4,5-tetramethylbenzene). This is a petroleum-aromatics chain. The diamine half is 4,4'-oxydianiline or p-phenylenediamine, both aromatics intermediates. (Trimellitic anhydride, the C9 single anhydride from pseudocumene oxidation, is a different molecule.)",
       "kind": "material",
-      "category": "plastics",
+      "category": "petrochem",
+      "subcat": "monomers",
       "era": "1980s",
       "facts": [
         {
@@ -3094,7 +3186,8 @@
       "simple_name": "Mechanical wood pulp",
       "description": "Softwood (spruce/fir) is debarked, chipped, steamed and refined in a disc or refiner mill; the long fibres are ideal for electrical insulation paper because they give high dielectric strength and mechanical strength in the thin sheet.",
       "kind": "material",
-      "category": "packaging",
+      "category": "industry",
+      "subcat": "paper-print-pack",
       "era": "ancient",
       "confidence": "high",
       "children": [],
@@ -3118,7 +3211,8 @@
       "simple_name": "Softwood pulp",
       "description": "The species matters as much as the process: long-fibre softwood pulp from spruce, fir or pine gives the dielectric strength and tear resistance that electrical insulation paper needs, while hardwood pulp from birch or aspen gives opacity and printability and is used in the thinner papers. Softwood is bought as chips or as market pulp.",
       "kind": "material",
-      "category": "packaging",
+      "category": "industry",
+      "subcat": "paper-print-pack",
       "era": "ancient",
       "confidence": "medium",
       "provenance": "complete",
@@ -3146,7 +3240,8 @@
     "mb.rf-modulator.hybrid-module.alumina-substrate.sintering-aid.magnesite": {
       "id": "mb.rf-modulator.hybrid-module.alumina-substrate.sintering-aid.magnesite",
       "kind": "material",
-      "category": "metals",
+      "category": "inorganics",
+      "subcat": "alkali-lime",
       "era": "ancient",
       "confidence": "medium",
       "name": "Magnesite ore",
@@ -3171,7 +3266,8 @@
       "simple_name": "Potassium permanganate etchant",
       "description": "An alkaline potassium permanganate bath oxidises the aluminium surface; the loose MnO2 sludge is removed by brushing or a nitric acid dip. The alternative chlorate chemistry was being phased out for safety and environmental reasons through the 1980s because chlorate/dioxide is toxic.",
       "kind": "material",
-      "category": "fluids",
+      "category": "inorganics",
+      "subcat": "acids-salts",
       "era": "1980s",
       "facts": [
         {
@@ -3191,7 +3287,8 @@
       "simple_name": "Impregnating varnish",
       "description": "A low-viscosity, high-solids unsaturated polyester resin dissolved in styrene, with an organic peroxide cure catalyst. It cures by crosslinking rather than by solvent loss, so it shrinks very little and fills completely.",
       "kind": "material",
-      "category": "plastics",
+      "category": "polymers",
+      "subcat": "thermosets",
       "era": "1980s",
       "facts": [
         {
@@ -3230,7 +3327,8 @@
       "simple_name": "Polyester-imide resin",
       "description": "The workhorse magnet-wire enamel of the 1980s. The base is a polycondensation of dimethyl terephthalate (or trimellitic anhydride) with polyols; the imide is introduced with a polyamide of trimellitic anhydride and a diamine such as ethylenediamine, which is what raises the class to H (180 C).",
       "kind": "material",
-      "category": "plastics",
+      "category": "polymers",
+      "subcat": "thermosets",
       "era": "1980s",
       "facts": [
         {
@@ -3267,6 +3365,7 @@
       ],
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1980s",
       "confidence": "high",
       "name": "Film winding and vacuum metallisation",
@@ -3291,7 +3390,8 @@
         {
           "id": "c64.mains.line-capacitor.metallised-film.winding.roll-film",
           "kind": "process",
-          "category": "passives",
+          "category": "polymers",
+          "subcat": "film-fibre",
           "era": "1980s",
           "confidence": "medium",
           "provenance": "complete",
@@ -3345,7 +3445,8 @@
       "simple_name": "Epoxy potting pour",
       "description": "From mid-1983 Commodore filled the case with a two-part epoxy so the whole assembly became one solid block: transformer, board, fuses, leads, the lot, in a minty-green or cool-grey mass. It made the unit tamper-proof and un-serviceable, and it turned out to be the primary cause of failure because the heat of the linear regulator could no longer escape.",
       "kind": "process",
-      "category": "assembly",
+      "category": "electric",
+      "subcat": "psu",
       "era": "1983",
       "facts": [
         {
@@ -3411,7 +3512,8 @@
       "simple_name": "Brick assembly and final test",
       "description": "The order of operations is visible in the potted builds: the transformer is soldered to by the diodes and fuses at its own pins, the small board is populated, the LED and connector are fitted, the assembly is dropped into the case, epoxy is poured, the halves are screwed together, and the finished unit is then hi-pot tested, earth-continuity tested and burned in on load. Testing after potting is what lets a potted brick be safe and unrepairable at the same time.",
       "kind": "process",
-      "category": "assembly",
+      "category": "electric",
+      "subcat": "psu",
       "era": "1983",
       "facts": [
         {
@@ -3442,7 +3544,8 @@
           "simple_name": "Hi-pot withstand test",
           "description": "1-1.5 kV AC is applied between the primary and the joined secondaries for about one second, with the leakage current monitored and the test set tripping on either a flashover or an excess leakage current. It finds a pinhole in the enamel, a missing layer of insulation paper, or a solder splash bridging the bobbin.",
           "kind": "process",
-          "category": "assembly",
+          "category": "electric",
+          "subcat": "mains-safety",
           "era": "1980s",
           "facts": [
             {
@@ -3475,7 +3578,8 @@
           "simple_name": "UL 478 / IEC 65 listing",
           "description": "The brick is certified as a component, not as a consumer appliance: UL 478 'Power Supply Units' in the United States, the equivalent IEC/EN 41003 and IEC 65 (BS 415 in the UK, VDE in West Germany) in Europe, plus CSA in Canada and Singapore's NLS scheme. Getting on the list required submitting the transformer winding instruction and the critical parts list, because those are the two things that cannot be verified by testing a finished unit.",
           "kind": "process",
-          "category": "assembly",
+          "category": "electric",
+          "subcat": "mains-safety",
           "era": "1982",
           "facts": [
             {
@@ -3500,7 +3604,8 @@
               "simple_name": "Isolation/creepage/clearance",
               "description": "The physical rules that make the layout safe: a primary-to-secondary creepage of about 6.4 mm and clearance of 3.2 mm for a 250 V basic insulation, the earthed foil between the windings, and the bobbin and terminal block designed so that a wire cannot fall across the isolation barrier. Every one of those dimensions is on the drawing and is checked at the follow-up inspection.",
               "kind": "process",
-              "category": "assembly",
+              "category": "electric",
+              "subcat": "mains-safety",
               "era": "1980s",
               "facts": [
                 {
@@ -3536,6 +3641,7 @@
       "description": "The anode foil (etched) and the cathode (bare aluminium foil, or the can itself in later types) are separated by the separator and wound on a mandrel into a compact roll, the leads are brought out, and the roll is impregnated under vacuum at 1-10 mbar with the electrolyte so the pores fill completely. Air left in the roll is the single biggest cause of high ESR. The can is then closed with a rubber bung pressed against the leads and a silicone or bitumen fill, and the leads are rolled down to set the dimensions.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1980s",
       "facts": [
         {
@@ -3581,7 +3687,8 @@
       "simple_name": "Sheet folding and tapping",
       "description": "Strip or sheet is blanked, then folded on a press brake to a U; the mounting hole is punched or drilled and tapped with a thread-forming tap. Aluminium's low modulus means the fold must be given a generous inside radius or the sheet tears, and the tapped hole must be at least 1.5 diameters from the bend.",
       "kind": "process",
-      "category": "metals",
+      "category": "electric",
+      "subcat": "psu",
       "era": "1980s",
       "facts": [
         {
@@ -3623,7 +3730,8 @@
       "simple_name": "Bolt regulator to heatsink",
       "description": "The regulator tab or TO-3 can is bolted to the folded aluminium plate with a thin layer of thermal compound. This is in 1982 typically a zinc-oxide paste in a silicone or hydrocarbon base, or sometimes simply a piece of thin copper foil. The thermal interface matters more than the compound brand: dry metal-to-metal contact is roughly ten times worse than a properly filled joint.",
       "kind": "process",
-      "category": "assembly",
+      "category": "electric",
+      "subcat": "psu",
       "era": "1982",
       "facts": [
         {
@@ -3655,7 +3763,8 @@
       "simple_name": "Triple-diffused planar process",
       "description": "Three sequential dopings (collector-base, base-emitter, and a deep collector-emitter) through a photolithographically masked oxide. The heavy collector-emitter diffusion carries the load current while the shallow, tightly controlled base-emitter diffusion sets the gain and the breakdown voltage. This is the process that made 15 A transistors possible at all.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1980s",
       "facts": [
         {
@@ -3692,7 +3801,8 @@
       "simple_name": "Die attach TO-3 sealing",
       "description": "The die is brazed to the header in a hydrogen atmosphere at 700-800 C with an active-metal braze, or soldered with a 50Pb-50Sn or AuSn preform at 220-300 C; the header is then nickel-plated. The can is crimped or cold-welded onto the header with an annular glass or ceramic feedthrough insulator; mica or a thin mica-fibre washer goes between the can and the heatsink to isolate the collector while conducting heat.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1980s",
       "facts": [
         {
@@ -3728,7 +3838,8 @@
       "simple_name": "Emitter wire bonds",
       "description": "Two to four 100-200 um aluminium wires are wedge-bonded from the emitter metallisation to the emitter lead to carry the full emitter current. The collector current flows through the die's back contact straight into the header. Ultrasonic wedge bonding at 50-250 g per wire was the universal method. Ball bonding was for fine-pitch.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1980s",
       "facts": [
         {
@@ -3766,7 +3877,8 @@
       "simple_name": "Die attach axial encapsulation",
       "description": "The die is die-attached to the anode lead with silver-loaded glass or a soft solder, one or two aluminium wires are wedge-bonded from the cathode metallisation to the cathode lead, then the whole assembly is transfer-moulded or cast in an epoxy body filled with silicone gel to relieve the thermal cycle between the glass and the leads.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1980s",
       "facts": [
         {
@@ -3807,7 +3919,8 @@
       "simple_name": "Layer winding on a coil winder",
       "description": "A single-spindle or two-spindle coil winder turns the bobbin while traversing the wire, and the operator lays interleaved insulation between each layer with a slow-moving 'paper feeder'. Bobbin layers are counter-wound to flatten the coil, and the leads are brought out through the bobbin flange and dressed so they cannot chafe on the core.",
       "kind": "process",
-      "category": "magnetics",
+      "category": "electric",
+      "subcat": "transformer-magnetics",
       "era": "1982",
       "facts": [
         {
@@ -3831,7 +3944,8 @@
           "simple_name": "Crimped flag terminals",
           "description": "The winding leads are soldered or, in the 1983-84 bricks, soldered directly to the transformer's own pins. The line cord and interwinding conductors terminate in tin-plated brass crimp flags. Under the epoxy pour the crimps are the weak link (they can anneal and let go) and the PVC of the line cord is visibly browned right at the pin.",
           "kind": "process",
-          "category": "assembly",
+          "category": "electric",
+          "subcat": "transformer-magnetics",
           "era": "1983",
           "facts": [
             {
@@ -3874,7 +3988,8 @@
       "simple_name": "Polyester varnish impregnation",
       "description": "The finished assembly is vacuum impregnated with a thermosetting polyester or epoxy varnish so the winding becomes a solid block and cannot move at 50 Hz. Viscous impregnating varnishes were standard by the early 1980s; the alternative is dip-and-bake in an epoxy or a polyurethane.",
       "kind": "process",
-      "category": "magnetics",
+      "category": "electric",
+      "subcat": "transformer-magnetics",
       "era": "1982",
       "facts": [
         {
@@ -3906,7 +4021,8 @@
       "simple_name": "Injection moulding the bobbin",
       "description": "Nylon is hygroscopic so the pellets are dried at 80 C for 4-8 h before moulding, then injection moulded at 240-280 C into a multi-cavity tool with hot runners and a mould temperature of 60-90 C. The mould cavity is polished because a flash of loose fibre on the winding slot would be a turn-coat defect.",
       "kind": "process",
-      "category": "plastics",
+      "category": "polymers",
+      "subcat": "thermoplastics",
       "era": "1980s",
       "facts": [
         {
@@ -3950,6 +4066,7 @@
       "description": "A 8 mm copper cathode rod or coil is pickled in sulphuric acid, washed, annealed in a continuous bright-annealing furnace at 500-700 C, then pulled through progressively finer dies with a phosphated soap lubricant. Ten or more die passes take 8 mm to 0.3 mm, and the die temperature is water-cooled to keep the copper from work-hardening to failure.",
       "kind": "process",
       "category": "metals",
+      "subcat": "nonferrous",
       "era": "1950s onward",
       "facts": [
         {
@@ -3993,7 +4110,8 @@
       "simple_name": "Polyester-imide enamel coating",
       "description": "The wire runs continuously through a die-casting oven where a 25-30% solids solution of the modified polyester-imide resin in cresol/xylene is applied, then through a 350-450 C curing oven, and through the same pair again for a second coat. The thermal cure crosslinks the resin to a hard film that resists varnish, oil and coolant.",
       "kind": "process",
-      "category": "magnetics",
+      "category": "electric",
+      "subcat": "transformer-magnetics",
       "era": "1982",
       "facts": [
         {
@@ -4030,7 +4148,8 @@
       "simple_name": "Punched E and I lamination",
       "description": "One E and one I punched from a strip of grain-oriented electrical steel by a high-speed progression press, roughly 200-600 strokes per minute. The die is a hardened tool-steel stamping die with a compound profile; the strip is fed on a roll and the interlamination burr left by the punch is small enough not to short adjacent plates.",
       "kind": "process",
-      "category": "magnetics",
+      "category": "electric",
+      "subcat": "transformer-magnetics",
       "era": "1982",
       "facts": [
         {
@@ -4074,7 +4193,8 @@
           "simple_name": "High-speed stamping press",
           "description": "A vertical crank or hydraulic press with the compound E+I die in the lower ram and a blanking punch above. In a 1982-era plant the strip ran on a powered roll feed with a pilot pin for registration; the same press also cut the mounting-hole side features and the interleaving key.",
           "kind": "tool",
-          "category": "magnetics",
+          "category": "industry",
+          "subcat": "plant-tooling",
           "era": "1982",
           "confidence": "medium",
           "children": [
@@ -4084,7 +4204,8 @@
               "simple_name": "Tool-steel stamping die",
               "description": "Tungsten-chromium or high-chromium tool steel, hardened and ground, with the compound E and I outline in the same 25-40 mm stroke. Dies lasted millions of hits before the cutting edge rolled and the burr grew past the electrical-steel tolerance.",
               "kind": "tool",
-              "category": "magnetics",
+              "category": "metals",
+              "subcat": "ferrous",
               "era": "1982",
               "confidence": "medium",
               "provenance": "complete",
@@ -4127,7 +4248,8 @@
       "simple_name": "Core stack assembly",
       "description": "E and I plates are stacked in alternating layers with the joints staggered so no section of the stack has an unbroken air gap, then clamped end to end by angle plates and bolts or by rivets through the yoke. The joints are the dominant core loss, so the assembler has to keep the interleaving sequence right by hand.",
       "kind": "process",
-      "category": "magnetics",
+      "category": "electric",
+      "subcat": "transformer-magnetics",
       "era": "1982",
       "facts": [
         {
@@ -4147,7 +4269,8 @@
           "simple_name": "Clamp bolts and angle plates",
           "description": "Mild steel angle plates bolted across the yokes, or two long tie bolts through the core legs, with the axial clamp force chosen so the interlaminar pressure is roughly 3-10 kg/mm2. This is enough to stop the stack buzzing at 50 Hz, not so much that the punched edges crack.",
           "kind": "part",
-          "category": "magnetics",
+          "category": "electric",
+          "subcat": "transformer-magnetics",
           "era": "1982",
           "confidence": "medium",
           "children": [],
@@ -4172,7 +4295,8 @@
     "mb.rf-modulator.assembly": {
       "id": "mb.rf-modulator.assembly",
       "kind": "process",
-      "category": "assembly",
+      "category": "board",
+      "subcat": "board-test",
       "era": "1982",
       "confidence": "medium",
       "provenance": "complete",
@@ -4212,7 +4336,8 @@
     "mb.rf-modulator.hybrid-module.chip-passives.laser-trim": {
       "id": "mb.rf-modulator.hybrid-module.chip-passives.laser-trim",
       "kind": "process",
-      "category": "assembly",
+      "category": "passives",
+      "subcat": "resistors",
       "era": "1980s",
       "confidence": "medium",
       "name": "Laser trimming of the film resistors",
@@ -4239,7 +4364,8 @@
         "https://en.wikipedia.org/wiki/Trichlorosilane"
       ],
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1980s",
       "confidence": "high",
       "provenance": "complete",
@@ -4280,7 +4406,8 @@
     "mb.rf-modulator.rf-oscillator.channel-selection": {
       "id": "mb.rf-modulator.rf-oscillator.channel-selection",
       "kind": "process",
-      "category": "power",
+      "category": "passives",
+      "subcat": "switches",
       "era": "1982",
       "confidence": "high",
       "name": "Channel and region switching",
@@ -4316,6 +4443,7 @@
       ],
       "kind": "process",
       "category": "metals",
+      "subcat": "precious-special",
       "era": "1980s",
       "confidence": "high",
       "name": "Silver refining from lead residues",
@@ -4344,6 +4472,7 @@
           ],
           "kind": "process",
           "category": "metals",
+          "subcat": "precious-special",
           "era": "ancient",
           "confidence": "high",
           "provenance": "complete",
@@ -4393,7 +4522,8 @@
       "simple_name": "Biaxial orientation",
       "description": "A cast polypropylene or cast polyethylene film is stretched in the machine direction, cooled, then stretched again in the transverse direction and heat-set. The two stretching steps line the polymer chains up in both directions, so the film has high tensile strength and tear resistance whatever the pull direction, which is exactly why a torn BOPP label ends in a straight line rather than a ragged one.",
       "kind": "process",
-      "category": "packaging",
+      "category": "polymers",
+      "subcat": "film-fibre",
       "era": "1980s",
       "confidence": "high",
       "provenance": "complete",
@@ -4437,6 +4567,7 @@
       "description": "The foil is threaded continuously through an etch tank at 70-80 C. Sodium chlorate with hydrochloric acid, or potassium permanganate, dissolves aluminium faster where the surface is already rough, so the etch runs away into a deep microscopic pore structure rather than eating away uniformly. The etched foil is rinsed, dried and cut to length.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1980s",
       "facts": [
         {
@@ -4476,6 +4607,7 @@
       "description": "The wound wet cell is energised from a DC source at a voltage ramped up to the rated working voltage. At the anode the aluminium oxidises to a dense amorphous alumina film only a few nanometres thick. This is the dielectric. Raising the voltage thickens the film; raising the temperature thickens it faster but also lets it dissolve, which is why forming is done hot and forming voltage is always lower than the operating voltage.",
       "kind": "process",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1980s",
       "facts": [
         {
@@ -4509,7 +4641,8 @@
     "mb.rf-modulator.variants.mitsumi.contrast.encoder-ic": {
       "id": "mb.rf-modulator.variants.mitsumi.contrast.encoder-ic",
       "kind": "part",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chips",
       "era": "1984",
       "confidence": "low",
       "name": "Video encoder integrated circuit",
@@ -4535,7 +4668,8 @@
         "https://en.wikipedia.org/wiki/Aluminium_oxide"
       ],
       "kind": "part",
-      "category": "board",
+      "category": "inorganics",
+      "subcat": "ceramics-refractory",
       "era": "1980s",
       "confidence": "high",
       "name": "Alumina substrate and its ceramic processing",
@@ -4575,6 +4709,7 @@
       ],
       "kind": "process",
       "category": "passives",
+      "subcat": "resistors",
       "era": "1980s",
       "confidence": "high",
       "name": "Thin-film and thick-film resistor networks",
@@ -4611,7 +4746,8 @@
     "mb.rf-modulator.hybrid-module.epoxy-encapsulant": {
       "id": "mb.rf-modulator.hybrid-module.epoxy-encapsulant",
       "kind": "material",
-      "category": "plastics",
+      "category": "polymers",
+      "subcat": "thermosets",
       "era": "1980s",
       "confidence": "medium",
       "name": "Epoxy encapsulant as RF seal",
@@ -4638,7 +4774,8 @@
     "mb.rf-modulator.hybrid-module.lead-frame": {
       "id": "mb.rf-modulator.hybrid-module.lead-frame",
       "kind": "part",
-      "category": "interconnect",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1980s",
       "confidence": "medium",
       "name": "Gold-plated DIP lead frame",
@@ -4675,7 +4812,8 @@
     "mb.rf-modulator.hybrid-module.assembly": {
       "id": "mb.rf-modulator.hybrid-module.assembly",
       "kind": "process",
-      "category": "assembly",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1980s",
       "confidence": "medium",
       "name": "Hybrid module assembly and transfer moulding",
@@ -4696,7 +4834,8 @@
         {
           "id": "mb.rf-modulator.hybrid-module.assembly.lead-bond",
           "kind": "process",
-          "category": "interconnect",
+          "category": "semiconductors",
+          "subcat": "chip-pack",
           "era": "1980s",
           "confidence": "medium",
           "name": "Attach the substrate to the lead frame",
@@ -4717,7 +4856,8 @@
             {
               "id": "mb.rf-modulator.hybrid-module.assembly.lead-bond.epoxy",
               "kind": "part",
-              "category": "plastics",
+              "category": "semiconductors",
+              "subcat": "chip-pack",
               "era": "1980s",
               "confidence": "medium",
               "name": "Silver-filled conductive epoxy",
@@ -4759,6 +4899,7 @@
       "id": "mb.rf-modulator.hybrid-module.chip-passives",
       "kind": "part",
       "category": "passives",
+      "subcat": "capacitors",
       "era": "1980s",
       "confidence": "medium",
       "name": "Chip inductor and chip capacitor",
@@ -4780,7 +4921,8 @@
     "mb.rf-modulator.hybrid-module.alignment": {
       "id": "mb.rf-modulator.hybrid-module.alignment",
       "kind": "process",
-      "category": "assembly",
+      "category": "board",
+      "subcat": "board-test",
       "era": "1980s",
       "confidence": "medium",
       "name": "Substrate alignment and RF screening",
@@ -4808,7 +4950,8 @@
         "https://en.wikipedia.org/wiki/Refractory"
       ],
       "kind": "material",
-      "category": "metals",
+      "category": "inorganics",
+      "subcat": "ceramics-refractory",
       "era": "1980s",
       "confidence": "high",
       "provenance": "incomplete",
@@ -4842,7 +4985,8 @@
     "c64.mains.earthing": {
       "id": "c64.mains.earthing",
       "kind": "process",
-      "category": "assembly",
+      "category": "electric",
+      "subcat": "mains-safety",
       "era": "1982",
       "confidence": "high",
       "name": "Protective earth bonding",
@@ -4875,7 +5019,8 @@
     "c64.mains.approvals": {
       "id": "c64.mains.approvals",
       "kind": "process",
-      "category": "assembly",
+      "category": "electric",
+      "subcat": "mains-safety",
       "era": "1982-1984",
       "confidence": "high",
       "name": "Safety approvals and standards",
@@ -4907,7 +5052,8 @@
         {
           "id": "c64.mains.approvals.safety-file",
           "kind": "process",
-          "category": "assembly",
+          "category": "electric",
+          "subcat": "mains-safety",
           "era": "1980s",
           "confidence": "medium",
           "name": "Safety file",
@@ -4935,7 +5081,8 @@
         {
           "id": "c64.mains.approvals.normal-tests",
           "kind": "process",
-          "category": "assembly",
+          "category": "electric",
+          "subcat": "mains-safety",
           "era": "1980s",
           "confidence": "medium",
           "name": "Routine production tests",
@@ -4963,7 +5110,8 @@
             {
               "id": "c64.mains.approvals.normal-tests.aql",
               "kind": "process",
-              "category": "assembly",
+              "category": "electric",
+              "subcat": "mains-safety",
               "era": "1980s",
               "confidence": "medium",
               "provenance": "complete",
@@ -5020,195 +5168,204 @@
       ]
     },
     "c64.psu.regulator.variant-discrete.pass-npn.triple-diffusion.diffusion-glass": {
-        "id": "c64.psu.regulator.variant-discrete.pass-npn.triple-diffusion.diffusion-glass",
-        "name": "Phosphorus/boron diffusion glass source",
-        "simple_name": "P/B diffusion glass",
-        "description": "Phosphorus- and boron-bearing doped-oxide diffusion source fired onto the power-transistor wafer; at drive-in the P and B diffuse through the masked oxide to form collector-base, base-emitter and deep collector-emitter regions.",
-        "kind": "material",
-        "category": "silicon",
-        "era": "1980s",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Planar_process"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: exact POCl3/BBr3 vs painted-glass vehicle not established; stated (P,B,B,P) sequence and 1-2 um / 20-40 um depths are candidate facts, not independently sourced.",
-        "children": [],
-        "edges": [
-          {
-            "to": "chem.fab-chemicals.dopants.phosphine",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
+      "id": "c64.psu.regulator.variant-discrete.pass-npn.triple-diffusion.diffusion-glass",
+      "name": "Phosphorus/boron diffusion glass source",
+      "simple_name": "P/B diffusion glass",
+      "description": "Phosphorus- and boron-bearing doped-oxide diffusion source fired onto the power-transistor wafer; at drive-in the P and B diffuse through the masked oxide to form collector-base, base-emitter and deep collector-emitter regions.",
+      "kind": "material",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
+      "era": "1980s",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Planar_process"
+      ],
+      "confidence": "medium",
+      "note": "Hedged: exact POCl3/BBr3 vs painted-glass vehicle not established; stated (P,B,B,P) sequence and 1-2 um / 20-40 um depths are candidate facts, not independently sourced.",
+      "children": [],
+      "edges": [
+        {
+          "to": "chem.fab-chemicals.dopants.phosphine",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "c64.psu.nameplate.metallised-label.bopp.cast-film": {
-        "id": "c64.psu.nameplate.metallised-label.bopp.cast-film",
-        "name": "Cast polyolefin label film",
-        "simple_name": "Cast film",
-        "description": "Cast (unstretched) polypropylene or polyethylene film, extruded and chill-cast, feedstock for biaxial orientation into BOPP label film.",
-        "kind": "material",
-        "category": "packaging",
-        "era": "1980s",
-        "sources": [],
-        "confidence": "medium",
-        "note": "Whether cast stock was PP or PE and stretch ratios 3-5x MD / 4-10x TD plus 110-140C set are process description, not established label spec.",
-        "children": [],
-        "edges": [
-          {
-            "to": "chem.polyethylene.resin",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
+      "id": "c64.psu.nameplate.metallised-label.bopp.cast-film",
+      "name": "Cast polyolefin label film",
+      "simple_name": "Cast film",
+      "description": "Cast (unstretched) polypropylene or polyethylene film, extruded and chill-cast, feedstock for biaxial orientation into BOPP label film.",
+      "kind": "material",
+      "category": "polymers",
+      "subcat": "film-fibre",
+      "era": "1980s",
+      "sources": [],
+      "confidence": "medium",
+      "note": "Whether cast stock was PP or PE and stretch ratios 3-5x MD / 4-10x TD plus 110-140C set are process description, not established label spec.",
+      "children": [],
+      "edges": [
+        {
+          "to": "chem.polyethylene.resin",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "c64.psu.regulator.variant-7805.die": {
-        "id": "c64.psu.regulator.variant-7805.die",
-        "name": "7805 monolithic regulator die",
-        "simple_name": "7805 die",
-        "description": "Monolithic 5V regulator silicon die containing reference, error amplifier, current limit and pass transistor, before TO-220 packaging.",
-        "kind": "part",
-        "category": "silicon",
-        "era": "1983",
-        "sources": [],
-        "confidence": "medium",
-        "note": "5V 1.5A rating and TO-220 versus TO-3P body variant per candidate facts; die size and diffusion sequence not established.",
-        "children": [],
-        "edges": [
-          {
-            "to": "metal.silica.polysilicon",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
+      "id": "c64.psu.regulator.variant-7805.die",
+      "name": "7805 monolithic regulator die",
+      "simple_name": "7805 die",
+      "description": "Monolithic 5V regulator silicon die containing reference, error amplifier, current limit and pass transistor, before TO-220 packaging.",
+      "kind": "part",
+      "category": "semiconductors",
+      "subcat": "chips",
+      "era": "1983",
+      "sources": [],
+      "confidence": "medium",
+      "note": "5V 1.5A rating and TO-220 versus TO-3P body variant per candidate facts; die size and diffusion sequence not established.",
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.silica.polysilicon",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "c64.psu.regulator.variant-discrete.driver.die": {
-        "id": "c64.psu.regulator.variant-discrete.driver.die",
-        "name": "Driver transistor die (small-signal NPN)",
-        "simple_name": "Driver die",
-        "description": "Small-signal NPN silicon die for the discrete regulator driver and error-amplifier stage, TO-92 class before encapsulation.",
-        "kind": "part",
-        "category": "silicon",
-        "era": "1982",
-        "sources": [],
-        "confidence": "medium",
-        "note": "hFE 100-400 and 2N3904/BC547-class assignment per candidate facts; same bins as board Q1-Q8 per candidate note; exact beta and die size not established.",
-        "children": [],
-        "edges": [
-          {
-            "to": "metal.silica.polysilicon",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
+      "id": "c64.psu.regulator.variant-discrete.driver.die",
+      "name": "Driver transistor die (small-signal NPN)",
+      "simple_name": "Driver die",
+      "description": "Small-signal NPN silicon die for the discrete regulator driver and error-amplifier stage, TO-92 class before encapsulation.",
+      "kind": "part",
+      "category": "semiconductors",
+      "subcat": "chips",
+      "era": "1982",
+      "sources": [],
+      "confidence": "medium",
+      "note": "hFE 100-400 and 2N3904/BC547-class assignment per candidate facts; same bins as board Q1-Q8 per candidate note; exact beta and die size not established.",
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.silica.polysilicon",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "c64.psu.transformer.winding.insulation.kapton.pseudocumene": {
-        "id": "c64.psu.transformer.winding.insulation.kapton.pseudocumene",
-        "name": "Pseudocumene aromatics feed",
-        "simple_name": "Pseudocumene",
-        "description": "1,2,4-trimethylbenzene C9 aromatic from reformer and naphtha cut, oxidised to trimellitic acid then dehydrated to trimellitic anhydride (TMA, the C9 single anhydride - a different molecule from pyromellitic dianhydride).",
-        "kind": "material",
-        "category": "plastics",
-        "era": "1980s",
-        "sources": [],
-        "confidence": "medium",
-        "note": "Oxidation yields and dehydration conditions not established; shown as petroleum-aromatics shortcut via naphtha.",
-        "children": [],
-        "edges": [
-          {
-            "to": "chem.ethylene.feedstock.naphtha",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
+      "id": "c64.psu.transformer.winding.insulation.kapton.pseudocumene",
+      "name": "Pseudocumene aromatics feed",
+      "simple_name": "Pseudocumene",
+      "description": "1,2,4-trimethylbenzene C9 aromatic from reformer and naphtha cut, oxidised to trimellitic acid then dehydrated to trimellitic anhydride (TMA, the C9 single anhydride - a different molecule from pyromellitic dianhydride).",
+      "kind": "material",
+      "category": "petrochem",
+      "subcat": "monomers",
+      "era": "1980s",
+      "sources": [],
+      "confidence": "medium",
+      "note": "Oxidation yields and dehydration conditions not established; shown as petroleum-aromatics shortcut via naphtha.",
+      "children": [],
+      "edges": [
+        {
+          "to": "chem.ethylene.feedstock.naphtha",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "c64.psu.transformer.winding.insulation.kapton.diamine": {
-        "id": "c64.psu.transformer.winding.insulation.kapton.diamine",
-        "name": "Aromatic diamine (oxydianiline/phenylenediamine)",
-        "simple_name": "Diamine",
-        "description": "4,4'-oxydianiline or p-phenylenediamine aromatic diamine co-monomer polymerised with pyromellitic dianhydride to polyimide.",
-        "kind": "material",
-        "category": "plastics",
-        "era": "1980s",
-        "sources": [],
-        "confidence": "medium",
-        "note": "Which diamine was used in this film and dimethylacetamide polymerisation at 200-300C per candidate facts are not established for this build.",
-        "children": [],
-        "edges": [
-          {
-            "to": "chem.styrene.benzene",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
+      "id": "c64.psu.transformer.winding.insulation.kapton.diamine",
+      "name": "Aromatic diamine (oxydianiline/phenylenediamine)",
+      "simple_name": "Diamine",
+      "description": "4,4'-oxydianiline or p-phenylenediamine aromatic diamine co-monomer polymerised with pyromellitic dianhydride to polyimide.",
+      "kind": "material",
+      "category": "petrochem",
+      "subcat": "monomers",
+      "era": "1980s",
+      "sources": [],
+      "confidence": "medium",
+      "note": "Which diamine was used in this film and dimethylacetamide polymerisation at 200-300C per candidate facts are not established for this build.",
+      "children": [],
+      "edges": [
+        {
+          "to": "chem.styrene.benzene",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "mb.rf-modulator.audio-chain.fm-modulator.audio-amplifier.die": {
-        "id": "mb.rf-modulator.audio-chain.fm-modulator.audio-amplifier.die",
-        "name": "SID audio amplifier transistor die (2N3904 class)",
-        "simple_name": "Audio amplifier die",
-        "description": "Small-signal NPN die for the SID Q2 common-emitter stage feeding the modulator audio input from the CAN 5V rail.",
-        "kind": "part",
-        "category": "silicon",
-        "era": "1982",
-        "sources": [],
-        "confidence": "medium",
-        "note": "2N3904 stock 902658-01 assignment per candidate facts; same bins as board amplifiers per candidate note; die size not established.",
-        "children": [],
-        "edges": [
-          {
-            "to": "metal.silica.polysilicon",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
+      "id": "mb.rf-modulator.audio-chain.fm-modulator.audio-amplifier.die",
+      "name": "SID audio amplifier transistor die (2N3904 class)",
+      "simple_name": "Audio amplifier die",
+      "description": "Small-signal NPN die for the SID Q2 common-emitter stage feeding the modulator audio input from the CAN 5V rail.",
+      "kind": "part",
+      "category": "semiconductors",
+      "subcat": "chips",
+      "era": "1982",
+      "sources": [],
+      "confidence": "medium",
+      "note": "2N3904 stock 902658-01 assignment per candidate facts; same bins as board amplifiers per candidate note; die size not established.",
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.silica.polysilicon",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "mb.rf-modulator.rf-oscillator.rf-transistor.die": {
-        "id": "mb.rf-modulator.rf-oscillator.rf-transistor.die",
-        "name": "VHF transistor die (2SC1730 and 2SC2778 class)",
-        "simple_name": "VHF die",
-        "description": "VHF small-signal NPN die for 60MHz picture-carrier oscillator, low output capacitance, TO-92 class.",
-        "kind": "part",
-        "category": "silicon",
-        "era": "1982",
-        "sources": [],
-        "confidence": "medium",
-        "note": "fT 250-350MHz class and Vceo 20-40V per candidate facts are not verified against 1982 data book per candidate note.",
-        "children": [],
-        "edges": [
-          {
-            "to": "metal.silica.polysilicon",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
+      "id": "mb.rf-modulator.rf-oscillator.rf-transistor.die",
+      "name": "VHF transistor die (2SC1730 and 2SC2778 class)",
+      "simple_name": "VHF die",
+      "description": "VHF small-signal NPN die for 60MHz picture-carrier oscillator, low output capacitance, TO-92 class.",
+      "kind": "part",
+      "category": "semiconductors",
+      "subcat": "chips",
+      "era": "1982",
+      "sources": [],
+      "confidence": "medium",
+      "note": "fT 250-350MHz class and Vceo 20-40V per candidate facts are not verified against 1982 data book per candidate note.",
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.silica.polysilicon",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "mb.rf-modulator.supply.zener.die": {
-        "id": "mb.rf-modulator.supply.zener.die",
-        "name": "8.2V zener diode die (HZ-7A1 class)",
-        "simple_name": "Zener die",
-        "description": "Heavily doped silicon PN-junction die reverse-biased into breakdown for modulator shunt stabiliser.",
-        "kind": "part",
-        "category": "silicon",
-        "era": "1982",
-        "sources": [],
-        "confidence": "medium",
-        "note": "HZ-7A1 6.8-8.2V assignment and tolerance and drift per candidate facts are type ranges, not verified for this module.",
-        "children": [],
-        "edges": [
-          {
-            "to": "metal.silica.polysilicon",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      }
+      "id": "mb.rf-modulator.supply.zener.die",
+      "name": "8.2V zener diode die (HZ-7A1 class)",
+      "simple_name": "Zener die",
+      "description": "Heavily doped silicon PN-junction die reverse-biased into breakdown for modulator shunt stabiliser.",
+      "kind": "part",
+      "category": "semiconductors",
+      "subcat": "chips",
+      "era": "1982",
+      "sources": [],
+      "confidence": "medium",
+      "note": "HZ-7A1 6.8-8.2V assignment and tolerance and drift per candidate facts are type ranges, not verified for this module.",
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.silica.polysilicon",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    }
   }
 }

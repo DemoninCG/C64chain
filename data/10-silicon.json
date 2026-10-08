@@ -7,7 +7,8 @@
       "simple_name": "MOS 6510 CPU, 40-pin DIP",
       "description": "8-bit NMOS microprocessor at U7 of the C64 mainboard, clocked at 1.022727 MHz NTSC (0.985248 MHz PAL). It is the 6502 core plus an 8-bit I/O port on pins 9/10 (address 0000 data-direction, 0001 output latch). The MOS/CSG datasheet calls it 'HMOS, silicon gate, depletion load technology' (i.e. an N-channel silicon-gate double-polysilicon process with depletion-mode load devices, roughly a 2 um minimum feature). Fabbed in-house by MOS Technology (later Commodore Semiconductor Group) at 950 Rittenhouse Road, Valley Forge Corporate Center, Norristown, Pennsylvania.",
       "kind": "part",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chips",
       "era": "1982-1984",
       "facts": [
         {
@@ -53,7 +54,8 @@
           "simple_name": "Photomask set, ~10 levels",
           "description": "The set of 1:1 chrome-on-glass plates the 6510 pattern was cut into: nine or ten levels. These are n+ source/drain, field, contact, poly, second contact, metal, passivation and pad, plus alignment and test structures. For a device this small the fab printed 1:1 with contact or proximity printing. 10x steppers were brand new in 1982 and not used for this part. The plates are made by the fabrication branch below.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1982",
           "facts": [
             {
@@ -79,7 +81,8 @@
               "simple_name": "10x stepper, late arrival",
               "description": "Reduction steppers (GCA, Canon, Magnifire, and later ASML) that printed a 10x-reduced reticle with a +-0.2-0.3 um overlay and broke the industry below the 1 um limit. By 1982 a 1:1 contact printer could just barely hold a 2 um line, so a 2 um 6510 was still printable 1:1. The steppers were arriving for the next generation, not for this part. Canon FPA-series 10x machines were among the first installed.",
               "kind": "note",
-              "category": "silicon",
+              "category": "semiconductors",
+              "subcat": "fab-tooling",
               "era": "1982-1983",
               "facts": [
                 {
@@ -107,7 +110,8 @@
           "simple_name": "MOS/CSG Rittenhouse plant",
           "description": "The place these chips were born. MOS Technology was founded in 1969 in Valley Forge, Pennsylvania, moved to 950 Rittenhouse Road in the Valley Forge Corporate Center off Trooper Road near Norristown, and was bought by Commodore Business Machines in 1976, becoming the Commodore Semiconductor Group. It was a small but complete device plant: design, mask making, wafer fabrication on 4- and 5-inch wafers, assembly and final test all under one roof, which is why a single address appears on every C64 chip marking. It closed in 1992 and the site became an EPA Superfund site from leaking underground storage tanks.",
           "kind": "facility",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "fab-tooling",
           "era": "1969-1992",
           "inputs": [
             "facility.electricity",
@@ -158,7 +162,8 @@
               "simple_name": "Class 10 cleanroom bays",
               "description": "Wafer processing in yellow-lit laminar-flow bays fed by fan filter units, with a class 1000 corridor outside; 70% RH and +/-1 C. Gases distributed on stainless steel panels from bulk nitrogen, hydrogen and oxygen tanks; resist and wet chemistry in stainless or quartz benches; photomasks brought in through a pass-through hatch and never returned dirty.",
               "kind": "facility",
-              "category": "silicon",
+              "category": "industry",
+              "subcat": "plant-tooling",
               "era": "1970s-1982",
               "inputs": [
                 "HEPA filters"
@@ -192,7 +197,8 @@
               "simple_name": "Mask shop",
               "description": "A device plant of this size either cut its own masks or bought them from a regional mask shop. The work involved taking the layout database to a numerically controlled pattern generator, exposing and etching 1:1 chrome-on-glass plates, inspecting them on a comparison tool, and repairing defects. This is a few weeks and a few thousand dollars per mask level, ten levels per part. Commodore's mask-making capability is asserted in some histories but not documented to this level.",
               "kind": "facility",
-              "category": "silicon",
+              "category": "semiconductors",
+              "subcat": "fab-tooling",
               "era": "1982",
               "confidence": "low",
               "provenance": "incomplete",
@@ -204,7 +210,8 @@
               "simple_name": "Assembly and test lines",
               "description": "Die sort, sawing, die bonding, wire bonding, transfer moulding, trim-and-form, marking and final test all ran on the site behind the fab. The gold bonder room was kept dry and at constant humidity (roughly 40% RH) because gold wire and epoxy bonding are moisture-sensitive. The moulding presses were hydraulic, 50-100 ton, multi-cavity transfer presses.",
               "kind": "facility",
-              "category": "silicon",
+              "category": "semiconductors",
+              "subcat": "fab-tooling",
               "era": "1982",
               "facts": [
                 {
@@ -277,7 +284,8 @@
       "simple_name": "4164 DRAMs, 64 KB RAM",
       "description": "The C64's dynamic memory. The breadbin mainboard (PCB 326498-01) carries EIGHT 4164 64Kbit x 1 DRAMs, each holding 8 KB, giving 64 KB total. The address bus is multiplexed row/column through two 74LS257 multiplexers. Early prototypes used 4116 16-pin parts. The 4164 is a single-transistor single-capacitor (1T1C) dynamic cell, needs only +5 V because the 8-pin version generates its own -5 V substrate bias internally, and runs a two-level polysilicon process.",
       "kind": "part",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chips",
       "era": "1982-1984",
       "facts": [
         {
@@ -334,7 +342,8 @@
           "simple_name": "1T1C memory cell",
           "description": "Each of the 65,536 bits is one access transistor plus one capacitor. The cell uses THREE polysilicon layers: poly 1 is the word line crossing the device, poly 2 is the overlapping plate of the storage capacitor (the plate is doped n+ and shared with the bit line), poly 3 is the bit line itself. Around 3.5 um x 8 um per cell in 1982. This is big compared with modern trench/stacked cells. Double-diffused poly (DDP) cells, where the source and drain are separately implanted so the cell can be offset, were used by several 64K DRAM makers.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982",
           "facts": [
             {
@@ -369,7 +378,8 @@
           "simple_name": "-5 V substrate bias pump",
           "description": "The 4116 needed +5, +12, -5 and a boosted write supply, which is why it had a VBB pin and why the C64 prototype had extra regulators. The 4164 collapsed this to +5 V alone by generating the negative substrate bias on chip: an on-chip oscillator drives a capacitor, and the resulting AC is rectified to about -5 V and fed to the substrate, which also forward-biases the pn junction between the substrate and the n+ wells. Sense amplifiers bootstrap the bit line to +7-8 V during restore, and a second internal supply raises the word line above VDD.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982",
           "facts": [
             {
@@ -395,7 +405,8 @@
           "simple_name": "4164 photomask set",
           "description": "A 64K DRAM needed eight to ten mask levels: active area, n+ field, contact, poly 1 (word line), poly 2 (capacitor plate), poly 3 (bit line), the second diffusion, metal, and passivation pad, and gate-2 test structures. The poly 2 and bit-line levels are what forced 5x step-and-repeat printing. Most 4164 wafers in 1982-83 went through GCA, Canon, Magnifire or ASML 5x steppers with 3x3 inch quartz reticles, and a handful of lines were still on 1:1 proximity aligners.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1982",
           "facts": [
             {
@@ -419,7 +430,8 @@
               "simple_name": "5x reticle",
               "description": "A 3x3 inch fused-quartz or borosilicate plate coated with 100-150 nm of sputtered chromium, exposed from a 10x or 20x artwork intermediate by a mask stepper, developed, the chrome etched in perchloric/sulfuric acid, inspected against the database on a Zeiss comparison tool, and mounted in a reticle cassette. Because quartz has a thermal expansion near zero, the reticle pattern stays put through a mask-level thermal cycle. The reason quartz beat glass once steppers became common.",
               "kind": "part",
-              "category": "silicon",
+              "category": "semiconductors",
+              "subcat": "wafer-fab",
               "era": "1982",
               "inputs": [],
               "facts": [
@@ -451,7 +463,8 @@
           "simple_name": "RAS-only refresh",
           "description": "The 4164 has no refresh counter: the row address must be presented on RAS every cycle to stay alive. On the C64 the counting is done by the VIC-II, not by the CPU and not by a CIA. While the VIC has the bus it multiplexes refresh row addresses onto its own video-RAM address bus, generating RAS itself. AEC going low is what takes the bus away from the 6510, so refresh is transparent to the processor. The KERNAL's part is only to write the raster counter at $D012, which steps the VIC through its refresh addresses.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982",
           "facts": [
             {
@@ -517,7 +530,8 @@
       "simple_name": "901226 BASIC, 901227 KERNAL, 901225 char",
       "description": "The three mask-programmed NMOS ROMs on the C64 mainboard, all in 24-pin DIP: 901226-01 is the 8 KB (2364-compatible pinout) Commodore BASIC V2 interpreter at $A000. 901227-03 is the 8 KB KERNAL at $E000 (901227-01/-02 in earlier lots, and 901229-0x is the 1541 drive's KERNAL, not this one). 901225-01 is the 4 KB (2532-compatible) character generator ROM at U5. Mask ROMs are programmed by deleting or adding metal at one point in the flow, which means a whole extra mask set cut for each ROM revision.",
       "kind": "part",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chips",
       "era": "1982-1984",
       "facts": [
         {
@@ -555,7 +569,8 @@
           "simple_name": "ROM-only mask plate",
           "description": "Because the ROM pattern is a physical edit to the flow, Commodore held a separate chrome-on-glass plate for each ROM number. It was cut from the ROM's bit map by the same pattern generator used for the logic masks, inspected against the database, and stored in a mask library. 901226-01 and 901227-03 each required their own.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1982",
           "inputs": [],
           "facts": [
@@ -585,7 +600,8 @@
           "simple_name": "ROM revisions are mask revisions",
           "description": "Every fix to the C64's firmware cost a new mask set and a new wafer run. The BASIC ROM has exactly one version, 901226-01. The KERNAL went through 901227-01, -02 and -03, the last of which fixed a tape-loading bug and is what nearly every C64 shipped with. The character generator is 901225-01, with national variants 325018 (Swedish) and 325056 (Spanish C64C). A mask-ROM run also had to be large enough to fill the order, so a small revision could mean waiting weeks for wafers.",
           "kind": "note",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982-1984",
           "facts": [
             {
@@ -657,7 +673,8 @@
       "simple_name": "8562 VIC-II, 40-pin DIP",
       "description": "The C64's video, colour and sprite chip at U19, in a 40-pin DIP. Breadbin boards carry the NMOS 6567 (NTSC) or 6569 (PAL). The 8562 and 8565 are the later HMOS-II cost reduction, needing only +5 V where the NMOS parts also need +12 V on pin 13. The die holds the 40x25 text and bitmap matrix, the 8-sprite engine, the DRAM-refresh and bus-mastering logic, the interrupt and border logic, 47 registers at $D000-$D02E, and the fixed 16-colour Y/C generator (mb.vic.palette): a 4-bit nibble from colour RAM plus the 4-bit colour registers selects one of 16 on-chip luminance and chrominance levels, emitted on pin 15 (sync plus luminance) and pin 14 (chroma).",
       "kind": "part",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chips",
       "era": "1982-1984",
       "facts": [
         {
@@ -705,7 +722,8 @@
           "simple_name": "VIC-II Y/C generator",
           "description": "The fixed 16-colour palette lives inside the VIC-II die as analogue luminance/chrominance levels, not as an external resistor ladder on the mainboard. A 4-bit colour nibble from the 2114 colour RAM at U6 together with the background, border and sprite registers at $D020-$D02E selects one of 16 Y/chroma combinations, emitted as sync plus luminance on pin 15 and chroma on pin 14 to the RF modulator and the DIN monitor socket. Early ceramic 6567s ran 64 colour clocks per line with no separated outputs. Production plastic parts run 65 per line NTSC (63 PAL) with separated Y/C.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982",
           "inputs": [],
           "facts": [
@@ -753,7 +771,8 @@
           "simple_name": "VIC-II photomask set",
           "description": "The 8562's mask set was nine or ten levels: n+ field, LOCOS active area, contact, polysilicon, second diffusion, metal, ROM-programming (none here), passivation pad and the alignment/test levels. A 1982 small fab of this sort typically printed 1:1 on a Coburn 2400 contact printer or a Perkin-Elmer Micralign proximity aligner with AZ-1350, using 1 mm chrome-on-glass plates about 5x7 inch. Overlay was held to +-0.5 um by a deliberate 'grid-broken' mask design: the layout broke the grid lines over active regions and added dummy structures so the stepper could align on a broken main grid rather than a continuous one.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1982",
           "inputs": [],
           "facts": [
@@ -823,7 +842,8 @@
       "simple_name": "6581 SID, 40-pin DIP",
       "description": "The C64's sound generator at U18: three analogue subtractive-synthesis voices (two oscillators plus a noise source through a 12-bit DAC, one extra-noise-only channel for percussion), a ring modulator, a resonant multimode filter with a self-oscillating VCA, external-to-internal feedback volume routing, two pulse-width modulators and a hard sync. It is an NMOS hybrid (digital logic and poly counters driving an analogue poly on the same die) which is why it is noisy, why R4, R4AR, R5 and R6 differ, and why a 8580 (made on a newer process) sounds cleaner.",
       "kind": "part",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chips",
       "era": "1982-1984",
       "facts": [
         {
@@ -864,7 +884,8 @@
           "simple_name": "SID external components",
           "description": "The 6581 does not make sound by itself. The C64 mainboard provides the 14.31818 MHz colour clock, which is the frequency of crystal Y1 itself rather than a divided or multiplied derivative, two 4066 CMOS bilateral switches and a 7406 hex inverter to control filter routing and to stabilize the output (a documented MOS workaround that varies with chip revision), the 470 ohm/1 kohm output network, and the 4066-switched external-to-internal feedback path. Those are separate parts in the board and interconnect trees.",
           "kind": "note",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982",
           "sources": [
             "https://archive.org/details/C64-C64C_Service_Manual_1992-03_Commodore",
@@ -879,7 +900,8 @@
           "simple_name": "SID photomask set",
           "description": "Nine or ten levels for the 6581: n+ field, LOCOS active area, base/well, contact, polysilicon (including the poly resistor pattern that is the DAC), second diffusion, metal, passivation pad, plus alignment. Printed 1:1 in AZ-1350 on a contact or Micralign aligner from 5x7 inch chrome-on-glass plates, with the grid-broken alignment scheme. The analogue poly resistor pattern was itself a mask level, and trimming it by laser was an option some makers used.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1982",
           "inputs": [],
           "facts": [
@@ -906,7 +928,8 @@
           "simple_name": "SID revisions, analogue process",
           "description": "The 6581 shipped in an unsuffixed NMOS form from 1982, then as R3, R4 and R4AR between 1985 and 1987. Later parts changed the analogue behaviour (supply voltage on pin 28 and the value of the four filter capacitors) but the familiar account of each revision being a discrete change to the analogue block found by listening to parts on probe is not established here. The 8580 arrived in 1987 as an R5, built on an HMOS-II process rather than a later NMOS one, with 9 V on pin 28 and 22 nF filter capacitors in place of the 6581's 470 pF. It is generally regarded as the cleaner and quieter part.",
           "kind": "note",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982-1994",
           "facts": [
             {
@@ -971,7 +994,8 @@
       "simple_name": "Two 6526 CIAs",
       "description": "CIA 1 at U17 and CIA 2 at U18 (PLA at U17 on some board revisions) provide the C64's two 8-bit parallel ports, the keyboard/joystick matrix scanning, the two 16-bit interval timers with one-shot/underflow interrupt, the shift register used for the serial (IEC) bus, and TOD (time-of-day) clocking derived from AC mains. Each 6526 is a 40-pin DIP NMOS part. CIA 1 sits at $D400 and reads port A from the VIC colour register file, while CIA 2 sits at $DC00 and drives the user port and serial bus.",
       "kind": "part",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chips",
       "era": "1982-1984",
       "facts": [
         {
@@ -1012,7 +1036,8 @@
           "simple_name": "Time-of-day clock",
           "description": "The CIA's time-of-day clock is a 50/60 Hz-driven real-time clock with four BCD registers (tenths of seconds, seconds, minutes, hours) plus an alarm, clocked from one side of the AC line through a 470 kohm resistor on the mainboard. The resulting clock is therefore a divided version of the mains frequency, trimmed per unit at final test by selecting a film capacitor. The 6526 is an NMOS part, and the C64 has no battery backup: with the mains-derived clock stopped, the clock stops too.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982",
           "inputs": [
             "thin-film capacitor",
@@ -1042,7 +1067,8 @@
           "simple_name": "Serial shift register",
           "description": "The CIA's 8-bit shift register is what makes the Commodore serial bus work at all. Software sets a bit, shifts it out under CIA timer control with the handshake lines driving the ATN and CLK/CB lines, and reads bits back the same way. The VIC-II's serial output is decoded separately. This is a purely digital function built from ordinary NMOS flip-flops, but its timing jitter is the reason the KERNAL's serial routines are as delicate as they are.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982",
           "facts": [
             {
@@ -1068,7 +1094,8 @@
           "simple_name": "CIA photomask set",
           "description": "Nine or ten levels: n+ field, LOCOS active area, contact, polysilicon, self-aligned diffusion, metal, passivation pad and alignment levels, printed 1:1 in AZ-1350 on a contact or Micralign aligner from chrome-on-glass plates, using the grid-broken alignment scheme with dummy structures and stepper/diffusion checks. The two CIAs and the VIA were almost certainly the same process with three different mask sets.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1982",
           "facts": [
             {
@@ -1128,7 +1155,8 @@
       "simple_name": "Discrete semiconductors",
       "description": "The handful of non-IC semiconductors in the machine: small-signal NPN and PNP planar transistors (2N3904, 2N3906, 2N4124) for the serial/parallel port buffers, the colour-amplifier and video-driver stages and the cassette/joystick input switching; higher-voltage NPN power transistors (2N3055, 2N3792) in the power supply's regulator and short-circuit crowbar; rectifier, switching and zener diodes (1N4001, 1N4148, 1N47xx); one or two indicator LEDs; and a metal-oxide varistor across the AC input. Each of these was made in a bipolar or compound-semiconductor plant completely unrelated to the Norristown logic fab.",
       "kind": "part",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chips",
       "era": "1982-1984",
       "facts": [
         {
@@ -1169,7 +1197,8 @@
           "simple_name": "TO-92 epoxy mould package",
           "description": "Discretes were diced, attached to the tab of a stamped lead frame, wire bonded or solder dipped, and transfer moulded in a black epoxy (a filled phenolic or epoxy compound loaded with carbon black for colour) with the leads formed to a 0.25 inch pitch. The 2N3904's die is under 1 square mm. The package volume is almost all mould compound.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chip-pack",
           "era": "1970s-1982",
           "inputs": [],
           "facts": [
@@ -1191,7 +1220,8 @@
               "simple_name": "Discrete lead frame, 0.25 inch",
               "description": "A transistor's leads are a stamped 0.25-0.30 mm strip of nickel or copper alloy, plated with tin or tin-lead so they solder into a phenolic or epoxy-moulded phenolic board. The C64 mainboard is a solder-through board, so lead-frame plating was the difference between a working assembly and a cold joint.",
               "kind": "part",
-              "category": "silicon",
+              "category": "semiconductors",
+              "subcat": "chip-pack",
               "era": "1970s-1982",
               "inputs": [],
               "sources": [
@@ -1226,7 +1256,8 @@
           "simple_name": "Rectifier/switching/zener diodes",
           "description": "Three diode families with completely different construction. The 1N4001 is a diffused rectifier: an n- epitaxial layer on an n+ substrate with a heavily p-doped anode, rated 1 A / 50 V. The 1N4148 is a planar switching diode: a small npn with a Schottky-clamped base shorted to the cathode, rated 200 mA / 100 V, fast enough for 300 ns recovery. The 1N47xx is a zener: a heavily doped junction with a knee of 2.4-75 V, usually a diffused planar or, in the low-current versions, a temperature-compensated bandgap reference. All three were made by alloying or diffusing junctions into small silicon dice and moulding them in DO-35 glass or DO-41 plastic.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982",
           "inputs": [],
           "facts": [
@@ -1259,7 +1290,8 @@
           "simple_name": "Indicator LED",
           "description": "The C64's power indicator is a 3 mm or 5 mm epoxy-domed LED: a liquid-phase epitaxially grown GaP or GaAsP junction die, die-bonded into a reflector cup on the cathode post, wire bonded to the anode, and encapsulated in a semi-transparent epoxy lens that also acts as a light pipe. Red (GaAsP, ~660 nm) and green (GaP, ~555 nm) were common. Amber (GaAsP ~590 nm) and the increasingly cheap GaP red were also in use. Blue LEDs did not exist in 1982 at any price. The first practical blue GaN/InGaN device was 1993, and an efficient one 1995.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "discretes-opto",
           "era": "1982",
           "inputs": [
             "gallium phosphide",
@@ -1293,7 +1325,8 @@
               "simple_name": "GaP or GaAsP substrate wafer",
               "description": "The LPE junction layers grow on a polished, Czochralski-grown substrate of n-type or semi-insulating GaAs, or on GaP grown by the same kind of pull used for silicon. GaAs itself is made by liquid-phase or VGF growth from a melt of gallium and arsenic, with the arsenic fed from a boiler of high-purity arsenic metal in hydrogen.",
               "kind": "part",
-              "category": "optics",
+              "category": "semiconductors",
+              "subcat": "discretes-opto",
               "era": "1970s-1982",
               "inputs": [],
               "facts": [
@@ -1348,6 +1381,7 @@
           "description": "A MOV disc across the mains input: a disc of ZnO powder mixed with a few percent of glass and pressed and sintered at 1000-1200 C in air. Its resistance is nonlinear (about 1 kohm/mm at low voltage, collapsing to tens of ohms at the 275 V clamping point) because the grain boundaries are thin depleted zinc-oxide grain-boundary phases that break down. Organic or glassy coating and epoxy moulding complete the disc.",
           "kind": "part",
           "category": "passives",
+          "subcat": "resistors",
           "era": "1982",
           "inputs": [
             "glass frit",
@@ -1424,7 +1458,8 @@
       "simple_name": "U6 2114L colour RAM",
       "description": "The C64's screen colour memory at U6, decoding to $D800-$DBE7: 1024 words of 4 bits each, i.e. one colour nibble for each of the 40x25 text screen's 1000 cells. The VIC-II reads these nibbles during the visible portion of every scanline and presents them to the 4-bit colour DAC, so the memory must be fully static with no clocks and no refresh. This is unlike the eight 4164 DRAMs sitting next to it. Period part numbers are 2114L (MOS Technology / other MOS vendors), MM2114 (National Semiconductor) and plain 2114. The C64 BOM lists 2114L-30, the -30 being a 300 ns speed grade. 18-pin DIP, single +5 V, TTL-compatible bidirectional I/O, about 225 mW.",
       "kind": "part",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chips",
       "era": "1982-1984",
       "facts": [
         {
@@ -1476,7 +1511,8 @@
           "simple_name": "Why static rather than dynamic",
           "description": "The DRAMs beside it get a refresh cycle roughly every 2 ms because the 6510 can be held off the bus while the KERNAL's refresh routine runs. The colour RAM has no such luxury. The VIC-II fetches a colour nibble out of this chip in the middle of drawing each character cell, within a few hundred nanoseconds of the start of the scanline, from an address counter the VIC owns. There is no software window in which the chip could be taken off to rewrite it. So the cell has to hold its state indefinitely. That is the whole reason for the part: it is a static latch array, and it draws more power (225 mW) than one DRAM chip as a result.",
           "kind": "note",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982",
           "facts": [
             {
@@ -1506,7 +1542,8 @@
           "simple_name": "Six-transistor NMOS cell",
           "description": "Each of the 1024 nibbles is six transistors: two cross-coupled NMOS inverters forming a bistable latch, plus two NMOS pass transistors that connect the latch to the bit line when the address decoder enables that column. Because it is NMOS, each 'inverter' of the latch is a pull-down transistor in series with a load. This is where the load scheme matters. The latch holds its state for as long as power is applied, with no refresh and no clock, and has to keep roughly 2 V of noise margin at 5 V supply despite sharing a die and a substrate with 1024 other cells that all switch at once.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982",
           "facts": [
             {
@@ -1535,7 +1572,8 @@
               "simple_name": "Load device",
               "description": "This is the real difference between a 2114 and a CMOS SRAM, and it is an extra process step. A ratioed NMOS latch needs something in series with the pull-down transistor to act as a load: on 1982 parts this was typically an undoped or lightly doped polysilicon resistor deposited in the same LPCVD step as the gate, or a depletion-mode NMOS transistor (gate tied to source, threshold deliberately shifted negative by an extra implant) acting as a current source. The depletion option needed one more implant than the resistor option. Not established: which option the C64's 2114 used.",
               "kind": "part",
-              "category": "silicon",
+              "category": "semiconductors",
+              "subcat": "chips",
               "era": "1970s-1982",
               "inputs": [],
               "facts": [
@@ -1570,7 +1608,8 @@
               "simple_name": "Pass transistors, two decoders",
               "description": "A 1024 x 4 array is decoded as a 32 x 32 matrix: a six-to-64 row decoder from A0-A5 and a five-to-32 column decoder from A6-A9, each a NAND-type NMOS decoder built from series pull-down strings. Each cell therefore needs two access transistors, one gated by a row line and one by a column line. The decoders are the only clocked-looking part of the chip, but they are combinational. There is no clock input pin at all, which is exactly what makes it static.",
               "kind": "part",
-              "category": "silicon",
+              "category": "semiconductors",
+              "subcat": "chips",
               "era": "1982",
               "facts": [
                 {
@@ -1594,7 +1633,8 @@
           "simple_name": "2114 mask set",
           "description": "Eight or nine 1:1 levels: n+ field, LOCOS active area, contact, polysilicon (gate and, if used, the load resistor pattern), self-aligned diffusion, metal, passivation pad, and alignment/test levels, printed from chrome-on-glass plates with grid-broken alignment.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1982",
           "inputs": [],
           "confidence": "medium",
@@ -1609,7 +1649,8 @@
           "simple_name": "VIC-II raster read",
           "description": "The VIC-II owns an internal video address counter that runs ahead of the beam. For each character cell in the visible portion of a scanline it drives the ten colour-RAM address lines and /CS low, and the chip returns the 4-bit colour on D0-D3 within about 300 ns. Those four bits go straight to the VIC-II's on-chip 16-colour Y/C generator (mb.vic.palette), which emits them as luminance on pin 15 and chroma on pin 14. When the VIC releases the bus, the 6510 can access the same memory as ordinary RAM at $D800. That single-ended, mid-scanline, few-hundred-nanosecond read is the electrical reason the part had to be a static latch array with roughly 2 V of noise margin.",
           "kind": "note",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982",
           "facts": [
             {
@@ -1674,7 +1715,8 @@
       "simple_name": "U17 PLA 906114-01",
       "description": "The C64's Programmable Logic Array at U17: it decodes the 6510's address lines and generates the chip-select and bank-switching strobes for every other chip on the board (RAM, ROMs, VIC-II, SID, CIAs, VIA, colour RAM) which makes it the single point of failure for the whole machine. Commodore part number 906114-01, alternate designation MOS 8700-001, die marked MOS 7700R1 / 8700R2. It is a mask-programmed NMOS clone of the Signetics 82S100 bipolar array, in a 28-pin 600 mil epoxy DIP, and it is by far the most failure-prone and most counterfeited part in the machine.",
       "kind": "part",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chips",
       "era": "1982-1984",
       "facts": [
         {
@@ -1720,7 +1762,8 @@
           "simple_name": "What a PLA is",
           "description": "Two arrays of transistors and a set of 'links'. The fixed AND array is a matrix of diode or transistor junctions arranged so that each row implements one product term. This is every possible AND of a subset of the 16 inputs. The programmable OR array adds up to eight of those product terms per output. Each product-term-to-output connection is a physical link in that array, and 'programming' the part simply means deciding which links exist. Commodore's version is pure combinational logic with no registered terms, which is why it is fast enough to sit directly on the 6510's address bus and settle inside a 6510 cycle.",
           "kind": "note",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982",
           "facts": [
             {
@@ -1754,7 +1797,8 @@
           "simple_name": "Fusible-link and antifuse PLAs",
           "description": "The two field-programmable routes a PLD could have taken instead, and the reason a mask-programmed part is a different commercial animal. A fusible link is a real wire of chromium or nichrome, 1-3 um thick, burned out by a laser programmer through the package's FE/NE pin. This is how the PAL 16L8 and 20L8 worked, and why a PAL is a catalogue part you can buy in thousands of functions. An antifuse starts as a conducting amorphous-silicon or silicon-dioxide film which a 20-40 V pulse converts into high-resistance insulation. It needs no laser but was slower to program and harder to test. Commodore could use neither for a part sold in the millions at commodity logic prices.",
           "kind": "note",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1970s-1982",
           "facts": [
             {
@@ -1779,7 +1823,8 @@
           "simple_name": "PLA versus PAL",
           "description": "The C64's part is called a PLA, but the parts most readers know by that name (the 16L8, 16R8, 20L8) are PALs, and the two are not interchangeable in sourcing or programming. A PAL is a generic catalogue device: every 16L8 from every vendor is the same silicon, and the buyer programs it. A mask-programmed PLA is a custom device: the buyer cannot program it, and nobody else ever made this function. That is the whole reason fakes are so common. The SuperPLA, realPLA, PLA20V8, PLAnkton and PLAtinum parts sold as replacements are typically GAL/EPROM emulations or freshly mask-programmed parts from a third party, and the C64's PLA is precisely the component where a substitute can fail in ways that are hard to trace.",
           "kind": "note",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982-1990",
           "facts": [
             {
@@ -1807,7 +1852,8 @@
           "simple_name": "Reverse-engineered from 82S100",
           "description": "Early C64s shipped with a bipolar Signetics 82S100, or the Fairchild 93459 clone of it. Signetics was acquired by Philips, which renamed the part PLS100. Commodore's engineers then decapped the bipolar part, photographed it with a Polaroid camera and rebuilt the function as a mask-programmed NMOS design. Bil Herd's recollection is 'We reverse engineered the PLA from Signetics using a polaroid camera'. The resulting die is marked MOS 7700R1 or 8700R2, and it runs at a slightly lower VOH than the bipolar original (about 3.7-3.8 V against 4.2 V), which is part of why early and late C64s behave marginally differently.",
           "kind": "note",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982-1988",
           "facts": [
             {
@@ -1842,7 +1888,8 @@
           "simple_name": "Economics of one mask set",
           "description": "The 906114-01 encodes the entire C64 memory map in a die smaller than the fingertip, and Commodore sold millions of C64s, so once the mask was paid for the part was dirt cheap per unit. But the flip side is that the function exists nowhere else in the world. Any machine needing a different bank-switch map needs a different mask, a different lot and a different lead time. Which is why C64Cs needed a different PLA (MOS 8721) to support the cartridge port's new banking. It is also why the cost of a single counterfeit or of a dead original is disproportionate to the value of the silicon inside it.",
           "kind": "note",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982-1990",
           "facts": [
             {
@@ -1869,7 +1916,8 @@
           "simple_name": "Why the PLA fails most",
           "description": "Three reasons stack up. First, it is a single point of failure: if any of its eight strobes misbehaves, the symptom is a dead or misbehaving machine rather than one dead chip. Second, its output enable and eight outputs switch hard on every 6510 cycle against the capacitive load of the whole board, so it is the highest-current part on the bus and the one that sees the worst ringing. Third, and decisively for longevity, it is the one chip that cannot be replaced: a dead 6510 can be bought new. A dead 906114-01 cannot, so in practice a dead PLA means a dead machine unless it is re-masked or emulated.",
           "kind": "note",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982-1994",
           "facts": [
             {
@@ -1933,7 +1981,8 @@
       "simple_name": "Chlor-alkali brine electrolysis",
       "description": "Salt dissolved in water and electrolyzed in a membrane or mercury cell at 3-4 V to make chlorine and hydrogen. The hydrogen is what reduces the trichlorosilane, and the chlorine is one half of the hydrochloric acid that chlorinates the metallurgical silicon in the first place.",
       "kind": "process",
-      "category": "fluids",
+      "category": "inorganics",
+      "subcat": "alkali-lime",
       "era": "1890s-",
       "inputs": [],
       "confidence": "low",
@@ -1962,7 +2011,8 @@
       "simple_name": "Feldspar and mica gangue",
       "description": "The pegmatite that hosts the quartz veins contains albite and K-feldspar with muscovite and biotite. Alumina in feldspar is the enemy (it survives all the way to the aluminium metallisation) so the lump is sorted by hand and by hydrofluoric-acid washing before it is even shipped.",
       "kind": "material",
-      "category": "metals",
+      "category": "inorganics",
+      "subcat": "clays-abrasives",
       "era": "ancient-",
       "confidence": "medium",
       "note": "Biotite in particular carries a lot of iron and is a classic contaminant marker in a quartz shipment.",
@@ -1974,7 +2024,8 @@
       "simple_name": "Delayed coking and calcination",
       "description": "Vacuum residue from crude oil distillation is heated in a battery of delayed-coking heaters to 500 C and held in a large coking drum for 12-24 hours. The green coke is then calcined in a rotary kiln at 1200-1350 C to drive off volatiles and leave needle coke at 0.5-2% sulphur. Silicon furnaces blend petroleum coke with anthracite coal.",
       "kind": "process",
-      "category": "metals",
+      "category": "petrochem",
+      "subcat": "fuels-carbon",
       "era": "1930s-",
       "confidence": "medium",
       "provenance": "incomplete",
@@ -2005,7 +2056,8 @@
       "simple_name": "Sour crude, vacuum distilled",
       "description": "Heavy Venezuelan or Middle East crude sent to a vacuum tower at 350-400 C and 30-50 mmHg. The bottoms are a dense black pitch of asphaltenes and metal porphyrins, and are the feed for the coke. Vanadium and nickel concentrate in this residue, so coke made from it carries trace vanadium that the silicon plant has to tolerate.",
       "kind": "material",
-      "category": "fluids",
+      "category": "petrochem",
+      "subcat": "refining",
       "era": "1930s-",
       "inputs": [],
       "places": [
@@ -2017,8 +2069,8 @@
       "provenance": "complete",
       "note": "Not established: that any particular silicon supplier fed its furnaces with vacuum-residue coke rather than coal-tar pitch, anthracite or low-ash coal, nor the vacuum-tower pressure, the coking-heater temperature or the vanadium figure. Traces of vanadium and nickel in metallurgical silicon, and hence in its carbon reductant, are real, but the level a silicon plant had to tolerate is not a published number.",
       "sources": [
-  "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
-]
+        "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+      ]
     },
     "si.polysilicon.coke.anthracite": {
       "id": "si.polysilicon.coke.anthracite",
@@ -2026,7 +2078,8 @@
       "simple_name": "Anthracite coke substitute",
       "description": "The other traditional reductant for the submerged arc furnace, mined from the hard coal fields of Pennsylvania, Wales and Shanxi. Lower carbon, higher ash and higher iron than petroleum coke, so it was used as a blend component.",
       "kind": "material",
-      "category": "metals",
+      "category": "petrochem",
+      "subcat": "fuels-carbon",
       "era": "ancient-",
       "places": [
         "Schuylkill County, Pennsylvania",
@@ -2047,7 +2100,8 @@
       "simple_name": "Quartz sand for crucible glass",
       "description": "High-purity quartz sand, acid-leached to remove aluminium and iron, is melted in a flame or arc furnace around a rotating graphite mandrel at about 2000 C into a clear, annealed vitreous silica blank. The graphite is then burnt off in air at 800-1000 C.",
       "kind": "process",
-      "category": "silicon",
+      "category": "inorganics",
+      "subcat": "silica-glass",
       "era": "1950s-",
       "inputs": [],
       "places": [
@@ -2081,7 +2135,8 @@
       "simple_name": "Seed crystal",
       "description": "A short (100)-oriented sliver cut from a previous ingot, used to set the orientation and the defect-free growth of the new boule. Its diameter has to match the finished boule, so a seed is cut and ground for each crystal-pulling station.",
       "kind": "material",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1950s-",
       "sources": [
         "https://en.wikipedia.org/wiki/Czochralski_method"
@@ -2101,7 +2156,8 @@
       "simple_name": "100 mm CZ silicon wafer",
       "description": "The starting substrate every die in the machine is cut from: a 4-inch (100 mm) Czochralski-grown, boron-doped p-type silicon wafer, 10-20 ohm-cm, mirror-polished on one face, 300-350 um thick, with a primary flat and a small secondary orientation flat. 125 mm was not standard until about 1986, and by 1982 every logic die in the C64 was patterned on one of these.",
       "kind": "part",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1982",
       "facts": [
         {
@@ -2169,7 +2225,8 @@
       "simple_name": "Sawing ingot, scribing flats",
       "description": "The boule is ground round, a sapphire-orientation-reference crystal is used to find the (100) direction, and the wafer flats are laser-scribed with a ruby or Nd:YAG laser before cutting. Slicing was by OD saw, with blades up to 2.2 m in diameter turning at 2000 rpm for a 0.30 mm kerf, or on more advanced 1982 machines by ID saw, with the blade inside the crystal for a 0.25 mm kerf. The result is a 0.7 mm wafer, far too warped and marked to print on.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1950s-",
       "facts": [
         {
@@ -2213,7 +2270,8 @@
       "simple_name": "Diamond-impregnated saw blade",
       "description": "A thin steel or resin-bonded wheel whose rim carries a diamond grit. Slicing 100 mm silicon at two to three wafers a minute relies on that grit: 20-40 um for a roughing cut and 3-5 um for the finish cut. Resin-bonded blades were introduced in the mid 1970s and gave a thinner kerf and less bow than the metal bond.",
       "kind": "tool",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "fab-tooling",
       "era": "1970s-1982",
       "facts": [
         {
@@ -2241,7 +2299,8 @@
       "simple_name": "Diamond from graphite",
       "description": "Saw-grade industrial diamond in 1982 was mostly synthetic: graphite pressed and sintered with a diamond-metal catalyst (Fe, Co or Ni) at 5-6 GPa and 1400-1600 C in a belt press. Natural diamond (the harder, scarcer gem and industrial grade) came from kimberlite pipes in South Africa, Botswana and Russia.",
       "kind": "process",
-      "category": "metals",
+      "category": "inorganics",
+      "subcat": "clays-abrasives",
       "era": "1950s-1982",
       "inputs": [],
       "facts": [
@@ -2295,7 +2354,8 @@
       "simple_name": "Lapping, polish, edge rounding",
       "description": "Saw-cut wafers are lapped double-sided on a rotating cast-iron plate against a conditioning plate, in a slurry of colloidal silica or alumina in water, taking them to about 300 um with several micrometres of total thickness variation left across the wafer. They are then polished chemically in hot alkaline peroxide or in HNO3/HF/acetic acid, which removes the last 10 um or so of saw damage and leaves an atomically flat surface, and finally the razor edge is rounded by a brief hot KOH or NH4OH etch so that photoresist cannot build up on it and so the wafer will not chip in handling.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1960s-1982",
       "inputs": [],
       "facts": [
@@ -2336,7 +2396,8 @@
       "simple_name": "Wafer cleaning",
       "description": "A 1982 fab cleaned more often and washed harder than a modern one, because particles rather than yield models set the pace. The sequence before a furnace step was megasonic at 1.6 MHz in deionised water, a hot Piranha of 3:1 H2SO4:H2O2 at 120 C to strip organics and metals, a dilute HF dip to remove native oxide, then RCA SC-1 (NH4OH:H2O2:H2O 1:1:5 at 75-80 C) or SC-2 (HCl:H2O2:H2O), and a megasonic rinse with particle-count filtration and an N2 blow-off. Between every mask level the same sequence ran again.",
       "kind": "process",
-      "category": "fluids",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1970s-1982",
       "inputs": [],
       "facts": [
@@ -2403,7 +2464,8 @@
       "simple_name": "Photolithography",
       "description": "Every layer of every die is defined the same way. The wafer is coated on a spinner at 2000-5000 rpm to 1-3 um of positive photoresist, soft-baked at 90-100 C, aligned to the mask on a 1:1 contact or proximity aligner, exposed through the chrome plate at 30-50 mJ/cm2, spray-developed in 5-10% tetramethylammonium hydroxide, hard-baked, stripped, and cleaned. Shipley AZ-1350 was the workhorse thin-film resist of the whole industry and the higher-solids AZ-1354 was used wherever the film had to stand up to a deep etch.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1970s-1982",
       "inputs": [
         "chem.photoresist",
@@ -2460,7 +2522,8 @@
       "simple_name": "Spin coater, hot-plate track",
       "description": "A bowl coater dispensing 1-3 mL of resist onto a vacuum-chucked spinning wafer, followed by a convection hot plate or an infrared bake at 90-120 C. By 1982 mask plates and wafers were often run on a coater-developer track that baked, exposed at a fixed dose and developed in one enclosed unit, with a dehumidified nitrogen purge and amber-safe lighting.",
       "kind": "tool",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "fab-tooling",
       "era": "1970s-1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Photolithography",
@@ -2475,7 +2538,8 @@
       "simple_name": "Contact/proximity aligner",
       "description": "A 1:1 mask aligner: mercury or xenon source, a 20x-100x binocular microscope, a vacuum or magnetic chuck, and either hard vacuum contact with the mask pressed straight down onto the resist, or a 100-500 um proximity gap. Typical 1982 units were the Coburn 2400, the Kasper 2400, the Universal Exposure Systems machines, and the Perkin-Elmer Micralign MA-2, whose 5x optical projection removed the \"mask lifts off the wafer\" failure mode that plagued pure contact printing. Mask work in the 1980s was often done on the same machines, by flashing an aperture and shutter wheel in a raster.",
       "kind": "tool",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "fab-tooling",
       "era": "1960s-1982",
       "facts": [
         {
@@ -2504,7 +2568,8 @@
       "simple_name": "Chrome-on-glass photomask",
       "description": "The physical plate a 1982 fab printed from: 5x7 inch of 1 mm soda-lime glass or fused quartz, coated with 100-150 nm of sputtered chromium, then exposed and developed in positive photoresist, the exposed chrome etched away in hot perchloric or sulfuric-perchromate acid, washed, inspected on a Zeiss comparison tool against the design database, and defect-repaired with a fine gallium or indium needle. Chromium was the universal absorber from the 1960s onward because of its opacity in the deep UV and its resistance to wet cleaning.",
       "kind": "part",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1982",
       "inputs": [],
       "facts": [
@@ -2551,7 +2616,8 @@
       "simple_name": "NMOS silicon-gate front end",
       "description": "The flow every simple logic part in the machine ran: n+ source and drain pre-diffusion, LOCOS field oxide grown in dry O2 and then wet H2/O2 at about 1000-1050 C, LPCVD polysilicon gate from silane at 800-850 C, a self-aligned arsenic source/drain implant with a 1000-1100 C anneal, contact cuts, 1-2 um aluminium sputtered with 0.5-1% silicon and etched in hot phosphoric acid, then PSG and nitride passivation. Ten mask levels, printed 1:1 in AZ-1350 on a contact or Micralign aligner. The 6510 branch under the CPU carries the layer-by-layer version with every temperature. This node is the same flow stated once for the parts that did not need the detail.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1982",
       "inputs": [
         "si.wafer",
@@ -2631,7 +2697,8 @@
       "simple_name": "Stamped DIP lead frame",
       "description": "The die and its leads emerge from a stamped, plated strip. Frames were made from FeNi 42/58 (C4-29) alloy 0.15-0.20 mm thick by progressive die stamping on a 400-800 ton press, then plated. This was a nickel strike and gold for hermetic parts, or a matte tin or tin-lead plate over nickel for plastic parts. The strip is indexed on a 0.3 inch tape through the bonder and the moulder, and a 40-pin DIP cavity set produces dozens of packaged parts per moulding cycle.",
       "kind": "part",
-      "category": "packaging",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1970s-1982",
       "facts": [
         {
@@ -2676,6 +2743,7 @@
       "description": "The standard low-CTE frame alloy: 42% nickel, 58% iron, with a coefficient of thermal expansion close to that of the die, so the bond survives temperature cycling. Melted in a vacuum induction furnace, cast, hot-rolled, then cold-rolled and annealed to 0.15-0.20 mm. Copper alloy C194 with 2.3% lead, and nickel itself, were the alternatives.",
       "kind": "material",
       "category": "metals",
+      "subcat": "ferrous",
       "era": "1960s-",
       "inputs": [],
       "facts": [
@@ -2713,7 +2781,8 @@
       "simple_name": "Nickel strike, gold/tin plating",
       "description": "A nickel strike first, because gold will not adhere directly to the iron-nickel alloy and the leads have to solder. Hermetic parts get a heavier gold plate over the nickel. Plastic parts get tin or tin-lead over the nickel so the leads solder into the machine's sockets. The bonding tab is always gold-plated, because the die is eutectic-bonded to it.",
       "kind": "process",
-      "category": "packaging",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1970s-1982",
       "inputs": [],
       "confidence": "medium",
@@ -2743,7 +2812,8 @@
       "simple_name": "Silica-filled epoxy compound",
       "description": "What actually seals a 1982 plastic IC. A thermosetting epoxy or phenolic compound of novolac resin plus 60-75% crushed quartz filler, a small amount of silicone release agent, catalyst and pigment, compounded on a two-roll mill under heat and then transfer moulded at 150-180 C and 700-1000 psi for one to three minutes, with a post-mould bake at 175 C. A 6510 uses on the order of 0.3-0.5 g of it; a 4164 about 0.1-0.2 g.",
       "kind": "material",
-      "category": "plastics",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1960s-1982",
       "facts": [
         {
@@ -2790,7 +2860,8 @@
       "simple_name": "Epoxy novolac resin",
       "description": "Phenol and formaldehyde condensed under acid to a novolac resin, which is then reacted with epichlorohydrin and caustic soda to give the epoxy novolac that forms the backbone of the moulding compound. Phenol itself came from cumene-process oxidation of benzene (overwhelmingly a coal-tar derivative in 1982) or from chlorobenzene hydrolysis.",
       "kind": "process",
-      "category": "plastics",
+      "category": "polymers",
+      "subcat": "thermosets",
       "era": "1930s-",
       "inputs": [
         "formaldehyde"
@@ -2834,7 +2905,8 @@
       "simple_name": "Crushed quartz filler",
       "description": "The single largest mass ingredient in any plastic package: 60-75% by weight of angular fused or ground silica of 0.5-3 um mean size, made by firing and grinding high-purity quartz. It is there to control the shrinkage coefficient and the thermal expansion, and it is why a decapsulated die sits in a white ceramic-looking blob.",
       "kind": "material",
-      "category": "plastics",
+      "category": "inorganics",
+      "subcat": "silica-glass",
       "era": "1970s-1982",
       "inputs": [],
       "facts": [
@@ -2864,7 +2936,8 @@
       "simple_name": "Die attach to the lead frame",
       "description": "The die is placed circuit-side-up on a pre-plated gold lead frame tab and swept through a die bonder. The hot-tool bond raises die and frame to about 400-450 C: gold and silicon melt together at 361 C and, on cooling, form a hard Au-Si eutectic weld roughly 25-50 um thick. That is both the mechanical bond and the die's low-resistance thermal path out to the frame. The diced dice are inspected under a stereomicroscope at 20-50x, and under dark-field illumination for particles, before they are attached: a chip on a pad costs the whole package.",
       "kind": "process",
-      "category": "assembly",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1970s-1982",
       "inputs": [
         "si.leadframe"
@@ -2904,7 +2977,8 @@
       "simple_name": "Gold wire wedge bonding",
       "description": "A wire bonder pulls 25-30 um diameter gold wire from a spool through a ceramic capillary and welds it to the aluminium bond pads: a first wire from each pad out to the frame lead, then interconnect wires pad to pad for internal bussing. Gold is soft, so a wedge-shaped tool presses the wire flat rather than using the ultrasonic ball bond of aluminium bonding. A single 6510 carried about 60 wires, roughly 1.5 m of 25 um gold in total.",
       "kind": "process",
-      "category": "assembly",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1970s-1982",
       "inputs": [],
       "facts": [
@@ -2942,7 +3016,8 @@
       "simple_name": "Transfer moulding",
       "description": "The bonded frame sits in a multi-cavity transfer press and is encapsulated in silica-filled epoxy moulding compound. A typical cycle is 150-180 C at 700-1000 psi for one to three minutes per cavity, and plaques of flash at the parting line are trimmed off in a second press operation. The alternate route for hermetic parts is sintering an alumina ceramic shell at about 850-950 C with a glass frit seal. Slower, more expensive, and used for military and aerospace grades.",
       "kind": "process",
-      "category": "assembly",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1970s-1982",
       "inputs": [
         "si.leadframe"
@@ -2985,7 +3060,8 @@
       "simple_name": "Transfer moulding press",
       "description": "A 50-100 ton multi-cavity transfer press with a heated upper platen, a pot and plunger that pre-form the compound pellet, and the encapsulated lead-frame strip in the cavity. Cycle: close the press, 150-180 C, 700-1000 psi, one to three minutes dwell, then open and eject the encapsulated part still on its frame rail.",
       "kind": "tool",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "fab-tooling",
       "era": "1970s-1982",
       "inputs": [
         "si.leadframe"
@@ -3026,7 +3102,8 @@
       "simple_name": "Trim, form, mark, final test",
       "description": "After moulding the leads are formed on an 8-16 station trim-and-form press (trimmed, bent to the package pitch, flattened, and dipped in a tin or tin-lead solder pot) the body is marked with a dot-matrix ink printer or a Nd:YAG laser with part number, lot code and date code, and the part is dropped into a socket on an automatic tester and run against a final test program.",
       "kind": "process",
-      "category": "assembly",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1982",
       "inputs": [
         "facility.test-equipment.functional"
@@ -3122,7 +3199,8 @@
       "simple_name": "Burn-in and final test",
       "description": "Assembled parts were run at elevated voltage (typically 7-9 V on a 5 V part) at 100-125 C for 24 to 168 hours in an oven loaded with sockets on a board, to weed out early-failure parts with contaminated junctions before they reached the customer. The C64 itself needed no burn-in: the chips were simply inserted into the board sockets.",
       "kind": "process",
-      "category": "assembly",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1970s-1982",
       "inputs": [
         "facility.test-equipment.burn-in"
@@ -3144,7 +3222,8 @@
       "simple_name": "Ceramic DIP sintering",
       "description": "For hermetic parts the die went into a 96% alumina ceramic shell, sealed with a devitrifying glass frit in a belt furnace at about 850-950 C, and the metal flange was brazed or glass-sealed to the header. Ceramic was slower and costlier than plastic and was used for military and industrial grades, but MOS shipped ceramic 40-pin parts of this kind, which is where the collectors' market for them comes from.",
       "kind": "process",
-      "category": "packaging",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1960s-1982",
       "facts": [
         {
@@ -3168,7 +3247,8 @@
       "simple_name": "Alumina ceramic DIP shell",
       "description": "A 96% alumina header: alumina powder pressed and sintered into a gas-tight body with a metallised cavity floor for the die, a glass-frit seal ring, and a flange carrying the frame leads. Alumina powder comes from bauxite, and that chain lives in the metals and packaging trees.",
       "kind": "part",
-      "category": "packaging",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1960s-1982",
       "inputs": [],
       "confidence": "medium",
@@ -3187,7 +3267,8 @@
       "simple_name": "Probe card",
       "description": "Before dicing, every die is probed on the wafer through a probe card: a fibreglass or ceramic substrate with a pattern of gold-plated tungsten or rhenium needles on 0.1 inch centres, hanging on a probe ring over the die and stepping down with a few grams of force. In 1982 cards were hand-drilled or photofabricated. Automatic stepping probe stations were still a novelty at these pad counts.",
       "kind": "part",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1970s-1982",
       "inputs": [],
       "facts": [
@@ -3229,7 +3310,8 @@
       "simple_name": "40-pin plastic DIP package",
       "description": "The package the 6510 CPU, the 8562 VIC-II and the 6526 CIA shipped in on the C64 mainboard: a 0.6 inch pitch, 40-leaded stamped lead frame with the die eutectic-bonded on its tab, gold wire to the pads, and a transfer-moulded body of silica-filled epoxy. A ceramic hermetic version existed for industrial and military customers. The 6581 SID is not in this package: it shipped in a 28-pin DIP, and the service manual's parts list carries 16-pin, 28-pin and 40-pin IC sockets for the board.",
       "kind": "part",
-      "category": "packaging",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1970s-1982",
       "inputs": [],
       "facts": [
@@ -3287,7 +3369,8 @@
       "simple_name": "24-pin plastic DIP package",
       "description": "The package of the BASIC, KERNAL and character ROMs: a 0.6 inch pitch, 24-leaded stamped lead frame, die eutectic-bonded on its tab, 25 um gold wedge bonding, and a transfer-moulded body of silica-filled epoxy. On the C64 mainboard these three were the only chips soldered in rather than socketed, because they cannot usefully be replaced. Though owners have socketed them since day one.",
       "kind": "part",
-      "category": "packaging",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1970s-1982",
       "inputs": [],
       "facts": [
@@ -3331,7 +3414,8 @@
       "simple_name": "18-pin plastic DIP package",
       "description": "The package of the 2114L colour RAM: an 18-leaded stamped lead frame at 0.6 inch pitch, about 18 pad bonds plus a handful of internal wires, and a transfer-moulded body of silica-filled epoxy. The lead-frame, bonding-wire and compound stories are the same as every other DIP in the machine.",
       "kind": "part",
-      "category": "packaging",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1980-1982",
       "inputs": [],
       "facts": [
@@ -3374,7 +3458,8 @@
       "simple_name": "28-pin 600 mil DIP package",
       "description": "A wide-body package, because the PLA needs 16 inputs, 8 outputs, an output enable, the unused FE/NE pin, VCC and VSS. Die attach is a gold-silicon eutectic bond on a gold-plated tab, about 28 pad bonds on a 25 um gold wedge bonder, and a transfer-moulded body of silica-filled epoxy, with the leads formed to 0.6 inch pitch in a 28-socket trim-and-form operation. A ceramic variant exists but is uncommon on a C64.",
       "kind": "part",
-      "category": "packaging",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1970s-1982",
       "inputs": [],
       "facts": [
@@ -3419,7 +3504,8 @@
       "simple_name": "8-pin plastic DIP package",
       "description": "The smallest and most common package in the machine: eight 4164 DRAMs, each a die on an 8-leaded lead frame with about eight frame bonds plus a dozen internal wires for the sense amps, transfer moulded in silica-filled epoxy. A 16-pin version of the same die exists for stackable C128 memory.",
       "kind": "part",
-      "category": "packaging",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1970s-1982",
       "inputs": [],
       "facts": [
@@ -3472,6 +3558,7 @@
       "description": "Gallium refined from bauxite residue or from zinc residues by repeated ion-exchange in alkaline solution or by amalgam/hydroxide extraction, to 99.9-99.99% metal, then to GaP by reaction with high-purity phosphorus at 1000-1100 C in a sealed quartz ampoule.",
       "kind": "material",
       "category": "metals",
+      "subcat": "precious-special",
       "era": "1940s-",
       "inputs": [],
       "places": [
@@ -3496,7 +3583,8 @@
       "simple_name": "Zinc oxide powder",
       "description": "Sphalerite (ZnS) concentrate is roasted in a fluidised bed at 900-1000 C to zinc oxide, then reduced with carbon in a shaft or electrothermic furnace at 900-1100 C to zinc metal, burned back to ZnO, and purified to high-purity ZnO for the varistor mix.",
       "kind": "material",
-      "category": "metals",
+      "category": "inorganics",
+      "subcat": "ceramics-refractory",
       "era": "ancient-",
       "inputs": [],
       "facts": [
@@ -3547,7 +3635,8 @@
       "simple_name": "Probe and final test, 6526",
       "description": "Probe with a 40-needle card and a program that clocks both 16-bit timers against a reference, steps the serial shift register through a byte, checks the interrupt priority logic and the port handshake, and measures the TOD chain. Assembled parts repeat it in a socket. Because the TOD is clocked from the AC line, the accuracy test needed a calibrated frequency standard, not just a functional pass.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1982",
       "inputs": [
         "facility.test-equipment.functional"
@@ -3574,7 +3663,8 @@
       "simple_name": "Probe, sort and final test",
       "description": "Probed on the wafer with an 18-needle probe card running an address/data checker over all 4096 bits in a marching pattern, then retested after moulding. Because the part has no refresh, its main failure modes are stuck cells from particles and defective decoders, both of which a walking-one/walking-zero pattern catches quickly. This is why the C64's most common colour-RAM symptom, a garbled or shifting character colour, is a die or socket fault rather than a marginal-timing one.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1982",
       "inputs": [
         "facility.test-equipment.functional"
@@ -3601,7 +3691,8 @@
       "simple_name": "Die separation",
       "description": "The wafer is flipped onto a vacuum chuck, scored along the scribe lines with a diamond scriber or, in the more expensive method, cut with a resin-bonded diamond wheel on a saw, leaving a kerf of 50-100 um. Small dies like the 6510 (about 3.5 x 3.9 mm) were often diced by scribing and snapping, then washed dry.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1970s-1982",
       "sources": [
         "https://en.wikipedia.org/wiki/Die_singulation"
@@ -3614,7 +3705,8 @@
           "simple_name": "Diamond scriber and dicing saw",
           "description": "A small die like the 6510 (roughly 3.5 x 3.9 mm) was separated either by scoring the wafer's back-side scribe lines with a diamond scriber and snapping the wafer along them, or by cutting with a resin-bonded diamond wheel leaving a 50-100 um kerf. The wafer was then washed dry, and a final microscopic inspection checked each die's edges and surface before it went to bonding. A chip on a pad would cost a whole package.",
           "kind": "tool",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "fab-tooling",
           "era": "1970s-1982",
           "inputs": [
             "facility.water"
@@ -3648,7 +3740,8 @@
       "simple_name": "2 um NMOS front end",
       "description": "A silicon-gate, double-polysilicon NMOS process flow on p-type (100) CZ silicon: heavily doped n+ source/drain first, LOCOS field oxide, heavily n-doped polysilicon gate, self-aligned arsenic source/drain, contact cuts, aluminium metallization, then phosphosilicate glass plus a plasma nitride seal. Ten mask levels, ~50 major process steps, roughly 6-8 weeks of fab cycle time.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1982",
       "facts": [
         {
@@ -3684,7 +3777,8 @@
           "simple_name": "1. n+ source/drain pre-diffusion",
           "description": "A thermal phosphorus diffusion: the wafer is coated with a phosphosilicate glass (PSG) doped by PH3 or by a PBN (pyrolytic boron nitride) solid phosphorus source, then held at 900-950 C for 30-60 minutes to push phosphorus about 0.5-1 um into the silicon. The result is a heavily doped (10^20 cm^-3) n+ region that will become the bit-line/tap contact landing areas and the bases of the load and driver devices.",
           "kind": "process",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1960s-1980s",
           "inputs": [],
           "facts": [
@@ -3728,7 +3822,8 @@
           "simple_name": "2. LOCOS field oxide",
           "description": "The active-area mask is defined in photoresist over the grown oxide, and field oxide grown by two-step thermal oxidation: a dry O2 pass at ~1000 C to lay down the thin masking oxide, then steam at the same temperature for ~2 hours to reach 6000-8000 A of field oxide. Field oxide was the isolation, the mask for the self-aligned source/drain implant, and the thickest feature on the die.",
           "kind": "process",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1960s-1980s",
           "inputs": [],
           "facts": [
@@ -3779,7 +3874,8 @@
           "simple_name": "3. Deposit/dope polysilicon",
           "description": "Polysilicon was deposited by low-pressure chemical vapour deposition in a heated-wall tube furnace from silane (SiH4) at 800-850 C or from dichlorosilane (SiH2Cl2) at ~1000 C, giving 4000-8000 A of polycrystalline film. For gates it was deposited heavily n-doped in the same step by adding phosphine to the silane flow. Undoped poly, or lightly doped poly, was also deposited in the same furnace as the load resistors and as the depletion-mode loads the 6510 datasheet describes.",
           "kind": "process",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1970s-1980s",
           "inputs": [
             "dichlorosilane"
@@ -3824,7 +3920,8 @@
           "simple_name": "4. Poly gate oxidation",
           "description": "After the undoped polysilicon is patterned, the whole wafer is re-oxidised: the bare silicon is left capped by the 400 A screen oxide, while the poly itself grows its own oxide. Dry O2 at 1000-1100 C for 30-90 minutes grows ~350-450 A of silicon dioxide on the poly, converting it into a depletion-mode MOSFET with the same gate dielectric as the silicon. This is why 'the gate oxide was grown in an oxygen furnace' is literally true of silicon-gate NMOS, but on the poly, not on the channel.",
           "kind": "process",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1970s-1980s",
           "inputs": [],
           "facts": [
@@ -3860,7 +3957,8 @@
           "simple_name": "5. Self-aligned implant",
           "description": "With the poly gate and field oxide standing up, the wafer is ion-implanted with arsenic (or phosphorus) at 50-150 keV. The gate poly and the field oxide act as their own masks, so the source and drain edges are formed automatically under the poly edges with no alignment tolerance at all. The implanted arsenic is then annealed at 1000-1100 C in dry O2 or N2, which also drives it under the gate edge and repairs implant damage.",
           "kind": "process",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1970s-1980s",
           "inputs": [],
           "facts": [
@@ -3902,7 +4000,8 @@
           "simple_name": "6. Contact cut, metallization",
           "description": "Contact windows are cut in the field oxide with an HF dip masked by photoresist (silicon dioxide etches fast in HF), then the wafer is coated by vacuum evaporation or DC sputtering with 1-2 um of aluminium containing 0.5-1% silicon to stop aluminium spikes punching through thin junctions. The aluminium is patterned by a hot phosphoric-acid etch (H3PO4:HNO3:acetic acid/water at ~50-80 C) or, from the late 1970s, by a CF4/O2 plasma in a barrel etcher.",
           "kind": "process",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1970s-1980s",
           "inputs": [],
           "facts": [
@@ -3949,7 +4048,8 @@
           "simple_name": "7. Passivation and pad opening",
           "description": "The aluminium is sealed under a phosphosilicate glass overcoat grown by CVD from TEOS and phosphine at 700-800 C, and in 1982-84 plants increasingly by plasma-enhanced CVD silicon nitride (~700 C, SiH4/NH3 or SiCl4/NH3 in a low-frequency glow discharge). Pad windows are opened with a hot phosphoric acid etch of the nitride followed by a buffered HF dip.",
           "kind": "process",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1970s-1984",
           "inputs": [],
           "facts": [
@@ -3989,7 +4089,8 @@
           "simple_name": "Positive photoresist",
           "description": "Wafer coated on a spinner (2000-4000 rpm) to 1-2 um of AZ-1350, dried 90-100 C for 20-30 min on a hot plate, aligned to the mask in a Coburn 2400 contact printer or a Perkin-Elmer Micralign MA-2 optical proximity aligner, exposed through the chrome plate, then spray-developed in 5-10% tetramethylammonium hydroxide. Between every step: megasonic clean, dilute H2SO4:H2O2, and a hard bake.",
           "kind": "process",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1970s-1982",
           "inputs": [
             "chem.photoresist"
@@ -4021,7 +4122,8 @@
           "simple_name": "Oxidation/diffusion furnaces",
           "description": "Quartz or fused-silica tube furnaces, horizontal, 5-6 inch ID, with 2-4 zone radiant or resistance heating to 1100 C, a boat of silicon-carbide or quartz carrying 25-50 wafers, and gas flow panels with wet/dry mixing valves. These did the field oxide, gate oxide, poly anneal and the source/drain drives.",
           "kind": "tool",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "fab-tooling",
           "era": "1960s-1980s",
           "inputs": [
             "facility.electricity"
@@ -4044,7 +4146,8 @@
           "simple_name": "Polysilicon furnace, aluminium sputterer",
           "description": "A second tube furnace, plumbed for silane/phosphine or dichlorosilane, for poly deposition. Aluminium went on in a separate vacuum tool: a DC magnetron sputter chamber (Balzers, Perkin-Elmer, Leybold) or a resistive evaporation chamber, both with turbomolecular pumps and a rotary fixture.",
           "kind": "tool",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "fab-tooling",
           "era": "1970s-1980s",
           "sources": [
             "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication",
@@ -4066,7 +4169,8 @@
           "simple_name": "Wet bench, plasma etcher",
           "description": "Wet etches in quartz or PVDF tanks: HF for oxide, hot H3PO4 for aluminium, buffered oxide etch (HF:NH4F) for fine oxide patterning. By 1982 many fabs had added a barrel-type CF4/CF4+O2 plasma etcher (e.g. the Plasma Technologies PT etch, or an ASM) for aluminium and for poly etching.",
           "kind": "tool",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "fab-tooling",
           "era": "1970s-1982",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -4105,7 +4209,8 @@
           "simple_name": "Low-energy ion implanter",
           "description": "A small Van de Graaff or mass-separated implant source (High Voltage Engineering, Extrion, or Veeco) accelerating arsenic to 50-150 keV, with a beam scanning and dose measurement unit. Implantation of the source/drain had largely replaced diffusion by 1982 in a well-equipped shop.",
           "kind": "tool",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "fab-tooling",
           "era": "1970s-1982",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -4119,7 +4224,8 @@
       "simple_name": "Wafer probe",
       "description": "Before dicing, each die is probed on a wafer with a probe card: a printed-circuit board with 40 microscopic tungsten or rhenium needles, one per 6510 bond pad. A Teradyne L-120 or Fairchild SICTEST automated tester drives a test program and logs wafer coordinates, so only known-good dice go to assembly. Probe cards in 1982 were hand-drilled needle cards. Automatic stepping probes were still rare.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1982",
       "inputs": [
         "facility.test-equipment.functional"
@@ -4136,7 +4242,8 @@
       "simple_name": "Mask cutting, inspection, repair",
       "description": "The 6510 layout existed as polygons on a Calma or Computervision workstation. It was checked against the design rules, extracted to a mask database and written to tape, and a mask data preparation program merged the layout with the process layers, the alignment marks and the die boundary to produce the flat rectangle-and-trapezoid format the pattern generator consumed. The generator then flashed a xenon-mercury lamp through an aperture and shutter wheel in a raster of rectangles into a camera-reduction stage, or a 1:1 mask writer exposed the blank plate directly. Each plate was developed in positive resist, the exposed chrome etched away, inspected on a Zeiss or KLA comparison tool against the database, and defect-repaired with a gallium or indium needle or by lifting and re-exposing the film. This data-reduction step, not the exposure, was where most mask errors were caught.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1970s-1982",
       "inputs": [
         "chem.photoresist"
@@ -4168,7 +4275,8 @@
           "simple_name": "Pattern generator",
           "description": "In 1982 most masks of this size were made by a numerically controlled pattern generator that flashed a xenon-mercury lamp through an aperture and shutter wheel in a raster of rectangles into a camera-reduction stage, or by a 1:1 mask writer that exposed a blank plate directly. Electron-beam mask writers (EBG, Santa Clara) existed but at roughly US$1-2 million were not typical in a small internal device fab.",
           "kind": "tool",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "fab-tooling",
           "era": "1970s-1982",
           "confidence": "medium",
           "provenance": "incomplete",
@@ -4180,7 +4288,8 @@
           "simple_name": "Mask inspection, defect repair",
           "description": "Masks were checked on a Zeiss or KLA comparison mask inspection tool against the design database, printing defect-free chrome checkouts. Opaque defects on clear areas were repaired with a fine gallium or indium needle or by lifting the film and re-exposing. Clear defects in a chrome line were patched with deposited carbon. Pellicles (1-2 um Mylar membranes mounted in a frame) protected final production masks from dust, though they were less common for 1:1 contact printing, where the mask still touched the wafer. Inspection was the last gate before a plate went into the mask library, because one bad plate silently ruins a whole wafer run.",
           "kind": "process",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "wafer-fab",
           "era": "1970s-1982",
           "inputs": [
             "si.mask.plate"
@@ -4205,7 +4314,8 @@
       "simple_name": "Planar epitaxial BJT process",
       "description": "The 2N3904, 2N3906 and 2N4124 are all the same architecture, differentiated by polarity and voltage rating: a p-type substrate, a heavily arsenic- or phosphorus-doped n+ subcollector, then a 1-3 um epitaxial n collector layer grown in an ATCP radiant-heated reactor at ~1150-1250 C with AsH3 or PH3 in H2. Isolation diffusions of boron create the tub, then the base (boron, ~0.5-1 um deep) and finally the emitter (arsenic or phosphorus, heavily overdoped to a low base resistance) through separate photolithography steps. Aluminium metallization is deposited by evaporation, alloyed at 400 C to make ohmic contacts, then the wafer is probed.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1970s-1982",
       "inputs": [
         "si.wafer",
@@ -4286,7 +4396,8 @@
       "simple_name": "Radiant-heated epitaxial reactor",
       "description": "After the n+ subcollector diffusion, a 1-3 um n-type epitaxial layer was grown in a radiant-heated vertical reactor: the wafers sat on a graphite susceptor inside a quartz bell jar, inductively heated to 1150-1250 C, with AsH3 or PH3 in H2 flowing over them. Epitaxy gave the collector the uniformity and the carrier concentration that a diffusion simply could not, which is what made the 2N3904's gain and its saturation voltage repeatable.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1960s-1982",
       "inputs": [
         "graphite susceptor"
@@ -4337,7 +4448,8 @@
       "simple_name": "Isolation diffusion and moat",
       "description": "A boron diffusion deep enough to reach the subcollector creates a p-type tub around each transistor, isolating it from its neighbours through reverse-biased pn junctions rather than an oxide. The same oxide that covers the tub is later cut away in the base and emitter windows. This is the 'planar epitaxial' process invented at Fairchild in 1959 and still the standard discrete recipe in 1982.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1959-1982",
       "inputs": [
         "boron trichloride",
@@ -4364,7 +4476,8 @@
       "simple_name": "Probe, gain binning, final test",
       "description": "Discretes are probed on the wafer with a 3- or 10-needle card, then tested after packaging on a curve tracer or a dedicated bin tester. Bipolar small-signal parts are binned by hFE and by VCEO (the 2N3904's hFE spread runs roughly 100-300) so a given lot is graded, and the C64's assembly only ever saw parts within the standard bin. Rectifiers are tested for reverse leakage and forward drop at rated current.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1982",
       "inputs": [
         "facility.test-equipment.functional"
@@ -4401,7 +4514,8 @@
       "simple_name": "GaP liquid-phase epitaxy",
       "description": "A GaP or GaAsP wafer is dipped in a molten, boron-doped Ga/GaP/P solution in a horizontal tilting boat inside a long quartz tube furnace at ~850-900 C. The substrate is swept through many alternating supersaturated melts so that dozens of GaP layers a few microns thick grow in, alternating p-type (Zn-doped) and n-type (S-doped) to form the double-heterostructure junction that makes the bright 1980s LED. The process is epitaxial in the strict sense. It is the same technique used for GaAs microwave chips.",
       "kind": "process",
-      "category": "optics",
+      "category": "semiconductors",
+      "subcat": "discretes-opto",
       "era": "1970s-1982",
       "inputs": [
         "gallium",
@@ -4457,7 +4571,8 @@
       "simple_name": "Mask programming, link pattern",
       "description": "This is the practical heart of a mask-programmed PLA. The AND array, the OR array and the decoders are all routine NMOS layers, but the pattern of which links exist is frozen into a single additional mask level. Drawn as one extra colour plane in the layout database and cut like any other plate. That one extra mask is what makes each unique logic function expensive: artwork generation, mask fabrication and inspection all have to be repeated, and the wafer run cannot be short because the lot must be big enough to be worth the NRE. The whole array is physically small, so a 4-inch wafer holds many thousands of dies. The constraint on order size is mask and engineering cost, not silicon.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1982",
       "inputs": [
         "si.mask.plate"
@@ -4502,7 +4617,8 @@
       "simple_name": "NMOS process for 906114-01",
       "description": "The device-level facts are solid: it is NMOS, mask programmed, made at Norristown, and running a lower VOH than the bipolar original. The process details are not published anywhere. On the evidence of die markings, the era and the same fab, it is almost certainly the house silicon-gate NMOS flow used for the 6510, 6522 and 6526 (n+ diffusion, LOCOS field oxide, LPCVD polysilicon, self-aligned source/drain, contact cuts, one aluminium layer, PSG or nitride passivation) run at whatever line width that flow was at the time. No specific figure is asserted for that line width, because no source states one for this part.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1982-1988",
       "inputs": [
         "si.wafer",
@@ -4554,7 +4670,8 @@
       "simple_name": "Probe, truth-table, final test",
       "description": "A PLA is uniquely testable because its specification is a truth table rather than a waveform. On probe, a stored truth table is stepped through all 16 inputs x /OE combinations on all 8 outputs (a few thousand vectors), which catches a stuck link, a shorted link or a bad decoder in seconds. Assembled parts get the same vector set in a socket on an automatic tester, plus a timing check that the address decode settles inside a 6510 cycle.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1982",
       "inputs": [
         "facility.test-equipment.functional"
@@ -4591,7 +4708,8 @@
       "simple_name": "Two-level NMOS DRAM process",
       "description": "Same basic silicon-gate NMOS flow as the CPU but heavier: thicker field oxide, more polysilicon depositions (three), a heavier arsenic source/drain, a thicker aluminium (2-3 um) for the bit lines that have to survive repeated bootstrapped swings, and usually two mask levels for bit-line precharge and sense amp. Eight to ten mask levels and 100-150 process steps, versus ~50 for the CPU.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1982",
       "inputs": [
         "si.wafer",
@@ -4619,7 +4737,8 @@
           "simple_name": "Poly-2 and bit-line printing",
           "description": "The tight overlays in a 4164 (bit line over capacitor plate, poly 2 over poly 1) were what finally forced 5x reduction step-and-repeat printing rather than 1:1 contact printing, because 1:1 contact printing of a 4 um bit line over a 4 um plate feature was too lossy. Typical 1982 DRAM mask lines ran GCA, Canon, Magnifire or ASML 5x steppers, with hard-baked 2 um Shipley AZ-1354 resist and a 5x reticle on a 3x3 inch quartz plate.",
           "kind": "tool",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "fab-tooling",
           "era": "1981-1982",
           "facts": [
             {
@@ -4669,7 +4788,8 @@
       "simple_name": "Alpha/latch-up protection",
       "description": "DRAM soft errors from alpha particles emitted by radon daughters in the mould compound were a real field-failure mode in 1982. Mitigations used then: a sintered alumina or silicon-nitride chip cover potted over the die in a hermetic package; 'getter' compounds in the cavity; and softer, minimum-area bit-line and capacitor geometries to increase the stored charge margin.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1982",
       "inputs": [],
       "facts": [
@@ -4694,7 +4814,8 @@
           "simple_name": "Sintered chip cover",
           "description": "On many 64K DRAMs the mould compound was not allowed near the die: instead a small alumina or silicon-nitride lid was diffusion-bonded to the lead frame cavity and the cavity then filled with a low-alpha moulding compound or left in a hermetic ceramic package. Alpha emission rate of the compound was a purchased specification in units of alphas per cm2 per hour.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chip-pack",
           "era": "1980-1982",
           "inputs": [],
           "facts": [
@@ -4733,7 +4854,8 @@
       "simple_name": "Wafer sort, final test, 4164",
       "description": "Every die is probed with an 8-needle probe card and tested on an automated memory tester that runs a march-type pattern (write a checkerboard, read it, invert, repeat) through all 65,536 cells, then a refresh test holding 128 RAS cycles. Assembled parts go back into a socket on the same tester for a signature/AC timing check at 150 ns. Timing bins came out of this test. The C64 does not need the fastest grade, but the drive and the C128 memory expansions did.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1982",
       "inputs": [
         "facility.test-equipment.functional"
@@ -4764,7 +4886,8 @@
       "simple_name": "Second polysilicon layer",
       "description": "The key DRAM process problem in 1982. A second conformal polysilicon layer had to be deposited and patterned so that its edge was razor sharp and its overlap onto the access transistor was tight. Deposition was LPCVD silane at ~800-850 C. The plate was doped n+ with a phosphorus implant and annealed. Refractory metal silicides (WSi2, TiSi2) were being introduced on gates in 1983-84 but were not universal in 1982 64K DRAMs.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1978-1982",
       "inputs": [],
       "facts": [
@@ -4805,7 +4928,8 @@
       "simple_name": "NMOS mask ROM front end",
       "description": "The same silicon-gate NMOS flow as the CPU (n+ source/drain diffusion, LOCOS field oxide, polysilicon, self-aligned source/drain, contact cuts, 1-2 um aluminium, PSG/nitride passivation) with one extra mask level for the ROM programming pattern. A 24-pin DIP ROM die is small (a few mm2) and yields well. The constraint was mask cost, not yield.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1982",
       "inputs": [
         "si.wafer",
@@ -4853,7 +4977,8 @@
       "simple_name": "Mask programming",
       "description": "An NMOS mask ROM of 1982 was an NMOS transistor array with a decoder, programmed by removing or adding contacts/metal at the array intersections. The usual 1980s implementation was contact programming: the programmer and sense-amp metal were left unconnected at a bit=1 location, and the ROM-only mask plate was drawn with those contact cuts simply omitted, or, in the opposite polarity, extra contact cuts were added for every 0. The array is arranged 32 bit lines (or 24, using 6 cells of 4 transistors) across 2048 words for the 8 KB parts.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chips",
       "era": "1982",
       "inputs": [
         "si.mask.plate"
@@ -4881,7 +5006,8 @@
           "simple_name": "Bit-line sense amplifiers",
           "description": "A masked bit line is precharged high and then a dummy word is selected to develop a voltage across the bit line. A differential sense amplifier (a latch of four NMOS transistors plus a pair of cross-coupled load devices, exactly the same topology as the 6510's logic) amplifies the millivolt difference and latches it. The sense amps were the largest block in a mask ROM die (typically 10-15% of the area) because each needed a perfect match.",
           "kind": "part",
-          "category": "silicon",
+          "category": "semiconductors",
+          "subcat": "chips",
           "era": "1982",
           "facts": [
             {
@@ -4901,7 +5027,8 @@
       "simple_name": "Verify every ROM bit",
       "description": "A mask ROM cannot be re-programmed, so its contents are verified twice. On the wafer, a 24-needle probe card runs a read-only pattern through the 8192 or 4096 addresses and sums the data. After assembly, the part goes into an automatic tester that reads the whole array and checks it against a resident signature and, for the C64's BASIC and KERNAL, the published checksum. Any failure meant a defective mask or a contamination particle, and the whole mask set had to be re-run.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1982",
       "inputs": [
         "facility.test-equipment.functional"
@@ -4928,7 +5055,8 @@
       "simple_name": "NMOS hybrid process",
       "description": "The 6581 was not a purely digital NMOS part. Its 24-bit phase accumulators, the noise LFSR and the envelope generators are ordinary silicon-gate NMOS with depletion loads, the same technology as the 6510. Its DACs, the filter and the VCA are analogue: long polysilicon resistors laid down in the same polysilicon deposition, a large-area common-emitter output transistor, and a big p-diffused 'pump' resistor in the VCA. All of it in one 2-4 um process with a single aluminium layer, and with the analogue section laid out shielded inside its own p-epitaxial tub.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1982",
       "inputs": [
         "si.wafer",
@@ -4991,7 +5119,8 @@
       "simple_name": "Probe and audio test, 6581",
       "description": "Probe testing a SID meant electrical tests (register access, oscillator counters, envelope thresholds, DAC linearity, filter self-oscillation) plus, on the better lines, a functional audio test: a short score stepped through the chip and the output listened to or measured on a spectrum analyser. Final test repeated it in a socket. This is why 6581 revisions are dated and marked (R4, R4AR, R5, R6). Each was a measured change to the analogue thresholds. The threshold voltages of the envelope generators and the VCA had to be trended, because the whole reason the 8580 sounds different is that its analogue section was redesigned and its thresholds tightened.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1982",
       "inputs": [
         "facility.test-equipment.functional"
@@ -5018,7 +5147,8 @@
       "simple_name": "Analog-plus-logic NMOS front end",
       "description": "The same silicon-gate NMOS sequence as the CPU, with extra care because the VIC-II mixes digital logic, the fixed-palette analogue section and comparators on one die: 2 um minimum feature, ~400 A poly-oxide, LOCOS field oxide, self-aligned n+ source/drain, single 1-2 um aluminium layer, PSG plus plasma nitride passivation. The analogue section generates the fixed 16 luminance and chrominance levels on-chip, with resistor values shared between opposite hues to save die area, and emits them on pins 14 and 15.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1982",
       "inputs": [
         "si.wafer",
@@ -5080,7 +5210,8 @@
       "simple_name": "Probe and pattern test, 8562",
       "description": "The VIC-II is probed with a 40-needle card and a test program that exercises the character generator, the sprite pointers, the colour registers and the interrupt logic, and, on the analogue side, checks the two video outputs (luminance on pin 15, chroma on pin 14) and the colour-register decode. Assembled parts run the same program in a socket, often while a technician watched a test pattern on a monitor plugged into the tester's video output.",
       "kind": "process",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "chip-pack",
       "era": "1982",
       "inputs": [
         "facility.test-equipment.functional"
@@ -5111,7 +5242,8 @@
       "simple_name": "Polysilicon load resistors",
       "description": "The 6510 and the SID both use undoped or lightly doped deposited polysilicon as a resistor, deposited in the same LPCVD silane step as the gate and left unetched between two aluminium contacts. Sheet resistance was 30-100 ohm/sq in 1982 and the resistance was trimmed, if at all, by laser or by anodising the surface. The 'thin-film resistor' trimming industry existed for exactly this.",
       "kind": "material",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1970s-1982",
       "inputs": [
         "dichlorosilane"
@@ -5151,7 +5283,8 @@
       "simple_name": "Industrial diamond grit",
       "description": "Synthetic saw-grade diamond grit for wafering saws, dice tools and grinding wheels. Graphite pressed and sintered with Fe/Co/Ni catalyst at 5-6 GPa and 1400-1600 C in a belt press; the largest early stones were 0.15 mm across, too small for jewelry but usable in industrial abrasives. Grit is pointable inside finished blades (impregnated, not eaten like coolant), so tools contain it.",
       "kind": "material",
-      "category": "metals",
+      "category": "inorganics",
+      "subcat": "clays-abrasives",
       "era": "1950s-1982",
       "facts": [
         {
@@ -5184,7 +5317,8 @@
       "simple_name": "100mm CZ silicon ingot",
       "description": "The 100mm Czochralski monocrystalline boule the wafers are sliced from: boron-doped p-type, 75-150mm diameter per the CZ node, sawn/lapped/polished into si.wafer. Missing link between metal.silica.czochralski (produces nothing) and si.wafer.slicing (consumes nothing).",
       "kind": "material",
-      "category": "silicon",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
       "era": "1982",
       "confidence": "high",
       "provenance": "complete",
@@ -5198,449 +5332,459 @@
       ]
     },
     "mb.cpu.fe.contacts.alsi-feed": {
-        "id": "mb.cpu.fe.contacts.alsi-feed",
-        "name": "Al-1pctSi evaporation/sputter feed",
-        "simple_name": "Al-Si feed, 1pctSi",
-        "description": "Aluminium alloyed with 0.5-1% silicon as the evaporation/sputtering charge for the 1-2 um contact metallization; the silicon fraction stops aluminium spiking through the thin junctions.",
-        "kind": "material",
-        "category": "metals",
-        "era": "1982",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: exact charge form (wire, slug, sputter target) and 0.5-1% band endpoints beyond the candidate quote not established.",
-        "children": [],
-        "edges": [
-          {
-            "to": "metal.aluminum.ingot",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
+      "id": "mb.cpu.fe.contacts.alsi-feed",
+      "name": "Al-1pctSi evaporation/sputter feed",
+      "simple_name": "Al-Si feed, 1pctSi",
+      "description": "Aluminium alloyed with 0.5-1% silicon as the evaporation/sputtering charge for the 1-2 um contact metallization; the silicon fraction stops aluminium spiking through the thin junctions.",
+      "kind": "material",
+      "category": "metals",
+      "subcat": "nonferrous",
+      "era": "1982",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+      ],
+      "confidence": "medium",
+      "note": "Hedged: exact charge form (wire, slug, sputter target) and 0.5-1% band endpoints beyond the candidate quote not established.",
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.aluminum.ingot",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "mb.cpu.fe.passivation.teos": {
-        "id": "mb.cpu.fe.passivation.teos",
-        "name": "Tetraethyl orthosilicate PSG precursor",
-        "simple_name": "TEOS precursor",
-        "description": "Tetraethyl orthosilicate feed for the CVD phosphosilicate-glass overcoat; co-fed with phosphine at 700-800 C to grow the sealing PSG under the pad windows.",
-        "kind": "material",
-        "category": "silicon",
-        "era": "1982",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: TEOS-vs-silane PSG route split at this fab not established; PECVD nitride alternative explicitly unconfirmed per candidate note and is NOT modeled. TEOS is the ethanol ester of silicon tetrachloride, not a trichlorosilane derivative.",
-        "children": [],
-        "edges": [
-          {
-            "to": "metal.silicon-tetrachloride",
-            "rel": "made from",
-            "basis": "inferred"
-          },
-          {
-            "to": "chem.ethanol",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
+      "id": "mb.cpu.fe.passivation.teos",
+      "name": "Tetraethyl orthosilicate PSG precursor",
+      "simple_name": "TEOS precursor",
+      "description": "Tetraethyl orthosilicate feed for the CVD phosphosilicate-glass overcoat; co-fed with phosphine at 700-800 C to grow the sealing PSG under the pad windows.",
+      "kind": "material",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
+      "era": "1982",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+      ],
+      "confidence": "medium",
+      "note": "Hedged: TEOS-vs-silane PSG route split at this fab not established; PECVD nitride alternative explicitly unconfirmed per candidate note and is NOT modeled. TEOS is the ethanol ester of silicon tetrachloride, not a trichlorosilane derivative.",
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.silicon-tetrachloride",
+          "rel": "made from",
+          "basis": "inferred"
+        },
+        {
+          "to": "chem.ethanol",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "mb.cpu.fe.photoresist.dnq": {
-        "id": "mb.cpu.fe.photoresist.dnq",
-        "name": "Positive DNQ/novolac resist formulation",
-        "simple_name": "DNQ resist formulation",
-        "description": "Factory-mixed positive photoresist: diazonaphthoquinone sensitizer in novolac resin, as-spun 1-2 um, developed in dilute TMAH. Consumable distinguished from the chem.photoresist process/family node.",
-        "kind": "material",
-        "category": "silicon",
-        "era": "1970s-1982",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Photoresist"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: AZ-1350 brand, bake schedule, aligner models per candidate note not established; formulation type only.",
-        "children": [],
-        "edges": [
-          {
-            "to": "chem.photoresist.novolac",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
-    
+      "id": "mb.cpu.fe.photoresist.dnq",
+      "name": "Positive DNQ/novolac resist formulation",
+      "simple_name": "DNQ resist formulation",
+      "description": "Factory-mixed positive photoresist: diazonaphthoquinone sensitizer in novolac resin, as-spun 1-2 um, developed in dilute TMAH. Consumable distinguished from the chem.photoresist process/family node.",
+      "kind": "material",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
+      "era": "1970s-1982",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Photoresist"
+      ],
+      "confidence": "medium",
+      "note": "Hedged: AZ-1350 brand, bake schedule, aligner models per candidate note not established; formulation type only.",
+      "children": [],
+      "edges": [
+        {
+          "to": "chem.photoresist.novolac",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "mb.discretes.epi.subcollector": {
-        "id": "mb.discretes.epi.subcollector",
-        "name": "n+ subcollector diffusion",
-        "simple_name": "n+ subcollector",
-        "description": "Heavily arsenic/phosphorus-doped n+ buried-layer diffusion preceding epitaxy; the epi collector is grown over it for uniformity and carrier control.",
-        "kind": "process",
-        "category": "silicon",
-        "era": "1960s-1982",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Planar_process"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: reactor geometry/temperatures per candidate note not established; buried-layer dose not established.",
-        "children": [],
-        "edges": [
-          {
-            "to": "chem.fab-chemicals.dopants.arsine",
-            "rel": "consumes",
-            "basis": "typical-1982"
-          }
-        ],
-        "provenance": "complete"
-      },
-    
+      "id": "mb.discretes.epi.subcollector",
+      "name": "n+ subcollector diffusion",
+      "simple_name": "n+ subcollector",
+      "description": "Heavily arsenic/phosphorus-doped n+ buried-layer diffusion preceding epitaxy; the epi collector is grown over it for uniformity and carrier control.",
+      "kind": "process",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
+      "era": "1960s-1982",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Planar_process"
+      ],
+      "confidence": "medium",
+      "note": "Hedged: reactor geometry/temperatures per candidate note not established; buried-layer dose not established.",
+      "children": [],
+      "edges": [
+        {
+          "to": "chem.fab-chemicals.dopants.arsine",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        }
+      ],
+      "provenance": "complete"
+    },
     "mb.discretes.led.epi.junction-die": {
-        "id": "mb.discretes.led.epi.junction-die",
-        "name": "LPE GaP/GaAsP junction die",
-        "simple_name": "LPE junction die",
-        "description": "Epitaxial double-heterostructure junction die as grown by liquid-phase epitaxy: alternating Zn-doped p-type and S-doped n-type GaP/GaAsP layers a few microns thick, before die attach and epoxy lens packaging.",
-        "kind": "part",
-        "category": "silicon",
-        "era": "1980s",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: 850-900 C melt, boron-doped charge, alternating-sweep detail and Zn/S dopant identities per candidate note not established.",
-        "children": [],
-        "edges": [
-          {
-            "to": "mb.discretes.led.gallium",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
+      "id": "mb.discretes.led.epi.junction-die",
+      "name": "LPE GaP/GaAsP junction die",
+      "simple_name": "LPE junction die",
+      "description": "Epitaxial double-heterostructure junction die as grown by liquid-phase epitaxy: alternating Zn-doped p-type and S-doped n-type GaP/GaAsP layers a few microns thick, before die attach and epoxy lens packaging.",
+      "kind": "part",
+      "category": "semiconductors",
+      "subcat": "discretes-opto",
+      "era": "1980s",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+      ],
+      "confidence": "medium",
+      "note": "Hedged: 850-900 C melt, boron-doped charge, alternating-sweep detail and Zn/S dopant identities per candidate note not established.",
+      "children": [],
+      "edges": [
+        {
+          "to": "mb.discretes.led.gallium",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "mb.discretes.led.gallium.recovery": {
-        "id": "mb.discretes.led.gallium.recovery",
-        "name": "Gallium recovery from Bayer liquor",
-        "simple_name": "Ga recovery, Bayer",
-        "description": "Alkaline ion-exchange/liquor-treatment recovery of trace gallium from Bayer-process aluminate liquor and bauxite/zinc residues, refined to 99.9-99.99% metal.",
-        "kind": "process",
-        "category": "metals",
-        "era": "1980s",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: amalgam vs hydroxide-extraction route and residue (red-mud vs zinc-residue) split not established.",
-        "children": [],
-        "edges": [
-          {
-            "to": "mb.discretes.led.gallium",
-            "rel": "produces",
-            "role": "product",
-            "basis": "inferred"
-          },
-          {
-            "to": "metal.bayer-liquor",
-            "rel": "consumes",
-            "basis": "documented"
-          }
-        ],
-        "provenance": "incomplete"
-      },
+      "id": "mb.discretes.led.gallium.recovery",
+      "name": "Gallium recovery from Bayer liquor",
+      "simple_name": "Ga recovery, Bayer",
+      "description": "Alkaline ion-exchange/liquor-treatment recovery of trace gallium from Bayer-process aluminate liquor and bauxite/zinc residues, refined to 99.9-99.99% metal.",
+      "kind": "process",
+      "category": "metals",
+      "subcat": "precious-special",
+      "era": "1980s",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+      ],
+      "confidence": "medium",
+      "note": "Hedged: amalgam vs hydroxide-extraction route and residue (red-mud vs zinc-residue) split not established.",
+      "children": [],
+      "edges": [
+        {
+          "to": "mb.discretes.led.gallium",
+          "rel": "produces",
+          "role": "product",
+          "basis": "inferred"
+        },
+        {
+          "to": "metal.bayer-liquor",
+          "rel": "consumes",
+          "basis": "documented"
+        }
+      ],
+      "provenance": "incomplete"
+    },
     "mb.discretes.led.substrate.phosphorus": {
-        "id": "mb.discretes.led.substrate.phosphorus",
-        "name": "Semiconductor-grade white phosphorus feed",
-        "simple_name": "White phosphorus P4",
-        "description": "High-purity white-phosphorus (P4) feed for GaP substrate growth and GaP/GaAsP LPE charges, via the phosphate-rock electric-furnace route.",
-        "kind": "material",
-        "category": "silicon",
-        "era": "1980s",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
-        ],
-        "confidence": "low",
-        "note": "Hedged: GaAs-vs-GaP substrate selection per candidate unresolved; arsenic-metal side has no canonical node and stays open.",
-        "children": [],
-        "edges": [
-          {
-            "to": "metal.phosphate-ore",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
+      "id": "mb.discretes.led.substrate.phosphorus",
+      "name": "Semiconductor-grade white phosphorus feed",
+      "simple_name": "White phosphorus P4",
+      "description": "High-purity white-phosphorus (P4) feed for GaP substrate growth and GaP/GaAsP LPE charges, via the phosphate-rock electric-furnace route.",
+      "kind": "material",
+      "category": "semiconductors",
+      "subcat": "discretes-opto",
+      "era": "1980s",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+      ],
+      "confidence": "low",
+      "note": "Hedged: GaAs-vs-GaP substrate selection per candidate unresolved; arsenic-metal side has no canonical node and stays open.",
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.phosphate-ore",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "mb.discretes.test.curve-tracer": {
-        "id": "mb.discretes.test.curve-tracer",
-        "name": "Discrete curve tracer and bin tester",
-        "simple_name": "Curve tracer / bin tester",
-        "description": "Semiconductor curve tracer with wafer-probe card plus packaged-part bin tester grading hFE/VCEO (bipolar) and leakage/drop (rectifiers); distinct from the powered C64-board functional station.",
-        "kind": "tool",
-        "category": "silicon",
-        "era": "1980s",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: needle counts, hFE 100-300 band bias conditions and ATE model per candidate note not established.",
-        "children": [],
-        "edges": [
-          {
-            "to": "facility.electricity",
-            "rel": "consumes",
-            "basis": "typical-1982"
-          }
-        ],
-        "provenance": "incomplete"
-      },
+      "id": "mb.discretes.test.curve-tracer",
+      "name": "Discrete curve tracer and bin tester",
+      "simple_name": "Curve tracer / bin tester",
+      "description": "Semiconductor curve tracer with wafer-probe card plus packaged-part bin tester grading hFE/VCEO (bipolar) and leakage/drop (rectifiers); distinct from the powered C64-board functional station.",
+      "kind": "tool",
+      "category": "semiconductors",
+      "subcat": "fab-tooling",
+      "era": "1980s",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+      ],
+      "confidence": "medium",
+      "note": "Hedged: needle counts, hFE 100-300 band bias conditions and ATE model per candidate note not established.",
+      "children": [],
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        }
+      ],
+      "provenance": "incomplete"
+    },
     "mb.pla.test.vector-tester": {
-        "id": "mb.pla.test.vector-tester",
-        "name": "PLA truth-table vector tester",
-        "simple_name": "PLA vector tester",
-        "description": "Socketed automatic tester stepping the PLA truth table (16 inputs x /OE over 8 outputs) plus address-decode timing check; probe-card front end with packaged-part socket for final test.",
-        "kind": "tool",
-        "category": "silicon",
-        "era": "1980s",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
-        ],
-        "confidence": "low",
-        "note": "Hedged: 28-needle card, ~65536-vector exhaustiveness and timing limits per candidate note not established.",
-        "children": [],
-        "edges": [
-          {
-            "to": "facility.electricity",
-            "rel": "consumes",
-            "basis": "typical-1982"
-          }
-        ],
-        "provenance": "incomplete"
-      },
-    
-    
-    
+      "id": "mb.pla.test.vector-tester",
+      "name": "PLA truth-table vector tester",
+      "simple_name": "PLA vector tester",
+      "description": "Socketed automatic tester stepping the PLA truth table (16 inputs x /OE over 8 outputs) plus address-decode timing check; probe-card front end with packaged-part socket for final test.",
+      "kind": "tool",
+      "category": "semiconductors",
+      "subcat": "fab-tooling",
+      "era": "1980s",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+      ],
+      "confidence": "low",
+      "note": "Hedged: 28-needle card, ~65536-vector exhaustiveness and timing limits per candidate note not established.",
+      "children": [],
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        }
+      ],
+      "provenance": "incomplete"
+    },
     "si.attach.diced-die": {
-        "id": "si.attach.diced-die",
-        "name": "Diced known-good die",
-        "simple_name": "Diced die",
-        "description": "Sawn and inspected known-good semiconductor die as the workpiece entering die attach: probed, scribed/broken, visually inspected, ready for eutectic bonding to the lead-frame tab.",
-        "kind": "part",
-        "category": "silicon",
-        "era": "1982",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: eutectic 361 C / 3.4pctSi and inspection magnifications per candidate note not established as attach parameters.",
-        "children": [],
-        "edges": [
-          {
-            "to": "si.attach",
-            "rel": "step",
-            "basis": "documented"
-          }
-        ],
-        "provenance": "incomplete"
-      },
+      "id": "si.attach.diced-die",
+      "name": "Diced known-good die",
+      "simple_name": "Diced die",
+      "description": "Sawn and inspected known-good semiconductor die as the workpiece entering die attach: probed, scribed/broken, visually inspected, ready for eutectic bonding to the lead-frame tab.",
+      "kind": "part",
+      "category": "semiconductors",
+      "subcat": "chips",
+      "era": "1982",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
+      ],
+      "confidence": "medium",
+      "note": "Hedged: eutectic 361 C / 3.4pctSi and inspection magnifications per candidate note not established as attach parameters.",
+      "children": [],
+      "edges": [
+        {
+          "to": "si.attach",
+          "rel": "step",
+          "basis": "documented"
+        }
+      ],
+      "provenance": "incomplete"
+    },
     "si.emc.resin.formaldehyde": {
-        "id": "si.emc.resin.formaldehyde",
-        "name": "Aqueous formaldehyde feed",
-        "simple_name": "Formaldehyde aqueous",
-        "description": "Aqueous formaldehyde (methanol-oxidation product over silver) condensed with phenol under acid to the novolac, then carried to epoxy-novolac moulding compound.",
-        "kind": "material",
-        "category": "silicon",
-        "era": "1980s",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Epoxy"
-        ],
-        "confidence": "low",
-        "note": "Hedged: concentration/formalin stabilizer and methanol grade not established; direct benzene edge on the parent is not the resin reagent (phenol is).",
-        "children": [],
-        "edges": [
-          {
-            "to": "chem.natural-gas",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
-    
+      "id": "si.emc.resin.formaldehyde",
+      "name": "Aqueous formaldehyde feed",
+      "simple_name": "Formaldehyde aqueous",
+      "description": "Aqueous formaldehyde (methanol-oxidation product over silver) condensed with phenol under acid to the novolac, then carried to epoxy-novolac moulding compound.",
+      "kind": "material",
+      "category": "petrochem",
+      "subcat": "monomers",
+      "era": "1980s",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Epoxy"
+      ],
+      "confidence": "low",
+      "note": "Hedged: concentration/formalin stabilizer and methanol grade not established; direct benzene edge on the parent is not the resin reagent (phenol is).",
+      "children": [],
+      "edges": [
+        {
+          "to": "chem.natural-gas",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "si.leadframe.alloy.vim-strip": {
-        "id": "si.leadframe.alloy.vim-strip",
-        "name": "FeNi vacuum-induction melting and strip rolling",
-        "simple_name": "VIM and strip rolling",
-        "description": "Vacuum-induction melting, casting, hot-rolling then cold-rolling/annealing of FeNi 42/58 strip to 0.15-0.20 mm for lead frames.",
-        "kind": "process",
-        "category": "metals",
-        "era": "1982",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: melt-shop specifics (charge mix, anneal cycle) not established; C194-copper alternative excluded from this path.",
-        "children": [],
-        "edges": [
-          {
-            "to": "si.leadframe.alloy",
-            "rel": "produces",
-            "role": "product",
-            "basis": "documented"
-          },
-          {
-            "to": "metal.ferronickel",
-            "rel": "consumes",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
+      "id": "si.leadframe.alloy.vim-strip",
+      "name": "FeNi vacuum-induction melting and strip rolling",
+      "simple_name": "VIM and strip rolling",
+      "description": "Vacuum-induction melting, casting, hot-rolling then cold-rolling/annealing of FeNi 42/58 strip to 0.15-0.20 mm for lead frames.",
+      "kind": "process",
+      "category": "metals",
+      "subcat": "ferrous",
+      "era": "1982",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
+      ],
+      "confidence": "medium",
+      "note": "Hedged: melt-shop specifics (charge mix, anneal cycle) not established; C194-copper alternative excluded from this path.",
+      "children": [],
+      "edges": [
+        {
+          "to": "si.leadframe.alloy",
+          "rel": "produces",
+          "role": "product",
+          "basis": "documented"
+        },
+        {
+          "to": "metal.ferronickel",
+          "rel": "consumes",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "si.mask.plate.patterning": {
-        "id": "si.mask.plate.patterning",
-        "name": "Photomask blank coating and patterning",
-        "simple_name": "Mask patterning",
-        "description": "Soda-lime/quartz blank preparation, 100-150 nm chromium sputtering, resist coat/expose/develop, chrome etch, Zeiss inspection and needle repair: the plate-making recipe.",
-        "kind": "process",
-        "category": "silicon",
-        "era": "1980s",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Photomask"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: perchloric vs sulfuric-perchromate etchant split and Zeiss-tool specificity not established.",
-        "children": [],
-        "edges": [
-          {
-            "to": "si.mask.plate",
-            "rel": "produces",
-            "role": "product",
-            "basis": "documented"
-          },
-          {
-            "to": "mb.logic.bipolar.litho.masks.writer",
-            "rel": "uses",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
-    
+      "id": "si.mask.plate.patterning",
+      "name": "Photomask blank coating and patterning",
+      "simple_name": "Mask patterning",
+      "description": "Soda-lime/quartz blank preparation, 100-150 nm chromium sputtering, resist coat/expose/develop, chrome etch, Zeiss inspection and needle repair: the plate-making recipe.",
+      "kind": "process",
+      "category": "semiconductors",
+      "subcat": "wafer-fab",
+      "era": "1980s",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Photomask"
+      ],
+      "confidence": "medium",
+      "note": "Hedged: perchloric vs sulfuric-perchromate etchant split and Zeiss-tool specificity not established.",
+      "children": [],
+      "edges": [
+        {
+          "to": "si.mask.plate",
+          "rel": "produces",
+          "role": "product",
+          "basis": "documented"
+        },
+        {
+          "to": "mb.logic.bipolar.litho.masks.writer",
+          "rel": "uses",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "si.polysilicon.coke.crude.vacuum-distillation": {
-        "id": "si.polysilicon.coke.crude.vacuum-distillation",
-        "name": "Crude vacuum distillation",
-        "simple_name": "Vacuum tower",
-        "description": "Atmospheric-residue vacuum distillation at 350-400 C and 30-50 mmHg; bottoms pitch is the coker feed carrying V/Ni porphyrins.",
-        "kind": "process",
-        "category": "silicon",
-        "era": "1980s",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
-        ],
-        "confidence": "low",
-        "note": "Hedged: tower pressure/temperature and heavy-crude grade per candidate note not established; vanadium tolerance unnumbered.",
-        "children": [],
-        "edges": [
-          {
-            "to": "si.polysilicon.coke.crude",
-            "rel": "produces",
-            "role": "product",
-            "basis": "documented"
-          },
-          {
-            "to": "chem.petroleum",
-            "rel": "consumes",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "complete"
-      },
+      "id": "si.polysilicon.coke.crude.vacuum-distillation",
+      "name": "Crude vacuum distillation",
+      "simple_name": "Vacuum tower",
+      "description": "Atmospheric-residue vacuum distillation at 350-400 C and 30-50 mmHg; bottoms pitch is the coker feed carrying V/Ni porphyrins.",
+      "kind": "process",
+      "category": "petrochem",
+      "subcat": "refining",
+      "era": "1980s",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
+      ],
+      "confidence": "low",
+      "note": "Hedged: tower pressure/temperature and heavy-crude grade per candidate note not established; vanadium tolerance unnumbered.",
+      "children": [],
+      "edges": [
+        {
+          "to": "si.polysilicon.coke.crude",
+          "rel": "produces",
+          "role": "product",
+          "basis": "documented"
+        },
+        {
+          "to": "chem.petroleum",
+          "rel": "consumes",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "complete"
+    },
     "si.trim.trim-form-press": {
-        "id": "si.trim.trim-form-press",
-        "name": "IC trim-and-form press",
-        "simple_name": "Trim-and-form press",
-        "description": "8-16 station trim-and-form press: lead trimming, bending to package pitch, flattening, then tin/tin-lead solder-pot dipping.",
-        "kind": "tool",
-        "category": "silicon",
-        "era": "1982",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
-        ],
-        "confidence": "low",
-        "note": "Hedged: station count range ends and solder-pot alloy per candidate facts only.",
-        "children": [],
-        "edges": [
-          {
-            "to": "facility.electricity",
-            "rel": "consumes",
-            "basis": "typical-1982"
-          }
-        ],
-        "provenance": "incomplete"
-      },
+      "id": "si.trim.trim-form-press",
+      "name": "IC trim-and-form press",
+      "simple_name": "Trim-and-form press",
+      "description": "8-16 station trim-and-form press: lead trimming, bending to package pitch, flattening, then tin/tin-lead solder-pot dipping.",
+      "kind": "tool",
+      "category": "semiconductors",
+      "subcat": "fab-tooling",
+      "era": "1982",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
+      ],
+      "confidence": "low",
+      "note": "Hedged: station count range ends and solder-pot alloy per candidate facts only.",
+      "children": [],
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        }
+      ],
+      "provenance": "incomplete"
+    },
     "si.trim.final-ate": {
-        "id": "si.trim.final-ate",
-        "name": "Packaged-IC socketed final tester",
-        "simple_name": "Final ATE socket tester",
-        "description": "Socketed automatic tester running the packaged-device final program (distinct from the C64-board functional station): go/no-go with lot/date-code-marked body feed.",
-        "kind": "tool",
-        "category": "silicon",
-        "era": "1982",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
-        ],
-        "confidence": "low",
-        "note": "Hedged: Teradyne/Fairchild model assignment and test-program contents per candidate note/facts not established as the as-used flow.",
-        "children": [],
-        "edges": [
-          {
-            "to": "facility.electricity",
-            "rel": "consumes",
-            "basis": "typical-1982"
-          }
-        ],
-        "provenance": "incomplete"
-      },
-    
+      "id": "si.trim.final-ate",
+      "name": "Packaged-IC socketed final tester",
+      "simple_name": "Final ATE socket tester",
+      "description": "Socketed automatic tester running the packaged-device final program (distinct from the C64-board functional station): go/no-go with lot/date-code-marked body feed.",
+      "kind": "tool",
+      "category": "semiconductors",
+      "subcat": "fab-tooling",
+      "era": "1982",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
+      ],
+      "confidence": "low",
+      "note": "Hedged: Teradyne/Fairchild model assignment and test-program contents per candidate note/facts not established as the as-used flow.",
+      "children": [],
+      "edges": [
+        {
+          "to": "facility.electricity",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        }
+      ],
+      "provenance": "incomplete"
+    },
     "si.wafer.diamond.catalyst": {
-        "id": "si.wafer.diamond.catalyst",
-        "name": "HPHT diamond metal catalyst",
-        "simple_name": "Fe/Co/Ni catalyst",
-        "description": "Iron/cobalt/nickel diamond-metal catalyst charge for HPHT graphite-to-diamond conversion in the belt press.",
-        "kind": "material",
-        "category": "metals",
-        "era": "1982",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Synthetic_diamond"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: Fe-vs-Co-vs-Ni selection and catalyst fraction not established.",
-        "children": [],
-        "edges": [
-          {
-            "to": "metal.nickel.ingot",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "incomplete"
-      },
+      "id": "si.wafer.diamond.catalyst",
+      "name": "HPHT diamond metal catalyst",
+      "simple_name": "Fe/Co/Ni catalyst",
+      "description": "Iron/cobalt/nickel diamond-metal catalyst charge for HPHT graphite-to-diamond conversion in the belt press.",
+      "kind": "material",
+      "category": "metals",
+      "subcat": "precious-special",
+      "era": "1982",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Synthetic_diamond"
+      ],
+      "confidence": "medium",
+      "note": "Hedged: Fe-vs-Co-vs-Ni selection and catalyst fraction not established.",
+      "children": [],
+      "edges": [
+        {
+          "to": "metal.nickel.ingot",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ],
+      "provenance": "incomplete"
+    },
     "si.wafer.diamond.grit.graphite-charge": {
-        "id": "si.wafer.diamond.grit.graphite-charge",
-        "name": "Abrasive-grit graphite synthesis feed",
-        "simple_name": "Grit graphite feed",
-        "description": "Graphite synthesis feed for HPHT abrasive-grit production (belt press, 0.15 mm early stones); distinct from the graphite-electrode product.",
-        "kind": "material",
-        "category": "metals",
-        "era": "1982",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Synthetic_diamond"
-        ],
-        "confidence": "medium",
-        "note": "Hedged: grit-maker identity per candidate note not established. The blast-furnace-coke leg is removed: HPHT graphite comes from petroleum/needle coke, not blast-furnace coke.",
-        "children": [],
-        "edges": [],
-        "provenance": "incomplete"
-      }
+      "id": "si.wafer.diamond.grit.graphite-charge",
+      "name": "Abrasive-grit graphite synthesis feed",
+      "simple_name": "Grit graphite feed",
+      "description": "Graphite synthesis feed for HPHT abrasive-grit production (belt press, 0.15 mm early stones); distinct from the graphite-electrode product.",
+      "kind": "material",
+      "category": "inorganics",
+      "subcat": "clays-abrasives",
+      "era": "1982",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Synthetic_diamond"
+      ],
+      "confidence": "medium",
+      "note": "Hedged: grit-maker identity per candidate note not established. The blast-furnace-coke leg is removed: HPHT graphite comes from petroleum/needle coke, not blast-furnace coke.",
+      "children": [],
+      "edges": [],
+      "provenance": "incomplete"
+    }
   }
 }
