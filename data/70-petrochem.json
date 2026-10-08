@@ -4569,6 +4569,53 @@
       "children": [],
       "inputs": []
     },
+    "chem.melamine": {
+      "id": "chem.melamine",
+      "name": "Melamine",
+      "simple_name": "Melamine",
+      "description": "2,4,6-triamino-1,3,5-triazine from urea (HP/Stamicarbon process, commercial 1963), condensed with formaldehyde to melamine-formaldehyde thermoset resin. Resin specs list melamine plus formaldehyde, never urea directly.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1960s",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "note": "Urea-to-melamine route per PMC/Stamicarbon; formaldehyde co-leg deferred (no canonical formaldehyde material). Direct resin-from-urea would fail the spec-sheet test.",
+      "children": [],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "chem.urea",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
+    },
+    "chem.calcium-carbide": {
+      "id": "chem.calcium-carbide",
+      "name": "Calcium carbide",
+      "simple_name": "Calcium carbide",
+      "description": "Calcium carbide from lime and coke in the electric arc furnace, hydrolysed with water to acetylene for welding gas. The Far-East welding-gas route alongside hydrocarbon-cracking acetylene; the tree already models the natural-gas side toward vinyl chloride.",
+      "kind": "material",
+      "category": "fluids",
+      "era": "1980s",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "note": "1982 acetylene geographically split (Japan/China/E.Europe carbide-based; US/W.Europe/Russia NG partial-oxidation) per Kirk-Othmer/Wiley. Hydrolysis-to-acetylene step and any 1982 supplier unestablished.",
+      "children": [],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.lime",
+          "rel": "made from",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "metal.coke",
+          "rel": "made from",
+          "basis": "typical-1982"
+        }
+      ]
+    },
     "metal.n-butyl-chloride": {
       "id": "metal.n-butyl-chloride",
       "name": "n-Butyl chloride",
