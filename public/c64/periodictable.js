@@ -91,10 +91,10 @@ function elBox(grid, x, y, w, h, fg, bg, title) {
 }
 
 // Draws the whole tab. `grid` is {text,set} - the live TextMode in the
-// viewer, or a stub in tests.
-export function renderElements(grid, cursor) {
+// viewer, or a stub in tests. boxH is the outer panel height.
+export function renderElements(grid, cursor, boxH = 38) {
   const U = (s) => toScreenText(s);
-  elBox(grid, 1, 1, 78, 38, UI.FRAME_FG, UI.BG, 'ELEMENTS');
+  elBox(grid, 1, 1, 78, boxH, UI.FRAME_FG, UI.BG, 'ELEMENTS');
   const counts = elementCounts();
   let tx = 3;
   const seg = (label, fg, bg) => {

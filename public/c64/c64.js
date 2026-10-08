@@ -1,18 +1,14 @@
 import { C, UI } from './palette.js';
 import { BOX, SOLID, toScreenText } from './petscii.js';
 import { TextMode, COLS, ROWS, wrapText } from './textmode.js';
-import { childLines, layoutTreeBoxes, planTreePanel, groupRouted, groupRails, trunkSpan, visibleWindow, clampStart, ensureCursorVisible, connectionsOf, EDGE_MODES, modeById, kindColor, nodeContent } from './treeview.js';
+import { childLines, layoutTreeBoxes, planTreePanel, groupRouted, groupRails, trunkSpan, visibleWindow, clampStart, ensureCursorVisible, connectionsOf, kindColor, nodeContent } from './treeview.js';
 import { renderElements, stepCursor, cellFromXY, elementAt } from './periodictable.js';
+import { CAT_ORDER, catColor, FLOW_ZOOMS, FLOW_NODE_H, FLOW_COL_GAP, FLOW_ROW_GAP, buildFlowGraph, computeTiers, layoutFlow, edgeCellsFor, clampCam, centreFor, nearestToCentre, flowLabel } from './flowview.js';
 
-const LEFT = { x: 1, y: 1, w: 78, h: 38 };
-const BOTTOM = { x: 1, y: 40, w: 78, h: 4 };
+const LEFT = { x: 1, y: 1, w: 78, h: 42 };
 
 const state = {
   selected: 'c64',
-  projection: 'full',
-  showChips: true,
-  showEditorial: false,
-  dim: false,
   nodes: {},
   meta: null,
   parents: {},
@@ -22,20 +18,20 @@ const state = {
   treeCursor: 0,
   treeScroll: 0,
   nodeScroll: 0,
-  edgeMode: 'supply',
-  edgeMenu: false,
-  edgeCursor: EDGE_MODES.findIndex((m) => m.def),
   tab: 'tree',
   elCur: { p: 4, g: 8 },
+  flow: { x: 0, y: 0, zoom: 1, init: false },
 };
 
 let tm = null;
-let toggleHits = [];
 let backHit = null;
 let treeChildHits = [];
+let flowHits = [];
+let flowDrag = null;
+let flowCache = null;
+let viewTreeHit = null;
+let minimapGeom = null;
 let nodeBox = null;
-let edgeHit = null;
-let menuHits = [];
 let tabHits = [];
 let animating = false;
 let animFrame = null;
@@ -99,6 +95,7 @@ function renderTitle() {
   tabHits = [];
   const tabs = [
     { id: 'tree', label: '[TREE]' },
+    { id: 'flow', label: '[FLOW]' },
     { id: 'elements', label: '[ELEMENTS]' },
   ];
   let x = COLS - 2;
@@ -122,14 +119,28 @@ const TREE = {
   nx: 2, nw: 26,
 };
 
+// Flow viewport: left column (selected + map) keeps the tree tab's 26-wide
+// footprint; the world window takes everything to its right.
+const FLOWVIEW = { vx0: 29, vy0: 3, vw: 49, vh: 39 };
+// Viewport background. The rails stay C64 BLUE; the world window goes BLACK
+// so category colours read against it instead of the panel.
+const FLOW_BG = C.BLACK;
+const FLOW_LEFT_W = 26;
+
+// The only connection set the C64 viewer speaks now: the classic "supply
+// chain" mode (children + contains/made of/made from/step/consumes +
+// from/made_by). Both tabs share it, so every flow edge is also a tree
+// connection and BFS parents always resolve to walkable trails.
+const SUPPLY_RELS = new Set(['contains', 'made of', 'made from', 'step', 'consumes']);
+
 function kidsFor(id) {
   const node = state.nodes[id];
   if (!node) return [];
-  const mode = modeById(state.edgeMode);
-  // Same backlog-container exclusion as the tree panel: keep it out of the
-  // view (nothing routes through a facility, so no grouped children are
-  // orphaned by this).
-  const conns = groupRouted(connectionsOf(node, state.nodes, new Set(mode.rels), { chain: !!mode.chain }))
+  // Supply links only (locked: the F2 edge menu is gone). Children are the
+  // refinement backbone; typed edges + from/made_by are the supply line.
+  // Keeping one fixed connection set is what lets the flow tab rebuild the
+  // click path as a structural root-to-node trail instead of click history.
+  const conns = groupRouted(connectionsOf(node, state.nodes, SUPPLY_RELS, { chain: true }))
     .filter((c) => c.id !== 'unlinked.catalogue');
   return conns.map(({ id, routed, via }) => ({
     id,
@@ -269,122 +280,467 @@ function renderLeft() {
   }
 }
 
-function renderBottom() {
-  box(BOTTOM.x, BOTTOM.y, BOTTOM.w, BOTTOM.h, UI.FRAME_FG, UI.BG, 'SETTINGS');
-  toggleHits = [];
-  const y = BOTTOM.y + 1;
-  const items = [
-    { key: 'projection', label: `VIEW:${state.projection === 'full' ? 'FULL' : 'ENT'}`, hint: 'F1' },
-    { key: 'showChips', label: `CHIPS:${state.showChips ? 'ON' : 'OFF'}`, hint: 'F3' },
-    { key: 'showEditorial', label: `COMMENT:${state.showEditorial ? 'ON' : 'OFF'}`, hint: 'F5' },
-    { key: 'dim', label: `DIM:${state.dim ? 'ON' : 'OFF'}`, hint: 'F7' },
-  ];
-  let x = BOTTOM.x + 2;
-  for (const it of items) {
-    const s = `[${it.hint} ${it.label}]`;
-    if (x + s.length > BOTTOM.x + BOTTOM.w - 2) break;
-    const on = it.key === 'projection' ? true : state[it.key];
-    tm.text(x, y, U(s), on ? C.BLACK : C.LTBLUE, on ? C.LTGREY : UI.BG);
-    toggleHits.push({ x0: x, x1: x + s.length - 1, y, key: it.key });
-    x += s.length + 1;
-  }
-  const st = state.cursor ? String.fromCharCode(SOLID) : ' ';
-  tm.text(2, ROWS - 1, U(state.tab === 'elements' ? 'ARROWS=CURSOR ENTER=SHOW IN TREE TAB=TREE PANEL' : 'UP/DN=CURSOR ENTER=OPEN LEFT=BACK 0=ROOT []=SCROLL'), C.GREY, UI.BG);
-  tm.set(COLS - 3, ROWS - 1, st.charCodeAt(0), C.YELLOW, UI.BG);
+// ------------------------------------------------------------ flow view
+// See flowview.js for the layout contract. The left rail holds the selected
+// node, a jump button, and a condensed whole-world map; the widened world
+// window takes everything to its right. Only the selected node's direct
+// edges are drawn: with 15 tiers and up to 514 nodes in one tier, drawing
+// everything would be solid overlapping lines in text mode.
 
-  const ey = BOTTOM.y + 2;
-  const mode = modeById(state.edgeMode);
-  const es = `[F2 EDGE:${mode.label} v]`;
-  tm.text(BOTTOM.x + 2, ey, U(es), C.BLACK, C.LTGREY);
-  edgeHit = { x0: BOTTOM.x + 2, x1: BOTTOM.x + 2 + es.length - 1, y: ey };
-}
-
-const MENU = { w: 42, h: 8 };
-
-function menuXY() {
-  return { x: Math.floor((COLS - MENU.w) / 2), y: Math.floor((ROWS - MENU.h) / 2) };
-}
-
-function renderMenu() {
-  menuHits = [];
-  const { x, y } = menuXY();
-  box(x, y, MENU.w, MENU.h, UI.FRAME_FG, C.BLUE, 'EDGE TYPES');
-  EDGE_MODES.forEach((m, i) => {
-    const ry = y + 1 + i;
-    const isCur = i === state.edgeCursor;
-    const isOn = m.id === state.edgeMode;
-    tm.text(x + 2, ry, isCur ? '>' : ' ', C.YELLOW, C.BLUE);
-    tm.text(x + 4, ry, U(m.label), isCur ? C.WHITE : C.LTBLUE, C.BLUE, MENU.w - 6);
-    const tag = m.def ? U('(DEFAULT)') : U(m.desc);
-    tm.text(x + MENU.w - 2 - tag.length, ry, tag, C.GREY, C.BLUE, tag.length);
-    if (isOn) tm.set(x + MENU.w - 3 - tag.length - 1, ry, '*'.charCodeAt(0), C.YELLOW, C.BLUE);
-    menuHits.push({ y: ry, mode: m.id });
+function getFlowLayout() {
+  const key = `supply|${state.flow.zoom}`;
+  if (flowCache && flowCache.key === key && flowCache.n === Object.keys(state.nodes).length) return flowCache;
+  const { succ, par } = buildFlowGraph(state.nodes, SUPPLY_RELS, true);
+  const root = state.meta?.root ?? 'c64';
+  const { depth, parent, maxD } = computeTiers(succ, root);
+  const zoom = FLOW_ZOOMS[state.flow.zoom] ?? FLOW_ZOOMS[1];
+  const { pos, headers, worldW, worldH, byTier, xOf } = layoutFlow(state.nodes, depth, maxD, {
+    nodeW: zoom.nodeW, nodeH: FLOW_NODE_H, colGap: FLOW_COL_GAP, rowGap: FLOW_ROW_GAP,
   });
-  tm.text(x + 2, y + MENU.h - 2, U('UP/DN CHOOSE ENTER ESC'), C.GREY, C.BLUE);
+  repairCanonicalParents(depth, parent, par, root);
+  flowCache = { key, n: Object.keys(state.nodes).length, succ, par, depth, parent, maxD, pos, headers, worldW, worldH, byTier, xOf, nodeW: zoom.nodeW };
+  return flowCache;
 }
 
-function openEdgeMenu() {
-  state.edgeCursor = EDGE_MODES.findIndex((m) => m.id === state.edgeMode);
-  state.edgeMenu = true;
-  render();
+// Prefer the shallowest predecessor the tree panel actually lists as a
+// canonical parent. Route-through lifting can swallow a process/tool link
+// (marked seen during the lift but never emitted as a row), leaving a BFS
+// parent whose step has no visible row. Each repair is verified to still
+// reach the root, so trails stay acyclic.
+function repairCanonicalParents(depth, parent, predecessors, root) {
+  const listers = new Map();
+  for (const [pid] of depth) {
+    const node = state.nodes[pid];
+    if (!node) continue;
+    for (const c of groupRouted(connectionsOf(node, state.nodes, SUPPLY_RELS, { chain: true }))) {
+      if (c.id === 'unlinked.catalogue') continue;
+      if (!listers.has(c.id)) listers.set(c.id, new Set());
+      listers.get(c.id).add(pid);
+    }
+  }
+  for (const [id, par0] of [...parent]) {
+    if (listers.get(id)?.has(par0)) continue;
+    let best = null;
+    for (const cand of predecessors.get(id) ?? []) {
+      if (cand === id || !depth.has(cand)) continue;
+      if (!listers.get(id)?.has(cand)) continue;
+      if (best === null || depth.get(cand) < depth.get(best)) best = cand;
+    }
+    if (best === null) continue;
+    const seen = new Set([id, best]);
+    let cur = best;
+    let ok = best === root;
+    while (!ok) {
+      const nx = parent.get(cur);
+      if (!nx || seen.has(nx)) break;
+      if (nx === root) { ok = true; break; }
+      seen.add(nx);
+      cur = nx;
+      if (seen.size > 600) break;
+    }
+    if (ok) parent.set(id, best);
+  }
 }
 
-function closeEdgeMenu() {
-  state.edgeMenu = false;
-  render();
+function clampFlowCam() {
+  const L = getFlowLayout();
+  const c = clampCam(state.flow.x, state.flow.y, L.worldW, L.worldH, FLOWVIEW.vw, FLOWVIEW.vh);
+  state.flow.x = c.x;
+  state.flow.y = c.y;
 }
 
-function pickEdgeMode(id) {
-  if (!EDGE_MODES.some((m) => m.id === id)) return;
-  state.edgeMode = id;
-  state.edgeMenu = false;
+function flowCentreOn(id) {
+  const L = getFlowLayout();
+  const c = centreFor(id, L.pos, FLOWVIEW.vw, FLOWVIEW.vh, L.worldW, L.worldH);
+  if (c) { state.flow.x = c.x; state.flow.y = c.y; }
+}
+
+// Rebuild the click-history trail as the structural root-to-node trail from
+// the BFS parents, so BACK walks up the tree instead of replaying clicks and
+// the tree tab opens on the node's real position. Only valid because both
+// tabs share the locked supply connection set: every BFS parent link is also
+// a listed tree connection.
+function setCanonicalPath(id) {
+  const L = getFlowLayout();
+  const root = state.meta?.root ?? 'c64';
+  if (!id || !state.nodes[id]) return;
+  if (id === root) { state.path = []; return; }
+  // Degraded trails clear instead of going stale: a wrong breadcrumb is
+  // worse than a short one. The repair pass above makes this unreachable in
+  // practice (every BFS parent is verified or replaced).
+  const trail = [];
+  const seen = new Set([id]);
+  let cur = id;
+  while (cur !== root) {
+    const p = L.parent?.get(cur);
+    if (!p || seen.has(p)) { state.path = []; return; }
+    trail.unshift(p);
+    seen.add(p);
+    cur = p;
+    if (trail.length > 500) { state.path = []; return; }
+  }
+  state.path = trail;
+}
+
+function flowGoTree() {
   state.treeCursor = 0;
   state.treeScroll = 0;
+  setTab('tree');
+}
+
+function flowPan(dx, dy) {
+  const L = getFlowLayout();
+  const c = clampCam(state.flow.x + dx, state.flow.y + dy, L.worldW, L.worldH, FLOWVIEW.vw, FLOWVIEW.vh);
+  state.flow.x = c.x;
+  state.flow.y = c.y;
   render();
+}
+
+function flowZoom(d) {
+  const nz = Math.min(FLOW_ZOOMS.length - 1, Math.max(0, state.flow.zoom + d));
+  if (nz === state.flow.zoom) return;
+  state.flow.zoom = nz;
+  flowCache = null;
+  // Keep the selection under the viewport when the box width changes.
+  if (state.selected) flowCentreOn(state.selected);
+  clampFlowCam();
+  render();
+}
+
+function flowSelectCentre() {
+  const L = getFlowLayout();
+  const id = nearestToCentre(L.pos, state.flow.x, state.flow.y, FLOWVIEW.vw, FLOWVIEW.vh);
+  if (id) { setCanonicalPath(id); track(id, false); }
+}
+
+function inFlowView(sx, sy) {
+  return sx >= FLOWVIEW.vx0 && sx < FLOWVIEW.vx0 + FLOWVIEW.vw && sy >= FLOWVIEW.vy0 && sy < FLOWVIEW.vy0 + FLOWVIEW.vh;
+}
+
+function flowBoxAt(sx, sy, w, h, fg, bg, isRoot) {
+  if (w < 2 || h < 2) return;
+  const put = (x, y, code, f) => { if (inFlowView(x, y)) tm.set(x, y, code, f, bg); };
+  if (isRoot) {
+    const RAIN = [C.RED, C.ORANGE, C.YELLOW, C.GREEN, C.LTBLUE];
+    const band = (i) => RAIN[Math.min(RAIN.length - 1, Math.floor((i / w) * RAIN.length))];
+    for (let i = 0; i < w; i++) {
+      put(sx + i, sy, i === 0 ? BOX.TL : i === w - 1 ? BOX.TR : BOX.H, band(i));
+      put(sx + i, sy + h - 1, i === 0 ? BOX.BL : i === w - 1 ? BOX.BR : BOX.H, band(i));
+    }
+    for (let j = 1; j < h - 1; j++) {
+      put(sx, sy + j, BOX.V, band(0), bg);
+      put(sx + w - 1, sy + j, BOX.V, band(w - 1), bg);
+    }
+    for (let j = 1; j < h - 1; j++) for (let i = 1; i < w - 1; i++) if (inFlowView(sx + i, sy + j)) tm.set(sx + i, sy + j, 32, fg, bg);
+    return;
+  }
+  put(sx, sy, BOX.TL, fg); put(sx + w - 1, sy, BOX.TR, fg);
+  put(sx, sy + h - 1, BOX.BL, fg); put(sx + w - 1, sy + h - 1, BOX.BR, fg);
+  for (let i = 1; i < w - 1; i++) { put(sx + i, sy, BOX.H, fg); put(sx + i, sy + h - 1, BOX.H, fg); }
+  for (let j = 1; j < h - 1; j++) { put(sx, sy + j, BOX.V, fg); put(sx + w - 1, sy + j, BOX.V, fg); }
+  for (let j = 1; j < h - 1; j++) for (let i = 1; i < w - 1; i++) if (inFlowView(sx + i, sy + j)) tm.set(sx + i, sy + j, 32, fg, bg);
+}
+
+// Condensed whole-world map for the flow tab's left rail. One character per
+// tier horizontally (raw left, C64 right, matching the world); vertically the
+// world height is squashed into the box. Each cell takes the colour of the
+// category with the most nodes in its bucket. BROWN is used by no category,
+// so the viewport-centre marker flashing in BROWN can never be mistaken for
+// data. Clicking a cell recentres the world window on that tier/height.
+function renderMinimap(mapX, mapY, maxW, mapH) {
+  minimapGeom = null;
+  if (mapH < 5) return;
+  const L = getFlowLayout();
+  const { pos, maxD, worldH, xOf, nodeW } = L;
+  if (!pos.size) return;
+  // Shrink-wrap the panel to the tier count: one character per tier plus the
+  // two border columns, instead of the full left-rail width.
+  const mw = Math.min(maxD + 1, maxW - 2);
+  if (mw <= 0) return;
+  const mapW = mw + 2;
+  box(mapX, mapY, mapW, mapH, UI.FRAME_FG, UI.BG, 'MAP');
+  const ix0 = mapX + 1;
+  const iy0 = mapY + 1;
+  const ih = mapH - 2;
+  if (ih <= 0) return;
+  const xOff = 0;
+  // Bucket counts: mw columns x ih rows, per category.
+  const buckets = [];
+  for (let i = 0; i < mw * ih; i++) buckets.push(null);
+  for (const [, p] of pos) {
+    const mx = (maxD - p.tier) - xOff;
+    if (mx < 0 || mx >= mw) continue;
+    const my = Math.min(ih - 1, Math.max(0, Math.floor(((p.y + p.h / 2) / worldH) * ih)));
+    const b = buckets[my * mw + mx] ?? (buckets[my * mw + mx] = {});
+    b[p.cat] = (b[p.cat] ?? 0) + 1;
+  }
+  const rank = new Map(CAT_ORDER.map((c, i) => [c, i]));
+  for (let my = 0; my < ih; my++) {
+    for (let mx = 0; mx < mw; mx++) {
+      const b = buckets[my * mw + mx];
+      if (!b) continue;
+      let best = null;
+      let bestN = -1;
+      for (const [cat, cnt] of Object.entries(b)) {
+        const r = rank.has(cat) ? rank.get(cat) : 999;
+        const br = best === null ? 1000 : rank.has(best) ? rank.get(best) : 999;
+        if (cnt > bestN || (cnt === bestN && r < br)) { best = cat; bestN = cnt; }
+      }
+      if (best !== null) tm.set(ix0 + mx, iy0 + my, 32, C.BLACK, catColor(best));
+    }
+  }
+  // Viewport-centre marker, flashing with the shared text cursor.
+  const ccx = state.flow.x + FLOWVIEW.vw / 2;
+  const ccy = state.flow.y + FLOWVIEW.vh / 2;
+  let tier = 0;
+  let bestD = Infinity;
+  for (let d = 0; d <= maxD; d++) {
+    const centre = xOf(d) + nodeW / 2;
+    const dist = Math.abs(centre - ccx);
+    if (dist < bestD) { bestD = dist; tier = d; }
+  }
+  const mmx = (maxD - tier) - xOff;
+  const mmy = Math.min(ih - 1, Math.max(0, Math.floor((ccy / worldH) * ih)));
+  if (state.cursor && mmx >= 0 && mmx < mw) {
+    tm.set(ix0 + mmx, iy0 + mmy, SOLID, C.BROWN, C.BROWN);
+  }
+  minimapGeom = { x0: ix0, y0: iy0, mw, mh: ih, maxD, worldH, xOf, nodeW };
+}
+
+function flowGoMap(mx, my) {
+  const g = minimapGeom;
+  if (!g) return;
+  const tier = g.maxD - mx;
+  if (tier < 0 || tier > g.maxD) return;
+  const wx = g.xOf(tier) + g.nodeW / 2;
+  const wy = ((my + 0.5) / g.mh) * g.worldH;
+  const c = clampCam(wx - FLOWVIEW.vw / 2, wy - FLOWVIEW.vh / 2, getFlowLayout().worldW, g.worldH, FLOWVIEW.vw, FLOWVIEW.vh);
+  state.flow.x = c.x;
+  state.flow.y = c.y;
+  render();
+}
+
+function renderFlow() {
+  box(LEFT.x, LEFT.y, LEFT.w, LEFT.h, UI.FRAME_FG, UI.BG, 'FLOW');
+  flowHits = [];
+  backHit = null;
+  viewTreeHit = null;
+  minimapGeom = null;
+  nodeBox = null;
+  const ix1 = LEFT.x + LEFT.w - 2;
+  const iy1 = LEFT.y + LEFT.h - 2;
+  const n = state.nodes[state.selected];
+  if (!n || !Object.keys(state.nodes).length) {
+    tm.text(LEFT.x + 1, TREE.pathY, U(state.err || 'LOADING...'), C.LTRED, UI.BG, LEFT.w - 2);
+    return;
+  }
+  const tName = U(trackedName());
+  const crumbs = [...state.path.map((id) => U(state.nodes[id]?.simple_name ?? id)), tName].join('>');
+  const maxCrumb = ix1 - 9;
+  const tail = crumbs.length > maxCrumb ? crumbs.slice(crumbs.length - maxCrumb) : crumbs;
+  tm.text(LEFT.x + 1, TREE.pathY, U('[BACK]'), C.BLACK, C.LTGREY);
+  backHit = { x0: LEFT.x + 1, x1: LEFT.x + 6, y: TREE.pathY };
+  tm.text(LEFT.x + 8, TREE.pathY, tail, C.GREY, UI.BG, maxCrumb);
+
+  const nameLines = childLines(tName, TREE.tw - 4, 3);
+  const th = nameLines.length + 2;
+  if (state.selected === (state.meta?.root ?? 'c64')) rainbowBox(TREE.tx, TREE.ty, TREE.tw, th);
+  else box(TREE.tx, TREE.ty, TREE.tw, th, kindColor(n.kind), UI.BG);
+  nameLines.forEach((ln, i) => {
+    tm.text(TREE.tx + 2, TREE.ty + 1 + i, ln, C.WHITE, UI.BG, TREE.tw - 4);
+  });
+
+  // Left rail: jump button + condensed whole-world map. The old NODE prose
+  // panel lives in the tree tab; here the column is navigation only.
+  const btnY = TREE.ty + th + 1;
+  const btnLabel = U('[VIEW NODE IN TREE]');
+  tm.text(TREE.tx + 2, btnY, btnLabel, C.BLACK, C.LTGREY, btnLabel.length);
+  viewTreeHit = { x0: TREE.tx + 2, x1: TREE.tx + 2 + btnLabel.length - 1, y: btnY };
+
+  const L = getFlowLayout();
+  clampFlowCam();
+  const { pos, headers } = L;
+  const cx = state.flow.x; const cy = state.flow.y;
+  const toSx = (wx) => FLOWVIEW.vx0 + (wx - cx);
+  const toSy = (wy) => FLOWVIEW.vy0 + (wy - cy);
+
+  renderMinimap(TREE.tx, btnY + 2, FLOW_LEFT_W, iy1 - (btnY + 2) + 1);
+
+  const zoom = FLOW_ZOOMS[state.flow.zoom] ?? FLOW_ZOOMS[1];
+
+  if (!pos.size) {
+    tm.text(FLOWVIEW.vx0, FLOWVIEW.vy0 + 2, U('(NO NODES IN THIS MODE)'), C.GREY, FLOW_BG, FLOWVIEW.vw);
+    return;
+  }
+
+  // Black out the world window first; everything below draws onto it.
+  tm.fillRect(FLOWVIEW.vx0, FLOWVIEW.vy0, FLOWVIEW.vw, FLOWVIEW.vh, 32, C.GREY, FLOW_BG);
+
+  // The canonical trail to the root: selected node up through its BFS parents.
+  // This is the same trail BACK walks and the tree tab opens on, so the view
+  // and the navigation never disagree about where the node sits.
+  const edgeFg = C.YELLOW;
+  const drawEdgeCells = (cells) => {
+    for (const c of cells) {
+      const sx = toSx(c.x); const sy = toSy(c.y);
+      if (!inFlowView(sx, sy)) continue;
+      const code = c.c === 'v' ? BOX.V : c.c === 'x' ? BOX.X : BOX.H;
+      tm.set(sx, sy, code, edgeFg, FLOW_BG);
+    }
+  };
+  const trail = [...state.path, state.selected];
+  for (let i = 0; i + 1 < trail.length; i++) {
+    const a = pos.get(trail[i]);
+    const b = pos.get(trail[i + 1]);
+    if (!a || !b) continue;
+    drawEdgeCells(edgeCellsFor(a, b));
+  }
+
+  // Headers: high-level category band (solid colour) then low-level subcat.
+  for (const h of headers) {
+    const sx = toSx(h.x); const sy = toSy(h.y);
+    if (sy < FLOWVIEW.vy0 || sy >= FLOWVIEW.vy0 + FLOWVIEW.vh) continue;
+    if (sx + h.w <= FLOWVIEW.vx0 || sx >= FLOWVIEW.vx0 + FLOWVIEW.vw) continue;
+    if (h.kind === 'cat') {
+      const bg = catColor(h.cat);
+      for (let i = 0; i < h.w; i++) {
+        const x = sx + i;
+        if (x < FLOWVIEW.vx0 || x >= FLOWVIEW.vx0 + FLOWVIEW.vw) continue;
+        tm.set(x, sy, 32, C.BLACK, bg);
+      }
+      const full = U(h.label).slice(0, h.w);
+      const off = Math.max(0, FLOWVIEW.vx0 - sx);
+      const vis = Math.min(full.length - off, FLOWVIEW.vx0 + FLOWVIEW.vw - Math.max(sx, FLOWVIEW.vx0));
+      if (vis > 0) tm.text(Math.max(sx, FLOWVIEW.vx0), sy, full.slice(off, off + vis), C.BLACK, bg, vis);
+    } else {
+      const full = U('-' + h.label).slice(0, h.w);
+      const off = Math.max(0, FLOWVIEW.vx0 - sx);
+      const vis = Math.min(full.length - off, FLOWVIEW.vx0 + FLOWVIEW.vw - Math.max(sx, FLOWVIEW.vx0));
+      if (vis > 0) tm.text(Math.max(sx, FLOWVIEW.vx0), sy, full.slice(off, off + vis), catColor(h.cat), FLOW_BG, vis);
+    }
+  }
+
+  // Nodes: only the intersecting few are drawn (the world can be ~2000 rows).
+  for (const [id, p] of pos) {
+    const sx = toSx(p.x); const sy = toSy(p.y);
+    if (sx + p.w <= FLOWVIEW.vx0 || sx >= FLOWVIEW.vx0 + FLOWVIEW.vw) continue;
+    if (sy + p.h <= FLOWVIEW.vy0 || sy >= FLOWVIEW.vy0 + FLOWVIEW.vh) continue;
+    const node = state.nodes[id];
+    if (!node) continue;
+    const isSel = id === state.selected;
+    const isRoot = id === (state.meta?.root ?? 'c64');
+    const fg = isSel ? C.WHITE : isRoot ? C.YELLOW : catColor(node.category);
+    flowBoxAt(sx, sy, p.w, p.h, isSel ? C.WHITE : catColor(node.category), FLOW_BG, isRoot && !isSel);
+    if (isSel) {
+      // Selection gets a bright frame on top of the category colour.
+      flowBoxAt(sx, sy, p.w, p.h, C.WHITE, FLOW_BG, false);
+    }
+    const label = flowLabel(node, p.w - 4);
+    const lx = sx + 2;
+    const ly = sy + 1;
+    if (ly >= FLOWVIEW.vy0 && ly < FLOWVIEW.vy0 + FLOWVIEW.vh) {
+      const off = Math.max(0, FLOWVIEW.vx0 - lx);
+      const vis = Math.min(label.length - off, FLOWVIEW.vx0 + FLOWVIEW.vw - Math.max(lx, FLOWVIEW.vx0));
+      if (vis > 0) tm.text(Math.max(lx, FLOWVIEW.vx0), ly, U(label).slice(off, off + vis), isSel ? C.WHITE : C.GREY, FLOW_BG, vis);
+    }
+    void fg;
+    flowHits.push({ x0: Math.max(sx, FLOWVIEW.vx0), x1: Math.min(sx + p.w - 1, FLOWVIEW.vx0 + FLOWVIEW.vw - 1), y0: Math.max(sy, FLOWVIEW.vy0), y1: Math.min(sy + p.h - 1, FLOWVIEW.vy0 + FLOWVIEW.vh - 1), id });
+  }
+
+  // Viewport centre crosshair: ENTER selects whatever is under it. Skipped
+  // when it would land inside a node box, so it never eats a label char.
+  const ccx = FLOWVIEW.vx0 + Math.floor(FLOWVIEW.vw / 2);
+  const ccy = FLOWVIEW.vy0 + Math.floor(FLOWVIEW.vh / 2);
+  const onNode = flowHits.some((t) => ccx >= t.x0 && ccx <= t.x1 && ccy >= t.y0 && ccy <= t.y1);
+  if (!onNode) tm.set(ccx, ccy, '+'.charCodeAt(0), C.GREY, FLOW_BG);
+
+  // Coordinates overlay the world at the top-left corner: the tier/node
+  // counts are gone (tiers read off the map width), so position + zoom is all
+  // that stays. Drawn last so the text wins over any node behind it.
+  const coord = U(`X${cx},Y${cy} ${zoom.label}`);
+  tm.text(FLOWVIEW.vx0, FLOWVIEW.vy0, coord, C.GREY, FLOW_BG, Math.min(coord.length, FLOWVIEW.vw));
+
+  // Edge-of-world hints, same vocabulary as the tree panel.
+  if (cy > 0) tm.text(FLOWVIEW.vx0 + FLOWVIEW.vw - 6, FLOWVIEW.vy0, U('^MORE'), C.GREY, FLOW_BG, 6);
+  if (cy + FLOWVIEW.vh < L.worldH) tm.text(FLOWVIEW.vx0 + FLOWVIEW.vw - 6, FLOWVIEW.vy0 + FLOWVIEW.vh - 1, U('vMORE'), C.GREY, FLOW_BG, 6);
+  if (cx > 0) tm.text(FLOWVIEW.vx0, FLOWVIEW.vy0 + FLOWVIEW.vh - 1, U('<MORE'), C.GREY, FLOW_BG, 6);
+  if (cx + FLOWVIEW.vw < L.worldW) tm.text(FLOWVIEW.vx0 + FLOWVIEW.vw - 6, FLOWVIEW.vy0 + FLOWVIEW.vh - 1, U('MORE>'), C.GREY, FLOW_BG, 6);
+}
+
+function renderBottom() {
+  // Footer is key hints plus the blink cursor only. The old F1/F3/F5/F7
+  // settings toggles were never wired to any render path, so the whole
+  // SETTINGS box went away and every tab grew into the freed rows.
+  const st = state.cursor ? String.fromCharCode(SOLID) : ' ';
+  const help = state.tab === 'elements'
+    ? 'ARROWS=CURSOR ENTER=SHOW IN TREE TAB=SWITCH'
+    : state.tab === 'flow'
+      ? 'ARROWS=PAN ENTER=SELECT 0=ROOT +/-=ZOOM DRAG=PAN T=TREE TAB=SWITCH'
+      : 'UP/DN=CURSOR ENTER=OPEN LEFT=BACK 0=ROOT []=SCROLL';
+  tm.text(2, ROWS - 1, U(help), C.GREY, UI.BG);
+  tm.set(COLS - 3, ROWS - 1, st.charCodeAt(0), C.YELLOW, UI.BG);
 }
 
 function render() {
   tm.clear(UI.BODY_FG, UI.BG);
   renderTitle();
   if (state.tab === 'elements') {
-    renderElements(tm, state.elCur);
+    renderElements(tm, state.elCur, LEFT.h);
+  } else if (state.tab === 'flow') {
+    renderFlow();
   } else {
     renderLeft();
   }
   renderBottom();
-  if (state.edgeMenu) renderMenu();
   tm.present();
 }
 
 // Tab switching never touches selected/path/cursors, so the tree panel is
-// exactly where the user left it when they switch back.
+// exactly where the user left it when they switch back. Entering flow centres
+// the viewport on the selection (first visit centres the root).
 function setTab(t) {
-  if (t !== 'tree' && t !== 'elements') return;
+  if (t !== 'tree' && t !== 'elements' && t !== 'flow') return;
   if (animating && animFrame !== null) {
     cancelAnimationFrame(animFrame);
     animFrame = null;
     animating = false;
   }
   state.tab = t;
-  state.edgeMenu = false;
+  if (t === 'flow') {
+    if (!state.flow.init) {
+      state.flow.init = true;
+      flowCentreOn(state.selected ?? state.meta?.root ?? 'c64');
+    } else if (state.selected) {
+      const L = getFlowLayout();
+      if (!L.pos.has(state.selected)) flowCentreOn(state.meta?.root ?? 'c64');
+    }
+    clampFlowCam();
+  }
   render();
 }
 
 function jumpToEvidence() {
   const el = elementAt(state.elCur.p, state.elCur.g);
   if (!el || !el.ev || !state.nodes[el.ev]) return;
-  state.tab = 'tree';
-  state.edgeMenu = false;
-  track(el.ev);
+  if (state.tab === 'elements') {
+    state.tab = 'flow';
+    state.flow.init = true;
+    setCanonicalPath(el.ev);
+    track(el.ev, false, { centreFlow: true });
+  } else {
+    state.tab = 'tree';
+    track(el.ev);
+  }
 }
 
-function track(id, push = true) {
+function track(id, push = true, opts = {}) {
   if (animating) return;
   if (!id || !state.nodes[id]) return;
   if (id === state.selected) {
     state.treeCursor = 0;
     state.treeScroll = 0;
     state.nodeScroll = 0;
+    if (state.tab === 'flow' && (opts.centreFlow || push === 'centre')) flowCentreOn(id);
     render();
     return;
   }
@@ -396,6 +752,7 @@ function track(id, push = true) {
   state.treeCursor = 0;
   state.treeScroll = 0;
   state.nodeScroll = 0;
+  if (state.tab === 'flow' && opts.centreFlow) flowCentreOn(id);
   if (src) startTrackAnimation(src);
   else render();
 }
@@ -545,6 +902,16 @@ function goBack() {
     render();
     return;
   }
+  if (state.tab === 'flow') {
+    state.path.pop();
+    state.selected = prev;
+    state.treeCursor = 0;
+    state.treeScroll = 0;
+    state.nodeScroll = 0;
+    flowCentreOn(prev);
+    render();
+    return;
+  }
   const departingId = state.selected;
   const departingNode = state.nodes[departingId];
   // Source: the current top-left selected frame for the departing node.
@@ -599,6 +966,16 @@ function goBack() {
 function goRoot() {
   if (animating) return;
   const root = state.meta?.root ?? 'c64';
+  if (state.tab === 'flow') {
+    state.path = [];
+    state.selected = root;
+    state.treeCursor = 0;
+    state.treeScroll = 0;
+    state.nodeScroll = 0;
+    flowCentreOn(root);
+    render();
+    return;
+  }
   if (state.selected === root && state.path.length === 0) {
     state.treeCursor = 0;
     state.treeScroll = 0;
@@ -640,14 +1017,6 @@ function enterCursor() {
   if (kids[state.treeCursor]) track(kids[state.treeCursor].id);
 }
 
-function toggle(key) {
-  if (key === 'projection') state.projection = state.projection === 'full' ? 'entities' : 'full';
-  else if (key === 'showChips') state.showChips = !state.showChips;
-  else if (key === 'showEditorial') state.showEditorial = !state.showEditorial;
-  else if (key === 'dim') state.dim = !state.dim;
-  render();
-}
-
 async function loadTree() {
   const urls = ['../tree.json', './tree.json', '/tree.json'];
   let lastErr = null;
@@ -684,7 +1053,11 @@ function cellFromEvent(e) {
 
 function wireInput() {
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab') { e.preventDefault(); setTab(state.tab === 'tree' ? 'elements' : 'tree'); return; }
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      setTab(state.tab === 'tree' ? 'flow' : state.tab === 'flow' ? 'elements' : 'tree');
+      return;
+    }
     if (animating) return;
     if (state.tab === 'elements') {
       if (e.key === 'ArrowUp') { e.preventDefault(); state.elCur = stepCursor(state.elCur, -1, 0); render(); }
@@ -694,17 +1067,21 @@ function wireInput() {
       else if (e.key === 'Enter') { e.preventDefault(); jumpToEvidence(); }
       return;
     }
-    if (e.key === 'F2') { e.preventDefault(); state.edgeMenu ? closeEdgeMenu() : openEdgeMenu(); return; }
-    if (state.edgeMenu) {
-      if (e.key === 'ArrowUp') { e.preventDefault(); state.edgeCursor = (state.edgeCursor + EDGE_MODES.length - 1) % EDGE_MODES.length; render(); }
-      else if (e.key === 'ArrowDown') { e.preventDefault(); state.edgeCursor = (state.edgeCursor + 1) % EDGE_MODES.length; render(); }
-      else if (e.key === 'Enter') { e.preventDefault(); pickEdgeMode(EDGE_MODES[state.edgeCursor].id); }
-      else if (e.key === 'Escape') { e.preventDefault(); closeEdgeMenu(); }
+    if (state.tab === 'flow') {
+      if (e.key === 'ArrowUp') { e.preventDefault(); flowPan(0, e.shiftKey ? -16 : -4); }
+      else if (e.key === 'ArrowDown') { e.preventDefault(); flowPan(0, e.shiftKey ? 16 : 4); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); flowPan(e.shiftKey ? -16 : -4, 0); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); flowPan(e.shiftKey ? 16 : 4, 0); }
+      else if (e.key === 'Enter') { e.preventDefault(); flowSelectCentre(); }
+      else if (e.key === 'Backspace' || e.key === 'b') { e.preventDefault(); goBack(); }
+      else if (e.key === '0') { goRoot(); }
+      else if (e.key === 't' || e.key === 'T') { e.preventDefault(); flowGoTree(); }
+      else if (e.key === 'PageUp') { e.preventDefault(); flowPan(0, -16); }
+      else if (e.key === 'PageDown') { e.preventDefault(); flowPan(0, 16); }
+      else if (e.key === '+' || e.key === '=') { e.preventDefault(); flowZoom(1); }
+      else if (e.key === '-' || e.key === '_') { e.preventDefault(); flowZoom(-1); }
       return;
-    }    if (e.key === 'F1') { e.preventDefault(); toggle('projection'); }
-    else if (e.key === 'F3') { e.preventDefault(); toggle('showChips'); }
-    else if (e.key === 'F5') { e.preventDefault(); toggle('showEditorial'); }
-    else if (e.key === 'F7') { e.preventDefault(); toggle('dim'); }
+    }
     else if (e.key === 'ArrowUp') { e.preventDefault(); moveCursor(-1); }
     else if (e.key === 'ArrowDown') { e.preventDefault(); moveCursor(1); }
     else if (e.key === 'ArrowRight' || e.key === 'Enter') { e.preventDefault(); enterCursor(); }
@@ -716,27 +1093,61 @@ function wireInput() {
     else if (e.key === ']') { e.preventDefault(); state.nodeScroll = state.nodeScroll + 5; render(); }
     else if (e.key >= '1' && e.key <= '9') { const k = treeKids(); if (k[Number(e.key) - 1]) track(k[Number(e.key) - 1].id); }
   });
+  let suppressClick = false;
+  tm.canvas.addEventListener('pointerdown', (e) => {
+    if (state.tab !== 'flow' || e.button !== 0) return;
+    const c = cellFromEvent(e);
+    if (!inFlowView(c.x, c.y)) return;
+    flowDrag = { x: e.clientX, y: e.clientY, ox: state.flow.x, oy: state.flow.y, moved: false };
+  });
+  tm.canvas.addEventListener('pointermove', (e) => {
+    if (!flowDrag) return;
+    const r = tm.canvas.getBoundingClientRect();
+    const dxCells = Math.round(((flowDrag.x - e.clientX) / r.width) * 80);
+    const dyCells = Math.round(((flowDrag.y - e.clientY) / r.height) * 45);
+    if (!flowDrag.moved && Math.abs(e.clientX - flowDrag.x) < 4 && Math.abs(e.clientY - flowDrag.y) < 4) return;
+    flowDrag.moved = true;
+    const L = getFlowLayout();
+    const c = clampCam(flowDrag.ox + dxCells, flowDrag.oy + dyCells, L.worldW, L.worldH, FLOWVIEW.vw, FLOWVIEW.vh);
+    state.flow.x = c.x;
+    state.flow.y = c.y;
+    render();
+  });
+  const endFlowDrag = () => {
+    if (flowDrag?.moved) suppressClick = true;
+    flowDrag = null;
+  };
+  tm.canvas.addEventListener('pointerup', endFlowDrag);
+  tm.canvas.addEventListener('pointercancel', endFlowDrag);
   tm.canvas.addEventListener('click', (e) => {
     const c = cellFromEvent(e);
     for (const t of tabHits) {
       if (c.y === t.y && c.x >= t.x0 && c.x <= t.x1) { setTab(t.id); return; }
     }
+    if (suppressClick) { suppressClick = false; return; }
     if (animating) return;
-    if (state.edgeMenu) {
-      for (const m of menuHits) {
-        const { x } = menuXY();
-        if (c.y === m.y && c.x >= x && c.x < x + MENU.w) { pickEdgeMode(m.mode); return; }
-      }
-      closeEdgeMenu();
-      return;
-    }
-    if (state.tab === 'tree' && edgeHit && c.y === edgeHit.y && c.x >= edgeHit.x0 && c.x <= edgeHit.x1) { openEdgeMenu(); return; }
     if (state.tab === 'elements') {
       const cell = cellFromXY(c.x, c.y);
       if (cell) { state.elCur = cell; render(); }
       return;
     }
     if (backHit && c.y === backHit.y && c.x >= backHit.x0 && c.x <= backHit.x1) { goBack(); return; }
+    if (state.tab === 'flow') {
+      if (viewTreeHit && c.y === viewTreeHit.y && c.x >= viewTreeHit.x0 && c.x <= viewTreeHit.x1) { flowGoTree(); return; }
+      if (minimapGeom && c.y >= minimapGeom.y0 && c.y < minimapGeom.y0 + minimapGeom.mh
+        && c.x >= minimapGeom.x0 && c.x < minimapGeom.x0 + minimapGeom.mw) {
+        flowGoMap(c.x - minimapGeom.x0, c.y - minimapGeom.y0);
+        return;
+      }
+      for (const t of flowHits) {
+        if (c.y >= t.y0 && c.y <= t.y1 && c.x >= t.x0 && c.x <= t.x1) {
+          setCanonicalPath(t.id);
+          track(t.id, false);
+          return;
+        }
+      }
+      return;
+    }
     for (const t of treeChildHits) {
       if (c.y >= t.y0 && c.y <= t.y1 && c.x >= (t.x0 ?? TREE.cx0) && c.x <= (t.x1 ?? TREE.cx0 + TREE.cw - 1)) {
         state.treeCursor = t.index;
@@ -744,14 +1155,17 @@ function wireInput() {
         return;
       }
     }
-    for (const t of toggleHits) {
-      if (c.y === t.y && c.x >= t.x0 && c.x <= t.x1) { toggle(t.key); return; }
-    }
   });
   tm.canvas.addEventListener('wheel', (e) => {
     if (animating) return;
     if (state.tab === 'elements') return;
     const c = cellFromEvent(e);
+    if (state.tab === 'flow') {
+      if (c.x >= LEFT.x && c.x < LEFT.x + LEFT.w && c.y >= LEFT.y && c.y < LEFT.y + LEFT.h) {
+        flowPan(e.deltaX > 0 ? 4 : e.deltaX < 0 ? -4 : 0, e.deltaY > 0 ? 4 : e.deltaY < 0 ? -4 : 0);
+      }
+      return;
+    }
     if (nodeBox && c.x >= nodeBox.x0 && c.x <= nodeBox.x1 && c.y >= nodeBox.y0 && c.y <= nodeBox.y1) {
       state.nodeScroll = Math.max(0, state.nodeScroll + (e.deltaY > 0 ? 3 : -3));
       render();
@@ -780,7 +1194,14 @@ async function boot() {
   }
   wireInput();
   render();
-  setInterval(() => { state.cursor = !state.cursor; renderBottom(); tm.present(); }, 530);
+  // The flow tab's minimap marker flashes with the shared text cursor, so the
+  // blink tick re-renders the whole panel there (layout is cached) and just
+  // the footer elsewhere.
+  setInterval(() => {
+    state.cursor = !state.cursor;
+    if (state.tab === 'flow' && !animating) render();
+    else { renderBottom(); tm.present(); }
+  }, 530);
 }
 
 boot();
