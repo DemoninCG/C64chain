@@ -8478,7 +8478,7 @@
       "id": "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis",
       "name": "Sulfolane from butadiene",
       "simple_name": "Sulfolane from butadiene",
-      "description": "The solvent that extracts benzene out of a naphtha stream is itself made out of the cracker's C4. Butadiene is reacted with sulfur dioxide and water to give tetrahydrothiophene 1,1-dioxide. So the styrene chain (benzene, ethylbenzene, styrene) is fed by butadiene twice over: once as the rubber in the ABS, and once as the solvent that separated the benzene. It is the clearest example in this file of a chemical park's flows being a web rather than a line. Butadiene plus SO2 at 100-140 C gives the sulfolene, a five-membered ring with one double bond left, and a second equivalent of water with a base opens the second ring to sulfolane. The sulphur dioxide comes from burning recovered elemental sulphur, usually the same Claus sulphur a nearby refinery took out of the same sour gas that fed the cracker.",
+      "description": "The solvent that extracts benzene out of a naphtha stream is itself made out of the cracker's C4. Butadiene adds sulphur dioxide in a cheletropic addition to give 3-sulfolene, a five-membered unsaturated ring, and the sulfolene is then catalytically hydrogenated to sulfolane over Raney nickel under hydrogen pressure. So the styrene chain (benzene, ethylbenzene, styrene) is fed by butadiene twice over: once as the rubber in the ABS, and once as the solvent that separated the benzene. It is the clearest example in this file of a chemical park's flows being a web rather than a line. The hydrogenation runs in aqueous solution at about 40-65 C and 100-300 psig H2 over a few percent Raney nickel, and the water is the reaction solvent, not a reactant. The sulphur dioxide comes from burning recovered elemental sulphur, usually the same Claus sulphur a nearby refinery took out of the same sour gas that fed the cracker.",
       "kind": "process",
       "category": "plastics",
       "era": "1960s",
@@ -8491,7 +8491,7 @@
           "value": "butadiene + SO2 at 100-140 C"
         }
       ],
-      "note": "Sulfolane is industrially made by the butadiene/SO2/hydrolysis route. The conditions quoted are representative. Established: Sulfolane from butadiene for benzene extraction linking styrene chain to C4. Not established: the stated reaction conditions as representative specifics.",
+      "note": "Sulfolane is industrially made by butadiene/SO2 adduction followed by Raney-nickel hydrogenation (US3928385A, Phillips 1975, citing Shell US2451298). Established: Sulfolane from butadiene for benzene extraction linking styrene chain to C4. Not established: the stated reaction conditions as representative specifics.",
       "confidence": "low",
       "provenance": "incomplete",
       "edges": [
@@ -8506,7 +8506,7 @@
           "basis": "documented"
         },
         {
-          "to": "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.process-water",
+          "to": "facility.gases.hydrogen",
           "rel": "consumes",
           "basis": "documented"
         }
@@ -12125,13 +12125,13 @@
         "id": "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.sulphur-dioxide",
         "name": "Sulphur dioxide",
         "simple_name": "Sulphur dioxide",
-        "description": "Sulphur dioxide as reacted with butadiene to sulfolene and hydrolysed to sulfolane.",
+        "description": "Sulphur dioxide as reacted with butadiene to sulfolene for hydrogenation to sulfolane.",
         "kind": "material",
         "category": "plastics",
         "era": "1960s",
         "sources": [],
         "confidence": "low",
-        "note": "100-140 C first step per candidate facts as representative only; Claus-burned sulphur origin noted but not typed.",
+        "note": "100-140 C first step per candidate facts as representative only; Claus-burned sulphur origin noted but not typed. Second step is Raney-nickel hydrogenation, not hydrolysis.",
         "children": [],
         "provenance": "incomplete",
         "edges": [
@@ -12141,20 +12141,6 @@
     "basis": "documented"
   }
 ]
-      },
-    "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.process-water": {
-        "id": "chem.styrene.benzene.aromatics-recovery.sulfolane.sulfolane-synthesis.process-water",
-        "name": "Process water",
-        "simple_name": "Process water",
-        "description": "Water with base opening the sulfolene ring to sulfolane.",
-        "kind": "material",
-        "category": "plastics",
-        "era": "1960s",
-        "sources": [],
-        "confidence": "low",
-        "note": "Second-ring hydrolysis per candidate description only; utility grade.",
-        "children": [],
-        "provenance": "incomplete"
       },
     "chem.styrene.benzene.coal-tar.benzol-recovery": {
         "id": "chem.styrene.benzene.coal-tar.benzol-recovery",
