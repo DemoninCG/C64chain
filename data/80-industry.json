@@ -917,8 +917,7 @@
       "category": "plastics",
       "era": "1983",
       "inputs": [
-        "vinylidene fluoride",
-        "R22"
+        "vinylidene fluoride"
       ],
       "confidence": "medium",
       "provenance": "incomplete",
@@ -1347,7 +1346,7 @@
       ],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Established by the cited article: that RO membranes are made in a variety of configurations with the two most common being spiral-wound and hollow-fibre; that current RO membranes are thin-film composite polyamide; that the spiral-wound design is engineered for one-way flow and does not allow backpulsing or air agitation to scour its surface; and that pretreatment is a necessity for any RO system. Not established: the cellulose acetate layer, the polysulphone support, the 0.2-1.5 micrometre selective-layer thickness, the epoxy potting, and the 1 m element length; the article names polyamide thin-film composite and hollow fibre but does not mention cellulose acetate or polysulphone, and states no layer thickness and no element length. The comparison with a read/write head gap is a figure of speech, not a measurement."
+      "note": "Established by the cited article: that RO membranes are made in a variety of configurations with the two most common being spiral-wound and hollow-fibre; that current RO membranes are thin-film composite polyamide; that the spiral-wound design is engineered for one-way flow and does not allow backpulsing or air agitation to scour its surface; Polysulphone support, spiral winding and sub-micron selective layer now have 1981 contemporary support (FilmTec aromatic-polyamide TFC, Cadotte US4277344A, ~99.5% rejection); the 1960s-70s installed base was asymmetric cellulose-acetate (Loeb/Sourirajan US3133132A), so a 1983 plant sits on the transition and both legs stay. Not established: cellulose acetate on polysulphone specifically, epoxy potting, and the 1 m element length. The comparison with a read/write head gap is a figure of speech, not a measurement."
     },
     "facility.water.filter-sand": {
       "id": "facility.water.filter-sand",
@@ -4957,15 +4956,15 @@
           "https://en.wikipedia.org/wiki/Polyvinylidene_fluoride"
         ],
         "confidence": "medium",
-        "note": "170 C melting and no-microbial-growth claims not established per candidate note; R22 pyrolysis to VDF not typed.",
+        "note": "VDF monomer melts at -144 C and boils at -84 C; the 177 C figure belongs to PVDF polymer. No-microbial-growth claims not established per candidate note.",
         "children": [],
         "provenance": "complete"
       },
     "facility.water.pvdf.vdf-synthesis": {
         "id": "facility.water.pvdf.vdf-synthesis",
-        "name": "Vinylidene fluoride synthesis (R22 leg)",
+        "name": "Vinylidene fluoride synthesis",
         "simple_name": "VDF synthesis",
-        "description": "Synthesis of vinylidene fluoride monomer feeding PVDF polymerisation.",
+        "description": "Synthesis of vinylidene fluoride monomer feeding PVDF polymerisation, by dehydrohalogenation of a 1,1,1-trihaloethane (1-chloro-1,1-difluoroethane or 1,1,1-trifluoroethane). R22 pyrolysis is the tetrafluoroethylene route, not the VDF route.",
         "kind": "process",
         "category": "plastics",
         "era": "1983",
@@ -4973,14 +4972,14 @@
           "https://en.wikipedia.org/wiki/Polyvinylidene_fluoride"
         ],
         "confidence": "medium",
-        "note": "R22-derived VDF route per candidate inputs only; conditions not established, type-level step.",
+        "note": "VDF from trihaloethane elimination per Kirk-Othmer/Ullmann via the difluoroethylene article; conditions not established, type-level step. HCFC-142b intermediate node banked, unmodelled.",
         "children": [],
         "edges": [
           {
             "to": "facility.water.pvdf.vinylidene-fluoride",
             "rel": "produces",
             "role": "product",
-            "basis": "documented"
+            "basis": "inferred"
           }
         ],
         "provenance": "incomplete"
@@ -5054,11 +5053,11 @@
         },
         {
           "label": "Taiwan 1980 supply mix",
-          "value": "oil 58.8%, coal 17.1%, hydro 13.9%, nuclear 10.2%, gas 1.2%"
+          "value": "oil 58.8%, nuclear 17.1%, coal 13.9%, hydro 10.2%, gas 0.0% (grid electricity by fuel, AGI WP2015-10 Table 4)"
         },
         {
           "label": "Taiwan 1990 supply mix",
-          "value": "coal 38.4%, oil 25.6%, hydro 24.5%, nuclear 7.7%"
+          "value": "nuclear 38.4%, coal 24.5%, oil 25.6%, hydro 7.7%, gas 1.2% (grid electricity by fuel, AGI WP2015-10 Table 4)"
         }
       ],
       "sources": [
