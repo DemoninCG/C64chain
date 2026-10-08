@@ -726,7 +726,7 @@ function render() {
   tm.clear(UI.BODY_FG, UI.BG);
   renderTitle();
   if (state.tab === 'elements') {
-    renderElements(tm, state.elCur, LEFT.h);
+    renderElements(tm, state.elCur, LEFT.h, state.nodes);
   } else if (state.tab === 'flow') {
     renderFlow();
   } else {

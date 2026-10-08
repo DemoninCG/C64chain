@@ -21,6 +21,11 @@
       "from": "chem.butadiene.sources.sounsby.butadiene-purity",
       "to": "chem.abs.grafting.rubber-phase.butadiene-raw",
       "why": "Same polymerisation-grade monomer from the same extractive unit (99.0-99.7%); sounsby produces leg already re-pointed to survivor only (duplicate dropped pre-merge), analytical-methods prose folded into survivor note. Batch-2 triage, centrally arbitrated."
+    },
+    {
+      "from": "chem.fab-chemicals.process-gases.argon",
+      "to": "facility.argon",
+      "why": "Same thing at the same level (CHECKLIST 4): both are bulk Argon material, fluids/gases, chain scope. Keep-rule picks facility.argon: richer description plus facts (0.93% + 99.99%) and 2 sources vs 1, a uses edge to the argon column, 8 inbound (logic fab bays, epi/metal/sputter, crystal fill, gases hub) vs 3, canonical published node per the 35-logic fragment comment, and the more general id. Loser has no facts and no children; its made-from atmospheric-air duplicates the survivor's, so nothing structural is lost (use-side sputter/anneal prose is archived in _merged and partly covered by facility.argon.uses). Repoints 3 consumes edges: metal.steel.ladle, metal.silica.czochralski, metal.chromium.aod. Purity figures conflict only in hedged notes (99.99% vs 99.999%, both not-established)."
     }
   ],
   "renames": [],

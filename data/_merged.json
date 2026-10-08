@@ -3907,6 +3907,18 @@
       "why": "Sixth DNQ/novolac duplicate: same substance (positive DNQ sensitizer in novolac resin) with identical made-from novolac legs; loser AZ-1350/Micralign/10-mask context duplicates parent si.front-end facts (lossless); sole inbound si.front-end consumes repoints to survivor (established Wave-3 DNQ sink). Research hold-out triage, centrally arbitrated.",
       "loserDescription": "Positive DNQ/novolac resist formulation consumed across the generic 10-mask-level NMOS front-end flow (contact/Micralign 1:1 printing in AZ-1350 class resist).",
       "loserFacts": null
+    },
+    {
+      "loser": "chem.fab-chemicals.process-gases.argon",
+      "loserName": "Argon",
+      "loserFile": "70-petrochem.json",
+      "survivor": "facility.argon",
+      "survivorName": "Argon",
+      "survivorFile": "80-industry.json",
+      "proposal": "70-petrochem.json",
+      "why": "Same thing at the same level (CHECKLIST 4): both are bulk Argon material, fluids/gases, chain scope. Keep-rule picks facility.argon: richer description plus facts (0.93% + 99.99%) and 2 sources vs 1, a uses edge to the argon column, 8 inbound (logic fab bays, epi/metal/sputter, crystal fill, gases hub) vs 3, canonical published node per the 35-logic fragment comment, and the more general id. Loser has no facts and no children; its made-from atmospheric-air duplicates the survivor's, so nothing structural is lost (use-side sputter/anneal prose is archived in _merged and partly covered by facility.argon.uses). Repoints 3 consumes edges: metal.steel.ladle, metal.silica.czochralski, metal.chromium.aod. Purity figures conflict only in hedged notes (99.99% vs 99.999%, both not-established).",
+      "loserDescription": "A by-product of the air separation unit at 0.93% of dry air, purified to 99.999%. It fills the sputtering cathodes (the argon ions are accelerated across the gap and knock atoms out of the aluminium or titanium target) and it is the inert atmosphere of the annealing and ashing steps. The sputtering itself is the metals chain, but the gas that drives it is an air separation product.",
+      "loserFacts": null
     }
   ]
 }

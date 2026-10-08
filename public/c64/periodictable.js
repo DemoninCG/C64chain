@@ -91,8 +91,11 @@ function elBox(grid, x, y, w, h, fg, bg, title) {
 }
 
 // Draws the whole tab. `grid` is {text,set} - the live TextMode in the
-// viewer, or a stub in tests. boxH is the outer panel height.
-export function renderElements(grid, cursor, boxH = 38) {
+// viewer, or a stub in tests. boxH is the outer panel height. `nodes` is
+// the built node map (id -> node); the evidence line shows the node's
+// human name (simple_name, then name), falling back to the id when the
+// node is missing so a dangling ev still reads as something.
+export function renderElements(grid, cursor, boxH = 38, nodes = {}) {
   const U = (s) => toScreenText(s);
   elBox(grid, 1, 1, 78, boxH, UI.FRAME_FG, UI.BG, 'ELEMENTS');
   const counts = elementCounts();
@@ -125,6 +128,8 @@ export function renderElements(grid, cursor, boxH = 38) {
   if (el) {
     const st = STATUS_STYLE[el.st];
     grid.text(4, dy, U(`${el.z} ${el.s} ${el.n} - ${st.label}`), C.YELLOW, UI.BG);
-    grid.text(4, dy + 1, U(el.ev ? `E.G. ${el.ev}` : 'NO NODE MENTIONS IT'), C.LTBLUE, UI.BG, 72);
+    const evNode = el.ev ? nodes[el.ev] : null;
+    const evLabel = el.ev ? (evNode?.simple_name ?? evNode?.name ?? el.ev) : null;
+    grid.text(4, dy + 1, U(evLabel ? `E.G. ${evLabel}` : 'NO NODE MENTIONS IT'), C.LTBLUE, UI.BG, 72);
   }
 }
