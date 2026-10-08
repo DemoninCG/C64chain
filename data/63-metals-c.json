@@ -1146,6 +1146,12 @@
           "to": "facility.steam",
           "rel": "consumes",
           "basis": "documented"
+        },
+        {
+          "to": "metal.activated-carbon",
+          "rel": "produces",
+          "role": "product",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -1317,6 +1323,11 @@
           "to": "metal.coke.cold-strip",
           "rel": "uses",
           "basis": "inferred"
+        },
+        {
+          "to": "metal.coal-preparation",
+          "rel": "step",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -2274,6 +2285,11 @@
         {
           "to": "metal.zinc.oxide",
           "rel": "consumes",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "metal.zinc.roasting",
+          "rel": "step",
           "basis": "typical-1982"
         }
       ]

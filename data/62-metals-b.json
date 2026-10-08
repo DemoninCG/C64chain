@@ -401,6 +401,12 @@
           "to": "metal.copper.intrusion",
           "rel": "consumes",
           "basis": "documented"
+        },
+        {
+          "to": "metal.copper.ore",
+          "rel": "produces",
+          "role": "product",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -1017,14 +1023,7 @@
           "sources": [
             "https://en.wikipedia.org/wiki/Peirce%E2%80%93Smith_converter"
           ],
-          "provenance": "incomplete",
-          "edges": [
-  {
-    "to": "metal.copper.converting",
-    "rel": "uses",
-    "basis": "documented"
-  }
-]
+          "provenance": "incomplete"
         }
       ],
       "edges": [
@@ -1041,6 +1040,17 @@
         {
           "to": "metal.copper.smelting",
           "rel": "step"
+        },
+        {
+          "to": "metal.copper.blister",
+          "rel": "produces",
+          "role": "product",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "metal.copper.converter",
+          "rel": "uses",
+          "basis": "documented"
         }
       ]
     },
@@ -2163,6 +2173,11 @@
           "to": "si.cz.seed",
           "rel": "consumes",
           "basis": "documented"
+        },
+        {
+          "to": "metal.silica.czochralski.crucible",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },
