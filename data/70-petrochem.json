@@ -185,6 +185,62 @@
         }
       ]
     },
+    "chem.ethylene.feedstock.fcc-c3": {
+      "id": "chem.ethylene.feedstock.fcc-c3",
+      "name": "FCC C3 cut (propylene-propane)",
+      "simple_name": "FCC C3 cut",
+      "description": "Cat-cracked C3 cut from the FCC gas-concentration and depropanizer overhead: propane plus propylene, split in the C3 splitter with propane to the LPG pool and propylene to storage. The 30-35% catalytic-cracking share of 1983 propylene supply.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1980s",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "note": "R1 second leg beside cracker C3 (description names catalytic cracking at 30-35%). FCC main-fractionator overhead and gas-plant routing per standard FCC flow; must not hang off the atmospheric crude fractionator.",
+      "children": [],
+      "inputs": []
+    },
+    "chem.refining.fuel-gas": {
+      "id": "chem.refining.fuel-gas",
+      "name": "Refinery fuel gas",
+      "simple_name": "Refinery fuel gas",
+      "description": "Light-ends refinery fuel gas burned in process heaters: methane, ethane and hydrogen off the crude overhead condenser and gas plant, about 3-5% of crude charge as fuel (40 CFR 63.641 refinery fuel gas definition).",
+      "kind": "material",
+      "category": "industry",
+      "era": "1980s",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "note": "Orphan backlog: heater/furnace consumers unmodelled; created for the fuel balance with the documented scale. Rescue when refinery heater fuel legs land.",
+      "children": [],
+      "inputs": []
+    },
+    "chem.refining.residue.atmospheric": {
+      "id": "chem.refining.residue.atmospheric",
+      "name": "Atmospheric residue (long residue)",
+      "simple_name": "Atmospheric residue",
+      "description": "The 700 F+ bottoms of atmospheric distillation, 25-40% of crude charge: vacuum-column feed, with fuel-oil blending as the alternate outlet.",
+      "kind": "material",
+      "category": "industry",
+      "era": "1980s",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "note": "Two-node split (atmospheric vs vacuum) deliberately: one residue id would conflate grades and destinations.",
+      "children": [],
+      "inputs": []
+    },
+    "chem.refining.residue.vacuum": {
+      "id": "chem.refining.residue.vacuum",
+      "name": "Vacuum residue (short residue)",
+      "simple_name": "Vacuum residue",
+      "description": "The 2-5% of crude that will not distil even under vacuum: coker, hydrocracker or fuel-oil feed. Same stream the vacuum-residue-processing node converts.",
+      "kind": "material",
+      "category": "industry",
+      "era": "1980s",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "note": "Consumed by vacuum-residue-processing; coker/hydrocracker splits unmodelled.",
+      "children": [],
+      "inputs": []
+    },
     "chem.refining": {
       "id": "chem.refining",
       "name": "Refining",
@@ -385,6 +441,17 @@
                   "to": "chem.refining.fluid-catalytic-cracking",
                   "rel": "step",
                   "basis": "documented"
+                },
+                {
+                  "to": "chem.refining.residue.atmospheric",
+                  "rel": "consumes",
+                  "basis": "documented"
+                },
+                {
+                  "to": "chem.refining.residue.vacuum",
+                  "rel": "produces",
+                  "role": "product",
+                  "basis": "documented"
                 }
               ]
             }
@@ -417,6 +484,18 @@
               "rel": "produces",
               "role": "product",
               "basis": "inferred"
+            },
+            {
+              "to": "chem.refining.fuel-gas",
+              "rel": "produces",
+              "role": "co-product",
+              "basis": "documented"
+            },
+            {
+              "to": "chem.refining.residue.atmospheric",
+              "rel": "produces",
+              "role": "co-product",
+              "basis": "documented"
             },
             {
               "to": "chem.refining.vacuum-residue-processing",
@@ -541,12 +620,25 @@
                   "to": "chem.refining.fluid-catalytic-cracking.cracked-gasoline",
                   "rel": "produces",
                   "role": "product"
+                },
+                {
+                  "to": "chem.ethylene.feedstock.fcc-c3",
+                  "rel": "produces",
+                  "role": "co-product",
+                  "basis": "documented"
                 }
               ]
             }
           ],
           "confidence": "low",
-          "note": "Established: The 2-5% of crude that will not distil is the hardest material in the refinery as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+          "note": "Established: The 2-5% of crude that will not distil is the hardest material in the refinery as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+          "edges": [
+  {
+    "to": "chem.refining.residue.vacuum",
+    "rel": "consumes",
+    "basis": "documented"
+  }
+]
         },
         {
           "id": "chem.refining.hydrotreating",
@@ -4786,6 +4878,11 @@
         {
           "to": "chem.propylene.sources.propylene-splitter",
           "rel": "step",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "chem.ethylene.feedstock.fcc-c3",
+          "rel": "made from",
           "basis": "typical-1982"
         }
       ]
