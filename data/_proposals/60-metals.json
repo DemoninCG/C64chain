@@ -1,6 +1,12 @@
 {
   "$comment": "Cross-fragment changes proposed by the agent that owns data/60-metals.json. Nothing here has been applied. Every `to` is an id defined in this fragment (in the `shared` map or inline in a branch root), so all of them are safe, stable merge targets - which is the whole reason this fragment was worth the pass. See docs/CHECKLIST.md section 8 before applying.",
-  "merges": [],
+  "merges": [
+    {
+      "from": "metal.electrical-steel.lamination",
+      "to": "c64.psu.transformer.core.lamination",
+      "why": "Same operation, same part, same machine (E+I from GOES strip, compound die, C64 transformer plates). Loser consumes electrical-steel duplicates survivor (drops with loser); loser consumes die-steel substance preserved via survivor punch-die consumes die-steel (R3 hold-out honoured); loser uses die-set drops as duplicate of survivor's own uses die-set (anchored batch-2). Varnish/insulation-coating paragraph: survivor lacks it - check at apply; loser prose currently has no varnish paragraph found, only C64-use context. Batch-2 triage, centrally arbitrated."
+    }
+  ],
   "advisory_no_action_needed": [
     {
       "ids": [

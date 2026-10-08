@@ -1604,7 +1604,8 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Zinc"
       ],
-      "children": []
+      "children": [],
+      "note": "C64-use paragraph folded in from the dissolved zinc hub node: die-cast zinc alloy for case-mounted parts and key plungers, plating on steel for EMI shields and chassis fasteners."
     },
     "metal.zinc.electrowinning": {
       "id": "metal.zinc.electrowinning",
@@ -4963,7 +4964,10 @@
           "value": "8-12% of the sinter mix as the fuel"
         }
       ],
-      "note": "The coke reference defines coke breeze as the fraction under 10 mm, so the upper bound is right. Not established: the 3 mm lower bound and the 8-12% of the sinter mix share.",
+      "note": "The coke reference defines coke breeze as the fraction under 10 mm, so the upper bound is right. Not established: the 3 mm lower bound and the 8-12% of the sinter mix share. Folded in from the merged quench-blow node: wet quenching uses about 4 m3 of water per m3 of coke, carrying 1-3 kg of suspended carbon per tonne of coke quenched.",
+      "sources": [
+        "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=9101QCA7.txt"
+      ],
       "edges": [
         {
           "to": "metal.coke",
@@ -6905,55 +6909,7 @@
         }
       ]
     },
-    "metal.electrical-steel.lamination": {
-      "id": "metal.electrical-steel.lamination",
-      "name": "E-E laminations and the stamping",
-      "simple_name": "E-E laminations",
-      "description": "The 0.3 mm strip is blanked and stamped into E and I shapes (or, in a cheaper 1982 supply, into E-E pairs and then stacked and interlocked) on a 400-800 tonne mechanical or hydraulic press with a compound die that does the whole lamination stack in one stroke. The stamping is heavily lubricated and the edges are deburred and then given a magnetic insulation treatment: a thin epoxy or phenolic varnish, or an 'insulation coating' of an inorganic glassy film, applied so that the laminations do not short-circuit each other. The core of the C64's transformer is about 30-60 stamped laminations, and the number is set by the stack height and the available die.",
-      "kind": "process",
-      "category": "metals",
-      "era": "1982",
-      "confidence": "medium",
-      "provenance": "incomplete",
-      "inputs": [],
-      "facts": [
-        {
-          "label": "Lamination thickness",
-          "value": "0.3-0.35 mm"
-        },
-        {
-          "label": "Press",
-          "value": "400-800 t, one stroke for the whole stack in a compound die"
-        },
-        {
-          "label": "Insulation",
-          "value": "epoxy or phenolic varnish, or an inorganic glassy film; a C-core varnish coat"
-        },
-        {
-          "label": "Stacks",
-          "value": "30-60 laminations for a small switcher"
-        }
-      ],
-      "sources": [
-        "https://en.wikipedia.org/wiki/Lamination"
-      ],
-      "note": "The interlocked E-E stamping process was the standard for small transformers in the 1980s; confidence high.",
-      "edges": [
-        {
-          "to": "metal.electrical-steel",
-          "rel": "consumes"
-        },
-        {
-          "to": "metal.die-steel",
-          "rel": "consumes"
-        },
-        {
-          "to": "metal.electrical-steel.die-set",
-          "rel": "uses",
-          "basis": "documented"
-        }
-      ]
-    },
+    
     "metal.electrical-steel.silicon-source": {
       "id": "metal.electrical-steel.silicon-source",
       "name": "Make the ferrosilicon and add it to the steel",

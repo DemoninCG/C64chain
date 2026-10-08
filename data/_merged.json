@@ -3791,6 +3791,110 @@
           "value": "99.0-99.7%"
         }
       ]
+    },
+    {
+      "loser": "metal.barite.mud-system",
+      "loserName": "Barite, bentonite and lime",
+      "loserFile": "64-metals-d.json",
+      "survivor": "chem.crude.rig.drilling-mud",
+      "survivorName": "Drilling mud (drilling fluid)",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "64-metals-d.json",
+      "why": "Same substance: weighted water-based drilling mud (barite weight plus bentonite viscosity). Survivor is reached with richer engineering content and bentonite/barite/weights/chelant legs; loser ref-0. Loser's lime-calcium-control sentence and 1.5-2.0 density figure preserved into survivor note pre-merge. Batch-2 triage, centrally arbitrated (checked against the lossy-merge precedent: no unique context lost).",
+      "loserDescription": "A drilling mud is not one material. It is a designed composite. The barite is the weight. It is the only cheap, abundant mineral dense enough to hold back formation pressure at a density of 1.5-2.0. The bentonite is the viscosity and the filtration control, and it works because its sodium montmorillonite swells in water to several times its dry volume. The lime and the lime-soil inhibitors control the calcium contamination that comes up with the cement and that would flocculate the bentonite. So the barite branch of this tree converges with the bentonite branch of the steel branch, and both converge on the drilling of the oil and gas wells that produce the crude oil the plastics agent starts from.",
+      "loserFacts": [
+        {
+          "label": "Weight",
+          "value": "barite takes the mud to 1.5-2.0 specific gravity"
+        },
+        {
+          "label": "Viscosity",
+          "value": "bentonite, swollen to several times its dry volume"
+        },
+        {
+          "label": "Calcium control",
+          "value": "lime and inhibitors, because calcium flocculates the clay"
+        }
+      ]
+    },
+    {
+      "loser": "metal.electrical-steel.lamination",
+      "loserName": "E-E laminations and the stamping",
+      "loserFile": "60-metals.json",
+      "survivor": "c64.psu.transformer.core.lamination",
+      "survivorName": "Punched E and I lamination",
+      "survivorFile": "50-power.json",
+      "proposal": "60-metals.json",
+      "why": "Same operation, same part, same machine (E+I from GOES strip, compound die, C64 transformer plates). Loser consumes electrical-steel duplicates survivor (drops with loser); loser consumes die-steel substance preserved via survivor punch-die consumes die-steel (R3 hold-out honoured); loser uses die-set drops as duplicate of survivor's own uses die-set (anchored batch-2). Varnish/insulation-coating paragraph: survivor lacks it - check at apply; loser prose currently has no varnish paragraph found, only C64-use context. Batch-2 triage, centrally arbitrated.",
+      "loserDescription": "The 0.3 mm strip is blanked and stamped into E and I shapes (or, in a cheaper 1982 supply, into E-E pairs and then stacked and interlocked) on a 400-800 tonne mechanical or hydraulic press with a compound die that does the whole lamination stack in one stroke. The stamping is heavily lubricated and the edges are deburred and then given a magnetic insulation treatment: a thin epoxy or phenolic varnish, or an 'insulation coating' of an inorganic glassy film, applied so that the laminations do not short-circuit each other. The core of the C64's transformer is about 30-60 stamped laminations, and the number is set by the stack height and the available die.",
+      "loserFacts": [
+        {
+          "label": "Lamination thickness",
+          "value": "0.3-0.35 mm"
+        },
+        {
+          "label": "Press",
+          "value": "400-800 t, one stroke for the whole stack in a compound die"
+        },
+        {
+          "label": "Insulation",
+          "value": "epoxy or phenolic varnish, or an inorganic glassy film; a C-core varnish coat"
+        },
+        {
+          "label": "Stacks",
+          "value": "30-60 laminations for a small switcher"
+        }
+      ]
+    },
+    {
+      "loser": "metal.coke.quench-blow",
+      "loserName": "Coke quench blow tank and its drain",
+      "loserFile": "63-metals-c.json",
+      "survivor": "metal.coke-breeze",
+      "survivorName": "Coke breeze",
+      "survivorFile": "60-metals.json",
+      "proposal": "63-metals-c.json",
+      "why": "Same substance (3-10 mm coke fines); survivor frames the sinter-plant internal loop. Quenching produces quench-blow (co-product) repoints to breeze on apply. Quench-water figures and EPA NEPIS source preserved into breeze note pre-merge. Flagged against the Wave-6 lossy precedent and cleared: no unique context lost. Batch-2 triage, centrally arbitrated.",
+      "loserDescription": "Quenching has three products, not one: the coke, the water with the fine carbon in it, and the coke breeze. It is the 3-10 mm fraction that the blast furnace cannot use because it would be blown through the burden. Breeze is worth something: a coke plant sells it for sinter-plant fuel, for foundry moulding sand, and in 1982 increasingly for the electrode and anode pitch trade as a cheap carbon filler. So the coke oven's smallest product feeds three of the other branches in this file, and the water carries 1-3 kg of suspended carbon per tonne of coke quenched.",
+      "loserFacts": [
+        {
+          "label": "Breeze yield",
+          "value": "2-5% of the coke"
+        },
+        {
+          "label": "Quench water",
+          "value": "~4 m3 per m3 of coke, carrying suspended carbon"
+        },
+        {
+          "label": "Uses",
+          "value": "sinter plant fuel, foundry sand additive, carbon filler"
+        }
+      ]
+    },
+    {
+      "loser": "metal.zinc",
+      "loserName": "Zinc",
+      "loserFile": "63-metals-c.json",
+      "survivor": "metal.zinc.ingot",
+      "survivorName": "Special high grade zinc ingot, 99.995%",
+      "survivorFile": "60-metals.json",
+      "proposal": "63-metals-c.json",
+      "why": "Same substance (SHG zinc); hub performs no index function (zero inbound of any kind, unlike copper's 52). Junk made-from legs (electricity, sphalerite, sulphuric-acid) retire with loser. C64-use paragraph preserved into ingot note pre-merge. Batch-2 triage, centrally arbitrated.",
+      "loserDescription": "Zinc is the fourth non-ferrous metal and the most recycled one. In a 1982 C64 it appears as a die-cast zinc alloy for the case-mounted parts and the key plungers, as a plating on steel for EMI shields and chassis fasteners, as brass (copper-zinc) for the bus-bar and connector bodies, and as zinc oxide in the varistor that clamps the supply spikes off the mains input. The smelting industry in 1982 was in the middle of its biggest change in a century: the roast-leach-electrowin zinc-iron plant was replacing the horizontal retort furnace.",
+      "loserFacts": [
+        {
+          "label": "Refined grade",
+          "value": "99.995% (SHG), the standard grade for galvanising and die casting"
+        },
+        {
+          "label": "Ore",
+          "value": "sphalerite ZnS at 3-20% Zn; the ore is often mined as a lead-zinc deposit"
+        },
+        {
+          "label": "Chain",
+          "value": "~100 t of 6% Zn ore -> ~18 t of 55% Zn concentrate -> ~5 t of zinc metal in the concentrate"
+        }
+      ]
     }
   ]
 }
