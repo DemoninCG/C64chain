@@ -19,7 +19,7 @@
 export const ELEMENTS = [
   { z: 1, s: 'H', n: 'HYDROGEN', p: 1, g: 1, st: 'pure', ev: 'metal.hydrogen' },
   { z: 2, s: 'HE', n: 'HELIUM', p: 1, g: 18, st: 'pure', ev: 'facility.helium' },
-  { z: 3, s: 'LI', n: 'LITHIUM', p: 2, g: 1, st: 'comp', ev: 'peripheral.tv.tuner.front-end.saw.lithium' },
+  { z: 3, s: 'LI', n: 'LITHIUM', p: 2, g: 1, st: 'pure', ev: 'metal.lithium' },
   { z: 4, s: 'BE', n: 'BERYLLIUM', p: 2, g: 2, st: 'comp', ev: 'metal.beryllium-copper' },
   { z: 5, s: 'B', n: 'BORON', p: 2, g: 13, st: 'comp', ev: 'mb.logic.bipolar.process.base.boron' },
   { z: 6, s: 'C', n: 'CARBON', p: 2, g: 14, st: 'pure', ev: 'metal.carbon.anode' },
@@ -27,7 +27,7 @@ export const ELEMENTS = [
   { z: 8, s: 'O', n: 'OXYGEN', p: 2, g: 16, st: 'pure', ev: 'facility.gases.oxygen' },
   { z: 9, s: 'F', n: 'FLUORINE', p: 2, g: 17, st: 'comp', ev: 'metal.fluorspar' },
   { z: 10, s: 'NE', n: 'NEON', p: 2, g: 18, st: 'absent', ev: null },
-  { z: 11, s: 'NA', n: 'SODIUM', p: 3, g: 1, st: 'comp', ev: 'metal.sodium' },
+  { z: 11, s: 'NA', n: 'SODIUM', p: 3, g: 1, st: 'comp', ev: 'metal.caustic-soda' },
   { z: 12, s: 'MG', n: 'MAGNESIUM', p: 3, g: 2, st: 'comp', ev: 'mb.rf-modulator.hybrid-module.alumina-substrate.sintering-aid.magnesite' },
   { z: 13, s: 'AL', n: 'ALUMINUM', p: 3, g: 13, st: 'pure', ev: 'metal.aluminum.ingot' },
   { z: 14, s: 'SI', n: 'SILICON', p: 3, g: 14, st: 'pure', ev: 'si.wafer' },
