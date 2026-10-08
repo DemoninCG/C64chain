@@ -81,7 +81,14 @@
       ],
       "confidence": "medium",
       "provenance": "raw",
-      "note": "Saudi Light at 38-39 API is the classic light sour grade. Arab Light (35-36 API) is the heavier sour crude that historically dominated Saudi exports. Assay figures vary by stream and year. A barrel of crude is a bulk hydrocarbon stream, not a power-generation one, so it is a fluid rather than energy. This is the commodity the whole petrochemical trunk consumes, and other branches reference it as an ingredient."
+      "note": "Saudi Light at 38-39 API is the classic light sour grade. Arab Light (35-36 API) is the heavier sour crude that historically dominated Saudi exports. Assay figures vary by stream and year. A barrel of crude is a bulk hydrocarbon stream, not a power-generation one, so it is a fluid rather than energy. This is the commodity the whole petrochemical trunk consumes, and other branches reference it as an ingredient.",
+      "edges": [
+  {
+    "to": "chem.crude.reservoir.source-rock",
+    "rel": "made from",
+    "basis": "inferred"
+  }
+]
     },
     "chem.natural-gas": {
       "id": "chem.natural-gas",
@@ -165,6 +172,16 @@
           "to": "chem.natural-gas.uses.hydrogen",
           "rel": "step",
           "basis": "documented"
+        },
+        {
+          "to": "chem.natural-gas.sources.non-associated-gas.gas-reservoir",
+          "rel": "made from",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "chem.natural-gas.sources.associated-gas",
+          "rel": "made from",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -399,6 +416,11 @@
               "to": "chem.refining.atmospheric-distillation.fractionating-tower.cut-points",
               "rel": "produces",
               "role": "product",
+              "basis": "inferred"
+            },
+            {
+              "to": "chem.refining.vacuum-residue-processing",
+              "rel": "step",
               "basis": "inferred"
             }
           ]
@@ -1393,6 +1415,11 @@
                   "to": "metal.caustic-soda",
                   "rel": "consumes",
                   "basis": "documented"
+                },
+                {
+                  "to": "chem.propylene.propylene-oxide.chlorohydrin.propanol",
+                  "rel": "consumes",
+                  "basis": "typical-1982"
                 }
               ]
             },
@@ -2272,7 +2299,14 @@
       ],
       "confidence": "low",
       "provenance": "complete",
-      "note": "Established: The feedstock as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+      "note": "Established: The feedstock as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+      "edges": [
+  {
+    "to": "chem.styrene.benzene.coal-tar",
+    "rel": "made from",
+    "basis": "inferred"
+  }
+]
     },
     "chem.abs": {
       "id": "chem.abs",
@@ -5167,6 +5201,11 @@
         {
           "to": "chem.abs.grafting.rubber-phase",
           "rel": "made of"
+        },
+        {
+          "to": "chem.abs.additives",
+          "rel": "made of",
+          "basis": "inferred"
         }
       ]
     },
@@ -5271,6 +5310,11 @@
         {
           "to": "chem.acrylonitrile.sovere.catalyst.antimony",
           "rel": "made of"
+        },
+        {
+          "to": "chem.acrylonitrile.sovere.catalyst.catalyst-manufacture.silica-support",
+          "rel": "made of",
+          "basis": "inferred"
         }
       ]
     },
@@ -7891,7 +7935,14 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Carbon%20tetrafluoride"
       ],
-      "note": "CF4 boils at -128 C. Not established: the dissociation to fluorine radicals as the reason selectivity against silicon works, manufacture from fluorine and carbon or from a chlorofluorocarbon feedstock, and CF4 as the standard 1980s oxide etch gas."
+      "note": "CF4 boils at -128 C. Not established: the dissociation to fluorine radicals as the reason selectivity against silicon works, manufacture from fluorine and carbon or from a chlorofluorocarbon feedstock, and CF4 as the standard 1980s oxide etch gas.",
+      "edges": [
+  {
+    "to": "chem.fab-chemicals.etch-gases.cf4.fluorine-from-fluorspar.anhydrous-hf",
+    "rel": "made from",
+    "basis": "inferred"
+  }
+]
     },
     "chem.fab-chemicals.etch-gases.cl2": {
       "id": "chem.fab-chemicals.etch-gases.cl2",
@@ -9739,6 +9790,11 @@
           "to": "chem.crude.rig.pressure-control",
           "rel": "uses",
           "basis": "typical-1982"
+        },
+        {
+          "to": "chem.crude.rig.bit",
+          "rel": "uses",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -10093,7 +10149,14 @@
                 }
               ],
               "confidence": "low",
-              "note": "Established: The first hole into a prospect as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given."
+              "note": "Established: The first hole into a prospect as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
+              "edges": [
+  {
+    "to": "chem.crude.rig.core-drilling",
+    "rel": "step",
+    "basis": "inferred"
+  }
+]
             },
             {
               "id": "chem.crude.exploration.reserve-estimate",
@@ -10227,7 +10290,14 @@
               "children": [],
               "confidence": "low",
               "note": "Established: An elastomer-sealed packer run and set in the casing to isolate zones and provide a seat for the tubing hanger as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
-              "provenance": "incomplete"
+              "provenance": "incomplete",
+              "edges": [
+  {
+    "to": "chem.crude.well-completion.packer.elastomer",
+    "rel": "contains",
+    "basis": "documented"
+  }
+]
             },
             {
               "id": "chem.crude.well-completion.christmas-tree",
