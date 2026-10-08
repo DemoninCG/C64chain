@@ -957,6 +957,11 @@
           "to": "si.mould",
           "rel": "step",
           "basis": "typical-1982"
+        },
+        {
+          "to": "mb.sid.poly-res",
+          "rel": "contains",
+          "basis": "typical-1982"
         }
       ]
     },
@@ -2611,6 +2616,11 @@
         {
           "to": "si.front-end.resist",
           "rel": "consumes",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "chem.fab-chemicals.dopants",
+          "rel": "step",
           "basis": "typical-1982"
         }
       ]
@@ -5178,7 +5188,14 @@
       "era": "1982",
       "confidence": "high",
       "provenance": "complete",
-      "inputs": []
+      "inputs": [],
+      "edges": [
+        {
+          "to": "si.cz.crucible-sand",
+          "rel": "step",
+          "basis": "inferred"
+        }
+      ]
     },
     "mb.cpu.fe.contacts.alsi-feed": {
         "id": "mb.cpu.fe.contacts.alsi-feed",

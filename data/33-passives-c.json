@@ -1025,6 +1025,11 @@
             {
               "to": "c64.joystick.knob.abs.fire-button",
               "rel": "contains"
+            },
+            {
+              "to": "c64.joystick.knob.abs.moulding.tool",
+              "rel": "uses",
+              "basis": "typical-1982"
             }
           ]
         },
@@ -1373,6 +1378,11 @@
         {
           "to": "chem.glass-fiber",
           "rel": "made of"
+        },
+        {
+          "to": "c64.keyboard-switches.pcb-resin",
+          "rel": "made of",
+          "basis": "typical-1982"
         }
       ]
     },

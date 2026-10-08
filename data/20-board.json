@@ -555,6 +555,11 @@
           "to": "chem.solder-chemicals.cleaning",
           "rel": "step",
           "basis": "documented"
+        },
+        {
+          "to": "mb.solder.wave.cooling",
+          "rel": "step",
+          "basis": "inferred"
         }
       ]
     },
@@ -1764,6 +1769,11 @@
         {
           "to": "mb.pcb.photoresist.carrier",
           "rel": "made of"
+        },
+        {
+          "to": "chem.pcb-chemicals.dry-film-resist",
+          "rel": "step",
+          "basis": "inferred"
         }
       ]
     },
@@ -1969,6 +1979,11 @@
         {
           "to": "facility.water",
           "rel": "consumes"
+        },
+        {
+          "to": "chem.pcb-chemicals.etching.ferric-chloride.regeneration",
+          "rel": "step",
+          "basis": "inferred"
         }
       ]
     },
