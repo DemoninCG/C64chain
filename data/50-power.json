@@ -3024,16 +3024,41 @@
         }
       ]
     },
+    "chem.durene": {
+      "id": "chem.durene",
+      "name": "Durene (1,2,4,5-tetramethylbenzene)",
+      "simple_name": "Durene",
+      "description": "1,2,4,5-tetramethylbenzene (durol), the symmetrical C10 aromatic separated from methylated xylene/trimethylbenzene streams by crystallization on its high 79 C melting point and catalytically oxidised in the vapour phase to pyromellitic dianhydride, the dianhydride half of Kapton-type polyimide.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1980s",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Durene",
+        "https://en.wikipedia.org/wiki/Pyromellitic_dianhydride"
+      ],
+      "children": [],
+      "inputs": [],
+      "note": "PMDA route is durene oxidation (Ullmann-cited); the TMA route is pseudocumene oxidation, a different molecule. Upstream single leg is methylation of pseudocumene; industrial xylenes/methanol alkylation legs unmodelled.",
+      "edges": [
+        {
+          "to": "c64.psu.transformer.winding.insulation.kapton.pseudocumene",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
+    },
     "c64.psu.transformer.winding.insulation.kapton.pyromellitic-dianhydride": {
       "id": "c64.psu.transformer.winding.insulation.kapton.pyromellitic-dianhydride",
       "sources": [
         "https://en.wikipedia.org/wiki/Kapton",
         "https://en.wikipedia.org/wiki/Polyimide",
-        "https://en.wikipedia.org/wiki/Trimellitic_anhydride"
+        "https://en.wikipedia.org/wiki/Pyromellitic_dianhydride"
       ],
       "name": "Pyromellitic dianhydride monomer",
       "simple_name": "Pyromellitic dianhydride",
-      "description": "The diacid anhydride half of Kapton is made by air oxidation of pseudocumene to trimellitic acid and then dehydrating it. This is a petroleum-aromatics chain. The diamine half is 4,4'-oxydianiline or p-phenylenediamine, both aromatics intermediates.",
+      "description": "The diacid anhydride half of Kapton is made by vapour-phase catalytic oxidation of durene (1,2,4,5-tetramethylbenzene). This is a petroleum-aromatics chain. The diamine half is 4,4'-oxydianiline or p-phenylenediamine, both aromatics intermediates. (Trimellitic anhydride, the C9 single anhydride from pseudocumene oxidation, is a different molecule.)",
       "kind": "material",
       "category": "plastics",
       "era": "1980s",
@@ -3053,7 +3078,7 @@
       "inputs": [],
       "edges": [
         {
-          "to": "c64.psu.transformer.winding.insulation.kapton.pseudocumene",
+          "to": "chem.durene",
           "rel": "made from",
           "basis": "documented"
         }
@@ -5084,7 +5109,7 @@
         "id": "c64.psu.transformer.winding.insulation.kapton.pseudocumene",
         "name": "Pseudocumene aromatics feed",
         "simple_name": "Pseudocumene",
-        "description": "1,2,4-trimethylbenzene C9 aromatic from reformer and naphtha cut, oxidised to trimellitic acid then dehydrated to pyromellitic dianhydride.",
+        "description": "1,2,4-trimethylbenzene C9 aromatic from reformer and naphtha cut, oxidised to trimellitic acid then dehydrated to trimellitic anhydride (TMA, the C9 single anhydride - a different molecule from pyromellitic dianhydride).",
         "kind": "material",
         "category": "plastics",
         "era": "1980s",
