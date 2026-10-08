@@ -1944,6 +1944,48 @@
         }
       ]
     },
+    "metal.nickel-oxide.niO-grade": {
+      "id": "metal.nickel-oxide.niO-grade",
+      "name": "Reforming-catalyst-grade nickel oxide",
+      "simple_name": "Catalyst-grade NiO",
+      "description": "Reforming-catalyst-grade nickel oxide as supplied: NiO dispersed on a refractory support (alpha-alumina ceramic at typically ~17% NiO per KATALCO 23-series practice; calcium-aluminate 57-series analogue), reduced in situ to active Ni in the reformer tubes. NOT the carbonate-route bulk NiO to ferronickel, stainless and plating.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1980s",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "note": "JM KATALCO 23-series typical ~17% NiO on alpha-alumina; 57-series loadings less verified. Distinct from bulk carbonate-route NiO (R2-complete route, untouched).",
+      "children": [],
+      "inputs": []
+    },
+    "metal.alumina.support": {
+      "id": "metal.alumina.support",
+      "name": "Refractory alumina catalyst support",
+      "simple_name": "Alumina support",
+      "description": "Refractory alumina catalyst-support grade for steam reforming: alpha-alumina ceramic (KATALCO 23-series) or calcium aluminate (57-series), high-temperature stable carrier for NiO crystallites. Distinct from smelter-grade alumina (Hall-Heroult feed) and from chlorided gamma-alumina Pt-reforming support.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1980s",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "note": "Two support chemistries on one node per the JM series structure. Support-grade calcination route unestablished; left unanchored rather than borrowing the smelter-alumina Bayer leg (wrong grade).",
+      "children": [],
+      "inputs": []
+    },
+    "metal.lithium": {
+      "id": "metal.lithium",
+      "name": "Lithium metal",
+      "simple_name": "Lithium metal",
+      "description": "Lithium metal: cast and extruded ingots and rod from LiCl-KCl eutectic electrolysis, reacted in bulk form with n-butyl chloride in hydrocarbon or ether at reflux to n-butyllithium at high yield. Battery-era demand did not exist in 1982; the metal documented here is the organolithium feed.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1980s",
+      "confidence": "low",
+      "provenance": "incomplete",
+      "note": "FMC bulk-lithium practice (cast/extruded ingots, hexane reflux) is era-plausible; LiCl feed grade, cell details and any 1982 supplier unestablished. LiCl-KCl electrolysis per Kipouros/OSTI/US4617098 as cited in grounding.",
+      "children": [],
+      "inputs": []
+    },
     "metal.stainless.304": {
       "id": "metal.stainless.304",
       "name": "AISI 304 and 430 stainless steel",
@@ -4099,7 +4141,7 @@
     },
     "metal.palladium": {
       "id": "metal.palladium",
-      "name": "Platinum-group metals from the anode slime",
+      "name": "Platinum-group metals (matte and slime sources)",
       "simple_name": "Platinum-group metals",
       "description": "The anode slime also carries platinum, palladium, ruthenium, iridium, rhodium and osmium, at grams per tonne of copper rather than kilograms, so the volumes are tiny and the values are astronomical. In 1982 most of the world's refined palladium came from the nickel-copper ores of the Sudbury and Norilsk basins and from the Bushveld's platinum mines rather than from the copper anode slimes, but the slimes were a real secondary source for platinum and rhodium. The refining route is a solvent extraction and precipitation circuit followed by a final electrolytic or thermal refining, and by 1982 the platinum-group market was dominated by South Africa and the Soviet Union, whose platinum was the ore of choice for autocatalyst converters in the 1970s.",
       "kind": "material",
@@ -4132,7 +4174,66 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Palladium"
       ],
-      "note": "Medium confidence on the slime assays; the primary sources and the autocatalyst history are well documented."
+      "note": "Medium confidence on the slime assays; the primary sources and the autocatalyst history are well documented.",
+      "children": [],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.pgm-matte",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
+    },
+    "metal.bushveld-concentrate": {
+      "id": "metal.bushveld-concentrate",
+      "name": "Bushveld PGM flotation concentrate",
+      "simple_name": "Bushveld concentrate",
+      "description": "Bushveld PGM flotation concentrate: Merensky Reef (and UG2) ore upgraded by flotation to a sulphide concentrate carrying PGM at two orders of magnitude above reef grade, feed to six-electrode furnace matte smelting (roasted first to cut converter load).",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "note": "Grade numbers for concentrate (g/t PGM) deliberately omitted: source tables vary by reef and plant.",
+      "children": [],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.chromite.merensky",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
+    },
+    "metal.pgm-matte": {
+      "id": "metal.pgm-matte",
+      "name": "PGM-bearing nickel-copper converter matte",
+      "simple_name": "PGM matte",
+      "description": "PGM-bearing nickel-copper converter matte: the smelter intermediate from which Pd, Pt and Rh are refined. Two 1982 feeds: Sudbury/Norilsk sulphide smelter matte and Bushveld furnace-to-converter matte (flotation concentrate melted in six-electrode furnaces, FeS converted in Pierce-Smith vessels). Distinct from copper anode slime, which is only a secondary PGM source.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1982",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "sources": [
+        "https://www.saimm.co.za/Journal/v115n06p507.pdf"
+      ],
+      "note": "Matte and concentrate are distinct flowsheet stages (mine flotation product vs smelter intermediate); collapsing them would hide the furnace/convert step.",
+      "children": [],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.bushveld-concentrate",
+          "rel": "made from",
+          "basis": "documented"
+        },
+        {
+          "to": "metal.nickel.sulphide-concentrate",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
     },
     "metal.anode-slime.selenide": {
       "id": "metal.anode-slime.selenide",

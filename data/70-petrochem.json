@@ -3987,7 +3987,21 @@
       "era": "1960s",
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Not established: the tube count and dimensions, pressures and inlet and outlet temperatures quoted for early-1980s multi-bed reformers, and how widely the older nickel-chromium formulation persisted."
+      "note": "Not established: the tube count and dimensions, pressures and inlet and outlet temperatures quoted for early-1980s multi-bed reformers, and how widely the older nickel-chromium formulation persisted.",
+      "children": [],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.nickel-oxide.niO-grade",
+          "rel": "made of",
+          "basis": "documented"
+        },
+        {
+          "to": "metal.alumina.support",
+          "rel": "made of",
+          "basis": "documented"
+        }
+      ]
     },
     "chem.natural-gas.uses.hydrogen.to-ammonia.catalyst": {
       "id": "chem.natural-gas.uses.hydrogen.to-ammonia.catalyst",
@@ -4513,7 +4527,61 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Organolithium%20chemistry"
       ],
-      "note": "Butyllithium is among the most used organolithium reagents. Not established: the 10-20 wt% solution in hexane, its pyrophoricity as a handling fact for this application, and the manufacture from lithium metal and butyl chloride."
+      "note": "Butyllithium is among the most used organolithium reagents. Not established: the 10-20 wt% solution in hexane, its pyrophoricity as a handling fact for this application, and the manufacture from lithium metal and butyl chloride.",
+      "edges": [
+  {
+    "to": "metal.lithium",
+    "rel": "made from",
+    "basis": "documented"
+  },
+  {
+    "to": "metal.n-butyl-chloride",
+    "rel": "made from",
+    "basis": "documented"
+  }
+]
+    },
+    "metal.crack-alloy": {
+      "id": "metal.crack-alloy",
+      "name": "Cast radiant-tube alloy (Incoloy 800 / HP)",
+      "simple_name": "Radiant-tube alloy",
+      "description": "Cast heat-resistant alloy for steam-cracker radiant coils: Incoloy 800 family (Ni 30-35, Cr 19-23, Fe balance) and HP-modified 35Cr-45Ni grades of the 1980s, centrifugally cast tube for 850 C metal skin in oxidising fire gas.",
+      "kind": "material",
+      "category": "metals",
+      "era": "1980s",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "note": "Incoloy 800 Ni/Cr ranges per Special Metals/AZoM; HP grades per service literature. Cast-tube manufacture and any 1982 supplier unestablished.",
+      "children": [],
+      "inputs": []
+    },
+    "chem.diatomite": {
+      "id": "chem.diatomite",
+      "name": "Diatomaceous earth (mined)",
+      "simple_name": "Diatomaceous earth",
+      "description": "Mined porous biogenic silica (diatom frustules), calcined for use as the phosphoric-acid catalyst carrier in cumene alkylation and as filter aid. The natural mineral behind the kieselguhr carrier.",
+      "kind": "material",
+      "category": "fluids",
+      "era": "1980s",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "note": "Mine endpoint: no earlier node needed in scope. Calcination specifics and any 1982 supplier unestablished.",
+      "children": [],
+      "inputs": []
+    },
+    "metal.n-butyl-chloride": {
+      "id": "metal.n-butyl-chloride",
+      "name": "n-Butyl chloride",
+      "simple_name": "n-Butyl chloride",
+      "description": "1-chlorobutane for n-butyllithium synthesis with lithium metal. Made from n-butanol and hydrogen chloride; the butanol node is unmodelled.",
+      "kind": "material",
+      "category": "fluids",
+      "era": "1980s",
+      "confidence": "low",
+      "provenance": "incomplete",
+      "note": "n-BuOH+HCl route per OrgSyn; butanol feed grade and any 1982 supplier unestablished. Withheld upstream (no butanol node) rather than invented.",
+      "children": [],
+      "inputs": []
     },
     "chem.butadiene.sources.cracker-c4": {
       "id": "chem.butadiene.sources.cracker-c4",
@@ -5614,7 +5682,14 @@
       ],
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Coil alloy compositions vary between licensors (Sons, Lummus, Mitsubishi, Linde) and the alloy detail is a metals-chain item. What matters here is that it is a cast high-nickel alloy bought in tonnes."
+      "note": "Coil alloy compositions vary between licensors (Sons, Lummus, Mitsubishi, Linde) and the alloy detail is a metals-chain item. What matters here is that it is a cast high-nickel alloy bought in tonnes.",
+      "edges": [
+  {
+    "to": "metal.crack-alloy",
+    "rel": "made of",
+    "basis": "typical-1982"
+  }
+]
     },
     "chem.ethylene.steam-cracking.furnace.epoxy-coating": {
       "id": "chem.ethylene.steam-cracking.furnace.epoxy-coating",
@@ -7027,7 +7102,14 @@
       "era": "1940s",
       "confidence": "medium",
       "provenance": "incomplete",
-      "note": "Kieselguhr/diatomaceous earth as the SPA carrier per UOP practice (US4051191, US4912279); the four-supports-are-one-material claim is withdrawn. Not established: the surface area of the alkylation catalyst carrier."
+      "note": "Kieselguhr/diatomaceous earth as the SPA carrier per UOP practice (US4051191, US4912279); the four-supports-are-one-material claim is withdrawn. Not established: the surface area of the alkylation catalyst carrier.",
+      "edges": [
+  {
+    "to": "chem.diatomite",
+    "rel": "made of",
+    "basis": "typical-1982"
+  }
+]
     },
     "chem.propylene.flame-retardants.chlorinated-paraffin": {
       "id": "chem.propylene.flame-retardants.chlorinated-paraffin",
