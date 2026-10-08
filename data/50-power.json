@@ -1624,11 +1624,11 @@
           "confidence": "high",
           "name": "Video amplifier and clip network",
           "simple_name": "Video amplifier",
-          "description": "Three small-signal transistors that take the VIC-II's pin 15 (sync + luminance) and pin 14 (colour), clip them with back-to-back diodes, and provide the two separate buffered outputs that go to the monitor connector as S-Video plus the summed composite that drives the RF section. Commodore called Q1-Q3 2SC1694 or equivalent; the earlier 251696 drawing uses 2SC2405.",
+          "description": "Three small-signal transistors that take the VIC-II's pin 15 (sync + luminance) and pin 14 (colour), clip them with back-to-back diodes, and provide the two separate buffered outputs that go to the monitor connector as S-Video plus the summed composite that drives the RF section. Commodore called Q1-Q3 2SC1684 or equivalent (251025 note 1); the earlier 251696 drawing uses 2SC2405.",
           "facts": [
             {
               "label": "Q1, Q2, Q3 (251025)",
-              "value": "2SC1694 or equivalent; Q4 2SC1730, Q5 2SC460, Q6 2SC2120"
+              "value": "2SC1684 or equivalent; Q4 2SC1730, Q5 2SC460, Q6 2SC2120"
             },
             {
               "label": "Q1, Q2 (251696)",
@@ -1651,8 +1651,8 @@
               "era": "1982",
               "confidence": "medium",
               "provenance": "complete",
-              "name": "2SC1694 small-signal NPN",
-              "simple_name": "2SC1694 small-signal NPN",
+              "name": "2SC1684 small-signal NPN",
+              "simple_name": "2SC1684 small-signal NPN",
               "description": "A TO-92 epoxy-potted silicon NPN with a 100-150 V collector rating, used as a common-emitter amplifier with a collector resistor and an unbypassed emitter resistor. The 2SC-prefix parts were the standard Japanese equivalents of the 2N series, and Commodore specified them as 'or equivalent'.",
               "facts": [
                 {
@@ -1664,7 +1664,7 @@
                   "value": "~100-150 V / 50-150 mA class"
                 }
               ],
-              "note": "Not established: the 2SC1694's 100-150 V collector rating and 50-150 mA class, the TO-92 epoxy-filled package, and Commodore's practice of specifying 2SC-prefix parts as \"or equivalent\" against 2N3904/2N4401. No datasheet for the 2SC1694 was consulted, so the ratings and package here are unsourced.",
+              "note": "Designation 2SC1684 documented (251025 note 1, Zimmers gif verified). No period datasheet found for the 2SC1684 (absent from NEC 1987 Si Transistors/Diode databook and Fairchild Discrete Data Book 1985, which carries zero 2SC types), so the 100-150 V / 50-150 mA ratings, TO-92 epoxy package and 2N-equivalence practice remain unsourced.",
               "children": [],
               "inputs": [],
               "edges": [
@@ -1687,18 +1687,18 @@
               "facts": [
                 {
                   "label": "Type",
-                  "value": "1SS119 (251025) / MA151K (251696) or equivalent"
+                  "value": "251025: D2,D3 1SS119 / D4,D5 1SS86 or 1SS174 / D6 1SS110 (all OR EQUIVALENT, drawing note 5); 251696: D1,D2 MA151K / D4,D5 1SS198 (OR EQUIVALENT, drawing notes 1 and 3)"
                 },
                 {
                   "label": "Vf",
-                  "value": "~0.6-0.7 V at 1 mA"
+                  "value": "1SS119: 0.8 V max at 10 mA (Hitachi 1995 sheet; out-of-era, period value not established)"
                 },
                 {
                   "label": "Package",
-                  "value": "DO-35 glass, 2 mm diameter"
+                  "value": "DO-34 glass (HITACHI code MHD, 0.084 g) per Hitachi 1SS119 sheet; tree's DO-35/2 mm replaced"
                 }
               ],
-              "note": "Not established: the 1SS119 and MA151K designations, the ~0.6-0.7 V forward drop at 1 mA, the DO-35 2 mm package, and the back-to-back sync-clipping topology. The 1992 service manual confirms that the modulator takes the VIC-II's sync/luminance on pin 15 and colour on pin 14 and mixes them with audio, but says nothing about the clipping diodes. No datasheet for either part was consulted."
+              "note": "Zimmers primaries add four designations the tree omitted (1SS86/1SS174/1SS110 on 251025; 1SS198 on 251696). 1SS119 confirmed on 251025 D2,D3 and documented by a Hitachi single-device sheet (Rev.1 Aug 1995, out-of-era, so ratings carry an era caveat). MA151K confirmed by designation; no databook found. Not established: the back-to-back sync-clipping topology. The 1992 service manual confirms that the modulator takes the VIC-II's sync/luminance on pin 15 and colour on pin 14 and mixes them with audio, but says nothing about the clipping diodes."
             }
           ]
         },
@@ -1752,14 +1752,14 @@
               "facts": [
                 {
                   "label": "f_T",
-                  "value": "~250-350 MHz class"
+                  "value": "800 MHz min, 1100 MHz typ at Vce=10 V, Ie=5 mA (NEC 1987, documented)"
                 },
                 {
                   "label": "Vceo",
-                  "value": "~20-40 V"
+                  "value": "Vceo 16 V, Vcbo 30 V, Vebo 5.0 V, Ic 50 mA, Cob 1.5 pF max, Pc 290 mW (NEC 1987, documented)"
                 }
               ],
-              "note": "Both are Japanese VHF small-signal types with f_T in the low hundreds of MHz; the exact figures are not verified against a 1982 data book.",
+              "note": "2SC1730 documented in NEC 1987 Silicon Transistors and Diodes databook (VHF/UHF oscillator/mixer tuner use, fT 1100 MHz typ, Cob 1.5 pF). 2SC2778 half not found in NEC 1987 or Fairchild 1985; its figures remain unsourced.",
               "children": [],
               "inputs": [],
               "edges": [
@@ -1920,18 +1920,18 @@
               "provenance": "incomplete",
               "name": "Intercarrier selector terminal",
               "simple_name": "Intercarrier selector terminal",
-              "description": "A single link or jumper on terminal 8 that reconfigures the intercarrier oscillator between 4.5 and 5.5 MHz. It is the PAL/NTSC configuration link for the whole module, and it is why one board could serve both markets with a single part change.",
+              "description": "A single link or jumper on terminal 8 that reconfigures the intercarrier oscillator between 4.5 and 5.5 MHz. Terminal 8 is an intercarrier selector: the 251025 drawing notes NO.8 TERMINAL SHORT=G.PAL / OPEN=I.PAL, i.e. both legs are PAL variants (5.5 vs 6.0 MHz markets); no NTSC leg appears on this drawing.",
               "facts": [
                 {
                   "label": "Terminal 8",
-                  "value": "shorted to ground = PAL (5.5 MHz); open = NTSC (4.5 MHz)"
+                  "value": "SHORT=G.PAL / OPEN=I.PAL per 251025 note 3 (5.5 vs 6.0 MHz assignment inferred, not established)"
                 },
                 {
                   "label": "Implementation",
                   "value": "a link or a switch contact in the oscillator bias network"
                 }
               ],
-              "note": "Not established: terminal 8 being shorted to ground for PAL (5.5 MHz) and open for NTSC (4.5 MHz), and its implementation as a link or switch contact in the oscillator bias network. The 1992 service manual confirms two modulator variants exist (schematic 251025 for board 250425-01 and schematic 251696 for board 250407-04, the latter listed as \"Modulator NTSC\") which supports the two-market point, but the terminal-8 strapping note is not in any source consulted."
+              "note": "Documented that terminal 8 is a short/open intercarrier selector (251025 drawing note 3, verbatim G.PAL/I.PAL); the 5.5/6.0 MHz assignment to short/open and any NTSC use are not established. The 1992 service manual confirms two modulator variants exist (schematic 251025 for board 250425-01 and schematic 251696 for board 250407-04, the latter listed as \"Modulator NTSC\") which supports the two-market point, but the terminal-8 strapping note is not in any source consulted."
             }
           ]
         },
@@ -2080,7 +2080,7 @@
               "facts": [
                 {
                   "label": "Type",
-                  "value": "HZ-7A1 (~6.8-8.2 V) or equivalent"
+                  "value": "HZ-7 (251025 D1) / HZ-7A1 (251696 D6), or equivalent"
                 },
                 {
                   "label": "Breakdown tolerance",
@@ -2091,7 +2091,7 @@
                   "value": "~+2 mV per volt of nominal per degree C"
                 }
               ],
-              "note": "The C64 mainboard itself uses 2.7 V (1N4371) and 7.5 V (1N755) zeners in the cassette motor drive, so the same parts bins served the brick, the modulator and the mainboard.",
+              "note": "The C64 mainboard itself uses 2.7 V (1N4371) and 7.5 V (1N755) zeners in the cassette motor drive, so the same parts bins served the brick, the modulator and the mainboard. Both suffixes primary-documented (251025 note 5 HZ-7; 251696 note 4 HZ-7A1; service-manual OCR confirms HZ-7A1). No HZ-series data in NEC 1987 or Fairchild 1985, so nominal voltage, tolerance and tempco stay unsourced.",
               "children": [],
               "inputs": [],
               "edges": [
@@ -2163,12 +2163,24 @@
             {
               "label": "Mitsumi MD6-VA3402/3403/3405",
               "value": "NTSC versions with different electrolytic sets"
+            },
+            {
+              "label": "M1 251080-01",
+              "value": "250407-04 parts list"
+            },
+            {
+              "label": "M1 251696-01",
+              "value": "RF Modulator NTSC C64 (250425 parts list)"
+            },
+            {
+              "label": "M1 252405-01",
+              "value": "Modulator NTSC (B-3/E parts lists)"
             }
           ],
           "sources": [
             "https://hd.retrorewind.ca/commodore/c64/rf-modulator"
           ],
-          "note": "The part numbers 474040 and 474041 are not found in any Commodore document or parts list. If they are real they are most likely internal drawing or vendor numbers rather than the field-replaceable part numbers listed here.",
+          "note": "The part numbers 474040 and 474041 are not found in any Commodore document or parts list. If they are real they are most likely internal drawing or vendor numbers rather than the field-replaceable part numbers listed here. 251696-01/252405-01/251080-01 added from service-manual OCR passages confirmed in-session.",
           "children": [
             {
               "id": "mb.rf-modulator.variants.mitsumi",
@@ -2641,7 +2653,7 @@
       ],
       "name": "Cell separator",
       "simple_name": "Cell separator",
-      "description": "A porous dielectric sheet between the anode and the cathode foil, keeping them apart without shorting. Low-voltage parts in 1980-82 used cellulose (paper) separators, which is the direct cause of the decades-later failure: paper is hygroscopic and absorbs electrolyte, and the carbonisation of that paper when leakage current rises shorts the cell.",
+      "description": "A porous sheet between the anode and the cathode foil, keeping them apart without shorting. The brick's 4700 uF part used a cellulose (kraft paper) separator: a highly absorbent high-purity paper that doubles as the electrolyte reservoir. Microporous polypropylene film was the premium longer-life alternative of the period and is not documented in this part. Paper is hygroscopic and absorbs electrolyte, and the carbonisation of that paper when leakage current rises shorts the cell.",
       "kind": "material",
       "category": "passives",
       "era": "1980s",
@@ -2658,10 +2670,6 @@
       "confidence": "high",
       "children": [],
       "edges": [
-        {
-          "to": "c64.psu.bulk-cap.separator.polypropylene",
-          "rel": "made of"
-        },
         {
           "to": "c64.psu.bulk-cap.separator.cellulose",
           "rel": "made of"
