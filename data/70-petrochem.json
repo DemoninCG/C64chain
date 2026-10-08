@@ -2938,6 +2938,11 @@
                       "to": "metal.silica.mgsi",
                       "rel": "consumes",
                       "basis": "documented"
+                    },
+                    {
+                      "to": "chem.methyl-chloride",
+                      "rel": "consumes",
+                      "basis": "typical-1982"
                     }
                   ]
                 },
@@ -3071,6 +3076,11 @@
                       "to": "chem.natural-gas.uses.fertiliser-ammonia",
                       "rel": "consumes",
                       "basis": "documented"
+                    },
+                    {
+                      "to": "chem.urea",
+                      "rel": "consumes",
+                      "basis": "typical-1982"
                     }
                   ]
                 }
@@ -3287,6 +3297,58 @@
           "to": "chem.propylene.sources.cracker-c3",
           "rel": "made from",
           "basis": "documented"
+        }
+      ]
+    },
+    "chem.methyl-chloride": {
+      "id": "chem.methyl-chloride",
+      "name": "Methyl chloride",
+      "simple_name": "Methyl chloride",
+      "description": "Methanol hydrochlorinated to methyl chloride, the methylating agent condensed with silicon and copper in the Rochow direct process and quaternised with trimethylamine toward TMAH developer. Made from methanol and hydrogen chloride at type level.",
+      "kind": "material",
+      "category": "fluids",
+      "era": "1980s",
+      "confidence": "low",
+      "provenance": "incomplete",
+      "note": "Established as a type: methyl chloride as the Rochow methylating agent and the quaternary-salt methyl source. Not established: the hydrochlorination route conditions, the methanol/HCl grades, or any 1982 supplier. Created to anchor the Rochow and quaternary-salt methyl legs.",
+      "children": [],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "chem.methanol",
+          "rel": "made from",
+          "basis": "inferred"
+        },
+        {
+          "to": "metal.hydrochloric-acid",
+          "rel": "made from",
+          "basis": "inferred"
+        }
+      ]
+    },
+    "chem.urea": {
+      "id": "chem.urea",
+      "name": "Urea",
+      "simple_name": "Urea",
+      "description": "Ammonia plus carbon dioxide at 180-220 C and 15-25 bar to ammonium carbamate, dehydrated to urea. The nitrogen-branch feed condensed with formaldehyde to urea-formaldehyde thermosets and carried via melamine to melamine-formaldehyde resins.",
+      "kind": "material",
+      "category": "fluids",
+      "era": "1920s",
+      "confidence": "low",
+      "provenance": "incomplete",
+      "note": "Route conditions per the urea-formaldehyde process description; Bosch-Meiser specifics and any 1982 supplier not established. Created to anchor the UF and melamine-resin urea legs (melamine intermediate itself still unmodelled).",
+      "children": [],
+      "inputs": [],
+      "edges": [
+        {
+          "to": "metal.ammonia",
+          "rel": "made from",
+          "basis": "inferred"
+        },
+        {
+          "to": "facility.gases.carbon-dioxide",
+          "rel": "made from",
+          "basis": "inferred"
         }
       ]
     },
@@ -11327,7 +11389,14 @@
         "confidence": "low",
         "note": "Quat composition and sodium limits per candidate description only; grade only.",
         "children": [],
-        "provenance": "incomplete"
+        "provenance": "incomplete",
+        "edges": [
+          {
+            "to": "chem.methyl-chloride",
+            "rel": "made from",
+            "basis": "inferred"
+          }
+        ]
       },
     "chem.natural-gas.composition.ethane-propane.wellhead-gas": {
         "id": "chem.natural-gas.composition.ethane-propane.wellhead-gas",
