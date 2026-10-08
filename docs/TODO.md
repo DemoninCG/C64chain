@@ -284,9 +284,12 @@ The chain backlog is down from 851 via the petroleum trunk, scoping, substance
 nodes, branch audit, the leaf fan-out, and the 2026-10-07 campaign
 (422 → 284), up to 296 after the modelling pass + Wave 8 additions, and back
 to 284 via the 2026-10-08 zero-edge scan batches (§5) + 2 merges.
-Batch-2 (this session, 6 read-only slices + central serial apply): 51 scopes
-(281 → 230), anchors in parts (230 → 132 and falling), 8 mergers via
-`_proposals` arbitration, 6 deletes, 5 NEW-NODEs with anchored legs.
+Batch-2 (this session, 6 read-only slices + central serial apply, re-measured
+2026-10-08 at 2568 nodes): 51 scopes (281 → 230), anchors in parts
+(230 → 128), 8 mergers via `_proposals` arbitration (203 total), 6 deletes,
+7 NEW-NODEs with anchored legs (stibnite, permalloy, aniline, boric-acid,
+bulk-concentrate, methyl-chloride, urea). 280 zero-edge incompletes remain,
+27 of them orphans.
 
 The remaining cases fall into these overlapping classes; the older per-class
 estimates are omitted because they were not re-counted after the later passes.
@@ -390,7 +393,7 @@ flagged per original verdict). Re-measured 2026-10-08T03:24Z (2575 nodes /
 absent 194; all nodes raw 106 / complete 501 / incomplete 835 / absent 1133.
 The 194 absent leaves are modelling-pass + Wave 8 additions not yet flagged;
 314 incomplete leaves had zero typed `edges[]` at scan start (highest-leverage
-subset), 281 remain after the first application round below.
+subset), 280 remain after the first application round and batch-2 below.
 All six packages ran in parallel (8 agents:
 evidence split in thirds) with central verification and serial apply —
 see the log entry above for arbitration outcomes. The evidence sweep returned
