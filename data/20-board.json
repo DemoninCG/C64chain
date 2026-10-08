@@ -81,7 +81,7 @@
           ],
           "note": "The $1-2 figure is the era cost quoted for the C64 printed-circuit board.",
           "confidence": "medium",
-          "provenance": "incomplete"
+          "provenance": "complete"
         }
       ],
       "edges": [
@@ -243,7 +243,7 @@
               "era": "1980s",
               "inputs": [],
               "confidence": "medium",
-              "provenance": "incomplete",
+              "provenance": "complete",
               "note": "A welded mild-steel frame carrying pot, tunnel, conveyor, hood and flux plumbing is the ordinary machine body. Not established: the frame dimensions, weld method, or steel grade on the C64 wave machine.",
               "edges": [
                 {
@@ -517,7 +517,7 @@
           "inputs": [],
           "note": "Modern lead-free practice would drag a solder bead along the pins to wick off the excess and, failing that, use a solder pot. The prevalence of resoldered connector joints on forty-year-old C64 boards is decent evidence that these joints were marginal from the start.",
           "confidence": "medium",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "edges": [
             {
               "to": "facility.electricity",
@@ -838,7 +838,7 @@
           ],
           "note": "The engineering team's stated culture was that if a product worked it shipped, and that quality control was not coming close enough to where it should have been. That is visible in this subsystem as rework rather than scrap.",
           "confidence": "medium",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "edges": [
             {
               "to": "facility.electricity",
@@ -956,7 +956,7 @@
                   "rel": "consumes"
                 }
               ],
-              "provenance": "incomplete"
+              "provenance": "complete"
             },
             {
               "id": "mb.test.ict.presence",
@@ -975,7 +975,7 @@
                   "rel": "consumes"
                 }
               ],
-              "provenance": "incomplete"
+              "provenance": "complete"
             },
             {
               "id": "mb.test.ict.tester",
@@ -1102,7 +1102,7 @@
                   "rel": "consumes"
                 }
               ],
-              "provenance": "incomplete"
+              "provenance": "complete"
             }
           ]
         },
@@ -1236,7 +1236,7 @@
                   "rel": "consumes"
                 }
               ],
-              "provenance": "incomplete"
+              "provenance": "complete"
             }
           ],
           "note": "A last power-on pass over the cased machine before packing is ordinary factory practice. Not established: which ports or functions the C64 final pass covered, how long it ran, or what fraction of machines saw it.",
@@ -1548,7 +1548,7 @@
           "inputs": [],
           "note": "Two-sided registration (landing the second side's artwork on the copper to within a fraction of a millimetre, using alignment pins and a register mark) is the hard part of a two-sided board. On this board it matters mainly for the mounting holes and the connector slots. On a via-heavy board it is what decides whether every barrel lands on its own pad. Having no vias makes it a far less critical operation than it would otherwise be, one of the quieter payoffs of the layer-change-by-component-lead strategy.",
           "confidence": "high",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "sources": [
             "https://patents.google.com/patent/US6037100A/en"
           ],
@@ -1579,7 +1579,7 @@
           "era": "1980s",
           "inputs": [],
           "confidence": "medium",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "note": "Panelisation itself is ordinary board-shop practice, with several boards grouped on one panel for processing and separated afterwards. Not established: the panel size for the 250407 order, how many boards shared a panel, or that this panel used perforated mouse-bite tabs leaving a rough board edge.",
           "edges": [
             {
@@ -1962,7 +1962,7 @@
       "inputs": [],
       "note": "The general step is established: chemical etching divides the copper into separate conducting lines called tracks or circuit traces, pads for connections, vias to pass connections between layers of copper, and features such as solid conductive areas for electromagnetic shielding. The 2 FeCl3 + Cu -> 2 FeCl2 + CuCl2 stoichiometry follows from that and is not separately cited. Not established: that this line used ferric chloride rather than sodium persulphate or a cupric chloride bath, the 42 deg Baume figure, the 40-50 deg C, the 20-45 minute etch time for 35 um copper, and the practice of dumping and remaking the bath as copper accumulates. Period text consistently quotes 42 deg Baume ferric chloride around 45 deg C. Sodium persulfate was a real alternative for some shops. Modern practice is still ferric chloride, but with tighter control and a copper-recovery loop. The etchant itself, its Baume range and its regeneration are the shared node chem.pcb-chemicals.etching.ferric-chloride. This node is the board-shop step that uses it.",
       "confidence": "medium",
-      "provenance": "incomplete",
+      "provenance": "complete",
       "sources": [
         "https://en.wikipedia.org/wiki/Printed_circuit_board"
       ],
@@ -2343,7 +2343,7 @@
           "era": "1980s",
           "inputs": [],
           "confidence": "medium",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "note": "Squeegeeing epoxy ink through a tensioned emulsion-coated mesh and baking it onto the mask is ordinary legend printing. Not established: the mesh count, emulsion type, or bake time and temperature for the 250407 legend.",
           "edges": [
             {
@@ -2368,7 +2368,7 @@
           "inputs": [],
           "note": "The exact set of colours used on the 250407 has not been confirmed here.",
           "confidence": "medium",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "edges": [
             {
               "to": "facility.electricity",
@@ -2410,7 +2410,7 @@
           "rel": "consumes"
         }
       ],
-      "provenance": "incomplete"
+      "provenance": "complete"
     },
     "mb.photo.plotter.film": {
       "id": "mb.photo.plotter.film",
@@ -2521,7 +2521,7 @@
       "inputs": [],
       "note": "Wet resist offered the no-prep advantage. Dry film offered the thickness control. Dry film won on thickness.",
       "confidence": "medium",
-      "provenance": "incomplete",
+      "provenance": "complete",
       "edges": [
         {
           "to": "facility.electricity",
@@ -2654,7 +2654,7 @@
       "category": "board",
       "era": "1980s",
       "confidence": "medium",
-      "provenance": "incomplete",
+      "provenance": "complete",
       "note": "175 C and 1.4 MPa are period-typical FR-4 press conditions; the supplier's ramp, soak and cooldown schedule is unrecorded.",
       "sources": [
         "https://jlcpcb.com/blog/fr4-pcb-guide-material-specs-usage-tips"
@@ -2778,7 +2778,7 @@
             "basis": "inferred"
           }
         ],
-        "provenance": "incomplete"
+        "provenance": "complete"
       },
     "mb.pcb.legend.white-ink": {
         "id": "mb.pcb.legend.white-ink",

@@ -150,6 +150,15 @@ stays readable.
   `.gitignore` (with rationale comment) untracked the five build outputs on
   2026-10-04; they are present in history before that commit and regenerated
   by `npm run build`. Nothing to do.
+- **Provenance re-review (2026-10-08).** `docs/PROVENANCE-REVIEW.md` written
+  (six checks + class gate + R2/staleness rulings); blind calibration 75%
+  then 95% after three wording fixes; 7-slice fan-out over all 853
+  incompletes; 195 promotions applied centrally after reachability gating
+  (10 orphan + 2 sourceless-basis rows flipped back to KEEP) plus 2 central
+  overrides and 3 content follow-ups (zinc-dust R4 retype, novolac
+  phenol→p-cresol re-author + promote, 3 stale-note refreshes). Complete
+  501 → 693; incomplete 853 → 657 (2585 nodes). KEEP blockers feed
+  research/orphan/modeling queues by category.
 
 ## 0. Still open, non-blocking
 
@@ -252,9 +261,10 @@ stays readable.
   to match note; xanthate renamed ethyl (SIPC acronym dropped as isopropyl).
 - Provenance research waves (guide: `docs/RESEARCH-GUIDE.md`; rulings R1–R5
   in §9): Waves 1–7 done. Wave 8 (industry/utilities) in progress.
-  Remaining: a provenance re-review pass (flags were deliberately left
-  untouched by research waves; promotion to complete needs the re-review
-  discipline, never an edge count).
+  Re-review pass DONE 2026-10-08 (guide: `docs/PROVENANCE-REVIEW.md`;
+  95% calibration; 195 promotions incl. the 80/90 slices; 657 incomplete
+  remain with categorized blockers). Open: newly created nodes' flags,
+  and the KEEP-blocker categories (evidence, orphan anchors, modeling).
 - Orphan queue for batch 2: catalogue leftovers (43 chain orphans held directly
   under `unlinked.catalogue`, re-measured 2026-10-08 — mostly 70-petrochem
   branch-heads: acrylonitrile, crude+reservoir subtree, fab/pcb-chemicals,

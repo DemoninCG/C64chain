@@ -1596,7 +1596,7 @@
         "https://en.wikipedia.org/wiki/Epoxy"
       ],
       "confidence": "high",
-      "provenance": "incomplete",
+      "provenance": "complete",
       "note": "Bisphenol A epoxy (the older, less package-friendly EPON-type system) was still used on some parts. Cresol novolac had largely displaced it in logic packaging. The epichlorohydrin -> propylene -> cracker -> chlorine -> brine chain used to be inlined beneath this node as seven nodes of its own. It is not inlined here. chem.epoxy.dgeba.epichlorohydrin publishes the molecule, chem.propylene.sources.cracker-c3 the C3 stream, metal.chlorine and metal.chlor-alkali the chlorine, metal.salt-brine the brine and metal.caustic-soda the caustic. The chain is named by id in `inputs` so there is one copy of it in the tree.",
       "facts": [
         {
@@ -1663,7 +1663,7 @@
         "https://en.wikipedia.org/wiki/Photomask"
       ],
       "confidence": "high",
-      "provenance": "incomplete",
+      "provenance": "complete",
       "note": "Silica is an ingredient of the blank, so metal.silica and metal.quartzite hang off `inputs` rather than as a child.",
       "inputs": [],
       "edges": [
@@ -1783,7 +1783,7 @@
               "category": "silicon",
               "era": "1980s",
               "confidence": "medium",
-              "provenance": "incomplete",
+              "provenance": "complete",
               "note": "The distinction: contact/proximity printing needs a full-size mask. A 1:1 projection stepper also prints 1:1 but optically. Only a reduction stepper (2x-10x) needs a smaller reticle. Bipolar logic in 1983 was 1:1 by either contact or 1:1 projection. Bipolar logic generally did not use reduction steppers at this node.",
               "facts": [
                 {
@@ -2082,7 +2082,7 @@
             "https://en.wikipedia.org/wiki/Photoresist"
           ],
           "confidence": "high",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "note": "The developer chemistry is named in `inputs` rather than inlined: chem.fab-chemicals.tmah publishes TMAH and its synthesis, and chem.photoresist.development publishes the 0.2-0.3 N spray-development process. A potassium-hydroxide developer, made by chlor-alkali electrolysis of brine alongside chlorine, was the older alkali and was still in use. The sub-branch that used to sit here (potash -> brine -> rock salt) duplicated metal.salt-brine and metal.chlor-alkali and has been removed.",
           "inputs": [],
           "edges": [
@@ -2111,7 +2111,7 @@
           "category": "silicon",
           "era": "1980s",
           "confidence": "high",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "note": "Plasma (reactive ion) etching of silicon dioxide was introduced in the early-to-mid 1980s and became standard later in the decade. A 1983 bipolar logic line used wet HF and BOE for its diffusion and contact windows. Hydrofluoric acid, the buffered-etch process and the fluorspar it is made from are named in `inputs` (chem.fab-chemicals.hydrofluoric-acid and its buffered-hf and fluorspar children). The fluorspar-to-HF chain, including the Derbyshire, Ilkley, Mexican, South African and Chinese fluorspar fields and the limestone by-product, used to be inlined beneath this node and is published at metal.fluorspar.",
           "sources": [
             "https://en.wikipedia.org/wiki/Hydrofluoric_acid"
@@ -2158,7 +2158,7 @@
           "category": "silicon",
           "era": "1980s",
           "confidence": "medium",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "note": "That the resist is removed after etch by dry stripping or plasma ashing or by a wet resist stripper is documented. Not established: chlorinated solvents as the standard route, the xylene-then-trichloroethylene sequence, the 87 C boiling point, the piranha wet strip, and the phasing out of trichloroethylene through the 1980s.",
           "inputs": [],
           "edges": [
@@ -2463,7 +2463,7 @@
                 "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
               ],
               "confidence": "high",
-              "provenance": "incomplete",
+              "provenance": "complete",
               "facts": [
                 {
                   "label": "Temperature",
@@ -2599,7 +2599,7 @@
             "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
           ],
           "confidence": "high",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "facts": [
             {
               "label": "Dopant",
@@ -2642,7 +2642,7 @@
           "category": "silicon",
           "era": "1980s",
           "confidence": "medium",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "note": "The gold-doped (Au-doped) polysilicon emitter was a real technique of the pre-Schottky era, not of 74LS: gold-doped saturated logic was superseded by Schottky-clamped logic (production from 1969; 74S in 1971, LS after), and gold-doped vs Schottky devices are mutually exclusive. It was implemented by co-depositing a tiny amount of gold in the emitter polysilicon or dopant glass, then driving it in with the arsenic or phosphorus. Confidence medium: the technique is well documented, but it is not 74LS practice, so this flow stores no gold leg. It was common in high-performance bipolar rather than mandatory in low-cost logic. A self-aligned polysilicon emitter (deposit a thin arsenic-doped polysilicon film, pattern it to define the emitter, then push, so the arsenic is confined by the polysilicon walls and the emitter comes out shallower and more uniform) was the other refinement of the era, widespread in analog through the 1980s and 1990s and doubtful on a commodity 74LS. The arsine itself is an ingredient and is named in `inputs`, not inlined as a child. Its provenance is worth recording: arsenic occurs as arsenide in copper and lead concentrates, roasting drives it off as arsenic trioxide fume, and the trioxide is reduced and hydrogenated to arsine. Arsenic-bearing copper concentrates were a notorious long-time smelting hazard, which is why arsenic control in copper works is a regulated topic today.",
           "sources": [
             "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
@@ -2808,7 +2808,7 @@
             "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
           ],
           "confidence": "high",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "facts": [
             {
               "label": "Etch",
@@ -2990,7 +2990,7 @@
       "category": "silicon",
       "era": "1980s",
       "confidence": "medium",
-      "provenance": "incomplete",
+      "provenance": "complete",
       "note": "The positive-resist chemistry (a novolac resin with a photosensitive protecting group, exposure breaking the group off so the exposed resin becomes soluble in alkaline developer, the pattern on the wafer taking the same polarity as the pattern on the mask) is not inlined here; chem.photoresist publishes it and is named in `inputs`. Positive resists went from invention in the 1940s to default in the late 1970s, had won MOS by 1983, and were displacing negative resist on bipolar. Within a decade negative resist was gone from production lines entirely.",
       "sources": [
         "https://www.shmj.or.jp/english/pdf/em/exhibi2437E.pdf"
@@ -3117,7 +3117,7 @@
           "category": "silicon",
           "era": "1980s",
           "confidence": "high",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "sources": [
             "https://florisera.com/cmos-process-steps-3um-to-1-25um"
           ],
@@ -3195,7 +3195,7 @@
             "https://en.wikipedia.org/wiki/Silicon_dioxide"
           ],
           "confidence": "high",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "facts": [
             {
               "label": "Thickness",
@@ -3242,7 +3242,7 @@
           "category": "silicon",
           "era": "1980s",
           "confidence": "high",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "note": "The silane feed is SiH4, decomposing on a hot surface at 700-850 C to lay down pure polycrystalline silicon. Cleaner and more controllable than trichlorosilane because it carries no chlorine and no corrosive by-products. Trichlorosilane still dominated for boule-grade silicon. A 4000-series part might also deposit a few resistors from this same film: polysilicon resistors cost nothing extra because they are made at the same time as the gate, from the same film, at no extra mask. That the 4066 specifically uses on-chip polysilicon resistors is plausible from its trim and bias requirements but is not verified against a cross-section, and some 4000-series parts use no resistors at all.",
           "sources": [
             "https://en.wikipedia.org/wiki/MOSIS",
@@ -3457,7 +3457,7 @@
             "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
           ],
           "confidence": "high",
-          "provenance": "incomplete",
+          "provenance": "complete",
           "note": "Organic die attach became common in the late 1980s-90s for cost reasons. In 1983 Au-Si eutectic brazing was still the standard on logic and memory.",
           "facts": [
             {
@@ -3742,7 +3742,7 @@
         "https://en.wikipedia.org/wiki/Integrated_circuit_packaging"
       ],
       "confidence": "high",
-      "provenance": "incomplete",
+      "provenance": "complete",
       "note": "Commodore bought these chips from several vendors and did not re-mark them, which is why an original C64 board may carry parts branded TI, Fairchild, National, Motorola, Hitachi, Toshiba or a Commodore house number, all mixed together. Laser marking (a Q-switched Nd:YAG or CO2 laser ablating characters into the epoxy surface, or a carbon laser removing the top layer to expose an underlying white layer) was indelible and fast but in 1983 was still a premium option used mostly for military marking, adopted more widely through the mid-to-late 1980s.",
       "facts": [
         {
@@ -3994,7 +3994,7 @@
           "rel": "uses"
         }
       ],
-      "provenance": "incomplete"
+      "provenance": "complete"
     },
     "mb.logic.package.leadframe.plating": {
       "id": "mb.logic.package.leadframe.plating",
@@ -4129,7 +4129,7 @@
         "https://en.wikipedia.org/wiki/Doping_(semiconductor)"
       ],
       "confidence": "high",
-      "provenance": "incomplete",
+      "provenance": "complete",
       "inputs": [],
       "children": [],
       "edges": [
@@ -4206,7 +4206,7 @@
         "https://en.wikipedia.org/wiki/RCA_clean"
       ],
       "confidence": "high",
-      "provenance": "incomplete",
+      "provenance": "complete",
       "inputs": [],
       "edges": [
         {
@@ -4670,7 +4670,7 @@
             "basis": "inferred"
           }
         ],
-        "provenance": "incomplete"
+        "provenance": "complete"
       },
     "mb.logic.bipolar.process.base.boron.doped-oxide": {
         "id": "mb.logic.bipolar.process.base.boron.doped-oxide",
@@ -4693,7 +4693,7 @@
             "basis": "inferred"
           }
         ],
-        "provenance": "incomplete"
+        "provenance": "complete"
       },
     "mb.logic.bipolar.process.base.boron.borax.source-firing": {
         "id": "mb.logic.bipolar.process.base.boron.borax.source-firing",
