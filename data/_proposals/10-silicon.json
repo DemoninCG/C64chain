@@ -1,7 +1,13 @@
 {
   "$comment": "Cross-fragment and cross-bottoms-out changes found while QA-ing data/10-silicon.json. None of these were applied: the targets live in files this agent does not own, or under c64.bottoms-out / metal.*, which CHECKLIST section 8 reserves for the maintainer. Nothing here is a rename or an id change.",
   "note": "WHAT CHANGED IN 10-silicon.json FIRST, because these proposals only make sense on top of it. The fragment used to inline the whole generic wafer-fab subtree once per chip: ten copies of '100 mm CZ silicon wafer', ten of the polysilicon/SiHCl3/metallurgical-silicon chain, ten fused-quartz crucibles, ten 'CZ pull, saw, lap, polish, clean' steps, nine 'Photolithography for this part' with nine copies of the photoresist and nine spin coaters, eight wafer-cleaning steps, seven chromite-ore nodes, seven gold-bonding-wire nodes. All of that is now ONE shared chain, written once in the fragment's `shared` map with an si.* id and referenced by id from every chip, so the ten chips genuinely converge on one silicon supply line and one packaging line. 351 nodes became 159. The shared nodes are still this fragment's own, because they carry 1982-specific material (4-inch wafers, SiHCl3 from a 98% furnace product, HF consumption per wafer) that the metals fragment does not. Every one of them is a merge candidate, listed below - the point is that there is now exactly ONE of each to merge instead of ten.",
-  "merges": [],
+  "merges": [
+    {
+      "from": "si.front-end.resist",
+      "to": "mb.cpu.fe.photoresist.dnq",
+      "why": "Sixth DNQ/novolac duplicate: same substance (positive DNQ sensitizer in novolac resin) with identical made-from novolac legs; loser AZ-1350/Micralign/10-mask context duplicates parent si.front-end facts (lossless); sole inbound si.front-end consumes repoints to survivor (established Wave-3 DNQ sink). Research hold-out triage, centrally arbitrated."
+    }
+  ],
   "renames": [],
   "crossFragmentNotes": [
     "I appended two entries to data/_aliases.json (mb.cpu.wafer -> si.wafer, mb.cpu.wafer.diamond -> si.wafer.diamond). That is the only file outside 10-silicon.json and data/_proposals/ that I touched, and it was necessary: 35-logic.json started referencing the two CPU-scoped ids while this pass was in flight, and an agent may still be mid-flight on that file. The build now reports both rewrites, so the change is visible rather than silent. If 35-logic has since moved to si.*, delete both alias lines.",

@@ -2614,7 +2614,7 @@
           "basis": "typical-1982"
         },
         {
-          "to": "si.front-end.resist",
+          "to": "mb.cpu.fe.photoresist.dnq",
           "rel": "consumes",
           "basis": "typical-1982"
         },
@@ -5466,30 +5466,7 @@
         ],
         "provenance": "complete"
       },
-    "si.front-end.resist": {
-        "id": "si.front-end.resist",
-        "name": "Generic front-end DNQ resist formulation",
-        "simple_name": "Front-end resist",
-        "description": "Positive DNQ/novolac resist formulation consumed across the generic 10-mask-level NMOS front-end flow (contact/Micralign 1:1 printing in AZ-1350 class resist).",
-        "kind": "material",
-        "category": "silicon",
-        "era": "1980s",
-        "sources": [
-          "https://en.wikipedia.org/wiki/Photoresist",
-          "https://en.wikipedia.org/wiki/Semiconductor_device_fabrication"
-        ],
-        "confidence": "low",
-        "note": "Hedged: AZ-1350 brand and 1:1-print specificity beyond candidate text not established.",
-        "children": [],
-        "edges": [
-          {
-            "to": "chem.photoresist.novolac",
-            "rel": "made from",
-            "basis": "inferred"
-          }
-        ],
-        "provenance": "incomplete"
-      },
+    
     "si.leadframe.alloy.vim-strip": {
         "id": "si.leadframe.alloy.vim-strip",
         "name": "FeNi vacuum-induction melting and strip rolling",

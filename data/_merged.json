@@ -3895,6 +3895,18 @@
           "value": "~100 t of 6% Zn ore -> ~18 t of 55% Zn concentrate -> ~5 t of zinc metal in the concentrate"
         }
       ]
+    },
+    {
+      "loser": "si.front-end.resist",
+      "loserName": "Generic front-end DNQ resist formulation",
+      "loserFile": "10-silicon.json",
+      "survivor": "mb.cpu.fe.photoresist.dnq",
+      "survivorName": "Positive DNQ/novolac resist formulation",
+      "survivorFile": "10-silicon.json",
+      "proposal": "10-silicon.json",
+      "why": "Sixth DNQ/novolac duplicate: same substance (positive DNQ sensitizer in novolac resin) with identical made-from novolac legs; loser AZ-1350/Micralign/10-mask context duplicates parent si.front-end facts (lossless); sole inbound si.front-end consumes repoints to survivor (established Wave-3 DNQ sink). Research hold-out triage, centrally arbitrated.",
+      "loserDescription": "Positive DNQ/novolac resist formulation consumed across the generic 10-mask-level NMOS front-end flow (contact/Micralign 1:1 printing in AZ-1350 class resist).",
+      "loserFacts": null
     }
   ]
 }

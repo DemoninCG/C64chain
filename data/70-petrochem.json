@@ -8919,7 +8919,7 @@
       "id": "chem.fab-chemicals.dopants.diborane.borane-from-fluoride",
       "name": "Boron trifluoride from fluorspar",
       "simple_name": "Boron trifluoride",
-      "description": "BF3 is made by treating fluorspar with sulphuric acid or with fluosilicic acid, so the p-type dopant of a 1983 NMOS process is, three steps back, the same rock as the HF that etched the oxide. This is the tightest single chain in this whole tree from a mineral to a transistor.",
+      "description": "BF3 is made by reacting boric acid or boron oxide with anhydrous hydrogen fluoride: B2O3 + 6 HF gives 2 BF3 plus water. The HF leg comes from treating fluorspar with sulphuric acid, so the p-type dopant of a 1983 NMOS process traces back through boric acid and fluorspar alike. Treating fluorspar with acid alone makes HF, not BF3; the boron must enter separately.",
       "kind": "process",
       "category": "silicon",
       "era": "1940s",
@@ -8938,6 +8938,11 @@
         {
           "to": "metal.sulphuric-acid",
           "rel": "consumes"
+        },
+        {
+          "to": "chem.boric-acid",
+          "rel": "consumes",
+          "basis": "documented"
         }
       ]
     },
@@ -11245,12 +11250,17 @@
         "era": "1970s",
         "sources": [],
         "confidence": "low",
-        "note": "Neat-cylinder delivery and 0.5-5% in hydrogen per candidate description only; BF3-from-fluorspar link not typed, left open.",
+        "note": "Neat-cylinder delivery and 0.5-5% in hydrogen per candidate description only.",
         "children": [],
         "provenance": "incomplete",
         "edges": [
   {
     "to": "metal.fluorspar",
+    "rel": "made from",
+    "basis": "documented"
+  },
+  {
+    "to": "chem.boric-acid",
     "rel": "made from",
     "basis": "documented"
   }
