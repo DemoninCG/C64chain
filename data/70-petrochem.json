@@ -4926,6 +4926,31 @@
       "confidence": "low",
       "note": "This figure is an order-of-magnitude estimate from typical material masses and is not a measured value."
     },
+    "chem.propylene-oxide.bulk": {
+      "id": "chem.propylene-oxide.bulk",
+      "name": "Propylene oxide (bulk)",
+      "simple_name": "Propylene oxide",
+      "description": "Bulk methyloxirane, the C3 epoxide made from propylene by the chlorohydrin route and the organic-hydroperoxide co-product routes that shared 1982 production, and hydrated to propylene glycol for unsaturated-polyester resin plus converted to polyether polyols.",
+      "kind": "material",
+      "category": "plastics",
+      "era": "1980s",
+      "confidence": "medium",
+      "provenance": "incomplete",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Propylene_oxide",
+        "https://en.wikipedia.org/wiki/Propylene_glycol"
+      ],
+      "children": [],
+      "inputs": [],
+      "note": "Groundable without propylene.monomer (cracker C3 suffices; monomer would only refine grade). 1982 routes are chlorohydrin + hydroperoxide co-product routes; HPPO is post-2000 and excluded.",
+      "edges": [
+        {
+          "to": "chem.propylene.sources.cracker-c3",
+          "rel": "made from",
+          "basis": "documented"
+        }
+      ]
+    },
     "chem.polyester.unsaturated": {
       "id": "chem.polyester.unsaturated",
       "name": "Unsaturated polyester resin",
@@ -11750,7 +11775,14 @@
         "confidence": "low",
         "note": "Propylene and ethylene-oxide chain origin per candidate note only; grade only.",
         "children": [],
-        "provenance": "incomplete"
+        "provenance": "incomplete",
+        "edges": [
+          {
+            "to": "chem.propylene-oxide.bulk",
+            "rel": "made from",
+            "basis": "documented"
+          }
+        ]
       },
     "chem.polyester.unsaturated.styrene-monomer": {
         "id": "chem.polyester.unsaturated.styrene-monomer",
