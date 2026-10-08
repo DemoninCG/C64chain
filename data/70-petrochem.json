@@ -1827,11 +1827,6 @@
                   "rel": "consumes"
                 },
                 {
-                  "to": "chem.butadiene.sources.sounsby.butadiene-purity",
-                  "rel": "produces",
-                  "role": "product"
-                },
-                {
                   "to": "chem.abs.grafting.rubber-phase.butadiene-raw",
                   "rel": "produces",
                   "role": "product"
@@ -3711,25 +3706,7 @@
           "confidence": "medium",
           "note": "The commercial introduction of aqueous-developable dry films dates from the early 1980s; by the middle of the decade they were the standard in North America. Not established: the 25-40 micron film thickness, the polyester (PET) or polyethylene base, the acrylate photopolymer and acrylated monomer chemistry, and the negative image convention as a description of 1980s dry film. The claim that aqueous-developable films arrived in the early 1980s and were standard in North America by the middle of the decade is the softest statement in this node."
         },
-        {
-          "id": "chem.pcb-chemicals.etching",
-          "name": "Copper etching",
-          "simple_name": "Copper etching",
-          "description": "Ferric chloride at 35-42 degrees Baume, or cupric chloride, dissolves the exposed copper in 30-60 minutes. Ferric chloride was the 1980s default: cheap, fast, and it etches copper at a rate that keeps the undercut manageable. Its problems were regeneration (the spent etchant is worthless unless it is oxidised back, which needs chlorine or a peroxide and an electrolytic cell) and the ferric ion's attack on the epoxy of the laminate if the etch went long. By the early 1980s the alkaline sodium persulphate etch was spreading because it regenerated in place with peroxide and sodium hydroxide and because it would etch a finer line.",
-          "kind": "process",
-          "category": "board",
-          "era": "1970s",
-          "children": [],
-          "confidence": "low",
-          "provenance": "complete",
-          "note": "Established: Ferric chloride at 35-42 degrees Baume, or cupric chloride, dissolves the exposed copper in 30-60 minutes as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s practice specifics as given.",
-          "edges": [
-            {
-              "to": "chem.pcb-chemicals.etching.ferric-chloride",
-              "rel": "consumes"
-            }
-          ]
-        },
+        
         {
           "id": "chem.pcb-chemicals.plating",
           "name": "Plating baths",
@@ -4604,24 +4581,7 @@
       "confidence": "low",
       "provenance": "incomplete"
     },
-    "chem.butadiene.sources.sounsby.butadiene-purity": {
-      "id": "chem.butadiene.sources.sounsby.butadiene-purity",
-      "name": "99%+ butadiene",
-      "simple_name": "99%+ butadiene",
-      "description": "The polymerisation-grade monomer has to be 99.0-99.7% with less than 100 ppm of inhibitor residue, less than 100 ppm water and less than 50 ppm carbonyls. The spec is enforced because the polymerisation catalysts of the era (both the persulfate emulsion ones and the lithium butyllithium ones) were exquisitely sensitive to all three. The certificate carried four numbers (purity by gas chromatography, inhibitor as the minutes before a calibrated sample polymerised, water by Karl Fischer and carbonyls colorimetrically) and each existed because of what it does to a polymerisation: water kills the lithium catalyst, the inhibitor sets the shelf life, carbonyls kill the persulphate graft and the purity sets the branching.",
-      "kind": "material",
-      "category": "plastics",
-      "era": "1960s",
-      "facts": [
-        {
-          "label": "Polymerisation grade",
-          "value": "99.0-99.7%"
-        }
-      ],
-      "confidence": "medium",
-      "provenance": "complete",
-      "note": "The analytical methods are period-correct and standard; the specific limits are those quoted in the description."
-    },
+    
     "chem.propylene.sources": {
       "id": "chem.propylene.sources",
       "name": "Where propylene comes from",
@@ -7369,7 +7329,7 @@
       "category": "plastics",
       "era": "1960s",
       "inputs": [],
-      "note": "Upstream: chem.butadiene and chem.butadiene.polymerisation.lithium-catalyst. Established: Butadiene monomer as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s specifics as given.",
+      "note": "Upstream: chem.butadiene and chem.butadiene.polymerisation.lithium-catalyst. Established: Butadiene monomer as a type. Not established: the stated figures conditions purities yields tonnages dates and 1980s specifics as given. Polymerisation-grade detail folded in from the merged purity node: 99.0-99.7% with low inhibitor, water and carbonyls by GC, Karl-Fischer and colorimetric assay.",
       "confidence": "low",
       "provenance": "complete",
       "edges": [

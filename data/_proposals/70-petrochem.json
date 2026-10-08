@@ -11,6 +11,16 @@
       "from": "chem.pcb-chemicals.laminate.copper-foil",
       "to": "metal.copper.foil",
       "why": "Same substance and overlapping grade: 35-70um electrolytic drum foil vs survivor 35um electrolytic PCB foil (survivor already carries laminate made-of, ed-drum produces, cathode/RA legs). Loser inbound catalogue-only; BTA-treatment context re-homes via companion EDGE metal.copper.foil made-of chem.pcb-chemicals.laminate.copper-foil.benzotriazole (applied). Precedent: peripheral.tv.chassis.pcb.copper-foil merged to same survivor. Zero-edge triage A2, centrally arbitrated."
+    },
+    {
+      "from": "chem.pcb-chemicals.etching",
+      "to": "mb.pcb.etch",
+      "why": "Same ferric-chloride Cu-etch operation at branch-head vs board-shop level; survivor already consumes etchant and carries the regeneration step (anchored batch-2 part 1), so no content loss. Upholds the banked pcb-etching merge-flag. Batch-2 triage, centrally arbitrated."
+    },
+    {
+      "from": "chem.butadiene.sources.sounsby.butadiene-purity",
+      "to": "chem.abs.grafting.rubber-phase.butadiene-raw",
+      "why": "Same polymerisation-grade monomer from the same extractive unit (99.0-99.7%); sounsby produces leg already re-pointed to survivor only (duplicate dropped pre-merge), analytical-methods prose folded into survivor note. Batch-2 triage, centrally arbitrated."
     }
   ],
   "renames": [],

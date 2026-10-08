@@ -3762,6 +3762,35 @@
       "why": "Same substance and overlapping grade: 35-70um electrolytic drum foil vs survivor 35um electrolytic PCB foil (survivor already carries laminate made-of, ed-drum produces, cathode/RA legs). Loser inbound catalogue-only; BTA-treatment context re-homes via companion EDGE metal.copper.foil made-of chem.pcb-chemicals.laminate.copper-foil.benzotriazole (applied). Precedent: peripheral.tv.chassis.pcb.copper-foil merged to same survivor. Zero-edge triage A2, centrally arbitrated.",
       "loserDescription": "A 35-70 micron copper foil, electrodeposited on a rotating drum from a copper sulphate-acid bath and then treated on the bonding surface. The treatment is the interesting part chemically: the foil's teeth are made mechanically or electrochemically, and the surface is then covered with a nodular copper layer bonded to an organo-chrome or a zinc-oleate layer, and in the 1980s increasingly with a benzotriazole layer. Benzotriazole replaced the chromate because hexavalent chromium was being regulated out of the process.",
       "loserFacts": null
+    },
+    {
+      "loser": "chem.pcb-chemicals.etching",
+      "loserName": "Copper etching",
+      "loserFile": "70-petrochem.json",
+      "survivor": "mb.pcb.etch",
+      "survivorName": "Ferric chloride etching",
+      "survivorFile": "20-board.json",
+      "proposal": "70-petrochem.json",
+      "why": "Same ferric-chloride Cu-etch operation at branch-head vs board-shop level; survivor already consumes etchant and carries the regeneration step (anchored batch-2 part 1), so no content loss. Upholds the banked pcb-etching merge-flag. Batch-2 triage, centrally arbitrated.",
+      "loserDescription": "Ferric chloride at 35-42 degrees Baume, or cupric chloride, dissolves the exposed copper in 30-60 minutes. Ferric chloride was the 1980s default: cheap, fast, and it etches copper at a rate that keeps the undercut manageable. Its problems were regeneration (the spent etchant is worthless unless it is oxidised back, which needs chlorine or a peroxide and an electrolytic cell) and the ferric ion's attack on the epoxy of the laminate if the etch went long. By the early 1980s the alkaline sodium persulphate etch was spreading because it regenerated in place with peroxide and sodium hydroxide and because it would etch a finer line.",
+      "loserFacts": null
+    },
+    {
+      "loser": "chem.butadiene.sources.sounsby.butadiene-purity",
+      "loserName": "99%+ butadiene",
+      "loserFile": "70-petrochem.json",
+      "survivor": "chem.abs.grafting.rubber-phase.butadiene-raw",
+      "survivorName": "Butadiene monomer",
+      "survivorFile": "70-petrochem.json",
+      "proposal": "70-petrochem.json",
+      "why": "Same polymerisation-grade monomer from the same extractive unit (99.0-99.7%); sounsby produces leg already re-pointed to survivor only (duplicate dropped pre-merge), analytical-methods prose folded into survivor note. Batch-2 triage, centrally arbitrated.",
+      "loserDescription": "The polymerisation-grade monomer has to be 99.0-99.7% with less than 100 ppm of inhibitor residue, less than 100 ppm water and less than 50 ppm carbonyls. The spec is enforced because the polymerisation catalysts of the era (both the persulfate emulsion ones and the lithium butyllithium ones) were exquisitely sensitive to all three. The certificate carried four numbers (purity by gas chromatography, inhibitor as the minutes before a calibrated sample polymerised, water by Karl Fischer and carbonyls colorimetrically) and each existed because of what it does to a polymerisation: water kills the lithium catalyst, the inhibitor sets the shelf life, carbonyls kill the persulphate graft and the purity sets the branching.",
+      "loserFacts": [
+        {
+          "label": "Polymerisation grade",
+          "value": "99.0-99.7%"
+        }
+      ]
     }
   ]
 }

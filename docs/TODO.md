@@ -255,12 +255,19 @@ stays readable.
   Remaining: a provenance re-review pass (flags were deliberately left
   untouched by research waves; promotion to complete needs the re-review
   discipline, never an edge count).
-- Orphan queue for batch 2: catalogue N–Z leftovers (~25, triage B diverged
+- Orphan queue for batch 2: catalogue leftovers (43 chain orphans held directly
+  under `unlinked.catalogue`, re-measured 2026-10-08 — mostly 70-petrochem
+  branch-heads: acrylonitrile, crude+reservoir subtree, fab/pcb-chemicals,
+  refining, solvents — plus scattered leaves; triage B diverged
   onto small-comps instead), untriaged metals clusters (lime ×6, tin slag /
   atomisation, extrusion, converting, cobalt leach, tantalum tail, barite
-  mud-system), connector plating baths, `chem.crude` vs `chem.petroleum`
-  umbrella check, `chem.styrene` umbrella merge + `benzene` rename (same
-  class as the silicon/ammonia renames), ~150 KEEP-banked verdicts
+  mud-system), connector plating baths, umbrella checks DECIDED 2026-10-08
+  (no merges: `chem.crude` is the extraction-operations process vs
+  `chem.petroleum` the substance with 12 inbound feedstock refs — different
+  kinds, different things; `chem.styrene.benzene` rename DECLINED — 13 inbound
+  refs, id stability wins over the silicon/ammonia precedent class, name is
+  already generic Benzene; `chem.styrene` branch kept — reached route, no
+  duplicate found), ~150 KEEP-banked verdicts
   (merge-flags: acrylonitrile, styrene, refining, solvents, pcb-etching,
   copper-foil, acetone, feedwater-treatment), and all DELETE verdicts
   (each needs ref-count plus prose preservation first).
@@ -277,6 +284,9 @@ The chain backlog is down from 851 via the petroleum trunk, scoping, substance
 nodes, branch audit, the leaf fan-out, and the 2026-10-07 campaign
 (422 → 284), up to 296 after the modelling pass + Wave 8 additions, and back
 to 284 via the 2026-10-08 zero-edge scan batches (§5) + 2 merges.
+Batch-2 (this session, 6 read-only slices + central serial apply): 51 scopes
+(281 → 230), anchors in parts (230 → 132 and falling), 8 mergers via
+`_proposals` arbitration, 6 deletes, 5 NEW-NODEs with anchored legs.
 
 The remaining cases fall into these overlapping classes; the older per-class
 estimates are omitted because they were not re-counted after the later passes.
