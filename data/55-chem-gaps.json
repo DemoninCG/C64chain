@@ -29,6 +29,14 @@
         {
           "label": "Softening point",
           "value": "about 820 C, against a 1400-1500 C melt"
+        },
+        {
+          "label": "Cloth thickness",
+          "value": "about 0.1-0.2 mm woven cloth for laminates"
+        },
+        {
+          "label": "Function in laminate",
+          "value": "raises dimensional stability and solder-heat resistance"
         }
       ],
       "sources": [
@@ -41,6 +49,10 @@
       "edges": [
         {
           "to": "chem.glass-fiber.borax",
+          "rel": "made from"
+        },
+        {
+          "to": "metal.silica-sand",
           "rel": "made from"
         }
       ]

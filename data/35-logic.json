@@ -91,7 +91,7 @@
               "basis": "typical-1982"
             },
             {
-              "to": "mb.logic.package.assembly.mould.compound",
+              "to": "si.emc",
               "rel": "made of",
               "basis": "documented"
             }
@@ -147,7 +147,7 @@
               "basis": "typical-1982"
             },
             {
-              "to": "mb.logic.package.assembly.mould.compound",
+              "to": "si.emc",
               "rel": "made of",
               "basis": "documented"
             }
@@ -200,7 +200,7 @@
               "basis": "typical-1982"
             },
             {
-              "to": "mb.logic.package.assembly.mould.compound",
+              "to": "si.emc",
               "rel": "made of",
               "basis": "documented"
             }
@@ -253,7 +253,7 @@
               "basis": "typical-1982"
             },
             {
-              "to": "mb.logic.package.assembly.mould.compound",
+              "to": "si.emc",
               "rel": "made of",
               "basis": "documented"
             }
@@ -305,7 +305,7 @@
               "basis": "typical-1982"
             },
             {
-              "to": "mb.logic.package.assembly.mould.compound",
+              "to": "si.emc",
               "rel": "made of",
               "basis": "documented"
             }
@@ -357,7 +357,7 @@
               "basis": "typical-1982"
             },
             {
-              "to": "mb.logic.package.assembly.mould.compound",
+              "to": "si.emc",
               "rel": "made of",
               "basis": "documented"
             }
@@ -405,7 +405,7 @@
               "basis": "typical-1982"
             },
             {
-              "to": "mb.logic.package.assembly.mould.compound",
+              "to": "si.emc",
               "rel": "made of",
               "basis": "documented"
             }
@@ -453,7 +453,7 @@
               "basis": "typical-1982"
             },
             {
-              "to": "mb.logic.package.assembly.mould.compound",
+              "to": "si.emc",
               "rel": "made of",
               "basis": "documented"
             }
@@ -506,7 +506,7 @@
               "basis": "typical-1982"
             },
             {
-              "to": "mb.logic.package.assembly.mould.compound",
+              "to": "si.emc",
               "rel": "made of",
               "basis": "documented"
             }
@@ -596,7 +596,7 @@
                   "basis": "typical-1982"
                 },
                 {
-                  "to": "mb.logic.package.assembly.mould.compound",
+                  "to": "si.emc",
                   "rel": "made of",
                   "basis": "documented"
                 }
@@ -1541,7 +1541,46 @@
     }
   ],
   "shared": {
-    "mb.logic.bipolar.cleanroom.ffu": {
+
+    "mb.logic.package.assembly.wirebond.bonder": {
+      "id": "mb.logic.package.assembly.wirebond.bonder",
+      "name": "Wedge bonder",
+      "simple_name": "Wedge bonder",
+      "description": "A two-station machine that draws wire from a spool, forms a loop, drives a wedge onto the die pad under a hydrogen flame, swings 90 degrees, and drives the second wedge onto the pin, then snaps the wire. Twenty or forty of these sat in a row along a packaging line, each attended by one operator feeding frames in and taking packaged parts out.",
+      "kind": "tool",
+      "category": "semiconductors",
+      "subcat": "fab-tooling",
+      "era": "1980s",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Wire_bonding"
+      ],
+      "confidence": "high",
+      "provenance": "complete",
+      "facts": [
+        {
+          "label": "Cycle rate",
+          "value": "~10 bonds/s, ~2 s per part"
+        },
+        {
+          "label": "Wire",
+          "value": "1.0 mil gold, spool-fed"
+        },
+        {
+          "label": "Weld",
+          "value": "hydrogen torch, ~1000 C"
+        }
+      ],
+      "inputs": [
+        "facility.electricity"
+      ],
+      "edges": [
+        {
+          "to": "facility.gases.hydrogen",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        }
+      ]
+    },    "mb.logic.bipolar.cleanroom.ffu": {
       "id": "mb.logic.bipolar.cleanroom.ffu",
       "name": "HEPA fan filter unit",
       "simple_name": "HEPA fan filter unit",
@@ -3576,94 +3615,7 @@
             }
           ]
         },
-        {
-          "id": "mb.logic.package.assembly.wirebond",
-          "name": "Gold wire bonding",
-          "simple_name": "Gold wire bonding",
-          "description": "A machine called a wedge bonder presses a hair-thin gold wire onto an aluminium bonding pad with a tungsten or ceramic tool while a hydrogen torch or arc welds them together, then repeats at the inner end of the pin. Each joint is a small aluminium-gold intermetallic wedge, and the wire is parted by tearing it rather than by cutting it. It is the cheapest way ever devised to connect a chip to the outside world, and it is why every 1983 logic chip has that characteristic fan of gold legs.",
-          "kind": "process",
-          "category": "semiconductors",
-          "subcat": "chip-pack",
-          "era": "1980s",
-          "confidence": "high",
-          "note": "Ball bonding, with a 2.5 mil wire and ~25-50 bonds per second, was displacing wedge bonding for high pin counts in this period. Wedge bonding at ~10 bonds per second dominated merchant logic.",
-          "sources": [
-            "https://en.wikipedia.org/wiki/Wire_bonding"
-          ],
-          "facts": [
-            {
-              "label": "Wire diameter",
-              "value": "0.7 mil (18 um) to 1.0 mil (25 um)"
-            },
-            {
-              "label": "Bonds per DIP-16",
-              "value": "~18-22"
-            },
-            {
-              "label": "Speed",
-              "value": "8-15 bonds/second wedge"
-            }
-          ],
-          "inputs": [],
-          "children": [
-            {
-              "id": "mb.logic.package.assembly.wirebond.bonder",
-              "name": "Wedge bonder",
-              "simple_name": "Wedge bonder",
-              "description": "A two-station machine that draws wire from a spool, forms a loop, drives a wedge onto the die pad under a hydrogen flame, swings 90 degrees, and drives the second wedge onto the pin, then snaps the wire. Twenty or forty of these sat in a row along a packaging line, each attended by one operator feeding frames in and taking packaged parts out.",
-              "kind": "tool",
-              "category": "semiconductors",
-              "subcat": "fab-tooling",
-              "era": "1980s",
-              "sources": [
-                "https://en.wikipedia.org/wiki/Wire_bonding"
-              ],
-              "confidence": "high",
-              "provenance": "complete",
-              "facts": [
-                {
-                  "label": "Cycle rate",
-                  "value": "~10 bonds/s, ~2 s per part"
-                },
-                {
-                  "label": "Wire",
-                  "value": "1.0 mil gold, spool-fed"
-                },
-                {
-                  "label": "Weld",
-                  "value": "hydrogen torch, ~1000 C"
-                }
-              ],
-              "inputs": [
-                "facility.electricity"
-              ],
-              "edges": [
-                {
-                  "to": "facility.gases.hydrogen",
-                  "rel": "consumes",
-                  "basis": "typical-1982"
-                }
-              ]
-            }
-          ],
-          "edges": [
-            {
-              "to": "facility.gases.hydrogen",
-              "rel": "consumes",
-              "basis": "typical-1982"
-            },
-            {
-              "to": "metal.gold",
-              "rel": "consumes",
-              "basis": "typical-1982"
-            },
-            {
-              "to": "metal.tungsten",
-              "rel": "consumes",
-              "basis": "typical-1982"
-            }
-          ]
-        },
+        
         {
           "id": "mb.logic.package.assembly.mould",
           "name": "Transfer moulding the black epoxy body",
@@ -3774,7 +3726,7 @@
           ],
           "edges": [
             {
-              "to": "mb.logic.package.assembly.mould.compound",
+              "to": "si.emc",
               "rel": "consumes",
               "basis": "documented"
             },
@@ -4428,58 +4380,7 @@
         }
       ]
     },
-    "mb.logic.package.assembly.mould.compound": {
-      "id": "mb.logic.package.assembly.mould.compound",
-      "name": "Epoxy moulding compound",
-      "simple_name": "Epoxy moulding compound",
-      "description": "A blend of roughly 15-20 percent resin system and 80-85 percent filler by weight. The resin is an epoxy-novolac cured by a phenolic novolac. The filler is spherical fused or precipitated silica graded from a few microns up to about 100 microns so the compound can be both thin enough to flow around a 25 um wire and stiff enough to survive handling. And there is a trace of carbon black pigment to make the part black, plus a trace of mould release. Green compounds arrived in the mid-1980s.",
-      "kind": "material",
-      "category": "semiconductors",
-      "subcat": "chip-pack",
-      "era": "1980s",
-      "confidence": "high",
-      "sources": [
-        "https://www.verifiedmarketresearch.com/product/epoxy-molding-compound-in-semiconductor-packaging-market"
-      ],
-      "facts": [
-        {
-          "label": "Filler loading",
-          "value": "70-85 wt% spherical silica"
-        },
-        {
-          "label": "Resin system",
-          "value": "epoxy cresol novolac + phenolic novolac hardener"
-        },
-        {
-          "label": "Pigment",
-          "value": "~0.5-1 wt% carbon black (or none, for 'clear')"
-        }
-      ],
-      "note": "The silica filler is an ingredient, not a component, so it hangs off `inputs` (metal.silica, metal.quartzite) rather than as a child. Green compounds arrived in the mid-1980s. The resin and the pigment really are constituents of the compound, so those two stay as children. Everything the resin is itself made from is an ingredient of the resin, one level down.",
-      "inputs": [],
-      "children": [],
-      "edges": [
-        {
-          "to": "chem.thermosets.phenolic",
-          "rel": "made from",
-          "basis": "inferred"
-        },
-        {
-          "to": "mb.logic.package.assembly.mould.compound.pigment",
-          "rel": "made from",
-          "basis": "inferred"
-        },
-        {
-          "to": "mb.logic.package.assembly.mould.compound.resin",
-          "rel": "made from",
-          "basis": "inferred"
-        },
-        {
-          "to": "si.emc.silica",
-          "rel": "made of"
-        }
-      ]
-    },
+    
     "mb.logic.package.leadframe.plating.tin": {
       "id": "mb.logic.package.leadframe.plating.tin",
       "name": "Tin plating bath",

@@ -176,7 +176,7 @@
               ],
               "edges": [
                 {
-                  "to": "c64.keyboard-switches.matrix.pcb.copper-foil",
+                  "to": "metal.copper.foil",
                   "rel": "contains"
                 },
                 {
@@ -1428,31 +1428,7 @@
         }
       ]
     },
-    "c64.keyboard-switches.matrix.pcb.copper-foil": {
-      "id": "c64.keyboard-switches.matrix.pcb.copper-foil",
-      "name": "Electrodeposited copper foil",
-      "simple_name": "Electrodeposited copper foil",
-      "description": "The matrix traces are copper, deposited on the laminate by an electroplating line using acid copper sulphate solution and an insoluble anode. The same copper foil process as the mainboard, at a much thinner gauge.",
-      "kind": "material",
-      "category": "board",
-      "subcat": "laminate",
-      "era": "1982-1984",
-      "confidence": "medium",
-      "facts": [
-        {
-          "label": "Foil thickness",
-          "value": "~35 um (1 oz)"
-        }
-      ],
-      "inputs": [],
-      "note": "Not established: acid copper sulphate electrodeposition on an insoluble anode for this board, and the 35 um (1 oz) foil thickness. Foil gauge is a boardhouse specification, not something a reference document states.",
-      "edges": [
-        {
-          "to": "metal.copper.foil",
-          "rel": "made of"
-        }
-      ]
-    },
+    
     "mb.crystal.y1.case.nickel-can": {
       "id": "mb.crystal.y1.case.nickel-can",
       "name": "Nickel can stock",

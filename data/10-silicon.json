@@ -1412,7 +1412,7 @@
           "children": [],
           "edges": [
             {
-              "to": "mb.discretes.varistor.zinc",
+              "to": "metal.zinc-oxide-powder",
               "rel": "made of",
               "basis": "typical-1982"
             },
@@ -2827,6 +2827,10 @@
         {
           "label": "Mass per part",
           "value": "~0.1-0.5 g depending on package size"
+        },
+        {
+          "label": "Filler morphology",
+          "value": "spherical graded silica in logic packaging; angular fused silica at about 70% in the cassette-deck grade"
         }
       ],
       "places": [
@@ -2851,6 +2855,16 @@
           "to": "si.emc.resin",
           "rel": "step",
           "basis": "documented"
+        },
+        {
+          "to": "mb.logic.package.assembly.mould.compound.pigment",
+          "rel": "made from",
+          "basis": "inferred"
+        },
+        {
+          "to": "chem.thermosets.phenolic",
+          "rel": "made from",
+          "basis": "inferred"
         }
       ]
     },
@@ -3577,58 +3591,7 @@
         }
       ]
     },
-    "mb.discretes.varistor.zinc": {
-      "id": "mb.discretes.varistor.zinc",
-      "name": "Zinc oxide powder from zinc concentrate",
-      "simple_name": "Zinc oxide powder",
-      "description": "Sphalerite (ZnS) concentrate is roasted in a fluidised bed at 900-1000 C to zinc oxide, then reduced with carbon in a shaft or electrothermic furnace at 900-1100 C to zinc metal, burned back to ZnO, and purified to high-purity ZnO for the varistor mix.",
-      "kind": "material",
-      "category": "inorganics",
-      "subcat": "ceramics-refractory",
-      "era": "ancient-",
-      "inputs": [],
-      "facts": [
-        {
-          "label": "Zinc content",
-          "value": "50-60% in run-of-mine sphalerite"
-        }
-      ],
-      "places": [
-        "Sullivan, British Columbia",
-        "Broken Hill, New South Wales",
-        "M IDA, China"
-      ],
-      "sources": [
-        "https://en.wikipedia.org/wiki/Zinc_oxide",
-        "https://en.wikipedia.org/wiki/Sphalerite",
-        "https://en.wikipedia.org/wiki/Varistor"
-      ],
-      "confidence": "medium",
-      "provenance": "incomplete",
-      "note": "Established: the carbothermal route to zinc oxide. \"The direct or American process starts with diverse contaminated zinc composites, such as zinc ores or smelter by-products. The zinc precursors are reduced (carbothermal reduction) by heating with a source of carbon such as anthracite to produce zinc vapor, which is then oxidized as in the indirect process. Because of the lower purity of the source material, the final product is also of lower quality in the direct process as compared to the indirect one.\" The reduction temperature is documented too: \"ZnO decomposes into zinc vapor and oxygen at around 1975 degC with a standard oxygen pressure. In a carbothermic reaction, heating with carbon converts the oxide into zinc vapor at a much lower temperature (around 950 degC).\" That 950 C figure is inside the 900-1100 C range given above. The fluidised-bed roast at 900-1000 C and the shaft or electrothermic furnace are not the documented route, since the documented sequence is reduction to vapour followed by air oxidation. The oxidising step is documented as well: \"metallic zinc is melted in a graphite crucible and vaporized at temperatures above 907 degC (typically around 1000 degC). Zinc vapor reacts with the oxygen in the air to give ZnO\". Not established: the 900-1000 C fluidised-bed roast; the shaft or electrothermic furnace reduction as described; the burn-back as a separate manufacturing step rather than part of vapour oxidation; and the 50-60% zinc content of run-of-mine sphalerite. The ore is documented as \"(Zn, Fe)S\", the most important ore of zinc, with iron substituting for zinc, which \"can reach up to 40%\", so the concentrate grade varies and no fixed percentage applies. Also not established: the Sullivan, Broken Hill and M IDA place names as the sources of a varistor-grade powder, and what makes an electronic-grade ZnO suitable for a varistor. The varistor behaviour itself is documented: the grains sit \"in a matrix of other metal oxides, such as small amounts of bismuth, cobalt, manganese oxides\", and each grain boundary \"forms a diode junction\".",
-      "edges": [
-        {
-          "to": "facility.gases",
-          "rel": "made from",
-          "basis": "inferred"
-        },
-        {
-          "to": "metal.coke",
-          "rel": "made from",
-          "basis": "typical-1982"
-        },
-        {
-          "to": "metal.sphalerite",
-          "rel": "made from",
-          "basis": "typical-1982"
-        },
-        {
-          "to": "facility.nitrogen.atmospheric-air",
-          "rel": "made from",
-          "basis": "documented"
-        }
-      ]
-    },
+    
     "mb.cia.test": {
       "id": "mb.cia.test",
       "name": "Wafer probe and final test of the 6526",

@@ -1,6 +1,12 @@
 {
   "_comment": "Written by the QA pass over data/50-power.json (c64.psu, mb.rf-modulator, c64.mains). Everything here is a change I am not allowed to apply myself: the target node lives in a fragment I do not own, or under c64.bottoms-out. `retype` and `duplicates` are extensions of the schema in README.md for the two cases a from/to merge cannot express; `note` explains anything a reviewer needs to know.",
-  "merges": [],
+  "merges": [
+    {
+      "from": "c64.mains.switch.contacts.copper-silver.silver-refining.cupellation",
+      "to": "metal.lead.cupellation-lead",
+      "why": "Same Parkes-feed silver-dross cupellation at the same level (Agricola 950-1100 C vs 1000-1150 C + 4 facts). Bone-ash cupel fact carried to survivor; generic lead consume subsumed by bullion+ingot consumes. Anode-slime cupellation KEPT (different copper-slime feed). No inbound edges; parent contains repoints."
+    }
+  ],
   "renames": [],
   "retype": [
     {

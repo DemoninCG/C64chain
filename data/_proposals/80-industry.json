@@ -31,7 +31,23 @@
       ]
     }
   ],
-  "merges": [],
+  "merges": [
+    {
+      "from": "facility.water.chromite",
+      "to": "metal.chromite",
+      "why": "Same Bushveld chromite ore at the same level. Survivor richer (assay + layered-intrusion + placers + 3 facts vs 1 sentence, 10 vs 1 inbound, canonical metals node). Oman/Kola places carried to survivor. Sole inbound (facility.water.chromate made-from) repoints."
+    },
+    {
+      "from": "facility.water.chromite-mine",
+      "to": "metal.chromite.mine",
+      "why": "Paired mine children are duplicates too (UG2 stoping/open-pit vs 200 m open-pit + 4 facts + bench at-edge). Stoping alternative carried to survivor description. Merged first (deepest) so the ore merge adopts the repointed id."
+    },
+    {
+      "from": "facility.power.iron-ore",
+      "to": "metal.iron",
+      "why": "Same Mesabi iron ore at the same level (chain metal.iron with 3 facts vs context blast-furnace framing). Pit child relocated to a published shared entry and pre-adopted under metal.iron (applyproposals cannot adopt into a childless survivor); context scope entries for both removed from _scope.json. Sole inbound (turbine-steel made-from) repoints."
+    }
+  ],
   "renames": [],
   "fixes_conflicts": [
     {

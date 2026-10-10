@@ -1,6 +1,17 @@
 {
   "$comment": "Cross-fragment proposals from the QA pass over data/35-logic.json (mb.logic, the merchant 74-series glue logic). Nothing here has been applied: the fragment now references the canonical nodes by id and no longer inlines its own copies. What remains is (a) merges into nodes this agent does not own, (b) id renames, and (c) the factual drift found between the inlined copies and the published ones, which the maintainer may want to fold in. Every merge below was already applied on the 35-logic side - the copy is gone and the reference is in place - so applying these is about tidying the other fragment, not about unblocking the build.",
-  "merges": [],
+  "merges": [
+    {
+      "from": "mb.logic.package.assembly.wirebond",
+      "to": "metal.gold.wire-bonding",
+      "why": "Same gold-wire die bonding at the same level (wedge/H2-torch vs thermasonic, 18-22 vs 80 bonds). Survivor richer (purple-plague etc.). H2/tungsten consumes + ball-vs-wedge note carried; wedge-bonder tool auto-adopts (survivor has children key). Parent contains repoints."
+    },
+    {
+      "from": "mb.logic.package.assembly.mould.compound",
+      "to": "si.emc",
+      "why": "Same silica-filled epoxy moulding compound (15-20% resin/80-85% spherical filler vs 60-75% ground silica; 11 inbound incl all logic chips). Phenolic/pigment made-from carried (pigment rescue); spherical-vs-angular morphology recorded on survivor; resin already linked. si.emc.resin stays (child-level synthesis process)."
+    }
+  ],
   "renames": [],
   "aliases": [
     {

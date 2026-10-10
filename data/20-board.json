@@ -2301,15 +2301,32 @@
             {
               "label": "Bath temperature",
               "value": "hot enough to keep the alloy molten, several degrees above 183 deg C"
+            },
+            {
+              "label": "Television variant alloy",
+              "value": "60/40 tin-lead at about 190 deg C"
+            },
+            {
+              "label": "Mask sequencing",
+              "value": "solder mask printed before the dip, so the mask covers the throwaway copper"
             }
           ],
           "inputs": [],
           "note": "Modern boards use ENIG, immersion tin or OSP instead. HASL went out of fashion because its coating is soft and its thermal expansion mismatch causes failures in thermal cycling. It was, however, ideal for a board that was going straight into a tin pot.",
           "confidence": "medium",
           "provenance": "complete",
+          "places": [
+            "Kuala Lumpur, Malaysia",
+            "Kuantan, Malaysia",
+            "Bintan, Indonesia"
+          ],
           "edges": [
             {
               "to": "metal.solder",
+              "rel": "consumes"
+            },
+            {
+              "to": "chem.solder-chemicals.rosin-flux",
               "rel": "consumes"
             }
           ]

@@ -26,6 +26,11 @@
       "from": "chem.fab-chemicals.process-gases.argon",
       "to": "facility.argon",
       "why": "Same thing at the same level (CHECKLIST 4): both are bulk Argon material, fluids/gases, chain scope. Keep-rule picks facility.argon: richer description plus facts (0.93% + 99.99%) and 2 sources vs 1, a uses edge to the argon column, 8 inbound (logic fab bays, epi/metal/sputter, crystal fill, gases hub) vs 3, canonical published node per the 35-logic fragment comment, and the more general id. Loser has no facts and no children; its made-from atmospheric-air duplicates the survivor's, so nothing structural is lost (use-side sputter/anneal prose is archived in _merged and partly covered by facility.argon.uses). Repoints 3 consumes edges: metal.steel.ladle, metal.silica.czochralski, metal.chromium.aod. Purity figures conflict only in hedged notes (99.99% vs 99.999%, both not-established)."
+    },
+    {
+      "from": "chem.natural-gas.uses.hydrogen",
+      "to": "facility.gases.hydrogen.reforming",
+      "why": "Same steam-methane-reforming operation at the same level (Ni 750-850 C/20-30 bar + shift + PSA vs desulphurise/Ni-Mo + shift + amine; a prior central merge already canonised the facility node). Nitride/nickel-catalyst consumes carried (catalyst rescue); to-ammonia child auto-adopts (survivor has children key); natural-gas consume already on survivor. Low-confidence scale/HCl prose stays archived. Sole inbound (natural-gas step) repoints."
     }
   ],
   "renames": [],

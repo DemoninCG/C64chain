@@ -3919,6 +3919,230 @@
       "why": "Same thing at the same level (CHECKLIST 4): both are bulk Argon material, fluids/gases, chain scope. Keep-rule picks facility.argon: richer description plus facts (0.93% + 99.99%) and 2 sources vs 1, a uses edge to the argon column, 8 inbound (logic fab bays, epi/metal/sputter, crystal fill, gases hub) vs 3, canonical published node per the 35-logic fragment comment, and the more general id. Loser has no facts and no children; its made-from atmospheric-air duplicates the survivor's, so nothing structural is lost (use-side sputter/anneal prose is archived in _merged and partly covered by facility.argon.uses). Repoints 3 consumes edges: metal.steel.ladle, metal.silica.czochralski, metal.chromium.aod. Purity figures conflict only in hedged notes (99.99% vs 99.999%, both not-established).",
       "loserDescription": "A by-product of the air separation unit at 0.93% of dry air, purified to 99.999%. It fills the sputtering cathodes (the argon ions are accelerated across the gap and knock atoms out of the aluminium or titanium target) and it is the inert atmosphere of the annealing and ashing steps. The sputtering itself is the metals chain, but the gas that drives it is an air separation product.",
       "loserFacts": null
+    },
+    {
+      "loser": "mb.logic.package.assembly.wirebond",
+      "loserName": "Gold wire bonding",
+      "loserFile": "35-logic.json",
+      "survivor": "metal.gold.wire-bonding",
+      "survivorName": "Gold wire bonding of the die",
+      "survivorFile": "60-metals.json",
+      "proposal": "35-logic.json",
+      "why": "Same gold-wire die bonding at the same level (wedge/H2-torch vs thermasonic, 18-22 vs 80 bonds). Survivor richer (purple-plague etc.). H2/tungsten consumes + ball-vs-wedge note carried; wedge-bonder tool auto-adopts (survivor has children key). Parent contains repoints.",
+      "loserDescription": "A machine called a wedge bonder presses a hair-thin gold wire onto an aluminium bonding pad with a tungsten or ceramic tool while a hydrogen torch or arc welds them together, then repeats at the inner end of the pin. Each joint is a small aluminium-gold intermetallic wedge, and the wire is parted by tearing it rather than by cutting it. It is the cheapest way ever devised to connect a chip to the outside world, and it is why every 1983 logic chip has that characteristic fan of gold legs.",
+      "loserFacts": [
+        {
+          "label": "Wire diameter",
+          "value": "0.7 mil (18 um) to 1.0 mil (25 um)"
+        },
+        {
+          "label": "Bonds per DIP-16",
+          "value": "~18-22"
+        },
+        {
+          "label": "Speed",
+          "value": "8-15 bonds/second wedge"
+        }
+      ]
+    },
+    {
+      "loser": "c64.mains.switch.contacts.copper-silver.silver-refining.cupellation",
+      "loserName": "Cupellation",
+      "loserFile": "50-power.json",
+      "survivor": "metal.lead.cupellation-lead",
+      "survivorName": "Cupellation of the silver dross to silver and gold",
+      "survivorFile": "60-metals.json",
+      "proposal": "50-power.json",
+      "why": "Same Parkes-feed silver-dross cupellation at the same level (Agricola 950-1100 C vs 1000-1150 C + 4 facts). Bone-ash cupel fact carried to survivor; generic lead consume subsumed by bullion+ingot consumes. Anode-slime cupellation KEPT (different copper-slime feed). No inbound edges; parent contains repoints.",
+      "loserDescription": "An ancient refining step that survives into the 1980s for precious metals: the metal is melted with a lead oxide flux and blown with air, which oxidises the lead and the base metals to litharge that floats off, while the silver and gold stay as metal. Agricola described it in the 16th century and it is still the standard way to remove base metal from silver dross.",
+      "loserFacts": [
+        {
+          "label": "Temperature",
+          "value": "~950-1100 C"
+        },
+        {
+          "label": "Litharge",
+          "value": "PbO, the oxidised lead, absorbed into the bone ash cupel"
+        }
+      ]
+    },
+    {
+      "loser": "facility.water.chromite-mine",
+      "loserName": "Chromite mine",
+      "loserFile": "80-industry.json",
+      "survivor": "metal.chromite.mine",
+      "survivorName": "Layer-seam chromite open pit, 200 m deep",
+      "survivorFile": "60-metals.json",
+      "proposal": "80-industry.json",
+      "why": "Paired mine children are duplicates too (UG2 stoping/open-pit vs 200 m open-pit + 4 facts + bench at-edge). Stoping alternative carried to survivor description. Merged first (deepest) so the ore merge adopts the repointed id.",
+      "loserDescription": "A stratiform chromite seam (UG2 in the Bushveld) worked by stoping or by open pit. Ends at the chromitite layer in the ground.",
+      "loserFacts": null
+    },
+    {
+      "loser": "mb.discretes.varistor.zinc",
+      "loserName": "Zinc oxide powder from zinc concentrate",
+      "loserFile": "10-silicon.json",
+      "survivor": "metal.zinc-oxide-powder",
+      "survivorName": "Zinc oxide powder",
+      "survivorFile": "60-metals.json",
+      "proposal": "10-silicon.json",
+      "why": "Same varistor ZnO powder at the same level: the same disc is made of both (double-feed symptom). Survivor has the correct high-purity indirect route with made-from zinc.ingot; the loser's sphalerite/coke/air legs describe the lower-quality direct process and are deliberately NOT carried (wrong-but-resolving). Sole inbound (varistor made-of) repoints.",
+      "loserDescription": "Sphalerite (ZnS) concentrate is roasted in a fluidised bed at 900-1000 C to zinc oxide, then reduced with carbon in a shaft or electrothermic furnace at 900-1100 C to zinc metal, burned back to ZnO, and purified to high-purity ZnO for the varistor mix.",
+      "loserFacts": [
+        {
+          "label": "Zinc content",
+          "value": "50-60% in run-of-mine sphalerite"
+        }
+      ]
+    },
+    {
+      "loser": "c64.keyboard-switches.matrix.pcb.copper-foil",
+      "loserName": "Electrodeposited copper foil",
+      "loserFile": "33-passives-c.json",
+      "survivor": "metal.copper.foil",
+      "survivorName": "Copper foil",
+      "survivorFile": "60-metals.json",
+      "proposal": "33-passives-c.json",
+      "why": "Same electrodeposited copper foil at the same level (loser: same process as mainboard at thinner gauge, made-of survivor already). Survivor covers 35 um PCB + 6-18 um drum foil with 3 facts. Hedged acid-sulphate/thickness note stays archived, not propagated. Sole inbound (matrix pcb contains) repoints.",
+      "loserDescription": "The matrix traces are copper, deposited on the laminate by an electroplating line using acid copper sulphate solution and an insoluble anode. The same copper foil process as the mainboard, at a much thinner gauge.",
+      "loserFacts": [
+        {
+          "label": "Foil thickness",
+          "value": "~35 um (1 oz)"
+        }
+      ]
+    },
+    {
+      "loser": "mb.logic.package.assembly.mould.compound",
+      "loserName": "Epoxy moulding compound",
+      "loserFile": "35-logic.json",
+      "survivor": "si.emc",
+      "survivorName": "Silica-filled epoxy moulding compound",
+      "survivorFile": "10-silicon.json",
+      "proposal": "35-logic.json",
+      "why": "Same silica-filled epoxy moulding compound (15-20% resin/80-85% spherical filler vs 60-75% ground silica; 11 inbound incl all logic chips). Phenolic/pigment made-from carried (pigment rescue); spherical-vs-angular morphology recorded on survivor; resin already linked. si.emc.resin stays (child-level synthesis process).",
+      "loserDescription": "A blend of roughly 15-20 percent resin system and 80-85 percent filler by weight. The resin is an epoxy-novolac cured by a phenolic novolac. The filler is spherical fused or precipitated silica graded from a few microns up to about 100 microns so the compound can be both thin enough to flow around a 25 um wire and stiff enough to survive handling. And there is a trace of carbon black pigment to make the part black, plus a trace of mould release. Green compounds arrived in the mid-1980s.",
+      "loserFacts": [
+        {
+          "label": "Filler loading",
+          "value": "70-85 wt% spherical silica"
+        },
+        {
+          "label": "Resin system",
+          "value": "epoxy cresol novolac + phenolic novolac hardener"
+        },
+        {
+          "label": "Pigment",
+          "value": "~0.5-1 wt% carbon black (or none, for 'clear')"
+        }
+      ]
+    },
+    {
+      "loser": "chem.natural-gas.uses.hydrogen",
+      "loserName": "Hydrogen by steam methane reforming",
+      "loserFile": "70-petrochem.json",
+      "survivor": "facility.gases.hydrogen.reforming",
+      "survivorName": "Steam methane reforming",
+      "survivorFile": "80-industry.json",
+      "proposal": "70-petrochem.json",
+      "why": "Same steam-methane-reforming operation at the same level (Ni 750-850 C/20-30 bar + shift + PSA vs desulphurise/Ni-Mo + shift + amine; a prior central merge already canonised the facility node). Nitride/nickel-catalyst consumes carried (catalyst rescue); to-ammonia child auto-adopts (survivor has children key); natural-gas consume already on survivor. Low-confidence scale/HCl prose stays archived. Sole inbound (natural-gas step) repoints.",
+      "loserDescription": "CH4 + H2O -> CO + 3H2 over nickel at 750-850 C and 20-30 bar, followed by the water-gas shift (iron oxide/chromia, 350-450 C) to raise the hydrogen fraction, then CO2 removal and cryogenic or PSA purification. A world-scale 1980s plant made 50-100 million m3 of hydrogen a day. Almost all of it went to ammonia; the rest to hydrotreating and to hydrochloric acid. The second largest industrial use of hydrogen is hydrochloric acid: H2 + Cl2 at 250-400 C over a synthesis catalyst, absorbed into demineralised water to 31-37%. The refinery's hydrogen (desulphurisation, hydrocracking, reforming) came from naphtha reformers and, as sour crudes grew, from dedicated gas reformers. In 1983 hydrogen was roughly 3-5% of refinery energy consumption and a genuine bottleneck.",
+      "loserFacts": null
+    },
+    {
+      "loser": "facility.power.iron-ore",
+      "loserName": "Blast furnace iron ore",
+      "loserFile": "80-industry.json",
+      "survivor": "metal.iron",
+      "survivorName": "Iron ore",
+      "survivorFile": "64-metals-d.json",
+      "proposal": "80-industry.json",
+      "why": "Same Mesabi iron ore at the same level (chain metal.iron with 3 facts vs context blast-furnace framing). Pit child relocated to a published shared entry and pre-adopted under metal.iron (applyproposals cannot adopt into a childless survivor); context scope entries for both removed from _scope.json. Sole inbound (turbine-steel made-from) repoints.",
+      "loserDescription": "The blast-furnace feed, and the reason a power station's turbine steel has a supply chain at all. US supply was Mesabi Range hematite and taconite in the Lake Superior district, shipped by rail to the blast furnaces of the Great Lakes steel belt. Europe and Japan imported Brazilian pellets and ore. Ends at the orebody.",
+      "loserFacts": null
+    },
+    {
+      "loser": "facility.water.chromite",
+      "loserName": "Chromite ore (FeCr2O4)",
+      "loserFile": "80-industry.json",
+      "survivor": "metal.chromite",
+      "survivorName": "Chromite ore (FeCr2O4), 38-46% Cr2O3",
+      "survivorFile": "60-metals.json",
+      "proposal": "80-industry.json",
+      "why": "Same Bushveld chromite ore at the same level. Survivor richer (assay + layered-intrusion + placers + 3 facts vs 1 sentence, 10 vs 1 inbound, canonical metals node). Oman/Kola places carried to survivor. Sole inbound (facility.water.chromate made-from) repoints.",
+      "loserDescription": "The only economic source of chromium. Mined by underground stoping in the Bushveld Complex of South Africa and elsewhere, then smelted to ferrochrome.",
+      "loserFacts": null
+    },
+    {
+      "loser": "peripheral.cassette.deck.logic.silicon.mould-compound",
+      "loserName": "Epoxy mould compound, silica-filled",
+      "loserFile": "90-peripherals.json",
+      "survivor": "si.emc",
+      "survivorName": "Silica-filled epoxy moulding compound",
+      "survivorFile": "10-silicon.json",
+      "proposal": "90-peripherals.json",
+      "why": "Third EMC copy at the same level (70% angular fused silica vs spherical grades; 1 inbound). Angular morphology recorded on survivor; resin made-of covered by the survivor resin link. Sole inbound (logic silicon contains) repoints.",
+      "loserDescription": "The black or off-white plastic that a chip is set in. It is an epoxy novolac resin filled to about 70% with ground fused silica, with a cure promoter and a mould release. The silica filler is what stops the encapsulant from shrinking and cracking the die during cure, and it comes from the same kind of sand as the glass batch.",
+      "loserFacts": [
+        {
+          "label": "Filler",
+          "value": "about 70% by weight ground silica, angular, a few microns"
+        },
+        {
+          "label": "Cure",
+          "value": "175 degrees C for several minutes, transfer or injection mould"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.chassis.pcb.glass",
+      "loserName": "E-glass fibre from silica sand",
+      "loserFile": "90-peripherals.json",
+      "survivor": "chem.glass-fiber",
+      "survivorName": "E-glass fibre",
+      "survivorFile": "55-chem-gaps.json",
+      "proposal": "90-peripherals.json",
+      "why": "Same E-glass FR-4 reinforcement at the same level. Loser carries a wrong 73% SiO2 composition (NOT carried) plus an optical-fibre aside; cloth-thickness/solder-heat facts + silica-sand made-from carried. Sole inbound (chassis pcb contains) repoints.",
+      "loserDescription": "The reinforcement is a textile of drawn glass filament: silica sand is melted in a bushing at 1400 degrees C, drawn to a fibre a few microns across, and woven into cloth. It is the same silica as the tank window glass, run through a different furnace.",
+      "loserFacts": [
+        {
+          "label": "Fibre diameter",
+          "value": "5-24 microns, woven into a cloth of about 0.1-0.2 mm thickness"
+        },
+        {
+          "label": "Function",
+          "value": "raises the laminate's dimensional stability and its solder-heat resistance"
+        },
+        {
+          "label": "E-glass composition",
+          "value": "about 73% SiO2, 16% CaO, 6% B2O3"
+        },
+        {
+          "label": "Drawing",
+          "value": "about 100 microns at the bushing, drawn to 5-24 microns"
+        }
+      ]
+    },
+    {
+      "loser": "peripheral.tv.chassis.pcb.plating",
+      "loserName": "HASL",
+      "loserFile": "90-peripherals.json",
+      "survivor": "mb.pcb.finish.hasl",
+      "survivorName": "HASL solder level on the pads",
+      "survivorFile": "20-board.json",
+      "proposal": "90-peripherals.json",
+      "why": "Same HASL tin-lead dip at the same level (TV 60/40 at 190 C vs C64 63/37). Variant alloy + mask-sequencing facts, KL/Kuantan/Bintan places, rosin-flux consume carried; solder consume already on survivor. Sole inbound (chassis pcb step) repoints.",
+      "loserDescription": "The board was dipped or dragged through a molten bath of 60/40 tin-lead, which left a solder film on the pads and bridged the copper under the mask. Immersion tin plating or gold-flash were also used, but a television of 1982 was overwhelmingly hot-tin-dipped. Tin from cassiterite, lead from galena, both of which are already in this tree.",
+      "loserFacts": [
+        {
+          "label": "Alloy",
+          "value": "60% tin / 40% lead, melt at 190 degrees C"
+        },
+        {
+          "label": "Solder mask over HASL",
+          "value": "mask printed before the dip, so the mask covers the throwaway copper"
+        }
+      ]
     }
   ]
 }

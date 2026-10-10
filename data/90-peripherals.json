@@ -1142,11 +1142,11 @@
                 "note": "Colour sets of the period were green or brown-black. The tan-and-brown Tiger FR-4 everyone associates with the era was common but not universal.",
                 "edges": [
                   {
-                    "to": "peripheral.tv.chassis.pcb.glass",
+                    "to": "chem.glass-fiber",
                     "rel": "contains"
                   },
                   {
-                    "to": "peripheral.tv.chassis.pcb.plating",
+                    "to": "mb.pcb.finish.hasl",
                     "rel": "step"
                   }
                 ]
@@ -2569,7 +2569,7 @@
                     "note": "The integrated circuit is documented as printed as a unit by photolithography onto a thin flat piece of semiconductor material, most commonly silicon, which is the mechanism this node describes for the drive logic. Not established: that a 1982 disk drive carried a 6502, a 6522 and a mask-programmed array on the same processes as each other (a CMOS or bipolar logic array is a different process from an NMOS CPU), the 3-5 micron and 5 micron line figures as drive silicon, phenolic mould compound, and the Hong Kong and Taiwan works. Those line figures belong to the machine processor and are documented there. A disk drive is a different buyer of the same industry. Aluminium interconnect over polysilicon is also a later generation than the early 1980s, so it should not be read as a 1982 statement.",
                     "edges": [
                       {
-                        "to": "peripheral.cassette.deck.logic.silicon.mould-compound",
+                        "to": "si.emc",
                         "rel": "contains"
                       }
                     ]
@@ -4001,48 +4001,7 @@
         }
       ]
     },
-    "peripheral.tv.chassis.pcb.glass": {
-      "id": "peripheral.tv.chassis.pcb.glass",
-      "name": "E-glass fibre from silica sand",
-      "simple_name": "E-glass fibre from silica sand",
-      "kind": "material",
-      "category": "inorganics",
-      "subcat": "silica-glass",
-      "era": "1982",
-      "description": "The reinforcement is a textile of drawn glass filament: silica sand is melted in a bushing at 1400 degrees C, drawn to a fibre a few microns across, and woven into cloth. It is the same silica as the tank window glass, run through a different furnace.",
-      "inputs": [
-        "boron and alumina modifiers",
-        "boron and calcium modifiers"
-      ],
-      "facts": [
-        {
-          "label": "Fibre diameter",
-          "value": "5-24 microns, woven into a cloth of about 0.1-0.2 mm thickness"
-        },
-        {
-          "label": "Function",
-          "value": "raises the laminate's dimensional stability and its solder-heat resistance"
-        },
-        {
-          "label": "E-glass composition",
-          "value": "about 73% SiO2, 16% CaO, 6% B2O3"
-        },
-        {
-          "label": "Drawing",
-          "value": "about 100 microns at the bushing, drawn to 5-24 microns"
-        }
-      ],
-      "confidence": "medium",
-      "provenance": "complete",
-      "note": "The same E-glass concept was invented for the printed circuit board and, by 1982, was also being pulled as optical fibre for telecommunications. Both start as melted quartz sand drawn to a fine filament. Glass fibre is the board industry's reinforcement. Optical fibre is the telecommunications industry's, off the same melted quartz sand.",
-      "children": [],
-      "edges": [
-        {
-          "to": "metal.silica-sand",
-          "rel": "made from"
-        }
-      ]
-    },
+    
     "peripheral.cassette.deck.head.core": {
       "id": "peripheral.cassette.deck.head.core",
       "name": "Permalloy or ferrite core",
@@ -4232,44 +4191,7 @@
         }
       ]
     },
-    "peripheral.cassette.deck.logic.silicon.mould-compound": {
-      "id": "peripheral.cassette.deck.logic.silicon.mould-compound",
-      "name": "Epoxy mould compound, silica-filled",
-      "simple_name": "Epoxy mould compound",
-      "kind": "material",
-      "category": "semiconductors",
-      "subcat": "chip-pack",
-      "era": "1982",
-      "description": "The black or off-white plastic that a chip is set in. It is an epoxy novolac resin filled to about 70% with ground fused silica, with a cure promoter and a mould release. The silica filler is what stops the encapsulant from shrinking and cracking the die during cure, and it comes from the same kind of sand as the glass batch.",
-      "inputs": [
-        "epoxy novolac resin",
-        "fused silica filler",
-        "mould release"
-      ],
-      "facts": [
-        {
-          "label": "Filler",
-          "value": "about 70% by weight ground silica, angular, a few microns"
-        },
-        {
-          "label": "Cure",
-          "value": "175 degrees C for several minutes, transfer or injection mould"
-        }
-      ],
-      "places": [
-        "Japan and Taiwan"
-      ],
-      "confidence": "medium",
-      "note": "The filler is deliberately angular and fused rather than spherical: the sharp interlocking particles give a high mechanical strength and a low water uptake, which is what kept moisture out of the die.",
-      "children": [],
-      "edges": [
-        {
-          "to": "mb.logic.package.assembly.mould.compound.resin",
-          "rel": "made of",
-          "basis": "documented"
-        }
-      ]
-    },
+    
     "peripheral.tv.mains.fuse.material": {
       "id": "peripheral.tv.mains.fuse.material",
       "name": "Glass cartridge and silver fuse wire",
@@ -5236,46 +5158,7 @@
         }
       ]
     },
-    "peripheral.tv.chassis.pcb.plating": {
-      "id": "peripheral.tv.chassis.pcb.plating",
-      "name": "HASL",
-      "simple_name": "HASL",
-      "kind": "process",
-      "category": "board",
-      "subcat": "finish-plate",
-      "era": "1982",
-      "description": "The board was dipped or dragged through a molten bath of 60/40 tin-lead, which left a solder film on the pads and bridged the copper under the mask. Immersion tin plating or gold-flash were also used, but a television of 1982 was overwhelmingly hot-tin-dipped. Tin from cassiterite, lead from galena, both of which are already in this tree.",
-      "inputs": [],
-      "facts": [
-        {
-          "label": "Alloy",
-          "value": "60% tin / 40% lead, melt at 190 degrees C"
-        },
-        {
-          "label": "Solder mask over HASL",
-          "value": "mask printed before the dip, so the mask covers the throwaway copper"
-        }
-      ],
-      "places": [
-        "Kuala Lumpur, Malaysia",
-        "Kuantan, Malaysia",
-        "Bintan, Indonesia"
-      ],
-      "confidence": "medium",
-      "provenance": "complete",
-      "note": "The big tin solder smelters of the era were in Kuala Lumpur and Kuantan in Malaysia, on Bintan in Indonesia, and in Cornwall and Bolivia. The solder is the only tin-lead user of cassiterite in this branch. Tin also went onto food cans, from the same ore.",
-      "children": [],
-      "edges": [
-        {
-          "to": "chem.solder-chemicals.rosin-flux",
-          "rel": "consumes"
-        },
-        {
-          "to": "metal.solder",
-          "rel": "consumes"
-        }
-      ]
-    },
+    
     "peripheral.tv.aerial.whip.plating": {
       "id": "peripheral.tv.aerial.whip.plating",
       "name": "Chrome-plate the whip rod",

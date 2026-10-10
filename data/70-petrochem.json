@@ -2,7 +2,32 @@
   "$comment": "Subsystem file: petrochemical / polymer chains. Branch roots chem.crude, chem.natural-gas, chem.refining, chem.ethylene, chem.propylene, chem.acrylonitrile, chem.butadiene, chem.styrene, chem.abs, chem.solvents, chem.fab-chemicals, chem.pcb-chemicals, chem.solder-chemicals. Cross-branch links use the id-ref form of 'children'.",
   "subsystem": "petrochem",
   "shared": {
-    "chem.ethylene.monomer": {
+
+    "chem.natural-gas.uses.hydrogen.to-ammonia": {
+      "id": "chem.natural-gas.uses.hydrogen.to-ammonia",
+      "name": "Hydrogen to ammonia (Haber-Bosch)",
+      "simple_name": "Hydrogen to ammonia",
+      "description": "N2 + 3H2 -> 2NH3 over promoted iron or ruthenium at 400-500 C and 150-250 bar, in a 1,000-2,500 tonne a day synthesis loop fed from a purge cascade. Ammonia is the single largest use of hydrogen, and it matters to the C64 in two places: the nitrogen for the polybutadiene and SAN polymerisations, and the acrylonitrile ammoxidation. The aqueous form the fab buys is at chem.fab-chemicals.ammonium-hydroxide.",
+      "kind": "process",
+      "category": "petrochem",
+      "subcat": "fuels-carbon",
+      "era": "1913",
+      "children": [],
+      "confidence": "low",
+      "provenance": "complete",
+      "note": "Established: Haber Bosch ammonia synthesis from nitrogen and hydrogen over promoted iron as the largest hydrogen use. Not established: the stated 400-500 C 150-250 bar and 1000-2500 tonne per day loop specifics as 1980s standard.",
+      "edges": [
+        {
+          "to": "chem.natural-gas.uses.hydrogen.to-ammonia.catalyst",
+          "rel": "consumes"
+        },
+        {
+          "to": "chem.natural-gas.uses.fertiliser-ammonia",
+          "rel": "produces",
+          "role": "product"
+        }
+      ]
+    },    "chem.ethylene.monomer": {
       "id": "chem.ethylene.monomer",
       "name": "Ethylene monomer",
       "simple_name": "Ethylene monomer",
@@ -176,7 +201,7 @@
           "rel": "made of"
         },
         {
-          "to": "chem.natural-gas.uses.hydrogen",
+          "to": "facility.gases.hydrogen.reforming",
           "rel": "step",
           "basis": "documented"
         },
@@ -9005,60 +9030,7 @@
         }
       ]
     },
-    "chem.natural-gas.uses.hydrogen": {
-      "id": "chem.natural-gas.uses.hydrogen",
-      "name": "Hydrogen by steam methane reforming",
-      "simple_name": "SMR hydrogen",
-      "description": "CH4 + H2O -> CO + 3H2 over nickel at 750-850 C and 20-30 bar, followed by the water-gas shift (iron oxide/chromia, 350-450 C) to raise the hydrogen fraction, then CO2 removal and cryogenic or PSA purification. A world-scale 1980s plant made 50-100 million m3 of hydrogen a day. Almost all of it went to ammonia; the rest to hydrotreating and to hydrochloric acid. The second largest industrial use of hydrogen is hydrochloric acid: H2 + Cl2 at 250-400 C over a synthesis catalyst, absorbed into demineralised water to 31-37%. The refinery's hydrogen (desulphurisation, hydrocracking, reforming) came from naphtha reformers and, as sour crudes grew, from dedicated gas reformers. In 1983 hydrogen was roughly 3-5% of refinery energy consumption and a genuine bottleneck.",
-      "kind": "process",
-      "category": "petrochem",
-      "subcat": "fuels-carbon",
-      "era": "1950s",
-      "children": [
-        {
-          "id": "chem.natural-gas.uses.hydrogen.to-ammonia",
-          "name": "Hydrogen to ammonia (Haber-Bosch)",
-          "simple_name": "Hydrogen to ammonia",
-          "description": "N2 + 3H2 -> 2NH3 over promoted iron or ruthenium at 400-500 C and 150-250 bar, in a 1,000-2,500 tonne a day synthesis loop fed from a purge cascade. Ammonia is the single largest use of hydrogen, and it matters to the C64 in two places: the nitrogen for the polybutadiene and SAN polymerisations, and the acrylonitrile ammoxidation. The aqueous form the fab buys is at chem.fab-chemicals.ammonium-hydroxide.",
-          "kind": "process",
-          "category": "petrochem",
-          "subcat": "fuels-carbon",
-          "era": "1913",
-          "children": [],
-          "confidence": "low",
-          "provenance": "complete",
-          "note": "Established: Haber Bosch ammonia synthesis from nitrogen and hydrogen over promoted iron as the largest hydrogen use. Not established: the stated 400-500 C 150-250 bar and 1000-2500 tonne per day loop specifics as 1980s standard.",
-          "edges": [
-            {
-              "to": "chem.natural-gas.uses.hydrogen.to-ammonia.catalyst",
-              "rel": "consumes"
-            },
-            {
-              "to": "chem.natural-gas.uses.fertiliser-ammonia",
-              "rel": "produces",
-              "role": "product"
-            }
-          ]
-        }
-      ],
-      "note": "Chlorine electrolysis itself belongs to the chlorine subsystem. The hydrogen requirement belongs here. Established: Hydrogen by steam methane reforming plus shift and purification. Not established: the stated temperatures pressures and world scale plant sizes as given.",
-      "confidence": "low",
-      "edges": [
-        {
-          "to": "mb.logic.cmos.process.locos.nitride",
-          "rel": "consumes",
-          "basis": "inferred"
-        },
-        {
-          "to": "chem.natural-gas.uses.hydrogen.nickel-catalyst",
-          "rel": "consumes"
-        },
-        {
-          "to": "chem.natural-gas",
-          "rel": "consumes"
-        }
-      ]
-    },
+    
     "chem.crude.rig.drilling-mud.bentonite.montmorillonite.soda-ash": {
       "id": "chem.crude.rig.drilling-mud.bentonite.montmorillonite.soda-ash",
       "name": "Soda ash conversion to sodium bentonite",

@@ -2324,7 +2324,9 @@
       "confidence": "high",
       "places": [
         "Rustenburg, South Africa",
-        "Kemi, Finland"
+        "Kemi, Finland",
+        "Oman",
+        "Kola Peninsula, USSR"
       ],
       "facts": [
         {
@@ -2348,7 +2350,7 @@
           "id": "metal.chromite.mine",
           "name": "Layer-seam chromite open pit, 200 m deep",
           "simple_name": "Chromite open pit, 200m",
-          "description": "The Bushveld chromite mines are among the deepest and most geometrically awkward open pits in the world. A 1-6 m chromitite layer is covered by 100-200 m of layered norite, and the pit must be advanced strip by strip along the seam, so the benches are narrow and the truck travels a long way for every tonne. The waste is platinum-group ore, so the chromite mines and the platinum mines are the same mines, and their combined revenue is what made the region what it is. The ore is crushed to about 100 mm and shipped to a smelter, sometimes 400 km away.",
+          "description": "The Bushveld chromite mines are among the deepest and most geometrically awkward open pits in the world. A 1-6 m chromitite layer is covered by 100-200 m of layered norite, and the pit must be advanced strip by strip along the seam, so the benches are narrow and the truck travels a long way for every tonne. The waste is platinum-group ore, so the chromite mines and the platinum mines are the same mines, and their combined revenue is what made the region what it is. The ore is crushed to about 100 mm and shipped to a smelter, sometimes 400 km away. Shallower seams such as the UG2 are also worked by underground stoping.",
           "kind": "facility",
           "category": "metals",
           "subcat": "ferrous",
@@ -7069,6 +7071,10 @@
         {
           "label": "Products",
           "value": "silver at 96-99%, gold dore at 30-50% Au"
+        },
+        {
+          "label": "Cupel",
+          "value": "bone ash cupel absorbs the oxidised lead litharge"
         }
       ],
       "sources": [
@@ -7594,11 +7600,24 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Wire_bonding"
       ],
-      "children": [],
+      "note": "Ball bonding was displacing wedge bonding for high pin counts in this period. Wedge bonding at about 10 bonds per second dominated merchant logic.",
+      "children": [
+        "mb.logic.package.assembly.wirebond.bonder"
+      ],
       "edges": [
         {
           "to": "metal.gold.ingot",
           "rel": "consumes"
+        },
+        {
+          "to": "facility.gases.hydrogen",
+          "rel": "consumes",
+          "basis": "typical-1982"
+        },
+        {
+          "to": "metal.tungsten",
+          "rel": "consumes",
+          "basis": "typical-1982"
         }
       ]
     },

@@ -872,44 +872,7 @@
       ],
       "note": "Not established: the Pleistocene age and glacial origin of the buried outwash the node describes, and the claim that groundwater was preferred over river water for an ultrapure plant. The aquifer article supports the confined-aquifer concept only."
     },
-    "facility.water.chromite": {
-      "id": "facility.water.chromite",
-      "name": "Chromite ore (FeCr2O4)",
-      "simple_name": "Chromite ore",
-      "description": "The only economic source of chromium. Mined by underground stoping in the Bushveld Complex of South Africa and elsewhere, then smelted to ferrochrome.",
-      "kind": "material",
-      "category": "metals",
-      "subcat": "ferrous",
-      "era": "1983",
-      "places": [
-        "Bushveld Complex, South Africa",
-        "Oman",
-        "Kola Peninsula, USSR"
-      ],
-      "confidence": "high",
-      "sources": [
-        "https://en.wikipedia.org/wiki/Chromite",
-        "https://en.wikipedia.org/wiki/Bushveld_Igneous_Complex"
-      ],
-      "children": [
-        {
-          "id": "facility.water.chromite-mine",
-          "name": "Chromite mine",
-          "simple_name": "Chromite mine",
-          "description": "A stratiform chromite seam (UG2 in the Bushveld) worked by stoping or by open pit. Ends at the chromitite layer in the ground.",
-          "kind": "facility",
-          "category": "metals",
-          "subcat": "ferrous",
-          "era": "1983",
-          "confidence": "high",
-          "provenance": "raw",
-          "sources": [
-            "https://en.wikipedia.org/wiki/Bushveld_Igneous_Complex",
-            "https://en.wikipedia.org/wiki/Chromite"
-          ]
-        }
-      ]
-    },
+    
     "facility.water.di-loop": {
       "id": "facility.water.di-loop",
       "name": "Ultrapure distribution loop",
@@ -1165,44 +1128,25 @@
       "provenance": "raw",
       "note": "Corrected: the chlorine leach and the salt-roast soda-ash-leach flowsheet previously given here are both wrong as stated. Vanadium metal production begins with roasting crushed ore with sodium chloride or sodium carbonate at about 850 C to give sodium metavanadate. The aqueous extract of that solid is acidified to give red cake, a polyvanadate salt, which is reduced with calcium metal. Carnotite was the Colorado Plateau ore, first mined in the Uravan Mineral Belt from 1898, and it carried vanadium as well as uranium, so vanadium came out as a by-product of uranium production. Confidence stays medium because which of the two the mills serving this supply ran principally for is not established, and no plant-level document for the 1983 route was found. An earlier citation to the Colorado Geological Survey study was withdrawn: it is a 164-page PDF that could not be read end to end in this environment, so its wording was second-hand."
     },
-    "facility.power.iron-ore": {
-      "id": "facility.power.iron-ore",
-      "name": "Blast furnace iron ore",
-      "simple_name": "Iron ore",
-      "description": "The blast-furnace feed, and the reason a power station's turbine steel has a supply chain at all. US supply was Mesabi Range hematite and taconite in the Lake Superior district, shipped by rail to the blast furnaces of the Great Lakes steel belt. Europe and Japan imported Brazilian pellets and ore. Ends at the orebody.",
-      "kind": "material",
+    
+    "facility.power.iron-ore-pit": {
+      "id": "facility.power.iron-ore-pit",
+      "name": "Iron ore open pit (Mesabi)",
+      "simple_name": "Mesabi open pit",
+      "description": "Taconite and hematite are dug by 15-tonne payload shovels and hauled in 90-tonne trucks from a strip 60 m deep. Ends at the orebody.",
+      "kind": "facility",
       "category": "metals",
       "subcat": "ferrous",
       "era": "1983",
-      "inputs": [
-        "open-pit mine"
+      "places": [
+        "Mesabi Range, Minnesota",
+        "Carajas, Brazil"
       ],
       "confidence": "high",
+      "provenance": "raw",
       "sources": [
-        "https://en.wikipedia.org/wiki/Iron_ore",
-        "https://en.wikipedia.org/wiki/Mesabi_Range"
-      ],
-      "children": [
-        {
-          "id": "facility.power.iron-ore-pit",
-          "name": "Iron ore open pit (Mesabi)",
-          "simple_name": "Mesabi open pit",
-          "description": "Taconite and hematite are dug by 15-tonne payload shovels and hauled in 90-tonne trucks from a strip 60 m deep. Ends at the orebody.",
-          "kind": "facility",
-          "category": "metals",
-          "subcat": "ferrous",
-          "era": "1983",
-          "places": [
-            "Mesabi Range, Minnesota",
-            "Carajas, Brazil"
-          ],
-          "confidence": "high",
-          "provenance": "raw",
-          "sources": [
-            "https://en.wikipedia.org/wiki/Mesabi_Range",
-            "https://en.wikipedia.org/wiki/Iron_ore"
-          ]
-        }
+        "https://en.wikipedia.org/wiki/Mesabi_Range",
+        "https://en.wikipedia.org/wiki/Iron_ore"
       ]
     },
     "facility.power.coking-coal-seam": {
@@ -1380,7 +1324,7 @@
       "note": "Not established: that chromate was a film-forming corrosion inhibitor in cooling systems, and the claim about thousands of chromate-bearing cooling towers in the 1980s. The encyclopaedia article on sodium chromate is a bare formula page and states none of this.",
       "edges": [
         {
-          "to": "facility.water.chromite",
+          "to": "metal.chromite",
           "rel": "made from"
         }
       ]
@@ -2106,7 +2050,7 @@
       "note": "Not established: the 540 C steam condition, the 0.5-0.8 percent chromium-molybdenum-vanadium high-pressure rotor steel, the austenitic stainless last stages, or the forging, normalising, stress-relief and creep-rupture proof test for the turbines feeding this supply; the alloy and treatment carry no source.",
       "edges": [
         {
-          "to": "facility.power.iron-ore",
+          "to": "metal.iron",
           "rel": "made from"
         },
         {
@@ -2165,7 +2109,9 @@
       "inputs": [
         "catalyst"
       ],
-      "children": [],
+      "children": [
+        "chem.natural-gas.uses.hydrogen.to-ammonia"
+      ],
       "confidence": "medium",
       "provenance": "complete",
       "note": "Established: steam methane reforming over a nickel catalyst at 800-900 C and 20-30 bar with a 2.5-3:1 steam-to-carbon ratio, plus the water-gas shift step, per the cited article. Not established: the under-0.5 ppm desulphurisation figure and the nickel-molybdenum/chromite and iron-chrome catalyst specifics.",
@@ -2184,6 +2130,15 @@
         },
         {
           "to": "facility.steam",
+          "rel": "consumes"
+        },
+        {
+          "to": "mb.logic.cmos.process.locos.nitride",
+          "rel": "consumes",
+          "basis": "inferred"
+        },
+        {
+          "to": "chem.natural-gas.uses.hydrogen.nickel-catalyst",
           "rel": "consumes"
         }
       ]
