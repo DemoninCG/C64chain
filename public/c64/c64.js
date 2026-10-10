@@ -3,6 +3,7 @@ import { BOX, SOLID, toScreenText } from './petscii.js';
 import { TextMode, COLS, ROWS, wrapText } from './textmode.js';
 import { childLines, layoutTreeBoxes, planTreePanel, groupRouted, groupRails, trunkSpan, visibleWindow, clampStart, ensureCursorVisible, connectionsOf, nodeContent } from './treeview.js';
 import { renderElements, stepCursor, cellFromXY, elementAt } from './periodictable.js';
+import { INTRO_STEPS, INTRO_CHAIN, INTRO_KEY, renderIntro, chainTrail } from './intro.js';
 import { CAT_ORDER, catColor, FLOW_ZOOMS, FLOW_NODE_H, FLOW_COL_GAP, FLOW_ROW_GAP, buildFlowGraph, computeTiers, layoutFlow, edgeCellsFor, clampCam, centreFor, nearestToCentre, flowLabel } from './flowview.js';
 
 const LEFT = { x: 1, y: 1, w: 78, h: 42 };
@@ -21,6 +22,7 @@ const state = {
   tab: 'tree',
   elCur: { p: 4, g: 8 },
   flow: { x: 0, y: 0, zoom: 1, init: false },
+  intro: { active: false, step: 0 },
 };
 
 let tm = null;
@@ -35,6 +37,7 @@ let nodeBox = null;
 let tabHits = [];
 let animating = false;
 let animFrame = null;
+let introHits = null;
 
 function U(s) {
   return toScreenText(s);
@@ -119,11 +122,12 @@ function renderTitle() {
     { id: 'tree', label: '[TREE]' },
     { id: 'flow', label: '[FLOW]' },
     { id: 'elements', label: '[ELEMENTS]' },
+    { id: 'intro', label: '[INTRO]' },
   ];
   let x = COLS - 2;
   for (let i = tabs.length - 1; i >= 0; i--) {
     const t = tabs[i];
-    const on = state.tab === t.id;
+    const on = t.id === 'intro' ? state.intro.active : (!state.intro.active && state.tab === t.id);
     x -= t.label.length;
     tm.text(x, 0, U(t.label), on ? C.BLACK : C.LTBLUE, on ? C.LTGREY : UI.BG);
     tabHits.push({ x0: x, x1: x + t.label.length - 1, y: 0, id: t.id });
@@ -712,25 +716,123 @@ function renderBottom() {
   // Footer is key hints plus the blink cursor only. The old F1/F3/F5/F7
   // settings toggles were never wired to any render path, so the whole
   // SETTINGS box went away and every tab grew into the freed rows.
+  // Hidden during the intro: its key line already lives inside the frame,
+  // and first-time viewers get just the one thing to focus on.
+  if (state.intro.active) return;
   const st = state.cursor ? String.fromCharCode(SOLID) : ' ';
   const help = state.tab === 'elements'
-    ? 'ARROWS=CURSOR ENTER=SHOW IN TREE TAB=SWITCH'
+    ? 'ARROWS=CURSOR ENTER=SHOW I=INTRO TAB=SWITCH'
     : state.tab === 'flow'
-      ? 'ARROWS=PAN ENTER=SELECT 0=ROOT +/-=ZOOM DRAG=PAN T=TREE TAB=SWITCH'
-      : 'UP/DN=CURSOR ENTER=OPEN LEFT=BACK 0=ROOT []=SCROLL';
+      ? 'ARROWS=PAN ENTER=SELECT 0=ROOT +/-=ZOOM I=INTRO T=TREE'
+      : 'UP/DN=CURSOR ENTER=OPEN LEFT=BACK 0=ROOT I=INTRO []=SCROLL';
   tm.text(2, ROWS - 1, U(help), C.GREY, UI.BG);
   tm.set(COLS - 3, ROWS - 1, st.charCodeAt(0), C.YELLOW, UI.BG);
 }
 
+function isIntroSeen() {
+  try {
+    return window.localStorage?.getItem(INTRO_KEY) === '1';
+  } catch {
+    // Storage blocked (private mode): show the tour; it will show again
+    // next visit, which beats hiding it forever.
+    return false;
+  }
+}
+
+function markIntroSeen() {
+  try {
+    window.localStorage?.setItem(INTRO_KEY, '1');
+  } catch { /* private mode: tour simply shows again next visit */ }
+}
+
+function startIntro(step = 0) {
+  if (animating && animFrame !== null) {
+    cancelAnimationFrame(animFrame);
+    animFrame = null;
+    animating = false;
+  }
+  state.intro.active = true;
+  state.intro.step = Math.min(INTRO_STEPS.length - 1, Math.max(0, step));
+  render();
+}
+
+function exitIntro(markSeen = true) {
+  if (markSeen) markIntroSeen();
+  state.intro.active = false;
+  introHits = null;
+  render();
+}
+
+function introGo(step) {
+  state.intro.step = Math.min(INTRO_STEPS.length - 1, Math.max(0, step));
+  render();
+}
+
+function introNext() {
+  if (state.intro.step >= INTRO_STEPS.length - 1) exitIntro(true);
+  else introGo(state.intro.step + 1);
+}
+
+function introPrev() {
+  if (state.intro.step > 0) introGo(state.intro.step - 1);
+}
+
+function introViewNode(id) {
+  // Clicking a chain box (or V) leaves the tour and opens that node in the
+  // tree on its chain trail: BACK climbs toward the C64 through the same
+  // stops, and drilling back down re-traverses them. Never the old
+  // C64-direct push, which skipped every stop in between.
+  const step = INTRO_STEPS[state.intro.step];
+  const vis = INTRO_CHAIN.slice(0, step?.count ?? 0);
+  const target = (id && state.nodes[id])
+    ? id
+    : [...vis].reverse().find((c) => state.nodes[c.id])?.id ?? vis[vis.length - 1]?.id;
+  exitIntro(true);
+  if (!target || !state.nodes[target]) return;
+  const L = getFlowLayout();
+  state.tab = 'tree';
+  state.path = chainTrail(target, {
+    chainIds: INTRO_CHAIN.map((c) => c.id),
+    root: state.meta?.root ?? 'c64',
+    has: (nid) => !!state.nodes[nid],
+    kidIds: (nid) => kidsFor(nid).map((k) => k.id),
+    succ: L.succ,
+    parent: L.parent,
+  });
+  state.selected = target;
+  state.treeCursor = 0;
+  state.treeScroll = 0;
+  state.nodeScroll = 0;
+  render();
+}
+
+function renderIntroPanel() {
+  introHits = renderIntro(tm, state.intro.step, state.nodes, state.cursor);
+  treeChildHits = [];
+  flowHits = [];
+  backHit = null;
+  viewTreeHit = null;
+  minimapGeom = null;
+  nodeBox = null;
+}
+
 function render() {
   tm.clear(UI.BODY_FG, UI.BG);
-  renderTitle();
-  if (state.tab === 'elements') {
-    renderElements(tm, state.elCur, LEFT.h, state.nodes);
-  } else if (state.tab === 'flow') {
-    renderFlow();
+  if (state.intro.active) {
+    // No header, no tabs, no footer: first-time viewers focus on the one
+    // thing. Stale tab targets are cleared so blank-chrome clicks do nothing.
+    // The header [INTRO] tab replays the tour, which hides the header again.
+    tabHits = [];
+    renderIntroPanel();
   } else {
-    renderLeft();
+    renderTitle();
+    if (state.tab === 'elements') {
+      renderElements(tm, state.elCur, LEFT.h, state.nodes);
+    } else if (state.tab === 'flow') {
+      renderFlow();
+    } else {
+      renderLeft();
+    }
   }
   renderBottom();
   tm.present();
@@ -740,6 +842,7 @@ function render() {
 // exactly where the user left it when they switch back. Entering flow centres
 // the viewport on the selection (first visit centres the root).
 function setTab(t) {
+  if (t === 'intro') { startIntro(0); return; }
   if (t !== 'tree' && t !== 'elements' && t !== 'flow') return;
   if (animating && animFrame !== null) {
     cancelAnimationFrame(animFrame);
@@ -1094,12 +1197,25 @@ function cellFromEvent(e) {
 
 function wireInput() {
   window.addEventListener('keydown', (e) => {
+    // Intro tour owns the keyboard while it is up: every other component
+    // is hidden, so no tree/flow/elements key may fire underneath it.
+    if (state.intro.active) {
+      if (e.key === 'Tab') { e.preventDefault(); introNext(); return; }
+      if (animating) return;
+      if (e.key === ' ' || e.key === 'Enter' || e.key === 'n' || e.key === 'N' || e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); introNext(); }
+      else if (e.key === 'b' || e.key === 'B' || e.key === 'p' || e.key === 'P' || e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'Backspace') { e.preventDefault(); introPrev(); }
+      else if (e.key === 's' || e.key === 'S' || e.key === 'Escape' || e.key === 'q' || e.key === 'Q') { e.preventDefault(); exitIntro(true); }
+      else if (e.key === 'v' || e.key === 'V') { e.preventDefault(); introViewNode(); }
+      else if (e.key === 'i' || e.key === 'I') { e.preventDefault(); markIntroSeen(); render(); }
+      return;
+    }
     if (e.key === 'Tab') {
       e.preventDefault();
       setTab(state.tab === 'tree' ? 'flow' : state.tab === 'flow' ? 'elements' : 'tree');
       return;
     }
     if (animating) return;
+    if (e.key === 'i' || e.key === 'I') { e.preventDefault(); startIntro(0); return; }
     if (state.tab === 'elements') {
       if (e.key === 'ArrowUp') { e.preventDefault(); state.elCur = stepCursor(state.elCur, -1, 0); render(); }
       else if (e.key === 'ArrowDown') { e.preventDefault(); state.elCur = stepCursor(state.elCur, 1, 0); render(); }
@@ -1136,12 +1252,14 @@ function wireInput() {
   });
   let suppressClick = false;
   tm.canvas.addEventListener('pointerdown', (e) => {
+    if (state.intro.active) return;
     if (state.tab !== 'flow' || e.button !== 0) return;
     const c = cellFromEvent(e);
     if (!inFlowView(c.x, c.y)) return;
     flowDrag = { x: e.clientX, y: e.clientY, ox: state.flow.x, oy: state.flow.y, moved: false };
   });
   tm.canvas.addEventListener('pointermove', (e) => {
+    if (state.intro.active) return;
     if (!flowDrag) return;
     const r = tm.canvas.getBoundingClientRect();
     const dxCells = Math.round(((flowDrag.x - e.clientX) / r.width) * 80);
@@ -1167,6 +1285,16 @@ function wireInput() {
     }
     if (suppressClick) { suppressClick = false; return; }
     if (animating) return;
+    // Intro consumes all clicks while up (other components are hidden).
+    if (state.intro.active && introHits) {
+      if (c.y === introHits.skip.y && c.x >= introHits.skip.x0 && c.x <= introHits.skip.x1) { exitIntro(true); return; }
+      if (c.y === introHits.next.y && c.x >= introHits.next.x0 && c.x <= introHits.next.x1) { introNext(); return; }
+      if (c.y === introHits.back.y && c.x >= introHits.back.x0 && c.x <= introHits.back.x1) { introPrev(); return; }
+      for (const b of introHits.chain ?? []) {
+        if (c.y >= b.y0 && c.y <= b.y1 && c.x >= b.x0 && c.x <= b.x1) { introViewNode(b.id); return; }
+      }
+      return;
+    }
     if (state.tab === 'elements') {
       const cell = cellFromXY(c.x, c.y);
       if (cell) { state.elCur = cell; render(); }
@@ -1199,6 +1327,7 @@ function wireInput() {
   });
   tm.canvas.addEventListener('wheel', (e) => {
     if (animating) return;
+    if (state.intro.active) return;
     if (state.tab === 'elements') return;
     const c = cellFromEvent(e);
     if (state.tab === 'flow') {
@@ -1234,13 +1363,20 @@ async function boot() {
     state.err = String(e?.message ?? e);
   }
   wireInput();
+  // First visit: open on the quartz-to-C64 tour instead of the tree. The
+  // flag is set on skip/finish; I replays the tour later. Set the flag
+  // before the first render so there is no tree flash-through.
+  if (!isIntroSeen()) {
+    state.intro.active = true;
+    state.intro.step = 0;
+  }
   render();
-  // The flow tab's minimap marker flashes with the shared text cursor, so the
-  // blink tick re-renders the whole panel there (layout is cached) and just
-  // the footer elsewhere.
+  // The flow tab's minimap marker and the intro pins flash with the shared
+  // text cursor, so the blink tick re-renders the whole panel there (layout
+  // is cached) and just the footer elsewhere.
   setInterval(() => {
     state.cursor = !state.cursor;
-    if (state.tab === 'flow' && !animating) render();
+    if ((state.tab === 'flow' || state.intro.active) && !animating) render();
     else { renderBottom(); tm.present(); }
   }, 530);
 }
