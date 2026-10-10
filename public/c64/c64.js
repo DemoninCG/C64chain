@@ -731,7 +731,7 @@ function renderBottom() {
       ? 'ARROWS=PAN ENTER=SELECT 0=ROOT +/-=ZOOM T=TREE N=NTSC'
       : 'UP/DN=CURSOR ENTER=OPEN LEFT=BACK 0=ROOT []=SCROLL N=NTSC';
   tm.text(2, ROWS - 1, U(help), C.GREY, UI.BG);
-  tm.text(COLS - 8, ROWS - 1, U('v1.0.0'), C.LTBLUE, UI.BG);
+  tm.text(COLS - 8, ROWS - 1, U('v1.0.1'), C.LTBLUE, UI.BG);
 }
 
 function isIntroSeen() {
