@@ -61,11 +61,11 @@ const POST_FRAG_SRC = `
 // The canvas backing store already matches the displayed size (see fit()),
 // so this runs per OUTPUT pixel: the clean 640x360 frame is sampled with
 // NEAREST-style texel centres for the sharp luma path and with hardware
-// bilinear for the smooth chroma-bleed path, while grain, wave offsets,
-// scanlines and vignette are all evaluated at full output resolution.
-// Stages mirror the old single-pass chain: edge wave -> tracking
-// displacement -> sharp-luma / bleeding-chroma (YIQ) split -> saturation
-// boost -> luma-only noise -> sharpened luma -> scanlines / head-switch.
+// bilinear for the smooth chroma-bleed path, while grain, scanlines and
+// vignette are all evaluated at full output resolution.
+// Stages: rolling-band / glitch / head-switch noise swell ->
+// sharp-luma / bleeding-chroma (YIQ) split -> saturation boost ->
+// luma-only noise -> sharpened luma -> scanlines / vignette.
 #ifdef GL_FRAGMENT_PRECISION_HIGH
 precision highp float;
 #else
@@ -78,7 +78,6 @@ uniform float u_on;
 uniform float u_sat;
 uniform float u_luma;
 uniform float u_bleed;
-uniform float u_wave;
 uniform float u_track;
 uniform float u_sharp;
 uniform float u_scan;
@@ -86,6 +85,16 @@ uniform float u_scan;
 vec3 rgb2yiq(vec3 c) {
   return vec3(
     dot(c, vec3(0.299, 0.587, 0.114)),
+    dot(c, vec3(0.596, -0.274, -0.322)),
+    dot(c, vec3(0.211, -0.523, 0.312)));
+}
+// Luma-only and chroma-only subsets: bit-identical to the matching channels
+// of rgb2yiq above, without the discarded dot products.
+float rgb2y(vec3 c) {
+  return dot(c, vec3(0.299, 0.587, 0.114));
+}
+vec2 rgb2iq(vec3 c) {
+  return vec2(
     dot(c, vec3(0.596, -0.274, -0.322)),
     dot(c, vec3(0.211, -0.523, 0.312)));
 }
@@ -126,57 +135,56 @@ void main() {
     return;
   }
   float t = u_time;
-  vec2 uv = uv0;
-  // 1. VHS edge wave (~2 source px peak, sub-pixel smooth at output res).
-  float wob = sin(uv.y * 57.0 + t * 4.2) * 0.0 + sin(uv.y * 12.0 - t * 1.7) * 0.0;
-  uv.x += (wob / 640.0) * u_wave;
-  // 2. Tracking: slow rolling band + rare thin glitch line + head switch.
+  // 1. Tracking: slow rolling band + rare thin glitch line + head switch.
+  //    These only swell the luma-noise amplitude below; the old edge-wave
+  //    wobble and horizontal tracking displacement were zero-weighted, so
+  //    sampling stays on uv0 (clean* clamp the offset taps at the edges).
   //    Frame counter wraps so hash inputs stay in mediump-friendly range.
   float trackY = 1.0 - fract(t * 0.07 + 0.3);
-  float bd = uv.y - trackY;
+  float bd = uv0.y - trackY;
   float band = exp(-bd * bd * 1800.0);
   float frame = mod(floor(t * 20.0), 50.0);
   float gy = hash12(vec2(frame, 1.7));
   float gate = step(0.62, hash12(vec2(frame, 9.2)));
-  float glitch = (1.0 - step(0.002, abs(uv.y - gy))) * gate;
+  float glitch = (1.0 - step(0.002, abs(uv0.y - gy))) * gate;
   float head = step(0.972, uv0.y);
-  float disp = glitch * 0.0;
-  vec2 suv = vec2(clamp(uv.x + disp * u_track, 0.0, 1.0), clamp(uv.y, 0.0, 1.0));
-  // 3. Sharp luma (nearest) vs bleeding chroma (bilinear wide blur, smeared
+  // 2. Sharp luma (nearest) vs bleeding chroma (bilinear wide blur, smeared
   //    right like composite). Tap offsets stay in source-px units so the look
   //    matches at any window size.
   vec2 px1 = vec2(1.0 / 640.0, 0.0);
-  vec3 c0 = cleanNearest(suv);
-  vec3 cL1 = cleanNearest(suv - px1);
-  vec3 cR1 = cleanNearest(suv + px1);
-  vec3 bL3 = cleanLinear(suv - 3.0 * px1);
-  vec3 bL2 = cleanLinear(suv - 2.0 * px1);
-  vec3 bL1 = cleanLinear(suv - px1);
-  vec3 b0 = cleanLinear(suv);
-  vec3 bR1 = cleanLinear(suv + px1);
-  vec3 bR2 = cleanLinear(suv + 2.0 * px1);
-  vec3 bR3 = cleanLinear(suv + 3.0 * px1);
+  vec2 px2 = 2.0 * px1;
+  vec2 px3 = 3.0 * px1;
+  vec3 c0 = cleanNearest(uv0);
+  vec3 cL1 = cleanNearest(uv0 - px1);
+  vec3 cR1 = cleanNearest(uv0 + px1);
+  vec3 bL3 = cleanLinear(uv0 - px3);
+  vec3 bL2 = cleanLinear(uv0 - px2);
+  vec3 bL1 = cleanLinear(uv0 - px1);
+  vec3 b0 = cleanLinear(uv0);
+  vec3 bR1 = cleanLinear(uv0 + px1);
+  vec3 bR2 = cleanLinear(uv0 + px2);
+  vec3 bR3 = cleanLinear(uv0 + px3);
   vec3 y0 = rgb2yiq(c0);
-  vec3 yL1 = rgb2yiq(cL1);
-  vec3 yR1 = rgb2yiq(cR1);
-  vec2 bleed = rgb2yiq(bL3).yz * 0.10 + rgb2yiq(bL2).yz * 0.16 + rgb2yiq(bL1).yz * 0.20
-             + rgb2yiq(b0).yz * 0.22
-             + rgb2yiq(bR1).yz * 0.15 + rgb2yiq(bR2).yz * 0.10 + rgb2yiq(bR3).yz * 0.07;
+  float yL1 = rgb2y(cL1);
+  float yR1 = rgb2y(cR1);
+  vec2 bleed = rgb2iq(bL3) * 0.10 + rgb2iq(bL2) * 0.16 + rgb2iq(bL1) * 0.20
+             + rgb2iq(b0) * 0.22
+             + rgb2iq(bR1) * 0.15 + rgb2iq(bR2) * 0.10 + rgb2iq(bR3) * 0.07;
   vec2 chroma = mix(y0.yz, bleed, clamp(u_bleed, 0.0, 1.0));
-  // 4. VHS sharpening on luma only (unsharp from 1-source-px neighbours).
-  float yBlur = (yL1.x + yR1.x) * 0.5;
+  // 3. VHS sharpening on luma only (unsharp from 1-source-px neighbours).
+  float yBlur = (yL1 + yR1) * 0.5;
   float ySharp = clamp(y0.x + (y0.x - yBlur) * u_sharp * 1.5, 0.0, 1.0);
-  // 5. Saturation boost (sample is hotter than raw viewer blues).
+  // 4. Saturation boost (sample is hotter than raw viewer blues).
   vec3 rgb = yiq2rgb(vec3(ySharp, chroma * u_sat));
-  // 6. Luma noise only, per OUTPUT pixel (gl_FragCoord): equal RGB addition
+  // 5. Luma noise only, per OUTPUT pixel (gl_FragCoord): equal RGB addition
   //    leaves I/Q untouched, so still no chroma noise at the higher res.
   //    Coords wrap to stay precise in mediump.
   float gframe = mod(floor(t * 60.0), 61.0);
   float n = grain(mod(gl_FragCoord.xy, 1024.0), fract(gframe * 0.61803) * 4.0);
   float nAmp = u_luma * (1.0 + band * 2.0 * u_track + glitch * 3.0 * u_track + head * 2.5);
-  rgb += vec3(nAmp * n * 1.0);
-  // 7. Scanlines: one smooth sine cycle per emulated source row.
-  rgb *= 1.0 - u_scan * (0.5 + 0.5 * sin(suv.y * 2261.9));
+  rgb += vec3(nAmp * n);
+  // 6. Scanlines: one smooth sine cycle per emulated source row.
+  rgb *= 1.0 - u_scan * (0.5 + 0.5 * sin(uv0.y * 2261.9));
   vec2 vd = uv0 - 0.5;
   rgb *= 1.0 - 0.16 * dot(vd, vd);
   gl_FragColor = vec4(clamp(rgb, 0.0, 1.0), 1.0);
