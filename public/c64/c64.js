@@ -726,10 +726,10 @@ function renderBottom() {
   // and first-time viewers get just the one thing to focus on.
   if (state.intro.active) return;
   const help = state.tab === 'elements'
-    ? 'ARROWS=CURSOR ENTER=SHOW TAB=SWITCH'
+    ? 'ARROWS=CURSOR ENTER=SHOW TAB=SWITCH N=NTSC'
     : state.tab === 'flow'
-      ? 'ARROWS=PAN ENTER=SELECT 0=ROOT +/-=ZOOM T=TREE'
-      : 'UP/DN=CURSOR ENTER=OPEN LEFT=BACK 0=ROOT []=SCROLL';
+      ? 'ARROWS=PAN ENTER=SELECT 0=ROOT +/-=ZOOM T=TREE N=NTSC'
+      : 'UP/DN=CURSOR ENTER=OPEN LEFT=BACK 0=ROOT []=SCROLL N=NTSC';
   tm.text(2, ROWS - 1, U(help), C.GREY, UI.BG);
   tm.text(COLS - 8, ROWS - 1, U('v1.0.0'), C.LTBLUE, UI.BG);
 }
@@ -1219,6 +1219,8 @@ function wireInput() {
       setTab(state.tab === 'tree' ? 'flow' : state.tab === 'flow' ? 'elements' : 'tree');
       return;
     }
+    // NTSC/VHS post toggle (all tabs; intro owns N for next-step above).
+    if (e.key === 'n' || e.key === 'N') { e.preventDefault(); tm.toggleFX(); render(); return; }
     if (animating) return;
     if (state.tab === 'elements') {
       if (e.key === 'ArrowUp') { e.preventDefault(); state.elCur = stepCursor(state.elCur, -1, 0); render(); }
@@ -1375,6 +1377,29 @@ async function boot() {
     state.intro.step = 0;
   }
   render();
+  // Console + query-string lab for the NTSC/VHS post chain:
+  //   ?ntsc=0 disables; ?sat=&luma=&bleed=&wave=&track=&sharp=&scan= tune.
+  //   window.__ntsc.set({sat:1.5}); window.__ntsc.get(); window.__ntsc.toggle()
+  window.__ntsc = {
+    get: () => ({ ...tm.fx }),
+    set: (p) => { tm.setFX(p); render(); return window.__ntsc.get(); },
+    toggle: () => { const on = tm.toggleFX(); render(); return on; },
+  };
+  // The NTSC grain/tracking is time-animated, so keep presenting every frame
+  // (cheap: textures re-upload only when dirty, the shader just re-runs with
+  // a new u_time). Skipped under prefers-reduced-motion, where the blink
+  // tick below still refreshes the frame on cursor flips.
+  let reduceMotion = false;
+  try {
+    reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+  } catch { /* keep animating */ }
+  if (!reduceMotion) {
+    const fxLoop = () => {
+      if (!document.hidden && !animating) tm.present();
+      requestAnimationFrame(fxLoop);
+    };
+    requestAnimationFrame(fxLoop);
+  }
   // The flow tab's minimap marker and the intro pins flash with the shared
   // text cursor, so the blink tick re-renders the whole panel there (layout
   // is cached) and just the footer elsewhere.
