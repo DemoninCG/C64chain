@@ -1,8 +1,8 @@
 # Category system v2 (12 highers for colour, lowers for label)
 
-Status: SPEC. No `data/*.json` node uses these values yet. `scripts/build.mjs`
-still validates the old 16; the migration flips validation after Wave 3.
-Nothing structural reads `category` (colour/filter/stats only), so this is safe.
+Status: IMPLEMENTED 2026-10-08. Every `data/*.json` node carries these values
+and `scripts/build.mjs` validates the 12 highers with their controlled lowers.
+Nothing structural reads `category` (colour/filter/stats only).
 
 ## Why 12
 

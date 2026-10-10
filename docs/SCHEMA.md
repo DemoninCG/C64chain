@@ -133,7 +133,7 @@ and are stitched together by `scripts/build.mjs`.
   // never force an edge to earn complete.
   "provenance": "raw",
 
-  // OPTIONAL — scope for orphan triage (TODO section 1, HANDOFF section 3).
+  // OPTIONAL — scope (policy: data/_scope.json).
   //   chain     everything needed to build a 250407 C64 in 1982 down to ore/crude/gas/sand
   //             (default when missing; must be reachable under the directed walk;
   //             upstream extraction, refining/cracking, fab/board/assembly, utilities

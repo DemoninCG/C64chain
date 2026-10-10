@@ -5,8 +5,8 @@
 # churn on every rebuild and diffs become unreadable.
 * text=auto eol=lf
 
-# Generated build artefacts and documentation. Keep LF, never CRLF: a tree.png
-# or a .dot file must never acquire line-ending changes that swamp a real diff.
+# Generated build artefacts and documentation. Keep LF, never CRLF: a .dot file
+# must never acquire line-ending changes that swamp a real diff.
 *.json   text eol=lf
 *.md     text eol=lf
 *.mjs    text eol=lf

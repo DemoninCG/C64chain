@@ -36,13 +36,13 @@ export const INTRO_CHAIN = [
 // description runs a few full sentences below it.
 export const INTRO_STEPS = [
   {
-    title: 'Austertana (Tana), Norway - Quartzite quarry',
-    caption: 'Bench quarry in metamorphosed sandstone: drill and blast, jaw-crush, wash, then hand and optical sorters pull the iron-stained lumps. Only the cleanest rock feeds the furnace.',
+    title: 'Austertana (Tana), Norway - Quartzite quarry - 1982',
+    caption: 'Quartzite (metamorphosed sandstone) from the quarry is drilled and blasted, jaw-crushed, and washed. Hand/optical sorters then pull the iron-stained lumps. Only the cleanest rock will be processed.',
     count: 1, map: 'norway', pin: 'tana',
   },
   {
     title: 'Austertana (Tana), Norway - High-grade quartzite',
-    caption: 'The sorted output is 97-99% silicon dioxide with iron oxide under 0.05%. Beach sand is never used; only this quarried rock will do for chemical silicon.',
+    caption: 'The sorted output is 97-99% SiO2 (silica) with iron oxide under 0.05%. Beach sand is never used; only this quarried rock will do for chemical silicon.',
     count: 2, map: 'norway', pin: 'tana',
   },
   {
@@ -57,27 +57,27 @@ export const INTRO_STEPS = [
   },
   {
     title: 'Hemlock, Michigan - Trichlorosilane',
-    caption: 'Metallurgical silicon meets hydrogen chloride gas in a 290-320 C fluid bed. The money molecule condenses out: trichlorosilane, purified only by volatility differences.',
+    caption: 'Metallurgical silicon meets hydrogen chloride gas in a 290-320 C fluid bed. The output is purified trichlorosilane, a volatile colorless liquid.',
     count: 5, map: 'usa', pin: 'hemlock',
   },
   {
     title: 'Hemlock, Michigan - Polysilicon',
-    caption: 'Fractionation distills boron down near one part per billion then the Siemens process grows silicon onto white-hot rods. The sawn 9N chunks charge the crystal puller.',
+    caption: 'Fractionation distills boron down near one part per billion. Then, the Siemens process slowly grows silicon onto white-hot rods. The sawn chunks will charge the crystal puller.',
     count: 6, map: 'usa', pin: 'hemlock',
   },
   {
     title: 'St Peters, Missouri - Czochralski crystal',
-    caption: 'A two-kilo charge melts at 1414 C in a silica crucible under argon. A slow pull freezes a single 75-150 mm boule. St Peters stands in as a representative merchant source.',
+    caption: 'A two-kilo charge melts at 1414 C in a silica crucible under argon for the Czochralski process: A seed crystal is dipped into the melt, then a slow pull freezes a single 75-150 mm boule.',
     count: 7, map: 'usa', pin: 'stpeters',
   },
   {
     title: 'St Peters, Missouri - CZ silicon ingot',
-    caption: 'The boule is boron-doped p-type silicon; the seed end is lopped off. It is sawn into slices, then lapped and polished into wafers further down the line.',
+    caption: 'The boule is boron-doped p-type silicon; the seed end is lopped off. It is cut into thin slices, to be polished into wafers further down the line.',
     count: 8, map: 'usa', pin: 'stpeters',
   },
   {
     title: 'St Peters, Missouri - Polished wafer',
-    caption: 'The finished substrate is a 100 mm wafer a few hundred microns thick with a polished mirror face. Every die in the finished computer starts as a slice of this disc.',
+    caption: 'The finished substrate is a 100 mm wafer a few hundred microns thick with a polished mirror face. Every die in every home computer starts as a slice of this type of disc.',
     count: 9, map: 'usa', pin: 'stpeters',
   },
   {
@@ -87,12 +87,12 @@ export const INTRO_STEPS = [
   },
   {
     title: 'Norristown, Pennsylvania - MOS 6510',
-    caption: 'A 6502 core plus an 8-bit I/O port, ticking at 1.022727 MHz and seated at U7. It is diffused, probed and packaged at 950 Rittenhouse Road under one roof.',
+    caption: 'A 6502 core plus an 8-bit I/O port, ticking at 1.023 MHz and seated at U7. It is diffused, probed and packaged at the same building in Norristown.',
     count: 11, map: 'usa', pin: 'norristown',
   },
   {
     title: 'Hong Kong - Commodore 64',
-    caption: 'The FR-4 board is populated and the breadbin boxed on the Hong Kong line. One Finnmark mountainside, ten thousand kilometres, twelve stops: a home computer.',
+    caption: 'The FR-4 board is populated and the breadbin boxed on the Hong Kong line. Boxes are stacked and shipped on pallets to their final destinations.',
     count: 12, map: 'asia', pin: 'hongkong',
   },
 ];
@@ -498,7 +498,7 @@ export function renderIntro(grid, stepIdx, nodes, cursorOn) {
   // The frame owns rows 1-43 now that the header and footer stay hidden
   // during the tour. Its title reads light blue to stand apart from the
   // yellow step title directly below it.
-  introBox(grid, 1, 1, 78, 43, UI.FRAME_FG, UI.BG, 'QUARTZ TO COMMODORE', C.LTBLUE);
+  introBox(grid, 1, 1, 78, 43, UI.FRAME_FG, UI.BG, 'FOLLOWING THE C64 SUPPLY CHAIN', C.LTBLUE);
   // Title on the top line (location, hyphen, material/process), then up
   // to three lines of description. Title shares y2 with SKIP: 64 cols so
   // they never collide.

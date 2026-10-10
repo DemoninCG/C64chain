@@ -16,9 +16,9 @@
  *   node scripts/relate.mjs verify-inputs        the 628 inputs-derived edges
  *   node scripts/relate.mjs audit                tree-wide rule check
  *
- * Reads public/tree.json, so run `node scripts/build.mjs` first. That file is
- * stale by design mid-phase (HANDOFF, patchtest); every command prints the
- * build timestamp it saw so a stale run is obvious.
+ * Reads public/tree.json, so run `node scripts/build.mjs` first. That file
+ * goes stale whenever data/ changes without a rebuild; every command prints
+ * the build timestamp it saw so a stale run is obvious.
  */
 
 import { readFile, writeFile } from 'node:fs/promises';
@@ -438,11 +438,8 @@ function cmdAudit() {
       seen.get(k).push(e);
     }
   }
-  /* The note-dissolution backlog is reported with its count rather than as a bare
-   * FAIL. Wave 4.2 dissolved the index notes and shells; the 9 remaining notes
-   * with outgoing edges are content (makers lists, routing points, measurement
-   * asides - see docs/TODO.md section 10), each needing an individual re-home,
-   * not a container to dissolve. Still fails so they cannot be forgotten. */
+  /* Notes must not carry outgoing children/from edges. The Wave 4 backlog is
+   * cleared; this still fails if one appears so it cannot slip back in. */
   const NOTE_BACKLOG_KNOWN = 9;
   let noteOut = 0;
   for (const id of ids) {
@@ -479,11 +476,11 @@ function cmdAudit() {
     for (const p of N[x].made_by ?? []) reach(p);
   }
   const orphans = ids.filter((i) => !seenNodes.has(i));
-  // Orphan triage with scope policy (TODO §1, HANDOFF §3, data/_scope.json).
+  // Orphan triage with scope policy (data/_scope.json; see docs/RELATIONS.md §8).
   // Product vision guides calls: viewer must show complete chain from C64 to raw
   // materials; context/alternate are dimmed/hidden, never required for completeness.
   //   chain     must be reachable (default); orphans are backlog (SHOULD connect
-  //             upstream worlds, branch-heads blocked on TODO-10, detached content).
+  //             upstream worlds, branch-heads awaiting anchors, detached content).
   //   context   plant furniture, logistics paperwork, cleanroom fixtures, power/steam
   //             equipment via at, waste outputs (correctly unlinked, terminal,
   //             catalogue blessed, does not gate). Notes/orgs default context by kind.

@@ -115,8 +115,14 @@ function centerText(y, str, fg, bg) {
 }
 
 function renderTitle() {
-  tm.fillRect(0, 0, COLS, 1, 32, C.YELLOW, UI.BG);
-  tm.text(2, 0, '**** C64 SUPPLY CHAIN ****', C.YELLOW, UI.BG);
+  tm.fillRect(0, 0, COLS, 1, 32, C.WHITE, UI.BG);
+  let tx = 2;
+  for (const color of RAINBOW) {
+    tm.set(tx++, 0, SOLID, color, UI.BG);
+  }
+  tx += 1;
+  const title = 'C64 SUPPLY CHAIN';
+  tm.text(tx, 0, title, C.WHITE, UI.BG);
   tabHits = [];
   const tabs = [
     { id: 'tree', label: '[TREE]' },
@@ -713,20 +719,19 @@ function renderFlow() {
 }
 
 function renderBottom() {
-  // Footer is key hints plus the blink cursor only. The old F1/F3/F5/F7
+  // Footer is key hints plus the version number only. The old F1/F3/F5/F7
   // settings toggles were never wired to any render path, so the whole
   // SETTINGS box went away and every tab grew into the freed rows.
   // Hidden during the intro: its key line already lives inside the frame,
   // and first-time viewers get just the one thing to focus on.
   if (state.intro.active) return;
-  const st = state.cursor ? String.fromCharCode(SOLID) : ' ';
   const help = state.tab === 'elements'
-    ? 'ARROWS=CURSOR ENTER=SHOW I=INTRO TAB=SWITCH'
+    ? 'ARROWS=CURSOR ENTER=SHOW TAB=SWITCH'
     : state.tab === 'flow'
-      ? 'ARROWS=PAN ENTER=SELECT 0=ROOT +/-=ZOOM I=INTRO T=TREE'
-      : 'UP/DN=CURSOR ENTER=OPEN LEFT=BACK 0=ROOT I=INTRO []=SCROLL';
+      ? 'ARROWS=PAN ENTER=SELECT 0=ROOT +/-=ZOOM T=TREE'
+      : 'UP/DN=CURSOR ENTER=OPEN LEFT=BACK 0=ROOT []=SCROLL';
   tm.text(2, ROWS - 1, U(help), C.GREY, UI.BG);
-  tm.set(COLS - 3, ROWS - 1, st.charCodeAt(0), C.YELLOW, UI.BG);
+  tm.text(COLS - 8, ROWS - 1, U('v1.0.0'), C.LTBLUE, UI.BG);
 }
 
 function isIntroSeen() {
@@ -1215,7 +1220,6 @@ function wireInput() {
       return;
     }
     if (animating) return;
-    if (e.key === 'i' || e.key === 'I') { e.preventDefault(); startIntro(0); return; }
     if (state.tab === 'elements') {
       if (e.key === 'ArrowUp') { e.preventDefault(); state.elCur = stepCursor(state.elCur, -1, 0); render(); }
       else if (e.key === 'ArrowDown') { e.preventDefault(); state.elCur = stepCursor(state.elCur, 1, 0); render(); }
@@ -1364,7 +1368,7 @@ async function boot() {
   }
   wireInput();
   // First visit: open on the quartz-to-C64 tour instead of the tree. The
-  // flag is set on skip/finish; I replays the tour later. Set the flag
+  // flag is set on skip/finish; [INTRO] replays the tour later. Set the flag
   // before the first render so there is no tree flash-through.
   if (!isIntroSeen()) {
     state.intro.active = true;

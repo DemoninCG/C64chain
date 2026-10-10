@@ -537,7 +537,7 @@
     }
   },
   "audit_rules": {
-    "$comment": "Checks for scripts/audit.mjs, all driven from this file so the prose cannot drift from the gate. All are tree-wide, so per HANDOFF Sec. 6 they must be run centrally after any fan-out, not only per fragment. Severity is stated explicitly; nothing is an implicit FAIL.",
+    "$comment": "Checks for scripts/audit.mjs, all driven from this file so the prose cannot drift from the gate. All are tree-wide, so they must be run centrally after any multi-file change, not only per fragment. Severity is stated explicitly; nothing is an implicit FAIL.",
     "kind_pair_not_in_schema": "FAIL. (source kind, target kind) is not in the relation's `stored` list.",
     "consumes_target_is_part": "FAIL. Explicitly forbidden by narrow_kinds. No edge needs it.",
     "note_with_outgoing_non_about_edge": "FAIL. A note with supply edges is a mis-typed node or an index node. PHASE 0: a child of a note is DELETE or about -- no judgement question exists for note>* (Wave 3 Sec. 5-78/79). 6 from-leaks close with one build.mjs guard (skip kind:note when deriving from); 15 children-holders stay manual Wave 4.2.",
@@ -597,7 +597,7 @@
     "schema_gaps_found": {
       "no_wafer_material_node": "si.wafer is kind part, so \"the wafer being processed\" is not a legal `consumes` target. Wafer-level process steps are correct in substance and have nowhere to point. Needs a wafer material node.",
       "no_home_for_durable_tooling": "`uses` targets tools only, so metal.aluminum.extrusion -> metal.die-steel (a die is capital equipment, not consumed) has no legal relation. Three edges.",
-      "inputs_dead_ends": "About 20% of all `inputs` entries resolve to nothing and produce NO edge; the substance is absent from the tree and nothing reports it. Worst: phosphine 13x, arsine 8x -- both ALREADY recorded in TODO.md section 8 as the worst cases of a normalisation bug that was never fixed. Concentrated in 90-peripherals (220), 40-chassis (160), 80-industry (133). CORRECTED: see wave2.schema_gaps_confirmed -- the phosphine/arsine examples were pre-fix and both resolve."
+      "inputs_dead_ends": "About 20% of all `inputs` entries resolve to nothing and produce NO edge; the substance is absent from the tree and nothing reports it. Worst: phosphine 13x, arsine 8x -- both recorded at the time as the worst cases of a normalisation bug that was never fixed. Concentrated in 90-peripherals (220), 40-chassis (160), 80-industry (133). CORRECTED: see wave2.schema_gaps_confirmed -- the phosphine/arsine examples were pre-fix and both resolve."
     },
     "content_bugs": [
       "metal.hall-heroult.dross has inputs [\"metal.alumina\",\"metal.carbon.anode\"] -- both are the POT's feed. Dross is a waste stream with no node at all.",
@@ -628,7 +628,7 @@
       "no wafer material node -- si.wafer is kind part, so wafer-level process steps are correct in substance and have nowhere legal to point",
       "no home for durable tooling -- `uses` targets tools only, so metal.aluminum.extrusion -> metal.die-steel (a die is capital equipment, not consumed) has no relation at all",
       "no relation for \"consumed as ambience or forming gas\" -- bipolar.process.sinter -> facility.nitrogen, and forming gases generally",
-      "CORRECTED 2026-10-04. I recorded this as an unfixed normalisation bug. It is FIXED: scripts/build.mjs:376 implements the fix and TODO.md section 8 documents it. Phosphine resolves with 21 inbound edges (1 children + 20 from) and arsine with 12 (1 + 11); diborane has 4. The 13x and 8x figures are PRE-FIX and I carried them into four agent briefs. The real defect is different and smaller: mb.cpu.fe.nplus claims a phosphorus diffusion consumes silane, and six nodes cite the phosphine leaf while nine cite an index node instead. Create nothing -- doing so would duplicate a working node."
+      "CORRECTED 2026-10-04. I recorded this as an unfixed normalisation bug. It is FIXED: scripts/build.mjs:376 implements the fix. Phosphine resolves with 21 inbound edges (1 children + 20 from) and arsine with 12 (1 + 11); diborane has 4. The 13x and 8x figures are PRE-FIX and I carried them into four agent briefs. The real defect is different and smaller: mb.cpu.fe.nplus claims a phosphorus diffusion consumes silane, and six nodes cite the phosphine leaf while nine cite an index node instead. Create nothing -- doing so would duplicate a working node."
     ],
     "content_bugs_found": [
       "metal.hall-heroult.dross has inputs [\"metal.alumina\",\"metal.carbon.anode\"] -- both are the POT's feed. Dross is a waste stream with no node at all.",
@@ -644,7 +644,7 @@
     "known_content_gap": "27% of sampled parents in rounds 3 and 4 end with no producer. The tree under-models the operation that brings many parts into being. This is not a relation problem and Wave 2 confirms it is not an ingredient problem either."
   },
   "wave3_examinations": {
-    "method": "One read-only agent per branch, examining structure rather than individual edges. Fixed report template with a required \"what it blocks\" column, so findings are orderable. 22 reports complete; the point is the global picture, not per-edge verdicts. PHASE 0: 22/22 compiled in docs/WAVE3-FINDINGS.md; Sec. 5-80 adjudicated in migration plan.",
+    "method": "One read-only agent per branch, examining structure rather than individual edges. Fixed report template with a required \"what it blocks\" column, so findings are orderable. 22 reports complete; the point is the global picture, not per-edge verdicts. PHASE 0: 22/22 compiled and adjudicated during the Wave 3/4 migration (working papers retired at publish; record in git history).",
     "THE_DOMINANT_DEFECT_one_pattern_named_independently_four_times": [
       "petrochem/feedstock: 12 of the 14 children of the `chem` index are typed `process` and named \"Substance: <a route>\".",
       "petrochem/polymers: 9 polymer branch heads typed `process`; FIVE have no substance node anywhere beneath them.",
